@@ -2,7 +2,7 @@
   "active_task": {
     "code": "CP20_TASK8B3_E6",
     "name": "Conditioned-Geometric Complex Numerator",
-    "stage": "STAGE_1_RUNNING",
+    "stage": "RESULT_RETURNED_UNVERIFIED",
     "target": {
       "C": 4,
       "d": -8
@@ -71,9 +71,16 @@
     ]
   },
   "next_action": {
-    "instruction": "Wait for the existing computation/proof session to return the E6 Stage 1 package. Do not send a duplicate authorization and do not alter the accepted seal. On return, mark the result unverified, then verify hashes, manifests, exact identities, theorem scope, and stop-rule status before acceptance.",
+    "instruction": "Perform the full independent manager intake on the frozen E6 returned package: verify all pre-run and dependency hashes, manifest membership, the exactly-once execution claim, deterministic verifier, exact identities, theorem scope, numerical labels, and audit stop rule. Do not accept or use any E6 claim before this gate passes.",
     "prompt": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
     "requires_user_or_external_result": true
+  },
+  "returned_result": {
+    "acceptance_status": "UNVERIFIED",
+    "complete_package_sha256": "9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849",
+    "directory_file_count": 21,
+    "manifest_sha256": "7c0f7ce6de55582cc1e69d12092f1d822cf169d897a0c36e28570e32378731d1",
+    "master_findings_archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md"
   },
   "prohibited_inferences": [
     "Do not claim E5-S2, E5-S3, E5-S4, or E5-S5.",
@@ -102,5 +109,5 @@
       "positive-only local-limit route"
     ]
   },
-  "updated_at": "2026-09-01T13:39:36+03:00"
+  "updated_at": "2026-09-01T14:38:47+03:00"
 }

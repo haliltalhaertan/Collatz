@@ -22,10 +22,10 @@ ve kurtarılan arşivler burada korunuyor. Baş araştırmacı programı bu katm
 ### Güncel senkronize arşiv
 
 - Arşiv: [`Collatz_Research_Archive_CURRENT.zip`](./Collatz_Research_Archive_CURRENT.zip)
-- SHA-256: `b1062e2ca07bbd3c789a53690301d0f90e0c283c23c0446b0bb34c3140982a0f`
-- Üye sayısı: 811
-- Açılmış araştırma verisi: 164.949.065 bayt
-- ZIP boyutu: 84.057.705 bayt
+- SHA-256: `46228e51d17da191f225260d23eb1ea3dc079da453b5b7a0a905b734df41c506`
+- Üye sayısı: 824
+- Açılmış araştırma verisi: 165.045.697 bayt
+- ZIP boyutu: 84.124.127 bayt
 - Derleme kaydı: [`CURRENT_ARCHIVE_BUILD.json`](./CURRENT_ARCHIVE_BUILD.json)
 
 Güncel paket; tam çıkarılmış araştırma ağacını, E3–E6 artefakt ve verilerini,
@@ -37,10 +37,12 @@ hash'li girdilerin izole audit kopyaları pakete tekrar eklenmedi.
 
 - E4: belge/kapsam onarımlarıyla bağımsız denetimden geçti.
 - E5: E5-S1 tam conditioned-geometric bridge kabul edildi; E5-S2–E5-S5 açık.
-- E6: pre-run seal doğrulandı ve Stage 1 yetkilendirmesi mevcut hesaplama
-  oturumuna gönderildi; çalışma yalnızca
+- E6: Stage 1 sonuç paketi yalnızca
   `83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57`
-  seal ZIP hash'i altında yürütülüyor. Yinelenen yetkilendirme gönderilmemeli.
+  seal ZIP hash'i altında döndü. Complete-package SHA-256
+  `9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849`;
+  durum `RESULT_RETURNED_UNVERIFIED`. Yönetici denetimi geçmeden hiçbir E6
+  iddiası kabul edilmemeli veya aşağı akışta kullanılmamalı.
 
 ### Kesintisiz devir ve kurtarma
 
