@@ -2,7 +2,7 @@
   "active_task": {
     "code": "CP20_TASK8B3_E7",
     "name": "Two-Sided Feynman-Kac Block Kernel",
-    "stage": "STAGE_0_READY_NOT_DISPATCHED",
+    "stage": "STAGE_0_RUNNING",
     "target": {
       "C": 4,
       "d": -8
@@ -91,9 +91,9 @@
     ]
   },
   "next_action": {
-    "instruction": "Send the recorded E7 research prompt to the existing computation/proof session. It is authorized to prepare Stage 0 pre-run seal artifacts only and must stop before any E7 Stage 1 computation or proof search implemented in code.",
+    "instruction": "Wait for the existing computation/proof session to return the E7 Stage 0 pre-run seal, manifest, and normalized seal ZIP. Do not send a duplicate prompt. On return, verify all dependency and pre-run hashes and freeze the seal before deciding whether Stage 1 may be authorized.",
     "prompt": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
-    "requires_user_or_external_result": false
+    "requires_user_or_external_result": true
   },
   "returned_result": {
     "acceptance_status": "ACCEPTED_E6_N1_WITH_SCOPE_REPAIR",
@@ -137,5 +137,5 @@
       "direct H2 norm-only Hadamard majorant"
     ]
   },
-  "updated_at": "2026-09-01T14:47:11+03:00"
+  "updated_at": "2026-09-01T14:52:27+03:00"
 }
