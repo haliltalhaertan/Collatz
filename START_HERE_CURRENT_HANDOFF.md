@@ -23,7 +23,7 @@ Run these steps in order:
    - `research_manager/CONTINUITY_PROTOCOL.md`
    - the active integration decision named in the state file
    - the active task prompt named in the state file
-   - the active authorization prompt named in the state file
+   - the active authorization prompt named in the state file, if non-null
 5. If the extracted archive is absent, run:
 
    ```text
@@ -36,21 +36,22 @@ Run these steps in order:
 
 ## Current active state
 
-- Scientific checkpoint: E5-S1 exact conditioned-geometric bridge accepted.
-- Active task: CP20 Task 8B3 E6.
-- Stage: E6 Stage 1 package returned and frozen, but remains unverified.
+- Scientific checkpoint: E6-N1 accepted with explicit scope repairs.
+- Active task: CP20 Task 8B3 E7.
+- Stage: Stage 0 prompt prepared but not yet dispatched.
 - Target: `(d,C)=(-8,4)`.
 - Accepted E6 seal ZIP SHA-256:
   `83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57`.
 - Returned complete-package SHA-256:
   `9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849`.
-- Immediate action: perform the full independent manager intake. No E6 claim
-  may be accepted or used downstream until all integrity, reproduction,
-  mathematical-scope, and stop-rule checks pass.
+- E6 manager decision SHA-256:
+  `d3017c56d3b6a5b6540848f29af29a1a7c1d24122991fee779e1d73ed3b28104`.
+- Immediate action: send the recorded E7 prompt to the existing computation
+  session for Stage 0 seal preparation only. Stage 1 is not authorized.
 
-Do not create a new seal, resend the authorization, rerun the sealed source,
-rerun E5, expand the depth, or begin a different branch unless the current
-integrity check fails or the user explicitly changes the objective.
+Do not run E7 Stage 1, rerun E6, expand the depth, or begin a different branch
+unless the current integrity check fails or the user explicitly changes the
+objective.
 
 ## Non-negotiable scientific scope
 
@@ -59,10 +60,14 @@ Accepted:
 - E4 critical-walk route decision with audited documentary/scope repairs.
 - E5-S1 exact finite Green kernel and conditioned-geometric bridge.
 - Positive denominator local-limit scale.
+- E6-N1 exact coefficient/Hadamard, numerator, and conditioned-bridge forms.
+- The M1 endpoint-state coboundary obstruction only in the repaired uniform
+  sup-summable scope.
 
 Not accepted:
 
-- E5-S2 through E5-S5.
+- E6-N2 through E6-N5.
+- E7-B2 through E7-B6.
 - A degree-one inherited cone bound.
 - A complex local-limit theorem.
 - A nonzero boundary-to-target transfer coefficient.

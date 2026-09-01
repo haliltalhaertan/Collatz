@@ -73,6 +73,9 @@ def main() -> None:
         "RESULT_RETURNED_UNVERIFIED",
         "AUDIT_PENDING",
         "ACCEPTED",
+        "STAGE_0_READY_NOT_DISPATCHED",
+        "STAGE_0_RUNNING",
+        "PRE_RUN_SEAL_AWAITING_AUTHORIZATION",
     }
     if state["active_task"]["stage"] not in allowed_stages:
         raise AssertionError("unrecognized active stage")

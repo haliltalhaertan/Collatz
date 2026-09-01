@@ -22,10 +22,10 @@ ve kurtarılan arşivler burada korunuyor. Baş araştırmacı programı bu katm
 ### Güncel senkronize arşiv
 
 - Arşiv: [`Collatz_Research_Archive_CURRENT.zip`](./Collatz_Research_Archive_CURRENT.zip)
-- SHA-256: `46228e51d17da191f225260d23eb1ea3dc079da453b5b7a0a905b734df41c506`
-- Üye sayısı: 824
-- Açılmış araştırma verisi: 165.045.697 bayt
-- ZIP boyutu: 84.124.127 bayt
+- SHA-256: `3aea8e923aaf4ac28a5e6f8eabb9818e40dc0cebb5033cc20875045549fda404`
+- Üye sayısı: 826
+- Açılmış araştırma verisi: 165.059.950 bayt
+- ZIP boyutu: 84.131.002 bayt
 - Derleme kaydı: [`CURRENT_ARCHIVE_BUILD.json`](./CURRENT_ARCHIVE_BUILD.json)
 
 Güncel paket; tam çıkarılmış araştırma ağacını, E3–E6 artefakt ve verilerini,
@@ -41,8 +41,9 @@ hash'li girdilerin izole audit kopyaları pakete tekrar eklenmedi.
   `83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57`
   seal ZIP hash'i altında döndü. Complete-package SHA-256
   `9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849`;
-  durum `RESULT_RETURNED_UNVERIFIED`. Yönetici denetimi geçmeden hiçbir E6
-  iddiası kabul edilmemeli veya aşağı akışta kullanılmamalı.
+  E6-N1, kapsam onarımlarıyla yönetici denetiminden geçti; E6-N2–E6-N5 açık.
+- E7: iki taraflı Feynman–Kac blok çekirdeği Stage-0 promptu hazırlandı. Sadece
+  pre-run seal hazırlanması yetkili; Stage 1 henüz yetkili değil.
 
 ### Kesintisiz devir ve kurtarma
 

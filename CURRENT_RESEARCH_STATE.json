@@ -1,8 +1,8 @@
 {
   "active_task": {
-    "code": "CP20_TASK8B3_E6",
-    "name": "Conditioned-Geometric Complex Numerator",
-    "stage": "RESULT_RETURNED_UNVERIFIED",
+    "code": "CP20_TASK8B3_E7",
+    "name": "Two-Sided Feynman-Kac Block Kernel",
+    "stage": "STAGE_0_READY_NOT_DISPATCHED",
     "target": {
       "C": 4,
       "d": -8
@@ -26,10 +26,10 @@
     "sync_policy": "research_manager/GITHUB_SYNC_POLICY.md"
   },
   "documents": {
-    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E5_S1_INTEGRATION_2026-09-01.md",
-    "active_authorization_decision": "research_manager/decisions/CP20_TASK8B3_E6_STAGE1_AUTHORIZATION_2026-09-01.md",
-    "active_authorization_prompt": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
-    "active_research_prompt": "research_manager/prompts/CP20_TASK8B3_E6_CONDITIONED_GEOMETRIC_COMPLEX_NUMERATOR_PROMPT_2026-09-01.md",
+    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
+    "active_authorization_decision": null,
+    "active_authorization_prompt": null,
+    "active_research_prompt": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md"
   },
   "integrity": {
@@ -49,6 +49,18 @@
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.zip",
         "sha256": "83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_COMPLETE_PACKAGE.zip",
+        "sha256": "9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/SHA256SUMS.txt",
+        "sha256": "7c0f7ce6de55582cc1e69d12092f1d822cf169d897a0c36e28570e32378731d1"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md",
+        "sha256": "d8e2f7c125744e50bf299b38a890ac0c7ff0d6c47d9fd08506a41b519b2faaec"
       }
     ],
     "repository_files": [
@@ -67,16 +79,24 @@
       {
         "path": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
         "sha256": "bb73c74b7c45f1ef12d881e4c2e3ceb88774688e46bfb6b29f4418bf928ea8fa"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
+        "sha256": "d3017c56d3b6a5b6540848f29af29a1a7c1d24122991fee779e1d73ed3b28104"
+      },
+      {
+        "path": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
+        "sha256": "94106512926dd887a93ebfa056a810ccd31000b03f5d34b077c886efe9be73b0"
       }
     ]
   },
   "next_action": {
-    "instruction": "Perform the full independent manager intake on the frozen E6 returned package: verify all pre-run and dependency hashes, manifest membership, the exactly-once execution claim, deterministic verifier, exact identities, theorem scope, numerical labels, and audit stop rule. Do not accept or use any E6 claim before this gate passes.",
-    "prompt": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
-    "requires_user_or_external_result": true
+    "instruction": "Send the recorded E7 research prompt to the existing computation/proof session. It is authorized to prepare Stage 0 pre-run seal artifacts only and must stop before any E7 Stage 1 computation or proof search implemented in code.",
+    "prompt": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
+    "requires_user_or_external_result": false
   },
   "returned_result": {
-    "acceptance_status": "UNVERIFIED",
+    "acceptance_status": "ACCEPTED_E6_N1_WITH_SCOPE_REPAIR",
     "complete_package_sha256": "9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849",
     "directory_file_count": 21,
     "manifest_sha256": "7c0f7ce6de55582cc1e69d12092f1d822cf169d897a0c36e28570e32378731d1",
@@ -85,6 +105,8 @@
   "prohibited_inferences": [
     "Do not claim E5-S2, E5-S3, E5-S4, or E5-S5.",
     "Do not infer a complex numerator asymptotic from five numerical checkpoints.",
+    "Do not claim E7-B2, E7-B3, E7-B4, E7-B5, or E7-B6.",
+    "Do not run E7 Stage 1 before external acceptance of its future pre-run seal ZIP hash.",
     "Do not rerun or modify a sealed source without a new external seal authorization.",
     "Do not claim that the Collatz conjecture is proved."
   ],
@@ -94,20 +116,26 @@
       "E4 audited critical-walk route decision with scope repairs",
       "E5-S1 exact one-row Green kernel",
       "E5-S1 exact conditioned-geometric bridge",
-      "positive target denominator local-limit scale"
+      "positive target denominator local-limit scale",
+      "E6-N1 exact coefficient, Hadamard, probability-numerator, and conditioned-bridge normal forms",
+      "M1 endpoint-state coboundary obstruction in the repaired uniform sup-summable scope"
     ],
     "open": [
       "uniform degree-one inherited bound",
       "uniform complex numerator bound N_r=O(r^-3/2)",
       "complex numerator asymptotic and coefficient regularity",
       "nonzero boundary-to-target transfer",
-      "fixed-target asymptotic or polynomial lower bound"
+      "fixed-target asymptotic or polynomial lower bound",
+      "quantitative two-sided complex block-kernel contraction",
+      "uniform positive-excursion tail closure at o(1/r)"
     ],
     "parked": [
       "absolute-value maximum-principle route",
       "global invariant-cone route",
-      "positive-only local-limit route"
+      "positive-only local-limit route",
+      "exact or uniformly sup-summable endpoint-state coboundary route",
+      "direct H2 norm-only Hadamard majorant"
     ]
   },
-  "updated_at": "2026-09-01T14:38:47+03:00"
+  "updated_at": "2026-09-01T14:47:11+03:00"
 }
