@@ -38,16 +38,17 @@ Run these steps in order:
 
 - Scientific checkpoint: E5-S1 exact conditioned-geometric bridge accepted.
 - Active task: CP20 Task 8B3 E6.
-- Stage: Stage 1 authorized but not yet executed.
+- Stage: Stage 1 authorization sent; computation/proof session is running.
 - Target: `(d,C)=(-8,4)`.
 - Accepted E6 seal ZIP SHA-256:
   `83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57`.
-- Immediate action: give the recorded E6 Stage 1 authorization prompt to the
-  computation/proof session, then intake and verify its returned package.
+- Immediate action: wait for the existing computation/proof session to return
+  its E6 package. Do not send a duplicate authorization. Treat the returned
+  package as unverified until the full manager intake gate passes.
 
-Do not create a new seal, rerun E5, expand the depth, or begin a different
-branch unless the current integrity check fails or the user explicitly changes
-the objective.
+Do not create a new seal, resend the authorization, rerun E5, expand the depth,
+or begin a different branch unless the current integrity check fails or the
+user explicitly changes the objective.
 
 ## Non-negotiable scientific scope
 

@@ -22,10 +22,10 @@ ve kurtarılan arşivler burada korunuyor. Baş araştırmacı programı bu katm
 ### Güncel senkronize arşiv
 
 - Arşiv: [`Collatz_Research_Archive_CURRENT.zip`](./Collatz_Research_Archive_CURRENT.zip)
-- SHA-256: `3c4cf43e8882f50c2c398b1d5a62e222f9459d71e5b0eb8af7a36fe429410396`
-- Üye sayısı: 810
-- Açılmış araştırma verisi: 164.947.379 bayt
-- ZIP boyutu: 84.056.090 bayt
+- SHA-256: `b1062e2ca07bbd3c789a53690301d0f90e0c283c23c0446b0bb34c3140982a0f`
+- Üye sayısı: 811
+- Açılmış araştırma verisi: 164.949.065 bayt
+- ZIP boyutu: 84.057.705 bayt
 - Derleme kaydı: [`CURRENT_ARCHIVE_BUILD.json`](./CURRENT_ARCHIVE_BUILD.json)
 
 Güncel paket; tam çıkarılmış araştırma ağacını, E3–E6 artefakt ve verilerini,
@@ -37,9 +37,10 @@ hash'li girdilerin izole audit kopyaları pakete tekrar eklenmedi.
 
 - E4: belge/kapsam onarımlarıyla bağımsız denetimden geçti.
 - E5: E5-S1 tam conditioned-geometric bridge kabul edildi; E5-S2–E5-S5 açık.
-- E6: pre-run seal doğrulandı; Stage 1 yalnızca
+- E6: pre-run seal doğrulandı ve Stage 1 yetkilendirmesi mevcut hesaplama
+  oturumuna gönderildi; çalışma yalnızca
   `83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57`
-  seal ZIP hash'i altında yetkili.
+  seal ZIP hash'i altında yürütülüyor. Yinelenen yetkilendirme gönderilmemeli.
 
 ### Kesintisiz devir ve kurtarma
 

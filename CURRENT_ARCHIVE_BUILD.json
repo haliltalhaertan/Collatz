@@ -1,8 +1,8 @@
 {
   "archive": "Collatz_Research_Archive_CURRENT.zip",
-  "archive_sha256": "3c4cf43e8882f50c2c398b1d5a62e222f9459d71e5b0eb8af7a36fe429410396",
-  "built_utc": "2026-09-01T10:22:24.618304+00:00",
-  "member_count": 810,
+  "archive_sha256": "b1062e2ca07bbd3c789a53690301d0f90e0c283c23c0446b0bb34c3140982a0f",
+  "built_utc": "2026-09-01T10:41:40.084033+00:00",
+  "member_count": 811,
   "schema": "COLLATZ_CURRENT_ARCHIVE_BUILD_V1",
   "source_groups": [
     "full extracted research archive",
@@ -11,6 +11,6 @@
     "repository tooling",
     "continuity handoff snapshot"
   ],
-  "total_uncompressed_bytes": 164947379,
-  "zip_bytes": 84056090
+  "total_uncompressed_bytes": 164949065,
+  "zip_bytes": 84057705
 }

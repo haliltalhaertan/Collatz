@@ -2,7 +2,7 @@
   "active_task": {
     "code": "CP20_TASK8B3_E6",
     "name": "Conditioned-Geometric Complex Numerator",
-    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+    "stage": "STAGE_1_RUNNING",
     "target": {
       "C": 4,
       "d": -8
@@ -71,7 +71,7 @@
     ]
   },
   "next_action": {
-    "instruction": "Send the recorded E6 Stage 1 manager authorization prompt to the existing computation/proof session. Do not alter the accepted seal. When results return, verify hashes, manifests, exact identities, theorem scope, and stop-rule status before updating this state.",
+    "instruction": "Wait for the existing computation/proof session to return the E6 Stage 1 package. Do not send a duplicate authorization and do not alter the accepted seal. On return, mark the result unverified, then verify hashes, manifests, exact identities, theorem scope, and stop-rule status before acceptance.",
     "prompt": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
     "requires_user_or_external_result": true
   },
@@ -102,5 +102,5 @@
       "positive-only local-limit route"
     ]
   },
-  "updated_at": "2026-09-01T13:20:00+03:00"
+  "updated_at": "2026-09-01T13:39:36+03:00"
 }

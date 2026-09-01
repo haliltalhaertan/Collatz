@@ -67,8 +67,15 @@ def main() -> None:
         raise AssertionError("state schema mismatch")
     if build["schema"] != "COLLATZ_CURRENT_ARCHIVE_BUILD_V1":
         raise AssertionError("build schema mismatch")
-    if state["active_task"]["stage"] != "STAGE_1_AUTHORIZED_NOT_EXECUTED":
-        raise AssertionError("unexpected active stage; update verifier/state together")
+    allowed_stages = {
+        "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+        "STAGE_1_RUNNING",
+        "RESULT_RETURNED_UNVERIFIED",
+        "AUDIT_PENDING",
+        "ACCEPTED",
+    }
+    if state["active_task"]["stage"] not in allowed_stages:
+        raise AssertionError("unrecognized active stage")
     if not state["next_action"]["instruction"]:
         raise AssertionError("next action is empty")
 
