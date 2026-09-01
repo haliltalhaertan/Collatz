@@ -19,6 +19,28 @@ Checkpoint'ler, promptlar, denetimler, hesaplama artefaktları, manifestolar
 ve kurtarılan arşivler burada korunuyor. Baş araştırmacı programı bu katman
 üzerinden yürütüyor.
 
+### Güncel senkronize arşiv
+
+- Arşiv: [`Collatz_Research_Archive_CURRENT.zip`](./Collatz_Research_Archive_CURRENT.zip)
+- SHA-256: `9707300dfa9e78c7ddbd003f705e7c2a95d9e3ba51ba63bf4831a01991a01270`
+- Üye sayısı: 804
+- Açılmış araştırma verisi: 164.926.237 bayt
+- ZIP boyutu: 84.045.712 bayt
+- Derleme kaydı: [`CURRENT_ARCHIVE_BUILD.json`](./CURRENT_ARCHIVE_BUILD.json)
+
+Güncel paket; tam çıkarılmış araştırma ağacını, E3–E6 artefakt ve verilerini,
+bağımsız E4 denetim çıktılarını, araştırma yöneticisi prompt/kararlarını ve
+deterministik paketleme aracını içeriyor. Geçici doğrulama ağaçları ile aynı
+hash'li girdilerin izole audit kopyaları pakete tekrar eklenmedi.
+
+### Aktif araştırma durumu
+
+- E4: belge/kapsam onarımlarıyla bağımsız denetimden geçti.
+- E5: E5-S1 tam conditioned-geometric bridge kabul edildi; E5-S2–E5-S5 açık.
+- E6: pre-run seal doğrulandı; Stage 1 yalnızca
+  `83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57`
+  seal ZIP hash'i altında yetkili.
+
 ## Katman 2 — Bağımsız denetim
 
 Kaynak: `haliltalhaertan/math` deposu, dal
@@ -69,3 +91,7 @@ zor olduğu, elle takip edilebilir örnekler. Matematik bilgisi gerektirmiyor.
 ```bash
 python3 bagimsiz-denetim/01-collatz/deney.py
 ```
+
+---
+
+Bu depodaki mevcut çalışmalar Collatz varsayımını kanıtlamamaktadır.

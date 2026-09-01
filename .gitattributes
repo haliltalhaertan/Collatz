@@ -1,0 +1,14 @@
+* text=auto eol=lf
+
+*.zip binary
+*.7z binary
+*.docx binary
+*.xlsx binary
+*.xls binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pyc binary

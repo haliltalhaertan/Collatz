@@ -1,0 +1,14 @@
+command: bundled Python 3.12.13 outputs\independent_checks.py with explicit audit ZIP, complete ZIP, audit root, and full E3 root
+script_sha256: 4000a26ca22ac57ccadfc6b6628521762fae6c73c76a74c4c6f29eed31fca687
+elapsed_seconds: 1.3274818999925628
+exit_code: 0
+
+audit ZIP SHA-256: a99185ffc4e9daa527a3ee54b59df8ced02bed65490421ce3f9a028119f8c408 PASS
+complete ZIP SHA-256: 95190d5cbdb633ad049720897b28c73898be229832549153c1fe9ee03b9c4cb1 PASS
+audit payload manifest: 28/28 PASS
+full sibling E3 manifest: 23/23 PASS
+CSV scope: profiles=970, boundary=40, max_r=8000 PASS
+independent reduced recurrence: 6 complex checkpoints, max |error|=2.058e-14 PASS
+boundary error-column recomputation: max difference=0.000e+00 PASS
+predeclaration temporal ordering: UNSUPPORTED (ZIP times normalized; no external pre-output seal)
+ALL INDEPENDENT IMPLEMENTATION CHECKS: PASS WITH DOCUMENTARY REPAIRS

@@ -1,0 +1,15 @@
+command: C:\Users\MDP\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe -u isolated_run\E4\CP20_TASK8B3_E4_VERIFY.py
+working mode: isolated copy of E4 plus hash-verified full sibling E3
+wall_seconds_observed_by_auditor: 9.1515051
+exit_code: 0
+
+E3 input gate 23/23 and unchanged verifier: PASS
+CSV dimensions and declared scope: PASS
+critical-walk masses, moments, and exponential obstruction grid: PASS
+critical-coordinate bijection and shifts: PASS
+E4 target values agree with frozen E3 at all selected depths: PASS
+independent direct reduced recurrence r=1000 max_error=2.058e-14: PASS
+boundary sensitivity and oracle control: PASS
+moving-boundary base modulus: PASS
+markdown UTF-8/LF controls: PASS
+ALL E4 VERIFIER ASSERTIONS: PASS

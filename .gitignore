@@ -1,0 +1,16 @@
+# Reproducible working trees packaged into Collatz_Research_Archive_CURRENT.zip
+_extracted/
+_verification/
+
+# Independent-audit input copies duplicate hash-identified canonical inputs
+audit_cp20_task8b3_e4_independent_20260831/input_audit/
+audit_cp20_task8b3_e4_independent_20260831/input_complete/
+audit_cp20_task8b3_e4_independent_20260831/isolated_run/
+
+# Runtime residue
+__pycache__/
+*.pyc
+*.pyo
+
+# Interrupted deterministic archive build
+Collatz_Research_Archive_CURRENT.zip.tmp
