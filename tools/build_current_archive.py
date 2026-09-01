@@ -19,6 +19,8 @@ RESEARCH_MANAGER = REPO / "research_manager"
 AUDIT_ROOT = REPO / "audit_cp20_task8b3_e4_independent_20260831"
 AUDIT_OUTPUTS = AUDIT_ROOT / "outputs"
 AUDIT_ZIP = AUDIT_ROOT / "CP20_TASK8B3_E4_INDEPENDENT_AUDIT_OUTPUTS.zip"
+START_HERE = REPO / "START_HERE_CURRENT_HANDOFF.md"
+CURRENT_STATE = REPO / "CURRENT_RESEARCH_STATE.json"
 OUTPUT = REPO / "Collatz_Research_Archive_CURRENT.zip"
 TEMP = REPO / "Collatz_Research_Archive_CURRENT.zip.tmp"
 BUILD_RECORD = REPO / "CURRENT_ARCHIVE_BUILD.json"
@@ -93,6 +95,15 @@ def main() -> None:
         )
     )
     add_tree(entries, REPO / "tools", arc_join(ARCHIVE_ROOT_NAME, "REPOSITORY_TOOLING"))
+    for path in (START_HERE, CURRENT_STATE):
+        if not path.is_file():
+            raise FileNotFoundError(path)
+        entries.append(
+            (
+                path,
+                arc_join(ARCHIVE_ROOT_NAME, "CONTINUITY", path.name),
+            )
+        )
 
     entries.sort(key=lambda item: item[1])
     arcnames = [arcname for _, arcname in entries]
@@ -130,6 +141,7 @@ def main() -> None:
             "research_manager",
             "independent E4 audit outputs",
             "repository tooling",
+            "continuity handoff snapshot",
         ],
         "total_uncompressed_bytes": sum(path.stat().st_size for path, _ in entries),
         "zip_bytes": zip_bytes,

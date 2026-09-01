@@ -45,6 +45,10 @@ Ordinary research stops when a new load-bearing theorem, critical lemma, major b
 
 New prompts and manager notes remain working artifacts until explicitly accepted for canonical persistence. Historical frozen files are immutable; repairs use a new V2/V3 version. No commit, push, Drive upload, or freeze label is implied merely by creating a local working prompt.
 
+## Continuity requirement
+
+Every accepted seal, returned result, audit verdict, repair, route decision, or material falsification must complete the atomic handoff and GitHub publication cycle in `CONTINUITY_PROTOCOL.md`. The active task, exact next action, accepted hashes, and prohibited inferences must be recoverable from `CURRENT_RESEARCH_STATE.json` without chat history. Conversation memory is never an authoritative project-state store.
+
 ## Current authorized task
 
 E5-S1 is accepted as the exact finite conditioned-geometric bridge; E5-S2 through E5-S5 remain open. CP20 Task 8B3 E6 Stage 1 is authorized only under pre-run seal ZIP SHA-256 `83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57`. No deeper numerical run is authorized. Any sealed-source or configuration change voids authorization. Research milestones are synchronized to GitHub under `GITHUB_SYNC_POLICY.md`. The simple full high-conductor exponential theorem is not an authorized next target.

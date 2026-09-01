@@ -22,10 +22,10 @@ ve kurtarılan arşivler burada korunuyor. Baş araştırmacı programı bu katm
 ### Güncel senkronize arşiv
 
 - Arşiv: [`Collatz_Research_Archive_CURRENT.zip`](./Collatz_Research_Archive_CURRENT.zip)
-- SHA-256: `9707300dfa9e78c7ddbd003f705e7c2a95d9e3ba51ba63bf4831a01991a01270`
-- Üye sayısı: 804
-- Açılmış araştırma verisi: 164.926.237 bayt
-- ZIP boyutu: 84.045.712 bayt
+- SHA-256: `3c4cf43e8882f50c2c398b1d5a62e222f9459d71e5b0eb8af7a36fe429410396`
+- Üye sayısı: 810
+- Açılmış araştırma verisi: 164.947.379 bayt
+- ZIP boyutu: 84.056.090 bayt
 - Derleme kaydı: [`CURRENT_ARCHIVE_BUILD.json`](./CURRENT_ARCHIVE_BUILD.json)
 
 Güncel paket; tam çıkarılmış araştırma ağacını, E3–E6 artefakt ve verilerini,
@@ -40,6 +40,31 @@ hash'li girdilerin izole audit kopyaları pakete tekrar eklenmedi.
 - E6: pre-run seal doğrulandı; Stage 1 yalnızca
   `83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57`
   seal ZIP hash'i altında yetkili.
+
+### Kesintisiz devir ve kurtarma
+
+Yeni bir LLM veya araştırmacı önce [`START_HERE_CURRENT_HANDOFF.md`](./START_HERE_CURRENT_HANDOFF.md)
+dosyasını okumalıdır. Canlı durumun makine-okunur tek kaynağı
+[`CURRENT_RESEARCH_STATE.json`](./CURRENT_RESEARCH_STATE.json), olay geçmişi
+ise hash-zincirli [`research_manager/RESEARCH_JOURNAL.jsonl`](./research_manager/RESEARCH_JOURNAL.jsonl)
+dosyasıdır.
+
+Devam etmeden önce şu kontrol geçmelidir:
+
+```bash
+python tools/verify_handoff.py
+```
+
+Arşiv ağacı yerelde yoksa, hash'i doğrulanmış güncel paket üzerine yazmadan
+`_restored_current/` altına şu araçla geri yüklenebilir:
+
+```bash
+python tools/extract_current_archive.py
+```
+
+Her kabul edilmiş bilimsel ilerleme; karar, günlük, canlı durum, güncel arşiv,
+doğrulama ve GitHub push işlemlerinin tek bir yayın çevrimi olarak
+tamamlanmasını gerektirir.
 
 ## Katman 2 — Bağımsız denetim
 
