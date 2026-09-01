@@ -38,7 +38,7 @@ Run these steps in order:
 
 - Scientific checkpoint: E6-N1 accepted with explicit scope repairs.
 - Active task: CP20 Task 8B3 E7.
-- Stage: E7 Stage 0 prompt dispatched; seal preparation is running.
+- Stage: E7 pre-run seal accepted; explicit Stage 1 authorization is pending.
 - Target: `(d,C)=(-8,4)`.
 - Accepted E6 seal ZIP SHA-256:
   `83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57`.
@@ -46,9 +46,11 @@ Run these steps in order:
   `9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849`.
 - E6 manager decision SHA-256:
   `d3017c56d3b6a5b6540848f29af29a1a7c1d24122991fee779e1d73ed3b28104`.
-- Immediate action: wait for the existing computation session to return the
-  E7 pre-run seal, manifest, and normalized seal ZIP. Do not send a duplicate
-  prompt. Stage 1 is not authorized.
+- Accepted E7 seal ZIP SHA-256:
+  `0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0`.
+- Immediate action: obtain explicit external manager authorization quoting
+  this exact hash. A generic continue instruction is insufficient. Stage 1 is
+  not authorized.
 
 Do not run E7 Stage 1, rerun E6, expand the depth, or begin a different branch
 unless the current integrity check fails or the user explicitly changes the

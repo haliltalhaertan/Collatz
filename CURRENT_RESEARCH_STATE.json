@@ -2,7 +2,7 @@
   "active_task": {
     "code": "CP20_TASK8B3_E7",
     "name": "Two-Sided Feynman-Kac Block Kernel",
-    "stage": "STAGE_0_RUNNING",
+    "stage": "PRE_RUN_SEAL_AWAITING_AUTHORIZATION",
     "target": {
       "C": 4,
       "d": -8
@@ -27,7 +27,7 @@
   },
   "documents": {
     "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
-    "active_authorization_decision": null,
+    "active_authorization_decision": "research_manager/decisions/CP20_TASK8B3_E7_STAGE0_SEAL_ACCEPTANCE_2026-09-01.md",
     "active_authorization_prompt": null,
     "active_research_prompt": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md"
@@ -61,6 +61,18 @@
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md",
         "sha256": "d8e2f7c125744e50bf299b38a890ac0c7ff0d6c47d9fd08506a41b519b2faaec"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.md",
+        "sha256": "b97f968d44eeaea8eb4d7c0979b6d6446b6e16a741c7c835d09441809301b8eb"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SHA256SUMS.txt",
+        "sha256": "3d0321a2b9d2d04efbe7b80a17704f12c6e1ab2e1ee2a9dcbb12f66fee72bb67"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.zip",
+        "sha256": "0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0"
       }
     ],
     "repository_files": [
@@ -87,13 +99,24 @@
       {
         "path": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
         "sha256": "94106512926dd887a93ebfa056a810ccd31000b03f5d34b077c886efe9be73b0"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE0_SEAL_ACCEPTANCE_2026-09-01.md",
+        "sha256": "4d7247b0004fb55c080a6a28f111ee154a20688a270877d274f93d8ebec35e97"
       }
     ]
   },
   "next_action": {
-    "instruction": "Wait for the existing computation/proof session to return the E7 Stage 0 pre-run seal, manifest, and normalized seal ZIP. Do not send a duplicate prompt. On return, verify all dependency and pre-run hashes and freeze the seal before deciding whether Stage 1 may be authorized.",
+    "instruction": "Obtain explicit external manager authorization for E7 Stage 1 under seal ZIP SHA-256 0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0. Do not dispatch Stage 1 from a generic continue instruction. After explicit authorization, create the required witness and recheck every manifested and dependency hash before execution.",
     "prompt": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
     "requires_user_or_external_result": true
+  },
+  "pre_run_seal": {
+    "authorization_status": "AWAITING_EXPLICIT_EXTERNAL_MANAGER_AUTHORIZATION",
+    "decision_sha256": "4d7247b0004fb55c080a6a28f111ee154a20688a270877d274f93d8ebec35e97",
+    "manifest_sha256": "3d0321a2b9d2d04efbe7b80a17704f12c6e1ab2e1ee2a9dcbb12f66fee72bb67",
+    "seal_document_sha256": "b97f968d44eeaea8eb4d7c0979b6d6446b6e16a741c7c835d09441809301b8eb",
+    "seal_zip_sha256": "0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0"
   },
   "returned_result": {
     "acceptance_status": "ACCEPTED_E6_N1_WITH_SCOPE_REPAIR",
@@ -137,5 +160,5 @@
       "direct H2 norm-only Hadamard majorant"
     ]
   },
-  "updated_at": "2026-09-01T14:52:27+03:00"
+  "updated_at": "2026-09-01T15:05:56+03:00"
 }
