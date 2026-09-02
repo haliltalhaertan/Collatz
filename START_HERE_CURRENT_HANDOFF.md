@@ -38,7 +38,7 @@ Run these steps in order:
 
 - Scientific checkpoint: E6-N1 accepted with explicit scope repairs.
 - Active task: CP20 Task 8B3 E7.
-- Stage: E7 Stage 1 authorized by the manager; not yet executed.
+- Stage: E7 Stage 1 authorized and dispatched; the run is outstanding.
 - Target: `(d,C)=(-8,4)`.
 - Accepted E6 seal ZIP SHA-256:
   `83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57`.
@@ -50,8 +50,9 @@ Run these steps in order:
   `0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0`.
 - E7 Stage 1 manager authorization decision SHA-256:
   `e653e6e9d627e8793eb8661c14063d463e7ffc5877dbfc3bdd0245b55b152dc1`.
-- Immediate action: give the recorded E7 Stage 1 authorization prompt to the
-  computation/proof session, then intake and verify its returned package. The
+- Immediate action: wait for the returned E7 Stage 1 package, then run the
+  manager intake gate before accepting anything. Do not re-dispatch, create a
+  new seal, or begin downstream work while the run is outstanding. The
   authorization binds to the seal ZIP hash above and to no other.
 
 Do not create a new seal, rerun E6, expand the depth, or begin a different

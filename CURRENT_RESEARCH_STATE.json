@@ -2,7 +2,7 @@
   "active_task": {
     "code": "CP20_TASK8B3_E7",
     "name": "Two-Sided Feynman-Kac Block Kernel",
-    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+    "stage": "STAGE_1_RUNNING",
     "target": {
       "C": 4,
       "d": -8
@@ -115,7 +115,7 @@
     ]
   },
   "next_action": {
-    "instruction": "Deliver the recorded E7 Stage 1 manager authorization prompt to the computation/proof session. Explicit authorization has been granted under seal ZIP SHA-256 0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0 after independent manager reverification of the seal, both manifests, the four dependencies, and the absence of Stage 1 outputs. The computation session must create the authorization witness and recheck every manifested and dependency hash before execution. When results return, verify hashes, manifests, exact identities, theorem scope, and stop-rule status before updating this state.",
+    "instruction": "Await the returned E7 Stage 1 package from the computation/proof session. The authorization prompt was dispatched under seal ZIP SHA-256 0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0. Do not re-dispatch, create a new seal, or begin downstream work while the run is outstanding. On return, run the manager intake gate before any acceptance: verify the authorization witness, recompute the seal and both manifests, recheck the four dependencies, confirm the declared outputs and their manifests, rerun the deterministic verifier read-only, reproduce at least one independent checkpoint, classify every claim by evidence level, and check whether the audit stop rule fired. The computation session's own verdict is an input, not the manager's verdict.",
     "prompt": "research_manager/prompts/CP20_TASK8B3_E7_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
     "requires_user_or_external_result": true
   },
@@ -168,5 +168,5 @@
       "direct H2 norm-only Hadamard majorant"
     ]
   },
-  "updated_at": "2026-09-02T16:14:29+03:00"
+  "updated_at": "2026-09-02T16:31:58+03:00"
 }
