@@ -57,6 +57,10 @@ def add_tree(entries: list[tuple[Path, str]], root: Path, prefix: str) -> None:
 
 def zip_add(zf: zipfile.ZipFile, path: Path, arcname: str) -> None:
     info = zipfile.ZipInfo(arcname, date_time=(1980, 1, 1, 0, 0, 0))
+    # ZipInfo defaults create_system to 0 on Windows and 3 elsewhere, which made
+    # archive_sha256 depend on the build platform while every member stayed
+    # byte-identical. Pin it so the archive hash is reproducible anywhere.
+    info.create_system = 0
     info.compress_type = zipfile.ZIP_DEFLATED
     info.external_attr = 0o100644 << 16
     zf.writestr(

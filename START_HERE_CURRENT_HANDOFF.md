@@ -58,13 +58,12 @@ Do not create a new seal, rerun E6, expand the depth, or begin a different
 branch unless the current integrity check fails or the user explicitly changes
 the objective.
 
-Known tooling hazard: `Collatz_Research_Archive_CURRENT.zip` is not
-bit-reproducible across platforms. Its members are deterministic, but
-`ZipInfo.create_system` is `0` in the published build and `3` when rebuilt on
-Linux, so a cross-platform rebuild changes `archive_sha256` while every member
-stays byte-identical. The archive also packages its own build tool, so editing
-the tool changes the archive hash. Rebuild on the original platform, or fix the
-field explicitly, before trusting a hash comparison after a rebuild.
+Archive reproducibility: `tools/build_current_archive.py` now pins
+`ZipInfo.create_system = 0`. Before that fix the field defaulted to `0` on
+Windows and `3` elsewhere, so rebuilding on another platform changed
+`archive_sha256` even though every member stayed byte-identical. Repeated
+rebuilds now reproduce the same hash. Note that the archive packages its own
+build tool, so any edit to `tools/` legitimately changes the archive hash.
 
 ## Non-negotiable scientific scope
 
