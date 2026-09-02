@@ -1,4 +1,11 @@
 {
+  "active_integrator": {
+    "acquired_at": "2026-09-02T16:48:04+03:00",
+    "base_commit": "dd5c7ab6886aaf1c2384c3aa8ffe034510eeeb1a",
+    "holder": "claude",
+    "scope": "co-chair governance infrastructure only: active_integrator lock, CO_CHAIR_DISSENT journal event, independent-reproduction standard, verifier validation. No E7 artifact, seal, or scientific change.",
+    "status": "RELEASED"
+  },
   "active_task": {
     "code": "CP20_TASK8B3_E7",
     "name": "Two-Sided Feynman-Kac Block Kernel",
@@ -15,6 +22,13 @@
       "file": "Collatz Problemi — Araştırma Arşivi-20260831T095815Z-1-001.zip",
       "file_count": 703,
       "sha256": "203ae218949c16df1130b0aa93963dceb8eedb26056a86071ce8cc7461dc5df9"
+    }
+  },
+  "co_chair_roles": {
+    "CP20_TASK8B3_E7": {
+      "adversarial_review_and_reproduction": "claude",
+      "primary_assessment": "codex",
+      "rationale": "claude authorized E7 Stage 1 and must not be sole judge of its result"
     }
   },
   "continuity": {
@@ -168,5 +182,5 @@
       "direct H2 norm-only Hadamard majorant"
     ]
   },
-  "updated_at": "2026-09-02T16:31:58+03:00"
+  "updated_at": "2026-09-02T16:48:04+03:00"
 }

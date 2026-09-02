@@ -24,6 +24,60 @@ The computation session executes only the authorized prompt. It must not:
 - begin downstream work after a load-bearing theorem appears;
 - overwrite frozen artifacts.
 
+## Co-chair governance
+
+Two research-manager co-chairs may share this role. Neither can assign work to
+the other, and neither is the other's reviewer of record by default. The final
+arbiter of any disagreement is the user.
+
+### Role rotation
+
+At each milestone one co-chair writes the primary mathematical and artifact
+assessment, and the other writes an independent adversarial review. The roles
+swap at the next milestone. No joint decision is recorded until both
+assessments exist.
+
+A co-chair who authorized a run must not be the sole judge of that run's
+result. Declare the conflict and take the adversarial role instead.
+
+### Active-integrator lock
+
+`CURRENT_RESEARCH_STATE.json` carries an `active_integrator` block with
+`holder`, `scope`, `base_commit`, `acquired_at`, and `status`. `status` is
+`HELD` or `RELEASED`.
+
+- Only the holder writes to the canonical branch, and only within `scope`.
+- The other co-chair prepares its assessment as a separate file or branch and
+  never pushes to the canonical branch while the lock is `HELD`.
+- `base_commit` records the commit the holder started from, so a stale-base
+  commit is detectable.
+- The lock is released in the same transaction that finishes the integration.
+- Claiming a lock whose `status` is `HELD` by the other co-chair is a protocol
+  violation, not a merge to resolve.
+
+### Independent reproduction standard
+
+Rerunning a producer's own verifier is provenance, not reproduction. An
+independent check must:
+
+- import no producer module;
+- be rebuilt from the definitions rather than the producer's code;
+- have its own source and output hashes;
+- cover at least one exact edge case and one central case.
+
+### Dissent record
+
+A disagreement is never silently closed. Append one `CO_CHAIR_DISSENT` journal
+entry carrying:
+
+- the SHA-256 of both assessment files;
+- the exact mathematical subject of the disagreement;
+- whether it affects a load-bearing claim;
+- `status`: `OPEN`, `RESOLVED`, or `REFERRED_TO_HALIL`;
+- whether any downstream work was stopped.
+
+An unresolved dissent on a load-bearing claim blocks acceptance.
+
 ## Result intake gate
 
 Every returned package is reviewed in this order:

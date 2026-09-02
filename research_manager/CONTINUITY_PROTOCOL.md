@@ -39,6 +39,10 @@ Every meaningful state transition is one transaction:
    stage changes.
 9. **Package:** rebuild the deterministic current archive.
 10. **Verify:** run `tools/verify_handoff.py` and require a pass.
+10b. **Lock:** when two co-chairs are active, confirm `active_integrator` in
+    `CURRENT_RESEARCH_STATE.json` names you as `holder` with `status` `HELD`,
+    that the transaction is inside its `scope`, and that `base_commit` matches
+    the commit you started from. Release the lock in this same transaction.
 11. **Publish:** fetch, preserve remote work, commit, rebase without force,
     push `main`, and confirm local HEAD equals `origin/main`.
 12. **Report:** give the user the commit, current-archive SHA-256, active stage,
@@ -66,6 +70,9 @@ integrity failure or user stop prevents publication.
   exists.
 - Returned results are not accepted until manager intake completes.
 - Audit stop rules override the temptation to continue downstream.
+- Under-classification is an integrity failure too. A result reported below its
+  actual evidence level, including one that would otherwise trigger an audit
+  stop, is treated like an overclaim.
 
 ## GitHub continuity rules
 

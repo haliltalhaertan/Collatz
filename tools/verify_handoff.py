@@ -82,6 +82,20 @@ def main() -> None:
     if not state["next_action"]["instruction"]:
         raise AssertionError("next action is empty")
 
+    lock = state.get("active_integrator")
+    if lock is not None:
+        required = {"holder", "scope", "base_commit", "acquired_at", "status"}
+        missing = required - set(lock)
+        if missing:
+            raise AssertionError(f"active_integrator missing keys: {sorted(missing)}")
+        if lock["status"] not in {"HELD", "RELEASED"}:
+            raise AssertionError(f"active_integrator status invalid: {lock['status']}")
+        if lock["status"] == "HELD" and not lock["holder"]:
+            raise AssertionError("active_integrator is HELD with no holder")
+        if not lock["scope"]:
+            raise AssertionError("active_integrator scope is empty")
+        git_value("cat-file", "-e", f"{lock['base_commit']}^{{commit}}")
+
     branch = git_value("branch", "--show-current")
     if branch != state["continuity"]["repository_branch"]:
         raise AssertionError(f"branch mismatch: {branch}")
