@@ -83,37 +83,124 @@
   },
   "integrity": {
     "archive_members": [
-      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip", "sha256": "3f28f90b29af3a41e1c679593968e9156e9bc3b0882659ec3b8cfa794e9b930d"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.md", "sha256": "ce7d634598d92b928597e3c1911f19ce51811bbda83721548d57a3703069ab9a"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SHA256SUMS.txt", "sha256": "e836ed783ace26a559e4250f2690176f237b4401ba47f7ac4dc677496ade92b8"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.zip", "sha256": "83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_COMPLETE_PACKAGE.zip", "sha256": "9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/SHA256SUMS.txt", "sha256": "7c0f7ce6de55582cc1e69d12092f1d822cf169d897a0c36e28570e32378731d1"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md", "sha256": "d8e2f7c125744e50bf299b38a890ac0c7ff0d6c47d9fd08506a41b519b2faaec"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.md", "sha256": "b97f968d44eeaea8eb4d7c0979b6d6446b6e16a741c7c835d09441809301b8eb"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SHA256SUMS.txt", "sha256": "3d0321a2b9d2d04efbe7b80a17704f12c6e1ab2e1ee2a9dcbb12f66fee72bb67"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.zip", "sha256": "0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md", "sha256": "a02d580d4198d2094b60532b3dc500c29f15e3a20f6b8fd71264e2f1225efbba"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md", "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/CONTINUITY_PROTOCOL.md", "sha256": "e302b6338b2b2176fa6575918529add95c915d62251bf038e68d4a532105779b"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl", "sha256": "2d70dc9c0bca19d14ef5f29986656c85332d6a5d5acf5f7d0c6479dd12d22b6f"},
-      {"path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/build_current_archive.py", "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"}
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip",
+        "sha256": "3f28f90b29af3a41e1c679593968e9156e9bc3b0882659ec3b8cfa794e9b930d"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.md",
+        "sha256": "ce7d634598d92b928597e3c1911f19ce51811bbda83721548d57a3703069ab9a"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SHA256SUMS.txt",
+        "sha256": "e836ed783ace26a559e4250f2690176f237b4401ba47f7ac4dc677496ade92b8"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.zip",
+        "sha256": "83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_COMPLETE_PACKAGE.zip",
+        "sha256": "9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/SHA256SUMS.txt",
+        "sha256": "7c0f7ce6de55582cc1e69d12092f1d822cf169d897a0c36e28570e32378731d1"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md",
+        "sha256": "d8e2f7c125744e50bf299b38a890ac0c7ff0d6c47d9fd08506a41b519b2faaec"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.md",
+        "sha256": "b97f968d44eeaea8eb4d7c0979b6d6446b6e16a741c7c835d09441809301b8eb"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SHA256SUMS.txt",
+        "sha256": "3d0321a2b9d2d04efbe7b80a17704f12c6e1ab2e1ee2a9dcbb12f66fee72bb67"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.zip",
+        "sha256": "0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md",
+        "sha256": "4a0435415330453ca919272734a8c5bfa27f11781f9c37d6b9401eb849b58990"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
+        "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/CONTINUITY_PROTOCOL.md",
+        "sha256": "e302b6338b2b2176fa6575918529add95c915d62251bf038e68d4a532105779b"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
+        "sha256": "15eea2eb7a50cb2a238c443cb85408c959170e7b6eeb7e9c770ec2f0dabc167d"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/build_current_archive.py",
+        "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"
+      }
     ],
     "repository_files": [
-      {"path": "research_manager/decisions/CP20_TASK8B3_E5_S1_INTEGRATION_2026-09-01.md", "sha256": "480e92551384ac90b003f175764aea0bf653bf8fd47a81897fa08665fcbbf251"},
-      {"path": "research_manager/decisions/CP20_TASK8B3_E6_STAGE1_AUTHORIZATION_2026-09-01.md", "sha256": "713e4e64e4bb2b955b100b6066586a84a2d0246563d1387998a7a567e38d7077"},
-      {"path": "research_manager/prompts/CP20_TASK8B3_E6_CONDITIONED_GEOMETRIC_COMPLEX_NUMERATOR_PROMPT_2026-09-01.md", "sha256": "e6cc37f7e3836d174c52dc34e85699500293074b3a9d446dfc5b201a292e7c25"},
-      {"path": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md", "sha256": "bb73c74b7c45f1ef12d881e4c2e3ceb88774688e46bfb6b29f4418bf928ea8fa"},
-      {"path": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md", "sha256": "d3017c56d3b6a5b6540848f29af29a1a7c1d24122991fee779e1d73ed3b28104"},
-      {"path": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md", "sha256": "94106512926dd887a93ebfa056a810ccd31000b03f5d34b077c886efe9be73b0"},
-      {"path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE0_SEAL_ACCEPTANCE_2026-09-01.md", "sha256": "4d7247b0004fb55c080a6a28f111ee154a20688a270877d274f93d8ebec35e97"},
-      {"path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE1_AUTHORIZATION_2026-09-01.md", "sha256": "e653e6e9d627e8793eb8661c14063d463e7ffc5877dbfc3bdd0245b55b152dc1"},
-      {"path": "research_manager/prompts/CP20_TASK8B3_E7_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md", "sha256": "093113d7a93c1ce859ebc229775c4f98861a6f731282929b672a9d63e5a6b5e4"},
-      {"path": "research_manager/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md", "sha256": "a02d580d4198d2094b60532b3dc500c29f15e3a20f6b8fd71264e2f1225efbba"},
-      {"path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md", "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"},
-      {"path": "research_manager/CONTINUITY_PROTOCOL.md", "sha256": "e302b6338b2b2176fa6575918529add95c915d62251bf038e68d4a532105779b"},
-      {"path": "research_manager/RESEARCH_JOURNAL.jsonl", "sha256": "2d70dc9c0bca19d14ef5f29986656c85332d6a5d5acf5f7d0c6479dd12d22b6f"},
-      {"path": "tools/build_current_archive.py", "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"}
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E5_S1_INTEGRATION_2026-09-01.md",
+        "sha256": "480e92551384ac90b003f175764aea0bf653bf8fd47a81897fa08665fcbbf251"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E6_STAGE1_AUTHORIZATION_2026-09-01.md",
+        "sha256": "713e4e64e4bb2b955b100b6066586a84a2d0246563d1387998a7a567e38d7077"
+      },
+      {
+        "path": "research_manager/prompts/CP20_TASK8B3_E6_CONDITIONED_GEOMETRIC_COMPLEX_NUMERATOR_PROMPT_2026-09-01.md",
+        "sha256": "e6cc37f7e3836d174c52dc34e85699500293074b3a9d446dfc5b201a292e7c25"
+      },
+      {
+        "path": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
+        "sha256": "bb73c74b7c45f1ef12d881e4c2e3ceb88774688e46bfb6b29f4418bf928ea8fa"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
+        "sha256": "d3017c56d3b6a5b6540848f29af29a1a7c1d24122991fee779e1d73ed3b28104"
+      },
+      {
+        "path": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
+        "sha256": "94106512926dd887a93ebfa056a810ccd31000b03f5d34b077c886efe9be73b0"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE0_SEAL_ACCEPTANCE_2026-09-01.md",
+        "sha256": "4d7247b0004fb55c080a6a28f111ee154a20688a270877d274f93d8ebec35e97"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE1_AUTHORIZATION_2026-09-01.md",
+        "sha256": "e653e6e9d627e8793eb8661c14063d463e7ffc5877dbfc3bdd0245b55b152dc1"
+      },
+      {
+        "path": "research_manager/prompts/CP20_TASK8B3_E7_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
+        "sha256": "093113d7a93c1ce859ebc229775c4f98861a6f731282929b672a9d63e5a6b5e4"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md",
+        "sha256": "4a0435415330453ca919272734a8c5bfa27f11781f9c37d6b9401eb849b58990"
+      },
+      {
+        "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
+        "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"
+      },
+      {
+        "path": "research_manager/CONTINUITY_PROTOCOL.md",
+        "sha256": "e302b6338b2b2176fa6575918529add95c915d62251bf038e68d4a532105779b"
+      },
+      {
+        "path": "research_manager/RESEARCH_JOURNAL.jsonl",
+        "sha256": "15eea2eb7a50cb2a238c443cb85408c959170e7b6eeb7e9c770ec2f0dabc167d"
+      },
+      {
+        "path": "tools/build_current_archive.py",
+        "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"
+      }
     ]
   },
   "next_action": {
