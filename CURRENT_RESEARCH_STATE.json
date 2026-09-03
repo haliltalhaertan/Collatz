@@ -1,10 +1,10 @@
 {
   "active_integrator": {
-    "acquired_at": "2026-09-02T16:48:04+03:00",
-    "base_commit": "dd5c7ab6886aaf1c2384c3aa8ffe034510eeeb1a",
-    "holder": "claude",
-    "scope": "co-chair governance infrastructure only: active_integrator lock, CO_CHAIR_DISSENT journal event, independent-reproduction standard, verifier validation. No E7 artifact, seal, or scientific change.",
-    "status": "RELEASED"
+    "acquired_at": "2026-09-04T02:19:02+03:00",
+    "base_commit": "3b089518e2dc00730e7bf5d16950d0dc05b4506c",
+    "holder": "manager-integration-session",
+    "scope": "E7 Recovery V1 + E7R-B3 audited countertheorem canonical integration and persistence-governance amendment only; no new mathematical research, Literature Transfer Stage 0, weighted-operator work, or E8.",
+    "status": "HELD"
   },
   "active_task": {
     "code": "CP20_TASK8B3_E7",
@@ -182,5 +182,5 @@
       "direct H2 norm-only Hadamard majorant"
     ]
   },
-  "updated_at": "2026-09-02T16:48:04+03:00"
+  "updated_at": "2026-09-04T02:19:02+03:00"
 }
