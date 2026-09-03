@@ -10,8 +10,8 @@ This session owns research direction. It must:
 - select one falsifiable, high-information target at a time;
 - write the computation/proof prompt;
 - independently inspect returned code, data, hashes, theorem statements, and failure reports;
-- distinguish `[EXACT]`, `[PROVED]`, `[CERTIFIED NUM]`, `[NUM]`, `[LEAD]`, `[OPEN]`, `[FAIL]`, and `[PARK]`;
-- decide whether to continue, repair, audit, freeze, park, or change branch;
+- distinguish `[EXACT]`, `[PROVED]`, `[CERTIFIED NUM]`, `[NUM]`, `[LEAD]`, `[OPEN]`, `[FAIL]`, `[FALSE]`, `[CLOSED]`, and `[PARK]`;
+- decide whether to continue, repair, audit, freeze, park, close, or change branch;
 - explain the result to the user without implying that Collatz is solved.
 
 ### Computation/proof session
@@ -21,44 +21,31 @@ The computation session executes only the authorized prompt. It must not:
 - redefine the project objective;
 - silently use unfrozen results as dependencies;
 - promote numerics to theorems;
-- begin downstream work after a load-bearing theorem appears;
+- begin downstream work after a load-bearing theorem or countertheorem appears;
 - overwrite frozen artifacts.
 
-## Co-chair governance
+## Co-chair and head-researcher governance
 
-Two research-manager co-chairs may share this role. Neither can assign work to
-the other, and neither is the other's reviewer of record by default. The final
-arbiter of any disagreement is the user.
+Research-manager co-chairs and additional head-researcher sessions may coexist. Historical named role assignments remain authoritative for their recorded milestones. Additional sessions do not automatically become co-chairs, signatories, reviewers of record, or holders of any historical assignment.
 
-### Role rotation
+Where a milestone has two named co-chairs assigned, neither can assign work to the other, neither is the other's reviewer of record by default, and the user is the final arbiter of any disagreement. The existing two-assessment rule applies to those named assignments. A co-chair who authorized a run must not be the sole judge of that run's result.
 
-At each milestone one co-chair writes the primary mathematical and artifact
-assessment, and the other writes an independent adversarial review. The roles
-swap at the next milestone. No joint decision is recorded until both
-assessments exist.
-
-A co-chair who authorized a run must not be the sole judge of that run's
-result. Declare the conflict and take the adversarial role instead.
+Session-count or cardinality differences alone do not block an otherwise valid integration. Do not invent identities, assignments, or signatures to reconcile them.
 
 ### Active-integrator lock
 
-`CURRENT_RESEARCH_STATE.json` carries an `active_integrator` block with
-`holder`, `scope`, `base_commit`, `acquired_at`, and `status`. `status` is
-`HELD` or `RELEASED`.
+`CURRENT_RESEARCH_STATE.json` carries an `active_integrator` block with `holder`, `scope`, `base_commit`, `acquired_at`, and `status`. `status` is `HELD` or `RELEASED`.
 
 - Only the holder writes to the canonical branch, and only within `scope`.
-- The other co-chair prepares its assessment as a separate file or branch and
-  never pushes to the canonical branch while the lock is `HELD`.
-- `base_commit` records the commit the holder started from, so a stale-base
-  commit is detectable.
-- The lock is released in the same transaction that finishes the integration.
-- Claiming a lock whose `status` is `HELD` by the other co-chair is a protocol
-  violation, not a merge to resolve.
+- A session not holding the lock may prepare an assessment separately but does not write canonical state while the lock is `HELD`.
+- `base_commit` records the actual canonical commit the holder started from, so stale-base integration is detectable.
+- The lock is released in the same milestone transaction that finishes the integration.
+- Claiming a lock already `HELD` by another holder is a protocol violation, not a merge to resolve.
+- A generic integration-session label may be used as `holder`; it is an operational lock label and does not create a co-chair identity or signature.
 
 ### Independent reproduction standard
 
-Rerunning a producer's own verifier is provenance, not reproduction. An
-independent check must:
+Rerunning a producer's own verifier is provenance, not reproduction. An independent check must:
 
 - import no producer module;
 - be rebuilt from the definitions rather than the producer's code;
@@ -67,8 +54,7 @@ independent check must:
 
 ### Dissent record
 
-A disagreement is never silently closed. Append one `CO_CHAIR_DISSENT` journal
-entry carrying:
+A disagreement is never silently closed. Append one `CO_CHAIR_DISSENT` journal entry carrying:
 
 - the SHA-256 of both assessment files;
 - the exact mathematical subject of the disagreement;
@@ -93,16 +79,39 @@ The computation session's verdict is an input, not the manager's final verdict.
 
 ## Audit and freeze gate
 
-Ordinary research stops when a new load-bearing theorem, critical lemma, major branch closure, checkpoint freeze, or publication-critical claim appears. The result must then be packaged for an independent zero-trust audit. It cannot be used downstream until the audit verdict is integrated and any wording or artifact repairs are complete.
+Ordinary research stops when a new load-bearing theorem, countertheorem, critical lemma, major branch closure, checkpoint freeze, or publication-critical claim appears. The result must then be packaged for an independent zero-trust audit. It cannot be used downstream until the audit verdict is integrated and any wording or artifact repairs are complete.
 
 ## Working-artifact rule
 
-New prompts and manager notes remain working artifacts until explicitly accepted for canonical persistence. Historical frozen files are immutable; repairs use a new V2/V3 version. No commit, push, Drive upload, or freeze label is implied merely by creating a local working prompt.
+New prompts and manager notes remain working artifacts until accepted for a milestone. Historical frozen files are immutable; repairs use a new V2/V3 version. Mere local creation does not itself imply acceptance or canonical publication.
+
+Once a computation, audit, or manager milestone is completed/accepted, however, the dual-persistence completion rule below applies automatically; the user does not need to separately request saving.
+
+## Dual-persistence completion rule
+
+Every completed computation, audit, or manager milestone closes with this exact operational chain:
+
+`result → hashes/manifests → Drive save → Drive read-back → GitHub save/push → GitHub read-back → report`
+
+A subordinate operation is not operationally complete until both the Drive and GitHub persistence/read-back legs succeed. If a connector, service, or permission failure prevents one leg, report that failure explicitly, preserve the recoverable artifacts, and do not label dual persistence as complete.
+
+This rule changes persistence/governance only. It does not alter the scientific evidence class of any claim.
 
 ## Continuity requirement
 
-Every accepted seal, returned result, audit verdict, repair, route decision, or material falsification must complete the atomic handoff and GitHub publication cycle in `CONTINUITY_PROTOCOL.md`. The active task, exact next action, accepted hashes, and prohibited inferences must be recoverable from `CURRENT_RESEARCH_STATE.json` without chat history. Conversation memory is never an authoritative project-state store.
+Every accepted seal, returned result, audit verdict, repair, route decision, or material falsification must complete the atomic handoff and publication cycle in `CONTINUITY_PROTOCOL.md`. The active task, exact next action, accepted hashes, prohibited inferences, and persistence status must be recoverable from `CURRENT_RESEARCH_STATE.json` without chat history. Conversation memory is never an authoritative project-state store.
 
 ## Current authorized task
 
-E6-N1 is accepted with the scope repairs in `decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md`; E6-N2 through E6-N5 remain open. E7 Stage 0 is complete and its pre-run seal ZIP SHA-256 `0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0` is accepted. E7 Stage 1 remains unauthorized until an external manager explicitly quotes and authorizes that hash; a generic continue instruction is insufficient. No deeper numerical run is authorized. Research milestones are synchronized to GitHub under `GITHUB_SYNC_POLICY.md`.
+The E7 Recovery and E7R-B3 audit milestone is integrated:
+
+- `E6-N1 [PROVED][AUDITED/ACCEPTED WITH SCOPE REPAIR]`;
+- `E7R-B1 [PROVED][AUDITED]`;
+- `E7R-B2 [PROVED][AUDITED]`;
+- frozen full-window pointwise `E7R-B3 [FALSE][CLOSED]`;
+- `B3-CT [PROVED][AUDITED]`;
+- `E7R-B4 / E6-N2`, `E7R-B5`, and `E7R-B6` remain `[OPEN]`.
+
+Historical/lost pre-recovery E7 conclusions remain `[UNVERIFIED — ARTIFACTS LOST]`. The global conditional bound `|E[F_{r,4}|S_r=n_r]|=O(1/r)` remains `[OPEN]`.
+
+The only next scientific action is Stage 0 for `CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1` as stated in `CURRENT_RESEARCH_STATE.json`. No weighted-operator or E8 work is authorized.
