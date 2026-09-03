@@ -3,13 +3,15 @@
     "acquired_at": "2026-09-04T02:19:02+03:00",
     "base_commit": "3b089518e2dc00730e7bf5d16950d0dc05b4506c",
     "holder": "manager-integration-session",
+    "lock_acquisition_commit": "b2401e3f58d2f9a235df399e52997148d3e6722d",
     "scope": "E7 Recovery V1 + E7R-B3 audited countertheorem canonical integration and persistence-governance amendment only; no new mathematical research, Literature Transfer Stage 0, weighted-operator work, or E8.",
-    "status": "HELD"
+    "status": "RELEASED"
   },
   "active_task": {
-    "code": "CP20_TASK8B3_E7",
-    "name": "Two-Sided Feynman-Kac Block Kernel",
-    "stage": "STAGE_1_RUNNING",
+    "code": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1",
+    "name": "Tao v7 + Si 2026 Literature Transfer / Exact Normal Form",
+    "objective": "Determine the exact normal-form/parameter mapping between E[F_{r,4}|S_r=n_r] with its finite phase cocycle and the conditioned affine/Fourier objects in Tao current arXiv v7 and Yuan Si 2026, before accepting any theorem transfer.",
+    "stage": "STAGE_0_READY_NOT_DISPATCHED",
     "target": {
       "C": 4,
       "d": -8
@@ -24,162 +26,139 @@
       "sha256": "203ae218949c16df1130b0aa93963dceb8eedb26056a86071ce8cc7461dc5df9"
     }
   },
+  "audited_evidence": {
+    "e6": {
+      "complete_package_sha256": "9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849",
+      "final_manifest_sha256": "7c0f7ce6de55582cc1e69d12092f1d822cf169d897a0c36e28570e32378731d1",
+      "status": "E6-N1 [PROVED][AUDITED/ACCEPTED WITH SCOPE REPAIR]"
+    },
+    "e7_recovery": {
+      "accepted": [
+        "E7R-B1 [PROVED][AUDITED]",
+        "E7R-B2 [PROVED][AUDITED]"
+      ],
+      "audit_commit": "887aa78c6a3508b70a6277cc09705837aec79edf",
+      "audit_verdict": "[AUDIT PASS]",
+      "complete_package_sha256": "3889a381235965d3392f944a0c0b637b7fc6493daf6d07d164b836de0f6df486",
+      "pre_run_seal_sha256": "58734a03a2aa7854f9ecb9f079c6db4b3d05191c249ffa6ccd7e629c4085590c"
+    },
+    "e7r_b3": {
+      "accepted": "B3-CT [PROVED][AUDITED]",
+      "audit_commit": "3b089518e2dc00730e7bf5d16950d0dc05b4506c",
+      "audit_verdict": "[AUDIT PASS]",
+      "authorized_pre_run_seal_sha256": "acb61ef495bc164c5f55754ea355128bd8105bf7ddec9ff900c2dc16f9646eb3",
+      "closed_statement": "E7R-B3 frozen pointwise contraction [FALSE][CLOSED]",
+      "producer_result_commit": "b76e9e004cf9310ae0fc4a295b33d0d1c3836a62",
+      "stage1_complete_package_sha256": "5172a6cadfa5d2bbce84564f19d3ba76b1338e51c7a5a96225d8c77ac4b4b186"
+    }
+  },
   "co_chair_roles": {
     "CP20_TASK8B3_E7": {
       "adversarial_review_and_reproduction": "claude",
       "primary_assessment": "codex",
-      "rationale": "claude authorized E7 Stage 1 and must not be sole judge of its result"
-    }
+      "rationale": "Historical recorded assignment only; no new identity or signature is inferred for additional head-researcher sessions."
+    },
+    "cardinality_policy": "Additional head-researcher sessions may coexist without becoming named co-chairs or reviewers of record. Canonical writes are controlled by active_integrator.",
+    "historical_assignments_preserved": true
   },
   "continuity": {
     "entrypoint": "START_HERE_CURRENT_HANDOFF.md",
     "journal": "research_manager/RESEARCH_JOURNAL.jsonl",
-    "minimum_required_commit": "17f7970af8ef4065507e371bad20d5a52ebe52f4",
+    "milestone_completion_rule": "result → hashes/manifests → Drive save → Drive read-back → GitHub save/push → GitHub read-back → report",
+    "minimum_required_commit": "3b089518e2dc00730e7bf5d16950d0dc05b4506c",
     "protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "repository_branch": "main",
     "sync_policy": "research_manager/GITHUB_SYNC_POLICY.md"
   },
   "documents": {
-    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
-    "active_authorization_decision": "research_manager/decisions/CP20_TASK8B3_E7_STAGE1_AUTHORIZATION_2026-09-01.md",
-    "active_authorization_prompt": "research_manager/prompts/CP20_TASK8B3_E7_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
-    "active_research_prompt": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
+    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md",
+    "active_authorization_decision": null,
+    "active_authorization_prompt": null,
+    "active_research_prompt": null,
+    "continuity_protocol": "research_manager/CONTINUITY_PROTOCOL.md",
+    "e6_integration": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
+    "e7_recovery_audit": "bagimsiz-denetim/e7-recovery-v1-zero-trust-audit-20260903/CP20_TASK8B3_E7_RECOVERY_V1_ZERO_TRUST_AUDIT_2026-09-03.md",
+    "e7r_b3_audit": "bagimsiz-denetim/e7r-b3-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_B3_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md"
   },
   "integrity": {
     "archive_members": [
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip",
-        "sha256": "3f28f90b29af3a41e1c679593968e9156e9bc3b0882659ec3b8cfa794e9b930d"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.md",
-        "sha256": "ce7d634598d92b928597e3c1911f19ce51811bbda83721548d57a3703069ab9a"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SHA256SUMS.txt",
-        "sha256": "e836ed783ace26a559e4250f2690176f237b4401ba47f7ac4dc677496ade92b8"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.zip",
-        "sha256": "83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_COMPLETE_PACKAGE.zip",
-        "sha256": "9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/SHA256SUMS.txt",
-        "sha256": "7c0f7ce6de55582cc1e69d12092f1d822cf169d897a0c36e28570e32378731d1"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md",
-        "sha256": "d8e2f7c125744e50bf299b38a890ac0c7ff0d6c47d9fd08506a41b519b2faaec"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.md",
-        "sha256": "b97f968d44eeaea8eb4d7c0979b6d6446b6e16a741c7c835d09441809301b8eb"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SHA256SUMS.txt",
-        "sha256": "3d0321a2b9d2d04efbe7b80a17704f12c6e1ab2e1ee2a9dcbb12f66fee72bb67"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.zip",
-        "sha256": "0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0"
-      }
+      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip", "sha256": "3f28f90b29af3a41e1c679593968e9156e9bc3b0882659ec3b8cfa794e9b930d"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.md", "sha256": "ce7d634598d92b928597e3c1911f19ce51811bbda83721548d57a3703069ab9a"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SHA256SUMS.txt", "sha256": "e836ed783ace26a559e4250f2690176f237b4401ba47f7ac4dc677496ade92b8"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.zip", "sha256": "83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_COMPLETE_PACKAGE.zip", "sha256": "9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/SHA256SUMS.txt", "sha256": "7c0f7ce6de55582cc1e69d12092f1d822cf169d897a0c36e28570e32378731d1"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md", "sha256": "d8e2f7c125744e50bf299b38a890ac0c7ff0d6c47d9fd08506a41b519b2faaec"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.md", "sha256": "b97f968d44eeaea8eb4d7c0979b6d6446b6e16a741c7c835d09441809301b8eb"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SHA256SUMS.txt", "sha256": "3d0321a2b9d2d04efbe7b80a17704f12c6e1ab2e1ee2a9dcbb12f66fee72bb67"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.zip", "sha256": "0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md", "sha256": "a02d580d4198d2094b60532b3dc500c29f15e3a20f6b8fd71264e2f1225efbba"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md", "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/CONTINUITY_PROTOCOL.md", "sha256": "e302b6338b2b2176fa6575918529add95c915d62251bf038e68d4a532105779b"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl", "sha256": "2d70dc9c0bca19d14ef5f29986656c85332d6a5d5acf5f7d0c6479dd12d22b6f"},
+      {"path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/build_current_archive.py", "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"}
     ],
     "repository_files": [
-      {
-        "path": "research_manager/decisions/CP20_TASK8B3_E5_S1_INTEGRATION_2026-09-01.md",
-        "sha256": "480e92551384ac90b003f175764aea0bf653bf8fd47a81897fa08665fcbbf251"
-      },
-      {
-        "path": "research_manager/decisions/CP20_TASK8B3_E6_STAGE1_AUTHORIZATION_2026-09-01.md",
-        "sha256": "713e4e64e4bb2b955b100b6066586a84a2d0246563d1387998a7a567e38d7077"
-      },
-      {
-        "path": "research_manager/prompts/CP20_TASK8B3_E6_CONDITIONED_GEOMETRIC_COMPLEX_NUMERATOR_PROMPT_2026-09-01.md",
-        "sha256": "e6cc37f7e3836d174c52dc34e85699500293074b3a9d446dfc5b201a292e7c25"
-      },
-      {
-        "path": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
-        "sha256": "bb73c74b7c45f1ef12d881e4c2e3ceb88774688e46bfb6b29f4418bf928ea8fa"
-      },
-      {
-        "path": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
-        "sha256": "d3017c56d3b6a5b6540848f29af29a1a7c1d24122991fee779e1d73ed3b28104"
-      },
-      {
-        "path": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
-        "sha256": "94106512926dd887a93ebfa056a810ccd31000b03f5d34b077c886efe9be73b0"
-      },
-      {
-        "path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE0_SEAL_ACCEPTANCE_2026-09-01.md",
-        "sha256": "4d7247b0004fb55c080a6a28f111ee154a20688a270877d274f93d8ebec35e97"
-      },
-      {
-        "path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE1_AUTHORIZATION_2026-09-01.md",
-        "sha256": "e653e6e9d627e8793eb8661c14063d463e7ffc5877dbfc3bdd0245b55b152dc1"
-      },
-      {
-        "path": "research_manager/prompts/CP20_TASK8B3_E7_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
-        "sha256": "093113d7a93c1ce859ebc229775c4f98861a6f731282929b672a9d63e5a6b5e4"
-      }
+      {"path": "research_manager/decisions/CP20_TASK8B3_E5_S1_INTEGRATION_2026-09-01.md", "sha256": "480e92551384ac90b003f175764aea0bf653bf8fd47a81897fa08665fcbbf251"},
+      {"path": "research_manager/decisions/CP20_TASK8B3_E6_STAGE1_AUTHORIZATION_2026-09-01.md", "sha256": "713e4e64e4bb2b955b100b6066586a84a2d0246563d1387998a7a567e38d7077"},
+      {"path": "research_manager/prompts/CP20_TASK8B3_E6_CONDITIONED_GEOMETRIC_COMPLEX_NUMERATOR_PROMPT_2026-09-01.md", "sha256": "e6cc37f7e3836d174c52dc34e85699500293074b3a9d446dfc5b201a292e7c25"},
+      {"path": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md", "sha256": "bb73c74b7c45f1ef12d881e4c2e3ceb88774688e46bfb6b29f4418bf928ea8fa"},
+      {"path": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md", "sha256": "d3017c56d3b6a5b6540848f29af29a1a7c1d24122991fee779e1d73ed3b28104"},
+      {"path": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md", "sha256": "94106512926dd887a93ebfa056a810ccd31000b03f5d34b077c886efe9be73b0"},
+      {"path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE0_SEAL_ACCEPTANCE_2026-09-01.md", "sha256": "4d7247b0004fb55c080a6a28f111ee154a20688a270877d274f93d8ebec35e97"},
+      {"path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE1_AUTHORIZATION_2026-09-01.md", "sha256": "e653e6e9d627e8793eb8661c14063d463e7ffc5877dbfc3bdd0245b55b152dc1"},
+      {"path": "research_manager/prompts/CP20_TASK8B3_E7_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md", "sha256": "093113d7a93c1ce859ebc229775c4f98861a6f731282929b672a9d63e5a6b5e4"},
+      {"path": "research_manager/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md", "sha256": "a02d580d4198d2094b60532b3dc500c29f15e3a20f6b8fd71264e2f1225efbba"},
+      {"path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md", "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"},
+      {"path": "research_manager/CONTINUITY_PROTOCOL.md", "sha256": "e302b6338b2b2176fa6575918529add95c915d62251bf038e68d4a532105779b"},
+      {"path": "research_manager/RESEARCH_JOURNAL.jsonl", "sha256": "2d70dc9c0bca19d14ef5f29986656c85332d6a5d5acf5f7d0c6479dd12d22b6f"},
+      {"path": "tools/build_current_archive.py", "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"}
     ]
   },
   "next_action": {
-    "instruction": "Await the returned E7 Stage 1 package from the computation/proof session. The authorization prompt was dispatched under seal ZIP SHA-256 0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0. Do not re-dispatch, create a new seal, or begin downstream work while the run is outstanding. On return, run the manager intake gate before any acceptance: verify the authorization witness, recompute the seal and both manifests, recheck the four dependencies, confirm the declared outputs and their manifests, rerun the deterministic verifier read-only, reproduce at least one independent checkpoint, classify every claim by evidence level, and check whether the audit stop rule fired. The computation session's own verdict is an input, not the manager's verdict.",
-    "prompt": "research_manager/prompts/CP20_TASK8B3_E7_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
-    "requires_user_or_external_result": true
-  },
-  "pre_run_seal": {
-    "authorization_status": "AWAITING_EXPLICIT_EXTERNAL_MANAGER_AUTHORIZATION",
-    "decision_sha256": "4d7247b0004fb55c080a6a28f111ee154a20688a270877d274f93d8ebec35e97",
-    "manifest_sha256": "3d0321a2b9d2d04efbe7b80a17704f12c6e1ab2e1ee2a9dcbb12f66fee72bb67",
-    "seal_document_sha256": "b97f968d44eeaea8eb4d7c0979b6d6446b6e16a741c7c835d09441809301b8eb",
-    "seal_zip_sha256": "0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0"
+    "authorized_stage": "STAGE_0_ONLY",
+    "executed_in_this_transaction": false,
+    "instruction": "Create and execute Stage 0 only for \"CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1\". Stage 0 must freeze the exact Tao/Si source versions, notation map, permitted algebraic transformations, falsification tests, and any computation before attempting a theorem transfer. No weighted-operator or E8 work is authorized.",
+    "prompt": null,
+    "requires_user_or_external_result": false
   },
   "prohibited_inferences": [
-    "Do not claim E5-S2, E5-S3, E5-S4, or E5-S5.",
-    "Do not infer a complex numerator asymptotic from five numerical checkpoints.",
-    "Do not claim E7-B2, E7-B3, E7-B4, E7-B5, or E7-B6.",
-    "Do not treat the E7 Stage 1 authorization as covering any seal ZIP hash other than 0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0.",
-    "Do not rerun or modify a sealed source without a new external seal authorization.",
+    "Do not promote historical/lost pre-recovery E7 conclusions; they remain [UNVERIFIED — ARTIFACTS LOST].",
+    "Do not claim the frozen full-window pointwise E7R-B3 contraction; it is [FALSE][CLOSED].",
+    "Do not claim |E[F_{r,4}|S_r=n_r]|=O(1/r); the global conditional bound remains [OPEN].",
+    "Do not infer E7R-B4/E6-N2, E7R-B5, or E7R-B6 from E7R-B1/B2 or from B3-CT.",
+    "Do not replace the closed pointwise route with an ad hoc weighted/operator/L2/spectral route without a fresh authorized task/seal.",
+    "Do not accept a theorem from Yuan Si 2026 merely by analogy or preprint status; exact parameter mapping is required.",
+    "Do not start E8.",
     "Do not claim that the Collatz conjecture is proved."
   ],
   "returned_result": {
-    "acceptance_status": "ACCEPTED_E6_N1_WITH_SCOPE_REPAIR",
-    "complete_package_sha256": "9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849",
-    "directory_file_count": 21,
-    "manifest_sha256": "7c0f7ce6de55582cc1e69d12092f1d822cf169d897a0c36e28570e32378731d1",
-    "master_findings_archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md"
+    "acceptance_status": "E7_RECOVERY_AND_B3_COUNTERTHEOREM_AUDIT_INTEGRATED",
+    "b3_countertheorem": "[PROVED][AUDITED]",
+    "b3_pre_run_seal_sha256": "acb61ef495bc164c5f55754ea355128bd8105bf7ddec9ff900c2dc16f9646eb3",
+    "b3_stage1_complete_package_sha256": "5172a6cadfa5d2bbce84564f19d3ba76b1338e51c7a5a96225d8c77ac4b4b186"
   },
   "schema": "COLLATZ_CURRENT_RESEARCH_STATE_V1",
   "scientific_checkpoint": {
     "accepted": [
-      "E4 audited critical-walk route decision with scope repairs",
-      "E5-S1 exact one-row Green kernel",
-      "E5-S1 exact conditioned-geometric bridge",
-      "positive target denominator local-limit scale",
-      "E6-N1 exact coefficient, Hadamard, probability-numerator, and conditioned-bridge normal forms",
-      "M1 endpoint-state coboundary obstruction in the repaired uniform sup-summable scope"
+      "E6-N1 [PROVED][AUDITED/ACCEPTED WITH SCOPE REPAIR]",
+      "E7R-B1 [PROVED][AUDITED]",
+      "E7R-B2 [PROVED][AUDITED]",
+      "B3-CT [PROVED][AUDITED]"
+    ],
+    "closed": [
+      "E7R-B3 frozen pointwise contraction [FALSE][CLOSED]",
+      "uniform pointwise contraction over the entire frozen endpoint window [CLOSED]"
+    ],
+    "historical_unverified": [
+      "pre-recovery E7 conclusions [UNVERIFIED — ARTIFACTS LOST]"
     ],
     "open": [
-      "uniform degree-one inherited bound",
-      "uniform complex numerator bound N_r=O(r^-3/2)",
-      "complex numerator asymptotic and coefficient regularity",
-      "nonzero boundary-to-target transfer",
-      "fixed-target asymptotic or polynomial lower bound",
-      "quantitative two-sided complex block-kernel contraction",
-      "uniform positive-excursion tail closure at o(1/r)"
-    ],
-    "parked": [
-      "absolute-value maximum-principle route",
-      "global invariant-cone route",
-      "positive-only local-limit route",
-      "exact or uniformly sup-summable endpoint-state coboundary route",
-      "direct H2 norm-only Hadamard majorant"
+      "E7R-B4 / E6-N2 [OPEN]",
+      "E7R-B5 [OPEN]",
+      "E7R-B6 [OPEN]",
+      "|E[F_{r,4}|S_r=n_r]|=O(1/r) [OPEN]"
     ]
   },
   "updated_at": "2026-09-04T02:19:02+03:00"

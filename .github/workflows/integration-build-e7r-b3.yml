@@ -1,0 +1,37 @@
+name: CP20 integration archive build
+
+on:
+  push:
+    branches:
+      - integration-build-e7r-b3-20260904
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild current archive
+        run: |
+          python tools/build_current_archive.py
+          cp Collatz_Research_Archive_CURRENT.zip /tmp/archive-first.zip
+          python tools/build_current_archive.py
+          cmp /tmp/archive-first.zip Collatz_Research_Archive_CURRENT.zip
+      - name: Verify handoff
+        run: |
+          python tools/verify_handoff.py | tee HANDOFF_VERIFY_OUTPUT.txt
+          grep -q 'HANDOFF VERIFICATION: PASS' HANDOFF_VERIFY_OUTPUT.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: e7r-b3-integration-build
+          path: |
+            Collatz_Research_Archive_CURRENT.zip
+            CURRENT_ARCHIVE_BUILD.json
+            HANDOFF_VERIFY_OUTPUT.txt
+          if-no-files-found: error
+          retention-days: 1
