@@ -24,6 +24,28 @@ jobs:
           cp Collatz_Research_Archive_CURRENT.zip /tmp/archive-first.zip
           python tools/build_current_archive.py
           cmp /tmp/archive-first.zip Collatz_Research_Archive_CURRENT.zip
+      - name: Integrity diagnostics
+        run: |
+          python - <<'PY'
+          import hashlib, json, zipfile
+          from pathlib import Path
+          state = json.loads(Path('CURRENT_RESEARCH_STATE.json').read_text(encoding='utf-8'))
+          def h(path):
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+          for row in state['integrity']['repository_files']:
+              actual = h(row['path'])
+              if actual != row['sha256']:
+                  print('REPO_MISMATCH', row['path'], 'expected='+row['sha256'], 'actual='+actual)
+          with zipfile.ZipFile('Collatz_Research_Archive_CURRENT.zip') as zf:
+              for row in state['integrity']['archive_members']:
+                  try:
+                      actual = hashlib.sha256(zf.read(row['path'])).hexdigest()
+                  except KeyError:
+                      print('ARCHIVE_MISSING', row['path'])
+                      continue
+                  if actual != row['sha256']:
+                      print('ARCHIVE_MISMATCH', row['path'], 'expected='+row['sha256'], 'actual='+actual)
+          PY
       - name: Verify handoff
         run: |
           git checkout -B main "$GITHUB_SHA"
