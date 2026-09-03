@@ -24,6 +24,7 @@ jobs:
           cmp /tmp/archive-first.zip Collatz_Research_Archive_CURRENT.zip
       - name: Verify handoff
         run: |
+          git checkout -B main "$GITHUB_SHA"
           python tools/verify_handoff.py | tee HANDOFF_VERIFY_OUTPUT.txt
           grep -q 'HANDOFF VERIFICATION: PASS' HANDOFF_VERIFY_OUTPUT.txt
       - uses: actions/upload-artifact@v4
