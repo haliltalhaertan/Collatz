@@ -6,9 +6,13 @@ Repository: `haliltalhaertan/Collatz`
 
 Branch: `cp20-publication-factor-pressure-v1-20260904`
 
-Pre-audit package HEAD: `8d7c441ad4b4bac0ddad2f2e59981beb5a5f14e7`
+Immutable manuscript target commit: `ab1afd5a52ca015c75438e32f70ffd4b30d764ce`
+
+Target manuscript blob SHA: `be040e901a656a546a275992283b939293d9794f`
 
 Manuscript creation commit: `6934312f7e51e08d71b8083b49a374ed3af70020`
+
+Later branch commits may contain only status/audit-handoff metadata. Audit the manuscript content fixed by the immutable target commit above; do not infer mathematical changes from later editorial metadata commits.
 
 Primary manuscript:
 
@@ -25,6 +29,20 @@ Publication extraction audit verdict already completed:
 Those repairs are recorded in:
 
 `publication_cp20_factor_pressure/CP20_PUBLICATION_AUDIT_REPAIR_INTEGRATION_2026-09-04.md`.
+
+Two additional attribution concessions were inserted before this audit target was sealed:
+
+- `\cite{NicholsonRampersad2016}` in the factor-complexity section, with an explicit warning that initial non-repetitive complexity is prefix-based whereas the CP20 proof uses a shifted window;
+- `\cite{PesinWeiss2001}` at the Legendre/variational pressure representation, explicitly conceding that thermodynamic-formalism machinery is standard.
+
+A local preflight compile of the exact target manuscript succeeded and produced a 16-page PDF with no unresolved references/citations. This is non-authoritative evidence only: you must independently compile and inspect it. The preflight PDF is persisted in the CP20 publication Drive folder as `CP20_MANUSCRIPT_V1_PREFLIGHT_2026-09-04.pdf`.
+
+Known nonblocking preflight warnings to inspect independently:
+
+- a large overfull box at the literal certificate filename in the reproducibility section;
+- several underfull and small overfull boxes in the narrow prior-art table.
+
+Do not treat these as already adjudicated; verify their visual materiality yourself.
 
 ## Role
 
@@ -58,13 +76,14 @@ Required checks:
 
 1. no fatal TeX errors;
 2. all `\ref` / `\cref` references resolve;
-3. all citations resolve;
+3. all citations resolve, including `NicholsonRampersad2016` and `PesinWeiss2001`;
 4. no missing bibliography entry;
 5. no multiply-defined labels;
 6. no undefined control sequence;
 7. record every overfull/underfull box that is materially visible;
 8. record final page count;
-9. inspect the rendered PDF visually for clipping, broken glyphs, table overflow, equation overflow, or unreadable bibliography.
+9. inspect the rendered PDF visually for clipping, broken glyphs, table overflow, equation overflow, or unreadable bibliography;
+10. specifically inspect the long literal certificate filename and the prior-art comparison table, because the local preflight reported layout warnings there.
 
 If compilation fails in a way caused by the manuscript source, verdict must be `[COMPILE FAIL]` unless the defect is a purely mechanical one-line editorial fix explicitly identified.
 
@@ -83,7 +102,7 @@ Mandatory checks:
 - exact hypothesis `s_k=kappa log_2 k+O(1)`, `kappa>1`;
 - no valuation-alphabet assumption introduced;
 - exact epsilon range `0<epsilon<alpha/kappa` in the proof;
-- correct start window;
+- correct shifted start window;
 - correct `liminf >= alpha/kappa` conclusion.
 
 ## Finite-B pressure theorem
@@ -154,6 +173,8 @@ Check all exponents and floor effects in the comparison
 
 `2^{alpha r-O(1)}` versus `2^{(alpha-kappa epsilon)r+O(1)}`.
 
+Also check that the manuscript's comparison with Nicholson–Rampersad is attribution-only: their named invariant is initial/prefix based, whereas CP20 uses starts in the shifted window `[N_r,2N_r-r]`. Any claim identifying the two invariants is an attribution defect.
+
 ## C6. Deterministic pressure count
 
 Verify:
@@ -181,6 +202,8 @@ Independently verify:
 - saddle equation `(Q-P)y^2-Py-(P+Q)=0`;
 - boundary `Q=P` optimizer escape;
 - exact `O(1/T)` boundary overshoot.
+
+The Legendre/variational machinery itself is not claimed as novel; verify that `PesinWeiss2001` is used only as background attribution and not as support for a Syracuse-specific theorem it does not state.
 
 ## C9. Two-regime uniformity
 
@@ -239,7 +262,12 @@ Verify that the manuscript does not claim novelty for:
 - pressure/Chernoff/Legendre machinery generally;
 - the architecture “constrained-language entropy versus Diophantine/discrepancy parameter yields a threshold.”
 
-Determine whether Nicholson–Rampersad and a general pressure/Birkhoff reference must be cited directly in the manuscript body before freeze. If yes, classify that as `[ATTRIBUTION REPAIR]` rather than a mathematical failure.
+The two direct body citations are already present. Audit their accuracy rather than merely their presence:
+
+1. `NicholsonRampersad2016` must be framed as the prefix-based initial non-repetitive-complexity precedent, with CP20 explicitly distinguished as a shifted-window analogue;
+2. `PesinWeiss2001` must be framed as general thermodynamic/multifractal background, not as a source for the Syracuse-specific pressure formula.
+
+Classify any misframing as `[ATTRIBUTION REPAIR]` unless it changes a mathematical theorem claim.
 
 The narrow novelty target is only:
 
