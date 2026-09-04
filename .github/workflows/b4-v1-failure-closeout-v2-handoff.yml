@@ -1,0 +1,87 @@
+name: B4 V1 Failure Closeout and V2 Reseal Handoff
+
+on:
+  push:
+    branches:
+      - integration-e7r-b4-v1-failure-closeout-v2-handoff-20260904
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout canonical main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fetch authoritative refs and driver
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin \
+            +refs/heads/integration-e7r-b4-v1-failure-closeout-v2-handoff-20260904:refs/remotes/origin/integration-e7r-b4-v1-failure-closeout-v2-handoff-20260904 \
+            +refs/heads/cp20-e7r-b4-stage1-input-integrity-failure-20260904:refs/remotes/origin/cp20-e7r-b4-stage1-input-integrity-failure-20260904
+          git show origin/integration-e7r-b4-v1-failure-closeout-v2-handoff-20260904:.github/integration/b4_v1_failure_closeout_v2_handoff.py > /tmp/b4_v1_failure_closeout_v2_handoff.py
+          git config user.name "Canonical Integrator"
+          git config user.email "actions@users.noreply.github.com"
+
+      - name: Patch governance verifier and lock-record finalization
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          verifier = Path('tools/verify_handoff.py')
+          src = verifier.read_text(encoding='utf-8')
+          needle = '        "STAGE_0_READY_NOT_DISPATCHED",\n'
+          addition = needle + '        "STAGE_0_REPAIR_READY_NOT_DISPATCHED",\n'
+          if '"STAGE_0_REPAIR_READY_NOT_DISPATCHED"' not in src:
+              if needle not in src:
+                  raise SystemExit('verifier allowed-stage patch point not found')
+              verifier.write_text(src.replace(needle, addition), encoding='utf-8', newline='\n')
+
+          driver = Path('/tmp/b4_v1_failure_closeout_v2_handoff.py')
+          d = driver.read_text(encoding='utf-8')
+          marker = '    # Release lock in the final milestone state (remote remains HELD until final push).\n'
+          patch = '    state["active_integrator"]["lock_acquisition_commit"] = lock_commit\n\n' + marker
+          if marker not in d:
+              raise SystemExit('driver lock-finalization patch point not found')
+          driver.write_text(d.replace(marker, patch), encoding='utf-8', newline='\n')
+          PY
+
+      - name: Canonically close V1 failure and hand off V2
+        shell: bash
+        run: |
+          set -euo pipefail
+          python /tmp/b4_v1_failure_closeout_v2_handoff.py
+
+      - name: Upload canonical closeout persistence bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: CP20_TASK8B3_E7R_B4_V1_FAILURE_CLOSEOUT_V2_HANDOFF_CANONICAL_PERSISTENCE
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: error
+          path: |
+            Collatz_Research_Archive_CURRENT.zip
+            CURRENT_ARCHIVE_BUILD.json
+            CURRENT_RESEARCH_STATE.json
+            START_HERE_CURRENT_HANDOFF.md
+            research_manager/RESEARCH_JOURNAL.jsonl
+            research_manager/decisions/CP20_TASK8B3_E7R_B4_V1_INPUT_INTEGRITY_FAILURE_CLOSEOUT_2026-09-04.md
+            research_manager/records/CP20_TASK8B3_E7R_B4_V1_MAIN_PLACEHOLDER_REVERT_PROVENANCE_2026-09-04.json
+            research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md
+            research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE
+            tools/verify_handoff.py
+            FINAL_HANDOFF_VERIFICATION.txt
+            GITHUB_READBACK.json
+            CANONICAL_CLOSEOUT_SUMMARY.json
+            ARCHIVE_BUDGET.json
+            FINAL_SHA.txt
+            LOCK_COMMIT.txt
