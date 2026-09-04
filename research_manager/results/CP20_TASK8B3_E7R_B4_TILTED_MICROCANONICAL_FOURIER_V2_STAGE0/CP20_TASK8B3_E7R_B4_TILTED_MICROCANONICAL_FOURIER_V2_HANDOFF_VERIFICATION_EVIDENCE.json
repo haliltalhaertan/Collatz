@@ -1,0 +1,30 @@
+{
+  "T1_T8_executed": false,
+  "actual_checkout_branch": "main",
+  "actual_checkout_sha": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+  "canonical_base_sha": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+  "command": "python tools/verify_handoff.py",
+  "execution_environment": "GitHub Actions ubuntu-24.04 / ubuntu-latest",
+  "github_actions_job_id": 101058408982,
+  "github_actions_run_attempt": 1,
+  "github_actions_run_id": 33883751792,
+  "prior_failed_attempt": {
+    "actual_checkout_sha": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+    "classification": "MECHANICAL_DETACHED_HEAD_COMPATIBILITY_FAILURE; no scientific content executed",
+    "job_id": 101058063492,
+    "run_id": 33883648381,
+    "terminal_verdict": "HANDOFF VERIFICATION: FAIL — branch mismatch: "
+  },
+  "repository": "haliltalhaertan/Collatz",
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE_V1",
+  "stage1_executed": false,
+  "terminal_stdout_sha256": "699cfd6fabbb1f5db40b49167365b10760a62e56786877ce62053b0e6f1676aa",
+  "terminal_verdict": "HANDOFF VERIFICATION: PASS",
+  "utc_timestamp": "2026-09-04T14:26:51.000479+00:00",
+  "workflow_artifact_id": 9940948102,
+  "workflow_artifact_zip_sha256": "911e2a6e3375d87ad5ad6ae15b59d656fc40f6ed2d8cd5d9bd92518441546ae0",
+  "workflow_commit": "75519f67559fd01760a824f9367c150fd033d5d8",
+  "workflow_file": ".github/workflows/b4-v2-stage0-handoff-finalization.yml",
+  "workflow_ref": "haliltalhaertan/Collatz/.github/workflows/b4-v2-stage0-handoff-finalization.yml@refs/heads/cp20-e7r-b4-v2-stage0-finalization-handoff-20260904",
+  "workflow_trigger_ref": "refs/heads/cp20-e7r-b4-v2-stage0-finalization-handoff-20260904"
+}
