@@ -1,0 +1,132 @@
+name: E7R literature Stage0 finalize seal
+
+on:
+  push:
+    branches:
+      - cp20-e7r-literature-transfer-v1-stage0-20260904
+    paths:
+      - .github/workflows/e7r-literature-stage0-finalize.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify and build normalized seal
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='b3eaaae80a64003f4ee06a43b65fbd3680b8e22b'
+          ROOT='research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0'
+          PREFIX='CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1'
+          git merge-base --is-ancestor "$BASE" HEAD
+
+          python - <<'PY'
+          import hashlib, json, pathlib, zipfile
+          root=pathlib.Path('research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0')
+          sf=json.loads((root/'SOURCE_FREEZE_HASHES.json').read_text())
+          def h(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+          checks={
+            root/'sources/tao/tao_1909.03562v7.pdf': sf['tao']['pdf_sha256'],
+            root/'sources/tao/tao_1909.03562v7_source.tar': sf['tao']['source_archive_sha256'],
+            root/'sources/si_zenodo/main.pdf': sf['si_zenodo']['pdf_sha256'],
+            root/'sources/si_github/main.tex': sf['si_github']['main_tex_sha256'],
+            root/'sources/si_github/main.pdf': sf['si_github']['main_pdf_sha256'],
+          }
+          for p,exp in checks.items():
+            got=h(p)
+            if got!=exp: raise SystemExit(f'SOURCE HASH FAIL {p}: {got} != {exp}')
+          if (root/'sources/si_zenodo/main.pdf').read_bytes() != (root/'sources/si_github/main.pdf').read_bytes():
+            raise SystemExit('SI PDF BYTE IDENTITY FAIL')
+
+          prefix='CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1'
+          required=[
+            f'{prefix}_SOURCE_REGISTRY.md',
+            f'{prefix}_PROJECT_DEFINITIONS.md',
+            f'{prefix}_NOTATION_MAP.md',
+            f'{prefix}_CANDIDATE_MAPS.md',
+            f'{prefix}_FALSIFICATION_PLAN.md',
+            f'{prefix}_CONFIG.json',
+            f'{prefix}_OUTPUT_SCHEMA.json',
+            f'{prefix}_STAGE1_EXACT_SYMBOLIC_CHECKS.py',
+            f'{prefix}_PRE_RUN_SEAL.md',
+            'SOURCE_FREEZE_HASHES.json',
+            'SOURCE_SHA256SUMS.txt',
+            'TAO_SOURCE_ARCHIVE_FILETYPE.txt',
+          ]
+          for n in required:
+            if not (root/n).is_file(): raise SystemExit('MISSING '+n)
+
+          # Manifest covers all sealed files except itself and the ZIP.
+          rels=required + [
+            'sources/tao/tao_1909.03562v7.pdf',
+            'sources/tao/tao_1909.03562v7_source.tar',
+            'sources/si_zenodo/main.pdf',
+            'sources/si_github/main.tex',
+            'sources/si_github/main.pdf',
+          ]
+          rels=sorted(rels)
+          manifest=''.join(f'{h(root/r)}  {r}\n' for r in rels)
+          man=root/f'{prefix}_PRE_RUN_SHA256SUMS.txt'
+          man.write_text(manifest,encoding='utf-8',newline='\n')
+
+          zip_path=root/f'{prefix}_PRE_RUN_SEAL.zip'
+          with zipfile.ZipFile(zip_path,'w',compression=zipfile.ZIP_STORED) as zf:
+            for r in sorted(rels+[man.name]):
+              p=root/r
+              zi=zipfile.ZipInfo(r,(1980,1,1,0,0,0))
+              zi.compress_type=zipfile.ZIP_STORED
+              zi.create_system=0
+              zi.external_attr=0
+              zf.writestr(zi,p.read_bytes())
+
+          # Verify CRC, membership, and all manifest hashes inside ZIP.
+          with zipfile.ZipFile(zip_path,'r') as zf:
+            bad=zf.testzip()
+            if bad: raise SystemExit('ZIP CRC FAIL '+bad)
+            names=zf.namelist()
+            expected=sorted(rels+[man.name])
+            if names!=expected: raise SystemExit('ZIP MEMBERSHIP/ORDER FAIL')
+            for line in manifest.splitlines():
+              exp,r=line.split('  ',1)
+              got=hashlib.sha256(zf.read(r)).hexdigest()
+              if got!=exp: raise SystemExit('ZIP MEMBER HASH FAIL '+r)
+            embedded=zf.read(man.name)
+            if hashlib.sha256(embedded).hexdigest()!=h(man):
+              raise SystemExit('EMBEDDED MANIFEST FAIL')
+
+          result={
+            'schema':'CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_V1',
+            'project_base_commit':'b3eaaae80a64003f4ee06a43b65fbd3680b8e22b',
+            'manifest_sha256':h(man),
+            'seal_zip_sha256':h(zip_path),
+            'seal_member_count':len(expected),
+            'stage1_executed':False,
+            'mappings_adjudicated':False,
+            'zip_crc':'PASS',
+            'manifest_verification':'PASS',
+          }
+          (root/f'{prefix}_STAGE0_FINAL_RECORD.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n',encoding='utf-8',newline='\n')
+          print(json.dumps(result,indent=2,sort_keys=True))
+          PY
+
+          git config user.name 'Halil Talha Ertan'
+          git config user.email 'haliltalhaertan@mail.com'
+          git add "$ROOT/${PREFIX}_PRE_RUN_SHA256SUMS.txt" "$ROOT/${PREFIX}_PRE_RUN_SEAL.zip" "$ROOT/${PREFIX}_STAGE0_FINAL_RECORD.json"
+          git commit -m '[skip ci] Freeze normalized Literature Transfer V1 Stage0 seal'
+          git push origin HEAD:cp20-e7r-literature-transfer-v1-stage0-20260904
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_COMPLETE
+          path: |
+            research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SEAL.zip
+            research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
