@@ -1,11 +1,11 @@
 {
   "active_integrator": {
-    "acquired_at": "2026-09-04T12:07:03+03:00",
-    "base_commit": "57f670bd531cee8f0f2d6eeb27431243f6e3a479",
-    "holder": "canonical-integrator-e7r-b4-stage0-stage1-authorization-20260904",
-    "lock_acquisition_commit": "060c9129aac5562e4b2b8c32634159c71579132b",
-    "scope": "B4 Stage-0 canonical intake plus two-phase Stage-1 authorization only; no Stage-1 execution, no new mathematics, no weighted/operator work, and no E8.",
-    "status": "RELEASED"
+    "acquired_at": "2026-09-04T12:52:45+03:00",
+    "base_commit": "f5269e5ddbf610b2305fafbd90fe2b1346376103",
+    "holder": "canonical-integrator-e7r-b4-v1-failure-closeout-v2-reseal-handoff-20260904",
+    "lock_acquisition_commit": "53610dc034b4c44d7af2cf47383fd4ee22c55d11",
+    "scope": "B4 V1 Stage-1 input-integrity failure canonical closeout plus V2 reseal handoff only; no Stage-1 rerun, no invalid T1–T8 mathematics intake, no new mathematics, no weighted/operator work, no E8, and no V2 Stage-0 execution.",
+    "status": "HELD"
   },
   "active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1",
