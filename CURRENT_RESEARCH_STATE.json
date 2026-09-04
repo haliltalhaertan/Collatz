@@ -1,11 +1,10 @@
 {
   "active_integrator": {
-    "acquired_at": "2026-09-04T11:21:24+03:00",
-    "base_commit": "9119a39957705f53060c380acf3e8f4dd6609565",
-    "holder": "canonical-integrator-e7r-literature-stage1-audit-20260904",
-    "lock_acquisition_commit": "4af6fa68ea0cdf8f393a2ab18f8e7a96115ec830",
-    "scope": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1 audited Stage-1 canonical integration only; no Stage-1 rerun, no new mathematics, no weighted/operator work, no E8, and no execution of the next research task.",
-    "status": "RELEASED"
+    "acquired_at": "2026-09-04T12:07:03+03:00",
+    "base_commit": "57f670bd531cee8f0f2d6eeb27431243f6e3a479",
+    "holder": "canonical-integrator-e7r-b4-stage0-stage1-authorization-20260904",
+    "scope": "B4 Stage-0 canonical intake plus two-phase Stage-1 authorization only; no Stage-1 execution, no new mathematics, no weighted/operator work, and no E8.",
+    "status": "HELD"
   },
   "active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1",
