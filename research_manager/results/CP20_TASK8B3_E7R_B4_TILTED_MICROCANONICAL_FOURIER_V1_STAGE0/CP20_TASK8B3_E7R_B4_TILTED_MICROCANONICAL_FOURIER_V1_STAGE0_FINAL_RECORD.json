@@ -1,0 +1,22 @@
+{
+  "canonical_base_commit": "57f670bd531cee8f0f2d6eeb27431243f6e3a479",
+  "canonical_main_modified": false,
+  "drive_persistence": {
+    "folder_id": "1n7sz5_1JFXAqJ1KUWT66Hy9KBzyvwnLI",
+    "folder_url": "https://drive.google.com/drive/folders/1n7sz5_1JFXAqJ1KUWT66Hy9KBzyvwnLI",
+    "readback_sha256": "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+    "seal_file_id": "12WfXfOfCHt9XZTSqBYPDfLV7xsZ1bVIY",
+    "seal_raw_readback": "PASS"
+  },
+  "manifest_sha256": "7de830b396fb075b4a97f78dd889ef16e92d66e763e5572af603f016faf33118",
+  "order_sha256": "90dbb1b229a6f5d7677251ce250ef377dba36b369a566d9cc0207aff420a333a",
+  "pre_run_seal_zip_sha256": "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0_FINAL_V1",
+  "stage0_checks": "PASS",
+  "stage1_executed": false,
+  "stage1_execution_integrity_contract_present": true,
+  "working_branch": "cp20-e7r-b4-tilted-microcanonical-fourier-v1-stage0-20260904",
+  "zip_crc": "PASS",
+  "zip_member_count": 16,
+  "zip_member_hashes": "PASS"
+}

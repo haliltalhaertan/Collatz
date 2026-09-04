@@ -3,6 +3,7 @@
     "acquired_at": "2026-09-04T12:07:03+03:00",
     "base_commit": "57f670bd531cee8f0f2d6eeb27431243f6e3a479",
     "holder": "canonical-integrator-e7r-b4-stage0-stage1-authorization-20260904",
+    "lock_acquisition_commit": "060c9129aac5562e4b2b8c32634159c71579132b",
     "scope": "B4 Stage-0 canonical intake plus two-phase Stage-1 authorization only; no Stage-1 execution, no new mathematics, no weighted/operator work, and no E8.",
     "status": "HELD"
   },
@@ -10,7 +11,7 @@
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation",
     "objective": "Determine whether the exact project microcanonical law can be recentered by an exponential/geometric tilt with mean log_2(3), and whether a new joint Fourier local-limit theorem at the primitive frequency eta_r = 2^(T_r-4) mod 3^r can yield |G_r| = O(1/r).",
-    "stage": "STAGE_0_READY_NOT_DISPATCHED",
+    "stage": "PRE_RUN_SEAL_AWAITING_AUTHORIZATION",
     "target": {
       "C": 4,
       "d": -8,
@@ -61,6 +62,39 @@
       "stage1_complete_package_sha256": "5172a6cadfa5d2bbce84564f19d3ba76b1338e51c7a5a96225d8c77ac4b4b186"
     }
   },
+  "b4_frozen_program": {
+    "T1": "conditional-law invariance",
+    "T2": "tilted centrality",
+    "T3": "denominator / local limit",
+    "T4": "numerator and G_r=N_r/D_r",
+    "T5": "required N_r=O(r^-3/2) scale",
+    "T6": "exact total-sum Fourier inversion",
+    "T7": "new tilted joint Fourier/renewal theorem",
+    "T8-A": "saddlepoint/Edgeworth fallback",
+    "T8-B": "endpoint-weighted/cotransition fallback",
+    "falsifications": "F1...F10 and T7-F1...T7-F5 frozen"
+  },
+  "b4_stage0": {
+    "accepted": true,
+    "accepted_claims": [],
+    "contract_git_blob": "94a15beb7573c860e4891048e705c9f13a156f04",
+    "contract_sha256": "3d9fd4c0c029c135b86c43377aa414c87704f5e6c3dd4a008fa621f3b4f1185e",
+    "drive_raw_seal_readback": "PASS",
+    "drive_seal_file_id": "12WfXfOfCHt9XZTSqBYPDfLV7xsZ1bVIY",
+    "drive_stage0_folder_id": "1n7sz5_1JFXAqJ1KUWT66Hy9KBzyvwnLI",
+    "manifest_sha256": "7de830b396fb075b4a97f78dd889ef16e92d66e763e5572af603f016faf33118",
+    "seal_crc": "PASS",
+    "seal_member_count": 16,
+    "seal_member_hashes": "PASS",
+    "seal_sha256": "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+    "seal_zip_materialized_on_main": false,
+    "sealed_members_canonicalized_byte_for_byte": 16,
+    "stage0_branch": "cp20-e7r-b4-tilted-microcanonical-fourier-v1-stage0-20260904",
+    "stage0_head": "c83d22f9e3ac8bdc4ec955d14b3d7dca11c3fee1",
+    "stage1_authorized": false,
+    "stage1_executed": false,
+    "status": "[ACCEPT B4 STAGE 0]"
+  },
   "co_chair_roles": {
     "CP20_TASK8B3_E7": {
       "adversarial_review_and_reproduction": "claude",
@@ -90,10 +124,11 @@
     "task": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1 Stage 1"
   },
   "documents": {
-    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
+    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0_ACCEPTANCE_AND_CONTRACT_CANONICALIZATION_2026-09-04.md",
     "active_authorization_decision": null,
     "active_authorization_prompt": null,
     "active_research_prompt": null,
+    "b4_stage1_execution_contract": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
     "continuity_protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "e6_integration": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
     "e7_recovery_audit": "bagimsiz-denetim/e7-recovery-v1-zero-trust-audit-20260903/CP20_TASK8B3_E7_RECOVERY_V1_ZERO_TRUST_AUDIT_2026-09-03.md",
@@ -522,9 +557,11 @@
   "next_action": {
     "authorized_stage": "STAGE_0_ONLY",
     "executed_in_this_transaction": false,
-    "instruction": "Prepare/execute Stage 0 only for CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1 in a future transaction, first freezing and falsifying T1–T8. Do not infer that Tao existing theorem applies after tilting. This canonical integration does not dispatch or execute Stage 0.",
+    "instruction": "Perform Phase-A canonical GitHub read-back and verify all 16 sealed member blobs and the exact execution-integrity contract while Stage 1 remains NOT AUTHORIZED. Proceed to separate Phase B only after PASS.",
     "prompt": null,
-    "requires_user_or_external_result": false
+    "requires_user_or_external_result": false,
+    "stage": "PRE_RUN_SEAL_AWAITING_AUTHORIZATION",
+    "task_code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1"
   },
   "next_task_stage0_requirements": [
     "T1 exact conditional-law invariance under geometric tilting",
