@@ -1,0 +1,123 @@
+name: CP20 apply priority citations
+
+on:
+  push:
+    branches:
+      - cp20-publication-factor-pressure-v1-20260904
+
+permissions:
+  contents: write
+
+jobs:
+  repair-and-compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cp20-publication-factor-pressure-v1-20260904
+          fetch-depth: 0
+
+      - name: Apply K1 and K2 citation repairs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          tex_path = Path('publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex')
+          bib_path = Path('publication_cp20_factor_pressure/CP20_REFERENCES.bib')
+
+          tex = tex_path.read_text(encoding='utf-8')
+          bib = bib_path.read_text(encoding='utf-8')
+
+          old1 = "This is the sign-sensitive coefficient inequality used throughout the pressure argument."
+          new1 = ("This is the sign-sensitive coefficient inequality used throughout the pressure argument. "
+                  "It is the standard Chernoff / large-deviation coefficient bound for words with a prescribed additive statistic; "
+                  "see, for example, \\cite{DemboZeitouni1998}.  We claim no novelty for this counting step.")
+          if 'DemboZeitouni1998' not in tex:
+              if old1 not in tex:
+                  raise SystemExit('K1 target sentence not found')
+              tex = tex.replace(old1, new1, 1)
+
+          old2 = ("Variational and Legendre-transform formulations of pressure and large-deviation spectra are standard in thermodynamic formalism and multifractal analysis of Birkhoff averages; see, for example, \\cite{PesinWeiss2001}.  Here this machinery is used only to express the Syracuse-specific feasible surface and does not form part of the novelty claim.")
+          new2 = ("Variational and Legendre-transform formulations of pressure, Birkhoff level sets, and large-deviation spectra are standard in thermodynamic formalism and multifractal analysis; see, for example, \\cite{PesinWeiss2001,TakensVerbitskiy2003}.  Here this machinery is used only to express the Syracuse-specific feasible surface and does not form part of the novelty claim.")
+          if 'TakensVerbitskiy2003' not in tex:
+              if old2 not in tex:
+                  raise SystemExit('K2 target sentence not found')
+              tex = tex.replace(old2, new2, 1)
+
+          if '@book{DemboZeitouni1998' not in bib:
+              bib += r'''
+
+@book{DemboZeitouni1998,
+  author    = {Amir Dembo and Ofer Zeitouni},
+  title     = {Large Deviations Techniques and Applications},
+  edition   = {2nd},
+  publisher = {Springer},
+  series    = {Stochastic Modelling and Applied Probability},
+  volume    = {38},
+  year      = {1998}
+}
+'''
+
+          if '@article{TakensVerbitskiy2003' not in bib:
+              bib += r'''
+
+@article{TakensVerbitskiy2003,
+  author  = {Floris Takens and Evgeny Verbitskiy},
+  title   = {On the Variational Principle for the Topological Entropy of Certain Non-Compact Sets},
+  journal = {Ergodic Theory and Dynamical Systems},
+  volume  = {23},
+  pages   = {317--348},
+  year    = {2003},
+  doi     = {10.1017/S0143385702000913}
+}
+'''
+
+          tex_path.write_text(tex, encoding='utf-8')
+          bib_path.write_text(bib, encoding='utf-8')
+          PY
+
+      - name: Install TeX
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended poppler-utils
+
+      - name: Compile repaired manuscript
+        working-directory: publication_cp20_factor_pressure
+        shell: bash
+        run: |
+          set -euo pipefail
+          pdflatex -interaction=nonstopmode -halt-on-error CP20_MANUSCRIPT.tex
+          bibtex CP20_MANUSCRIPT
+          pdflatex -interaction=nonstopmode -halt-on-error CP20_MANUSCRIPT.tex
+          pdflatex -interaction=nonstopmode -halt-on-error CP20_MANUSCRIPT.tex
+          if grep -E 'LaTeX Warning: (Reference|Citation).*undefined|There were undefined references|There were undefined citations|multiply defined' CP20_MANUSCRIPT.log; then
+            echo 'Unresolved reference/citation/label warning found.'
+            exit 1
+          fi
+          echo '=== BOX WARNINGS ==='
+          grep -E 'Overfull|Underfull' CP20_MANUSCRIPT.log || true
+          pdfinfo CP20_MANUSCRIPT.pdf | grep '^Pages:'
+          sha256sum CP20_MANUSCRIPT.pdf
+
+      - name: Commit citation repairs
+        shell: bash
+        run: |
+          if git diff --quiet -- publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex publication_cp20_factor_pressure/CP20_REFERENCES.bib; then
+            echo 'No citation changes to commit.'
+            exit 0
+          fi
+          git config user.name 'Halil Talha Ertan'
+          git config user.email 'haliltalhaertan@mail.com'
+          git add publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex publication_cp20_factor_pressure/CP20_REFERENCES.bib
+          git commit -m 'Apply final specialist citation repairs K1 K2'
+          git push origin HEAD:cp20-publication-factor-pressure-v1-20260904
+
+      - name: Upload repaired PDF and log
+        uses: actions/upload-artifact@v4
+        with:
+          name: cp20-final-citation-repair
+          path: |
+            publication_cp20_factor_pressure/CP20_MANUSCRIPT.pdf
+            publication_cp20_factor_pressure/CP20_MANUSCRIPT.log
+          retention-days: 14
