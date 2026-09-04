@@ -1,0 +1,26 @@
+{
+  "project_base_commit": "b3eaaae80a64003f4ee06a43b65fbd3680b8e22b",
+  "schema": "CP20_E7R_LT_STAGE0_SOURCE_FREEZE_V1",
+  "si_github": {
+    "commit": "119199e7165505f9535952e272056af912ce59fb",
+    "main_pdf_sha256": "0dfad7f22df91c14c36182d7557aee537a462ef0a2a548422c366d21e2bd06c8",
+    "main_tex_sha256": "c1ff1f11f442fed1b2f7a37be61fe0e3c0916719549018557446ca01e81e0811",
+    "repository": "SamSi0322/collatz-affine-model"
+  },
+  "si_zenodo": {
+    "created": "2026-05-04",
+    "doi": "10.5281/zenodo.20027097",
+    "modified": "2026-05-04",
+    "pdf_md5": "f59b2b147590fc66d3153d34ad497390",
+    "pdf_sha256": "0dfad7f22df91c14c36182d7557aee537a462ef0a2a548422c366d21e2bd06c8",
+    "record": "20027097"
+  },
+  "si_zenodo_equals_github_pdf": true,
+  "tao": {
+    "arxiv": "1909.03562",
+    "last_revised_utc": "2026-07-16T05:37:32Z",
+    "pdf_sha256": "62cf49d4d8e8e681c7a4738ebaf56f3dbb7b67de95f37ccbac6e428ef3fc394e",
+    "source_archive_sha256": "ba81acd6254838251f1ee585256a6f9f223cdc9c73bed0a3c4fd25782d0124ad",
+    "version": "v7"
+  }
+}
