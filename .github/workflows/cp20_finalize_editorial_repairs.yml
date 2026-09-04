@@ -1,0 +1,183 @@
+name: CP20 finalize editorial repairs
+
+on:
+  push:
+    branches:
+      - cp20-publication-factor-pressure-v1-20260904
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: ${{ !contains(github.event.head_commit.message, '[cp20-finalize]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cp20-publication-factor-pressure-v1-20260904
+          fetch-depth: 0
+
+      - name: Apply audited editorial repairs
+        shell: python
+        run: |
+          from pathlib import Path
+
+          tex_path = Path('publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex')
+          bib_path = Path('publication_cp20_factor_pressure/CP20_REFERENCES.bib')
+          tex = tex_path.read_text(encoding='utf-8')
+          bib = bib_path.read_text(encoding='utf-8')
+
+          # 1. Correct non-repetitive-complexity attribution.
+          a = tex.index(r'\begin{remark}[Relation to non-repetitive complexity]')
+          b = tex.index(r'\end{remark}', a) + len(r'\end{remark}')
+          new_remark = r'''\begin{remark}[Relation to non-repetitive complexity]\label{rem:nonrepetitive}
+          Moothathu introduced a prefix-based non-repetitive subword complexity \cite{Moothathu2012}.  Nicholson and Rampersad later studied the corresponding \emph{initial non-repetitive complexity} of infinite words \cite{NicholsonRampersad2016}.  These notions provide established terminology for long runs without repeated length-\(r\) factors.  The proof of \cref{thm:lower}, however, uses the shifted window \(u\in[N_r,2N_r-r]\), rather than an initial prefix.  Thus we use this literature only for terminology and priority: the theorem proved here is a shifted-window exponential factor-complexity statement, not a claim to have introduced a non-repetitive-complexity invariant.
+          \end{remark}'''
+          tex = tex[:a] + new_remark + tex[b:]
+
+          # 2. Expand the audited two-regime uniformity argument to publishable detail.
+          old = r'''In the interior region \(Q-P\ge\eta\), the quadratic saddle \eqref{eq:saddle} gives a uniform optimizer bound, and compactness produces a finite set of Chernoff parameters.  In the boundary strip \(0\le Q-P<\eta\), one sufficiently large fixed \(T\) controls the whole strip using \eqref{eq:overshoot}.  Consequently, for each \(\delta>0\), there is a finite set of fixed parameters that gives a uniform exponential count strictly below \(2^{(\alpha/\kappa)r}\) for all types in \(K_\delta\), up to subexponential factors.'''
+          new = r'''For later use, write
+          \[
+           \Phi_t(\rho_1,\rho_2)
+           =E_1(\rho_1)+E_2(\rho_2)
+           +P\log_2A(t)+Q\log_2B(t),
+           \qquad t>1,
+          \]
+          so that \(h(\rho)=\inf_{t>1}\Phi_t(\rho)\).
+
+          \begin{lemma}[Uniform low-pressure cover]\label{lem:uniform-low-pressure}
+          For every \(\delta>0\) there exist \(c_\delta>0\) and a finite set
+          \(\mathcal T_\delta\subset(1,\infty)\) such that for every
+          \(\rho\in K_\delta\) one can choose \(t\in\mathcal T_\delta\) with
+          \[
+           \Phi_t(\rho)\le \frac{\alpha}{\kappa}-c_\delta.
+          \]
+          Consequently the fixed-type word counts whose projected types belong to
+          \(K_\delta\) are bounded uniformly by
+          \[
+           2^{(\alpha/\kappa-c_\delta)r+o(r)}.
+          \]
+          \end{lemma}
+
+          \begin{proof}
+          Put \(q=Q-P\).  In the interior region \(q\ge\eta>0\), the positive
+          root of \eqref{eq:saddle} is
+          \[
+           y_*(\rho)
+           =\frac{P+\sqrt{P^2+4q(P+Q)}}{2q}.
+          \]
+          Since \(0\le P,Q\le1\), \(P+Q\le1\), and \(q\ge\eta\),
+          \[
+           y_*(\rho)\le \frac{1+\sqrt5}{2\eta}.
+          \]
+          Thus the corresponding optimizer \(t_*=1+y_*\) ranges over a compact
+          interval depending only on \(\eta\).  For each
+          \(\rho\in K_\delta\cap\{q\ge\eta\}\), choose its optimizer.  Because
+          \(\Phi_t(\rho)=h(\rho)\le\alpha/\kappa-\delta\) there, continuity gives
+          a neighborhood of \(\rho\) on which the same fixed parameter satisfies
+          \(\Phi_t\le\alpha/\kappa-\delta/2\).  Compactness of this part of
+          \(K_\delta\) gives a finite subcover and hence finitely many such
+          parameters.
+
+          It remains to control \(0\le q<\eta\).  On the boundary \(q=0\),
+          \eqref{eq:overshoot} gives, uniformly in the boundary point,
+          \[
+           \Phi_T(\rho)-h(\rho)
+           =P\log_2\!\left(\frac{T^2-T+1}{(T-1)^2}\right)
+           =O(T^{-1}).
+          \]
+          Choose a fixed \(T\) so large that this boundary excess is at most
+          \(\delta/4\).  The explicit saddle formula above and its boundary limit
+          show that \(h\) is continuous on the compact feasible region; therefore
+          \(\Phi_T-h\) is continuous at the boundary.  After decreasing \(\eta\)
+          if necessary, the whole strip \(0\le q<\eta\) satisfies
+          \[
+           \Phi_T(\rho)\le h(\rho)+\delta/2.
+          \]
+          Hence on \(K_\delta\) this fixed parameter gives
+          \(\Phi_T\le\alpha/\kappa-\delta/2\).
+
+          Combining the interior finite subcover with this one boundary parameter
+          proves the first assertion, for example with \(c_\delta=\delta/2\).
+          The fixed-type estimate \eqref{eq:fixedtype}, Stirling's formula, and the
+          fact that only finitely many fixed Chernoff parameters are now used make
+          the remaining factors uniform and subexponential in \(r\), proving the
+          stated counting bound.
+          \end{proof}'''
+          if old not in tex:
+              raise SystemExit('two-regime target paragraph not found')
+          tex = tex.replace(old, new, 1)
+          tex = tex.replace('By the two-regime uniformity statement, types whose projected pressure satisfies',
+                            'By \\cref{lem:uniform-low-pressure}, types whose projected pressure satisfies', 1)
+
+          # 3. Allow the long certificate filename to wrap rather than clip.
+          tex = tex.replace(r'\texttt{CP20\_TASK8A\_RIGOROUS\_CERTIFICATE\_V3.py}',
+                            r'\path{CP20_TASK8A_RIGOROUS_CERTIFICATE_V3.py}', 1)
+
+          # 4. Replace the narrow appendix table by prose to remove column collisions.
+          s = tex.index(r'\section{Prior-art comparison table}')
+          e = tex.index(r'\bibliographystyle{amsplain}', s)
+          prior = r'''\section{Prior-art comparison}
+
+          \paragraph{Witteveen 2026 \cite{Witteveen2026}.}
+          Shared structure includes affine repeated-factor subtraction, a mechanical/Sturmian language, constrained-language entropy, and a threshold architecture.  The main distinction is that Witteveen treats bounded-amplitude cycles with uniformly bounded discrepancy and reads the affine identity in the \(3\)-adic endpoint direction, whereas the present paper treats the critical-log orbit regime and derives the specific rate/pressure/density chain.  The repeated-factor device and the broad architecture are therefore prior art; no exact theorem subsumption was located.
+
+          \paragraph{\texttt{collatz-things} 2026 \cite{CollatzThings2026}.}
+          The shared ingredients are repetition, factor complexity, critical discrepancy, Diophantine exponents, and ordinary-integrality obstruction.  That programme treats a special balanced \(q=3\), \(\{3,4\}\)-residual language and obtains qualitative no-realizer conclusions.  It is strong close prior art but concerns a different symbolic object and a different quantitative conclusion.
+
+          \paragraph{Dubickas 2009 \cite{Dubickas2009}.}
+          Complexity constraints for Collatz-related codings are already present there.  The coding and bound differ from the valuation-word exponential rate used here, so factor complexity in a Collatz setting is not claimed as new.
+
+          \paragraph{L\'opez--Stoll 2009 \cite{LopezStoll2009}.}
+          Sturmian/mechanical words already occur in a Collatz setting, as an input to the conjugacy map rather than as the phase background used here.  Sturmian Collatz methods are not claimed as new.
+
+          \paragraph{Wang 2019 \cite{Wang2019}.}
+          Valuation/E-sequences and repeated-prefix arithmetic provide strong algebraic precedent.  The present use of arbitrary repeated factors in exponential windows and the resulting quantitative rates are the distinct features relevant here.
+
+          '''
+          tex = tex[:s] + prior + tex[e:]
+
+          # Add the actual priority source to the bibliography.
+          if 'Moothathu2012' not in bib:
+              entry = r'''@article{Moothathu2012,
+            author  = {T. K. Subrahmonian Moothathu},
+            title   = {Eulerian Entropy and Non-Repetitive Subword Complexity},
+            journal = {Theoretical Computer Science},
+            volume  = {420},
+            number  = {1},
+            pages   = {80--88},
+            year    = {2012},
+            doi     = {10.1016/j.tcs.2011.11.013}
+          }
+
+          '''
+              marker = '@article{NicholsonRampersad2016,'
+              if marker not in bib:
+                  raise SystemExit('Nicholson bibliography marker not found')
+              bib = bib.replace(marker, entry + marker, 1)
+
+          tex_path.write_text(tex, encoding='utf-8')
+          bib_path.write_text(bib, encoding='utf-8')
+
+      - name: Verify repaired source contains mandatory changes
+        shell: bash
+        run: |
+          grep -q 'Moothathu2012' publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex
+          grep -q 'Uniform low-pressure cover' publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex
+          grep -q 'CP20_TASK8A_RIGOROUS_CERTIFICATE_V3.py' publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex
+          ! grep -q '\\section{Prior-art comparison table}' publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex
+
+      - name: Commit repairs
+        shell: bash
+        run: |
+          git config user.name 'CP20 publication repair bot'
+          git config user.email 'haliltalhaertan@users.noreply.github.com'
+          git add publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex publication_cp20_factor_pressure/CP20_REFERENCES.bib
+          if git diff --cached --quiet; then
+            echo 'No repair changes to commit.'
+            exit 0
+          fi
+          git commit -m '[cp20-finalize] Integrate manuscript zero-trust editorial repairs'
+          git push origin HEAD:cp20-publication-factor-pressure-v1-20260904
