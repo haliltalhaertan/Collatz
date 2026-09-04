@@ -2,26 +2,72 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
-    "authorized_execution_base_sha": {"pattern": "^[0-9a-f]{40}$", "type": "string"},
-    "authorized_seal_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
-    "canonical_base_sha": {"pattern": "^[0-9a-f]{40}$", "type": "string"},
-    "config_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
-    "contract_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
-    "exact_entrypoint": {"minLength": 1, "type": "string"},
-    "execution_count_claim": {"const": 1},
-    "output_absence_precheck": {"const": "PASS"},
-    "pid_or_session_identifier": {"minLength": 1, "type": "string"},
-    "preflight_status": {"const": "PASS"},
-    "stage0_source_base_sha": {"const": "8d274095b0e1acbe1fad0a73ef6a5293364902fc"},
-    "task": {"const": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2"},
-    "task_version": {"const": "V2"},
-    "utc_timestamp": {"minLength": 1, "type": "string"}
+    "authorized_execution_base_sha": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "authorized_seal_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "canonical_base_sha": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "config_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "contract_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "exact_entrypoint": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "execution_count_claim": {
+      "const": 1
+    },
+    "output_absence_precheck": {
+      "const": "PASS"
+    },
+    "pid_or_session_identifier": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "preflight_status": {
+      "const": "PASS"
+    },
+    "stage0_source_base_sha": {
+      "const": "8d274095b0e1acbe1fad0a73ef6a5293364902fc"
+    },
+    "task": {
+      "const": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2"
+    },
+    "task_version": {
+      "const": "V2"
+    },
+    "utc_timestamp": {
+      "minLength": 1,
+      "type": "string"
+    }
   },
   "required": [
-    "task", "task_version", "stage0_source_base_sha", "canonical_base_sha",
-    "authorized_execution_base_sha", "authorized_seal_sha256", "contract_sha256",
-    "config_sha256", "execution_count_claim", "output_absence_precheck", "utc_timestamp",
-    "pid_or_session_identifier", "exact_entrypoint", "preflight_status"
+    "task",
+    "task_version",
+    "stage0_source_base_sha",
+    "canonical_base_sha",
+    "authorized_execution_base_sha",
+    "authorized_seal_sha256",
+    "contract_sha256",
+    "config_sha256",
+    "execution_count_claim",
+    "output_absence_precheck",
+    "utc_timestamp",
+    "pid_or_session_identifier",
+    "exact_entrypoint",
+    "preflight_status"
   ],
   "title": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 RUN_WITNESS",
   "type": "object",
