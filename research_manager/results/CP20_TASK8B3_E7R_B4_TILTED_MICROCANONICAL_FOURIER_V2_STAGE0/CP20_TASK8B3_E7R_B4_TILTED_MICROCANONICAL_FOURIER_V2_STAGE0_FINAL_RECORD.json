@@ -1,0 +1,72 @@
+{
+  "T1_T8_executed": false,
+  "canonical_base_sha": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+  "collatz_conjecture_proved": false,
+  "drive": {
+    "folder_id": "1b_2-FVRryZpphu_tHhQgs18si2DJ0aSF",
+    "path": "/Google Drive/Collatz Problemi — Araştırma Arşivi/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/FINAL_RESEAL_HANDOFF_VERIFIED_2026-09-04",
+    "raw_readback": "PASS",
+    "raw_readback_sha256": "66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac"
+  },
+  "final_working_branch": "cp20-e7r-b4-v2-stage0-finalization-handoff-20260904",
+  "hashes": {
+    "execution_contract_sha256": "f6ba52fb3576834748f31d80b61751045a85a8cbb0a900451b63c40591f2c3cf",
+    "final_manifest_sha256": "9cadd5bfa74a88350a7ba4911f18ff73cafe7bb7065f1496893e526d9a2f5604",
+    "final_seal_sha256": "66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac",
+    "launcher_sha256": "c3c144804318ce0cca41ae11721446cbb88d345dd4475ca2817dded2d6c57be9",
+    "pre_t1_gate_schema_sha256": "764c18bcd592e037711b04bc29a99ac599309401ef904c3bf95a05a9e1d091e5",
+    "scientific_diff_report_sha256": "b51318905c2b7e36380cd0251aed31743cf62c286c51543267f3fa7e76a80c92",
+    "selftest_results_sha256": "85f6f4a0c1bd927f0372d350f5309daad3bf63b1741400851042642297c1c4b3",
+    "static_control_flow_results_sha256": "6dd4c5d5551a656deed0310d619a2b1fbacd62c32d8da3b619ff225121773610",
+    "validator_sha256": "0df65ed6f045a5f03cdf66e4dff4535b8bcf136e7ca76bbe66df49e9a4f385fa",
+    "witness_schema_sha256": "a5d6ead006f0e6f87e3a455725b2d27aa0408b0f33032245ef66af396d6587c4"
+  },
+  "literal_handoff": {
+    "actual_checkout_sha": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+    "evidence_sha256": "9fd77ffa40b4aaf185d88a495832e3b23b21c4d42db64c5d125735af8451a45b",
+    "job_id": 101058408982,
+    "run_id": 33883751792,
+    "verdict": "HANDOFF VERIFICATION: PASS",
+    "workflow_commit": "75519f67559fd01760a824f9367c150fd033d5d8"
+  },
+  "mechanical_checks": {
+    "S1_S12": {
+      "S1": "FAIL",
+      "S10": "FAIL",
+      "S11": "FAIL",
+      "S12": "PASS",
+      "S2": "FAIL",
+      "S3": "FAIL",
+      "S4": "FAIL",
+      "S5": "FAIL",
+      "S6": "FAIL",
+      "S7": "FAIL",
+      "S8": "FAIL",
+      "S9": "FAIL"
+    },
+    "old_v1_blacklist_test": "PASS",
+    "static_control_flow": "PASS",
+    "witness_selftest": "PASS"
+  },
+  "previous_candidate": {
+    "authorization_use": "FORBIDDEN",
+    "classification": "[V2 STAGE0 CANDIDATE — BLOCKED — DO NOT AUTHORIZE]",
+    "seal_sha256": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea"
+  },
+  "repository": "haliltalhaertan/Collatz",
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_FINAL_RECORD_V1",
+  "scientific_diff": "NO SCIENTIFIC CHANGE",
+  "seal_validation": {
+    "all_member_hashes": "PASS",
+    "crc": "PASS",
+    "manifest_membership": "PASS",
+    "member_count": 27,
+    "sorted_membership": "PASS",
+    "unique": "PASS"
+  },
+  "stage1_authorization_permitted": false,
+  "stage1_authorization_reason": "Only the manager/canonical integrator may authorize Stage 1 in a separate task.",
+  "stage1_executed": false,
+  "status": "[CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 — STAGE 0 REPAIR FROZEN — AWAITING MANAGER AUTHORIZATION]",
+  "utc_timestamp": "2026-09-04T14:32:26.692308+00:00"
+}
