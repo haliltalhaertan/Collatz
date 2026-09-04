@@ -1,0 +1,72 @@
+name: B4 V2 Stage0 Literal Handoff Verification
+
+on:
+  push:
+    branches:
+      - cp20-e7r-b4-v2-stage0-finalization-handoff-20260904
+
+permissions:
+  contents: read
+
+jobs:
+  literal-handoff-verification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact canonical base
+        uses: actions/checkout@v4
+        with:
+          ref: 8d274095b0e1acbe1fad0a73ef6a5293364902fc
+          fetch-depth: 0
+
+      - name: Assert exact checkout SHA and run literal verifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECTED='8d274095b0e1acbe1fad0a73ef6a5293364902fc'
+          ACTUAL="$(git rev-parse HEAD)"
+          echo "actual_checkout_sha=${ACTUAL}"
+          test "${ACTUAL}" = "${EXPECTED}"
+          python tools/verify_handoff.py | tee handoff_stdout.txt
+          grep -Fx 'HANDOFF VERIFICATION: PASS' handoff_stdout.txt
+
+      - name: Build workflow evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import datetime, json, os, pathlib, subprocess
+          expected='8d274095b0e1acbe1fad0a73ef6a5293364902fc'
+          actual=subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip()
+          stdout=pathlib.Path('handoff_stdout.txt').read_text(encoding='utf-8')
+          verdict='HANDOFF VERIFICATION: PASS' if 'HANDOFF VERIFICATION: PASS' in stdout.splitlines() else 'HANDOFF VERIFICATION: FAIL'
+          evidence={
+            'schema':'CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE_WORKFLOW_V1',
+            'repository':'haliltalhaertan/Collatz',
+            'canonical_base_sha':expected,
+            'actual_checkout_sha':actual,
+            'command':'python tools/verify_handoff.py',
+            'terminal_verdict':verdict,
+            'utc_timestamp':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            'execution_environment':'GitHub Actions ubuntu-latest',
+            'github_actions_run_id':os.environ.get('GITHUB_RUN_ID'),
+            'github_actions_run_attempt':os.environ.get('GITHUB_RUN_ATTEMPT'),
+            'github_job_key':os.environ.get('GITHUB_JOB'),
+            'workflow_ref':os.environ.get('GITHUB_WORKFLOW_REF'),
+            'workflow_trigger_sha':os.environ.get('GITHUB_SHA'),
+            'workflow_trigger_ref':os.environ.get('GITHUB_REF'),
+            'stdout_file':'handoff_stdout.txt'
+          }
+          assert actual == expected
+          assert verdict == 'HANDOFF VERIFICATION: PASS'
+          pathlib.Path('CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE_WORKFLOW.json').write_text(json.dumps(evidence, indent=2, sort_keys=True)+'\n', encoding='utf-8')
+          PY
+
+      - name: Upload handoff evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: b4-v2-stage0-handoff-evidence
+          path: |
+            CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE_WORKFLOW.json
+            handoff_stdout.txt
+          if-no-files-found: error
+          retention-days: 30
