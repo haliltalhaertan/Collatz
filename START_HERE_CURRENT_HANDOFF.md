@@ -1,88 +1,102 @@
 # START HERE — Current Collatz Research Handoff
 
-This is the single entry point for a new LLM, researcher, or recovery session.
-Do not infer the active task from filenames, chat history, or the newest-looking report. The machine-readable authority is `CURRENT_RESEARCH_STATE.json`.
+This is the single recovery entry point. `CURRENT_RESEARCH_STATE.json` is the machine-readable authority for the active task, stage, accepted hashes, prohibitions, and exact next action.
 
 ## Recovery sequence
 
 1. Confirm branch `main` and fetch `origin/main` without discarding local work.
 2. Read `CURRENT_RESEARCH_STATE.json` completely.
 3. Run `python tools/verify_handoff.py` and require `HANDOFF VERIFICATION: PASS`.
-4. Read, in order:
+4. Read:
    - `research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md`
    - `research_manager/CONTINUITY_PROTOCOL.md`
-   - `research_manager/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md`
-   - the E7 Recovery zero-trust audit
-   - the E7R-B3 zero-trust countertheorem audit.
-5. Restore the current archive only into a fresh recovery tree if needed.
-6. Execute only `next_action` from `CURRENT_RESEARCH_STATE.json`.
+   - `research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_ACCEPTANCE_2026-09-04.md`
+   - `research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUTHORIZATION_2026-09-04.md`
+   - `research_manager/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md`
+5. Execute only `next_action` from `CURRENT_RESEARCH_STATE.json`.
 
-## Current accepted scientific state
+## Current accepted scientific checkpoint
 
 - `E6-N1 [PROVED][AUDITED/ACCEPTED WITH SCOPE REPAIR]`
 - `E7R-B1 [PROVED][AUDITED]`
-- `E7R-B2 [PROVED][AUDITED]`, including the conditioned excursion-tail theorem.
+- `E7R-B2 [PROVED][AUDITED]`
 - `E7R-B3 frozen pointwise contraction [FALSE][CLOSED]`
 - `B3-CT [PROVED][AUDITED]`
 - `E7R-B4 / E6-N2 [OPEN]`
 - `E7R-B5 [OPEN]`
 - `E7R-B6 [OPEN]`
+- `|E[F_{r,4}|S_r=n_r]|=O(1/r) [OPEN]`
 
 Historical/lost pre-recovery E7 conclusions remain `[UNVERIFIED — ARTIFACTS LOST]`.
 
-The global conditional estimate
-`|E[F_{r,4} | S_r=n_r]| = O(1/r)` remains **[OPEN]**.
+Nothing here proves the Collatz conjecture.
 
-Nothing here proves Collatz.
+## Literature Transfer V1 — frozen Stage 0
 
-## Audited milestone hashes
+Canonical task: `CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1`
 
-E7 Recovery V1:
-- audit commit `887aa78c6a3508b70a6277cc09705837aec79edf`
-- complete package SHA-256 `3889a381235965d3392f944a0c0b637b7fc6493daf6d07d164b836de0f6df486`
-- pre-run seal SHA-256 `58734a03a2aa7854f9ecb9f079c6db4b3d05191c249ffa6ccd7e629c4085590c`
+Stage-0 verdict: `[LITERATURE TRANSFER V1 — STAGE 0 FROZEN]`
 
-E7R-B3 V1:
-- audit commit `3b089518e2dc00730e7bf5d16950d0dc05b4506c`
-- Stage-1 package SHA-256 `5172a6cadfa5d2bbce84564f19d3ba76b1338e51c7a5a96225d8c77ac4b4b186`
-- authorized pre-run seal SHA-256 `acb61ef495bc164c5f55754ea355128bd8105bf7ddec9ff900c2dc16f9646eb3`
-- producer result commit `b76e9e004cf9310ae0fc4a295b33d0d1c3836a62`
+Accepted normalized Stage-0 seal ZIP SHA-256:
 
-The audited CF-left family lies in the frozen full pointwise window eventually and satisfies
-`mathcal K^(4)_(u_r,v_r)(k_r,ell_r) -> 1`.
-Therefore the old full-window `O(1/m_r)` pointwise route is closed.
+`403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79`
 
-## Exact next scientific task
+Stage-0 manifest SHA-256:
 
-Code: `CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1`
+`f486d82365ca77066b328660bf48cd891eacb8aeed7a439d8bfc67b87d5b9276`
 
-Working name: **Tao v7 + Si 2026 Literature Transfer / Exact Normal Form**
+Accepted working-branch commit:
 
-Exact next action:
+`8ff843722bc9a4901fe72a1594d0fca95ca358b7`
 
-> Create and execute Stage 0 only for "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1". Stage 0 must freeze the exact Tao/Si source versions, notation map, permitted algebraic transformations, falsification tests, and any computation before attempting a theorem transfer. No weighted-operator or E8 work is authorized.
+Integrity at acceptance:
+- manifest verification `PASS`
+- ZIP CRC `PASS`
+- 18 sealed members
+- Stage 1 not executed
+- M1–M8 not adjudicated
+- Drive read-back `PASS`
+- GitHub branch read-back `PASS`
 
-Do **not** execute the Literature Transfer Stage 0 merely by recovering this handoff. Dispatch/execute it only as the next explicit scientific operation. No weighted-operator or E8 work is authorized before that Stage-0 discipline is established.
+Frozen literature:
+- Tao arXiv `1909.03562v7`; PDF `62cf49d4d8e8e681c7a4738ebaf56f3dbb7b67de95f37ccbac6e428ef3fc394e`; source archive `ba81acd6254838251f1ee585256a6f9f223cdc9c73bed0a3c4fd25782d0124ad`
+- Si Zenodo DOI `10.5281/zenodo.20027097`; PDF `0dfad7f22df91c14c36182d7557aee537a462ef0a2a548422c366d21e2bd06c8`; GitHub commit `119199e7165505f9535952e272056af912ce59fb`; `main.tex` `c1ff1f11f442fed1b2f7a37be61fe0e3c0916719549018557446ca01e81e0811`
 
-The future Stage 0 must freeze exact source versions and determine by algebraic normal-form comparison whether the project target is an ordinary Fourier coefficient, derivative/finite-difference/degree-one correction, critical-profile object, resonant/nondecaying object, or outside the cited models. Yuan Si 2026 supplies no accepted theorem dependency by analogy alone.
+No unsealed source revision may be substituted.
 
-## Closed route
+## Canonical stage
 
-Formally closed:
-**uniform pointwise contraction over the entire frozen endpoint window**.
+`STAGE_1_AUTHORIZED_NOT_EXECUTED`
 
-This closure does not by itself refute a separately sealed weighted, averaged, L2/operator, smaller-subwindow, or modified-geometry statement.
+Stage 1 is authorized **only** under seal `403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79` and has not been executed by the authorization transaction.
+
+Required M1–M8 order:
+M1 microcanonical composition → M2 Bernoulli bridge → M3 affine-offset/Fourier character → M4 C=4 frequency/depth → M5 degree-one correction → M6 entropy line → M7 B3-CT/resonance → M8 Tao white-point/renewal applicability.
+
+### Binding M3 manager repair
+
+The frozen helper `CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py` remains unchanged for provenance, but `candidate_m3_project_exponent()` is not accepted as exact project-phase evidence. Negative exponent rows require an independent implementation of the modular-inverse + dyadic-correction / unified-modulus representation frozen in `PROJECT_DEFINITIONS.md`, with a separate hash.
+
+## Stage-1 evidence and stop discipline
+
+- Tao theorem statements may be treated as known literature.
+- Si theorem statements remain `[LITERATURE CLAIM — UNAUDITED]`.
+- No Si theorem becomes a project dependency without independent proof or separate zero-trust audit.
+- Exact law equality is not interchangeable with asymptotic equivalence.
+- No analogy-only mapping is accepted.
+
+Stop immediately for independent audit on LT-N6, LT-N7, or LT-CT as defined in the Stage-1 authorization decision. If no stop fires, LT-N1–LT-N5 may be completed in the same run. `[NO DIRECT MATCH]` and F1–F8 falsifications are permitted outcomes.
+
+No weighted-operator work, modified geometry, adaptive frequency/endpoint rescue, new literature-source search, or E8 is authorized by this handoff.
+
+## Exact next action
+
+> Execute Stage 1 once under seal `403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79`, adjudicating M1–M8 in order and obeying the binding M3 repair and the LT-N6/LT-N7/LT-CT audit stop rule. Do not begin weighted-operator work or E8.
 
 ## Mandatory persistence cycle
 
-Every completed computation, audit, or manager milestone automatically closes with:
+Every completed computation, audit, or manager milestone closes with:
 
 `result → hashes/manifests → Drive save → Drive read-back → GitHub save/push → GitHub read-back → report`
-
-The user does not need to separately request saving. A subordinate operation is not operationally complete until both persistence/read-back legs succeed unless a connector/service failure is explicitly reported.
-
-## Co-chair/session caution
-
-Historical named co-chair assignments are preserved. Additional head-researcher sessions do not acquire invented identities, signatures, or reviewer roles. Canonical writes are controlled by the active-integrator lock. A cardinality mismatch alone is not a scientific blocker.
 
 Nothing in the current research state proves the Collatz conjecture.

@@ -1,0 +1,11 @@
+{
+  "manifest_sha256": "f486d82365ca77066b328660bf48cd891eacb8aeed7a439d8bfc67b87d5b9276",
+  "manifest_verification": "PASS",
+  "mappings_adjudicated": false,
+  "project_base_commit": "b3eaaae80a64003f4ee06a43b65fbd3680b8e22b",
+  "schema": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_V1",
+  "seal_member_count": 18,
+  "seal_zip_sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79",
+  "stage1_executed": false,
+  "zip_crc": "PASS"
+}

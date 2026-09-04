@@ -1,0 +1,1 @@
+research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/tao/tao_1909.03562v7_source.tar: gzip compressed data, last modified: Fri Jul 17 00:26:49 2026, from Unix, original size modulo 2^32 1832960

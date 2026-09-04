@@ -1,0 +1,2305 @@
+\documentclass[11pt,a4paper]{amsart}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\TV}{\mathrm{TV}}
+\newcommand{\Col}{\mathrm{Col}}
+\newcommand{\Aff}{\mathrm{Aff}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\Syrac}{\mathrm{Syrac}}
+\newcommand{\Hyper}{\mathrm{Hyper}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Unif}{\mathrm{Unif}}
+\newcommand{\eQ}{\mathbf{e}_Q}
+\newcommand{\Fhat}{\widehat{\mu}_{\mathcal{F}}}
+
+\title{A microcanonical phase transition for the Collatz affine random model}
+
+\author{Yuan Si}
+\thanks{University of Waterloo, Waterloo, Ontario, Canada.
+Email: \href{mailto:y3si@uwaterloo.ca}{\texttt{y3si@uwaterloo.ca}}.
+ORCID: \href{https://orcid.org/0009-0005-1233-6972}{0009-0005-1233-6972}.}
+\date{}
+
+\subjclass[2020]{11B37, 37P99, 60J10, 42A38, 60K20}
+\keywords{Collatz conjecture, Syracuse map, affine random map, mixing, random walk on cyclic groups, Rajchman measure, perpetuity, Bernoulli bridge}
+
+\begin{document}
+
+\begin{abstract}
+Tao's proof that almost all Collatz orbits attain almost bounded values
+proceeds through a Syracuse affine random model whose $n$-step map is
+$\Aff_{a_1,\dots,a_n}(x)=3^n2^{-S_n}x+F_n(a_1,\dots,a_n)$
+with $a_i$ i.i.d.\ geometric variables of mean $2$.
+Tao establishes superpolynomial $3$-adic Fourier decay of the offset $F_n$
+and remarks (Remark~1.16) that an upgrade from logarithmic density to natural
+density would likely require fine-scale mixing of the entire affine map.
+
+We isolate the multiplicative marginal $2^{-S_n}\pmod{3^k}$ and prove a sharp
+threshold: it equidistributes precisely up to $3^k\ll\sqrt{n}$, with a
+complete Jacobi-theta cutoff profile in the critical window
+$M_k/\sqrt n\to\lambda$.
+Beyond this scale the marginal is asymptotically maximally far from uniform,
+so any extension of Tao's mixing to refined moduli must exploit the coupling
+between $S_n$ and~$F_n$.
+
+We then introduce a microcanonical framework: condition on $S_n=s$.
+Under this conditioning the multiplicative phase becomes deterministic, and
+the affine Fourier coefficient at any frequency $\xi\in\Z/3^{n+k}\Z$ with
+$v_3(\xi)<k$ is reduced to a primitive ternary Bernoulli-bridge transform on
+a real-line perpetuity $\mathcal F_\infty$.
+The law of the perpetuity is the stationary measure of a contracting-on-average
+two-map affine system whose linear ratios are $1/2$ and $3/2$, which are
+not integral powers of a common $\lambda$ with $1/\lambda$ Pisot;
+Br\'emont's classification therefore yields
+$\widehat{\mu}_{\mathcal F}(t)\to0$ as $|t|\to\infty$.
+
+Combining ensemble equivalence, an exact suffix self-similarity, and Br\'emont's
+Rajchman theorem we prove a sharp phase transition for the worst (resonant)
+hard frequency $\eta_s=2^s$:
+$$
+\Delta_n:=s\log_3 2-n-h\to+\infty
+\;\Longrightarrow\;\text{microcanonical coefficient}\to0,
+$$
+$$
+\Delta_n\to-\infty
+\;\Longrightarrow\;\text{microcanonical coefficient}\to1.
+$$
+The transition occurs precisely at the entropy line
+$h=h_\ast n+o(n)$ with $h_\ast=2\log_32-1\approx 0.262$.
+We further reduce the full hard-range mixing problem to a single
+\emph{primitive ternary bridge decay} statement and prove the
+$o(m/\log m)$-frequency case unconditionally.
+The remaining range is identified as a clean one-dimensional
+Diophantine question.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+\subsection{Background}
+Write $\N+1:=\{1,2,3,\dots\}$ for the positive integers.
+The Collatz map $\Col\colon\N+1\to\N+1$ is defined by
+$\Col(N)=3N+1$ for $N$ odd and $\Col(N)=N/2$ for $N$ even;
+we refer to~\cite{Lagarias} for a comprehensive survey.
+Previously, Korec~\cite{Korec} showed that
+$\Col_{\min}(N)\le N^\theta$ for almost all~$N$ (natural density)
+whenever $\theta>\log 3/\log 4$.
+Tao~\cite{Tao} proved that for every $f\colon\N+1\to\R$ with $f(N)\to\infty$,
+$\Col_{\min}(N):=\inf_{m\ge0}\Col^m(N)\le f(N)$
+for almost all $N$ in the sense of \emph{logarithmic} density.
+The proof passes to the Syracuse map and to an affine random model: with
+$a_1,\dots,a_n$ i.i.d.\ copies of $\Geom(2)$, where $\PP(\Geom(2)=m)=2^{-m}$
+for $m\ge1$, the $n$-step affine map is
+\begin{equation}\label{eq:affine}
+\Aff_{a_1,\dots,a_n}(x)=3^n2^{-S_n}x+F_n(a_1,\dots,a_n),
+\qquad S_n:=a_1+\cdots+a_n,
+\end{equation}
+with the Syracuse offset
+\begin{equation}\label{eq:Fn}
+F_n(a_1,\dots,a_n):=\sum_{m=1}^n3^{n-m}2^{-a_{[m,n]}},
+\qquad a_{[m,n]}:=a_m+\cdots+a_n.
+\end{equation}
+Tao's key analytic input is a fine-scale $3$-adic mixing statement for the
+offset $F_n$, equivalent (via Plancherel) to a superpolynomial Fourier-decay
+estimate
+\begin{equation}\label{eq:tao117}
+\Bigl|\,\E\,e^{-2\pi i\xi\Syrac(\Z/3^n\Z)/3^n}\Bigr|\ll_A n^{-A}
+\end{equation}
+uniformly in $n$ and primitive $\xi\in\Z/3^n\Z$
+\cite[Prop.~1.17]{Tao}, where $\Syrac(\Z/3^n\Z)\equiv F_n\pmod{3^n}$.
+Tao remarks that an upgrade to natural density appears to require a
+corresponding fine-scale mixing statement for the \emph{entire} random affine
+map, not just for~$F_n$ \cite[Rem.~1.16]{Tao}.
+
+\subsection{Where the multiplicative marginal fails}
+A direct attack on Tao's Remark~1.16 requires understanding the
+multiplicative marginal $2^{-S_n}\pmod{3^k}$ in addition to the offset.
+Our starting point, established in earlier work~\cite{SiNote}, is that this
+marginal mixes only up to a logarithmic scale.
+For each $k\ge1$ let
+$G_k:=(\Z/3^k\Z)^\times$ and $M_k:=\#G_k=2\cdot 3^{k-1}$.
+Define the additive walk
+$Y_{n,k}:=-S_n\pmod{M_k}$, identified with the multiplicative process via
+the discrete logarithm base~$2$, and write $\nu_{n,k}:=\mathcal L(Y_{n,k})$,
+$U_{M_k}$ for the uniform law.
+
+\begin{theorem}[\cite{SiNote}; see Theorem~\ref{thm:profile} for an independent proof with cutoff profile]\label{thm:thresh}
+For any $k=k(n)$:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item if $M_k=o(\sqrt n)$, equivalently $k\le\tfrac12\log_3n-\omega(1)$,
+then $\|\nu_{n,k}-U_{M_k}\|_{\TV}\to0$;
+\item if $\sqrt n=o(M_k)$, equivalently $k\ge\tfrac12\log_3n+\omega(1)$,
+then $\|\nu_{n,k}-U_{M_k}\|_{\TV}\to1$.
+\end{enumerate}
+\end{theorem}
+
+The present paper extends~\cite{SiNote} in several directions.
+First, we close the critical window of Theorem~\ref{thm:thresh} with a
+complete cutoff profile.
+Second, we develop a microcanonical (conditional on $S_n=s$) Fourier
+analysis of the affine map and obtain a sharp phase transition for the
+worst hard frequencies at the entropy line.
+Third, we reduce the full hard-frequency problem to an explicit primitive
+ternary Bernoulli-bridge transform, and prove its $o(m/\log m)$-frequency case.
+
+\subsection{The microcanonical viewpoint}
+Throughout the paper we write
+$\eQ(x):=e^{2\pi ix/Q}$ and use $Q=3^N$ with various $N$.
+Splitting the affine character at $Q=3^{n+k}$ gives
+\begin{equation}\label{eq:split}
+\eQ\!\bigl(\xi\Aff_{a_1,\dots,a_n}(x)\bigr)
+=\mathbf e_{3^k}\!\bigl(\xi 2^{-S_n}x\bigr)\,
+\mathbf e_{3^{n+k}}\!\bigl(\xi F_n\bigr).
+\end{equation}
+Theorem~\ref{thm:thresh} kills any naive attempt to mix the multiplicative
+factor $2^{-S_n}$ for $3^k\gg\sqrt n$.
+However, conditioning on $S_n=s$ turns the multiplicative factor into a
+deterministic phase~$\mathbf e_{3^k}(\xi 2^{-s}x)$; only the offset Fourier
+coefficient $\E[\mathbf e_{3^{n+k}}(\xi F_n)\mid S_n=s]$ remains stochastic.
+This is the principle that lets the analysis bypass the multiplicative
+obstruction.
+
+\subsection{Main results}
+We classify frequencies $\xi\in\Z/3^{n+k}\Z$ by their \emph{effective
+ternary depth}
+$d(\xi):=n+k-v_3(\xi)$,
+splitting into easy, subdiffusive and hard regimes.
+We write $h:=k-v_3(\xi)$, so $d(\xi)=n+h$.
+Frequencies with $h=0$ reduce to Tao's setting, while frequencies with
+$h\ge1$ ($v_3(\xi)<k$) are the new ``hard'' frequencies that probe the
+finer modulus $3^{n+k}$.
+
+For central bridges $S_n=s$ with $s=2n+O(\sqrt{n\log n})$ define
+\begin{equation}\label{eq:Delta}
+\Delta_n:=s\log_3 2-n-h.
+\end{equation}
+The number $h_\ast:=2\log_3 2-1\approx 0.2618595$ is the entropy boundary:
+$\Delta_n>0$ if and only if $h<h_\ast n+O(\sqrt{n\log n})$.
+The constant $h_\ast$ arises from the Shannon entropy
+$H(\Geom(2))=2\log 2$ versus the modulus entropy $(n+h)\log 3$.
+
+\begin{theorem}[Sharp resonant phase transition; Theorem~\ref{thm:N}]
+\label{thm:NIntro}
+Let $s=2n+O(\sqrt{n\log n})$, $h\ge1$, and let
+$\xi=3^{k-h}\cdot 2^s$ with $h\le k$ be the resonant hard frequency.
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item \textup{(Subcritical decay).} If $\Delta_n\to+\infty$, then
+$$
+\E\bigl[\,\mathbf e_{3^{n+k}}(\xi F_n)\bigm|S_n=s\bigr]\to0.
+$$
+\item \textup{(Supercritical obstruction).} If $\Delta_n\to-\infty$, then
+$$
+\bigl|\E[\mathbf e_{3^{n+k}}(\xi F_n)\mid S_n=s]\bigr|\to1.
+$$
+\item \textup{(Critical profile).} If $3^{\Delta_n}\to\lambda\in(0,\infty)$,
+$$
+\E\bigl[\mathbf e_{3^{n+k}}(\xi F_n)\bigm|S_n=s\bigr]
+-\mathbf e_{3^{n+h}}(3^{n-1})\,\widehat\mu_{\mathcal F}(\lambda)\to 0,
+$$
+where $h=k-v_3(\xi)$.
+The deterministic phase equals $\exp(2\pi i/3^{h+1})$, which tends to~$1$
+when $h\to\infty$ (the entropy-critical regime, since
+$3^{\Delta_n}\to\lambda\in(0,\infty)$ forces $h\sim h_\ast n$).
+The perpetuity $\mathcal F_\infty$ satisfies
+$\mathcal F_\infty\stackrel d=2^{-A}(1+3\mathcal F_\infty')$ with
+$A\sim\Geom(2)$ and $\mathcal F_\infty'$ an independent copy.
+\end{enumerate}
+The same conclusions hold for the full affine character~\eqref{eq:split},
+since under $S_n=s$ the multiplicative factor is a deterministic phase.
+\end{theorem}
+
+The proof has three main ingredients.
+First, an exact algebraic identity: multiplying $F_n$ by $2^s$ converts
+the $3$-adic offset phase into a real-line Bernoulli-bridge integral
+\begin{equation}\label{eq:proofoutline-1}
+\E[\mathbf e_{3^N}(2^s F_n)\mid S_n=s]
+=\mathbf e_{3^N}(3^{n-1})\cdot\E_{\Omega_{m,r}}\exp(2\pi i\lambda_n F_n^{\R}),
+\quad\lambda_n:=\frac{2^s}{3^N}=3^{\Delta_n},
+\end{equation}
+where $F_n^{\R}=\sum_r 3^r\,2^{-(A_0+\cdots+A_r)}$ is the offset viewed as
+a real number rather than a $3$-adic residue (Section~\ref{sec:bridge}).
+This is the essential observation that converts the multiplicative
+obstruction to a real-line Diophantine question.
+
+Second, the limiting object as $n\to\infty$ is the perpetuity
+$\mathcal F_\infty:=\sum_{r\ge 0}3^r\,2^{-(A_0+\cdots+A_r)}$, the stationary
+measure of the contracting-on-average two-map IFS
+$\{\psi_0(x)=x/2,\;\psi_1(x)=1/2+(3/2)x\}$.
+The linear ratios $\{1/2,3/2\}$ are not powers of a common Pisot
+number, so by Br\'emont's classification~\cite[Theorem 2.5]{Bremont},
+$\widehat\mu_{\mathcal F}(t)\to 0$ as $|t|\to\infty$ (Section~\ref{sec:rajchman}).
+
+Third, an exact suffix self-similarity: for any decomposition $m=J+L$,
+\begin{equation}\label{eq:proofoutline-3}
+X_m=X_J+3^{r-y}\cdot 2^{-J}\cdot X_L(\omega),
+\end{equation}
+which collapses a global bridge into a smaller bridge of length~$L$
+with shifted parameters.
+This bootstraps the near-critical decay $\Delta_n=o(n/\log n)$
+(Theorem~\ref{thm:M}) to the entire subcritical range $\Delta_n\to+\infty$
+via an inductive descent on the suffix length
+(Section~\ref{sec:suffix}); the residual range $\Delta_n\ge n/\log n$
+is reduced by suffix self-similarity to a smaller bridge whose entropy
+gap is $o(L/\log L)$, so that Theorem~\ref{thm:M} applies at the smaller scale.
+
+\begin{theorem}[Hard-range decay at logarithmic oversampling;
+Theorem~\ref{thm:H}]\label{thm:HIntro}
+Fix $K,L,A>0$.
+Suppose $|s-2n|\le L\sqrt{n\log n}$.
+Then
+$$
+\sup_{\substack{\xi\in\Z/3^{n+k}\Z\\1\le k-v_3(\xi)\le K\log n}}
+\bigl|\E[\mathbf e_{3^{n+k}}(\xi F_n)\mid S_n=s]\bigr|
+\ll_{A,K,L} n^{-A}.
+$$
+\end{theorem}
+
+This is proved by Tao's renewal estimate combined with an augmentation
+trick (Section~\ref{sec:logh}).
+Beyond logarithmic oversampling we obtain a complete reduction:
+
+\begin{theorem}[Reduction to a Bernoulli-bridge transform; Theorem~\ref{thm:reduction}]
+\label{thm:reductionIntro}
+For every primitive $\eta\in(\Z/3^{n+h}\Z)^\times$ and any $s\ge n$,
+let $q\in\Z$ be the unique representative of $\eta\cdot 2^{-s}\pmod{3^{n+h}}$
+in $(-3^{n+h}/2,3^{n+h}/2]$.
+Then $3\nmid q$ and
+$$
+\E[\mathbf e_{3^{n+h}}(\eta F_n)\mid S_n=s]
+=\mathbf e_{3^{n+h}}(q\cdot 3^{n-1})\cdot
+\E_{\Omega_{m,r}}\mathbf e_{3^{n+h}}(2qP_m),
+$$
+where $m=s-1$, $r=n-1$, $\Omega_{m,r}=\{\varepsilon\in\{0,1\}^m:\sum\varepsilon_j=r\}$,
+$X_m:=\sum_{j=1}^m\varepsilon_j\,3^{R_{j-1}}\,2^{-j}$, $R_j:=\varepsilon_1+\cdots+\varepsilon_j$,
+and $P_m:=2^mX_m\in\Z$.
+\end{theorem}
+
+Finally, we prove a subexponential decay theorem for the bridge transform
+that already covers a non-trivial portion of the hard range:
+
+\begin{theorem}[Subexponential primitive-frequency decay;
+Theorem~\ref{thm:P}]\label{thm:PIntro}
+Let $r=m/2+O(\sqrt{m\log m})$ and let $t_m=q_m\,2^{m+1}/3^{\mathfrak N_m}$ with
+$3\nmid q_m$.
+If $|t_m|\to\infty$ and $\log|t_m|=o(m/\log m)$, then
+$$
+\E_{\Omega_{m,r}}\mathbf e_{3^{\mathfrak N_m}}(2q_mP_m)\to0.
+$$
+\end{theorem}
+
+For the exponential range $\log|q|=\Theta(m)$ we prove a strong
+density-one form of HFBD.
+
+\begin{theorem}[Density-one and fiberwise flattening; Theorems~\ref{thm:R}, \ref{thm:T}]\label{thm:RTIntro}
+Let $L=2P$, $y=P+O(\sqrt{P\log P})$, and $d>y$.
+Then there is $c>0$ such that
+$$
+\frac{1}{\varphi(3^d)}\sum_{\substack{q\bmod 3^d\\3\nmid q}}|\mathcal C_{L,y,d}(q)|^2
+\ll L^C\,e^{-cL},
+$$
+and for every $0\le d_0<d$ and every primitive
+$q_0\in(\Z/3^{d_0}\Z)^\times$,
+$$
+\frac{1}{\#\{q\equiv q_0\!\!\pmod{3^{d_0}}\}}
+\sum_{\substack{q\bmod 3^d\\q\equiv q_0\!\!\pmod{3^{d_0}}}}|\mathcal C_{L,y,d}(q)|^2
+\ll L^C\,e^{-c\min(d-d_0,L)}.
+$$
+Iterating across a depth chain $0=d_0<d_1<\cdots<d_T$ produces a
+multiscale exceptional set
+$\mathcal E_T\subset(\Z/3^{d_T}\Z)^\times$ of positive $3$-adic
+codimension (Corollary~\ref{cor:tree}).
+\end{theorem}
+
+The density-one half of Theorem~\ref{thm:RTIntro} is proved by an
+explicit pair-switch averaging that transfers $1/2$ contraction per
+``active'' pair and is closed by a saddle-point estimate on the bridge
+generating function $(1+z+z^2)^P/(1+2z+z^2)^P$.
+The fiberwise version restricts the averaging to a $3^{d_0}$-cylinder
+and exploits that ``active pairs early in the bridge'' contribute fresh
+ternary digits beyond depth $d_0$.
+We state the supremum form as a conjecture and discuss the residual
+rigidity obstruction.
+
+\subsection{Relation to Tao's Remark~1.16}
+Theorem~\ref{thm:NIntro} resolves the worst (resonant) hard frequency in
+Tao's Remark~1.16 throughout the entire entropy-allowed range:
+the conditional affine Fourier coefficient decays for $h<h_\ast n-\omega(1)$
+and fails to decay for $h>h_\ast n+\omega(1)$.
+Theorem~\ref{thm:HIntro} extends this to all hard frequencies in the
+logarithmic-oversampling regime, and Theorem~\ref{thm:reductionIntro}
+clarifies what an unconditional natural-density upgrade would require
+beyond what Tao's machinery already supplies.
+The matching upper and lower bounds at the entropy line $h=h_\ast n$
+identify a hard ceiling: above $h_\ast n$, the white-point method cannot
+yield uniform mixing, regardless of any technical strengthening of Tao's
+renewal estimate.
+
+\subsection{Notation and conventions}
+We write $f\ll g$ for $f=O(g)$ and $f\ll_A g$ when the implied constant
+depends on parameter $A$.
+$\omega(1)$ denotes any sequence tending to $\infty$.
+We use $\mathbf e_Q(x)=e^{2\pi ix/Q}$ and reserve $Q=3^N$ for various~$N$.
+Probabilities and expectations are taken under
+$(a_1,\dots,a_n)\sim\Geom(2)^{\otimes n}$ unless otherwise specified;
+\emph{microcanonical} expectations $\E[\,\cdot\,\mid S_n=s]$
+condition on the total $S_n=s$.
+
+\subsection{Organization}
+Section~\ref{sec:profile} proves the cutoff profile of
+Theorem~\ref{thm:thresh}.
+Section~\ref{sec:depth} sets up the effective-depth stratification and
+proves a fixed-depth limit identifying the obstruction at small depths.
+Section~\ref{sec:subdiff} proves subdiffusive microcanonical decay.
+Section~\ref{sec:logh} proves Theorem~\ref{thm:HIntro}.
+Section~\ref{sec:bridge} establishes the Bernoulli-bridge normal form and
+the resonant perpetuity.
+Section~\ref{sec:rajchman} verifies that Br\'emont's classification gives
+the Rajchman property of the perpetuity.
+Section~\ref{sec:suffix} proves the resonant phase transition
+(Theorem~\ref{thm:NIntro}) via suffix self-similarity.
+Section~\ref{sec:reduction} applies the bridge reduction to prove the
+$o(m/\log m)$-frequency decay
+Theorem~\ref{thm:PIntro}.
+Section~\ref{sec:flatten} proves the density-one and fiberwise flattening
+estimates (Theorems~\ref{thm:R}, \ref{thm:T}) and derives the
+multiscale codimension bound for the exceptional tree
+(Corollary~\ref{cor:tree}).
+Section~\ref{sec:open} states Conjecture~\ref{conj:HFBD} (HFBD-sup) and
+discusses the residual rigidity question.
+Appendix~\ref{app:tech} collects auxiliary technical lemmas.
+
+\subsection*{Acknowledgements}
+The author thanks Terence Tao for the original framework, and
+Julien Br\'emont for useful correspondence on the Rajchman classification
+of contracting-on-average affine IFS.
+
+\section{Cutoff profile for the multiplicative marginal}\label{sec:profile}
+
+This section refines Theorem~\ref{thm:thresh} by computing the limiting
+total-variation profile in the critical window $M_k/\sqrt n\to\lambda$.
+
+For a modulus $M\ge1$ let $\mu_M$ be the law of $-\Geom(2)$ on $\Z/M\Z$:
+\begin{equation}\label{eq:muM}
+\mu_M(r)=\PP(-\Geom(2)\equiv r\pmod M),\qquad r\in\Z/M\Z.
+\end{equation}
+The Fourier transform $\widehat\mu_M(j)=\sum_r\mu_M(r)e^{2\pi ijr/M}$ admits
+the closed form
+\begin{equation}\label{eq:muMhat}
+\widehat\mu_M(j)=\frac{\tfrac12 e^{-2\pi ij/M}}
+{1-\tfrac12 e^{-2\pi ij/M}},
+\qquad
+|\widehat\mu_M(j)|^2=\frac1{1+8\sin^2(\pi j/M)},
+\end{equation}
+established by summing the geometric series; see~\cite[\S3]{SiNote}.
+The Fourier transform of $\nu_{n,k}=\mathcal L(-S_n\bmod M_k)$ at $j$ is
+$\widehat\nu_{n,k}(j)=\widehat\mu_{M_k}(j)^n$.
+
+\begin{theorem}[Cutoff profile]\label{thm:profile}
+Suppose $M_k/\sqrt n\to\lambda\in(0,\infty)$ as $n\to\infty$.
+Define
+\begin{equation}\label{eq:Hlambda}
+H_\lambda(t):=\sum_{j\in\Z}e^{-4\pi^2 j^2/\lambda^2}e^{-2\pi ijt}
+=\frac{\lambda}{\sqrt{4\pi}}\sum_{\ell\in\Z}
+\exp\!\left(-\frac{\lambda^2(t+\ell)^2}{4}\right),
+\qquad t\in\R/\Z,
+\end{equation}
+where the second equality follows from Poisson summation.
+Then
+\begin{equation}\label{eq:profile}
+\sup_{x\in\Z/M_k\Z}\biggl|M_k\,\nu_{n,k}(x)-H_\lambda\!\left(\frac{x+2n}{M_k}\right)\biggr|\to0,
+\end{equation}
+and
+\begin{equation}\label{eq:TVprofile}
+\|\nu_{n,k}-U_{M_k}\|_{\TV}\to\frac12\int_0^1|H_\lambda(t)-1|\,dt.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We have $\E[a_1]=2$ and $\Var(a_1)=2$ since $a_1\sim\Geom(2)$ on
+$\{1,2,\dots\}$ has $\E[a_1]=\sum_{m\ge1}m2^{-m}=2$ and
+$\E[a_1^2]=\sum_{m\ge1}m^22^{-m}=6$.
+For fixed $j\in\Z$ and $M=M_k\sim\lambda\sqrt n$, the cumulant expansion at
+$\theta=2\pi j/M$ gives
+\begin{align*}
+\log\widehat\mu_M(j)
+&=-i\theta\,\E[a_1]-\frac{\theta^2}{2}\Var(a_1)+O_j(M^{-3})\\
+&=-\frac{4\pi ij}{M}-\frac{4\pi^2 j^2}{M^2}+O_j(M^{-3}),
+\end{align*}
+where the implied constant depends on~$j$.
+For each fixed $j$, since $n/M^2\to 1/\lambda^2$,
+$$
+\widehat\mu_M(j)^n\to
+\exp\!\left(-\frac{4\pi ijn}{M}\right)\exp\!\left(-\frac{4\pi^2 j^2}{\lambda^2}\right).
+$$
+
+\emph{Fourier inversion and frequency split.}
+By Fourier inversion on $\Z/M\Z$,
+\begin{equation}\label{eq:fourinv}
+M\,\nu_{n,k}(x)=\sum_{j\in\Z/M\Z}\widehat\mu_M(j)^n\,e^{-2\pi ijx/M}.
+\end{equation}
+
+\emph{Uniform Gaussian tail.}
+For $0\le j\le M/2$, $\sin u\ge 2u/\pi$ on $[0,\pi/2]$ together with~\eqref{eq:muMhat}
+gives $|\widehat\mu_M(j)|^2\le 1/(1+32(j/M)^2)$, hence
+$|\widehat\mu_M(j)|^n\le\exp\bigl(-c\,n(j/M)^2\bigr)$
+for some absolute $c>0$.
+With $n/M^2\to 1/\lambda^2$, for all sufficiently large~$n$,
+$$
+|\widehat\mu_M(j)|^n\le\exp(-c_\lambda j^2)\qquad(0\le j\le M/2),
+$$
+with $c_\lambda>0$.
+By symmetry $j\leftrightarrow M-j$, the same bound holds for $j\in[M/2,M]$
+upon writing $\|j\|_M:=\min(j,M-j)$.
+
+\emph{Pointwise convergence at fixed cutoff.}
+Fix $J\ge 1$.
+For $|j|\le J$, the cumulant expansion gives $\widehat\mu_M(j)^n\to e^{-4\pi ijn/M-4\pi^2 j^2/\lambda^2}$
+pointwise.
+The partial sum
+$$
+\sum_{\|j\|_M\le J}\widehat\mu_M(j)^n\,e^{-2\pi ijx/M}
+\to
+\sum_{|j|\le J}e^{-4\pi^2 j^2/\lambda^2}e^{-2\pi ij(x+2n)/M}
+$$
+uniformly in $x\in\Z/M\Z$ as $n\to\infty$.
+
+\emph{Tail $J\to\infty$.}
+The remainder satisfies, uniformly in $x$ and $n$ sufficiently large,
+$$
+\Bigl|\sum_{\|j\|_M>J}\widehat\mu_M(j)^n\,e^{-2\pi ijx/M}\Bigr|
+\le 2\sum_{j>J}e^{-c_\lambda j^2}\to 0\quad\text{as }J\to\infty.
+$$
+Setting $t:=(x+2n)/M\bmod 1$ and combining,
+\begin{equation}\label{eq:fourinv-limit}
+M\,\nu_{n,k}(x)\to\sum_{j\in\Z}e^{-4\pi^2j^2/\lambda^2}e^{-2\pi ijt}=H_\lambda(t)
+\end{equation}
+uniformly in $x\in\Z/M_k\Z$.
+
+\emph{Poisson summation.}
+The Gaussian $g(u):=(\lambda/\sqrt{4\pi})\,e^{-\lambda^2 u^2/4}$ has Fourier
+transform (with the convention $\widehat g(\xi)=\int g(u)e^{-2\pi i\xi u}\,du$)
+$\widehat g(\xi)=e^{-4\pi^2\xi^2/\lambda^2}$.
+Poisson summation $\sum_{\ell}g(t+\ell)=\sum_j\widehat g(j)e^{2\pi ijt}$
+yields the closed form in~\eqref{eq:Hlambda}.
+
+\emph{Total variation.}
+The total-variation identity is
+$\|\nu_{n,k}-U_{M_k}\|_{\TV}=\tfrac12 M_k^{-1}\sum_x|M_k\,\nu_{n,k}(x)-1|$.
+By~\eqref{eq:fourinv-limit} and uniform convergence, the right-hand side is
+a Riemann sum of $\tfrac12|H_\lambda(t)-1|$ on $[0,1]$ with mesh $1/M_k\to 0$,
+which converges to $\tfrac12\int_0^1|H_\lambda(t)-1|\,dt$.
+\end{proof}
+
+\section{Effective ternary depth and a fixed-depth obstruction}\label{sec:depth}
+
+We now introduce the basic stratification of frequencies that drives the
+remainder of the paper.
+For $\xi\in\Z/Q\Z$ with $Q=3^{n+k}$ and $\xi\ne0$, let $v=v_3(\xi)$ be its
+$3$-adic valuation and set $d=d(\xi)=n+k-v$, so $\xi=3^v\eta$ with
+$\eta\in(\Z/3^d\Z)^\times$.
+Then $\mathbf e_Q(\xi F_n)=\mathbf e_{3^d}(\eta F_n)$.
+
+\begin{lemma}[Tail reduction]\label{lem:tail}
+For every $1\le d\le n$ and every $(a_1,\dots,a_n)$,
+$$
+F_n(a_1,\dots,a_n)\equiv F_d(a_{n-d+1},\dots,a_n)\pmod{3^d},
+$$
+where $F_d$ is the Syracuse offset~\eqref{eq:Fn} on the last $d$ variables.
+\end{lemma}
+
+\begin{proof}
+Inspect~\eqref{eq:Fn} term by term.
+For $m\le n-d$ one has $n-m\ge d$, so the term $3^{n-m}2^{-a_{[m,n]}}$ is
+divisible by $3^d$ and vanishes modulo $3^d$.
+Setting $r=m-(n-d)$ in the remaining range $m=n-d+1,\dots,n$ gives
+$3^{n-m}=3^{d-r}$ and $a_{[m,n]}=a_{n-d+r}+\cdots+a_n$, recovering
+$F_d(a_{n-d+1},\dots,a_n)$ termwise.
+\end{proof}
+
+A naive hope would be that all non-trivial frequencies decay under
+microcanonical conditioning.
+The next result rules this out at fixed effective depth.
+
+\begin{proposition}[Fixed-depth limit]\label{prop:C}
+Let $d\ge1$ and $\eta\in(\Z/3^d\Z)^\times$ be fixed.
+For any $s=s_n$ with $s/n\to2$,
+$$
+\E\bigl[\mathbf e_{3^d}(\eta F_n)\bigm| S_n=s\bigr]
+\to\E\bigl[\mathbf e_{3^d}(\eta F_d(A_1,\dots,A_d))\bigr],
+$$
+where $(A_1,\dots,A_d)$ are i.i.d.\ $\Geom(2)$.
+For $d=1$ and $\eta=1$ the limit equals
+$\tfrac13 e^{2\pi i/3}+\tfrac23 e^{4\pi i/3}$, of modulus $1/\sqrt 3$.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:tail}, $\mathbf e_{3^d}(\eta F_n)
+=\mathbf e_{3^d}(\eta F_d(a_{n-d+1},\dots,a_n))$.
+We claim that the conditional law
+$\mathcal L((a_{n-d+1},\dots,a_n)\mid S_n=s)$
+converges in total variation to $\Geom(2)^{\otimes d}$ as $n\to\infty$
+with $s/n\to2$.
+
+Indeed, for fixed $b=(b_1,\dots,b_d)$ with $B:=b_1+\cdots+b_d$,
+\begin{align*}
+\PP\bigl(a_{n-d+1}=b_1,\dots,a_n=b_d\bigm| S_n=s\bigr)
+&=\frac{2^{-B}\,\PP(S_{n-d}=s-B)}{\PP(S_n=s)}\\
+&=\frac{\binom{s-B-1}{n-d-1}}{\binom{s-1}{n-1}},
+\end{align*}
+where the second equality uses $\PP(S_m=t)=\binom{t-1}{m-1}2^{-t}$, so
+$\PP(S_{n-d}=s-B)/\PP(S_n=s)=2^B\binom{s-B-1}{n-d-1}/\binom{s-1}{n-1}$
+and the $2^{-B}$ cancels.
+A direct computation writes the ratio as
+$$
+\frac{\binom{s-B-1}{n-d-1}}{\binom{s-1}{n-1}}
+=\prod_{j=1}^d(n-j)\cdot
+\prod_{j=0}^{B-d-1}(s-n-j)\cdot
+\prod_{j=1}^{B}(s-j)^{-1}.
+$$
+For $s=2n+O(\sqrt n)$ each factor in the first product is $n(1+O(1/n))$,
+each factor in the second product is $n(1+O(1/n))$ on the typical event
+$B=2d+O(\sqrt d\log n)$, and each factor in the third product is
+$2n(1+O(1/n))$.
+Hence
+$$
+\frac{\binom{s-B-1}{n-d-1}}{\binom{s-1}{n-1}}\cdot 2^{B}
+=\frac{n^d\cdot n^{B-d}}{(2n)^B}\cdot 2^B\cdot\bigl(1+O(d^2/n+|s-2n|d/n)\bigr)
+=1+O\!\left(\frac{d^2+|s-2n|d}{n}\right)
+$$
+on the typical event $B=2d+O(\sqrt d\log n)$, recorded as
+Lemma~\ref{lem:ratio} below.
+Hence the conditional probability tends to $2^{-B}=\prod_i 2^{-b_i}$,
+which is the i.i.d.\ law.
+A standard tail estimate for $B$ (geometric tail of $\Geom(2)$) shows the
+non-typical contribution is $o(1)$, so the conditional law converges in
+total variation.
+
+Since $\mathbf e_{3^d}(\eta F_d)$ is a bounded continuous function of the
+finite tuple, the limiting expectation is
+$\E[\mathbf e_{3^d}(\eta F_d(A_1,\dots,A_d))]$.
+
+For $d=1$ and $\eta=1$ we have $F_1(A)=2^{-A}$.
+Since $2^{-1}\equiv 2\pmod 3$ and $2^{-2}\equiv 1\pmod 3$, the powers
+$2^{-A}\pmod 3$ are $2$ if $A$ is odd and $1$ if $A$ is even.
+Under $A\sim\Geom(2)$, $\PP(A\text{ odd})=2/3$ and $\PP(A\text{ even})=1/3$.
+The limit is $\tfrac23\,e^{4\pi i/3}+\tfrac13\,e^{2\pi i/3}$ and a direct
+computation gives modulus $1/\sqrt 3$.
+\end{proof}
+
+\begin{lemma}[Composition ratio asymptotics]\label{lem:ratio}
+For positive integers $s,n,d,B$ with $1\le d<n$ and $d\le B\le s-n+d-1$,
+$$
+\frac{\binom{s-B-1}{n-d-1}}{\binom{s-1}{n-1}}
+=\frac{\prod_{j=1}^d(n-j)\cdot\prod_{j=0}^{B-d-1}(s-n-j)}
+{\prod_{j=1}^{B}(s-j)}.
+$$
+For $s=2n+\sigma$ with $|\sigma|=O(\sqrt n)$, $d=o(\sqrt n)$, and
+$B=2d+O(\sqrt{d\log n})$,
+$$
+\frac{\binom{s-B-1}{n-d-1}}{\binom{s-1}{n-1}}\cdot 2^B
+=1+O\!\left(\frac{d^2+d\log n}{n}+\frac{|\sigma|\sqrt{d\log n}}{n}
++\frac{d\sigma^2}{n^2}\right).
+$$
+In particular, if $|\sigma|=O(\sqrt n)$ and $d=o(\sqrt n)$, the
+right-hand side is $1+o(1)$.
+\end{lemma}
+
+\begin{proof}
+The exact form follows from $\binom{a}{b}=a!/(b!(a-b)!)$ after
+substituting $a=s-B-1$, $b=n-d-1$ in the numerator and $a=s-1$, $b=n-1$
+in the denominator and cancelling factorials.
+
+For the asymptotic, take logarithms.
+The numerator contributes
+$\sum_{j=1}^d\log(n-j)+\sum_{j=0}^{B-d-1}\log(s-n-j)$
+and the denominator contributes $\sum_{j=1}^B\log(s-j)+B\log 2$
+(after multiplication by $2^B$).
+Writing each factor as $n+O(1)$, $s-n+O(1)$, $s+O(1)$, expanding
+$\log(N+\delta)=\log N+\delta/N+O(\delta^2/N^2)$,
+and using $s=2n+\sigma$:
+\begin{align*}
+\log\frac{\binom{s-B-1}{n-d-1}}{\binom{s-1}{n-1}}+B\log 2
+&=d\log n+(B-d)\log(s-n)-B\log s+B\log 2+O\Bigl(\frac{d+B}{n}\Bigr)\\
+&=d\log n+(B-d)\log(n+\sigma)-B\log(2n+\sigma)+B\log 2+O\Bigl(\frac{d+B}{n}\Bigr).
+\end{align*}
+Expanding $\log(n+\sigma)=\log n+\sigma/n+O(\sigma^2/n^2)$ and
+$\log(2n+\sigma)=\log(2n)+\sigma/(2n)+O(\sigma^2/n^2)$,
+$$
+=d\log n+(B-d)\Bigl(\log n+\frac{\sigma}{n}\Bigr)
+-B\Bigl(\log n+\log 2+\frac{\sigma}{2n}\Bigr)+B\log 2+O\Bigl(\frac{d^2+\sigma^2}{n^2}+\frac{d+B}{n}\Bigr).
+$$
+The constant terms cancel: $d+(B-d)-B=0$ and $-B\log 2+B\log 2=0$.
+The first-order $\sigma$-terms give $(B-d)\sigma/n-B\sigma/(2n)=(B/2-d)\sigma/n$.
+Under $B=2d+O(\sqrt{d\log n})$, $|B/2-d|=O(\sqrt{d\log n})$, so the
+first-order $\sigma$-term is $O(|\sigma|\sqrt{d\log n}/n)$.
+The quadratic errors from the Taylor expansions and finite products are
+$O((d^2+d\log n)/n+d\sigma^2/n^2)$.
+Exponentiating gives the claimed asymptotic.
+\end{proof}
+
+The fixed-depth obstruction tells us that any positive Fourier-decay
+statement must require $d=d(\xi)\to\infty$.
+
+\section{Subdiffusive microcanonical decay}\label{sec:subdiff}
+
+We next prove that beyond fixed depth, but still in the subdiffusive regime
+$d=o(\sqrt n)$, Tao's unconditional decay can be transferred to the
+microcanonical setting.
+
+\begin{theorem}[Subdiffusive decay]\label{thm:D}
+Let $s=2n+O(\sqrt n)$ and $d=d(n)\to\infty$ with $d=o(\sqrt n)$.
+For any $A>0$,
+$$
+\sup_{\eta\in(\Z/3^d\Z)^\times}
+\bigl|\E[\mathbf e_{3^d}(\eta F_d(a_{n-d+1},\dots,a_n))\mid S_n=s]\bigr|
+\le C_A\,d^{-A}+o(1).
+$$
+In particular for $\xi=\eta\,3^{n+k-d}$ with $\eta$ as above,
+$\E[\mathbf e_{3^{n+k}}(\xi F_n)\mid S_n=s]\to0$.
+\end{theorem}
+
+\begin{proof}
+\emph{Tail reduction.}
+By Lemma~\ref{lem:tail},
+$\mathbf e_{3^d}(\eta F_n)=\mathbf e_{3^d}(\eta F_d(a_{n-d+1},\dots,a_n))$,
+so the conditional expectation depends only on the joint law of the last
+$d$ variables.
+
+\emph{Equivalence of ensembles.}
+Lemma~\ref{lem:ratio} (applied with the same $d$) gives
+\begin{equation}\label{eq:Dratio}
+\PP\bigl(a_{n-d+1}=b_1,\dots,a_n=b_d\mid S_n=s\bigr)
+=2^{-B}\bigl(1+O(d^2/n+|\sigma|d/n)\bigr)
+\end{equation}
+on the typical event $B=2d+O(\sqrt d\log n)$, where $\sigma:=s-2n$.
+Under the assumptions $|s-2n|=O(\sqrt n)$ and $d=o(\sqrt n)$,
+$$
+d^2/n+|\sigma|d/n\le d^2/n+\sqrt n\cdot d/n=O\bigl(d^2/n+d/\sqrt n\bigr)=o(1).
+$$
+The non-typical event has $\Geom(2)^{\otimes d}$-mass $O(\exp(-c\log^2 n))=o(1)$
+by Hoeffding's inequality applied to $B-2d$.
+Therefore
+\begin{equation}\label{eq:Dee}
+\bigl\|\mathcal L((a_{n-d+1},\dots,a_n)\mid S_n=s)-\Geom(2)^{\otimes d}\bigr\|_{\TV}\to 0.
+\end{equation}
+
+\emph{Transfer to Tao's bound.}
+Since $\mathbf e_{3^d}(\eta F_d)$ has modulus $1$, the total-variation
+estimate~\eqref{eq:Dee} gives
+\begin{equation}\label{eq:Dtransfer}
+\E[\mathbf e_{3^d}(\eta F_d(a_{n-d+1},\dots,a_n))\mid S_n=s]
+=\E[\mathbf e_{3^d}(\eta F_d(A_1,\dots,A_d))]+o(1),
+\end{equation}
+where $(A_i)_{i=1}^d$ are i.i.d.\ $\Geom(2)$.
+
+The right-hand side of~\eqref{eq:Dtransfer} is precisely the unconditional
+characteristic function of the Syracuse random variable
+$\Syrac(\Z/3^d\Z)\equiv F_d(A_1,\dots,A_d)\pmod{3^d}$ at primitive
+frequency $\eta\in(\Z/3^d\Z)^\times$.
+By Tao's superpolynomial decay~\eqref{eq:tao117},
+$$
+\sup_{\eta\in(\Z/3^d\Z)^\times}|\E[\mathbf e_{3^d}(\eta F_d(A_1,\dots,A_d))]|\le C_A d^{-A}.
+$$
+Combining the two estimates yields the theorem.
+\end{proof}
+
+\section{Hard-range decay at logarithmic oversampling}\label{sec:logh}
+
+We now address the regime $h=k-v_3(\xi)=O(\log n)$.
+Throughout this section we use Tao's pair-grouping setup~\cite[\S7]{Tao}.
+Reverse the variables: set $c_i:=a_{n+1-i}$ so that
+\begin{equation}\label{eq:Fnreverse}
+F_n=\sum_{j=1}^n3^{j-1}\,2^{-c_{[1,j]}},\qquad c_{[1,j]}:=c_1+\cdots+c_j.
+\end{equation}
+For $j\in[n/2]$ set $b_j:=c_{2j-1}+c_{2j}$.
+The $b_j$ are i.i.d.\ Pascal random variables on $\{2,3,\dots\}$ with
+$\PP(b_j=b)=(b-1)/2^b$.
+A short calculation gives
+\begin{equation}\label{eq:Fnpair}
+F_n=\sum_{j=1}^{\lfloor n/2\rfloor}3^{2j-2}\,2^{-b_{[1,j]}}\bigl(2^{c_{2j}}+3\bigr)
+\quad(+\,\text{boundary term if }n\text{ is odd}),
+\end{equation}
+where $b_{[1,j]}=b_1+\cdots+b_j$, and conditionally on $(b_j)$ the variables
+$c_{2j}$ are independent and uniform on $\{1,\dots,b_j-1\}$.
+For a character $\chi(x)=e^{-2\pi i\xi x/3^N}$ on $\Z[1/2]$, set
+\begin{equation}\label{eq:fchi}
+f_\chi(x,b):=\E[\chi(x(2^{a_2}+3))\mid a_1+a_2=b],\qquad |f_\chi(x,b)|\le1.
+\end{equation}
+Tao's Lemma~7.2 \cite{Tao} gives the cosine cancellation
+$|f_\chi(x,3)|=|\cos(\pi\theta(j,b_{[1,j]}))|$, where with $N\ge1$ and
+primitive $\eta\in(\Z/3^N\Z)^\times$,
+\begin{equation}\label{eq:thetadef}
+\theta_{N,\eta}(j,\ell):=\Bigl\{\frac{\eta\cdot 3^{2j-2}\cdot
+(2^{-\ell+1}\bmod 3^N)}{3^N}\Bigr\}\in(-1/2,1/2],
+\end{equation}
+and $\{\cdot\}$ denotes the signed fractional part.
+Tao defines white points of $[N/2]\times\Z$ as those $(j,\ell)$ with
+$|\theta_{N,\eta}(j,\ell)|>\varepsilon$ for a fixed small $\varepsilon>0$,
+and proves~\cite[Lemma~7.2]{Tao} that $b_j=3$ at a white point implies
+$|f_\chi(x_j,3)|\le e^{-\varepsilon^3}$ where $x_j=3^{2j-2}2^{-b_{[1,j]}}$.
+
+Define the white-point count
+\begin{equation}\label{eq:Wcount}
+W_{n,h,\eta}:=
+\#\bigl\{1\le j\le \lfloor n/2\rfloor:b_j=3,\,(j,b_{[1,j]})\text{ is white at modulus }3^{n+h}\bigr\}.
+\end{equation}
+The pair-grouping computation~\eqref{eq:Fnpair} and~\eqref{eq:fchi} give
+\begin{equation}\label{eq:WtoFn}
+\bigl|\E[\mathbf e_{3^{n+h}}(\eta F_n)]\bigr|\le\E\,e^{-\varepsilon^3\,W_{n,h,\eta}}.
+\end{equation}
+
+\begin{theorem}[Hard-range decay at logarithmic oversampling]\label{thm:H}
+Fix $K,L,A>0$.
+Suppose $|s-2n|\le L\sqrt{n\log n}$.
+Then
+$$
+\sup_{\substack{\xi\in\Z/3^{n+k}\Z\\1\le k-v_3(\xi)\le K\log n}}
+\bigl|\E[\mathbf e_{3^{n+k}}(\xi F_n)\mid S_n=s]\bigr|\ll_{A,K,L} n^{-A}.
+$$
+\end{theorem}
+
+\begin{proof}
+Write $\xi=3^v\eta$ with $\eta$ primitive at modulus $3^{n+h}$, $h=k-v$.
+By~\eqref{eq:WtoFn} applied at modulus $3^{n+h}=3^N$,
+$|\E[\mathbf e_{3^N}(\eta F_n)]|\le\E e^{-\varepsilon^3 W_{n,h,\eta}}$.
+We use the standard naive conditioning bound
+\begin{equation}\label{eq:naivecond}
+\E[e^{-\varepsilon^3 W}\mid S_n=s]\le\frac{\E[e^{-\varepsilon^3 W}]}{\PP(S_n=s)}.
+\end{equation}
+The local central limit theorem for $S_n$ (a sum of $n$ i.i.d.\ $\Geom(2)$
+variables, $\E S_n=2n$, $\Var S_n=2n$) gives
+\begin{equation}\label{eq:LCLT}
+\PP(S_n=s)=\frac1{\sqrt{4\pi n}}\,e^{-(s-2n)^2/(4n)}\bigl(1+o(1)\bigr).
+\end{equation}
+For $|s-2n|\le L\sqrt{n\log n}$ this yields $\PP(S_n=s)\gg n^{-1/2-L^2/4}$.
+We now produce a polynomial bound for $\E e^{-\varepsilon^3 W_{n,h,\eta}}$.
+
+\emph{Augmentation.}
+Tao's Proposition~7.3~\cite{Tao} controls the white-point count over the
+full range $[N/2]$ at modulus~$3^N$, with $N$ Pascal variables.
+We have only $\lfloor n/2\rfloor$ Pascal variables.
+Augment the sequence $b_1,\dots,b_{\lfloor n/2\rfloor}$ by sampling
+$b_{\lfloor n/2\rfloor+1},\dots,b_{\lfloor N/2\rfloor}$ as i.i.d.\ Pascal
+variables independent of the original sequence.
+This is purely a coupling device: the augmenting variables do not appear
+in $F_n$, but they generate a longer renewal walk for which Tao's
+estimate applies directly.
+
+Define
+$$
+W^{\rm full}_{N,\eta}:=
+\#\bigl\{1\le j\le \lfloor N/2\rfloor:b_j=3,\,(j,b_{[1,j]})\text{ is white at modulus }3^N\bigr\}
+$$
+and $W^{\rm extra}:=W^{\rm full}_{N,\eta}-W_{n,h,\eta}\ge 0$.
+Each indicator counted by $W^{\rm extra}$ takes value~$0$ or~$1$, so
+\begin{equation}\label{eq:Wextra}
+W^{\rm extra}\le \lfloor N/2\rfloor-\lfloor n/2\rfloor\le h
+\end{equation}
+deterministically.
+From $W^{\rm full}_{N,\eta}=W_{n,h,\eta}+W^{\rm extra}$ and~\eqref{eq:Wextra},
+\begin{equation}\label{eq:Wpointwise}
+e^{-\varepsilon^3 W_{n,h,\eta}}
+=e^{-\varepsilon^3 W^{\rm full}_{N,\eta}}\cdot e^{\varepsilon^3 W^{\rm extra}}
+\le e^{\varepsilon^3 h}\cdot e^{-\varepsilon^3 W^{\rm full}_{N,\eta}}
+\quad\text{pointwise.}
+\end{equation}
+
+Tao's Proposition~7.3 \cite[\S7.5]{Tao} gives, for any $A>0$,
+\begin{equation}\label{eq:taop73}
+\E\,e^{-\varepsilon^3 W^{\rm full}_{N,\eta}}\ll_A N^{-A},
+\end{equation}
+uniformly in $N\ge 1$ and primitive $\eta\in(\Z/3^N\Z)^\times$.
+Taking expectations of~\eqref{eq:Wpointwise} (the augmenting variables
+have the same Pascal law as the originals, so the joint expectation is
+unchanged),
+\begin{equation}\label{eq:taoextended}
+\E\,e^{-\varepsilon^3 W_{n,h,\eta}}\le e^{\varepsilon^3 h}\,\E\,e^{-\varepsilon^3 W^{\rm full}_{N,\eta}}\ll_A e^{\varepsilon^3 h}\,N^{-A}.
+\end{equation}
+
+\emph{Polynomial absorption.}
+For $h\le K\log n$ we have $e^{\varepsilon^3 h}\le n^{\varepsilon^3 K}$ and
+$N=n+h\le n(1+K\log n/n)$, so $\log N=\log n+o(1)$ and
+$N^{-A}=n^{-A}(1+o(1))$.
+Substituting into~\eqref{eq:taoextended},
+$$
+\E\,e^{-\varepsilon^3 W_{n,h,\eta}}\ll_{A,K} n^{\varepsilon^3 K}\cdot n^{-A}=n^{-(A-\varepsilon^3 K)}.
+$$
+Combining with~\eqref{eq:naivecond} and the local CLT bound
+$\PP(S_n=s)^{-1}\ll_L n^{1/2+L^2/4}$ valid for $|s-2n|\le L\sqrt{n\log n}$,
+$$
+\bigl|\E[\mathbf e_{3^N}(\eta F_n)\mid S_n=s]\bigr|
+\le \E[e^{-\varepsilon^3 W_{n,h,\eta}}\mid S_n=s]
+\ll_{A,K,L} n^{-(A-\varepsilon^3 K-1/2-L^2/4)}.
+$$
+Choosing $A$ sufficiently large (depending on the desired exponent
+$A'$, $K$, $L$) yields the bound~$\ll_{A',K,L}n^{-A'}$.
+
+The factorization~\eqref{eq:split} reduces the affine character at
+$\xi=3^v\eta$ to the offset character at modulus $3^N$:
+$\mathbf e_{3^{n+k}}(\xi\Aff_{a_1,\dots,a_n}(x))
+=\mathbf e_{3^k}(\xi\,2^{-s}x)\cdot\mathbf e_{3^N}(\eta F_n)$.
+Under $S_n=s$ the multiplicative factor is deterministic of modulus~$1$,
+so the conditional expectation over $(a_1,\dots,a_n)$ inherits the same
+bound.
+\end{proof}
+
+\section{Bernoulli-bridge normal form}\label{sec:bridge}
+
+The proof of Theorems~\ref{thm:NIntro} and~\ref{thm:reductionIntro}
+relies on rewriting the offset $F_n$ in a Bernoulli-bridge form that
+collapses the $3$-adic phase to a real-line integral against a perpetuity.
+
+Set $m:=s-1$, $r:=n-1$.
+Under $S_n=s$ all compositions $a_1+\cdots+a_n=s$, $a_i\ge1$, are
+equiprobable.
+The standard stars-and-bars bijection identifies such compositions with
+binary strings $\varepsilon=(\varepsilon_1,\dots,\varepsilon_m)$ having
+exactly $r$ ones; the position of the $t$-th one is $p_t=b_1+\cdots+b_t$
+where we write the reverse composition $b_i=a_{n+1-i}$.
+Let
+$\Omega_{m,r}:=\{\varepsilon\in\{0,1\}^m:\sum_j\varepsilon_j=r\}$,
+$R_j:=\varepsilon_1+\cdots+\varepsilon_j$,
+\begin{equation}\label{eq:Xm}
+X_m:=\sum_{j=1}^m\varepsilon_j\,3^{R_{j-1}}\,2^{-j},\qquad
+P_m:=2^m X_m=\sum_{j=1}^m\varepsilon_j\,3^{R_{j-1}}\,2^{m-j}\in\Z.
+\end{equation}
+
+\begin{lemma}[Decomposition of $F_n$]\label{lem:Fdecomp}
+Under $S_n=s$, $F_n=3^{n-1}\,2^{-s}+X_m$.
+\end{lemma}
+
+\begin{proof}
+\emph{Reversal.}
+Substitute $m'=n-m+1$ in~\eqref{eq:Fn}, so $m=n-m'+1$ and $n-m=m'-1$;
+the range $m=1,\dots,n$ becomes $m'=n,\dots,1$ (i.e.\ all of $\{1,\dots,n\}$).
+With $b_i=a_{n+1-i}$,
+$a_{[m,n]}=a_m+\cdots+a_n=a_{n-m'+1}+\cdots+a_n=b_{m'}+\cdots+b_1=b_{[1,m']}$.
+Therefore
+\begin{equation}\label{eq:Fnreverseproof}
+F_n=\sum_{m'=1}^n 3^{m'-1}\,2^{-b_{[1,m']}}=\sum_{\ell=0}^{n-1}3^\ell\,2^{-b_{[1,\ell+1]}}.
+\end{equation}
+The term $\ell=n-1$ contributes $3^{n-1}\,2^{-b_{[1,n]}}=3^{n-1}\,2^{-s}$.
+
+\emph{Stars-and-bars bijection.}
+Identify positive compositions $(b_1,\dots,b_n)$ of~$s$ with binary
+strings $\varepsilon\in\{0,1\}^{s-1}$ having exactly $n-1$ ones as
+follows.
+Read $\varepsilon$ from left to right; let $p_1<p_2<\cdots<p_{n-1}$ be
+the positions of the ones.
+Set $p_0=0$, $p_n=s$, and define $b_t:=p_t-p_{t-1}$ for $t=1,\dots,n$.
+Each $b_t\ge 1$ and $\sum b_t=s$, so $\varepsilon\mapsto(b_1,\dots,b_n)$
+is a bijection between $\Omega_{m,r}=\{\varepsilon\in\{0,1\}^m:\sum=r\}$
+and positive compositions, where $m=s-1$, $r=n-1$.
+Moreover the partial sum $b_{[1,t]}=p_t$ is exactly the position of the
+$t$-th one.
+At position $j\in\{1,\dots,m\}$ in the Bernoulli string, $\varepsilon_j=1$
+iff $j$ is the position of some $p_t$, in which case $t=R_j$ (the running
+one-count at~$j$).
+
+\emph{Identifying $X_m$.}
+For $0\le\ell\le n-2$, the term $3^\ell\,2^{-b_{[1,\ell+1]}}$
+in~\eqref{eq:Fnreverseproof} corresponds to $j=p_{\ell+1}$ in the
+Bernoulli string, with $R_{j-1}=\ell$ (since $p_{\ell+1}$ is the position
+of the $(\ell+1)$-st one).
+Summing over $\ell=0,\dots,n-2$ and recognising
+$\varepsilon_j\cdot 3^{R_{j-1}}\cdot 2^{-j}$ as the contribution at each
+position with $\varepsilon_j=1$,
+$$
+\sum_{\ell=0}^{n-2}3^\ell\,2^{-b_{[1,\ell+1]}}
+=\sum_{j:\,\varepsilon_j=1}3^{R_{j-1}}\,2^{-j}
+=\sum_{j=1}^m\varepsilon_j\,3^{R_{j-1}}\,2^{-j}=X_m.
+$$
+Combining with the $\ell=n-1$ contribution gives $F_n=3^{n-1}\,2^{-s}+X_m$.
+\end{proof}
+
+Recall that $h\ge1$, $N=n+h$, and $\eta\in(\Z/3^N\Z)^\times$.
+Let $q\in\Z$ be the unique representative of $\eta\cdot 2^{-s}\bmod 3^N$
+in $(-3^N/2,3^N/2]$.
+Since $\eta$ is a unit and $2$ is invertible modulo~$3^N$, $q$ is also coprime to $3$:
+\begin{equation}\label{eq:qprime}
+3\nmid q.
+\end{equation}
+
+\begin{theorem}[Bridge reduction]\label{thm:reduction}
+For every $\eta\in(\Z/3^N\Z)^\times$,
+\begin{equation}\label{eq:reductioneq}
+\E[\mathbf e_{3^N}(\eta F_n)\mid S_n=s]
+=\mathbf e_{3^N}(q\cdot 3^{n-1})\cdot\E_{\Omega_{m,r}}\mathbf e_{3^N}(2qP_m).
+\end{equation}
+For the resonant frequency $\eta=2^s$, $q=1$, the formula simplifies to
+$\mathbf e_{3^N}(3^{n-1})\cdot\E_{\Omega_{m,r}}\mathbf e_{3^N}(2P_m)$.
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{lem:Fdecomp}, $F_n=3^{n-1}\,2^{-s}+X_m$ in
+$\Z[1/2]\cap(\Z/3^N\Z)$ (using the canonical embedding induced by
+$2$ being a unit modulo $3^N$).
+Multiplying by $\eta\in(\Z/3^N\Z)^\times$,
+$$
+\eta F_n\equiv\eta\cdot 3^{n-1}\cdot 2^{-s}+\eta X_m\pmod{3^N}.
+$$
+By definition $q\equiv\eta\cdot 2^{-s}\pmod{3^N}$, hence
+$\eta\equiv q\cdot 2^s\pmod{3^N}$ and $\eta\cdot 2^{-s}\equiv q\pmod{3^N}$.
+Substituting,
+\begin{equation}\label{eq:etaFn}
+\eta F_n\equiv q\cdot 3^{n-1}+q\cdot 2^s\cdot X_m\pmod{3^N}.
+\end{equation}
+Since $m=s-1$, $2^s=2\cdot 2^m$, so $2^s X_m=2\cdot 2^m X_m=2P_m\in\Z$.
+Therefore $\eta F_n\equiv q\cdot 3^{n-1}+2qP_m\pmod{3^N}$, both terms
+being integers.
+
+Under $S_n=s$, the law of $(a_1,\dots,a_n)$ is uniform on the set of
+positive compositions of~$s$ into $n$ parts, which has size
+$\binom{s-1}{n-1}=\#\Omega_{m,r}$.
+The stars-and-bars bijection in the proof of Lemma~\ref{lem:Fdecomp}
+identifies compositions with $\Omega_{m,r}$, so the law of $\varepsilon$,
+hence the law of $P_m=2^m X_m$, is uniform on $\Omega_{m,r}$.
+The constant phase $\mathbf e_{3^N}(q\cdot 3^{n-1})$ pulls out of the
+conditional expectation, leaving
+$\E[\mathbf e_{3^N}(\eta F_n)\mid S_n=s]=\mathbf e_{3^N}(q\cdot 3^{n-1})\cdot
+\E_{\Omega_{m,r}}\mathbf e_{3^N}(2qP_m)$.
+
+For the resonant frequency $\eta=2^s$, $q\equiv 2^s\cdot 2^{-s}\equiv 1\pmod{3^N}$,
+so $q=1$ in $(-3^N/2,3^N/2]$.
+
+\emph{Primitivity.}
+Since $\eta\in(\Z/3^N\Z)^\times$ and $2^{-s}$ is a unit modulo~$3^N$, their
+product $q$ is also a unit, in particular $3\nmid q$.
+\end{proof}
+
+\begin{lemma}[Multiscale anti-resonance]\label{lem:antires}
+Let $t=q\,2^s/3^N$ with $3\nmid q$, $N=n+h$, $h\ge1$, $m=s-1$.
+Set $\Delta:=s\log_3 2-N=s\log_3 2-n-h$ and
+$$
+\mathfrak D_m(t):=\min_{0\le\ell\le m}2^\ell\cdot\dist(t,2^{m-\ell}\Z).
+$$
+Then $\mathfrak D_m(t)\ge\frac12\,3^\Delta$.
+\end{lemma}
+
+\begin{proof}
+For any integer $A$ and $\ell\in\{0,\dots,m\}$,
+\begin{align*}
+2^\ell|t-A\,2^{m-\ell}|
+&=\frac{2^\ell\cdot 2^{m-\ell}}{3^N}|q\,2^{s-(m-\ell)}-A\,3^N|\\
+&=\frac{2^{s-1}}{3^N}|2^{\ell+1}q-A\,3^N|.
+\end{align*}
+Since $\gcd(q,3)=1=\gcd(2,3)$, we have $2^{\ell+1}q\not\equiv0\pmod3$
+while $A\,3^N\equiv 0\pmod 3$, so $2^{\ell+1}q-A\,3^N$ is a non-zero
+integer of absolute value $\ge1$.
+Therefore $2^\ell\dist(t,2^{m-\ell}\Z)\ge 2^{s-1}/3^N=\frac12\,3^\Delta$.
+\end{proof}
+
+The Bernoulli-bridge normal form of Theorem~\ref{thm:reduction} suggests
+considering the unconditional perpetuity obtained by passing to the iid
+fair-Bernoulli limit.
+Let $\varepsilon_1,\varepsilon_2,\dots$ be i.i.d.\ uniform on $\{0,1\}$ and
+set
+\begin{equation}\label{eq:Finfty}
+\mathcal F_\infty:=\sum_{j=1}^\infty\varepsilon_j\,3^{R_{j-1}}\,2^{-j},
+\quad R_j=\varepsilon_1+\cdots+\varepsilon_j.
+\end{equation}
+The series converges almost surely because the gaps between successive
+ones are i.i.d.\ $\Geom(2)$ and the multiplicative drift
+$\E[\log(3\cdot 2^{-A})]=\log 3-2\log 2=\log(3/4)<0$;
+this is a special case of the random difference equation framework
+of Vervaat~\cite{Vervaat}.
+
+\begin{lemma}[Distributional equation]\label{lem:dist-eq}
+$\mathcal F_\infty\overset d=2^{-A}(1+3\,\mathcal F_\infty')$, where
+$A\sim\Geom(2)$ and $\mathcal F_\infty'$ is an independent copy of
+$\mathcal F_\infty$.
+Equivalently, $\mathcal F_\infty$ is the unique stationary measure of the
+two-map IFS
+\begin{equation}\label{eq:IFS}
+\psi_0(x)=x/2,\qquad\psi_1(x)=1/2+(3/2)x,
+\end{equation}
+with $\psi_0$ chosen with probability $1/2$ and $\psi_1$ with
+probability~$1/2$.
+\end{lemma}
+
+\begin{proof}
+Decompose $\mathcal F_\infty$ by $\varepsilon_1$.
+If $\varepsilon_1=0$, the sum starts at $j=2$ and a re-indexing gives
+$\mathcal F_\infty=\tfrac12\mathcal F_\infty'$.
+If $\varepsilon_1=1$, the $j=1$ term is $1\cdot 3^0\cdot 2^{-1}=1/2$ and
+the remaining terms have $R_{j-1}=1+(\text{rest})$, giving
+$\mathcal F_\infty=\tfrac12+\tfrac32\mathcal F_\infty'$.
+Each case has probability $1/2$.
+For the geometric reformulation, the gap to the first one is
+$A:=\min\{j:\varepsilon_j=1\}\sim\Geom(2)$, and
+$\mathcal F_\infty=2^{-A}(1+3\,\mathcal F_\infty')$ follows by aggregating
+the geometric factor.
+\end{proof}
+
+\section{Rajchman property of the perpetuity}\label{sec:rajchman}
+
+We now establish that $\widehat\mu_{\mathcal F}(t):=\E\,e^{2\pi i t\mathcal F_\infty}$
+vanishes at infinity.
+This is the key analytic input for the resonant-decay theorems below.
+
+\begin{theorem}[Br\'emont's Rajchman criterion, restated]
+\label{thm:bremont-restated}
+Let $N\ge 1$, and let $\varphi_k(x)=r_k x+b_k$ ($0\le k\le N$) be affine maps
+of the real line with $r_k>0$.
+Let $p=(p_0,\dots,p_N)$ be a probability vector with $p_k>0$, and assume
+$\sum_{k=0}^N p_k\log r_k<0$ (contracting on average) and that
+$(\varphi_k)_{0\le k\le N}$ have no common fixed point.
+Let $\nu$ be the unique stationary measure satisfying
+$\nu=\sum_k p_k\,(\varphi_k)_*\nu$.
+Then $\nu$ fails to be Rajchman, i.e.\ $\widehat\nu(t)\not\to 0$ as
+$|t|\to\infty$, if and only if there exists an affine map
+$f(x)=ax+b$ ($a\ne 0$) such that the conjugated family
+$f\circ\varphi_k\circ f^{-1}$ is in \emph{Pisot form}:
+there exist $0<\lambda<1$ with $1/\lambda$ a Pisot number, relatively
+prime integers $(n_k)_{0\le k\le N}$, and translations
+$\mu_k\in T(1/\lambda)$ such that
+$f\circ\varphi_k\circ f^{-1}(x)=\lambda^{n_k}x+\mu_k$ for every~$k$.
+In particular, in the non-Rajchman case the original ratios satisfy
+$r_k=\lambda^{n_k}$ for one common~$\lambda$.
+\end{theorem}
+
+This is~\cite[Theorem 2.5]{Bremont}, with the Pisot form definition from
+\cite[Definition 2.3]{Bremont}.
+The result generalises the classical Erd\H{o}s--Salem characterisation of
+Rajchman Bernoulli convolutions~\cite{Erdos1939,Salem};
+see~\cite{PSS} for a survey of the Bernoulli-convolution background.
+
+\begin{theorem}[Rajchman of $\mathcal F_\infty$]\label{thm:rajchman}
+$\widehat\mu_{\mathcal F}(t)\to0$ as $|t|\to\infty$.
+\end{theorem}
+
+\begin{proof}
+We apply Theorem~\ref{thm:bremont-restated} (Br\'emont~\cite[Theorem~2.5]{Bremont})
+and then check that no affine conjugation of the IFS~\eqref{eq:IFS}
+lands in Pisot form.
+
+\emph{Verifying hypotheses.}
+The IFS has affine maps $\psi_0(x)=r_0 x+b_0$ and $\psi_1(x)=r_1 x+b_1$
+with
+$$
+r_0=1/2,\quad b_0=0,\quad r_1=3/2,\quad b_1=1/2,\quad p_0=p_1=1/2.
+$$
+\textbf{(i) No common fixed point.}
+The fixed point of $\psi_0$ is $x=0$.
+The fixed point of $\psi_1$ solves $1/2+(3/2)x=x$, i.e.\ $-x/2=1/2$, giving
+$x=-1$.
+These are distinct.
+
+\textbf{(ii) Contracting on average.}
+The average Lyapunov exponent is
+$$
+p_0\log r_0+p_1\log r_1=\tfrac12\log(1/2)+\tfrac12\log(3/2)
+=\tfrac12\log(3/4)<0.
+$$
+
+By Theorem~\ref{thm:bremont-restated}, the invariant measure $\mathcal F_\infty$
+fails to be Rajchman if and only if some affine conjugate of the
+IFS~\eqref{eq:IFS} is in Pisot form.
+
+\emph{Affine conjugation preserves linear ratios.}
+For $f(x)=ax+b$ ($a\ne 0$) and any $g(x)=rx+c$,
+$f\circ g\circ f^{-1}(x)=a(r((x-b)/a)+c)+b=rx+(ac-rb+b)$,
+which has the same linear ratio~$r$ as $g$.
+Hence the conjugate of the IFS~\eqref{eq:IFS} has linear ratios
+$r_0=1/2$ and $r_1=3/2$ regardless of~$f$.
+
+\emph{Excluding Pisot form.}
+For Pisot form we would need $1/2=\lambda^{n_0}$ and $3/2=\lambda^{n_1}$
+for some Pisot $1/\lambda>1$ and coprime integers $(n_0,n_1)\in\Z^2$.
+Br\'emont's framework allows the integer exponents $(n_j)$ to be of
+either sign, and $\lambda\in(0,1)$ since $1/\lambda>1$.
+Eliminating $\lambda$ via $\lambda^{n_0 n_1}=(1/2)^{n_1}=(3/2)^{n_0}$,
+$$
+2^{-n_1}=2^{-n_0}\cdot 3^{n_0}
+\quad\Longrightarrow\quad
+2^{n_0-n_1}\cdot 3^{-n_0}=1\text{ in }\Q^\times.
+$$
+The multiplicative group $\Q^\times$ has the $2$-adic and $3$-adic
+valuations $v_2,v_3$ as independent characters.
+Applying $v_2$ gives $n_0-n_1=0$; applying $v_3$ gives $-n_0=0$, hence
+$n_0=0$ and $n_1=0$.
+This contradicts $\gcd(n_0,n_1)=1$ (which requires $(n_0,n_1)\ne(0,0)$).
+
+Therefore the IFS~\eqref{eq:IFS} is not affinely conjugate to any Pisot
+form, and Br\'emont's theorem yields the Rajchman property of
+$\mathcal F_\infty$.
+\end{proof}
+
+\begin{remark}[Why the perpetuity matters]
+$\mathcal F_\infty$ is the natural real-line limit object that arises from
+the resonant frequency $\eta_s=2^s$ via the bridge reduction
+\eqref{eq:reductioneq}.
+The Rajchman property converts a multiplicative obstruction in the
+$3$-adic affine model into a Diophantine question on a real-line
+perpetuity, where the classical Salem--Erd\H{o}s/Brémont machinery applies.
+This is the link that gives a sharp resonant phase transition.
+\end{remark}
+
+\section{Sharp resonant phase transition}\label{sec:suffix}
+
+\subsection{Near-critical decay}
+We first treat the near-critical range, in which the bridge length scale
+$R$ used for ensemble equivalence can be chosen $o(n/\log n)$.
+Two auxiliary lemmas prepare the way.
+
+\begin{lemma}[Long-block ensemble equivalence]
+\label{lem:long-block}
+Fix $L_0>0$.
+Let $a_1,a_2,\dots$ be i.i.d.\ $\Geom(2)$, $S_n=a_1+\cdots+a_n$, and assume
+$|s-2n|\le L_0\sqrt{n\log n}$.
+Let $R=R_n$ satisfy $1\le R\le n/2$ and $R\log n/n\le 1$.
+Then for every $A>0$,
+\begin{equation}\label{eq:LB}
+\bigl\|\mathcal L((a_n,a_{n-1},\dots,a_{n-R+1})\mid S_n=s)-\Geom(2)^{\otimes R}\bigr\|_{\TV}
+\le C_{A,L_0}\!\left[\sqrt{\frac{R\log n}{n}}+\frac{R\log n+\log^2 n}{n}+n^{-A}\right].
+\end{equation}
+In particular, if $R\log n/n\to 0$, the total-variation distance tends to~$0$.
+\end{lemma}
+
+\begin{proof}
+Write $\Geom(p)$ for the law on $\{1,2,\dots\}$ with $\PP_p(X=m)=p(1-p)^{m-1}$,
+so $\Geom(2)=\Geom(1/2)$.
+Set $p:=n/s$.
+For $|s-2n|\le L_0\sqrt{n\log n}$ and $n$ large, $p\in[1/3,2/3]$ and
+$|p-1/2|\le C_{L_0}\sqrt{\log n/n}$.
+
+\smallskip\noindent\emph{Step 1: Conditional law equals tilted-product conditional.}
+Under any product law $\Geom(p)^{\otimes n}$, every $(a_1,\dots,a_n)$ with
+$\sum a_i=s$ has the same mass $p^n(1-p)^{s-n}$, so the conditional law on
+$\{S_n=s\}$ is independent of~$p$.
+Hence
+$\mathcal L((a_n,\dots,a_{n-R+1})\mid S_n=s)$ is the same under $\Geom(p)$
+as under $\Geom(1/2)$.
+We compare it first with $\Geom(p)^{\otimes R}$, then $\Geom(p)^{\otimes R}$
+with $\Geom(1/2)^{\otimes R}$.
+
+\smallskip\noindent\emph{Step 2: Tilted local CLT.}
+Let $T_R=a_n+\cdots+a_{n-R+1}$.
+By independence under $\Geom(p)$, the Radon--Nikodym derivative of the
+conditional block law w.r.t.\ $\Geom(p)^{\otimes R}$ is
+$L_p(T_R)=\PP_p(S_{n-R}=s-T_R)/\PP_p(S_n=s)$, so
+\begin{equation}\label{eq:LB-RN}
+\|\mathcal L_{\rm cond}-\Geom(p)^{\otimes R}\|_{\TV}=\tfrac12\E_p|L_p(T_R)-1|.
+\end{equation}
+A negative-binomial Stirling expansion gives, uniformly for $|x|\le m^{2/3}$,
+$\PP_p(S_m^{(p)}=m/p+x)=(2\pi v_p m)^{-1/2}\exp(-x^2/(2v_p m))(1+O((1+|x|+|x|^3)/m))$,
+where $v_p=(1-p)/p^2$.
+Set $u:=T_R-R/p$; Chernoff for $\Geom(p)$ with bounded MGF gives
+$\PP_p(|u|>t)\le 2\exp(-c_0\min(t^2/R,t))$.
+Choose $t=K_A(\sqrt{R\log n}+\log n)$ for $K_A$ large; then $\PP_p(|u|>t)\le n^{-A-2}$.
+On $\{|u|\le t\}$, the Stirling expansion gives
+$L_p(T_R)=\sqrt{n/(n-R)}\exp(-u^2/(2v_p(n-R)))(1+O(R/n+t^2/n+t^3/n^2+1/n))$,
+so $\sup_{|u|\le t}|L_p(T_R)-1|\le C_{A,L_0}(R\log n+\log^2 n)/n$.
+Together with $L_p(T_R)\le C$ pointwise (also from Stirling) and~$\PP_p(|u|>t)\le n^{-A-2}$,
+\begin{equation}\label{eq:LB-step2}
+\|\mathcal L_{\rm cond}-\Geom(p)^{\otimes R}\|_{\TV}\le C_{A,L_0}\!\left[\frac{R\log n+\log^2 n}{n}+n^{-A}\right].
+\end{equation}
+
+\smallskip\noindent\emph{Step 3: Tilt-to-untilt via Hellinger affinity.}
+The Hellinger affinity of one $\Geom(p)$ vs.\ one $\Geom(1/2)$ is
+$\rho(p)=\sqrt{p/2}/(1-\sqrt{(1-p)/2})$.
+Taylor at $p=1/2$ gives $1-\rho(p)\le C(p-1/2)^2$, so
+$H^2(\Geom(p)^{\otimes R},\Geom(1/2)^{\otimes R})=1-\rho(p)^R\le R(1-\rho(p))\le CR(p-1/2)^2$.
+Total variation $\le\sqrt 2\cdot H$ gives
+$\|\Geom(p)^{\otimes R}-\Geom(1/2)^{\otimes R}\|_{\TV}\le C\sqrt R\,|p-1/2|\le C_{L_0}\sqrt{R\log n/n}$.
+
+\smallskip
+Combining steps 2 and 3 by the triangle inequality yields~\eqref{eq:LB}.
+\end{proof}
+
+\begin{lemma}[Uniform bridge tail moment]
+\label{lem:uniform-bridge-tail-moment}
+There exist $\alpha\in(0,1)$, $\rho\in(0,1)$, and $C<\infty$ such that
+for $r=m/2+O(\sqrt{m\log m})$ and $0\le R\le m$,
+$$
+\E_{\Omega_{m,r}}\!\left[\bigl(\textstyle\sum_{j>R}\varepsilon_j\,3^{R_{j-1}}\,2^{-j}\bigr)^\alpha\right]
+\le C\rho^R.
+$$
+In particular, $\sup_{m,r}\E_{\Omega_{m,r}}[X_m^\alpha]<\infty$.
+\end{lemma}
+
+\begin{proof}
+Choose $p_+\in(1/2,\log 2/\log 3)$.
+For $m$ large, $r/m\le p_+$.
+Pick $\alpha>0$ small enough that
+$\rho:=(1-p_++p_+\,3^\alpha)/2^\alpha<1$;
+this is possible because $\frac{d}{d\alpha}\log\rho|_{\alpha=0}=p_+\log 3-\log 2<0$.
+
+By subadditivity of $x\mapsto x^\alpha$ on $\R_{\ge 0}$,
+$$
+\Bigl(\sum_{j>R}\varepsilon_j\,3^{R_{j-1}}2^{-j}\Bigr)^\alpha
+\le\sum_{j>R}\varepsilon_j\,3^{\alpha R_{j-1}}2^{-\alpha j}.
+$$
+Conditional on $\varepsilon_j=1$, $R_{j-1}$ is hypergeometric (drawing
+$j-1$ from $m-1$ with $r-1$ marked).
+Hoeffding's convex-order comparison for sampling without replacement gives,
+for any $a\ge 1$,
+$\E[a^{R_{j-1}}\mid\varepsilon_j=1]\le(1-p_j+p_j a)^{j-1}$ with
+$p_j=(r-1)/(m-1)\le p_+ +o(1)$.
+Taking $a=3^\alpha$ and absorbing the $o(1)$,
+$$
+\E_{\Omega_{m,r}}\bigl[\varepsilon_j\,3^{\alpha R_{j-1}}2^{-\alpha j}\bigr]
+\le\frac{r}{m}\cdot 2^{-\alpha j}(1-p_++p_+\,3^\alpha)^{j-1}\le C\rho^j.
+$$
+Summing in $j>R$ gives the claim.
+The bound on $\E[X_m^\alpha]$ is the case $R=0$.
+\end{proof}
+
+\begin{theorem}[Near-critical resonant decay]\label{thm:M}
+Let $s=2n+O(\sqrt{n\log n})$, $h\ge1$, and define
+$\Delta_n:=s\log_3 2-n-h$.
+Suppose $\Delta_n\to+\infty$ and $\Delta_n=o(n/\log n)$.
+For the resonant frequency $\eta_s=2^s\bmod 3^{n+h}$,
+$$
+\E[\mathbf e_{3^{n+h}}(2^s F_n)\mid S_n=s]\to0.
+$$
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:reduction} with $q=1$, the conditional expectation
+equals (up to a deterministic phase) $\E_{\Omega_{m,r}}\exp(2\pi i\lambda_n X_m)$
+with $\lambda_n=3^{\Delta_n}\to\infty$ and $m=s-1$, $r=n-1$.
+
+Choose $R=R_n$ with
+$\Delta_n+\log n\ll R\ll n/\log n$;
+this is feasible because $\Delta_n=o(n/\log n)$.
+Set $X_R:=\sum_{j=1}^R\varepsilon_j 3^{R_{j-1}}2^{-j}$ and $T_R:=X_m-X_R$.
+
+By Lemma~\ref{lem:uniform-bridge-tail-moment},
+$\E_{\Omega_{m,r}}[T_R^\alpha]\le C\rho^R$ for the absolute
+$\alpha,\rho$ given there.
+Using $|e^{ix}-1|\le C_\alpha|x|^\alpha$ on $\R_{\ge 0}$ for $0<\alpha\le 1$,
+$$
+\bigl|\E_{\Omega_{m,r}}e^{2\pi i\lambda_n X_m}-\E_{\Omega_{m,r}}e^{2\pi i\lambda_n X_R}\bigr|
+\le C_\alpha\,\lambda_n^\alpha\,\E_{\Omega_{m,r}}[T_R^\alpha]
+\le C_\alpha\,3^{\alpha\Delta_n}\,\rho^R=o(1),
+$$
+by the choice $R\gg\Delta_n+\log n$.
+
+By Lemma~\ref{lem:long-block} (applied with $R\log n/n\to 0$ since
+$R\ll n/\log n$), the joint law of $(A_0,\dots,A_{R-1})=(a_n,\dots,a_{n-R+1})$
+under $S_n=s$ is close in total variation to $\Geom(2)^{\otimes R}$.
+Since $X_R$ depends only on $(A_0,\dots,A_{R-1})$,
+$$
+\E_{\Omega_{m,r}}e^{2\pi i\lambda_n X_R}
+=\E_{\rm iid}e^{2\pi i\lambda_n X_R}+o(1).
+$$
+Applying the same tail bound under the i.i.d.\ law to the perpetuity
+$\mathcal F_\infty=\sum_{j\ge 1}\varepsilon_j 3^{R_{j-1}}2^{-j}$,
+$\E_{\rm iid}|\mathcal F_\infty-X_R|^\alpha\ll\rho^R$, hence
+$|\E_{\rm iid}e^{2\pi i\lambda_n X_R}-\widehat\mu_{\mathcal F}(\lambda_n)|
+\le C_\alpha\,3^{\alpha\Delta_n}\,\rho^R=o(1)$.
+By Theorem~\ref{thm:rajchman}, $\widehat\mu_{\mathcal F}(\lambda_n)\to 0$
+since $\lambda_n\to\infty$.
+Combining gives $\E_{\Omega_{m,r}}\exp(2\pi i\lambda_n X_m)\to 0$,
+and hence the stated conditional expectation tends to~$0$.
+\end{proof}
+
+% [Old Step 1-3 proof body removed; replaced by lemma-based proof above.]
+\iffalse
+Define the tail $T_R:=F_n^{\R}-F_{n,R}^{\R}=\sum_{r=R}^{n-1}3^r 2^{-(A_0+\cdots+A_r)}$.
+For $0<\alpha\le 1$, the inequality $|x+y|^\alpha\le|x|^\alpha+|y|^\alpha$ on
+$\R_{\ge 0}$ gives
+$$
+T_R^\alpha\le\sum_{r=R}^{n-1}\bigl(3^r 2^{-(A_0+\cdots+A_r)}\bigr)^\alpha
+=\sum_{r=R}^{n-1}3^{\alpha r}\,2^{-\alpha(A_0+\cdots+A_r)}.
+$$
+By independence under the i.i.d.\ $\Geom(2)$ law and
+$\E[2^{-\alpha A}]=\sum_{a\ge 1}2^{-a}2^{-\alpha a}=1/(2^{\alpha+1}-1)$,
+$$
+\E_{\rm iid}\bigl[3^{\alpha r}\,2^{-\alpha(A_0+\cdots+A_r)}\bigr]
+=\frac{3^{\alpha r}}{(2^{\alpha+1}-1)^{r+1}}=\frac{m_\alpha^r}{2^{\alpha+1}-1},
+$$
+where $m_\alpha:=3^\alpha/(2^{\alpha+1}-1)$ (Appendix~\ref{app:tech}).
+Note $m_0=1$, $m_1=1$, and $m_\alpha<1$ for $\alpha\in(0,1)$;
+e.g.\ $m_{1/2}=\sqrt 3/(2\sqrt 2-1)\approx 0.947$.
+Choose any $\alpha\in(0,1)$ with $|\log m_\alpha|>0$.
+Summing the geometric series,
+\begin{equation}\label{eq:tailmoment}
+\E_{\rm iid}[T_R^\alpha]\le\frac{m_\alpha^R}{(2^{\alpha+1}-1)(1-m_\alpha)}\ll m_\alpha^R.
+\end{equation}
+Transferring to the conditional law via~\eqref{eq:EE} and using
+$\PP(S_n=s)^{-1}\ll n^{C_0}$ from~\eqref{eq:LCLT}, with $C_0=1/2+L^2/4$,
+\begin{equation}\label{eq:tailmoment-cond}
+\E\bigl[T_R^\alpha\mid S_n=s\bigr]\ll n^{C_0}\,m_\alpha^R.
+\end{equation}
+
+\medskip\noindent\emph{Step 3: Phase replacement via $L^\alpha$ tail bound.}
+The pointwise inequality $|e^{ix}-1|\le\min(2,|x|)$ for $x\in\R$ implies,
+for $T_R\ge 0$,
+\begin{equation}\label{eq:phasediff}
+|e^{2\pi i\lambda_n T_R}-1|\le\min(2,2\pi\lambda_n T_R).
+\end{equation}
+For $\alpha\in(0,1]$ and any $u\ge 0$, $\min(2,u)\le u^\alpha\cdot 2^{1-\alpha}+u\cdot\mathbf 1\{u\le 1\}\le 3\,u^\alpha$ (split at $u\le 1$ vs.\ $u>1$ and use $u\le u^\alpha$ on $\{u\le 1\}$).
+Hence
+\begin{equation}\label{eq:phaseLalpha}
+\E\bigl[|e^{2\pi i\lambda_n T_R}-1|\bigm|S_n=s\bigr]
+\le 3(2\pi\lambda_n)^\alpha\,\E\bigl[T_R^\alpha\bigm|S_n=s\bigr]
+\ll n^{C_0}\,\lambda_n^\alpha\,m_\alpha^R.
+\end{equation}
+With $\lambda_n=3^{\Delta_n}$ and the choice $R\gg(\alpha\Delta_n\log 3+C_0\log n)/|\log m_\alpha|$
+(which is consistent with $R\ll n$ since $\Delta_n=o(n)$), the right-hand
+side of~\eqref{eq:phaseLalpha} is~$o(1)$.
+Hence $|e^{2\pi i\lambda_n T_R}-1|\to 0$ in probability, and
+\begin{equation}\label{eq:trunc-replace}
+\E[\mathbf e_{3^N}(2P_m)\mid S_n=s]
+=\E[\exp(2\pi i\lambda_n F_{n,R}^{\R})\mid S_n=s]+o(1).
+\end{equation}
+By~\eqref{eq:EE} the right-hand side equals
+$\E_{\rm iid}\exp(2\pi i\lambda_n\mathcal F_R)+o(1)$
+where $\mathcal F_R:=\sum_{r=0}^{R-1}3^r 2^{-(A_0+\cdots+A_r)}$ under
+i.i.d.\ $\Geom(2)$.
+Applying the same $L^\alpha$ tail bound to $|\mathcal F_\infty-\mathcal F_R|$
+(this time directly under the i.i.d.\ law),
+$\E_{\rm iid}|\mathcal F_\infty-\mathcal F_R|^\alpha\ll m_\alpha^R$, and the
+moving-frequency comparison
+$|\E_{\rm iid}[e^{2\pi i\lambda_n\mathcal F_R}-e^{2\pi i\lambda_n\mathcal F_\infty}]|
+\le 3(2\pi\lambda_n)^\alpha\,m_\alpha^R$
+gives, with the same choice of $R$,
+$\E_{\rm iid}\exp(2\pi i\lambda_n\mathcal F_R)=\widehat\mu_{\mathcal F}(\lambda_n)+o(1)$.
+By Theorem~\ref{thm:rajchman}, $\widehat\mu_{\mathcal F}(\lambda_n)\to 0$.
+Combining the three steps yields the theorem.
+\fi
+
+\subsection{Suffix self-similarity and full subcritical decay}
+The near-critical theorem covers $\Delta_n=o(n/\log n)$.
+For larger $\Delta_n$ we use an exact suffix self-similarity to reduce to a
+smaller bridge whose entropy gap is $o(L/\log L)$.
+
+\begin{lemma}[Suffix scale selection]\label{lem:suffix-scale-selection}
+Let $s=2n+O(\sqrt{n\log n})$ and $\Delta_n:=s\log_3 2-n-h$.
+Assume $\Delta_n\ge c_0\,n/\log n$ for some fixed $c_0>0$, and $h\to\infty$.
+Put
+$\beta:=\log_3 2-1/2>0$.
+Then $R_n:=\lfloor h^{3/4}/(\log h)^{3/4}\rfloor$ satisfies
+$\sqrt{h\log h}\ll R_n\ll h/\log^2 h$ and $R_n\ll\Delta_n$.
+With $L:=\lfloor(h+R_n)/\beta\rfloor$, one has $L\asymp h$,
+$R_n=o(L/\log^2 L)$, and $R_n\gg\sqrt{L\log L}$.
+\end{lemma}
+
+\begin{proof}
+The inequalities $\sqrt{h\log h}\ll h^{3/4}/(\log h)^{3/4}\ll h/\log^2 h$
+are both equivalent to $(\log h)^5\ll h$, which holds for $h\to\infty$.
+Since $\Delta_n\ge c_0 n/\log n$ and $h\le s\log_3 2-n+O(1)=O(n)$,
+$R_n\le n^{3/4}\ll c_0 n/\log n\le\Delta_n$.
+The claims about $L$ follow from $L=(h+R_n)/\beta+O(1)$ and $R_n=o(h)$.
+\end{proof}
+
+\begin{lemma}[Suffix decomposition]\label{lem:suffix}
+Let $1\le J<m$, $L=m-J$, and let
+$\omega:=(\varepsilon_{J+1},\dots,\varepsilon_m)$ with suffix sum
+$y:=\omega_1+\cdots+\omega_L$.
+Then
+$$
+X_m=X_J+3^{r-y}\cdot 2^{-J}\cdot X_L(\omega),
+$$
+where $X_L(\omega)=\sum_{i=1}^L\omega_i\,3^{\omega_1+\cdots+\omega_{i-1}}\,2^{-i}$
+is the bridge sum on the suffix.
+\end{lemma}
+
+\begin{proof}
+Split $X_m$ at index $J$.
+For $J<j\le m$, write $i=j-J$ and observe
+$R_{j-1}=R_J+\omega_1+\cdots+\omega_{i-1}=(r-y)+\omega_1+\cdots+\omega_{i-1}$.
+Therefore the suffix sum equals $3^{r-y}\cdot 2^{-J}\sum_{i=1}^L\omega_i 3^{\omega_1+\cdots+\omega_{i-1}}2^{-i}$.
+\end{proof}
+
+\begin{theorem}[Sharp resonant phase transition]\label{thm:N}
+Theorem~\ref{thm:NIntro} holds.
+That is, for $s=2n+O(\sqrt{n\log n})$ and $h\ge1$:
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item if $\Delta_n\to+\infty$, the conditional Fourier coefficient
+$\E[\mathbf e_{3^{n+h}}(2^s F_n)\mid S_n=s]\to0$;
+\item if $\Delta_n\to-\infty$, $|\E[\,\cdot\,]|\to1$;
+\item if $3^{\Delta_n}\to\lambda\in(0,\infty)$, the coefficient tends
+to $\mathbf e_{3^{n+h}}(3^{n-1})\,\widehat\mu_{\mathcal F}(\lambda)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{lemma}[Uniform $L^\alpha$-tightness under the central bridge]
+\label{lem:uniform-bridge-tightness}
+With $\alpha,\rho,C$ as in Lemma~\ref{lem:uniform-bridge-tail-moment},
+uniformly for $s=2n+O(\sqrt{n\log n})$,
+$\sup_n\E[(F_n^{\R})^\alpha\mid S_n=s]\le C'$ for some $C'<\infty$.
+In particular $F_n^{\R}\mid S_n=s$ is tight.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:Fdecomp}, $F_n^{\R}=3^{n-1}2^{-s}+X_m$ under the bridge
+representation $\Omega_{m,r}$, with $m=s-1$, $r=n-1$.
+Since $s=2n+O(\sqrt{n\log n})$, $r/m=1/2+O(\sqrt{\log n/n})$, so the
+hypothesis of Lemma~\ref{lem:uniform-bridge-tail-moment} is met.
+That lemma gives $\E_{\Omega_{m,r}}[X_m^\alpha]\le C$.
+The deterministic term satisfies $3^{n-1}2^{-s}\ll(3/4)^n e^{O(\sqrt{n\log n})}=o(1)$,
+hence $\E[(F_n^{\R})^\alpha\mid S_n=s]\le C_\alpha((3^{n-1}2^{-s})^\alpha+\E_{\Omega_{m,r}}[X_m^\alpha])\le C'$.
+Markov's inequality $\PP(F_n^{\R}>M\mid S_n=s)\le C'M^{-\alpha}$ yields tightness.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:N}]
+We treat the three parts in turn.
+
+\emph{Part (3): critical profile.}
+With $\lambda_n=3^{\Delta_n}\to\lambda\in(0,\infty)$, the truncation
+argument of Theorem~\ref{thm:M} (with $R\gg\log n$, here $\Delta_n=O(1)$)
+gives
+$\E[\exp(2\pi i\lambda_n F_n^{\R})\mid S_n=s]
+=\widehat\mu_{\mathcal F}(\lambda_n)+o(1)
+\to\widehat\mu_{\mathcal F}(\lambda)$
+by continuity of $\widehat\mu_{\mathcal F}$ on the compact set
+$\{|t|\le|\lambda|+1\}$.
+Multiplying by the deterministic phase $\mathbf e_{3^{n+h}}(3^{n-1})$
+gives part~(3).
+
+\emph{Part (2): supercritical obstruction.}
+With $\lambda_n=3^{\Delta_n}\to 0$, Lemma~\ref{lem:uniform-bridge-tightness}
+gives a uniform $L^\alpha$ bound for $F_n^{\R}\mid S_n=s$.
+For any $\delta>0$, Markov's inequality gives
+$\PP(\lambda_n F_n^{\R}>\delta\mid S_n=s)\le\delta^{-\alpha}\lambda_n^\alpha\,C'\to 0$.
+Hence $\lambda_n F_n^{\R}\to 0$ in probability under the conditional law,
+and bounded convergence yields
+$\E[\exp(2\pi i\lambda_n F_n^{\R})\mid S_n=s]\to 1$.
+The deterministic phase has modulus~$1$, so $|\E[\,\cdot\,]|\to 1$.
+
+\emph{Part (1): subcritical decay} (treated in three subcases).
+
+\emph{Subcase A: $h=O(\log n)$.}
+Theorem~\ref{thm:H} applied at $\xi=2^s$ with $A>1/2+L^2/4$ yields
+$|\E[\mathbf e_{3^{n+h}}(2^s F_n)\mid S_n=s]|\ll_{A',K,L}n^{-A'}$ for any~$A'>0$.
+
+\emph{Subcase B: $h\to\infty$ and $\Delta_n=o(n/\log n)$.}
+This is Theorem~\ref{thm:M}.
+
+\emph{Subcase C: the remaining case, via suffix descent.}
+If $\Delta_n$ is not $o(n/\log n)$, then along every subsequence there is a
+further subsequence with $\Delta_n\ge c\,n/\log n$ for some $c>0$.
+On that subsubsequence, $h\to\infty$ (since $\Delta_n\to+\infty$ and
+$h=h_\ast n-\Delta_n+O(\sqrt{n\log n})$).
+Lemma~\ref{lem:suffix-scale-selection} applies with $\Delta_n\ge c\,n/\log n$.
+By Lemma~\ref{lem:suffix-scale-selection}, choose
+$R_n=\lfloor h^{3/4}/(\log h)^{3/4}\rfloor$ and $L=\lfloor(h+R_n)/\beta\rfloor$,
+$J=m-L$, where $\beta=\log_3 2-1/2$.
+Under the bridge law on $\Omega_{m,r}$, the suffix sum
+$y:=\varepsilon_{J+1}+\cdots+\varepsilon_m$ is hypergeometric $\Hyper(m,r,L)$,
+and Hoeffding gives
+$\PP(y\in\mathcal T)=1-O(n^{-2})$ for
+$\mathcal T:=\{y:|y-L/2|\le C\sqrt{L\log L}\}$.
+
+By Lemma~\ref{lem:suffix},
+$X_m=X_J+3^{r-y}2^{-J}X_L(\omega)$, hence
+$P_m=2^L P_J+3^{r-y}P_L(\omega)$.
+Therefore
+$$
+\E[\mathbf e_{3^{n+h}}(2P_m)\mid\text{prefix},y]
+=\mathbf e_{3^{n+h}}(2^{L+1}P_J)\,\E_{\Omega_{L,y}}\mathbf e_{3^{y+h+1}}(2P_L),
+$$
+since reducing $r-y\ge 0$ leaves $P_L(\omega)\bmod 3^{N'}$ with
+$N':=y+h+1\le N$.
+The inner expectation is the resonant smaller-bridge transform up to a
+phase of modulus~$1$.
+
+The smaller-bridge entropy gap is
+$\Delta':=(L+1)\log_3 2-(y+1)-h=\beta L+(L/2-y)-h+O(1)$.
+On $\mathcal T$, $|L/2-y|\le C\sqrt{L\log L}\ll R_n$ by
+Lemma~\ref{lem:suffix-scale-selection}, hence
+$\Delta'=R_n+O(\sqrt{L\log L})\to+\infty$ and
+$\Delta'=o(L/\log L)$.
+Also $s'=L+1=2(y+1)+O(\sqrt{L\log L})=2n'+O(\sqrt{n'\log n'})$ with $n'=y+1$,
+so $s'$ is in the central window of the smaller bridge.
+
+Theorem~\ref{thm:M} applies to the smaller bridge: uniformly for
+$y\in\mathcal T$,
+$\E_{\Omega_{L,y}}\mathbf e_{3^{y+h+1}}(2P_L)\to 0$.
+Off $\mathcal T$, the inner expectation has modulus~$\le 1$ on an event
+of probability $O(n^{-2})$.
+Averaging over~$y$,
+$|\E[\mathbf e_{3^{n+h}}(2P_m)\mid S_n=s]|\le\sup_{y\in\mathcal T}|\E_{\Omega_{L,y}}\mathbf e_{3^{y+h+1}}(2P_L)|+O(n^{-2})\to 0$.
+
+The three subcases together cover every $\Delta_n\to+\infty$:
+Subcase A handles $h=O(\log n)$ (regardless of $\Delta_n$);
+Subcase B handles $h\to\infty$ with $\Delta_n=o(n/\log n)$;
+Subcase C handles the remaining case $\Delta_n\not=o(n/\log n)$ by a
+subsequence argument.
+Multiplying through by the phase~$\mathbf e_{3^{n+h}}(3^{n-1})$ completes
+the proof of part~(1).
+\end{proof}
+
+\subsection{Implications for the affine character}
+By the splitting~\eqref{eq:split}, under $S_n=s$ the multiplicative factor
+$\mathbf e_{3^k}(\xi 2^{-s}x)$ has modulus~$1$ and is deterministic.
+Therefore the affine character coefficient
+$\E[\mathbf e_{3^{n+k}}(\xi\Aff_{a_1,\dots,a_n}(x))\mid S_n=s]$
+equals the offset coefficient times this phase, and Theorem~\ref{thm:N}
+gives the sharp affine phase transition asserted in
+Theorem~\ref{thm:NIntro}.
+
+The matching obstruction in part (2) at the entropy line $h=h_\ast n$ shows
+that, regardless of any improvement to Tao's renewal estimate, one cannot
+hope to extend uniform hard-frequency mixing past $h\sim h_\ast n$.
+
+\section{Reduction of all hard frequencies and subexponential decay}\label{sec:reduction}
+
+The Bernoulli-bridge formula of Theorem~\ref{thm:reduction}
+applies to every primitive $\eta\in(\Z/3^{n+h}\Z)^\times$, not only the
+resonant $\eta=2^s$.
+This reduces the entire hard-frequency problem to the analysis of the
+\emph{primitive ternary bridge transform}
+\begin{equation}\label{eq:PTBT}
+\mathcal C_{m,r,N}(q):=\E_{\Omega_{m,r}}\mathbf e_{3^N}(q\,P_m),\qquad
+3\nmid q.
+\end{equation}
+Lemma~\ref{lem:antires} shows that for $t=q\,2^{m+1}/3^N$ (the ``effective
+real frequency'' of $\mathcal C_{m,r,N}(2q)$), the multiscale dyadic
+distance $\mathfrak D_m(t)\ge\frac12\,3^\Delta$ where
+$\Delta=s\log_3 2-N$.
+
+We now prove an $o(m/\log m)$-frequency range, which already covers a
+substantial portion of the hard range.
+The following lemma is the Bernoulli-bridge analogue of
+Lemma~\ref{lem:long-block}; the proof is identical (Stirling expansion of the
+hypergeometric ratio $\binom{m-R}{r-u}/\binom{m}{r}$ followed by a
+Hellinger tilt-to-untilt comparison with $p=r/m\approx 1/2$).
+
+\begin{lemma}[Bernoulli bridge long-block equivalence]
+\label{lem:bernoulli-bridge-long-block}
+Let $r=m/2+O(\sqrt{m\log m})$ and $R=R_m$ with $1\le R\le m/2$ and
+$R\log m/m\to 0$.
+Under the uniform law on $\Omega_{m,r}$,
+$$
+\bigl\|\mathcal L((\varepsilon_1,\dots,\varepsilon_R)\mid\Omega_{m,r})
+-\mathrm{Bern}(1/2)^{\otimes R}\bigr\|_{\TV}
+\ll\sqrt{\frac{R\log m}{m}}+\frac{R\log m+\log^2 m}{m}+m^{-A}
+$$
+for every fixed $A>0$.
+\end{lemma}
+
+\begin{theorem}[$o(m/\log m)$-frequency decay]\label{thm:P}
+Let $r=m/2+O(\sqrt{m\log m})$, and let $t_m=q_m\,2^{m+1}/3^{\mathfrak N_m}$ with
+$3\nmid q_m$.
+If $|t_m|\to\infty$ and $\log|t_m|=o(m/\log m)$, then
+$\mathcal C_{m,r,\mathfrak N_m}(2q_m)\to0$.
+\end{theorem}
+
+\begin{proof}
+Since $P_m=2^m X_m$,
+$\mathbf e_{3^{\mathfrak N_m}}(2q_mP_m)=\exp(2\pi i\,2q_m P_m/3^{\mathfrak N_m})=\exp(2\pi i t_m X_m)$
+where $t_m=q_m\cdot 2^{m+1}/3^{\mathfrak N_m}$.
+The structure of the proof mirrors Theorem~\ref{thm:M} with the resonant
+$q=1$ replaced by an arbitrary primitive frequency~$q_m$.
+
+\emph{Step 1: Truncation length.}
+Choose $R=R_m$ satisfying
+\begin{equation}\label{eq:Rsubexp}
+\log|t_m|+\log m\ll R\ll m/\log m,
+\end{equation}
+which is feasible by the assumption $\log|t_m|=o(m/\log m)$.
+
+\emph{Step 2: Ensemble equivalence.}
+By Lemma~\ref{lem:bernoulli-bridge-long-block}, since $R\ll m/\log m$,
+\begin{equation}\label{eq:bridge-EE}
+\bigl\|\mathcal L((\varepsilon_1,\dots,\varepsilon_R)\mid\Omega_{m,r})
+-\mathrm{Bern}(1/2)^{\otimes R}\bigr\|_{\TV}\to 0.
+\end{equation}
+
+\emph{Step 3: $L^\alpha$ truncation error.}
+Define $X_R:=\sum_{j=1}^R\varepsilon_j\,3^{R_{j-1}}\,2^{-j}$ and
+$T_R:=X_m-X_R\ge 0$.
+By Lemma~\ref{lem:uniform-bridge-tail-moment}, applied directly under the
+bridge law $\Omega_{m,r}$,
+$\E_{\Omega_{m,r}}[T_R^\alpha]\le C\rho^R$
+for the absolute constants $\alpha\in(0,1)$ and $\rho\in(0,1)$ of that lemma.
+
+Hence
+\begin{equation}\label{eq:Pphasealpha}
+\bigl|\E_{\Omega_{m,r}}e^{2\pi i t_m X_m}-\E_{\Omega_{m,r}}e^{2\pi i t_m X_R}\bigr|
+\le C_\alpha|t_m|^\alpha\,\E_{\Omega_{m,r}}[T_R^\alpha]
+\le C_\alpha|t_m|^\alpha\rho^R.
+\end{equation}
+Choosing $R$ so that $R\log(1/\rho)\gg\alpha\log|t_m|+\log m$
+(consistent with $R\ll m/\log m$ since $\log|t_m|=o(m/\log m)$),
+the right-hand side is $o(1)$, giving
+\begin{equation}\label{eq:replace1}
+\E_{\Omega_{m,r}}\exp(2\pi i t_m X_m)=\E_{\Omega_{m,r}}\exp(2\pi i t_m X_R)+o(1).
+\end{equation}
+
+\emph{Step 4: Reduction to perpetuity.}
+By~\eqref{eq:bridge-EE},
+\begin{equation}\label{eq:replace2}
+\E_{\Omega_{m,r}}\exp(2\pi i t_m X_R)=\E_{\rm iid}\exp(2\pi i t_m\mathcal F_R)+o(1),
+\end{equation}
+where $\mathcal F_R:=\sum_{j=1}^R\varepsilon_j\,3^{R_{j-1}}\,2^{-j}$ in the
+i.i.d.\ Bernoulli$(1/2)$ model.
+Applying the same $L^\alpha$ estimate to $|\mathcal F_\infty-\mathcal F_R|$
+(directly under the i.i.d.\ law), and the moving-frequency bound
+$|\E_{\rm iid}[e^{2\pi it_m\mathcal F_R}-e^{2\pi it_m\mathcal F_\infty}]|
+\le 6\pi|t_m|^\alpha\,\E_{\rm iid}|\mathcal F_\infty-\mathcal F_R|^\alpha
+\ll|t_m|^\alpha m_\alpha^R$,
+the same choice of~$R$ gives
+$\E_{\rm iid}\exp(2\pi it_m\mathcal F_R)=\widehat\mu_{\mathcal F}(t_m)+o(1)$.
+By Theorem~\ref{thm:rajchman}, $\widehat\mu_{\mathcal F}(t_m)\to 0$ since
+$|t_m|\to\infty$.
+Combining~\eqref{eq:replace1} and~\eqref{eq:replace2} yields
+$\E_{\Omega_{m,r}}\exp(2\pi i t_m X_m)\to 0$.
+\end{proof}
+
+\begin{remark}[Range of Theorem~\ref{thm:P}]
+For Collatz hard frequencies, $t_m=q\,2^{m+1}/3^N$ with $3\nmid q$ and
+$N=n+h$.
+Under $\Delta_n\to+\infty$ we have
+$\log|t_m|=\log|q|+(m+1)\log 2-N\log 3=\log|q|+\Delta_n\log 3+O(1)$.
+Hence Theorem~\ref{thm:P} covers all $q$ with $\log|q|=o(m/\log m)$.
+The remaining range $\log|q|=\Omega(m/\log m)$ is left to
+Conjecture~\ref{conj:HFBD} below.
+\end{remark}
+
+\begin{corollary}[Hard-range decay below the entropy line, conditional]\label{cor:cond}
+Assume Conjecture~\ref{conj:HFBD}.
+For $s=2n+O(\sqrt{n\log n})$ and $h\ge1$ with $\Delta_n\to+\infty$,
+$$
+\sup_{\substack{\xi\in\Z/3^{n+k}\Z\\v_3(\xi)<k}}
+\bigl|\E[\mathbf e_{3^{n+k}}(\xi F_n)\mid S_n=s]\bigr|\to0,
+$$
+and the analogous statement holds for the affine character.
+The transition at $\Delta_n=0$ is sharp by Theorem~\ref{thm:N}(2).
+\end{corollary}
+
+\section{Density-one and fiberwise flattening}\label{sec:flatten}
+
+In this section we attack the primitive ternary bridge transform
+$\mathcal C_{m,r,N}(q)$ at exponential frequency $|q|$ where
+Theorem~\ref{thm:P} does not apply.
+The averaging argument we develop does not yet establish the supremum
+form of HFBD (Conjecture~\ref{conj:HFBD}), but it shows that the bad set
+of $q$ is exponentially sparse, and remains exponentially sparse inside
+every $3$-adic cylinder.
+Combined with the suffix self-similarity, this forces any genuine bad
+sequence~$q_m$ to live on a positive-codimension $3$-adic exceptional
+tree.
+
+For this section, we write
+$$
+\mathcal C_{L,y,d}(q):=\E_{\Omega_{L,y}}\mathbf e_{3^d}(qP_L),\qquad 3\nmid q,
+$$
+for the local primitive ternary bridge transform on blocks of length~$L$
+with~$y$ ones and ternary modulus~$3^d$.
+
+\subsection{Pair-switch factorization}
+Fix $L=2P$ (the case $L=2P+1$ adds a single inert bit and is handled
+identically).
+Group the bits of $\varepsilon\in\Omega_{L,y}$ into pairs
+$(\varepsilon_{2p-1},\varepsilon_{2p})$ for $p=1,\dots,P$, and let
+$\sigma_p:=\varepsilon_{2p-1}+\varepsilon_{2p}\in\{0,1,2\}$,
+$C_{p-1}:=\sigma_1+\cdots+\sigma_{p-1}$.
+Conditional on $\sigma=(\sigma_p)$, the pairs with $\sigma_p=1$
+each carry an independent uniform binary choice between
+$(1,0)$ and $(0,1)$; pairs with $\sigma_p\in\{0,2\}$ are deterministic.
+
+\begin{lemma}[Pair-switch valuation]\label{lem:switch}
+For any $p$ with $\sigma_p=1$, switching $(\varepsilon_{2p-1},\varepsilon_{2p})$
+between $(1,0)$ and $(0,1)$ changes $P_L=2^L X_L$ by exactly
+$\pm\,3^{C_{p-1}}\cdot 2^{L-2p}$, while leaving $C_{p'-1}$ unchanged for
+all $p'\ne p$.
+\end{lemma}
+
+\begin{proof}
+The configuration $(1,0)$ contributes $3^{C_{p-1}}\cdot 2^{L-(2p-1)}
+=3^{C_{p-1}}\cdot 2^{L-2p+1}$ to $P_L$ at index $j=2p-1$ and zero at
+$j=2p$;
+the configuration $(0,1)$ contributes zero at $j=2p-1$ and
+$3^{C_{p-1}}\cdot 2^{L-2p}$ at $j=2p$.
+Their difference is $3^{C_{p-1}}\cdot 2^{L-2p}$.
+For any $p'\ne p$, the cumulative count $R_{j-1}$ at $j\in\{2p'-1,2p'\}$
+depends only on $\sigma_1,\dots,\sigma_{p'-1}$, and switching pair $p$
+preserves $\sigma_p=1$.
+\end{proof}
+
+Averaging over the binary switches with $\sigma$ fixed gives
+\begin{equation}\label{eq:condbound}
+\bigl|\E[\mathbf e_{3^d}(qP_L)\mid\sigma]\bigr|^2
+=\prod_{p:\sigma_p=1}\cos^2\!\Bigl(\pi\,\frac{q\,3^{C_{p-1}}\,2^{L-2p}}{3^d}\Bigr).
+\end{equation}
+Let $A(\sigma):=\#\{p:\sigma_p=1\}$ denote the number of active pairs.
+
+\subsection{Ternary digit averaging}
+The averaging identity
+\begin{equation}\label{eq:digit}
+\frac13\sum_{a=0}^2\cos^2\!\bigl(\pi(x+a/3)\bigr)=\frac12
+\end{equation}
+follows from $\cos^2\theta=(1+\cos 2\theta)/2$ and
+$\sum_{a=0}^2 e^{2\pi ia/3}=0$.
+
+\begin{lemma}[Cylinder averaging]\label{lem:cylavg}
+Fix $0\le d_0<d$, $D:=d-d_0$, and a residue $q_0\in\Z/3^{d_0}\Z$
+with $\gcd(q_0,3)=1$.
+For any pair-sum pattern~$\sigma$,
+\begin{equation}\label{eq:cylavg}
+\frac{1}{\#\{q\bmod 3^d:q\equiv q_0\!\!\pmod{3^{d_0}}\}}
+\sum_{\substack{q\bmod 3^d\\q\equiv q_0\!\!\pmod{3^{d_0}}}}
+\prod_{p:\sigma_p=1}\cos^2\!\Bigl(\pi\,\frac{q\,3^{C_{p-1}}\,2^{L-2p}}{3^d}\Bigr)
+\le 2^{-A_D(\sigma)},
+\end{equation}
+where $A_D(\sigma):=\#\{p:\sigma_p=1,\;C_{p-1}<D\}$.
+\end{lemma}
+
+\begin{proof}
+Write $\mathrm{Active}(\sigma):=\{p:\sigma_p=1\}$ and $A=A(\sigma):=|\mathrm{Active}(\sigma)|$.
+For $p\in\mathrm{Active}(\sigma)$ set $\alpha_p:=3^{C_{p-1}}\cdot 2^{L-2p}\in\Z$.
+Note $\gcd(2,3)=1$, so the $3$-adic valuation of $\alpha_p$ is exactly
+$C_{p-1}$.
+Since each active pair increments the cumulative count by $1$, the values
+$\{C_{p-1}:p\in\mathrm{Active}(\sigma)\}$ are pairwise distinct.
+
+Use the identity $\cos^2\theta=(1+\cos 2\theta)/2$ at $\theta=\pi q\alpha_p/3^d$
+and expand the product:
+\begin{align*}
+\prod_{p\in\mathrm{Active}(\sigma)}\cos^2\!\Bigl(\frac{\pi q\alpha_p}{3^d}\Bigr)
+&=\frac{1}{2^A}\sum_{S\subseteq\mathrm{Active}(\sigma)}\,\prod_{p\in S}\cos\!\Bigl(\frac{2\pi q\alpha_p}{3^d}\Bigr)\\
+&=\frac{1}{2^A}\sum_{S\subseteq\mathrm{Active}(\sigma)}\,\frac{1}{2^{|S|}}\sum_{\varepsilon\in\{\pm1\}^S}
+\mathbf e_{3^d}\!\bigl(q\,K_S(\varepsilon)\bigr),
+\end{align*}
+where $K_S(\varepsilon):=\sum_{p\in S}\varepsilon_p\alpha_p\in\Z$.
+
+For the cylinder average we decompose $q=q_0+3^{d_0}\,q'$ with
+$q'\in\Z/3^{D}\Z$ uniformly distributed, and use orthogonality of additive
+characters on $\Z/3^D\Z$:
+\begin{equation}\label{eq:char-orth}
+\E_{q\equiv q_0\!\!\pmod{3^{d_0}}}\,\mathbf e_{3^d}(qK_S)
+=\mathbf e_{3^d}(q_0K_S)\cdot\mathbf 1\bigl[3^D\mid K_S\bigr].
+\end{equation}
+
+We claim that $3^D\mid K_S(\varepsilon)$ if and only if every $p\in S$ satisfies
+$C_{p-1}\ge D$.
+Sufficiency is immediate since each $\alpha_p$ is then divisible by $3^D$.
+For necessity, suppose some $p\in S$ has $C_{p-1}<D$.
+Let $p_\ast$ be the element of $S$ with smallest $C_{p-1}$.
+Then $v_3(\alpha_{p_\ast})=C_{p_\ast-1}$ and every other $p\in S$ has
+$v_3(\alpha_p)>C_{p_\ast-1}$ since the $C_{p-1}$-values are distinct.
+Hence
+$v_3(K_S(\varepsilon))=v_3(\varepsilon_{p_\ast}\alpha_{p_\ast})=C_{p_\ast-1}<D$,
+contradicting $3^D\mid K_S(\varepsilon)$.
+
+Therefore the only surviving subsets $S$ in the expansion are
+$S\subseteq\{p\in\mathrm{Active}(\sigma):C_{p-1}\ge D\}$, of which there
+are $2^{A-A_D(\sigma)}$.
+For each such $S$ and each~$\varepsilon$, the character
+$\mathbf e_{3^d}(q_0K_S)$ has modulus~$1$.
+Combining,
+$$
+\Biggl|\E_{q\equiv q_0}\prod_{p\in\mathrm{Active}(\sigma)}\cos^2\!\Bigl(\frac{\pi q\alpha_p}{3^d}\Bigr)\Biggr|
+\le\frac{1}{2^A}\sum_{S\subseteq\{C_{p-1}\ge D\}}\frac{1}{2^{|S|}}\cdot 2^{|S|}
+=\frac{2^{A-A_D(\sigma)}}{2^A}=2^{-A_D(\sigma)},
+$$
+proving~\eqref{eq:cylavg}.
+The constraint $\gcd(q_0,3)=1$ is needed only to ensure that the cylinder
+$q\equiv q_0\pmod{3^{d_0}}$ contains primitive elements; the orthogonality
+argument itself does not use it.
+\end{proof}
+
+\subsection{Bridge generating function}
+Recall the conditional law of $\sigma$ given $\sum_p\sigma_p=y$ is
+\begin{equation}\label{eq:sigmalaw}
+\PP_{\Omega_{L,y}}(\sigma)
+=\frac{2^{A(\sigma)}}{[z^y](1+2z+z^2)^P}
+\cdot\mathbf 1\Bigl[\sum_p\sigma_p=y\Bigr],
+\end{equation}
+since each pair contributes a factor $(1+2z+z^2)=(1+z)^2$ to
+$(1+z)^L=\sum_y\#\Omega_{L,y}\,z^y$, with the $2z$ term coming from the
+two configurations of an active pair.
+
+\begin{theorem}[Density-one HFBD; averaged flattening]\label{thm:R}
+Let $L=2P$, $y=P+O(\sqrt{P\log P})$, and $d>y$.
+There exists $c>0$ such that
+\begin{equation}\label{eq:Rbound}
+\frac{1}{\varphi(3^d)}\sum_{\substack{q\bmod 3^d\\3\nmid q}}|\mathcal C_{L,y,d}(q)|^2
+\ll L^C\,e^{-cL}.
+\end{equation}
+Consequently, for every threshold $\tau>0$,
+$$
+\#\{q\bmod 3^d:3\nmid q,\;|\mathcal C_{L,y,d}(q)|>\tau\}
+\ll\tau^{-2}L^C\,e^{-cL}\,\varphi(3^d).
+$$
+\end{theorem}
+
+\begin{proof}
+By Cauchy--Schwarz applied to $\E_{\Omega_{L,y}}\E_\sigma[\,\cdot\mid\sigma]$,
+$$
+|\mathcal C_{L,y,d}(q)|^2\le\E_\sigma\bigl|\E[\mathbf e_{3^d}(qP_L)\mid\sigma]\bigr|^2.
+$$
+Lemma~\ref{lem:cylavg} with $d_0=0$ gives an upper bound on the average
+over \emph{all} residues modulo $3^d$ (not only primitive ones).
+Since the summands are nonnegative and primitive residues have density
+$\varphi(3^d)/3^d=2/3$,
+$$
+\frac{1}{\varphi(3^d)}\sum_{\substack{q\bmod 3^d\\3\nmid q}}|\mathcal C_{L,y,d}(q)|^2
+\le\frac{3^d}{\varphi(3^d)}\cdot\frac{1}{3^d}\sum_{q\bmod 3^d}|\mathcal C_{L,y,d}(q)|^2
+=\frac32\cdot\frac{1}{3^d}\sum_{q\bmod 3^d}|\mathcal C_{L,y,d}(q)|^2.
+$$
+Applying Lemma~\ref{lem:cylavg} with $d_0=0$ to the right-hand side, and
+using $D=d>y\ge A(\sigma)$ so $A_D(\sigma)=A(\sigma)$,
+$$
+\frac{1}{\varphi(3^d)}\sum_{3\nmid q}|\mathcal C_{L,y,d}(q)|^2
+\le\frac32\,\E_\sigma\bigl[2^{-A(\sigma)}\bigr].
+$$
+
+By~\eqref{eq:sigmalaw}, the conditional law of $\sigma$ on
+$\sum_p\sigma_p=y$ assigns weight proportional to $2^{A(\sigma)}$.
+Therefore
+\begin{equation}\label{eq:E2A}
+\E_\sigma\bigl[2^{-A(\sigma)}\bigr]
+=\frac{\sum_\sigma 2^{-A(\sigma)}\cdot 2^{A(\sigma)}\mathbf 1[\sum\sigma_p=y]}
+{\sum_\sigma 2^{A(\sigma)}\mathbf 1[\sum\sigma_p=y]}
+=\frac{[z^y](1+z+z^2)^P}{[z^y](1+2z+z^2)^P},
+\end{equation}
+since the unweighted single-pair generating function (counting each
+$\sigma_p\in\{0,1,2\}$ with multiplicity $1$) is $1+z+z^2$, and the
+weighted single-pair generating function counting bridges with the $2$-fold
+internal degree of freedom for active pairs is $(1+2z+z^2)=(1+z)^2$.
+
+\emph{Lower bound on the denominator.}
+$[z^y](1+z)^{2P}=\binom{2P}{y}$.
+For $y=P+\tilde\sigma$ with $\tilde\sigma=O(\sqrt{P\log P})$,
+Stirling gives
+\begin{equation}\label{eq:denom}
+\binom{2P}{P+\tilde\sigma}=\frac{4^P}{\sqrt{\pi P}}\,
+e^{-\tilde\sigma^2/P}\bigl(1+O(P^{-1/2})\bigr)
+\gg \frac{4^P}{\sqrt P}\cdot e^{-O(\log P)}.
+\end{equation}
+
+\emph{Upper bound on the numerator.}
+The trinomial coefficient $a_P(y):=[z^y](1+z+z^2)^P$ is the probability
+generating function for the sum of $P$ i.i.d.\ uniform variables on
+$\{0,1,2\}$, scaled by $3^P$.
+That sum has mean $P$ and variance $2P/3$.
+By the local central limit theorem on the lattice~$\Z$
+(see e.g.~\cite[Theorem 2.5.2]{LPW}),
+\begin{equation}\label{eq:num}
+a_P(y)=\frac{3^P}{\sqrt{2\pi\cdot 2P/3}}\,
+e^{-3(y-P)^2/(4P)}\bigl(1+O(P^{-1/2})\bigr)
+\ll \frac{3^P}{\sqrt P}.
+\end{equation}
+
+\emph{Combining.}
+Dividing~\eqref{eq:num} by~\eqref{eq:denom},
+$$
+\E_\sigma\bigl[2^{-A(\sigma)}\bigr]
+\ll \frac{3^P/\sqrt P}{4^P/\sqrt P}\cdot e^{O(\log P)}
+=\Bigl(\frac{3}{4}\Bigr)^P\cdot P^{C}
+=e^{-(L/2)\log(4/3)}\cdot L^{C},
+$$
+which proves~\eqref{eq:Rbound} with any $c<\tfrac12\log(4/3)\approx 0.144$.
+The Markov inequality~$\#\{q:|\mathcal C|>\tau\}\le\tau^{-2}\sum|\mathcal C|^2$
+gives the second statement.
+\end{proof}
+
+\subsection{Fiberwise flattening}
+\begin{theorem}[Fiberwise flattening]\label{thm:T}
+Let $L=2P$, $y=P+O(\sqrt{P\log P})$, $0\le d_0<d$, $D:=d-d_0$.
+For any primitive $q_0\in(\Z/3^{d_0}\Z)^\times$,
+\begin{equation}\label{eq:Tbound}
+\frac{1}{\#\{q\bmod 3^d:q\equiv q_0\!\!\pmod{3^{d_0}}\}}
+\sum_{\substack{q\bmod 3^d\\q\equiv q_0\!\!\pmod{3^{d_0}}}}
+|\mathcal C_{L,y,d}(q)|^2
+\ll L^C\,e^{-c\min(D,L)}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By Cauchy--Schwarz and Lemma~\ref{lem:cylavg},
+$$
+\text{LHS of \eqref{eq:Tbound}}\le\E_\sigma\bigl[2^{-A_D(\sigma)}\bigr].
+$$
+
+\emph{Reduction to the leading $M$ pairs.}
+Set $M:=\lfloor\min(D,P)/2\rfloor$.
+For $p\le M$ the cumulative count satisfies
+$C_{p-1}=\sigma_1+\cdots+\sigma_{p-1}\le 2(p-1)\le 2M-2<2M\le D$,
+so every active pair among the first $M$ pairs lies inside the set
+$\{C_{p-1}<D\}$ and hence contributes to $A_D(\sigma)$.
+Writing $B_M(\sigma):=\#\{p\le M:\sigma_p=1\}$ we obtain
+$A_D(\sigma)\ge B_M(\sigma)$, hence
+\begin{equation}\label{eq:reduceMB}
+\E_\sigma\bigl[2^{-A_D(\sigma)}\bigr]\le\E_\sigma\bigl[2^{-B_M(\sigma)}\bigr].
+\end{equation}
+
+\emph{Generating function for $\E_\sigma 2^{-B_M(\sigma)}$.}
+Using~\eqref{eq:sigmalaw} and the fact that pairs are independent given
+their sums,
+\begin{equation}\label{eq:GFM}
+\E_\sigma\bigl[2^{-B_M(\sigma)}\bigr]
+=\frac{[z^y]\bigl[(1+z+z^2)^M(1+2z+z^2)^{P-M}\bigr]}
+{[z^y](1+2z+z^2)^P}.
+\end{equation}
+The first $M$ pair factors are $(1+2z+z^2)$ in the denominator and
+$(1+z+z^2)$ in the numerator (because the $\sigma=1$ contribution
+$2z$ becomes $z$ after reweighting by $2^{-1}$); the remaining $P-M$
+pair factors are $(1+2z+z^2)$ on both sides.
+
+\emph{Saddle-point estimate.}
+By Lemma~\ref{lem:mixed-saddle-point} (Appendix~\ref{app:tech}),
+$$
+[z^y](1+z+z^2)^M(1+2z+z^2)^{P-M}\ll P^C\cdot\frac{3^M\cdot 4^{P-M}}{\sqrt P}.
+$$
+Dividing by the denominator $\binom{2P}{y}\gg 4^P/(P^{C}\sqrt P)$
+(Stirling, central window),
+\begin{equation}\label{eq:Tboundproof}
+\E_\sigma\bigl[2^{-B_M(\sigma)}\bigr]
+\ll P^{C}\cdot\frac{3^M\cdot 4^{P-M}}{4^P}
+=P^{C}\Bigl(\frac{3}{4}\Bigr)^M
+\ll L^C\,e^{-c\min(D,L)},
+\end{equation}
+since $M=\Theta(\min(D,L))$ and $(3/4)^M=e^{-M\log(4/3)}$.
+This proves~\eqref{eq:Tbound}.
+\end{proof}
+
+\subsection{Multiscale pruning of exceptional sets}
+The fiberwise estimate of Theorem~\ref{thm:T} is closed under composition
+and yields a multiscale codimension bound for the bad set.
+
+\begin{corollary}[Exceptional-tree codimension]\label{cor:tree}
+Fix a chain of depths $0=d_0<d_1<\cdots<d_T$ and bridge blocks
+$(L_j,y_j)$ with $y_j=L_j/2+O(\sqrt{L_j\log L_j})$.
+Set $H_j:=\min(d_j-d_{j-1},L_j)$ and $\tau_j:=e^{-cH_j/4}$.
+Define
+$$
+\mathcal E_T:=\bigl\{q\in(\Z/3^{d_T}\Z)^\times:
+|\mathcal C_{L_j,y_j,d_j}(q\bmod 3^{d_j})|>\tau_j\text{ for every }1\le j\le T\bigr\}.
+$$
+If $H_j\gg\log L_j$ for every~$j$, then
+\begin{equation}\label{eq:treebound}
+\#\mathcal E_T\ll\varphi(3^{d_T})\,\exp\!\left(-c'\sum_{j=1}^T H_j\right)
+\end{equation}
+for an absolute $c'>0$.
+In particular, if $\sum_j H_j\asymp d_T$, then $\#\mathcal E_T\ll 3^{(1-\kappa)d_T}$
+for some $\kappa>0$.
+\end{corollary}
+
+\begin{proof}
+We iterate Theorem~\ref{thm:T} from $j=1$ to $j=T$, conditioning at each
+step on the residue class fixed at the previous level.
+
+\emph{Single-level density.}
+At level~$j$, fix $q_{j-1}\in\Z/3^{d_{j-1}}\Z$ with $\gcd(q_{j-1},3)=1$.
+The number of residues in $\Z/3^{d_j}\Z$ above $q_{j-1}$ is exactly
+$3^{d_j-d_{j-1}}$.
+By Theorem~\ref{thm:T} applied with $(L,y,d_0,d):=(L_j,y_j,d_{j-1},d_j)$,
+$D=d_j-d_{j-1}$, the average of $|\mathcal C_{L_j,y_j,d_j}(q)|^2$ over
+this cylinder is $\ll L_j^C\,e^{-cH_j}$ where $H_j=\min(D,L_j)$.
+Markov's inequality therefore gives
+\begin{equation}\label{eq:singlelevel}
+\#\bigl\{q\equiv q_{j-1}\!\!\pmod{3^{d_{j-1}}}:|\mathcal C_{L_j,y_j,d_j}(q\bmod 3^{d_j})|>\tau_j\bigr\}
+\le \tau_j^{-2}\,L_j^C\,e^{-cH_j}\cdot 3^{d_j-d_{j-1}}.
+\end{equation}
+Substituting $\tau_j=e^{-cH_j/4}$ and using $H_j\gg\log L_j$ to absorb the
+polynomial factor,
+\begin{equation}\label{eq:singlelevel-tau}
+\#\bigl\{q\equiv q_{j-1}\!\!\pmod{3^{d_{j-1}}}:|\mathcal C|>\tau_j\bigr\}
+\le e^{-c''H_j}\cdot 3^{d_j-d_{j-1}}
+\end{equation}
+for some $c''>0$.
+
+\emph{Iterating the chain.}
+At level~$j=0$ all $\varphi(3^{d_0})$ primitive residues are eligible.
+At each subsequent level the bad lifts in each
+$3^{d_{j-1}}$-cylinder number at most $e^{-c''H_j}\cdot 3^{d_j-d_{j-1}}$.
+By induction on~$j$,
+\begin{align*}
+\#\mathcal E_T
+&\le \varphi(3^{d_0})\,\prod_{j=1}^T\bigl(e^{-c''H_j}\cdot 3^{d_j-d_{j-1}}\bigr)
+=\varphi(3^{d_0})\cdot 3^{d_T-d_0}\cdot\prod_{j=1}^T e^{-c''H_j}\\
+&\le\varphi(3^{d_T})\cdot\exp\!\Bigl(-c''\sum_{j=1}^T H_j\Bigr),
+\end{align*}
+using $\varphi(3^{d_0})\cdot 3^{d_T-d_0}\le\varphi(3^{d_T})\cdot(3/2)$ and absorbing
+the constant.
+
+\emph{Linear codimension.}
+If $\sum_j H_j\asymp d_T$, then
+$\varphi(3^{d_T})\cdot e^{-c'\sum H_j}\ll 3^{d_T}\cdot e^{-c''d_T}=3^{d_T(1-c''/\log 3)}=3^{(1-\kappa)d_T}$
+with $\kappa=c''/\log 3>0$.
+\end{proof}
+
+\begin{remark}[Implication for HFBD]\label{rem:hfbd}
+Corollary~\ref{cor:tree} shows that any sequence $q_m$ violating
+HFBD-sup must, in the bridge representation, survive a positive-codimension
+exceptional tree at all scales, in the sense that
+$q_m\bmod 3^{d_j}$ avoids the union of bad lifts at every level~$j$.
+The structure of such surviving residues mirrors Tao's black-triangle
+chains in~\cite[\S7]{Tao}: nested $3$-adic resonances of arithmetic type.
+The natural way to close the tree is to show such a sequence must be
+asymptotically resonant, i.e.\ $q_m\equiv\pm 2^a\pmod{3^{d_j}}$
+for arbitrarily large depth $d_j$, in which case the resonant analysis
+of \S\ref{sec:suffix} applies.
+\end{remark}
+
+\begin{remark}[A structural ceiling for second-moment methods]\label{rem:ceiling}
+The codimension $\kappa>0$ in Corollary~\ref{cor:tree} is bounded by
+the ratio of the per-step pair-switch contraction to the ternary branching:
+each unit of $3$-adic depth introduces $3$ branches against a pair-switch
+contraction of $1/2$ per active pair, giving an asymptotic survival rate of
+order $(3/2)^{d_T/2}$ for the absolute size of $\mathcal E_T$.
+In particular, second-moment methods of the type used in
+Theorems~\ref{thm:R}--\ref{thm:T} yield positive codimension but cannot
+yield $\#\mathcal E_T=O(1)$, which is what HFBD-sup would require.
+The supremum form of HFBD therefore requires a rigidity input beyond
+$L^2$-flattening, and the natural candidate is the resonant-capture
+statement of Remark~\ref{rem:hfbd}.
+\end{remark}
+
+\section{The remaining open range}\label{sec:open}
+
+The exact suffix self-similarity (Lemma~\ref{lem:suffix}) reduces the
+exponential range of $|q|$ to a Diophantine condition.
+For $L\to\infty$ and $y=L/2+O(\sqrt{L\log m})$, define
+$d_L:=y+h+1$ and let $q_{d_L}\in\Z$ be the representative of
+$2q\pmod{3^{d_L}}$ in $(-3^{d_L}/2,3^{d_L}/2]$, so $3\nmid q_{d_L}$.
+
+\begin{conjecture}[High-frequency primitive ternary bridge decay; HFBD]\label{conj:HFBD}
+Let $r=m/2+O(\sqrt{m\log m})$ and $3\nmid q$.
+If $m\log 2-N\log 3\to+\infty$, then
+$$
+\sup_{\substack{q\in\Z/3^N\Z\\3\nmid q}}
+|\mathcal C_{m,r,N}(q)|\to0.
+$$
+\end{conjecture}
+
+Theorem~\ref{thm:P} verifies HFBD in the subexponential range
+$\log|q|=o(m/\log m)$, and Theorems~\ref{thm:R}--\ref{thm:T} give a strong
+density-one form of HFBD in the exponential range as well: the bad set
+of primitive frequencies is exponentially sparse in every $3$-adic
+cylinder, and surviving frequencies have positive $3$-adic codimension
+(Corollary~\ref{cor:tree}).
+The remaining content of HFBD is therefore a rigidity statement on the
+multiscale exceptional tree.
+
+\begin{remark}[Status after Section~\ref{sec:flatten}]
+By Theorem~\ref{thm:P}, HFBD holds for $\log|q|=o(m/\log m)$.
+By Theorems~\ref{thm:R} and~\ref{thm:T}, for $\log|q|=\Theta(m)$ the
+bad set of primitive residues is exponentially sparse in every $3$-adic
+cylinder; iterating the fiberwise estimate over a chain of suffix scales
+gives Corollary~\ref{cor:tree}, which forces any HFBD-violating sequence
+$(q_m)$ to survive a positive-codimension exceptional tree.
+The natural completion (Remark~\ref{rem:hfbd}) is a rigidity theorem
+asserting that any such surviving sequence must be asymptotically
+captured by the resonant family $\{\pm 2^a\}$, in which case the analysis
+of Section~\ref{sec:suffix} closes the remaining branch.
+The Br\'emont/Li--Sahlsten/Rapaport classification \cite{Bremont,LiSahlsten,Rapaport}
+suggests that the obstruction, if any, is of arithmetic Pisot type and
+hence rigid; the IFS~\eqref{eq:IFS} is not in Pisot form, giving a
+structural reason to expect HFBD to hold.
+\end{remark}
+
+\subsection*{Implications for Tao's Remark~1.16}
+A natural-density upgrade of Tao's theorem requires fine-scale mixing of
+the entire affine map $\Aff_{a_1,\dots,a_n}$.
+The results of this paper show:
+\begin{itemize}
+\item the multiplicative marginal $2^{-S_n}\pmod{3^k}$ alone cannot
+provide such mixing past $3^k\sim\sqrt n$ (Theorem~\ref{thm:thresh});
+\item under microcanonical conditioning the multiplicative obstruction
+disappears and the worst (resonant) hard frequency exhibits a sharp phase
+transition at the entropy line $h_\ast n$ (Theorem~\ref{thm:N});
+\item the full hard-frequency problem reduces to the primitive ternary
+bridge transform~\eqref{eq:PTBT} and is unconditionally solved in the
+subexponential range (Theorem~\ref{thm:P});
+\item in the exponential range, the bad set of primitive residues is
+exponentially sparse in every $3$-adic cylinder, so a multiscale
+exceptional tree is forced to have positive codimension
+(Theorems~\ref{thm:R}, \ref{thm:T}, Corollary~\ref{cor:tree});
+\item the matching obstruction at $h>h_\ast n$ identifies the sharp limit
+of any uniform decay, regardless of technical strength of Tao's renewal
+estimate.
+\end{itemize}
+What remains for the supremum form of HFBD is a rigidity statement
+asserting that any HFBD-violating sequence must be asymptotically
+captured by the resonant family $\{\pm 2^a\}$.
+A proof of this rigidity would close hard-frequency affine mixing
+throughout the entire entropy-allowed range and provide the missing
+input toward Tao's Remark~1.16.
+
+\appendix
+
+\section{Technical lemmas}\label{app:tech}
+
+We collect several technical estimates used in the body of the paper.
+
+\subsection{Local central limit theorem for $S_n$}
+The variable $S_n=a_1+\cdots+a_n$ with $a_i$ i.i.d.\ $\Geom(2)$ is
+supported on $\{n,n+1,\dots\}$ with $\E S_n=2n$ and $\Var S_n=2n$.
+Its characteristic function is
+$\phi_n(\theta)=\bigl(\tfrac12 e^{i\theta}/(1-\tfrac12 e^{i\theta})\bigr)^n$,
+satisfying $|\phi_n(\theta)|\le e^{-cn\sin^2(\theta/2)}$ for $|\theta|\le\pi$.
+By Fourier inversion and the standard local CLT for lattice distributions
+(see e.g.~\cite[Theorem 2.5.2]{LPW}),
+\begin{equation}\label{eq:LCLTapp}
+\PP(S_n=s)=\frac{1}{\sqrt{4\pi n}}\,\exp\!\Bigl(-\frac{(s-2n)^2}{4n}\Bigr)\,\bigl(1+O(n^{-1/2})\bigr)
+\end{equation}
+uniformly for $|s-2n|\le n^{2/3}$ (say).
+For $|s-2n|\le L\sqrt{n\log n}$, this gives
+$\PP(S_n=s)\gg n^{-1/2-L^2/4}$, the bound used in the proof of
+Theorem~\ref{thm:H}.
+
+\subsection{Hoeffding for hypergeometric}
+Let $y\sim\Hyper(m,r,L)$ denote the number of ones in a uniform $L$-subset
+of $\{0,1\}^m$ subject to total~$r$.
+Equivalently, $y$ is the number of red balls drawn in $L$ draws without
+replacement from an urn with $r$ red and $m-r$ white balls.
+Hoeffding's inequality (cf.~\cite[Theorem 12.4]{LPW}) gives
+\begin{equation}\label{eq:hoeffdingapp}
+\PP\bigl(|y-Lr/m|>t\bigr)\le 2\exp(-2t^2/L)\quad\text{for all }t>0.
+\end{equation}
+
+\subsection{$L^\alpha$ moment of the perpetuity tail}\label{app:Lalpha}
+For $A\sim\Geom(2)$ on $\{1,2,\dots\}$ and $0<\alpha<1$,
+\begin{equation}\label{eq:mqapp}
+m_\alpha:=\E\bigl[(3\cdot 2^{-A})^\alpha\bigr]=\frac{3^\alpha}{2^{\alpha+1}-1}<1.
+\end{equation}
+This follows from $\E[2^{-\alpha A}]=2^{-(\alpha+1)}/(1-2^{-(\alpha+1)})=1/(2^{\alpha+1}-1)$.
+At $\alpha=0$ and $\alpha=1$, $m_\alpha=1$; convexity of
+$f(\alpha):=\log m_\alpha=\alpha\log 3-\log(2^{\alpha+1}-1)$ on $[0,1]$ (a direct
+second-derivative check shows $f''>0$, then $f(0)=f(1)=0$ implies $f<0$ on the
+interior) gives $m_\alpha<1$ for $\alpha\in(0,1)$.
+
+\subsection{Mixed saddle-point estimate}\label{app:mixed-saddle}
+
+\begin{lemma}[Mixed saddle-point]\label{lem:mixed-saddle-point}
+Let $G_{P,M}(z):=(1+z+z^2)^M(1+2z+z^2)^{P-M}$ for $0\le M\le P$.
+Uniformly for $y=P+O(\sqrt{P\log P})$,
+$$
+[z^y]G_{P,M}(z)\ll P^C\,\frac{3^M\cdot 4^{P-M}}{\sqrt P}
+$$
+for an absolute constant $C$.
+\end{lemma}
+
+\begin{proof}
+Write $G_{P,M}(z)=3^M 4^{P-M}\,\E z^{U_M+V_{P-M}}$, where $U_M$ is the
+sum of $M$ i.i.d.\ uniform $\{0,1,2\}$ variables and $V_{P-M}\sim\mathrm{Bin}(2(P-M),1/2)$
+is independent.
+Hence $[z^y]G_{P,M}(z)=3^M 4^{P-M}\PP(U_M+V_{P-M}=y)$, and it suffices to
+show $\sup_y\PP(U_M+V_{P-M}=y)\ll P^{-1/2}$.
+
+If $P-M\ge P/2$, $\sup_y\PP(U_M+V_{P-M}=y)\le\sup_v\PP(V_{P-M}=v)$, and
+Stirling for binomial coefficients gives this $\ll(P-M)^{-1/2}\ll P^{-1/2}$.
+
+If $M\ge P/2$, $\sup_y\PP(U_M+V_{P-M}=y)\le\sup_u\PP(U_M=u)$.
+The characteristic function of a single uniform $\{0,1,2\}$ variable is
+$\phi(\theta)=(1+e^{i\theta}+e^{2i\theta})/3=e^{i\theta}(1+2\cos\theta)/3$,
+so $|\phi(\theta)|=|1+2\cos\theta|/3$.
+There are $c,c'>0$ with $|\phi(\theta)|\le e^{-c\theta^2}$ for $|\theta|\le 1$
+and $|\phi(\theta)|\le 1-c'$ for $1\le|\theta|\le\pi$.
+Fourier inversion gives
+$$
+\sup_u\PP(U_M=u)
+\le\frac1{2\pi}\int_{-\pi}^\pi|\phi(\theta)|^M d\theta
+\ll\int_{-1}^1 e^{-cM\theta^2}\,d\theta+(1-c')^M
+\ll M^{-1/2}\ll P^{-1/2}.
+$$
+Combining the two cases proves the lemma.
+\end{proof}
+
+\subsection{Saddle-point estimate for trinomial coefficients}
+For the polynomial $(1+z+z^2)^P$, the coefficient
+$a_P(y):=[z^y](1+z+z^2)^P$ is the probability generating function of
+$P$ i.i.d.\ uniform$\{0,1,2\}$ variables, scaled by $3^P$.
+The local CLT for lattice distributions gives, for $y=P+\tilde\sigma$ with
+$\tilde\sigma=O(\sqrt{P\log P})$,
+\begin{equation}\label{eq:trinomapp}
+a_P(y)=\frac{3^P}{\sqrt{2\pi\cdot 2P/3}}\,\exp\!\Bigl(-\frac{3\tilde\sigma^2}{4P}\Bigr)\bigl(1+O(P^{-1/2})\bigr).
+\end{equation}
+
+\begin{thebibliography}{99}
+
+\bibitem{Bremont}
+J.~Br\'emont,
+\emph{Self-similar measures and the Rajchman property},
+Annales Henri Lebesgue \textbf{4} (2021), 973--1004.
+\href{https://doi.org/10.5802/ahl.94}{doi:10.5802/ahl.94}.
+
+\bibitem{Erdos1939}
+P.~Erd\H{o}s,
+\emph{On a family of symmetric Bernoulli convolutions},
+Amer.~J.~Math.~\textbf{61} (1939), 974--976.
+
+\bibitem{Korec}
+I.~Korec,
+\emph{A density estimate for the $3x+1$ problem},
+Math.~Slovaca \textbf{44} (1994), 85--89.
+
+\bibitem{Lagarias}
+J.~C.~Lagarias,
+\emph{The $3x+1$ Problem: An Overview},
+in: \emph{The Ultimate Challenge: The $3x+1$ Problem},
+AMS, 2010, pp.~3--29; updated version arXiv:2111.02635.
+
+\bibitem{LiSahlsten}
+J.~Li and T.~Sahlsten,
+\emph{Trigonometric series and self-similar sets},
+J.~European Math.~Soc.~\textbf{24} (2022), 341--368.
+\href{https://doi.org/10.4171/JEMS/1102}{doi:10.4171/JEMS/1102}.
+
+\bibitem{LPW}
+D.~A.~Levin and Y.~Peres,
+\emph{Markov Chains and Mixing Times}, 2nd ed.,
+American Mathematical Society, Providence, RI, 2017.
+
+\bibitem{PSS}
+Y.~Peres, W.~Schlag, and B.~Solomyak,
+\emph{Sixty years of Bernoulli convolutions},
+in: \emph{Fractal Geometry and Stochastics II},
+Progr.~Probab.~\textbf{46}, Birkh\"auser, 2000, pp.~39--65.
+
+\bibitem{Rapaport}
+A.~Rapaport,
+\emph{On the Rajchman property for self-similar measures on $\mathbb R^d$},
+Adv.~Math.~\textbf{403} (2022), 108375.
+
+\bibitem{Salem}
+R.~Salem,
+\emph{A remarkable class of algebraic integers.  Proof of a conjecture
+of Vijayaraghavan},
+Duke Math.~J.~\textbf{11} (1944), 103--108.
+
+\bibitem{SiNote}
+Y.~Si,
+\emph{A logarithmic threshold for the multiplicative component in Tao's
+affine Collatz framework}, 2026.
+\href{https://doi.org/10.5281/zenodo.19683190}{doi:10.5281/zenodo.19683190}.
+
+\bibitem{Tao}
+T.~Tao,
+\emph{Almost all orbits of the Collatz map attain almost bounded values},
+Forum of Mathematics, Pi \textbf{10} (2022), e12, 1--56.
+\href{https://doi.org/10.1017/fmp.2022.8}{doi:10.1017/fmp.2022.8}.
+
+\bibitem{Vervaat}
+W.~Vervaat,
+\emph{On a stochastic difference equation and a representation of
+non-negative infinitely divisible random variables},
+Adv.~in Appl.~Probab.~\textbf{11} (1979), 750--783.
+
+\end{thebibliography}
+
+\end{document}
