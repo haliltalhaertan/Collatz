@@ -1,0 +1,879 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalize,noabbrev]{cleveref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=green!35!black,
+  urlcolor=blue!55!black,
+  pdftitle={Factor-Complexity and Pressure Barriers for Critical-Log Syracuse Valuation Words},
+  pdfauthor={Halil Talha Ertan}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\alphaC}{\alpha}
+\newcommand{\Fcal}{\mathcal F}
+\newcommand{\Acc}{\operatorname{Acc}}
+\newcommand{\e}{\mathrm e}
+
+\title[Factor-complexity and pressure barriers]{Factor-Complexity and Pressure Barriers for Critical-Log Syracuse Valuation Words}
+\author{Halil Talha Ertan}
+\address{Independent Researcher, Turkey}
+\email{haliltalhaertan@gmail.com}
+\date{}
+
+\begin{document}
+
+\begin{abstract}
+Let
+\[
+ n_{k+1}=\frac{3n_k+1}{2^{a_k}},\qquad a_k=v_2(3n_k+1),
+\]
+be a positive odd-only Syracuse orbit, let
+\(A_k=\sum_{i<k}a_i\), put \(\alpha=\log_2 3\), and define
+\(s_k=\lfloor\alpha k\rfloor-A_k\).
+We study the conditional critical-log regime
+\[
+ s_k=\kappa\log_2 k+O(1),\qquad \kappa>1.
+\]
+If \(p_a(r)\) denotes the number of distinct length-\(r\) factors of the valuation word, then arithmetic separation of repeated factors gives
+\[
+ \liminf_{r\to\infty}\frac{\log_2 p_a(r)}{r}\ge \frac{\alpha}{\kappa}.
+\]
+For a finite valuation bound \(1\le a_k\le B\), \(B\ge3\), and pointwise zero-criticality relative to the Sturmian phase word
+\(g_k=\lfloor\alpha(k+1)\rfloor-\lfloor\alpha k\rfloor\), we derive a deterministic weighted-pressure upper bound
+\[
+ \limsup_{r\to\infty}\frac{\log_2 p_a(r)}{r}\le h_B,
+\]
+and hence \(\kappa\ge\alpha/h_B\).  A uniform pressure envelope, which does not require the finite bound \(B\) to be specified in advance, yields the certified inequality
+\[
+ \kappa\ge\frac{\alpha}{h_\infty}>\frac{348}{125}=2.784.
+\]
+We then resolve critical sites \(a_k=g_k\) into two phase-dependent types and obtain an explicit concave pressure surface \(h(\rho_1,\rho_2)\).  Along the audited exponential scale families, every accumulation density pair lies in a feasible region \(\mathcal F\) and satisfies
+\[
+ h(\rho_1,\rho_2)\ge\frac{\alpha}{\kappa}.
+\]
+In particular, zero critical density already implies the same \(2.784\) threshold, without pointwise zero-criticality.  Exact interval certification gives quantitative minimum critical-density requirements, including values near \(0.3462262371\), \(0.0916083302\), and \(0.0314445509\) for \(\kappa=1.06,1.5,2\), respectively.
+These are conditional structural obstructions inside the critical-log regime; they do not prove the Collatz conjecture and do not exclude divergent or cyclic behavior in general.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+The Collatz problem and its accelerated odd-only form have generated a large literature connecting arithmetic dynamics, parity or valuation encodings, symbolic dynamics, Diophantine approximation, and probabilistic models; see, for example, Lagarias' survey \cite{Lagarias1985}.  The present paper studies one highly structured hypothetical regime for the accelerated odd map.  We do not assume or claim that this regime describes arbitrary Collatz trajectories.
+
+For a positive odd integer \(n_k\), write
+\[
+ n_{k+1}=\frac{3n_k+1}{2^{a_k}},
+ \qquad
+ a_k=v_2(3n_k+1)\ge1.
+\]
+Set
+\[
+ A_k=\sum_{i<k}a_i,
+ \qquad
+ \alpha=\log_2 3,
+ \qquad
+ F_k=\lfloor\alpha k\rfloor,
+ \qquad
+ s_k=F_k-A_k.
+\]
+Our hypothesis is the global critical-log law
+\begin{equation}\label{eq:criticallog}
+ s_k=\kappa\log_2 k+O(1),\qquad \kappa>1.
+\end{equation}
+The condition \(\kappa>1\) is load-bearing in the polynomial state bound below.
+
+The first mechanism is arithmetic.  A repeated valuation block acts by the same affine map at both occurrences.  Subtracting the two copies forces a large power of two to divide the difference of the corresponding start values.  Since \eqref{eq:criticallog} also makes the ordinary orbit grow only polynomially, sufficiently many starts in an exponentially long window cannot share a valuation factor.  This yields an exponential lower rate for factor complexity.
+
+The second mechanism is symbolic and deterministic.  The phase word
+\[
+ g_k=F_{k+1}-F_k\in\{1,2\}
+\]
+is Sturmian.  Relative to this phase, the defect \(d_k=g_k-a_k\) has a total over any long factor controlled by the critical-log discrepancy.  Under pointwise zero-criticality and a finite valuation bound, a weighted generating function therefore gives a pressure upper rate.  Comparing the lower and upper rates produces a threshold on \(\kappa\).
+
+The third mechanism relaxes pointwise zero-criticality.  We distinguish the two possible critical events
+\[
+ (g_k,a_k)=(1,1),\qquad (g_k,a_k)=(2,2),
+\]
+and introduce a two-dimensional pressure surface.  Its feasible high-pressure region gives a quantitative lower requirement on critical-site density.
+
+\subsection{Relation to earlier symbolic and entropy approaches}
+
+No novelty is claimed for the individual ingredients.  Valuation or E-sequence formulations occur in Wang's work \cite{Wang2019}; factor complexity for Collatz-related codings appears in Dubickas \cite{Dubickas2009}; Sturmian words enter the Collatz conjugacy setting in L\'opez--Stoll \cite{LopezStoll2009}; and stochastic entropy and large-deviation viewpoints are classical in Collatz models, including Lagarias--Weiss \cite{LagariasWeiss1992}.
+
+Two 2026 sources are especially close.  Witteveen \cite{Witteveen2026} studies bounded-amplitude positive Collatz cycles using a mechanical/Sturmian exponent language, repeated-factor divisibility, and an entropy threshold.  At the arithmetic level, the overlap is exact: if a repeated length-\(r\) exponent word of total valuation \(q\) occurs twice, subtraction of the two affine maps gives
+\[
+ 2^q(x_{a+r}-x_{b+r})=3^r(x_a-x_b).
+\]
+Witteveen reads this identity in the \(3\)-adic direction to obtain divisibility of an endpoint difference by \(3^r\); we read the same identity in the coprime \(2\)-adic direction to obtain divisibility of a start-value difference by \(2^q\).  Thus repeated-factor divisibility itself is not a new device.  Likewise, the broad architecture ``entropy rate of a constrained Collatz word language versus a Diophantine or discrepancy parameter gives a threshold'' already occurs there.
+
+The distinction is the hypothesis class and the quantitative output.  Witteveen's cycle language is controlled by bounded amplitude and uniformly bounded subword discrepancy.  Here the global critical-log law permits an \(O(\log r)\) defect band and leads to the specific lower rate \(\alpha/\kappa\), the deterministic pressure constants \(h_B\), the uniform threshold \(2.784\), and a two-type density surface.
+
+A second close source is the public \texttt{collatz-things} research programme \cite{CollatzThings2026}.  Its July 2026 integral-escape results combine symbolic repetition, low factor complexity, bounded critical discrepancy, Diophantine exponents, and ordinary integrality on a special balanced \(q=3\), \(\{3,4\}\)-block residual language.  Those results are qualitative no-realizer statements in a different residual system; they do not state the quantitative critical-log rate/pressure/density theorems proved here.
+
+Accordingly, our novelty claim is deliberately narrow: we are not aware of an equivalent theorem under the hypotheses of this paper.  A remaining literature risk is that a sufficiently abstract theorem in combinatorics on words or symbolic dynamics, stated outside Collatz terminology, may subsume part of the counting or pressure argument after a change of notation.  That priority question is separate from the internal proof of the results below.
+
+\section{Setup and main results}
+
+For a finite word
+\[
+ W=(a_u,\ldots,a_{u+r-1}),
+\]
+write
+\[
+ A(W)=\sum_{j=0}^{r-1}a_{u+j}.
+\]
+Let \(p_a(r)\) denote the number of distinct length-\(r\) factors occurring in the infinite valuation word \((a_k)_{k\ge0}\).
+
+Our first principal theorem is the factor-complexity lower bound.
+
+\begin{theorem}[Exponential factor-complexity lower rate]\label{thm:lower}
+Assume \eqref{eq:criticallog}.  Then
+\[
+ \liminf_{r\to\infty}\frac{\log_2 p_a(r)}{r}
+ \ge \frac{\alpha}{\kappa}.
+\]
+No a priori bound on the valuation alphabet is assumed.
+\end{theorem}
+
+For the pressure theorem, define the Sturmian phase
+\[
+ g_k=F_{k+1}-F_k\in\{1,2\}.
+\]
+A site is \emph{critical} when \(a_k=g_k\).
+
+For finite \(B\ge3\), define
+\begin{align}\label{eq:hB}
+ h_B:=\inf_{\lambda\in\mathbb R}\Bigg[&(2-\alpha)
+ \log_2\!\Big(\sum_{a=2}^{B}\e^{\lambda(1-a)}\Big)\\
+ &+(\alpha-1)
+ \log_2\!\Big(\sum_{\substack{1\le a\le B\\a\ne2}}
+ \e^{\lambda(2-a)}\Big)\Bigg].\notag
+\end{align}
+
+\begin{theorem}[Finite-alphabet zero-critical pressure]\label{thm:pressure}
+Assume \eqref{eq:criticallog}.  Let \(B\ge3\) be finite and suppose
+\[
+ 1\le a_k\le B,
+ \qquad
+ a_k\ne g_k
+ \quad\text{for every }k.
+\]
+Then
+\[
+ \limsup_{r\to\infty}\frac{\log_2 p_a(r)}{r}\le h_B.
+\]
+Consequently
+\[
+ \kappa\ge\frac{\alpha}{h_B}.
+\]
+In the special case \(1\le a_k\le3\), exact certification gives
+\[
+ \kappa>3.027.
+\]
+\end{theorem}
+
+The finite bound in \cref{thm:pressure} is not part of the eventual uniform headline.  The critical-log law itself makes each realized valuation sequence bounded, but the bound need not be known in advance.
+
+\begin{theorem}[Uniform zero-critical obstruction]\label{thm:uniform}
+Assume \eqref{eq:criticallog} and \(a_k\ne g_k\) for every \(k\).  Without specifying any finite valuation-alphabet bound in advance,
+\[
+ \kappa\ge\frac{\alpha}{h_\infty}>\frac{348}{125}=2.784,
+\]
+where \(h_\infty\) is the formal infinite-alphabet pressure envelope defined in \cref{sec:uniform-envelope}.  Informationally,
+\[
+ \frac{\alpha}{h_\infty}
+ \approx2.78401090300090189.
+\]
+\end{theorem}
+
+We next relax pointwise zero-criticality.  Put
+\[
+ M_1=2-\alpha,
+ \qquad
+ M_2=\alpha-1.
+\]
+For normalized type densities \(\rho_1,\rho_2\), define
+\begin{equation}\label{eq:F}
+ \Fcal=
+ \left\{(\rho_1,\rho_2):
+ 0\le\rho_1\le M_1,
+ \ 0\le\rho_2\le M_2,
+ \ \rho_1-\rho_2\ge M_1-M_2
+ \right\}.
+\end{equation}
+Set
+\[
+ P=M_1-\rho_1,
+ \qquad
+ Q=M_2-\rho_2,
+\]
+\[
+ A(t)=\frac1{t-1},
+ \qquad
+ B(t)=t+\frac1{t-1},
+ \qquad t>1,
+\]
+and
+\[
+ E_i(\rho_i)
+ =M_i\log_2M_i
+ -(M_i-\rho_i)\log_2(M_i-\rho_i)
+ -\rho_i\log_2\rho_i,
+\]
+with the usual continuous convention at the endpoints.  On \(\Fcal\), define
+\begin{equation}\label{eq:surface}
+ h(\rho_1,\rho_2)
+ =E_1(\rho_1)+E_2(\rho_2)
+ +\inf_{t>1}
+ \big[P\log_2A(t)+Q\log_2B(t)\big].
+\end{equation}
+
+For a multiplicative window \([N,2N)\), let \(D_i(N)\) denote the normalized count of type-\(i\) critical sites in that window.
+
+\begin{theorem}[Critical-site density pressure]\label{thm:density}
+Assume \eqref{eq:criticallog}.  Let \(\varepsilon_r\) satisfy
+\[
+ 0<\varepsilon_r<\frac{\alpha}{\kappa},
+ \qquad
+ \varepsilon_r\to0,
+ \qquad
+ r\varepsilon_r\to\infty,
+\]
+and put
+\[
+ N_r=\left\lfloor
+ 2^{(\alpha/\kappa-\varepsilon_r)r}
+ \right\rfloor.
+\]
+Then every accumulation point
+\[
+ \rho\in\Acc\{(D_1(N_r),D_2(N_r))\}
+\]
+lies in \(\Fcal\) and satisfies
+\[
+ h(\rho_1,\rho_2)\ge\frac{\alpha}{\kappa}.
+\]
+\end{theorem}
+
+The theorem is deliberately stated only on the audited scale families above; no arbitrary-\(N\) accumulation statement is used here.
+
+\section{Polynomial state growth and repeated-factor separation}
+
+The exact affine iterate is elementary but central.
+
+\begin{lemma}[Affine iterate]\label{lem:affine}
+For every \(k\ge1\),
+\begin{equation}\label{eq:affineiterate}
+ 2^{A_k}n_k
+ =3^k n_0+\sum_{j=0}^{k-1}3^{k-1-j}2^{A_j}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+This follows by iterating
+\(2^{a_j}n_{j+1}=3n_j+1\).  The formula is immediate for \(k=1\); multiplying the \(k\)-th identity by \(3\), adding \(2^{A_k}\), and using \(A_{k+1}=A_k+a_k\) gives the induction step.
+\end{proof}
+
+\begin{lemma}[Polynomial ordinary-state bound]\label{lem:poly}
+Under \eqref{eq:criticallog},
+\[
+ n_k=O(k^\kappa).
+\]
+\end{lemma}
+
+\begin{proof}
+Divide \eqref{eq:affineiterate} by \(2^{A_k}\) and factor out \(3^k\):
+\[
+ n_k=\frac{3^k}{2^{A_k}}
+ \left(
+ n_0+\sum_{j=0}^{k-1}\frac{2^{A_j}}{3^{j+1}}
+ \right).
+\]
+Since
+\[
+ A_j=\lfloor\alpha j\rfloor-s_j
+ =\alpha j-\{\alpha j\}-s_j,
+\]
+we have
+\[
+ \frac{2^{A_j}}{3^j}
+ =2^{-s_j-\{\alpha j\}}
+ =O(j^{-\kappa}).
+\]
+The series in parentheses is therefore bounded because \(\kappa>1\).  On the other hand,
+\[
+ \frac{3^k}{2^{A_k}}
+ =2^{s_k+\{\alpha k\}}
+ =O(k^\kappa).
+\]
+Combining the two estimates proves the claim.
+\end{proof}
+
+\begin{lemma}[Local valuation mass]\label{lem:localmass}
+There is a constant \(C\) such that for every \(r\ge1\) and every \(u\ge r\),
+\[
+ A_{u+r}-A_u\ge \alpha r-C.
+\]
+\end{lemma}
+
+\begin{proof}
+From the definitions,
+\[
+ A_{u+r}-A_u
+ =F_{u+r}-F_u-(s_{u+r}-s_u).
+\]
+The floor contribution is at least \(\alpha r-1\).  Under \eqref{eq:criticallog},
+\[
+ s_{u+r}-s_u
+ =\kappa\log_2\frac{u+r}{u}+O(1).
+\]
+For \(u\ge r\), the logarithm is at most \(1\).  Hence the discrepancy increment is bounded above uniformly, which gives the result.
+\end{proof}
+
+\begin{lemma}[Repeated-factor spacing]\label{lem:repeat}
+Suppose the same length-\(r\) valuation word \(W\) occurs at positions \(u<v\).  Then
+\[
+ 2^{A(W)}\mid(n_v-n_u).
+\]
+Under \eqref{eq:criticallog}, the difference is nonzero; consequently
+\[
+ |n_v-n_u|\ge2^{A(W)}.
+\]
+\end{lemma}
+
+\begin{proof}
+The word \(W\) has one affine action, so for some integer \(B_W\),
+\[
+ 2^{A(W)}n_{u+r}=3^r n_u+B_W,
+\]
+\[
+ 2^{A(W)}n_{v+r}=3^r n_v+B_W.
+\]
+Subtracting gives
+\[
+ 2^{A(W)}(n_{v+r}-n_{u+r})
+ =3^r(n_v-n_u).
+\]
+Because \(2^{A(W)}\) and \(3^r\) are coprime,
+\(2^{A(W)}\mid(n_v-n_u)\).
+
+If \(n_v=n_u\), determinism makes the orbit eventually periodic.  The valuation average on an eventual period is rational.  But \eqref{eq:criticallog} gives \(s_k=o(k)\), hence
+\[
+ \frac{A_k}{k}\longrightarrow\alpha,
+\]
+and \(\alpha=\log_2 3\) is irrational.  This contradiction excludes equality.
+\end{proof}
+
+\section{Exponential factor complexity}
+
+\begin{proof}[Proof of \cref{thm:lower}]
+Fix
+\[
+ 0<\varepsilon<\frac{\alpha}{\kappa}
+\]
+and define
+\[
+ N_r=\left\lfloor2^{(\alpha/\kappa-\varepsilon)r}\right\rfloor.
+\]
+For large \(r\), consider length-\(r\) factors starting at
+\[
+ u\in[N_r,2N_r-r].
+\]
+Suppose two such factors, starting at \(u<v\), are equal.  By \cref{lem:repeat,lem:localmass},
+\[
+ |n_v-n_u|
+ \ge2^{A(W)}
+ \ge2^{\alpha r-O(1)}.
+\]
+On the other hand, \cref{lem:poly} and \(u,v\asymp N_r\) give
+\[
+ |n_v-n_u|
+ \le O(N_r^\kappa)
+ =2^{(\alpha-\kappa\varepsilon)r+O(1)}.
+\]
+The two bounds are incompatible for sufficiently large \(r\).  Hence all factors in the selected window are distinct.
+
+The number of starts is \(N_r-O(r)\), so
+\[
+ \liminf_{r\to\infty}
+ \frac{\log_2p_a(r)}r
+ \ge\frac{\alpha}{\kappa}-\varepsilon.
+\]
+Since \(\varepsilon\) is arbitrary in \((0,\alpha/\kappa)\), letting \(\varepsilon\downarrow0\) proves the theorem.
+\end{proof}
+
+\begin{remark}
+The proof uses no finite valuation alphabet.  The lower rate comes from the conjunction of polynomial state growth, repeated-factor separation, and the local valuation mass forced by the global critical-log law.
+\end{remark}
+
+\section{Finite-alphabet deterministic pressure}\label{sec:finitepressure}
+
+The phase word
+\[
+ g_k=\lfloor\alpha(k+1)\rfloor-\lfloor\alpha k\rfloor
+\]
+is a two-letter mechanical/Sturmian word.  In particular, its length-\(r\) factor complexity is \(r+1\), and every length-\(r\) factor has one of two Parikh vectors, differing by one occurrence of the symbol \(2\); see \cite{MorseHedlund1940}.  Thus the phase word contributes only polynomial overhead to exponential word counts.
+
+Define the defect
+\[
+ d_k=g_k-a_k.
+\]
+Then the exact telescoping identity is
+\begin{equation}\label{eq:defectsum}
+ \sum_{i=0}^{r-1}d_{u+i}
+ =s_{u+r}-s_u.
+\end{equation}
+For arbitrary starts beyond the asymptotic regime,
+\[
+ |s_{u+r}-s_u|
+ \le \kappa\log_2(r+1)+C
+ =O(\log r),
+\]
+uniformly in \(u\).  Finitely many earlier starts do not affect the exponential factor-complexity rate.
+
+Fix a finite \(B\ge3\) and assume
+\[
+ 1\le a_k\le B,
+ \qquad a_k\ne g_k.
+\]
+At a phase-\(1\) site the allowed defects are
+\[
+ d\in\{-1,\ldots,-(B-1)\},
+\]
+while at a phase-\(2\) site they are
+\[
+ d\in\{+1,-1,\ldots,-(B-2)\}.
+\]
+For a fixed phase factor with \(n_1\) phase-\(1\) sites and \(n_2\) phase-\(2\) sites, put
+\[
+ P_1(\lambda)=\sum_{a=2}^B\e^{\lambda(1-a)},
+\qquad
+ P_2(\lambda)=\sum_{\substack{1\le a\le B\\a\ne2}}
+ \e^{\lambda(2-a)}.
+\]
+If \(N(S)\) counts valuation words over that fixed phase factor having total defect \(S\), then coefficient positivity gives
+\[
+ N(S)\e^{\lambda S}
+ \le P_1(\lambda)^{n_1}P_2(\lambda)^{n_2},
+\]
+and therefore
+\begin{equation}\label{eq:chernoff}
+ N(S)
+ \le P_1(\lambda)^{n_1}P_2(\lambda)^{n_2}
+ \e^{-\lambda S}.
+\end{equation}
+This is the sign-sensitive coefficient inequality used throughout the pressure argument.
+
+Because \(|S|=O(\log r)\), the final factor in \eqref{eq:chernoff} is only polynomial in \(r\) for fixed \(\lambda\).  Sturmian balance gives
+\[
+ \frac{n_1}{r}=2-\alpha+O(r^{-1}),
+ \qquad
+ \frac{n_2}{r}=\alpha-1+O(r^{-1}).
+\]
+Hence, after summing over the \(O(r)\) admissible defect values and the \(r+1\) phase factors,
+\[
+ \limsup_{r\to\infty}\frac{\log_2p_a(r)}r
+ \le
+ (2-\alpha)\log_2P_1(\lambda)
+ +(\alpha-1)\log_2P_2(\lambda).
+\]
+Taking the infimum over \(\lambda\in\mathbb R\) proves the first assertion of \cref{thm:pressure}.  Combining it with \cref{thm:lower} yields
+\[
+ \frac{\alpha}{\kappa}\le h_B,
+\qquad
+ \kappa\ge\frac{\alpha}{h_B}.
+\]
+The stated \(B=3\) numerical consequence is an exact interval-certified corollary of this variational constant.
+
+\section{The uniform pressure envelope}\label{sec:uniform-envelope}
+
+For the formal infinite-alphabet envelope, the phase-\(1\) and phase-\(2\) partition sums converge exactly when \(\lambda>0\).  With \(t=\e^\lambda>1\), they are
+\begin{equation}\label{eq:infsums}
+ S_{1,\infty}(\lambda)
+ =\frac1{\e^\lambda-1}=\frac1{t-1},
+\end{equation}
+\begin{equation}\label{eq:infsums2}
+ S_{2,\infty}(\lambda)
+ =\e^\lambda+\frac1{\e^\lambda-1}
+ =t+\frac1{t-1}.
+\end{equation}
+Define
+\begin{equation}\label{eq:hinfty}
+ h_\infty
+ =\inf_{\lambda>0}
+ \left[
+ (2-\alpha)\log_2S_{1,\infty}(\lambda)
+ +(\alpha-1)\log_2S_{2,\infty}(\lambda)
+ \right].
+\end{equation}
+The pressure is strictly convex in the appropriate parameter, diverges at both ends of its domain, and has a unique minimizer.  Exact rational interval arithmetic certifies
+\begin{equation}\label{eq:cert}
+ h_\infty<\frac{56931}{100000}
+\end{equation}
+and consequently
+\begin{equation}\label{eq:cert2}
+ \frac{\alpha}{h_\infty}>
+ \frac{348}{125}=2.784.
+\end{equation}
+
+\begin{proof}[Proof of \cref{thm:uniform}]
+Under \eqref{eq:criticallog}, the increments
+\[
+ d_k=s_{k+1}-s_k=g_k-a_k
+\]
+are uniformly bounded along any fixed trajectory: the main logarithmic increment is bounded and the \(O(1)\) error sequence is bounded.  Since \(g_k\in\{1,2\}\), the valuations \(a_k\) are therefore bounded along that trajectory, although the bound is not specified in the theorem statement.
+
+Let \(B\) be any finite bound valid for the trajectory.  The finite pressure constants satisfy
+\[
+ h_B\le h_{B+1}\le h_\infty.
+\]
+By \cref{thm:pressure},
+\[
+ \kappa\ge\frac{\alpha}{h_B}
+ \ge\frac{\alpha}{h_\infty}.
+\]
+The certified strict inequality \eqref{eq:cert2} finishes the proof.
+\end{proof}
+
+\begin{remark}
+This is why the correct wording is ``without an a priori valuation-alphabet bound.''  The theorem does not assert the existence of a genuinely unbounded-valuation trajectory satisfying \eqref{eq:criticallog}.
+\end{remark}
+
+\section{Critical-site pressure geometry}\label{sec:density}
+
+We now allow critical sites.  Type \(1\) means \((g,a)=(1,1)\), and type \(2\) means \((g,a)=(2,2)\).  In a length-\(r\) phase factor, let \(m_i\) count type-\(i\) critical sites and let \(\rho_i=m_i/r\).
+
+The limiting phase proportions are
+\[
+ M_1=2-\alpha,
+ \qquad
+ M_2=\alpha-1.
+\]
+After removing the critical sites, the proportions of noncritical phase-\(1\) and phase-\(2\) sites are
+\[
+ P=M_1-\rho_1,
+ \qquad
+ Q=M_2-\rho_2.
+\]
+At zero total defect, the remaining positive defect mass available on phase-\(2\) sites must compensate the negative mass on phase-\(1\) sites, which forces \(Q\ge P\).  This is exactly the feasible condition
+\[
+ \rho_1-\rho_2\ge M_1-M_2,
+\]
+and gives \(\Fcal\) in \eqref{eq:F}.
+
+For a fixed phase factor with exact counts \(n_1,n_2\) and fixed critical counts \(m_1,m_2\), choosing the critical positions contributes
+\[
+ \binom{n_1}{m_1}\binom{n_2}{m_2}.
+\]
+The noncritical defect partition functions are
+\[
+ A(t)=\frac1{t-1},
+ \qquad
+ B(t)=t+\frac1{t-1}.
+\]
+If \(N(S)\) counts fixed-type words of total defect \(S\), then for every \(t>1\),
+\begin{equation}\label{eq:fixedtype}
+ N(S)t^S
+ \le
+ \binom{n_1}{m_1}\binom{n_2}{m_2}
+ A(t)^{n_1-m_1}B(t)^{n_2-m_2}.
+\end{equation}
+Stirling's formula at exponential scale, together with Sturmian balance \(n_i=M_i r+O(1)\), yields the surface \eqref{eq:surface}.
+
+\subsection{Concavity and the boundary saddle}
+
+The pressure admits the Legendre representation
+\begin{align}\label{eq:legendre}
+ h(\rho_1,\rho_2)=\inf_{t>1,\mu_1,\mu_2}\Big[&
+ M_1\log_2(A(t)+2^{\mu_1})
+ +M_2\log_2(B(t)+2^{\mu_2})\\
+ &-\mu_1\rho_1-\mu_2\rho_2
+ \Big].\notag
+\end{align}
+It is therefore an infimum of affine functions of \((\rho_1,\rho_2)\), hence concave on \(\Fcal\).
+
+Writing \(y=t-1\), an interior saddle with \(Q>P\) satisfies
+\begin{equation}\label{eq:saddle}
+ (Q-P)y^2-Py-(P+Q)=0.
+\end{equation}
+This quadratic has a unique positive root.  On the boundary \(Q=P\), the finite optimizer escapes to \(t=\infty\), and the pressure reduces to
+\[
+ h(\rho_1,\rho_2)=E_1(\rho_1)+E_2(\rho_2).
+\]
+For a fixed large \(T\), the exact boundary overshoot is
+\begin{equation}\label{eq:overshoot}
+ P\log_2\left(
+ \frac{T^2-T+1}{(T-1)^2}
+ \right)=O(T^{-1}).
+\end{equation}
+
+\subsection{Uniform low-pressure counting}
+
+The optimizer in \eqref{eq:surface} is not uniformly bounded as \(Q-P\downarrow0\), so a one-piece compactness argument is invalid.  The repaired proof uses two regimes.
+
+Fix \(\delta>0\) and the low-pressure sublevel set
+\[
+ K_\delta=
+ \left\{\rho\in\Fcal:
+ h(\rho)\le\frac{\alpha}{\kappa}-\delta
+ \right\}.
+\]
+In the interior region \(Q-P\ge\eta\), the quadratic saddle \eqref{eq:saddle} gives a uniform optimizer bound, and compactness produces a finite set of Chernoff parameters.  In the boundary strip \(0\le Q-P<\eta\), one sufficiently large fixed \(T\) controls the whole strip using \eqref{eq:overshoot}.  Consequently, for each \(\delta>0\), there is a finite set of fixed parameters that gives a uniform exponential count strictly below \(2^{(\alpha/\kappa)r}\) for all types in \(K_\delta\), up to subexponential factors.
+
+Finite realized types may lie \(O(r^{-1})\) outside \(\Fcal\) because their total defect is bounded rather than exactly zero.  Projecting such a type to a nearest feasible point changes the normalized type by \(O(r^{-1})\) and the exponent by \(o(r)\).  All limiting pressure statements are applied after this projection.
+
+\begin{proof}[Proof of \cref{thm:density}]
+Choose \(\varepsilon_r\) and \(N_r\) as in the theorem.  The factor-separation argument of \cref{thm:lower} still makes every length-\(r\) factor beginning in
+\[
+ [N_r,2N_r-r]
+\]
+distinct for sufficiently large \(r\).  The number of starts is
+\[
+ 2^{(\alpha/\kappa-o(1))r}.
+\]
+On these multiplicative windows, \eqref{eq:criticallog} gives
+\[
+ s_{u+r}-s_u=O(1),
+\]
+so the fixed-type counting estimate \eqref{eq:fixedtype} applies with only subexponential overhead.
+
+There are only \(O(r^2)\) critical type pairs.  By the two-regime uniformity statement, types whose projected pressure satisfies
+\[
+ h\le\frac{\alpha}{\kappa}-\delta
+\]
+can account for only an exponentially negligible fraction of all starts.  Let \(\widehat\sigma(u,r)\in\Fcal\) denote the projected feasible type associated to the block beginning at \(u\).  Since \(\Fcal\) is convex, the mean projected type lies in \(\Fcal\).  Concavity of \(h\), together with \(h\ge0\) on \(\Fcal\), gives
+\[
+ \liminf_{r\to\infty}
+ h\left(
+ \frac1{L_r}\sum_u\widehat\sigma(u,r)
+ \right)
+ \ge\frac{\alpha}{\kappa},
+\]
+where \(L_r\) is the number of starts.
+
+Projection changes the mean by \(O(r^{-1})\).  Double counting critical incidences over the overlapping length-\(r\) windows gives, for each type \(i\),
+\[
+ \frac1{L_r}\sum_u\sigma_i(u,r)
+ =D_i(N_r)+O(r/N_r).
+\]
+Therefore every accumulation point of \((D_1(N_r),D_2(N_r))\) belongs to \(\Fcal\) and has pressure at least \(\alpha/\kappa\).
+\end{proof}
+
+\section{Consequences and certified phase geometry}
+
+\begin{corollary}[Natural critical-type densities]\label{cor:naturaldensity}
+Assume \eqref{eq:criticallog}.  If the natural type densities exist,
+\[
+ \frac1N\#\{k<N:k\text{ is type }i\}\longrightarrow\rho_i,
+\]
+then \(\rho=(\rho_1,\rho_2)\in\Fcal\) and
+\[
+ h(\rho_1,\rho_2)\ge\frac{\alpha}{\kappa}.
+\]
+\end{corollary}
+
+\begin{proof}
+Natural densities force the multiplicative-window densities \(D_i(N)\) to converge to the same limits.  Apply \cref{thm:density} along any admissible scale family.
+\end{proof}
+
+\begin{corollary}[Zero critical density]\label{cor:zerodensity}
+Assume \eqref{eq:criticallog} and
+\[
+ \#\{k<N:a_k=g_k\}=o(N).
+\]
+Then
+\[
+ \kappa\ge\frac{\alpha}{h_\infty}>2.784.
+\]
+Thus pointwise zero-criticality is not required for the uniform threshold.
+\end{corollary}
+
+\begin{proof}
+The hypothesis implies
+\[
+ D_1(N)+D_2(N)\longrightarrow0,
+\]
+so \cref{thm:density} gives
+\[
+ h(0,0)\ge\frac{\alpha}{\kappa}.
+\]
+At \((0,0)\), the entropy terms vanish and \eqref{eq:surface} becomes exactly the variational problem \eqref{eq:hinfty}, because
+\[
+ A(t)=S_{1,\infty}(\lambda),
+ \qquad
+ B(t)=S_{2,\infty}(\lambda),
+ \qquad t=\e^\lambda.
+\]
+Hence \(h(0,0)=h_\infty\), and the certified inequality \eqref{eq:cert2} gives the claim.
+\end{proof}
+
+Define the minimum total critical density compatible with the pressure constraint by
+\begin{equation}\label{eq:rhomin}
+ \rho_{\min}(\kappa)
+ =\inf\left\{
+ \rho_1+\rho_2:
+ \rho\in\Fcal,\quad
+ h(\rho)\ge\frac{\alpha}{\kappa}
+ \right\}.
+\end{equation}
+Exact interval certification gives the following frozen numerical corollaries.
+
+\begin{proposition}[Certified minimum critical densities]\label{prop:rhomin}
+The values in \eqref{eq:rhomin} satisfy
+\[
+ \rho_{\min}(1.06)
+ \in
+ [0.3462262370615603636914,
+  0.3462262370615928578729],
+\]
+\[
+ \rho_{\min}(1.5)
+ \in
+ [0.0916083301662531377156,
+  0.0916083301662716819078],
+\]
+and
+\[
+ \rho_{\min}(2.0)
+ \in
+ [0.0314445508714800107814,
+  0.0314445508714920087543].
+\]
+\end{proposition}
+
+These intervals are numerical certificates for the exact variational problem; the decimal approximations are not used for proof-critical sign decisions.
+
+\subsection{Consistency with the unrestricted endpoint}
+
+If critical counts are left unconstrained, the one-site partition sum is
+\[
+ \sum_{a\ge1}t^{g-a}
+ =\frac{t^g}{t-1}.
+\]
+Since the Sturmian phase has mean \(g=\alpha\), the unrestricted pressure is
+\[
+ H_{\rm all}(t)
+ =\alpha\log_2t-\log_2(t-1).
+\]
+Its unique minimizer is
+\[
+ t_*=\frac{\alpha}{\alpha-1},
+\]
+and therefore
+\begin{equation}\label{eq:cp19}
+ \max_{\rho\in\Fcal}h(\rho)
+ =\alpha\log_2\alpha
+ -(\alpha-1)\log_2(\alpha-1).
+\end{equation}
+The maximizing densities are
+\[
+ \rho_1^*=\frac{2-\alpha}{\alpha},
+ \qquad
+ \rho_2^*=\frac{(\alpha-1)^2}{\alpha^2}.
+\]
+Thus the optimized phase contribution is recovered exactly; there is no additional strict ``Sturmian phase cost.''
+
+\section{Scope and limitations}
+
+The results of this paper are conditional on the global law \eqref{eq:criticallog}.  In particular, they do not prove the Collatz conjecture.  They do not rule out all divergent positive orbits, all nontrivial cycles, or all critical-log orbits in the surviving high-\(\kappa\) regime.  The finite-\(B\) result \cref{thm:pressure} must always carry its explicit hypothesis \(1\le a_k\le B\); only the envelope result \cref{thm:uniform} removes the need to specify that bound in advance.
+
+The density theorem is stated only for the audited exponential scale families in \cref{thm:density}.  A stronger arbitrary-\(N\) accumulation statement is not used here.  Likewise, no continued-fraction repeat law or microcanonical Fourier result from separate project branches is imported into this manuscript.
+
+A previously studied abstract survivor with logarithmic excursion cores is not excluded by the present theorem when it fails the global critical-log hypothesis.  Hypothesis mismatch is not an exclusion result.
+
+\section{Reproducibility and proof status}
+
+The universal mathematical arguments in this manuscript are intended to be readable independently of code.  Numerical certificates are used only for explicit inequalities such as \eqref{eq:cert}, \eqref{eq:cert2}, and the intervals in \cref{prop:rhomin}.
+
+The publication branch is extracted from independently audited and frozen Task-6, Task-7, and Task-8A sources.  The 2026-09-04 independent publication audit returned \texttt{[PASS WITH EDITORIAL REPAIRS]}; its blocking repairs were restoration of the finite-alphabet hypothesis in the finite-\(B\) pressure theorem, restoration of the exact \(0<\varepsilon<\alpha/\kappa\) counting-window range, and stronger prior-art disclosure.  Those repairs alter no frozen mathematical result.
+
+For the critical-density numerics, the canonical certificate source is
+\texttt{CP20\_TASK8A\_RIGOROUS\_CERTIFICATE\_V3.py}, with its frozen saved output and manifest hashes.  The finite-\(B\) and infinite-envelope constants are likewise supported by the frozen pressure-generalization certificate package.  A final submission package should list the exact source paths and hashes alongside the manuscript.
+
+\section*{Disclosure and funding}
+
+\paragraph{AI-assisted research disclosure.}
+AI systems were used during the broader research programme for conjecture exploration, symbolic and numerical experimentation, proof-audit preparation, literature screening, and drafting assistance.  The mathematical claims included here were selected from the project's audited/frozen result set, and the author assumes responsibility for the manuscript, its citations, and its final claims.  This paragraph should be adapted to the policy of the eventual journal before submission.
+
+\paragraph{Funding.}
+This work received no external funding.
+
+\appendix
+
+\section{Exact zero-critical endpoint algebra}
+
+At \(\rho=(0,0)\), put \(P=M_1=2-\alpha\) and \(Q=M_2=\alpha-1\).  The saddle equation \eqref{eq:saddle} becomes
+\[
+ (2\alpha-3)y^2-(2-\alpha)y-1=0.
+\]
+Its positive root is
+\[
+ y_0=
+ \frac{(2-\alpha)+
+ \sqrt{(2-\alpha)^2+4(2\alpha-3)}}
+ {2(2\alpha-3)},
+\qquad
+ t_0=1+y_0.
+\]
+The frozen interval certificate gives
+\[
+ t_0\in
+ [4.9371845970284873,
+  4.9371845970284874].
+\]
+This exact saddle is the common zero-density endpoint of the Task-8A surface and the infinite-alphabet pressure envelope.
+
+\section{Prior-art comparison table}
+
+\begin{center}
+\begin{tabular}{p{0.19\textwidth}p{0.26\textwidth}p{0.26\textwidth}p{0.21\textwidth}}
+\toprule
+Source & Shared structure & Main distinction & Effect on novelty claim\\
+\midrule
+Witteveen 2026 \cite{Witteveen2026}
+& Affine repeated-factor subtraction, mechanical/Sturmian language, constrained-language entropy, threshold architecture
+& Bounded-amplitude cycles and uniformly bounded discrepancy; \(3\)-adic endpoint reading rather than the present critical-log orbit rate/pressure/density chain
+& Device and architecture are prior art; no exact theorem subsumption located\\[2mm]
+\texttt{collatz-things} 2026 \cite{CollatzThings2026}
+& Repetition, factor complexity, critical discrepancy, Diophantine exponents, ordinary integrality obstruction
+& Special balanced \(q=3\), \(\{3,4\}\) residual language; qualitative no-realizer conclusions
+& Strong close prior art; different object and quantitative conclusion\\[2mm]
+Dubickas 2009 \cite{Dubickas2009}
+& Complexity constraints for Collatz-related coding
+& Different parity/linear-map coding and linear-type bound
+& Factor complexity in Collatz is not new\\[2mm]
+L\'opez--Stoll 2009 \cite{LopezStoll2009}
+& Sturmian/mechanical words in a Collatz setting
+& Sturmian input to the conjugacy map rather than the present phase background
+& Sturmian Collatz methods are not new\\[2mm]
+Wang 2019 \cite{Wang2019}
+& Valuation/E-sequences and repeated-prefix arithmetic
+& Prefix criteria rather than arbitrary repeated factors in exponential windows and the present quantitative rates
+& Strong algebraic precedent\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bibliographystyle{amsplain}
+\bibliography{CP20_REFERENCES}
+
+\end{document}
