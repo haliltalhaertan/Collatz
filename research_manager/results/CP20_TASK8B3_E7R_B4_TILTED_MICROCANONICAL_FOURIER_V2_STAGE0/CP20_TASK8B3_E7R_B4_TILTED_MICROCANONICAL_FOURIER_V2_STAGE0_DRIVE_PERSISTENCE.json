@@ -1,0 +1,13 @@
+{
+  "T1_T8_executed": false,
+  "drive_folder_id": "11BE-6i5vntuI3-J_lAbv9t6u5aeC1nlz",
+  "drive_folder_url": "https://drive.google.com/drive/folders/11BE-6i5vntuI3-J_lAbv9t6u5aeC1nlz",
+  "drive_seal_file_id": "1kkHe3T6w8oEYzSF03-b4MHJ6xHO4lasv",
+  "raw_readback_byte_identical": true,
+  "raw_readback_sha256": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
+  "raw_readback_status": "PASS",
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_DRIVE_PERSISTENCE_V2",
+  "seal_sha256": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
+  "stage1_executed": false,
+  "utc_timestamp": "2026-09-04T13:58:38.133441+00:00"
+}
