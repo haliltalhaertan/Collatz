@@ -3,8 +3,9 @@
     "acquired_at": "2026-09-04T21:21:08.422729+00:00",
     "base_commit": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
     "holder": "canonical-integrator-b4-v2-stage0-stage1-authorization-20260905",
+    "released_at": "2026-09-04T21:21:12.131352+00:00",
     "scope": "B4 V2 Stage0 canonical intake + two-commit Stage1 authorization only; no Stage1/T1-T8 execution, invalid V1 drafts, new mathematics, weighted/operator work or E8.",
-    "status": "HELD"
+    "status": "RELEASED"
   },
   "active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
@@ -183,6 +184,7 @@
     "accepted": true,
     "accepted_source_branch": "cp20-e7r-b4-v2-stage0-finalization-handoff-20260904",
     "accepted_source_head": "85f3daa617aaa245eb2b43c5b0cc425d669bb927",
+    "authorization_commit_sha": "f8d778a2113922e3bbb14c86ee2fa5359cee28ea",
     "authorization_count": 1,
     "blocked_seals": [
       "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
@@ -210,11 +212,13 @@
     "drive_seal_file_id": "1hWN1mdJdx78jnsOlD2ZXF8htkf9e8QGL",
     "manifest_sha256": "7f48807db5733c85759324d4f94e357aa6941de0ecd911b4180f5bc2101d6dcb",
     "phase_a_readback": "PASS",
+    "phase_b_readback": "PASS",
     "scientific_diff": "NO SCIENTIFIC CHANGE",
     "seal_sha256": "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e",
     "seal_zip_materialized_on_main": false,
     "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
     "stage1_authorization_once_only": true,
+    "stage1_authorization_status": "[AUTHORIZED ONCE — NOT EXECUTED]",
     "stage1_authorized": true,
     "stage1_executed": false
   },
@@ -232,7 +236,7 @@
     "future_once_only_contract_rule": "Pre-run execution-integrity contracts must be canonicalized before authorization/execution.",
     "journal": "research_manager/RESEARCH_JOURNAL.jsonl",
     "milestone_completion_rule": "result → hashes/manifests → Drive save → Drive read-back → GitHub save/push → GitHub read-back → report",
-    "minimum_required_commit": "0cbce73c5f47f2778b6cc7417eccd30d80920549",
+    "minimum_required_commit": "f8d778a2113922e3bbb14c86ee2fa5359cee28ea",
     "protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "repository_branch": "main",
     "sync_policy": "research_manager/GITHUB_SYNC_POLICY.md"
@@ -255,8 +259,10 @@
     "b4_v1_defective_witness": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_RUN_WITNESS_AS_PRODUCED.json",
     "b4_v1_failure_record": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_RECORD.json",
     "b4_v1_forensic_package_reference": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_PACKAGE_REFERENCE.json",
+    "b4_v2_canonical_transaction": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_TRANSACTION_2026-09-05.json",
     "b4_v2_stage0_config": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CONFIG.json",
     "b4_v2_stage0_phase_a_readback": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_A_READBACK_2026-09-05.json",
+    "b4_v2_stage0_phase_b_readback": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_B_READBACK_2026-09-05.json",
     "b4_v2_stage0_repair_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
     "continuity_protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "e6_integration": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
@@ -270,7 +276,7 @@
     "archive_members": [
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CONTINUITY/START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "1172cccb975b03352e4cedc4ccfb4bae8410c2eb757477c0d4f3628dfeec5bc6"
+        "sha256": "4e98b2673cb00a1d66d0e397bc09e8666ad86cfbc0797c2c2df0105a42c38781"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip",
@@ -330,7 +336,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "467a6caa0227600a581c3d4b26e2d925a4d154531014a3b9d6fa79c4627e39e7"
+        "sha256": "1325beaf36003bfd95137e9279518fbdeea1b620e72a7e59bd8ab9e1fc6239b6"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -447,12 +453,128 @@
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_SHA256SUMS.txt",
         "sha256": "f8afcf1778722bd8715a78792d9855c65c0849c8fc722f00096fd67bc6c9d4c4"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_ACCEPTANCE_AND_CANONICALIZATION_2026-09-05.json",
+        "sha256": "04624fa439df3b608aadcaadd755d000634228a815fb8d679d367154d2f80f84"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
+        "sha256": "581dd6d09e2958c0f87a1498e51405a2541e52c42f97cf6cbaabca49811ec591"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_TRANSACTION_2026-09-05.json",
+        "sha256": "6c9500f619651965520c328b07c7161a9a32e7c69afb2820871cf0522be41f41"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_A_READBACK_2026-09-05.json",
+        "sha256": "ce0c22e8837b4e9b43d05deef364160cd28e15c33f399329dc1078e9c4bb2f6a"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_B_READBACK_2026-09-05.json",
+        "sha256": "31ccfebaac0cd406661bc3c5af4a7aa735b1253949575a3c7deda9c5eedac2ce"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_AUTHORIZATION_BASE_SELF_REFERENCE_REPAIR_RECORD.json",
+        "sha256": "085e1dc07159032b0f5335e28fb1d8043b79844387c9790c76cccfbacdb6d637"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_BLOCKED_CANDIDATE_CLASSIFICATION.json",
+        "sha256": "4755917f79a337ea70a567babc2757a00fc681343129e18b2bfec3869d16a1ce"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_INPUTS.md",
+        "sha256": "a919ad0d9443c9049d3ae5478b56a862ca284170e4ab5c48fdbf64571999a5e0"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_STATE_PATH_REPAIR_RECORD.json",
+        "sha256": "302f9fe934e883aa74d12af7ecc90c0c9bf52efe05c4505a4bca92a0157cd73a"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CONFIG.json",
+        "sha256": "2fbc7bd09ab2cae89095b537342cf63c85f53f821d4ddf21c7860a2ec53b1f4b"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_MECHANICAL_CHECKS.json",
+        "sha256": "146262c197408fa0051c5db2ab0def925957fbc9d12203d1664754848bcd6f1b"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_SCIENTIFIC_DIFF_CHECK.py",
+        "sha256": "73e4907fff95159353534c143fc32bae7966052a3f6a2fb21e4c28d4bf333de6"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE.json",
+        "sha256": "1d1c7ecfb9e411da440e16516fe0076e1b1eae291ee0647812274107b3a6128e"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_STDOUT.txt",
+        "sha256": "0648a8d6f69385a4fd57d3efb91a8ac7ba89ad8709df1071230f41c6ed26fdf4"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.md",
+        "sha256": "7a3741533d6116086cf3c739f0d8c48b6af2966ef157132a419cb62da01a5e6f"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SHA256SUMS.txt",
+        "sha256": "7f48807db5733c85759324d4f94e357aa6941de0ecd911b4180f5bc2101d6dcb"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT.json",
+        "sha256": "f4e2d05554976f898d6fbc943cf79e330d8869007f7ae83bac8858dd15c864a2"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_PROGRAM_PRESERVATION.md",
+        "sha256": "8fad7e2f4f6b8c624a1e2f0e95c4a7a5ec1eea038835c9503e7f0376eea53f3e"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_FINAL_RECORD.json",
+        "sha256": "0a37c2e651f5fff2bb450d99dab38080b30667914951d4c280997d323a26e1cd"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py",
+        "sha256": "9222d0e0a8079e3560bc880520dd5ead44869f5fd4fa541520e225c841b8a732"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
+        "sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA.json",
+        "sha256": "2edf4198adeeb65602d3d8259c429a1853bc58ac5bd6c47e5e0e151283517795"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE_SCHEMA.json",
+        "sha256": "b6d7fe7602c291690d82d2bcde292403712003be1433878b247b22f1b24b55e2"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS_SCHEMA.json",
+        "sha256": "c6e12499f3de2acb7fa34be81a4b54d5d0424abb351ca2fcbbc3ab7808447f01"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_CHECK.py",
+        "sha256": "5e2c7e9a944bb3dcb52a18ddb2faa5bd16e42b1982b8cbfed5c8b5ae0bb6b7fd"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS.json",
+        "sha256": "e52c52e572c1382d581278988f3917ee200472bdcb5efab5079bd56e5860aaaf"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST.py",
+        "sha256": "2407c797676c3af0a91024f84c051d3de7252874eb912c12a6ab6e664fe36662"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS.json",
+        "sha256": "10132ba0a0e52a2ebee658174076824362ffe53f243cb1a44499df6f00477433"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py",
+        "sha256": "59c7c81511602469387160cdd5e737eb862b40fb91950ed599147ad2aa699bdd"
       }
     ],
     "repository_files": [
       {
         "path": "START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "1172cccb975b03352e4cedc4ccfb4bae8410c2eb757477c0d4f3628dfeec5bc6"
+        "sha256": "4e98b2673cb00a1d66d0e397bc09e8666ad86cfbc0797c2c2df0105a42c38781"
       },
       {
         "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
@@ -468,7 +590,7 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "467a6caa0227600a581c3d4b26e2d925a4d154531014a3b9d6fa79c4627e39e7"
+        "sha256": "1325beaf36003bfd95137e9279518fbdeea1b620e72a7e59bd8ab9e1fc6239b6"
       },
       {
         "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -645,6 +767,122 @@
       {
         "path": "tools/build_current_archive.py",
         "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_ACCEPTANCE_AND_CANONICALIZATION_2026-09-05.json",
+        "sha256": "04624fa439df3b608aadcaadd755d000634228a815fb8d679d367154d2f80f84"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
+        "sha256": "581dd6d09e2958c0f87a1498e51405a2541e52c42f97cf6cbaabca49811ec591"
+      },
+      {
+        "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_TRANSACTION_2026-09-05.json",
+        "sha256": "6c9500f619651965520c328b07c7161a9a32e7c69afb2820871cf0522be41f41"
+      },
+      {
+        "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_A_READBACK_2026-09-05.json",
+        "sha256": "ce0c22e8837b4e9b43d05deef364160cd28e15c33f399329dc1078e9c4bb2f6a"
+      },
+      {
+        "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_B_READBACK_2026-09-05.json",
+        "sha256": "31ccfebaac0cd406661bc3c5af4a7aa735b1253949575a3c7deda9c5eedac2ce"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_AUTHORIZATION_BASE_SELF_REFERENCE_REPAIR_RECORD.json",
+        "sha256": "085e1dc07159032b0f5335e28fb1d8043b79844387c9790c76cccfbacdb6d637"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_BLOCKED_CANDIDATE_CLASSIFICATION.json",
+        "sha256": "4755917f79a337ea70a567babc2757a00fc681343129e18b2bfec3869d16a1ce"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_INPUTS.md",
+        "sha256": "a919ad0d9443c9049d3ae5478b56a862ca284170e4ab5c48fdbf64571999a5e0"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_STATE_PATH_REPAIR_RECORD.json",
+        "sha256": "302f9fe934e883aa74d12af7ecc90c0c9bf52efe05c4505a4bca92a0157cd73a"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CONFIG.json",
+        "sha256": "2fbc7bd09ab2cae89095b537342cf63c85f53f821d4ddf21c7860a2ec53b1f4b"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_MECHANICAL_CHECKS.json",
+        "sha256": "146262c197408fa0051c5db2ab0def925957fbc9d12203d1664754848bcd6f1b"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_SCIENTIFIC_DIFF_CHECK.py",
+        "sha256": "73e4907fff95159353534c143fc32bae7966052a3f6a2fb21e4c28d4bf333de6"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE.json",
+        "sha256": "1d1c7ecfb9e411da440e16516fe0076e1b1eae291ee0647812274107b3a6128e"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_STDOUT.txt",
+        "sha256": "0648a8d6f69385a4fd57d3efb91a8ac7ba89ad8709df1071230f41c6ed26fdf4"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.md",
+        "sha256": "7a3741533d6116086cf3c739f0d8c48b6af2966ef157132a419cb62da01a5e6f"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SHA256SUMS.txt",
+        "sha256": "7f48807db5733c85759324d4f94e357aa6941de0ecd911b4180f5bc2101d6dcb"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT.json",
+        "sha256": "f4e2d05554976f898d6fbc943cf79e330d8869007f7ae83bac8858dd15c864a2"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_PROGRAM_PRESERVATION.md",
+        "sha256": "8fad7e2f4f6b8c624a1e2f0e95c4a7a5ec1eea038835c9503e7f0376eea53f3e"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_FINAL_RECORD.json",
+        "sha256": "0a37c2e651f5fff2bb450d99dab38080b30667914951d4c280997d323a26e1cd"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py",
+        "sha256": "9222d0e0a8079e3560bc880520dd5ead44869f5fd4fa541520e225c841b8a732"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
+        "sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA.json",
+        "sha256": "2edf4198adeeb65602d3d8259c429a1853bc58ac5bd6c47e5e0e151283517795"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE_SCHEMA.json",
+        "sha256": "b6d7fe7602c291690d82d2bcde292403712003be1433878b247b22f1b24b55e2"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS_SCHEMA.json",
+        "sha256": "c6e12499f3de2acb7fa34be81a4b54d5d0424abb351ca2fcbbc3ab7808447f01"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_CHECK.py",
+        "sha256": "5e2c7e9a944bb3dcb52a18ddb2faa5bd16e42b1982b8cbfed5c8b5ae0bb6b7fd"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS.json",
+        "sha256": "e52c52e572c1382d581278988f3917ee200472bdcb5efab5079bd56e5860aaaf"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST.py",
+        "sha256": "2407c797676c3af0a91024f84c051d3de7252874eb912c12a6ab6e664fe36662"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS.json",
+        "sha256": "10132ba0a0e52a2ebee658174076824362ffe53f243cb1a44499df6f00477433"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py",
+        "sha256": "59c7c81511602469387160cdd5e737eb862b40fb91950ed599147ad2aa699bdd"
       }
     ]
   },
@@ -766,13 +1004,14 @@
   "next_action": {
     "authorized_stage": "STAGE_1_ONCE_ONLY",
     "executed_in_this_transaction": false,
-    "instruction": "Execute B4 V2 Stage 1 later once only in a fresh uncontaminated computation session; do not execute it in this integration.",
+    "instruction": "Execute CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 Stage 1 exactly once in a fresh session that has not seen invalid V1 T1-T8 drafts, using canonical_stage0_base_sha=34ac0dbeb8c0ae2fddab706680f1682412b00786, authorization_commit_sha=f8d778a2113922e3bbb14c86ee2fa5359cee28ea, seal=11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e, contract=7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403.",
     "prohibited": [
-      "Stage1 execution here",
-      "T1-T8 execution here",
+      "blocked seals",
       "invalid V1 drafts",
+      "canonical-integrator mathematics",
+      "unauthorized rerun",
       "E8",
-      "new mathematics"
+      "weighted/operator work outside frozen fallback"
     ]
   },
   "next_task_stage0_requirements": [

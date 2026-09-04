@@ -1,0 +1,117 @@
+{
+  "T1_T8_executed": false,
+  "active_task_stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+  "authorization_binding": {
+    "authorized_v2_seal_sha256": "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e",
+    "canonical_stage0_base_sha": "34ac0dbeb8c0ae2fddab706680f1682412b00786",
+    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+    "v2_contract_sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403"
+  },
+  "authorization_self_reference_absent": true,
+  "canonical_artifacts_unchanged": [
+    {
+      "expected_blob": "3d11d9772ede17a8a35560339ed888f5fe81dad0",
+      "expected_sha256": "73e4907fff95159353534c143fc32bae7966052a3f6a2fb21e4c28d4bf333de6",
+      "observed_blob": "3d11d9772ede17a8a35560339ed888f5fe81dad0",
+      "observed_sha256": "73e4907fff95159353534c143fc32bae7966052a3f6a2fb21e4c28d4bf333de6",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_SCIENTIFIC_DIFF_CHECK.py"
+    },
+    {
+      "expected_blob": "a05cc0a6230323e0bc62f975ad17af95083ad691",
+      "expected_sha256": "f4e2d05554976f898d6fbc943cf79e330d8869007f7ae83bac8858dd15c864a2",
+      "observed_blob": "a05cc0a6230323e0bc62f975ad17af95083ad691",
+      "observed_sha256": "f4e2d05554976f898d6fbc943cf79e330d8869007f7ae83bac8858dd15c864a2",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT.json"
+    },
+    {
+      "expected_blob": "d8439a34620b2db4f7b06f1d889e2b0543354a65",
+      "expected_sha256": "9222d0e0a8079e3560bc880520dd5ead44869f5fd4fa541520e225c841b8a732",
+      "observed_blob": "d8439a34620b2db4f7b06f1d889e2b0543354a65",
+      "observed_sha256": "9222d0e0a8079e3560bc880520dd5ead44869f5fd4fa541520e225c841b8a732",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py"
+    },
+    {
+      "expected_blob": "49a8571ffd10635fba9161a30ecfeded188bc0dc",
+      "expected_sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403",
+      "observed_blob": "49a8571ffd10635fba9161a30ecfeded188bc0dc",
+      "observed_sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md"
+    },
+    {
+      "expected_blob": "d7c75c6ed6873b28bf6e30b8ff0956dd335d6bdf",
+      "expected_sha256": "2edf4198adeeb65602d3d8259c429a1853bc58ac5bd6c47e5e0e151283517795",
+      "observed_blob": "d7c75c6ed6873b28bf6e30b8ff0956dd335d6bdf",
+      "observed_sha256": "2edf4198adeeb65602d3d8259c429a1853bc58ac5bd6c47e5e0e151283517795",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA.json"
+    },
+    {
+      "expected_blob": "b851d62cd25ecebdc1498e7168489f6e44ace976",
+      "expected_sha256": "b6d7fe7602c291690d82d2bcde292403712003be1433878b247b22f1b24b55e2",
+      "observed_blob": "b851d62cd25ecebdc1498e7168489f6e44ace976",
+      "observed_sha256": "b6d7fe7602c291690d82d2bcde292403712003be1433878b247b22f1b24b55e2",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE_SCHEMA.json"
+    },
+    {
+      "expected_blob": "093ccd9c20c73db45293d6a0320de4f6ede8cfbf",
+      "expected_sha256": "c6e12499f3de2acb7fa34be81a4b54d5d0424abb351ca2fcbbc3ab7808447f01",
+      "observed_blob": "093ccd9c20c73db45293d6a0320de4f6ede8cfbf",
+      "observed_sha256": "c6e12499f3de2acb7fa34be81a4b54d5d0424abb351ca2fcbbc3ab7808447f01",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS_SCHEMA.json"
+    },
+    {
+      "expected_blob": "c9375e45b1112f5e1e76be3e9d23788ab6725ed7",
+      "expected_sha256": "5e2c7e9a944bb3dcb52a18ddb2faa5bd16e42b1982b8cbfed5c8b5ae0bb6b7fd",
+      "observed_blob": "c9375e45b1112f5e1e76be3e9d23788ab6725ed7",
+      "observed_sha256": "5e2c7e9a944bb3dcb52a18ddb2faa5bd16e42b1982b8cbfed5c8b5ae0bb6b7fd",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_CHECK.py"
+    },
+    {
+      "expected_blob": "91dba1c9769cfdb63f71f7e6766474d23a5b7a7d",
+      "expected_sha256": "e52c52e572c1382d581278988f3917ee200472bdcb5efab5079bd56e5860aaaf",
+      "observed_blob": "91dba1c9769cfdb63f71f7e6766474d23a5b7a7d",
+      "observed_sha256": "e52c52e572c1382d581278988f3917ee200472bdcb5efab5079bd56e5860aaaf",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS.json"
+    },
+    {
+      "expected_blob": "aa7cf1c0e527b83366f1f9ff071f66bb936a2055",
+      "expected_sha256": "2407c797676c3af0a91024f84c051d3de7252874eb912c12a6ab6e664fe36662",
+      "observed_blob": "aa7cf1c0e527b83366f1f9ff071f66bb936a2055",
+      "observed_sha256": "2407c797676c3af0a91024f84c051d3de7252874eb912c12a6ab6e664fe36662",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST.py"
+    },
+    {
+      "expected_blob": "3f28aa57fb26b6c29cfde78b911e93cce9b52ef3",
+      "expected_sha256": "10132ba0a0e52a2ebee658174076824362ffe53f243cb1a44499df6f00477433",
+      "observed_blob": "3f28aa57fb26b6c29cfde78b911e93cce9b52ef3",
+      "observed_sha256": "10132ba0a0e52a2ebee658174076824362ffe53f243cb1a44499df6f00477433",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS.json"
+    },
+    {
+      "expected_blob": "9f40af0f595dcadec37520e4f125f295f17532f8",
+      "expected_sha256": "59c7c81511602469387160cdd5e737eb862b40fb91950ed599147ad2aa699bdd",
+      "observed_blob": "9f40af0f595dcadec37520e4f125f295f17532f8",
+      "observed_sha256": "59c7c81511602469387160cdd5e737eb862b40fb91950ed599147ad2aa699bdd",
+      "pass": true,
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py"
+    }
+  ],
+  "direct_child": true,
+  "distinct_commits": true,
+  "phase_a_commit_sha": "34ac0dbeb8c0ae2fddab706680f1682412b00786",
+  "phase_a_is_ancestor": true,
+  "phase_b_commit_sha": "f8d778a2113922e3bbb14c86ee2fa5359cee28ea",
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_B_READBACK_V1",
+  "stage1_executed": false,
+  "verdict": "PASS"
+}

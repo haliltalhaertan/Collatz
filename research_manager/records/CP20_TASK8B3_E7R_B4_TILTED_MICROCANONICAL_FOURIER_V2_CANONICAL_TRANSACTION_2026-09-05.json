@@ -1,0 +1,39 @@
+{
+  "T1_T8_executed": false,
+  "accepted_source_branch": "cp20-e7r-b4-v2-stage0-finalization-handoff-20260904",
+  "accepted_source_head": "85f3daa617aaa245eb2b43c5b0cc425d669bb927",
+  "authorization_count": 1,
+  "authorization_once_only": true,
+  "authorized_seal_sha256": "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e",
+  "blocked_seals": [
+    "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+    "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
+    "66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac",
+    "06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f"
+  ],
+  "claims": {
+    "B4-CT": "NOT ESTABLISHED",
+    "B4-N1": "NOT ESTABLISHED",
+    "B4-N2": "NOT ESTABLISHED",
+    "B4-N3": "NOT ESTABLISHED",
+    "B4-N4": "NOT ESTABLISHED",
+    "B4-N5": "NOT ESTABLISHED",
+    "B4-N6": "NOT ESTABLISHED",
+    "B4-N7": "NOT ESTABLISHED",
+    "E6-N2": "[OPEN]"
+  },
+  "config_sha256": "2fbc7bd09ab2cae89095b537342cf63c85f53f821d4ddf21c7860a2ec53b1f4b",
+  "contract_sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403",
+  "drive_stage0_folder_id": "1SFvk3A5fSzB4adPFIMxudgMdbooXVi3q",
+  "drive_stage0_raw_readback": "PASS",
+  "drive_stage0_seal_file_id": "1hWN1mdJdx78jnsOlD2ZXF8htkf9e8QGL",
+  "manifest_sha256": "7f48807db5733c85759324d4f94e357aa6941de0ecd911b4180f5bc2101d6dcb",
+  "phase_a_commit_sha": "34ac0dbeb8c0ae2fddab706680f1682412b00786",
+  "phase_a_readback": "PASS",
+  "phase_b_commit_sha": "f8d778a2113922e3bbb14c86ee2fa5359cee28ea",
+  "phase_b_readback": "PASS",
+  "required_main": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_TRANSACTION_V1",
+  "scientific_diff": "NO SCIENTIFIC CHANGE",
+  "stage1_executed": false
+}
