@@ -426,7 +426,7 @@ The proof uses no finite valuation alphabet.  The lower rate comes from the conj
 \end{remark}
 
 \begin{remark}[Relation to non-repetitive complexity]\label{rem:nonrepetitive}
-Nicholson and Rampersad introduced the \emph{initial non-repetitive complexity} of an infinite word \cite{NicholsonRampersad2016}.  Their invariant is prefix-based, whereas the proof of \cref{thm:lower} uses the shifted window \(u\in[N_r,2N_r-r]\).  Thus \cref{thm:lower} is best viewed only as a windowed analogue with an exponential lower rate, not as a theorem about the initial non-repetitive-complexity invariant itself.
+Moothathu introduced a prefix-based non-repetitive subword complexity \cite{Moothathu2012}.  Nicholson and Rampersad later studied the corresponding \emph{initial non-repetitive complexity} of infinite words \cite{NicholsonRampersad2016}.  These notions provide established terminology for long runs without repeated length-\(r\) factors.  The proof of \cref{thm:lower}, however, uses the shifted window \(u\in[N_r,2N_r-r]\), rather than an initial prefix.  Thus we use this literature only for terminology and priority: the theorem proved here is a shifted-window exponential factor-complexity statement, not a claim to have introduced a non-repetitive-complexity invariant.
 \end{remark}
 
 \section{Finite-alphabet deterministic pressure}\label{sec:finitepressure}
@@ -642,7 +642,74 @@ Fix \(\delta>0\) and the low-pressure sublevel set
  h(\rho)\le\frac{\alpha}{\kappa}-\delta
  \right\}.
 \]
-In the interior region \(Q-P\ge\eta\), the quadratic saddle \eqref{eq:saddle} gives a uniform optimizer bound, and compactness produces a finite set of Chernoff parameters.  In the boundary strip \(0\le Q-P<\eta\), one sufficiently large fixed \(T\) controls the whole strip using \eqref{eq:overshoot}.  Consequently, for each \(\delta>0\), there is a finite set of fixed parameters that gives a uniform exponential count strictly below \(2^{(\alpha/\kappa)r}\) for all types in \(K_\delta\), up to subexponential factors.
+For later use, write
+\[
+ \Phi_t(\rho_1,\rho_2)
+ =E_1(\rho_1)+E_2(\rho_2)
+ +P\log_2A(t)+Q\log_2B(t),
+ \qquad t>1,
+\]
+so that \(h(\rho)=\inf_{t>1}\Phi_t(\rho)\).
+
+\begin{lemma}[Uniform low-pressure cover]\label{lem:uniform-low-pressure}
+For every \(\delta>0\) there exist \(c_\delta>0\) and a finite set
+\(\mathcal T_\delta\subset(1,\infty)\) such that for every
+\(\rho\in K_\delta\) one can choose \(t\in\mathcal T_\delta\) with
+\[
+ \Phi_t(\rho)\le \frac{\alpha}{\kappa}-c_\delta.
+\]
+Consequently the fixed-type word counts whose projected types belong to
+\(K_\delta\) are bounded uniformly by
+\[
+ 2^{(\alpha/\kappa-c_\delta)r+o(r)}.
+\]
+\end{lemma}
+
+\begin{proof}
+Put \(q=Q-P\).  In the interior region \(q\ge\eta>0\), the positive
+root of \eqref{eq:saddle} is
+\[
+ y_*(\rho)
+ =\frac{P+\sqrt{P^2+4q(P+Q)}}{2q}.
+\]
+Since \(0\le P,Q\le1\), \(P+Q\le1\), and \(q\ge\eta\),
+\[
+ y_*(\rho)\le \frac{1+\sqrt5}{2\eta}.
+\]
+Thus the corresponding optimizer \(t_*=1+y_*\) ranges over a compact
+interval depending only on \(\eta\).  For each
+\(\rho\in K_\delta\cap\{q\ge\eta\}\), choose its optimizer.  Because
+\(\Phi_t(\rho)=h(\rho)\le\alpha/\kappa-\delta\) there, continuity gives
+a neighborhood of \(\rho\) on which the same fixed parameter satisfies
+\(\Phi_t\le\alpha/\kappa-\delta/2\).  Compactness of this part of
+\(K_\delta\) gives a finite subcover and hence finitely many such
+parameters.
+
+It remains to control \(0\le q<\eta\).  On the boundary \(q=0\),
+\eqref{eq:overshoot} gives, uniformly in the boundary point,
+\[
+ \Phi_T(\rho)-h(\rho)
+ =P\log_2\!\left(\frac{T^2-T+1}{(T-1)^2}\right)
+ =O(T^{-1}).
+\]
+Choose a fixed \(T\) so large that this boundary excess is at most
+\(\delta/4\).  The explicit saddle formula above and its boundary limit
+show that \(h\) is continuous on the compact feasible region; therefore
+\(\Phi_T-h\) is continuous at the boundary.  After decreasing \(\eta\)
+if necessary, the whole strip \(0\le q<\eta\) satisfies
+\[
+ \Phi_T(\rho)\le h(\rho)+\delta/2.
+\]
+Hence on \(K_\delta\) this fixed parameter gives
+\(\Phi_T\le\alpha/\kappa-\delta/2\).
+
+Combining the interior finite subcover with this one boundary parameter
+proves the first assertion, for example with \(c_\delta=\delta/2\).
+The fixed-type estimate \eqref{eq:fixedtype}, Stirling's formula, and the
+fact that only finitely many fixed Chernoff parameters are now used make
+the remaining factors uniform and subexponential in \(r\), proving the
+stated counting bound.
+\end{proof}
 
 Finite realized types may lie \(O(r^{-1})\) outside \(\Fcal\) because their total defect is bounded rather than exactly zero.  Projecting such a type to a nearest feasible point changes the normalized type by \(O(r^{-1})\) and the exponent by \(o(r)\).  All limiting pressure statements are applied after this projection.
 
@@ -661,7 +728,7 @@ On these multiplicative windows, \eqref{eq:criticallog} gives
 \]
 so the fixed-type counting estimate \eqref{eq:fixedtype} applies with only subexponential overhead.
 
-There are only \(O(r^2)\) critical type pairs.  By the two-regime uniformity statement, types whose projected pressure satisfies
+There are only \(O(r^2)\) critical type pairs.  By \cref{lem:uniform-low-pressure}, types whose projected pressure satisfies
 \[
  h\le\frac{\alpha}{\kappa}-\delta
 \]
@@ -812,7 +879,7 @@ The universal mathematical arguments in this manuscript are intended to be reada
 The publication branch is extracted from independently audited and frozen Task-6, Task-7, and Task-8A sources.  The 2026-09-04 independent publication audit returned \texttt{[PASS WITH EDITORIAL REPAIRS]}; its blocking repairs were restoration of the finite-alphabet hypothesis in the finite-\(B\) pressure theorem, restoration of the exact \(0<\varepsilon<\alpha/\kappa\) counting-window range, and stronger prior-art disclosure.  Those repairs alter no frozen mathematical result.
 
 For the critical-density numerics, the canonical certificate source is
-\texttt{CP20\_TASK8A\_RIGOROUS\_CERTIFICATE\_V3.py}, with its frozen saved output and manifest hashes.  The finite-\(B\) and infinite-envelope constants are likewise supported by the frozen pressure-generalization certificate package.  A final submission package should list the exact source paths and hashes alongside the manuscript.
+\path{CP20_TASK8A_RIGOROUS_CERTIFICATE_V3.py}, with its frozen saved output and manifest hashes.  The finite-\(B\) and infinite-envelope constants are likewise supported by the frozen pressure-generalization certificate package.  A final submission package should list the exact source paths and hashes alongside the manuscript.
 
 \section*{Disclosure and funding}
 
@@ -847,36 +914,22 @@ The frozen interval certificate gives
 \]
 This exact saddle is the common zero-density endpoint of the Task-8A surface and the infinite-alphabet pressure envelope.
 
-\section{Prior-art comparison table}
+\section{Prior-art comparison}
 
-\begin{center}
-\begin{tabular}{p{0.19\textwidth}p{0.26\textwidth}p{0.26\textwidth}p{0.21\textwidth}}
-\toprule
-Source & Shared structure & Main distinction & Effect on novelty claim\\
-\midrule
-Witteveen 2026 \cite{Witteveen2026}
-& Affine repeated-factor subtraction, mechanical/Sturmian language, constrained-language entropy, threshold architecture
-& Bounded-amplitude cycles and uniformly bounded discrepancy; \(3\)-adic endpoint reading rather than the present critical-log orbit rate/pressure/density chain
-& Device and architecture are prior art; no exact theorem subsumption located\\[2mm]
-\texttt{collatz-things} 2026 \cite{CollatzThings2026}
-& Repetition, factor complexity, critical discrepancy, Diophantine exponents, ordinary integrality obstruction
-& Special balanced \(q=3\), \(\{3,4\}\) residual language; qualitative no-realizer conclusions
-& Strong close prior art; different object and quantitative conclusion\\[2mm]
-Dubickas 2009 \cite{Dubickas2009}
-& Complexity constraints for Collatz-related coding
-& Different parity/linear-map coding and linear-type bound
-& Factor complexity in Collatz is not new\\[2mm]
-L\'opez--Stoll 2009 \cite{LopezStoll2009}
-& Sturmian/mechanical words in a Collatz setting
-& Sturmian input to the conjugacy map rather than the present phase background
-& Sturmian Collatz methods are not new\\[2mm]
-Wang 2019 \cite{Wang2019}
-& Valuation/E-sequences and repeated-prefix arithmetic
-& Prefix criteria rather than arbitrary repeated factors in exponential windows and the present quantitative rates
-& Strong algebraic precedent\\
-\bottomrule
-\end{tabular}
-\end{center}
+\paragraph{Witteveen 2026 \cite{Witteveen2026}.}
+Shared structure includes affine repeated-factor subtraction, a mechanical/Sturmian language, constrained-language entropy, and a threshold architecture.  The main distinction is that Witteveen treats bounded-amplitude cycles with uniformly bounded discrepancy and reads the affine identity in the \(3\)-adic endpoint direction, whereas the present paper treats the critical-log orbit regime and derives the specific rate/pressure/density chain.  The repeated-factor device and the broad architecture are therefore prior art; no exact theorem subsumption was located.
+
+\paragraph{\texttt{collatz-things} 2026 \cite{CollatzThings2026}.}
+The shared ingredients are repetition, factor complexity, critical discrepancy, Diophantine exponents, and ordinary-integrality obstruction.  That programme treats a special balanced \(q=3\), \(\{3,4\}\)-residual language and obtains qualitative no-realizer conclusions.  It is strong close prior art but concerns a different symbolic object and a different quantitative conclusion.
+
+\paragraph{Dubickas 2009 \cite{Dubickas2009}.}
+Complexity constraints for Collatz-related codings are already present there.  The coding and bound differ from the valuation-word exponential rate used here, so factor complexity in a Collatz setting is not claimed as new.
+
+\paragraph{L\'opez--Stoll 2009 \cite{LopezStoll2009}.}
+Sturmian/mechanical words already occur in a Collatz setting, as an input to the conjugacy map rather than as the phase background used here.  Sturmian Collatz methods are not claimed as new.
+
+\paragraph{Wang 2019 \cite{Wang2019}.}
+Valuation/E-sequences and repeated-prefix arithmetic provide strong algebraic precedent.  The present use of arbitrary repeated factors in exponential windows and the resulting quantitative rates are the distinct features relevant here.
 
 \bibliographystyle{amsplain}
 \bibliography{CP20_REFERENCES}
