@@ -3,14 +3,15 @@
     "acquired_at": "2026-09-04T09:52:30+03:00",
     "base_commit": "b3eaaae80a64003f4ee06a43b65fbd3680b8e22b",
     "holder": "canonical-integrator-literature-transfer-v1-20260904",
+    "lock_acquisition_commit": "11cde04e474899c42bf752d0e66dc7875d43af83",
     "scope": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1 Stage-0 intake and Stage-1 authorization under seal 403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79 only; no Stage 1 execution, weighted-operator work, or E8.",
-    "status": "HELD"
+    "status": "RELEASED"
   },
   "active_task": {
     "code": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1",
     "name": "Tao v7 + Si 2026 Literature Transfer / Exact Normal Form",
     "objective": "Determine the exact normal-form/parameter mapping between E[F_{r,4}|S_r=n_r] with its finite phase cocycle and the conditioned affine/Fourier objects in Tao current arXiv v7 and Yuan Si 2026, before accepting any theorem transfer.",
-    "stage": "STAGE_0_READY_NOT_DISPATCHED",
+    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
     "target": {
       "C": 4,
       "d": -8
@@ -64,16 +65,16 @@
     "entrypoint": "START_HERE_CURRENT_HANDOFF.md",
     "journal": "research_manager/RESEARCH_JOURNAL.jsonl",
     "milestone_completion_rule": "result → hashes/manifests → Drive save → Drive read-back → GitHub save/push → GitHub read-back → report",
-    "minimum_required_commit": "3b089518e2dc00730e7bf5d16950d0dc05b4506c",
+    "minimum_required_commit": "d1e7e6b2c9e6f382feed2841ca61bd1b449a51b0",
     "protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "repository_branch": "main",
     "sync_policy": "research_manager/GITHUB_SYNC_POLICY.md"
   },
   "documents": {
-    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md",
-    "active_authorization_decision": null,
-    "active_authorization_prompt": null,
-    "active_research_prompt": null,
+    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_ACCEPTANCE_2026-09-04.md",
+    "active_authorization_decision": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUTHORIZATION_2026-09-04.md",
+    "active_authorization_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
+    "active_research_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
     "continuity_protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "e6_integration": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
     "e7_recovery_audit": "bagimsiz-denetim/e7-recovery-v1-zero-trust-audit-20260903/CP20_TASK8B3_E7_RECOVERY_V1_ZERO_TRUST_AUDIT_2026-09-03.md",
@@ -136,11 +137,43 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "15eea2eb7a50cb2a238c443cb85408c959170e7b6eeb7e9c770ec2f0dabc167d"
+        "sha256": "528c79b88ce37527438db3fa4de6786b59a395456b4951445278ca6d79527d2b"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/build_current_archive.py",
         "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_ACCEPTANCE_2026-09-04.md",
+        "sha256": "1834d46b4b1175f15f5308c1ff4fffd95245f32b00a5b4dc760b01159fa26a07"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUTHORIZATION_2026-09-04.md",
+        "sha256": "2b8cc05624c1134dee0a2344c7bd3c6a9ad72c7a3b68f4b58eafa3e18f7f4a73"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
+        "sha256": "5f51efc062d96a6dd6cd6f51e02248f7cb72adcf945a469eb9ab372ca1ca03a9"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SEAL.zip",
+        "sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SHA256SUMS.txt",
+        "sha256": "f486d82365ca77066b328660bf48cd891eacb8aeed7a439d8bfc67b87d5b9276"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json",
+        "sha256": "ef1f46e57e5dcbc3755be10a090148fa8a803378dffb1bb7cc276ceebbf0cab6"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PROJECT_DEFINITIONS.md",
+        "sha256": "7a8cdb45e31ff03a337e8cf4378c5326af4f47f736dbc3925ee9e357f821e007"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py",
+        "sha256": "7114fe2c56004a344c05e56cac305e593077eac43aa09ac084a196d1378ad4e2"
       }
     ],
     "repository_files": [
@@ -194,19 +227,123 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "15eea2eb7a50cb2a238c443cb85408c959170e7b6eeb7e9c770ec2f0dabc167d"
+        "sha256": "528c79b88ce37527438db3fa4de6786b59a395456b4951445278ca6d79527d2b"
       },
       {
         "path": "tools/build_current_archive.py",
         "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_ACCEPTANCE_2026-09-04.md",
+        "sha256": "1834d46b4b1175f15f5308c1ff4fffd95245f32b00a5b4dc760b01159fa26a07"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUTHORIZATION_2026-09-04.md",
+        "sha256": "2b8cc05624c1134dee0a2344c7bd3c6a9ad72c7a3b68f4b58eafa3e18f7f4a73"
+      },
+      {
+        "path": "research_manager/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
+        "sha256": "5f51efc062d96a6dd6cd6f51e02248f7cb72adcf945a469eb9ab372ca1ca03a9"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SEAL.zip",
+        "sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SHA256SUMS.txt",
+        "sha256": "f486d82365ca77066b328660bf48cd891eacb8aeed7a439d8bfc67b87d5b9276"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json",
+        "sha256": "ef1f46e57e5dcbc3755be10a090148fa8a803378dffb1bb7cc276ceebbf0cab6"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PROJECT_DEFINITIONS.md",
+        "sha256": "7a8cdb45e31ff03a337e8cf4378c5326af4f47f736dbc3925ee9e357f821e007"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py",
+        "sha256": "7114fe2c56004a344c05e56cac305e593077eac43aa09ac084a196d1378ad4e2"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/tao/tao_1909.03562v7.pdf",
+        "sha256": "62cf49d4d8e8e681c7a4738ebaf56f3dbb7b67de95f37ccbac6e428ef3fc394e"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/tao/tao_1909.03562v7_source.tar",
+        "sha256": "ba81acd6254838251f1ee585256a6f9f223cdc9c73bed0a3c4fd25782d0124ad"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/si_zenodo/main.pdf",
+        "sha256": "0dfad7f22df91c14c36182d7557aee537a462ef0a2a548422c366d21e2bd06c8"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/si_github/main.pdf",
+        "sha256": "0dfad7f22df91c14c36182d7557aee537a462ef0a2a548422c366d21e2bd06c8"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/si_github/main.tex",
+        "sha256": "c1ff1f11f442fed1b2f7a37be61fe0e3c0916719549018557446ca01e81e0811"
       }
     ]
   },
+  "literature_transfer_v1": {
+    "stage0": {
+      "acceptance": "[ACCEPT STAGE 0]",
+      "canonical_base": "b3eaaae80a64003f4ee06a43b65fbd3680b8e22b",
+      "drive_readback": "PASS",
+      "frozen_sources": {
+        "si_github_commit": "119199e7165505f9535952e272056af912ce59fb",
+        "si_main_tex_sha256": "c1ff1f11f442fed1b2f7a37be61fe0e3c0916719549018557446ca01e81e0811",
+        "si_pdf_sha256": "0dfad7f22df91c14c36182d7557aee537a462ef0a2a548422c366d21e2bd06c8",
+        "si_zenodo_doi": "10.5281/zenodo.20027097",
+        "tao_arxiv": "1909.03562v7",
+        "tao_pdf_sha256": "62cf49d4d8e8e681c7a4738ebaf56f3dbb7b67de95f37ccbac6e428ef3fc394e",
+        "tao_source_archive_sha256": "ba81acd6254838251f1ee585256a6f9f223cdc9c73bed0a3c4fd25782d0124ad"
+      },
+      "github_branch_readback": "PASS",
+      "manifest_sha256": "f486d82365ca77066b328660bf48cd891eacb8aeed7a439d8bfc67b87d5b9276",
+      "manifest_verification": "PASS",
+      "mappings_adjudicated": false,
+      "seal_member_count": 18,
+      "seal_zip_sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79",
+      "stage1_executed": false,
+      "status": "[LITERATURE TRANSFER V1 — STAGE 0 FROZEN]",
+      "working_branch": "cp20-e7r-literature-transfer-v1-stage0-20260904",
+      "working_branch_commit": "8ff843722bc9a4901fe72a1594d0fca95ca358b7",
+      "zip_crc": "PASS"
+    },
+    "stage1_authorization": {
+      "audit_stop": [
+        "LT-N6",
+        "LT-N7",
+        "LT-CT"
+      ],
+      "authorized_seal_zip_sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79",
+      "e8_authorized": false,
+      "manager_repair": "candidate_m3_project_exponent() is not accepted exact project-phase evidence; negative exponent rows require an independent modular-inverse + dyadic-correction / unified-modulus implementation from PROJECT_DEFINITIONS.md, separately hashed.",
+      "objective": "Adjudicate M1–M8 by exact normal-form derivation from the frozen project, Tao v7, and Si 2026 sources.",
+      "required_order": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8"
+      ],
+      "si_theorem_status": "[LITERATURE CLAIM — UNAUDITED]",
+      "stage1_executed": false,
+      "status": "[LITERATURE TRANSFER V1 — STAGE 1 AUTHORIZED — NOT EXECUTED]",
+      "weighted_operator_authorized": false
+    }
+  },
   "next_action": {
-    "authorized_stage": "STAGE_0_ONLY",
+    "authorized_stage": "STAGE_1_ONLY",
     "executed_in_this_transaction": false,
-    "instruction": "Create and execute Stage 0 only for \"CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1\". Stage 0 must freeze the exact Tao/Si source versions, notation map, permitted algebraic transformations, falsification tests, and any computation before attempting a theorem transfer. No weighted-operator or E8 work is authorized.",
-    "prompt": null,
+    "instruction": "Execute Stage 1 once under seal 403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79, adjudicating M1–M8 in order and obeying the binding M3 repair and the LT-N6/LT-N7/LT-CT audit stop rule. Do not begin weighted-operator work or E8.",
+    "prompt": "research_manager/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
     "requires_user_or_external_result": false
   },
   "prohibited_inferences": [
@@ -217,13 +354,19 @@
     "Do not replace the closed pointwise route with an ad hoc weighted/operator/L2/spectral route without a fresh authorized task/seal.",
     "Do not accept a theorem from Yuan Si 2026 merely by analogy or preprint status; exact parameter mapping is required.",
     "Do not start E8.",
-    "Do not claim that the Collatz conjecture is proved."
+    "Do not claim that the Collatz conjecture is proved.",
+    "Do not execute Stage 1 except once under the authorized Literature Transfer V1 seal SHA-256.",
+    "Do not use candidate_m3_project_exponent() as mathematical evidence for M3.",
+    "Do not use any unsealed Tao or Si source revision.",
+    "Do not promote a Si theorem to a project dependency without independent proof or separate zero-trust audit.",
+    "Do not rescue a failed Literature Transfer mapping with weighted operators, modified geometry, adaptive frequency search, adaptive endpoint search, new literature sources, or E8."
   ],
   "returned_result": {
-    "acceptance_status": "E7_RECOVERY_AND_B3_COUNTERTHEOREM_AUDIT_INTEGRATED",
-    "b3_countertheorem": "[PROVED][AUDITED]",
-    "b3_pre_run_seal_sha256": "acb61ef495bc164c5f55754ea355128bd8105bf7ddec9ff900c2dc16f9646eb3",
-    "b3_stage1_complete_package_sha256": "5172a6cadfa5d2bbce84564f19d3ba76b1338e51c7a5a96225d8c77ac4b4b186"
+    "acceptance_status": "LITERATURE_TRANSFER_V1_STAGE0_ACCEPTED_STAGE1_AUTHORIZED_NOT_EXECUTED",
+    "stage0_manifest_sha256": "f486d82365ca77066b328660bf48cd891eacb8aeed7a439d8bfc67b87d5b9276",
+    "stage0_seal_zip_sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79",
+    "stage0_working_branch_commit": "8ff843722bc9a4901fe72a1594d0fca95ca358b7",
+    "stage1_executed": false
   },
   "schema": "COLLATZ_CURRENT_RESEARCH_STATE_V1",
   "scientific_checkpoint": {
@@ -247,5 +390,5 @@
       "|E[F_{r,4}|S_r=n_r]|=O(1/r) [OPEN]"
     ]
   },
-  "updated_at": "2026-09-04T09:52:30+03:00"
+  "updated_at": "2026-09-04T10:05:03+03:00"
 }
