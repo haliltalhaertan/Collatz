@@ -32,13 +32,22 @@ jobs:
           expected_zip='66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac'
           h=lambda b: hashlib.sha256(b).hexdigest()
           assert h(manifest.read_bytes()) == expected_manifest, 'final manifest SHA mismatch'
-          listed=[]
+          listed=[]; mismatches=[]
           for line in manifest.read_text(encoding='utf-8').splitlines():
               hh,name=line.split('  ',1)
               p=root/name
-              assert p.is_file(), f'missing member {name}'
-              assert h(p.read_bytes()) == hh, f'member SHA mismatch {name}'
+              if not p.is_file():
+                  mismatches.append((name,hh,'MISSING'))
+              else:
+                  got=h(p.read_bytes())
+                  if got != hh:
+                      mismatches.append((name,hh,got))
               listed.append(name)
+          if mismatches:
+              print('SEALED MEMBER BYTE MISMATCHES:')
+              for name,expected,got in mismatches:
+                  print(f'{name}\n  expected={expected}\n  actual={got}')
+              raise SystemExit(2)
           members=sorted(listed+[manifest.name])
           assert len(members)==27 and len(members)==len(set(members))
           with zipfile.ZipFile(out,'w') as z:
