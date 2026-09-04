@@ -1,0 +1,29 @@
+name: B4 V2 Stage0 SelfRef Repair Handoff Verification
+
+on:
+  push:
+    branches:
+      - cp20-e7r-b4-v2-stage0-finalization-handoff-20260904
+
+permissions:
+  contents: read
+
+jobs:
+  literal-handoff:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Exact canonical checkout
+        uses: actions/checkout@v4
+        with:
+          ref: 8d274095b0e1acbe1fad0a73ef6a5293364902fc
+          fetch-depth: 0
+      - name: Assert exact SHA and run literal handoff verifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          git checkout -B main 8d274095b0e1acbe1fad0a73ef6a5293364902fc
+          ACTUAL="$(git rev-parse HEAD)"
+          echo "ACTUAL_CHECKOUT_SHA=$ACTUAL"
+          test "$ACTUAL" = "8d274095b0e1acbe1fad0a73ef6a5293364902fc"
+          python tools/verify_handoff.py | tee /tmp/b4_v2_selfref_handoff_stdout.txt
+          grep -Fx 'HANDOFF VERIFICATION: PASS' /tmp/b4_v2_selfref_handoff_stdout.txt
