@@ -1,16 +1,79 @@
 {
   "allowed_stage0_execution": [
     "witness_schema_tests",
-    "synthetic_witness_validator_tests",
+    "synthetic_two_commit_authorization_tests",
     "static_launcher_control_flow_checks",
     "seal_manifest_hash_checks",
     "deterministic_file_comparisons",
-    "exact_contamination_diff_classification"
+    "scientific_freeze_diff",
+    "literal_handoff_verification"
   ],
+  "authorization_model": {
+    "authorization_commit_sha": "runtime Phase-B commit; must descend from Phase A and contain authorization + state",
+    "authorization_json_must_not_self_reference_commit_sha": true,
+    "canonical_base_sha_definition": "canonical_base_sha = authorization_commit_sha",
+    "canonical_stage0_base_sha": "runtime Phase-A commit; must contain exact canonical_stage0_artifacts below",
+    "type": "TWO_COMMIT_PHASE_A_PHASE_B"
+  },
+  "blocked_seal_blacklist": [
+    "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+    "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
+    "66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac"
+  ],
+  "canonical_stage0_artifacts": {
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_SCIENTIFIC_DIFF_CHECK.py": {
+      "git_blob_sha1": "a669089f05af9ee6720b5ed6ef429bcfdaba40e7",
+      "sha256": "d44e64e6b8506ad62d0f5e1bf84d1ebe278abd05935dfbc337c46896639f795b"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT.json": {
+      "git_blob_sha1": "388d8f279a540694bfdb7b3c1d5f7e7166d05dd6",
+      "sha256": "78660cf5cd6341179557e996cfbe28fe4ccbe02180e1e3138a50b1bde050e225"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py": {
+      "git_blob_sha1": "6de84a91e66521b6ff92b86f87dc2126fa84e61c",
+      "sha256": "16cadd29fc6bae7f3255a596267ede57faa30f469b7b70cffb1042f68115f6cc"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md": {
+      "git_blob_sha1": "da0341ad445207b56c5a1a18e251a89f89eda52f",
+      "sha256": "26dd63e143c9d7a1178b0a99acdeda0f3b9839208c7e2df066706a17f959de9f"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA.json": {
+      "git_blob_sha1": "d7c75c6ed6873b28bf6e30b8ff0956dd335d6bdf",
+      "sha256": "2edf4198adeeb65602d3d8259c429a1853bc58ac5bd6c47e5e0e151283517795"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE_SCHEMA.json": {
+      "git_blob_sha1": "b851d62cd25ecebdc1498e7168489f6e44ace976",
+      "sha256": "b6d7fe7602c291690d82d2bcde292403712003be1433878b247b22f1b24b55e2"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS_SCHEMA.json": {
+      "git_blob_sha1": "093ccd9c20c73db45293d6a0320de4f6ede8cfbf",
+      "sha256": "c6e12499f3de2acb7fa34be81a4b54d5d0424abb351ca2fcbbc3ab7808447f01"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_CHECK.py": {
+      "git_blob_sha1": "c3d51eee7bb1913b3759b5b88e264de3fe6e46f5",
+      "sha256": "a332ab557d2645fa308ce3b1a4760d6da7209e8d73f1f6ad7e8e07f3f7cd87e0"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS.json": {
+      "git_blob_sha1": "a74e7d72c75c914106fdf5cfab90ed5c03f039b9",
+      "sha256": "54760bf1f1a636107832319540665ac36d8919360bfcb3cfacb5e2bbc707c235"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST.py": {
+      "git_blob_sha1": "9aa9887ba9a078ffe3064c8449ec859d56dbbc2f",
+      "sha256": "1496892571aa35dd94f590292ae02908298551a40677a5b2553123b988394d4c"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS.json": {
+      "git_blob_sha1": "a26acbb6b1335da78b76c841d907e88f8811ea34",
+      "sha256": "2d905f57ea824e1dd10f1293a033c3bfc9e0ce88687ecaa308f37b5a861a3b6d"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py": {
+      "git_blob_sha1": "5d76c492bbd05de966f603ea3fc01bf21d38560f",
+      "sha256": "efeadaa9f838e5b4dd03bec0603b94763709e7101ac83481456dfce7ece8d362"
+    }
+  },
   "canonical_v1_stage0_scientific_source_commit": "c83d22f9e3ac8bdc4ec955d14b3d7dca11c3fee1",
   "contract": {
     "filename": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
-    "sha256": "f6ba52fb3576834748f31d80b61751045a85a8cbb0a900451b63c40591f2c3cf"
+    "sha256": "26dd63e143c9d7a1178b0a99acdeda0f3b9839208c7e2df066706a17f959de9f"
   },
   "forbidden_stage0": [
     "T1",
@@ -39,17 +102,22 @@
   },
   "future_authorization": {
     "artifact_path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
+    "forbidden_required_field": "authorization_commit_sha",
     "required_fields": [
       "authorized_v2_seal_sha256",
       "v2_contract_sha256",
-      "authorized_execution_base_sha"
+      "canonical_stage0_base_sha",
+      "stage"
     ],
-    "required_stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED"
+    "required_stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+    "runtime_required_args": [
+      "--canonical-stage0-base-sha",
+      "--authorization-commit-sha",
+      "--authorized-seal-sha256",
+      "--contract-sha256"
+    ]
   },
-  "old_v1_seal_blacklist": [
-    "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c"
-  ],
-  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_CONFIG_V2",
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_CONFIG_TWO_COMMIT_AUTHORIZATION_V3",
   "scientific_program": {
     "G_r": "E[e_(3^r)(eta_r F_r^aff) | sum A_i=T_r]",
     "T_r": "floor(alpha*r)-8",
@@ -97,6 +165,20 @@
     "p_star_definition": "1/log_2(3)",
     "sigma_star_squared_definition": "alpha*(alpha-1)"
   },
+  "selftest_case_meaning": {
+    "S1": "missing canonical_stage0_base_sha",
+    "S10": "Stage0-base mismatch inside authorization JSON",
+    "S11": "wrong authorization stage",
+    "S12": "correct two-commit synthetic model",
+    "S2": "wrong canonical_stage0_base_sha",
+    "S3": "missing authorization_commit_sha",
+    "S4": "malformed authorization_commit_sha",
+    "S5": "Stage0 base not ancestor of authorization commit",
+    "S6": "authorization commit not ancestor of execution HEAD",
+    "S7": "authorization artifact missing at authorization commit",
+    "S8": "seal mismatch",
+    "S9": "contract mismatch"
+  },
   "selftest_expected": {
     "S1": "FAIL",
     "S10": "FAIL",
@@ -116,5 +198,5 @@
   "stage1_authorized": false,
   "task": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
   "task_version": "V2",
-  "working_branch": "cp20-e7r-b4-tilted-microcanonical-fourier-v2-stage0-reseal-20260904"
+  "working_branch": "cp20-e7r-b4-v2-stage0-finalization-handoff-20260904"
 }

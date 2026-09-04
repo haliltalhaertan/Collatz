@@ -1,34 +1,34 @@
 {
-  "S1_S12": {
-    "S1": "FAIL",
-    "S10": "FAIL",
-    "S11": "FAIL",
-    "S12": "PASS",
-    "S2": "FAIL",
-    "S3": "FAIL",
-    "S4": "FAIL",
-    "S5": "FAIL",
-    "S6": "FAIL",
-    "S7": "FAIL",
-    "S8": "FAIL",
-    "S9": "FAIL"
-  },
+  "S12": "PASS_AS_EXPECTED",
+  "S1_S11": "FAIL_AS_EXPECTED",
+  "Stage1_executed": false,
   "T1_T8_executed": false,
-  "candidate_manifest_validation": {
-    "crc": "PASS",
-    "member_hashes": "PASS",
-    "membership": "PASS",
-    "sorted": "PASS",
-    "unique": "PASS"
+  "authorization_json_self_reference_required": false,
+  "blocked_seal_firewall": {
+    "pre_handoff_v2": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
+    "selfref_defect_v2": "66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac",
+    "v1": "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+    "verdict": "PASS"
   },
-  "candidate_seal_sha256": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
-  "old_v1_seal_blacklist_test": "PASS",
-  "old_v1_seal_sha256": "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
-  "real_stage1_launcher_invoked": false,
-  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_MECHANICAL_CHECKS_V1",
+  "config_sha256": "6007a994b04ab1768d8164bdbbc44acdf94a076c1f07ab3d2ea67c0934cfbe67",
+  "contract_sha256": "26dd63e143c9d7a1178b0a99acdeda0f3b9839208c7e2df066706a17f959de9f",
+  "handoff_job_id": 101150791299,
+  "handoff_run_id": 33912148126,
+  "key_artifact_sha256": {
+    "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE.json": "93168be2f5ba453387bd7ed42180ce026e4e8da9195373f326b160bf8bb3400c",
+    "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT.json": "78660cf5cd6341179557e996cfbe28fe4ccbe02180e1e3138a50b1bde050e225",
+    "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py": "16cadd29fc6bae7f3255a596267ede57faa30f469b7b70cffb1042f68115f6cc",
+    "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md": "26dd63e143c9d7a1178b0a99acdeda0f3b9839208c7e2df066706a17f959de9f",
+    "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE_SCHEMA.json": "b6d7fe7602c291690d82d2bcde292403712003be1433878b247b22f1b24b55e2",
+    "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS_SCHEMA.json": "c6e12499f3de2acb7fa34be81a4b54d5d0424abb351ca2fcbbc3ab7808447f01",
+    "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS.json": "54760bf1f1a636107832319540665ac36d8919360bfcb3cfacb5e2bbc707c235",
+    "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS.json": "2d905f57ea824e1dd10f1293a033c3bfc9e0ce88687ecaa308f37b5a861a3b6d",
+    "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py": "efeadaa9f838e5b4dd03bec0603b94763709e7101ac83481456dfce7ece8d362"
+  },
+  "literal_handoff_verification": "PASS",
+  "real_stage1_entrypoint_invoked": false,
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_AUTHORIZATION_BASE_SELF_REFERENCE_REPAIR_MECHANICAL_CHECKS_V1",
   "scientific_diff": "NO SCIENTIFIC CHANGE",
-  "stage1_executed": false,
   "static_control_flow": "PASS",
-  "utc_timestamp": "2026-09-04T14:29:54.271458+00:00",
-  "witness_selftest_overall": "PASS"
+  "witness_selftest": "PASS"
 }

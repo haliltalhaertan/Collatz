@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
-    "authorized_execution_base_sha": {
+    "authorization_commit_sha": {
       "pattern": "^[0-9a-f]{40}$",
       "type": "string"
     },
@@ -11,6 +11,10 @@
       "type": "string"
     },
     "canonical_base_sha": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "canonical_stage0_base_sha": {
       "pattern": "^[0-9a-f]{40}$",
       "type": "string"
     },
@@ -40,7 +44,8 @@
       "const": "PASS"
     },
     "stage0_source_base_sha": {
-      "const": "8d274095b0e1acbe1fad0a73ef6a5293364902fc"
+      "const": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+      "type": "string"
     },
     "task": {
       "const": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2"
@@ -57,8 +62,9 @@
     "task",
     "task_version",
     "stage0_source_base_sha",
+    "canonical_stage0_base_sha",
+    "authorization_commit_sha",
     "canonical_base_sha",
-    "authorized_execution_base_sha",
     "authorized_seal_sha256",
     "contract_sha256",
     "config_sha256",
@@ -69,11 +75,13 @@
     "exact_entrypoint",
     "preflight_status"
   ],
-  "title": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 RUN_WITNESS",
+  "title": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 RUN_WITNESS — TWO-COMMIT AUTHORIZATION",
   "type": "object",
   "x_cross_field_rules": [
-    "canonical_base_sha MUST equal authorized_execution_base_sha",
-    "authorized_seal_sha256 MUST NOT equal consumed V1 seal ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
-    "seal/contract/config SHA fields MUST exactly equal manager/configured values"
+    "canonical_base_sha MUST equal authorization_commit_sha",
+    "canonical_stage0_base_sha and authorization_commit_sha MUST be distinct commit identities",
+    "no authorization JSON field is required to equal authorization_commit_sha",
+    "authorized_seal_sha256 MUST NOT equal any blocked V1/V2 candidate seal",
+    "seal/contract/config SHA fields MUST exactly equal runtime/sealed expectations"
   ]
 }

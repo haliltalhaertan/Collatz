@@ -1,11 +1,19 @@
 {
-  "T1_T8_executed_under_candidate": false,
+  "T1_T8_executed_under_blocked_candidates": false,
   "authorization_use": "FORBIDDEN",
-  "candidate_manifest_sha256": "de2ded39eec5673260ba6e0873583bbb4f9fc1cb7fe27d4cefc6c73e5b22a63d",
-  "candidate_seal_sha256": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
-  "classification": "[V2 STAGE0 CANDIDATE \u2014 BLOCKED \u2014 DO NOT AUTHORIZE]",
+  "blocked_candidates": [
+    {
+      "classification": "[BLOCKED CANDIDATE — PRE-HANDOFF-GATE — DO NOT AUTHORIZE]",
+      "reason": "Created before mandatory literal handoff gate was satisfied.",
+      "seal_sha256": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea"
+    },
+    {
+      "classification": "[BLOCKED CANDIDATE — AUTHORIZATION-BASE SELF-REFERENCE DEFECT — DO NOT AUTHORIZE]",
+      "reason": "Contract/launcher required an authorization-bearing commit to contain its own not-yet-known SHA via authorized_execution_base_sha.",
+      "seal_sha256": "66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac"
+    }
+  ],
   "provenance_only": true,
-  "reason": "Created before mandatory literal HANDOFF VERIFICATION gate was satisfied.",
-  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_BLOCKED_CANDIDATE_CLASSIFICATION_V1",
-  "stage1_executed_under_candidate": false
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_BLOCKED_CANDIDATE_CLASSIFICATION_SELFREF_REPAIR_V1",
+  "stage1_executed_under_blocked_candidates": false
 }

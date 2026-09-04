@@ -1,28 +1,35 @@
 {
   "T1_T8_executed": false,
   "call_positions": {
-    "append_pre_t1_gate_ledger(": 1079,
-    "output_absence(": 861,
-    "validate_witness(": 1029,
-    "verify_future_base(": 894,
-    "verify_seal(": 781,
-    "write_gate(": 1057,
-    "write_witness(": 1004
+    "append_pre_t1_gate_ledger(": 1144,
+    "output_absence(": 916,
+    "validate_witness(": 1108,
+    "verify_authorization_chain(": 949,
+    "verify_seal(": 836,
+    "write_gate(": 1129,
+    "write_witness(": 1090
   },
   "checks": {
+    "authorization_artifact_read_at_auth_commit": true,
+    "authorization_json_not_required_to_name_own_commit": true,
+    "authorization_to_head_ancestry_check": true,
+    "blocked_seal_firewall": true,
     "complete_witness_before_gate": true,
-    "future_git_base_checks": true,
     "gate_checked_before_ledger": true,
     "integrity_failure_literal": true,
     "no_T1_START_emission": true,
     "no_math_packages": true,
-    "old_v1_seal_blacklist": true,
-    "runtime_authorized_execution_base_arg": true,
+    "old_self_referential_arg_removed": true,
+    "phase_a_artifact_blob_and_sha256_checks": true,
+    "runtime_authorization_commit_arg": true,
     "runtime_authorized_seal_arg": true,
+    "runtime_canonical_stage0_base_arg": true,
     "runtime_contract_sha_arg": true,
+    "stage0_to_authorization_ancestry_check": true,
     "validator_separate_import": true
   },
   "forbidden_math_imports": [],
   "overall": "PASS",
-  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS_V2"
+  "real_stage1_entrypoint_invoked": false,
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS_TWO_COMMIT_V3"
 }
