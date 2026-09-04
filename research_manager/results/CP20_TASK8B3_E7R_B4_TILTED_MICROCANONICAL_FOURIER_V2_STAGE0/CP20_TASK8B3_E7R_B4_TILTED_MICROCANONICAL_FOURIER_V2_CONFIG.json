@@ -63,20 +63,53 @@
     },
     "eta_r": "2^(T_r-4) mod 3^r",
     "falsification": [
-      "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10",
-      "T7-F1", "T7-F2", "T7-F3", "T7-F4", "T7-F5"
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F8",
+      "F9",
+      "F10",
+      "T7-F1",
+      "T7-F2",
+      "T7-F3",
+      "T7-F4",
+      "T7-F5"
     ],
     "fourier_convention": {
       "H_r": "E_pstar[chi_r(A)*exp(i*t*(sum(A)-alpha*r))]",
       "N_r": "(1/(2*pi))*integral_{-pi}^{pi} exp(-i*t*(T_r-alpha*r))*H_r(t) dt"
     },
     "goal": "|G_r|=O(1/r)",
-    "outcomes": ["B4-N1", "B4-N2", "B4-N3", "B4-N4", "B4-N5", "B4-N6", "B4-N7", "B4-CT"],
+    "outcomes": [
+      "B4-N1",
+      "B4-N2",
+      "B4-N3",
+      "B4-N4",
+      "B4-N5",
+      "B4-N6",
+      "B4-N7",
+      "B4-CT"
+    ],
     "p_star_definition": "1/log_2(3)",
     "sigma_star_squared_definition": "alpha*(alpha-1)"
   },
   "selftest_expected": {
-    "S1": "FAIL", "S10": "FAIL", "S11": "FAIL", "S12": "PASS", "S2": "FAIL", "S3": "FAIL", "S4": "FAIL", "S5": "FAIL", "S6": "FAIL", "S7": "FAIL", "S8": "FAIL", "S9": "FAIL"
+    "S1": "FAIL",
+    "S10": "FAIL",
+    "S11": "FAIL",
+    "S12": "PASS",
+    "S2": "FAIL",
+    "S3": "FAIL",
+    "S4": "FAIL",
+    "S5": "FAIL",
+    "S6": "FAIL",
+    "S7": "FAIL",
+    "S8": "FAIL",
+    "S9": "FAIL"
   },
   "stage0_only": true,
   "stage0_source_base_sha": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
