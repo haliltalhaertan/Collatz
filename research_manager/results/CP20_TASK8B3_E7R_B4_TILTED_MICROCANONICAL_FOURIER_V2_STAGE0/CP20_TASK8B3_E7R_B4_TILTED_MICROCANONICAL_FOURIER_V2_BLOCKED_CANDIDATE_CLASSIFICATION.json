@@ -3,7 +3,7 @@
   "authorization_use": "FORBIDDEN",
   "candidate_manifest_sha256": "de2ded39eec5673260ba6e0873583bbb4f9fc1cb7fe27d4cefc6c73e5b22a63d",
   "candidate_seal_sha256": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
-  "classification": "[V2 STAGE0 CANDIDATE — BLOCKED — DO NOT AUTHORIZE]",
+  "classification": "[V2 STAGE0 CANDIDATE \u2014 BLOCKED \u2014 DO NOT AUTHORIZE]",
   "provenance_only": true,
   "reason": "Created before mandatory literal HANDOFF VERIFICATION gate was satisfied.",
   "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_BLOCKED_CANDIDATE_CLASSIFICATION_V1",
