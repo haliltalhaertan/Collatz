@@ -3,20 +3,31 @@
     "acquired_at": "2026-09-04T11:21:24+03:00",
     "base_commit": "9119a39957705f53060c380acf3e8f4dd6609565",
     "holder": "canonical-integrator-e7r-literature-stage1-audit-20260904",
+    "lock_acquisition_commit": "4af6fa68ea0cdf8f393a2ab18f8e7a96115ec830",
     "scope": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1 audited Stage-1 canonical integration only; no Stage-1 rerun, no new mathematics, no weighted/operator work, no E8, and no execution of the next research task.",
-    "status": "HELD"
+    "status": "RELEASED"
   },
   "active_task": {
-    "code": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1",
-    "name": "Tao v7 + Si 2026 Literature Transfer / Exact Normal Form",
-    "objective": "Determine the exact normal-form/parameter mapping between E[F_{r,4}|S_r=n_r] with its finite phase cocycle and the conditioned affine/Fourier objects in Tao current arXiv v7 and Yuan Si 2026, before accepting any theorem transfer.",
-    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+    "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1",
+    "name": "Tilted / Recentered Microcanonical Fourier Cancellation",
+    "objective": "Determine whether the exact project microcanonical law can be recentered by an exponential/geometric tilt with mean log_2(3), and whether a new joint Fourier local-limit theorem at the primitive frequency eta_r = 2^(T_r-4) mod 3^r can yield |G_r| = O(1/r).",
+    "stage": "STAGE_0_READY_NOT_DISPATCHED",
     "target": {
       "C": 4,
-      "d": -8
+      "d": -8,
+      "primitive_frequency": "eta_r = 2^(T_r-4) mod 3^r"
     }
   },
   "archive": {
+    "budget_policy": {
+      "canonical_main_policy": "small reports/JSON/hashes/manifests/Drive identifiers/small reproducibility source only; no duplicated sealed PDFs/source archives/Stage-0 seal ZIPs; no historical deletion for headroom",
+      "github_builder_hard_limit_bytes": 100000000,
+      "large_stage1_package_drive_file_id": "1PqiwA2CnnXuA6ZkjM7edaKdSBqB1CYXN",
+      "large_stage1_package_drive_folder_id": "1MfxD3sXu3j-Op7jlbS9umNefzhb2--7f",
+      "large_stage1_package_drive_readback": "PASS",
+      "large_stage1_package_materialized_on_main": false,
+      "large_stage1_package_sha256": "978d8b90c58131dcf350699920a241fee7a7d7b4c2abeff5cb1ea45da96e120e"
+    },
     "build_record": "CURRENT_ARCHIVE_BUILD.json",
     "current_archive": "Collatz_Research_Archive_CURRENT.zip",
     "original_import": {
@@ -62,22 +73,34 @@
   },
   "continuity": {
     "entrypoint": "START_HERE_CURRENT_HANDOFF.md",
+    "future_once_only_contract_rule": "Pre-run execution-integrity contracts must be canonicalized before authorization/execution.",
     "journal": "research_manager/RESEARCH_JOURNAL.jsonl",
     "milestone_completion_rule": "result → hashes/manifests → Drive save → Drive read-back → GitHub save/push → GitHub read-back → report",
-    "minimum_required_commit": "d1e7e6b2c9e6f382feed2841ca61bd1b449a51b0",
+    "minimum_required_commit": "4af6fa68ea0cdf8f393a2ab18f8e7a96115ec830",
     "protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "repository_branch": "main",
     "sync_policy": "research_manager/GITHUB_SYNC_POLICY.md"
   },
+  "documentation_gap": {
+    "audit_verdict": "[EXECUTION INTEGRITY PASS WITH DOCUMENTATION GAP]",
+    "future_once_only_rule": "Pre-run execution-integrity contracts must be canonicalized before authorization/execution.",
+    "historical_authorization_rewritten": false,
+    "missing_preexecution_record": "STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT_ADDENDUM",
+    "rerun_authorized": false,
+    "rerun_required": false,
+    "task": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1 Stage 1"
+  },
   "documents": {
-    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_ACCEPTANCE_2026-09-04.md",
-    "active_authorization_decision": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUTHORIZATION_2026-09-04.md",
-    "active_authorization_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
-    "active_research_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
+    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
+    "active_authorization_decision": null,
+    "active_authorization_prompt": null,
+    "active_research_prompt": null,
     "continuity_protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "e6_integration": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
     "e7_recovery_audit": "bagimsiz-denetim/e7-recovery-v1-zero-trust-audit-20260903/CP20_TASK8B3_E7_RECOVERY_V1_ZERO_TRUST_AUDIT_2026-09-03.md",
     "e7r_b3_audit": "bagimsiz-denetim/e7r-b3-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_B3_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+    "literature_transfer_stage1_audit": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+    "literature_transfer_stage1_result": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md"
   },
   "integrity": {
@@ -136,7 +159,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "528c79b88ce37527438db3fa4de6786b59a395456b4951445278ca6d79527d2b"
+        "sha256": "245bccc8c38066cc52fdbc2d0e9f436fe58e5868865acccfb781b92073fb2cac"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/build_current_archive.py",
@@ -173,6 +196,54 @@
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py",
         "sha256": "7114fe2c56004a344c05e56cac305e593077eac43aa09ac084a196d1378ad4e2"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
+        "sha256": "55a3519ef092f9394300e9f37d0301318032b3f7704eae676ab506ddba1ad7de"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDIT_STOP.md",
+        "sha256": "ae3b4fc9b734ce2585ce0ba8d22971c4f5246eacdd8f0fac97f3429867a5664b"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_DRIVE_PERSISTENCE_RECORD.json",
+        "sha256": "20728c931a51d7bac395ada0f6a982104603c83cc5f06da73d6e2a2aa789c87d"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_INDEPENDENT_FINITE_PHASE.py",
+        "sha256": "a6384e10c11b1e7b61183d1009811eaed4837112666c715bfca70f9d8df106b4"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MECHANICAL_RESULTS.json",
+        "sha256": "f69ccb877bc340745078217c226ec2744c1eed3d1222ff89868d72a8e1ada9a8"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PACKAGE_RECORD.json",
+        "sha256": "a5b6cba99e55604cb102551c95ed1ffcb4f53634b354e5e407b748ab00ff48a2"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PROVENANCE.json",
+        "sha256": "323d6bca730a92a0c08863922e938902a9d0a9f70caf118698be2755879533e7"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
+        "sha256": "f194c227e880b8b7370d28379abd8db2bf535663ccb74ec075b6efb224c1c841"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_RESULT.json",
+        "sha256": "7d1b2defa4e4a9f5f2cb6a2ff63bbaf6a265aa6b12cfe427101a2f5e779cef3f"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_SHA256SUMS.txt",
+        "sha256": "f8afcf1778722bd8715a78792d9855c65c0849c8fc722f00096fd67bc6c9d4c4"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+        "sha256": "9c99922b314523090444ea4f665015b4e161eb48c151b3c6a054331601306a45"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-04.txt",
+        "sha256": "ee298f410355cea4b1e60cdd065a7165a407ffab577c9841b299a2d9a3e43889"
       }
     ],
     "repository_files": [
@@ -226,7 +297,7 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "528c79b88ce37527438db3fa4de6786b59a395456b4951445278ca6d79527d2b"
+        "sha256": "245bccc8c38066cc52fdbc2d0e9f436fe58e5868865acccfb781b92073fb2cac"
       },
       {
         "path": "tools/build_current_archive.py",
@@ -283,10 +354,70 @@
       {
         "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/si_github/main.tex",
         "sha256": "c1ff1f11f442fed1b2f7a37be61fe0e3c0916719549018557446ca01e81e0811"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
+        "sha256": "55a3519ef092f9394300e9f37d0301318032b3f7704eae676ab506ddba1ad7de"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDIT_STOP.md",
+        "sha256": "ae3b4fc9b734ce2585ce0ba8d22971c4f5246eacdd8f0fac97f3429867a5664b"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_DRIVE_PERSISTENCE_RECORD.json",
+        "sha256": "20728c931a51d7bac395ada0f6a982104603c83cc5f06da73d6e2a2aa789c87d"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_INDEPENDENT_FINITE_PHASE.py",
+        "sha256": "a6384e10c11b1e7b61183d1009811eaed4837112666c715bfca70f9d8df106b4"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MECHANICAL_RESULTS.json",
+        "sha256": "f69ccb877bc340745078217c226ec2744c1eed3d1222ff89868d72a8e1ada9a8"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PACKAGE_RECORD.json",
+        "sha256": "a5b6cba99e55604cb102551c95ed1ffcb4f53634b354e5e407b748ab00ff48a2"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PROVENANCE.json",
+        "sha256": "323d6bca730a92a0c08863922e938902a9d0a9f70caf118698be2755879533e7"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
+        "sha256": "f194c227e880b8b7370d28379abd8db2bf535663ccb74ec075b6efb224c1c841"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_RESULT.json",
+        "sha256": "7d1b2defa4e4a9f5f2cb6a2ff63bbaf6a265aa6b12cfe427101a2f5e779cef3f"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_SHA256SUMS.txt",
+        "sha256": "f8afcf1778722bd8715a78792d9855c65c0849c8fc722f00096fd67bc6c9d4c4"
+      },
+      {
+        "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+        "sha256": "9c99922b314523090444ea4f665015b4e161eb48c151b3c6a054331601306a45"
+      },
+      {
+        "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-04.txt",
+        "sha256": "ee298f410355cea4b1e60cdd065a7165a407ffab577c9841b299a2d9a3e43889"
       }
     ]
   },
   "literature_transfer_v1": {
+    "closed_route": {
+      "not_closed": [
+        "adaptations of Tao/Si mechanisms requiring a new theorem",
+        "exponential tilting / recentered measures",
+        "off-central microcanonical Fourier analysis",
+        "weighted/cotransition operators",
+        "saddlepoint/Edgeworth methods",
+        "modified geometry"
+      ],
+      "scope": "EXACT — DO NOT BROADEN",
+      "statement": "Direct application/transfer of the frozen Tao v7 / Si 2026 analytic theorems to the exact project microcanonical fiber."
+    },
     "stage0": {
       "acceptance": "[ACCEPT STAGE 0]",
       "canonical_base": "b3eaaae80a64003f4ee06a43b65fbd3680b8e22b",
@@ -336,15 +467,76 @@
       "stage1_executed": false,
       "status": "[LITERATURE TRANSFER V1 — STAGE 1 AUTHORIZED — NOT EXECUTED]",
       "weighted_operator_authorized": false
+    },
+    "stage1_result": {
+      "authorized_stage0_seal_sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79",
+      "complete_package_sha256": "978d8b90c58131dcf350699920a241fee7a7d7b4c2abeff5cb1ea45da96e120e",
+      "downstream_math_after_stop": false,
+      "e6_n2": "[OPEN]",
+      "lt_ladder": {
+        "LT-CT": "[PROVED][AUDITED]",
+        "LT-N1": "[PROVED][AUDITED]",
+        "LT-N2": "[PROVED][AUDITED]",
+        "LT-N3": "[PROVED][AUDITED]",
+        "LT-N4": "[PROVED][AUDITED]",
+        "LT-N5": "[PROVED][AUDITED]",
+        "LT-N6": "[NOT PROVED]",
+        "LT-N7": "[NOT PROVED]"
+      },
+      "manifest_sha256": "f8afcf1778722bd8715a78792d9855c65c0849c8fc722f00096fd67bc6c9d4c4",
+      "mappings": {
+        "M1": "PASS",
+        "M2": "PASS",
+        "M3": "PASS",
+        "M4": "PASS",
+        "M5": "PASS",
+        "M6": "PASS",
+        "M7": "PASS — CONSISTENCY CLASSIFICATION ONLY",
+        "M8": "PASS — NO DIRECT THEOREM MATCH"
+      },
+      "normal_form": {
+        "G_r": "E[e_{3^r}(eta_r F_r^aff) | sum_i A_i = T_r]",
+        "T_r": "floor((log_2 3) r)-8",
+        "eta_r": "2^(T_r-4) mod 3^r",
+        "global_mod16_cocycle": "none; dyadic factor absorbed into primitive 3-adic frequency"
+      },
+      "package_location": "Drive only for large package; canonical main carries small records and hashes",
+      "result_branch": "cp20-e7r-literature-transfer-v1-stage1-audit-stop-20260904",
+      "result_branch_head": "93201a44924562eddb951d083370e42e0ec8bf00",
+      "stage1_rerun_in_integration": false,
+      "status": "[AUDITED AND CANONICALLY INTEGRATED]"
+    },
+    "zero_trust_audit": {
+      "artifact_sha256": {
+        "full_audit": "9c99922b314523090444ea4f665015b4e161eb48c151b3c6a054331601306a45",
+        "independent_reproduction": "e2dfd4cae002751abf8b22ae3da8ca1e14050af2e9e391039c753cf0b46976f5",
+        "reproduction_results": "22a6ed55fff981e07d8b07ac4fd6a914173cebdc51519962f7453f8b10df7276",
+        "verdict_record": "d19495edf4461c61cc07cca8e6777ce6932107547657ed54f178fdaf39419426"
+      },
+      "audit_branch": "cp20-e7r-literature-transfer-v1-zero-trust-audit-20260904",
+      "audit_branch_head": "594517c1f0a27c9335ee10aa287cb5054210be7d",
+      "execution_integrity": "[EXECUTION INTEGRITY PASS WITH DOCUMENTATION GAP]",
+      "package_integrity": "[PACKAGE INTEGRITY PASS]",
+      "verdict": "[AUDIT PASS — DIRECT TAO/SI THEOREM TRANSFER CLOSED]"
     }
   },
   "next_action": {
-    "authorized_stage": "STAGE_1_ONLY",
+    "authorized_stage": "STAGE_0_ONLY",
     "executed_in_this_transaction": false,
-    "instruction": "Execute Stage 1 once under seal 403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79, adjudicating M1–M8 in order and obeying the binding M3 repair and the LT-N6/LT-N7/LT-CT audit stop rule. Do not begin weighted-operator work or E8.",
-    "prompt": "research_manager/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
+    "instruction": "Prepare/execute Stage 0 only for CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1 in a future transaction, first freezing and falsifying T1–T8. Do not infer that Tao existing theorem applies after tilting. This canonical integration does not dispatch or execute Stage 0.",
+    "prompt": null,
     "requires_user_or_external_result": false
   },
+  "next_task_stage0_requirements": [
+    "T1 exact conditional-law invariance under geometric tilting",
+    "T2 choice p_* = 1/log_2(3) and centrality of T_r under that tilted law",
+    "T3 exact Fourier-inversion representation of the microcanonical numerator",
+    "T4 denominator local limit P_{p_*}(sum A_i=T_r) ~ c r^(-1/2)",
+    "T5 required numerator target O(r^(-3/2))",
+    "T6 whether Tao-style white-point/renewal estimates can be generalized uniformly in the additional Fourier variable dual to the total sum",
+    "T7 saddlepoint / Edgeworth alternative",
+    "T8 endpoint-weighted block-operator alternative if the direct tilted route fails"
+  ],
   "prohibited_inferences": [
     "Do not promote historical/lost pre-recovery E7 conclusions; they remain [UNVERIFIED — ARTIFACTS LOST].",
     "Do not claim the frozen full-window pointwise E7R-B3 contraction; it is [FALSE][CLOSED].",
@@ -358,14 +550,19 @@
     "Do not use candidate_m3_project_exponent() as mathematical evidence for M3.",
     "Do not use any unsealed Tao or Si source revision.",
     "Do not promote a Si theorem to a project dependency without independent proof or separate zero-trust audit.",
-    "Do not rescue a failed Literature Transfer mapping with weighted operators, modified geometry, adaptive frequency search, adaptive endpoint search, new literature sources, or E8."
+    "Do not rescue a failed Literature Transfer mapping with weighted operators, modified geometry, adaptive frequency search, adaptive endpoint search, new literature sources, or E8.",
+    "Do not broaden the audited Literature Transfer closure beyond direct application/transfer of the frozen Tao v7 / Si 2026 analytic theorems to the exact project microcanonical fiber.",
+    "Do not claim that Tao existing theorem applies after exponential/geometric tilting.",
+    "Do not rerun Literature Transfer V1 Stage 1 to repair the documentation gap.",
+    "Do not execute CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1 Stage 0 as part of this integration."
   ],
   "returned_result": {
-    "acceptance_status": "LITERATURE_TRANSFER_V1_STAGE0_ACCEPTED_STAGE1_AUTHORIZED_NOT_EXECUTED",
-    "stage0_manifest_sha256": "f486d82365ca77066b328660bf48cd891eacb8aeed7a439d8bfc67b87d5b9276",
-    "stage0_seal_zip_sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79",
-    "stage0_working_branch_commit": "8ff843722bc9a4901fe72a1594d0fca95ca358b7",
-    "stage1_executed": false
+    "acceptance_status": "LITERATURE_TRANSFER_V1_AUDIT_PASS_CANONICALLY_INTEGRATED",
+    "audit_head": "594517c1f0a27c9335ee10aa287cb5054210be7d",
+    "audit_verdict": "[AUDIT PASS — DIRECT TAO/SI THEOREM TRANSFER CLOSED]",
+    "e6_n2": "[OPEN]",
+    "stage1_manifest_sha256": "f8afcf1778722bd8715a78792d9855c65c0849c8fc722f00096fd67bc6c9d4c4",
+    "stage1_package_sha256": "978d8b90c58131dcf350699920a241fee7a7d7b4c2abeff5cb1ea45da96e120e"
   },
   "schema": "COLLATZ_CURRENT_RESEARCH_STATE_V1",
   "scientific_checkpoint": {
@@ -373,11 +570,18 @@
       "E6-N1 [PROVED][AUDITED/ACCEPTED WITH SCOPE REPAIR]",
       "E7R-B1 [PROVED][AUDITED]",
       "E7R-B2 [PROVED][AUDITED]",
-      "B3-CT [PROVED][AUDITED]"
+      "B3-CT [PROVED][AUDITED]",
+      "LT-N1 [PROVED][AUDITED]",
+      "LT-N2 [PROVED][AUDITED]",
+      "LT-N3 [PROVED][AUDITED]",
+      "LT-N4 [PROVED][AUDITED]",
+      "LT-N5 [PROVED][AUDITED]",
+      "LT-CT [PROVED][AUDITED]"
     ],
     "closed": [
       "E7R-B3 frozen pointwise contraction [FALSE][CLOSED]",
-      "uniform pointwise contraction over the entire frozen endpoint window [CLOSED]"
+      "uniform pointwise contraction over the entire frozen endpoint window [CLOSED]",
+      "Direct application/transfer of the frozen Tao v7 / Si 2026 analytic theorems to the exact project microcanonical fiber [CLOSED]"
     ],
     "historical_unverified": [
       "pre-recovery E7 conclusions [UNVERIFIED — ARTIFACTS LOST]"
@@ -386,8 +590,9 @@
       "E7R-B4 / E6-N2 [OPEN]",
       "E7R-B5 [OPEN]",
       "E7R-B6 [OPEN]",
-      "|E[F_{r,4}|S_r=n_r]|=O(1/r) [OPEN]"
+      "|E[F_{r,4}|S_r=n_r]|=O(1/r) [OPEN]",
+      "E6-N2 [OPEN]"
     ]
   },
-  "updated_at": "2026-09-04T10:05:03+03:00"
+  "updated_at": "2026-09-04T11:21:26+03:00"
 }

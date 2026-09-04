@@ -1,0 +1,11 @@
+{
+  "downstream_math_after_stop": false,
+  "mandatory_stop": "LT-CT at M8",
+  "manifest_sha256": "f8afcf1778722bd8715a78792d9855c65c0849c8fc722f00096fd67bc6c9d4c4",
+  "manifest_verification": "PASS",
+  "member_count": 10,
+  "package_sha256": "978d8b90c58131dcf350699920a241fee7a7d7b4c2abeff5cb1ea45da96e120e",
+  "schema": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PACKAGE_RECORD_V1",
+  "stage1_execution_count": 1,
+  "zip_crc": "PASS"
+}

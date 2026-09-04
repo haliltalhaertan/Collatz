@@ -1,0 +1,10 @@
+{
+  "drive_folder_id": "1MfxD3sXu3j-Op7jlbS9umNefzhb2--7f",
+  "drive_folder_url": "https://drive.google.com/drive/folders/1MfxD3sXu3j-Op7jlbS9umNefzhb2--7f",
+  "drive_package_file_id": "1PqiwA2CnnXuA6ZkjM7edaKdSBqB1CYXN",
+  "drive_package_url": "https://drive.google.com/file/d/1PqiwA2CnnXuA6ZkjM7edaKdSBqB1CYXN/view?usp=drivesdk",
+  "expected_package_sha256": "978d8b90c58131dcf350699920a241fee7a7d7b4c2abeff5cb1ea45da96e120e",
+  "readback_package_sha256": "978d8b90c58131dcf350699920a241fee7a7d7b4c2abeff5cb1ea45da96e120e",
+  "readback_byte_compare": "PASS",
+  "readback_verdict": "PASS"
+}

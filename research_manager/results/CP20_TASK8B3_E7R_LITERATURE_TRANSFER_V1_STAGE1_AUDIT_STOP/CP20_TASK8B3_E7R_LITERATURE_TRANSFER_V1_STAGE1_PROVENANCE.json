@@ -1,0 +1,11 @@
+{
+  "repository": "haliltalhaertan/Collatz",
+  "canonical_authorization_commit": "9119a39957705f53060c380acf3e8f4dd6609565",
+  "authorization_prompt_path": "research_manager/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
+  "authorization_prompt_git_blob_sha1": "231857f79275c45ff3027aa5b30d2d9d3690e25b",
+  "authorized_stage0_seal_sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79",
+  "mapping_order": ["M1","M2","M3","M4","M5","M6","M7","M8"],
+  "stage1_execution_count": 1,
+  "audit_stop": "LT-CT at M8",
+  "downstream_math_after_stop": false
+}
