@@ -13,7 +13,7 @@
     "classification": "MECHANICAL_DETACHED_HEAD_COMPATIBILITY_FAILURE; no scientific content executed",
     "job_id": 101058063492,
     "run_id": 33883648381,
-    "terminal_verdict": "HANDOFF VERIFICATION: FAIL — branch mismatch: "
+    "terminal_verdict": "HANDOFF VERIFICATION: FAIL \u2014 branch mismatch: "
   },
   "repository": "haliltalhaertan/Collatz",
   "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE_V1",
