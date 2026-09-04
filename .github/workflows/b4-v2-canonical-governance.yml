@@ -1,0 +1,27 @@
+name: B4 V2 Canonical Governance
+
+on:
+  push:
+    branches:
+      - b4-v2-governance-runner-no-more-branches-20260905
+
+permissions:
+  contents: write
+
+jobs:
+  canonical-integrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Execute governance-only two-commit integration
+        run: python .github/scripts/b4_v2_canonical_integrate.py
+      - name: Upload canonical persistence bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: CP20_TASK8B3_E7R_B4_V2_CANONICAL_INTAKE_STAGE1_AUTHORIZATION
+          path: .canonical_persistence/
+          if-no-files-found: error
+          retention-days: 90
