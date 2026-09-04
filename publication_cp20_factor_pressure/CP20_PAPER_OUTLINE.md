@@ -8,7 +8,7 @@ Alternative:
 
 **Entropy–Pressure Constraints on Critical-Log Syracuse Orbits**
 
-Status: `[WORKING OUTLINE — NO NEW MATHEMATICS]`
+Status: `[POST-AUDIT REPAIRED OUTLINE — NO NEW MATHEMATICS]`
 
 ---
 
@@ -37,13 +37,12 @@ Suggested abstract logic:
 2. Assume the critical-log discrepancy law.
 3. State the exponential factor-complexity lower bound
    `liminf log_2 p_a(r)/r >= alpha/kappa`.
-4. Under zero-criticality, state the deterministic weighted-pressure upper bound and the consequence
-   `kappa > 2.784` uniformly without a preassigned alphabet bound.
+4. For finite `B>=3`, under `1<=a_k<=B` and pointwise zero-criticality, state the deterministic weighted-pressure upper bound `limsup log_2 p_a(r)/r<=h_B` and `kappa>=alpha/h_B`; then state the separate uniform consequence `kappa > 2.784` without a preassigned alphabet bound.
 5. Relax pointwise zero-criticality to a two-type critical-site density theorem; if critical sites have zero density, the same threshold remains.
 6. Give one or two certified `rho_min(kappa)` examples.
 7. Close with exact scope: this is a conditional structural obstruction inside the critical-log regime, not a proof of the Collatz conjecture.
 
-Avoid “first,” “introduce factor complexity,” or “new entropy method.”
+Avoid “first,” “introduce factor complexity,” “new entropy method,” or any implication that the general entropy-threshold architecture is new.
 
 ---
 
@@ -77,9 +76,13 @@ State three main theorems in compressed form:
 
 `liminf log_2 p_a(r)/r >= alpha/kappa`.
 
-**Theorem B — zero-critical pressure obstruction**
+**Theorem B — finite-`B` zero-critical pressure obstruction and uniform envelope**
 
-`limsup log_2 p_a(r)/r <= h_B`, hence `kappa>=alpha/h_B`, and uniformly
+For finite `B>=3`, assuming `1<=a_k<=B` for every `k` and `a_k!=g_k` for every `k`,
+
+`limsup log_2 p_a(r)/r <= h_B`, hence `kappa>=alpha/h_B`.
+
+Separately, the formal `B=infinity` pressure envelope removes the need to specify the finite alphabet bound in advance and yields
 
 `kappa > 2.784`.
 
@@ -106,7 +109,14 @@ Recommended order:
 
 The comparison paragraph should say explicitly:
 
-> The present argument does not claim novelty for affine repetition, Sturmian structure, factor complexity, or entropy barriers individually. Its distinguishing feature is the quantitative critical-log entropy-pressure chain for the ordinary Syracuse valuation word and the resulting two-type critical-density pressure surface.
+> The present argument does not claim novelty for affine repetition, Sturmian structure, factor complexity, repeated-factor divisibility, entropy barriers, or the general strategy of comparing a constrained-language entropy rate against a Diophantine/discrepancy parameter to obtain a threshold. Its distinguishing feature is the quantitative critical-log entropy-pressure chain for the ordinary Syracuse valuation word and the resulting two-type critical-density pressure surface.
+
+The Witteveen comparison must include two architecture-level disclosures rather than only listing similar ingredients:
+
+1. Equal exponent factors give the same affine subtraction identity. Witteveen reads it in the `3`-adic direction to obtain `3^r` endpoint divisibility; the present Task-6 mechanism reads it in the coprime `2`-adic direction to obtain `2^{A(W)}` start-value divisibility. These are dual consequences of one identity, so the repeated-factor device itself is not new.
+2. Witteveen already compares the entropy of a constrained Collatz word language against a Diophantine parameter to obtain a threshold. The present work therefore claims novelty only for the different critical-log hypothesis class and the specific quantitative outputs `alpha/kappa`, `h_B`, the uniform `2.784` threshold, and the two-type density pressure surface.
+
+The `collatz-things` comparison should make equally clear that its July 2026 IEF12–IEF21 results already combine symbolic repetition, complexity, bounded critical discrepancy, Diophantine exponents and integrality obstruction on a special balanced `q=3` residual language; the present theorem is quantitative and concerns a different ordinary-Syracuse critical-log class.
 
 ---
 
@@ -133,7 +143,7 @@ Exact word map.
 
 ### Lemma 4.3 — local valuation mass
 
-`A(u,r)>=alpha r-O(1)` on the required windows.
+`A(u,r)>=alpha r-O(1)` on the required windows `u>=r`.
 
 Keep all quantifier restrictions exactly as in the frozen V3 source.
 
@@ -150,6 +160,8 @@ Derive
 for equal valuation factors at two starts.
 
 Handle the equal-state branch explicitly via eventual periodicity and irrationality of `alpha`.
+
+Add a related-work sentence here or in §3.3 noting that Witteveen's `3^r` endpoint divisibility is the dual coprime consequence of the same affine subtraction.
 
 ## 5.2 Exponential counting window
 
@@ -179,7 +191,7 @@ Conclude
 This is the place to distinguish the theorem from:
 
 - Dubickas's linear complexity lower bound for a different coding;
-- Witteveen's bounded-amplitude cycle factor-count mechanism;
+- Witteveen's bounded-amplitude cycle factor-count and entropy-threshold mechanism;
 - the qualitative low-complexity exclusions in the integral-escape residual programme.
 
 ---
@@ -197,9 +209,15 @@ No novelty claim.
 
 ## 6.2 Defect language
 
+Fix a finite `B>=3` and assume explicitly
+
+`1<=a_k<=B`
+
+for every `k`, together with pointwise zero-criticality `a_k!=g_k`.
+
 Define `d_k=g_k-a_k`.
 
-Under zero-criticality, record the exact finite-`B` supports at `g=1` and `g=2` sites.
+Under these finite-`B` zero-critical hypotheses, record the exact supports at `g=1` and `g=2` sites.
 
 Use
 
@@ -219,19 +237,21 @@ Emphasize that the `O(log r)` band costs only polynomial overhead.
 
 ## 6.4 Pressure constant
 
-Define `h_B` exactly.
-
-Prove
+Under the same finite-`B` hypotheses define `h_B` exactly and prove
 
 `limsup log_2 p_a(r)/r <= h_B`.
 
+Do not state this finite-`B` bound without `1<=a_k<=B`.
+
 ## 6.5 Theorem B
 
-Combine with Theorem A:
+Combine with Theorem A under the finite-`B` hypotheses:
 
 `kappa>=alpha/h_B`.
 
-Then develop the `B=infinity` uniform envelope and exact interval certificate:
+For the certified `B=3` special case, state explicitly that `1<=a_k<=3`, zero-criticality, and the critical-log hypothesis are assumed before writing `kappa>3.027`.
+
+Then develop the separate `B=infinity` uniform envelope and exact interval certificate:
 
 `alpha/h_infinity > 348/125 = 2.784`.
 
@@ -279,7 +299,15 @@ Avoid the superseded one-piece compactness argument entirely.
 
 State only the frozen quantifiers:
 
-for `epsilon_r->0`, `r epsilon_r->infinity`, and the associated Task-6 scales `N_r`, every accumulation point of the type-density pair satisfies
+`0<epsilon_r<alpha/kappa`,
+`epsilon_r->0`,
+`r epsilon_r->infinity`,
+
+and the associated Task-6 scales
+
+`N_r=floor(2^{(alpha/kappa-epsilon_r)r})`.
+
+Every accumulation point of the type-density pair satisfies
 
 `rho in F`,
 `h(rho)>=alpha/kappa`.
@@ -370,7 +398,17 @@ State exact rational target inequalities and reproduction commands.
 
 ## Appendix D — Extended prior-art comparison
 
-Optional, but advisable if introduction length becomes excessive. Include a theorem-by-theorem comparison table for Witteveen and `collatz-things`.
+Advisable rather than merely optional after the independent audit. Include a theorem-by-theorem comparison table for Witteveen and `collatz-things`.
+
+For Witteveen the table must include:
+
+- common affine subtraction identity;
+- Witteveen's `3^r` endpoint-divisibility reading versus CP20's `2^{A(W)}` start-divisibility reading;
+- bounded-amplitude / uniformly bounded-discrepancy cycle language versus logarithmically growing critical-log discrepancy;
+- the fact that the general entropy-threshold architecture is prior art;
+- the distinct CP20 outputs `alpha/kappa`, `h_B`, the uniform `2.784` threshold and the critical-density pressure surface.
+
+For `collatz-things`, compare its qualitative balanced-`q=3` residual-language exclusions with CP20's quantitative ordinary-Syracuse critical-log results.
 
 ---
 
@@ -388,6 +426,8 @@ The manuscript must pass all of the following:
 8. No “first” claim appears without a new specialist priority audit.
 9. Certified decimals are separated from exact inequalities.
 10. The abstract and title do not imply a proof of the Collatz conjecture.
+11. Every finite-`B` statement carries the hypothesis `1<=a_k<=B` explicitly.
+12. The manuscript does not claim novelty for the general entropy-rate-versus-Diophantine/discrepancy threshold architecture.
 
 ---
 
