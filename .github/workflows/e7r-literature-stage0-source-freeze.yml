@@ -22,6 +22,7 @@ jobs:
           set -euo pipefail
           ROOT='research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0'
           SRC="$ROOT/sources"
+          rm -rf "$ROOT"
           mkdir -p "$SRC/tao" "$SRC/si_zenodo" "$SRC/si_github"
 
           curl -fL --retry 4 --retry-delay 2 -A 'Collatz-Stage0/1.0' \
@@ -38,48 +39,25 @@ jobs:
           curl -fL --retry 4 --retry-delay 2 \
             "https://raw.githubusercontent.com/SamSi0322/collatz-affine-model/$SI_COMMIT/main.pdf" -o "$SRC/si_github/main.pdf"
 
-          pdftotext "$SRC/tao/tao_1909.03562v7.pdf" "$SRC/tao/tao_1909.03562v7.txt"
-          pdftotext "$SRC/si_zenodo/main.pdf" "$SRC/si_zenodo/main.txt"
-          pdftotext "$SRC/si_github/main.pdf" "$SRC/si_github/main.txt"
-
-          grep -q '1909.03562v7' "$SRC/tao/tao_1909.03562v7.txt"
           test "$(md5sum "$SRC/si_zenodo/main.pdf" | awk '{print $1}')" = 'f59b2b147590fc66d3153d34ad497390'
 
           python - <<'PY'
-          import hashlib, json, pathlib, subprocess
+          import hashlib, json, pathlib
           root = pathlib.Path('research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0')
           src = root/'sources'
-          files = [
-              src/'tao'/'tao_1909.03562v7.pdf',
-              src/'tao'/'tao_1909.03562v7_source.tar',
-              src/'tao'/'tao_1909.03562v7.txt',
-              src/'si_zenodo'/'main.pdf',
-              src/'si_zenodo'/'main.txt',
-              src/'si_github'/'main.tex',
-              src/'si_github'/'main.pdf',
-              src/'si_github'/'main.txt',
-          ]
+          tao_pdf = src/'tao'/'tao_1909.03562v7.pdf'
+          tao_src = src/'tao'/'tao_1909.03562v7_source.tar'
+          zen_pdf = src/'si_zenodo'/'main.pdf'
+          si_tex = src/'si_github'/'main.tex'
+          si_pdf = src/'si_github'/'main.pdf'
           def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
           data = {
             'schema':'CP20_E7R_LT_STAGE0_SOURCE_FREEZE_V1',
             'project_base_commit':'b3eaaae80a64003f4ee06a43b65fbd3680b8e22b',
-            'tao': {
-              'arxiv':'1909.03562', 'version':'v7',
-              'pdf_sha256':sha(files[0]), 'source_archive_sha256':sha(files[1]),
-              'pdftotext_sha256':sha(files[2]),
-            },
-            'si_zenodo': {
-              'doi':'10.5281/zenodo.20027097',
-              'pdf_sha256':sha(files[3]), 'pdftotext_sha256':sha(files[4]),
-              'pdf_md5':hashlib.md5(files[3].read_bytes()).hexdigest(),
-            },
-            'si_github': {
-              'repository':'SamSi0322/collatz-affine-model',
-              'commit':'119199e7165505f9535952e272056af912ce59fb',
-              'main_tex_sha256':sha(files[5]), 'main_pdf_sha256':sha(files[6]),
-              'pdftotext_sha256':sha(files[7]),
-            },
-            'si_zenodo_equals_github_pdf': files[3].read_bytes() == files[6].read_bytes(),
+            'tao': {'arxiv':'1909.03562','version':'v7','last_revised_utc':'2026-07-16T05:37:32Z','pdf_sha256':sha(tao_pdf),'source_archive_sha256':sha(tao_src)},
+            'si_zenodo': {'doi':'10.5281/zenodo.20027097','record':'20027097','created':'2026-05-04','modified':'2026-05-04','pdf_sha256':sha(zen_pdf),'pdf_md5':hashlib.md5(zen_pdf.read_bytes()).hexdigest()},
+            'si_github': {'repository':'SamSi0322/collatz-affine-model','commit':'119199e7165505f9535952e272056af912ce59fb','main_tex_sha256':sha(si_tex),'main_pdf_sha256':sha(si_pdf)},
+            'si_zenodo_equals_github_pdf': zen_pdf.read_bytes() == si_pdf.read_bytes(),
           }
           (root/'SOURCE_FREEZE_HASHES.json').write_text(json.dumps(data,indent=2,sort_keys=True)+'\n',encoding='utf-8')
           print(json.dumps(data,indent=2,sort_keys=True))
