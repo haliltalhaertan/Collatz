@@ -9,29 +9,169 @@
   },
   "canonical_base_commit": "57f670bd531cee8f0f2d6eeb27431243f6e3a479",
   "fixed_stage0_checks": {
-    "arc_order_r_cases": [1,2,4,8,16,64,256],
-    "centrality_r_cases": [16,24,32,64],
+    "arc_order_r_cases": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      64,
+      256
+    ],
+    "centrality_r_cases": [
+      16,
+      24,
+      32,
+      64
+    ],
     "conditional_weight_cases": [
-      {"T":7,"compositions":[[1,1,5],[1,2,4],[2,2,3],[3,1,3]],"p":"1/2","r":3},
-      {"T":7,"compositions":[[1,1,5],[1,2,4],[2,2,3],[3,1,3]],"p":"2/3","r":3},
-      {"T":8,"compositions":[[1,1,1,5],[1,2,2,3],[2,2,2,2]],"p":"3/5","r":4}
+      {
+        "T": 7,
+        "compositions": [
+          [
+            1,
+            1,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            3,
+            1,
+            3
+          ]
+        ],
+        "p": "1/2",
+        "r": 3
+      },
+      {
+        "T": 7,
+        "compositions": [
+          [
+            1,
+            1,
+            5
+          ],
+          [
+            1,
+            2,
+            4
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            3,
+            1,
+            3
+          ]
+        ],
+        "p": "2/3",
+        "r": 3
+      },
+      {
+        "T": 8,
+        "compositions": [
+          [
+            1,
+            1,
+            1,
+            5
+          ],
+          [
+            1,
+            2,
+            2,
+            3
+          ],
+          [
+            2,
+            2,
+            2,
+            2
+          ]
+        ],
+        "p": "3/5",
+        "r": 4
+      }
     ],
     "fourier_inversion_finite_surrogate_cases": [
-      {"T":3,"chi":"(-1)^(a1+2*a2)","max_part":4,"p":"2/3","r":2},
-      {"T":4,"chi":"(-1)^(a1+2*a2)","max_part":4,"p":"2/3","r":2},
-      {"T":6,"chi":"(-1)^(a1+a2+2*a3)","max_part":3,"p":"3/5","r":3}
+      {
+        "T": 3,
+        "chi": "(-1)^(a1+2*a2)",
+        "max_part": 4,
+        "p": "2/3",
+        "r": 2
+      },
+      {
+        "T": 4,
+        "chi": "(-1)^(a1+2*a2)",
+        "max_part": 4,
+        "p": "2/3",
+        "r": 2
+      },
+      {
+        "T": 6,
+        "chi": "(-1)^(a1+a2+2*a3)",
+        "max_part": 3,
+        "p": "3/5",
+        "r": 3
+      }
     ],
     "negative_binomial_enumeration_cases": [
-      {"T":4,"p":"1/2","r":2},
-      {"T":6,"p":"2/3","r":3},
-      {"T":7,"p":"3/5","r":4}
+      {
+        "T": 4,
+        "p": "1/2",
+        "r": 2
+      },
+      {
+        "T": 6,
+        "p": "2/3",
+        "r": 3
+      },
+      {
+        "T": 7,
+        "p": "3/5",
+        "r": 4
+      }
     ],
     "quotient_cases": [
-      {"T":4,"chi":"(-1)^(a1+2*a2)","p":"2/3","r":2},
-      {"T":6,"chi":"(-1)^(a1+a2+a3)","p":"3/5","r":3}
+      {
+        "T": 4,
+        "chi": "(-1)^(a1+2*a2)",
+        "p": "2/3",
+        "r": 2
+      },
+      {
+        "T": 6,
+        "chi": "(-1)^(a1+a2+a3)",
+        "p": "3/5",
+        "r": 3
+      }
     ]
   },
-  "forbidden_stage0": ["asymptotic_decay_fit","adaptive_r_search","adaptive_t_search","large_r_Nr_numerics","spectral_experiments","Edgeworth_coefficient_claim","new_renewal_theorem_claim","E6-N2_proof","weighted_operator_work","E8"],
+  "forbidden_stage0": [
+    "asymptotic_decay_fit",
+    "adaptive_r_search",
+    "adaptive_t_search",
+    "large_r_Nr_numerics",
+    "spectral_experiments",
+    "Edgeworth_coefficient_claim",
+    "new_renewal_theorem_claim",
+    "E6-N2_proof",
+    "weighted_operator_work",
+    "E8"
+  ],
   "fourier_convention": {
     "H_r": "E_pstar[chi_r(A)*exp(i*t*(sum(A)-alpha*r))]",
     "N_r": "(1/(2*pi))*integral_{-pi}^{pi} exp(-i*t*(T_r-alpha*r))*H_r(t) dt"
@@ -42,7 +182,12 @@
   "sigma_star_squared_definition": "alpha*(alpha-1)",
   "stage0_only": true,
   "stage1_authorized": false,
-  "target": {"G_r":"E[e_{3^r}(eta_r F_r^aff) | sum A_i=T_r]","T_r":"floor(alpha*r)-8","eta_r":"2^(T_r-4) mod 3^r","goal":"|G_r|=O(1/r)"},
+  "target": {
+    "G_r": "E[e_{3^r}(eta_r F_r^aff) | sum A_i=T_r]",
+    "T_r": "floor(alpha*r)-8",
+    "eta_r": "2^(T_r-4) mod 3^r",
+    "goal": "|G_r|=O(1/r)"
+  },
   "task_code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1",
   "working_branch": "cp20-e7r-b4-tilted-microcanonical-fourier-v1-stage0-20260904"
 }
