@@ -1,0 +1,35 @@
+{
+  "schema": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_RESULT_V1",
+  "sealed_stage0_zip_sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79",
+  "source_hashes_verified": true,
+  "mapping_results": {
+    "M1": {"status":"PROVED","evidence":["Exact shift from uniform weak compositions to uniform positive compositions; literature n=r, s=T_r."]},
+    "M2": {"status":"PROVED","evidence":["Exact stars-and-bars bijection: binary length T_r-1 with r-1 ones; reversal preserves uniform law."]},
+    "M3": {"status":"PROVED","evidence":["Exact rational exponent identity Phi_r=2^T F_r^aff/(16*3^r); boundary s=1 included; independent negative-exponent implementation hash a6384e10c11b1e7b61183d1009811eaed4837112666c715bfca70f9d8df106b4."]},
+    "M4": {"status":"PROVED","evidence":["eta_r=2^(T_r-4) mod 3^r is primitive; k=0,h=0,d=r; q=2^-4 mod 3^r."]},
+    "M5": {"status":"PROVED","evidence":["Observable is literally one microcanonical primitive affine-offset Fourier coefficient, not a derivative/finite difference/degree-one correction."]},
+    "M6": {"status":"PROVED","evidence":["Delta_r=-(theta_r+8)/alpha in (-9/alpha,-8/alpha]; exact critical-scale strip, but total T_r=alpha r+O(1) violates Si central bridge s=2r+O(sqrt(r log r))."]},
+    "M7": {"status":"PROVED","evidence":["Exact block map: h_block=u, q_block=2^(u+k-4), Delta_block=-u+O(1)->-infinity; B3-CT nondecay is consistent with supercritical/power-of-two resonance classification, without theorem transfer."]},
+    "M8": {"status":"NO_DIRECT_MATCH","evidence":["Tao Fourier/white-point theorem is unconditioned; project is an exponentially rare off-central microcanonical fiber. Sealed Si conditional transfers require central/half-density bridge hypotheses. LT-CT fires."]}
+  },
+  "falsification_results": {
+    "F1":"NOT_TRIGGERED",
+    "F2":"NOT_TRIGGERED",
+    "F3":"NOT_TRIGGERED",
+    "F4":"TRIGGERED",
+    "F5":"TRIGGERED",
+    "F6":"NOT_TRIGGERED",
+    "F7":"NOT_TRIGGERED",
+    "F8":"TRIGGERED"
+  },
+  "outcomes": ["LT-N1","LT-N2","LT-N3","LT-N4","LT-N5","LT-CT"],
+  "stage1_executed": true,
+  "mandatory_stop": true,
+  "notes": [
+    "LT-N6 not proved/not triggered.",
+    "LT-N7 not proved/not triggered; E6-N2 remains OPEN.",
+    "LT-CT proved at M8: direct sealed Tao/Si theorem-transfer route to the exact project fiber is closed.",
+    "No mathematical downstream work was executed after the M8 stop.",
+    "Si theorem statements remain LITERATURE CLAIM — UNAUDITED."
+  ]
+}
