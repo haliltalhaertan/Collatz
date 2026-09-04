@@ -1,0 +1,13 @@
+{
+  "drive_folder_id": "1hYTCh3ilo3SfBRPePpNLBGcbQCDrPnsB",
+  "drive_raw_readback": "PASS",
+  "failure_branch": "cp20-e7r-b4-stage1-input-integrity-failure-20260904",
+  "failure_branch_commit": "f1dce61f3d2ee207a50bd0f46208f49f3901f013",
+  "forensic_manifest_drive_file_id": "1dGgNLgFBB7l7mbc094aK3XIbO5_lhir9",
+  "forensic_manifest_sha256": "92f787e9f44625186fe4f1e78c85f601523d19a902818babe3ad78547ae10ce7",
+  "invalid_mathematical_contents_imported_to_main": false,
+  "package_drive_file_id": "1T9G831PyU6E11-FGJnaT_dEr4WMzPRAg",
+  "package_materialized_on_main": false,
+  "package_sha256": "71ad925b3d461e4ceb77293736cee75dfea116c012703e1308e00bc118125ab4",
+  "schema": "B4_V1_FORENSIC_PACKAGE_REFERENCE_V1"
+}

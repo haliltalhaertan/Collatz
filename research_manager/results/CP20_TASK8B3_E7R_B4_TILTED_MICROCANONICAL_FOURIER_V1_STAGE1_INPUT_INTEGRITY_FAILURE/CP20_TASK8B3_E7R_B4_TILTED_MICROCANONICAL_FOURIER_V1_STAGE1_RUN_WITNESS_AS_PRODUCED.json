@@ -1,0 +1,9 @@
+{
+  "authorized_seal_sha256": "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+  "config_sha256": "dbd990b493bfc846ab84db9020d43d31376918e9351bd04dea49bd0bb6753f88",
+  "execution_count_claim": 1,
+  "output_absence_precheck": "PASS",
+  "pid": 1632,
+  "task": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1",
+  "utc_timestamp": "2026-09-04T09:26:39.602258+00:00"
+}

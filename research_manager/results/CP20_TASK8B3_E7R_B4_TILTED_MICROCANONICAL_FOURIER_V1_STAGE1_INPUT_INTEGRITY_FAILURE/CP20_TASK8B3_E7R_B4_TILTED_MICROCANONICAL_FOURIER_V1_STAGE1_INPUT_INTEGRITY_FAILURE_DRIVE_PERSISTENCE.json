@@ -1,0 +1,13 @@
+{
+  "folder_id": "1hYTCh3ilo3SfBRPePpNLBGcbQCDrPnsB",
+  "folder_url": "https://drive.google.com/drive/folders/1hYTCh3ilo3SfBRPePpNLBGcbQCDrPnsB",
+  "manifest_file_id": "1dGgNLgFBB7l7mbc094aK3XIbO5_lhir9",
+  "package_file_id": "1T9G831PyU6E11-FGJnaT_dEr4WMzPRAg",
+  "package_sha256": "71ad925b3d461e4ceb77293736cee75dfea116c012703e1308e00bc118125ab4",
+  "raw_readback_byte_equal": true,
+  "raw_readback_sha256": "71ad925b3d461e4ceb77293736cee75dfea116c012703e1308e00bc118125ab4",
+  "record_file_id": "1pLlok2wZ8jXBfAqPdDHoWhTFJ5NF1A20",
+  "report_file_id": "1mcr3nyVjQk9P_ING2b7DnOS8lD_2D0ag",
+  "schema": "B4_STAGE1_INTEGRITY_FAILURE_DRIVE_PERSISTENCE_V1",
+  "status": "PASS"
+}

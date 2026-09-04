@@ -2,34 +2,32 @@
 
 Machine-readable authority: `CURRENT_RESEARCH_STATE.json`. Recover on branch `main`, run `python tools/verify_handoff.py`, and require `HANDOFF VERIFICATION: PASS` before any research action.
 
-## B4 canonical status
+## B4 V1 canonical closeout
 
-Task: `CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1` — **Tilted / Recentered Microcanonical Fourier Cancellation**.
+B4 V1 Stage 0: **[FROZEN — SCIENTIFIC PROGRAM PRESERVED]**.
 
-Corrected Phase-A canonicalization commit: `7042f332378f587b2a8ad839990994f3c0474458`. Phase-A canonical read-back: **PASS** (16/16 sealed members exact; contract exact; Stage 1 remained NOT AUTHORIZED).
+B4 V1 Stage 1: **[INPUT INTEGRITY FAILURE — INVALID / NON-CANONICAL]**. The pre-T1 `RUN_WITNESS` omitted the contract-required canonical base SHA. The launcher was invoked once; no rerun occurred. All subsequent V1 T1–T8 mathematical drafts are **[INVALID / NON-CANONICAL / DO NOT USE]** and are not canonical evidence.
 
-Stage-0 seal SHA-256: `ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c`. Manifest SHA-256: `7de830b396fb075b4a97f78dd889ef16e92d66e763e5572af603f016faf33118`.  
-Stage-0 branch/head: `cp20-e7r-b4-tilted-microcanonical-fourier-v1-stage0-20260904` @ `c83d22f9e3ac8bdc4ec955d14b3d7dca11c3fee1`.  
-Drive Stage-0 folder: `1n7sz5_1JFXAqJ1KUWT66Hy9KBzyvwnLI`; raw seal read-back PASS. The seal ZIP remains Drive-only; its sealed text/source/config/hash members are preserved on main.
+Old V1 seal `ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c`: **[CONSUMED — MUST NOT BE REUSED OR REAUTHORIZED]**. Old V1 authorization: **[CONSUMED / CLOSED]**.
 
-Canonical execution-integrity contract SHA-256: `3d9fd4c0c029c135b86c43377aa414c87704f5e6c3dd4a008fa621f3b4f1185e`; Git blob `94a15beb7573c860e4891048e705c9f13a156f04`. It was canonicalized before Phase-B authorization.
+B4-N1 through B4-N7 and B4-CT are all **NOT ESTABLISHED**. `E6-N2` remains **[OPEN]**. The invalid drafts must not influence canonical science.
 
-## Phase B
+Forensic source: `cp20-e7r-b4-stage1-input-integrity-failure-20260904` @ `f1dce61f3d2ee207a50bd0f46208f49f3901f013`; package SHA-256 `71ad925b3d461e4ceb77293736cee75dfea116c012703e1308e00bc118125ab4`; forensic manifest SHA-256 `92f787e9f44625186fe4f1e78c85f601523d19a902818babe3ad78547ae10ce7`; Drive folder `1hYTCh3ilo3SfBRPePpNLBGcbQCDrPnsB` with raw read-back PASS. Canonical main contains only the forensic failure report/record, produced defective witness, manifest/hash references, and Drive persistence provenance — not invalid mathematical draft contents.
 
-Canonical stage: `STAGE_1_AUTHORIZED_NOT_EXECUTED`.
+Main provenance only: accidental placeholder `c3062952ffb23754f62fd2dd6f6a6237e8b1d22c` was immediately reverted by `f5269e5ddbf610b2305fafbd90fe2b1346376103`. Compare `0c0e0e55c490278396f0b8f5033000b80725fb6c` → `f5269e5ddbf610b2305fafbd90fe2b1346376103` has net `files: []`. History was not rewritten.
 
-Stage 1 is authorized **ONCE and ONLY** for seal `ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c`, bound to every condition A–H of canonical contract `3d9fd4c0c029c135b86c43377aa414c87704f5e6c3dd4a008fa621f3b4f1185e`.
+## Exact next task
 
-Any input-integrity failure terminates `[B4 STAGE1 INPUT INTEGRITY FAILURE]` without execution. T1→T8 are adjudicated in frozen order; T8-A/T8-B only by frozen fallback logic after T7 adjudication. Tilting is not cancellation; Tao p=1/2 and Si central-fiber theorems do not automatically transfer; moving-frequency uniformity is load-bearing; no global mod-16 cocycle may be introduced; B3-CT remains a falsification constraint.
+Code: `CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2`
 
-Mandatory audit stop fires at a genuinely load-bearing B4-N5, B4-N6, B4-N7/E6-N2, load-bearing B4-CT, or a downstream-dependent exact leading-coefficient cancellation/non-cancellation theorem. Later T stages become `NOT_EXECUTED`; no rescue mathematics.
+Name: **Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal**
 
-`E6-N2` remains `[OPEN]` at authorization. No B4 theorem is accepted by this transaction.
+Stage: `STAGE_0_REPAIR_READY_NOT_DISPATCHED`
 
-## Exact next action
+Objective: Produce a fresh Stage-0 seal for the SAME frozen B4 scientific program, with no scientific result imported from the invalid V1 Stage-1 invocation, and repair the execution launcher so that all contract-required witness fields are written and mechanically validated BEFORE T1 can begin. This is an execution-integrity repair, not a scientific route change.
 
-Execute B4 Stage 1 exactly once under the authorized seal and canonical execution-integrity contract, adjudicating T1→T8 in frozen order.
+V2 Stage 0 must repair the launcher/witness path before any future T1 action, including frozen-schema validation and the preregistered canonical-base witness self-tests. It must not read or reuse invalid V1 T1–T8 drafts. Any future V2 Stage 1 must run in a fresh computation session/chat uncontaminated by those drafts.
 
-Stage 1 was **NOT EXECUTED** by this management transaction. No E8 was performed; no weighted/operator work was performed.
+V2 Stage 0 is **NOT DISPATCHED** and was not executed by this closeout. No Stage-1 rerun, weighted/operator work, E8, or new mathematics is authorized by recovery alone.
 
-Nothing in this authorization proves the Collatz conjecture.
+Nothing in this closeout proves the Collatz conjecture.

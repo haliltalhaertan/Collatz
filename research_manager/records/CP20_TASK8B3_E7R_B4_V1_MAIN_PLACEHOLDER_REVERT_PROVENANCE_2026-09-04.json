@@ -1,0 +1,11 @@
+{
+  "classification": "PROVENANCE_ONLY",
+  "compare_base": "0c0e0e55c490278396f0b8f5033000b80725fb6c",
+  "compare_head": "f5269e5ddbf610b2305fafbd90fe2b1346376103",
+  "history_rewritten": false,
+  "immediate_revert_commit": "f5269e5ddbf610b2305fafbd90fe2b1346376103",
+  "net_files": [],
+  "old_authorization_commit": "0c0e0e55c490278396f0b8f5033000b80725fb6c",
+  "schema": "B4_V1_MAIN_PLACEHOLDER_REVERT_PROVENANCE_V1",
+  "temporary_placeholder_commit": "c3062952ffb23754f62fd2dd6f6a6237e8b1d22c"
+}

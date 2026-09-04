@@ -74,6 +74,7 @@ def main() -> None:
         "AUDIT_PENDING",
         "ACCEPTED",
         "STAGE_0_READY_NOT_DISPATCHED",
+        "STAGE_0_REPAIR_READY_NOT_DISPATCHED",
         "STAGE_0_RUNNING",
         "PRE_RUN_SEAL_AWAITING_AUTHORIZATION",
     }

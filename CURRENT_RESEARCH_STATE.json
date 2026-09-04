@@ -3,20 +3,17 @@
     "acquired_at": "2026-09-04T12:52:45+03:00",
     "base_commit": "f5269e5ddbf610b2305fafbd90fe2b1346376103",
     "holder": "canonical-integrator-e7r-b4-v1-failure-closeout-v2-reseal-handoff-20260904",
-    "lock_acquisition_commit": "53610dc034b4c44d7af2cf47383fd4ee22c55d11",
+    "lock_acquisition_commit": "0cbce73c5f47f2778b6cc7417eccd30d80920549",
+    "released_at": "2026-09-04T12:52:47+03:00",
     "scope": "B4 V1 Stage-1 input-integrity failure canonical closeout plus V2 reseal handoff only; no Stage-1 rerun, no invalid T1–T8 mathematics intake, no new mathematics, no weighted/operator work, no E8, and no V2 Stage-0 execution.",
-    "status": "HELD"
+    "status": "RELEASED"
   },
   "active_task": {
-    "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1",
-    "name": "Tilted / Recentered Microcanonical Fourier Cancellation",
-    "objective": "Determine whether the exact project microcanonical law can be recentered by an exponential/geometric tilt with mean log_2(3), and whether a new joint Fourier local-limit theorem at the primitive frequency eta_r = 2^(T_r-4) mod 3^r can yield |G_r| = O(1/r).",
-    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
-    "target": {
-      "C": 4,
-      "d": -8,
-      "primitive_frequency": "eta_r = 2^(T_r-4) mod 3^r"
-    }
+    "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
+    "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
+    "objective": "Produce a fresh Stage-0 seal for the SAME frozen B4 scientific program, with no scientific result imported from the invalid V1 Stage-1 invocation, and repair the execution launcher so that all contract-required witness fields are written and mechanically validated BEFORE T1 can begin. This is an execution-integrity repair, not a scientific route change.",
+    "scientific_route_change": false,
+    "stage": "STAGE_0_REPAIR_READY_NOT_DISPATCHED"
   },
   "archive": {
     "budget_policy": {
@@ -93,13 +90,94 @@
     "seal_member_count": 16,
     "seal_member_hashes": "PASS",
     "seal_sha256": "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+    "seal_status": "[CONSUMED — MUST NOT BE REUSED OR REAUTHORIZED]",
     "seal_zip_materialized_on_main": false,
     "sealed_members_canonicalized_byte_for_byte": 16,
     "stage0_branch": "cp20-e7r-b4-tilted-microcanonical-fourier-v1-stage0-20260904",
     "stage0_head": "c83d22f9e3ac8bdc4ec955d14b3d7dca11c3fee1",
-    "stage1_authorized": true,
+    "stage1_authorization_status": "[CONSUMED / CLOSED]",
+    "stage1_authorized": false,
+    "stage1_authorized_historically": true,
     "stage1_executed": false,
-    "status": "[ACCEPT B4 STAGE 0]"
+    "stage1_execution_status": "[INPUT INTEGRITY FAILURE — INVALID / NON-CANONICAL]",
+    "status": "[FROZEN — SCIENTIFIC PROGRAM PRESERVED]"
+  },
+  "b4_v1_closeout": {
+    "claims": {
+      "B4-CT": "NOT ESTABLISHED",
+      "B4-N1": "NOT ESTABLISHED",
+      "B4-N2": "NOT ESTABLISHED",
+      "B4-N3": "NOT ESTABLISHED",
+      "B4-N4": "NOT ESTABLISHED",
+      "B4-N5": "NOT ESTABLISHED",
+      "B4-N6": "NOT ESTABLISHED",
+      "B4-N7": "NOT ESTABLISHED",
+      "E6-N2": "[OPEN]"
+    },
+    "drive_folder_id": "1hYTCh3ilo3SfBRPePpNLBGcbQCDrPnsB",
+    "drive_raw_readback": "PASS",
+    "entrypoint_invocations_observed": 1,
+    "failure_branch": "cp20-e7r-b4-stage1-input-integrity-failure-20260904",
+    "failure_branch_commit": "f1dce61f3d2ee207a50bd0f46208f49f3901f013",
+    "failure_package_sha256": "71ad925b3d461e4ceb77293736cee75dfea116c012703e1308e00bc118125ab4",
+    "forensic_manifest_sha256": "92f787e9f44625186fe4f1e78c85f601523d19a902818babe3ad78547ae10ce7",
+    "invalid_drafts_imported_to_main": false,
+    "invalid_drafts_may_influence_canonical_science": false,
+    "invalid_drafts_status": "[INVALID / NON-CANONICAL / DO NOT USE]",
+    "main_history_provenance": {
+      "compare_base": "0c0e0e55c490278396f0b8f5033000b80725fb6c",
+      "compare_head": "f5269e5ddbf610b2305fafbd90fe2b1346376103",
+      "history_rewritten": false,
+      "net_files": [],
+      "revert_commit": "f5269e5ddbf610b2305fafbd90fe2b1346376103",
+      "temporary_placeholder_commit": "c3062952ffb23754f62fd2dd6f6a6237e8b1d22c"
+    },
+    "old_authorization_commit": "0c0e0e55c490278396f0b8f5033000b80725fb6c",
+    "old_authorization_status": "[CONSUMED / CLOSED]",
+    "old_contract_sha256": "3d9fd4c0c029c135b86c43377aa414c87704f5e6c3dd4a008fa621f3b4f1185e",
+    "old_seal_sha256": "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+    "old_seal_status": "[CONSUMED — MUST NOT BE REUSED OR REAUTHORIZED]",
+    "rerun_performed": false,
+    "stage0_status": "[FROZEN — SCIENTIFIC PROGRAM PRESERVED]",
+    "stage1_status": "[INPUT INTEGRITY FAILURE — INVALID / NON-CANONICAL]"
+  },
+  "b4_v2_reseal": {
+    "contamination_control": {
+      "fresh_stage1_session_required": true,
+      "may_read": [
+        "canonical scientific inputs",
+        "V1 integrity-failure forensic record",
+        "produced defective witness",
+        "statement of the mechanical defect"
+      ],
+      "must_not_read": [
+        "invalid V1 T1–T8 mathematical draft outputs"
+      ]
+    },
+    "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
+    "objective": "Produce a fresh Stage-0 seal for the SAME frozen B4 scientific program, with no scientific result imported from the invalid V1 Stage-1 invocation, and repair the execution launcher so that all contract-required witness fields are written and mechanically validated BEFORE T1 can begin. This is an execution-integrity repair, not a scientific route change.",
+    "scientific_program_preserved": true,
+    "scientific_route_change": false,
+    "stage": "STAGE_0_REPAIR_READY_NOT_DISPATCHED",
+    "stage0_dispatched": false,
+    "stage0_executed": false,
+    "task": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
+    "witness_required_fields": [
+      "canonical_base_sha",
+      "authorized_seal_sha256",
+      "config_sha256",
+      "execution_count_claim",
+      "output_absence_precheck",
+      "UTC timestamp",
+      "PID/session identifier",
+      "exact entrypoint identity"
+    ],
+    "witness_self_test": {
+      "correct_canonical_base_sha": "PASS",
+      "missing_canonical_base_sha": "FAIL",
+      "synthetic_test_destination_only": true,
+      "wrong_canonical_base_sha": "FAIL"
+    }
   },
   "co_chair_roles": {
     "CP20_TASK8B3_E7": {
@@ -115,7 +193,7 @@
     "future_once_only_contract_rule": "Pre-run execution-integrity contracts must be canonicalized before authorization/execution.",
     "journal": "research_manager/RESEARCH_JOURNAL.jsonl",
     "milestone_completion_rule": "result → hashes/manifests → Drive save → Drive read-back → GitHub save/push → GitHub read-back → report",
-    "minimum_required_commit": "7042f332378f587b2a8ad839990994f3c0474458",
+    "minimum_required_commit": "0cbce73c5f47f2778b6cc7417eccd30d80920549",
     "protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "repository_branch": "main",
     "sync_policy": "research_manager/GITHUB_SYNC_POLICY.md"
@@ -130,11 +208,15 @@
     "task": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1 Stage 1"
   },
   "documents": {
-    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0_ACCEPTANCE_AND_CONTRACT_CANONICALIZATION_2026-09-04.md",
-    "active_authorization_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_AUTHORIZATION_2026-09-04.md",
-    "active_authorization_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
-    "active_research_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
+    "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_V1_INPUT_INTEGRITY_FAILURE_CLOSEOUT_2026-09-04.md",
+    "active_authorization_decision": null,
+    "active_authorization_prompt": null,
+    "active_research_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
     "b4_stage1_execution_contract": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
+    "b4_v1_defective_witness": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_RUN_WITNESS_AS_PRODUCED.json",
+    "b4_v1_failure_record": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_RECORD.json",
+    "b4_v1_forensic_package_reference": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_PACKAGE_REFERENCE.json",
+    "b4_v2_stage0_repair_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
     "continuity_protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "e6_integration": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
     "e7_recovery_audit": "bagimsiz-denetim/e7-recovery-v1-zero-trust-audit-20260903/CP20_TASK8B3_E7_RECOVERY_V1_ZERO_TRUST_AUDIT_2026-09-03.md",
@@ -146,52 +228,60 @@
   "integrity": {
     "archive_members": [
       {
+        "path": "Collatz Problemi — Araştırma Arşivi/CONTINUITY/START_HERE_CURRENT_HANDOFF.md",
+        "sha256": "1172cccb975b03352e4cedc4ccfb4bae8410c2eb757477c0d4f3628dfeec5bc6"
+      },
+      {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip",
         "sha256": "3f28f90b29af3a41e1c679593968e9156e9bc3b0882659ec3b8cfa794e9b930d"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.md",
-        "sha256": "ce7d634598d92b928597e3c1911f19ce51811bbda83721548d57a3703069ab9a"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SHA256SUMS.txt",
-        "sha256": "e836ed783ace26a559e4250f2690176f237b4401ba47f7ac4dc677496ade92b8"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.zip",
-        "sha256": "83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_COMPLETE_PACKAGE.zip",
         "sha256": "9511dc8c9bbd0485f159bbfdf2b5f1f784813af156db5085d90e4faccf1be849"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/SHA256SUMS.txt",
-        "sha256": "7c0f7ce6de55582cc1e69d12092f1d822cf169d897a0c36e28570e32378731d1"
-      },
-      {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md",
         "sha256": "d8e2f7c125744e50bf299b38a890ac0c7ff0d6c47d9fd08506a41b519b2faaec"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.md",
+        "sha256": "ce7d634598d92b928597e3c1911f19ce51811bbda83721548d57a3703069ab9a"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.zip",
+        "sha256": "83a26e81fc8a96479a6b76fdd33f962a047885115f00ec6a892248a0c07b6c57"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SHA256SUMS.txt",
+        "sha256": "e836ed783ace26a559e4250f2690176f237b4401ba47f7ac4dc677496ade92b8"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/SHA256SUMS.txt",
+        "sha256": "7c0f7ce6de55582cc1e69d12092f1d822cf169d897a0c36e28570e32378731d1"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.md",
         "sha256": "b97f968d44eeaea8eb4d7c0979b6d6446b6e16a741c7c835d09441809301b8eb"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SHA256SUMS.txt",
-        "sha256": "3d0321a2b9d2d04efbe7b80a17704f12c6e1ab2e1ee2a9dcbb12f66fee72bb67"
-      },
-      {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.zip",
         "sha256": "0eb3b2d1487ec1d8dfcf0fc200b1082a8e61b7df2e52f9b6f8f1b943f2ad77f0"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md",
-        "sha256": "4a0435415330453ca919272734a8c5bfa27f11781f9c37d6b9401eb849b58990"
+        "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SHA256SUMS.txt",
+        "sha256": "3d0321a2b9d2d04efbe7b80a17704f12c6e1ab2e1ee2a9dcbb12f66fee72bb67"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
-        "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"
+        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+        "sha256": "9c99922b314523090444ea4f665015b4e161eb48c151b3c6a054331601306a45"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-04.txt",
+        "sha256": "ee298f410355cea4b1e60cdd065a7165a407ffab577c9841b299a2d9a3e43889"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/build_current_archive.py",
+        "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/CONTINUITY_PROTOCOL.md",
@@ -199,11 +289,19 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "53e07d60496ba2f7240317d456395950e244c84a088ca32fda2c727ca3aeeadc"
+        "sha256": "467a6caa0227600a581c3d4b26e2d925a4d154531014a3b9d6fa79c4627e39e7"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/build_current_archive.py",
-        "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
+        "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_V1_INPUT_INTEGRITY_FAILURE_CLOSEOUT_2026-09-04.md",
+        "sha256": "682397e979dd88c77e212d61450e1938cc5635db1f102bf0182b6751a71a74f0"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
+        "sha256": "55a3519ef092f9394300e9f37d0301318032b3f7704eae676ab506ddba1ad7de"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_ACCEPTANCE_2026-09-04.md",
@@ -214,8 +312,44 @@
         "sha256": "2b8cc05624c1134dee0a2344c7bd3c6a9ad72c7a3b68f4b58eafa3e18f7f4a73"
       },
       {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md",
+        "sha256": "4a0435415330453ca919272734a8c5bfa27f11781f9c37d6b9401eb849b58990"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
+        "sha256": "e42037247ae915f829ec2b1eaae37c6466c23031a23bdcf7b6c759da5761e174"
+      },
+      {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
         "sha256": "5f51efc062d96a6dd6cd6f51e02248f7cb72adcf945a469eb9ab372ca1ca03a9"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_V1_MAIN_PLACEHOLDER_REVERT_PROVENANCE_2026-09-04.json",
+        "sha256": "1530bfdcf3b7b6dee3623c9d757ac40193943fb7a6b9d5a69511941d39ec0222"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_DRIVE_PERSISTENCE.json",
+        "sha256": "e5533338d24eda8cb863b7af7f55ea2c0fcab34e6798a05056e9c7ec589b85c4"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_PACKAGE_REFERENCE.json",
+        "sha256": "83371165090373741f32b72634ab6826aea676e747e82e31851f68d1467ef7f1"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_RECORD.json",
+        "sha256": "516199bf1cf13ac5834400c8cc987c5595de87b0121415969ddb58bd38e7f381"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_REPORT.md",
+        "sha256": "94e93158210c3a63c32adc6059e9bd77935cc24a4b6f93a342a8d90d189ea8f2"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_SHA256SUMS.txt",
+        "sha256": "92f787e9f44625186fe4f1e78c85f601523d19a902818babe3ad78547ae10ce7"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_RUN_WITNESS_AS_PRODUCED.json",
+        "sha256": "2f15a06d765d728706903a17671b25e0b90ee0decb19b9dd2cd1e59294ec7675"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SEAL.zip",
@@ -226,20 +360,16 @@
         "sha256": "f486d82365ca77066b328660bf48cd891eacb8aeed7a439d8bfc67b87d5b9276"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json",
-        "sha256": "ef1f46e57e5dcbc3755be10a090148fa8a803378dffb1bb7cc276ceebbf0cab6"
-      },
-      {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PROJECT_DEFINITIONS.md",
         "sha256": "7a8cdb45e31ff03a337e8cf4378c5326af4f47f736dbc3925ee9e357f821e007"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py",
-        "sha256": "7114fe2c56004a344c05e56cac305e593077eac43aa09ac084a196d1378ad4e2"
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json",
+        "sha256": "ef1f46e57e5dcbc3755be10a090148fa8a803378dffb1bb7cc276ceebbf0cab6"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
-        "sha256": "55a3519ef092f9394300e9f37d0301318032b3f7704eae676ab506ddba1ad7de"
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py",
+        "sha256": "7114fe2c56004a344c05e56cac305e593077eac43aa09ac084a196d1378ad4e2"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDIT_STOP.md",
@@ -276,60 +406,20 @@
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_SHA256SUMS.txt",
         "sha256": "f8afcf1778722bd8715a78792d9855c65c0849c8fc722f00096fd67bc6c9d4c4"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
-        "sha256": "9c99922b314523090444ea4f665015b4e161eb48c151b3c6a054331601306a45"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-04.txt",
-        "sha256": "ee298f410355cea4b1e60cdd065a7165a407ffab577c9841b299a2d9a3e43889"
       }
     ],
     "repository_files": [
       {
-        "path": "research_manager/decisions/CP20_TASK8B3_E5_S1_INTEGRATION_2026-09-01.md",
-        "sha256": "480e92551384ac90b003f175764aea0bf653bf8fd47a81897fa08665fcbbf251"
+        "path": "START_HERE_CURRENT_HANDOFF.md",
+        "sha256": "1172cccb975b03352e4cedc4ccfb4bae8410c2eb757477c0d4f3628dfeec5bc6"
       },
       {
-        "path": "research_manager/decisions/CP20_TASK8B3_E6_STAGE1_AUTHORIZATION_2026-09-01.md",
-        "sha256": "713e4e64e4bb2b955b100b6066586a84a2d0246563d1387998a7a567e38d7077"
+        "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+        "sha256": "9c99922b314523090444ea4f665015b4e161eb48c151b3c6a054331601306a45"
       },
       {
-        "path": "research_manager/prompts/CP20_TASK8B3_E6_CONDITIONED_GEOMETRIC_COMPLEX_NUMERATOR_PROMPT_2026-09-01.md",
-        "sha256": "e6cc37f7e3836d174c52dc34e85699500293074b3a9d446dfc5b201a292e7c25"
-      },
-      {
-        "path": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
-        "sha256": "bb73c74b7c45f1ef12d881e4c2e3ceb88774688e46bfb6b29f4418bf928ea8fa"
-      },
-      {
-        "path": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
-        "sha256": "d3017c56d3b6a5b6540848f29af29a1a7c1d24122991fee779e1d73ed3b28104"
-      },
-      {
-        "path": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
-        "sha256": "94106512926dd887a93ebfa056a810ccd31000b03f5d34b077c886efe9be73b0"
-      },
-      {
-        "path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE0_SEAL_ACCEPTANCE_2026-09-01.md",
-        "sha256": "4d7247b0004fb55c080a6a28f111ee154a20688a270877d274f93d8ebec35e97"
-      },
-      {
-        "path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE1_AUTHORIZATION_2026-09-01.md",
-        "sha256": "e653e6e9d627e8793eb8661c14063d463e7ffc5877dbfc3bdd0245b55b152dc1"
-      },
-      {
-        "path": "research_manager/prompts/CP20_TASK8B3_E7_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
-        "sha256": "093113d7a93c1ce859ebc229775c4f98861a6f731282929b672a9d63e5a6b5e4"
-      },
-      {
-        "path": "research_manager/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md",
-        "sha256": "4a0435415330453ca919272734a8c5bfa27f11781f9c37d6b9401eb849b58990"
-      },
-      {
-        "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
-        "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"
+        "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-04.txt",
+        "sha256": "ee298f410355cea4b1e60cdd065a7165a407ffab577c9841b299a2d9a3e43889"
       },
       {
         "path": "research_manager/CONTINUITY_PROTOCOL.md",
@@ -337,11 +427,31 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "53e07d60496ba2f7240317d456395950e244c84a088ca32fda2c727ca3aeeadc"
+        "sha256": "467a6caa0227600a581c3d4b26e2d925a4d154531014a3b9d6fa79c4627e39e7"
       },
       {
-        "path": "tools/build_current_archive.py",
-        "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"
+        "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
+        "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E5_S1_INTEGRATION_2026-09-01.md",
+        "sha256": "480e92551384ac90b003f175764aea0bf653bf8fd47a81897fa08665fcbbf251"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
+        "sha256": "d3017c56d3b6a5b6540848f29af29a1a7c1d24122991fee779e1d73ed3b28104"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E6_STAGE1_AUTHORIZATION_2026-09-01.md",
+        "sha256": "713e4e64e4bb2b955b100b6066586a84a2d0246563d1387998a7a567e38d7077"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_V1_INPUT_INTEGRITY_FAILURE_CLOSEOUT_2026-09-04.md",
+        "sha256": "682397e979dd88c77e212d61450e1938cc5635db1f102bf0182b6751a71a74f0"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
+        "sha256": "55a3519ef092f9394300e9f37d0301318032b3f7704eae676ab506ddba1ad7de"
       },
       {
         "path": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_ACCEPTANCE_2026-09-04.md",
@@ -352,8 +462,68 @@
         "sha256": "2b8cc05624c1134dee0a2344c7bd3c6a9ad72c7a3b68f4b58eafa3e18f7f4a73"
       },
       {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md",
+        "sha256": "4a0435415330453ca919272734a8c5bfa27f11781f9c37d6b9401eb849b58990"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE0_SEAL_ACCEPTANCE_2026-09-01.md",
+        "sha256": "4d7247b0004fb55c080a6a28f111ee154a20688a270877d274f93d8ebec35e97"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE1_AUTHORIZATION_2026-09-01.md",
+        "sha256": "e653e6e9d627e8793eb8661c14063d463e7ffc5877dbfc3bdd0245b55b152dc1"
+      },
+      {
+        "path": "research_manager/prompts/CP20_TASK8B3_E6_CONDITIONED_GEOMETRIC_COMPLEX_NUMERATOR_PROMPT_2026-09-01.md",
+        "sha256": "e6cc37f7e3836d174c52dc34e85699500293074b3a9d446dfc5b201a292e7c25"
+      },
+      {
+        "path": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
+        "sha256": "bb73c74b7c45f1ef12d881e4c2e3ceb88774688e46bfb6b29f4418bf928ea8fa"
+      },
+      {
+        "path": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
+        "sha256": "e42037247ae915f829ec2b1eaae37c6466c23031a23bdcf7b6c759da5761e174"
+      },
+      {
         "path": "research_manager/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
         "sha256": "5f51efc062d96a6dd6cd6f51e02248f7cb72adcf945a469eb9ab372ca1ca03a9"
+      },
+      {
+        "path": "research_manager/prompts/CP20_TASK8B3_E7_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
+        "sha256": "093113d7a93c1ce859ebc229775c4f98861a6f731282929b672a9d63e5a6b5e4"
+      },
+      {
+        "path": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
+        "sha256": "94106512926dd887a93ebfa056a810ccd31000b03f5d34b077c886efe9be73b0"
+      },
+      {
+        "path": "research_manager/records/CP20_TASK8B3_E7R_B4_V1_MAIN_PLACEHOLDER_REVERT_PROVENANCE_2026-09-04.json",
+        "sha256": "1530bfdcf3b7b6dee3623c9d757ac40193943fb7a6b9d5a69511941d39ec0222"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_DRIVE_PERSISTENCE.json",
+        "sha256": "e5533338d24eda8cb863b7af7f55ea2c0fcab34e6798a05056e9c7ec589b85c4"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_PACKAGE_REFERENCE.json",
+        "sha256": "83371165090373741f32b72634ab6826aea676e747e82e31851f68d1467ef7f1"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_RECORD.json",
+        "sha256": "516199bf1cf13ac5834400c8cc987c5595de87b0121415969ddb58bd38e7f381"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_REPORT.md",
+        "sha256": "94e93158210c3a63c32adc6059e9bd77935cc24a4b6f93a342a8d90d189ea8f2"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_SHA256SUMS.txt",
+        "sha256": "92f787e9f44625186fe4f1e78c85f601523d19a902818babe3ad78547ae10ce7"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_RUN_WITNESS_AS_PRODUCED.json",
+        "sha256": "2f15a06d765d728706903a17671b25e0b90ee0decb19b9dd2cd1e59294ec7675"
       },
       {
         "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SEAL.zip",
@@ -364,28 +534,16 @@
         "sha256": "f486d82365ca77066b328660bf48cd891eacb8aeed7a439d8bfc67b87d5b9276"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json",
-        "sha256": "ef1f46e57e5dcbc3755be10a090148fa8a803378dffb1bb7cc276ceebbf0cab6"
-      },
-      {
         "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PROJECT_DEFINITIONS.md",
         "sha256": "7a8cdb45e31ff03a337e8cf4378c5326af4f47f736dbc3925ee9e357f821e007"
       },
       {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json",
+        "sha256": "ef1f46e57e5dcbc3755be10a090148fa8a803378dffb1bb7cc276ceebbf0cab6"
+      },
+      {
         "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py",
         "sha256": "7114fe2c56004a344c05e56cac305e593077eac43aa09ac084a196d1378ad4e2"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/tao/tao_1909.03562v7.pdf",
-        "sha256": "62cf49d4d8e8e681c7a4738ebaf56f3dbb7b67de95f37ccbac6e428ef3fc394e"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/tao/tao_1909.03562v7_source.tar",
-        "sha256": "ba81acd6254838251f1ee585256a6f9f223cdc9c73bed0a3c4fd25782d0124ad"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/si_zenodo/main.pdf",
-        "sha256": "0dfad7f22df91c14c36182d7557aee537a462ef0a2a548422c366d21e2bd06c8"
       },
       {
         "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/si_github/main.pdf",
@@ -396,8 +554,16 @@
         "sha256": "c1ff1f11f442fed1b2f7a37be61fe0e3c0916719549018557446ca01e81e0811"
       },
       {
-        "path": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
-        "sha256": "55a3519ef092f9394300e9f37d0301318032b3f7704eae676ab506ddba1ad7de"
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/si_zenodo/main.pdf",
+        "sha256": "0dfad7f22df91c14c36182d7557aee537a462ef0a2a548422c366d21e2bd06c8"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/tao/tao_1909.03562v7.pdf",
+        "sha256": "62cf49d4d8e8e681c7a4738ebaf56f3dbb7b67de95f37ccbac6e428ef3fc394e"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/tao/tao_1909.03562v7_source.tar",
+        "sha256": "ba81acd6254838251f1ee585256a6f9f223cdc9c73bed0a3c4fd25782d0124ad"
       },
       {
         "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDIT_STOP.md",
@@ -436,12 +602,8 @@
         "sha256": "f8afcf1778722bd8715a78792d9855c65c0849c8fc722f00096fd67bc6c9d4c4"
       },
       {
-        "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
-        "sha256": "9c99922b314523090444ea4f665015b4e161eb48c151b3c6a054331601306a45"
-      },
-      {
-        "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-04.txt",
-        "sha256": "ee298f410355cea4b1e60cdd065a7165a407ffab577c9841b299a2d9a3e43889"
+        "path": "tools/build_current_archive.py",
+        "sha256": "5af0a91d8ac190ed61511f3e68b6d551db988a245a8a65e17eb5ced0d01e9416"
       }
     ]
   },
@@ -563,7 +725,16 @@
   "next_action": {
     "authorized_stage": "STAGE_0_ONLY",
     "executed_in_this_transaction": false,
-    "instruction": "Execute B4 Stage 1 exactly once under the authorized seal and canonical execution-integrity contract, adjudicating T1→T8 in frozen order.",
+    "instruction": "Prepare and execute Stage 0 only for CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 under the recorded integrity-repair reseal requirements; do not read or reuse invalid V1 T1–T8 mathematical drafts. Do not execute V2 Stage 1, weighted/operator work, or E8.",
+    "prohibited": [
+      "rerun or reauthorize B4 V1 Stage 1",
+      "reuse old V1 seal",
+      "inspect, adjudicate, summarize, import, or use invalid V1 T1–T8 mathematical drafts",
+      "new mathematics in this closeout",
+      "weighted/operator work",
+      "E8",
+      "V2 Stage 0 execution in this closeout"
+    ],
     "prompt": null,
     "requires_user_or_external_result": false,
     "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",

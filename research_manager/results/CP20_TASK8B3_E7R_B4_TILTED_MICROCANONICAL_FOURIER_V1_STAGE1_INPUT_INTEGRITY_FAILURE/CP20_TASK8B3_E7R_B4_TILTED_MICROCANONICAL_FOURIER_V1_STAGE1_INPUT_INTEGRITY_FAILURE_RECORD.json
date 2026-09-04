@@ -1,0 +1,20 @@
+{
+  "authorized_seal_sha256": "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+  "canonical_main_at_execution": "0c0e0e55c490278396f0b8f5033000b80725fb6c",
+  "contract_sha256": "3d9fd4c0c029c135b86c43377aa414c87704f5e6c3dd4a008fa621f3b4f1185e",
+  "draft_mathematics_valid": false,
+  "e6_n2": "OPEN",
+  "entrypoint_invocations_observed": 1,
+  "failure": "RUN_WITNESS missing canonical base SHA required by contract section B",
+  "forensic_manifest_sha256": "92f787e9f44625186fe4f1e78c85f601523d19a902818babe3ad78547ae10ce7",
+  "forensic_package_sha256": "71ad925b3d461e4ceb77293736cee75dfea116c012703e1308e00bc118125ab4",
+  "main_no_net_tree_diff_after_persistence_incident": true,
+  "main_revert_commit": "f5269e5ddbf610b2305fafbd90fe2b1346376103",
+  "main_temporary_placeholder_commit": "c3062952ffb23754f62fd2dd6f6a6237e8b1d22c",
+  "rerun_performed": false,
+  "run_witness_sha256": "2f15a06d765d728706903a17671b25e0b90ee0decb19b9dd2cd1e59294ec7675",
+  "schema": "B4_STAGE1_INPUT_INTEGRITY_FAILURE_V1",
+  "scientific_state_changed": false,
+  "sealed_launcher_sha256": "b59db6b20b9144ccf81cc8da5b947950eb2f8d0ce4c17e372da10cae69011fca",
+  "status": "[B4 STAGE1 INPUT INTEGRITY FAILURE]"
+}
