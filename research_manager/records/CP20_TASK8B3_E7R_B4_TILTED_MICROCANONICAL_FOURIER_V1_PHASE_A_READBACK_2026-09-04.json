@@ -1,0 +1,10 @@
+{
+  "contract_git_blob": "94a15beb7573c860e4891048e705c9f13a156f04",
+  "contract_sha256": "3d9fd4c0c029c135b86c43377aa414c87704f5e6c3dd4a008fa621f3b4f1185e",
+  "order_git_blob": "a62a0781b5c78f6203401b47329a8584617e8f94",
+  "order_sha256": "90dbb1b229a6f5d7677251ce250ef377dba36b369a566d9cc0207aff420a333a",
+  "phase_a_commit": "7042f332378f587b2a8ad839990994f3c0474458",
+  "sealed_members_exact": "16/16",
+  "stage1_authorized": false,
+  "verdict": "PASS"
+}

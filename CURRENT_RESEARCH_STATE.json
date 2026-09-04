@@ -5,13 +5,13 @@
     "holder": "canonical-integrator-e7r-b4-stage0-stage1-authorization-20260904",
     "lock_acquisition_commit": "060c9129aac5562e4b2b8c32634159c71579132b",
     "scope": "B4 Stage-0 canonical intake plus two-phase Stage-1 authorization only; no Stage-1 execution, no new mathematics, no weighted/operator work, and no E8.",
-    "status": "HELD"
+    "status": "RELEASED"
   },
   "active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation",
     "objective": "Determine whether the exact project microcanonical law can be recentered by an exponential/geometric tilt with mean log_2(3), and whether a new joint Fourier local-limit theorem at the primitive frequency eta_r = 2^(T_r-4) mod 3^r can yield |G_r| = O(1/r).",
-    "stage": "PRE_RUN_SEAL_AWAITING_AUTHORIZATION",
+    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
     "target": {
       "C": 4,
       "d": -8,
@@ -85,8 +85,10 @@
     "manifest_sha256": "7de830b396fb075b4a97f78dd889ef16e92d66e763e5572af603f016faf33118",
     "order_git_blob": "a62a0781b5c78f6203401b47329a8584617e8f94",
     "order_sha256": "90dbb1b229a6f5d7677251ce250ef377dba36b369a566d9cc0207aff420a333a",
+    "phase_a_canonicalization_commit": "7042f332378f587b2a8ad839990994f3c0474458",
     "phase_a_prior_candidate_commit": "6e7757b316646d5eaf350c7acbaecb9c8468f1eb",
     "phase_a_prior_readback": "FAIL_ORDER_EOL_NORMALIZATION",
+    "phase_a_readback": "PASS",
     "seal_crc": "PASS",
     "seal_member_count": 16,
     "seal_member_hashes": "PASS",
@@ -95,7 +97,7 @@
     "sealed_members_canonicalized_byte_for_byte": 16,
     "stage0_branch": "cp20-e7r-b4-tilted-microcanonical-fourier-v1-stage0-20260904",
     "stage0_head": "c83d22f9e3ac8bdc4ec955d14b3d7dca11c3fee1",
-    "stage1_authorized": false,
+    "stage1_authorized": true,
     "stage1_executed": false,
     "status": "[ACCEPT B4 STAGE 0]"
   },
@@ -113,7 +115,7 @@
     "future_once_only_contract_rule": "Pre-run execution-integrity contracts must be canonicalized before authorization/execution.",
     "journal": "research_manager/RESEARCH_JOURNAL.jsonl",
     "milestone_completion_rule": "result → hashes/manifests → Drive save → Drive read-back → GitHub save/push → GitHub read-back → report",
-    "minimum_required_commit": "4af6fa68ea0cdf8f393a2ab18f8e7a96115ec830",
+    "minimum_required_commit": "7042f332378f587b2a8ad839990994f3c0474458",
     "protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "repository_branch": "main",
     "sync_policy": "research_manager/GITHUB_SYNC_POLICY.md"
@@ -129,9 +131,9 @@
   },
   "documents": {
     "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0_ACCEPTANCE_AND_CONTRACT_CANONICALIZATION_2026-09-04.md",
-    "active_authorization_decision": null,
-    "active_authorization_prompt": null,
-    "active_research_prompt": null,
+    "active_authorization_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_AUTHORIZATION_2026-09-04.md",
+    "active_authorization_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
+    "active_research_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
     "b4_stage1_execution_contract": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
     "continuity_protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "e6_integration": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
@@ -197,7 +199,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "245bccc8c38066cc52fdbc2d0e9f436fe58e5868865acccfb781b92073fb2cac"
+        "sha256": "53e07d60496ba2f7240317d456395950e244c84a088ca32fda2c727ca3aeeadc"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/build_current_archive.py",
@@ -335,7 +337,7 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "245bccc8c38066cc52fdbc2d0e9f436fe58e5868865acccfb781b92073fb2cac"
+        "sha256": "53e07d60496ba2f7240317d456395950e244c84a088ca32fda2c727ca3aeeadc"
       },
       {
         "path": "tools/build_current_archive.py",
@@ -561,10 +563,10 @@
   "next_action": {
     "authorized_stage": "STAGE_0_ONLY",
     "executed_in_this_transaction": false,
-    "instruction": "Perform corrected Phase-A GitHub read-back for 16/16 sealed members and exact contract bytes/blob while Stage 1 remains NOT AUTHORIZED; only after PASS may Phase B be created.",
+    "instruction": "Execute B4 Stage 1 exactly once under the authorized seal and canonical execution-integrity contract, adjudicating T1→T8 in frozen order.",
     "prompt": null,
     "requires_user_or_external_result": false,
-    "stage": "PRE_RUN_SEAL_AWAITING_AUTHORIZATION",
+    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
     "task_code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1"
   },
   "next_task_stage0_requirements": [
@@ -633,6 +635,16 @@
       "|E[F_{r,4}|S_r=n_r]|=O(1/r) [OPEN]",
       "E6-N2 [OPEN]"
     ]
+  },
+  "stage1_authorization": {
+    "authorization_count": 1,
+    "authorized_seal_sha256": "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+    "canonical_contract_git_blob": "94a15beb7573c860e4891048e705c9f13a156f04",
+    "canonical_contract_sha256": "3d9fd4c0c029c135b86c43377aa414c87704f5e6c3dd4a008fa621f3b4f1185e",
+    "phase_a_commit": "7042f332378f587b2a8ad839990994f3c0474458",
+    "phase_a_readback": "PASS",
+    "stage1_executed": false,
+    "status": "STAGE_1_AUTHORIZED_NOT_EXECUTED"
   },
   "updated_at": "2026-09-04T11:21:26+03:00"
 }
