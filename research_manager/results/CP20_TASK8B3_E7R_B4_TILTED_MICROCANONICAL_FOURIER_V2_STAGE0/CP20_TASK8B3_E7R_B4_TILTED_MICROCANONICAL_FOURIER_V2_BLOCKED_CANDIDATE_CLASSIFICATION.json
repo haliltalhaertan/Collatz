@@ -1,0 +1,24 @@
+{
+  "T1_T8_executed_under_blocked_candidates": false,
+  "authorization_use": "FORBIDDEN",
+  "blocked_candidates": [
+    {
+      "classification": "[BLOCKED CANDIDATE \u2014 PRE-HANDOFF-GATE \u2014 DO NOT AUTHORIZE]",
+      "reason": "Created before mandatory literal handoff gate was satisfied.",
+      "seal_sha256": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea"
+    },
+    {
+      "classification": "[BLOCKED CANDIDATE \u2014 AUTHORIZATION-BASE SELF-REFERENCE DEFECT \u2014 DO NOT AUTHORIZE]",
+      "reason": "Contract/launcher required an authorization-bearing commit to contain its own not-yet-known SHA via authorized_execution_base_sha.",
+      "seal_sha256": "66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac"
+    },
+    {
+      "classification": "[BLOCKED CANDIDATE \u2014 CANONICAL STATE PATH MISMATCH \u2014 DO NOT AUTHORIZE]",
+      "reason": "Launcher used non-authoritative active_stage aliases instead of CURRENT_RESEARCH_STATE.json[\"active_task\"][\"stage\"].",
+      "seal_sha256": "06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f"
+    }
+  ],
+  "provenance_only": true,
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_BLOCKED_CANDIDATE_CLASSIFICATION_STATEPATH_REPAIR_V2",
+  "stage1_executed_under_blocked_candidates": false
+}

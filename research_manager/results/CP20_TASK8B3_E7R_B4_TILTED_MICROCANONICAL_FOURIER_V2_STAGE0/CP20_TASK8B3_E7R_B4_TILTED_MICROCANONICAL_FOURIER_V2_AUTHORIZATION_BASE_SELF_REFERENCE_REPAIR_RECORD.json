@@ -1,0 +1,33 @@
+{
+  "Stage1_executed": false,
+  "T1_T8_executed": false,
+  "authorization_json_requires_own_commit_sha": false,
+  "authorization_model": "TWO_COMMIT_PHASE_A_PHASE_B",
+  "blocked_candidates": [
+    "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
+    "66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac",
+    "06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f"
+  ],
+  "canonical_base_sha_definition": "authorization_commit_sha",
+  "collatz_proof": false,
+  "config_sha256": "6007a994b04ab1768d8164bdbbc44acdf94a076c1f07ab3d2ea67c0934cfbe67",
+  "contract_sha256": "26dd63e143c9d7a1178b0a99acdeda0f3b9839208c7e2df066706a17f959de9f",
+  "defect_repaired": "authorization-base self-reference",
+  "final_manifest_sha256": "RECORDED_OUTSIDE_SEAL_TO_AVOID_SELF_REFERENCE",
+  "final_seal_sha256": "RECORDED_OUTSIDE_SEAL_TO_AVOID_SELF_REFERENCE",
+  "handoff_job_id": 101150791299,
+  "handoff_run_id": 33912148126,
+  "launcher_sha256": "16cadd29fc6bae7f3255a596267ede57faa30f469b7b70cffb1042f68115f6cc",
+  "literal_handoff_verification": "PASS",
+  "pre_t1_gate_schema_sha256": "b6d7fe7602c291690d82d2bcde292403712003be1433878b247b22f1b24b55e2",
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_AUTHORIZATION_BASE_SELF_REFERENCE_REPAIR_FINAL_RECORD_V1",
+  "scientific_diff": "NO SCIENTIFIC CHANGE",
+  "selftest_results_sha256": "2d905f57ea824e1dd10f1293a033c3bfc9e0ce88687ecaa308f37b5a861a3b6d",
+  "stage1_authorization_permitted": false,
+  "static_control_flow_results_sha256": "54760bf1f1a636107832319540665ac36d8919360bfcb3cfacb5e2bbc707c235",
+  "status": "[CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 \u2014 STAGE 0 REPAIR FROZEN \u2014 AWAITING MANAGER AUTHORIZATION]",
+  "superseded_for_authorization": true,
+  "superseded_reason": "canonical state path mismatch",
+  "validator_sha256": "efeadaa9f838e5b4dd03bec0603b94763709e7101ac83481456dfce7ece8d362",
+  "witness_schema_sha256": "c6e12499f3de2acb7fa34be81a4b54d5d0424abb351ca2fcbbc3ab7808447f01"
+}

@@ -1,0 +1,37 @@
+{
+  "outcome_vocab": [
+    "B4-N1",
+    "B4-N2",
+    "B4-N3",
+    "B4-N4",
+    "B4-N5",
+    "B4-N6",
+    "B4-N7",
+    "B4-CT"
+  ],
+  "required_top_level": [
+    "task",
+    "integrity_preflight",
+    "pre_t1_gate",
+    "T1_T8",
+    "stage1_complete"
+  ],
+  "requirements": {
+    "append_only_stage_ledger": true,
+    "one_real_run_only": true,
+    "post_stop_stages_marked_NOT_EXECUTED": true,
+    "pre_t1_gate_required": true,
+    "stop_rule_enforced": true
+  },
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA_V2",
+  "status_vocab": [
+    "PROVED",
+    "FAIL",
+    "OPEN",
+    "NOT_EXECUTED",
+    "COUNTERTHEOREM",
+    "AUDIT_STOP",
+    "NUM",
+    "CERTIFIED_NUM"
+  ]
+}

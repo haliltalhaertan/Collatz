@@ -1,0 +1,20 @@
+{
+  "T1_T8_executed": false,
+  "actual_checkout_branch": "main",
+  "actual_checkout_sha": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+  "canonical_base_sha": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+  "command": "python tools/verify_handoff.py",
+  "exact_terminal_verdict": "HANDOFF VERIFICATION: PASS",
+  "execution_environment": "GitHub Actions ubuntu-24.04",
+  "github_actions_job_id": 101166400966,
+  "github_actions_run_id": 33917015405,
+  "repository": "haliltalhaertan/Collatz",
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE_STATEPATH_REPAIR_V2",
+  "stage1_executed": false,
+  "terminal_verdict": "HANDOFF VERIFICATION: PASS",
+  "verification_method": "GitHub Actions step succeeds only after grep -Fx of exact literal verdict",
+  "verified_excerpt_sha256": "0648a8d6f69385a4fd57d3efb91a8ac7ba89ad8709df1071230f41c6ed26fdf4",
+  "workflow_commit": "df4cdae09558498dbbf505cf7fc3b89f6d5322b2",
+  "workflow_file": ".github/workflows/b4-v2-stage0-statepath-handoff.yml",
+  "workflow_ref": "refs/heads/cp20-e7r-b4-v2-statepath-handoff-verify-20260904"
+}

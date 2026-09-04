@@ -1,0 +1,130 @@
+{
+  "cases": {
+    "P1": {
+      "errors": [],
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    "P2": {
+      "errors": [
+        "missing:active_task"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "P3": {
+      "errors": [
+        "missing:active_task.stage"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "P4": {
+      "errors": [
+        "active_task.stage_mismatch"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "P5": {
+      "errors": [
+        "alias_conflict:active_stage"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "P6": {
+      "errors": [],
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    "S1": {
+      "errors": [
+        "missing:canonical_stage0_base_sha"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "S10": {
+      "errors": [
+        "authorization_stage0_base_mismatch"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "S11": {
+      "errors": [
+        "authorization_stage_mismatch"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "S12": {
+      "errors": [],
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    "S2": {
+      "errors": [
+        "canonical_stage0_base_sha"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "S3": {
+      "errors": [
+        "missing:authorization_commit_sha"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "S4": {
+      "errors": [
+        "format:authorization_commit_sha",
+        "canonical_base_vs_authorization_commit",
+        "authorization_commit_sha"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "S5": {
+      "errors": [
+        "stage0_not_ancestor_of_authorization"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "S6": {
+      "errors": [
+        "authorization_not_ancestor_of_execution_head"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "S7": {
+      "errors": [
+        "authorization_artifact_missing"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "S8": {
+      "errors": [
+        "authorization_seal_mismatch"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "S9": {
+      "errors": [
+        "authorization_contract_mismatch"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    }
+  },
+  "mathematics_executed": false,
+  "overall": "PASS",
+  "real_stage1_entrypoint_invoked": false,
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS_TWO_COMMIT_STATEPATH_V4"
+}

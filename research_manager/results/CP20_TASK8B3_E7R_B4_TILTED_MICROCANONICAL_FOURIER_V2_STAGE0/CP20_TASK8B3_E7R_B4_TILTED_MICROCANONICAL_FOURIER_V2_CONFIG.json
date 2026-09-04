@@ -1,0 +1,229 @@
+{
+  "allowed_stage0_execution": [
+    "witness_schema_tests",
+    "synthetic_two_commit_authorization_tests",
+    "static_launcher_control_flow_checks",
+    "seal_manifest_hash_checks",
+    "deterministic_file_comparisons",
+    "scientific_freeze_diff",
+    "literal_handoff_verification",
+    "canonical_state_path_tests"
+  ],
+  "authorization_model": {
+    "authorization_commit_sha": "runtime Phase-B commit; must descend from Phase A and contain authorization + state",
+    "authorization_json_must_not_self_reference_commit_sha": true,
+    "canonical_base_sha_definition": "canonical_base_sha = authorization_commit_sha",
+    "canonical_stage0_base_sha": "runtime Phase-A commit; must contain exact canonical_stage0_artifacts below",
+    "type": "TWO_COMMIT_PHASE_A_PHASE_B"
+  },
+  "blocked_seal_blacklist": [
+    "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+    "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
+    "66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac",
+    "06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f"
+  ],
+  "canonical_stage0_artifacts": {
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_SCIENTIFIC_DIFF_CHECK.py": {
+      "git_blob_sha1": "3d11d9772ede17a8a35560339ed888f5fe81dad0",
+      "sha256": "73e4907fff95159353534c143fc32bae7966052a3f6a2fb21e4c28d4bf333de6"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT.json": {
+      "git_blob_sha1": "a05cc0a6230323e0bc62f975ad17af95083ad691",
+      "sha256": "f4e2d05554976f898d6fbc943cf79e330d8869007f7ae83bac8858dd15c864a2"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py": {
+      "git_blob_sha1": "d8439a34620b2db4f7b06f1d889e2b0543354a65",
+      "sha256": "9222d0e0a8079e3560bc880520dd5ead44869f5fd4fa541520e225c841b8a732"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md": {
+      "git_blob_sha1": "49a8571ffd10635fba9161a30ecfeded188bc0dc",
+      "sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA.json": {
+      "git_blob_sha1": "d7c75c6ed6873b28bf6e30b8ff0956dd335d6bdf",
+      "sha256": "2edf4198adeeb65602d3d8259c429a1853bc58ac5bd6c47e5e0e151283517795"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE_SCHEMA.json": {
+      "git_blob_sha1": "b851d62cd25ecebdc1498e7168489f6e44ace976",
+      "sha256": "b6d7fe7602c291690d82d2bcde292403712003be1433878b247b22f1b24b55e2"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS_SCHEMA.json": {
+      "git_blob_sha1": "093ccd9c20c73db45293d6a0320de4f6ede8cfbf",
+      "sha256": "c6e12499f3de2acb7fa34be81a4b54d5d0424abb351ca2fcbbc3ab7808447f01"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_CHECK.py": {
+      "git_blob_sha1": "c9375e45b1112f5e1e76be3e9d23788ab6725ed7",
+      "sha256": "5e2c7e9a944bb3dcb52a18ddb2faa5bd16e42b1982b8cbfed5c8b5ae0bb6b7fd"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS.json": {
+      "git_blob_sha1": "91dba1c9769cfdb63f71f7e6766474d23a5b7a7d",
+      "sha256": "e52c52e572c1382d581278988f3917ee200472bdcb5efab5079bd56e5860aaaf"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST.py": {
+      "git_blob_sha1": "aa7cf1c0e527b83366f1f9ff071f66bb936a2055",
+      "sha256": "2407c797676c3af0a91024f84c051d3de7252874eb912c12a6ab6e664fe36662"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS.json": {
+      "git_blob_sha1": "3f28aa57fb26b6c29cfde78b911e93cce9b52ef3",
+      "sha256": "10132ba0a0e52a2ebee658174076824362ffe53f243cb1a44499df6f00477433"
+    },
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py": {
+      "git_blob_sha1": "9f40af0f595dcadec37520e4f125f295f17532f8",
+      "sha256": "59c7c81511602469387160cdd5e737eb862b40fb91950ed599147ad2aa699bdd"
+    }
+  },
+  "canonical_state": {
+    "authoritative_stage_path": [
+      "active_task",
+      "stage"
+    ],
+    "fallback_forbidden": true,
+    "file": "CURRENT_RESEARCH_STATE.json",
+    "optional_aliases_consistency_only": [
+      "active_stage",
+      "continuity.active_stage"
+    ],
+    "required_stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED"
+  },
+  "canonical_v1_stage0_scientific_source_commit": "c83d22f9e3ac8bdc4ec955d14b3d7dca11c3fee1",
+  "contract": {
+    "filename": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
+    "sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403"
+  },
+  "forbidden_stage0": [
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6",
+    "T7",
+    "T8",
+    "Fourier_numerical_experiment",
+    "asymptotic_calculation",
+    "invalid_V1_mathematics",
+    "weighted_operator_work",
+    "E8"
+  ],
+  "frozen_dependencies": {
+    "CURRENT_RESEARCH_STATE.json": "3ba90bbf9e91ddc600235a38a800db90b03a07e0",
+    "START_HERE_CURRENT_HANDOFF.md": "e2009a91dedf614e156156845642bead316f5473",
+    "research_manager/decisions/CP20_TASK8B3_E7R_B4_V1_INPUT_INTEGRITY_FAILURE_CLOSEOUT_2026-09-04.md": "760e00b367c3f0d31e6cef8554f777112e549d9e",
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_DEFINITIONS.md": "49b40e67af1b22b2b8ffc74d319f7484b94f3adc",
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_FALSIFICATION_PLAN.md": "037658c98909b720eb492a779ef93d084fe31b44",
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_OUTCOME_LADDER.md": "12c664ef704845109196cfcb6750958b1c56bdff",
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_T1_T8_PROGRAM.md": "483db69a5cc70243b150df5a40ecfd829e67cba2",
+    "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_TARGET_NORMAL_FORM.md": "681a1efb291ca5c28196fbb4ece54d8dd36d8173"
+  },
+  "future_authorization": {
+    "artifact_path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
+    "forbidden_required_field": "authorization_commit_sha",
+    "required_fields": [
+      "authorized_v2_seal_sha256",
+      "v2_contract_sha256",
+      "canonical_stage0_base_sha",
+      "stage"
+    ],
+    "required_stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+    "runtime_required_args": [
+      "--canonical-stage0-base-sha",
+      "--authorization-commit-sha",
+      "--authorized-seal-sha256",
+      "--contract-sha256"
+    ]
+  },
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_CONFIG_TWO_COMMIT_AUTHORIZATION_STATEPATH_V4",
+  "scientific_program": {
+    "G_r": "E[e_(3^r)(eta_r F_r^aff) | sum A_i=T_r]",
+    "T_r": "floor(alpha*r)-8",
+    "alpha_definition": "log_2(3)",
+    "arc_split": {
+      "L_r": "ln(r+1)^(1/4)",
+      "adaptive_changes_forbidden": true,
+      "intermediate": "L_r/sqrt(r) < |t| <= r^(-1/4)",
+      "major": "|t| <= L_r/sqrt(r)",
+      "minor": "r^(-1/4) < |t| <= pi"
+    },
+    "eta_r": "2^(T_r-4) mod 3^r",
+    "falsification": [
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F8",
+      "F9",
+      "F10",
+      "T7-F1",
+      "T7-F2",
+      "T7-F3",
+      "T7-F4",
+      "T7-F5"
+    ],
+    "fourier_convention": {
+      "H_r": "E_pstar[chi_r(A)*exp(i*t*(sum(A)-alpha*r))]",
+      "N_r": "(1/(2*pi))*integral_{-pi}^{pi} exp(-i*t*(T_r-alpha*r))*H_r(t) dt"
+    },
+    "goal": "|G_r|=O(1/r)",
+    "outcomes": [
+      "B4-N1",
+      "B4-N2",
+      "B4-N3",
+      "B4-N4",
+      "B4-N5",
+      "B4-N6",
+      "B4-N7",
+      "B4-CT"
+    ],
+    "p_star_definition": "1/log_2(3)",
+    "sigma_star_squared_definition": "alpha*(alpha-1)"
+  },
+  "selftest_case_meaning": {
+    "P1": "active_task.stage correct; no top-level active_stage => PASS",
+    "P2": "active_task missing => FAIL",
+    "P3": "active_task.stage missing => FAIL",
+    "P4": "active_task.stage wrong => FAIL",
+    "P5": "active_task.stage correct but top-level alias conflicts => FAIL",
+    "P6": "active_task.stage correct and matching optional alias exists => PASS",
+    "S1": "missing canonical_stage0_base_sha",
+    "S10": "Stage0-base mismatch inside authorization JSON",
+    "S11": "wrong authorization stage",
+    "S12": "correct two-commit synthetic model",
+    "S2": "wrong canonical_stage0_base_sha",
+    "S3": "missing authorization_commit_sha",
+    "S4": "malformed authorization_commit_sha",
+    "S5": "Stage0 base not ancestor of authorization commit",
+    "S6": "authorization commit not ancestor of execution HEAD",
+    "S7": "authorization artifact missing at authorization commit",
+    "S8": "seal mismatch",
+    "S9": "contract mismatch"
+  },
+  "selftest_expected": {
+    "P1": "PASS",
+    "P2": "FAIL",
+    "P3": "FAIL",
+    "P4": "FAIL",
+    "P5": "FAIL",
+    "P6": "PASS",
+    "S1": "FAIL",
+    "S10": "FAIL",
+    "S11": "FAIL",
+    "S12": "PASS",
+    "S2": "FAIL",
+    "S3": "FAIL",
+    "S4": "FAIL",
+    "S5": "FAIL",
+    "S6": "FAIL",
+    "S7": "FAIL",
+    "S8": "FAIL",
+    "S9": "FAIL"
+  },
+  "stage0_only": true,
+  "stage0_source_base_sha": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+  "stage1_authorized": false,
+  "task": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
+  "task_version": "V2",
+  "working_branch": "cp20-e7r-b4-v2-stage0-finalization-handoff-20260904"
+}
