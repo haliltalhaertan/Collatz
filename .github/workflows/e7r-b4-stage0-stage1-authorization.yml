@@ -1,0 +1,61 @@
+name: B4 Two-Phase Stage0 Intake and Stage1 Authorization
+
+on:
+  push:
+    branches:
+      - integration-e7r-b4-stage0-stage1-authorization-20260904
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout canonical main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fetch authoritative refs and integration driver
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin \
+            +refs/heads/integration-e7r-b4-stage0-stage1-authorization-20260904:refs/remotes/origin/integration-e7r-b4-stage0-stage1-authorization-20260904 \
+            +refs/heads/cp20-e7r-b4-tilted-microcanonical-fourier-v1-stage0-20260904:refs/remotes/origin/cp20-e7r-b4-tilted-microcanonical-fourier-v1-stage0-20260904
+          git show origin/integration-e7r-b4-stage0-stage1-authorization-20260904:.github/integration/e7r_b4_stage0_stage1_authorize.py > /tmp/e7r_b4_stage0_stage1_authorize.py
+
+      - name: Canonicalize Phase A then authorize Phase B without execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          python /tmp/e7r_b4_stage0_stage1_authorize.py
+
+      - name: Upload canonical persistence bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: CP20_TASK8B3_E7R_B4_TWO_PHASE_CANONICAL_PERSISTENCE
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: error
+          path: |
+            Collatz_Research_Archive_CURRENT.zip
+            CURRENT_ARCHIVE_BUILD.json
+            CURRENT_RESEARCH_STATE.json
+            START_HERE_CURRENT_HANDOFF.md
+            research_manager/RESEARCH_JOURNAL.jsonl
+            research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0_ACCEPTANCE_AND_CONTRACT_CANONICALIZATION_2026-09-04.md
+            research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_PHASE_A_READBACK_2026-09-04.json
+            research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_AUTHORIZATION_2026-09-04.md
+            research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md
+            research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0
+            FINAL_HANDOFF_VERIFICATION.txt
+            GITHUB_READBACK.json
+            ARCHIVE_BUDGET.json
+            CANONICAL_TRANSACTION_SUMMARY.json
+            PHASE_A_COMMIT.txt
+            PHASE_B_COMMIT.txt
+            FINAL_SHA.txt
