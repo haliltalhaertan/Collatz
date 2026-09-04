@@ -1,11 +1,10 @@
 {
   "active_integrator": {
-    "acquired_at": "2026-09-04T02:19:02+03:00",
-    "base_commit": "3b089518e2dc00730e7bf5d16950d0dc05b4506c",
-    "holder": "manager-integration-session",
-    "lock_acquisition_commit": "b2401e3f58d2f9a235df399e52997148d3e6722d",
-    "scope": "E7 Recovery V1 + E7R-B3 audited countertheorem canonical integration and persistence-governance amendment only; no new mathematical research, Literature Transfer Stage 0, weighted-operator work, or E8.",
-    "status": "RELEASED"
+    "acquired_at": "2026-09-04T09:52:30+03:00",
+    "base_commit": "b3eaaae80a64003f4ee06a43b65fbd3680b8e22b",
+    "holder": "canonical-integrator-literature-transfer-v1-20260904",
+    "scope": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1 Stage-0 intake and Stage-1 authorization under seal 403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79 only; no Stage 1 execution, weighted-operator work, or E8.",
+    "status": "HELD"
   },
   "active_task": {
     "code": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1",
@@ -248,5 +247,5 @@
       "|E[F_{r,4}|S_r=n_r]|=O(1/r) [OPEN]"
     ]
   },
-  "updated_at": "2026-09-04T02:19:02+03:00"
+  "updated_at": "2026-09-04T09:52:30+03:00"
 }
