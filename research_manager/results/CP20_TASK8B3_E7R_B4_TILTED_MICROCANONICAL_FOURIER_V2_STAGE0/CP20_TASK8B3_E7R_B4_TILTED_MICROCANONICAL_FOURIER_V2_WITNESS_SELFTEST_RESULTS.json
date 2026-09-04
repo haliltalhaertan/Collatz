@@ -1,0 +1,20 @@
+{
+  "cases": {
+    "S1": {"errors": ["missing:canonical_base_sha"], "expected": "FAIL", "observed": "FAIL"},
+    "S10": {"errors": ["execution_count_claim"], "expected": "FAIL", "observed": "FAIL"},
+    "S11": {"errors": ["output_absence_precheck"], "expected": "FAIL", "observed": "FAIL"},
+    "S12": {"errors": [], "expected": "PASS", "observed": "PASS"},
+    "S2": {"errors": ["empty:canonical_base_sha"], "expected": "FAIL", "observed": "FAIL"},
+    "S3": {"errors": ["format:canonical_base_sha", "canonical_vs_authorized_base", "canonical_base_sha"], "expected": "FAIL", "observed": "FAIL"},
+    "S4": {"errors": ["canonical_vs_authorized_base", "canonical_base_sha"], "expected": "FAIL", "observed": "FAIL"},
+    "S5": {"errors": ["missing:authorized_execution_base_sha"], "expected": "FAIL", "observed": "FAIL"},
+    "S6": {"errors": ["canonical_vs_authorized_base", "authorized_execution_base_sha"], "expected": "FAIL", "observed": "FAIL"},
+    "S7": {"errors": ["authorized_seal_sha256"], "expected": "FAIL", "observed": "FAIL"},
+    "S8": {"errors": ["contract_sha256"], "expected": "FAIL", "observed": "FAIL"},
+    "S9": {"errors": ["config_sha256"], "expected": "FAIL", "observed": "FAIL"}
+  },
+  "mathematics_executed": false,
+  "overall": "PASS",
+  "real_stage1_entrypoint_invoked": false,
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS_V2"
+}
