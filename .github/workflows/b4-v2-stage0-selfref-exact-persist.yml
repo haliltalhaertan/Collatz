@@ -1,0 +1,86 @@
+name: B4 V2 Stage0 SelfRef Exact Persistence
+
+on:
+  push:
+    branches:
+      - cp20-e7r-b4-v2-stage0-finalization-handoff-20260904
+    paths:
+      - .stage0_repair_payload/READY
+
+permissions:
+  contents: write
+
+jobs:
+  persist-exact-seal:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repair branch
+        uses: actions/checkout@v4
+        with:
+          ref: cp20-e7r-b4-v2-stage0-finalization-handoff-20260904
+          fetch-depth: 0
+
+      - name: Reconstruct and verify exact fresh Stage0 seal
+        shell: bash
+        run: |
+          set -euo pipefail
+          BRANCH='cp20-e7r-b4-v2-stage0-finalization-handoff-20260904'
+          ROOT='research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0'
+          TASK='CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2'
+          EXPECTED_ZIP='06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f'
+          EXPECTED_MANIFEST='3fb977047d60d02a40ac2964efdb107f7c3b3b36a540d9e1d3845af64bc221f9'
+          mkdir -p /tmp/b4v2_exact /tmp/b4v2_extract
+          cat .stage0_repair_payload/part*.b64 | base64 -d > /tmp/b4v2_exact/final.zip
+          test "$(sha256sum /tmp/b4v2_exact/final.zip | awk '{print $1}')" = "$EXPECTED_ZIP"
+          python - <<'PY'
+          import hashlib, pathlib, zipfile
+          zpath=pathlib.Path('/tmp/b4v2_exact/final.zip')
+          out=pathlib.Path('/tmp/b4v2_extract')
+          expected_zip='06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f'
+          expected_manifest='3fb977047d60d02a40ac2964efdb107f7c3b3b36a540d9e1d3845af64bc221f9'
+          manifest_name='CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SHA256SUMS.txt'
+          h=lambda b: hashlib.sha256(b).hexdigest()
+          assert h(zpath.read_bytes()) == expected_zip
+          with zipfile.ZipFile(zpath) as z:
+              names=z.namelist()
+              assert len(names)==28, len(names)
+              assert len(names)==len(set(names))
+              assert names==sorted(names)
+              assert z.testzip() is None
+              assert manifest_name in names
+              mbytes=z.read(manifest_name)
+              assert h(mbytes)==expected_manifest
+              lines=mbytes.decode('utf-8').splitlines()
+              assert len(lines)==27
+              listed=[]
+              for line in lines:
+                  hh,name=line.split('  ',1)
+                  assert name in names
+                  assert h(z.read(name))==hh, name
+                  listed.append(name)
+              assert sorted(listed+[manifest_name])==names
+              z.extractall(out)
+          print('EXACT FINAL SEAL VALIDATION: PASS')
+          print('final_seal_sha256='+expected_zip)
+          print('final_manifest_sha256='+expected_manifest)
+          print('member_count=28')
+          print('CRC=PASS uniqueness=PASS sorting=PASS member_hashes=PASS')
+          PY
+          mkdir -p "$ROOT"
+          cp -a /tmp/b4v2_extract/. "$ROOT/"
+          cp /tmp/b4v2_exact/final.zip "$ROOT/${TASK}_PRE_RUN_SEAL.zip"
+          test "$(sha256sum "$ROOT/${TASK}_PRE_RUN_SEAL.zip" | awk '{print $1}')" = "$EXPECTED_ZIP"
+          test "$(sha256sum "$ROOT/${TASK}_PRE_RUN_SHA256SUMS.txt" | awk '{print $1}')" = "$EXPECTED_MANIFEST"
+
+      - name: Commit exact repair artifacts and self-clean
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT='research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0'
+          rm -rf .stage0_repair_payload
+          rm -f .github/workflows/b4-v2-stage0-selfref-exact-persist.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A "$ROOT" .stage0_repair_payload .github/workflows/b4-v2-stage0-selfref-exact-persist.yml || true
+          git commit -m 'B4 V2 Stage0: exact-byte self-reference repair reseal'
+          git push origin HEAD:cp20-e7r-b4-v2-stage0-finalization-handoff-20260904
