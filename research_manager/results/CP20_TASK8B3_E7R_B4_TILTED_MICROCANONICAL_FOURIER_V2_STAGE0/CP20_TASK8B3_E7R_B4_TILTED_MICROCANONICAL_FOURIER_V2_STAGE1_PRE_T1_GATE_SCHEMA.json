@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "authorized_execution_base_sha": {"pattern": "^[0-9a-f]{40}$", "type": "string"},
+    "authorized_seal_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "config_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "contract_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "run_witness_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "status": {"const": "PASS"},
+    "utc_timestamp": {"minLength": 1, "type": "string"}
+  },
+  "required": ["status", "run_witness_sha256", "authorized_execution_base_sha", "authorized_seal_sha256", "contract_sha256", "config_sha256", "utc_timestamp"],
+  "title": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 PRE_T1_GATE",
+  "type": "object",
+  "x_gate_condition": "PASS may be written only after seal/manifest/member/CRC/dependency/output-absence/RUN_WITNESS/schema/base/contract/config validations all PASS; no T1 START may precede it."
+}
