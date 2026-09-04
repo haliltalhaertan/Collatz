@@ -18,14 +18,21 @@ jobs:
           ref: 8d274095b0e1acbe1fad0a73ef6a5293364902fc
           fetch-depth: 0
 
-      - name: Assert exact checkout SHA and run literal verifier
+      - name: Bind exact canonical SHA to local main and run literal verifier
         shell: bash
         run: |
           set -euo pipefail
           EXPECTED='8d274095b0e1acbe1fad0a73ef6a5293364902fc'
+          ACTUAL_BEFORE="$(git rev-parse HEAD)"
+          echo "actual_checkout_sha_before_branch_bind=${ACTUAL_BEFORE}"
+          test "${ACTUAL_BEFORE}" = "${EXPECTED}"
+          git checkout -B main "${EXPECTED}"
           ACTUAL="$(git rev-parse HEAD)"
+          BRANCH="$(git branch --show-current)"
           echo "actual_checkout_sha=${ACTUAL}"
+          echo "actual_checkout_branch=${BRANCH}"
           test "${ACTUAL}" = "${EXPECTED}"
+          test "${BRANCH}" = "main"
           python tools/verify_handoff.py | tee handoff_stdout.txt
           grep -Fx 'HANDOFF VERIFICATION: PASS' handoff_stdout.txt
 
@@ -37,6 +44,7 @@ jobs:
           import datetime, json, os, pathlib, subprocess
           expected='8d274095b0e1acbe1fad0a73ef6a5293364902fc'
           actual=subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip()
+          branch=subprocess.check_output(['git','branch','--show-current'], text=True).strip()
           stdout=pathlib.Path('handoff_stdout.txt').read_text(encoding='utf-8')
           verdict='HANDOFF VERIFICATION: PASS' if 'HANDOFF VERIFICATION: PASS' in stdout.splitlines() else 'HANDOFF VERIFICATION: FAIL'
           evidence={
@@ -44,6 +52,7 @@ jobs:
             'repository':'haliltalhaertan/Collatz',
             'canonical_base_sha':expected,
             'actual_checkout_sha':actual,
+            'actual_checkout_branch':branch,
             'command':'python tools/verify_handoff.py',
             'terminal_verdict':verdict,
             'utc_timestamp':datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -57,6 +66,7 @@ jobs:
             'stdout_file':'handoff_stdout.txt'
           }
           assert actual == expected
+          assert branch == 'main'
           assert verdict == 'HANDOFF VERIFICATION: PASS'
           pathlib.Path('CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE_WORKFLOW.json').write_text(json.dumps(evidence, indent=2, sort_keys=True)+'\n', encoding='utf-8')
           PY
