@@ -3,7 +3,7 @@
 ## Factor-complexity / pressure / critical-site density paper
 
 Date: 2026-09-04  
-Status: `[PUBLICATION NOVELTY AUDIT — NO NOVELTY CERTIFICATE]`
+Status: `[POST-INDEPENDENT-AUDIT REPAIRED — NO NOVELTY CERTIFICATE]`
 
 ## Executive verdict
 
@@ -15,7 +15,8 @@ However, a strong novelty correction is mandatory. The following ingredients are
 - Sturmian/mechanical-word methods;
 - repeated-factor arithmetic/divisibility obstructions;
 - entropy barriers in Collatz-related languages;
-- qualitative exclusion of low-complexity or highly repetitive residual itineraries.
+- qualitative exclusion of low-complexity or highly repetitive residual itineraries;
+- the broad threshold architecture of comparing a constrained-language entropy rate against a Diophantine or discrepancy parameter.
 
 The defensible novelty target is the specific quantitative synthesis:
 
@@ -72,6 +73,20 @@ Therefore the CP20 manuscript must NOT say:
 - “we introduce repeated-factor divisibility”;
 - “we introduce entropy barriers for Collatz.”
 
+### Architecture-level comparison required by the independent audit
+
+The overlap is stronger than a mere ingredient list and must be disclosed directly.
+
+First, the repeated-factor lemmas are dual readings of the same affine subtraction. If an equal length-`s` valuation/exponent word of total valuation `q` occurs at starts `a` and `b`, subtraction gives an identity of the form
+
+`2^q (x_{a+s}-x_{b+s}) = 3^s (x_a-x_b)`.
+
+Witteveen reads this in the `3`-adic direction to obtain `3^s` divisibility of an endpoint difference. CP20 Task 6 reads it in the coprime `2`-adic direction to obtain `2^q` divisibility of a start-value difference. Thus the arithmetic device itself is not novel; the difference lies in which side of the identity is coupled to the global hypothesis and subsequent counting argument.
+
+Second, Witteveen already has the broad threshold architecture “entropy rate of a constrained Collatz word language versus a Diophantine/discrepancy parameter, yielding an exclusion threshold.” CP20 therefore must not claim that architecture as new. CP20's distinction is that the constraint class, rate inequalities, and outputs are different: a logarithmically growing critical-log discrepancy band rather than a bounded-amplitude zero-budget language; an exponential lower factor-complexity rate `alpha/kappa` paired with a deterministic pressure upper rate `h_B`; and a two-type critical-density pressure surface.
+
+This architecture-level disclosure is mandatory in the manuscript related-work section and, if used, Appendix D.
+
 ## Why it does not subsume CP20 Task 6/7/8A
 
 The mathematical objects and conclusions differ substantially.
@@ -80,15 +95,15 @@ Witteveen works with **hypothetical positive cycles under a bounded-amplitude co
 
 `s_k=kappa log_2 k+O(1)`.
 
-Witteveen's mechanical-language argument is local to the bounded-amplitude cycle regime. CP20 Task 6 instead derives the asymptotic quantitative lower rate
+Witteveen's zero-budget language imposes uniformly bounded subword discrepancy, whereas CP20 permits the logarithmically growing `O(log r)` defect band implied by the critical-log law. Witteveen's entropy threshold is tied to cycle amplitude and a Diophantine irrationality exponent. CP20 Task 6 instead derives the asymptotic quantitative lower rate
 
 `liminf log_2 p_a(r)/r >= alpha/kappa`.
 
-CP20 Task 7 then derives a different deterministic pressure upper bound from the critical-log defect band and zero-criticality, and Task 8A resolves critical sites into a two-density pressure surface.
+CP20 Task 7 then derives a deterministic pressure upper bound from the critical-log defect band and zero-criticality, and Task 8A resolves critical sites into a two-density pressure surface.
 
 No equivalent of the CP20 `h_B`, `h(rho_1,rho_2)`, `kappa>2.784`, or `rho_min(kappa)` theorem was located in the Witteveen manuscript.
 
-**Classification:** `[STRONG CLOSE PRIOR ART — DISTINCT THEOREM REGIME]`.
+**Classification:** `[STRONG CLOSE PRIOR ART — SHARED DEVICE/ARCHITECTURE — DISTINCT HYPOTHESIS CLASS AND QUANTITATIVE OUTPUT]`.
 
 ---
 
@@ -234,14 +249,15 @@ Because contemporary Collatz work is rapidly changing and many results first app
 - repeated-factor/prefix divisibility as an arithmetic mechanism;
 - using word complexity to constrain Collatz-type itineraries;
 - entropy or large-deviation language around Collatz;
-- qualitative exclusion of low-complexity residual words.
+- qualitative exclusion of low-complexity residual words;
+- the broad architecture “constrained-language entropy rate versus Diophantine/discrepancy parameter gives a threshold.”
 
 ## No equivalent theorem located
 
 - the Task-6 quantitative rate
   `liminf log_2 p_a(r)/r >= alpha/kappa`
   for arbitrary positive ordinary critical-log Syracuse orbits;
-- the zero-critical weighted-pressure upper rate `h_B`;
+- the zero-critical weighted-pressure upper rate `h_B` under the finite-`B` hypotheses;
 - the uniform no-a-priori-alphabet-bound threshold `kappa>2.784`;
 - the Task-8A feasible two-type pressure surface `h(rho_1,rho_2)`;
 - the frozen critical-density accumulation theorem;
@@ -268,7 +284,8 @@ Because contemporary Collatz work is rapidly changing and many results first app
 - “the first entropy barrier for Collatz”;
 - “the first Sturmian approach to Collatz”;
 - “we introduce repeated-factor divisibility”;
-- “the first proof that low-complexity Collatz words are impossible.”
+- “the first proof that low-complexity Collatz words are impossible”;
+- any claim that the entropy-threshold architecture itself is new.
 
 ---
 
@@ -285,3 +302,5 @@ Before submission, perform one specialist human literature pass focused on:
 1. post-2009 combinatorics-on-words treatments of Collatz/Syracuse;
 2. 2025–2026 repository/preprint work on valuation languages;
 3. factor complexity under Diophantine or discrepancy constraints outside Collatz, where an abstract theorem could subsume Task 6 or Task 7 under another terminology.
+
+This abstract non-Collatz subsumption risk remains `[OPEN — SPECIALIST CHECK REQUIRED]`. It does not block manuscript drafting, but it must remain explicit and the paper should not be submitted until it is addressed.
