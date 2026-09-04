@@ -7,6 +7,7 @@ BLOCKED={
  'ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c',
  '2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea',
  '66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac',
+ '06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f',
 }
 SHA40=re.compile(r"^[0-9a-f]{40}$")
 SHA64=re.compile(r"^[0-9a-f]{64}$")
@@ -39,6 +40,22 @@ def validate(w, expected_canonical_stage0_base_sha, expected_authorization_commi
     if w['execution_count_claim']!=1: errors.append('execution_count_claim')
     if w['output_absence_precheck']!='PASS': errors.append('output_absence_precheck')
     if w['preflight_status']!='PASS': errors.append('preflight_status')
+    return errors
+
+
+def validate_canonical_state(state):
+    errors=[]
+    if not isinstance(state,dict): return ['canonical_state_not_object']
+    if 'active_task' not in state: return ['missing:active_task']
+    active_task=state['active_task']
+    if not isinstance(active_task,dict): return ['active_task_not_object']
+    if 'stage' not in active_task: return ['missing:active_task.stage']
+    stage=active_task['stage']
+    if stage!='STAGE_1_AUTHORIZED_NOT_EXECUTED': errors.append('active_task.stage_mismatch')
+    if 'active_stage' in state and state['active_stage']!=stage: errors.append('alias_conflict:active_stage')
+    continuity=state.get('continuity')
+    if isinstance(continuity,dict) and 'active_stage' in continuity and continuity['active_stage']!=stage:
+        errors.append('alias_conflict:continuity.active_stage')
     return errors
 
 def validate_authorization_model(model, expected_stage0, expected_auth_commit, expected_head, expected_seal, expected_contract):

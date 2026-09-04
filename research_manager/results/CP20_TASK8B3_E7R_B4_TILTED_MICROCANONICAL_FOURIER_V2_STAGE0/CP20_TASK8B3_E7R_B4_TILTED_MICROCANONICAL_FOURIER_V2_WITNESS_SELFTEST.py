@@ -21,6 +21,7 @@ model={
  'state_stage':'STAGE_1_AUTHORIZED_NOT_EXECUTED'
 }
 expected={f'S{i}':'FAIL' for i in range(1,12)}; expected['S12']='PASS'
+expected.update({'P1':'PASS','P2':'FAIL','P3':'FAIL','P4':'FAIL','P5':'FAIL','P6':'PASS'})
 results={}
 def witness_case(name, mutate):
     w=copy.deepcopy(witness); mutate(w)
@@ -29,6 +30,9 @@ def witness_case(name, mutate):
 def model_case(name, mutate):
     x=copy.deepcopy(model); mutate(x)
     errs=m.validate_authorization_model(x,stage0,authc,head,seal,contract)
+    results[name]={'expected':expected[name],'observed':'PASS' if not errs else 'FAIL','errors':errs}
+def state_case(name,state):
+    errs=m.validate_canonical_state(copy.deepcopy(state))
     results[name]={'expected':expected[name],'observed':'PASS' if not errs else 'FAIL','errors':errs}
 witness_case('S1',lambda w:w.pop('canonical_stage0_base_sha'))
 witness_case('S2',lambda w:w.__setitem__('canonical_stage0_base_sha','9'*40))
@@ -43,8 +47,14 @@ model_case('S10',lambda x:x['authorization_json'].__setitem__('canonical_stage0_
 model_case('S11',lambda x:x['authorization_json'].__setitem__('stage','WRONG_STAGE'))
 errs=m.validate(witness,stage0,authc,seal,contract,config)+m.validate_authorization_model(model,stage0,authc,head,seal,contract)
 results['S12']={'expected':'PASS','observed':'PASS' if not errs else 'FAIL','errors':errs}
+state_case('P1',{'active_task':{'stage':'STAGE_1_AUTHORIZED_NOT_EXECUTED'}})
+state_case('P2',{})
+state_case('P3',{'active_task':{}})
+state_case('P4',{'active_task':{'stage':'WRONG_STAGE'}})
+state_case('P5',{'active_task':{'stage':'STAGE_1_AUTHORIZED_NOT_EXECUTED'},'active_stage':'CONFLICTING_STAGE'})
+state_case('P6',{'active_task':{'stage':'STAGE_1_AUTHORIZED_NOT_EXECUTED'},'active_stage':'STAGE_1_AUTHORIZED_NOT_EXECUTED'})
 overall=all(v['expected']==v['observed'] for v in results.values())
-out={'schema':f'{TASK}_WITNESS_SELFTEST_RESULTS_TWO_COMMIT_V3','overall':'PASS' if overall else 'FAIL','real_stage1_entrypoint_invoked':False,'mathematics_executed':False,'cases':results}
+out={'schema':f'{TASK}_WITNESS_SELFTEST_RESULTS_TWO_COMMIT_STATEPATH_V4','overall':'PASS' if overall else 'FAIL','real_stage1_entrypoint_invoked':False,'mathematics_executed':False,'cases':results}
 (HERE/f'{TASK}_WITNESS_SELFTEST_RESULTS.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n',encoding='utf-8')
 print('SELFTEST PASS' if overall else 'SELFTEST FAIL')
 raise SystemExit(0 if overall else 1)

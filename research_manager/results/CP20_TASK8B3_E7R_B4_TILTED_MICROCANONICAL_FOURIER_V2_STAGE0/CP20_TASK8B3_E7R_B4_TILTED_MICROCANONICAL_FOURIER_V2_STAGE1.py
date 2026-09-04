@@ -8,6 +8,7 @@ BLOCKED={
  'ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c',
  '2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea',
  '66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac',
+ '06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f',
 }
 AUTH_PATH='research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json'
 HERE=pathlib.Path(__file__).resolve().parent
@@ -54,8 +55,19 @@ def verify_authorization_chain(stage0_base,authorization_commit,seal_sha,contrac
     if auth.get('stage')!='STAGE_1_AUTHORIZED_NOT_EXECUTED': fail('authorization stage mismatch')
     try: state=json.loads(git('show',f'{authorization_commit}:CURRENT_RESEARCH_STATE.json'))
     except Exception: fail('canonical state unreadable at authorization_commit_sha')
-    stage=state.get('active_stage') or state.get('continuity',{}).get('active_stage')
-    if stage!='STAGE_1_AUTHORIZED_NOT_EXECUTED': fail('canonical state does not say STAGE_1_AUTHORIZED_NOT_EXECUTED')
+    if not isinstance(state,dict): fail('canonical state is not an object')
+    if 'active_task' not in state: fail('canonical state missing active_task')
+    active_task=state['active_task']
+    if not isinstance(active_task,dict): fail('canonical state active_task is not an object')
+    if 'stage' not in active_task: fail('canonical state missing active_task.stage')
+    stage=active_task['stage']
+    if stage!='STAGE_1_AUTHORIZED_NOT_EXECUTED': fail('canonical state active_task.stage does not say STAGE_1_AUTHORIZED_NOT_EXECUTED')
+    aliases=[]
+    if 'active_stage' in state: aliases.append(('active_stage',state['active_stage']))
+    continuity=state.get('continuity')
+    if isinstance(continuity,dict) and 'active_stage' in continuity: aliases.append(('continuity.active_stage',continuity['active_stage']))
+    for label,value in aliases:
+        if value!=stage: fail('canonical state legacy stage alias conflicts with active_task.stage: '+label)
     for path,expected in config['canonical_stage0_artifacts'].items():
         try: blob=git('rev-parse',f'{stage0_base}:{path}')
         except Exception: fail('Phase-A Stage0 artifact unreadable: '+path)

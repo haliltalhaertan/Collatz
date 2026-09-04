@@ -14,11 +14,14 @@
     "authorization_json_not_required_to_name_own_commit": true,
     "authorization_to_head_ancestry_check": true,
     "blocked_seal_firewall": true,
+    "canonical_state_authoritative_active_task_stage": true,
     "complete_witness_before_gate": true,
     "gate_checked_before_ledger": true,
     "integrity_failure_literal": true,
+    "legacy_alias_conflict_fails": true,
     "no_T1_START_emission": true,
     "no_math_packages": true,
+    "no_top_level_active_stage_fallback": true,
     "old_self_referential_arg_removed": true,
     "phase_a_artifact_blob_and_sha256_checks": true,
     "runtime_authorization_commit_arg": true,
@@ -31,5 +34,5 @@
   "forbidden_math_imports": [],
   "overall": "PASS",
   "real_stage1_entrypoint_invoked": false,
-  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS_TWO_COMMIT_V3"
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS_TWO_COMMIT_STATEPATH_V4"
 }

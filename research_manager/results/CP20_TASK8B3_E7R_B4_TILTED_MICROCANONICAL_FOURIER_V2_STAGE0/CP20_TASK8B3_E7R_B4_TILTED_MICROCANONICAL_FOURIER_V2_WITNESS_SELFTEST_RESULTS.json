@@ -1,5 +1,43 @@
 {
   "cases": {
+    "P1": {
+      "errors": [],
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    "P2": {
+      "errors": [
+        "missing:active_task"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "P3": {
+      "errors": [
+        "missing:active_task.stage"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "P4": {
+      "errors": [
+        "active_task.stage_mismatch"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "P5": {
+      "errors": [
+        "alias_conflict:active_stage"
+      ],
+      "expected": "FAIL",
+      "observed": "FAIL"
+    },
+    "P6": {
+      "errors": [],
+      "expected": "PASS",
+      "observed": "PASS"
+    },
     "S1": {
       "errors": [
         "missing:canonical_stage0_base_sha"
@@ -88,5 +126,5 @@
   "mathematics_executed": false,
   "overall": "PASS",
   "real_stage1_entrypoint_invoked": false,
-  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS_TWO_COMMIT_V3"
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS_TWO_COMMIT_STATEPATH_V4"
 }

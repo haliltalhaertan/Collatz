@@ -36,10 +36,23 @@ Before T1, the launcher MUST verify:
 7. that JSON names the exact V2 contract SHA;
 8. that JSON names the exact `canonical_stage0_base_sha`;
 9. that JSON stage is `STAGE_1_AUTHORIZED_NOT_EXECUTED`;
-10. `CURRENT_RESEARCH_STATE.json` at `authorization_commit_sha` reports the same stage;
+10. `CURRENT_RESEARCH_STATE.json` at `authorization_commit_sha` contains an `active_task` object whose authoritative `active_task.stage` equals `STAGE_1_AUTHORIZED_NOT_EXECUTED`; any optional legacy stage alias, if present, must agree with `active_task.stage` and may never override it;
 11. the canonical Stage-0 load-bearing artifacts and contract at `canonical_stage0_base_sha` match the exact sealed Git blob IDs and SHA-256 hashes recorded by the Stage-0 config.
 
 No authorization JSON field is required to equal the commit SHA that contains the JSON.
+
+
+## Authoritative canonical state path
+The authoritative Phase-B canonical stage is read from:
+
+`CURRENT_RESEARCH_STATE.json["active_task"]["stage"]`
+
+and MUST equal:
+
+`STAGE_1_AUTHORIZED_NOT_EXECUTED`
+
+`active_task` MUST exist and MUST be an object. `active_task.stage` MUST exist. No undocumented top-level `active_stage` field is required. The launcher MUST NOT silently fall back to any alternate schema. If an optional legacy alias such as top-level `active_stage` or `continuity.active_stage` exists, it is a consistency check only; any conflict with `active_task.stage` is an integrity failure before T1.
+
 
 ## Required pre-T1 order
 1. Parse manager-authorized runtime inputs.
@@ -82,6 +95,7 @@ The following seals are permanently rejected for future authorization:
 - consumed V1 seal `ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c`;
 - V2 candidate `2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea`;
 - V2 candidate `66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac` with authorization-base self-reference defect.
+- V2 candidate `06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f` with canonical-state-path mismatch.
 
 ## One-run discipline
 The actual V2 Stage-1 entrypoint may be invoked once only under a future explicit manager authorization. A failed real invocation consumes that authorization. Synthetic integrity tests do not invoke the actual Stage-1 entrypoint and execute no mathematics.
