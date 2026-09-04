@@ -75,7 +75,7 @@
     "exact_entrypoint",
     "preflight_status"
   ],
-  "title": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 RUN_WITNESS — TWO-COMMIT AUTHORIZATION",
+  "title": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 RUN_WITNESS \u2014 TWO-COMMIT AUTHORIZATION",
   "type": "object",
   "x_cross_field_rules": [
     "canonical_base_sha MUST equal authorization_commit_sha",

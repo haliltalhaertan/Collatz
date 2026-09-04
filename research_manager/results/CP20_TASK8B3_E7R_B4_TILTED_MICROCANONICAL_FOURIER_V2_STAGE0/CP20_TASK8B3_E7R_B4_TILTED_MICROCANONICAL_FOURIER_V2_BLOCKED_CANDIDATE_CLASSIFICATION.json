@@ -3,12 +3,12 @@
   "authorization_use": "FORBIDDEN",
   "blocked_candidates": [
     {
-      "classification": "[BLOCKED CANDIDATE — PRE-HANDOFF-GATE — DO NOT AUTHORIZE]",
+      "classification": "[BLOCKED CANDIDATE \u2014 PRE-HANDOFF-GATE \u2014 DO NOT AUTHORIZE]",
       "reason": "Created before mandatory literal handoff gate was satisfied.",
       "seal_sha256": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea"
     },
     {
-      "classification": "[BLOCKED CANDIDATE — AUTHORIZATION-BASE SELF-REFERENCE DEFECT — DO NOT AUTHORIZE]",
+      "classification": "[BLOCKED CANDIDATE \u2014 AUTHORIZATION-BASE SELF-REFERENCE DEFECT \u2014 DO NOT AUTHORIZE]",
       "reason": "Contract/launcher required an authorization-bearing commit to contain its own not-yet-known SHA via authorized_execution_base_sha.",
       "seal_sha256": "66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac"
     }

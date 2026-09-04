@@ -49,7 +49,7 @@
     "config_sha256",
     "utc_timestamp"
   ],
-  "title": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 PRE_T1_GATE — TWO-COMMIT AUTHORIZATION",
+  "title": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 PRE_T1_GATE \u2014 TWO-COMMIT AUTHORIZATION",
   "type": "object",
   "x_gate_condition": "PASS only after seal, output-absence, two-commit Git authorization chain, Phase-A Stage-0 artifact hashes, RUN_WITNESS and schema validation all PASS; canonical_base_sha = authorization_commit_sha; no T1 START may precede it."
 }

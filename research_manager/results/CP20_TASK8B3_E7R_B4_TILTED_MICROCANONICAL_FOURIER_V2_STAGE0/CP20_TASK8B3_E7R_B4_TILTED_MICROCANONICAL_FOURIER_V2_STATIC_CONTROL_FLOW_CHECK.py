@@ -20,7 +20,7 @@ checks={
  'runtime_authorized_seal_arg':'--authorized-seal-sha256' in src,
  'runtime_contract_sha_arg':'--contract-sha256' in src,
  'old_self_referential_arg_removed':'--authorized-execution-base-sha' not in src,
- 'authorization_json_not_required_to_name_own_commit':"auth.get('authorization_commit_sha')" not in src and 'auth.get("authorization_commit_sha")' not in src,
+ 'authorization_json_not_required_to_name_own_commit':"auth.get('authorization_commit_sha')" not in src and 'auth.get(\"authorization_commit_sha\")' not in src,
  'stage0_to_authorization_ancestry_check':'canonical_stage0_base_sha is not ancestor of authorization_commit_sha' in src,
  'authorization_to_head_ancestry_check':'authorization_commit_sha is not ancestor of execution HEAD' in src,
  'authorization_artifact_read_at_auth_commit':"git('show',f'{authorization_commit}:{AUTH_PATH}')" in src,
