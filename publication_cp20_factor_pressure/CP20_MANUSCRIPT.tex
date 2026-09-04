@@ -425,6 +425,10 @@ Since \(\varepsilon\) is arbitrary in \((0,\alpha/\kappa)\), letting \(\varepsil
 The proof uses no finite valuation alphabet.  The lower rate comes from the conjunction of polynomial state growth, repeated-factor separation, and the local valuation mass forced by the global critical-log law.
 \end{remark}
 
+\begin{remark}[Relation to non-repetitive complexity]\label{rem:nonrepetitive}
+Nicholson and Rampersad introduced the \emph{initial non-repetitive complexity} of an infinite word \cite{NicholsonRampersad2016}.  Their invariant is prefix-based, whereas the proof of \cref{thm:lower} uses the shifted window \(u\in[N_r,2N_r-r]\).  Thus \cref{thm:lower} is best viewed only as a windowed analogue with an exponential lower rate, not as a theorem about the initial non-repetitive-complexity invariant itself.
+\end{remark}
+
 \section{Finite-alphabet deterministic pressure}\label{sec:finitepressure}
 
 The phase word
@@ -609,6 +613,7 @@ The pressure admits the Legendre representation
  &-\mu_1\rho_1-\mu_2\rho_2
  \Big].\notag
 \end{align}
+Variational and Legendre-transform formulations of pressure and large-deviation spectra are standard in thermodynamic formalism and multifractal analysis of Birkhoff averages; see, for example, \cite{PesinWeiss2001}.  Here this machinery is used only to express the Syracuse-specific feasible surface and does not form part of the novelty claim.
 It is therefore an infimum of affine functions of \((\rho_1,\rho_2)\), hence concave on \(\Fcal\).
 
 Writing \(y=t-1\), an interior saddle with \(Q>P\) satisfies
