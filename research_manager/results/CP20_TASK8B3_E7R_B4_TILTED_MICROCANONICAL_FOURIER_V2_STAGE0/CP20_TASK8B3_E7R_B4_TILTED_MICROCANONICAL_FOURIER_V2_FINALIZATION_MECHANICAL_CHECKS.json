@@ -1,0 +1,34 @@
+{
+  "S1_S12": {
+    "S1": "FAIL",
+    "S10": "FAIL",
+    "S11": "FAIL",
+    "S12": "PASS",
+    "S2": "FAIL",
+    "S3": "FAIL",
+    "S4": "FAIL",
+    "S5": "FAIL",
+    "S6": "FAIL",
+    "S7": "FAIL",
+    "S8": "FAIL",
+    "S9": "FAIL"
+  },
+  "T1_T8_executed": false,
+  "candidate_manifest_validation": {
+    "crc": "PASS",
+    "member_hashes": "PASS",
+    "membership": "PASS",
+    "sorted": "PASS",
+    "unique": "PASS"
+  },
+  "candidate_seal_sha256": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
+  "old_v1_seal_blacklist_test": "PASS",
+  "old_v1_seal_sha256": "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
+  "real_stage1_launcher_invoked": false,
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_MECHANICAL_CHECKS_V1",
+  "scientific_diff": "NO SCIENTIFIC CHANGE",
+  "stage1_executed": false,
+  "static_control_flow": "PASS",
+  "utc_timestamp": "2026-09-04T14:29:54.271458+00:00",
+  "witness_selftest_overall": "PASS"
+}
