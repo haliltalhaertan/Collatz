@@ -1,0 +1,157 @@
+name: CP20 prepare JNT submission
+
+on:
+  push:
+    branches:
+      - cp20-submission-jnt-v1-20260904
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cp20-submission-jnt-v1-20260904
+          fetch-depth: 0
+
+      - name: Apply JNT metadata and transparent AI disclosures
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          tex_path = Path('publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex')
+          tex = tex_path.read_text(encoding='utf-8')
+
+          marker = r'\date{}'
+          metadata = r'''\date{}
+\subjclass[2020]{Primary 11B83; Secondary 37B10, 37B40, 68R15}
+\keywords{Syracuse map, Collatz problem, valuation words, factor complexity, Sturmian words, thermodynamic pressure}
+'''
+          if '\\subjclass[2020]' not in tex:
+              if marker not in tex:
+                  raise SystemExit('date marker not found')
+              tex = tex.replace(marker, metadata, 1)
+
+          old_disclosure = r'''\section*{Disclosure and funding}
+
+\paragraph{AI-assisted research disclosure.}
+AI systems were used during the broader research programme for conjecture exploration, symbolic and numerical experimentation, proof-audit preparation, literature screening, and drafting assistance.  The mathematical claims included here were selected from the project's audited/frozen result set, and the author assumes responsibility for the manuscript, its citations, and its final claims.  This paragraph should be adapted to the policy of the eventual journal before submission.
+
+\paragraph{Funding.}
+This work received no external funding.
+'''
+          replacement = r'''\section*{Funding}
+This work received no external funding.
+
+\section*{Declaration of competing interest}
+The author declares no competing interests.
+'''
+          if old_disclosure in tex:
+              tex = tex.replace(old_disclosure, replacement, 1)
+          elif 'This paragraph should be adapted to the policy of the eventual journal before submission.' in tex:
+              raise SystemExit('Disclosure block changed unexpectedly')
+
+          repro_marker = r'''For the critical-density numerics, the canonical certificate source is
+\path{CP20_TASK8A_RIGOROUS_CERTIFICATE_V3.py}, with its frozen saved output and manifest hashes.  The finite-\(B\) and infinite-envelope constants are likewise supported by the frozen pressure-generalization certificate package.  A final submission package should list the exact source paths and hashes alongside the manuscript.
+'''
+          ai_research = repro_marker + r'''
+\subsection*{Research workflow and use of AI-assisted tools}\label{sec:ai-workflow}
+AI-assisted research tools, including OpenAI ChatGPT, OpenAI Codex, and Anthropic Claude, were used in the broader research workflow for conjecture exploration, symbolic-derivation checks, computational-script drafting, literature screening, and adversarial proof-audit preparation.  Outputs from these tools were treated as untrusted candidate material rather than as authority.  Claims selected for this paper were retained only after separate exact derivations, reproducible computational certificates where applicable, and dedicated zero-trust audit passes.  The AI tools are not authors.  The author selected the research direction and claims, reviewed the final manuscript and citations, and takes full responsibility for the mathematical statements and conclusions.
+'''
+          if 'Research workflow and use of AI-assisted tools' not in tex:
+              if repro_marker not in tex:
+                  raise SystemExit('Reproducibility marker not found')
+              tex = tex.replace(repro_marker, ai_research, 1)
+
+          bib_marker = r'''\bibliographystyle{amsplain}
+\bibliography{CP20_REFERENCES}
+'''
+          declaration = r'''\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+During the preparation of this work, the author used OpenAI ChatGPT, OpenAI Codex, and Anthropic Claude to assist with content organization, language editing, literature screening, and preparation of reproducibility materials.  AI-assisted tools were also used in the research workflow as described above.  After using these tools, the author reviewed and edited the content as needed and takes full responsibility for the content of the publication.
+
+''' + bib_marker
+          if 'Declaration of generative AI and AI-assisted technologies in the manuscript preparation process' not in tex:
+              if bib_marker not in tex:
+                  raise SystemExit('Bibliography marker not found')
+              tex = tex.replace(bib_marker, declaration, 1)
+
+          tex_path.write_text(tex, encoding='utf-8')
+
+          outdir = Path('publication_cp20_factor_pressure/submission_jnt')
+          outdir.mkdir(parents=True, exist_ok=True)
+
+          cover = '''Dear Editors of the Journal of Number Theory,\n\nPlease consider the manuscript “Factor-Complexity and Pressure Barriers for Critical-Log Syracuse Valuation Words” by Halil Talha Ertan for publication in the Journal of Number Theory.\n\nThe paper studies a conditional structural regime for positive odd-only Syracuse orbits. Under the global critical-log law s_k = kappa log_2 k + O(1), it proves an exponential lower bound for valuation-word factor complexity. It then combines this arithmetic lower bound with deterministic constrained-word pressure estimates to obtain finite-alphabet and uniform zero-critical obstructions, including the certified threshold kappa > 2.784, and a two-type critical-site density pressure inequality.\n\nThe manuscript does not claim to prove the Collatz conjecture and does not exclude divergent or cyclic behavior in general. The novelty claim is deliberately restricted to the quantitative Syracuse-specific rate/pressure/density chain. Close prior work on repeated-factor divisibility, Sturmian codings, entropy barriers, and thermodynamic formalism is discussed explicitly.\n\nThe manuscript contains a detailed disclosure of AI-assisted research and manuscript-preparation tools in accordance with Elsevier's current policy. AI-assisted outputs were treated as untrusted candidate material and the final claims were subjected to separate adversarial audits and reproducible checks where applicable. I take full responsibility for the manuscript and all of its mathematical statements, citations, and conclusions.\n\nFor clarity, a separate manuscript by the author concerning polynomial collision energy for the Syracuse random variable is currently under review elsewhere. The present submission concerns factor complexity and deterministic pressure under a critical-log orbit hypothesis; its principal theorem set is distinct and the present manuscript is not under consideration by any other journal.\n\nThe manuscript is 17 pages in the current amsart format. Suggested 2020 MSC classifications are 11B83 (primary), 37B10, 37B40, and 68R15 (secondary).\n\nThank you for your consideration.\n\nSincerely,\nHalil Talha Ertan\nIndependent Researcher, Turkey\nhaliltalhaertan@gmail.com\n'''
+          (outdir / 'CP20_JNT_COVER_LETTER.txt').write_text(cover, encoding='utf-8')
+
+          highlights = '''Critical-log Syracuse orbits force exponential valuation-word complexity.\nFinite-alphabet zero-critical words satisfy a deterministic pressure bound.\nA uniform pressure envelope yields the certified threshold kappa > 2.784.\nCritical-site densities obey an explicit two-type pressure inequality.\nThe results are conditional and do not prove the Collatz conjecture.\n'''
+          (outdir / 'CP20_JNT_HIGHLIGHTS.txt').write_text(highlights, encoding='utf-8')
+
+          checklist = '''# CP20 Journal of Number Theory submission package\n\nTarget journal: Journal of Number Theory (Elsevier)\n\n## Submission metadata\n- Title: Factor-Complexity and Pressure Barriers for Critical-Log Syracuse Valuation Words\n- Author: Halil Talha Ertan\n- Affiliation: Independent Researcher, Turkey\n- Email: haliltalhaertan@gmail.com\n- Primary MSC: 11B83\n- Secondary MSC: 37B10, 37B40, 68R15\n- Keywords: Syracuse map; Collatz problem; valuation words; factor complexity; Sturmian words; thermodynamic pressure\n- Funding: none\n- Competing interests: none declared\n\n## Policy notes\n- The manuscript explicitly states that it does not prove the Collatz conjecture.\n- A journal-specific AI disclosure is included before the references.\n- A separate research-workflow disclosure explains AI-assisted theorem exploration, code drafting, literature screening, and audit preparation.\n- The author retains full responsibility for the paper.\n- The same manuscript is not under consideration elsewhere.\n\n## Files\n- CP20_MANUSCRIPT.tex\n- CP20_REFERENCES.bib\n- submission_jnt/CP20_JNT_COVER_LETTER.txt\n- submission_jnt/CP20_JNT_HIGHLIGHTS.txt\n- compiled CP20_MANUSCRIPT.pdf\n\n## Final portal checks\n- Confirm article type: Research Paper / Full Length Article (or nearest current JNT option).\n- Copy title, abstract, keywords, MSC codes, author/affiliation exactly.\n- Upload the compiled PDF.\n- Upload source files if the portal requests them at initial submission.\n- Paste the AI declaration exactly as stated in the manuscript if the portal asks separately.\n- State that there is no duplicate or simultaneous submission of this manuscript.\n- Do not characterize the paper as a proof of Collatz.\n'''
+          (outdir / 'CP20_JNT_SUBMISSION_CHECKLIST.md').write_text(checklist, encoding='utf-8')
+          PY
+
+      - name: Install TeX and PDF tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended poppler-utils zip
+
+      - name: Compile JNT-targeted manuscript
+        working-directory: publication_cp20_factor_pressure
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f CP20_MANUSCRIPT.aux CP20_MANUSCRIPT.bbl CP20_MANUSCRIPT.blg CP20_MANUSCRIPT.log CP20_MANUSCRIPT.out CP20_MANUSCRIPT.pdf
+          pdflatex -interaction=nonstopmode -halt-on-error CP20_MANUSCRIPT.tex
+          bibtex CP20_MANUSCRIPT
+          pdflatex -interaction=nonstopmode -halt-on-error CP20_MANUSCRIPT.tex
+          pdflatex -interaction=nonstopmode -halt-on-error CP20_MANUSCRIPT.tex
+          if grep -E 'LaTeX Warning: (Reference|Citation).*undefined|There were undefined references|There were undefined citations|multiply defined' CP20_MANUSCRIPT.log; then
+            echo 'Unresolved reference/citation/label warning found.'
+            exit 1
+          fi
+          echo '=== BOX WARNINGS ==='
+          grep -E 'Overfull|Underfull' CP20_MANUSCRIPT.log || true
+          pdfinfo CP20_MANUSCRIPT.pdf | grep '^Pages:'
+          sha256sum CP20_MANUSCRIPT.pdf | tee submission_jnt/CP20_JNT_PDF_SHA256.txt
+          cp CP20_MANUSCRIPT.pdf submission_jnt/CP20_MANUSCRIPT_JNT.pdf
+
+      - name: Build submission ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd publication_cp20_factor_pressure
+          rm -f submission_jnt/CP20_JNT_SUBMISSION_PACKAGE.zip
+          zip -j submission_jnt/CP20_JNT_SUBMISSION_PACKAGE.zip \
+            CP20_MANUSCRIPT.tex \
+            CP20_REFERENCES.bib \
+            submission_jnt/CP20_MANUSCRIPT_JNT.pdf \
+            submission_jnt/CP20_JNT_COVER_LETTER.txt \
+            submission_jnt/CP20_JNT_HIGHLIGHTS.txt \
+            submission_jnt/CP20_JNT_SUBMISSION_CHECKLIST.md \
+            submission_jnt/CP20_JNT_PDF_SHA256.txt
+          sha256sum submission_jnt/CP20_JNT_SUBMISSION_PACKAGE.zip | tee submission_jnt/CP20_JNT_PACKAGE_SHA256.txt
+
+      - name: Commit journal-targeted package
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'Halil Talha Ertan'
+          git config user.email 'haliltalhaertan@mail.com'
+          git add publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex \
+                  publication_cp20_factor_pressure/submission_jnt
+          git commit -m 'Prepare CP20 Journal of Number Theory submission package'
+          git push origin HEAD:cp20-submission-jnt-v1-20260904
+
+      - name: Upload JNT submission artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cp20-jnt-submission-package
+          path: |
+            publication_cp20_factor_pressure/submission_jnt/CP20_JNT_SUBMISSION_PACKAGE.zip
+            publication_cp20_factor_pressure/submission_jnt/CP20_MANUSCRIPT_JNT.pdf
+            publication_cp20_factor_pressure/CP20_MANUSCRIPT.log
+          retention-days: 30
