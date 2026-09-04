@@ -1,0 +1,81 @@
+name: CP20 prepare JNT submission
+
+on:
+  push:
+    branches:
+      - cp20-submission-jnt-v1-20260904
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cp20-submission-jnt-v1-20260904
+          fetch-depth: 0
+
+      - name: Prepare journal-targeted files
+        run: python3 publication_cp20_factor_pressure/submission_jnt/prepare_jnt_submission.py
+
+      - name: Install TeX and PDF tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended poppler-utils zip
+
+      - name: Compile manuscript
+        working-directory: publication_cp20_factor_pressure
+        run: |
+          set -euo pipefail
+          rm -f CP20_MANUSCRIPT.aux CP20_MANUSCRIPT.bbl CP20_MANUSCRIPT.blg CP20_MANUSCRIPT.log CP20_MANUSCRIPT.out CP20_MANUSCRIPT.pdf
+          pdflatex -interaction=nonstopmode -halt-on-error CP20_MANUSCRIPT.tex
+          bibtex CP20_MANUSCRIPT
+          pdflatex -interaction=nonstopmode -halt-on-error CP20_MANUSCRIPT.tex
+          pdflatex -interaction=nonstopmode -halt-on-error CP20_MANUSCRIPT.tex
+          if grep -E 'LaTeX Warning: (Reference|Citation).*undefined|There were undefined references|There were undefined citations|multiply defined' CP20_MANUSCRIPT.log; then
+            exit 1
+          fi
+          grep -E 'Overfull|Underfull' CP20_MANUSCRIPT.log || true
+          pdfinfo CP20_MANUSCRIPT.pdf | grep '^Pages:'
+          sha256sum CP20_MANUSCRIPT.pdf | tee submission_jnt/CP20_JNT_PDF_SHA256.txt
+          cp CP20_MANUSCRIPT.pdf submission_jnt/CP20_MANUSCRIPT_JNT.pdf
+
+      - name: Build ZIP
+        working-directory: publication_cp20_factor_pressure
+        run: |
+          set -euo pipefail
+          rm -f submission_jnt/CP20_JNT_SUBMISSION_PACKAGE.zip
+          zip -j submission_jnt/CP20_JNT_SUBMISSION_PACKAGE.zip \
+            CP20_MANUSCRIPT.tex \
+            CP20_REFERENCES.bib \
+            submission_jnt/CP20_MANUSCRIPT_JNT.pdf \
+            submission_jnt/CP20_JNT_COVER_LETTER.txt \
+            submission_jnt/CP20_JNT_HIGHLIGHTS.txt \
+            submission_jnt/CP20_JNT_SUBMISSION_CHECKLIST.md \
+            submission_jnt/CP20_JNT_PDF_SHA256.txt
+          sha256sum submission_jnt/CP20_JNT_SUBMISSION_PACKAGE.zip | tee submission_jnt/CP20_JNT_PACKAGE_SHA256.txt
+
+      - name: Commit prepared package
+        run: |
+          set -euo pipefail
+          git config user.name 'Halil Talha Ertan'
+          git config user.email 'haliltalhaertan@mail.com'
+          git add publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex publication_cp20_factor_pressure/submission_jnt
+          if git diff --cached --quiet; then
+            echo 'No changes to commit.'
+          else
+            git commit -m 'Prepare CP20 Journal of Number Theory submission package'
+            git push origin HEAD:cp20-submission-jnt-v1-20260904
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cp20-jnt-submission-package
+          path: |
+            publication_cp20_factor_pressure/submission_jnt/CP20_JNT_SUBMISSION_PACKAGE.zip
+            publication_cp20_factor_pressure/submission_jnt/CP20_MANUSCRIPT_JNT.pdf
+            publication_cp20_factor_pressure/CP20_MANUSCRIPT.log
+          retention-days: 30
