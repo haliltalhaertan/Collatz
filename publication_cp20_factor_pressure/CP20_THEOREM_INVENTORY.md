@@ -2,7 +2,7 @@
 
 ## Publication branch: factor complexity / pressure / critical-site density
 
-Status: `[EDITORIAL EXTRACTION FROM FROZEN RESULTS — NO NEW MATHEMATICS]`
+Status: `[POST-AUDIT EDITORIAL REPAIRED — NO NEW MATHEMATICS]`
 
 Notation throughout:
 
@@ -43,7 +43,7 @@ Under the critical-log hypotheses, equality `n_u=n_v` would force eventual perio
 
 **Publication role:** arithmetic separation mechanism.
 
-**Novelty caution:** repeated-factor divisibility as a general Collatz mechanism is not to be advertised as new; close prior versions occur in earlier work and in Witteveen 2026.
+**Novelty caution:** repeated-factor divisibility as a general Collatz mechanism is not to be advertised as new; close prior versions occur in earlier work and in Witteveen 2026. In particular, Witteveen's `3^r` endpoint divisibility and the present `2^{A(W)}` start-value divisibility are dual coprime consequences of the same affine subtraction identity.
 
 ## T3 — Local valuation mass
 
@@ -63,7 +63,11 @@ for a fixed constant `C`.
 **Status:** `[PROVED][AUDITED][FROZEN]`  
 **Source:** Task 6 V3.
 
-For every sufficiently small fixed `epsilon>0`, the exponentially long start window
+For every fixed `epsilon` satisfying
+
+`0 < epsilon < alpha/kappa`, 
+
+the exponentially long start window
 
 `N_r=floor(2^{(alpha/kappa-epsilon)r})`
 
@@ -80,7 +84,15 @@ The theorem is independent of any valuation-alphabet bound.
 **Status:** `[PROVED][AUDITED][FROZEN]`  
 **Sources:** Task 6 strengthened V3; Task 7 V3.
 
-Assume in addition `a_k != g_k` for every `k`. For finite `B>=3`, define
+Let `B>=3` be finite. Assume
+
+`1 <= a_k <= B`
+
+for every `k`, and zero-criticality
+
+`a_k != g_k`
+
+for every `k`. Define
 
 `h_B = inf_lambda [(2-alpha) log_2(sum_{a=2..B} exp(lambda(1-a))) + (alpha-1) log_2(sum_{1<=a<=B,a!=2} exp(lambda(2-a)))]`.
 
@@ -99,9 +111,10 @@ The proof uses:
 
 ## T6 — Finite-alphabet entropy-pressure obstruction
 
-**Status:** `[PROVED][AUDITED][FROZEN]`.
+**Status:** `[PROVED][AUDITED][FROZEN]`  
+**Sources:** Task 6 strengthened V3; Task 7 V3; combination with T4.
 
-Combining T4 and T5 gives
+Under the finite-`B` hypotheses of T5 (`B>=3`, `1<=a_k<=B`, pointwise zero-criticality) and the critical-log hypothesis, combining T4 and T5 gives
 
 `alpha/kappa <= h_B`,
 
@@ -109,9 +122,9 @@ therefore
 
 `kappa >= alpha/h_B`.
 
-Certified special case:
+Certified special case: under the `B=3` hypotheses (`1<=a_k<=3`, zero-critical, critical-log),
 
-`B=3 => kappa > 3.027`.
+`kappa > 3.027`.
 
 ## T7 — Uniform no-a-priori-alphabet-bound obstruction
 
@@ -172,7 +185,11 @@ For every audited Task-6 scale family
 
 `N_r=floor(2^{(alpha/kappa-epsilon_r)r})`,
 
-with `epsilon_r->0` and `r epsilon_r->infinity`, every accumulation point `rho` of the multiplicative-window type-critical density pair lies in `F` and satisfies
+with
+
+`0 < epsilon_r < alpha/kappa`,
+
+`epsilon_r->0`, and `r epsilon_r->infinity`, every accumulation point `rho` of the multiplicative-window type-critical density pair lies in `F` and satisfies
 
 `h(rho)>=alpha/kappa`.
 
@@ -223,6 +240,10 @@ Frozen interval certificates give
 Maximizing `h` over the feasible density region recovers the older unrestricted CP19 Task-4 entropy exactly. There is no strict optimized “Sturmian phase cost.”
 
 **Publication role:** internal consistency check / contextual corollary; not a headline novelty claim.
+
+# Post-audit extraction note
+
+The 2026-09-04 independent zero-trust publication audit returned `[PASS WITH EDITORIAL REPAIRS]`. This file incorporates the blocking extraction repairs without adding mathematics: T4 now carries the exact `0<epsilon<alpha/kappa` range; T5 restores the finite-alphabet hypothesis `1<=a_k<=B`; T6 carries the same finite-`B` hypotheses and an explicit source line; T8 uses the stricter audited V3 scale-family quantifiers.
 
 # Excluded theorem candidates
 
