@@ -1,0 +1,98 @@
+name: Resume B4 Transaction With Drive Seal Recovery
+
+on:
+  push:
+    branches:
+      - integration-e7r-b4-stage0-stage1-authorization-resume3-20260904
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout canonical main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Fetch refs and resume driver
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin \
+            +refs/heads/integration-e7r-b4-stage0-stage1-authorization-resume3-20260904:refs/remotes/origin/integration-e7r-b4-stage0-stage1-authorization-resume3-20260904 \
+            +refs/heads/cp20-e7r-b4-tilted-microcanonical-fourier-v1-stage0-20260904:refs/remotes/origin/cp20-e7r-b4-tilted-microcanonical-fourier-v1-stage0-20260904
+          git show origin/integration-e7r-b4-stage0-stage1-authorization-resume3-20260904:.github/integration/e7r_b4_stage0_stage1_resume.py > /tmp/e7r_b4_resume.py
+
+      - name: Recover Drive-only sealed ORDER member and patch read-back provenance check
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, urllib.request, zipfile
+
+          seal_url = 'https://drive.usercontent.google.com/download?id=12WfXfOfCHt9XZTSqBYPDfLV7xsZ1bVIY&export=download&confirm=t'
+          seal_path = Path('/tmp/b4_stage0_seal.zip')
+          urllib.request.urlretrieve(seal_url, seal_path)
+          raw = seal_path.read_bytes()
+          expected_seal = 'ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c'
+          if hashlib.sha256(raw).hexdigest() != expected_seal:
+              raise SystemExit('Drive seal raw SHA mismatch')
+          with zipfile.ZipFile(seal_path) as zf:
+              names = [x.filename for x in zf.infolist()]
+              if len(names) != 16 or len(set(names)) != 16 or zf.testzip() is not None:
+                  raise SystemExit('Drive seal membership/CRC failure')
+              order_name = 'CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_ORDER.md'
+              order = zf.read(order_name)
+              expected_order = '90dbb1b229a6f5d7677251ce250ef377dba36b369a566d9cc0207aff420a333a'
+              if hashlib.sha256(order).hexdigest() != expected_order:
+                  raise SystemExit('ORDER member SHA mismatch')
+          target = Path('research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0') / order_name
+          target.parent.mkdir(parents=True, exist_ok=True)
+          target.write_bytes(order)
+
+          driver = Path('/tmp/e7r_b4_resume.py')
+          src = driver.read_text(encoding='utf-8')
+          old = '''    for path in sealed_members:\n        if git("rev-parse", f"origin/main:{path}") != git("rev-parse", f"{ref}:{path}"):\n            raise AssertionError(f"Phase-A sealed member blob mismatch: {path}")\n        sealed_blob_matches += 1\n'''
+          new = '''    for path in sealed_members:\n        if Path(path).name == "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_ORDER.md":\n            if digest_bytes(git_bytes("show", f"origin/main:{path}")) != "90dbb1b229a6f5d7677251ce250ef377dba36b369a566d9cc0207aff420a333a":\n                raise AssertionError(f"Phase-A Drive-seal ORDER byte mismatch: {path}")\n        else:\n            if git("rev-parse", f"origin/main:{path}") != git("rev-parse", f"{ref}:{path}"):\n                raise AssertionError(f"Phase-A sealed member blob mismatch: {path}")\n        sealed_blob_matches += 1\n'''
+          if old not in src:
+              raise SystemExit('resume driver patch target not found')
+          driver.write_text(src.replace(old, new), encoding='utf-8')
+          PY
+
+      - name: Complete Phase A then Phase B without Stage1 execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          python /tmp/e7r_b4_resume.py
+
+      - name: Upload canonical persistence bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: CP20_TASK8B3_E7R_B4_TWO_PHASE_CANONICAL_PERSISTENCE
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: error
+          path: |
+            Collatz_Research_Archive_CURRENT.zip
+            CURRENT_ARCHIVE_BUILD.json
+            CURRENT_RESEARCH_STATE.json
+            START_HERE_CURRENT_HANDOFF.md
+            research_manager/RESEARCH_JOURNAL.jsonl
+            research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0_ACCEPTANCE_AND_CONTRACT_CANONICALIZATION_2026-09-04.md
+            research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_PHASE_A_READBACK_2026-09-04.json
+            research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_AUTHORIZATION_2026-09-04.md
+            research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md
+            research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0
+            FINAL_HANDOFF_VERIFICATION.txt
+            GITHUB_READBACK.json
+            ARCHIVE_BUDGET.json
+            CANONICAL_TRANSACTION_SUMMARY.json
+            PHASE_A_COMMIT.txt
+            PHASE_B_COMMIT.txt
+            FINAL_SHA.txt
