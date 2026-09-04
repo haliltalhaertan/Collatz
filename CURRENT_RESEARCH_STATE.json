@@ -11,7 +11,7 @@
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
     "objective": "Produce a fresh Stage-0 seal for the SAME frozen B4 scientific program, with no scientific result imported from the invalid V1 Stage-1 invocation, and repair the execution launcher so that all contract-required witness fields are written and mechanically validated BEFORE T1 can begin. This is an execution-integrity repair, not a scientific route change.",
     "scientific_route_change": false,
-    "stage": "STAGE_0_REPAIR_ACCEPTED_AWAITING_AUTHORIZATION"
+    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED"
   },
   "archive": {
     "budget_policy": {
@@ -156,7 +156,7 @@
     "objective": "Produce a fresh Stage-0 seal for the SAME frozen B4 scientific program, with no scientific result imported from the invalid V1 Stage-1 invocation, and repair the execution launcher so that all contract-required witness fields are written and mechanically validated BEFORE T1 can begin. This is an execution-integrity repair, not a scientific route change.",
     "scientific_program_preserved": true,
     "scientific_route_change": false,
-    "stage": "STAGE_0_REPAIR_ACCEPTED_AWAITING_AUTHORIZATION",
+    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
     "stage0_accepted": true,
     "stage0_dispatched": true,
     "stage0_executed": true,
@@ -183,7 +183,7 @@
     "accepted": true,
     "accepted_source_branch": "cp20-e7r-b4-v2-stage0-finalization-handoff-20260904",
     "accepted_source_head": "85f3daa617aaa245eb2b43c5b0cc425d669bb927",
-    "authorization_count": 0,
+    "authorization_count": 1,
     "blocked_seals": [
       "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
       "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
@@ -191,6 +191,7 @@
       "06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f"
     ],
     "canonical_source_base": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+    "canonical_stage0_base_sha": "34ac0dbeb8c0ae2fddab706680f1682412b00786",
     "claims": {
       "B4-CT": "NOT ESTABLISHED",
       "B4-N1": "NOT ESTABLISHED",
@@ -208,11 +209,13 @@
     "drive_raw_readback": "PASS",
     "drive_seal_file_id": "1hWN1mdJdx78jnsOlD2ZXF8htkf9e8QGL",
     "manifest_sha256": "7f48807db5733c85759324d4f94e357aa6941de0ecd911b4180f5bc2101d6dcb",
+    "phase_a_readback": "PASS",
     "scientific_diff": "NO SCIENTIFIC CHANGE",
     "seal_sha256": "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e",
     "seal_zip_materialized_on_main": false,
-    "stage": "STAGE_0_REPAIR_ACCEPTED_AWAITING_AUTHORIZATION",
-    "stage1_authorized": false,
+    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+    "stage1_authorization_once_only": true,
+    "stage1_authorized": true,
     "stage1_executed": false
   },
   "co_chair_roles": {
@@ -245,7 +248,7 @@
   },
   "documents": {
     "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_ACCEPTANCE_AND_CANONICALIZATION_2026-09-05.json",
-    "active_authorization_decision": null,
+    "active_authorization_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
     "active_authorization_prompt": null,
     "active_research_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
     "b4_stage1_execution_contract": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
@@ -253,6 +256,7 @@
     "b4_v1_failure_record": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_RECORD.json",
     "b4_v1_forensic_package_reference": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_PACKAGE_REFERENCE.json",
     "b4_v2_stage0_config": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CONFIG.json",
+    "b4_v2_stage0_phase_a_readback": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_A_READBACK_2026-09-05.json",
     "b4_v2_stage0_repair_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
     "continuity_protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "e6_integration": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
@@ -760,16 +764,15 @@
     }
   },
   "next_action": {
-    "authorized_stage": "PHASE_B_ONLY_AFTER_PHASE_A_READBACK",
+    "authorized_stage": "STAGE_1_ONCE_ONLY",
     "executed_in_this_transaction": false,
-    "instruction": "Create Phase B Stage-1 authorization only after exact Phase-A GitHub read-back PASS; do not execute Stage 1 or T1-T8.",
+    "instruction": "Execute B4 V2 Stage 1 later once only in a fresh uncontaminated computation session; do not execute it in this integration.",
     "prohibited": [
-      "Stage1 execution",
-      "T1-T8 execution",
+      "Stage1 execution here",
+      "T1-T8 execution here",
       "invalid V1 drafts",
-      "new mathematics",
-      "weighted/operator work",
-      "E8"
+      "E8",
+      "new mathematics"
     ]
   },
   "next_task_stage0_requirements": [

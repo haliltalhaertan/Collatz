@@ -1,0 +1,6 @@
+{
+  "authorized_v2_seal_sha256": "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e",
+  "canonical_stage0_base_sha": "34ac0dbeb8c0ae2fddab706680f1682412b00786",
+  "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+  "v2_contract_sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403"
+}
