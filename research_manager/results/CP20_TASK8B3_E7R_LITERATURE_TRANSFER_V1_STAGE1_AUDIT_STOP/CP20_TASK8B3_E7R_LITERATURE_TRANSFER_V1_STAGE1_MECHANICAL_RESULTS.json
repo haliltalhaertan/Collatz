@@ -1,0 +1,22 @@
+{
+  "authorized_seal_sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79",
+  "independent_phase_implementation_sha256": "a6384e10c11b1e7b61183d1009811eaed4837112666c715bfca70f9d8df106b4",
+  "mechanical_checks": {
+    "all_checks": "PASS",
+    "m3_exhaustive_small_cases": 1715,
+    "negative_cases": [
+      {"fraction": "1/72", "j": 0, "s": 2},
+      {"fraction": "1/36", "j": 1, "s": 2},
+      {"fraction": "1/18", "j": 2, "s": 2},
+      {"fraction": "1/108", "j": 0, "s": 3},
+      {"fraction": "1/54", "j": 1, "s": 3},
+      {"fraction": "1/162", "j": 0, "s": 4}
+    ],
+    "unified_grid_cases": 198
+  },
+  "schema": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MECHANICAL_V1",
+  "seal_crc": "PASS",
+  "sealed_candidate_helper_used_as_evidence": false,
+  "source_hashes_verified": true,
+  "stage1_execution_count_this_run": 1
+}
