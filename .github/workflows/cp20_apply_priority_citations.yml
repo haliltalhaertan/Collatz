@@ -25,7 +25,6 @@ jobs:
 
           tex_path = Path('publication_cp20_factor_pressure/CP20_MANUSCRIPT.tex')
           bib_path = Path('publication_cp20_factor_pressure/CP20_REFERENCES.bib')
-
           tex = tex_path.read_text(encoding='utf-8')
           bib = bib_path.read_text(encoding='utf-8')
 
@@ -46,32 +45,26 @@ jobs:
               tex = tex.replace(old2, new2, 1)
 
           if '@book{DemboZeitouni1998' not in bib:
-              bib += r'''
-
-@book{DemboZeitouni1998,
-  author    = {Amir Dembo and Ofer Zeitouni},
-  title     = {Large Deviations Techniques and Applications},
-  edition   = {2nd},
-  publisher = {Springer},
-  series    = {Stochastic Modelling and Applied Probability},
-  volume    = {38},
-  year      = {1998}
-}
-'''
+              bib += ("\n\n@book{DemboZeitouni1998,\n"
+                      "  author    = {Amir Dembo and Ofer Zeitouni},\n"
+                      "  title     = {Large Deviations Techniques and Applications},\n"
+                      "  edition   = {2nd},\n"
+                      "  publisher = {Springer},\n"
+                      "  series    = {Stochastic Modelling and Applied Probability},\n"
+                      "  volume    = {38},\n"
+                      "  year      = {1998}\n"
+                      "}\n")
 
           if '@article{TakensVerbitskiy2003' not in bib:
-              bib += r'''
-
-@article{TakensVerbitskiy2003,
-  author  = {Floris Takens and Evgeny Verbitskiy},
-  title   = {On the Variational Principle for the Topological Entropy of Certain Non-Compact Sets},
-  journal = {Ergodic Theory and Dynamical Systems},
-  volume  = {23},
-  pages   = {317--348},
-  year    = {2003},
-  doi     = {10.1017/S0143385702000913}
-}
-'''
+              bib += ("\n\n@article{TakensVerbitskiy2003,\n"
+                      "  author  = {Floris Takens and Evgeny Verbitskiy},\n"
+                      "  title   = {On the Variational Principle for the Topological Entropy of Certain Non-Compact Sets},\n"
+                      "  journal = {Ergodic Theory and Dynamical Systems},\n"
+                      "  volume  = {23},\n"
+                      "  pages   = {317--348},\n"
+                      "  year    = {2003},\n"
+                      "  doi     = {10.1017/S0143385702000913}\n"
+                      "}\n")
 
           tex_path.write_text(tex, encoding='utf-8')
           bib_path.write_text(bib, encoding='utf-8')
