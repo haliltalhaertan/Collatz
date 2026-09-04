@@ -1,0 +1,96 @@
+name: E7R literature Stage0 source freeze
+
+on:
+  push:
+    branches:
+      - cp20-e7r-literature-transfer-v1-stage0-20260904
+
+permissions:
+  contents: write
+
+jobs:
+  source-freeze:
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Freeze authoritative literature bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT='research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0'
+          SRC="$ROOT/sources"
+          mkdir -p "$SRC/tao" "$SRC/si_zenodo" "$SRC/si_github"
+
+          curl -fL --retry 4 --retry-delay 2 -A 'Collatz-Stage0/1.0' \
+            'https://arxiv.org/pdf/1909.03562v7' -o "$SRC/tao/tao_1909.03562v7.pdf"
+          curl -fL --retry 4 --retry-delay 2 -A 'Collatz-Stage0/1.0' \
+            'https://export.arxiv.org/e-print/1909.03562v7' -o "$SRC/tao/tao_1909.03562v7_source.tar"
+
+          curl -fL --retry 4 --retry-delay 2 \
+            'https://zenodo.org/records/20027097/files/main.pdf?download=1' -o "$SRC/si_zenodo/main.pdf"
+
+          SI_COMMIT='119199e7165505f9535952e272056af912ce59fb'
+          curl -fL --retry 4 --retry-delay 2 \
+            "https://raw.githubusercontent.com/SamSi0322/collatz-affine-model/$SI_COMMIT/main.tex" -o "$SRC/si_github/main.tex"
+          curl -fL --retry 4 --retry-delay 2 \
+            "https://raw.githubusercontent.com/SamSi0322/collatz-affine-model/$SI_COMMIT/main.pdf" -o "$SRC/si_github/main.pdf"
+
+          pdftotext "$SRC/tao/tao_1909.03562v7.pdf" "$SRC/tao/tao_1909.03562v7.txt"
+          pdftotext "$SRC/si_zenodo/main.pdf" "$SRC/si_zenodo/main.txt"
+          pdftotext "$SRC/si_github/main.pdf" "$SRC/si_github/main.txt"
+
+          grep -q '1909.03562v7' "$SRC/tao/tao_1909.03562v7.txt"
+          test "$(md5sum "$SRC/si_zenodo/main.pdf" | awk '{print $1}')" = 'f59b2b147590fc66d3153d34ad497390'
+
+          python - <<'PY'
+          import hashlib, json, pathlib, subprocess
+          root = pathlib.Path('research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0')
+          src = root/'sources'
+          files = [
+              src/'tao'/'tao_1909.03562v7.pdf',
+              src/'tao'/'tao_1909.03562v7_source.tar',
+              src/'tao'/'tao_1909.03562v7.txt',
+              src/'si_zenodo'/'main.pdf',
+              src/'si_zenodo'/'main.txt',
+              src/'si_github'/'main.tex',
+              src/'si_github'/'main.pdf',
+              src/'si_github'/'main.txt',
+          ]
+          def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+          data = {
+            'schema':'CP20_E7R_LT_STAGE0_SOURCE_FREEZE_V1',
+            'project_base_commit':'b3eaaae80a64003f4ee06a43b65fbd3680b8e22b',
+            'tao': {
+              'arxiv':'1909.03562', 'version':'v7',
+              'pdf_sha256':sha(files[0]), 'source_archive_sha256':sha(files[1]),
+              'pdftotext_sha256':sha(files[2]),
+            },
+            'si_zenodo': {
+              'doi':'10.5281/zenodo.20027097',
+              'pdf_sha256':sha(files[3]), 'pdftotext_sha256':sha(files[4]),
+              'pdf_md5':hashlib.md5(files[3].read_bytes()).hexdigest(),
+            },
+            'si_github': {
+              'repository':'SamSi0322/collatz-affine-model',
+              'commit':'119199e7165505f9535952e272056af912ce59fb',
+              'main_tex_sha256':sha(files[5]), 'main_pdf_sha256':sha(files[6]),
+              'pdftotext_sha256':sha(files[7]),
+            },
+            'si_zenodo_equals_github_pdf': files[3].read_bytes() == files[6].read_bytes(),
+          }
+          (root/'SOURCE_FREEZE_HASHES.json').write_text(json.dumps(data,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+          print(json.dumps(data,indent=2,sort_keys=True))
+          PY
+
+          file "$SRC/tao/tao_1909.03562v7_source.tar" | tee "$ROOT/TAO_SOURCE_ARCHIVE_FILETYPE.txt"
+          sha256sum "$SRC"/tao/* "$SRC"/si_zenodo/* "$SRC"/si_github/* | sort -k2 > "$ROOT/SOURCE_SHA256SUMS.txt"
+          sha256sum -c "$ROOT/SOURCE_SHA256SUMS.txt"
+
+          git config user.name 'Halil Talha Ertan'
+          git config user.email 'haliltalhaertan@mail.com'
+          git add "$ROOT"
+          git commit -m '[skip ci] Freeze Tao v7 and Si 2026 Stage0 source bytes'
+          git push origin HEAD:cp20-e7r-literature-transfer-v1-stage0-20260904
