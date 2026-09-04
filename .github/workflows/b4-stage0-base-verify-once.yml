@@ -11,12 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 57f670bd531cee8f0f2d6eeb27431243f6e3a479
+          ref: main
           fetch-depth: 0
       - name: Verify canonical handoff
         shell: bash
         run: |
           set -euo pipefail
+          test "$(git branch --show-current)" = "main"
           test "$(git rev-parse HEAD)" = "57f670bd531cee8f0f2d6eeb27431243f6e3a479"
           python tools/verify_handoff.py | tee /tmp/handoff.txt
           grep -F "HANDOFF VERIFICATION: PASS" /tmp/handoff.txt
