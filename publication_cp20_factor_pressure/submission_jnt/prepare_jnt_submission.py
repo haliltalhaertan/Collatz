@@ -1,5 +1,6 @@
 from pathlib import Path
 
+# Trigger revision: journal-targeted preparation workflow.
 ROOT = Path(__file__).resolve().parents[1]
 tex_path = ROOT / 'CP20_MANUSCRIPT.tex'
 tex = tex_path.read_text(encoding='utf-8')
