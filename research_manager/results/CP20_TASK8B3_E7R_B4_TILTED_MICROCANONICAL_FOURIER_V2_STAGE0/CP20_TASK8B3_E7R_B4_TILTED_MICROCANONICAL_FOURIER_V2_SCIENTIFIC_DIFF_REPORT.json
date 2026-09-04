@@ -1,0 +1,21 @@
+{
+  "differences": [
+    {"artifact": "DEFINITIONS", "classification": "MECHANICAL_VERSION_RENAME", "normalized_equal": true, "v1_source_sha256": "56c4c916d6bb0811356d25deecaf57cd8ccc615beb6bf607f81f3c8eeb43efbe", "v2_sha256": "b7b3edb06a1a893dd267643a87f2ee59412deee9f445998f9516c39fa65aaf8d"},
+    {"artifact": "T1_T8_PROGRAM", "classification": "MECHANICAL_VERSION_RENAME", "normalized_equal": true, "v1_source_sha256": "52f7e31f244e5138149d8df10724f332bbc7f3ee26da731e0378e2a1e9636375", "v2_sha256": "994c7a4fe1dfb57537f0394ca6168487a2d4ed478e823889cac456b29d249a44"},
+    {"artifact": "FALSIFICATION_PLAN", "classification": "MECHANICAL_VERSION_RENAME", "normalized_equal": true, "v1_source_sha256": "03a3a9a2cfaa098e8c71dc2ffeb2c341b9dd43541510c7d4acacd0c1d3befd2b", "v2_sha256": "50be9ea52d5341e602b6587fc0c9ef34c0216454e4e7b5dacede1e093b8cae0a"},
+    {"artifact": "OUTCOME_LADDER", "classification": "MECHANICAL_VERSION_RENAME", "normalized_equal": true, "v1_source_sha256": "bed3b709d4083541743627bb2d6643581cfb63f9b33d7ed92f517f76780608f5", "v2_sha256": "1f808799589210b0ebd756a8a3d4fde5fb43d7edae1c48a83364c397101efa2a"},
+    {"artifact": "TARGET_NORMAL_FORM", "classification": "MECHANICAL_VERSION_RENAME", "normalized_equal": true, "v1_source_sha256": "0232d0e70e6c790f7f8de76ee361ea0c44ea1ed4bfa36e24f9955b3782f1487f", "v2_sha256": "35cb770958208de0e07de973491db7e28d2b8a18dab62f7763a5347267d3fea7"}
+  ],
+  "invalid_v1_stage1_mathematics_used": false,
+  "mechanical_changes": [
+    {"classification": "CANONICAL_BASE_UPDATE", "description": "stage0_source_base_sha frozen to 8d274095b0e1acbe1fad0a73ef6a5293364902fc"},
+    {"classification": "INTEGRITY_REPAIR", "description": "complete witness schema + separate validator + S1-S12 selftests"},
+    {"classification": "INTEGRITY_REPAIR", "description": "PRE_T1_GATE and static no-bypass control-flow gate"},
+    {"classification": "INTEGRITY_REPAIR", "description": "future authorization-base/seal/contract binding and V1 seal blacklist"}
+  ],
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT_V2",
+  "scientific_change_count": 0,
+  "source_commit": "c83d22f9e3ac8bdc4ec955d14b3d7dca11c3fee1",
+  "stage0_source_base_sha": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+  "verdict": "NO SCIENTIFIC CHANGE"
+}
