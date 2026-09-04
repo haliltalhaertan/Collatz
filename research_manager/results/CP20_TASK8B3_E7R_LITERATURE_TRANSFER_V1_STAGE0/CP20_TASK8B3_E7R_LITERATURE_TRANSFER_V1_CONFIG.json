@@ -1,0 +1,42 @@
+{
+  "accepted_dependencies": [
+    "E6-N1 [PROVED][AUDITED/ACCEPTED WITH SCOPE REPAIR]",
+    "E7R-B1 [PROVED][AUDITED]",
+    "E7R-B2 [PROVED][AUDITED]",
+    "B3-CT [PROVED][AUDITED]"
+  ],
+  "candidate_maps": ["M1","M2","M3","M4","M5","M6","M7","M8"],
+  "closed": ["E7R-B3 full frozen-window pointwise O(1/m_r) contraction"],
+  "falsification_targets": ["F1","F2","F3","F4","F5","F6","F7","F8"],
+  "forbidden_operations": [
+    "new asymptotic sequence evaluation",
+    "decay fitting",
+    "adaptive frequency search",
+    "adaptive endpoint search",
+    "large-r transfer test",
+    "prove/disprove Si theorem",
+    "prove E6-N2",
+    "weighted/operator cancellation",
+    "E8"
+  ],
+  "future_outcomes": ["LT-N1","LT-N2","LT-N3","LT-N4","LT-N5","LT-N6","LT-N7","LT-CT"],
+  "open": ["E7R-B4 / E6-N2","E7R-B5","E7R-B6"],
+  "order_sha256": "004d22da3d279dd27c6f88a08a723956e99b3f9777eb2ecb3784644d42b1ac8f",
+  "project": {
+    "alpha": "log_2(3)",
+    "base_commit": "b3eaaae80a64003f4ee06a43b65fbd3680b8e22b",
+    "beta": "alpha-1",
+    "n_r": "floor(beta*r)-8",
+    "repository": "haliltalhaertan/Collatz",
+    "target": {"C": 4, "d": -8}
+  },
+  "schema": "CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_CONFIG_V1",
+  "sources": {
+    "si_github": {"commit": "119199e7165505f9535952e272056af912ce59fb", "main_pdf_sha256": "0dfad7f22df91c14c36182d7557aee537a462ef0a2a548422c366d21e2bd06c8", "main_tex_sha256": "c1ff1f11f442fed1b2f7a37be61fe0e3c0916719549018557446ca01e81e0811", "repository": "SamSi0322/collatz-affine-model"},
+    "si_zenodo": {"doi": "10.5281/zenodo.20027097", "md5": "f59b2b147590fc66d3153d34ad497390", "pdf_sha256": "0dfad7f22df91c14c36182d7557aee537a462ef0a2a548422c366d21e2bd06c8"},
+    "tao": {"arxiv": "1909.03562", "pdf_sha256": "62cf49d4d8e8e681c7a4738ebaf56f3dbb7b67de95f37ccbac6e428ef3fc394e", "source_archive_sha256": "ba81acd6254838251f1ee585256a6f9f223cdc9c73bed0a3c4fd25782d0124ad", "version": "v7"}
+  },
+  "stage": "STAGE_0_FROZEN_STAGE_1_NOT_AUTHORIZED",
+  "stage1_authorized": false,
+  "stage1_stop_on": ["LT-N6","LT-N7","load-bearing LT-CT"]
+}
