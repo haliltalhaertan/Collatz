@@ -1,21 +1,57 @@
 {
-  "differences": [
-    {"artifact": "DEFINITIONS", "classification": "MECHANICAL_VERSION_RENAME", "normalized_equal": true, "v1_source_sha256": "56c4c916d6bb0811356d25deecaf57cd8ccc615beb6bf607f81f3c8eeb43efbe", "v2_sha256": "b7b3edb06a1a893dd267643a87f2ee59412deee9f445998f9516c39fa65aaf8d"},
-    {"artifact": "T1_T8_PROGRAM", "classification": "MECHANICAL_VERSION_RENAME", "normalized_equal": true, "v1_source_sha256": "52f7e31f244e5138149d8df10724f332bbc7f3ee26da731e0378e2a1e9636375", "v2_sha256": "994c7a4fe1dfb57537f0394ca6168487a2d4ed478e823889cac456b29d249a44"},
-    {"artifact": "FALSIFICATION_PLAN", "classification": "MECHANICAL_VERSION_RENAME", "normalized_equal": true, "v1_source_sha256": "03a3a9a2cfaa098e8c71dc2ffeb2c341b9dd43541510c7d4acacd0c1d3befd2b", "v2_sha256": "50be9ea52d5341e602b6587fc0c9ef34c0216454e4e7b5dacede1e093b8cae0a"},
-    {"artifact": "OUTCOME_LADDER", "classification": "MECHANICAL_VERSION_RENAME", "normalized_equal": true, "v1_source_sha256": "bed3b709d4083541743627bb2d6643581cfb63f9b33d7ed92f517f76780608f5", "v2_sha256": "1f808799589210b0ebd756a8a3d4fde5fb43d7edae1c48a83364c397101efa2a"},
-    {"artifact": "TARGET_NORMAL_FORM", "classification": "MECHANICAL_VERSION_RENAME", "normalized_equal": true, "v1_source_sha256": "0232d0e70e6c790f7f8de76ee361ea0c44ea1ed4bfa36e24f9955b3782f1487f", "v2_sha256": "35cb770958208de0e07de973491db7e28d2b8a18dab62f7763a5347267d3fea7"}
+  "allowed_differences": [
+    "HANDOFF_EVIDENCE_ADDITION",
+    "PRE_RUN_STATUS_FINALIZATION",
+    "MANIFEST_REBUILD",
+    "SEAL_REBUILD",
+    "HASH_UPDATE"
   ],
-  "invalid_v1_stage1_mathematics_used": false,
-  "mechanical_changes": [
-    {"classification": "CANONICAL_BASE_UPDATE", "description": "stage0_source_base_sha frozen to 8d274095b0e1acbe1fad0a73ef6a5293364902fc"},
-    {"classification": "INTEGRITY_REPAIR", "description": "complete witness schema + separate validator + S1-S12 selftests"},
-    {"classification": "INTEGRITY_REPAIR", "description": "PRE_T1_GATE and static no-bypass control-flow gate"},
-    {"classification": "INTEGRITY_REPAIR", "description": "future authorization-base/seal/contract binding and V1 seal blacklist"}
+  "blocked_candidate_seal_sha256": "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
+  "comparisons": [
+    {
+      "byte_identical": true,
+      "candidate_sha256": "b7b3edb06a1a893dd267643a87f2ee59412deee9f445998f9516c39fa65aaf8d",
+      "file": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_DEFINITIONS.md",
+      "final_sha256": "b7b3edb06a1a893dd267643a87f2ee59412deee9f445998f9516c39fa65aaf8d"
+    },
+    {
+      "byte_identical": true,
+      "candidate_sha256": "50be9ea52d5341e602b6587fc0c9ef34c0216454e4e7b5dacede1e093b8cae0a",
+      "file": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FALSIFICATION_PLAN.md",
+      "final_sha256": "50be9ea52d5341e602b6587fc0c9ef34c0216454e4e7b5dacede1e093b8cae0a"
+    },
+    {
+      "byte_identical": true,
+      "candidate_sha256": "275dbe76692a6a3dc4fbaf617f763baeabb0304808b66559a1ab611978ac727f",
+      "file": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_ORDER.md",
+      "final_sha256": "275dbe76692a6a3dc4fbaf617f763baeabb0304808b66559a1ab611978ac727f"
+    },
+    {
+      "byte_identical": true,
+      "candidate_sha256": "1f808799589210b0ebd756a8a3d4fde5fb43d7edae1c48a83364c397101efa2a",
+      "file": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_OUTCOME_LADDER.md",
+      "final_sha256": "1f808799589210b0ebd756a8a3d4fde5fb43d7edae1c48a83364c397101efa2a"
+    },
+    {
+      "byte_identical": true,
+      "candidate_sha256": "994c7a4fe1dfb57537f0394ca6168487a2d4ed478e823889cac456b29d249a44",
+      "file": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_T1_T8_PROGRAM.md",
+      "final_sha256": "994c7a4fe1dfb57537f0394ca6168487a2d4ed478e823889cac456b29d249a44"
+    },
+    {
+      "byte_identical": true,
+      "candidate_sha256": "35cb770958208de0e07de973491db7e28d2b8a18dab62f7763a5347267d3fea7",
+      "file": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_TARGET_NORMAL_FORM.md",
+      "final_sha256": "35cb770958208de0e07de973491db7e28d2b8a18dab62f7763a5347267d3fea7"
+    },
+    {
+      "byte_identical": true,
+      "candidate_sha256": "f6ba52fb3576834748f31d80b61751045a85a8cbb0a900451b63c40591f2c3cf",
+      "file": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
+      "final_sha256": "f6ba52fb3576834748f31d80b61751045a85a8cbb0a900451b63c40591f2c3cf"
+    }
   ],
-  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT_V2",
-  "scientific_change_count": 0,
-  "source_commit": "c83d22f9e3ac8bdc4ec955d14b3d7dca11c3fee1",
-  "stage0_source_base_sha": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+  "forbidden_scientific_change_detected": false,
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_SCIENTIFIC_DIFF_REPORT_V1",
   "verdict": "NO SCIENTIFIC CHANGE"
 }
