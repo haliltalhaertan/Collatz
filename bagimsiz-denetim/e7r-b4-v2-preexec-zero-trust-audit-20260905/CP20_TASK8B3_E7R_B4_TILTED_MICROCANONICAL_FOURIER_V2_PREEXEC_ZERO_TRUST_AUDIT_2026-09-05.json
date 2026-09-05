@@ -39,5 +39,13 @@
     "B4-CT": "NOT ESTABLISHED",
     "E6-N2": "[OPEN]"
   },
-  "audit_report_sha256": "2824d0b242f1aadc0868fc038eb4ced38b3e77ada6bb2ba6d63b58720f6f98aa"
+  "audit_report_sha256": "81f8908bc15b2b03c9db4f214831b7c73a1116a3b6d50e003597a3e0575ad0c7",
+  "mechanical_root_cause": {
+    "frozen_dependency_path": "CURRENT_RESEARCH_STATE.json",
+    "sealed_expected_blob": "3ba90bbf9e91ddc600235a38a800db90b03a07e0",
+    "expected_blob_source_commit": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
+    "phase_a_actual_blob": "aa8daf546826853b720356ff96530f0b78ec197d",
+    "phase_a_commit": "34ac0dbeb8c0ae2fddab706680f1682412b00786",
+    "classification": "integrity-contract/configuration defect; no scientific change"
+  }
 }
