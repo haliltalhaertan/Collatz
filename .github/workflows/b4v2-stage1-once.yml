@@ -37,23 +37,30 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          EXPECTED_00=d1930c60b44ffe4964fa4f09fe00505fb46ddab9d5e0254b89eaf08406ebbfc7
-          EXPECTED_01=1905ed388e1d9b7e655e3c0ca7def20072675c9e5dc2c8b74965e9bb7550fc70
-          EXPECTED_02=ed1b828547568a58bdd36654c1f5ea11219a318cb98dc29e2280913597f60597
-          EXPECTED_03=0e8ae0517a0c5d0f013eda3705aa77f967ae423b2e996fc08d7afdbff62742b9
-          EXPECTED_04=4879e0306687130c9c290bf31d75559619e86466029c02dc5b30c554106f3c15
-          EXPECTED_05=64dea11ddd5972e57db62b9965bb210f72fcb9381adf6986349cea1f65140db1
-          EXPECTED_06=20dc2f92995a7115b15f11660245e8240099986a0dc7ad50cccd186eaa0d695d
-          EXPECTED_07=2a23c5040fa9bb92f2b00299c0d1b8510c546c7988b970ab303f8313f95fad4c
-          for i in 00 01 02 03 04 05 06 07; do
-            var="EXPECTED_${i}"
-            expected="${!var}"
-            got="$(tr -d '\r\n\t ' < ".stage1_b4v2/seal.part${i}" | sha256sum | awk '{print $1}')"
-            bytes="$(tr -d '\r\n\t ' < ".stage1_b4v2/seal.part${i}" | wc -c)"
-            echo "part${i} norm_bytes=${bytes} sha256=${got}"
+          check_part() {
+            local f="$1" expected="$2"
+            local got bytes
+            got="$(tr -d '\r\n\t ' < "$f" | sha256sum | awk '{print $1}')"
+            bytes="$(tr -d '\r\n\t ' < "$f" | wc -c)"
+            echo "$(basename "$f") norm_bytes=${bytes} sha256=${got}"
             test "$got" = "$expected"
-          done
-          cat .stage1_b4v2/seal.part* | tr -d '\r\n\t ' | base64 -d > /tmp/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.zip
+          }
+          check_part .stage1_b4v2/seal.part00 d1930c60b44ffe4964fa4f09fe00505fb46ddab9d5e0254b89eaf08406ebbfc7
+          check_part .stage1_b4v2/seal.part01 1905ed388e1d9b7e655e3c0ca7def20072675c9e5dc2c8b74965e9bb7550fc70
+          check_part .stage1_b4v2/seal.part02 ed1b828547568a58bdd36654c1f5ea11219a318cb98dc29e2280913597f60597
+          check_part .stage1_b4v2/seal.part03 0e8ae0517a0c5d0f013eda3705aa77f967ae423b2e996fc08d7afdbff62742b9
+          check_part .stage1_b4v2/seal.part04a 4be8a16f7ce30fc45ccc77b22b01d867df1b0bd729cf61931187c41d0e7e8ebb
+          check_part .stage1_b4v2/seal.part04b e9a9c6e79c0ecc061fa0d6da4ebad0f7cdbd722665cbef0a30d4b7ef4244b377
+          check_part .stage1_b4v2/seal.part04c 6f8e33b6688221e1a2fe5eec0e147656d3b33be34762b0f4de8d90309275c741
+          check_part .stage1_b4v2/seal.part04d 1cdb867226b4bb84239d9d0836fd4e215e378c44244c63086dc9ed0a98b7aaf6
+          check_part .stage1_b4v2/seal.part05 64dea11ddd5972e57db62b9965bb210f72fcb9381adf6986349cea1f65140db1
+          check_part .stage1_b4v2/seal.part06 20dc2f92995a7115b15f11660245e8240099986a0dc7ad50cccd186eaa0d695d
+          check_part .stage1_b4v2/seal.part07 2a23c5040fa9bb92f2b00299c0d1b8510c546c7988b970ab303f8313f95fad4c
+          cat \
+            .stage1_b4v2/seal.part00 .stage1_b4v2/seal.part01 .stage1_b4v2/seal.part02 .stage1_b4v2/seal.part03 \
+            .stage1_b4v2/seal.part04a .stage1_b4v2/seal.part04b .stage1_b4v2/seal.part04c .stage1_b4v2/seal.part04d \
+            .stage1_b4v2/seal.part05 .stage1_b4v2/seal.part06 .stage1_b4v2/seal.part07 \
+            | tr -d '\r\n\t ' | base64 -d > /tmp/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.zip
           ACTUAL="$(sha256sum /tmp/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.zip | awk '{print $1}')"
           echo "$ACTUAL" | tee /tmp/b4v2_seal_sha.txt
           test "$ACTUAL" = "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e"
