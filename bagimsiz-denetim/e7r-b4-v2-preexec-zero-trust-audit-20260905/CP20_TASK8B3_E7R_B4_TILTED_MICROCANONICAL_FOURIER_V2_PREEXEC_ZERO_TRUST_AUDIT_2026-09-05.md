@@ -22,6 +22,12 @@ The persisted failure record at commit `04a66e41864d1d530ead63b1faeaf122048e3069
 
 The sealed execution contract states that the actual V2 Stage-1 entrypoint may be invoked once only and that a failed real invocation consumes that authorization. Therefore the authorization created at Phase B is no longer available for any future invocation, even though no mathematics began.
 
+## Mechanical root cause
+
+The failure was not a random runner problem. The sealed config freezes `CURRENT_RESEARCH_STATE.json` inside `frozen_dependencies` to Git blob `3ba90bbf9e91ddc600235a38a800db90b03a07e0`, which is the blob at historical source base `8d274095b0e1acbe1fad0a73ef6a5293364902fc`. The launcher then checks every frozen dependency **at the Phase-A commit**. But Phase A `34ac0dbeb8c0ae2fddab706680f1682412b00786` necessarily changed `CURRENT_RESEARCH_STATE.json`; its actual Phase-A blob is `aa8daf546826853b720356ff96530f0b78ec197d`. Therefore the sealed launcher was structurally destined to reject the authorized Phase-A state at this check.
+
+This is an integrity-contract/configuration defect, not a mathematical finding. A future repair must not merely re-authorize the same tuple: it must repair the frozen-dependency semantics (or bind the state file to the correct Phase-A object in a non-self-contradictory way), reseal, canonicalize, and only then issue a new once-only authorization.
+
 ## Requirement-by-requirement adjudication
 
 1. PASS — current canonical `main` is `1a6f924fd86352c11f57a95b0382adaf92d15bcd`.
