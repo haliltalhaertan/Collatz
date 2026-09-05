@@ -25,46 +25,22 @@ jobs:
           set -euo pipefail
           RESULT_BRANCH="${GITHUB_REF_NAME}"
           git fetch origin main
-          MAIN_SHA="$(git rev-parse origin/main)"
-          test "$MAIN_SHA" = "1a6f924fd86352c11f57a95b0382adaf92d15bcd"
+          test "$(git rev-parse origin/main)" = "1a6f924fd86352c11f57a95b0382adaf92d15bcd"
           git switch -C main origin/main
           python tools/verify_handoff.py | tee /tmp/b4v2_handoff.txt
           grep -F "HANDOFF VERIFICATION: PASS" /tmp/b4v2_handoff.txt
           test "$(git rev-parse HEAD)" = "1a6f924fd86352c11f57a95b0382adaf92d15bcd"
           git switch "$RESULT_BRANCH"
 
-      - name: Reconstruct and verify exact authorized seal
+      - name: Retrieve exact authorized seal directly from Drive
         shell: bash
         run: |
           set -euo pipefail
-          check_part() {
-            local f="$1" expected="$2"
-            local got bytes
-            got="$(tr -d '\r\n\t ' < "$f" | sha256sum | awk '{print $1}')"
-            bytes="$(tr -d '\r\n\t ' < "$f" | wc -c)"
-            echo "$(basename "$f") norm_bytes=${bytes} sha256=${got}"
-            test "$got" = "$expected"
-          }
-          check_part .stage1_b4v2/seal.part00 d1930c60b44ffe4964fa4f09fe00505fb46ddab9d5e0254b89eaf08406ebbfc7
-          check_part .stage1_b4v2/seal.part01 1905ed388e1d9b7e655e3c0ca7def20072675c9e5dc2c8b74965e9bb7550fc70
-          check_part .stage1_b4v2/seal.part02 ed1b828547568a58bdd36654c1f5ea11219a318cb98dc29e2280913597f60597
-          check_part .stage1_b4v2/seal.part03 0e8ae0517a0c5d0f013eda3705aa77f967ae423b2e996fc08d7afdbff62742b9
-          check_part .stage1_b4v2/seal.part04a 4be8a16f7ce30fc45ccc77b22b01d867df1b0bd729cf61931187c41d0e7e8ebb
-          check_part .stage1_b4v2/seal.part04b0 b3bb164ffd50ac78da68f05ce5f7204a03f03239e6f3165a31c804f30f90f05e
-          check_part .stage1_b4v2/seal.part04b1 b17b817596a955dadc4206cf6789313fc83d5c8edb1d69bcc415d551d6f670be
-          check_part .stage1_b4v2/seal.part04b2 9399cf61b6cded72d24fb24779f61b68cea571e872d9e1a08e78bb700a78c6a2
-          check_part .stage1_b4v2/seal.part04b3 e52cd55c02dcedbe1f21b21e1a41677a0dfa2ffa0c7174cd0ac3657120310d5d
-          check_part .stage1_b4v2/seal.part04c 6f8e33b6688221e1a2fe5eec0e147656d3b33be34762b0f4de8d90309275c741
-          check_part .stage1_b4v2/seal.part04d 1cdb867226b4bb84239d9d0836fd4e215e378c44244c63086dc9ed0a98b7aaf6
-          check_part .stage1_b4v2/seal.part05 64dea11ddd5972e57db62b9965bb210f72fcb9381adf6986349cea1f65140db1
-          check_part .stage1_b4v2/seal.part06 20dc2f92995a7115b15f11660245e8240099986a0dc7ad50cccd186eaa0d695d
-          check_part .stage1_b4v2/seal.part07 2a23c5040fa9bb92f2b00299c0d1b8510c546c7988b970ab303f8313f95fad4c
-          cat \
-            .stage1_b4v2/seal.part00 .stage1_b4v2/seal.part01 .stage1_b4v2/seal.part02 .stage1_b4v2/seal.part03 \
-            .stage1_b4v2/seal.part04a .stage1_b4v2/seal.part04b0 .stage1_b4v2/seal.part04b1 .stage1_b4v2/seal.part04b2 .stage1_b4v2/seal.part04b3 .stage1_b4v2/seal.part04c .stage1_b4v2/seal.part04d \
-            .stage1_b4v2/seal.part05 .stage1_b4v2/seal.part06 .stage1_b4v2/seal.part07 \
-            | tr -d '\r\n\t ' | base64 -d > /tmp/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.zip
-          ACTUAL="$(sha256sum /tmp/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.zip | awk '{print $1}')"
+          OUT=/tmp/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.zip
+          curl --fail --location --retry 2 --retry-delay 1 \
+            'https://drive.usercontent.google.com/download?id=1hWN1mdJdx78jnsOlD2ZXF8htkf9e8QGL&export=download&confirm=t' \
+            --output "$OUT"
+          ACTUAL="$(sha256sum "$OUT" | awk '{print $1}')"
           echo "$ACTUAL" | tee /tmp/b4v2_seal_sha.txt
           test "$ACTUAL" = "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e"
           python - <<'PY'
@@ -97,7 +73,6 @@ jobs:
           echo "OUTPUT ABSENCE PRECHECK: PASS"
 
       - name: Single real Stage1 integrity invocation
-        id: invoke
         shell: bash
         run: |
           set -euo pipefail
@@ -140,14 +115,14 @@ jobs:
         run: |
           set -euo pipefail
           if [ ! -e /tmp/b4v2_launcher_invoked ]; then
-            echo "Launcher was not invoked; leaving authorization unconsumed and prep state intact."
+            echo "Launcher was not invoked; authorization remains unconsumed."
             exit 0
           fi
           D="research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0"
           git config user.name "B4 V2 Stage1 Producer"
           git config user.email "actions@users.noreply.github.com"
           git add "$D"
-          git rm -r .stage1_b4v2
+          git rm -r .stage1_b4v2 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No invocation evidence to persist" >&2
             exit 92
