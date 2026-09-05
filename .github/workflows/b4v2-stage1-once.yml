@@ -1,0 +1,130 @@
+name: B4 V2 Stage1 Integrity Once
+
+on:
+  push:
+    branches:
+      - cp20-e7r-b4-v2-stage1-20260905
+    paths:
+      - .github/workflows/b4v2-stage1-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  stage1-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify canonical handoff on exact main
+        shell: bash
+        run: |
+          set -euo pipefail
+          RESULT_BRANCH="${GITHUB_REF_NAME}"
+          git fetch origin main
+          MAIN_SHA="$(git rev-parse origin/main)"
+          test "$MAIN_SHA" = "1a6f924fd86352c11f57a95b0382adaf92d15bcd"
+          git switch -C main origin/main
+          python tools/verify_handoff.py | tee /tmp/b4v2_handoff.txt
+          grep -F "HANDOFF VERIFICATION: PASS" /tmp/b4v2_handoff.txt
+          test "$(git rev-parse HEAD)" = "1a6f924fd86352c11f57a95b0382adaf92d15bcd"
+          git switch "$RESULT_BRANCH"
+
+      - name: Reconstruct and verify exact authorized seal
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .stage1_b4v2/seal.part* | tr -d '\r\n\t ' | base64 -d > /tmp/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.zip
+          ACTUAL="$(sha256sum /tmp/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.zip | awk '{print $1}')"
+          echo "$ACTUAL" | tee /tmp/b4v2_seal_sha.txt
+          test "$ACTUAL" = "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e"
+          python - <<'PY'
+          import zipfile
+          p='/tmp/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.zip'
+          with zipfile.ZipFile(p) as z:
+              assert z.testzip() is None
+              names=[i.filename for i in z.infolist()]
+              assert names == sorted(names)
+              assert len(names) == len(set(names))
+          print('SEAL ZIP MECHANICS: PASS')
+          PY
+
+      - name: Pre-invocation output absence guard
+        shell: bash
+        run: |
+          set -euo pipefail
+          D="research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0"
+          for f in \
+            "$D/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS.json" \
+            "$D/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE.json" \
+            "$D/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_LEDGER.jsonl" \
+            "$D/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json" \
+            "$D/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RESULTS.json"; do
+            if [ -e "$f" ]; then
+              echo "REFUSING REAL INVOCATION: pre-existing Stage1 output: $f" >&2
+              exit 91
+            fi
+          done
+          echo "OUTPUT ABSENCE PRECHECK: PASS"
+
+      - name: Single real Stage1 integrity invocation
+        id: invoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          D="research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0"
+          touch /tmp/b4v2_launcher_invoked
+          python \
+            "$D/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py" \
+            --config "$D/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CONFIG.json" \
+            --seal /tmp/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.zip \
+            --canonical-stage0-base-sha 34ac0dbeb8c0ae2fddab706680f1682412b00786 \
+            --authorization-commit-sha f8d778a2113922e3bbb14c86ee2fa5359cee28ea \
+            --authorized-seal-sha256 11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e \
+            --contract-sha256 7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403 \
+            --output "$D/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RESULTS.json" \
+            2>&1 | tee "$D/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt"
+          grep -F "B4 V2 STAGE1 PRE-T1 INTEGRITY GATE: PASS" "$D/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt"
+
+      - name: Collect invocation evidence
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/b4v2_evidence
+          cp /tmp/b4v2_handoff.txt /tmp/b4v2_evidence/ 2>/dev/null || true
+          cp /tmp/b4v2_seal_sha.txt /tmp/b4v2_evidence/ 2>/dev/null || true
+          D="research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0"
+          find "$D" -maxdepth 1 -type f -name '*STAGE1*' -exec cp {} /tmp/b4v2_evidence/ \; 2>/dev/null || true
+
+      - name: Upload invocation evidence artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b4-v2-stage1-integrity-evidence
+          path: /tmp/b4v2_evidence
+          if-no-files-found: warn
+
+      - name: Persist invocation evidence to result branch
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -e /tmp/b4v2_launcher_invoked ]; then
+            echo "Launcher was not invoked; leaving authorization unconsumed and prep state intact."
+            exit 0
+          fi
+          D="research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0"
+          git config user.name "B4 V2 Stage1 Producer"
+          git config user.email "actions@users.noreply.github.com"
+          git add "$D"
+          git rm -r .stage1_b4v2
+          if git diff --cached --quiet; then
+            echo "No invocation evidence to persist" >&2
+            exit 92
+          fi
+          git commit -m "Record B4 V2 Stage1 integrity invocation evidence"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
