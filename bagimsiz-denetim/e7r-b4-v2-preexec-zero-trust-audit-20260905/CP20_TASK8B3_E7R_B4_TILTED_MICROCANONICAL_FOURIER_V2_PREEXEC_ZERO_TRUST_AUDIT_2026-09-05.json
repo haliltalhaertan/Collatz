@@ -1,0 +1,43 @@
+{
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_V1",
+  "audit_date": "2026-09-05",
+  "primary_verdict": "[AUDIT FAIL — DO NOT EXECUTE B4 V2 STAGE1]",
+  "canonical_main": "1a6f924fd86352c11f57a95b0382adaf92d15bcd",
+  "phase_a": "34ac0dbeb8c0ae2fddab706680f1682412b00786",
+  "phase_b": "f8d778a2113922e3bbb14c86ee2fa5359cee28ea",
+  "authorized_seal_sha256": "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e",
+  "contract_sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403",
+  "config_sha256": "2fbc7bd09ab2cae89095b537342cf63c85f53f821d4ddf21c7860a2ec53b1f4b",
+  "launcher_sha256": "9222d0e0a8079e3560bc880520dd5ead44869f5fd4fa541520e225c841b8a732",
+  "manifest_sha256": "7f48807db5733c85759324d4f94e357aa6941de0ecd911b4180f5bc2101d6dcb",
+  "drive_seal_file_id": "1hWN1mdJdx78jnsOlD2ZXF8htkf9e8QGL",
+  "drive_stage0_folder_id": "1SFvk3A5fSzB4adPFIMxudgMdbooXVi3q",
+  "stage1_invocation": {
+    "branch": "cp20-e7r-b4-v2-stage1-20260905",
+    "evidence_commit": "04a66e41864d1d530ead63b1faeaf122048e3069",
+    "timestamp": "2026-09-05T07:17:52.681686+00:00",
+    "status": "[B4 V2 STAGE1 INPUT INTEGRITY FAILURE]",
+    "reason": "frozen dependency blob mismatch at Phase A: CURRENT_RESEARCH_STATE.json",
+    "authorization_consumed": true,
+    "T1_T8": "NOT_EXECUTED"
+  },
+  "stage1_trace": {
+    "real_entrypoint_invoked": true,
+    "run_witness": false,
+    "pre_t1_gate": false,
+    "t1_start": false,
+    "mathematics_executed": false
+  },
+  "scientific_state": {
+    "B4-N1": "NOT ESTABLISHED",
+    "B4-N2": "NOT ESTABLISHED",
+    "B4-N3": "NOT ESTABLISHED",
+    "B4-N4": "NOT ESTABLISHED",
+    "B4-N5": "NOT ESTABLISHED",
+    "B4-N6": "NOT ESTABLISHED",
+    "B4-N7": "NOT ESTABLISHED",
+    "B4-CT": "NOT ESTABLISHED",
+    "E6-N2": "[OPEN]"
+  },
+  "audit_report_sha256": "2824d0b242f1aadc0868fc038eb4ced38b3e77ada6bb2ba6d63b58720f6f98aa"
+}
