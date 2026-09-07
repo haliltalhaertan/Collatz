@@ -33,14 +33,17 @@ Status: synchronized exploratory preservation; not canonical B4 acceptance, not 
 11. The repaired sufficient target is only logarithmic white occupation: at least `A log m` regular pair entries with `dist(2^(x_j-beta),Z)>=eta`, except on an `O(1/m)` event, restricted to the actual coupled accessible central arrays and with parity/overshoot seams handled exactly.
 12. The small-`b` continuation passed independent audit: if `z` and its next `L` states remain eta-close to integers while all intervening pair totals satisfy `b<=B`, then the initial nearest positive integer is divisible by `9^L`. On actual ternary starts this implies `dist(2^E/3^(D+2L),Z)<eta/9^L`. At the original boundary start even one bounded-symbol black-to-black transition is impossible.
 13. A separate exact generating-function/Stirling argument proves that, below the explicit logarithmic-length threshold, polynomially many disjoint blocks with every symbol in `{1,...,B}` occur in every long actual central suffix with superpolynomially high probability. Symbolic scarcity is therefore closed; conditioned arithmetic resonance and low-state occupation are the remaining obstacles.
+14. Low-state hit rarity is refuted: at a fixed bulk pair time its conditional probability tends to one half, and a fixed zero-prefix enters the low region with positive probability. Low steps also carry no uniform contraction.
+15. The exact positive-resonance event has been reduced to a finite endpoint-conditioned coefficient sum, but per-start atom bounds plus a union bound are incompatible with the useful-word abundance regime. A global block-occupation estimate is required.
+16. Memoryless overshoot and parity are closed, logarithmically huge pair totals are negligible, and every fixed finite suffix range is `O(1/m)`. In contrast, the whole range `R<delta*m` gives only `O(m^(-1/2))` by positive bounds and remains load-bearing.
 
 ## Exactly one next scientific action
 
-Prove or refute the repaired first-passage-conditioned arithmetic estimate on the actual admissible triangular arrays, using the now-audited small-`b` lemma and proved symbolic-block supply:
+Prove or refute the actual-array multiscale marked occupation estimate, at the intrinsic suffix scale `R`, using the audited small-`b` lemma and proved symbolic-block supply:
 
-`P(W_eta^reg < A log m | endpoint and exact first-passage data) <= C/m`.
+`E[exp(-lambda sum_q 1_(C_q)) | S_R=K, exact first-passage data] <= C/R`.
 
-Overshoot and odd leftovers must be summed with exact weights or split into a central window and a controlled tail; they are not arbitrary uniform parameters. The proved hazard/supermartingale reduction then yields the needed white-block exponential moment and would imply the target crossing estimate
+Here `C_q` is a preregistered bounded-positive block that is neither low at entry nor positively amplified-resonant. The estimate must be uniform over every sufficiently large accessible suffix length `R`, not merely `R>=delta*m`; finite `R` is already controlled. The proved contraction and first-passage convolution would then imply the target crossing estimate
 
 `|E_a[product_(t=0)^(m-1) q(X_t); tau_0<=m | X_m=b_r]| <= C/m`
 
