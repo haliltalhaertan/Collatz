@@ -1,0 +1,81 @@
+{
+  "schema": "CP20_XUB_LLMLAB_REAL_PILOT_RESULT_V1",
+  "classification": "NON_CANONICAL_ADVISORY_PARTIAL_NO_SCIENTIFIC_RESULT",
+  "created_at": "2026-09-07T18:10:44+03:00",
+  "parent_state_commit": "b7c77d39ea76e7f74d2666bf2f072fd19fed622d",
+  "task_id": "cp20-xub-marked-occupation-advisory-v1",
+  "project_id": "cp20-xub-llmlab-pilot-20260907",
+  "run_id": "directed-91ab0e82dfc64e4bbc19240f311089b2",
+  "contract_sha256": "b15b3c934c27677789a238d58cab9f4dfd713ad333aa4531e61cf2cbe68e0668",
+  "package": {
+    "path": "CP20_XUB_LLMLAB_REAL_PILOT_V1_COMPLETE_PACKAGE.zip",
+    "sha256": "0835c5365b1ff2a32dc4b75d2d76c89c613f361be51b6f870f06898aecc2d052",
+    "bytes": 142991,
+    "members": 34,
+    "builtin_verifier": "PASS",
+    "independent_sha256": "PASS",
+    "zip_crc": "PASS"
+  },
+  "gate": {
+    "validation": "PASS",
+    "input_hashes": "4/4 PASS",
+    "dag": "PASS",
+    "preflight": "FEASIBLE_WITH_LIMITATIONS",
+    "preexecution_model_calls": 0
+  },
+  "limits": {
+    "max_total_llm_calls": 3,
+    "max_total_cost_usd": 0.75,
+    "max_wall_seconds": 900,
+    "max_parallel_workers": 2,
+    "max_retries_per_call": 0
+  },
+  "run_status": "PARTIAL",
+  "lanes": {
+    "sol-proof-builder": {
+      "model": "openai/gpt-5.6-sol",
+      "status": "PARTIAL",
+      "prompt_tokens": 4535,
+      "completion_tokens": 5000,
+      "reasoning_tokens": 5000,
+      "recorded_cost_usd": 0.061336,
+      "public_findings": false,
+      "first_missing_step": "Provider response truncated or incomplete"
+    },
+    "qwen-independent-refuter": {
+      "model": "qwen/qwen3.8-max-0902",
+      "status": "TIMEOUT",
+      "wall_seconds": 300.02835499998764,
+      "recorded_usage_available": false,
+      "reserved_cost_ceiling_usd": 0.063562,
+      "public_findings": false,
+      "first_missing_step": "Lane wall-time ceiling"
+    },
+    "grok-adversarial-auditor": {
+      "model": "x-ai/grok-4.6",
+      "status": "BLOCKED_DEPENDENCY",
+      "calls": 0,
+      "recorded_cost_usd": 0,
+      "public_findings": false
+    }
+  },
+  "cost": {
+    "locally_recorded_usd": 0.061336,
+    "defensible_lower_bound_usd": 0.061336,
+    "defensible_upper_bound_usd": 0.124898,
+    "exact_total_known": false,
+    "reason": "Qwen timed out before final provider usage telemetry"
+  },
+  "infrastructure_finding": {
+    "status": "DEFECT",
+    "statement": "provider_cost_complete remains true when a timed-out provider call exits before DirectedBudget.record() receives usage"
+  },
+  "scientific_claims": {
+    "XUB-MARKED-OCC": "OPEN",
+    "XUB": "OPEN",
+    "E6-N2_B4": "OPEN",
+    "Collatz": "NOT_PROVED"
+  },
+  "sealed_b4_execution_performed": false,
+  "canonical_claim_changed": false
+}
