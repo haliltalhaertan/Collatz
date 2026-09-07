@@ -1,0 +1,3 @@
+# V2 narrow test repair
+
+Manager authorized a separate V2 after V1 demonstrated a test defect. V1 source, plan, provenance, and results are retained byte-identical. V2 changes only the erroneous phase-concatenation tail denominator from 16*3^(r-3) to 16*3^r and the destination from RESULTS.json to RESULTS_V2.json. Cases and all other checks are unchanged. This is an acknowledged post-output harness correction, not an original predeclared passing run. V2 is executed once after separately printing source/plan hashes. The original plan remains the fixed case contract. No literal row-product check or other extra case is added.

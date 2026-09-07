@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact Fraction and integers",
+  "range": {"r": [5, 8], "n": [0, 4]},
+  "counts": {
+    "row_identity": 1161,
+    "four_prefix_identity": 1161,
+    "prefix_mass": 20,
+    "prefix_tail_union": 60
+  },
+  "provenance": "Transcribed from the one successful tool execution of independent_row_checks.py; not a redirected byte-for-byte stdout file. Source written and executed before opening the producer derivation or checker source/results. No imports from other agents."
+}
