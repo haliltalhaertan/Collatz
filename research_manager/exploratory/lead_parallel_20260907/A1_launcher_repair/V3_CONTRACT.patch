@@ -1,0 +1,37 @@
+diff --git a/research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md b/research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md
+--- a/research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md
++++ b/research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md
+@@ -13,6 +13,7 @@
+ - `v2_contract_sha256`
+ - `canonical_stage0_base_sha`
+ - `stage = STAGE_1_AUTHORIZED_NOT_EXECUTED`
++- `phase_a_governance_blobs`: an object mapping each Phase-A-bound governance file named by the Stage-0 config (`CURRENT_RESEARCH_STATE.json`, `START_HERE_CURRENT_HANDOFF.md`) to its exact Git blob SHA-1 at `canonical_stage0_base_sha`. These blobs are recorded by the Phase-B integrator after Phase-A read-back; they cannot be known at seal time because Phase A rewrites those files.
+ 
+ The authorization JSON MUST NOT be required to contain `authorization_commit_sha` and MUST NOT be required to equal the SHA of the commit that contains it. `authorization_commit_sha` is supplied to the computation only after Phase B exists.
+ 
+@@ -37,9 +38,14 @@
+ 8. that JSON names the exact `canonical_stage0_base_sha`;
+ 9. that JSON stage is `STAGE_1_AUTHORIZED_NOT_EXECUTED`;
+ 10. `CURRENT_RESEARCH_STATE.json` at `authorization_commit_sha` contains an `active_task` object whose authoritative `active_task.stage` equals `STAGE_1_AUTHORIZED_NOT_EXECUTED`; any optional legacy stage alias, if present, must agree with `active_task.stage` and may never override it;
+-11. the canonical Stage-0 load-bearing artifacts and contract at `canonical_stage0_base_sha` match the exact sealed Git blob IDs and SHA-256 hashes recorded by the Stage-0 config.
++11. the canonical Stage-0 load-bearing artifacts and contract at `canonical_stage0_base_sha` match the exact sealed Git blob IDs and SHA-256 hashes recorded by the Stage-0 config;
++12. every `frozen_dependencies` entry of the Stage-0 config (immutable scientific/closeout inputs only) is present unchanged at `canonical_stage0_base_sha`, and no `frozen_dependencies` entry names a Phase-A-bound governance file;
++13. every Phase-A-bound governance file named by the Stage-0 config (`phase_a_bound_governance_files`) has, at `canonical_stage0_base_sha`, exactly the Git blob SHA-1 recorded under `phase_a_governance_blobs` in the Phase-B authorization JSON.
+ 
+ No authorization JSON field is required to equal the commit SHA that contains the JSON.
++
++## Frozen dependency semantics
++`frozen_dependencies` in the Stage-0 config binds immutable inputs (the canonical V1 Stage-0 scientific program files and the V1 closeout decision) by content-addressed Git blob, checked at `canonical_stage0_base_sha`. Live governance files that the Phase-A or Phase-B integrator rewrites (`CURRENT_RESEARCH_STATE.json`, `START_HERE_CURRENT_HANDOFF.md`) MUST NOT appear in `frozen_dependencies`: their Phase-A blob does not exist at seal time, so a seal-time blob for them is structurally guaranteed to mismatch at Phase A (the V2 defect of 2026-09-05). They are bound instead by `phase_a_governance_blobs` in the Phase-B authorization JSON.
+ 
+ 
+ ## Authoritative canonical state path
+@@ -95,7 +101,8 @@
+ - consumed V1 seal `ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c`;
+ - V2 candidate `2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea`;
+ - V2 candidate `66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac` with authorization-base self-reference defect.
+-- V2 candidate `06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f` with canonical-state-path mismatch.
++- V2 candidate `06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f` with canonical-state-path mismatch;
++- consumed V2 seal `11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e` (once-only authorization consumed on 2026-09-05 by a real invocation that failed at the frozen-dependency check before any mathematics; frozen-dependency semantics defect).
+ 
+ ## One-run discipline
+ The actual V2 Stage-1 entrypoint may be invoked once only under a future explicit manager authorization. A failed real invocation consumes that authorization. Synthetic integrity tests do not invoke the actual Stage-1 entrypoint and execute no mathematics.

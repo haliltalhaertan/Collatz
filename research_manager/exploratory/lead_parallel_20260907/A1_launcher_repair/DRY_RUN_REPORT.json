@@ -1,0 +1,227 @@
+{
+  "T1_T8_executed": false,
+  "authorization_granted_by_this_run": false,
+  "cases": {
+    "G1": {
+      "build": {
+        "canonical_artifact_entries_recomputed_differently_from_patch": [],
+        "config_sha256": "27e2e0a9a314403d9132c60241dce22e1d40c2182687a14a99af172a4b8df772",
+        "contract_sha256": "0380a742cc7bcfc3f5036eabe191722bfc8da4bc2a656e5628e8baf4219c9b6b",
+        "handoff_blob_at_phase_a": "2c74b2201b14b483a528fd22b9ae6de817d884a7",
+        "phase_a": "a8188b0e0e4cf651bc55f01ed78e65291e9c8b40",
+        "seal": "C:\\Users\\MDP\\AppData\\Local\\Temp\\claude\\b4v3\\seal_G1.zip",
+        "seal_sha256": "b2c1b5da72fbfb70937a4a1ea4f90e46cfb6c8d574066607065b5ad4290903cf",
+        "state_blob_at_phase_a": "9404ce9200ab92e33bb1791e72d2daf7067ad585",
+        "static_control_flow_on_patched_launcher": "PASS",
+        "synthetic_seal_members_not_in_repo_tree": [
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_DEFINITIONS.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FALSIFICATION_PLAN.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_ORDER.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_OUTCOME_LADDER.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_T1_T8_PROGRAM.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_TARGET_NORMAL_FORM.md"
+        ],
+        "v2_frozen_state_blob_would_match_at_phase_a": false
+      },
+      "expected": "PASS",
+      "observed": "PASS",
+      "phase_a": "a8188b0e0e4cf651bc55f01ed78e65291e9c8b40",
+      "phase_b": "c385b7dcfdde472a66a4bbf05dd9fa9098ab8ac6",
+      "run": {
+        "exit_code": 0,
+        "failure_record": null,
+        "gate_written": true,
+        "ledger_events": [
+          "PRE_T1_GATE"
+        ],
+        "output_T1_T8": {
+          "T1": "NOT_EXECUTED",
+          "T2": "NOT_EXECUTED",
+          "T3": "NOT_EXECUTED",
+          "T4": "NOT_EXECUTED",
+          "T5": "NOT_EXECUTED",
+          "T6": "NOT_EXECUTED",
+          "T7": "NOT_EXECUTED",
+          "T8": "NOT_EXECUTED"
+        },
+        "stderr_tail": "",
+        "stdout": "B4 V2 STAGE1 PRE-T1 INTEGRITY GATE: PASS\nT1–T8 NOT EXECUTED by integrity launcher.",
+        "t1_start_emitted": false,
+        "witness_written": true
+      }
+    },
+    "G2": {
+      "expected": "FAIL",
+      "expected_reason": "Phase-A governance blob mismatch: CURRENT_RESEARCH_STATE.json",
+      "matches_expectation": true,
+      "observed": "FAIL",
+      "phase_a": "650ef8ca57c11826a9419e0de33b326dd50081c2",
+      "phase_b": "a6505fc36bbc76697ea42a0e8d2e87316002a917",
+      "run": {
+        "exit_code": 1,
+        "failure_record": {
+          "T1_T8": "NOT_EXECUTED",
+          "authorization_consumed": true,
+          "reason": "Phase-A governance blob mismatch: CURRENT_RESEARCH_STATE.json",
+          "status": "[B4 V2 STAGE1 INPUT INTEGRITY FAILURE]",
+          "utc_timestamp": "2026-09-07T07:17:48.733677+00:00"
+        },
+        "gate_written": false,
+        "ledger_events": [],
+        "output_T1_T8": null,
+        "stderr_tail": "[B4 V2 STAGE1 INPUT INTEGRITY FAILURE] Phase-A governance blob mismatch: CURRENT_RESEARCH_STATE.json",
+        "stdout": "",
+        "t1_start_emitted": false,
+        "witness_written": false
+      }
+    },
+    "G3": {
+      "expected": "FAIL",
+      "expected_reason": "authorization missing phase_a_governance_blobs object",
+      "matches_expectation": true,
+      "observed": "FAIL",
+      "phase_a": "a8188b0e0e4cf651bc55f01ed78e65291e9c8b40",
+      "phase_b": "84a6edeaf75caec261ebfc867b6df1dffad66134",
+      "run": {
+        "exit_code": 1,
+        "failure_record": {
+          "T1_T8": "NOT_EXECUTED",
+          "authorization_consumed": true,
+          "reason": "authorization missing phase_a_governance_blobs object",
+          "status": "[B4 V2 STAGE1 INPUT INTEGRITY FAILURE]",
+          "utc_timestamp": "2026-09-07T07:17:50.212607+00:00"
+        },
+        "gate_written": false,
+        "ledger_events": [],
+        "output_T1_T8": null,
+        "stderr_tail": "[B4 V2 STAGE1 INPUT INTEGRITY FAILURE] authorization missing phase_a_governance_blobs object",
+        "stdout": "",
+        "t1_start_emitted": false,
+        "witness_written": false
+      }
+    },
+    "G4": {
+      "build": {
+        "canonical_artifact_entries_recomputed_differently_from_patch": [],
+        "config_sha256": "7f48f53c55952f1f101a03125dd70bd3eef5486ebeaeb3e3101ab888083dc6aa",
+        "contract_sha256": "0380a742cc7bcfc3f5036eabe191722bfc8da4bc2a656e5628e8baf4219c9b6b",
+        "handoff_blob_at_phase_a": "2c0575727667935e52a4fdc6794a2438cfff3a94",
+        "phase_a": "875b4276a1284677844f2e5d92aa5daa9088882c",
+        "seal": "C:\\Users\\MDP\\AppData\\Local\\Temp\\claude\\b4v3\\seal_G4.zip",
+        "seal_sha256": "81ffe50c167e62cbc8e596a990a3a5a897f8c618781d191dacfba476d285e5ef",
+        "state_blob_at_phase_a": "7fab54d9fabee6632458fc2213cc9f140f6b7523",
+        "static_control_flow_on_patched_launcher": "PASS",
+        "synthetic_seal_members_not_in_repo_tree": [
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_DEFINITIONS.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FALSIFICATION_PLAN.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_ORDER.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_OUTCOME_LADDER.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_T1_T8_PROGRAM.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_TARGET_NORMAL_FORM.md"
+        ],
+        "v2_frozen_state_blob_would_match_at_phase_a": false
+      },
+      "expected": "FAIL",
+      "expected_reason": "frozen_dependencies must not list a Phase-A-bound governance file: CURRENT_RESEARCH_STATE.json",
+      "matches_expectation": true,
+      "observed": "FAIL",
+      "phase_a": "875b4276a1284677844f2e5d92aa5daa9088882c",
+      "phase_b": "70608f6f60a24196991b0c23aca924e7e2b624de",
+      "run": {
+        "exit_code": 1,
+        "failure_record": {
+          "T1_T8": "NOT_EXECUTED",
+          "authorization_consumed": true,
+          "reason": "frozen_dependencies must not list a Phase-A-bound governance file: CURRENT_RESEARCH_STATE.json",
+          "status": "[B4 V2 STAGE1 INPUT INTEGRITY FAILURE]",
+          "utc_timestamp": "2026-09-07T07:17:53.577670+00:00"
+        },
+        "gate_written": false,
+        "ledger_events": [],
+        "output_T1_T8": null,
+        "stderr_tail": "[B4 V2 STAGE1 INPUT INTEGRITY FAILURE] frozen_dependencies must not list a Phase-A-bound governance file: CURRENT_RESEARCH_STATE.json",
+        "stdout": "",
+        "t1_start_emitted": false,
+        "witness_written": false
+      }
+    },
+    "G5": {
+      "build": {
+        "canonical_artifact_entries_recomputed_differently_from_patch": [],
+        "config_sha256": "27e2e0a9a314403d9132c60241dce22e1d40c2182687a14a99af172a4b8df772",
+        "contract_sha256": "0380a742cc7bcfc3f5036eabe191722bfc8da4bc2a656e5628e8baf4219c9b6b",
+        "handoff_blob_at_phase_a": "0bf0637caf4d8fb57e80dddc11c061f1ecd1f734",
+        "phase_a": "350037f70c14e1d4b385d144530e560d9fee4503",
+        "seal": "C:\\Users\\MDP\\AppData\\Local\\Temp\\claude\\b4v3\\seal_G5.zip",
+        "seal_sha256": "b2c1b5da72fbfb70937a4a1ea4f90e46cfb6c8d574066607065b5ad4290903cf",
+        "state_blob_at_phase_a": "3345da2b65e7462087f2002edd5088e331164b2c",
+        "static_control_flow_on_patched_launcher": "PASS",
+        "synthetic_seal_members_not_in_repo_tree": [
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_DEFINITIONS.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FALSIFICATION_PLAN.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_ORDER.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_OUTCOME_LADDER.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_T1_T8_PROGRAM.md",
+          "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_TARGET_NORMAL_FORM.md"
+        ],
+        "tampered_scientific_input": {
+          "blob_at_phase_a": "838bb12cf9a7cb28aa9b93ee3ad04f89f906debd",
+          "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_DEFINITIONS.md",
+          "sealed_blob": "49b40e67af1b22b2b8ffc74d319f7484b94f3adc"
+        },
+        "v2_frozen_state_blob_would_match_at_phase_a": false
+      },
+      "expected": "FAIL",
+      "expected_reason": "frozen dependency blob mismatch at Phase A: research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_DEFINITIONS.md",
+      "matches_expectation": true,
+      "observed": "FAIL",
+      "phase_a": "350037f70c14e1d4b385d144530e560d9fee4503",
+      "phase_b": "d23f1bb6c6e5ca9801dcd25c73aed6f819a3d889",
+      "run": {
+        "exit_code": 1,
+        "failure_record": {
+          "T1_T8": "NOT_EXECUTED",
+          "authorization_consumed": true,
+          "reason": "frozen dependency blob mismatch at Phase A: research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_DEFINITIONS.md",
+          "status": "[B4 V2 STAGE1 INPUT INTEGRITY FAILURE]",
+          "utc_timestamp": "2026-09-07T07:17:56.652198+00:00"
+        },
+        "gate_written": false,
+        "ledger_events": [],
+        "output_T1_T8": null,
+        "stderr_tail": "[B4 V2 STAGE1 INPUT INTEGRITY FAILURE] frozen dependency blob mismatch at Phase A: research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_DEFINITIONS.md",
+        "stdout": "",
+        "t1_start_emitted": false,
+        "witness_written": false
+      }
+    }
+  },
+  "clone_branches": [
+    "dryrun/G1/phaseA",
+    "dryrun/G1/phaseB",
+    "dryrun/G2/phaseA",
+    "dryrun/G2/phaseB",
+    "dryrun/G3/phaseB",
+    "dryrun/G4/phaseA",
+    "dryrun/G4/phaseB",
+    "dryrun/G5/phaseA",
+    "*",
+    "dryrun/G5/phaseB"
+  ],
+  "clone_head_before": "1a6f924fd86352c11f57a95b0382adaf92d15bcd",
+  "clone_remotes": "",
+  "real_authorization_tuple_used": false,
+  "real_seal_used": false,
+  "repo": "C:\\Users\\MDP\\Documents\\ChatGPT\\Collatz",
+  "schema": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_V3_INTEGRITY_GATE_DRY_RUN_V1",
+  "sealed_v2_launcher_executed": false,
+  "utc": "2026-09-07T07:17:38.919530+00:00",
+  "v2_root_cause_plumbing": {
+    "config_v2_frozen_blob_for_state": "3ba90bbf9e91ddc600235a38a800db90b03a07e0",
+    "state_blob_at_real_phase_a_34ac0db": "aa8daf546826853b720356ff96530f0b78ec197d",
+    "state_blob_at_src_base_8d27409": "3ba90bbf9e91ddc600235a38a800db90b03a07e0",
+    "v2_check_line81_would_fail_at_real_phase_a": true
+  },
+  "verdict": "PASS",
+  "work": "C:\\Users\\MDP\\AppData\\Local\\Temp\\claude\\b4v3"
+}

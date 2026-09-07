@@ -1,0 +1,10 @@
+B(i)/(ii): paths 4795 int_identity 4795 phase_exact 4795 row_product_exact 4795 crt 4795 B_odd 4795 mod16_first4 4795 keys 176 residues [1, 3, 5, 7, 9, 11, 13, 15]
+B(iii): cases 30 vector_identity_ok 30 uniform_independent_ok 30 weights_sum_one_ok 30 numeric maxdiff 1.386e-50
+B(iv): triples 528 bound_C_ok 528 union_bound_ok 528 single_coord_le_power_ok 528 product_formula_ok 528 brute_force_checked 409 brute_force_ok 409
+B(iv) critical: n_r table r=10..17: {10: -3, 11: -2, 12: -1, 13: -1, 14: 0, 15: 0, 16: 1, 17: 1}
+B(iv) critical: r=14..2000 n_r>=0 ok 1987 exact n_r<=beta(r-1) ok 1987 min margin beta(r-1)-n_r 7.41510047885 cutoff chain ok 5961 / 5961
+E: cases 31 paths 2935 checks 23480 V1-denominator failures 2935 V2-denominator failures 0 other failures 0 residue keys 176 residues [1, 3, 5, 7, 9, 11, 13, 15]
+E: r=16 sample {"a": [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], "B": 71613463, "u": 40356301, "v": -15, "project_exponent": "71613463/688747536", "ternary_exponent_mod1": "28689622/43046721", "mod16_exponent_mod1": "7/16", "ternary_minus_project_mod1": "9/16"}
+E: r=4 witness {"B4": 65, "B3": 19, "Btail": 1, "correct": "65/1296", "v1_wrong": "91/432", "target": "65/1296"}
+F: {"auditor_paths_r5to8_n0to4": 1161, "auditor_pairs": 20, "auditor_cutoff_triples": 60, "producer_cases": 31, "producer_paths": 2935, "producer_checks": 23480}
+OVERALL PASS failures 0 elapsed 1.91 s

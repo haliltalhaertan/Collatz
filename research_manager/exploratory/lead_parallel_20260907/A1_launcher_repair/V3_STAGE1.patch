@@ -1,0 +1,34 @@
+diff --git a/research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py b/research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py
+--- a/research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py
++++ b/research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py
+@@ -9,6 +9,7 @@
+  '2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea',
+  '66ac975940abb29a1248079ea6e03643ded966da296cf33deb7c7a0f5fa60eac',
+  '06768aebd233c874fbb2103f3f3ccadca7db5ae76c7f5fb051ab982cf737012f',
++ '11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e',
+ }
+ AUTH_PATH='research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json'
+ HERE=pathlib.Path(__file__).resolve().parent
+@@ -75,10 +76,22 @@
+         try: data=git_bytes('show',f'{stage0_base}:{path}')
+         except Exception: fail('Phase-A Stage0 artifact bytes unreadable: '+path)
+         if hbytes(data)!=expected['sha256']: fail('Phase-A Stage0 SHA256 mismatch: '+path)
++    bound_paths=config.get('phase_a_bound_governance_files')
++    if not isinstance(bound_paths,list) or not bound_paths: fail('config missing phase_a_bound_governance_files')
++    for path in bound_paths:
++        if path in config['frozen_dependencies']: fail('frozen_dependencies must not list a Phase-A-bound governance file: '+path)
+     for path,blob in config['frozen_dependencies'].items():
+         try: got=git('rev-parse',f'{stage0_base}:{path}')
+         except Exception: fail('frozen dependency unreadable at Phase A: '+path)
+         if got!=blob: fail('frozen dependency blob mismatch at Phase A: '+path)
++    bound=auth.get('phase_a_governance_blobs')
++    if not isinstance(bound,dict): fail('authorization missing phase_a_governance_blobs object')
++    for path in bound_paths:
++        expected=bound.get(path)
++        if not (isinstance(expected,str) and len(expected)==40 and all(c in '0123456789abcdef' for c in expected)): fail('authorization phase_a_governance_blobs malformed: '+path)
++        try: got=git('rev-parse',f'{stage0_base}:{path}')
++        except Exception: fail('Phase-A governance file unreadable: '+path)
++        if got!=expected: fail('Phase-A governance blob mismatch: '+path)
+ 
+ def verify_seal(seal,authorized_sha,contract_sha,config_path):
+     if authorized_sha in BLOCKED: fail('blocked candidate seal rejected')

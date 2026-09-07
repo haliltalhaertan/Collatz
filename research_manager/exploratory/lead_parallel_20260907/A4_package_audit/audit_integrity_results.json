@@ -1,0 +1,605 @@
+{
+ "package": "C:/Users/MDP/Documents/ChatGPT/Collatz/research_manager/exploratory/prefix_bridge_20260906",
+ "files": {
+  ".gitattributes": {
+   "size": 8,
+   "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+   "crlf_count": 0,
+   "lone_lf_count": 1,
+   "sha256_lf_normalised": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+  },
+  "MANAGER_REVIEW.md": {
+   "size": 3062,
+   "sha256": "30212c0282ea363ec7b824229acc34248e8fbaab5a16108d6c77cebe89e41798",
+   "crlf_count": 0,
+   "lone_lf_count": 26,
+   "sha256_lf_normalised": "30212c0282ea363ec7b824229acc34248e8fbaab5a16108d6c77cebe89e41798"
+  },
+  "MANAGER_SCOPE.md": {
+   "size": 1583,
+   "sha256": "ae5fcf38a964cb54ee2b1c94115ae4708cc9dd67573e9246c5c5c494726a9bf1",
+   "crlf_count": 0,
+   "lone_lf_count": 18,
+   "sha256_lf_normalised": "ae5fcf38a964cb54ee2b1c94115ae4708cc9dd67573e9246c5c5c494726a9bf1"
+  },
+  "PACKAGE_SHA256SUMS.txt": {
+   "size": 1717,
+   "sha256": "1a460a8c53d3ef5c703a67c04471cf16dafcd82aef9243c47e16111a6f9f09a3",
+   "crlf_count": 0,
+   "lone_lf_count": 19,
+   "sha256_lf_normalised": "1a460a8c53d3ef5c703a67c04471cf16dafcd82aef9243c47e16111a6f9f09a3"
+  },
+  "README.md": {
+   "size": 1918,
+   "sha256": "e3f15853270eed91d7edcbe56c333d4dcbd62577c56b6378840589b9c208e434",
+   "crlf_count": 0,
+   "lone_lf_count": 17,
+   "sha256_lf_normalised": "e3f15853270eed91d7edcbe56c333d4dcbd62577c56b6378840589b9c208e434"
+  },
+  "RESUME_HANDOFF.md": {
+   "size": 2500,
+   "sha256": "e1032bd99904c51a828d96c5050d2234355a833149c8b3a117f959ccbfd30741",
+   "crlf_count": 0,
+   "lone_lf_count": 20,
+   "sha256_lf_normalised": "e1032bd99904c51a828d96c5050d2234355a833149c8b3a117f959ccbfd30741"
+  },
+  "SHA256SUMS.txt": {
+   "size": 1479,
+   "sha256": "0820de845a8e1d7796d01f17f8fbf8943a317c548783c5eeb846d3714a928b90",
+   "crlf_count": 0,
+   "lone_lf_count": 16,
+   "sha256_lf_normalised": "0820de845a8e1d7796d01f17f8fbf8943a317c548783c5eeb846d3714a928b90"
+  },
+  "audit/INDEPENDENT_FINAL_AUDIT.md": {
+   "size": 6843,
+   "sha256": "512c3eb4518ef9491d1ac85f14d70d3c5b9238ad9ed8b747090784b5ad6f6e38",
+   "crlf_count": 0,
+   "lone_lf_count": 50,
+   "sha256_lf_normalised": "512c3eb4518ef9491d1ac85f14d70d3c5b9238ad9ed8b747090784b5ad6f6e38"
+  },
+  "audit/INDEPENDENT_INITIAL_AUDIT.md": {
+   "size": 4245,
+   "sha256": "5c0733c3f55894fa587991080487da6ddd779c5aae79de973542676ece5b63b4",
+   "crlf_count": 0,
+   "lone_lf_count": 53,
+   "sha256_lf_normalised": "5c0733c3f55894fa587991080487da6ddd779c5aae79de973542676ece5b63b4"
+  },
+  "audit/independent_row_checks.py": {
+   "size": 2167,
+   "sha256": "2ed8f06acb6a3422596fe1a42264e8f217d168f6dd321cbcc0187df4f58c5f6d",
+   "crlf_count": 0,
+   "lone_lf_count": 58,
+   "sha256_lf_normalised": "2ed8f06acb6a3422596fe1a42264e8f217d168f6dd321cbcc0187df4f58c5f6d"
+  },
+  "audit/INDEPENDENT_ROW_CHECK_OUTPUT.json": {
+   "size": 507,
+   "sha256": "fea73a627c28cc696e954f5234a7b176afe88c45d87b25ff0c5cc78672983f36",
+   "crlf_count": 0,
+   "lone_lf_count": 12,
+   "sha256_lf_normalised": "fea73a627c28cc696e954f5234a7b176afe88c45d87b25ff0c5cc78672983f36"
+  },
+  "checks/exact_prefix_checks.py": {
+   "size": 4389,
+   "sha256": "2efe6a8ce8c9c59da02f9ac058515a371d5467831066384af986fb93bacc3886",
+   "crlf_count": 0,
+   "lone_lf_count": 100,
+   "sha256_lf_normalised": "2efe6a8ce8c9c59da02f9ac058515a371d5467831066384af986fb93bacc3886"
+  },
+  "checks/exact_prefix_checks_v2.py": {
+   "size": 4388,
+   "sha256": "ed6aced4569dccb91821845669488ba399cff0fb5cd471ecbe0b5ebc860bb979",
+   "crlf_count": 0,
+   "lone_lf_count": 100,
+   "sha256_lf_normalised": "ed6aced4569dccb91821845669488ba399cff0fb5cd471ecbe0b5ebc860bb979"
+  },
+  "checks/PLAN.md": {
+   "size": 1696,
+   "sha256": "3a3fb9b5d9a8023370b9d1fdcb9dfc2bb798f756f436db10145b30637224992c",
+   "crlf_count": 0,
+   "lone_lf_count": 18,
+   "sha256_lf_normalised": "3a3fb9b5d9a8023370b9d1fdcb9dfc2bb798f756f436db10145b30637224992c"
+  },
+  "checks/PRE_EXECUTION_PROVENANCE.md": {
+   "size": 1217,
+   "sha256": "98421c2911f6edf48e3a3f2675d3d2ee2882c620d1e0a3d5dfb34e2d13e5981f",
+   "crlf_count": 0,
+   "lone_lf_count": 12,
+   "sha256_lf_normalised": "98421c2911f6edf48e3a3f2675d3d2ee2882c620d1e0a3d5dfb34e2d13e5981f"
+  },
+  "checks/REPORT.md": {
+   "size": 3520,
+   "sha256": "5650be123bf949947f2aa06eb583af3f5efbbe55ea38b3b79861bd5eeb4156d5",
+   "crlf_count": 0,
+   "lone_lf_count": 36,
+   "sha256_lf_normalised": "5650be123bf949947f2aa06eb583af3f5efbbe55ea38b3b79861bd5eeb4156d5"
+  },
+  "checks/RESULTS.json": {
+   "size": 559988,
+   "sha256": "5bb9778ad1d2b1585d8bba3dcea7bc5fd76049c44420866a2409b6cf59e6b66e",
+   "crlf_count": 41426,
+   "lone_lf_count": 0,
+   "sha256_lf_normalised": "3cf213dbe64d1f1650fd2d1f471cf461687659a47b3e50cd52770df01db28416"
+  },
+  "checks/RESULTS_V2.json": {
+   "size": 4210,
+   "sha256": "3b6fe2ac8166cee1f7891d4f3abfc4b70a847c3085e4d7c44fde8e12ce084c3d",
+   "crlf_count": 248,
+   "lone_lf_count": 0,
+   "sha256_lf_normalised": "8d45373e14b3a13be896baa4211e558950c4be7793d5900f68093baffa90896a"
+  },
+  "checks/V2_REPAIR.md": {
+   "size": 631,
+   "sha256": "bdc15c97f5a220ea60aadf7b07037e4db709028c3fe72d5ab9f65e77e481d194",
+   "crlf_count": 0,
+   "lone_lf_count": 3,
+   "sha256_lf_normalised": "bdc15c97f5a220ea60aadf7b07037e4db709028c3fe72d5ab9f65e77e481d194"
+  },
+  "derivation/EXACT_PREFIX_REDUCTION.md": {
+   "size": 7374,
+   "sha256": "d87074f0a06e4b249911393d9821a54077b55a7a0c7e9b46fd7545d5229974fa",
+   "crlf_count": 0,
+   "lone_lf_count": 104,
+   "sha256_lf_normalised": "d87074f0a06e4b249911393d9821a54077b55a7a0c7e9b46fd7545d5229974fa"
+  }
+ },
+ "lists": {
+  "SHA256SUMS.txt": {
+   "entries": 16,
+   "match": [
+    "audit/INDEPENDENT_FINAL_AUDIT.md",
+    "audit/INDEPENDENT_INITIAL_AUDIT.md",
+    "audit/INDEPENDENT_ROW_CHECK_OUTPUT.json",
+    "audit/independent_row_checks.py",
+    "checks/exact_prefix_checks_v2.py",
+    "checks/exact_prefix_checks.py",
+    "checks/PLAN.md",
+    "checks/PRE_EXECUTION_PROVENANCE.md",
+    "checks/REPORT.md",
+    "checks/RESULTS_V2.json",
+    "checks/RESULTS.json",
+    "checks/V2_REPAIR.md",
+    "derivation/EXACT_PREFIX_REDUCTION.md",
+    "MANAGER_REVIEW.md",
+    "MANAGER_SCOPE.md",
+    "RESUME_HANDOFF.md"
+   ],
+   "mismatch": [],
+   "missing_on_disk": [],
+   "on_disk_not_listed": [
+    ".gitattributes",
+    "PACKAGE_SHA256SUMS.txt",
+    "README.md",
+    "SHA256SUMS.txt"
+   ]
+  },
+  "PACKAGE_SHA256SUMS.txt": {
+   "entries": 19,
+   "match": [
+    ".gitattributes",
+    "audit/INDEPENDENT_FINAL_AUDIT.md",
+    "audit/INDEPENDENT_INITIAL_AUDIT.md",
+    "audit/INDEPENDENT_ROW_CHECK_OUTPUT.json",
+    "audit/independent_row_checks.py",
+    "checks/exact_prefix_checks_v2.py",
+    "checks/exact_prefix_checks.py",
+    "checks/PLAN.md",
+    "checks/PRE_EXECUTION_PROVENANCE.md",
+    "checks/REPORT.md",
+    "checks/RESULTS_V2.json",
+    "checks/RESULTS.json",
+    "checks/V2_REPAIR.md",
+    "derivation/EXACT_PREFIX_REDUCTION.md",
+    "MANAGER_REVIEW.md",
+    "MANAGER_SCOPE.md",
+    "README.md",
+    "RESUME_HANDOFF.md",
+    "SHA256SUMS.txt"
+   ],
+   "mismatch": [],
+   "missing_on_disk": [],
+   "on_disk_not_listed": [
+    "PACKAGE_SHA256SUMS.txt"
+   ]
+  }
+ },
+ "zip": {
+  "zip_sha256": "36d0666ec20be4bb7b1341c33166140620c7e8d952c4fb15314c6863b571943f",
+  "members": [
+   {
+    "name": ".gitattributes",
+    "size": 8,
+    "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     44,
+     56
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "MANAGER_REVIEW.md",
+    "size": 3062,
+    "sha256": "30212c0282ea363ec7b824229acc34248e8fbaab5a16108d6c77cebe89e41798",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     42,
+     8
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "MANAGER_SCOPE.md",
+    "size": 1583,
+    "sha256": "ae5fcf38a964cb54ee2b1c94115ae4708cc9dd67573e9246c5c5c494726a9bf1",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     34,
+     38
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "PACKAGE_SHA256SUMS.txt",
+    "size": 1717,
+    "sha256": "1a460a8c53d3ef5c703a67c04471cf16dafcd82aef9243c47e16111a6f9f09a3",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     45,
+     18
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "README.md",
+    "size": 1918,
+    "sha256": "e3f15853270eed91d7edcbe56c333d4dcbd62577c56b6378840589b9c208e434",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     45,
+     0
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "RESUME_HANDOFF.md",
+    "size": 2500,
+    "sha256": "e1032bd99904c51a828d96c5050d2234355a833149c8b3a117f959ccbfd30741",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     36,
+     18
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "SHA256SUMS.txt",
+    "size": 1479,
+    "sha256": "0820de845a8e1d7796d01f17f8fbf8943a317c548783c5eeb846d3714a928b90",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     42,
+     26
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "audit/INDEPENDENT_FINAL_AUDIT.md",
+    "size": 6843,
+    "sha256": "512c3eb4518ef9491d1ac85f14d70d3c5b9238ad9ed8b747090784b5ad6f6e38",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     41,
+     36
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "audit/INDEPENDENT_INITIAL_AUDIT.md",
+    "size": 4245,
+    "sha256": "5c0733c3f55894fa587991080487da6ddd779c5aae79de973542676ece5b63b4",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     34,
+     50
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "audit/independent_row_checks.py",
+    "size": 2167,
+    "sha256": "2ed8f06acb6a3422596fe1a42264e8f217d168f6dd321cbcc0187df4f58c5f6d",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     39,
+     8
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "audit/INDEPENDENT_ROW_CHECK_OUTPUT.json",
+    "size": 507,
+    "sha256": "fea73a627c28cc696e954f5234a7b176afe88c45d87b25ff0c5cc78672983f36",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     40,
+     42
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "checks/exact_prefix_checks.py",
+    "size": 4389,
+    "sha256": "2efe6a8ce8c9c59da02f9ac058515a371d5467831066384af986fb93bacc3886",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     34,
+     44
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "checks/exact_prefix_checks_v2.py",
+    "size": 4388,
+    "sha256": "ed6aced4569dccb91821845669488ba399cff0fb5cd471ecbe0b5ebc860bb979",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     39,
+     8
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "checks/PLAN.md",
+    "size": 1696,
+    "sha256": "3a3fb9b5d9a8023370b9d1fdcb9dfc2bb798f756f436db10145b30637224992c",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     34,
+     40
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "checks/PRE_EXECUTION_PROVENANCE.md",
+    "size": 1217,
+    "sha256": "98421c2911f6edf48e3a3f2675d3d2ee2882c620d1e0a3d5dfb34e2d13e5981f",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     37,
+     54
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "checks/REPORT.md",
+    "size": 3520,
+    "sha256": "5650be123bf949947f2aa06eb583af3f5efbbe55ea38b3b79861bd5eeb4156d5",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     40,
+     10
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "checks/RESULTS.json",
+    "size": 559988,
+    "sha256": "5bb9778ad1d2b1585d8bba3dcea7bc5fd76049c44420866a2409b6cf59e6b66e",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     37,
+     58
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "checks/RESULTS_V2.json",
+    "size": 4210,
+    "sha256": "3b6fe2ac8166cee1f7891d4f3abfc4b70a847c3085e4d7c44fde8e12ce084c3d",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     39,
+     28
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "checks/V2_REPAIR.md",
+    "size": 631,
+    "sha256": "bdc15c97f5a220ea60aadf7b07037e4db709028c3fe72d5ab9f65e77e481d194",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     39,
+     14
+    ],
+    "identical_to_disk": true
+   },
+   {
+    "name": "derivation/EXACT_PREFIX_REDUCTION.md",
+    "size": 7374,
+    "sha256": "d87074f0a06e4b249911393d9821a54077b55a7a0c7e9b46fd7545d5229974fa",
+    "datetime": [
+     2026,
+     9,
+     6,
+     23,
+     39,
+     30
+    ],
+    "identical_to_disk": true
+   }
+  ],
+  "identical": 20,
+  "different": 0,
+  "missing_on_disk": [],
+  "on_disk_not_in_zip": []
+ },
+ "v2_hash_claim": {
+  "claimed": "3b6fe2ac8166cee1f7891d4f3abfc4b70a847c3085e4d7c44fde8e12ce084c3d",
+  "files_with_this_hash": [
+   "checks/RESULTS_V2.json"
+  ],
+  "RESULTS_V2_lf_normalised_hash": "8d45373e14b3a13be896baa4211e558950c4be7793d5900f68093baffa90896a"
+ },
+ "v1_v2_diff": {
+  "unified_diff": [
+   "--- checks/exact_prefix_checks.py",
+   "+++ checks/exact_prefix_checks_v2.py",
+   "@@ -36 +36 @@",
+   "-    output = ROOT / 'RESULTS.json'",
+   "+    output = ROOT / 'RESULTS_V2.json'",
+   "@@ -68 +68 @@",
+   "-            check('phase_concatenation', Fraction(b,16*m) == Fraction(prefix,16*27)+Fraction(2**s*tail,16*3**(r-3)), r,n,a)",
+   "+            check('phase_concatenation', Fraction(b,16*m) == Fraction(prefix,16*27)+Fraction(2**s*tail,16*3**r), r,n,a)"
+  ],
+  "removed_lines": [
+   "-    output = ROOT / 'RESULTS.json'",
+   "-            check('phase_concatenation', Fraction(b,16*m) == Fraction(prefix,16*27)+Fraction(2**s*tail,16*3**(r-3)), r,n,a)"
+  ],
+  "added_lines": [
+   "+    output = ROOT / 'RESULTS_V2.json'",
+   "+            check('phase_concatenation', Fraction(b,16*m) == Fraction(prefix,16*27)+Fraction(2**s*tail,16*3**r), r,n,a)"
+  ],
+  "v1_lines": 100,
+  "v2_lines": 100
+ },
+ "results_internal_hashes": {
+  "V2_source_sha256_recorded": "ed6aced4569dccb91821845669488ba399cff0fb5cd471ecbe0b5ebc860bb979",
+  "V2_source_sha256_disk": "ed6aced4569dccb91821845669488ba399cff0fb5cd471ecbe0b5ebc860bb979",
+  "V1_source_sha256_recorded": "2efe6a8ce8c9c59da02f9ac058515a371d5467831066384af986fb93bacc3886",
+  "V1_source_sha256_disk": "2efe6a8ce8c9c59da02f9ac058515a371d5467831066384af986fb93bacc3886",
+  "plan_sha256_recorded_V1": "3a3fb9b5d9a8023370b9d1fdcb9dfc2bb798f756f436db10145b30637224992c",
+  "plan_sha256_recorded_V2": "3a3fb9b5d9a8023370b9d1fdcb9dfc2bb798f756f436db10145b30637224992c",
+  "plan_sha256_disk": "3a3fb9b5d9a8023370b9d1fdcb9dfc2bb798f756f436db10145b30637224992c",
+  "V1_failures": 2935,
+  "V1_failure_tests": [
+   "phase_concatenation"
+  ],
+  "V1_checks_by_name": {
+   "bezout": 2935,
+   "crt_fraction": 2935,
+   "integer_concatenation": 2935,
+   "phase_concatenation": 2935,
+   "first_three_residue_formula": 2935,
+   "residue_key_consistency": 2935,
+   "oddness": 2935,
+   "nontrivial_mod16_factor": 2935
+  },
+  "V2_failures": 0,
+  "V2_checks_by_name": {
+   "bezout": 2935,
+   "crt_fraction": 2935,
+   "integer_concatenation": 2935,
+   "phase_concatenation": 2935,
+   "first_three_residue_formula": 2935,
+   "residue_key_consistency": 2935,
+   "oddness": 2935,
+   "nontrivial_mod16_factor": 2935
+  },
+  "V1_paths_total": 2935,
+  "V2_paths_total": 2935,
+  "V1_start_utc": "2026-09-06T20:37:58.832158+00:00",
+  "V2_start_utc": "2026-09-06T20:39:29.002060+00:00",
+  "V1_elapsed": 0.09590960000059567,
+  "V2_elapsed": 0.06784150001476519,
+  "V1_residue_keys": 176,
+  "V2_residue_keys": 176,
+  "V2_observed_B_mod16": [
+   1,
+   3,
+   5,
+   7,
+   9,
+   11,
+   13,
+   15
+  ],
+  "V2_target_sample": {
+   "r": 16,
+   "n": 1,
+   "a": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "B": 71613463,
+   "u": 40356301,
+   "v": -15,
+   "project_exponent": "71613463/688747536",
+   "ternary_exponent_mod1": "28689622/43046721",
+   "mod16_exponent_mod1": "7/16"
+  },
+  "V1_input_hashes_unchanged": true,
+  "V2_input_hashes_unchanged": true
+ }
+}

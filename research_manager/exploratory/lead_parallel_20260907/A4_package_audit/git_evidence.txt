@@ -1,0 +1,69 @@
+# git evidence captured 2026-09-06T21:10:03Z by A4 auditor (read-only commands)
+## git remote -v
+origin	https://github.com/haliltalhaertan/Collatz.git (fetch)
+origin	https://github.com/haliltalhaertan/Collatz.git (push)
+## git branch -vv
+* codex/prefix-bridge-20260906-persistence 1a6f924 [origin/main] Finalize B4 V2 authorization handoff
+  main                                     9119a39 [origin/main: behind 13] Integrate Literature Transfer V1 Stage0 and authorize Stage1
+## git rev-parse HEAD
+1a6f924fd86352c11f57a95b0382adaf92d15bcd
+## git cat-file -t 1a6f924fd86352c11f57a95b0382adaf92d15bcd
+commit
+## git ls-remote --heads origin (full)
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/b4-v2-governance-runner-20260905
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/b4-v2-governance-runner-actual-20260905
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/b4-v2-governance-runner-actual2-20260905
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/b4-v2-governance-runner-actual3-20260905
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/b4-v2-governance-runner-exec-20260905
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/b4-v2-governance-runner-live-20260905
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/b4-v2-governance-runner-live2-20260905
+e7823e6d1828857c5a954bf6e4626e9a06166662	refs/heads/b4-v2-governance-runner-no-more-branches-20260905
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/b4-v2-governance-runner-stop-20260905
+5084dbd2c219cbbd42604c2683af0feef667e132	refs/heads/b4-v2-persistence-recovery-20260905
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/canonical-integrator-b4-v2-intake-auth-20260905
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/canonical-integrator-b4-v2-intake-auth-executor-20260905
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/canonical-integrator-b4-v2-intake-auth-finalizer-20260905
+8d274095b0e1acbe1fad0a73ef6a5293364902fc	refs/heads/canonical-integrator-b4-v2-intake-auth-run-20260905
+c4259132b340c942d36c574024561f947c9a0c4c	refs/heads/claude/collatz-handoff-recovery-28hq3g
+f1dce61f3d2ee207a50bd0f46208f49f3901f013	refs/heads/cp20-e7r-b4-stage1-input-integrity-failure-20260904
+c83d22f9e3ac8bdc4ec955d14b3d7dca11c3fee1	refs/heads/cp20-e7r-b4-tilted-microcanonical-fourier-v1-stage0-20260904
+1399e7831c7582fcf715a693c9db4f4a3d1184a5	refs/heads/cp20-e7r-b4-tilted-microcanonical-fourier-v2-stage0-reseal-20260904
+8fb8d68d3c131d6e11721fd629f1ea879102aedc	refs/heads/cp20-e7r-b4-v2-preexec-zero-trust-audit-20260905
+85f3daa617aaa245eb2b43c5b0cc425d669bb927	refs/heads/cp20-e7r-b4-v2-stage0-finalization-handoff-20260904
+04a66e41864d1d530ead63b1faeaf122048e3069	refs/heads/cp20-e7r-b4-v2-stage1-20260905
+df4cdae09558498dbbf505cf7fc3b89f6d5322b2	refs/heads/cp20-e7r-b4-v2-statepath-handoff-verify-20260904
+8ff843722bc9a4901fe72a1594d0fca95ca358b7	refs/heads/cp20-e7r-literature-transfer-v1-stage0-20260904
+93201a44924562eddb951d083370e42e0ec8bf00	refs/heads/cp20-e7r-literature-transfer-v1-stage1-audit-stop-20260904
+594517c1f0a27c9335ee10aa287cb5054210be7d	refs/heads/cp20-e7r-literature-transfer-v1-zero-trust-audit-20260904
+2263dc3fc777431845eaaf0cdbc9916851937c40	refs/heads/cp20-publication-factor-pressure-v1-20260904
+4cdbcf31823dadb09d0814b8af5b7790dcbdee2f	refs/heads/cp20-submission-jnt-v1-20260904
+801cde1c9a76ccc83032b16c26d37c14f79935a6	refs/heads/integration-build-e7r-b3-20260904
+20f3eed4850f284d32ab68df0f4fdec48fe10387	refs/heads/integration-e7r-b4-stage0-stage1-authorization-20260904
+ba4a534795e1873779e3dd7fc67acf2a2511fa45	refs/heads/integration-e7r-b4-stage0-stage1-authorization-resume-20260904
+ba4a534795e1873779e3dd7fc67acf2a2511fa45	refs/heads/integration-e7r-b4-stage0-stage1-authorization-resume2-20260904
+1f2f3b394f88e0229599cbac9a7047f37dd0cdf8	refs/heads/integration-e7r-b4-stage0-stage1-authorization-resume3-20260904
+e3083ce0a9655346b1ee9112d5432ddaa0cc1061	refs/heads/integration-e7r-b4-stage0-stage1-authorization-resume4-20260904
+477d59ef1c38cda017bef00eeedb568bb0e9968b	refs/heads/integration-e7r-b4-v1-failure-closeout-v2-handoff-20260904
+0fbc53c0c058b3aeaec5c46ef4015aae4295912e	refs/heads/integration-e7r-literature-stage1-canonical-20260904
+1a6f924fd86352c11f57a95b0382adaf92d15bcd	refs/heads/main
+b2401e3f58d2f9a235df399e52997148d3e6722d	refs/heads/noop-ignore
+b2401e3f58d2f9a235df399e52997148d3e6722d	refs/heads/noop-ignore-2
+ls-remote exit=0
+## git ls-remote --heads origin | grep -i prefix
+grep exit=1 (1 = no remote branch containing 'prefix')
+## git ls-files research_manager/exploratory (tracked files under package path)
+ls-files count=0
+## git status --short research_manager/exploratory
+?? research_manager/exploratory/
+## git log --oneline --all -- research_manager/exploratory/prefix_bridge_20260906
+log count=0
+## git log --oneline -3 HEAD
+1a6f924 Finalize B4 V2 authorization handoff
+f8d778a Authorize B4 V2 Stage1 after PhaseA readback
+34ac0db Canonicalize accepted B4 V2 Stage0
+## git rev-list --count origin/main..HEAD
+0
+## git check-attr text -- package file (attribute effect while untracked)
+research_manager/exploratory/prefix_bridge_20260906/checks/RESULTS_V2.json: text: unset
+true
+core.autocrlf exit=0

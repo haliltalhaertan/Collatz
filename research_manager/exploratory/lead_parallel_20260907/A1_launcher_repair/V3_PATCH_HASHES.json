@@ -1,0 +1,12 @@
+{
+  "launcher_lines_v2": 157,
+  "launcher_lines_v3": 170,
+  "v2_config_sha256": "2fbc7bd09ab2cae89095b537342cf63c85f53f821d4ddf21c7860a2ec53b1f4b",
+  "v2_contract_sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403",
+  "v2_launcher_sha256": "9222d0e0a8079e3560bc880520dd5ead44869f5fd4fa541520e225c841b8a732",
+  "v3_config_sha256": "27e2e0a9a314403d9132c60241dce22e1d40c2182687a14a99af172a4b8df772",
+  "v3_contract_git_blob": "0538d87d1c2a38c83435fe8f356284cfde1618bc",
+  "v3_contract_sha256": "0380a742cc7bcfc3f5036eabe191722bfc8da4bc2a656e5628e8baf4219c9b6b",
+  "v3_launcher_git_blob": "91479908ae8e3e3ab1c785a58e9b4a4f4cb2b1a7",
+  "v3_launcher_sha256": "7cd46c5a7e9c74e8e204dbea0d40085b0b34c146406e640de0543be46079bfb2"
+}

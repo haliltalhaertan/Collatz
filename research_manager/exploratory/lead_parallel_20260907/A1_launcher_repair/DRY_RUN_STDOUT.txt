@@ -1,0 +1,14 @@
+{
+  "verdict": "PASS",
+  "v2_root_cause_plumbing": {
+    "config_v2_frozen_blob_for_state": "3ba90bbf9e91ddc600235a38a800db90b03a07e0",
+    "state_blob_at_src_base_8d27409": "3ba90bbf9e91ddc600235a38a800db90b03a07e0",
+    "state_blob_at_real_phase_a_34ac0db": "aa8daf546826853b720356ff96530f0b78ec197d",
+    "v2_check_line81_would_fail_at_real_phase_a": true
+  }
+}
+G1: expected=PASS observed=PASS exit=0 reason=None
+G2: expected=FAIL observed=FAIL exit=1 reason=Phase-A governance blob mismatch: CURRENT_RESEARCH_STATE.json
+G3: expected=FAIL observed=FAIL exit=1 reason=authorization missing phase_a_governance_blobs object
+G4: expected=FAIL observed=FAIL exit=1 reason=frozen_dependencies must not list a Phase-A-bound governance file: CURRENT_RESEARCH_STATE.json
+G5: expected=FAIL observed=FAIL exit=1 reason=frozen dependency blob mismatch at Phase A: research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_DEFINITIONS.md

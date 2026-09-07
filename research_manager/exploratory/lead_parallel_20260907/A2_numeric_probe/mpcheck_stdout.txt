@@ -1,0 +1,6 @@
+{
+ "max_abs_discrepancy": 2.482534153247273e-16,
+ "pass_1e-9": true,
+ "items": 34,
+ "elapsed_seconds": 89.33150920001208
+}

@@ -1,0 +1,70 @@
+{
+  "classification": "NUMERICAL_REPRESENTATIVE_REPRODUCTION_ONLY",
+  "implementation": "independent direct-transition/coefficient DP",
+  "h": [
+    {
+      "r": 30,
+      "j": 6,
+      "real": 0.3923252939563784,
+      "imag": -0.3397765462698825,
+      "absolute": 0.5190060092841395
+    },
+    {
+      "r": 30,
+      "j": 7,
+      "real": -0.3723978647752304,
+      "imag": -0.46953449326658836,
+      "absolute": 0.5992852493231104
+    },
+    {
+      "r": 30,
+      "j": 8,
+      "real": 0.21657426289116996,
+      "imag": 0.6823711179647589,
+      "absolute": 0.7159153259843852
+    },
+    {
+      "r": 30,
+      "j": 9,
+      "real": -0.43043985466994167,
+      "imag": 0.9026192616556101,
+      "absolute": 0.9999999999999997
+    },
+    {
+      "r": 60,
+      "j": 12,
+      "real": -0.0006230795407350843,
+      "imag": -0.00926612956516153,
+      "absolute": 0.009287054712471723
+    },
+    {
+      "r": 60,
+      "j": 13,
+      "real": -0.0037144805779339273,
+      "imag": 0.009248251570954194,
+      "absolute": 0.009966319435152833
+    }
+  ],
+  "barrier": [
+    {
+      "r": 30,
+      "threshold": -4,
+      "probability": 0.927450389432313,
+      "inside_absolute": 0.8519228375502956,
+      "outside_absolute": 0.04152825747982998,
+      "decomposition_residual": 0.0
+    },
+    {
+      "r": 30,
+      "threshold": 0,
+      "probability": 0.9999531321812356,
+      "inside_absolute": 0.8373419686507599,
+      "outside_absolute": 4.6438141974697865e-06,
+      "decomposition_residual": 0.0
+    }
+  ],
+  "g30_absolute": 0.8373376045683394,
+  "unrestricted_count": 163011640,
+  "expected_unrestricted_count": 163011640,
+  "count_normalization_pass": true
+}

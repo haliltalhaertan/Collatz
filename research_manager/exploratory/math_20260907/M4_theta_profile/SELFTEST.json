@@ -1,0 +1,15 @@
+{
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "numpy": "2.5.2",
+  "mpmath": "1.3.0",
+  "alpha": 1.584962500721156,
+  "beta": 0.5849625007211562,
+  "beta_check": 1.1102230246251565e-16,
+  "bruteforce_cases": 40,
+  "bruteforce_max_err": 3.219646771412954e-15,
+  "probe_rows_compared": 587,
+  "probe_max_abs_diff": 6.589173651150304e-14,
+  "probe_max_rel_diff": 1.5525243129740038e-12,
+  "probe_argmax_r": 534
+}
