@@ -31,10 +31,12 @@ Status: synchronized exploratory preservation; not canonical B4 acceptance, not 
 9. This reduction leaves a genuinely new arithmetic input: a uniform `O(1/ell)` bound for the complex boundary-start bridge ratio on the coupled accessible endpoint array. It is not supplied by the positive killed local-limit theorem and is still OPEN.
 10. Pairing the post-crossing increments proves that raw `B=1` blocks are exponentially abundant in the central microcanonical bridge and gives an exact positive hazard in a regular remaining-slope cone. An adversarial audit refutes uniformity over arbitrary endpoints (`K=0` is an exact counterexample) and shows that long `B=1` runs may remain black because the phase is multiplied by `8/9` each time.
 11. The repaired sufficient target is only logarithmic white occupation: at least `A log m` regular pair entries with `dist(2^(x_j-beta),Z)>=eta`, except on an `O(1/m)` event, restricted to the actual coupled accessible central arrays and with parity/overshoot seams handled exactly.
+12. The small-`b` continuation passed independent audit: if `z` and its next `L` states remain eta-close to integers while all intervening pair totals satisfy `b<=B`, then the initial nearest positive integer is divisible by `9^L`. On actual ternary starts this implies `dist(2^E/3^(D+2L),Z)<eta/9^L`. At the original boundary start even one bounded-symbol black-to-black transition is impossible.
+13. A separate exact generating-function/Stirling argument proves that, below the explicit logarithmic-length threshold, polynomially many disjoint blocks with every symbol in `{1,...,B}` occur in every long actual central suffix with superpolynomially high probability. Symbolic scarcity is therefore closed; conditioned arithmetic resonance and low-state occupation are the remaining obstacles.
 
 ## Exactly one next scientific action
 
-Prove or refute the repaired first-passage-conditioned arithmetic estimate on the actual admissible triangular arrays:
+Prove or refute the repaired first-passage-conditioned arithmetic estimate on the actual admissible triangular arrays, using the now-audited small-`b` lemma and proved symbolic-block supply:
 
 `P(W_eta^reg < A log m | endpoint and exact first-passage data) <= C/m`.
 
