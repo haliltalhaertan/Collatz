@@ -77,6 +77,7 @@ def main() -> None:
         "STAGE_0_REPAIR_READY_NOT_DISPATCHED",
         "STAGE_0_RUNNING",
         "PRE_RUN_SEAL_AWAITING_AUTHORIZATION",
+        "STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED",
     }
     if state["active_task"]["stage"] not in allowed_stages:
         raise AssertionError("unrecognized active stage")

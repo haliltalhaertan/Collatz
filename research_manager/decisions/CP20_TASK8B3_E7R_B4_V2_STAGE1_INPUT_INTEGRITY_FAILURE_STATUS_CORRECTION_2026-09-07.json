@@ -1,0 +1,68 @@
+{
+  "schema": "CP20_MANAGER_GOVERNANCE_DECISION_V1",
+  "timestamp_utc": "2026-09-07T11:47:19.9937840Z",
+  "task": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
+  "status": "[B4 V2 STAGE1 INPUT INTEGRITY FAILURE — AUTHORIZATION CONSUMED / CLOSED]",
+  "classification": "MECHANICAL_INTEGRITY_CONTRACT_CONFIGURATION_FAILURE",
+  "scientific_change": false,
+  "accepted_evidence_heads": {
+    "invocation": "04a66e41864d1d530ead63b1faeaf122048e3069",
+    "independent_audit": "8fb8d68d3c131d6e11721fd629f1ea879102aedc"
+  },
+  "accepted_artifacts": {
+    "stage1_input_integrity_failure_json": {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json",
+      "git_blob": "2e74de7161532fd10dd2cf1893eacf19dda173e9",
+      "sha256": "1997355b8cc2c505df44175b2467598b0e96ded41ab0e45bf9c4d5b6e06ec30a"
+    },
+    "stage1_integrity_stdout": {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt",
+      "git_blob": "e3d138a494737151eef85f44a9018aa1427e4c74",
+      "sha256": "fad5d23d92ba219aeb6057aaa6c70ed798d79b1229f9a31a261cbcbb1f9d5f34"
+    },
+    "preexec_audit_report": {
+      "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
+      "git_blob": "ea54d835951de4c2026f5fb12973360d9d8e5298",
+      "sha256": "81f8908bc15b2b03c9db4f214831b7c73a1116a3b6d50e003597a3e0575ad0c7"
+    },
+    "preexec_audit_json": {
+      "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.json",
+      "git_blob": "fed71aadac38b418d163f78d0cdba20dfcef0fc7",
+      "sha256": "efda35345d58ee1a0109dbb47b25ef4001c894d449c536ce62ac4ac56117bd1e"
+    },
+    "preexec_audit_manifest": {
+      "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt",
+      "git_blob": "5e55a2d695d3c611b5cc0e08457000ff897dc239",
+      "sha256": "0ccdbad263ac7960fa6052cfba9f108abe466279117c3577c025faa322fd61a5"
+    }
+  },
+  "failure": {
+    "reason": "frozen dependency blob mismatch at Phase A: CURRENT_RESEARCH_STATE.json",
+    "timestamp_utc": "2026-09-05T07:17:52.681686+00:00",
+    "real_entrypoint_invoked": true,
+    "run_witness_created": false,
+    "pre_t1_gate_reached": false,
+    "t1_start_reached": false,
+    "t1_t8_executed": false
+  },
+  "authorization": {
+    "seal_zip_sha256": "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e",
+    "authorization_commit": "f8d778a2113922e3bbb14c86ee2fa5359cee28ea",
+    "available_count": 0,
+    "consumed": true,
+    "must_not_invoke_reuse_or_reauthorize": true
+  },
+  "scientific_status": {
+    "B4_N1_through_B4_N7": "NOT ESTABLISHED",
+    "B4_CT": "NOT ESTABLISHED",
+    "E6_N2": "[OPEN]"
+  },
+  "exclusions": {
+    "invalid_v1_drafts_accepted_or_imported": false,
+    "v3_task_created": false,
+    "v3_seal_created": false,
+    "v3_execution_created": false,
+    "v3_authorization_created": false
+  },
+  "next_action": "Administrative stop. Do not execute or rerun B4 V2 Stage1. Await a separate explicit manager transaction, if desired, to design and independently audit a new repair/reseal. This decision dispatches nothing."
+}

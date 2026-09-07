@@ -3,15 +3,16 @@
     "acquired_at": "2026-09-07T11:42:06.4458908Z",
     "base_commit": "1a6f924fd86352c11f57a95b0382adaf92d15bcd",
     "holder": "canonical-integrator-b4-v2-status-correction-20260907",
+    "released_at": "2026-09-07T11:47:19.9937840Z",
     "scope": "B4 V2 consumed-authorization status correction only: select five exact evidence artifacts, add one manager correction decision, append journal sequence 22, repair root state/handoff, add the exact closed stage to tools/verify_handoff.py allowed_stages, rebuild/verify archive, and perform Drive/GitHub publication read-back; no Stage1/T1-T8 execution, no invalid V1 drafts, no scientific route change, no V3 seal or authorization.",
-    "status": "HELD"
+    "status": "RELEASED"
   },
   "active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
-    "objective": "Produce a fresh Stage-0 seal for the SAME frozen B4 scientific program, with no scientific result imported from the invalid V1 Stage-1 invocation, and repair the execution launcher so that all contract-required witness fields are written and mechanically validated BEFORE T1 can begin. This is an execution-integrity repair, not a scientific route change.",
+    "objective": "Record that the real B4 V2 Stage-1 invocation failed its Phase-A frozen-dependency check before RUN_WITNESS, PRE_T1_GATE, T1 START, or T1-T8 mathematics; the once-only authorization is consumed and closed. This is a governance correction with no scientific route change.",
     "scientific_route_change": false,
-    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED"
+    "stage": "STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED"
   },
   "archive": {
     "budget_policy": {
@@ -55,6 +56,26 @@
       "closed_statement": "E7R-B3 frozen pointwise contraction [FALSE][CLOSED]",
       "producer_result_commit": "b76e9e004cf9310ae0fc4a295b33d0d1c3836a62",
       "stage1_complete_package_sha256": "5172a6cadfa5d2bbce84564f19d3ba76b1338e51c7a5a96225d8c77ac4b4b186"
+    },
+    "e7r_b4_v2_preexec_failure": {
+      "audit_commit": "8fb8d68d3c131d6e11721fd629f1ea879102aedc",
+      "audit_manifest_sha256": "0ccdbad263ac7960fa6052cfba9f108abe466279117c3577c025faa322fd61a5",
+      "audit_report_sha256": "81f8908bc15b2b03c9db4f214831b7c73a1116a3b6d50e003597a3e0575ad0c7",
+      "audit_verdict": "[AUDIT FAIL — DO NOT EXECUTE B4 V2 STAGE1]",
+      "authorization_commit": "f8d778a2113922e3bbb14c86ee2fa5359cee28ea",
+      "authorization_consumed": true,
+      "failure_reason": "frozen dependency blob mismatch at Phase A: CURRENT_RESEARCH_STATE.json",
+      "invocation_commit": "04a66e41864d1d530ead63b1faeaf122048e3069",
+      "invocation_failure_sha256": "1997355b8cc2c505df44175b2467598b0e96ded41ab0e45bf9c4d5b6e06ec30a",
+      "mathematics_executed": false,
+      "pre_t1_gate_reached": false,
+      "real_entrypoint_invoked": true,
+      "run_witness_created": false,
+      "scientific_state_changed": false,
+      "seal_sha256": "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e",
+      "status": "[B4 V2 STAGE1 INPUT INTEGRITY FAILURE — AUTHORIZATION CONSUMED / CLOSED]",
+      "stdout_sha256": "fad5d23d92ba219aeb6057aaa6c70ed798d79b1229f9a31a261cbcbb1f9d5f34",
+      "t1_start_reached": false
     }
   },
   "b4_frozen_program": {
@@ -141,7 +162,7 @@
   },
   "b4_v2_reseal": {
     "contamination_control": {
-      "fresh_stage1_session_required": true,
+      "fresh_stage1_session_required": false,
       "may_read": [
         "canonical scientific inputs",
         "V1 integrity-failure forensic record",
@@ -153,10 +174,10 @@
       ]
     },
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
-    "objective": "Produce a fresh Stage-0 seal for the SAME frozen B4 scientific program, with no scientific result imported from the invalid V1 Stage-1 invocation, and repair the execution launcher so that all contract-required witness fields are written and mechanically validated BEFORE T1 can begin. This is an execution-integrity repair, not a scientific route change.",
+    "objective": "Historical V2 reseal record. The once-only authorization was consumed by a real invocation that stopped at Phase A before mathematics; no execution remains authorized.",
     "scientific_program_preserved": true,
     "scientific_route_change": false,
-    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+    "stage": "STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED",
     "stage0_accepted": true,
     "stage0_dispatched": true,
     "stage0_executed": true,
@@ -184,7 +205,9 @@
     "accepted_source_branch": "cp20-e7r-b4-v2-stage0-finalization-handoff-20260904",
     "accepted_source_head": "85f3daa617aaa245eb2b43c5b0cc425d669bb927",
     "authorization_commit_sha": "f8d778a2113922e3bbb14c86ee2fa5359cee28ea",
+    "authorization_consumed": true,
     "authorization_count": 1,
+    "available_authorization_count": 0,
     "blocked_seals": [
       "ec26b5fbbd89f0a8184486c82bbb34b6a810263a8b2016a17103cf8fda6ab41c",
       "2e6d9e1d833fc8dabf02c0e970ccfb06fc86e4cbc9e85cd2e0e61ae3611879ea",
@@ -212,14 +235,24 @@
     "manifest_sha256": "7f48807db5733c85759324d4f94e357aa6941de0ecd911b4180f5bc2101d6dcb",
     "phase_a_readback": "PASS",
     "phase_b_readback": "PASS",
+    "failure_reason": "frozen dependency blob mismatch at Phase A: CURRENT_RESEARCH_STATE.json",
+    "failure_timestamp_utc": "2026-09-05T07:17:52.681686+00:00",
+    "invocation_audit_head": "8fb8d68d3c131d6e11721fd629f1ea879102aedc",
+    "invocation_audit_verdict": "[AUDIT FAIL — DO NOT EXECUTE B4 V2 STAGE1]",
+    "invocation_producer_head": "04a66e41864d1d530ead63b1faeaf122048e3069",
+    "mathematics_executed": false,
+    "pre_t1_gate_reached": false,
+    "real_entrypoint_invoked": true,
+    "run_witness_created": false,
     "scientific_diff": "NO SCIENTIFIC CHANGE",
     "seal_sha256": "11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e",
     "seal_zip_materialized_on_main": false,
-    "stage": "STAGE_1_AUTHORIZED_NOT_EXECUTED",
+    "stage": "STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED",
     "stage1_authorization_once_only": true,
-    "stage1_authorization_status": "[AUTHORIZED ONCE — NOT EXECUTED]",
-    "stage1_authorized": true,
-    "stage1_executed": false
+    "stage1_authorization_status": "[CONSUMED / CLOSED — MUST NOT REUSE]",
+    "stage1_authorized": false,
+    "stage1_executed": false,
+    "t1_start_reached": false
   },
   "co_chair_roles": {
     "CP20_TASK8B3_E7": {
@@ -235,7 +268,7 @@
     "future_once_only_contract_rule": "Pre-run execution-integrity contracts must be canonicalized before authorization/execution.",
     "journal": "research_manager/RESEARCH_JOURNAL.jsonl",
     "milestone_completion_rule": "result → hashes/manifests → Drive save → Drive read-back → GitHub save/push → GitHub read-back → report",
-    "minimum_required_commit": "f8d778a2113922e3bbb14c86ee2fa5359cee28ea",
+    "minimum_required_commit": "26ca3ae9ba3a91a97b85c7116fd31e69cc17af90",
     "protocol": "research_manager/CONTINUITY_PROTOCOL.md",
     "repository_branch": "main",
     "sync_policy": "research_manager/GITHUB_SYNC_POLICY.md"
@@ -251,9 +284,15 @@
   },
   "documents": {
     "accepted_checkpoint_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_ACCEPTANCE_AND_CANONICALIZATION_2026-09-05.json",
-    "active_authorization_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
+    "historical_consumed_authorization_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
     "active_authorization_prompt": null,
-    "active_research_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
+    "historical_b4_v2_stage0_repair_prompt": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
+    "b4_v2_preexec_audit_json": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.json",
+    "b4_v2_preexec_audit_manifest": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt",
+    "b4_v2_preexec_audit_report": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
+    "b4_v2_stage1_failure_record": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json",
+    "b4_v2_stage1_failure_stdout": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt",
+    "b4_v2_status_correction_decision": "research_manager/decisions/CP20_TASK8B3_E7R_B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTION_2026-09-07.json",
     "b4_stage1_execution_contract": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
     "b4_v1_defective_witness": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_RUN_WITNESS_AS_PRODUCED.json",
     "b4_v1_failure_record": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_RECORD.json",
@@ -275,7 +314,7 @@
     "archive_members": [
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CONTINUITY/START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "4e98b2673cb00a1d66d0e397bc09e8666ad86cfbc0797c2c2df0105a42c38781"
+        "sha256": "694873b72a9ac4e480b860cb35a2a177875442cbe6a2ec33a2fa431175e439cc"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip",
@@ -335,7 +374,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "1325beaf36003bfd95137e9279518fbdeea1b620e72a7e59bd8ab9e1fc6239b6"
+        "sha256": "918aa1719aa6a6fa1b8f3ce20a59884c6f9c513cde1d388fffe4c72ff3fdd26d"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -568,12 +607,40 @@
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py",
         "sha256": "59c7c81511602469387160cdd5e737eb862b40fb91950ed599147ad2aa699bdd"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
+        "sha256": "81f8908bc15b2b03c9db4f214831b7c73a1116a3b6d50e003597a3e0575ad0c7"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.json",
+        "sha256": "efda35345d58ee1a0109dbb47b25ef4001c894d449c536ce62ac4ac56117bd1e"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt",
+        "sha256": "0ccdbad263ac7960fa6052cfba9f108abe466279117c3577c025faa322fd61a5"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/verify_handoff.py",
+        "sha256": "41131903c57d5d6871d4c6c55e9c0262e7698378be3cc7770b0e4f1f6110397f"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTION_2026-09-07.json",
+        "sha256": "bfb3d1532ac61cad496a4723dfde459bc6fc743805071751503c6480edbd276b"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json",
+        "sha256": "1997355b8cc2c505df44175b2467598b0e96ded41ab0e45bf9c4d5b6e06ec30a"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt",
+        "sha256": "fad5d23d92ba219aeb6057aaa6c70ed798d79b1229f9a31a261cbcbb1f9d5f34"
       }
     ],
     "repository_files": [
       {
         "path": "START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "4e98b2673cb00a1d66d0e397bc09e8666ad86cfbc0797c2c2df0105a42c38781"
+        "sha256": "694873b72a9ac4e480b860cb35a2a177875442cbe6a2ec33a2fa431175e439cc"
       },
       {
         "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
@@ -589,7 +656,7 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "1325beaf36003bfd95137e9279518fbdeea1b620e72a7e59bd8ab9e1fc6239b6"
+        "sha256": "918aa1719aa6a6fa1b8f3ce20a59884c6f9c513cde1d388fffe4c72ff3fdd26d"
       },
       {
         "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -882,6 +949,34 @@
       {
         "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py",
         "sha256": "59c7c81511602469387160cdd5e737eb862b40fb91950ed599147ad2aa699bdd"
+      },
+      {
+        "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
+        "sha256": "81f8908bc15b2b03c9db4f214831b7c73a1116a3b6d50e003597a3e0575ad0c7"
+      },
+      {
+        "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.json",
+        "sha256": "efda35345d58ee1a0109dbb47b25ef4001c894d449c536ce62ac4ac56117bd1e"
+      },
+      {
+        "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt",
+        "sha256": "0ccdbad263ac7960fa6052cfba9f108abe466279117c3577c025faa322fd61a5"
+      },
+      {
+        "path": "tools/verify_handoff.py",
+        "sha256": "41131903c57d5d6871d4c6c55e9c0262e7698378be3cc7770b0e4f1f6110397f"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTION_2026-09-07.json",
+        "sha256": "bfb3d1532ac61cad496a4723dfde459bc6fc743805071751503c6480edbd276b"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json",
+        "sha256": "1997355b8cc2c505df44175b2467598b0e96ded41ab0e45bf9c4d5b6e06ec30a"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt",
+        "sha256": "fad5d23d92ba219aeb6057aaa6c70ed798d79b1229f9a31a261cbcbb1f9d5f34"
       }
     ]
   },
@@ -1001,19 +1096,22 @@
     }
   },
   "next_action": {
-    "authorized_stage": "STAGE_1_ONCE_ONLY",
+    "authorization_available": false,
+    "authorized_stage": null,
     "executed_in_this_transaction": false,
-    "instruction": "Execute CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2 Stage 1 exactly once in a fresh session that has not seen invalid V1 T1-T8 drafts, using canonical_stage0_base_sha=34ac0dbeb8c0ae2fddab706680f1682412b00786, authorization_commit_sha=f8d778a2113922e3bbb14c86ee2fa5359cee28ea, seal=11456b7d6f673e5cab6079850731cbda70373b77e4e0f532089d6783fd16c78e, contract=7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403.",
+    "instruction": "Do not execute or rerun B4 V2 Stage 1. Its sole once-only authorization was consumed by the 2026-09-05 real invocation, which failed before RUN_WITNESS, PRE_T1_GATE, T1 START, or T1-T8 mathematics. Await a separate explicit manager transaction for any future repair/reseal; no V3 is authorized or dispatched.",
     "prohibited": [
-      "blocked seals",
+      "reuse or reauthorization of the consumed V2 tuple",
+      "B4 V2 Stage1 execution or rerun",
       "invalid V1 drafts",
-      "canonical-integrator mathematics",
-      "unauthorized rerun",
+      "claim that T1-T8 executed",
+      "claim any B4-N1...B4-N7 or B4-CT result",
+      "V3 seal, authorization, or execution without a separate explicit manager transaction",
       "E8",
-      "weighted/operator work outside frozen fallback"
+      "unauthorized weighted/operator work"
     ]
   },
-  "next_task_stage0_requirements": [
+  "historical_b4_frozen_program_requirements": [
     "T1 exact conditional-law invariance under geometric tilting",
     "T2 choice p_* = 1/log_2(3) and centrality of T_r under that tilted law",
     "T3 exact Fourier-inversion representation of the microcanonical numerator",
@@ -1041,6 +1139,10 @@
     "Do not claim that Tao existing theorem applies after exponential/geometric tilting.",
     "Do not rerun Literature Transfer V1 Stage 1 to repair the documentation gap.",
     "Do not execute CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1 Stage 0 as part of this integration."
+    ,"Do not reuse or reauthorize the consumed B4 V2 tuple."
+    ,"Do not claim the B4 V2 invocation produced mathematics; it stopped before RUN_WITNESS, PRE_T1_GATE, T1 START, and T1-T8."
+    ,"Do not infer a scientific result from the mechanical Phase-A integrity failure."
+    ,"Do not claim a V3 authorization exists."
   ],
   "returned_result": {
     "acceptance_status": "LITERATURE_TRANSFER_V1_AUDIT_PASS_CANONICALLY_INTEGRATED",
@@ -1087,8 +1189,9 @@
     "canonical_contract_sha256": "3d9fd4c0c029c135b86c43377aa414c87704f5e6c3dd4a008fa621f3b4f1185e",
     "phase_a_commit": "7042f332378f587b2a8ad839990994f3c0474458",
     "phase_a_readback": "PASS",
+    "stage1_authorized": false,
     "stage1_executed": false,
-    "status": "STAGE_1_AUTHORIZED_NOT_EXECUTED"
+    "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-04T11:21:26+03:00"
+  "updated_at": "2026-09-07T11:47:19.9937840Z"
 }
