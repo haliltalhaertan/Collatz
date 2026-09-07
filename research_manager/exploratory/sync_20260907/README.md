@@ -17,6 +17,7 @@ This batch synchronizes the work visible from several research sessions without 
 - `canonical/CANONICAL_STATUS_CORRECTION_PLAN.md`: plan-only repair for stale canonical status; it is not authorization and has not changed `main`.
 - `TEAM_SYNC_HANDOFF_2026-09-07.md`: compact cross-session continuation point and the single selected next scientific action.
 - `bll_closure/`: post-package theorem application and independent zero-trust audit closing BLL/KUB for the two fixed-start arrays; it was created after the immutable 21-member team-sync ZIP.
+- `xub/`: exact first-passage reduction of the remaining crossing term, primary-literature map, and an independent representation audit. The reduction is exact on the actual admissible arrays, but the required arithmetic cancellation estimate remains open.
 
 ## Raw archives
 
@@ -29,8 +30,8 @@ Drive byte persistence/read-back is recorded in `DRIVE_RAW_READBACK_2026-09-07.m
 
 ## Scientific checkpoint
 
-The exact prefix mixture and logarithmic prefix-excess cutoff remain valid exploratory results. The shifted-lattice killed local-limit theorem now proves BLL and therefore `|K_m^0|=O(1/m)` for the two actual fixed starts. The triangle-weighted bound, full PWE, crossing-term cancellation (XUB), E6-N2/B4, a nonzero profile, polynomial lower bounds and Collatz remain OPEN unless a later audited record explicitly says otherwise.
+The exact prefix mixture and logarithmic prefix-excess cutoff remain valid exploratory results. The shifted-lattice killed local-limit theorem now proves BLL and therefore `|K_m^0|=O(1/m)` for the two actual fixed starts. The remaining crossing term now has an audited exact first-passage/renewal representation, including the required `q(a'_s)^{-1}` seam factor and the correct `m-s+1` continuation length. That representation does not prove XUB: the first missing input is a uniform complex boundary-start cancellation estimate on the coupled accessible array. The triangle-weighted bound, full PWE, XUB, E6-N2/B4, a nonzero profile, polynomial lower bounds and Collatz remain OPEN unless a later audited record explicitly says otherwise.
 
-The remote canonical `main` at intake was `1a6f924fd86352c11f57a95b0382adaf92d15bcd`; its B4 V2 instruction is stale because later branches record authorization consumption and no T1-T8 execution. Do not execute the old B4 V2 seal.
+The remote canonical `main` at intake was stale. It was subsequently corrected by the independently audited two-commit lock protocol and now ends at `2461573739147763eb011faf03c344370a184d69`: authorization consumed/closed, no T1–T8 execution, no V3 authority, lock released. Do not execute the old B4 V2 seal.
 
 No force push or wholesale merge of divergent evidence/publication branches is authorized by this preservation package.

@@ -7,7 +7,7 @@ Status: synchronized exploratory preservation; not canonical B4 acceptance, not 
 - Prefix package: GitHub branch `codex/prefix-bridge-20260906-persistence`, remote tip `d544bf2d072dd442c3f6528d87d9f7c4f86c23ce`; immutable ZIP SHA-256 `36d0666ec20be4bb7b1341c33166140620c7e8d952c4fb15314c6863b571943f`; Drive raw-byte comparison PASS at file `1gFNtpNvhrTK1ok8UieVfFWrcqj3baaH-`.
 - 2026-09-07 team raw archives: `lead_parallel_20260907_RAW.zip` SHA-256 `e7cff5854e6cda42f216c25ec9fcd70676a8d6877bab013f8899f33732ff0443`; interrupted math ZIP SHA-256 `c1d200539009fe7c87d4ccec86071ab69d3bf9143c0721258039436e78848f03`. Both Drive raw-byte comparisons PASS.
 - Team GitHub preservation branch: `codex/team-sync-20260907`; first remote preservation commit `458c5e358d66a087c5f2cf2fa053adb2e04b7a6e`. Later commits add byte-preserving attributes, review closure, manifests and receipts.
-- Canonical `origin/main` observed at `1a6f924fd86352c11f57a95b0382adaf92d15bcd`. It is stale: it says B4 V2 is authorized/unexecuted, whereas branch `04a66e41864d1d530ead63b1faeaf122048e3069` records the real invocation, authorization consumed and T1-T8 not executed; audit branch `8fb8d68d3c131d6e11721fd629f1ea879102aedc` says DO NOT EXECUTE.
+- Canonical `main` was corrected through the independently audited two-commit lock protocol. Final remote commit: `2461573739147763eb011faf03c344370a184d69`; it records the real invocation, consumed authorization, pre-mathematics stop, no V3 authority, and a released lock. GitHub load-bearing blob read-back: 12/12 PASS. See `canonical/CANONICAL_STATUS_CORRECTION_GITHUB_READBACK_2026-09-07.md`.
 
 ## Artifact classification
 
@@ -27,13 +27,19 @@ Status: synchronized exploratory preservation; not canonical B4 acceptance, not 
 5. The post-package theorem application in `bll_closure/` matches the actual reflected walk to Caravenna--Chaumont, Proposition 4.1, equation (4.5). Its general `(h,c)`-lattice hypothesis includes the moving coset `m*beta+Z`. Consequently `p_m^0(a,b_r)=O(m^(-3/2))` and `|K_m^0(a,b_r)|=O(1/m)` are now PROVED for the two fixed starts and barrier zero.
 6. This BLL/KUB result does not cover the full `j`-dependent PWE window and does not control the crossing contribution.
 7. Claims excluding every finite-state reduction were overbroad. Only a finite stationary quotient preserving the pointwise multiplier was excluded. Fredholm and usual fixed-endpoint Green-kernel language remain heuristic or require reformulation.
+8. The crossing term has now been reduced exactly at its first passage. With `c_s(a)=floor(beta*s-a)+1`, `a'_s=a+c_s(a)-beta*(s-1)`, and the exact seam correction, its numerator is a sum of first-passage fluxes times `q(a'_s)^(-1)L_(m-s+1)(a'_s,b)`. The independently audited formula is recorded in `xub/`.
+9. This reduction leaves a genuinely new arithmetic input: a uniform `O(1/ell)` bound for the complex boundary-start bridge ratio on the coupled accessible endpoint array. It is not supplied by the positive killed local-limit theorem and is still OPEN.
 
 ## Exactly one next scientific action
 
-Prove or refute the uniform complex crossing estimate XUB on the actual admissible triangular arrays:
+Prove or refute the first-passage-conditioned arithmetic estimate that would imply XUB on the actual admissible triangular arrays. One concrete route is a paired-increment white-block occupation bound of the form
+
+`E[exp(-c_eta*N_eta) | endpoint and exact first-passage/overshoot data] <= C/m`,
+
+with the conditioning and parity boundary kept exact. Equivalently, establish the required uniform boundary-start complex bridge ratio on the coupled accessible array. This would imply the target crossing estimate
 
 `|E_a[product_(t=0)^(m-1) q(X_t); tau_0<=m | X_m=b_r]| <= C/m`
 
-The killed half is already `O(1/m)` by BLL/KUB. XUB is a complex/arithmetic cancellation problem, not a positive-probability ballot bound: crossing probability itself may approach one. XUB is sufficient for this split route, not logically necessary for all possible proof routes.
+The killed half is already `O(1/m)` by BLL/KUB. The exact first-passage representation is proved, but XUB is still a complex/arithmetic cancellation problem, not a positive-probability ballot bound: crossing probability itself may approach one. XUB is sufficient for this split route, not logically necessary for all possible proof routes.
 
 No statement here proves E6-N2, B4, a nonzero profile, a polynomial lower bound, cycles, or the Collatz conjecture.
