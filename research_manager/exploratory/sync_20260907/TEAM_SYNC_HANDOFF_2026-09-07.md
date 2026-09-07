@@ -29,14 +29,16 @@ Status: synchronized exploratory preservation; not canonical B4 acceptance, not 
 7. Claims excluding every finite-state reduction were overbroad. Only a finite stationary quotient preserving the pointwise multiplier was excluded. Fredholm and usual fixed-endpoint Green-kernel language remain heuristic or require reformulation.
 8. The crossing term has now been reduced exactly at its first passage. With `c_s(a)=floor(beta*s-a)+1`, `a'_s=a+c_s(a)-beta*(s-1)`, and the exact seam correction, its numerator is a sum of first-passage fluxes times `q(a'_s)^(-1)L_(m-s+1)(a'_s,b)`. The independently audited formula is recorded in `xub/`.
 9. This reduction leaves a genuinely new arithmetic input: a uniform `O(1/ell)` bound for the complex boundary-start bridge ratio on the coupled accessible endpoint array. It is not supplied by the positive killed local-limit theorem and is still OPEN.
+10. Pairing the post-crossing increments proves that raw `B=1` blocks are exponentially abundant in the central microcanonical bridge and gives an exact positive hazard in a regular remaining-slope cone. An adversarial audit refutes uniformity over arbitrary endpoints (`K=0` is an exact counterexample) and shows that long `B=1` runs may remain black because the phase is multiplied by `8/9` each time.
+11. The repaired sufficient target is only logarithmic white occupation: at least `A log m` regular pair entries with `dist(2^(x_j-beta),Z)>=eta`, except on an `O(1/m)` event, restricted to the actual coupled accessible central arrays and with parity/overshoot seams handled exactly.
 
 ## Exactly one next scientific action
 
-Prove or refute the first-passage-conditioned arithmetic estimate that would imply XUB on the actual admissible triangular arrays. One concrete route is a paired-increment white-block occupation bound of the form
+Prove or refute the repaired first-passage-conditioned arithmetic estimate on the actual admissible triangular arrays:
 
-`E[exp(-c_eta*N_eta) | endpoint and exact first-passage/overshoot data] <= C/m`,
+`P(W_eta^reg < A log m | endpoint and exact first-passage data) <= C/m`.
 
-with the conditioning and parity boundary kept exact. Equivalently, establish the required uniform boundary-start complex bridge ratio on the coupled accessible array. This would imply the target crossing estimate
+Overshoot and odd leftovers must be summed with exact weights or split into a central window and a controlled tail; they are not arbitrary uniform parameters. The proved hazard/supermartingale reduction then yields the needed white-block exponential moment and would imply the target crossing estimate
 
 `|E_a[product_(t=0)^(m-1) q(X_t); tau_0<=m | X_m=b_r]| <= C/m`
 

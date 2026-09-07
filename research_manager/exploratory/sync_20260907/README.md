@@ -18,6 +18,7 @@ This batch synchronizes the work visible from several research sessions without 
 - `TEAM_SYNC_HANDOFF_2026-09-07.md`: compact cross-session continuation point and the single selected next scientific action.
 - `bll_closure/`: post-package theorem application and independent zero-trust audit closing BLL/KUB for the two fixed-start arrays; it was created after the immutable 21-member team-sync ZIP.
 - `xub/`: exact first-passage reduction of the remaining crossing term, primary-literature map, and an independent representation audit. The reduction is exact on the actual admissible arrays, but the required arithmetic cancellation estimate remains open.
+- `xub_pair/`: paired-increment continuation and adversarial audit. It proves that raw `B=1` symbols are abundant in the central bridge, refutes arbitrary-endpoint uniformity, and reduces the route to logarithmically many arithmetically white opportunities on the actual coupled arrays.
 
 ## Raw archives
 
@@ -30,7 +31,7 @@ Drive byte persistence/read-back is recorded in `DRIVE_RAW_READBACK_2026-09-07.m
 
 ## Scientific checkpoint
 
-The exact prefix mixture and logarithmic prefix-excess cutoff remain valid exploratory results. The shifted-lattice killed local-limit theorem now proves BLL and therefore `|K_m^0|=O(1/m)` for the two actual fixed starts. The remaining crossing term now has an audited exact first-passage/renewal representation, including the required `q(a'_s)^{-1}` seam factor and the correct `m-s+1` continuation length. That representation does not prove XUB: the first missing input is a uniform complex boundary-start cancellation estimate on the coupled accessible array. The triangle-weighted bound, full PWE, XUB, E6-N2/B4, a nonzero profile, polynomial lower bounds and Collatz remain OPEN unless a later audited record explicitly says otherwise.
+The exact prefix mixture and logarithmic prefix-excess cutoff remain valid exploratory results. The shifted-lattice killed local-limit theorem now proves BLL and therefore `|K_m^0|=O(1/m)` for the two actual fixed starts. The remaining crossing term now has an audited exact first-passage/renewal representation, including the required `q(a'_s)^{-1}` seam factor and the correct `m-s+1` continuation length. Pair averaging closes the positive/combinatorial scarcity question but exposes the true arithmetic one: prove at least `A log m` regular white phase opportunities with failure probability `O(1/m)` on the actual coupled central arrays. The arbitrary-endpoint version is refuted. The triangle-weighted bound, full PWE, XUB, E6-N2/B4, a nonzero profile, polynomial lower bounds and Collatz remain OPEN unless a later audited record explicitly says otherwise.
 
 The remote canonical `main` at intake was stale. It was subsequently corrected by the independently audited two-commit lock protocol and now ends at `2461573739147763eb011faf03c344370a184d69`: authorization consumed/closed, no T1–T8 execution, no V3 authority, lock released. Do not execute the old B4 V2 seal.
 
