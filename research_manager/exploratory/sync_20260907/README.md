@@ -11,7 +11,11 @@ This batch synchronizes the work visible from several research sessions without 
 - `audit/ARTIFACT_INTAKE_AUDIT.md`: bounded intake and evidence classification.
 - `git/GIT_SYNC_MAP.md`: branch map and safe additive integration topology.
 - `math/PWE_BARRIER_INDEPENDENT_REVIEW.md`: independent continuation of PWE/barrier analysis.
-- `math_audit/`: independent audit of that continuation, when complete.
+- `math_audit/PWE_BARRIER_AUDIT.md`: completed independent scope audit of the PWE/barrier continuation.
+- `kfb/KFB_FEASIBILITY.md`: feasibility reduction for the killed Feynman--Kac bridge; its `O(1/m)` conclusion is conditional.
+- `kfb_audit/KFB_FEASIBILITY_AUDIT.md`: independent audit identifying the missing uniform killed positive local-limit estimate (BLL).
+- `canonical/CANONICAL_STATUS_CORRECTION_PLAN.md`: plan-only repair for stale canonical status; it is not authorization and has not changed `main`.
+- `TEAM_SYNC_HANDOFF_2026-09-07.md`: compact cross-session continuation point and the single selected next scientific action.
 
 ## Raw archives
 
@@ -19,6 +23,8 @@ This batch synchronizes the work visible from several research sessions without 
 - `math_20260907_INTERRUPTED_RAW.zip`: SHA-256 `c1d200539009fe7c87d4ccec86071ab69d3bf9143c0721258039436e78848f03`, 79,988 bytes.
 
 The raw ZIPs contain the source directories byte-for-byte as observed. They are evidence preservation, not permission to resume or execute a program. Resume incomplete numerical work under a new run identifier and frozen plan; do not append silently to interrupted logs.
+
+Drive byte persistence/read-back is recorded in `DRIVE_RAW_READBACK_2026-09-07.md`: both ZIP hashes match after complete raw retrieval. Folder: https://drive.google.com/drive/folders/1Tg5P5wfILAgKYg-CiUmJS60kzdRFL2AU.
 
 ## Scientific checkpoint
 
