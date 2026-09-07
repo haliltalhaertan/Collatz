@@ -24,15 +24,16 @@ Status: synchronized exploratory preservation; not canonical B4 acceptance, not 
 2. The endpoint constants `j-5*alpha` and `j-4*alpha-1` are compatible row-phase and pre-increment coordinates.
 3. Literal monotonicity of `|H_j|` in `j` is refuted by finite counterexamples. Eventual PWE remains OPEN and finite data do not refute it.
 4. Exact barrier splitting `Psi=K+R` and exact domination `|K|<=Q` are valid.
-5. The fixed-start killed upper bound `|K|=O(1/m)` is CONDITIONAL on a uniform killed positive local-limit estimate `p_m^0(a,b_r)<=C*m^(-3/2)`. That BLL statement was neither proved nor properly matched to the time-dependent irrational-shift lattice in the feasibility note.
-6. Claims excluding every finite-state reduction were overbroad. Only a finite stationary quotient preserving the pointwise multiplier was excluded. Fredholm and usual fixed-endpoint Green-kernel language remain heuristic or require reformulation.
+5. The post-package theorem application in `bll_closure/` matches the actual reflected walk to Caravenna--Chaumont, Proposition 4.1, equation (4.5). Its general `(h,c)`-lattice hypothesis includes the moving coset `m*beta+Z`. Consequently `p_m^0(a,b_r)=O(m^(-3/2))` and `|K_m^0(a,b_r)|=O(1/m)` are now PROVED for the two fixed starts and barrier zero.
+6. This BLL/KUB result does not cover the full `j`-dependent PWE window and does not control the crossing contribution.
+7. Claims excluding every finite-state reduction were overbroad. Only a finite stationary quotient preserving the pointwise multiplier was excluded. Fredholm and usual fixed-endpoint Green-kernel language remain heuristic or require reformulation.
 
 ## Exactly one next scientific action
 
-Prove or refute the uniform positive killed bridge/local-limit estimate BLL on the actual admissible triangular array:
+Prove or refute the uniform complex crossing estimate XUB on the actual admissible triangular arrays:
 
-`p_m^0(a,b_r) <= C*m^(-3/2)` for the fixed starts `a_G` and `a_H`, barrier zero, and the actual endpoints indexed by `theta_r`.
+`|E_a[product_(t=0)^(m-1) q(X_t); tau_0<=m | X_m=b_r]| <= C/m`
 
-This must explicitly handle the time-dependent integer boundary induced by states `a-beta*t+Z`. Until BLL is closed, do not call the killed term `O(1/m)`. If BLL passes, the next arithmetic gap is the crossing contribution XUB; XUB is sufficient for the split route, not logically necessary for all possible proofs.
+The killed half is already `O(1/m)` by BLL/KUB. XUB is a complex/arithmetic cancellation problem, not a positive-probability ballot bound: crossing probability itself may approach one. XUB is sufficient for this split route, not logically necessary for all possible proof routes.
 
 No statement here proves E6-N2, B4, a nonzero profile, a polynomial lower bound, cycles, or the Collatz conjecture.

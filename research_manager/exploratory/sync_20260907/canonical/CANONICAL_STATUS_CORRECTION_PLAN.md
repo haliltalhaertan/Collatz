@@ -8,20 +8,20 @@ Scope: correct the unsafe canonical status at `origin/main`; preserve exact prod
 
 - Canonical baseline is `origin/main = 1a6f924fd86352c11f57a95b0382adaf92d15bcd` (`Finalize B4 V2 authorization handoff`).
 - The local `main` pointer is stale and MUST NOT be used as an integration base. Before a future integration, fetch and confirm the server-side `refs/heads/main`; abort if it is not the expected baseline or if it moved during review.
-- Use a clean, dedicated integration worktree/branch based directly on the freshly fetched `origin/main`. Do not merge the current exploratory checkout or either evidence branch wholesale.
+- Fast-forward the stale local `main` pointer to the freshly verified `origin/main`, after proving the old local pointer is an ancestor and `main` is not checked out elsewhere. Use a clean, dedicated worktree with the branch **exactly `main`**; `tools/verify_handoff.py` requires the checked-out branch to match `continuity.repository_branch=main`. Do not use a temporary integration branch, and do not merge the current exploratory checkout or either evidence branch wholesale.
 - The canonical `active_integrator` at the baseline is `RELEASED`. A future integration must acquire a new narrow transaction lock before canonical writes:
 
 ```json
 {
   "holder": "canonical-integrator-b4-v2-status-correction-20260907",
-  "scope": "B4 V2 consumed-authorization status correction only: select five exact evidence artifacts, add one manager correction decision, append journal sequence 22, repair root state/handoff, rebuild/verify archive, and perform Drive/GitHub publication read-back; no Stage1/T1-T8 execution, no invalid V1 drafts, no scientific route change, no V3 seal or authorization.",
+  "scope": "B4 V2 consumed-authorization status correction only: select five exact evidence artifacts, add one manager correction decision, append journal sequence 22, repair root state/handoff, add the exact closed stage to tools/verify_handoff.py allowed_stages, rebuild/verify archive, and perform Drive/GitHub publication read-back; no Stage1/T1-T8 execution, no invalid V1 drafts, no scientific route change, no V3 seal or authorization.",
   "base_commit": "1a6f924fd86352c11f57a95b0382adaf92d15bcd",
   "acquired_at": "<transaction UTC timestamp>",
   "status": "HELD"
 }
 ```
 
-- Prefer a two-commit canonical transaction: (A) lock acquisition from the verified baseline, then (B) the reviewed milestone finalization that releases the lock. Immediately before finalization, verify that the branch still descends from the same fetched canonical base and that no other canonical integrator is `HELD`. In the final state set `status: RELEASED`, preserve `holder`, `scope`, `base_commit`, and `acquired_at`, and add `released_at`.
+- Use a two-commit canonical transaction: (A) lock acquisition from the verified baseline, then (B) the reviewed milestone finalization that releases the lock. Commit A must be fast-forward pushed to remote `main` and read back before any canonical content edit; a local-only lock is not a lock. Immediately before Commit B, require remote `main` to equal Commit A exactly, not merely descend from the original baseline. Any movement stops the transaction without force or rewrite. In the final state set `status: RELEASED`, preserve `holder`, `scope`, `base_commit`, and `acquired_at`, and add `released_at`; push and read back Commit B.
 - No force push, history rewrite, reset of the dirty exploratory checkout, or reuse of the old transaction holder is permitted.
 
 ## 2. Exact evidence selection
@@ -54,6 +54,7 @@ Exclude `.github/workflows/b4v2-stage1-once.yml`: it is execution machinery, is 
 
 5. `bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt`
    - Git blob SHA-1: `5e55a2d695d3c611b5cc0e08457000ff897dc239`
+   - SHA-256: `0ccdbad263ac7960fa6052cfba9f108abe466279117c3577c025faa322fd61a5`
    - Its two manifested hashes are exactly the MD and JSON SHA-256 values above.
 
 The audit verdict is `[AUDIT FAIL — DO NOT EXECUTE B4 V2 STAGE1]`. The audit records: real sealed entrypoint invoked; RUN_WITNESS not created; PRE_T1_GATE not reached; T1 START not reached; T1–T8 mathematics not executed; the sole once-only authorization consumed. Its root-cause evidence binds sealed expected blob `3ba90bbf9e91ddc600235a38a800db90b03a07e0` from `8d274095b0e1acbe1fad0a73ef6a5293364902fc` against Phase-A actual blob `aa8daf546826853b720356ff96530f0b78ec197d` at `34ac0dbeb8c0ae2fddab706680f1682412b00786`.
@@ -66,6 +67,7 @@ Create a small canonical decision, proposed path:
 
 It must state only:
 
+- schema/version identifier for this governance correction decision;
 - accepted evidence heads and the five exact artifact hashes above;
 - status `[B4 V2 STAGE1 INPUT INTEGRITY FAILURE — AUTHORIZATION CONSUMED / CLOSED]`;
 - the failure is mechanical/integrity-contract configuration, with `NO SCIENTIFIC CHANGE`;
@@ -89,6 +91,9 @@ Retain all established scientific checkpoints and old evidence. Apply only the f
    - add the real invocation trace (`real_entrypoint_invoked: true`, `run_witness_created: false`, `pre_t1_gate_reached: false`, `t1_start_reached: false`, `mathematics_executed: false`), failure reason/timestamp, producer head `04a66e4…`, audit head `8fb8d68…`, and audit verdict.
 4. Add `audited_evidence.e7r_b4_v2_preexec_failure` with both evidence heads, the five artifact identities, verdict, consumed seal/authorization tuple, mechanical root cause, and explicit `scientific_state_changed: false`.
 5. Add the five canonical paths plus the new manager-decision path under `documents` with unambiguous names (`b4_v2_stage1_failure_record`, `b4_v2_stage1_failure_stdout`, `b4_v2_preexec_audit_report`, `b4_v2_preexec_audit_json`, `b4_v2_preexec_audit_manifest`, `b4_v2_status_correction_decision`). Keep the historical authorization decision path as provenance, but it must no longer be labelled active; rename its key to `historical_consumed_authorization_decision` or add a clear consumed-status companion field.
+   - Set `documents.active_research_prompt` to `null` or rename it to `historical_b4_v2_stage0_repair_prompt`; it must not remain a live-looking prompt.
+   - Remove/rename `documents.active_authorization_decision`; retain it only under the historical consumed name.
+   - Rename `next_task_stage0_requirements` to `historical_b4_frozen_program_requirements`, or place it under an explicitly historical block with `authorized:false`.
 6. Replace `next_action` with an unauthorizing stop object, for example:
 
 ```json
@@ -114,7 +119,10 @@ Retain all established scientific checkpoints and old evidence. Apply only the f
 8. Preserve `scientific_checkpoint` unchanged except, if desired, add a governance-only closed item clearly labelled as such; do not add a proved/false mathematical statement.
 9. The legacy top-level `stage1_authorization` currently names the V1 seal `ec26…` yet says `STAGE_1_AUTHORIZED_NOT_EXECUTED`. Resolve this safety ambiguity narrowly: mark it explicitly as historical B4 V1, `status: "[CONSUMED / CLOSED]"`, `stage1_authorized: false`, and keep `stage1_executed: false`. Do not repurpose that legacy block for V2.
 10. Update `updated_at` to the transaction timestamp. Update `active_integrator` as described in section 1 and release it only at finalization.
-11. Do not manually invent archive hashes in `integrity.archive_members`; rebuild deterministically, then populate only values produced by the archive tooling and independently rechecked.
+11. Set `continuity.minimum_required_commit` to Commit A, the published lock-acquisition commit. Commit B is its descendant and therefore satisfies the new minimum.
+12. Finalize the decision, journal, handoff, and state bytes—including the `RELEASED` lock—before archive construction. Compute the final source hashes and populate `integrity.archive_members` from those bytes; then freeze those four source files, build the archive, and compare archive members back to the frozen sources. Do not follow a `rebuild then populate integrity` order, which would leave stale state inside the archive.
+13. Perform a semantic scan of every live-looking `active_*`, `next_*`, `authorized`, `execute`, and `dispatch` field, not only a fixed string grep.
+14. The baseline `tools/verify_handoff.py` rejects the new closed stage because its `allowed_stages` set predates this status. Add exactly `STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED` to that set, with no other verifier behavior change. Treat this as expected governance-tooling maintenance, not a scientific-program edit. Record and read back the final verifier Git blob and SHA-256, and update any repository/archive integrity rows that cover this archived tool.
 
 ## 5. Proposed `START_HERE_CURRENT_HANDOFF.md`
 
@@ -141,20 +149,20 @@ Append exactly one new UTF-8/LF JSON line; do not edit sequences 1–21. The bas
 Proposed event shape (serialize as one deterministic compact JSON line; substitute only the actual transaction timestamp and final decision SHA-256 if recorded):
 
 ```json
-{"T1_T8_executed":false,"active_stage":"STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED","authorization_available":false,"authorization_consumed":true,"event":"B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTED","evidence":{"audit_commit":"8fb8d68d3c131d6e11721fd629f1ea879102aedc","audit_report_sha256":"81f8908bc15b2b03c9db4f214831b7c73a1116a3b6d50e003597a3e0575ad0c7","audit_verdict":"[AUDIT FAIL — DO NOT EXECUTE B4 V2 STAGE1]","failure_reason":"frozen dependency blob mismatch at Phase A: CURRENT_RESEARCH_STATE.json","invocation_commit":"04a66e41864d1d530ead63b1faeaf122048e3069","invocation_failure_sha256":"1997355b8cc2c505df44175b2467598b0e96ded41ab0e45bf9c4d5b6e06ec30a","mathematics_executed":false,"pre_t1_gate":false,"real_entrypoint_invoked":true,"run_witness":false,"scientific_state_changed":false,"stdout_sha256":"fad5d23d92ba219aeb6057aaa6c70ed798d79b1229f9a31a261cbcbb1f9d5f34","t1_start":false},"next_action":"Do not execute or rerun the consumed B4 V2 authorization; await a separate explicit manager transaction for any future repair/reseal. No V3 is authorized or dispatched.","previous_entry_sha256":"f00f80b4b0f394b4c08711e03271e519974ef43ede4094fc82b030e3416b6f72","schema":"COLLATZ_RESEARCH_JOURNAL_V1","sequence":22,"task":"CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2","timestamp_utc":"<transaction UTC timestamp>"}
+{"T1_T8_executed":false,"active_stage":"STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED","authorization_available":false,"authorization_consumed":true,"event":"B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTED","evidence":{"audit_commit":"8fb8d68d3c131d6e11721fd629f1ea879102aedc","audit_manifest_sha256":"0ccdbad263ac7960fa6052cfba9f108abe466279117c3577c025faa322fd61a5","audit_report_sha256":"81f8908bc15b2b03c9db4f214831b7c73a1116a3b6d50e003597a3e0575ad0c7","audit_verdict":"[AUDIT FAIL — DO NOT EXECUTE B4 V2 STAGE1]","failure_reason":"frozen dependency blob mismatch at Phase A: CURRENT_RESEARCH_STATE.json","invocation_commit":"04a66e41864d1d530ead63b1faeaf122048e3069","invocation_failure_sha256":"1997355b8cc2c505df44175b2467598b0e96ded41ab0e45bf9c4d5b6e06ec30a","manager_correction_decision_sha256":"<final decision SHA-256>","mathematics_executed":false,"pre_t1_gate":false,"real_entrypoint_invoked":true,"run_witness":false,"scientific_state_changed":false,"stdout_sha256":"fad5d23d92ba219aeb6057aaa6c70ed798d79b1229f9a31a261cbcbb1f9d5f34","t1_start":false},"next_action":"Do not execute or rerun the consumed B4 V2 authorization; await a separate explicit manager transaction for any future repair/reseal. No V3 is authorized or dispatched.","previous_entry_sha256":"f00f80b4b0f394b4c08711e03271e519974ef43ede4094fc82b030e3416b6f72","schema":"COLLATZ_RESEARCH_JOURNAL_V1","sequence":22,"task":"CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2","timestamp_utc":"<transaction UTC timestamp>"}
 ```
 
 ## 7. Archive, verification, persistence, and publication order
 
 1. Fresh-fetch and pin the actual remote `main`; require the expected base or restart review on the new base.
-2. Create a clean dedicated worktree/branch from that remote object; acquire the narrow `active_integrator` lock. Confirm no other held lock/transaction and no unrelated working-tree content.
+2. Fast-forward local `main`, create a clean dedicated worktree checked out on exactly `main`, acquire the narrow `active_integrator` lock in Commit A, fast-forward push Commit A, and read back remote `main` plus the lock contents. Only then begin canonical content edits.
 3. Select the five exact blobs by commit/path. Recompute all five Git blob IDs and SHA-256 values; verify the audit manifest 2/2; verify producer JSON parses and stdout exactly agrees.
 4. Independently inspect the two source commit ancestry/diffs; confirm no workflow, invalid V1 draft, `.stage1_b4v2` residue, exploratory result, or unrelated branch content entered the candidate tree.
-5. Write and review the manager correction decision, append journal sequence 22 with the recomputed previous-line hash, update `CURRENT_RESEARCH_STATE.json`, and update `START_HERE_CURRENT_HANDOFF.md`.
-6. Validate JSON and JSONL; independently recompute the journal chain; grep all root/current handoff material for stale actionable phrases such as `STAGE_1_AUTHORIZED_NOT_EXECUTED`, `Execute CP20_TASK8B3...V2 Stage 1`, and `[AUTHORIZED ONCE — NOT EXECUTED]`. Historical sealed/authorization records may retain historical text, but current root state/handoff must not present it as live authority.
-7. Rebuild `Collatz_Research_Archive_CURRENT.zip` using `python tools/build_current_archive.py`; update `CURRENT_ARCHIVE_BUILD.json`; verify deterministic repeat build, member uniqueness/order/CRC, size limit, and inclusion/hash of the five evidence files, decision, journal tail, state, and handoff.
-8. Run `python tools/verify_handoff.py` and require exact `HANDOFF VERIFICATION: PASS`. Also run any archive extraction/read-back verifier prescribed by the repository. Failure stops the transaction; it does not authorize a workaround execution.
-9. Release `active_integrator` in the final milestone commit only after all local checks pass. Confirm the final staged path set is narrow and expected; confirm no scientific program bytes changed.
+5. Write and review the manager correction decision, append journal sequence 22 with the recomputed previous-line hash, update `CURRENT_RESEARCH_STATE.json`, update `START_HERE_CURRENT_HANDOFF.md`, and make the single expected governance-tooling edit adding the exact new closed stage to `tools/verify_handoff.py`'s `allowed_stages` set. No other verifier or scientific-program bytes may change.
+6. Validate JSON and JSONL; independently recompute the journal chain; semantically inspect all `active_*`, `next_*`, `authorized`, `execute`, and `dispatch` fields; also grep root/current handoff material for stale actionable phrases such as `STAGE_1_AUTHORIZED_NOT_EXECUTED`, `Execute CP20_TASK8B3...V2 Stage 1`, and `[AUTHORIZED ONCE — NOT EXECUTED]`. Historical sealed/authorization records may retain historical text, but current root state/handoff must not present it as live authority.
+7. Freeze the final decision, journal, handoff, and released state bytes and populate `integrity.archive_members` before archive creation. Rebuild `Collatz_Research_Archive_CURRENT.zip` using `python tools/build_current_archive.py`; do not modify those frozen source bytes afterward. Compare archive copies of state, handoff, and journal byte-for-byte with their sources; update `CURRENT_ARCHIVE_BUILD.json`; verify deterministic repeat build, member uniqueness/order/CRC, size limit, and inclusion/hash of the five evidence files, decision, journal tail, state, and handoff.
+8. Recompute and record the edited verifier's Git blob and SHA-256, confirm its diff is only the one new allowed-stage literal, then run `python tools/verify_handoff.py` and require exact `HANDOFF VERIFICATION: PASS`. Also run any archive extraction/read-back verifier prescribed by the repository. Failure stops the transaction; it does not authorize a workaround execution.
+9. Release `active_integrator` in final Commit B only after all local checks pass. Confirm the final staged path set is narrow and expected; confirm no scientific program bytes changed. Immediately before Commit B require remote `main` to equal Commit A exactly.
 10. Persist the completed milestone/archive to the designated Drive location and perform raw-byte read-back. Record IDs, archive SHA-256, member count, and explicit PASS/FAIL. A connector failure must be recorded as blocked, never as success.
 11. Immediately fetch remote `main` again. If it moved, stop and rebase/review non-destructively; never force. Push only after the base/concurrency check passes.
 12. GitHub read-back: resolve server-side `refs/heads/main`, read back the five evidence blobs, manager decision, root state, handoff, journal tail, and `CURRENT_ARCHIVE_BUILD.json`; compare hashes/contents with the reviewed transaction.
@@ -177,13 +185,18 @@ Proposed event shape (serialize as one deterministic compact JSON line; substitu
 - [ ] No V3 seal, authorization, dispatch, or implied permission created.
 - [ ] Journal is append-only, sequence 22, and previous-entry hash is independently verified from raw sequence-21 bytes.
 - [ ] Root state, handoff, and decision agree on the exact next action.
-- [ ] Active-integrator holder/scope/base are exact; lock is released only in the final milestone state.
+- [ ] Worktree branch is exactly `main`; `continuity.repository_branch` and verifier expectations agree.
+- [ ] Commit A lock was pushed/read back before content edits; remote `main` still equals Commit A immediately before Commit B.
+- [ ] Active-integrator holder/scope/base are exact; `continuity.minimum_required_commit` names Commit A; lock is released only in final Commit B.
+- [ ] All live-looking `active_*`, `next_*`, `authorized`, `execute`, and `dispatch` fields are semantically safe; historical prompt/authorization/requirements keys are not presented as live.
+- [ ] Final decision, journal, handoff, and released state bytes were frozen before archive creation and archive copies match them byte-for-byte.
 - [ ] Archive deterministic rebuild/read-back passes and contains the corrected canonical surface.
 - [ ] `tools/verify_handoff.py` returns exact PASS.
-- [ ] Staged-path review shows no unrelated tracked or exploratory files.
+- [ ] `tools/verify_handoff.py` differs only by the exact new closed-stage allowlist entry; its Git blob/SHA-256 and archive inclusion are recorded and read back.
+- [ ] Staged-path review shows only the expected evidence, governance records/root surfaces, archive metadata/archive, and the one verifier allowlist edit; no unrelated or scientific-program files.
 - [ ] Drive raw-byte read-back passes or is explicitly reported blocked.
 - [ ] GitHub server-side read-back passes; no force push/history rewrite occurred.
 
 ## 9. Non-goals
 
-This transaction does not integrate prefix-bridge work, 2026-09-07 exploratory mathematics, publication/JNT branches, launcher-repair proposals, or any new theorem. It does not fix or reseal the B4 mechanism. It only makes canonical recovery truthful and safe: the V2 once-only authorization is consumed, no T1–T8 mathematics ran, and there is currently no authorized next execution.
+This transaction does not integrate prefix-bridge work, 2026-09-07 exploratory mathematics, publication/JNT branches, launcher-repair proposals, or any new theorem. It does not fix or reseal the B4 mechanism. The only tooling edit permitted is the one-literal `tools/verify_handoff.py` allowed-stage addition required to verify the new truthful closed status. The transaction only makes canonical recovery truthful and safe: the V2 once-only authorization is consumed, no T1–T8 mathematics ran, and there is currently no authorized next execution.

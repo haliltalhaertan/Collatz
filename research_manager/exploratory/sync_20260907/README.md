@@ -16,6 +16,7 @@ This batch synchronizes the work visible from several research sessions without 
 - `kfb_audit/KFB_FEASIBILITY_AUDIT.md`: independent audit identifying the missing uniform killed positive local-limit estimate (BLL).
 - `canonical/CANONICAL_STATUS_CORRECTION_PLAN.md`: plan-only repair for stale canonical status; it is not authorization and has not changed `main`.
 - `TEAM_SYNC_HANDOFF_2026-09-07.md`: compact cross-session continuation point and the single selected next scientific action.
+- `bll_closure/`: post-package theorem application and independent zero-trust audit closing BLL/KUB for the two fixed-start arrays; it was created after the immutable 21-member team-sync ZIP.
 
 ## Raw archives
 
@@ -28,7 +29,7 @@ Drive byte persistence/read-back is recorded in `DRIVE_RAW_READBACK_2026-09-07.m
 
 ## Scientific checkpoint
 
-The exact prefix mixture and logarithmic prefix-excess cutoff remain valid exploratory results. The triangle-weighted bound, PWE, killed Feynman-Kac ballot theorem, crossing-term cancellation, E6-N2/B4, a nonzero profile, polynomial lower bounds and Collatz remain OPEN unless a later audited record explicitly says otherwise.
+The exact prefix mixture and logarithmic prefix-excess cutoff remain valid exploratory results. The shifted-lattice killed local-limit theorem now proves BLL and therefore `|K_m^0|=O(1/m)` for the two actual fixed starts. The triangle-weighted bound, full PWE, crossing-term cancellation (XUB), E6-N2/B4, a nonzero profile, polynomial lower bounds and Collatz remain OPEN unless a later audited record explicitly says otherwise.
 
 The remote canonical `main` at intake was `1a6f924fd86352c11f57a95b0382adaf92d15bcd`; its B4 V2 instruction is stale because later branches record authorization consumption and no T1-T8 execution. Do not execute the old B4 V2 seal.
 
