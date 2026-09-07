@@ -1,11 +1,10 @@
 {
   "active_integrator": {
-    "acquired_at": "2026-09-04T21:21:08.422729+00:00",
-    "base_commit": "8d274095b0e1acbe1fad0a73ef6a5293364902fc",
-    "holder": "canonical-integrator-b4-v2-stage0-stage1-authorization-20260905",
-    "released_at": "2026-09-04T21:21:12.131352+00:00",
-    "scope": "B4 V2 Stage0 canonical intake + two-commit Stage1 authorization only; no Stage1/T1-T8 execution, invalid V1 drafts, new mathematics, weighted/operator work or E8.",
-    "status": "RELEASED"
+    "acquired_at": "2026-09-07T11:42:06.4458908Z",
+    "base_commit": "1a6f924fd86352c11f57a95b0382adaf92d15bcd",
+    "holder": "canonical-integrator-b4-v2-status-correction-20260907",
+    "scope": "B4 V2 consumed-authorization status correction only: select five exact evidence artifacts, add one manager correction decision, append journal sequence 22, repair root state/handoff, add the exact closed stage to tools/verify_handoff.py allowed_stages, rebuild/verify archive, and perform Drive/GitHub publication read-back; no Stage1/T1-T8 execution, no invalid V1 drafts, no scientific route change, no V3 seal or authorization.",
+    "status": "HELD"
   },
   "active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
