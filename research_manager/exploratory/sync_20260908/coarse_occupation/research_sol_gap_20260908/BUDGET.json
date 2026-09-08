@@ -1,0 +1,11 @@
+{
+  "cumulative_ceiling_usd": 2,
+  "previous_settled_usd": 0.041352,
+  "this_wave_actual_usd": 0.020004,
+  "cumulative_actual_usd": 0.061356,
+  "remaining_usd": 1.938644,
+  "outstanding_openrouter_calls": 0,
+  "provider_cost_complete": true,
+  "no_time_cutoff": true,
+  "retries": 0
+}
