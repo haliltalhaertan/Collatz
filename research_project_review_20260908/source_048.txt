@@ -1,0 +1,92 @@
+# CP20 Task 8B3 E6 — Master Findings
+
+## Strongest result
+
+**[PROVED] E6-N1 only.**
+
+E6 proved the exact coefficient/Hadamard, probability-numerator, and
+conditioned Feynman–Kac normal forms. It did not prove E6-N2, E6-N3, E6-N4,
+or E6-N5.
+
+## Exact normal form
+
+\[
+A_r(n)=\sum_{k=0}^{n}
+p^{\rm fin}_{r,k,4}A_{r-1}(k),
+\]
+
+\[
+\mathcal A_r(z)
+=\frac1{1-z}
+(P^{\rm fin}_{r,4}\odot\mathcal A_{r-1})(z),
+\]
+
+\[
+N_r=b^ra^{n_r}A_r(n_r)
+=D_r\,
+\mathbb E[F_{r,4}\mid S_r=n_r].
+\]
+
+The Hadamard identity is formal and analytic for \(|z|<1\). The phase
+multiplier is exactly periodic with period \(2\cdot3^{r-1}\).
+
+## Mechanism disposition
+
+- **M1 — [FAIL]:** exact state coboundaries and uniform summable state-local
+  defects are obstructed by a fixed two-step path holonomy.
+- **M2 — [OPEN]:** the Hadamard form is exact, but the phase multiplier is an
+  \(H^2\) isometry and no ordered-operator or off-saddle \(1/r\) gain was
+  proved.
+- **M3 — [OPEN]:** the exact conditioned Feynman–Kac bridge survives. Its
+  missing theorem is a uniform complex central-block kernel bound plus a
+  positive-excursion tail estimate.
+- **M4 — [OPEN/PARK]:** exact cyclotomic counters and zero tests survive, but
+  bare finite nonvanishing and complete-period arguments have no quantitative
+  polynomial separation.
+
+## Asymptotic status
+
+**[OPEN]**
+
+\[
+N_r=O(r^{-3/2})
+\]
+
+was not proved. Consequently no uniform \(r^{-3/2}\) asymptotic, nonzero
+coefficient, fixed-target limit, or polynomial lower bound was obtained.
+
+The first missing load-bearing inequality is
+
+\[
+\left|\mathbb E[F_{r,4}\mid S_r=n_r]\right|
+\le C/r
+\]
+
+uniformly along the rotation orbit, with a sharper first-order expansion and
+nonvanishing argument required beyond the upper bound.
+
+## Computation status
+
+**[CERTIFIED NUM]** The sealed source ran exactly once:
+
+- 91 direct/recursive composition-counter cases;
+- 203,476 explicitly enumerated compositions;
+- 153 exact cyclotomic cases;
+- five read-only E5 numerator conversions;
+- no new depth, fit, plot, bin, frequency, precision, or rescue computation.
+
+**[NUM]** The five values of \(r^{3/2}N_r\) were order one. This is not a
+scale or coefficient theorem.
+
+## Audit and route decision
+
+The audit stop did not fire: only E6-N1 was obtained, and the M1 obstruction
+closes one ansatz class rather than the whole route.
+
+**[OPEN]** Continue the conditioned-geometric bridge for exactly one repaired
+follow-up: prove or refute a quantitative two-sided Feynman–Kac block-kernel
+contraction with arithmetic residue mixing and a uniform positive-excursion
+tail. If that estimate cannot be closed, park the numerator route.
+
+Nothing in E6 proves Collatz.
+

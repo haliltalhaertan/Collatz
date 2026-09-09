@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "task_id": "test-task",
+  "run_id": "directed-c3bda14a2dc4452f8d8242ce16e619ce",
+  "lane_id": "1",
+  "role": "Theorist",
+  "model": "fake/model",
+  "reasoning_effort": null,
+  "step_id": "test-task:directed-c3bda14a2dc4452f8d8242ce16e619ce:1:v1",
+  "provider_attempts": [
+    {
+      "attempt_id": "1:attempt:1",
+      "client_call_id": "test-task:directed-c3bda14a2dc4452f8d8242ce16e619ce:1:v1:1:attempt:1",
+      "started_at": "2026-09-07T18:30:48.493045+00:00",
+      "status": "RETURNED",
+      "metadata": {},
+      "usage": {
+        "cost_usd": 0
+      }
+    }
+  ],
+  "status": "PARTIAL",
+  "public_findings": "",
+  "claim_results": [
+    {
+      "claim_id": "claim",
+      "statement": "Given identity",
+      "status": "OPEN",
+      "domain": "real x",
+      "assumptions": [
+        "Declared definition"
+      ],
+      "first_missing_step": "Structured result contains no final findings",
+      "evidence_files": [
+        "EVIDENCE.json"
+      ]
+    }
+  ],
+  "scope_compliance": {
+    "scope_changed": false,
+    "undeclared_tools_used": false,
+    "undeclared_inputs_used": false,
+    "budget_exceeded": false
+  },
+  "usage": {
+    "cost_usd": 0,
+    "wall_seconds": 0.030055500013986602
+  },
+  "integrity_issues": [],
+  "independence_level": "ISOLATED_INPUTS_SHARED_COORDINATOR",
+  "unexpected_findings": [],
+  "first_missing_step": "Structured result contains no final findings",
+  "output_hash_scope": "canonical JSON excluding output_sha256",
+  "output_sha256": "372851cf7baabfeb7aea27f624212655d7b587dfdc399e201537175022fb79f8"
+}

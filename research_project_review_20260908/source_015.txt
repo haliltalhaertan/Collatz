@@ -1,0 +1,2657 @@
+# Collatz Problemi Araştırma Checkpoint 7
+
+**Tarih:** 14 Ağustos 2026
+**Ana araştırma hattı:** Critical-ballot/logarithmic-corridor parity prefix'lerinde küçük ordinary realizers'ı dual (3)-adik suffix arithmetic ile dışlama girişimi.
+
+Bu checkpoint, Checkpoint 6'da global least-residue ordering'in modular wraparound nedeniyle başarısız olduğunun görülmesinden devam etmektedir. Araştırma planı dual endpoint, suffix locality ve ternary lift üzerine yoğunlaştırıldı.
+
+## Ana sonuç
+
+Dual (3)-adik yaklaşımın temel cebiri başarıyla kapandı.
+
+Özellikle:
+
+[
+Y=T^j(R)
+]
+
+endpoint'inin fixed-small realizer (R\le M) ve logarithmic corridor altında yalnız polynomial büyüyebileceği exact olarak gösterildi.
+
+Daha önemlisi:
+
+[
+\boxed{
+C(v)\pmod{3^m}
+}
+]
+
+gerçekten yalnız **son (m) odd positions** tarafından belirleniyor.
+
+Bu, global parity problemini (m=O(\log j)) uzunluğunda bir suffix problemine indirme yönünde gerçek bir yapısal avantaj sağladı.
+
+Fakat araştırmanın merkezindeki aday recurrence'de bir hata bulundu:
+
+[
+\boxed{
+S\_{m+1}\neq3S\_m+2^d.
+}
+]
+
+Doğru recurrence:
+
+# [ \boxed{ S\_{m+1}
+
+S\_m+3^m2^d.
+}
+]
+
+Bu düzeltmeyle ternary lift formalizmi yine çalışıyor ve:
+
+[
+E\_{m+1}=E\_m+\lambda\_m3^m
+]
+
+exact oluyor.
+
+Ancak daha sonra önemli bir ikinci obstruction ortaya çıktı:
+
+> Fixed-small endpoint regime'inde ternary zero-lift tail yeni bağımsız bir constraint üretmiyor; bir noktadan sonra (\lambda\_m=0) olması zaten endpoint congruence'ın tautolojik sonucu.
+
+Daha da kötüsü, exact finite experiments'te logarithmic corridor'a izin verilen suffix'lerin doğal modulus derinliğinde (3)-adik residue space'in **tamamını** kaplayabildiği görüldü.
+
+Örneğin odd-slack coefficient:
+
+[
+B=0.89,0.90,\ldots,0.99
+]
+
+ve doğal:
+
+[
+m\approx B\log\_3 q
+]
+
+ölçeğinde, (q=10^3,10^4,10^5,10^6) testlerinde bütün units modulo (3^m) üretilebildi.
+
+Dolayısıyla:
+
+[
+\boxed{
+\text{suffix residue support tek başına anti-concentrated değildir.}
+}
+]
+
+Checkpoint 7 sonunda:
+
+[
+\boxed{
+8/9\to1
+}
+]
+
+veya herhangi bir:
+
+[
+8/9+\varepsilon
+]
+
+iyileştirmesi **elde edilmedi**.
+
+Asıl açık obstruction artık daha net:
+
+[
+\boxed{
+\textbf{suffix residue ile global Archimedean target window arasındaki korelasyon.}
+}
+]
+
+---
+
+# 1. Dual endpoint identity
+
+Length-(j) shortcut parity word:
+
+[
+v=(\varepsilon\_0,\ldots,\varepsilon\_{j-1})
+]
+
+ve ones count:
+
+[
+q=h(j)
+]
+
+olsun.
+
+Checkpoint 6 affine identity:
+
+# [ \boxed{ 2^jY
+
+3^qR+C(v),
+}
+\tag{1.1}
+]
+
+burada:
+
+[
+Y=T^j(R)
+]
+
+ve:
+
+# [ C(v)
+
+\sum\_{r=0}^{q-1}
+3^{q-1-r}2^{d\_r}.
+]
+
+Modulo (3^q):
+
+[
+2^jY\equiv C(v)\pmod{3^q}.
+]
+
+(2), modulo (3^q) invertible olduğundan:
+
+## [EXACT]
+
+[
+\boxed{
+Y
+\equiv
+2^{-j}C(v)
+\pmod{3^q}.
+}
+\tag{1.2}
+]
+
+Dolayısıyla dual endpoint representative:
+
+# [ \boxed{ E\_q(v)
+
+[2^{-j}C(v)]\_{3^q}.
+}
+\tag{1.3}
+]
+
+Bu, 2026 tarihli Kramer preprint'indeki “3-adic endpoint representative” ile aynı genel türde bir objedir; orada finite accelerated exponent code'un hem (2)-adik start representative hem (3)-adik endpoint representative belirlediği açıkça kullanılıyor.
+
+---
+
+# 2. Corridor altında (\Delta\_j)
+
+Tanımla:
+
+[
+\rho=\frac1\alpha,
+\qquad
+\alpha=\log\_2 3,
+]
+
+ve:
+
+# [ \Delta\_j
+
+\alpha q-j.
+]
+
+Critical-ballot nedeniyle:
+
+[
+q\ge\lceil\rho j\rceil,
+]
+
+dolayısıyla:
+
+[
+\boxed{
+\Delta\_j\ge0.
+}
+\tag{2.1}
+]
+
+Corridor:
+
+[
+h(\ell)-\lceil\rho\ell\rceil
+\le
+C\log\_2(\ell+1)+C\_0
+]
+
+ise terminal (j)'de:
+
+[
+q
+\le
+\rho j
+\+
+1
+\+
+C\log\_2(j+1)
+\+
+C\_0.
+]
+
+Bundan:
+
+## [EXACT]
+
+[
+\boxed{
+0\le
+\Delta\_j
+\le
+\alpha C\log\_2(j+1)
+\+
+\alpha(C\_0+1).
+}
+\tag{2.2}
+]
+
+Odd-only normalization:
+
+[
+B=\alpha C.
+]
+
+Dolayısıyla relevant regime:
+
+[
+C<\rho
+\iff
+B<1.
+]
+
+---
+
+# 3. Affine remainder'ın normalized formu
+
+Checkpoint 6 rank-position formu:
+
+# [ d\_r
+
+\lfloor\alpha r\rfloor-s\_r.
+]
+
+Dolayısıyla:
+
+# [ \frac{C(v)}{3^q}
+
+\frac13
+\sum\_{r=0}^{q-1}
+\frac{2^{d\_r}}{3^r}.
+]
+
+Ama:
+
+# [ \frac{2^{d\_r}}{3^r}
+
+2^{-s\_r-{r\alpha}}.
+]
+
+Sonuç:
+
+## [EXACT]
+
+# [ \boxed{ \frac{C(v)}{3^q}
+
+\frac13
+\sum\_{r=0}^{q-1}
+2^{-s\_r-{r\alpha}}.
+}
+\tag{3.1}
+]
+
+Barrier altında:
+
+[
+0<
+2^{-s\_r-{r\alpha}}
+\le1.
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+\frac13
+\le
+\frac{C(v)}{3^q}
+\le
+\frac q3.
+}
+\tag{3.2}
+]
+
+---
+
+# 4. Endpoint'in polynomial büyüklüğü
+
+(1.1)'i (2^j)'ye bölelim:
+
+# [ Y
+
+\frac{3^q}{2^j}
+\left(
+R+\frac{C(v)}{3^q}
+\right).
+]
+
+Fakat:
+
+# [ \frac{3^q}{2^j}
+
+2^{\Delta\_j}.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+# [ \boxed{ Y
+
+2^{\Delta\_j}
+\left(
+R+
+\frac13
+\sum\_{r\<q}
+2^{-s\_r-{r\alpha}}
+\right).
+}
+\tag{4.1}
+]
+
+Eğer:
+
+[
+1\le R\le M,
+]
+
+(3.2):
+
+[
+Y
+\le
+2^{\Delta\_j}
+\left(M+\frac j3\right).
+]
+
+(2.2):
+
+[
+2^{\Delta\_j}
+\le
+2^{\alpha(C\_0+1)}
+(j+1)^{\alpha C}.
+]
+
+Böylece:
+
+## [EXACT] Polynomial endpoint bound
+
+[
+\boxed{
+Y
+\le
+K(M,C\_0)
+(j+1)^{1+\alpha C},
+}
+\tag{4.2}
+]
+
+örneğin:
+
+# [ \boxed{ K(M,C\_0)
+
+2^{\alpha(C\_0+1)}
+\left(M+\frac13\right)
+}
+]
+
+seçilebilir.
+
+Odd-only coefficient:
+
+[
+B=\alpha C
+]
+
+ile:
+
+[
+\boxed{
+Y=O\_{M,C\_0}(j^{1+B}).
+}
+\tag{4.3}
+]
+
+Relevant (B<1) rejiminde:
+
+[
+\boxed{
+Y=O(j^{2-\varepsilon}).
+}
+]
+
+---
+
+# 5. (Y<3^q) eventually
+
+Critical-ballot:
+
+[
+q\ge\rho j.
+]
+
+Dolayısıyla:
+
+# [ 3^q \ge 3^{\rho j}
+
+2^j.
+]
+
+Endpoint ise yalnız polynomial.
+
+Bu nedenle sufficiently large (j):
+
+## [EXACT]
+
+[
+\boxed{
+Y<3^q.
+}
+\tag{5.1}
+]
+
+Sonuç olarak full dual residue:
+
+# [ E\_q
+
+[2^{-j}C(v)]\_{3^q}
+]
+
+artık yalnız congruence değil:
+
+[
+\boxed{
+E\_q=Y.
+}
+\tag{5.2}
+]
+
+---
+
+# 6. Suffix locality
+
+Full affine remainder:
+
+# [ C(v)
+
+\sum\_{r=0}^{q-1}
+3^{q-1-r}2^{d\_r}.
+]
+
+Modulo:
+
+[
+3^m,
+\qquad
+1\le m\le q
+]
+
+alalım.
+
+Eğer:
+
+[
+r\le q-m-1,
+]
+
+o terimde:
+
+[
+q-1-r\ge m
+]
+
+olduğundan terim (3^m)'ye bölünür.
+
+Yalnız:
+
+[
+r=q-m,\ldots,q-1
+]
+
+kalır.
+
+Tanımla:
+
+# [ \boxed{ S\_m(v)
+
+\sum\_{u=0}^{m-1}
+3^{m-1-u}
+2^{d\_{q-m+u}}.
+}
+\tag{6.1}
+]
+
+O halde:
+
+## [EXACT] Suffix-locality theorem
+
+[
+\boxed{
+C(v)
+\equiv
+S\_m(v)
+\pmod{3^m}.
+}
+\tag{6.2}
+]
+
+Ve:
+
+[
+\boxed{
+Y
+\equiv
+2^{-j}S\_m(v)
+\pmod{3^m}.
+}
+\tag{6.3}
+]
+
+Yani modulo (3^m) endpoint bilgisi yalnız:
+
+[
+\boxed{\text{son }m\text{ ones positions}}
+]
+
+tarafından belirlenmektedir.
+
+Bu tür (3)-adik inverse-tree locality klasik Collatz literatüründe tamamen yabancı değildir: Applegate–Lagarias ters (3x+1) ağaçlarını residue classes modulo powers of (3) ile etiketleyip ternary/3-adic vectors kullanır; tree paths de reversed parity information taşır.
+
+---
+
+# 7. Prompt'taki suffix recurrence yanlış çıktı
+
+Aday:
+
+[
+S\_{m+1}
+\stackrel{?}{=}
+3S\_m+2^{d\_{q-m-1}}
+]
+
+idi.
+
+Bu yanlış.
+
+Gerçekten:
+
+# [ S\_{m+1}
+
+\sum\_{u=0}^{m}
+3^{m-u}
+2^{d\_{q-m-1+u}}.
+]
+
+İlk term:
+
+[
+3^m2^{d\_{q-m-1}}.
+]
+
+Kalan terms:
+
+# [ \sum\_{u=1}^{m} 3^{m-u} 2^{d\_{q-m-1+u}}
+
+S\_m.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+# [ \boxed{ S\_{m+1}
+
+S\_m
+\+
+3^m2^{d\_{q-m-1}}.
+}
+\tag{7.1}
+]
+
+### [FAIL]
+
+[
+\boxed{
+S\_{m+1}=3S\_m+2^d
+}
+]
+
+indexing nedeniyle yanlış.
+
+Bu Checkpoint 7'deki ilk önemli düzeltmedir.
+
+---
+
+# 8. Buna rağmen ternary nestedness doğru
+
+(7.1):
+
+[
+S\_{m+1}
+\equiv
+S\_m
+\pmod{3^m}.
+]
+
+Tanımla:
+
+# [ \boxed{ E\_m
+
+[2^{-j}S\_m]\_{3^m}.
+}
+\tag{8.1}
+]
+
+O zaman:
+
+[
+E\_{m+1}
+\equiv
+E\_m
+\pmod{3^m}.
+]
+
+Ve:
+
+[
+1\le E\_m<3^m
+]
+
+olduğundan unique:
+
+[
+\lambda\_m\in{0,1,2}
+]
+
+vardır.
+
+## [EXACT] Ternary lift
+
+# [ \boxed{ E\_{m+1}
+
+E\_m+\lambda\_m3^m.
+}
+\tag{8.2}
+]
+
+(\lambda\_m), (E\_{m+1})'in yeni base-(3) digit'idir.
+
+---
+
+# 9. Exact ternary lift criterion
+
+Tanımla:
+
+# [ \boxed{ \kappa\_m
+
+\frac{2^jE\_m-S\_m}{3^m}
+\in\mathbb Z.
+}
+\tag{9.1}
+]
+
+Yeni suffix exponent:
+
+[
+d=d\_{q-m-1}.
+]
+
+(7.1) ve (8.2):
+
+## [ 2^j(E\_m+\lambda\_m3^m)
+
+(S\_m+3^m2^d)
+\equiv0
+\pmod{3^{m+1}}.
+]
+
+Böl:
+
+## [ \kappa\_m + 2^j\lambda\_m
+
+2^d
+\equiv0
+\pmod3.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+[
+\boxed{
+\lambda\_m
+\equiv
+2^{-j}
+\left(
+2^d-\kappa\_m
+\right)
+\pmod3,
+}
+\tag{9.2}
+]
+
+representative:
+
+[
+\lambda\_m\in{0,1,2}.
+]
+
+Ve:
+
+## [EXACT] Zero-lift criterion
+
+[
+\boxed{
+\lambda\_m=0
+\iff
+\kappa\_m
+\equiv
+2^d
+\pmod3.
+}
+\tag{9.3}
+]
+
+Çünkü:
+
+[
+2^d\equiv
+\begin{cases}
+1\pmod3,&d\text{ even},\\
+2\pmod3,&d\text{ odd}.
+\end{cases}
+]
+
+Zero-lift her yeni suffix level'da temel olarak yeni exponent'in parity'sine bir congruence condition getirir.
+
+---
+
+# 10. (\kappa\_m) recurrence
+
+(9.1), (7.1), (8.2):
+
+# [ \kappa\_{m+1}
+
+## \frac{ \kappa\_m + 2^j\lambda\_m
+
+2^d
+}{3}.
+]
+
+Yani:
+
+## [EXACT]
+
+# [ \boxed{ \kappa\_{m+1}
+
+## \frac{ \kappa\_m + 2^j\lambda\_m
+
+2^{d\_{q-m-1}}
+}{3}.
+}
+\tag{10.1}
+]
+
+Zero-lift halinde:
+
+# [ \boxed{ \kappa\_{m+1}
+
+\frac{
+\kappa\_m-2^{d\_{q-m-1}}
+}{3}.
+}
+\tag{10.2}
+]
+
+---
+
+# 11. Fixed endpoint'te ternary zero tail neden otomatik?
+
+Eğer:
+
+[
+3^m>Y
+]
+
+ve full endpoint condition geçerliyse:
+
+[
+Y\equiv E\_m\pmod{3^m}.
+]
+
+Her ikisi:
+
+[
+0\<Y,E\_m<3^m
+]
+
+olduğundan:
+
+[
+E\_m=Y.
+]
+
+Sonraki (m+1) için de:
+
+[
+3^{m+1}>Y,
+]
+
+dolayısıyla:
+
+[
+E\_{m+1}=Y.
+]
+
+Yani:
+
+## [EXACT]
+
+[
+\boxed{
+3^m>Y
+\Longrightarrow
+\lambda\_m=\lambda\_{m+1}=\cdots=0
+}
+]
+
+full suffix boyunca.
+
+Dahası bu zero condition yeni bir arithmetic miracle değildir.
+
+Eğer:
+
+[
+E\_m=Y,
+]
+
+then:
+
+# [ \kappa\_m
+
+\frac{2^jY-S\_m}{3^m}.
+]
+
+Full affine equation kullanılırsa:
+
+# [ \boxed{ \kappa\_m
+
+3^{q-m}R
+\+
+\sum\_{r=0}^{q-m-1}
+3^{q-m-1-r}2^{d\_r}.
+}
+\tag{11.1}
+]
+
+Modulo (3), (m\<q) iken yalnız son term kalır:
+
+[
+\boxed{
+\kappa\_m
+\equiv
+2^{d\_{q-m-1}}
+\pmod3.
+}
+\tag{11.2}
+]
+
+Bu tam olarak zero-lift criterion'dır.
+
+### [FAIL]
+
+Dolayısıyla:
+
+[
+\boxed{
+\text{eventual ternary zero tail}
+}
+]
+
+fixed endpoint'i dışlamak için yeni bağımsız bir obstruction değildir.
+
+Fixed endpoint zaten zero tail'i cebirsel olarak zorlar.
+
+Bu, Checkpoint 5'te binary lift için bulunan metodolojik probleme paraleldir.
+
+---
+
+# 12. Logarithmic suffix determination theorem
+
+Polynomial endpoint:
+
+[
+Y
+\le
+K(j+1)^{1+\alpha C}.
+]
+
+Seç:
+
+# [ \boxed{ m\_0(j)
+
+\left\lceil
+\log\_3
+\left(
+K(j+1)^{1+\alpha C}
+\right)
+\right\rceil
++1.
+}
+\tag{12.1}
+]
+
+O zaman:
+
+[
+m\_0(j)=O(\log j),
+]
+
+ve:
+
+[
+3^{m\_0}>Y.
+]
+
+Ayrıca:
+
+[
+q=\Theta(j),
+]
+
+dolayısıyla sufficiently large (j):
+
+[
+m\_0\<q.
+]
+
+Suffix locality:
+
+[
+Y\equiv
+2^{-j}S\_{m\_0}(v)
+\pmod{3^{m\_0}}.
+]
+
+Ve (Y<3^{m\_0}).
+
+Sonuç:
+
+## [EXACT] Logarithmic-suffix determination
+
+# [ \boxed{ Y
+
+[2^{-j}S\_{m\_0}(v)]\_{3^{m\_0}}
+}
+\tag{12.2}
+]
+
+ve (m\_0=O(\log j)).
+
+Başka deyişle:
+
+> Fixed-small realizer ve logarithmic corridor varsayımı altında global endpoint'in **tam değeri**, yalnız son (O(\log j)) ones positions ve terminal length (j) tarafından belirlenir.
+
+Bu checkpoint'in en güçlü pozitif yapısal sonucudur.
+
+---
+
+# 13. Daha kısa modulus ile target-window localization
+
+Tanımla:
+
+[
+P(v)=\frac{C(v)}{3^q}.
+]
+
+(1\le R\le M) için:
+
+# [ Y
+
+2^{\Delta\_j}(R+P(v)).
+]
+
+Dolayısıyla:
+
+[
+Y\in I\_j(v;M),
+]
+
+burada:
+
+# [ \boxed{ I\_j(v;M)
+
+\left[
+2^{\Delta\_j}(1+P(v)),
+,
+2^{\Delta\_j}(M+P(v))
+\right].
+}
+\tag{13.1}
+]
+
+Interval width:
+
+# [ |I\_j|
+
+(M-1)2^{\Delta\_j}.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+[
+\boxed{
+|I\_j|
+\le
+K\_M(j+1)^{\alpha C}.
+}
+\tag{13.2}
+]
+
+Odd notation:
+
+[
+B=\alpha C.
+]
+
+Yani:
+
+[
+\boxed{
+|I\_j|=O\_M(j^B).
+}
+\tag{13.3}
+]
+
+Seç:
+
+[
+3^m>|I\_j|.
+]
+
+O zaman aynı residue class modulo (3^m), (I\_j) içinde **en fazla bir integer** içerebilir.
+
+Dolayısıyla:
+
+## [EXACT] Target-window formulation
+
+(m=B\log\_3j+O(1)) ölçeğinde son (m) ones positions:
+
+[
+\boxed{
+\text{target interval içinde endpoint varsa onu unique belirler.}
+}
+]
+
+Ama önemli caveat:
+
+[
+\boxed{
+\text{target interval'in konumu }P(v)
+\text{ nedeniyle bütün prefix'e bağlıdır.}
+}
+]
+
+Bu daha sonra ana obstruction olacak.
+
+---
+
+# 14. Powers of (2) modulo powers of (3)
+
+LTE:
+
+# [ v\_3(4^{3^r}-1)
+
+v\_3(4-1)+v\_3(3^r).
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+# [ \boxed{ v\_3 \left( 2^{2\cdot3^r}-1 \right)
+
+r+1.
+}
+\tag{14.1}
+]
+
+Bundan:
+
+## [EXACT]
+
+# [ \boxed{ \operatorname{ord}\_{3^m}(2)
+
+2\cdot3^{m-1}.
+}
+\tag{14.2}
+]
+
+Bu nedenle (2), units modulo (3^m) grubunun primitive root'udur.
+
+---
+
+# 15. Triangular effective period
+
+Suffix:
+
+# [ S\_m
+
+\sum\_{u=0}^{m-1}
+3^{m-1-u}2^{d\_u}
+]
+
+şeklinde yazılsın.
+
+(u)-inci term'in modulus (3^m)'de belirlenmesi için:
+
+[
+2^{d\_u}
+\pmod{3^{u+1}}
+]
+
+bilmek yeterlidir.
+
+Dolayısıyla exponent'in effective period'u:
+
+## [EXACT]
+
+[
+\boxed{
+d\_u
+\pmod{
+2\cdot3^u
+}.
+}
+\tag{15.1}
+]
+
+Bu çok temiz triangular arithmetic structure verir:
+
+- en eski suffix exponent için yalnız parity,
+- bir sonraki için mod (6),
+- sonra mod (18),
+- sonra mod (54),
+- vb.
+
+Ayrıca:
+
+[
+d\_u\mapsto d\_u+1
+]
+
+değişiminde:
+
+# [ \Delta S\_m
+
+3^{m-1-u}2^{d\_u}.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+# [ \boxed{ v\_3(\Delta S\_m)
+
+m-1-u.
+}
+\tag{15.2}
+]
+
+Prompt'taki triangular sensitivity doğrudur.
+
+---
+
+# 16. Suffix map injective mi?
+
+Hayır.
+
+En küçük seviyede bile kırılıyor.
+
+(m=1):
+
+[
+S\_1
+\equiv
+2^{d\_{q-1}}
+\pmod3.
+]
+
+Bu yalnız:
+
+[
+d\_{q-1}\pmod2
+]
+
+bilgisini görür.
+
+Dolayısıyla aynı parity'deki iki farklı exponent collision verir.
+
+### Explicit critical-corridor örneği
+
+Odd-rank slack bound:
+
+[
+s\_r
+\le
+0.9\log\_2(r+1)
+]
+
+al.
+
+(q=10) için iki admissible slack path:
+
+[
+(0,0,0,0,0,0,0,0,0,0)
+]
+
+ve:
+
+[
+(0,0,0,0,0,0,0,1,1,2).
+]
+
+Son rank'ta:
+
+[
+d\_9=14
+]
+
+ve:
+
+[
+d\_9'=12.
+]
+
+Ama:
+
+[
+2^{14}
+\equiv
+2^{12}
+\equiv1
+\pmod3.
+]
+
+Dolayısıyla:
+
+## [EXACT counterexample]
+
+[
+\boxed{
+\text{suffix displacement}
+\to
+S\_m\bmod3^m
+\text{ map'i }m=1\text{'de bile injective değildir.}
+}
+]
+
+---
+
+# 17. Bounded-to-one mu?
+
+Uniform bounded-to-one da beklenmemeli.
+
+Eski suffix coordinate:
+
+[
+d\_{q-m}
+]
+
+term'i:
+
+[
+3^{m-1}2^{d\_{q-m}}
+]
+
+şeklinde gelir ve modulo (3^m) yalnız exponent parity'sini görür.
+
+Corridor genişliği:
+
+[
+O(\log j)
+]
+
+olduğundan aynı parity'ye sahip:
+
+[
+\asymp\log j
+]
+
+farklı displacement değeri aynı local ternary contribution'ı verebilir.
+
+Dolayısıyla fixed (m) ve growing (j) için multiplicity'nin universal constant ile sınırlanması mümkün değildir.
+
+### [FAIL]
+
+[
+\boxed{
+\text{suffix map uniformly bounded-to-one}
+}
+]
+
+yanlış yöndür.
+
+---
+
+# 18. Exact collision experiments
+
+Geniş Collatz brute force yapılmadı.
+
+Yalnız synthetic, critical-rank suffix tree exact arithmetic ile tarandı.
+
+Kullanılan corridor:
+
+[
+\boxed{
+0\le s\_r
+\le
+\lfloor B\log\_2(r+1)\rfloor
+}
+]
+
+ve internal transition:
+
+[
+d\_{r+1}>d\_r.
+]
+
+Baseline:
+
+# [ \lfloor\alpha r\rfloor
+
+\lfloor\log\_2(3^r)\rfloor
+]
+
+big-integer bit lengths ile exact hesaplandı.
+
+(B) değerleri rational olarak exact kullanıldı.
+
+---
+
+## [NUM] Natural target-depth residue coverage
+
+Seçildi:
+
+[
+m=
+\left\lceil
+B\log\_3q
+\right\rceil.
+]
+
+Bu yaklaşık target-window modulus derinliğidir.
+
+Sonuç:
+
+| (q)(B)(m)distinct suffix residuesunits mod (3^m) |      |    |           |           |
+| ------------------------------------------------ | ---- | -- | --------- | --------- |
+| (10^3)                                           | 0.89 | 6  | 486       | 486       |
+| (10^3)                                           | 0.90 | 6  | 486       | 486       |
+| (10^3)                                           | 0.92 | 6  | 486       | 486       |
+| (10^3)                                           | 0.95 | 6  | 486       | 486       |
+| (10^3)                                           | 0.98 | 7  | 1458      | 1458      |
+| (10^3)                                           | 0.99 | 7  | 1458      | 1458      |
+| (10^4)                                           | 0.89 | 8  | 4374      | 4374      |
+| (10^4)                                           | 0.95 | 8  | 4374      | 4374      |
+| (10^4)                                           | 0.99 | 9  | 13122     | 13122     |
+| (10^5)                                           | 0.89 | 10 | 39366     | 39366     |
+| (10^5)                                           | 0.95 | 10 | 39366     | 39366     |
+| (10^5)                                           | 0.99 | 11 | 118098    | 118098    |
+| (10^6)                                           | 0.89 | 12 | 354294    | 354294    |
+| (10^6)                                           | 0.95 | 12 | 354294    | 354294    |
+| (10^6)                                           | 0.99 | 13 | 1,062,882 | 1,062,882 |
+
+Yani test edilen bütün natural-depth durumlarında:
+
+# [ \boxed{ \text{suffix residue support}
+
+(\mathbb Z/3^m\mathbb Z)^\times.
+}
+]
+
+Bu yalnız `[NUM]`.
+
+Ama metodolojik olarak çok kuvvetli bir uyarıdır.
+
+---
+
+# 19. Collision multiplicity de küçük değil
+
+Örneğin:
+
+[
+q=1000,
+\quad
+B=0.9,
+\quad
+m=6.
+]
+
+Toplam admissible suffix path sayısı:
+
+[
+9450\.
+]
+
+Unit residue sayısı:
+
+[
+486\.
+]
+
+Her unit hit edildi.
+
+Multiplicity:
+
+[
+\boxed{
+2\le\mu(z)\le46,
+}
+]
+
+ortalama:
+
+[
+19.444\ldots
+]
+
+oldu.
+
+(q=10,000,\ B=0.9,\ m=8):
+
+[
+525,486
+]
+
+suffix path,
+
+[
+4374
+]
+
+unit residue.
+
+Her unit yine hit edildi.
+
+Multiplicity:
+
+[
+\boxed{
+33\le\mu(z)\le251.
+}
+]
+
+### [NUM]
+
+Bu sonuçlar suffix map'in yalnız collision üretmediğini, doğal modulus scale'inde oldukça güçlü bir modular mixing gösterdiğini düşündürüyor.
+
+Theorem değildir.
+
+---
+
+# 20. Endpoint-determination derinliğinde bile support geniş
+
+Endpoint'in tamamını belirlemek için gereken derinlik yaklaşık:
+
+[
+m
+\sim
+(1+B)\log\_3 q.
+]
+
+Daha küçük exact experiment:
+
+[
+q=1000.
+]
+
+Sonuç:
+
+- (B=0.89,\ m=12): unit residue'ların yaklaşık
+  [
+  96.54%
+  ]
+  üretildi.
+- (B=0.95,\ m=13):
+  [
+  99.21%
+  ]
+  üretildi.
+
+### [NUM]
+
+Bu daha da güçlü bir uyarıdır:
+
+[
+\boxed{
+\text{suffix residue rarity varsayımı deneysel olarak desteklenmiyor.}
+}
+]
+
+---
+
+# 21. Basit suffix cardinality counting neden çalışmıyor?
+
+Bir suffix exponent için slack choices:
+
+[
+O(\log j).
+]
+
+Suffix length:
+
+[
+m=K\log j.
+]
+
+Naive possible pattern sayısı:
+
+[
+N\_{\rm suff}
+\le
+(O(\log j))^{K\log j}.
+]
+
+Yani:
+
+# [ \log N\_{\rm suff}
+
+O(
+(\log j)\log\log j
+).
+]
+
+Residue space:
+
+[
+3^m,
+]
+
+dolayısıyla:
+
+# [ \log3^m
+
+\Theta(\log j).
+]
+
+Naive pattern entropy, residue-space entropy'den:
+
+[
+\log\log j
+]
+
+factor daha büyük.
+
+### [FAIL]
+
+Dolayısıyla yalnız:
+
+[
+\boxed{
+\text{number of suffix patterns}
+<
+3^m
+}
+]
+
+tipinde bir pigeonhole anti-concentration yöntemi mümkün görünmüyor.
+
+Ve burada:
+
+[
+B=1
+]
+
+özel bir threshold olarak ortaya çıkmıyor.
+
+Bu, yöntemin aradığımız mekanizmayı kullanmadığının güçlü işaretidir.
+
+---
+
+# 22. Ternary digit condition neden locally zayıf?
+
+Zero lift:
+
+[
+\lambda\_m=0
+]
+
+criterion:
+
+[
+\kappa\_m
+\equiv
+2^d
+\pmod3.
+]
+
+Ama:
+
+[
+2^d\pmod3
+]
+
+yalnız exponent parity'sine bağlı.
+
+Dolayısıyla yeni bir zero ternary digit eklemek ilk bakışta yalnız:
+
+[
+\boxed{
+d\pmod2
+}
+]
+
+constraint'i getiriyor.
+
+Corridor'da her rank için:
+
+[
+O(\log j)
+]
+
+possible slack/exponent choices var.
+
+Bu nedenle tek bir ternary digit condition'a karşı local combinatorial freedom çok büyüktür.
+
+Daha yüksek digits elbette (\kappa)'nın sonraki durumuna gömülüdür; fakat yeni step'te imposed direct congruence yalnız mod (3)'dür.
+
+Bu, suffix recursion'ın neden hemen rigid bir finite automaton'a dönüşmediğini açıklıyor.
+
+---
+
+# 23. Low-modulus decoding sonucu
+
+# [ S\_1
+
+2^{d\_{q-1}}.
+]
+
+Modulo (3):
+
+[
+d\_{q-1}\pmod2
+]
+
+decode edilir.
+
+# [ S\_2
+
+3,2^{d\_{q-2}}
+\+
+2^{d\_{q-1}}.
+]
+
+Modulo (9):
+
+- (d\_{q-2}) yalnız mod (2),
+- (d\_{q-1}) mod (6)
+
+ölçeğinde görülür.
+
+# [ S\_3
+
+9,2^{d\_{q-3}}
+\+
+3,2^{d\_{q-2}}
+\+
+2^{d\_{q-1}}.
+]
+
+Modulo (27):
+
+- oldest suffix exponent mod (2),
+- next mod (6),
+- newest mod (18)
+
+ölçeğinde görünür.
+
+Genel pattern:
+
+## [EXACT]
+
+Suffix coordinate (u), residue tarafından yalnız:
+
+[
+\boxed{
+d\_u
+\bmod
+2\cdot3^u
+}
+]
+
+precision'ında görülebilir.
+
+Bu triangularity bir decoding structure veriyor fakat uniqueness vermiyor.
+
+---
+
+# 24. Fixed-small endpoint suffix theorem'in gerçek gücü
+
+Şu sonuç artık elimizde:
+
+Bir fixed:
+
+[
+R\le M
+]
+
+eğer arbitrary large (j)'de corridor prefix realize ederse endpoint:
+
+[
+Y=T^j(R)
+]
+
+yalnız:
+
+[
+O(j^{1+B})
+]
+
+büyür.
+
+Ve:
+
+[
+Y
+]
+
+tamamen son:
+
+[
+O(\log j)
+]
+
+ones positions'dan recover edilebilir.
+
+Bu önemli bir reduction:
+
+[
+\boxed{
+\text{global endpoint arithmetic}
+\rightarrow
+O(\log j)\text{-suffix arithmetic}.
+}
+]
+
+Ancak reduction'ın kalan global parçası:
+
+[
+\boxed{
+\text{hangi polynomial endpoint'in gerekli olduğu}
+}
+]
+
+sorusudur.
+
+Bu da target interval center:
+
+[
+P(v)=\frac13\sum\_{r\<q}
+2^{-s\_r-{r\alpha}}
+]
+
+tarafından belirleniyor.
+
+Ve bu quantity bütün prefix'e bağlıdır.
+
+---
+
+# 25. Asıl obstruction: suffix-target correlation
+
+Suffix bize:
+
+# [ \boxed{ E\_m(v)
+
+[2^{-j}S\_m(v)]\_{3^m}
+}
+]
+
+veriyor.
+
+Global real geometry ise:
+
+[
+\boxed{
+Y
+\in
+I\_j(v;M)
+}
+]
+
+zorunluluğunu getiriyor.
+
+Ancak:
+
+[
+E\_m
+]
+
+yalnız son (m) ones'a bağlıyken,
+
+[
+I\_j(v;M)
+]
+
+interval'inin merkezi:
+
+[
+2^{\Delta\_j}P(v)
+]
+
+bütün prefix'e bağlı.
+
+Dolayısıyla ana problem:
+
+[
+\boxed{
+\text{suffix residue support}
+}
+]
+
+değil,
+
+[
+\boxed{
+\text{suffix residue ile prefix-generated target window
+arasındaki korelasyon}.
+}
+]
+
+Finite experiments'te suffix support'ın tüm unit residue space'i kapsaması bu ayrımı daha da önemli hale getiriyor.
+
+---
+
+# 26. 3-adik suffix viewpoint literatürde nerede?
+
+Applegate–Lagarias'ın inverse (3x+1) tree çalışması ters iteration'ları root residue classes modulo powers of (3) üzerinden etiketliyor; ternary vectors ile tree node'larını kodluyor ve reversed parity vectors'i inverse paths olarak kullanıyor. Dolayısıyla “suffix parity information ↔ finite 3-adic endpoint/root information” genel prensibi mevcut literatürün bir parçasıdır.
+
+Daha yakın tarihli Kramer 2026 preprint'i finite accelerated exponent codes için real drift, (2)-adic start representative ve (3)-adic endpoint representative'ı aynı anda takip ediyor; genuine fixed positive orbit'te başlangıç representative'ın sonunda sabit, endpoint representative'ın da gerçek endpoint'e eşit olması gerektiğini açıkça gösteriyor.
+
+Bizim bu checkpoint'teki daha özel soru:
+
+[
+\boxed{
+\text{critical-ballot/logarithmic corridor}
+\+
+\text{logarithmic suffix}
+\+
+\text{short moving target interval}
+}
+]
+
+kombinasyonudur.
+
+Taradığım primary kaynaklarda bu restricted target-window anti-concentration theorem'inin çözülmüş bir versiyonunu bulamadım.
+
+---
+
+# 27. (p)-adic linear forms / S-unit yolu işe yarıyor mu?
+
+Bu checkpoint'te generic deep Diophantine machinery ayrıca kontrol edildi.
+
+Bugeaud'un sparse digital representations çalışması complex ve (p)-adic logarithmic forms kullanarak variable number of nonzero digits'e izin veren sonuçlar veriyor; ancak growing-digit regime yaklaşık:
+
+[
+\frac{\log\log N}{\log\log\log N}
+]
+
+ölçeğinde.
+
+Bizim relevant integers/exponents için:
+
+[
+\log N=\Theta(j),
+]
+
+dolayısıyla:
+
+[
+\log\log N
+\asymp
+\log j.
+]
+
+Bizim suffix term count:
+
+[
+m=\Theta(\log j),
+]
+
+yani mevcut sparse-digit theorem'lerin kontrollü growing-term rejiminden yaklaşık bir:
+
+[
+\log\log j
+]
+
+factor daha büyüktür.
+
+Ayrıca bizim equation tek multiplicative linear form değil:
+
+[
+\sum\_{u\<m}
+3^{m-1-u}2^{d\_u}
+\equiv
+2^jY
+\pmod{3^m}
+]
+
+şeklinde variable-term additive (S)-unit sum'dır.
+
+### [PARK]
+
+Generic Baker/Yu/(p)-adic linear forms machinery şu anda doğrudan usable bir bound vermiyor.
+
+Bu yol tamamen imkânsız değildir fakat Checkpoint 7'deki (m=\Theta(\log j)) regime için uygun explicit theorem bulunmadı.
+
+---
+
+# 28. Applegate–Lagarias bağlantısından önemli uyarı
+
+Inverse Collatz trees üzerinde (3)-adic residue classes kullanımı daha önce güçlü biçimde geliştirilmiş durumda. Applegate–Lagarias, pruned inverse trees'i (a\pmod{3^{l+1}}) root classes ile kodluyor ve ternary prefix certificates kullanıyor.
+
+Dolayısıyla:
+
+[
+\boxed{
+\text{“3-adik suffix bilgisi var”}
+}
+]
+
+tek başına yeni bir breakthrough değildir.
+
+Yeni olması gereken ingredient:
+
+[
+\boxed{
+\text{critical logarithmic corridor'un
+bu 3-adic tree üzerinde özel bir anti-concentration zorlaması}
+}
+]
+
+olmalıdır.
+
+Bu checkpoint'te tam olarak bu ingredient bulunamadı.
+
+---
+
+# 29. Fixed-(M) exclusion çıktı mı?
+
+Hayır.
+
+Elimizde:
+
+[
+R\le M
+\Longrightarrow
+Y=O(j^{1+B}),
+]
+
+ve:
+
+[
+Y
+]
+
+son (O(\log j)) ones tarafından recover edilebilir.
+
+Ancak corridor suffix family'nin relevant modulo (3^m) residue support'ı finite experiments'te aşırı geniştir.
+
+Dolayısıyla:
+
+[
+\boxed{
+\forall M<\infty,\quad
+M\_j(C,C\_0)>M
+\text{ eventually}
+}
+]
+
+statement'ı henüz kanıtlanmadı.
+
+### [OPEN]
+
+Fixed-small-realizer exclusion aktif problem olarak kalıyor.
+
+---
+
+# 30. Herhangi bir (B\_\*>8/9) çıktı mı?
+
+[
+\boxed{\textbf{Hayır.}}
+]
+
+Mevcut rigorous frontier hâlâ:
+
+[
+\boxed{
+\limsup
+\frac{s\_k}{\log\_2k}
+\ge
+\frac89.
+}
+]
+
+Ternary suffix arithmetic bu checkpoint'te coefficient'i yükseltmedi.
+
+---
+
+# 31. Neden (B=1) henüz görünmedi?
+
+Başlangıçta ümit:
+
+[
+m\sim B\log\_3j
+]
+
+ve suffix entropy ile:
+
+[
+3^m
+]
+
+residue space arasında (B=1)'de bir phase transition bulunmasıydı.
+
+Fakat naive suffix path count:
+
+[
+(\log j)^{O(\log j)}
+]
+
+olduğu için residue space:
+
+# [ 3^{O(\log j)}
+
+j^{O(1)}
+]
+
+üzerinde çok fazla combinatorial freedom var.
+
+Üstelik finite residue experiments natural (m)-scale'de full surjectivity gösterdi.
+
+Dolayısıyla şu an kullanılan mechanism:
+
+[
+\boxed{
+B=1
+}
+]
+
+threshold'unu ayırt etmiyor.
+
+Bu, yöntemin henüz doğru arithmetic coupling'i kullanmadığının göstergesi.
+
+---
+
+# 32. Checkpoint 7 sorularının cevapları
+
+### 1. Dual endpoint formulation exact mı?
+
+Evet.
+
+[
+\boxed{
+Y
+\equiv
+2^{-j}C(v)
+\pmod{3^q}.
+}
+]
+
+**[EXACT]**
+
+---
+
+### 2. Fixed-small (R) altında explicit polynomial bound?
+
+Evet.
+
+[
+\boxed{
+Y
+\le
+K(M,C\_0)(j+1)^{1+\alpha C}.
+}
+]
+
+Odd normalization:
+
+[
+\boxed{
+Y=O(j^{1+B}).
+}
+]
+
+**[EXACT]**
+
+---
+
+### 3. (C(v)\bmod3^m) yalnız son (m) ones'a bağlı mı?
+
+Evet.
+
+[
+\boxed{
+C(v)\equiv S\_m(v)\pmod{3^m}.
+}
+]
+
+**[EXACT]**
+
+---
+
+### 4. Correct suffix recurrence?
+
+Prompt'taki aday yanlış.
+
+Doğrusu:
+
+# [ \boxed{ S\_{m+1}
+
+S\_m+
+3^m2^{d\_{q-m-1}}.
+}
+]
+
+**[EXACT]**
+
+---
+
+### 5. Ternary lift doğru mu?
+
+Evet.
+
+[
+\boxed{
+E\_{m+1}=E\_m+\lambda\_m3^m,
+\quad
+\lambda\_m\in{0,1,2}.
+}
+]
+
+**[EXACT]**
+
+---
+
+### 6. (\lambda\_m=0) exact criterion?
+
+[
+\boxed{
+\lambda\_m=0
+\iff
+\kappa\_m\equiv2^{d\_{q-m-1}}\pmod3,
+}
+]
+
+[
+\kappa\_m=
+\frac{2^jE\_m-S\_m}{3^m}.
+]
+
+**[EXACT]**
+
+---
+
+### 7. (\operatorname{ord}\_{3^m}(2))?
+
+# [ \boxed{ \operatorname{ord}\_{3^m}(2)
+
+2\cdot3^{m-1}.
+}
+]
+
+Ve:
+
+[
+\boxed{
+v\_3(2^{2\cdot3^r}-1)=r+1.
+}
+]
+
+**[EXACT]**
+
+---
+
+### 8. Suffix displacement map injective/bounded-to-one mı?
+
+Injective değil.
+
+Uniform bounded-to-one da değil.
+
+**[FAIL]**
+
+---
+
+### 9. İlk collision?
+
+[
+\boxed{m=1.}
+]
+
+Explicit corridor-admissible example verildi.
+
+---
+
+### 10. Corridor collision multiplicity'yi küçültüyor mu?
+
+Finite exact experiments bunun tersini gösteriyor:
+
+natural target-depth'te residue support tüm units'i kaplıyor.
+
+**[NUM]**
+
+---
+
+### 11. Polynomial target interval precise nasıl?
+
+# [ \boxed{ Y\in I\_j(v;M)
+
+2^{\Delta\_j}
+\left[
+1+\frac{C(v)}{3^q},
+,
+M+\frac{C(v)}{3^q}
+\right]
+}
+]
+
+ve:
+
+[
+\boxed{
+|I\_j|=O(j^B).
+}
+]
+
+**[EXACT]**
+
+---
+
+### 12. Fixed-(M) exclusion theorem?
+
+[
+\boxed{\text{Hayır.}}
+]
+
+---
+
+### 13. Explicit (B\_\*>8/9)?
+
+[
+\boxed{\text{Hayır.}}
+]
+
+---
+
+### 14. İlk gerçek obstruction?
+
+[
+\boxed{
+\textbf{suffix residue support değil;
+suffix residue ile global moving target window arasındaki korelasyon.}
+}
+]
+
+Ayrıca ternary zero-tail kendi başına yeni constraint üretmiyor.
+
+---
+
+### 15. Obstruction full LBH/Periodicity'den daha dar mı?
+
+Evet, formulation düzeyinde çok daha dar.
+
+Yalnız:
+
+[
+\boxed{
+\text{critical-ballot}
+\+
+O(\log j)\text{ corridor}
+\+
+O(\log j)\text{ suffix}
+\+
+\text{polynomial target window}
+}
+]
+
+sınıfını ilgilendiriyor.
+
+Full parity-vector veya general rationality problemi gerekmiyor.
+
+Ancak restricted theorem henüz açık.
+
+---
+
+# 33. Ne başarısız oldu?
+
+### [FAIL]
+
+Prompt'taki:
+
+[
+S\_{m+1}=3S\_m+2^d.
+]
+
+### [FAIL]
+
+Suffix displacement → residue injectivity.
+
+### [FAIL]
+
+Uniform bounded multiplicity.
+
+### [FAIL]
+
+Simple suffix-cardinality versus (3^m) counting.
+
+### [FAIL]
+
+Ternary zero-lift tail'i bağımsız contradiction olarak kullanmak.
+
+### [FAIL]
+
+Suffix marginal residue rarity varsayımı; finite data doğal scale'de full residue coverage gösteriyor.
+
+### [PARK]
+
+Generic (p)-adic/S-unit bounds; mevcut variable-term regime doğrudan yeterli değil.
+
+---
+
+# 34. Kesin olarak ne ilerledi?
+
+### [EXACT]
+
+Fixed-small realizer endpoint:
+
+[
+Y=O(j^{1+B}).
+]
+
+### [EXACT]
+
+Global endpoint exact değeri son:
+
+[
+O(\log j)
+]
+
+ones'tan recover edilebilir.
+
+### [EXACT]
+
+Target interval width yalnız:
+
+[
+O(j^B).
+]
+
+### [EXACT]
+
+Suffix arithmetic triangular:
+
+[
+d\_u
+\pmod{2\cdot3^u}.
+]
+
+### [EXACT]
+
+Ternary lift recurrence ve zero criterion çıkarıldı.
+
+### [EXACT]
+
+Ternary zero tail'in neden bağımsız yeni obstruction olmadığı gösterildi.
+
+### [NUM]
+
+Relevant suffix modulus scale'inde unexpectedly complete modular coverage bulundu.
+
+---
+
+# 35. Checkpoint 8 için doğru araştırma yönü
+
+Checkpoint 7 sonunda yalnız suffix residue support'a saldırmaya devam etmek düşük getirili görünüyor.
+
+Yeni ana problem:
+
+[
+\boxed{
+\textbf{prefix-generated target center ile
+suffix-generated }3\textbf{-adic residue arasındaki coupling.}
+}
+]
+
+Önerilen bir sonraki sıra:
+
+### 1. Prefix/suffix exact split
+
+[
+\frac{C(v)}{3^q}
+]
+
+ifadesini:
+
+[
+P\_{\rm pre}+P\_{\rm suf}
+]
+
+olarak son (m) ranks'te böl.
+
+Suffix residue:
+
+[
+E\_m
+]
+
+ile suffix'in Archimedean contribution:
+
+[
+P\_{\rm suf}
+]
+
+aynı variables tarafından belirleniyor.
+
+Bu correlation exact olarak türetilmeli.
+
+---
+
+### 2. Conditional target interval
+
+Prefix sabitlendiğinde:
+
+[
+P\_{\rm pre}
+]
+
+fixed olur.
+
+Suffix varyasyonları hem:
+
+[
+E\_m
+]
+
+hem:
+
+[
+P\_{\rm suf}
+]
+
+üretir.
+
+Araştırılması gereken joint map:
+
+[
+\boxed{
+\text{suffix}
+\longmapsto
+(E\_m,\ P\_{\rm suf})
+}
+]
+
+olmalı.
+
+Marginal:
+
+[
+E\_m
+]
+
+neredeyse uniform olsa bile joint distribution rigid olabilir.
+
+---
+
+### 3. Joint modular–Archimedean anti-concentration
+
+Yeni theorem adayı:
+
+[
+\boxed{
+E\_m
+\text{ ile }
+2^{\Delta}P\_{\rm suf}
+\text{ aynı anda target-compatible olamaz}
+}
+]
+
+sufficiently often / sufficiently long corridor altında.
+
+Bu, Checkpoint 7'de eksik kalan gerçek coupling'dir.
+
+---
+
+### 4. Record-minimizer data
+
+Synthetic residue coverage yerine:
+
+[
+M\_j
+]
+
+staircase record transitions'da joint pair:
+
+[
+(E\_m,P\_{\rm suf})
+]
+
+incelensin.
+
+Eski minimizer neden tam belirli (j)'de corridor'dan çıkıyor?
+
+Bu artık daha hedefli bir computational laboratory olabilir.
+
+---
+
+# 36. Literatür konumlandırması
+
+Three-way diagnostics — real drift, (2)-adic starting residue, (3)-adic endpoint residue — Temmuz 2026 tarihli Kramer preprint'inde doğrudan araştırılmış ve finite critical code search için kullanılmıştır. Çalışma genuine fixed integer code'larında iki residue-rate'in eventually uygun scale'e düşmesi gerektiğini kanıtlıyor, ancak Collatz ispatı iddiası taşımıyor.
+
+Ters Collatz ağaçlarında ternary/3-adic residue-vector kullanımı ise çok daha eski; Applegate–Lagarias inverse trees'i mod (3^m) labels ve reversed parity paths ile sistematik biçimde kullanıyor.
+
+Dolayısıyla Checkpoint 7'nin potansiyel özgün tarafı yalnız:
+
+[
+\boxed{
+\text{critical logarithmic corridor içinde
+short suffix residue ile short Archimedean target interval'in
+joint compatibility'si}
+}
+]
+
+olabilir.
+
+Bu joint theorem mevcut primary kaynaklarda bulunamadı.
+
+---
+
+# 37. Güncel bilimsel durum
+
+Checkpoint 6:
+
+[
+\boxed{
+\text{global modular ordering yok}
+}
+]
+
+sonucuyla bitmişti.
+
+Checkpoint 7:
+
+[
+\boxed{
+\text{dual }3\text{-adic suffix locality gerçek}
+}
+]
+
+sonucunu doğruladı.
+
+Fakat aynı zamanda:
+
+[
+\boxed{
+\text{suffix marginal residue space aşırı esnek}
+}
+]
+
+olduğu ortaya çıktı.
+
+Dolayısıyla yeni durum:
+
+[
+\boxed{
+\begin{array}{c}
+\text{Global parity problem}\\
+\Downarrow\\
+O(\log j)\text{ suffix determines endpoint residue}\\
+\Downarrow\\
+\text{ama suffix residues alone are not sparse}\\
+\Downarrow\\
+\textbf{need joint modular–Archimedean coupling.}
+\end{array}
+}
+]
+
+Mevcut rigorous slack frontier değişmedi:
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2 k}
+\ge\frac89.
+}
+]
+
+**Checkpoint 7 sonucu:** Henüz (8/9+\varepsilon) yok.
+
+**En güçlü yeni theorem:** Fixed-small/log-corridor endpoint'in tam değeri son (O(\log j)) ones positions'dan recover edilebilir.
+
+**En güçlü yeni negatif bulgu:** Relevant suffix depth'lerinde residue support finite exact experiments'te tüm ((\mathbb Z/3^m\mathbb Z)^\times)'ı kaplıyor; dolayısıyla suffix-only anti-concentration yanlış hedef olabilir.
+
+**Checkpoint 8 ana hedefi:**
+
+[
+\boxed{
+\textbf{joint }
+(E\_m,P\_{\rm suf})
+\textbf{ modular–Archimedean anti-concentration.}
+}
+]

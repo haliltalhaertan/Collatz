@@ -1,0 +1,136 @@
+{
+  "status": "PARTIAL",
+  "final_status": "PARTIAL",
+  "active_lanes": {},
+  "completed_lanes": [
+    "sol-proof-builder",
+    "qwen-independent-refuter",
+    "grok-adversarial-auditor"
+  ],
+  "usage": {
+    "calls": 2,
+    "provider_cost_usd": 0.028816,
+    "provider_cost_complete": false,
+    "provider_cost_lower_bound_usd": 0.028816,
+    "provider_cost_upper_bound_usd": 0.13542200000000001,
+    "wall_seconds": 601.0064531000098
+  },
+  "lanes": {
+    "qwen-independent-refuter": {
+      "status": "TIMEOUT",
+      "first_missing_step": "Lane wall-time ceiling",
+      "usage": {
+        "wall_seconds": 600.5570201999799
+      },
+      "public_answer_characters": 0,
+      "provider_attempts": [
+        {
+          "attempt_id": "qwen-independent-refuter:attempt:1",
+          "client_call_id": "cp20-xub-marked-occupation-advisory-v2:directed-e09d63fe9dc14362a16651602cc1d100:qwen-independent-refuter:v1:qwen-independent-refuter:attempt:1",
+          "started_at": "2026-09-07T18:33:22.224710+00:00",
+          "status": "INTERRUPTED",
+          "metadata": {
+            "id": "gen-1788806006-KxZYzE7NRMPw25D5cQp1",
+            "model": "qwen/qwen3.8-max-0902",
+            "provider": "Alibaba"
+          },
+          "usage": {},
+          "error_type": "TimeoutError"
+        }
+      ],
+      "public_findings": "",
+      "claim_results": [
+        {
+          "claim_id": "XUB-MARKED-OCC",
+          "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+          "status": "OPEN",
+          "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+          "assumptions": [
+            "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+            "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+            "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+            "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+            "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+            "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+          ],
+          "first_missing_step": "Lane wall-time ceiling",
+          "evidence_files": [
+            "EVIDENCE.json"
+          ]
+        }
+      ]
+    },
+    "sol-proof-builder": {
+      "status": "COMPLETED",
+      "first_missing_step": {
+        "name": "Non-low bounded-positive block occupation inequality",
+        "inequality": "Let N_R^(0)=sum_{q in Q_R} 1_{G_q intersect L_q^c}, where G_q is the event that every pair total in block q lies in {1,...,B_0} and L_q is the low-entry event. Prove that there exist C_0<infinity and R_0 such that, for every sufficiently large actual accessible array and every R>=R_0, E[exp(-lambda N_R^(0)) | S_R=K and the exact first-passage data] <= C_0/R.",
+        "quantifiers": "Uniformly over the actual coupled arrays (r,R,tau,K) satisfying R=2J+epsilon, epsilon in {0,1}, K-beta R in (-15-2beta,-13-2beta), z_0=2^(1-{beta tau}) in (1,2), and over the fixed preregistered grid with L_R=floor(c log R). Constants may depend only on eta, lambda, B_0, c, and the fixed grid rule.",
+        "why_strictly_narrower": "Since C_q=G_q intersect L_q^c intersect R_q^c, one has sum_q 1_{C_q} <= N_R^(0), hence exp(-lambda N_R^(0)) <= exp(-lambda sum_q 1_{C_q}). The displayed inequality is therefore a necessary, strictly easier consequence of the target: it omits the amplified-resonance exclusion entirely.",
+        "why_missing": "No supplied identity controls the lower tail of N_R^(0). One-point beta-binomial marginals do not resolve dependence between block words and their entry heights, and the records provide no proved cycle/ballot argument handling the affine threshold, rational ties, even-time sampling, and endpoint conditioning. Even proving this inequality would not finish the primary claim; a further global estimate showing that resonant blocks do not remove too much of this occupation would still be required."
+      },
+      "usage": {
+        "prompt_tokens": 4639,
+        "completion_tokens": 1722,
+        "reasoning_tokens": 620,
+        "cached_tokens": 0,
+        "cost_usd": 0.028816,
+        "wall_seconds": 148.04935970000224
+      },
+      "public_answer_characters": 1895,
+      "provider_attempts": [
+        {
+          "attempt_id": "sol-proof-builder:attempt:1",
+          "client_call_id": "cp20-xub-marked-occupation-advisory-v2:directed-e09d63fe9dc14362a16651602cc1d100:sol-proof-builder:v1:sol-proof-builder:attempt:1",
+          "started_at": "2026-09-07T18:33:22.101333+00:00",
+          "status": "RETURNED",
+          "metadata": {
+            "id": "gen-1788806006-tSWrraEn05lVy0QHmkCG",
+            "model": "openai/gpt-5.6-sol",
+            "provider": "OpenAI"
+          },
+          "usage": {
+            "prompt_tokens": 4639,
+            "completion_tokens": 1722,
+            "reasoning_tokens": 620,
+            "cached_tokens": 0,
+            "cost_usd": 0.028816
+          }
+        }
+      ],
+      "public_findings": "[{'type': 'checked_identity', 'statement': 'Under the stated uniform weak-composition law, for 1 <= h < R and 0 <= a <= K, stars-and-bars gives exactly P(S_h=a | S_R=K) = binom(a+h-1,h-1) binom(K-a+R-h-1,R-h-1) / binom(K+R-1,R-1).', 'justification': 'There are binom(K+R-1,R-1) weak compositions of K into R coordinates. Fixing the first h coordinates to total a leaves binom(a+h-1,h-1) choices for that prefix and binom(K-a+R-h-1,R-h-1) choices for the remaining coordinates. Thus the displayed marginal identity is valid, but it supplies no joint lower-tail estimate for occupation across the disjoint block grid.'}, {'type': 'checked_obstruction', 'statement': 'Low-state visits cannot be discarded as a uniformly rare exceptional event.', 'justification': 'For fixed m<R, the event Y_1=...=Y_m=0 has exact conditional probability binom(K+R-m-1,R-m-1)/binom(K+R-1,R-1) = product_{i=0}^{m-1}(R-1-i)/(K+R-1-i). Along the actual arrays K/R -> beta, this tends to (1+beta)^(-m)>0. Taking even m=2L with 2(4/9)^L<eta forces z_L=z_0(4/9)^L<eta because z_0<2. Hence entry into the low region has probability bounded away from zero.'}, {'type': 'insufficiency', 'statement': 'The supplied reductions do not establish the claimed Laplace estimate.', 'justification': 'The beta-binomial identity controls one partial sum only. The amplified-resonance coefficient formula controls one selected start only. Neither yields a uniform joint lower-tail bound for the number of bounded-positive, non-low blocks on a growing disjoint grid. Exchangeability alone does not provide independence or a usable negative-dependence estimate after conditioning on S_R=K. A per-start estimate and union bound likewise cannot prove the required exponential-moment bound.'}, {'type': 'conclusion', 'statement': 'No rigorous proof or actual accessible counterexample sequence is obtained. The primary claim remains OPEN.'}]",
+      "claim_results": [
+        {
+          "claim_id": "XUB-MARKED-OCC",
+          "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+          "status": "OPEN",
+          "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+          "assumptions": [
+            "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+            "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+            "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+            "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+            "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+            "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+          ],
+          "first_missing_step": {
+            "name": "Non-low bounded-positive block occupation inequality",
+            "inequality": "Let N_R^(0)=sum_{q in Q_R} 1_{G_q intersect L_q^c}, where G_q is the event that every pair total in block q lies in {1,...,B_0} and L_q is the low-entry event. Prove that there exist C_0<infinity and R_0 such that, for every sufficiently large actual accessible array and every R>=R_0, E[exp(-lambda N_R^(0)) | S_R=K and the exact first-passage data] <= C_0/R.",
+            "quantifiers": "Uniformly over the actual coupled arrays (r,R,tau,K) satisfying R=2J+epsilon, epsilon in {0,1}, K-beta R in (-15-2beta,-13-2beta), z_0=2^(1-{beta tau}) in (1,2), and over the fixed preregistered grid with L_R=floor(c log R). Constants may depend only on eta, lambda, B_0, c, and the fixed grid rule.",
+            "why_strictly_narrower": "Since C_q=G_q intersect L_q^c intersect R_q^c, one has sum_q 1_{C_q} <= N_R^(0), hence exp(-lambda N_R^(0)) <= exp(-lambda sum_q 1_{C_q}). The displayed inequality is therefore a necessary, strictly easier consequence of the target: it omits the amplified-resonance exclusion entirely.",
+            "why_missing": "No supplied identity controls the lower tail of N_R^(0). One-point beta-binomial marginals do not resolve dependence between block words and their entry heights, and the records provide no proved cycle/ballot argument handling the affine threshold, rational ties, even-time sampling, and endpoint conditioning. Even proving this inequality would not finish the primary claim; a further global estimate showing that resonant blocks do not remove too much of this occupation would still be required."
+          },
+          "evidence_files": [
+            "EVIDENCE.json"
+          ]
+        }
+      ]
+    }
+  },
+  "zip": {
+    "members": 34,
+    "crc_error": null,
+    "sha256": "4b313c8486836941994a406588591617ef7d327b3eea99f56d8497c22eb7d012",
+    "bytes": 111966
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "xub-maximum-gap-local-question",
+  "run_id": "directed-b5ce2c215e994551b8f29062a2d07222",
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "usage": {
+    "calls": 1,
+    "reserved_tokens": 7870,
+    "reserved_cost_usd": 0.04774,
+    "prompt_tokens": 697,
+    "completion_tokens": 1861,
+    "reasoning_tokens": 1142,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.020004,
+    "provider_cost_complete": true,
+    "wall_seconds": 42.818787900032476,
+    "lanes": {
+      "gap": {
+        "calls": 1,
+        "reserved_tokens": 7870,
+        "reserved_cost_usd": 0.04774,
+        "attempts": {
+          "gap:attempt:1": {
+            "reserved_tokens": 7870,
+            "reserved_cost_usd": 0.04774,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 697,
+              "completion_tokens": 1861,
+              "reasoning_tokens": 1142,
+              "cached_tokens": 0,
+              "cost_usd": 0.020004
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.020004,
+        "provider_cost_upper_bound_usd": 0.020004,
+        "last_usage": {
+          "prompt_tokens": 697,
+          "completion_tokens": 1861,
+          "reasoning_tokens": 1142,
+          "cached_tokens": 0,
+          "cost_usd": 0.020004
+        },
+        "provider_cost_usd": 0.020004,
+        "actual_tokens": 2558
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.0,
+    "provider_cost_lower_bound_usd": 0.020004,
+    "provider_cost_upper_bound_usd": 0.020004
+  },
+  "lanes": {
+    "gap": "COMPLETED"
+  },
+  "new_tasks_started": 0,
+  "limitations": [
+    "No automatic proof promotion from model text or generated code"
+  ]
+}

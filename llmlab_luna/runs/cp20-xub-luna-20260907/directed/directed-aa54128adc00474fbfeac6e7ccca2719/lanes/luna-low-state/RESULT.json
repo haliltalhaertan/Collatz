@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "task_id": "cp20-xub-luna-five-routes-v1",
+  "run_id": "directed-aa54128adc00474fbfeac6e7ccca2719",
+  "lane_id": "luna-low-state",
+  "role": "Analyze low-state occupation through an exact bridge decomposition; do not assume low visits are rare.",
+  "model": "openai/gpt-5.6-luna",
+  "reasoning_effort": "high",
+  "step_id": "cp20-xub-luna-five-routes-v1:directed-aa54128adc00474fbfeac6e7ccca2719:luna-low-state:v1",
+  "provider_attempts": [
+    {
+      "attempt_id": "luna-low-state:attempt:1",
+      "client_call_id": "cp20-xub-luna-five-routes-v1:directed-aa54128adc00474fbfeac6e7ccca2719:luna-low-state:v1:luna-low-state:attempt:1",
+      "started_at": "2026-09-07T19:02:43.692576+00:00",
+      "status": "RETURNED",
+      "metadata": {
+        "id": "gen-1788807766-72NXpaSsB81CWFnm6fxW",
+        "model": "openai/gpt-5.6-luna",
+        "provider": "OpenAI"
+      },
+      "usage": {
+        "prompt_tokens": 4666,
+        "completion_tokens": 4354,
+        "reasoning_tokens": 3624,
+        "cached_tokens": 0,
+        "cost_usd": 0.00639115
+      }
+    }
+  ],
+  "status": "COMPLETED",
+  "public_findings": "['Under the stated uniform weak-composition bridge, let S_h=Y_1+...+Y_h. For 1≤h<R, exact counting gives P(S_h=a | S_R=K) = [C(a+h-1,h-1) C(K-a+R-h-1,R-h-1)] / C(K+R-1,R-1). More generally, conditional on S_h=a, the next ℓ coordinates have total w with probability C(w+ℓ-1,ℓ-1) C(K-a-w+R-h-ℓ-1,R-h-ℓ-1) / C(K-a+R-h-1,R-h-1). This is the required bridge decomposition; it does not introduce independent increments.', 'At pair time j, h=2j and log_2 z_j=1-{βτ}+S_h-βh. Thus z_j<η iff S_h<βh+c_η, where c_η=log_2(η/z_0) is fixed. Since K=βR+O(1), the bridge mean is hK/R=βh+O(1). Its exact variance is K h(R-h)(K+R)/(R^2(R+1)), which is Θ(R) when h/R stays in a compact subinterval of (0,1). A direct Stirling expansion of the displayed beta-binomial mass gives a centered Gaussian local scale, so at every fixed bulk fraction P(z_j<η | S_R=K)→1/2. Therefore low entries are not an exceptional event.', 'There is also an exact positive-probability entrance mechanism. If the first d=2L raw coordinates vanish, then z_L=z_0(4/9)^L. Choosing L with 2(4/9)^L<η forces a low entry, while the exact probability is C(K+R-d-1,R-d-1)/C(K+R-1,R-1)→(1+β)^(-d)>0. This supports neither the target estimate nor a refutation, because the target allows low blocks.', 'The bridge formulas and one-time asymptotics do not control the joint lower tail of low/non-low entries on the disjoint block grid. In particular, they do not establish the required occupation Laplace bound, and they say nothing about the additional bounded-positive and nonresonance marks. No rigorous proof or actual accessible counterexample to the primary claim was obtained.']",
+  "claim_results": [
+    {
+      "claim_id": "XUB-MARKED-OCC",
+      "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+      "status": "OPEN",
+      "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+      "assumptions": [
+        "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+        "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+        "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+        "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+        "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+        "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+      ],
+      "first_missing_step": {
+        "inequality": "For some a>0 and C<∞ depending only on the fixed parameters, uniformly over all sufficiently large accessible actual arrays, prove P(Σ_{q∈Q_R} 1_{z_{j_q}≥η} < a log R | S_R=K and exact first-passage data) ≤ C/R.",
+        "scope": "This is strictly narrower than the target: it counts only non-low block entries and omits bounded positivity and amplified nonresonance.",
+        "why_missing": "The exact bridge decomposition supplies marginals and conditional segment laws, but no joint lower-tail estimate under even-time sampling, rational ties, or the bounded affine threshold. Proving this narrower estimate would still not prove the marked C_q estimate; it is the first unresolved low-state occupation step."
+      },
+      "evidence_files": [
+        "EVIDENCE.json"
+      ]
+    }
+  ],
+  "scope_compliance": {
+    "scope_changed": false,
+    "undeclared_tools_used": false,
+    "undeclared_inputs_used": false,
+    "budget_exceeded": false
+  },
+  "usage": {
+    "prompt_tokens": 4666,
+    "completion_tokens": 4354,
+    "reasoning_tokens": 3624,
+    "cached_tokens": 0,
+    "cost_usd": 0.00639115,
+    "wall_seconds": 273.5134065000166
+  },
+  "integrity_issues": [],
+  "independence_level": "ISOLATED_INPUTS_SHARED_COORDINATOR",
+  "unexpected_findings": [],
+  "first_missing_step": {
+    "inequality": "For some a>0 and C<∞ depending only on the fixed parameters, uniformly over all sufficiently large accessible actual arrays, prove P(Σ_{q∈Q_R} 1_{z_{j_q}≥η} < a log R | S_R=K and exact first-passage data) ≤ C/R.",
+    "scope": "This is strictly narrower than the target: it counts only non-low block entries and omits bounded positivity and amplified nonresonance.",
+    "why_missing": "The exact bridge decomposition supplies marginals and conditional segment laws, but no joint lower-tail estimate under even-time sampling, rational ties, or the bounded affine threshold. Proving this narrower estimate would still not prove the marked C_q estimate; it is the first unresolved low-state occupation step."
+  },
+  "output_hash_scope": "canonical JSON excluding output_sha256",
+  "output_sha256": "41a1a281c49f30bd6ab8391c012388a58a1b49460a5ae9f5cccccfef1b3008fc"
+}

@@ -1,0 +1,69 @@
+{
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "mode": "directed_task",
+  "run_id": "directed-c8626febc92746ac98e857711db4ac03",
+  "task_id": "cp20-xub-sol-none-v1",
+  "pid": 33716,
+  "heartbeat_at": "2026-09-08T07:23:09.078697+00:00",
+  "updated_at": "2026-09-08T07:23:09.078711+00:00",
+  "completed_lanes": [
+    "sol-none-review"
+  ],
+  "active_lanes": {},
+  "lanes": {
+    "sol-none-review": "COMPLETED"
+  },
+  "usage": {
+    "calls": 1,
+    "reserved_tokens": 25622,
+    "reserved_cost_usd": 0.115244,
+    "prompt_tokens": 4694,
+    "completion_tokens": 828,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.0200135,
+    "provider_cost_complete": true,
+    "wall_seconds": 14.770588899962604,
+    "lanes": {
+      "sol-none-review": {
+        "calls": 1,
+        "reserved_tokens": 25622,
+        "reserved_cost_usd": 0.115244,
+        "attempts": {
+          "sol-none-review:attempt:1": {
+            "reserved_tokens": 25622,
+            "reserved_cost_usd": 0.115244,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 4694,
+              "completion_tokens": 828,
+              "reasoning_tokens": 0,
+              "cached_tokens": 0,
+              "cost_usd": 0.0200135
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.0200135,
+        "provider_cost_upper_bound_usd": 0.0200135,
+        "last_usage": {
+          "prompt_tokens": 4694,
+          "completion_tokens": 828,
+          "reasoning_tokens": 0,
+          "cached_tokens": 0,
+          "cost_usd": 0.0200135
+        },
+        "provider_cost_usd": 0.0200135,
+        "actual_tokens": 5522
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.0,
+    "provider_cost_lower_bound_usd": 0.0200135,
+    "provider_cost_upper_bound_usd": 0.0200135
+  },
+  "final_status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "current_step": "Directed task",
+  "last_error": ""
+}

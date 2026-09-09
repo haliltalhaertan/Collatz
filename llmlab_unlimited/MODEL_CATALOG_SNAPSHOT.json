@@ -1,0 +1,55 @@
+[
+  {
+    "id": "deepseek/deepseek-v4-pro-0813",
+    "pricing": {
+      "prompt": "0.00000066",
+      "completion": "0.00000198",
+      "input_cache_read": "0.000000022"
+    },
+    "reasoning": {
+      "mandatory": false,
+      "supported_efforts": [
+        "max",
+        "high",
+        "low"
+      ],
+      "default_effort": "high"
+    }
+  },
+  {
+    "id": "z-ai/glm-5.3-flash",
+    "pricing": {
+      "prompt": "0.000000075",
+      "completion": "0.00000025",
+      "input_cache_read": "0.000000015"
+    },
+    "reasoning": {
+      "mandatory": true,
+      "default_enabled": true,
+      "supported_efforts": [
+        "max",
+        "high",
+        "low"
+      ],
+      "default_effort": "max"
+    }
+  },
+  {
+    "id": "tencent/hy4-preview",
+    "pricing": {
+      "prompt": "0.000000834",
+      "completion": "0.000002501",
+      "input_cache_read": "0.000000042"
+    },
+    "reasoning": {
+      "mandatory": false,
+      "default_enabled": true,
+      "supported_efforts": [
+        "high",
+        "low",
+        "none"
+      ],
+      "default_effort": "high"
+    }
+  }
+]

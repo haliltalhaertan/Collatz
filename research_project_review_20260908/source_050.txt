@@ -1,0 +1,154 @@
+# CP20 TASK 8B2 — D1-E MASTER FINDINGS
+
+**Date:** 2026-08-27  
+**Branch:** Defect-Coupled Return + Repeated-Factor Conjunction  
+**Final branch status:** `[OPEN]`  
+**Finite evidence:** `[NUM]` with targeted `[LEAD]` observations  
+**Naive phase-only bridge:** `[FAIL]`  
+**Load-bearing theorem candidate:** NONE
+
+This package reconstructs the completed D1-E result from the exact D1-D
+candidate words because the canonical D1-E Drive folder had no persisted
+artifacts. No new residue optimization was performed.
+
+## 1. What was tested
+
+Twelve exact D1-D finite critical-log plateau candidates were analyzed using:
+
+- mechanical phase word `g_k`;
+- continued-fraction denominator shifts 2, 5, 12, 41, 53, 306, 665 when they fit;
+- valuation word `a_k`;
+- defect/choice code `d_k = a_k - g_k`;
+- exact canonical residues/states;
+- exact valuation-factor repeats;
+- inherited finite Task-8A surrogate status.
+
+## 2. Did defect/choice masks destroy all useful valuation returns?
+
+**Only some.**
+
+On an interval where the phase symbols agree, valuation symbols agree exactly
+iff the shifted defect symbols agree.
+
+The strongest finite falsification is the kappa=2.7, M=4 candidate:
+
+- q = 12
+- phase LCP = 44
+- valuation LCP = 0
+- defect mismatches inside the phase-return block = 26
+
+Across canonical post-injury aligned tests, there were
+**12**
+cases with phase LCP at least 8 but valuation LCP at most 1.
+
+Therefore the naive implication
+
+`long phase return => long valuation return`
+
+is `[FAIL]`.
+
+But actual valuation repeats still occur. The longest observed exact repeated
+valuation factor had length **8**.
+
+So defect masks destroy many important phase returns, not all valuation
+recurrence.
+
+## 3. Is there a quantitative lower cost for breaking returns?
+
+For one fixed length-L phase-return constraint, one defect mismatch is already
+enough to destroy the exact length-L valuation return. Thus the bare
+phase/defect identity gives only a local cost of one mismatch.
+
+Finite data support that this cost can be small:
+
+- among phase returns of length at least 8, the smallest observed mismatch
+  count was **1** on length 10
+  (density 0.100);
+- among phase returns of length at least 16, the smallest observed mismatch
+  count was **7** on length 16.
+
+These are `[NUM]`, not asymptotic theorems.
+
+The unresolved quantity is the minimum simultaneous hitting-set cost needed
+to break all overlapping dangerous continued-fraction return constraints on
+a supermultiplicative plateau. No positive density, entropy, pressure,
+variation, or defect-budget theorem was obtained.
+
+Status: `[OPEN]`.
+
+## 4. Does frozen Task 8A pressure constrain that cost enough for contradiction?
+
+No contradiction was obtained.
+
+All 12 selected D1-D candidates have inherited finite Task-8A surrogate
+status `PASS`, while many long phase returns are destroyed immediately or
+after only a few valuation symbols.
+
+More importantly, Task 8A constrains critical-site density/pressure data.
+The D1-E quantity is relational: whether `d_i != d_(i+q)` across many shifted
+return intervals.
+
+No frozen theorem currently converts the Task-8A marginal pressure
+constraints into a lower bound for this shifted mismatch hitting cost.
+
+Therefore current Task 8A + defect-cost information does not yield a
+contradiction.
+
+Status: `[OPEN]`, with finite `[NUM]` survival evidence.
+
+## 5. Can frozen Task 6 repeated-factor divisibility actually be triggered?
+
+Yes locally.
+
+True valuation repeats occur inside the exact finite plateau words. For every
+recorded repeat, the engine reconstructed the ordinary intermediate states
+and verified exactly that the frozen Task-6 divisibility holds.
+
+Largest observed repeated factor:
+
+- length = 8
+- valuation mass = 12
+- spacing = 8
+- ordinary-state difference bit length = 104
+
+Thus Task 6 is mechanically triggerable when a true valuation repeat exists.
+
+However the observed repeats are short and no supermultiplicative plateau was
+available in the finite data. Mechanical phase returns do not force long
+valuation repeats, so Task 6 cannot yet be triggered at the scale required
+for a contradiction.
+
+Status: `[OPEN]`.
+
+## 6. What emerged?
+
+- `[FAIL]`: phase-only return => valuation-return bridge.
+- `[NUM]`: finite defect mismatch counts, return lengths, Task-6 repeat checks,
+  and Task-8A-surrogate coexistence.
+- `[LEAD]`: the correct next object is an overlapping
+  defect-return-constraint hitting problem.
+- `[OPEN]`: whether an infinite LEVEL-2 critical-log word can keep
+  supermultiplicative injury gaps while breaking all dangerous valuation
+  returns at Task-8A-admissible cost.
+- No universal theorem.
+- No load-bearing theorem candidate.
+- No explicit infinite countermodel.
+- No whole-branch closure.
+- No audit trigger.
+
+# FINAL STRATEGIC VERDICT
+
+`[OPEN]`
+
+Head-researcher next action:
+
+Do not continue with a generic Sturmian recurrence argument. The next useful
+target is either:
+
+1. prove that breaking every Task-6-dangerous continued-fraction return on a
+   supermultiplicative plateau has a positive defect/critical cost forbidden
+   by frozen Task 8A; or
+2. construct a recursive defect controller that hits all such dangerous
+   returns at admissible cost.
+
+Until one of those is obtained, this return-word branch remains open.

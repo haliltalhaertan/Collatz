@@ -1,0 +1,17 @@
+{
+  "python": "3.14.3",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "packages": {
+    "openai": "1.109.1",
+    "pydantic": "2.13.5",
+    "streamlit": "1.62.0",
+    "z3-solver": "4.16.0.0"
+  },
+  "seeds": {
+    "sol-low-review": 0
+  },
+  "shared_helpers": [
+    "claim_check",
+    "GuardedExperimentWorkspace"
+  ]
+}

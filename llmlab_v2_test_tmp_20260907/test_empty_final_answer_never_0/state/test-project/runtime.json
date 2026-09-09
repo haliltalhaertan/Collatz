@@ -1,0 +1,90 @@
+{
+  "status": "PARTIAL",
+  "mode": "directed_task",
+  "run_id": "directed-2da2a0b9f12749dea761a4baeee066ff",
+  "task_id": "test-task",
+  "pid": 53396,
+  "heartbeat_at": "2026-09-07T18:30:47.402381+00:00",
+  "updated_at": "2026-09-07T18:30:47.402391+00:00",
+  "completed_lanes": [
+    "0",
+    "1",
+    "2"
+  ],
+  "active_lanes": {},
+  "lanes": {
+    "0": "PARTIAL",
+    "1": "PARTIAL",
+    "2": "BLOCKED_DEPENDENCY"
+  },
+  "usage": {
+    "calls": 2,
+    "reserved_tokens": 4174,
+    "reserved_cost_usd": 0.004174,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.0,
+    "provider_cost_complete": true,
+    "wall_seconds": 0.13378040000679903,
+    "lanes": {
+      "0": {
+        "calls": 1,
+        "reserved_tokens": 2087,
+        "reserved_cost_usd": 0.002087,
+        "attempts": {
+          "0:attempt:1": {
+            "reserved_tokens": 2087,
+            "reserved_cost_usd": 0.002087,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "cost_usd": 0
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.0,
+        "last_usage": {
+          "cost_usd": 0
+        },
+        "provider_cost_usd": 0.0,
+        "actual_tokens": 0
+      },
+      "1": {
+        "calls": 1,
+        "reserved_tokens": 2087,
+        "reserved_cost_usd": 0.002087,
+        "attempts": {
+          "1:attempt:1": {
+            "reserved_tokens": 2087,
+            "reserved_cost_usd": 0.002087,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "cost_usd": 0
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.0,
+        "last_usage": {
+          "cost_usd": 0
+        },
+        "provider_cost_usd": 0.0,
+        "actual_tokens": 0
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.0,
+    "provider_cost_lower_bound_usd": 0.0,
+    "provider_cost_upper_bound_usd": 0.0
+  },
+  "final_status": "PARTIAL",
+  "current_step": "Directed task",
+  "last_error": ""
+}

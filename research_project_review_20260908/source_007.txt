@@ -1,0 +1,151 @@
+COLLATZ PROBLEMİ — ARAŞTIRMA ARŞİVİ
+MASTER INDEX v2
+Date: 2026-08-15
+
+ROOT GOOGLE DRIVE FOLDER
+Collatz Problemi — Araştırma Arşivi
+Folder ID: 1mRJGjUsali3eOYtRyMnvO19afK_M4SY5
+
+ARCHIVE POLICY
+1. Keep checkpoint research prompt, checkpoint result, audit prompt, audit result, helper code/output, and raw/original source separately whenever exact bytes are available.
+2. Never silently reconstruct a missing source and label it canonical.
+3. When exact bytes cannot be exported, preserve a SOURCE REFERENCE / SOURCE STATUS record with File Library ID or transcript provenance.
+4. Preserve failed ideas and audit corrections; do not overwrite historical checkpoints.
+5. Future checkpoints should be added in the same structure.
+
+FOLDER STRUCTURE
+00_MASTER_INDEX — 1ekBhFx--ENCf_YJvY4u3b261iQjgz43y
+CP01 — 1BGjkdImAu7n3IZraawucZRYMmVPKTAUg
+CP02 — 1aBT7BTQ4ikSIGZZgm5lc9B4yDHP3N0ch
+CP03 — 1QRcnyoJS9ABNPkMdcZcYRciGZGabdSX4
+CP04 — 1sGgk5d4jpgTaTIgOx6EE5OKXX4nPkG3h
+CP05 — 1M72RLzwDIdRQ0MTh4CdsDcMI56OGsZY8
+CP06 — 1JdvCCs9MPdGnladZ13pSZ9QeKDitKSbv
+CP07 — 1csgSsFtwoHZkEWVVYPxt2N6vOs7XlqAz
+CP08 — 1IanbCk0lxGTV13w1PH-W63yYDPBX6Fgj
+CP09 — 15EvnzRrYwfAvCQ6NMkz_KvjYd89uBxa3
+CP10 — 1SgwtVoGHpLrocsIZRb-BZdm1sst0y-Bm
+CP11 — 1yBOIsxOekUo1UMUOANvUCHIAgqYKWher
+CP12 — 1n4Gt9bG3DuwjijbQO0bVLQTQkOI3E1bP
+90_CROSS_CHECK_AUDITS — 1SH3VhdEgT2jrMXp-ExsHbnFNq791vJHv
+91_COMPUTATION_ARTIFACTS — 1bhVIBNC7vvkqXKlHMrfMKaVa6h5r260h
+99_RAW_AND_SOURCE_MANIFEST — 11gB3f2Sd15nIpxEXHj7bbDUT7ILnX-CI
+99/ORIGINAL_LOCAL_SOURCES — 1SvySZ9jIOwPIjZp8_cyi6w5Fu0DR-nxJ
+
+ARCHIVED CHECKPOINT RESULTS / AUDITS
+CP02
+- CP02 — Checkpoint Sonuç Raporu — Drive ID 143S-9Ewqm0_3-My2no4sc9slke9ivqse
+- Research prompt source reference preserved; File Library exact bytes pending.
+
+CP03
+- CP03 — Checkpoint Sonuç Raporu — 1WTzacJVniXxVZ4l3Z9bp9kJl1d2tRkah
+- Prompt source status preserved.
+
+CP04
+- CP04 — Checkpoint Sonuç Raporu — 1SFNJN0dV0BK1hKcTsv_0lm1IGIr1ECou
+- Prompt source status preserved.
+
+CP05
+- SOURCE STATUS record only. Canonical CP05 bytes pending recovery.
+
+CP06
+- CP06 — Checkpoint Sonuç Raporu — 1UukKEPz-49QpNxomLvax3txNVMZPZxeB
+- Prompt source status preserved.
+
+CP07
+- CP07 — Checkpoint Sonuç Raporu — 1cH5FE8hXV1GN7MiaE7IQMBPCAYJbUcfe
+- Prompt source status preserved.
+
+CP08
+- CP08 — Checkpoint Sonuç Raporu — 1TkdBmI3053yEjEED9psaiXAZ79yoza7G
+- Prompt source status preserved.
+
+CP09
+- CP09 — Collatz_Checkpoint_9_2026-08-14.docx — 1VxchITcAknp6EElLyANTpXPiHB6vXGJV
+- CP09 — Audit 01 — Adversarial Independent Proof & Novelty Audit — 1ynzbnbK8iDvg42p9VkjRlR7qEuIP5cDw
+- Research prompt source status preserved.
+
+CP10
+- CP10 — Collatz_Checkpoint_10_2026-08-15.docx — 1tyrfVxOc9H4lwY5C-FlYU1gcOfLPWEDZ
+- CP10 — Audit — Bağımsız Adversarial Denetim — 13CnM60s_KKjvfXwYHIFNhEFYttYXZfXv
+- Research prompt source reference preserved.
+- Audit prompt source reference preserved.
+
+CP11
+- CP11 — Collatz_Checkpoint_11_2026-08-15.docx — 1_98OlZkMieeKqZJAo9MR_llGypbGaQ7R
+- CP11 — Audit 01 — Executive Verdict Proof Sağlam — 1tkMQFw_doSQkMBUt28EpUV-M8RMrN2ls
+- CP11 — Audit 02 — Claude Bağımsız Adversarial Denetim — 1G1IovaBDH93lcV49KCaKfkQ7ZBrLRHVU
+- Research prompt source reference preserved.
+- Audit prompt source reference preserved.
+
+CP12
+- CP12 — Collatz_Checkpoint_12_2026-08-15.docx — 13Jk4T0NCm4X3tZ42EbJ3bC0RXAv2XyoY
+- CP12 — Audit 02 — Bağımsız Adversarial Denetim — Collision Barrier Bulgusu — 1Xgr6szOYXch5M0NjTwXB-FFhB42OUGjs
+- CP12 Audit 01 transcript-source status preserved; standalone exact bytes pending.
+- CP12 research prompt source reference preserved.
+- CP12 audit prompt transcript-source reference preserved.
+
+CROSS-CHECK / FORWARD AUDITS
+- Architecture-Limit Audit Prompt — source reference — 1r0Fld3CivdtaHIx4YqphXhoryqGf8U_G
+  Purpose: independently verify/falsify the numerical collision-only K≈3.016579 barrier before designing CP13.
+
+COMPUTATION ARTIFACTS
+- COMPUTATION ARTIFACT SOURCE REFERENCES — CP10–CP12 — 1OvFmRPAAjektqxrb-ySadf0YT5hlGll5
+- Exact File Library identifiers for CP10/CP11/CP12 helper scripts, outputs, finite tables, and interval-certificate candidates are recorded there.
+
+RAW / ORIGINAL LOCAL SOURCES
+Exact locally available plaintext sources were copied into 99_RAW_AND_SOURCE_MANIFEST/ORIGINAL_LOCAL_SOURCES, including:
+- CP02 raw result source
+- CP03 raw result source
+- CP04 raw result source
+- CP06 raw result source and duplicate raw source
+- CP07 raw result source
+- CP08 raw result source
+- CP09 raw audit source
+- CP10 raw audit source
+- CP11 raw audit sources
+- CP12 raw audit source
+- intermediate manuscript raw source
+
+INTERMEDIATE MANUSCRIPT
+- Harmonic sparsity of divergent Syracuse orbits — LaTeX source — Drive ID 1PcUYS9L5QoSZyz-0bQcvAID-ne5Ges0W
+
+PROVENANCE / PENDING MANIFEST
+- UNARCHIVED SOURCE REFERENCES — Drive ID 11RaryIKhp1GOSE-UQG7lmq1678VnPTQJ
+  Lists exact File Library IDs for sources whose bytes could not be exported during this pass.
+
+CANONICAL SOURCE GAPS AS OF THIS INDEX
+- CP01 canonical prompt/result/audit bytes not positively located.
+- CP05 canonical prompt/result/audit bytes not positively located.
+- Standalone prompt bytes for several checkpoints are still File-Library/transcript references rather than byte-for-byte Drive copies.
+- CP12 Audit 01 is preserved as transcript provenance/status but not yet as a standalone exact-byte file.
+- Helper scripts/certificate outputs identified only in File Library remain source references until byte export is possible.
+
+CHECKPOINT 12 SCIENTIFIC STATUS FOR ARCHIVE CONTINUITY
+- Qualitative strict improvement survives adversarial audit:
+  exists eta_12 > 0 with limsup H_N/ln ln N <= K_11 - eta_12,
+  K_11 = 4.916563550949996...
+- Explicit K<4.723566 / ~4.72097 remains a machine-assisted certificate candidate pending independent formal interval recertification.
+- B=1 remains open.
+- Second CP12 audit raises a numerical collision-only barrier candidate near K≈3.016579; this must be independently audited before becoming working theorem status.
+
+SHA-256 PROVENANCE OF KEY LOCAL CANONICAL COPIES
+CP09 DOCX: 86614b15707b1d3f6935d06f2d66c199e3d5014c8a284e4ee68d8fdd84960a7f
+CP10 DOCX: f23ec854654e0120af57b2963c07167cc859c11c9ab58f59748d89799228a992
+CP11 DOCX: 0d5981fcde3d64db1d8a2703f144fd75331437104f65fe05be3830356e76e8bc
+CP12 DOCX: b6ee6e10240a08d77ccf9bb34bd834e958d81bad64a08a272895bec1f0e7abf8
+Intermediate manuscript: 55e7ddf8b02d461a3daec4b08c60b36f87e80ce41c46ca0de6e47829bf197a02
+
+FUTURE RULE
+Every new Collatz checkpoint should create/retain, where applicable:
+01_RESEARCH_PROMPT
+02_RESULT_CHECKPOINT
+03_AUDIT_PROMPT_01
+04_AUDIT_RESULT_01
+05_AUDIT_PROMPT_02
+06_AUDIT_RESULT_02
+07_COMPUTATION_CODE
+08_COMPUTATION_OUTPUT
+09_CERTIFICATES
+10_SOURCE_PROVENANCE
+and update this master index rather than overwriting history.

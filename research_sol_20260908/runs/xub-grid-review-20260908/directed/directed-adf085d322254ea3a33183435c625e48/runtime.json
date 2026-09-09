@@ -1,0 +1,139 @@
+{
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "mode": "directed_task",
+  "run_id": "directed-adf085d322254ea3a33183435c625e48",
+  "task_id": "xub-grid-obstruction-review",
+  "pid": 9208,
+  "heartbeat_at": "2026-09-08T07:45:14.863045+00:00",
+  "updated_at": "2026-09-08T07:45:14.863059+00:00",
+  "completed_lanes": [
+    "logic",
+    "rank",
+    "grid"
+  ],
+  "active_lanes": {},
+  "lanes": {
+    "logic": "COMPLETED",
+    "rank": "COMPLETED",
+    "grid": "COMPLETED"
+  },
+  "usage": {
+    "calls": 3,
+    "reserved_tokens": 20927,
+    "reserved_cost_usd": 0.12585400000000002,
+    "prompt_tokens": 1721,
+    "completion_tokens": 3791,
+    "reasoning_tokens": 1605,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.041352,
+    "provider_cost_complete": true,
+    "wall_seconds": 107.55248660000507,
+    "lanes": {
+      "rank": {
+        "calls": 1,
+        "reserved_tokens": 6894,
+        "reserved_cost_usd": 0.041788,
+        "attempts": {
+          "rank:attempt:1": {
+            "reserved_tokens": 6894,
+            "reserved_cost_usd": 0.041788,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 557,
+              "completion_tokens": 1115,
+              "reasoning_tokens": 347,
+              "cached_tokens": 0,
+              "cost_usd": 0.012264
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.012264,
+        "provider_cost_upper_bound_usd": 0.012264,
+        "last_usage": {
+          "prompt_tokens": 557,
+          "completion_tokens": 1115,
+          "reasoning_tokens": 347,
+          "cached_tokens": 0,
+          "cost_usd": 0.012264
+        },
+        "provider_cost_usd": 0.012264,
+        "actual_tokens": 1672
+      },
+      "grid": {
+        "calls": 1,
+        "reserved_tokens": 7045,
+        "reserved_cost_usd": 0.04209,
+        "attempts": {
+          "grid:attempt:1": {
+            "reserved_tokens": 7045,
+            "reserved_cost_usd": 0.04209,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 590,
+              "completion_tokens": 1861,
+              "reasoning_tokens": 971,
+              "cached_tokens": 0,
+              "cost_usd": 0.01979
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.01979,
+        "provider_cost_upper_bound_usd": 0.01979,
+        "last_usage": {
+          "prompt_tokens": 590,
+          "completion_tokens": 1861,
+          "reasoning_tokens": 971,
+          "cached_tokens": 0,
+          "cost_usd": 0.01979
+        },
+        "provider_cost_usd": 0.01979,
+        "actual_tokens": 2451
+      },
+      "logic": {
+        "calls": 1,
+        "reserved_tokens": 6988,
+        "reserved_cost_usd": 0.041976,
+        "attempts": {
+          "logic:attempt:1": {
+            "reserved_tokens": 6988,
+            "reserved_cost_usd": 0.041976,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 574,
+              "completion_tokens": 815,
+              "reasoning_tokens": 287,
+              "cached_tokens": 0,
+              "cost_usd": 0.009298
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.009298,
+        "provider_cost_upper_bound_usd": 0.009298,
+        "last_usage": {
+          "prompt_tokens": 574,
+          "completion_tokens": 815,
+          "reasoning_tokens": 287,
+          "cached_tokens": 0,
+          "cost_usd": 0.009298
+        },
+        "provider_cost_usd": 0.009298,
+        "actual_tokens": 1389
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.0,
+    "provider_cost_lower_bound_usd": 0.041352,
+    "provider_cost_upper_bound_usd": 0.041352
+  },
+  "final_status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "current_step": "Directed task",
+  "last_error": ""
+}

@@ -1,0 +1,20 @@
+{
+  "archive_sha256": "f9a501670013f59ae56c3249e7e2daa9ff47d8b7ee1b50ba58acafd769acef12",
+  "sources": [
+    {
+      "member": "Collatz Problemi — Araştırma Arşivi/CP20/Module E Results/CP20_TASK8B3_E0_EXACT_RECURSION_V2.md",
+      "file": "CP20_TASK8B3_E0_EXACT_RECURSION_V2.md",
+      "sha256": "d279583fd6bb2de7375100d9a95d0dfbc3bd17df7e64af5509cd97548b515b39"
+    },
+    {
+      "member": "Collatz Problemi — Araştırma Arşivi/CP20/Module E Results/CP20_TASK8B3_E0_INTERVAL_ANTICONCENTRATION_REPORT.md",
+      "file": "CP20_TASK8B3_E0_INTERVAL_ANTICONCENTRATION_REPORT.md",
+      "sha256": "ef9f962e9cd0487fb48dbe9d752ecb016c0852527bbeef60b0148f3e9b432d60"
+    },
+    {
+      "member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E1 — Low-High Conductor Decomposition/CP20_TASK8B3_E1_HIGH_CONDUCTOR_REQUIRED_DECAY.md",
+      "file": "CP20_TASK8B3_E1_HIGH_CONDUCTOR_REQUIRED_DECAY.md",
+      "sha256": "a26fa9213df406d282477e509c07411ff7e033eb9a8e1d86047efc1e5d0ac69e"
+    }
+  ]
+}

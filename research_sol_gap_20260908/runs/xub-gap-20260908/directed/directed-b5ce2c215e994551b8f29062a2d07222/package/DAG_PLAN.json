@@ -1,0 +1,35 @@
+[
+  {
+    "lane_id": "gap",
+    "role": "Let U_1,...,U_n be totals of n disjoint d-coordinate blocks from a uniform weak composition of K into R=dn coordinates. Their mass is proportional to product_i binom(U_i+d-1,d-1), sum U_i=K. Put s_j=sum_(i<=j) U_i-jK/n, j=0,...,n-1. Delta is largest minus second-largest s_j, with zero for tied maxima. For fixed B>0, prove a positive uniform lower bound P(Delta>B)>=c_B>0 as d~a log R grows, or give a precise obstruction. Focus on one elementary injection/comparison of the exact weights, or a fully justified bound on the number of vertices within B of the maximum. No Brownian heuristic as proof, no unsupported theorem citations, no claim about Collatz. If unable, return the most specific missing finite inequality and any proved partial result. At most 650 words.",
+    "independence_group": "gap",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [],
+    "execution": "model",
+    "model": "openai/gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "max_completion_tokens": 4000,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 20000,
+    "max_cost_usd": 0.08,
+    "max_wall_seconds": 0,
+    "input_price_per_million": 2.0,
+    "output_price_per_million": 10.0,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  }
+]

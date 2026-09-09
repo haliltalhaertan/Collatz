@@ -1,0 +1,9 @@
+{
+  "task_id": "cp20-xub-deepseek-five-routes-v1",
+  "run_id": "directed-7d7d0ee20bab478b973565c4b9ad95ae",
+  "status": "STOPPED",
+  "artifact_root": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_comparison\\deepseek\\runs\\cp20-xub-deepseek-20260907\\directed\\directed-7d7d0ee20bab478b973565c4b9ad95ae",
+  "claim_ledger_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_comparison\\deepseek\\runs\\cp20-xub-deepseek-20260907\\directed\\directed-7d7d0ee20bab478b973565c4b9ad95ae\\package\\CLAIM_LEDGER.json",
+  "package_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_comparison\\deepseek\\runs\\cp20-xub-deepseek-20260907\\directed\\directed-7d7d0ee20bab478b973565c4b9ad95ae\\package\\COMPLETE_PACKAGE.zip",
+  "package_sha256": "3a3ef6a2e2656a6030050ca6f7c584f91cfbb20af68e65124cfed3ea7c8a8792"
+}

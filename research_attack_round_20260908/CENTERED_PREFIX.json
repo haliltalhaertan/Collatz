@@ -1,0 +1,50 @@
+[
+  {
+    "r": 5,
+    "m": 6,
+    "t": 1,
+    "strata": 2,
+    "V": "49/4",
+    "raw_signature_diagonal": "81/4",
+    "centered_signature_diagonal": "37/8",
+    "sum_stratum_variances": "37/4",
+    "cross_strata": "3",
+    "cauchy_strata_bound": "37/2"
+  },
+  {
+    "r": 10,
+    "m": 12,
+    "t": 3,
+    "strata": 4,
+    "V": "307/16",
+    "raw_signature_diagonal": "27895/4",
+    "centered_signature_diagonal": "6701/256",
+    "sum_stratum_variances": "819/32",
+    "cross_strata": "-205/32",
+    "cauchy_strata_bound": "819/8"
+  },
+  {
+    "r": 12,
+    "m": 15,
+    "t": 4,
+    "strata": 5,
+    "V": "6395/4",
+    "raw_signature_diagonal": "28179333/128",
+    "centered_signature_diagonal": "50973/128",
+    "sum_stratum_variances": "2795/4",
+    "cross_strata": "900",
+    "cauchy_strata_bound": "13975/4"
+  },
+  {
+    "r": 14,
+    "m": 17,
+    "t": 5,
+    "strata": 6,
+    "V": "413919/256",
+    "raw_signature_diagonal": "650219507/512",
+    "centered_signature_diagonal": "12206397/8192",
+    "sum_stratum_variances": "274211/256",
+    "cross_strata": "34927/64",
+    "cauchy_strata_bound": "822633/128"
+  }
+]

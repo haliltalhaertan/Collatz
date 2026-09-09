@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.0",
+  "task_id": "cp20-xub-marked-occupation-advisory-v2",
+  "project_id": "cp20-xub-llmlab-pilot-v2-20260907",
+  "parent_task_id": "CP20_XUB_MULTISCALE_REDUCTION_20260907",
+  "parent_state_commit": "ad289d9623661ab927c89ac798c55ba42d7abd2c",
+  "created_at": "2026-09-07T18:32:51.880616+00:00",
+  "created_by": "codex-principal-recovery-successor",
+  "mode": "directed_task",
+  "objective": "Give a rigorous proof or a rigorous refutation on an actual accessible sequence of the frozen actual-array multiscale marked occupation/Laplace estimate. If neither is achieved, identify the first genuinely missing estimate in a form that is strictly narrower than the target. Treat all supplied exploratory records as untrusted evidence to be checked, not as proved inputs unless their displayed finite identities are re-derived. This is a non-canonical advisory pilot and must not execute or modify any sealed B4 stage. This is a fresh V2 pilot, not a resumption of V1. Prioritize a concise, inspectable public final answer: at most 1200 words in findings. If the main estimate cannot be established, stop the attempted proof and explicitly report OPEN with the first missing inequality, its quantifiers, and why the displayed reductions do not prove it. Do not spend the entire response pursuing a full proof. Give checkable mathematical arguments in the final findings; unsupported theorem invocations and model agreement are not evidence.",
+  "task_type": "proof_review",
+  "primary_claim": {
+    "claim_id": "XUB-MARKED-OCC",
+    "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+    "status_at_start": "OPEN",
+    "quantifiers": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+    "definitions": [
+      "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+      "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+      "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+      "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+      "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+      "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+    ]
+  },
+  "scope": {
+    "included": [
+      "Exact weak-composition counting and exchangeability",
+      "Cyclic shifts, cycle lemmas, Chung-Feller-type arguments with every tie and boundary convention proved",
+      "Generating functions, coefficient identities, ballot/reflection arguments, local limits with explicit uniformity",
+      "Construction of an actual accessible counterexample sequence if the stated estimate is false",
+      "Even-time sampling, rational chord ties, bounded affine shifts, odd singleton bookkeeping, and short-orbit ternary/binary arithmetic"
+    ],
+    "excluded": [
+      "Execution or use of any sealed B4 Stage 1 source",
+      "Invalid or non-canonical B4 V1 drafts",
+      "Claims about arbitrary independent endpoints outside the actual coupled array",
+      "New numerical depth, fits, plots, adaptive searches, or literature browsing",
+      "Promotion of XUB, E6-N2/B4, a nonzero profile, polynomial lower bounds, or Collatz to proved status"
+    ]
+  },
+  "inputs": [
+    {
+      "path": "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+      "sha256": "e7b9d3fa45bdc4616ca430b1a3d7748fddf3e43691229a638779d140f38e4363",
+      "required": true,
+      "mutable": false
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+      "sha256": "d54203042b7686bfc98ce247cf1820572c891e126a9b686391e8d7543b5a3158",
+      "required": true,
+      "mutable": false
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+      "sha256": "90a0468f0a0f042ac82afc09b38d276589836bcb6f77afe5f2a481e1e6c057b0",
+      "required": true,
+      "mutable": false
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md",
+      "sha256": "736f23134059666d68f2f1d7ebc41c51d85924e6d2efc05607ebd83ac3527ddc",
+      "required": true,
+      "mutable": false
+    }
+  ],
+  "input_manifests": [],
+  "allowed_tools": [],
+  "forbidden_tools": [
+    "network",
+    "canonical_write",
+    "sealed_stage_execution",
+    "numerical_depth_extension"
+  ],
+  "allowed_methods": [
+    "exact combinatorial derivation",
+    "adversarial proof review",
+    "analytic counterexample construction",
+    "uniform asymptotic inequality with stated constants and ranges"
+  ],
+  "forbidden_methods": [
+    "assume low-state hits are rare",
+    "assume conditioned increments are independent",
+    "use a per-start union bound as if it reached O(1/R)",
+    "cite Chung-Feller or a cycle lemma without resolving ties, affine shift, even-time sampling and odd parity",
+    "infer proof from model agreement",
+    "expand the research scope"
+  ],
+  "agent_plan": {
+    "strategy": "dag",
+    "max_parallel_workers": 2,
+    "lanes": [
+      {
+        "lane_id": "sol-proof-builder",
+        "role": "TheoremBuilder",
+        "execution": "model",
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "independence_group": "openai-proof",
+        "max_completion_tokens": 12000,
+        "max_calls": 1,
+        "max_tokens": 50000,
+        "max_cost_usd": 0.25,
+        "max_wall_seconds": 600,
+        "input_price_per_million": 2.0,
+        "output_price_per_million": 10.0,
+        "can_read_other_lane_outputs": false,
+        "depends_on": [],
+        "visible_inputs": [
+          "task_contract",
+          "definitions",
+          "declared_inputs"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [
+          "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+          "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+          "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+          "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md"
+        ],
+        "seed": 0
+      },
+      {
+        "lane_id": "qwen-independent-refuter",
+        "role": "IndependentCounterexampleSearcher",
+        "execution": "model",
+        "model": "qwen/qwen3.8-max-0902",
+        "reasoning_effort": "low",
+        "independence_group": "qwen-refutation",
+        "max_completion_tokens": 12000,
+        "max_calls": 1,
+        "max_tokens": 50000,
+        "max_cost_usd": 0.2,
+        "max_wall_seconds": 600,
+        "input_price_per_million": 2.0,
+        "output_price_per_million": 6.0,
+        "can_read_other_lane_outputs": false,
+        "depends_on": [],
+        "visible_inputs": [
+          "task_contract",
+          "definitions",
+          "declared_inputs"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [
+          "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+          "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+          "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+          "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md"
+        ],
+        "seed": 0
+      },
+      {
+        "lane_id": "grok-adversarial-auditor",
+        "role": "IndependentAuditor",
+        "execution": "model",
+        "model": "x-ai/grok-4.6",
+        "reasoning_effort": "low",
+        "independence_group": "xai-audit",
+        "max_completion_tokens": 8000,
+        "max_calls": 1,
+        "max_tokens": 50000,
+        "max_cost_usd": 0.25,
+        "max_wall_seconds": 600,
+        "input_price_per_million": 2.0,
+        "output_price_per_million": 6.0,
+        "can_read_other_lane_outputs": true,
+        "depends_on": [
+          "sol-proof-builder",
+          "qwen-independent-refuter"
+        ],
+        "visible_inputs": [
+          "task_contract",
+          "definitions",
+          "declared_inputs",
+          "selected_artifacts"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [
+          "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+          "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+          "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+          "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md"
+        ],
+        "seed": 0
+      }
+    ]
+  },
+  "budget": {
+    "max_total_llm_calls": 3,
+    "max_calls_per_lane": 1,
+    "max_total_tokens": 150000,
+    "max_tokens_per_lane": 50000,
+    "max_total_cost_usd": 0.75,
+    "max_wall_seconds": 1200,
+    "max_parallel_workers": 2,
+    "max_retries_per_call": 0
+  },
+  "stop_rules": [
+    "BUDGET_EXHAUSTED",
+    "INPUT_INTEGRITY_FAILURE",
+    "USER_STOP",
+    "RIGOROUS_REFUTATION",
+    "ROUTE_CHANGING_CLAIM_REQUIRES_HUMAN_AUDIT"
+  ],
+  "required_outputs": [
+    "CLAIM_LEDGER.json",
+    "MASTER_FINDINGS.md",
+    "RUN_SUMMARY.json",
+    "COMPLETE_PACKAGE.zip",
+    "PACKAGE_SHA256.txt"
+  ],
+  "result_policy": {
+    "allow_new_task_creation": false,
+    "allow_scope_expansion": false,
+    "allow_budget_expansion": false,
+    "allow_canonical_repository_write": false,
+    "unexpected_result_action": "RECORD_AS_ESCALATION_CANDIDATE"
+  }
+}

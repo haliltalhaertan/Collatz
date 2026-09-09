@@ -1,0 +1,9 @@
+{
+  "task_id": "cp20-xub-sol-low-v1",
+  "run_id": "directed-d739a13411c3411dbe0d776a8500a21c",
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "artifact_root": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_sol_low\\runs\\cp20-xub-sol-low-20260908\\directed\\directed-d739a13411c3411dbe0d776a8500a21c",
+  "claim_ledger_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_sol_low\\runs\\cp20-xub-sol-low-20260908\\directed\\directed-d739a13411c3411dbe0d776a8500a21c\\package\\CLAIM_LEDGER.json",
+  "package_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_sol_low\\runs\\cp20-xub-sol-low-20260908\\directed\\directed-d739a13411c3411dbe0d776a8500a21c\\package\\COMPLETE_PACKAGE.zip",
+  "package_sha256": "b5530cff98c8920e4d0025aefe49f72942ba099faf043a075f878b5a432770b7"
+}

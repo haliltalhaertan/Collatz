@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "design": "Previously fixed grid, persisted without expansion",
+  "m_min": 1,
+  "m_max": 6,
+  "t_min": 1,
+  "t_max": 4,
+  "coefficient_pair_checks": 699,
+  "exact_variance_checks": 168
+}

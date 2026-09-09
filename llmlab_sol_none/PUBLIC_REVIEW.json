@@ -1,0 +1,18 @@
+{
+  "public_findings": "[{'type': 'exact_check', 'statement': 'Under the uniform weak-composition law, the displayed one-block resonance count is correct for interior blocks. Fixing prefix total h contributes binom(h+2j-1,2j-1); fixing a bounded-positive pair word of total w contributes [z^w](sum_{b=1}^{B_0}(b+1)z^b)^L, since a pair total b has b+1 raw-coordinate realizations; the remaining R-2j-2L coordinates contribute binom(K-h-w+R-2j-2L-1,R-2j-2L-1). Division by binom(K+R-1,R-1) gives the stated conditional probability.'}, {'type': 'necessary_condition', 'statement': 'Let N_R=sum_{q in Q_R}1_{C_q}. The claimed bound implies strong lower-tail control: for every integer n>=0, P(N_R<=n | S_R=K, first-passage data) <= e^{lambda n} C/R, because e^{-lambda N_R} >= e^{-lambda n} on {N_R<=n}. In particular P(N_R=0)<=C/R. Thus marginal estimates for individual blocks, or merely E[N_R] growing, cannot prove the claim.'}, {'type': 'insufficiency', 'statement': 'The supplied reductions give exact single-block weights but no joint lower-tail estimate for N_R. Endpoint conditioning couples all blocks through their total sums, while the non-low marks depend on prefix sums and the resonance marks depend arithmetically on those same prefix sums. Consequently neither independence nor a product bound is available. A per-start resonance union bound would also prove the stronger and unnecessary event that no block resonates, and the supplied scaling shows it cannot reach O(1/R).'}, {'type': 'scope_check', 'statement': 'The low-state calculations do not yield the target: low entries can have positive bulk probability, and the target deliberately permits them. Likewise, rarity of symbols exceeding B_0 is irrelevant because B_0 is fixed and its complement has nonvanishing probability.'}, {'type': 'conclusion', 'statement': 'No rigorous proof or actual accessible counterexample follows from the supplied finite identities. The marked occupation estimate remains open.'}]",
+  "first_missing_step": {
+    "name": "Actual-array joint marked lower-tail inequality",
+    "inequality": "There must exist constants a>0 and C_0<infinity, depending only on eta, lambda, B_0, c and the fixed grid rule, such that for every sufficiently large accessible R, every actual coupled (r,R,tau,K) satisfying the stated constraints, and every integer 0<=n<=ceil((2/lambda) log R), P(N_R<=n | S_R=K and the exact first-passage data) <= C_0 e^{lambda n/2}/R, where N_R=sum_{q in Q_R}1_{C_q}.",
+    "why_narrower_than_target": "This is required only up to logarithmic n and directly implies the desired Laplace estimate after splitting the expectation at n approximately (2/lambda)log R and summing the lower tail. It does not demand independence, exclusion of all resonances, or occupation control outside the preregistered grid.",
+    "why_not_proved": "The exact coefficient formula controls one prescribed block only. No displayed identity or estimate controls simultaneous bounded-positive words together with affine non-low prefix constraints and short-orbit nonresonance marks across many endpoint-conditioned blocks. Rational ties, even-time sampling, and the growing ternary conductor therefore remain unresolved at precisely this joint lower-tail step."
+  },
+  "usage": {
+    "prompt_tokens": 4694,
+    "completion_tokens": 828,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "cost_usd": 0.0200135,
+    "wall_seconds": 14.59880089998478
+  },
+  "status": "COMPLETED"
+}

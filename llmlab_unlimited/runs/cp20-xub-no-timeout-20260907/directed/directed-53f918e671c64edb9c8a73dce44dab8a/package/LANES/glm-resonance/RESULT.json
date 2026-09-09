@@ -1,0 +1,7 @@
+{
+  "status": "STOPPED",
+  "lane_id": "glm-resonance",
+  "role": "Analyze weighted amplified-resonance counting on actual coupled arrays, and its interaction with useful-block occupation.",
+  "claim_results": [],
+  "first_missing_step": "User stop"
+}

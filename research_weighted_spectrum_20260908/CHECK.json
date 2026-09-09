@@ -1,0 +1,18 @@
+{
+  "r": 8,
+  "b": 0.8,
+  "q": 6561,
+  "L": 84,
+  "frequencies": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "normalization": 1.0,
+  "minimum_mass": 0.00013163686256513336,
+  "max_fourier_error": 5.466781211117589e-17,
+  "relative_interval_bias": 0.24446390837730325,
+  "proved_lower_bound": 0.125,
+  "status": "PASS"
+}

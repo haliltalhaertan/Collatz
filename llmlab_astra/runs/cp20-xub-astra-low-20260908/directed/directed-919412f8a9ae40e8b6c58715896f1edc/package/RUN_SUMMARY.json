@@ -1,0 +1,62 @@
+{
+  "task_id": "cp20-xub-astra-low-v1",
+  "run_id": "directed-919412f8a9ae40e8b6c58715896f1edc",
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "usage": {
+    "calls": 1,
+    "reserved_tokens": 25625,
+    "reserved_cost_usd": 0.57625,
+    "prompt_tokens": 4695,
+    "completion_tokens": 1135,
+    "reasoning_tokens": 159,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.11543,
+    "provider_cost_complete": true,
+    "wall_seconds": 42.04632690001745,
+    "lanes": {
+      "astra-low-review": {
+        "calls": 1,
+        "reserved_tokens": 25625,
+        "reserved_cost_usd": 0.57625,
+        "attempts": {
+          "astra-low-review:attempt:1": {
+            "reserved_tokens": 25625,
+            "reserved_cost_usd": 0.57625,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 4695,
+              "completion_tokens": 1135,
+              "reasoning_tokens": 159,
+              "cached_tokens": 0,
+              "cost_usd": 0.11543
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.11543,
+        "provider_cost_upper_bound_usd": 0.11543,
+        "last_usage": {
+          "prompt_tokens": 4695,
+          "completion_tokens": 1135,
+          "reasoning_tokens": 159,
+          "cached_tokens": 0,
+          "cost_usd": 0.11543
+        },
+        "provider_cost_usd": 0.11543,
+        "actual_tokens": 5830
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.0,
+    "provider_cost_lower_bound_usd": 0.11543,
+    "provider_cost_upper_bound_usd": 0.11543
+  },
+  "lanes": {
+    "astra-low-review": "COMPLETED"
+  },
+  "new_tasks_started": 0,
+  "limitations": [
+    "No automatic proof promotion from model text or generated code"
+  ]
+}

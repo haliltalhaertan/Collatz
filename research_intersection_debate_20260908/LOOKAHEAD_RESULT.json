@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "r": 10,
+      "A": 15,
+      "m": 12,
+      "t": 3,
+      "certificates": [
+        1012,
+        752,
+        498,
+        250
+      ],
+      "forced_acceptance_lower_bounds": [
+        1012,
+        495,
+        0,
+        0
+      ],
+      "exact": 250
+    },
+    {
+      "r": 12,
+      "A": 19,
+      "m": 15,
+      "t": 4,
+      "certificates": [
+        9802,
+        7867,
+        5935,
+        3990,
+        1967
+      ],
+      "forced_acceptance_lower_bounds": [
+        9802,
+        6006,
+        2002,
+        0,
+        0
+      ],
+      "exact": 1967
+    },
+    {
+      "r": 16,
+      "A": 25,
+      "m": 20,
+      "t": 5,
+      "certificates": [
+        260984,
+        212925,
+        167012,
+        123519,
+        81900,
+        41142
+      ],
+      "forced_acceptance_lower_bounds": [
+        260984,
+        164730,
+        77520,
+        0,
+        0,
+        0
+      ],
+      "exact": 41142
+    }
+  ],
+  "necessary_lookahead": {
+    "b": 1.2,
+    "kappa": 1.053,
+    "p": 0.631301378358907,
+    "h_over_r": 0.14252415475184443,
+    "h_over_tail": 0.37022867028568174,
+    "scope": "necessary only for the specified full-dyadic exact-lookahead/worst-rest certificate"
+  }
+}

@@ -1,0 +1,197 @@
+[
+  {
+    "lane_id": "glm-counting",
+    "role": "Derive exact weak-composition coefficient identities and identify a sufficient occupation bound; preserve first-passage conditioning.",
+    "independence_group": "same-model-glm",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions",
+      "declared_inputs"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [
+      "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md"
+    ],
+    "execution": "model",
+    "model": "z-ai/glm-5.3-flash",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 8000,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 30000,
+    "max_cost_usd": 0.005,
+    "max_wall_seconds": 600,
+    "input_price_per_million": 0.075,
+    "output_price_per_million": 0.25,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  },
+  {
+    "lane_id": "glm-cycles",
+    "role": "Audit a cyclic-shift or ballot approach, resolving ties, affine shifts, even sampling and odd parity; isolate the first missing lemma.",
+    "independence_group": "same-model-glm",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions",
+      "declared_inputs"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [
+      "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md"
+    ],
+    "execution": "model",
+    "model": "z-ai/glm-5.3-flash",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 8000,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 30000,
+    "max_cost_usd": 0.005,
+    "max_wall_seconds": 600,
+    "input_price_per_million": 0.075,
+    "output_price_per_million": 0.25,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  },
+  {
+    "lane_id": "glm-low-state",
+    "role": "Analyze low-state occupation through an exact bridge decomposition; do not assume low visits are rare.",
+    "independence_group": "same-model-glm",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions",
+      "declared_inputs"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [
+      "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md"
+    ],
+    "execution": "model",
+    "model": "z-ai/glm-5.3-flash",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 8000,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 30000,
+    "max_cost_usd": 0.005,
+    "max_wall_seconds": 600,
+    "input_price_per_million": 0.075,
+    "output_price_per_million": 0.25,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  },
+  {
+    "lane_id": "glm-resonance",
+    "role": "Analyze weighted amplified-resonance counting on actual coupled arrays, and its interaction with useful-block occupation.",
+    "independence_group": "same-model-glm",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions",
+      "declared_inputs"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [
+      "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md"
+    ],
+    "execution": "model",
+    "model": "z-ai/glm-5.3-flash",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 8000,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 30000,
+    "max_cost_usd": 0.005,
+    "max_wall_seconds": 600,
+    "input_price_per_million": 0.075,
+    "output_price_per_million": 0.25,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  },
+  {
+    "lane_id": "glm-refutation",
+    "role": "Adversarially seek an actual accessible counterexample or a necessary condition that could fail. Verify quantifiers; arbitrary endpoints are inadmissible.",
+    "independence_group": "same-model-glm",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions",
+      "declared_inputs"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [
+      "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md"
+    ],
+    "execution": "model",
+    "model": "z-ai/glm-5.3-flash",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 8000,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 30000,
+    "max_cost_usd": 0.005,
+    "max_wall_seconds": 600,
+    "input_price_per_million": 0.075,
+    "output_price_per_million": 0.25,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  }
+]

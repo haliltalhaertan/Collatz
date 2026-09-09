@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "task_id": "collatz-sol-low-mini-benchmark-v1",
+  "run_id": "directed-7d61f4fff6a248ec86b8d713fac3c8f0",
+  "lane_id": "b3",
+  "role": "For standard T, consider the three-step branch word odd,even,even. Derive T^3(n), specify the residue class of positive n making this word valid, and the stronger residue class making T^3(n) odd.",
+  "model": "openai/gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "step_id": "collatz-sol-low-mini-benchmark-v1:directed-7d61f4fff6a248ec86b8d713fac3c8f0:b3:v1",
+  "provider_attempts": [
+    {
+      "attempt_id": "b3:attempt:1",
+      "client_call_id": "collatz-sol-low-mini-benchmark-v1:directed-7d61f4fff6a248ec86b8d713fac3c8f0:b3:v1:b3:attempt:1",
+      "started_at": "2026-09-08T07:31:38.635668+00:00",
+      "status": "RETURNED",
+      "metadata": {
+        "id": "gen-1788852701-fxAkcMqlgHU492dvTZHl",
+        "model": "openai/gpt-5.6-sol",
+        "provider": "OpenAI"
+      },
+      "usage": {
+        "prompt_tokens": 448,
+        "completion_tokens": 408,
+        "reasoning_tokens": 176,
+        "cached_tokens": 0,
+        "cost_usd": 0.004976
+      }
+    }
+  ],
+  "status": "COMPLETED",
+  "public_findings": "[{'answer': 'For the branch word odd, even, even, the valid inputs are positive integers n ≡ 1 (mod 4), and T^3(n) = (3n+1)/4. The output T^3(n) is odd exactly for the stronger class n ≡ 1 (mod 8).', 'justification': 'Starting with odd n gives T(n)=3n+1, which is even. The next value is T^2(n)=(3n+1)/2. For the third branch operation to be even, 4 must divide 3n+1, equivalent to n ≡ 1 (mod 4). Thus T^3(n)=(3n+1)/4. This quotient is odd exactly when 3n+1 ≡ 4 (mod 8), equivalent to n ≡ 1 (mod 8).'}]",
+  "claim_results": [
+    {
+      "claim_id": "BENCHMARK-ANSWER",
+      "statement": "The response correctly solves its assigned exercise.",
+      "status": "OPEN",
+      "domain": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+      "assumptions": [
+        "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+        "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+        "log means natural logarithm."
+      ],
+      "first_missing_step": "Proof not certified",
+      "evidence_files": [
+        "EVIDENCE.json"
+      ]
+    }
+  ],
+  "scope_compliance": {
+    "scope_changed": false,
+    "undeclared_tools_used": false,
+    "undeclared_inputs_used": false,
+    "budget_exceeded": false
+  },
+  "usage": {
+    "prompt_tokens": 448,
+    "completion_tokens": 408,
+    "reasoning_tokens": 176,
+    "cached_tokens": 0,
+    "cost_usd": 0.004976,
+    "wall_seconds": 38.46820389997447
+  },
+  "integrity_issues": [
+    "INVALID_CLAIM_STATUS"
+  ],
+  "independence_level": "ISOLATED_INPUTS_SHARED_COORDINATOR",
+  "unexpected_findings": [],
+  "first_missing_step": null,
+  "output_hash_scope": "canonical JSON excluding output_sha256",
+  "output_sha256": "7c8df962950d13914a8d9909a0307def5930fa47f44fa3f8f007ea93ffdfe528"
+}

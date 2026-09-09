@@ -1,0 +1,33 @@
+# COLLATZ CP17 — MASTER CHECKPOINT
+## Frozen reconstructed summary
+
+This is a newly created summary of the frozen CP17 archive, not an original historical source file.
+
+## Status
+`[PROVED][FROZEN][INDEPENDENTLY ADVERSARIALLY AUDITED]`
+Final standalone audit verdict: `PROOF VALID`.
+
+## Core setting
+Odd-only Syracuse dynamics:
+n_{k+1}=(3n_k+1)/2^{a_k}, with a_k=v_2(3n_k+1)>=1.
+Define A_k=sum_{i<k}a_i, alpha=log_2 3, D_k=A_k-alpha k, s_k=floor(alpha k)-A_k, and H_N=sum_{k<N}1/n_k.
+Exact relation: D_k=-s_k-{alpha k}.
+
+## Frozen theorem
+The final CP17 package proves
+limsup_{N->infinity} H_N/log log N <= K17,
+with K17 = 2.74288143876594... < 3.
+A key consequence is
+limsup_k (s_k-log_2 k)=+infinity.
+This is not a proof of Collatz and does not imply limsup s_k/log k > 1.
+
+## Carry identities
+U_N=prod_{k<N}(1+1/(3n_k));
+n_k=n_0 3^k 2^{-A_k} U_k;
+U_{k+1}-U_k=2^{D_k}/(3n_0);
+X_N=sum_{k<N}2^{D_k};
+U_N=1+X_N/(3n_0);
+0<=H_N-3 log U_N<=pi^2/48.
+
+## Archive
+The root-level CP17 frozen folder contains copies of the final V3 package, final standalone zero-trust audit and post-handoff research-manager prompt. The original frozen copies remain preserved inside the CP18 big-audit archive.

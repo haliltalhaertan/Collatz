@@ -1,0 +1,9 @@
+{
+  "task_id": "cp20-xub-three-models-no-timeout-v1",
+  "run_id": "directed-53f918e671c64edb9c8a73dce44dab8a",
+  "status": "STOPPED",
+  "artifact_root": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_unlimited\\runs\\cp20-xub-no-timeout-20260907\\directed\\directed-53f918e671c64edb9c8a73dce44dab8a",
+  "claim_ledger_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_unlimited\\runs\\cp20-xub-no-timeout-20260907\\directed\\directed-53f918e671c64edb9c8a73dce44dab8a\\package\\CLAIM_LEDGER.json",
+  "package_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_unlimited\\runs\\cp20-xub-no-timeout-20260907\\directed\\directed-53f918e671c64edb9c8a73dce44dab8a\\package\\COMPLETE_PACKAGE.zip",
+  "package_sha256": "5e38a9a76be47e732843bbbda4ce7886d3a1e26782eb7cce3b200e247c2a76dd"
+}

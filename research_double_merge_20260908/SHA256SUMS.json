@@ -1,0 +1,30 @@
+[
+  {
+    "path": "AUDIT.md",
+    "sha256": "dc1714d6f134823702971c098cdde7a4e333dfb668dfe7c8f6b63109ed3f7027"
+  },
+  {
+    "path": "CERTIFICATES.json",
+    "sha256": "9c42bdf72852419a67b62747f4fa127f77753094243797e0c1094ed5e5cfbe3a"
+  },
+  {
+    "path": "INPUTS.json",
+    "sha256": "133d5ebd180593fbb3ed9d25164861e566f758f9f95eb23301c35f0e3a8d404d"
+  },
+  {
+    "path": "REPORT.md",
+    "sha256": "6ac3b04774bc69bbc6ee3d23807f2455232db2c82ea7189914c5c627f294ada9"
+  },
+  {
+    "path": "RESULT.json",
+    "sha256": "eb7f3a7a1b9bdadd09c89c90c673ba545f2ca6863cae3287238bad4d48f69171"
+  },
+  {
+    "path": "RULES.json",
+    "sha256": "392fa0a0c86c45a77acd76c056367b6700566439f9d57996b3f7474a4c591fce"
+  },
+  {
+    "path": "run.py",
+    "sha256": "9655f7a6b3050ef9abe7fe25b0cae9bab33d179eb4265607fb0d40731c8a15dd"
+  }
+]

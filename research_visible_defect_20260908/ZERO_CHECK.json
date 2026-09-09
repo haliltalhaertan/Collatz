@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "conductor_cases": 440,
+  "scope": "1<=t<=10,0<=j<=t,1<=s<=t",
+  "method": "direct tail residue counts vs binomial lift; exact cyclotomic divisibility by equal halves",
+  "zeros": [
+    {
+      "t": 2,
+      "j": 1,
+      "s": 1
+    },
+    {
+      "t": 4,
+      "j": 2,
+      "s": 1
+    },
+    {
+      "t": 6,
+      "j": 3,
+      "s": 1
+    },
+    {
+      "t": 8,
+      "j": 4,
+      "s": 1
+    },
+    {
+      "t": 10,
+      "j": 5,
+      "s": 1
+    }
+  ]
+}

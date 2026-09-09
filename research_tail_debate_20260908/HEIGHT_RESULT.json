@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "start_checks": 4095,
+  "rows": [
+    {
+      "m": 1,
+      "t": 1,
+      "nonempty_cells": 1
+    },
+    {
+      "m": 2,
+      "t": 1,
+      "nonempty_cells": 2
+    },
+    {
+      "m": 3,
+      "t": 1,
+      "nonempty_cells": 3
+    },
+    {
+      "m": 4,
+      "t": 1,
+      "nonempty_cells": 6
+    },
+    {
+      "m": 5,
+      "t": 1,
+      "nonempty_cells": 8
+    },
+    {
+      "m": 6,
+      "t": 2,
+      "nonempty_cells": 14
+    },
+    {
+      "m": 7,
+      "t": 2,
+      "nonempty_cells": 16
+    },
+    {
+      "m": 8,
+      "t": 2,
+      "nonempty_cells": 20
+    },
+    {
+      "m": 9,
+      "t": 3,
+      "nonempty_cells": 29
+    },
+    {
+      "m": 10,
+      "t": 3,
+      "nonempty_cells": 33
+    },
+    {
+      "m": 11,
+      "t": 3,
+      "nonempty_cells": 38
+    },
+    {
+      "m": 12,
+      "t": 4,
+      "nonempty_cells": 47
+    }
+  ]
+}

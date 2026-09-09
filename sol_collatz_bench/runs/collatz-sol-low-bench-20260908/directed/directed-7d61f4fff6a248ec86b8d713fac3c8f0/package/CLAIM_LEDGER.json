@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.1",
+  "authoritative": true,
+  "task_id": "collatz-sol-low-mini-benchmark-v1",
+  "primary_claim_id": "BENCHMARK-ANSWER",
+  "claims": [
+    {
+      "claim_id": "BENCHMARK-ANSWER",
+      "statement": "The response correctly solves its assigned exercise.",
+      "status": "OPEN",
+      "domain": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+      "first_missing_step": "Proof not certified",
+      "classification_conflict": false,
+      "semantic_binding_conflict": false,
+      "classification_rule": "RECONCILE_CLASSIFICATIONS_WITHOUT_VOTING",
+      "independence_level": "SHARED_TRUST_BASE",
+      "supporting_evidence": [
+        {
+          "lane_id": "b1",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "The response correctly solves its assigned exercise.",
+          "domain": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+          "assumptions": [
+            "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+            "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+            "log means natural logarithm."
+          ],
+          "evidence_files": [
+            "LANES/b1/EVIDENCE.json",
+            "LANES/b1/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        },
+        {
+          "lane_id": "b2",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "The response correctly solves its assigned exercise.",
+          "domain": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+          "assumptions": [
+            "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+            "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+            "log means natural logarithm."
+          ],
+          "evidence_files": [
+            "LANES/b2/EVIDENCE.json",
+            "LANES/b2/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        },
+        {
+          "lane_id": "b3",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "The response correctly solves its assigned exercise.",
+          "domain": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+          "assumptions": [
+            "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+            "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+            "log means natural logarithm."
+          ],
+          "evidence_files": [
+            "LANES/b3/EVIDENCE.json",
+            "LANES/b3/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        },
+        {
+          "lane_id": "b4",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "The response correctly solves its assigned exercise.",
+          "domain": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+          "assumptions": [
+            "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+            "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+            "log means natural logarithm."
+          ],
+          "evidence_files": [
+            "LANES/b4/EVIDENCE.json",
+            "LANES/b4/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        },
+        {
+          "lane_id": "b5",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "The response correctly solves its assigned exercise.",
+          "domain": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+          "assumptions": [
+            "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+            "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+            "log means natural logarithm."
+          ],
+          "evidence_files": [
+            "LANES/b5/EVIDENCE.json",
+            "LANES/b5/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        },
+        {
+          "lane_id": "b6",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "The response correctly solves its assigned exercise.",
+          "domain": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+          "assumptions": [
+            "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+            "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+            "log means natural logarithm."
+          ],
+          "evidence_files": [
+            "LANES/b6/EVIDENCE.json",
+            "LANES/b6/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        },
+        {
+          "lane_id": "b7",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "The response correctly solves its assigned exercise.",
+          "domain": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+          "assumptions": [
+            "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+            "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+            "log means natural logarithm."
+          ],
+          "evidence_files": [
+            "LANES/b7/EVIDENCE.json",
+            "LANES/b7/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        },
+        {
+          "lane_id": "b8",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "The response correctly solves its assigned exercise.",
+          "domain": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+          "assumptions": [
+            "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+            "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+            "log means natural logarithm."
+          ],
+          "evidence_files": [
+            "LANES/b8/EVIDENCE.json",
+            "LANES/b8/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        }
+      ],
+      "evidence_files": [
+        "LANES/b1/EVIDENCE.json",
+        "LANES/b1/RESULT.json",
+        "LANES/b2/EVIDENCE.json",
+        "LANES/b2/RESULT.json",
+        "LANES/b3/EVIDENCE.json",
+        "LANES/b3/RESULT.json",
+        "LANES/b4/EVIDENCE.json",
+        "LANES/b4/RESULT.json",
+        "LANES/b5/EVIDENCE.json",
+        "LANES/b5/RESULT.json",
+        "LANES/b6/EVIDENCE.json",
+        "LANES/b6/RESULT.json",
+        "LANES/b7/EVIDENCE.json",
+        "LANES/b7/RESULT.json",
+        "LANES/b8/EVIDENCE.json",
+        "LANES/b8/RESULT.json"
+      ],
+      "assumptions": [
+        "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+        "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+        "log means natural logarithm."
+      ]
+    }
+  ],
+  "downstream_claims_not_established": [
+    "Canonical research state changes",
+    "Numerical searches",
+    "External tools",
+    "General proof claims beyond supplied assumptions"
+  ],
+  "authority_scope": "One consolidated reporting row per claim; not an independent truth certificate",
+  "shared_trust_base": [
+    "definitions",
+    "codebase",
+    "coordinator"
+  ],
+  "mathematical_truth_verified_by_package": false
+}

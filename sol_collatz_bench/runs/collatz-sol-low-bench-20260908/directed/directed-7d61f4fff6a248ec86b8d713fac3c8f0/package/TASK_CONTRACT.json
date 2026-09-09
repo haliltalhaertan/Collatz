@@ -1,0 +1,310 @@
+{
+  "schema_version": "1.0",
+  "task_id": "collatz-sol-low-mini-benchmark-v1",
+  "project_id": "collatz-sol-low-bench-20260908",
+  "parent_task_id": "LOCAL_MINI_BENCHMARK",
+  "parent_state_commit": "2461573739147763eb011faf03c344370a184d69",
+  "created_at": "2026-09-08T07:30:44.967929+00:00",
+  "created_by": "codex-principal-recovery-successor",
+  "mode": "directed_task",
+  "objective": "Answer ONLY the question assigned in your lane role. This is a small educational Collatz benchmark, not an attempt to prove the conjecture. Put your answer and concise checkable justification in findings, at most 400 words. Do not claim a proof of an unproved premise. No tools. No elapsed time limit; finite token and cost limits.",
+  "task_type": "proof_review",
+  "primary_claim": {
+    "claim_id": "BENCHMARK-ANSWER",
+    "statement": "The response correctly solves its assigned exercise.",
+    "status_at_start": "OPEN",
+    "quantifiers": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+    "definitions": [
+      "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+      "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+      "log means natural logarithm."
+    ]
+  },
+  "scope": {
+    "included": [
+      "Eight fixed educational questions and local logical checks."
+    ],
+    "excluded": [
+      "Canonical research state changes",
+      "Numerical searches",
+      "External tools",
+      "General proof claims beyond supplied assumptions"
+    ]
+  },
+  "inputs": [],
+  "input_manifests": [],
+  "allowed_tools": [],
+  "forbidden_tools": [
+    "network",
+    "canonical_write",
+    "sealed_stage_execution",
+    "numerical_depth_extension"
+  ],
+  "allowed_methods": [
+    "Elementary arithmetic",
+    "Algebra",
+    "Conditional proof",
+    "Logical counterexample"
+  ],
+  "forbidden_methods": [
+    "Inventing a proof of the Collatz conjecture"
+  ],
+  "agent_plan": {
+    "strategy": "dag",
+    "max_parallel_workers": 4,
+    "lanes": [
+      {
+        "lane_id": "b1",
+        "role": "Compute the standard Collatz trajectory starting at 6 up to its FIRST visit to 1, inclusive. Give the full list and the number of applications of T.",
+        "execution": "model",
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "independence_group": "sol-low",
+        "max_completion_tokens": 1500,
+        "max_calls": 1,
+        "max_tokens": 15000,
+        "max_cost_usd": 0.04,
+        "max_wall_seconds": 0,
+        "input_price_per_million": 2,
+        "output_price_per_million": 10,
+        "can_read_other_lane_outputs": false,
+        "depends_on": [],
+        "visible_inputs": [
+          "task_contract",
+          "definitions"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [],
+        "seed": 0
+      },
+      {
+        "lane_id": "b2",
+        "role": "Let U(n)=(3n+1)/2^v2(3n+1) on positive odd n. Starting at 7, give the next three U-values and the three exact exponents v2.",
+        "execution": "model",
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "independence_group": "sol-low",
+        "max_completion_tokens": 1500,
+        "max_calls": 1,
+        "max_tokens": 15000,
+        "max_cost_usd": 0.04,
+        "max_wall_seconds": 0,
+        "input_price_per_million": 2,
+        "output_price_per_million": 10,
+        "can_read_other_lane_outputs": false,
+        "depends_on": [],
+        "visible_inputs": [
+          "task_contract",
+          "definitions"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [],
+        "seed": 0
+      },
+      {
+        "lane_id": "b3",
+        "role": "For standard T, consider the three-step branch word odd,even,even. Derive T^3(n), specify the residue class of positive n making this word valid, and the stronger residue class making T^3(n) odd.",
+        "execution": "model",
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "independence_group": "sol-low",
+        "max_completion_tokens": 1500,
+        "max_calls": 1,
+        "max_tokens": 15000,
+        "max_cost_usd": 0.04,
+        "max_wall_seconds": 0,
+        "input_price_per_million": 2,
+        "output_price_per_million": 10,
+        "can_read_other_lane_outputs": false,
+        "depends_on": [],
+        "visible_inputs": [
+          "task_contract",
+          "definitions"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [],
+        "seed": 0
+      },
+      {
+        "lane_id": "b4",
+        "role": "Can an odd-only Collatz cycle of exactly two U-steps have successive exact exponents k1=1,k2=2? Derive the cycle equation and decide whether a positive integer start exists.",
+        "execution": "model",
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "independence_group": "sol-low",
+        "max_completion_tokens": 1500,
+        "max_calls": 1,
+        "max_tokens": 15000,
+        "max_cost_usd": 0.04,
+        "max_wall_seconds": 0,
+        "input_price_per_million": 2,
+        "output_price_per_million": 10,
+        "can_read_other_lane_outputs": false,
+        "depends_on": [],
+        "visible_inputs": [
+          "task_contract",
+          "definitions"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [],
+        "seed": 0
+      },
+      {
+        "lane_id": "b5",
+        "role": "In a HEURISTIC surrogate, k is independently sampled with P(k=j)=2^-j for j>=1 and the additive +1 is discarded, giving multiplier A=3/2^k. Compute E[A] and E[log A] exactly. Does negative expected log drift prove deterministic Collatz convergence? Explain.",
+        "execution": "model",
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "independence_group": "sol-low",
+        "max_completion_tokens": 1500,
+        "max_calls": 1,
+        "max_tokens": 15000,
+        "max_cost_usd": 0.04,
+        "max_wall_seconds": 0,
+        "input_price_per_million": 2,
+        "output_price_per_million": 10,
+        "can_read_other_lane_outputs": false,
+        "depends_on": [],
+        "visible_inputs": [
+          "task_contract",
+          "definitions"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [],
+        "seed": 0
+      },
+      {
+        "lane_id": "b6",
+        "role": "A program verifies that every integer 1<=n<=1000000 reaches 1. A proposed proof says: there are no counterexamples in that interval, therefore every positive integer reaches 1. Is the implication valid? State exactly what was proved and what is missing.",
+        "execution": "model",
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "independence_group": "sol-low",
+        "max_completion_tokens": 1500,
+        "max_calls": 1,
+        "max_tokens": 15000,
+        "max_cost_usd": 0.04,
+        "max_wall_seconds": 0,
+        "input_price_per_million": 2,
+        "output_price_per_million": 10,
+        "can_read_other_lane_outputs": false,
+        "depends_on": [],
+        "visible_inputs": [
+          "task_contract",
+          "definitions"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [],
+        "seed": 0
+      },
+      {
+        "lane_id": "b7",
+        "role": "In a proposed Collatz occupation argument, a random count N_R is 0 with probability 1/2 and R with probability 1/2. For fixed lambda>0 compute E[N_R] and E[exp(-lambda N_R)]. Can a large mean by itself establish E[exp(-lambda N_R)]<=C/R with C independent of R?",
+        "execution": "model",
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "independence_group": "sol-low",
+        "max_completion_tokens": 1500,
+        "max_calls": 1,
+        "max_tokens": 15000,
+        "max_cost_usd": 0.04,
+        "max_wall_seconds": 0,
+        "input_price_per_million": 2,
+        "output_price_per_million": 10,
+        "can_read_other_lane_outputs": false,
+        "depends_on": [],
+        "visible_inputs": [
+          "task_contract",
+          "definitions"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [],
+        "seed": 0
+      },
+      {
+        "lane_id": "b8",
+        "role": "Assume H: every odd integer n>1 has a standard Collatz iterate T^k(n) that is a positive integer strictly below n. Prove that H would imply that every positive integer reaches 1. Distinguish proving the implication from proving H.",
+        "execution": "model",
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "independence_group": "sol-low",
+        "max_completion_tokens": 1500,
+        "max_calls": 1,
+        "max_tokens": 15000,
+        "max_cost_usd": 0.04,
+        "max_wall_seconds": 0,
+        "input_price_per_million": 2,
+        "output_price_per_million": 10,
+        "can_read_other_lane_outputs": false,
+        "depends_on": [],
+        "visible_inputs": [
+          "task_contract",
+          "definitions"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [],
+        "seed": 0
+      }
+    ]
+  },
+  "budget": {
+    "max_total_llm_calls": 8,
+    "max_calls_per_lane": 1,
+    "max_total_tokens": 120000,
+    "max_tokens_per_lane": 15000,
+    "max_total_cost_usd": 0.32,
+    "max_wall_seconds": 0,
+    "max_parallel_workers": 4,
+    "max_retries_per_call": 0
+  },
+  "stop_rules": [
+    "BUDGET_EXHAUSTED",
+    "USER_STOP"
+  ],
+  "required_outputs": [
+    "CLAIM_LEDGER.json",
+    "MASTER_FINDINGS.md",
+    "RUN_SUMMARY.json",
+    "COMPLETE_PACKAGE.zip",
+    "PACKAGE_SHA256.txt"
+  ],
+  "result_policy": {
+    "allow_new_task_creation": false,
+    "allow_scope_expansion": false,
+    "allow_budget_expansion": false,
+    "allow_canonical_repository_write": false,
+    "unexpected_result_action": "RECORD_AS_ESCALATION_CANDIDATE"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "task_id": "xub-maximum-gap-local-question",
+  "project_id": "xub-gap-20260908",
+  "parent_task_id": "LOCAL_MINI_BENCHMARK",
+  "parent_state_commit": "2461573739147763eb011faf03c344370a184d69",
+  "created_at": "2026-09-08T07:52:02.423136+00:00",
+  "created_by": "codex-principal-recovery-successor",
+  "mode": "directed_task",
+  "objective": "Solve only your bounded analytic research subproblem. Return a concise checkable argument, at most 700 words. Distinguish a surrogate theorem from the actual Collatz-array claim. No tools, experiments, or canonical changes. No time cutoff.",
+  "task_type": "proof_review",
+  "primary_claim": {
+    "claim_id": "GAP-LOWER-BOUND",
+    "statement": "Find a rigorous bounded-step advance on the maximum-gap probability under the endpoint-only uniform composition law.",
+    "status_at_start": "OPEN",
+    "quantifiers": "R=dn, n>=2, d grows like a fixed positive constant times log R, K/R approaches beta=log2(3)-1. B>0 fixed. No first-passage transfer claimed.",
+    "definitions": [
+      "Actual reference model: Y_i are uniform nonnegative integer weak compositions of K into R coordinates. beta=log2(3)-1, K-beta R in (-15-2beta,-13-2beta). R=2J+epsilon. z_j=z0*2^(S_(2j)-2beta*j), z0 in (1,2).",
+      "Disjoint useful blocks have L=floor(c log R) pairs. C_q requires nonlow entry z>=eta, every pair total in {1,...,B0}, and nonresonance. Target E exp(-lambda N_C)<=C/R. Additional exact first-passage conditioning is a separate law issue."
+    ]
+  },
+  "scope": {
+    "included": [
+      "One bounded analytic question on exact weighted compositions."
+    ],
+    "excluded": [
+      "Canonical research state changes",
+      "Numerical searches",
+      "External tools",
+      "General proof claims beyond supplied assumptions"
+    ]
+  },
+  "inputs": [],
+  "input_manifests": [],
+  "allowed_tools": [],
+  "forbidden_tools": [
+    "network",
+    "canonical_write",
+    "sealed_stage_execution",
+    "numerical_depth_extension"
+  ],
+  "allowed_methods": [
+    "Elementary arithmetic",
+    "Algebra",
+    "Conditional proof",
+    "Logical counterexample"
+  ],
+  "forbidden_methods": [
+    "Inventing a proof of the Collatz conjecture"
+  ],
+  "agent_plan": {
+    "strategy": "dag",
+    "max_parallel_workers": 1,
+    "lanes": [
+      {
+        "lane_id": "gap",
+        "role": "Let U_1,...,U_n be totals of n disjoint d-coordinate blocks from a uniform weak composition of K into R=dn coordinates. Their mass is proportional to product_i binom(U_i+d-1,d-1), sum U_i=K. Put s_j=sum_(i<=j) U_i-jK/n, j=0,...,n-1. Delta is largest minus second-largest s_j, with zero for tied maxima. For fixed B>0, prove a positive uniform lower bound P(Delta>B)>=c_B>0 as d~a log R grows, or give a precise obstruction. Focus on one elementary injection/comparison of the exact weights, or a fully justified bound on the number of vertices within B of the maximum. No Brownian heuristic as proof, no unsupported theorem citations, no claim about Collatz. If unable, return the most specific missing finite inequality and any proved partial result. At most 650 words.",
+        "execution": "model",
+        "model": "openai/gpt-5.6-sol",
+        "reasoning_effort": "low",
+        "independence_group": "gap",
+        "max_completion_tokens": 4000,
+        "max_calls": 1,
+        "max_tokens": 20000,
+        "max_cost_usd": 0.08,
+        "max_wall_seconds": 0,
+        "input_price_per_million": 2,
+        "output_price_per_million": 10,
+        "can_read_other_lane_outputs": false,
+        "depends_on": [],
+        "visible_inputs": [
+          "task_contract",
+          "definitions"
+        ],
+        "hidden_inputs": [
+          "producer_hidden_reasoning",
+          "producer_system_prompt",
+          "other_auditor_output"
+        ],
+        "input_paths": [],
+        "seed": 0
+      }
+    ]
+  },
+  "budget": {
+    "max_total_llm_calls": 1,
+    "max_calls_per_lane": 1,
+    "max_total_tokens": 20000,
+    "max_tokens_per_lane": 20000,
+    "max_total_cost_usd": 0.08,
+    "max_wall_seconds": 0,
+    "max_parallel_workers": 1,
+    "max_retries_per_call": 0
+  },
+  "stop_rules": [
+    "BUDGET_EXHAUSTED",
+    "USER_STOP"
+  ],
+  "required_outputs": [
+    "CLAIM_LEDGER.json",
+    "MASTER_FINDINGS.md",
+    "RUN_SUMMARY.json",
+    "COMPLETE_PACKAGE.zip",
+    "PACKAGE_SHA256.txt"
+  ],
+  "result_policy": {
+    "allow_new_task_creation": false,
+    "allow_scope_expansion": false,
+    "allow_budget_expansion": false,
+    "allow_canonical_repository_write": false,
+    "unexpected_result_action": "RECORD_AS_ESCALATION_CANDIDATE"
+  }
+}

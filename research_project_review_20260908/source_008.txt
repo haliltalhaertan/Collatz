@@ -1,0 +1,80 @@
+COLLATZ PROBLEMİ — ARAŞTIRMA ARŞİVİ
+MASTER INDEX / PROVENANCE REGISTER
+Oluşturulma: 15 Ağustos 2026
+
+AMAÇ
+Bu arşiv Collatz araştırmasının checkpoint promptlarını, checkpoint sonuç raporlarını, adversarial audit/denetçi raporlarını, ara manuscriptleri, hesaplama kodlarını/çıktılarını ve ham kaynak kopyalarını kaybetmeden saklamak için oluşturulmuştur.
+
+ARŞİV POLİTİKASI
+1. [EXACT]/[VALID]/[FAIL]/[OPEN]/[NUM] etiketleri kaynağın kendi bilimsel statüsüdür; arşivleme bunları yeniden doğrulamaz.
+2. Kaynak dosyanın byte-level kopyası mevcutsa SHA-256 kaydedilir.
+3. Aynı içeriğin kopyaları aynı SHA-256 ile duplicate olarak işaretlenir; canonical kopya ayrıca belirtilir.
+4. ChatGPT File Library'de bulunup aktif runtime'a byte olarak mount edilmemiş dosyalar SOURCE-REFERENCE olarak kaydedilir; Drive'a tam byte kopyası ancak kaynak byte erişilebilir olduğunda eklenir.
+5. Gelecekte oluşturulan her yeni checkpoint için minimum paket: RESEARCH_PROMPT + RESULT + AUDIT_PROMPT + AUDIT_01 + AUDIT_02 (varsa) + COMPUTATION_ARTIFACTS + MANIFEST_UPDATE.
+
+KLASÖR YAPISI
+00_MASTER_INDEX
+CP01 ... CP12
+90_CROSS_CHECK_AUDITS
+91_COMPUTATION_ARTIFACTS
+99_RAW_AND_SOURCE_MANIFEST
+
+CANONICAL CHECKPOINT RESULTS — DRIVE'A AKTARILANLAR
+CP02 — Checkpoint Sonuç Raporu — SHA256 ea7b7c2c777d99c3302722ef16e717082455fc9062d6cec6d986fb7098dd0cf5
+CP03 — Checkpoint Sonuç Raporu — SHA256 08d3a4cf9ae4f377ed50dbe36d3d6689772f1537cd42e8b8cba2074bed63368b
+CP04 — Checkpoint Sonuç Raporu — SHA256 322fd17b7cd0a40deb5cea16bccce94b17458f660a53b1662f060559048bdab5
+CP06 — Checkpoint Sonuç Raporu — SHA256 d57d6d69e95043225ca221442abf07280fbbd830cdfdd01253769a33d5577b15
+CP07 — Checkpoint Sonuç Raporu — SHA256 8b7e95cbde27c8fa7336baa7728bc9cc4a403d27ed2cfbb3677403dad5277f2d
+CP08 — Checkpoint Sonuç Raporu — SHA256 23b111fa2128bc51dfc36740ecb7e044c45c8f8f6e33267be6d12a42e5d609bb
+CP09 — Collatz_Checkpoint_9_2026-08-14.docx — SHA256 86614b15707b1d3f6935d06f2d66c199e3d5014c8a284e4ee68d8fdd84960a7f
+CP10 — Collatz_Checkpoint_10_2026-08-15.docx — SHA256 f23ec854654e0120af57b2963c07167cc859c11c9ab58f59748d89799228a992
+CP11 — Collatz_Checkpoint_11_2026-08-15.docx — SHA256 0d5981fcde3d64db1d8a2703f144fd75331437104f65fe05be3830356e76e8bc
+CP12 — Collatz_Checkpoint_12_2026-08-15.docx — SHA256 b6ee6e10240a08d77ccf9bb34bd834e958d81bad64a08a272895bec1f0e7abf8
+
+CHECKPOINT RESULTS — KAYNAK DOSYASI HENÜZ BYTE-LEVEL BULUNAMAYANLAR
+CP01 — exact checkpoint result source henüz runtime/File Library aramasında kesin dosya olarak bulunamadı. CP02, CP01 sonuçlarını yeniden türetiyor; ancak CP01 için ayrı canonical dosya bulunmadan reconstruction canonical sayılmayacak.
+CP05 — CP06, 'Checkpoint 5'te izole edilen restricted least-realizer probleminden' devam ediyor; fakat CP05'in ayrı canonical source file'ı henüz kesin bulunamadı. Ayrı dosya bulunmadan reconstruction canonical sayılmayacak.
+
+AUDIT / DENETİM — DRIVE'A AKTARILANLAR
+CP09 Audit 01 — SHA256 2f51d2367f0ed73d7d6c0f185f88d087cf793741a95852a4d5675df479e64d99
+CP10 Bağımsız Adversarial Denetim — SHA256 f5d01962c44a4a28b5f6fd8e58f577fe1b0f0dd3273489ee23e09da63629d220
+CP11 Audit 01 — SHA256 ca4191c1b7e4253fe124638cd563b519b99a1784fb2e6ffee05cb6846297dad1
+CP11 Audit 02 (Claude) — SHA256 64734ac3dc9550348b74657274e6972071b9ae6e1bc1e9b82155bf1527fe545f
+CP12 Audit 02 / Architecture-limit finding — SHA256 e059f9862bed400a2175e9315a164c2ad9c7296a045a8329dd1674da6909108d
+
+ARA MANUSCRIPT — DRIVE'A AKTARILDI
+'Harmonic sparsity of divergent Syracuse orbits' LaTeX source — SHA256 55e7ddf8b02d461a3daec4b08c60b36f87e80ce41c46ca0de6e47829bf197a02
+
+PROMPT SOURCE REFERENCES — CHATGPT FILE LIBRARY'DE BULUNDU
+CP02 research prompt candidate — File Library id file_00000000265081f4a5e90766edb47a46; title 'markdown.md eingefügt'; created 2026-08-14T11:00:25Z.
+CP10 research prompt — file_0000000032c481f4a03c1063e255026a; title 'Yapıştırılan metin.txt'.
+CP10 audit prompt — file_00000000b61881f48e2e276e08c84604; title 'Yapıştırılan metin.txt'.
+CP11 research prompt — file_00000000c63881f494c404fdfbd6329c; title 'Yapıştırılan metin.txt'.
+CP11 audit prompt — file_0000000056308243b05db2a4d4cd0a6f; title 'Yapıştırılan markdown.md'.
+CP12 research prompt — file_00000000744c82469b05f797df917e71; title 'Yapıştırılan metin.txt'.
+CP12 audit prompt — chat transcript source exists; separate source file not yet positively identified.
+Architecture-limit audit prompt — chat transcript source exists; generated after CP12 second audit; separate source file not yet uploaded/mounted.
+
+COMPUTATION / CERTIFICATE SOURCE REFERENCES — CHATGPT FILE LIBRARY'DE BULUNDU
+checkpoint10_local_lemma_audit.py — file_00000000efb4820abdddc5e8bd611188
+checkpoint12_independent_audit.py — file_0000000075e8820aaa095b6c0fd17c48
+checkpoint12_independent_audit_output.txt — file_0000000013ec820a8a0ed0e513c1130e
+checkpoint12_robust_interval_candidate.txt — file_000000000abc820a97df8caa4cb24e48
+checkpoint12_finite_tables.cpp — file_000000001ef4820aab7fb57f8525d3c3
+checkpoint12_finite_tables_output.txt — file_0000000004988243840739a0c51cca32
+
+CP12 ÖNEMLİ BİLİMSEL DURUM NOTU
+- Qualitative strict improvement iki adversarial audit'te ayakta: some eta_12>0 ile limsup H_N/ln ln N <= K_11-eta_12.
+- K_11 = 4.916563550949996... .
+- ~4.72097 / <4.723566 explicit katsayıları computer-assisted certificate candidate; publication-grade bağımsız interval certificate henüz gerekli.
+- B=1 OPEN.
+- İkinci CP12 audit, collision-only improvement'ın idealize edilse dahi K~3.0166 civarında takılabileceğini NUM olarak raporluyor; bu architecture-limit ayrı bağımsız audit ile teyit edilmeden theorem yapılmamalı.
+
+DUPLICATE / RAW PROVENANCE
+Yapıştırılan markdown.md ve Yapıştırılan markdown(1).md aynı CP06 içeriğini taşır; SHA256 d57d6d69e95043225ca221442abf07280fbbd830cdfdd01253769a33d5577b15.
+CP10-audit.md ve CP10_AUDIT_02.md.txt aynı byte içeriği taşır; SHA256 f5d01962c44a4a28b5f6fd8e58f577fe1b0f0dd3273489ee23e09da63629d220.
+CP11-audit.md ve CP11_AUDIT_02.md.txt aynı byte içeriği taşır; SHA256 64734ac3dc9550348b74657274e6972071b9ae6e1bc1e9b82155bf1527fe545f.
+CP12-audit.md ve CP12_AUDIT_02.md.txt aynı byte içeriği taşır; SHA256 e059f9862bed400a2175e9315a164c2ad9c7296a045a8329dd1674da6909108d.
+
+ARŞİV DURUMU
+Bu index, kaynak byte'ı aktif runtime'da mevcut olan canonical checkpoint sonuçlarını ve auditleri Drive'a taşındıktan sonra yazıldı. File Library'de referans olarak bulunan fakat byte-level export kanalı olmayan prompt/helper artifacts SOURCE-REFERENCE olarak listelenmiştir; exact Drive copies ilerleyen arşiv turunda kaynak byte erişilebilir olduğunda eklenmelidir.

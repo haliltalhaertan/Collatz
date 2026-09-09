@@ -1,0 +1,262 @@
+Collatz Problemi — Araştırma Checkpoint 10
+B = 1 borderline rejimi • Growing-depth harmonic sparsity • 15 Ağustos 2026
+Çalışma zemini: Checkpoint 9’un bağımsız audit’ten geçmiş [EXACT] zinciri H_N=o(log N) ⇒ X_N=N^{o(1)} ⇒ forever-undercritical durumda limsup s_k/log₂k ≥ 1. Bu checkpoint’in hedefi B=1 sınırını kırmak veya ilk gerçek obstruction’ı tam olarak izole etmektir.
+CHECKPOINT SONUCU
+[EXACT] Yeni harmonic rate
+H_N := Σ_{k<N} 1/n_k = O(log log N)   (her injective positive odd-only Syracuse orbit için).
+[EXACT] Explicit leading coefficient
+limsup_{N→∞} H_N / log log N ≤ K* = 6.3274088946…
+K* = h(α) / [3(ln 3 − h(α))],   α=log₂3,   h(c)=c ln c − (c−1)ln(c−1).
+[EXACT] Yeni carry rate
+∀ε>0:  X_N := Σ_{k<N}2^{D_k} = O_ε((log N)^{2.1091362983…+ε}).
+[EXACT] Borderline lower bound
+s_k ≤ log₂k + C eventually  ⇒  H_N ≥ 3 log log N + O(1).
+[OPEN] Ana boşluk
+3 ≤ possible borderline harmonic coefficient ≤ 6.3274088946…
+B=1 bu checkpoint’te çürütülemedi. Rigorous log-slack frontier bu nedenle hâlâ 1’dir. Fakat Checkpoint 9’daki yalnız o(log N) statement’i ilk kez doğru borderline ölçeği olan log log N seviyesine indirildi.
+1. Borderline B = 1 rejiminin zorunlu sonuçları
+Varsayım: bazı sabit C ve k₀ için bütün k≥k₀ değerlerinde s_k ≤ log₂k + C. Forever-undercritical kimliğinden D_k = −s_k−{kα}.
+2^{D_k} = 2^{-s_k-{kα}} ≥ 2^{-C-1}/k.
+Dolayısıyla integral comparison ile:
+X_N ≥ 2^{-C-1} log N + O(1).
+[EXACT]
+Exact carry identity U_N = 1 + X_N/(3n₀) olduğundan:
+U_N ≥ c(n₀,C) log N + O(1).
+Checkpoint 4’teki bounded-error identity:
+0 ≤ H_N − 3 ln U_N ≤ π²/48.
+Böylece:
+H_N ≥ 3 ln ln N + O(1).
+[EXACT] Borderline Harmonic Lower Bound
+Buradaki 3 katsayısı log tabanından doğan bir artefact değildir. İkinci 1/3, log U_N ile H_N arasındaki exact leading normalization’dan gelir.
+1.1. Eğer s_k = log₂k + O(1) iki taraflı ise
+Eğer ayrıca s_k ≥ log₂k−O(1) ise 2^{D_k} ≍1/k; dolayısıyla:
+X_N ≍ log N,   U_N ≍ log N,   H_N = 3 ln ln N + O(1).
+Bu nedenle 3 log log N gerçekten B=1 corridor’unun doğal harmonic scale’idir.
+2. X_N=o(log N) için tam harmonic threshold
+X_N=3n₀(U_N−1) ve H_N=3 ln U_N+O(1) birlikte kullanıldığında:
+H_N ≤ 3 ln ln N − ω(1)   ⇒   X_N=o(log N).
+Ters yönde de X_N=o(log N) ise U_N/log N→0 ve bounded Taylor correction nedeniyle:
+H_N ≤ 3 ln ln N − ω(1).
+[EXACT] Threshold equivalence
+Dolayısıyla bu yöntem hattında B=1’i kırmak için kritik savaş doğrudan 3 katsayısının altına inmektir.
+2.1. Genel C log log N ölçeği
+Eğer H_N = C ln ln N + o(ln ln N) ve C>0 ise:
+U_N = (ln N)^{C/3+o(1)},   X_N=(ln N)^{C/3+o(1)}.
+Kritik coefficient tam olarak C=3’tür.
+3. Fixed-t harmonic theorem’de gizli sabitin açılması
+Checkpoint 9’da sabit t için kullanılan t-step reciprocal balance yeniden türetildi. Bir-step exact identity:
+1/n_k = (3/2^{a_k})(1/n_{k+1}) + ε_k,
+ε_k = 1/[n_k(3n_k+1)] = 2^{-a_k}/(n_k n_{k+1}) > 0.
+t step compose edildiğinde:
+1/n_s = W_{s,t}/n_{s+t} + E_{s,t},   W_{s,t}=3^t/2^{A_{s,t}}.
+3.1. Composition error exponential değil
+Q_{s,i}=∏_{h=s}^{i-1}3/2^{a_h} olsun. Pozitif affine offsets nedeniyle n_i > Q_{s,i} n_s. Böylece her error contribution:
+Q_{s,i} ε_i ≤ 1/[2 n_s n_{i+1}].
+Bütün start indices üzerinde error, indeks mesafesi ≤t olan reciprocal-pair graph’ına indirgenir. T=t² Archimedean threshold’u ile vertices küçük/büyük diye ayrılıp Cauchy ve square-summability uygulanınca:
+Σ_s E_{s,t} = O((log(t+1))²).
+[EXACT]
+Bu, önceki kaba O((3/2)^t) ve O(t) error bounds’unu dramatik biçimde iyileştirir. Composition error artık growing-depth theorem’in leading katsayısına katkı yapmaz.
+4. Terminal residue boundary terminin explicit kontrolü
+Sabit t ve terminal unit class y mod 3^{t+1} için μ_t(y), o class’a ulaşan unit t-step chains içindeki minimum total valuation; w_t(y)=3^t/2^{μ_t(y)}.
+Bir cutoff c∈(α,2), L=⌊ct⌋ ve good classes G_t={y:μ_t(y)≤L} seçilsin.
+4.1. Good class sayısı
+Toplam valuation A olan positive t-tuples sayısı C(A−1,t−1). Hockey-stick identity ile A≤L histories sayısı C(L,t). Her word en fazla iki terminal unit class ürettiği için:
+#G_t ≤ 2 C(L,t).
+4.2. Least terminal representative → auxiliary start
+Her good y için minimum word seçilip y’nin modulo Q_t=2·3^{t+1} least positive odd representative’ı r_y’den aynı word geriye doğru invert edildi. Her inverse step pozitif odd integer üretir. Elde edilen x_y unit’tir ve farklı y’ler farklı x_y verir.
+2^{μ_t(y)} r_y = 3^t x_y + B_y,   B_y>0.
+Dolayısıyla:
+w_t(y)/r_y < 1/x_y.
+x_y’ler distinct positive integers coprime to 6 olduğundan, #G_t adet böyle integer’ın reciprocal toplamı en fazla ilk #G_t unit integers’ın harmonic toplamıdır:
+Σ_{y∈G_t} w_t(y)/r_y ≤ (1/3) ln #G_t + O(1).
+Stirling ile, sabit c için:
+Σ_{y∈G_t} w_t(y)/r_y ≤ [h(c)/3] t + O(log t),
+h(c)=c ln c − (c−1)ln(c−1).
+[EXACT]
+5. Uniform fixed-t inequality
+Geometric random variable G için P(G=a)=2^{-a}, S_t=G₁+⋯+G_t. p_t(c)=P(S_t≤ct). Bad classes için η_t=2^{αt−⌊ct⌋−1}. Arithmetic-progression packing, boundary theorem ve O(log²t) composition error birlikte:
+(1−η_t) H_N ≤ [p_t(c)/3](ln N+1) + [h(c)/3]t + O((ln t)²).
+[EXACT] Uniform in N and t
+Bu, Checkpoint 9’daki H_N≤γ_t ln N+O_t(1) statement’inin gerekli uniform versiyonudur. Hidden constant artık explicit olarak lineer t seviyesindedir ve leading lineer katsayı yalnız least-representative boundary’den gelir.
+6. Geometric lower tail ve growing depth
+0<z<1 için E[z^G]=z/(2−z). Chernoff:
+p_t(c) ≤ [ z^{1−c}/(2−z) ]^t.
+Optimum z=2(c−1)/c verir:
+p_t(c) ≤ exp(−I(c)t),
+I(c)=c ln2 − h(c) >0   (α<c<2).
+Şimdi t=t(N) seçilir:
+t(N) = ceil((ln ln N + 2 ln ln ln N)/I(c)).
+Bu seçimde p_t ln N=o(1), η_t=o(1), O((ln t)²)=o(t). Sonuç:
+limsup_{N→∞} H_N/ln ln N ≤ h(c)/[3 I(c)].
+6.1. c ↓ α limiti
+α=log₂3 ve α ln2=ln3. c→α+ alınırsa:
+K* = h(α)/[3(ln3−h(α))] = 6.327408894639676…
+limsup H_N/ln ln N ≤ K*.
+[EXACT] Growing-Depth Harmonic Theorem
+Bu checkpoint’in en güçlü yeni sonucu budur:
+H_N = O(log log N).
+7. Carry için yeni polylog bound
+3 ln U_N≤H_N ve X_N=3n₀(U_N−1) olduğundan:
+∀ε>0:  X_N = O_ε((ln N)^{K*/3+ε}).
+K*/3 = 2.109136298213225…
+[EXACT]
+Bu Checkpoint 9’daki N^{o(1)} bound’unu polylogarithmic seviyeye indirir.
+7.1. İkincil second-order slack corollary
+Bu ana B=1 hedefinin yerine geçmez. Ancak polylog carry bound şu corridor’u dışlar:
+s_k ≤ log₂k − c log₂log₂k + O(1) eventually,   c > 1.1091362982…
+Eşdeğer bir limsup second-order lower bound elde edilir. Bu sonuç B=1 upper corridor’unu öldürmez ve ana frontier olarak yorumlanmamalıdır.
+8. Neden B = 1 hâlâ ölmedi? Katsayı audit’i
+Borderline hypothesis lower bound:
+H_N ≥ 3 ln ln N + O(1).
+Growing-depth upper bound:
+H_N ≤ (6.3274088947+o(1)) ln ln N.
+Dolayısıyla halen gerçek bir coefficient gap vardır:
+3   versus   6.3274088947.
+8.1. Leading kaybın tek kaynağı
+Composition error O((ln t)²)=o(t). Tail terms O(ln t). Chernoff leading exponent explicit. Böylece upper coefficient’in lineer-t parçası yalnız:
+B_t(c):=Σ_{μ_t(y)≤ct} w_t(y)/r_y
+least-representative boundary toplamından gelir.
+Mevcut theorem yalnız:
+B_t(c) ≤ [h(c)/3] t + o(t).
+c→α limitinde mevcut boundary coefficient:
+h(α)/3 = 0.3478776053…
+B=1 contradiction için gereken sufficient coefficient:
+b < 3 I(α) = 0.1649384184…
+Yani bu proof architecture içinde boundary terminde en az yaklaşık %52.59 genuine arithmetic saving gerekir.
+[OPEN] Missing Boundary Lemma
+Bir c>α için B_t(c) ≤ (3 I(c)−δ)t + o(t) kanıtla; özellikle B_t(c)=o(t) yeterlidir.
+9. Boundary term için finite exact evidence
+c=1.6 ile exhaustive finite valuation-word enumeration yapıldı. Aşağıdaki B_t(c) değerleri exact finite combinatorial search’ün floating-point gösterimleridir; theorem değildir.
+t
+B_t(1.6)
+B_t/t
+4
+0.243571
+0.060893
+8
+0.431248
+0.053906
+10
+0.559227
+0.055923
+12
+0.551829
+0.045986
+14
+0.536192
+0.038299
+16
+0.509787
+0.031862
+[NUM]
+Bu değerler current rigorous linear coefficient’ten çok küçük ve B_t=o(t) ihtimalini destekliyor; fakat t≤16 verisi asymptotic statement değildir. Bu gözlem Checkpoint 11 için en değerli computational lead olarak tutulmalıdır.
+10. Taylor correction yeni diverging saving üretmiyor
+Exact:
+H_N − 3 ln U_N = Σ_{k<N}[1/n_k − 3 ln(1+1/(3n_k))].
+Her summand pozitif ve O(1/n_k²). Injectivity nedeniyle square-sum convergent:
+0 ≤ H_N−3 ln U_N ≤ π²/48.
+[EXACT / FAIL]
+Dolayısıyla bu Taylor expansion’dan Φ_N→∞ tipinde ek bir saving çıkamaz. İkinci 1/3 normalization leading order’da gerçek anlamda sharp’tır.
+11. Arithmetic-progression harmonic packing stability
+Bir residue class’ta baseline b_j=r+(j−1)Q ve actual distinct values m_j≥b_j olsun. Harmonic deficit:
+Δ = Σ_j (1/b_j − 1/m_j).
+λ>1 ve S={j:m_j≥λb_j} için:
+Σ_{j∈S} 1/b_j ≤ [λ/(λ−1)] Δ.
+[EXACT] Harmonic-weighted stability
+Ancak bu count rigidity vermez. M’nin son yarısını aynı progression içinde sabit-factor ileri kaydırmak, positive fraction of indices’i 1.5–2 factor büyütürken toplam harmonic deficit yalnız O_Q(1) kalabilir.
+[FAIL]
+Bu nedenle “near-max harmonic occupation ⇒ çoğu representative pointwise near-minimal” claim’i ek hypothesis olmadan yanlıştır.
+12. Cross-t coherence ve collision structure
+Exact nesting:
+W_{k,t+1}=W_{k,t} · 3/2^{a_{k-t-1}}.
+[EXACT]
+Fakat arbitrary long finite all-a=1 valuation words realizable olduğundan birçok t ölçeğinde büyük weights’in finite düzeyde birlikte bulunması yasak değildir. Cross-t relation tek başına independent entropy factor üretmiyor.
+[FAIL]
+Terminal residue collisions t≤10 için exact finite DP ile test edildi. c=1.6 good-history word-pair upper count’una göre distinct good terminal classes oranı t=4’te 0.867, t=10’da 0.679 seviyesine indi; collision vardır fakat henüz exponential-rate theorem veya B=1’i etkileyecek certified saving yoktur.
+[NUM]
+13. Mod 5 / 7 forbidden-residue atlasının statüsü
+p≠2,3 için one-step Syracuse dynamics herhangi bir target residue mod p^m üretebilir. Target y mod p^m, uygun y mod 9 ve exact valuation a seçilip CRT ile birleştirilerek unit predecessor x=(2^a y−1)/3 kurulabilir.
+[EXACT local surjectivity]
+Bu nedenle mod 5,25,7,49 üzerinde yalnız local map’ten gelen yeni statewise forbidden residue yoktur. Forever-undercritical global orbit şartından daha ince bir restriction teorik olarak mümkün olabilir; fakat bu checkpoint’te böyle bir theorem bulunmadı.
+[PARK]
+14. B=1 local slack dynamics tek başına obstruction değil
+Mechanical increments m_k∈{1,2} ve 2α∈(3,4) nedeniyle iki consecutive m_k=1 mümkün değildir. Her dyadic scale 2^r civarında en geç bir step sonra m_k=2 vardır.
+Her r için 2^r’den sonraki ilk m_k=2 step’inde slack’i 1 artır; diğer step’lerde slack’i sabit bırak. O zaman:
+s_k = log₂k + O(1),
+a_k = m_k+s_k−s_{k+1} ∈ {1,2} and a_k≥1,
+D_k = −s_k−{kα} ≤0.
+[EXACT synthetic admissible path]
+Her finite prefix exact valuation-word theorem’iyle positive integer-realizable. Fakat bütün infinite path’in tek bir positive integer tarafından realize edilip edilmediği tam olarak arithmetic obstruction’dır.
+Sonuç: bounded r_k:=s_k−log₂k local recurrence’i tek başına B=1’i yasaklayamaz.
+15. Borderline implication graph
+Koşul
+Exact implication / status
+A: s_k≤log₂k+O(1)
+A ⇒ X_N≳log N. [EXACT]
+B: X_N≳log N
+B ⇒ U_N≳log N ⇒ H_N≥3 log log N+O(1). [EXACT]
+C: H_N≥3 log log N
+Yeni independent condition değil; A/B carry zincirinin reformülasyonu.
+D: low-valuation histories
+Growing-depth proof’te upper bound üretir; equality structure boundary terminde toplanır.
+E/F: harmonic packing / least reps
+Current coefficient gap’in gerçek bağımsız arithmetic noktası. [OPEN]
+G: cross-t coherence
+Exact fakat tek başına independent loss vermiyor. [FAIL as standalone]
+H: exact Syracuse compatibility
+Synthetic B=1 path’i ordinary integer realizability’den ayıran nihai şart. [OPEN]
+16. Checkpoint 10 zorunlu sorularının cevapları
+Soru
+Cevap
+1. B=1 H_N lower bound?
+H_N ≥ 3 ln ln N + O(1). [EXACT]
+2. X_N=o(log N) için ne yeterli?
+H_N ≤ 3 ln ln N − ω(1); bounded-error relation ile essentially equivalent. [EXACT]
+3. Fixed-t C_t growth?
+Uniform decomposition: leading boundary [h(c)/3]t; remaining errors O((ln t)^2). Dolayısıyla C_t=O(t). [EXACT]
+4. t=t(N) rigorously seçildi mi?
+Evet; t≈(ln ln N)/I(c). [EXACT]
+5. Yeni explicit H_N rate?
+H_N≤(6.3274088947+o(1)) ln ln N. [EXACT]
+6. H_N=O(log log N)?
+Evet. [EXACT]
+7. 3 log log N kritik frontier mı?
+Evet; B=1 lower scale ve X=o(log N) threshold’u. [EXACT]
+8. Packing near-equality rigidity?
+Harmonic-weighted rigidity evet; count/pointwise rigidity hayır.
+9. Cross-t coherence yeni bilgi?
+Exact recurrence var; standalone entropy saving bulunmadı.
+10. Terminal collisions strict theorem?
+Finite collisions [NUM], asymptotic certified saving yok.
+11. Yeni forbidden residue?
+p=5,7 gibi p≠3 için local fixed-residue exclusion yok.
+12. r_k local dynamics obstruction?
+Hayır; explicit infinite synthetic B=1 admissible path var. [FAIL]
+13. Finite exact borderline models?
+Evet; synthetic path’in her finite prefix’i Collatz-realizable. [EXACT]
+14. Frontier ileri gitti mi?
+Ana ratio frontier hâlâ 1. Ancak harmonic frontier O(log log N)’e ve carry polylog seviyesine ilerledi.
+17. Güncel rigorous frontier ve Checkpoint 11 hedefi
+Forever-undercritical ana theorem değişmedi:
+D_k≤0 bütün k ⇒ limsup s_k/log₂k ≥ 1.
+Fakat supporting analytic frontier önemli ölçüde güçlendi:
+H_N=o(log N)  →  H_N=O(log log N),
+X_N=N^{o(1)}  →  X_N=O_ε((log N)^{2.10914+ε}).
+Checkpoint 11 için en yüksek değerli açık lemma
+Good-history weighted boundary:
+B_t(c)=Σ_{μ_t(y)≤ct} [3^t/2^{μ_t(y)}]/r_y.
+Mevcut proof:
+B_t(c) ≤ [h(c)/3]t+o(t).
+B=1’i kırmaya yeterli hedef:
+∃c>α, δ>0:  B_t(c) ≤ [3I(c)−δ]t+o(t).
+Daha güçlü ve temiz hedef:
+B_t(c)=o(t).
+[OPEN — highest priority]
+Finite exact data bu yönde umut verici, ancak theorem yok. Bu lemma restricted least-realizer / low-total-valuation history aritmetiğini doğrudan hedefliyor ve current coefficient gap’in tamamını açıklıyor.
+18. Literatür konumlandırması ve novelty disiplini
+Rozier’in Lower Bound Hypothesis çalışması parity vectors’ın least starting values ve entropy yapısını ele alır; general LBH hâlâ hipotezdir. Tao’nun Syracuse çalışması valuation vectors için geometric(1/2) model ve 3-adic transport araçlarını almost-all/logarithmic-density setting’inde kullanır. Bunlar burada türetilen pointwise injective-orbit H_N=O(log log N) statement’iyle aynı theorem değildir.
+Hedefli arXiv taramasında “her injective positive Syracuse orbit için H_N=O(log log N)” veya equivalent polylog X_N statement’ının doğrudan eşleşmesini bulamadım. Bu, novelty/priority iddiası değildir; yayın öncesinde klasik 3x+1 literature, inverse-tree papers ve 2026 preprintleri theorem-level sistematik olarak taranmalıdır.
+19. Bilimsel özet
+Checkpoint 9 B<1’i kapatıp frontier’ı 1’e taşımıştı. Checkpoint 10’da ilk kez B=1’in doğru harmonic ölçeği çözüldü. Fixed-t harmonic sparsity theorem’in sabitleri uniformlaştırıldı; t-step reciprocal error exponential değil O(log²t) çıktı; growing t≈log log N meşrulaştı ve H_N=O(log log N) elde edildi.
+Ancak B=1’in zorunlu 3 log log N lower bound’una karşı elde edilen current upper coefficient 6.3274. Aradaki gap artık belirsiz bir “daha iyi estimate lazım” problemi değil. Leading loss tek bir restricted arithmetic quantity’de: low-total-valuation terminal histories’nin weighted least-positive-representative boundary sum’ında.
+Bu nedenle Checkpoint 11’in doğru hedefi generic harmonic veya residue optimizasyonu değil, B_t(c) boundary terminin sublinear veya yeterince küçük linear growth’unu kanıtlamaktır.

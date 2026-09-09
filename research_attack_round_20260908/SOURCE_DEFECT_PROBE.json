@@ -1,0 +1,910 @@
+{
+  "scope": "Fixed r5..12, A=floor(alpha*r)+d, d=-1,0,1, m=ceil(1.2*r), t>=1",
+  "panels": [
+    {
+      "r": 5,
+      "A": 7,
+      "m": 6,
+      "t": 1,
+      "B": "15/2",
+      "Dsrc": "37/8",
+      "D2": "37/8",
+      "D2_ratio": "37/60",
+      "ratio": "37/60",
+      "violates": false,
+      "layers": [
+        {
+          "k": 4,
+          "N": 10,
+          "e": "18",
+          "contribution": "9/2",
+          "contribution_D2": "9/2"
+        },
+        {
+          "k": 5,
+          "N": 5,
+          "e": "1/2",
+          "contribution": "1/8",
+          "contribution_D2": "1/8"
+        }
+      ]
+    },
+    {
+      "r": 5,
+      "A": 8,
+      "m": 6,
+      "t": 2,
+      "B": "35/4",
+      "Dsrc": "245/64",
+      "D2": "199/64",
+      "D2_ratio": "199/560",
+      "ratio": "7/16",
+      "violates": false,
+      "layers": [
+        {
+          "k": 3,
+          "N": 10,
+          "e": "5",
+          "contribution": "15/16",
+          "contribution_D2": "5/16"
+        },
+        {
+          "k": 4,
+          "N": 10,
+          "e": "11",
+          "contribution": "11/4",
+          "contribution_D2": "11/4"
+        },
+        {
+          "k": 5,
+          "N": 5,
+          "e": "3/4",
+          "contribution": "9/64",
+          "contribution_D2": "3/64"
+        }
+      ]
+    },
+    {
+      "r": 6,
+      "A": 9,
+      "m": 8,
+      "t": 1,
+      "B": "28",
+      "Dsrc": "25/4",
+      "D2": "25/4",
+      "D2_ratio": "25/112",
+      "ratio": "25/112",
+      "violates": false,
+      "layers": [
+        {
+          "k": 5,
+          "N": 35,
+          "e": "25/2",
+          "contribution": "25/8",
+          "contribution_D2": "25/8"
+        },
+        {
+          "k": 6,
+          "N": 21,
+          "e": "25/2",
+          "contribution": "25/8",
+          "contribution_D2": "25/8"
+        }
+      ]
+    },
+    {
+      "r": 6,
+      "A": 10,
+      "m": 8,
+      "t": 2,
+      "B": "63/2",
+      "Dsrc": "175/32",
+      "D2": "105/32",
+      "D2_ratio": "5/48",
+      "ratio": "25/144",
+      "violates": false,
+      "layers": [
+        {
+          "k": 4,
+          "N": 35,
+          "e": "11/4",
+          "contribution": "33/64",
+          "contribution_D2": "11/64"
+        },
+        {
+          "k": 5,
+          "N": 35,
+          "e": "35/4",
+          "contribution": "35/16",
+          "contribution_D2": "35/16"
+        },
+        {
+          "k": 6,
+          "N": 21,
+          "e": "59/4",
+          "contribution": "177/64",
+          "contribution_D2": "59/64"
+        }
+      ]
+    },
+    {
+      "r": 7,
+      "A": 10,
+      "m": 9,
+      "t": 1,
+      "B": "42",
+      "Dsrc": "5",
+      "D2": "5",
+      "D2_ratio": "5/42",
+      "ratio": "5/42",
+      "violates": false,
+      "layers": [
+        {
+          "k": 6,
+          "N": 56,
+          "e": "2",
+          "contribution": "1/2",
+          "contribution_D2": "1/2"
+        },
+        {
+          "k": 7,
+          "N": 28,
+          "e": "18",
+          "contribution": "9/2",
+          "contribution_D2": "9/2"
+        }
+      ]
+    },
+    {
+      "r": 7,
+      "A": 11,
+      "m": 9,
+      "t": 2,
+      "B": "105/2",
+      "Dsrc": "125/16",
+      "D2": "79/16",
+      "D2_ratio": "79/840",
+      "ratio": "25/168",
+      "violates": false,
+      "layers": [
+        {
+          "k": 5,
+          "N": 70,
+          "e": "9",
+          "contribution": "27/16",
+          "contribution_D2": "9/16"
+        },
+        {
+          "k": 6,
+          "N": 56,
+          "e": "14",
+          "contribution": "7/2",
+          "contribution_D2": "7/2"
+        },
+        {
+          "k": 7,
+          "N": 28,
+          "e": "14",
+          "contribution": "21/8",
+          "contribution_D2": "7/8"
+        }
+      ]
+    },
+    {
+      "r": 7,
+      "A": 12,
+      "m": 9,
+      "t": 3,
+      "B": "231/4",
+      "Dsrc": "2029/128",
+      "D2": "1051/128",
+      "D2_ratio": "1051/7392",
+      "ratio": "2029/7392",
+      "violates": false,
+      "layers": [
+        {
+          "k": 4,
+          "N": 56,
+          "e": "6",
+          "contribution": "21/32",
+          "contribution_D2": "3/32"
+        },
+        {
+          "k": 5,
+          "N": 70,
+          "e": "35/2",
+          "contribution": "525/128",
+          "contribution_D2": "315/128"
+        },
+        {
+          "k": 6,
+          "N": 56,
+          "e": "38",
+          "contribution": "285/32",
+          "contribution_D2": "171/32"
+        },
+        {
+          "k": 7,
+          "N": 28,
+          "e": "20",
+          "contribution": "35/16",
+          "contribution_D2": "5/16"
+        }
+      ]
+    },
+    {
+      "r": 8,
+      "A": 11,
+      "m": 10,
+      "t": 1,
+      "B": "60",
+      "Dsrc": "25/2",
+      "D2": "25/2",
+      "D2_ratio": "5/24",
+      "ratio": "5/24",
+      "violates": false,
+      "layers": [
+        {
+          "k": 7,
+          "N": 84,
+          "e": "50",
+          "contribution": "25/2",
+          "contribution_D2": "25/2"
+        },
+        {
+          "k": 8,
+          "N": 36,
+          "e": "0",
+          "contribution": "0",
+          "contribution_D2": "0"
+        }
+      ]
+    },
+    {
+      "r": 8,
+      "A": 12,
+      "m": 10,
+      "t": 2,
+      "B": "165/2",
+      "Dsrc": "191/16",
+      "D2": "165/16",
+      "D2_ratio": "1/8",
+      "ratio": "191/1320",
+      "violates": false,
+      "layers": [
+        {
+          "k": 6,
+          "N": 126,
+          "e": "5",
+          "contribution": "15/16",
+          "contribution_D2": "5/16"
+        },
+        {
+          "k": 7,
+          "N": 84,
+          "e": "38",
+          "contribution": "19/2",
+          "contribution_D2": "19/2"
+        },
+        {
+          "k": 8,
+          "N": 36,
+          "e": "8",
+          "contribution": "3/2",
+          "contribution_D2": "1/2"
+        }
+      ]
+    },
+    {
+      "r": 8,
+      "A": 13,
+      "m": 10,
+      "t": 3,
+      "B": "99",
+      "Dsrc": "1097/64",
+      "D2": "551/64",
+      "D2_ratio": "551/6336",
+      "ratio": "1097/6336",
+      "violates": false,
+      "layers": [
+        {
+          "k": 5,
+          "N": 126,
+          "e": "55/2",
+          "contribution": "385/128",
+          "contribution_D2": "55/128"
+        },
+        {
+          "k": 6,
+          "N": 126,
+          "e": "31/2",
+          "contribution": "465/128",
+          "contribution_D2": "279/128"
+        },
+        {
+          "k": 7,
+          "N": 84,
+          "e": "42",
+          "contribution": "315/32",
+          "contribution_D2": "189/32"
+        },
+        {
+          "k": 8,
+          "N": 36,
+          "e": "6",
+          "contribution": "21/32",
+          "contribution_D2": "3/32"
+        }
+      ]
+    },
+    {
+      "r": 9,
+      "A": 13,
+      "m": 11,
+      "t": 2,
+      "B": "495/4",
+      "Dsrc": "941/64",
+      "D2": "847/64",
+      "D2_ratio": "77/720",
+      "ratio": "941/7920",
+      "violates": false,
+      "layers": [
+        {
+          "k": 7,
+          "N": 210,
+          "e": "9",
+          "contribution": "27/16",
+          "contribution_D2": "9/16"
+        },
+        {
+          "k": 8,
+          "N": 120,
+          "e": "50",
+          "contribution": "25/2",
+          "contribution_D2": "25/2"
+        },
+        {
+          "k": 9,
+          "N": 45,
+          "e": "11/4",
+          "contribution": "33/64",
+          "contribution_D2": "11/64"
+        }
+      ]
+    },
+    {
+      "r": 9,
+      "A": 14,
+      "m": 11,
+      "t": 3,
+      "B": "1287/8",
+      "Dsrc": "11821/512",
+      "D2": "4843/512",
+      "D2_ratio": "4843/82368",
+      "ratio": "11821/82368",
+      "violates": false,
+      "layers": [
+        {
+          "k": 6,
+          "N": 252,
+          "e": "80",
+          "contribution": "35/4",
+          "contribution_D2": "5/4"
+        },
+        {
+          "k": 7,
+          "N": 210,
+          "e": "15/2",
+          "contribution": "225/128",
+          "contribution_D2": "135/128"
+        },
+        {
+          "k": 8,
+          "N": 120,
+          "e": "50",
+          "contribution": "375/32",
+          "contribution_D2": "225/32"
+        },
+        {
+          "k": 9,
+          "N": 45,
+          "e": "63/8",
+          "contribution": "441/512",
+          "contribution_D2": "63/512"
+        }
+      ]
+    },
+    {
+      "r": 9,
+      "A": 15,
+      "m": 11,
+      "t": 4,
+      "B": "3003/16",
+      "Dsrc": "143997/4096",
+      "D2": "51251/4096",
+      "D2_ratio": "51251/768768",
+      "ratio": "6857/36608",
+      "violates": false,
+      "layers": [
+        {
+          "k": 5,
+          "N": 210,
+          "e": "367/4",
+          "contribution": "5505/1024",
+          "contribution_D2": "367/1024"
+        },
+        {
+          "k": 6,
+          "N": 252,
+          "e": "73",
+          "contribution": "219/16",
+          "contribution_D2": "73/16"
+        },
+        {
+          "k": 7,
+          "N": 210,
+          "e": "151/4",
+          "contribution": "2265/256",
+          "contribution_D2": "1359/256"
+        },
+        {
+          "k": 8,
+          "N": 120,
+          "e": "36",
+          "contribution": "27/4",
+          "contribution_D2": "9/4"
+        },
+        {
+          "k": 9,
+          "N": 45,
+          "e": "135/16",
+          "contribution": "2025/4096",
+          "contribution_D2": "135/4096"
+        }
+      ]
+    },
+    {
+      "r": 10,
+      "A": 14,
+      "m": 12,
+      "t": 2,
+      "B": "715/4",
+      "Dsrc": "1417/64",
+      "D2": "779/64",
+      "D2_ratio": "779/11440",
+      "ratio": "109/880",
+      "violates": false,
+      "layers": [
+        {
+          "k": 8,
+          "N": 330,
+          "e": "77",
+          "contribution": "231/16",
+          "contribution_D2": "77/16"
+        },
+        {
+          "k": 9,
+          "N": 165,
+          "e": "115/4",
+          "contribution": "115/16",
+          "contribution_D2": "115/16"
+        },
+        {
+          "k": 10,
+          "N": 55,
+          "e": "11/4",
+          "contribution": "33/64",
+          "contribution_D2": "11/64"
+        }
+      ]
+    },
+    {
+      "r": 10,
+      "A": 15,
+      "m": 12,
+      "t": 3,
+      "B": "1001/4",
+      "Dsrc": "6701/256",
+      "D2": "2915/256",
+      "D2_ratio": "265/5824",
+      "ratio": "6701/64064",
+      "violates": false,
+      "layers": [
+        {
+          "k": 7,
+          "N": 462,
+          "e": "159/2",
+          "contribution": "1113/128",
+          "contribution_D2": "159/128"
+        },
+        {
+          "k": 8,
+          "N": 330,
+          "e": "91/2",
+          "contribution": "1365/128",
+          "contribution_D2": "819/128"
+        },
+        {
+          "k": 9,
+          "N": 165,
+          "e": "207/8",
+          "contribution": "3105/512",
+          "contribution_D2": "1863/512"
+        },
+        {
+          "k": 10,
+          "N": 55,
+          "e": "55/8",
+          "contribution": "385/512",
+          "contribution_D2": "55/512"
+        }
+      ]
+    },
+    {
+      "r": 10,
+      "A": 16,
+      "m": 12,
+      "t": 4,
+      "B": "5005/16",
+      "Dsrc": "158613/4096",
+      "D2": "57179/4096",
+      "D2_ratio": "57179/1281280",
+      "ratio": "1743/14080",
+      "violates": false,
+      "layers": [
+        {
+          "k": 6,
+          "N": 462,
+          "e": "471/4",
+          "contribution": "7065/1024",
+          "contribution_D2": "471/1024"
+        },
+        {
+          "k": 7,
+          "N": 462,
+          "e": "279/4",
+          "contribution": "837/64",
+          "contribution_D2": "279/64"
+        },
+        {
+          "k": 8,
+          "N": 330,
+          "e": "199/4",
+          "contribution": "2985/256",
+          "contribution_D2": "1791/256"
+        },
+        {
+          "k": 9,
+          "N": 165,
+          "e": "535/16",
+          "contribution": "1605/256",
+          "contribution_D2": "535/256"
+        },
+        {
+          "k": 10,
+          "N": 55,
+          "e": "223/16",
+          "contribution": "3345/4096",
+          "contribution_D2": "223/4096"
+        }
+      ]
+    },
+    {
+      "r": 11,
+      "A": 16,
+      "m": 14,
+      "t": 2,
+      "B": "3003/4",
+      "Dsrc": "1601/64",
+      "D2": "627/64",
+      "D2_ratio": "19/1456",
+      "ratio": "1601/48048",
+      "violates": false,
+      "layers": [
+        {
+          "k": 9,
+          "N": 1287,
+          "e": "355/4",
+          "contribution": "1065/64",
+          "contribution_D2": "355/64"
+        },
+        {
+          "k": 10,
+          "N": 715,
+          "e": "35/4",
+          "contribution": "35/16",
+          "contribution_D2": "35/16"
+        },
+        {
+          "k": 11,
+          "N": 286,
+          "e": "33",
+          "contribution": "99/16",
+          "contribution_D2": "33/16"
+        }
+      ]
+    },
+    {
+      "r": 11,
+      "A": 17,
+      "m": 14,
+      "t": 3,
+      "B": "1001",
+      "Dsrc": "24143/256",
+      "D2": "8297/256",
+      "D2_ratio": "8297/256256",
+      "ratio": "3449/36608",
+      "violates": false,
+      "layers": [
+        {
+          "k": 8,
+          "N": 1716,
+          "e": "424",
+          "contribution": "371/8",
+          "contribution_D2": "53/8"
+        },
+        {
+          "k": 9,
+          "N": 1287,
+          "e": "775/8",
+          "contribution": "11625/512",
+          "contribution_D2": "6975/512"
+        },
+        {
+          "k": 10,
+          "N": 715,
+          "e": "639/8",
+          "contribution": "9585/512",
+          "contribution_D2": "5751/512"
+        },
+        {
+          "k": 11,
+          "N": 286,
+          "e": "119/2",
+          "contribution": "833/128",
+          "contribution_D2": "119/128"
+        }
+      ]
+    },
+    {
+      "r": 11,
+      "A": 18,
+      "m": 14,
+      "t": 4,
+      "B": "2431/2",
+      "Dsrc": "101073/512",
+      "D2": "32627/512",
+      "D2_ratio": "32627/622336",
+      "ratio": "101073/622336",
+      "violates": false,
+      "layers": [
+        {
+          "k": 7,
+          "N": 1716,
+          "e": "653",
+          "contribution": "9795/256",
+          "contribution_D2": "653/256"
+        },
+        {
+          "k": 8,
+          "N": 1716,
+          "e": "439",
+          "contribution": "1317/16",
+          "contribution_D2": "439/16"
+        },
+        {
+          "k": 9,
+          "N": 1287,
+          "e": "2527/16",
+          "contribution": "37905/1024",
+          "contribution_D2": "22743/1024"
+        },
+        {
+          "k": 10,
+          "N": 715,
+          "e": "2839/16",
+          "contribution": "8517/256",
+          "contribution_D2": "2839/256"
+        },
+        {
+          "k": 11,
+          "N": 286,
+          "e": "447/4",
+          "contribution": "6705/1024",
+          "contribution_D2": "447/1024"
+        }
+      ]
+    },
+    {
+      "r": 12,
+      "A": 18,
+      "m": 15,
+      "t": 3,
+      "B": "1547",
+      "Dsrc": "35979/256",
+      "D2": "18261/256",
+      "D2_ratio": "18261/396032",
+      "ratio": "35979/396032",
+      "violates": false,
+      "layers": [
+        {
+          "k": 9,
+          "N": 3003,
+          "e": "1215/8",
+          "contribution": "8505/512",
+          "contribution_D2": "1215/512"
+        },
+        {
+          "k": 10,
+          "N": 2002,
+          "e": "819/2",
+          "contribution": "12285/128",
+          "contribution_D2": "7371/128"
+        },
+        {
+          "k": 11,
+          "N": 1001,
+          "e": "551/8",
+          "contribution": "8265/512",
+          "contribution_D2": "4959/512"
+        },
+        {
+          "k": 12,
+          "N": 364,
+          "e": "108",
+          "contribution": "189/16",
+          "contribution_D2": "27/16"
+        }
+      ]
+    },
+    {
+      "r": 12,
+      "A": 19,
+      "m": 15,
+      "t": 4,
+      "B": "1989",
+      "Dsrc": "50973/128",
+      "D2": "21195/128",
+      "D2_ratio": "2355/28288",
+      "ratio": "1307/6528",
+      "violates": false,
+      "layers": [
+        {
+          "k": 8,
+          "N": 3432,
+          "e": "1054",
+          "contribution": "7905/128",
+          "contribution_D2": "527/128"
+        },
+        {
+          "k": 9,
+          "N": 3003,
+          "e": "4279/16",
+          "contribution": "12837/256",
+          "contribution_D2": "4279/256"
+        },
+        {
+          "k": 10,
+          "N": 2002,
+          "e": "3407/4",
+          "contribution": "51105/256",
+          "contribution_D2": "30663/256"
+        },
+        {
+          "k": 11,
+          "N": 1001,
+          "e": "6143/16",
+          "contribution": "18429/256",
+          "contribution_D2": "6143/256"
+        },
+        {
+          "k": 12,
+          "N": 364,
+          "e": "251",
+          "contribution": "3765/256",
+          "contribution_D2": "251/256"
+        }
+      ]
+    },
+    {
+      "r": 12,
+      "A": 20,
+      "m": 15,
+      "t": 5,
+      "B": "37791/16",
+      "Dsrc": "9205587/16384",
+      "D2": "3029677/16384",
+      "D2_ratio": "3029677/38697984",
+      "ratio": "1022843/4299776",
+      "violates": false,
+      "layers": [
+        {
+          "k": 7,
+          "N": 3003,
+          "e": "36423/32",
+          "contribution": "1129113/32768",
+          "contribution_D2": "36423/32768"
+        },
+        {
+          "k": 8,
+          "N": 3432,
+          "e": "904",
+          "contribution": "15255/128",
+          "contribution_D2": "2825/128"
+        },
+        {
+          "k": 9,
+          "N": 3003,
+          "e": "24775/32",
+          "contribution": "1362625/8192",
+          "contribution_D2": "619375/8192"
+        },
+        {
+          "k": 10,
+          "N": 2002,
+          "e": "5871/8",
+          "contribution": "322905/2048",
+          "contribution_D2": "146775/2048"
+        },
+        {
+          "k": 11,
+          "N": 1001,
+          "e": "18639/32",
+          "contribution": "2516265/32768",
+          "contribution_D2": "465975/32768"
+        },
+        {
+          "k": 12,
+          "N": 364,
+          "e": "491/2",
+          "contribution": "15221/2048",
+          "contribution_D2": "491/2048"
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "r": 5,
+      "A": 6,
+      "m": 6,
+      "reason": "t<1"
+    },
+    {
+      "r": 6,
+      "A": 8,
+      "m": 8,
+      "reason": "t<1"
+    }
+  ],
+  "violations": [],
+  "first_violation": null,
+  "max_ratio_panel": {
+    "r": 5,
+    "A": 7,
+    "m": 6,
+    "t": 1,
+    "B": "15/2",
+    "Dsrc": "37/8",
+    "D2": "37/8",
+    "D2_ratio": "37/60",
+    "ratio": "37/60",
+    "violates": false,
+    "layers": [
+      {
+        "k": 4,
+        "N": 10,
+        "e": "18",
+        "contribution": "9/2",
+        "contribution_D2": "9/2"
+      },
+      {
+        "k": 5,
+        "N": 5,
+        "e": "1/2",
+        "contribution": "1/8",
+        "contribution_D2": "1/8"
+      }
+    ]
+  }
+}

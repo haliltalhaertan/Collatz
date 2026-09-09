@@ -1,0 +1,62 @@
+{
+  "task_id": "cp20-xub-sol-none-v1",
+  "run_id": "directed-c8626febc92746ac98e857711db4ac03",
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "usage": {
+    "calls": 1,
+    "reserved_tokens": 25622,
+    "reserved_cost_usd": 0.115244,
+    "prompt_tokens": 4694,
+    "completion_tokens": 828,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.0200135,
+    "provider_cost_complete": true,
+    "wall_seconds": 14.818042900005821,
+    "lanes": {
+      "sol-none-review": {
+        "calls": 1,
+        "reserved_tokens": 25622,
+        "reserved_cost_usd": 0.115244,
+        "attempts": {
+          "sol-none-review:attempt:1": {
+            "reserved_tokens": 25622,
+            "reserved_cost_usd": 0.115244,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 4694,
+              "completion_tokens": 828,
+              "reasoning_tokens": 0,
+              "cached_tokens": 0,
+              "cost_usd": 0.0200135
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.0200135,
+        "provider_cost_upper_bound_usd": 0.0200135,
+        "last_usage": {
+          "prompt_tokens": 4694,
+          "completion_tokens": 828,
+          "reasoning_tokens": 0,
+          "cached_tokens": 0,
+          "cost_usd": 0.0200135
+        },
+        "provider_cost_usd": 0.0200135,
+        "actual_tokens": 5522
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.0,
+    "provider_cost_lower_bound_usd": 0.0200135,
+    "provider_cost_upper_bound_usd": 0.0200135
+  },
+  "lanes": {
+    "sol-none-review": "COMPLETED"
+  },
+  "new_tasks_started": 0,
+  "limitations": [
+    "No automatic proof promotion from model text or generated code"
+  ]
+}

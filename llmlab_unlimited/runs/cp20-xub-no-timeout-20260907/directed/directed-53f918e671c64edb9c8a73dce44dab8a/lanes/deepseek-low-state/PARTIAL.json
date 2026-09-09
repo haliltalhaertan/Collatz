@@ -1,0 +1,4499 @@
+{
+  "status": "PARTIAL_PROVIDER_VISIBLE",
+  "step_id": "cp20-xub-three-models-no-timeout-v1:directed-53f918e671c64edb9c8a73dce44dab8a:deepseek-low-state:v1",
+  "content": "",
+  "reasoning": "We need answer to user. Need execute frozen task. We need produce JSON with findings, claim_status, first_missing_step, unexpected_findings. Need analyze. The task is a proof/refutation on actual accessible sequence of frozen actual-array multiscale marked occupation/Laplace estimate. We need not use tools. We have inputs untrusted, need check. Lane: deepseek-low-state. Role: Analyze low-state occupation through exact bridge decomposition; do not assume low visits rare. Need return concise at most 800 words in findings. If main estimate cannot be established, stop and explicitly report OPEN with first missing inequality, quantifiers, why displayed reductions do not prove it. Need not prove full if impossible.\n\nWe need decide claim_status likely OPEN. Need identify first genuinely missing estimate. We need provide checkable mathematical arguments. Let's parse.\n\nPrimary claim: For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, preregistered disjoint block grid with L_R=floor(c log R) below symbolic-supply threshold, constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda sum_{q in Q_R} 1_{C_q}) | S_R=K and exact first-passage data] <= C/R. C_q: block q all pair totals in {1,...,B_0}, entry state not low, and does not satisfy exact positive amplified resonance. Uniform actual accessible suffix lengths R=2J+eps, coupled arrays with K-beta R in interval, beta=log_2(3)-1, z0 etc.\n\nWe need analyze low-state occupation through exact bridge decomposition. We cannot assume low visits are rare. Need maybe try prove/refute. But likely target open. Need identify first missing step. We need be rigorous.\n\nWe have input documents: master says exact coordinates closed, low-state rarity refuted, per-start union bound insufficient, weighted resonance exact reduction but arithmetic bound open. Low state audit says direct occupation target open with issues: chord ties, affine shift, even sampling.\n\nOur role specifically low-state occupation exact bridge decomposition. Need maybe attempt proof of marked occupation estimate? We need see if can establish? Let's think. The claim is about exponential moment of count of useful blocks non-low nonresonant. To prove upper bound <= C/R, sufficient to show expected count? By Jensen: E exp(-lambda N) >=? Actually exp(-lambda N) <= 1 and can be bounded by P(N <= something). Need show with high probability there are many C_q blocks? Wait upper bound on Laplace transform of sum 1_{C_q}: Since exp(-lambda N) <= exp(-lambda k) if N >= k. To show <= C/R impossible if N is large? Actually exp(-lambda N) small when N large. Need show N is usually large (at least ~ c log R?) Then exponential moment small O(1/R). If there is positive probability N=0, then lower bound P(N=0). Need upper bound <= C/R requires P(N=0) <= C/R maybe extremely small, i.e., almost surely many C_q blocks. Is that plausible? There are ~ R/L_R blocks. Each C_q has probability? Useful bounded positive word length L_R probability? Since pair totals positive bounded, each pair total positive probability. Word length L_R=floor(c log R). Probability of specific bounded positive word maybe ~? Under weak composition with total beta R, each pair total has roughly geometric? Bounded positive pair totals 1..B0 probability maybe constant per pair? For L_R log length, probability ~ rho^{L_R} = R^{-a} maybe. Number of blocks ~ R/L_R. Expected C_q maybe R^{1-a}/L_R. If a<1, expected many. But lower tail? Need show probability all blocks fail maybe O(1/R)? Hmm.\n\nC_q includes nonresonant. Resonance is rare? Exact amplified resonance condition has threshold eta/9^L, volume tiny ~ 2 * eta / 9^L. For each block, conditional probability given prefix? Maybe O(eta/9^L) times density? Need maybe rare. Then many blocks C_q if useful abundance. But low-state entry? Non-low means entry z >= eta. For any block with bounded positive pair totals, entry z_j evolves: z_j = z_0 * 2^{H_j - 2 beta j}. For bounded positive pair totals, H_j = sum B_i between L_R and B0 L_R. Expected drift? beta = log_2 3 -1 ~0.585. 2 beta =1.17. If pair totals average maybe > 2 beta? H_j - 2 beta j. For b=1, H_j=j, log z changes 1 - 2beta? Wait z_j exponent =1 - {beta tau}+ H_j - 2beta j. For b=1 each pair: H_j=j, difference (1-2beta)j ≈ -0.17j, so z decreases slowly. For b=2, difference (2-2beta)j=0.83j positive. For typical pair total under distribution with beta mean? Pair total B_j = Y_{2j-1}+Y_{2j}. Conditional total K≈beta R. Mean per pair = 2K/R ≈ 2beta ≈1.17. So expected drift H_j - 2beta j ≈0? Actually H_j mean ≈2beta j, so zero. z random walk? In log, increments are B_j - 2beta, zero mean conditioned? Under global conditioning with end K, bridge mean zero. So z is exponential of conditioned random walk bridge? z0 1-2, log z_j = c + sum (B_i - 2beta). Conditioned at final? At j=J, H_J=K (if R even), log z_J = c + K - 2beta J ≈ c + beta R - beta R = c (since R=2J). So bridge returns to O(1). Thus log z is a bridge with zero mean increments, bounded? B_i can be huge, but can bound. Low state z<eta corresponds log z < log eta = O(1). For a mean-zero bridge with O(1) endpoint, probability at fixed fraction is ~1/2 as audit says. Non-low entry probability ~1/2. So low not rare.\n\nNeed bound exp(-lambda sum C_q). C_q is useful bounded positive all pair totals in 1..B0, non-low at entry, nonresonant. For each block, if entry low or resonant, not counted. Many blocks useful but maybe low half. The sum C_q counts useful entries that are non-low and nonresonant. Expected count maybe half useful count. Need show this count grows like? If useful word probability per block is R^{-a} with a<1, number blocks ~R/log R, expected useful nonlow maybe R^{1-a}/log R. Then Laplace transform <= exp(-lambda * E? no, lower tail). Need concentration to show N ≥ c R^{1-a}/log R with high probability maybe. Then exp(-lambda N) is super tiny O(1/R). But maybe dependencies.\n\nHowever the primary claim is upper bound O(1/R), which is strong. It implies with probability at least 1 - O(1/R), N >= (1/lambda) log R? Actually if P(N < (1/lambda) log R + O(1)) ≤ O(1/R). Need many C_q blocks. Could be plausible if blocks have positive probability and weak dependence. But proof requires exact bridge decomposition and resonance arithmetic.\n\nThe task is to execute lane: analyze low-state occupation through exact bridge decomposition. We need perhaps identify first missing estimate. The \"main estimate cannot be established\" likely. Need report OPEN. We need identify first missing inequality precisely, quantifiers, why displayed reductions do not prove it. We can use exact bridge decomposition to show a missing inequality.\n\nWe need decide what first missing estimate is. It might be: an occupation lower-tail bound for number of non-low useful blocks across disjoint blocks under conditioned bridge, after excluding resonances. More specific: Need prove\nP( sum_{q in Q_R} 1_{G_q ∩ L_q^c} <= theta R^{1-a}/log R | S_R=K, first-passage) <= C/R (or perhaps exponential bound), where G_q bounded-positive word and L_q^c non-low. But C_q additionally nonresonant; resonance may be handled separately. Or maybe first missing is a bridge occupation estimate for low/non-low states at block entries.\n\nLet's parse \"first genuinely missing estimate in a form that is strictly narrower than the target.\" We need formulate.\n\nInputs indicate direct occupation target in low audit:\nM_eta=#{0<=j<J: log2 z_j >= log2 eta}\nDirect occupation target E[exp(-lambda M_eta)|S_R=K] <= C/R.\nThis is marked version counts only regular entries whose next symbol positive/bounded. Cycle lemma/Chung-Feller plausible but issues: chord-centering rational ties; affine shift; even-time sampling.\n\nOur lane deepseek-low-state: \"Analyze low-state occupation through an exact bridge decomposition; do not assume low visits are rare.\"\n\nWe need maybe attempt an exact bridge decomposition for non-low occupation. Conditioned S_R=K, pair totals B_j are exchangeable? Under weak composition with sum K, Y_i are exchangeable conditioned sum K? Yes if Y_i are iid geometric? Wait weak composition with sum K: Are Y_i independent? Uniform over weak compositions of K into R parts. If original Y_i are iid geometric conditioned on sum K. Does that make Y_i exchangeable but not independent. Pair totals B_j are exchangeable (since pairs are blocks of 2 exchangeable? Conditioned sum K, pair totals B_j from pairs of Y; vector of pair totals is exchangeable across j? Is it? The distribution of B_1,...,B_J given sum of all Y over R. Are B_j exchangeable? Because Y_i exchangeable, grouping into pairs: The vector of pair sums (B_1,...,B_J) and maybe epsilon. Is the law invariant under permutations of pairs? If we permute pairs of two coordinates, Y vector is invariant? Uniform composition is exchangeable under all coordinates, so any permutation of coordinates preserves law. Permuting pairs is a permutation of coordinates, so yes vector of pair sums is exchangeable (if R even). If epsilon=1, last singleton makes maybe pair vector exchangeable given singleton? Yes likely.\n\nThus B_1,...,B_J are exchangeable with sum K (if even R=2J), each nonnegative integer. The law is not independent but exchangeable with negative correlation. An exact bridge decomposition can be via random permutation? For exchangeable nonnegative variables with fixed sum, distribution is uniform composition of K into J parts? Wait if Y_i uniform composition into R parts, pair totals B_j are sums of two coordinates. Are B_j uniform composition of K into J parts? No, because each B_j has multiplicity (b+1) compositions of b into two nonnegative parts. Thus P(B_1=b_1,...,B_J=b_J) proportional to product_j (b_j+1), conditioned sum K. This is a weighted composition, not uniform. The audit's beta-binomial law for partial sum is exact.\n\nWe can perhaps decompose bridge into increments. Need low-state occupation. z_j = z0 * 2^{H_j - 2β j}. Low state condition z_j < η is equivalent to H_j - 2β j < log_2(η/z0). Let threshold a = log_2(η/z0) which is bounded between? z0 ∈(1,2), η fixed. Threshold O(1), maybe negative or positive? η admissible maybe <1? Low z<η; threshold = log_2 η - log_2 z0, negative if η<1 and z0>1. So condition H_j - 2β j < a (a negative O(1)). Non-low: H_j - 2β j ≥ a.\n\nThus non-low entry is event that the partial sum of exchangeable pair totals is above its mean? Since E[H_j]=? Given total K, E[H_j]=j K/J = j*(K/J). Since K/J ≈ 2β? Wait J=R/2, K≈β R=2β J, so mean H_j≈2β j. Yes threshold at mean + a? Actually H_j - 2β j ≥ a, a negative, so above mean - O(1). So non-low is at or above mean less O(1). For fixed bulk j, probability ~1/2.\n\nFor a block starting at j, non-low entry depends on H_j (prefix sum). Bounded-positive useful block length L_R depends on increments B_{j+1},...,B_{j+L_R}. Under exchangeable conditioned sum, given prefix H_j = h, the remaining increments are conditionally weighted composition with sum K-h. More specifically, for block grid disjoint, entries are at j = q L_R + 1 maybe. Need analyze occupation over multiple blocks.\n\nThe target C_q = G_q ∩ L_q^c ∩ R_q^c. If we ignore resonance, need show many useful non-low blocks. The exact bridge decomposition could express count of blocks with bounded positive word and entry non-low. We need maybe lower-tail.\n\nCould there be a refutation? Since low-state hits are not rare, maybe non-low useful blocks may be too few? Let's test.\n\nGiven R length, L_R=c log R. Blocks q count |Q_R| ≈ R/L_R = R/(c log R). For each block, G_q (all pair totals in 1..B0) probability? Under exchangeable weighted composition with K≈β R. For a fixed block of length L, each pair total positive bounded. Under global conditioning, probability roughly product of local probabilities times? Negative correlation. For single pair total B=b: P(B=b | total K) = (b+1) * [compositions remaining] / total. As R large with K/R→β, for fixed b, tends to (b+1) β^b/(1+β)^{b+2}? Let's derive. For geometric iid conditioned sum, a single coordinate Y has Polya? But for pair total B=Y1+Y2, distribution tends to negative binomial? For fixed b, P(B=b) → (b+1) p^2 (1-p)^b with p=1/(1+β) maybe? Since β = mean per coordinate? Wait K/R→β, so p=1/(1+β), P(Y=y)=p(1-p)^y. Pair total B ~ NegBin(2,p): P(B=b)=(b+1)p^2(1-p)^b = (b+1) β^b/(1+β)^{b+2}. Yes β≈0.585, p≈0.631, positive probability for b=1..B0. So each pair positive bounded has constant probability ρ_B0 = P(B∈[1,B0]) >0. For a word of L pair totals all bounded, probability under iid would be ρ^L = e^{-c' L}=R^{-c' c}. Here c below symbolic-supply threshold ensures exponent a<1? Yes.\n\nSo each block G_q probability ~ R^{-a} with a = - c log ρ? Actually ρ^L = R^{-c log(1/ρ)/log? base e}. Let a = c * |log ρ| / log R? If L=c log R, ρ^L = exp(-c |log ρ| log R)=R^{-c |log ρ|}. If c small enough so a<1. Then expected number useful blocks ~ (R/L)*R^{-a}=R^{1-a}/(c log R), large.\n\nNon-low entry probability given block prefix maybe ~? For block start j, H_j is bridge. At fixed fraction, P(non-low) ~1/2. Thus expected useful non-low ~0.5 R^{1-a}/log R. Large.\n\nCan all blocks fail? Need lower-tail probability. Blocks are disjoint and length L. Under exchangeable conditioned composition, disjoint block sums and entries have multinomial-like negative correlation. Could approximate by iid across blocks? But because total fixed, sums over blocks are negatively correlated. For rare events with probability p=R^{-a}, number of successes approximately Poisson with mean μ=R^{1-a}/log R. If μ large, P(no success)≈e^{-μ} which is much smaller than 1/R if μ >> log R. Since R^{1-a}/log R >> log R for a<1, yes. So exponential moment <= C/R plausible.\n\nBut rigorous proof is hard. Missing step likely exactly this lower-tail/occupation concentration for exchangeable bridge.\n\nNeed identify first missing inequality. Could be:\nFor the preregistered block grid and for a fixed θ>0 (e.g. θ=ρ_B0^L/4), there is C such that\nP( ∑_{q∈Q_R} 1_{G_q ∩ L_q^c} ≤ θ R / L_R | S_R=K ) ≤ C/R\nor equivalently\nE[exp(-λ ∑ 1_{G_q ∩ L_q^c}) | S_R=K] ≤ C/R.\nThen if resonance removal can be handled by adding a small exceptional term, target follows. But maybe resonance is a separate missing arithmetic estimate. The first missing could be even before resonance: low-state marked occupation estimate without resonance:\nE[exp(-λ ∑_{q∈Q_R} 1_{G_q ∩ L_q^c}) | S_R=K] ≤ C/R.\nIs this true? Need check. This is strictly narrower than target? It drops resonance, so stronger than target (since C_q ⊆ G_q ∩ L_q^c, so sum C_q ≤ sum G_q∩L_q^c; exp(-λ larger? Wait exp(-λ sum C_q) >= exp(-λ sum G∩L^c)? If sum C_q ≤ sum G∩L^c, then -λ sum C_q ≥ -λ sum G∩L^c, so exp(-λ sum C_q) ≥ exp(-λ sum G∩L^c). Thus bounding the no-resonance version would imply target? Actually if E exp(-λ sum G∩L^c) ≤ C/R, then since exp(-λ sum C_q) ≤? Let's compare: C_q ⊆ D_q, so sum C_q ≤ sum D_q. Then exp(-λ sum C_q) ≥ exp(-λ sum D_q) because exponent less negative. So E exp(-λ sum C_q) ≥ E exp(-λ sum D_q). Thus a bound on E exp(-λ sum D_q) does NOT imply bound on E exp(-λ sum C_q). Wait target has smaller exponent? Let's compute:",
+  "reasoning_details": [
+    {
+      "type": "reasoning.text",
+      "text": "We",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " need answer to",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " user. Need execute",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " frozen task.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " We need produce JSON with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " findings, claim_status, first_m",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "issing_step, unexpected_f",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "indings. Need analyze.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " The task is a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " proof/refutation on actual",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " accessible sequence of frozen",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " actual-array multiscale marked",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " occupation/Laplace estimate.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " We need not use",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " tools. We have inputs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " untrusted, need check",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Lane: deepseek-low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-state. Role: Analyze low-state occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " through exact bridge decomposition;",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " do not assume low visits",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " rare. Need return",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " concise at most ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "800 words in findings. If",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " main estimate cannot be established,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " stop and explicitly report OPEN",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with first missing inequality",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", quantifiers, why displayed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " reductions do not prove it.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need not prove full if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " impossible.\n\nWe need decide claim",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_status likely OPEN. Need identify",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " first genuinely missing estimate",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". We need provide",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " checkable mathematical arguments",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Let's parse",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\nPrimary claim: For fixed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " admissible eta, lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", bounded positive alphabet cutoff B_0,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " preregistered disjoint block",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " grid with L_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=floor(c log R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") below symbolic-supply threshold, constant",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C such that every sufficiently",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " large actual accessible suffix array satisfies E[",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "exp(-lambda sum_{q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " in Q_R} 1_{C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q}) | S",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R=K and exact first",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-passage data] <= C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R. C_q: block",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " q all pair totals in {1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",...,B_0}, entry",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " state not low, and does",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not satisfy exact positive",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " amplified resonance. Uniform actual",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " accessible suffix lengths R=2J",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+eps, coupled",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " arrays with K-beta",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R in interval,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " beta=log_",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2(3)-1,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " z0 etc.\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "We need analyze low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-state occupation through exact bridge decomposition. We",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " cannot assume low visits",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are rare. Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " maybe try prove/",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "refute. But likely",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " target open. Need identify",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " first missing step. We need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be rigorous.\n\nWe have",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " input documents: master",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " says exact coordinates closed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", low-state rarity",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " refuted, per",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-start union bound insufficient",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", weighted resonance exact",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " reduction but arithmetic bound",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " open. Low state audit says direct",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " occupation target open with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " issues: chord ties",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", affine shift, even sampling",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\nOur role specifically",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " low-state occupation exact",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bridge decomposition. Need maybe attempt",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " proof of marked occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " estimate? We need see",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if can establish?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Let's think. The claim is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " about exponential moment of count",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of useful blocks non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-low nonresonant. To",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " prove upper bound <= C/R,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sufficient to show expected count",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? By Jensen: E exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-lambda N) >=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? Actually exp(-lambda N) <= ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1 and can be bounded by P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(N <= something).",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need show with high probability there",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are many C_q blocks? Wait upper bound",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " on Laplace transform of sum ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1_{C_q}:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Since exp(-lambda N) <= exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-lambda k)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if N >= k. To show <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C/R impossible if N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is large? Actually exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-lambda N) small",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " when N large. Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " show N is usually large",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (at least ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " c log R?)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Then exponential moment small O",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(1/R). If there",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is positive probability N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=0, then lower",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bound P(N=0).",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need upper bound <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C/R requires P(N=0)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <= C/R maybe extremely small",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", i.e., almost surely",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " many C_q blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Is that plausible",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? There are ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R/L_R blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Each C_q has probability?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Useful bounded positive word",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " length L_R probability? Since pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " totals positive bounded, each pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " total positive probability.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Word length L_R=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "floor(c log R). Probability of specific",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bounded positive word maybe ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? Under weak composition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with total beta R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", each pair total",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " has roughly geometric? B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ounded positive pair totals ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1..B0 probability maybe constant",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " per pair? For L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R log length, probability ~ r",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ho^{L_R}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " = R^{-a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "} maybe. Number",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of blocks ~ R/L_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Expected C_q maybe",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R^{1-a}/L_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". If a<",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1, expected many. But lower",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " tail? Need show probability all",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks fail maybe O",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(1/R)? Hmm.\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "C_q includes nonreson",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ant. Resonance is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " rare? Exact amplified",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " resonance condition has threshold",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " eta/9^L, volume tiny",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ~ 2 *",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " eta / 9^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "L. For each block,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " conditional probability given prefix",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? Maybe O(eta",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/9^L) times",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " density? Need maybe rare. Then many",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks C_q if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " useful abundance. But low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-state entry? Non-low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " means entry z >= eta",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". For any block with bounded",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " positive pair totals, entry z_j evolves",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": z_j = z_",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0 * 2^{H",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j - 2 beta j}. For bounded",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " positive pair totals, H_j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " = sum B_i",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " between L_R and B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0 L_R. Expected",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " drift? beta =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log_2 ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "3 -1 ~0.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "585. 2 beta",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " =1.17. If",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " pair totals average maybe > 2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " beta? H_j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " - 2 beta j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". For b=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1, H_j=j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", log z changes ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1 - 2beta? Wait z",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j exponent =1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " - {beta tau}+ H",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j - 2beta j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". For b=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1 each pair: H_j=j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", difference (1-2beta)j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≈ -0.17j,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " so z decreases slowly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". For b=2,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " difference (2-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2beta)j=0.83",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "j positive. For typical",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " pair total under distribution",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with beta mean? Pair total",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " B_j = Y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_{2j-1}+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Y_{2j}.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Conditional total K≈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "beta R. Mean per",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " pair = 2K/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≈ 2beta ≈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1.17. So expected",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " drift H_j - 2beta",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " j ≈0?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Actually H_j mean ≈2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "beta j, so",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " zero. z random",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " walk? In log,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " increments are B_j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " - 2beta, zero",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mean conditioned? Under",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " global conditioning with end K, bridge",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mean zero. So z is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exponential of conditioned random walk bridge",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? z0 ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1-2,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log z_j = c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " + sum (B_i",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " - 2beta). Condition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ed at final?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " At j=J",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", H_J=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "K (if R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " even), log z_J = c +",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K - 2beta J",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≈ c + beta",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R - beta R = c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (since R=2J",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "). So bridge returns",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to O(1). Thus",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log z is a bridge with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " zero mean increments,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bounded? B_i can be huge",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", but can bound. Low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " state z<eta",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " corresponds log z <",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log eta = O(1). For",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a mean-zero bridge with O",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(1) endpoint",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", probability at fixed fraction",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is ~1/2 as audit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " says. Non-low entry probability",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ~1/2. So",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " low not rare.\n\nNeed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bound exp(-lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum C_q). C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q is useful bounded",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " positive all pair totals in ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1..B0, non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-low at entry, nonresonant",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". For each block, if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " entry low or resonant,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not counted. Many",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks useful but maybe low half",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". The sum C_q counts useful",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " entries that are non-low and nonres",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "onant. Expected count",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " maybe half useful count.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need show this count",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " grows like? If",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " useful word probability per",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " block is R^{-a}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with a<1, number blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ~R/log R, expected useful",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " nonlow maybe R^{1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-a}/log R. Then",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Laplace transform <= exp(-lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " * E? no",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", lower tail). Need concentration",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to show N ≥",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " c R^{1-a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}/log R with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " high probability maybe. Then",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp(-lambda N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") is super tiny",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " O(1/R). But maybe dependencies",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\nHowever the primary",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " claim is upper bound O(1/R),",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " which is strong. It",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " implies with probability at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " least 1 - O(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1/R), N >= (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1/lambda) log R?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Actually if P(N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " < (1/lambda) log R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " + O(1)) ≤",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " O(1/R). Need many",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C_q blocks. Could be plausible",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if blocks have positive",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " probability and weak dependence",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". But proof requires",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exact bridge decomposition and resonance",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " arithmetic.\n\nThe task",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is to execute lane",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": analyze low-state occupation through exact bridge decomposition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". We need perhaps",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " identify first missing estimate. The \"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "main estimate cannot be established\" likely",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Need report OPEN",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". We need identify first",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " missing inequality precisely, quant",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ifiers, why displayed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " reductions do not prove it. We can",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " use exact bridge decomposition to show a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " missing inequality.\n\nWe",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " need decide what first",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " missing estimate is. It might be:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " an occupation lower-tail",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bound for number of non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-low useful blocks across",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " disjoint blocks under conditioned",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bridge, after excluding",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " resonances. More",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " specific: Need prove\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "P( sum_{q in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Q_R} 1_{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "G_q ∩ L_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^c} <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " theta R^{1-a}/",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "log R | S_R=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "K, first-passage)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <= C/R (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "or perhaps exponential bound),",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " where G_q bounded",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-positive word and L_q^c non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-low. But C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q additionally nonresonant;",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " resonance may be handled separately.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Or maybe first missing is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a bridge occupation estimate for low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/non-low states at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " block entries.\n\nLet's parse \"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "first genuinely missing estimate",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " in a form that is strictly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " narrower than the target.\"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " We need formulate.\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Inputs indicate direct",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " occupation target in low audit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":\nM_eta=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "#{0<=j<J: log2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " z_j >= log2 eta",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}\nDirect occupation target E[exp(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda M_eta)|",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "S_R=K] <= C/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\nThis is marked version",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " counts only regular entries whose next symbol",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " positive/bounded. Cycle",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma/Chung-Feller plausible but",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " issues: chord-centering rational",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ties; affine shift;",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " even-time sampling.\n\nOur",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lane deepseek-low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-state: \"Analy",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ze low-state occupation through an",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exact bridge decomposition; do not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " assume low visits are rare.\"\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "We need maybe attempt an",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exact bridge decomposition for non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-low occupation. Condition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ed S_R=K, pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " totals B_j are exchange",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "able? Under weak composition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with sum K, Y_i",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are exchangeable conditioned",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum K? Yes",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if Y_i are i",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "id geometric? Wait weak composition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with sum K: Are Y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_i independent? Uniform",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " over weak compositions of K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " into R parts. If",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " original Y_i are i",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "id geometric conditioned on sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K. Does that make",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Y_i exchangeable but",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not independent. Pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " totals B_j are exchange",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "able (since pairs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are blocks of 2 exchange",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "able? Conditioned sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K, pair totals",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " B_j from pairs of Y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "; vector of pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " totals is exchangeable across",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " j? Is it",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? The distribution of B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_1,...,B_J given",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum of all Y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " over R. Are B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j exchangeable? Because",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Y_i exchangeable,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " grouping into pairs: The vector",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of pair sums (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "B_1,...,B_J",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") and maybe epsilon. Is the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " law invariant under permutations of pairs? If",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " we permute pairs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of two coordinates, Y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " vector is invariant? Uniform",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " composition is exchangeable under all coordinates",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", so any permutation of coordinates preserves law",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Permuting pairs is a permutation of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " coordinates, so yes vector of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " pair sums is exchangeable (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "if R even). If epsilon",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=1, last singleton",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " makes maybe pair vector",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exchangeable given singleton",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? Yes likely.\n\nThus B_",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1,...,B_J are exchange",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "able with sum K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (if even R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=2J), each",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " nonnegative integer. The law",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is not independent but",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exchangeable with negative",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " correlation. An exact bridge decomposition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " can be via random permutation? For exchange",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "able nonnegative variables",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with fixed sum, distribution is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " uniform composition of K into",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " J parts? Wait",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if Y_i uniform composition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " into R parts, pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " totals B_j are sums of two",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " coordinates. Are B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j uniform composition of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K into J parts? No",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", because each B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j has multiplicity (b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+1) compositions",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of b into two non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "negative parts. Thus P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(B_1=b_1,...,B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_J=b_J) proportional",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to product_j (b_j+1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "), conditioned sum K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". This is a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " weighted composition, not uniform. The audit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "'s beta-binomial law",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for partial sum is exact",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\nWe can perhaps",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " decompose bridge into increments",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Need low-state",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " occupation. z_j = z",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0 * 2^{H_j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " - 2β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " j}. Low state condition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " z_j < η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is equivalent to H_j - ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2β j < log_",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2(η/z0).",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Let threshold a = log_2(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "η/z0) which is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bounded between? z",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0 ∈(1,2), η fixed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Threshold O(1),",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " maybe negative or positive? η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " admissible maybe <1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? Low z<",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "η; threshold = log_2 η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " - log_2 z",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0, negative if η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "<1 and z0>1.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " So condition H_j -",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 2β j < a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (a negative O(1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")). Non-low:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " H_j - 2β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " j ≥ a.\n\nThus non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-low entry is event",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " that the partial sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of exchangeable pair totals",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is above its mean",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? Since E[H_j]=?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Given total K, E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "[H_j]=j K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/J = j*(K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/J). Since K/J ≈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 2β?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Wait J=R/2, K≈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "β R=2β J",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", so mean H",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j≈2β j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Yes threshold at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mean + a? Actually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " H_j - 2β j ≥",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a, a negative,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " so above mean -",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " O(1).",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " So non-low is at or",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " above mean less O(1). For fixed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bulk j, probability ~1/2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\nFor a block starting",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " at j, non-low entry",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " depends on H_j (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "prefix sum). B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ounded-positive useful block length L_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " depends on increments B_{j+1},",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "...,B_{j+L_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}. Under exchangeable",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " conditioned sum, given",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " prefix H_j = h",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", the remaining increments are condition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ally weighted composition with sum K-h.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " More specifically, for block",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " grid disjoint, entries are at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " j = q L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R + 1 maybe. Need analyze",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " occupation over multiple blocks.\n\nThe",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " target C_q = G",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q ∩ L_q^c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ∩ R_q^c. If",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " we ignore resonance, need show",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " many useful non-low blocks. The exact",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bridge decomposition could express",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " count of blocks with bounded",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " positive word and entry non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-low. We need maybe",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lower-tail.\n\nCould there",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be a refutation? Since low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-state hits are not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " rare, maybe non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-low useful blocks may",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be too few? Let's test.\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Given R length, L_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=c log R. Blocks q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " count |Q_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "| ≈ R/L_R =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R/(c log R).",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " For each block,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " G_q (all pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " totals in 1..B0) probability",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? Under exchangeable",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " weighted composition with K≈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "β R. For a fixed block of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " length L, each pair total",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " positive bounded. Under global",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " conditioning, probability roughly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " product of local probabilities",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " times? Negative correlation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". For single pair total B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=b: P(B=b |",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " total K) = (b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+1) * [",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "compositions remaining] / total",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". As R large with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K/R→β, for fixed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " b, tends to (b+1)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " β^b/(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1+β)^{b+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2}? Let's derive",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". For geometric i",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "id conditioned sum,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a single coordinate Y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " has Polya? But for pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " total B=Y1+Y2, distribution",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " tends to negative binomial?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " For fixed b, P(B=b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") → (b+1) p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^2 (1-p)^b with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " p=1/(1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+β) maybe?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Since β = mean per",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " coordinate? Wait K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R→β,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " so p=1/(1+β),",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " P(Y=y)=p(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1-p)^y.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Pair total B ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " NegBin(2,p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "): P(B=b)=(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "b+1)p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^2(1-p)^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "b = (b+1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") β^b/(1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+β)^{b+2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}. Yes β≈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0.585, p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈0.631",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", positive probability for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " b=1..B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0. So each pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " positive bounded has constant",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " probability ρ_B0",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " = P(B∈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "[1,B0]) >",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0. For a word of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " L pair totals all bounded",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", probability under i",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "id would be ρ^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "L = e^{-c'",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " L}=R^{-c' c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}. Here c below",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " symbolic-supply threshold ensures",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exponent a<1? Yes",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\nSo each block G",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q probability ~ R^{-a} with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a = - c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log ρ? Actually ρ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^L = R^{-c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log(1/ρ)/",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "log? base e",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}. Let a = c *",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " |log ρ| /",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log R? If L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=c log R, ρ^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "L = exp(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "c |log ρ| log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R)=R^{-c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " |log ρ|}. If",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " c small enough so",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a<1. Then",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " expected number useful blocks ~ (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "R/L)*R^{-a}=R^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1-a}/(c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log R), large.\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Non-low entry probability given",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " block prefix maybe ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? For block start j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", H_j is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bridge. At fixed fraction",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", P(non-low) ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1/2. Thus",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " expected useful non-low ~0",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".5 R^{1-a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}/log R. Large.\n\nCan",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " all blocks fail? Need lower",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-tail probability. Blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are disjoint and length",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " L. Under exchangeable",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " conditioned composition, disjoint",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " block sums and entries",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " have multinomial-like",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " negative correlation. Could",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " approximate by iid across",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks? But because",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " total fixed, sums",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " over blocks are negatively correlated. For",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " rare events with probability p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=R^{-a}, number",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of successes approximately Poisson with mean μ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=R^{1-a}/log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R. If μ large,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " P(no success",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")≈e^{-μ} which",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is much smaller than ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1/R if μ >>",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log R. Since",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R^{1-a}/log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R >> log R for a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "<1, yes. So",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exponential moment <= C/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " plausible.\n\nBut rigorous proof is hard",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Missing step likely exactly this",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lower-tail/occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " concentration for exchangeable bridge",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\nNeed identify first",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " missing inequality. Could be:\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "For the preregistered block grid",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " and for a fixed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " θ>0 (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "e.g. θ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=ρ_B0^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "L/4), there is C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " such that\nP(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ∑_{q∈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Q_R} 1_{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "G_q ∩ L_q^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "c} ≤ θ R /",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " L_R | S_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=K ) ≤ C/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "\nor equivalently\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "E[exp(-λ ∑ ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1_{G_q ∩ L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q^c}) |",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " S_R=K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "] ≤ C/R.\nThen",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if resonance removal can be handled",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " by adding a small",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exceptional term, target",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " follows. But maybe",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " resonance is a separate missing arithmetic estimate",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". The first missing",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " could be even before resonance",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": low-state marked",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " occupation estimate without resonance:\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "E[exp(-λ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ∑_{q∈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Q_R} 1_{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "G_q ∩ L_q^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "c}) | S_R=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "K] ≤ C/R.\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Is this true? Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " check. This is strictly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " narrower than target? It drops",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " resonance, so stronger",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " than target (since C_q ⊆",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " G_q ∩ L_q^c, so",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum C_q ≤",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum G_q∩L_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^c; exp(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "λ larger? Wait exp(-λ sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C_q) >= exp(-λ sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " G∩L^c)?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " If sum C_q ≤ sum G",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "∩L^c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", then -λ sum C_q ≥",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " -λ sum G∩L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^c, so exp(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "λ sum C_q) ≥",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp(-λ sum G∩",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "L^c). Thus bounding",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the no-resonance version",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " would imply target?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Actually if E exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-λ sum G∩L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^c) ≤ C/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", then since exp(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "λ sum C_q) ≤",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? Let's compare",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": C_q ⊆ D",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q, so sum C_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≤ sum D_q. Then",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp(-λ sum C_q)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≥ exp(-λ sum D",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q) because exponent",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " less negative. So E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp(-λ sum C_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") ≥ E exp(-λ sum D",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q). Thus a bound on",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " E exp(-λ sum D_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") does NOT imply bound",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " on E exp(-λ sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C_q). Wait target",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " has smaller exponent? Let's compute:",
+      "format": "unknown",
+      "index": 0
+    }
+  ],
+  "provider_attempts": [
+    {
+      "attempt_id": "deepseek-low-state:attempt:1",
+      "client_call_id": "cp20-xub-three-models-no-timeout-v1:directed-53f918e671c64edb9c8a73dce44dab8a:deepseek-low-state:v1:deepseek-low-state:attempt:1",
+      "started_at": "2026-09-07T20:23:44.830438+00:00",
+      "status": "INTERRUPTED",
+      "metadata": {
+        "id": "gen-1788812625-SZPcXBs2O0cqGOZRgqqx",
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "Alibaba"
+      },
+      "usage": {},
+      "error_type": "ProviderStopped"
+    }
+  ]
+}

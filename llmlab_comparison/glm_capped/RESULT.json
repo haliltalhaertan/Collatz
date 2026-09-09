@@ -1,0 +1,9 @@
+{
+  "task_id": "cp20-xub-glm-capped-five-routes-v1",
+  "run_id": "directed-02fc562e633a4f2581f879a2b91e10cf",
+  "status": "STOPPED",
+  "artifact_root": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_comparison\\glm_capped\\runs\\cp20-xub-glm-capped-20260907\\directed\\directed-02fc562e633a4f2581f879a2b91e10cf",
+  "claim_ledger_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_comparison\\glm_capped\\runs\\cp20-xub-glm-capped-20260907\\directed\\directed-02fc562e633a4f2581f879a2b91e10cf\\package\\CLAIM_LEDGER.json",
+  "package_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_comparison\\glm_capped\\runs\\cp20-xub-glm-capped-20260907\\directed\\directed-02fc562e633a4f2581f879a2b91e10cf\\package\\COMPLETE_PACKAGE.zip",
+  "package_sha256": "42ab90924b596542228814a27c590ae0e1152188cbe8eaeadce53a400ccc9f6d"
+}

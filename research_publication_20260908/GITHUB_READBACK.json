@@ -1,0 +1,110 @@
+{
+  "repository": "haliltalhaertan/Collatz",
+  "branch": "codex/coarse-occupation-20260908",
+  "commit": "eb4818a2dbfa946d7752783d1722b02cb8520a72",
+  "files_verified": 20,
+  "all_bytes_match": true,
+  "files": [
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_20260908/PRINCIPAL_ANALYSIS.md",
+      "bytes": 6937,
+      "sha256": "fb217db33e1847d539a53fe126822985e45b59ddbff40b49015f031b0a830d6c"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_20260908/REPORT_TR.md",
+      "bytes": 3287,
+      "sha256": "e03f790fc331d647a901d79e114d891d89a645a37c42511d47af31ac77df9c00"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_20260908/BUDGET.json",
+      "bytes": 315,
+      "sha256": "b9908ef743fb7f879abddd2d6a675702f6dea6527b32b1686a3b398e9cfcbd5f"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_gap_20260908/COARSE_GRID_OBSTRUCTION_PROOF.md",
+      "bytes": 8783,
+      "sha256": "5ae22e8bcf586110e6af8112147b262188beb0b0d8c5293768f9871d4db65dbe"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_gap_20260908/INDEPENDENT_AUDIT.md",
+      "bytes": 1810,
+      "sha256": "c2b7400c2831459d6f53ade11f0153b33b5e95420a0f968644643c8bde3d0984"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_gap_20260908/NEXT_ACTION.md",
+      "bytes": 1675,
+      "sha256": "4bc6fdd1389d8f1d7342a2928ac62a3537e401d7b339659ef1877872978f109b"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_gap_20260908/REPORT_TR.md",
+      "bytes": 3359,
+      "sha256": "57babc2b7378fd269ef8f920e7a89d134551cc5326b0a6f2559db467a94e4c3b"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_gap_20260908/CONSTANT_CHECKS.json",
+      "bytes": 303,
+      "sha256": "2df257e0517794c7245c1bd4c2e37cd262cc70ace73e41dfc4b38ee5bd935d26"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_gap_20260908/check_constants.py",
+      "bytes": 915,
+      "sha256": "5523b3d13e834f12144226adf202f0a70fd9ace84dfc21cf73e5e3589c8b70d7"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_gap_20260908/SOL_REVIEW.json",
+      "bytes": 804,
+      "sha256": "9a2bc70bba8b101ffc8591456f2f297b9686f4bfabcc641173d6a67cf4efca40"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_gap_20260908/BUDGET.json",
+      "bytes": 294,
+      "sha256": "1c1cf1579ce1217b2c597d2c1ec224e521f8ba3baa40c35a5c4d49f2aa61542a"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_sol_gap_20260908/SOURCE_HASHES.json",
+      "bytes": 1045,
+      "sha256": "cdb9417368677cfb2577f3a72972e365d9d7e3066f0121e1fa4b8a5af5f38779"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_coarse_windows_20260908/ALL_LOG_COEFFICIENTS_PROOF.md",
+      "bytes": 8211,
+      "sha256": "f95bbe61eaceed1c0ae74d27646d8c31801b93be2dac8874589d9e5bf4c2f859"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_coarse_windows_20260908/SUBLOG_COROLLARY.md",
+      "bytes": 2103,
+      "sha256": "3837fd428254f86887bfb5434dde9fcec82ccaccf67e539196c536b59745238b"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_coarse_windows_20260908/INDEPENDENT_AUDIT.md",
+      "bytes": 1572,
+      "sha256": "3852a1606941768fcfcfd6fc192f2ef88342acad626938baef2a8738c75d3e37"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_coarse_windows_20260908/NEXT_ACTION.md",
+      "bytes": 2145,
+      "sha256": "4b1815b78a5b38ccf027170009b5d0b309cdf8142802f14dfce6e1194aa7b220"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_coarse_windows_20260908/REPORT_TR.md",
+      "bytes": 2432,
+      "sha256": "214368af90d2a9972617e74fa31d20dadde041036bd3b892707d3ab3ffec5a42"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/research_coarse_windows_20260908/BUDGET.json",
+      "bytes": 197,
+      "sha256": "769ae727d17c564a4d8179a2b68a07922f234126953f7b7c4b00f151ca23607a"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/README.md",
+      "bytes": 1236,
+      "sha256": "445f208e69b5adf7ca944f623ed8e955c26a15701624f240ae001b1d0ca00fc4"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260908/coarse_occupation/SHA256SUMS.json",
+      "bytes": 2224,
+      "sha256": "0058abc1cd595c6b5423838236b43c0d692c8aa57b51a05747cfde77aeb3c9de"
+    }
+  ],
+  "zip_snapshot_sha256": "491170f09c45b74ea4bc5c35979be3a791292dd40fc168f4c227499c7534b7b5"
+}

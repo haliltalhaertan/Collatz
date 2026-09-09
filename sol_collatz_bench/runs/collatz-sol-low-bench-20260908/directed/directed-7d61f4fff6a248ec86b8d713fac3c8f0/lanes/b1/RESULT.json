@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "task_id": "collatz-sol-low-mini-benchmark-v1",
+  "run_id": "directed-7d61f4fff6a248ec86b8d713fac3c8f0",
+  "lane_id": "b1",
+  "role": "Compute the standard Collatz trajectory starting at 6 up to its FIRST visit to 1, inclusive. Give the full list and the number of applications of T.",
+  "model": "openai/gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "step_id": "collatz-sol-low-mini-benchmark-v1:directed-7d61f4fff6a248ec86b8d713fac3c8f0:b1:v1",
+  "provider_attempts": [
+    {
+      "attempt_id": "b1:attempt:1",
+      "client_call_id": "collatz-sol-low-mini-benchmark-v1:directed-7d61f4fff6a248ec86b8d713fac3c8f0:b1:v1:b1:attempt:1",
+      "started_at": "2026-09-08T07:31:38.469531+00:00",
+      "status": "RETURNED",
+      "metadata": {
+        "id": "gen-1788852701-hfIUVD8PAWUK3hBORaDl",
+        "model": "openai/gpt-5.6-sol",
+        "provider": "OpenAI"
+      },
+      "usage": {
+        "prompt_tokens": 433,
+        "completion_tokens": 213,
+        "reasoning_tokens": 53,
+        "cached_tokens": 0,
+        "cost_usd": 0.002996
+      }
+    }
+  ],
+  "status": "COMPLETED",
+  "public_findings": "{'trajectory': [6, 3, 10, 5, 16, 8, 4, 2, 1], 'applications_of_T': 8, 'justification': 'Successive applications give 6/2=3, 3·3+1=10, 10/2=5, 3·5+1=16, 16/2=8, 8/2=4, 4/2=2, and 2/2=1. This is the first visit to 1.'}",
+  "claim_results": [
+    {
+      "claim_id": "BENCHMARK-ANSWER",
+      "statement": "The response correctly solves its assigned exercise.",
+      "status": "OPEN",
+      "domain": "Only the specified exercise; no universal Collatz claim unless explicitly conditional.",
+      "assumptions": [
+        "Standard Collatz map on positive integers: T(n)=n/2 for even n, T(n)=3n+1 for odd n.",
+        "v2(m) is the largest k>=0 with 2^k dividing positive integer m.",
+        "log means natural logarithm."
+      ],
+      "first_missing_step": "Proof not certified",
+      "evidence_files": [
+        "EVIDENCE.json"
+      ]
+    }
+  ],
+  "scope_compliance": {
+    "scope_changed": false,
+    "undeclared_tools_used": false,
+    "undeclared_inputs_used": false,
+    "budget_exceeded": false
+  },
+  "usage": {
+    "prompt_tokens": 433,
+    "completion_tokens": 213,
+    "reasoning_tokens": 53,
+    "cached_tokens": 0,
+    "cost_usd": 0.002996,
+    "wall_seconds": 25.99713650002377
+  },
+  "integrity_issues": [
+    "INVALID_CLAIM_STATUS"
+  ],
+  "independence_level": "ISOLATED_INPUTS_SHARED_COORDINATOR",
+  "unexpected_findings": [],
+  "first_missing_step": null,
+  "output_hash_scope": "canonical JSON excluding output_sha256",
+  "output_sha256": "c5f59fabccace9a82d4da33eca9f00a16299f309a773088d07f582c4a7c6e100"
+}

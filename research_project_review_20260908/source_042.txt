@@ -1,0 +1,192 @@
+# CP20 TASK 8B1 — MODULE B MASTER FINDINGS
+
+**Date:** 2026-08-26  
+**Primary numerical triage:** `[B-LEAD]`  
+**New structural result:** `[MAJOR THEOREM CANDIDATE][AUDIT CANDIDATE]`  
+**Stop rule:** TRIGGERED. No Module D/C/E work was started.
+
+## What was tested
+
+The search used Kramer's natural-log residue rates:
+
+\[
+ho_r(k)=rac{\ln(1+r_k)}k,
+\qquad
+ho_M(k)=rac1k
+\ln\left(1+rac{M_k}{(3/2)^k}ight).
+\]
+
+Classes:
+
+- U0: unrestricted bounded valuation baseline;
+- U1: critical-log corridor;
+- U2: U1 + full-scale finite feasible-region surrogate;
+- U3: U2 + full-scale finite pressure surrogate;
+- U4: U3 + dyadic multiplicative-window pressure surrogates.
+
+U3/U4 are explicitly **computational surrogates**, not theorem-equivalent
+finite forms of frozen Task 8A.
+
+Representative
+\[
+\kappa=1.06,1.2,1.5,2.0,2.5,2.7
+\]
+were tested at
+\[
+k=50,100,200,400,800,1600
+\]
+with main corridor width \(M=4\), plus \(M=2,8\) sensitivity at \(k=400\).
+
+Methods used:
+- exact exhaustive prefix verification;
+- adversarial balanced beam search;
+- 2-adic-focused and 3-adic-focused beam variants;
+- pressure-guided beam variants;
+- compensated local mutation;
+- fixed-\(n_0\) ordinary extension scans.
+
+## Exact identity verification
+
+The engine exhaustively direct-verified all
+\[
+3^{12}=531441
+\]
+words in alphabet \(\{1,2,3\}\), plus 1000 random larger prefixes.
+
+A subtle exact distinction was found and repaired:
+
+Kramer's \(r_kmod2^{A_k}\) is the necessary start congruence, but the
+least representative need not itself realize the final exponent exactly.
+
+The exact length-\(k\) cylinder is the one-bit lift
+\[
+n_0\equiv
+(2^{A_k}-B_k)3^{-k}
+\pmod{2^{A_k+1}}.
+\]
+
+The lift reduces to \(r_k\) modulo \(2^{A_k}\).
+
+## Finite extremal result
+
+Across the main U3/U4 search, no best-found family drove
+\[
+E_k=\max(ho_r,ho_M)
+\]
+toward zero.
+
+At \(k=1600\), the best-found U4 values were:
+
+- kappa=1.06: rho_r=1.088739602, rho_M=0.689746757, E=1.088739602, critical density=0.431250.
+- kappa=1.2: rho_r=1.089122501, rho_M=0.690996089, E=1.089122501, critical density=0.371875.
+- kappa=1.5: rho_r=1.088239126, rho_M=0.690979148, E=1.088239126, critical density=0.310000.
+- kappa=2.0: rho_r=1.085217018, rho_M=0.690989559, E=1.085217018, critical density=0.509375.
+- kappa=2.5: rho_r=1.080903749, rho_M=0.688842375, E=1.080903749, critical density=0.406875.
+- kappa=2.7: rho_r=1.082129741, rho_M=0.690934801, E=1.082129741, critical density=0.353125.
+
+The bottleneck is consistently the 2-adic start rate.
+
+These values do **not** prove a positive residue gap. A heuristic search finds
+upper bounds on the true extremal minimum, not lower bounds.
+
+## Fixed-n0 / nesting falsification
+
+Scanning every odd
+\[
+n_0\le50000
+\]
+under the \(M=4\) corridor found maximum ordinary-shadow depths:
+
+- kappa=1.06: 75;
+- kappa=1.2: 75;
+- kappa=1.5: 40;
+- kappa=2.0: 33;
+- kappa=2.5: 19;
+- kappa=2.7: 19.
+
+1000 random 40-bit starts did not improve these qualitatively.
+
+However this is not a stabilization theorem.
+
+More importantly, every optimized terminal word has an exact positive
+ordinary cylinder witness. At \(k=1600\) these witnesses directly realize the
+entire finite optimized prefix; extending those ordinary orbits beyond the
+optimized horizon typically leaves the \(M=4\) corridor soon afterward.
+
+This reconfirms the CP18 finite-satisfiability barrier:
+very long finite positive witnesses do not establish one infinite ordinary
+realizer.
+
+## New load-bearing theorem candidate
+
+The main structural discovery is not a positive residue gap.
+
+Let
+\[
+X_k=
+\frac{3^kr_k+B_k}{2^{A_k}}.
+\]
+
+Under global critical-log,
+\[
+X_k=k^\kappa\Theta(1)(1+r_k).
+\]
+
+Therefore
+\[
+\rho_r(k)\to0
+\Longrightarrow
+X_k=e^{o(k)}<3^k
+\]
+eventually. Since
+\[
+M_k\equiv X_k\pmod{3^k},
+\]
+one gets
+\[
+M_k=X_k
+\]
+eventually and therefore
+\[
+\boxed{
+\rho_r(k)\to0
+\Longrightarrow
+\rho_M(k)\to0.
+}
+\]
+
+More generally, if
+\[
+\limsup\rho_r(k)<\ln3,
+\]
+then
+\[
+\boxed{
+\rho_M(k)
+=
+\max\{0,\rho_r(k)-\ln(3/2)\}+o(1).
+}
+\]
+
+Thus the 3-adic endpoint rate is asymptotically redundant once the start
+rate vanishes inside the critical-log class.
+
+This theorem changes the branch architecture and triggers independent audit.
+
+## Triage
+
+The residue-obstruction route itself remains `[B-LEAD]` because no theorem
+showing
+\[
+\liminf\rho_r(k)>0
+\]
+was obtained.
+
+The new redundancy theorem is separately
+`[MAJOR THEOREM CANDIDATE][AUDIT CANDIDATE]`.
+
+Do not use it downstream before audit.
+
+## Strategic recommendation
+
+**ADD MODULE D RETURN-WORD/REPEATED-FACTOR CONJUNCTION**

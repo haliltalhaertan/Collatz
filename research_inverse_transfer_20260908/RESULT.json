@@ -1,0 +1,183 @@
+{
+  "sidon": [
+    {
+      "n": 4,
+      "m": 729,
+      "overlap": "1/4",
+      "uniform": "1/729",
+      "convolution_norm_ratio_squared": "7/16"
+    },
+    {
+      "n": 8,
+      "m": 6561,
+      "overlap": "1/8",
+      "uniform": "1/6561",
+      "convolution_norm_ratio_squared": "15/64"
+    },
+    {
+      "n": 16,
+      "m": 59049,
+      "overlap": "1/16",
+      "uniform": "1/59049",
+      "convolution_norm_ratio_squared": "31/256"
+    },
+    {
+      "n": 32,
+      "m": 531441,
+      "overlap": "1/32",
+      "uniform": "1/531441",
+      "convolution_norm_ratio_squared": "63/1024"
+    }
+  ],
+  "actual": [
+    {
+      "r": 10,
+      "A": 15,
+      "L": 256,
+      "Q": 10,
+      "baseline_and_increments": [
+        "647/81",
+        "85/81",
+        "26/27",
+        "1/3",
+        "-1/3"
+      ],
+      "terms": [
+        {
+          "R": 6,
+          "baseline_and_increments": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "Q": 0
+        },
+        {
+          "R": 7,
+          "baseline_and_increments": [
+            "35/27",
+            "0",
+            "-8/27",
+            "-1/3",
+            "-2/3"
+          ],
+          "Q": 0
+        },
+        {
+          "R": 8,
+          "baseline_and_increments": [
+            "140/81",
+            "58/81",
+            "4/9",
+            "1/9",
+            "0"
+          ],
+          "Q": 3
+        },
+        {
+          "R": 9,
+          "baseline_and_increments": [
+            "50/27",
+            "11/27",
+            "26/27",
+            "4/9",
+            "4/3"
+          ],
+          "Q": 5
+        },
+        {
+          "R": 10,
+          "baseline_and_increments": [
+            "164/81",
+            "1/81",
+            "2/27",
+            "-1/9",
+            "-1"
+          ],
+          "Q": 1
+        },
+        {
+          "R": 11,
+          "baseline_and_increments": [
+            "88/81",
+            "-7/81",
+            "-2/9",
+            "2/9",
+            "0"
+          ],
+          "Q": 1
+        }
+      ]
+    },
+    {
+      "r": 10,
+      "A": 15,
+      "L": 4096,
+      "Q": 140,
+      "baseline_and_increments": [
+        "424/3",
+        "-5/3",
+        "1/3"
+      ],
+      "terms": [
+        {
+          "R": 8,
+          "baseline_and_increments": [
+            "0",
+            "0",
+            "0"
+          ],
+          "Q": 0
+        },
+        {
+          "R": 9,
+          "baseline_and_increments": [
+            "10/3",
+            "-1/3",
+            "0"
+          ],
+          "Q": 3
+        },
+        {
+          "R": 10,
+          "baseline_and_increments": [
+            "100/9",
+            "2/9",
+            "5/3"
+          ],
+          "Q": 13
+        },
+        {
+          "R": 11,
+          "baseline_and_increments": [
+            "80/3",
+            "7/3",
+            "2"
+          ],
+          "Q": 31
+        },
+        {
+          "R": 12,
+          "baseline_and_increments": [
+            "416/9",
+            "-5/9",
+            "-14/3"
+          ],
+          "Q": 41
+        },
+        {
+          "R": 13,
+          "baseline_and_increments": [
+            "54",
+            "-10/3",
+            "4/3"
+          ],
+          "Q": 52
+        }
+      ]
+    }
+  ],
+  "status": "PASS"
+}

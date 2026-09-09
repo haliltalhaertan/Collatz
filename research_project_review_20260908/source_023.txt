@@ -1,0 +1,327 @@
+Collatz ProblemiAraştırma Checkpoint 11
+Dağılımsal least-realizer problemi, initial-segment discrepancy ve B_t(c) boundary termini
+15 Ağustos 2026
+Ana hedef: B = 1 borderline rejimini kırmak için düşük-total-valuation histories’nin küçük auxiliary starts arasında ne kadar yoğunlaşabildiğini belirlemek.
+Girdi
+Checkpoint 10 + adversarial audit + Checkpoint 11 araştırma planı
+Mevcut ratio frontier
+limsup s_k / log₂ k ≥ 1
+Checkpoint 11 ana yeni sonuç
+H_N üst katsayısı 6.3274088946… → 4.91656355095…
+Durum
+B = 1 henüz kırılmadı; remaining obstruction initial-segment discrepancy
+
+0. Yönetici özeti
+Checkpoint 11, Checkpoint 10’da izole edilen boundary quantity B_t(c)’yi doğrudan dağılımsal bir least-realizer problemine dönüştürdü. En kritik düzeltme, minimum valuation history’nin terminal sınıf başına tekil olmaması nedeniyle auxiliary start değişkeninin canonical hale getirilmesiydi.
+[EXACT] Canonical auxiliary start ξ_t(y) tanımlandı; B_t(c), ξ_t(y)’lerin reciprocal toplamı ile yukarıdan kontrol ediliyor.
+[EXACT] N_t(M,c) distribution function için Stieltjes/dyadic reduction elde edildi.
+[EXACT] Crude start-first count: C_t(M,c) ≤ (M/2)P(S_t≤ct) + binom(⌊ct⌋,t). Gerçek zor rejim M < 2^{ct}.
+[EXACT] Yeni parity-prefix discrepancy theorem: N_t(2^J−1,c) ≤ Σ_{z≤L−t} binom(J−1,z).
+[EXACT] Bu theorem B_t(c) boundary katsayısını h(c)/3’ten 2(c−1)ln2/3’e indiriyor.
+[EXACT] Büyüyen-t optimizasyonu sonucu limsup H_N/ln ln N ≤ 4.91656355095… ve X_N için polylog exponent 1.63885451698… elde edildi.
+[EXACT] Yeni ikinci-mertebe slack sonucu: limsup (s_k−log₂k)/log₂log₂k ≥ −0.63885451698… .
+[FAIL] Basit subadditivity B_{t+u}≤B_t+B_u yanlıştır. B_t=O(1) finite veride hâlâ plausible fakat theorem değildir.
+[OPEN] B=1 hâlâ açık. Kalan en dar lemma, saturated small-start zone içinde strict initial-segment discrepancy / distributional least-realizer saving elde etmektir.
+1. Çalışma zemini
+H_N := Σ_{k<N} 1/n_k,     X_N := Σ_{k<N} 2^{D_k}.
+H_N = 3 ln U_N + O(1),     U_N = 1 + X_N/(3n₀).
+Checkpoint 10’dan:
+limsup_{N→∞} H_N / ln ln N ≤ 6.327408894639676…
+X_N = O_{ε,n₀}((ln N)^{2.1091362982132256…+ε}).
+Forever-undercritical borderline hypothesis
+s_k ≤ log₂ k + C   eventually
+ise
+X_N ≫ ln N,     H_N ≥ 3 ln ln N + O(1).
+Dolayısıyla Checkpoint 11’in hedefi, Checkpoint 10’daki harmonic upper coefficient’i 3’ün altına çekmeye yetecek kadar least-realizer boundary saving üretmekti.
+2. Canonical auxiliary start: tie problemi ve düzeltme
+Başlangıç planındaki x_y tanımı doğrudan kullanılamaz: aynı terminal residue class y için aynı minimum total valuation’ı taşıyan birden fazla history farklı auxiliary starts üretebilir.
+2.1. En küçük explicit tie counterexample
+t = 3, terminal class y = 65 (mod 81) için minimum total valuation 7’dir. İki farklı minimum history:
+(1,3,3): auxiliary start x = 307.
+(2,4,1): auxiliary start x = 305.
+[FAIL] “Minimum history terminal sınıf başına unique auxiliary start verir” iddiası yanlıştır.
+2.2. Canonical tanım
+ξ_t(y) := min{x : x, y’ye minimum-weight bir history ile gider}.
+Farklı y sınıfları farklı ξ_t(y) üretir; çünkü sabit bir positive start’ın ilk t exact valuation history’si deterministiktir.
+Minimum history için
+2^{μ_t(y)} r_y = 3^t ξ_t(y) + B_y,     B_y>0.
+Bu nedenle
+3^t/(2^{μ_t(y)}r_y) = 1/(ξ_t(y)+B_y/3^t) < 1/ξ_t(y).
+[EXACT] B_t(c) < Σ_{μ_t(y)≤ct} 1/ξ_t(y).
+Ayrıca r_y < 2·3^{t+1} ve μ_t(y)≤L=⌊ct⌋ olduğundan:
+ξ_t(y) < 6·2^{μ_t(y)} ≤ 6·2^L.
+3. Distributional counting formulation
+N_t(M,c) := #{y : μ_t(y)≤L, ξ_t(y)≤M}.
+Canonical starts üzerinden partial summation exact olarak uygulanabilir. X, bütün relevant ξ_t(y)’leri kapsıyorsa:
+Σ_{ξ_t(y)≤X} 1/ξ_t(y) = N_t(X,c)/X + ∫₁^X N_t(u,c)u^{-2} du.
+Dyadic shell biçimi:
+B_t(c) < Σ_j 2^{-j} N_{t,j}(c),
+burada N_{t,j}(c), ξ_t(y) ∈ [2^j,2^{j+1}) olan good terminal classes sayısıdır.
+[EXACT] B_t(c) problemi rigorous biçimde bir initial-segment distribution/counting problemine indirgenmiştir.
+4. Start-first counting ve crude large-deviation bound
+Tanımla:
+C_t(M,c) := #{1≤x≤M : gcd(x,6)=1, A_t(x)≤L}.
+Her canonical ξ_t(y) bu setin elemanı olduğundan:
+N_t(M,c) ≤ C_t(M,c).
+Total valuation A olan length-t positive valuation words sayısı binom(A−1,t−1)’dir. Her word modulo 2^{A+1} tek odd starting class belirler. [1,M] içinde o class’ın sayısı en fazla M/2^{A+1}+1’dir. Dolayısıyla:
+C_t(M,c) ≤ Σ_{A=t}^{L} binom(A−1,t−1)(M/2^{A+1}+1).
+Geometric composition identity ve hockey-stick ile:
+C_t(M,c) ≤ (M/2) p_t(c) + binom(L,t),
+p_t(c) := P(S_t≤ct) = Σ_{A=t}^{L} binom(A−1,t−1)2^{-A}.
+Asymptotically:
+p_t(c) ≈ e^{-I(c)t},     binom(L,t) ≈ e^{h(c)t}/√t,
+h(c)=c ln c−(c−1)ln(c−1),     I(c)=c ln2−h(c).
+İki terimin crossover scale’i:
+M e^{-I(c)t} ≍ e^{h(c)t}  ⇔  M ≍ e^{c ln2·t}=2^{ct}.
+[EXACT] Asıl dağılımsal obstruction subcritical small-start regime M < 2^{ct}’dir; large-M tarafı crude density term ile kontrol edilebilir.
+5. Small-M için finite uyarı
+c=1.6 için x=31’in actual Syracuse prefix’i uzun süre low-total-valuation cutoff içinde kalır. Exact finite check: A_t(31)≤1.6t, t=37’ye kadar doğrudur; t=38’de bozulur.
+Exit çevresi:
+t
+A_t(31)
+A_t/t
+31
+45
+1.4516
+32
+47
+1.4688
+33
+49
+1.4848
+34
+53
+1.5588
+35
+56
+1.6000
+36
+57
+1.5833
+37
+58
+1.5676
+38
+63
+1.6579
+[NUM] Bu finite persistence, “small starts low-weight setten hemen exponential hızla kaybolur” gibi basit uniform lemmas için güçlü bir caution’dır; asymptotic counterexample değildir.
+
+6. Yeni parity-prefix discrepancy theorem
+Checkpoint 11’in ana yeni deterministic saving’i burada çıkıyor.
+L=⌊ct⌋ ve D=L−t olsun. Eğer A_t(x)≤L ise shortcut parity word’ünün ilk L+1 bitinde en az t+1 adet 1 vardır. Dolayısıyla ilk L+1 bit boyunca toplam zero sayısı en fazla D’dir.
+Şimdi J≤L+1 al. Parity-vector bijection nedeniyle x mod 2^J ile ilk J parity bits arasında birebir eşleme vardır. Canonical start x<2^J ve x odd olduğundan ilk bit 1’dir. İlk J bit içindeki zero sayısı en fazla D olabilir.
+N_t(2^J−1,c) ≤ Σ_{z=0}^{D} binom(J−1,z).
+[EXACT] Parity-prefix initial-segment discrepancy theorem yukarıdaki bound’dur.
+Ayrıca ξ_t(y) her zaman gcd(ξ_t(y),6)=1 olduğundan generic unit cap:
+N_t(M,c) ≤ M/3 + O(1).
+7. B_t(c) boundary terminin yeni bound’u
+Canonical support ξ_t(y)<6·2^L olduğundan reciprocal sum’u dyadic scales’e ayırıyoruz. İlk kritik scale yaklaşık J₀=2D’dir.
+Küçük starts için yalnız mod-6 unit packing kullanılır:
+Σ_{ξ≤2^{2D+O(1)}} 1/ξ ≤ (2D ln2)/3 + O(1).
+J=2D+r olan üst shells için parity-prefix theorem:
+2^{-J} Σ_{z≤D} binom(J,z) = P(Bin(J,1/2)≤D).
+Hoeffding:
+P(Bin(J,1/2)≤D) ≤ exp(−r²/(2J)).
+r boyunca toplam O(√t) olduğundan:
+B_t(c) ≤ [2(c−1)ln2/3] t + O_c(√t).
+[EXACT] Checkpoint 10 boundary coefficient h(c)/3, Checkpoint 11’de 2(c−1)ln2/3 ile değiştirilmiştir.
+8. Growing-t sonucu ve yeni harmonic katsayı
+Checkpoint 10’dan uniform master inequality:
+(1−η_t)H_N ≤ [p_t(c)/3](ln N+1) + B_t(c) + O((ln t)²).
+t, yaklaşık ln ln N / I(c) ölçeğinde ve standard ek ln ln ln N buffer ile seçildiğinde p_t(c)ln N=o(ln ln N), η_t→0 ve error lower order kalır.
+Dolayısıyla:
+limsup H_N/ln ln N ≤ K₁₁(c) := 2(c−1)ln2 / [3I(c)].
+I'(c)=ln(2(c−1)/c) ve
+I(c)−(c−1)I'(c)=ln(2/c)>0,
+olduğundan (c−1)/I(c), c∈(α,2) üzerinde artandır. En iyi limit c↓α’da gelir.
+K₁₁ = 2(α−1)ln2 / [3I(α)] = 4.91656355095…
+[EXACT] Harmonic leading coefficient 6.32740889464… → 4.91656355095… olarak rigorously iyileşti.
+8.1. Carry exponent
+H_N=3 ln U_N+O(1) olduğundan:
+ln U_N ≤ (K₁₁/3 + o(1)) ln ln N.
+p₁₁ := K₁₁/3 = 1.63885451698333…
+Dolayısıyla her ε>0 için:
+X_N = O_{ε,n₀}((ln N)^{1.63885451698333…+ε}).
+[EXACT] Checkpoint 10 polylog exponent 2.1091362982… → 1.63885451698… .
+9. Yeni ikinci-mertebe slack frontier
+Forever-undercritical durumda suppose eventually:
+s_k ≤ log₂k − β log₂log₂k + C.
+O zaman:
+2^{D_k} ≫ (log k)^β/k,
+ve integral comparison ile:
+X_N ≫ (ln N)^{β+1}.
+Upper exponent p₁₁=1.63885451698… ile çelişki β+1>p₁₁ olduğunda gelir.
+Dolayısıyla β₁₁:=p₁₁−1=0.63885451698333… için:
+limsup_{k→∞} [s_k−log₂k]/log₂log₂k ≥ −0.63885451698333… .
+[EXACT] Primary ratio frontier 1 olarak kalırken ikinci-mertebe corridor rigorously daraltıldı.
+10. Rate-function formulation ve kalan saturated zone
+Define:
+Ψ_c(θ) := limsup_{t→∞} (1/t) ln N_t(e^{θt},c).
+Limit existence varsayılmıyor.
+Parity-prefix theorem’den, J≈θt/ln2 ve D≈(c−1)t ile:
+0<θ≤2(c−1)ln2 için yalnız Ψ_c(θ)≤θ (trivial/full-density exponent) elde ediliyor.
+θ>2(c−1)ln2 için binomial lower-tail strict saving veriyor:
+Ψ_c(θ) ≤ θ H₂(((c−1)ln2)/θ),
+burada H₂ binary entropy’dir; θ doğal-log scale’inde kullanıldığı için expression natural exponential rate olarak okunur.
+Ayrıca global count: Ψ_c(θ)≤h(c).
+[OPEN] Mevcut proof, 0<θ≤2(c−1)ln2 aralığında tam logarithmic-density saturation’a izin veriyor. B=1 için kalan asıl obstruction bu saturated small-start zone’dur.
+11. B=1 için gereken ek saving ne kadar?
+Checkpoint 11 boundary coefficient:
+b₁₁(c)=2(c−1)ln2/3.
+B=1’i aynı master inequality üzerinden kırmak için bir c>α’da:
+b(c) < 3I(c)
+gerekir.
+c↓α limitinde current boundary coefficient yaklaşık 0.2703, required threshold yaklaşık 0.16494’tür. Yani leading boundary mass’te kabaca %39 ek arithmetic/distributional saving gerekir.
+[OPEN] En dar hedef: saturated zone initial-segment occupancy’sinde enough strict discrepancy gösterip effective B_t linear coefficient’i 3I(c)’nin altına indirmek.
+12. Rozier LBH ile tam sözlük
+Syracuse length t, total valuation A=ct, shortcut/full parity length j=A, odd-count q=t ve ones ratio r=1/c.
+Binary entropy ile geometric rate arasındaki identity:
+c(1−H₂(1/c)) = I(c)/ln2.
+[EXACT] Entropy-rate sözlüğü bağımsız olarak doğrulandı.
+Rozier’in Lower Bound Hypothesis’i pointwise least-start lower bounds önerir; yayımlanmış unconditional theorem kritik density’nin sınırlı bir tarafında çalışır. Burada LBH theorem olarak kullanılmadı.
+Full pointwise LBH varsayılsa bile yalnız total good-class count ile birlikte boundary coefficient kabaca
+[h(c)−I(c)]/3
+seviyesinde kalır ve B=1 için gereken 3I(c) threshold’unu genel olarak geçmez.
+[LEAD] Bu formal karşılaştırma, neden gerekli eksik lemma’nın pointwise değil distributional least-realizer / initial-segment discrepancy türünde olduğunu gösterir.
+13. Finite exact B_t(1.6) laboratuvarı
+Aşağıdaki değerler canonical ξ_t(y) tie-fix ile exact enumeration’dan gelir. Bunlar theorem değildir.
+t
+B_t(1.6)
+t
+B_t(1.6)
+1
+0.224598930500
+2
+0.347032690200
+3
+0.261121385500
+4
+0.243570827900
+5
+0.347977603400
+6
+0.351399537000
+7
+0.458062035000
+8
+0.431247257100
+9
+0.497642812900
+10
+0.559226569200
+11
+0.502239591100
+12
+0.551829304400
+13
+0.485503738600
+14
+0.536192196500
+15
+0.583784575400
+16
+0.509786868700
+17
+0.552959600300
+18
+0.485564227852
+t=18 exact enumeration: L=28, 13,123,110 valuation compositions; B_18(1.6)=0.485564227852481… .
+[NUM] B_t(1.6)=O(1) conjecture’ı t≤18 verisinde çökmedi; ancak asymptotic theorem değildir.
+13.1. c taraması, t=14
+c
+B_14(c)
+B_14 / (3I(c)·14)
+1.59
+0.536192
+0.23879
+1.60
+0.536192
+0.25263
+1.62
+0.536192
+0.28379
+1.65
+0.656807
+0.41808
+1.70
+0.656807
+0.58769
+1.80
+0.871866
+1.86443
+[NUM] Finite optimum α tarafına yakın görünmektedir; bu yalnız finite evidence’dır.
+14. Falsification: subadditivity
+Simple subadditivity false. c=1.59 için:
+B₄=0.2435708279,     B₅=0.2359505250,
+B₉=0.4976428129 > B₄+B₅=0.4795213529.
+[FAIL] B_{t+u}≤B_t+B_u false.
+Naive multiplicative subadditivity de küçük t’de açık biçimde false. Kullanışlı quasi-subadditive theorem bu checkpoint’te bulunmadı.
+15. Minimum-word / prefix-free / residue-spacing hatları
+[FAIL] Minimum-history tie nedeniyle “bir terminal class ↦ tek minimum word” yapısı yoktur; canonical ξ_t düzeltmesi zorunludur.
+[FAIL] Basit least-realizer monotonicity veya residue-spacing theorem bulunmadı; önceki checkpoint’lerdeki modular wraparound problemleri devam etmektedir.
+[PARK] Mod 5,7 vb. genel forbidden-residue atlası ana hatta alınmadı; tested simple supports yeterince dolu ve asymptotic harmonic saving sağlamadı.
+16. Checkpoint 11 zorunlu cevaplar
+1. B_t distributional counting’e indirgenebildi mi?
+Evet. Canonical ξ_t(y) ile Stieltjes/dyadic reduction [EXACT].
+2. N_t için en iyi exact bound?
+Crude: N_t≤(M/2)p_t+binom(L,t). Daha güçlü initial-segment: N_t(2^J−1,c)≤Σ_{z≤L−t}binom(J−1,z), J≤L+1.
+3. Crude bound’da gerçek problem scale?
+M<2^{ct}. Crossover M≈2^{ct}.
+4. Rozier LBH neden yetersiz?
+Pointwise cutoff alone, terminal classes’ın small-start distribution’ını kontrol etmiyor; resulting linear boundary coefficient B=1 threshold’una yetmiyor.
+5. Hangi distributional LBH yeterli?
+Saturated θ-zone’da enough strict initial-segment discrepancy sağlayıp effective boundary coefficient’i bazı c>α için <3I(c) yapan herhangi deterministic rate bound.
+6. Small-start regime’de exponential saving çıktı mı?
+Upper part θ>2(c−1)ln2’de evet, binomial prefix tail ile. Saturated zone’da hayır.
+7. Finite B_t/t trendi?
+t≤18’de küçük kaldı; theorem değil.
+8. B_t=O(1) plausible mı?
+Evet [CONJ], finite evidence destekliyor; proof yok.
+9. c taraması?
+Finite t=14 verisinde α’ya yakın c daha güçlü; asymptotic claim yok.
+10. Subadditivity?
+Simple additive ve multiplicative adaylar false; yararlı quasi-subadditivity bulunmadı.
+11. Yeni exact 2-adic/3-adic incompatibility?
+Ana yeni exact yapı parity-prefix initial-segment discrepancy; ayrı bir forbidden congruence theorem yok.
+12. B=1 kırıldı mı?
+Hayır.
+13. En dar kalan lemma?
+Saturated small-start zone’da strict initial-segment discrepancy / distributional least-realizer theorem; equivalent practical target B_t(c)≤(3I(c)−δ)t+o(t), tercihen B_t=o(t).
+17. Literatür konumlandırması
+Rozier’in Lower Bound Hypothesis çalışması parity-vector least starts için entropy-temelli lower bounds’i sistematikleştirir. Checkpoint 11’de LBH varsayılmadı; yalnız entropy-rate sözlüğünü ve pointwise versus distributional ayrımını konumlandırmak için kullanıldı.
+Stérin’in parity-vector first-occurrence/binary encoding çalışması, finite parity words’ün first starts ile birebir ilişkisini ve recursive binary encoding’i açıklar. Bu, burada ortaya çıkan initial-segment discrepancy formulation’ın doğal olduğunu destekler; fakat gereken restricted large-deviation theorem’i sağlamaz.
+Hedefli primary-source taramasında N_t(M,c) için burada gereken initial-segment large-deviation theorem’ine veya 4.91656355095 katsayısıyla aynı statement’a doğrudan eşleşen bir theorem bulunmadı. Bu bir novelty/priority iddiası değildir; yayın öncesi daha geniş literatür audit’i gereklidir.
+18. Checkpoint 12 için önerilen tek ana hedef
+Checkpoint 11 sonunda problem artık çok dar bir formdadır:
+Low-total-valuation parity cylinders, ordinary initial interval [1,M] içinde ne kadar discrepancy gösterebilir?
+Mevcut theorem upper log-scale region’da binomial saving veriyor fakat
+0 < θ ≤ 2(c−1)ln2
+aralığında full-density exponent Ψ_c(θ)=θ olasılığını dışlamıyor.
+Bir sonraki checkpoint’te yalnız bu saturated zone’a saldırmak en yüksek değerli yoldur. Önerilen alt hedefler:
+Collatz parity permutation’ın initial-segment discrepancy’si için recursive/Walsh transfer relation çıkar.
+Canonical minimum histories şartını aktif kullan; bütün low-weight starts yerine ξ_t(y) subset’inin daha seyrek olduğunu kanıtlamaya çalış.
+B_t(1.6)=O(1) conjecture’ını t≈20–24 exact scalable DP ile falsify etmeye devam et.
+Pratik theorem target: bazı c>α ve δ>0 için B_t(c)≤(3I(c)−δ)t+o(t).
+İdeal target: B_t(c)=o(t), ki B=1 corridor’unu doğrudan öldürür.
+19. Güncel proje frontier’i
+Primary rigorous frontier:   limsup s_k/log₂k ≥ 1.
+Checkpoint 11 harmonic frontier:   limsup H_N/ln ln N ≤ 4.91656355095…
+Checkpoint 11 carry frontier:   X_N = O_ε((ln N)^{1.63885451698…+ε}).
+Second-order slack:   limsup (s_k−log₂k)/log₂log₂k ≥ −0.63885451698… .
+B=1 borderline henüz çözülmedi. Fakat Checkpoint 11, Checkpoint 10’daki en büyük surviving loss’un önemli bir kısmını dağılımsal parity-prefix counting ile geri kazandı ve kalan obstruction’ı tek bir saturated initial-segment discrepancy problemine indirdi.
+
+Araştırma durumu
+Aktif
+Ana theorem improvement
+6.3274088946… → 4.91656355095…
+B=1
+[OPEN]
+B_t(1.6)=O(1)
+[CONJ] — t≤18 finite evidence
+Checkpoint 12 hedefi
+Saturated small-start initial-segment discrepancy
+Kaynak notları
+Araştırma planı: kullanıcı tarafından sağlanan “Collatz Araştırması — Checkpoint 11” çalışma talimatı, 15 Ağustos 2026.
+O. Rozier, “The 3x+1 problem: a lower bound hypothesis”, arXiv:1510.01610 / Funct. Approx. Comment. Math. 56 (2017).
+C. Stérin, “Binary expression of ancestors in the Collatz graph”, arXiv:1907.00775.
+Parity-vector bijection / finite residue-class background için Terras–Everett çizgisinin modern parity-sequence formülasyonları ve Rozier’in parity-sequence çalışmaları kullanılmıştır.

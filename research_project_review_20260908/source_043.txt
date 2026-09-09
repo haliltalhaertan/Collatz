@@ -1,0 +1,61 @@
+# CP20 TASK 8B3 — E1 MASTER FINDINGS
+
+**Final branch-level outcome:** `[LEAD]`
+
+No universal load-bearing high-conductor decay or short-interval theorem was found. No audit stop fired.
+
+## A. Suffix/conductor structure
+`[EXACT]`
+
+`M_r mod 3^t` depends pointwise only on the last `t` valuation letters and equals the length-t endpoint functional of that suffix. This is independent of prefix and total mass. It is an elementary affine block corollary, not treated as a new foundational theorem.
+
+## B. Aggregate low-conductor block
+`[EXACT]`
+
+Fourier completion plus the conductor-wise Dirichlet-kernel L1 bound gives low-block relative error
+
+`<= 2^((alpha tau-b)r+o(r))`.
+
+Thus the correct strict sufficient threshold is
+
+`tau < b/alpha`,
+
+not the tentative `tau<b/(2 alpha)`.
+
+This cleanly quarantines the frozen E0 fixed-conductor obstruction.
+
+## C. Minimum high-conductor theorem needed
+`[EXACT SUFFICIENCY REGION]` / existence `[OPEN]`.
+
+For a high-block bound `|phi|<=2^(-delta r)`, the strict sufficient rate is
+
+`delta>alpha-b`.
+
+For `|phi|<=2^(-c t)`, the same sufficient threshold is `c>alpha-b`. The mixed profile condition is recorded separately.
+
+## D. Adversarial computation
+`[CERTIFIED NUM]` for exact endpoint support/counts and exhaustive small frequency scans; Fourier magnitudes are numerical evaluations of those exact finite distributions.
+
+- Suffix lemma: 2310 exhaustive and 2000 random larger checks, zero violations.
+- Full all-frequency conductor scans: 51 critical-band rows through r=10.
+- Larger structured primitive/interval tests: r through 18.
+- Center mass d=0 primitive coefficients decrease substantially, but fixed negative offset d=-3 is much more adversarial.
+- d=-3 structured primitive base-2 rates for r=13..18 stay roughly 0.08-0.10.
+- Short-interval d=-3 clustering at b=0.8 does not persist monotonically: discrepancy rate at r=13..18 is approximately 0.106, 0.078, 0.096, 0.046, -0.002, 0.017.
+
+No finite family certifies subexponential decay, polynomial decay, or exponential clustering asymptotically.
+
+## E. Strategic verdict
+`[LEAD]`
+
+A conductor decomposition is mathematically viable: E0's low-conductor obstruction does not by itself block short-interval anti-concentration.
+
+The weakest useful next theorem target is parameterized by the interval exponent b:
+
+> For some `tau<b/alpha`, uniformly over the required fixed O(1) critical mass band and all frequencies with conductor exponent `t>=tau r`, prove a bound strong enough that
+> `sup |phi_(r,A)(xi)| <= 2^(-(alpha-b+epsilon)r)`
+> for some epsilon>0; or prove an equivalent conductor-dependent profile satisfying the mixed inequality in the high-conductor report.
+
+For small b this target is numerically severe; for b close to alpha it remains compatible with the tested structured primitive data.
+
+Do not proceed to Task 6 conjunction until such a rigorous short-interval/high-conductor theorem exists.

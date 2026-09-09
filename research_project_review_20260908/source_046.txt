@@ -1,0 +1,150 @@
+# CP20 Task 8B3 E4 — Master Findings
+
+## Primary verdict
+
+**[AUDIT CANDIDATE — CRITICAL-WALK ROUTE DECISION]**
+
+E4 proves, subject to independent zero-trust audit, that the natural
+exponential weighted-offset compactness route cannot be contractive. The
+correct replacement coordinate is the exact critical line \(x=d-\theta\);
+there the dynamics is a centered geometric-jump renewal with a deterministic
+complex phase. E4 does **not** prove compactness, a nonzero fixed profile, a
+zero-only theorem, or Collatz.
+
+## Input integrity
+
+- All 23 E3 manifest entries were independently hashed and matched.
+- The unchanged E3 verifier returned
+  'ALL E3 VERIFIER ASSERTIONS: PASS'.
+- E4 writes only inside the new E4 folder.
+- The final E4 verifier repeats the E3 gate and records its own result.
+
+## Exact results
+
+Let \(a=\beta/\alpha\), \(b=1/\alpha\),
+\(\alpha=\log_2 3\), and \(\beta=\alpha-1\).
+
+1. **Qualified exact unrolling.**
+
+   \[
+   K_d=\sum_{j=0}^{J}ba^jP_{d-j}K_{d-j+\varepsilon}(T\theta)
+        +a^{J+1}K_{d-J-1}.
+   \]
+
+   Hence (U) holds whenever \(a^{-m}K_m(\theta)\to0\) as
+   \(m\to-\infty\). The masses \(q_j=ba^j\) sum to one.
+
+2. **Deterministic drift identity.**
+
+   The original offset increment is
+   \(\varepsilon(\theta)-J\), and
+
+   \[
+   \sum_{k<n}\varepsilon(T^k\theta)=n\beta+T^n\theta-\theta.
+   \]
+
+   Thus the mean drift is exactly zero without any iid model for the branch.
+
+3. **Exact line conjugacy.**
+
+   With \(x=d-\theta\),
+
+   \[
+   \kappa(x)=a\kappa(x-1)+bp_C(x)\kappa(x+\beta),
+   \quad p_C(x)=e^{2\pi i2^{x-1-C}},
+   \]
+
+   and the unrolled equation is
+
+   \[
+   \kappa(x)=\sum_{j\ge0}ba^j p_C(x-j)
+                    \kappa(x+\beta-j).
+   \]
+
+   The branch seam and dense rotation are coordinate artifacts in this
+   representation.
+
+4. **Critical walk.**
+
+   For \(J\sim q_j\), \(Y=\beta-J\) satisfies
+
+   \[
+   \mathbb EY=0,\qquad
+   \mathbb EY^2=\operatorname{Var}(Y)=\alpha\beta.
+   \]
+
+   This is an exact positive-kernel representation, not an iid assertion about
+   the deterministic branch symbols.
+
+5. **Exponential obstruction.**
+
+   On \(\|f\|_s=\sup_xe^{-sx}|f(x)|\), the exact operator multipliers are
+
+   \[
+   m_{\rm LE}(s)=ae^{-s}+be^{\beta s},
+   \qquad
+   m_{\rm U}(s)=\frac{be^{\beta s}}{1-ae^{-s}}.
+   \]
+
+   Their unique minimum is one at \(s=0\); for admissible \(s\ne0\) they exceed
+   one. Far-left localization, where \(p_C\to1\), gives matching norm and
+   spectral-radius lower bounds. Therefore pure one-sided or two-sided
+   exponential weighting cannot produce a strict contraction.
+
+6. **Inherited moving boundary.**
+
+   At \(n=0\), the unscaled magnitude is one and the critical scaling has
+   magnitude \(r\) at \(x=-\beta r\). Its phase product converges to a nonzero
+   unit. This rules out uniform polynomial weights of degree \(p<1\), but
+   does not transfer nontriviality to fixed \(x\).
+
+## Space decision
+
+| Candidate | Operator closed/bounded? | Uniformly inherited finite-depth bound? | Compactness/tail result |
+|---|---:|---:|---:|
+| Unweighted \(L^\infty\) | Yes, norm \(1\) | Not proved | No |
+| Pure exponential \(L^\infty_s\) | Yes | No strict contraction | Obstructed |
+| Patched/two-sided exponential | Locally definable | No | Same far-left obstruction |
+| Polynomial \(L^\infty_p\) | Yes under shifts/renewal | \(p<1\) impossible; \(p\ge1\) open | Jump-tail only |
+| Weighted \(L^1\) | Operator-theoretic | Base datum not inherited | No |
+| Local BV | Yes locally | Global variation not controlled | No |
+| Global analytic strip | No natural inherited norm | No | No |
+
+The geometric jump-tail estimate is not a finite-offset spatial truncation
+bound. No canonical remote boundary was found.
+
+## Nontriviality status
+
+- N1 gives a nonzero moving-boundary asymptotic, but not a fixed-target lower
+  bound.
+- N2 gives an explicit small-phase sector far left, but the exact dynamics
+  leaks right through the \(j=0\) jump.
+- N3 lacks a quantitative complex renewal/local-limit lower estimate.
+- N4 identifies the invariant candidate
+  \(A(f)=\lim_{x\to-\infty}f(x)/x\), but available convergence does not preserve
+  a receding boundary.
+- N5 does not prove zero unique.
+
+Therefore zero is neither excluded nor proved unique.
+
+## Bounded diagnostics
+
+The design was frozen before inspection: \(C\in\{4,7\}\),
+\(-64\le d\le32\), and depths \(1000,2000,4000,6000,8000\).
+The binary64 engine finished in about 17 seconds with peak working set about
+171 MB.
+
+Numerically, the negative-offset side is polynomial-like over the declared
+window, the positive side decays rapidly, and non-oracle remote boundary
+choices produce order-one target errors by \(r=8000\). These are [NUM]
+observations only.
+
+## Route decision
+
+The simple weighted-compactness plan should not continue with exponential
+weights or artificial finite-offset boundaries. The single next research
+action is an independent audit of the exact line conjugacy and spectral-radius
+obstruction. If it passes, formulate a new sealed task for a degree-one
+weighted centered complex-renewal/local-limit theorem carrying the nonzero
+moving boundary to the fixed target.
+

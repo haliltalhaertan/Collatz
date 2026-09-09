@@ -1,0 +1,290 @@
+[
+  {
+    "path": ".git",
+    "reason": "git metadata or generated cache"
+  },
+  {
+    "path": "llmlab_astra/runs/cp20-xub-astra-low-20260908/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_astra/runs/cp20-xub-astra-low-20260908/directed/directed-919412f8a9ae40e8b6c58715896f1edc/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_astra/runs/cp20-xub-astra-low-20260908/directed/directed-919412f8a9ae40e8b6c58715896f1edc/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_astra/runs/cp20-xub-astra-low-20260908/directed/directed-919412f8a9ae40e8b6c58715896f1edc/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_comparison/deepseek/runs/cp20-xub-deepseek-20260907/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_comparison/deepseek/runs/cp20-xub-deepseek-20260907/directed/directed-7d7d0ee20bab478b973565c4b9ad95ae/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_comparison/deepseek/runs/cp20-xub-deepseek-20260907/directed/directed-7d7d0ee20bab478b973565c4b9ad95ae/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_comparison/deepseek/runs/cp20-xub-deepseek-20260907/directed/directed-7d7d0ee20bab478b973565c4b9ad95ae/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_comparison/deepseek/runs/cp20-xub-deepseek-20260907/directed/directed-7d7d0ee20bab478b973565c4b9ad95ae/stop.flag",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_comparison/glm_capped/runs/cp20-xub-glm-capped-20260907/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_comparison/glm_capped/runs/cp20-xub-glm-capped-20260907/directed/directed-02fc562e633a4f2581f879a2b91e10cf/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_comparison/glm_capped/runs/cp20-xub-glm-capped-20260907/directed/directed-02fc562e633a4f2581f879a2b91e10cf/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_comparison/glm_capped/runs/cp20-xub-glm-capped-20260907/directed/directed-02fc562e633a4f2581f879a2b91e10cf/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_comparison/glm_capped/runs/cp20-xub-glm-capped-20260907/directed/directed-02fc562e633a4f2581f879a2b91e10cf/stop.flag",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_luna/runs/cp20-xub-luna-20260907/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_luna/runs/cp20-xub-luna-20260907/directed/directed-aa54128adc00474fbfeac6e7ccca2719/lanes/luna-low-state/PARTIAL.json",
+    "reason": "credential substring redacted in exported copy; original retained locally"
+  },
+  {
+    "path": "llmlab_luna/runs/cp20-xub-luna-20260907/directed/directed-aa54128adc00474fbfeac6e7ccca2719/lanes/luna-low-state/RESPONSE.json",
+    "reason": "credential substring redacted in exported copy; original retained locally"
+  },
+  {
+    "path": "llmlab_luna/runs/cp20-xub-luna-20260907/directed/directed-aa54128adc00474fbfeac6e7ccca2719/package/COMPLETE_PACKAGE.zip",
+    "reason": "archive contains private runtime material; safe loose files retained"
+  },
+  {
+    "path": "llmlab_luna/runs/cp20-xub-luna-20260907/directed/directed-aa54128adc00474fbfeac6e7ccca2719/package/LANES/luna-low-state/PARTIAL.json",
+    "reason": "credential substring redacted in exported copy; original retained locally"
+  },
+  {
+    "path": "llmlab_luna/runs/cp20-xub-luna-20260907/directed/directed-aa54128adc00474fbfeac6e7ccca2719/package/LANES/luna-low-state/RESPONSE.json",
+    "reason": "credential substring redacted in exported copy; original retained locally"
+  },
+  {
+    "path": "llmlab_luna/runs/cp20-xub-luna-20260907/directed/directed-aa54128adc00474fbfeac6e7ccca2719/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_luna/runs/cp20-xub-luna-20260907/directed/directed-aa54128adc00474fbfeac6e7ccca2719/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_luna/runs/cp20-xub-luna-20260907/directed/directed-aa54128adc00474fbfeac6e7ccca2719/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_sol_low/runs/cp20-xub-sol-low-20260908/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_sol_low/runs/cp20-xub-sol-low-20260908/directed/directed-d739a13411c3411dbe0d776a8500a21c/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_sol_low/runs/cp20-xub-sol-low-20260908/directed/directed-d739a13411c3411dbe0d776a8500a21c/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_sol_low/runs/cp20-xub-sol-low-20260908/directed/directed-d739a13411c3411dbe0d776a8500a21c/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_sol_none/runs/cp20-xub-sol-none-20260908/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_sol_none/runs/cp20-xub-sol-none-20260908/directed/directed-c8626febc92746ac98e857711db4ac03/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_sol_none/runs/cp20-xub-sol-none-20260908/directed/directed-c8626febc92746ac98e857711db4ac03/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_sol_none/runs/cp20-xub-sol-none-20260908/directed/directed-c8626febc92746ac98e857711db4ac03/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_unlimited/runs/cp20-xub-no-timeout-20260907/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_unlimited/runs/cp20-xub-no-timeout-20260907/directed/directed-53f918e671c64edb9c8a73dce44dab8a/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_unlimited/runs/cp20-xub-no-timeout-20260907/directed/directed-53f918e671c64edb9c8a73dce44dab8a/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_unlimited/runs/cp20-xub-no-timeout-20260907/directed/directed-53f918e671c64edb9c8a73dce44dab8a/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_unlimited/runs/cp20-xub-no-timeout-20260907/directed/directed-53f918e671c64edb9c8a73dce44dab8a/stop.flag",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2/runs/cp20-xub-llmlab-pilot-v2-20260907/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2/runs/cp20-xub-llmlab-pilot-v2-20260907/directed/directed-e09d63fe9dc14362a16651602cc1d100/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2/runs/cp20-xub-llmlab-pilot-v2-20260907/directed/directed-e09d63fe9dc14362a16651602cc1d100/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2/runs/cp20-xub-llmlab-pilot-v2-20260907/directed/directed-e09d63fe9dc14362a16651602cc1d100/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_0/state/test-project/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_0/state/test-project/directed/directed-2da2a0b9f12749dea761a4baeee066ff/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_0/state/test-project/directed/directed-2da2a0b9f12749dea761a4baeee066ff/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_0/state/test-project/directed/directed-2da2a0b9f12749dea761a4baeee066ff/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_1/state/test-project/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_1/state/test-project/directed/directed-4196aabfba37477bbc0a8538c839b1e9/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_1/state/test-project/directed/directed-4196aabfba37477bbc0a8538c839b1e9/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_1/state/test-project/directed/directed-4196aabfba37477bbc0a8538c839b1e9/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_2/state/test-project/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_2/state/test-project/directed/directed-c3bda14a2dc4452f8d8242ce16e619ce/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_2/state/test-project/directed/directed-c3bda14a2dc4452f8d8242ce16e619ce/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_empty_final_answer_never_2/state/test-project/directed/directed-c3bda14a2dc4452f8d8242ce16e619ce/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_partial_timeout_blocks_au0/state/test-project/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_partial_timeout_blocks_au0/state/test-project/directed/directed-68400553822d46dbbf94168c55953e61/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_partial_timeout_blocks_au0/state/test-project/directed/directed-68400553822d46dbbf94168c55953e61/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "llmlab_v2_test_tmp_20260907/test_partial_timeout_blocks_au0/state/test-project/directed/directed-68400553822d46dbbf94168c55953e61/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "research_block_variance_20260908/__pycache__/run.cpython-314.pyc",
+    "reason": "git metadata or generated cache"
+  },
+  {
+    "path": "research_exact_join_20260908/__pycache__/run.cpython-314.pyc",
+    "reason": "git metadata or generated cache"
+  },
+  {
+    "path": "research_intersection_debate_20260908/__pycache__/audit_dp.cpython-314.pyc",
+    "reason": "git metadata or generated cache"
+  },
+  {
+    "path": "research_sol_20260908/runs/xub-grid-review-20260908/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "research_sol_20260908/runs/xub-grid-review-20260908/directed/directed-adf085d322254ea3a33183435c625e48/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "research_sol_20260908/runs/xub-grid-review-20260908/directed/directed-adf085d322254ea3a33183435c625e48/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "research_sol_20260908/runs/xub-grid-review-20260908/directed/directed-adf085d322254ea3a33183435c625e48/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "research_sol_gap_20260908/runs/xub-gap-20260908/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "research_sol_gap_20260908/runs/xub-gap-20260908/directed/directed-b5ce2c215e994551b8f29062a2d07222/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "research_sol_gap_20260908/runs/xub-gap-20260908/directed/directed-b5ce2c215e994551b8f29062a2d07222/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "research_sol_gap_20260908/runs/xub-gap-20260908/directed/directed-b5ce2c215e994551b8f29062a2d07222/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "sol_collatz_bench/runs/collatz-sol-low-bench-20260908/.run.guard",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "sol_collatz_bench/runs/collatz-sol-low-bench-20260908/directed/directed-7d61f4fff6a248ec86b8d713fac3c8f0/private/.evidence_hmac.key",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "sol_collatz_bench/runs/collatz-sol-low-bench-20260908/directed/directed-7d61f4fff6a248ec86b8d713fac3c8f0/private/budget.json",
+    "reason": "private runtime or authentication material"
+  },
+  {
+    "path": "sol_collatz_bench/runs/collatz-sol-low-bench-20260908/directed/directed-7d61f4fff6a248ec86b8d713fac3c8f0/private/research_steps.sqlite3",
+    "reason": "private runtime or authentication material"
+  }
+]

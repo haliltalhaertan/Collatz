@@ -1,0 +1,16 @@
+[
+  {
+    "type": "ESCALATION_CANDIDATE",
+    "statement": "{'escalation_candidate': 'The supplied documents do not specify the actual preregistered grid Q_R, the numerical symbolic-supply threshold, or the admissible range of c. Uniform constants and boundary blocks therefore cannot be audited from the supplied material. These data should be attached before a proof or counterexample can be fully checked.'}",
+    "action_taken": "RECORDED_ONLY",
+    "new_task_started": false,
+    "additional_budget_spent": 0
+  },
+  {
+    "type": "ESCALATION_CANDIDATE",
+    "statement": "{'escalation_candidate': \"The phrase 'conditioned on the exact first-passage data' is not accompanied by a displayed derivation that this additional conditioning leaves the suffix law exactly uniform over weak compositions with total K. The frozen definitions assert that law, but any application outside this task needs the seam-conditioning identity stated explicitly.\"}",
+    "action_taken": "RECORDED_ONLY",
+    "new_task_started": false,
+    "additional_budget_spent": 0
+  }
+]

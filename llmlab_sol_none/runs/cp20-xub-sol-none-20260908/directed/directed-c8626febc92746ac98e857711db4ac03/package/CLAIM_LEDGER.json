@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.1",
+  "authoritative": true,
+  "task_id": "cp20-xub-sol-none-v1",
+  "primary_claim_id": "XUB-MARKED-OCC",
+  "claims": [
+    {
+      "claim_id": "XUB-MARKED-OCC",
+      "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+      "status": "OPEN",
+      "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+      "first_missing_step": {
+        "name": "Actual-array joint marked lower-tail inequality",
+        "inequality": "There must exist constants a>0 and C_0<infinity, depending only on eta, lambda, B_0, c and the fixed grid rule, such that for every sufficiently large accessible R, every actual coupled (r,R,tau,K) satisfying the stated constraints, and every integer 0<=n<=ceil((2/lambda) log R), P(N_R<=n | S_R=K and the exact first-passage data) <= C_0 e^{lambda n/2}/R, where N_R=sum_{q in Q_R}1_{C_q}.",
+        "why_narrower_than_target": "This is required only up to logarithmic n and directly implies the desired Laplace estimate after splitting the expectation at n approximately (2/lambda)log R and summing the lower tail. It does not demand independence, exclusion of all resonances, or occupation control outside the preregistered grid.",
+        "why_not_proved": "The exact coefficient formula controls one prescribed block only. No displayed identity or estimate controls simultaneous bounded-positive words together with affine non-low prefix constraints and short-orbit nonresonance marks across many endpoint-conditioned blocks. Rational ties, even-time sampling, and the growing ternary conductor therefore remain unresolved at precisely this joint lower-tail step."
+      },
+      "classification_conflict": false,
+      "semantic_binding_conflict": false,
+      "classification_rule": "RECONCILE_CLASSIFICATIONS_WITHOUT_VOTING",
+      "independence_level": "SHARED_TRUST_BASE",
+      "supporting_evidence": [
+        {
+          "lane_id": "sol-none-review",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+          "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+          "assumptions": [
+            "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+            "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+            "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+            "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+            "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+            "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+          ],
+          "evidence_files": [
+            "LANES/sol-none-review/EVIDENCE.json",
+            "LANES/sol-none-review/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        }
+      ],
+      "evidence_files": [
+        "LANES/sol-none-review/EVIDENCE.json",
+        "LANES/sol-none-review/RESULT.json"
+      ],
+      "assumptions": [
+        "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+        "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+        "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+        "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+        "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+        "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+      ]
+    }
+  ],
+  "downstream_claims_not_established": [
+    "Execution or use of any sealed B4 Stage 1 source",
+    "Invalid or non-canonical B4 V1 drafts",
+    "Claims about arbitrary independent endpoints outside the actual coupled array",
+    "New numerical depth, fits, plots, adaptive searches, or literature browsing",
+    "Promotion of XUB, E6-N2/B4, a nonzero profile, polynomial lower bounds, or Collatz to proved status"
+  ],
+  "authority_scope": "One consolidated reporting row per claim; not an independent truth certificate",
+  "shared_trust_base": [
+    "definitions",
+    "codebase",
+    "coordinator"
+  ],
+  "mathematical_truth_verified_by_package": false
+}

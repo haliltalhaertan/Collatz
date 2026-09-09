@@ -1,0 +1,81 @@
+{
+  "task_id": "test-task",
+  "run_id": "directed-c3bda14a2dc4452f8d8242ce16e619ce",
+  "status": "PARTIAL",
+  "usage": {
+    "calls": 2,
+    "reserved_tokens": 4174,
+    "reserved_cost_usd": 0.004174,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.0,
+    "provider_cost_complete": true,
+    "wall_seconds": 0.1814412999956403,
+    "lanes": {
+      "0": {
+        "calls": 1,
+        "reserved_tokens": 2087,
+        "reserved_cost_usd": 0.002087,
+        "attempts": {
+          "0:attempt:1": {
+            "reserved_tokens": 2087,
+            "reserved_cost_usd": 0.002087,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "cost_usd": 0
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.0,
+        "last_usage": {
+          "cost_usd": 0
+        },
+        "provider_cost_usd": 0.0,
+        "actual_tokens": 0
+      },
+      "1": {
+        "calls": 1,
+        "reserved_tokens": 2087,
+        "reserved_cost_usd": 0.002087,
+        "attempts": {
+          "1:attempt:1": {
+            "reserved_tokens": 2087,
+            "reserved_cost_usd": 0.002087,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "cost_usd": 0
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.0,
+        "last_usage": {
+          "cost_usd": 0
+        },
+        "provider_cost_usd": 0.0,
+        "actual_tokens": 0
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.0,
+    "provider_cost_lower_bound_usd": 0.0,
+    "provider_cost_upper_bound_usd": 0.0
+  },
+  "lanes": {
+    "0": "PARTIAL",
+    "1": "PARTIAL",
+    "2": "BLOCKED_DEPENDENCY"
+  },
+  "new_tasks_started": 0,
+  "limitations": [
+    "No automatic proof promotion from model text or generated code"
+  ]
+}

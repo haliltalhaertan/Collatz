@@ -1,0 +1,22 @@
+[
+  {
+    "name": "DENSE_LOWER_TAIL_PROOF.md",
+    "sha256": "3a93eb0634db6f0451fed5a5e83e0c4c142ead6198541b995d44a531bba68855"
+  },
+  {
+    "name": "EXACT_B1_WORD_LEMMA.md",
+    "sha256": "0e4f6870fe06d36fad62f0089025c180b8cb7f17cff9672ec4c3d5f52361f6ca"
+  },
+  {
+    "name": "INDEPENDENT_AUDIT.md",
+    "sha256": "98f822227eb261b6c203aeed37cbbb07e5ca3d471c65c17c14d28c1c27bb80aa"
+  },
+  {
+    "name": "NEXT_ACTION.md",
+    "sha256": "0718d6da092ef7d9cb70eefca1ca58ed9a7c8689e57e0b38a56b32211e9d1ada"
+  },
+  {
+    "name": "REPORT_TR.md",
+    "sha256": "171a9c6b9b44452f27600053c025b0ba6d0581271e9ad4022f3123a08cb99317"
+  }
+]

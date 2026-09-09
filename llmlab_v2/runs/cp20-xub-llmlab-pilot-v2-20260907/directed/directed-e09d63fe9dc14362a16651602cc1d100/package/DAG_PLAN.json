@@ -1,0 +1,123 @@
+[
+  {
+    "lane_id": "sol-proof-builder",
+    "role": "TheoremBuilder",
+    "independence_group": "openai-proof",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions",
+      "declared_inputs"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [
+      "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md"
+    ],
+    "execution": "model",
+    "model": "openai/gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "max_completion_tokens": 12000,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 50000,
+    "max_cost_usd": 0.25,
+    "max_wall_seconds": 600,
+    "input_price_per_million": 2.0,
+    "output_price_per_million": 10.0,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  },
+  {
+    "lane_id": "qwen-independent-refuter",
+    "role": "IndependentCounterexampleSearcher",
+    "independence_group": "qwen-refutation",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions",
+      "declared_inputs"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [
+      "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md"
+    ],
+    "execution": "model",
+    "model": "qwen/qwen3.8-max-0902",
+    "reasoning_effort": "low",
+    "max_completion_tokens": 12000,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 50000,
+    "max_cost_usd": 0.2,
+    "max_wall_seconds": 600,
+    "input_price_per_million": 2.0,
+    "output_price_per_million": 6.0,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  },
+  {
+    "lane_id": "grok-adversarial-auditor",
+    "role": "IndependentAuditor",
+    "independence_group": "xai-audit",
+    "can_read_other_lane_outputs": true,
+    "depends_on": [
+      "sol-proof-builder",
+      "qwen-independent-refuter"
+    ],
+    "visible_inputs": [
+      "task_contract",
+      "definitions",
+      "declared_inputs",
+      "selected_artifacts"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [
+      "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+      "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md"
+    ],
+    "execution": "model",
+    "model": "x-ai/grok-4.6",
+    "reasoning_effort": "low",
+    "max_completion_tokens": 8000,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 50000,
+    "max_cost_usd": 0.25,
+    "max_wall_seconds": 600,
+    "input_price_per_million": 2.0,
+    "output_price_per_million": 6.0,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  }
+]

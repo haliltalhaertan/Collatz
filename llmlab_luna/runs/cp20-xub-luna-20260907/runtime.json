@@ -1,0 +1,209 @@
+{
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "mode": "directed_task",
+  "run_id": "directed-aa54128adc00474fbfeac6e7ccca2719",
+  "task_id": "cp20-xub-luna-five-routes-v1",
+  "pid": 43352,
+  "heartbeat_at": "2026-09-07T19:10:15.485240+00:00",
+  "updated_at": "2026-09-07T19:10:15.485253+00:00",
+  "completed_lanes": [
+    "luna-low-state",
+    "luna-resonance",
+    "luna-cycles",
+    "luna-counting",
+    "luna-refutation"
+  ],
+  "active_lanes": {},
+  "lanes": {
+    "luna-low-state": "COMPLETED",
+    "luna-resonance": "COMPLETED",
+    "luna-cycles": "COMPLETED",
+    "luna-counting": "COMPLETED",
+    "luna-refutation": "COMPLETED"
+  },
+  "usage": {
+    "calls": 5,
+    "reserved_tokens": 127436,
+    "reserved_cost_usd": 0.0654872,
+    "prompt_tokens": 23356,
+    "completion_tokens": 23558,
+    "reasoning_tokens": 20095,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.03410785,
+    "provider_cost_complete": true,
+    "wall_seconds": 452.0383657000202,
+    "lanes": {
+      "luna-counting": {
+        "calls": 1,
+        "reserved_tokens": 25491,
+        "reserved_cost_usd": 0.0130982,
+        "attempts": {
+          "luna-counting:attempt:1": {
+            "reserved_tokens": 25491,
+            "reserved_cost_usd": 0.0130982,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 4669,
+              "completion_tokens": 4399,
+              "reasoning_tokens": 3624,
+              "cached_tokens": 0,
+              "cost_usd": 0.0064459
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.0064459,
+        "provider_cost_upper_bound_usd": 0.0064459,
+        "last_usage": {
+          "prompt_tokens": 4669,
+          "completion_tokens": 4399,
+          "reasoning_tokens": 3624,
+          "cached_tokens": 0,
+          "cost_usd": 0.0064459
+        },
+        "provider_cost_usd": 0.0064459,
+        "actual_tokens": 9068
+      },
+      "luna-cycles": {
+        "calls": 1,
+        "reserved_tokens": 25490,
+        "reserved_cost_usd": 0.013098,
+        "attempts": {
+          "luna-cycles:attempt:1": {
+            "reserved_tokens": 25490,
+            "reserved_cost_usd": 0.013098,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 4675,
+              "completion_tokens": 3853,
+              "reasoning_tokens": 3106,
+              "cached_tokens": 0,
+              "cost_usd": 0.0057922
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.0057922,
+        "provider_cost_upper_bound_usd": 0.0057922,
+        "last_usage": {
+          "prompt_tokens": 4675,
+          "completion_tokens": 3853,
+          "reasoning_tokens": 3106,
+          "cached_tokens": 0,
+          "cost_usd": 0.0057922
+        },
+        "provider_cost_usd": 0.0057922,
+        "actual_tokens": 8528
+      },
+      "luna-low-state": {
+        "calls": 1,
+        "reserved_tokens": 25461,
+        "reserved_cost_usd": 0.0130922,
+        "attempts": {
+          "luna-low-state:attempt:1": {
+            "reserved_tokens": 25461,
+            "reserved_cost_usd": 0.0130922,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 4666,
+              "completion_tokens": 4354,
+              "reasoning_tokens": 3624,
+              "cached_tokens": 0,
+              "cost_usd": 0.00639115
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.00639115,
+        "provider_cost_upper_bound_usd": 0.00639115,
+        "last_usage": {
+          "prompt_tokens": 4666,
+          "completion_tokens": 4354,
+          "reasoning_tokens": 3624,
+          "cached_tokens": 0,
+          "cost_usd": 0.00639115
+        },
+        "provider_cost_usd": 0.00639115,
+        "actual_tokens": 9020
+      },
+      "luna-resonance": {
+        "calls": 1,
+        "reserved_tokens": 25480,
+        "reserved_cost_usd": 0.013096,
+        "attempts": {
+          "luna-resonance:attempt:1": {
+            "reserved_tokens": 25480,
+            "reserved_cost_usd": 0.013096,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 4669,
+              "completion_tokens": 5786,
+              "reasoning_tokens": 5151,
+              "cached_tokens": 0,
+              "cost_usd": 0.0081103
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.0081103,
+        "provider_cost_upper_bound_usd": 0.0081103,
+        "last_usage": {
+          "prompt_tokens": 4669,
+          "completion_tokens": 5786,
+          "reasoning_tokens": 5151,
+          "cached_tokens": 0,
+          "cost_usd": 0.0081103
+        },
+        "provider_cost_usd": 0.0081103,
+        "actual_tokens": 10455
+      },
+      "luna-refutation": {
+        "calls": 1,
+        "reserved_tokens": 25514,
+        "reserved_cost_usd": 0.0131028,
+        "attempts": {
+          "luna-refutation:attempt:1": {
+            "reserved_tokens": 25514,
+            "reserved_cost_usd": 0.0131028,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 4677,
+              "completion_tokens": 5166,
+              "reasoning_tokens": 4590,
+              "cached_tokens": 0,
+              "cost_usd": 0.0073683
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.0073683,
+        "provider_cost_upper_bound_usd": 0.0073683,
+        "last_usage": {
+          "prompt_tokens": 4677,
+          "completion_tokens": 5166,
+          "reasoning_tokens": 4590,
+          "cached_tokens": 0,
+          "cost_usd": 0.0073683
+        },
+        "provider_cost_usd": 0.0073683,
+        "actual_tokens": 9843
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.0,
+    "provider_cost_lower_bound_usd": 0.03410785,
+    "provider_cost_upper_bound_usd": 0.03410785
+  },
+  "final_status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "current_step": "Directed task",
+  "last_error": ""
+}

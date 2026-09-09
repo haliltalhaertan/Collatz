@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.1",
+  "authoritative": true,
+  "task_id": "xub-grid-obstruction-review",
+  "primary_claim_id": "GRID-AUDIT",
+  "claims": [
+    {
+      "claim_id": "GRID-AUDIT",
+      "statement": "Audit necessary occupation conditions for the open marked-block Laplace bound.",
+      "status": "OPEN",
+      "domain": "As specified in each lane; do not silently transfer a surrogate result.",
+      "first_missing_step": "Prove a uniform discrete ballot estimate for the actual weighted weak-composition bridge: for all admissible R,K, L=floor(c log R), remainders 0<=r<2L, and z0 in (1,2), establish at least P(S_{2Lq}-beta(2Lq)<log2(eta/z0) for every 1<=q<=n)>=c1/n, with c1>0 independent of all parameters, or determine the correct order. The theorem must handle the random remainder, negative O(1) complete endpoint, strict/weak barrier atoms, and possible repeated block totals. Without this estimate the proposed L/R obstruction is only conditional.",
+      "classification_conflict": false,
+      "semantic_binding_conflict": false,
+      "classification_rule": "RECONCILE_CLASSIFICATIONS_WITHOUT_VOTING",
+      "independence_level": "SHARED_TRUST_BASE",
+      "supporting_evidence": [
+        {
+          "lane_id": "grid",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "Audit necessary occupation conditions for the open marked-block Laplace bound.",
+          "domain": "As specified in each lane; do not silently transfer a surrogate result.",
+          "assumptions": [
+            "Actual reference model: Y_i are uniform nonnegative integer weak compositions of K into R coordinates. beta=log2(3)-1, K-beta R in (-15-2beta,-13-2beta). R=2J+epsilon. z_j=z0*2^(S_(2j)-2beta*j), z0 in (1,2).",
+            "Disjoint useful blocks have L=floor(c log R) pairs. C_q requires nonlow entry z>=eta, every pair total in {1,...,B0}, and nonresonance. Target E exp(-lambda N_C)<=C/R. Additional exact first-passage conditioning is a separate law issue."
+          ],
+          "evidence_files": [
+            "LANES/grid/EVIDENCE.json",
+            "LANES/grid/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        },
+        {
+          "lane_id": "logic",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "Audit necessary occupation conditions for the open marked-block Laplace bound.",
+          "domain": "As specified in each lane; do not silently transfer a surrogate result.",
+          "assumptions": [
+            "Actual reference model: Y_i are uniform nonnegative integer weak compositions of K into R coordinates. beta=log2(3)-1, K-beta R in (-15-2beta,-13-2beta). R=2J+epsilon. z_j=z0*2^(S_(2j)-2beta*j), z0 in (1,2).",
+            "Disjoint useful blocks have L=floor(c log R) pairs. C_q requires nonlow entry z>=eta, every pair total in {1,...,B0}, and nonresonance. Target E exp(-lambda N_C)<=C/R. Additional exact first-passage conditioning is a separate law issue."
+          ],
+          "evidence_files": [
+            "LANES/logic/EVIDENCE.json",
+            "LANES/logic/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        },
+        {
+          "lane_id": "rank",
+          "lane_status": "COMPLETED",
+          "status": "OPEN",
+          "statement": "Audit necessary occupation conditions for the open marked-block Laplace bound.",
+          "domain": "As specified in each lane; do not silently transfer a surrogate result.",
+          "assumptions": [
+            "Actual reference model: Y_i are uniform nonnegative integer weak compositions of K into R coordinates. beta=log2(3)-1, K-beta R in (-15-2beta,-13-2beta). R=2J+epsilon. z_j=z0*2^(S_(2j)-2beta*j), z0 in (1,2).",
+            "Disjoint useful blocks have L=floor(c log R) pairs. C_q requires nonlow entry z>=eta, every pair total in {1,...,B0}, and nonresonance. Target E exp(-lambda N_C)<=C/R. Additional exact first-passage conditioning is a separate law issue."
+          ],
+          "evidence_files": [
+            "LANES/rank/EVIDENCE.json",
+            "LANES/rank/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        }
+      ],
+      "evidence_files": [
+        "LANES/grid/EVIDENCE.json",
+        "LANES/grid/RESULT.json",
+        "LANES/logic/EVIDENCE.json",
+        "LANES/logic/RESULT.json",
+        "LANES/rank/EVIDENCE.json",
+        "LANES/rank/RESULT.json"
+      ],
+      "assumptions": [
+        "Actual reference model: Y_i are uniform nonnegative integer weak compositions of K into R coordinates. beta=log2(3)-1, K-beta R in (-15-2beta,-13-2beta). R=2J+epsilon. z_j=z0*2^(S_(2j)-2beta*j), z0 in (1,2).",
+        "Disjoint useful blocks have L=floor(c log R) pairs. C_q requires nonlow entry z>=eta, every pair total in {1,...,B0}, and nonresonance. Target E exp(-lambda N_C)<=C/R. Additional exact first-passage conditioning is a separate law issue."
+      ]
+    }
+  ],
+  "downstream_claims_not_established": [
+    "Canonical research state changes",
+    "Numerical searches",
+    "External tools",
+    "General proof claims beyond supplied assumptions"
+  ],
+  "authority_scope": "One consolidated reporting row per claim; not an independent truth certificate",
+  "shared_trust_base": [
+    "definitions",
+    "codebase",
+    "coordinator"
+  ],
+  "mathematical_truth_verified_by_package": false
+}

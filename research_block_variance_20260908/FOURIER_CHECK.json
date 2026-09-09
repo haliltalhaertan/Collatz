@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "scope": "floating-point independent Fourier identity check on r10; proof is algebraic",
+  "max_error": 8.367574097429743e-13,
+  "spectral_variance": 19.18749999999987,
+  "exact_variance": "307/16"
+}

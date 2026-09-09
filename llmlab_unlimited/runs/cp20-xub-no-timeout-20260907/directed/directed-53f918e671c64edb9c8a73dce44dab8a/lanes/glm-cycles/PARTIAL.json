@@ -1,0 +1,8939 @@
+{
+  "status": "PARTIAL_PROVIDER_VISIBLE",
+  "step_id": "cp20-xub-three-models-no-timeout-v1:directed-53f918e671c64edb9c8a73dce44dab8a:glm-cycles:v1",
+  "content": "",
+  "reasoning": "This is a request to execute a frozen task as a specific lane (\"glm-cycles\") in a research pilot about a mathematical claim. The claim is a highly specialized estimate involving weak compositions, Markov chain-like occupation measures, and exponential moments. The task asks me to either prove or refute the claim, or identify the first missing estimate.\n\nThe honest answer here: this is an extremely deep open problem (a reduction toward a Collatz-adjacent result \"XUB\"), and the exploratory documents themselves state the key estimate is OPEN and load-bearing. My role is the \"cyclic-shift/ballot audit\" lane. I should not fabricate a proof. The instruction says: \"If the main estimate cannot be established, stop the attempted proof and explicitly report OPEN with the first missing inequality, its quantifiers, and why the displayed reductions do not prove it.\"\n\nSo the expected, correct output is a JSON with:\n- findings: concise (≤800 words) mathematically inspectable audit of the cyclic-shift/ballot route, identifying the first missing lemma.\n- claim_status: \"OPEN\" (with first_missing_step).\n- unexpected_findings: escalation candidates only.\n\nLet me actually think about the mathematics to give a genuine audit.\n\nSetting: Y_1,...,Y_R uniform over weak compositions of K into R parts (K ≈ βR, β = log2(3) − 1 ≈ 0.58496). Pair totals B_j = Y_{2j−1}+Y_{2j}. H_j = B_1+...+B_j. z_j = 2^{1−{βτ}+H_j−2βj}. Low state: z_j < η, i.e., log2 z_j = 1 − {βτ} + H_j − 2βj < log2 η. Note 1−{βτ} ∈ (0,1]. So the \"chord\" variable is S_h − β·(2j)... let me check: with h = 2j pairs, partial raw sum S_{2j} = H_j. log2 z_j − 1 + {βτ} = H_j − 2βj = (S_{2j} − 2βj) with K/R ≈ β: the mean of S_{2j} given S_R=K is 2j·K/R ≈ 2βj·... wait, 2j·K/R ≈ 2j·(βR)/R = 2βj. So H_j − 2βj is the deviation of the pair partial sum from its mean — a random walk bridge centered at β per raw coordinate... Actually the bridge is over raw increments with mean β each? K/R → β, so E[Y_i] ≈ β. So H_j − 2βj = (S_{2j} − 2j·K/R) − 2j(K/R − β) + ... The bridge fluctuation is O(√R) scaled by h/R. The threshold: low iff H_j − 2βj < log2 η − 1 + {βτ} ∈ (log2 η − 1, log2 η]. Since log2 η is presumably negative (η < 1?). Actually η is a small constant (low means z<η; z_0 ∈ (1,2), so η likely < 1). So the threshold is a fixed negative affine shift off zero: log2 η − 1 + {βτ}, a constant in (log2 η − 1, log2 η]. So \"not low\" = bridge stays above a fixed negative constant times... i.e., H_j ≥ 2βj + c for a constant c = log2 η − 1 + {βτ} ∈ (log2 η − 1, log2 η], roughly c ≈ log2 η − 1/2 or so. Actually c ∈ (log2η−1, log2η], a fixed constant.\n\nSo the occupation measure M_η counts times j where a centered (and slightly shifted) conditioned random-walk bridge excursion stays above threshold. The target: E[exp(−λ·#{blocks q: C_q})] ≤ C/R.\n\nKey intuition for why the target could be true: with ~R/J blocks where each block has length L_R = floor(c log R), the number of C_q blocks is roughly (number of blocks) × (probability a block qualifies). If probability of C_q is bounded below by a positive constant p_0 (needs: entry not low has prob ~1/2 at bulk times, bounded positive alphabet has prob (B0+1)^{-L}... wait, alphabet {1,...,B_0} for each pair total with weight (b+1)? Under uniform composition law, P(Y=y) given sum ≈ βR behaves like... marginal P(Y_i = y) ~ geometric-ish with ratio β/(1+β)? Actually for uniform weak composition with sum K, P(Y_i=y) = C(K−y+R−2, R−2)/C(K+R−1, R−1) = ... ratio P(Y=y+1)/P(Y=y) = (K−y)/(K+y+R−1) → β/(1+β) ≈ 0.369. Hmm, (b+1) weight in U_{B0}(z) = Σ(b+1)z^b suggests the combinatorics of pair totals B_j = Y_{2j−1}+Y_{2j}: number of (two raw) compositions giving pair total b is b+1. So P(B_j = b) ∝ (b+1)·(...). In the bulk, P(B_j = b) ≈ (b+1)·p_b where p_b ~ ρ^b with ρ = β/(1+β)? Something like that.\n\nSo a block q of length L_R has G_q probability ≈ (Σ_{b=1}^{B0} (b+1) p_b)^{L_R} ≈ p_0^{L_R} with p_0 < 1 — exponentially small in L_R = c log R, i.e., ≈ R^{c log p_0}. The number of blocks is ≈ R / L_R ≈ R / log R. Number of C_q blocks ≈ (R/L_R)·p_0^{L_R}·(1/2)·(1 − res). For the Laplace bound ≤ C/R we need E[e^{−λ N}] where N = #C_q. e^{−λN} ≤ C/R requires N ≳ log R typically. N typical = R^{1 + c log p_0}/log R... if c log p_0 > −1, N grows like a power of R, so e^{−λN} ≈ 0 easily. Wait but that seems too easy — unless the events are highly correlated and the expected count is dominated by... Actually E[e^{−λN}] ≤ C/R: if E[N] ≥ c′ log R (or more), and N concentrated, e^{−λN} is tiny. Hmm, but wait — C_q requires the block to be non-low at entry AND nonresonant. Entry not low: prob ~ 1/2 at a bulk time, but only if the block entry is at a bulk time. But wait — the issue is the \"occupation\" estimate must handle the whole suffix uniformly, including... hmm, but blocks partition Q_R which is a grid over the suffix. Actually the target allows many low/resonant blocks; it only needs the Laplace transform of the count of good blocks to be O(1/R), i.e., essentially N ≥ (1/λ) log R with high probability (1 − O(1/R)).\n\nBut there's a catch: the naive second-moment / independence arguments fail because blocks are dependent through the conditioning S_R = K and through the state z (multiplicative dynamics). The exploratory doc says the per-start union bound fails. But for a lower bound on the count, one needs something like: with probability ≥ 1 − C/R, N ≥ log R. This needs control of the joint dependence — e.g., partition argument: either many blocks are good, or... Hmm.\n\nActually wait. Is the claim plausible? The subtle issue: the bridge is a random walk bridge conditioned to end near its mean (K ≈ βR). A bridge can have long excursions below the threshold. But blocks are short (L_R = c log R pairs). The entry state of block q depends on the past. For the count of good blocks: in any stretch of the bridge where the walk is above the shifted threshold at block entries, blocks have G-probability p_0^{L_R} each roughly independently (finite-range dependence under the conditioned law? weak composition conditioned — increments are exchangeable, negatively correlated in a specific way). Hmm.\n\nThe real difficulty flagged: amplified resonance R_q — the event that dist(2^{E_j}/3^{D_j+2L}, Z) < η/9^L with positive integer. This is a Diophantine condition on 2^{E_j} mod 3^{D_j+2L}: 2^{E} = h·3^{D+2L} ± small. Since 3^{Q} is odd, 2^{E} mod 3^Q cycles with period ord(2 mod 3^Q) = 2·3^{Q−1}, exponentially large. Over the window E_j = O(m) values (E_j grows like H_j + O(j) ≈ (β+2)j... E_j ≈ K + 2j + const? E_j = τ+⌊βτ⌋+1+2j+H_j; over j ≤ J ≈ R/2, E_j spans a window of length ≈ 2J + K ≈ (2+β)R + O(1)), the residues 2^{E} mod 3^{D+2L} — the question is how often the distance condition holds. This is a short-orbit discrepancy question: essentially how well the initial segment of the 2-adic... of the multiplicative orbit of 2 in (Z/3^Q)^* can be approximated — related to bounding rational approximations to log_2 3 via the window length. Since the orbit period is 2·3^{Q−1} ≫ window, the occupied residues over the window look like an arithmetic-progression-like set; the number of E in the window with 2^E ≡ h·3^Q + O(η·3^Q/9^L) — hmm, the condition dist(2^E/3^{D+2L}, Z) < η/9^L means |2^E − h 3^{D+2L}| < η·3^{D+2L}/9^L = η·3^{D} / 3^{2L}·... wait η/9^L · 3^{D+2L} = η·3^D. So 2^E within η·3^D of a multiple of 3^{D+2L}. Since 2^E ranges up to 2^{(2+β)R} while 3^{D} with D = τ+2j ≈ R-scale: 3^{τ+2j} for j ≈ R/2 gives 3^R ≈ 2^{1.58R}... so magnitudes are comparable. Anyway this is a hard Diophantine/discrepancy problem: bounding the number of hits of a target interval by the sequence 2^E mod 3^Q for E in a window of length O(R) with Q ≈ R. The doc says: \"Full-orbit multiplicative order and LTE do not bound this weighted short-orbit occupation.\" That's the symbolic-side gap.\n\nNow my lane role: \"Audit a cyclic-shift or ballot approach, resolving ties, affine shifts, even sampling and odd parity; isolate the first missing lemma.\"\n\nThe cyclic-shift/cycle-lemma idea: For occupation times of a random walk bridge above a line, there are ballot-type identities: the probability that a bridge excursion stays above a threshold relates to cyclic shifts (Dvoretzky–Motzkin cycle lemma): among the cyclic shifts of a sequence with sum > 0, the fraction of shifts whose partial sums stay positive equals (sum)/n (for integer increments summing to positive). The audit's point (from LOW_STATE_OCCUPATION_AUDIT.md): \"A cycle-lemma/Chung-Feller mechanism is plausible, but three exact issues remain: chord-centering rational ties; affine bounded shift; even-time sampling with final singleton.\"\n\nSo my job: assess whether a cycle-lemma mechanism can give the Laplace estimate. My audit conclusion should be: the cycle lemma gives lower bounds on occupation/excursion structure for the centered chord, but (a) the target requires a uniform lower bound on the number of C_q blocks weighted by a product structure including the resonance exclusion (a non-Markovian, arithmetic event depending on H_j sums in a complicated way), which the cycle lemma does not touch; (b) the tie conventions: the cycle lemma for weak compositions with zero components (ties) needs the \"strict partial sums\" version: for integer increments with sum ≥ 1 and each ≤ ... the number of cyclic shifts with all partial sums positive is ≥ ... The classical Dvoretzky–Motzkin: if increments are integers ≤ ... Actually the version: if a_1,...,a_n are integers with a_i ≤ 1 and sum k > 0, then exactly k cyclic shifts have all partial sums positive. For increments not bounded by 1 (our pair totals can be large, though bounded in useful blocks), the lemma gives at least one shift, not a fraction. The fraction version needs the increment bound. With affine shift and even sampling, one gets at best \"some fraction of shifts have excursions\", but the target needs exponential moments of the count over a grid of disjoint blocks — cycle lemma controls a single path's occupation via symmetries over cyclic shifts, giving exact identities for the number of nonnegative paths, but the Laplace transform of occupation counts of disjoint blocks conditioned on S_R=K requires joint distribution of the occupation across the grid, not just an aggregate symmetry.\n\nSo the first missing lemma in my lane: a uniform lower bound on the number of good blocks, i.e., something like: there exists p_0 > 0 (depending on η, B_0, λ, c) such that for all accessible (r,R,τ,K),\n\nP(N_R ≥ (1/λ + o(1)) log R | S_R = K) ≥ 1 − C/R,\n\nwhere N_R = Σ_q 1_{C_q}. Or a first-moment/lower-tail control: E[e^{−λN_R}] ≤ C/R requires (essentially) P(N_R < (log R)/λ) ≤ C/R. The first missing inequality: a uniform lower bound on P(C_q holds for a block at a fresh entry) jointly across the grid, with explicit control of the dependence, plus a Diophantine bound on the resonance hits within a window of length O(R) — the symbolic gap: number of (j, h) with j ≤ J, L ≤ h... such that dist(2^{τ+⌊βτ⌋+1+2j+h}/3^{τ+2j+2L_R}, Z) < η/9^{L_R} is at most (say) a fraction ρ_res < 1 of the (j,h) pairs, uniformly, for L_R = floor(c log R). Without that, even defining C_q robustly fails; and with it, one still needs the occupation lower bound.\n\nBut as the cycles lane, I should isolate the first missing lemma specific to the cyclic-shift route: the exact statement of what a cycle lemma would need to deliver and why the ties/shift/parity can be resolved, then show the remaining gap. Let me structure:\n\n1. Ties: under uniform weak composition, the conditioned increments are exchangeable; the cyclic-shift symmetry group acts on the R raw increments (or on 2J pair-blocks + singleton). With zero increments (ties at level 0 and equal levels), the standard fix: use",
+  "reasoning_details": [
+    {
+      "type": "reasoning.text",
+      "text": "This",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is a request",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to execute",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a frozen task as",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a specific",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lane (\"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "glm-cycles\")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a research",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " pilot about",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mathematical",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " claim. The claim",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " highly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " specialized",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " estimate",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " involving",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " weak compositions, Mark",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ov chain-like",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " occupation measures",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", and exponential",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " moments",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". The task asks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " me to either prove",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " or refute the claim",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", or identify",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the first missing estimate",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\nThe honest",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " answer",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " here",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": this",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is an",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " extremely deep open problem",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " reduction",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " toward",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Collatz-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "adjacent result",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " \"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "XUB\"),",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " and the explor",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "atory documents",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " themselves state",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the key",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " estimate is OPEN and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " load-bearing. My",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " role is the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " \"c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "yclic-shift/b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "allot audit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "\" lane. I",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " should not fabric",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ate a proof.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " The instruction",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " says: \"If",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the main estimate cannot",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be established, stop",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the attempted proof and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " explicitly report OPEN with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the first missing inequality",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", its quantifiers",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", and why the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " displayed reductions do not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " prove it.\"\n\nSo",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " expected",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " correct output is a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " JSON with:\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "- findings: concise",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≤800 words)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " math",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ematically inspect",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "able audit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of the cyclic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-shift/b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "allot route,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " identifying the first missing",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma.\n- claim",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_status: \"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "OPEN\"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " first_missing_step).\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "- unexpected",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_findings: escalation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " candidates only.\n\nLet",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " me actually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " think",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " about the mathematics",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to give",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a genuine",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " audit.\n\nSetting",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": Y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_1,...,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Y_R uniform",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " over",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " weak compositions of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K into",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R parts (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ βR",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " β = log2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(3) −",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 1 ≈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 0.58",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "4",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "96). Pair totals",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " B_j = Y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_{2j−",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1}+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Y_{2j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}. H",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j = B_",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1+...+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "B_j. z",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j = 2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{1−",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "{βτ}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+H_j−",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2βj}.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Low state:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " z_j < η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " i.e., log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " z_j =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 1 − {",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "βτ} +",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " H_j − ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2βj ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "< log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2 η.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Note",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 1−",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "{βτ}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ∈ (0,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1].",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " So the \"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ch",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ord\" variable",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is S_h −",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "·",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2j)...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " let me check",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": with h",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " = 2j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " pairs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", partial",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " raw",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum S_{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2j} =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " H_j. log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2 z_j −",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 1 +",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " {βτ}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " = H",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j − 2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "βj =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "S_{2j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "} − 2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "j) with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ β:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mean of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " S_{2j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "} given",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " S_R=K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is 2j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "·",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "K/R ≈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 2βj",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "·",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " wait, ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2j·K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R ≈ ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "·(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")/",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "R =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 2βj",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". So H",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j − 2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "βj is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " deviation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " partial sum from its",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mean",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " —",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a random",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " walk bridge",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " centered",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " at β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " per",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " raw",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " coordinate",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Actually the bridge",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is over",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " raw increments with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mean β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " each",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " →",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " β,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " so E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "[Y_i] ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ β. So",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " H_j − ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2βj =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "S_{2j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "} − 2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "j·K/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") −",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2j(K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R − β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") +",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " The bridge fluct",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "uation is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " O(√",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " scaled",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " by",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " h",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " The threshold",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " iff",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " H",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j − 2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "βj < log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2 η − ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1 + {β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "τ} ∈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2 η − ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1, log2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " η]. Since",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log2 η is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " presumably negative (η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " < 1?).",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Actually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " η is a small",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " constant (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " means",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " z",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "<η;",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " z_0 ∈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (1,2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "), so η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " likely",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " < 1).",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " So the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " threshold is a fixed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " negative affine",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " shift off",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " zero",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2 η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " − 1 +",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " {βτ},",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a constant in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2 η − ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1, log2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " η].",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " So",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " \"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " low\" =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bridge",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " stays",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " above a fixed negative",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " constant times",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " i",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".e., H_j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≥",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 2βj",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " + c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " constant c =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log2 η −",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 1 + {",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "βτ} ∈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (log2 η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " − 1,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log2 η],",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " roughly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≈ log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2 η − ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/2 or",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " so.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Actually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ∈ (log2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "−",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1, log2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "η], a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " fixed constant.\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "So the occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " measure",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " M_",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "η counts",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " times",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " j where",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " centered",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " slightly shifted) conditioned",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " random-w",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "alk bridge excursion",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " stays",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " above threshold",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". The target",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": E[exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(−λ·",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "#{blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " q:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C_q})",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "] ≤ C/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Key",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " intuition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " why the target could",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be true: with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/J blocks where",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " each",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " block has",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " length L_R =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " floor(c log R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "),",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the number of C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q blocks is roughly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "number of blocks)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " × (probability",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " block qualifies",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "). If",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " probability",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C_q is bounded",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " below by",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a positive constant p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0 (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "needs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": entry",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not low has",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " prob",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ~1/2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " at bulk",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " times",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bounded",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " positive alphabet has",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " prob (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1)^{-L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "... wait",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", alphabet",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " {1,...,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "B_0}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for each",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " pair total with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " weight",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+1)?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Under",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " uniform",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " composition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " law",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(Y=y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") given",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ βR",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " behaves",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " like...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " marginal",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(Y_i",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " = y) ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " geometric",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-ish with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ratio",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/(1+β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")? Actually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for uniform weak",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " composition with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(Y_i=y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") = C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(K−y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+R−2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", R−2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")/C(K+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "R−1,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R−1)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ratio",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(Y=y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+1)/P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(Y=y) =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (K−y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")/(K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+y+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "R−1)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " → β/(1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+β) ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ 0.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "369. Hmm",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+1) weight",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " U",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "B0}(z",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") = Σ(b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+1)z",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^b suggests the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " comb",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "inatorics",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " pair totals B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j = Y_{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2j−1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}+Y_{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2j}:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " number",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "two",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " raw",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") compositions giving",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " total b is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " b+1.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " So P(B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j = b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "∝ (b+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1)·(...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "). In",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the bulk",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(B_j = b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ (b+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1)·p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " where p_b ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ρ^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "b with ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ρ = β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/(1+β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")? Something",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " like that.\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "So a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " block q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of length L_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " has",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " G",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q probability",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ (Σ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_{b",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=1}^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "B0",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "} (b+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1) p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_b)^{L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R} ≈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " p_0^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "L_R} with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " p_0 ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "< 1 —",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exponentially",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " small in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " L_R =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " c log R,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " i.e., ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ R^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "c log p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_0}. The",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " number of blocks is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ R /",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R ≈ R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " /",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R. Number",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q blocks ≈",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (R/L_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")·p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_0^{L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R}·(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1/2)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "·(1 −",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " res).",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " For",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Laplace bound",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≤",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C/R we",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " need E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "[e",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{−λ N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}] where",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N = #",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "C_q. e",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{−λN",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "} ≤ C/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " requires N ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≳ log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R typically",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " typical",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " +",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " c log p_",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0}/log R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if c log p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_0 >",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " −1, N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " grows",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " like a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " power of R,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " so",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " e^{−λ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "N} ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ 0 easily",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Wait",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " but that",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " seems",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " too easy —",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " unless",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the events",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are highly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " correlated and the expected",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " count",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is dominated",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " by...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Actually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "[e",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{−λN",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}] ≤ C/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "[N] ≥ c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "′",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log R (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "or more),",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " concentrated",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", e^{−",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "λN} is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " tiny. Hmm,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " but wait",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " — C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q requires",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the block",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to be non-low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " at entry AND non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "resonant.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Entry",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " low: prob",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ~ ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1/2 at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bulk time",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " but only",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if the block entry",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a bulk time.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " But wait",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " — the issue",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the \"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "\" estimate",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " must",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " handle",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the whole",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " suffix",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " uniformly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", including",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " hmm, but blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " partition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R which",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is a grid",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " over",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the suffix. Actually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the target allows",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " many low/res",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "onant blocks;",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " it only",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " needs the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Lap",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lace transform",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of the count",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of good",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks to",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be O",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(1/R),",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " i.e., essentially",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≥ (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1/",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "λ) log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " high probability (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " −",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " O(1/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")).\n\nBut",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " there",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "'s a catch",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": the naive",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " second",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-m",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "oment /",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " independence",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " arguments",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " fail because blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are dependent",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " through",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the conditioning",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " S_R =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K and through",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the state",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " z (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "multip",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "licative dynamics",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "). The explor",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "atory doc",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " says the per-start",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " union bound fails",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " But for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lower",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bound on the count",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " one needs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " something",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " like: with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " probability ≥",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 1 − C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R, N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≥ log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R. This",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " needs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " control",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of the joint dependence",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " —",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " e.g., partition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " argument",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": either",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " many",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks are",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " good, or...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Hmm.\n\nActually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " wait.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " claim plausible",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "? The",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " subtle",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " issue: the bridge",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a random walk bridge",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " conditioned to",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " end",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " near",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " its",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mean (K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≈ βR",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "). A",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bridge can",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " have",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " long excursions below",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the threshold. But",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are short",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R = c log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R pairs). The",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " entry",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " state of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " block q depends",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " on the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " past",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". For",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the count",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " good blocks:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " any",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " stretch",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bridge where",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the walk",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " above the shifted",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " threshold at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " block",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " entries",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " have",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " G",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-pro",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "bability p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_0^{L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R} each",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " roughly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " independently (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "finite",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-range dependence under",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " conditioned law? weak",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " composition conditioned",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " —",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " increments",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exchangeable, negatively",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " correlated in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a specific",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " way).",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Hmm.\n\nThe",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " real difficulty",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " flagged",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": amplified",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " resonance R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q — the event",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " that",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " dist(2^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "E_j}/3",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{D_j+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2L}, Z",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") < η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/9^L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with positive integer",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". This is a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Diophantine condition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " on ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2^{E_j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mod 3^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "D_j+2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "L}:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2^{E}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " h·3^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "D+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2L} ±",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " small",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Since",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 3",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{Q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "} is odd",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", 2^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "E} mod ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "3^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Q cycles",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with period ord",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mod",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 3^Q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") = 2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "·3^{Q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "−1},",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exponentially",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " large",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Over",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " window",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " E_j =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " O(m) values",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (E_j grows",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " like",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " H_j + O",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") ≈ (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "β+2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")j... E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " + 2j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " + const",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j = τ+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "⌊β",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "τ⌋",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+1+2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "j+H_j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "; over",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≤",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " J",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ R/2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j spans",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " window",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of length ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2J",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " + K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≈ (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+β)R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " +",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " O(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1)),",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the residues",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 2^{E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mod 3^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "D+2L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "} —",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the question",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is how",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " often",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " distance",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " condition",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " holds. This",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is a short",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-orbit discrepancy question",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": essentially",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " how",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " well",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " initial",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " segment of the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2-ad",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ic...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the multip",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "licative orbit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of 2 in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (Z",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/3^Q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")^*",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " can",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be approximated —",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " related",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to bounding",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " rational",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " approximations to",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2 ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "3 via",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " window",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " length",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". Since",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " orbit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " period",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is 2·",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "3^{Q−",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≫ window",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", the occupied",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " residues",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " over",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the window look",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " like an",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " arithmetic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-pro",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "gression-like",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " set",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ";",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the number",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " window with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "E ≡ h",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "·",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "3^Q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " +",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " O",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "·3^Q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/9^L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " —",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " hmm",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", the condition dist",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(2^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "E/3^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "D+2L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}, Z) ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "< η/9^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "L means |",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2^E −",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " h ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "3^{D+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2L}| ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "< η·",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "3^{D+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2L}/9",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^L = η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "·3^{D",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " /",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 3",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "L}·",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "... wait η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "9^L ·",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 3^{D",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+2L}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " = η·3",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "D. So ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2^E within",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "·3^D",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of a multiple",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of 3^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "D+2L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}. Since",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^E ranges",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " up",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2^{(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2+β)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "R} while",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 3^{D",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " D =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " τ+2j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≈ R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-scale",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 3^{τ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+2j}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " j ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ R/2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " gives",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 3^R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≈ 2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".58R}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " so",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " magn",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "itudes are comparable.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Anyway",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " this",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is a hard",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Diophantine/dis",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "crepancy problem",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bounding",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the number of hits",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " target",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " interval",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " by",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the sequence",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "2^E mod",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 3^Q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " E in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a window of length",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " O",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(R)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with Q ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "≈ R. The",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " doc",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " says:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " \"Full-orbit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " multiplicative order and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " LTE do not bound",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " this weighted short-or",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "bit occupation.\" That",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "'s the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " symbolic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-side",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " gap",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\nNow",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " my",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lane role: \"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Audit a cyclic-shift",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " or ballot approach,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " resolving ties, affine",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " shifts",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", even sampling",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " and odd parity;",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " isolate the first missing",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma.\"\n\nThe",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " cyclic-shift/c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ycle-lemma idea",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": For occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " times",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of a random walk",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bridge above a line",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", there",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ballot",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-type identities",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " probability",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " that a bridge",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " excursion",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " stays above a threshold",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " relates",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to cyclic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " shifts (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Dv",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "oretz",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ky–Motz",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "kin cycle",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma):",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " among",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the cyclic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " shifts of a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sequence",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " >",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 0, the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " fraction",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of shifts",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " whose",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " partial sums stay",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " positive equals",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")/",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "for integer",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " increments sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ming to positive",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "). The",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " audit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "'s",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " point (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "from LOW_STATE_OCC",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "UPATION_AUDIT",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".md): \"A",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " cycle-lemma/",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "Chung-Feller",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " mechanism is plausible,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " but three exact issues",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " remain: chord",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-centering rational",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ties;",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " affine",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bounded shift; even",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-time sampling with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " final",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " singleton.\"\n\nSo",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " my job: assess",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " whether a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " cycle-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lemma mechanism",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " can give",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the Lap",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lace estimate",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " My",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " audit conclusion",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " should",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be: the cycle",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " gives lower",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bounds on occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/ex",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "cursion structure",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for the centered",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " chord",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", but (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") the target",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " requires",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " uniform lower",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bound on the number",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q blocks weighted",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " by a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " product",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " structure",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " including",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the resonance",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exclusion",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "a non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-M",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "arkovian",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", arithmetic event",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " depending",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " on H",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j sums",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a complicated",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " way), which",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the cycle lemma does",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not touch",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "; (b)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the tie",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " conventions",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the cycle",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " weak",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " compositions with zero",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " components",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (ties",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") needs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the \"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "strict partial",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sums\" version",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " integer",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " increments with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum ≥",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 1 and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " each",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≤",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " number",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of cyclic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " shifts with all partial",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sums positive",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is ≥",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " The",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " classical Dvoret",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "zky–Mot",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "zkin: if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " increments are integers",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≤ ...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Actually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the version",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a_",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1,...,a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_n are integers with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_i ≤",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 1 and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum k",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " > 0,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " then exactly k cyclic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " shifts have all partial",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sums positive",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". For increments",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bounded by",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 1 (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "our",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " totals can",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be large,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " though bounded in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " useful",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks), the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " gives at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " least one",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " shift,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " fraction. The",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " fraction",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " version",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " needs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the increment",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " bound",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ". With affine",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " shift and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " even",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sampling, one",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " gets",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " best",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " \"",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "some",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " fraction",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of shifts have",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exc",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ursions\",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " but",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the target",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " needs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exponential",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " moments",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the count over",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " grid",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " disjoint",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks — cycle",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma controls",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " single path",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "'s occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " via",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sym",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "metries over",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " cyclic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " shifts, giving",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exact",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " identities for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " number of non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "negative paths",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", but the Lap",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lace transform of occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " counts",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " disjoint",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks conditioned",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " on S",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R=K requires",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " joint",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " distribution of the occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " across the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " grid",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " just an",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " aggregate",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " symmetry",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "So the first missing",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " my lane: a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " uniform lower bound on",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the number of good",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " i",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".e., something",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " like:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " there",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exists p",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_0 > ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0 (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "depending on η",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_0, λ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ", c) such",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " that for all",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " accessible",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "r",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",R,τ,K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "),\n\nP(N_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≥ (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1/λ +",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " o",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(1)) log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R |",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " S_R =",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≥ 1 −",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C/R,\n\nwhere",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N_R = Σ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 1_{C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q}. Or",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " first",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-moment",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/l",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ower-t",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ail control",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "[e",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{−λN",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R}] ≤ C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R requires",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ess",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "entially) P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(N_R ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "< (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R)/λ)",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≤ C/R.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " The first missing inequality",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " uniform",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lower bound on P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q holds",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for a block",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " at a fresh",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " entry) jointly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " across",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " grid,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " explicit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " control",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of the dependence",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " plus",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Di",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ophantine bound",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " on the resonance",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " hits",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " within",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " window of length O",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(R) —",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " symbolic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " gap",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " number",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "j, h",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") with j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≤ J,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ≤",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " h",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "...",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " such",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " that dist(2",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{τ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+⌊βτ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "⌋+",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1+2j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+h}/3^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "τ+2j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "+2L_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}, Z) ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "< η/9^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "L_R} is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " at most (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "say",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") a",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " fraction ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ρ_res",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " < 1 of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "j,h",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ") pairs,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " uniformly,",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R = floor(c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log R).",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Without",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " that, even",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " defining",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C_q robust",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ly fails",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ";",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " it, one",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " still needs the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lower bound.\n\nBut",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " as",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the cycles",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lane, I should",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " isolate the first missing",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma specific",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to the cyclic-shift",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " route",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ": the exact",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " statement",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of what",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " a cycle lemma",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " would need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to deliver",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " why the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ties",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/shift",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "parity can",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " resolved, then",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " show",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " remaining gap.",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Let me structure",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":\n\n1. T",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ies:",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " under",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " uniform",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " weak composition, the",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " conditioned",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " increments are exchange",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "able; the cyclic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-shift symmetry",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " group",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " acts on the R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " raw increments (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "or on",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 2J pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-block",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "s +",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " singleton",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "). With",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " zero increments (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ties at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " level",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " 0 and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " equal",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " levels",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "), the standard",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " fix",
+      "format": "unknown",
+      "index": 0
+    }
+  ],
+  "provider_attempts": [
+    {
+      "attempt_id": "glm-cycles:attempt:1",
+      "client_call_id": "cp20-xub-three-models-no-timeout-v1:directed-53f918e671c64edb9c8a73dce44dab8a:glm-cycles:v1:glm-cycles:attempt:1",
+      "started_at": "2026-09-07T20:02:01.558735+00:00",
+      "status": "INTERRUPTED",
+      "metadata": {
+        "id": "gen-1788811324-24TXt9XcJaxyxNtTIhbN",
+        "model": "z-ai/glm-5.3-flash",
+        "provider": "Relace"
+      },
+      "usage": {},
+      "error_type": "ProviderStopped"
+    }
+  ]
+}

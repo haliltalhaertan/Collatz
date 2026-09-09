@@ -1,0 +1,23 @@
+# CP20 TASK 8B3 E0 — MASTER FINDINGS
+
+\[
+\boxed{\texttt{[AUDIT CANDIDATE — LOAD-BEARING THEOREM FOUND]}}
+\]
+
+1. Endpoint recursion: `[EXACT]`, 87 distribution-level recursion/enumeration checks passed through r=10 over the full feasible |d|<=5 band.
+2. Fixed-mass bridge: `[PROVED]`, last-part kernel converges in total variation to Geom(1/alpha).
+3. Polynomial/subexponential frequency family: fixed conductor is exact nondecay; primitive \(2^{A-C}\) family is `[LEAD]` only.
+4. Bad O(1) mass subsequence: d=-5 is strongly more resonant numerically, but `[OPEN]` asymptotically.
+5. Primitive vs low conductor: qualitatively different `[EXACT/CERTIFIED NUM]`.
+6. Collision energy: raw energy exponential because |W| is exponential; excess finite fibers remain near injective in small exact data.
+7. Short intervals: `[OPEN]`; no exponential clustering found.
+8. Finite-block spectral gap: `[FAIL]` globally; high-conductor-only version `[OPEN]`.
+9. Exact obstruction: endpoint residues are always 3-adic units, forcing conductor-3 Fourier nondecay.
+10. Weakest useful surviving theorem: direct short-interval exponential upper bound, or high-conductor discrepancy strong enough to imply it after fixed conductors are separated.
+
+Constants:
+\[
+\alpha=1.584962500721156,\quad h_*=1.505643887946301,\quad \alpha-h_*=0.079318612774856.
+\]
+
+Stop rule: the universal low-conductor branch-closure theorem is load-bearing. No downstream Task-6 consequence is taken before independent audit.

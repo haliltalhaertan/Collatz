@@ -1,0 +1,1549 @@
+# Collatz Problemi Araştırma Checkpoint 4
+
+**Tarih:** 14 Ağustos 2026
+**Ana araştırma hattı:** Forever-undercritical odd-only Collatz yörüngelerinde
+
+[
+\limsup\_{k\to\infty}\frac{s\_k}{\log\_2 k}\ge\frac89
+]
+
+sonucunun güçlendirilmesi; harmonic thinness, future valuation cylinders ve least-positive-realizer problemi.
+
+---
+
+## 0. Checkpoint başlangıç noktası
+
+Odd-only Syracuse dönüşümü:
+
+# [ n\_{k+1}
+
+\frac{3n\_k+1}{2^{a\_k}},
+\qquad
+a\_k=v\_2(3n\_k+1).
+]
+
+Tanımlar:
+
+[
+A\_0=0,
+\qquad
+A\_k=\sum\_{i=0}^{k-1}a\_i,
+]
+
+[
+\alpha=\log\_2 3,
+]
+
+[
+D\_k=A\_k-k\alpha.
+]
+
+Forever-undercritical varsayımı:
+
+[
+\boxed{
+D\_k\le0
+\qquad\forall k.
+}
+]
+
+Slack:
+
+[
+\boxed{
+s\_k=\lfloor k\alpha\rfloor-A\_k.
+}
+]
+
+Böylece:
+
+[
+\boxed{
+D\_k=-s\_k-{k\alpha}.
+}
+]
+
+Checkpoint 3'te:
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2 k}
+\ge\frac89
+}
+]
+
+kanıtlanmıştı.
+
+Checkpoint 4'ün ana hedefi, herhangi bir:
+
+[
+\varepsilon>0
+]
+
+için
+
+[
+\frac89+\varepsilon
+]
+
+şeklinde unconditional bir iyileştirme elde etmekti.
+
+---
+
+# 1. Ne araştırıldı?
+
+Araştırma dört ana alt probleme indirildi:
+
+1. Future valuation cylinders'ın harmonic occupation'ı nasıl hesaplanabilir?
+2. Checkpoint 3'teki weighted (2)-adic contraction, harmonic density'ye aktarılabilir mi?
+3. Time-varying slack ceiling
+   [
+   s\_k\le B\log\_2k+O(1)
+   ]
+   altında future-cylinder measure gerçekten stretched-exponential küçülüyor mu?
+4. (8/9) bariyerinin gerçek nedeni kullanılan kaba inequality'ler mi, yoksa ordinary-integer realizability mi?
+
+Ayrıca slack-layer decomposition ve mod-(3) exclusion'ın future cylinders ile birlikte ek bir density kazancı verip vermediği araştırıldı.
+
+---
+
+# 2. Kesin olarak ne bulundu?
+
+## [EXACT] 2.1. Harmonic sum ile carry toplamı bounded-error eşdeğerdir
+
+Tanımla:
+
+# [ X\_N
+
+\sum\_{k=0}^{N-1}2^{D\_k}.
+]
+
+Checkpoint 3 identity:
+
+# [ U\_{k+1}-U\_k
+
+\frac{2^{D\_k}}{3n\_0},
+\qquad
+U\_0=1
+]
+
+olduğundan:
+
+# [ \boxed{ U\_N
+
+1+\frac{X\_N}{3n\_0}.
+}
+\tag{2.1}
+]
+
+Ayrıca:
+
+# [ U\_N
+
+\prod\_{k\<N}
+\left(
+1+\frac1{3n\_k}
+\right).
+]
+
+Dolayısıyla:
+
+# [ 3\ln U\_N
+
+\sum\_{k\<N}
+3\ln
+\left(
+1+\frac1{3n\_k}
+\right).
+]
+
+Her (t\ge0) için:
+
+[
+0
+\le
+t-\ln(1+t)
+\le
+\frac{t^2}{2}.
+]
+
+(t=1/(3n\_k)) uygulanırsa:
+
+## [ 0 \le \frac1{n\_k}
+
+3\ln
+\left(
+1+\frac1{3n\_k}
+\right)
+\le
+\frac1{6n\_k^2}.
+]
+
+Forever-undercritical yörünge injective olduğundan:
+
+# [ \sum\_k\frac1{n\_k^2} \le \sum\_{\substack{m\ge1\m\text{ odd}}} \frac1{m^2}
+
+\frac{\pi^2}{8}.
+]
+
+Sonuç:
+
+## [ \boxed{ 0 \le \sum\_{k\<N}\frac1{n\_k}
+
+3\ln U\_N
+\le
+\frac{\pi^2}{48}.
+}
+\tag{2.2}
+]
+
+Yani:
+
+# [ \boxed{ \sum\_{k\<N}\frac1{n\_k}
+
+3\ln
+\left(
+1+
+\frac1{3n\_0}
+\sum\_{k\<N}2^{D\_k}
+\right)
+\+
+O(1).
+}
+\tag{2.3}
+]
+
+Bunun önemli sonucu:
+
+[
+\sum\_{k\<N}\frac1{n\_k}
+\le
+\left(
+\frac13-\eta
+\right)\ln N+O(1)
+]
+
+ile
+
+# [ \boxed{ \sum\_{k\<N}2^{D\_k}
+
+O
+\left(
+N^{1/9-\eta/3}
+\right)
+}
+]
+
+aynı büyüme probleminin iki eşdeğer formudur.
+
+Dolayısıyla harmonic thinness problemi doğrudan:
+
+[
+\boxed{
+\sum\_{k\<N}
+2^{-s\_k-{k\alpha}}
+}
+]
+
+toplamının büyümesini sıkıştırmaya indirgenebilir.
+
+---
+
+## [EXACT] 2.2. Tek future cylinder için harmonic progression bound
+
+Bir arithmetic progression:
+
+[
+n\equiv r\pmod q,
+\qquad
+1\le r\le q
+]
+
+için:
+
+# [ S\_{q,r}(X)
+
+\sum\_{\substack{n\le X\n\equiv r\pmod q}}
+\frac1n.
+]
+
+Integral comparison ile:
+
+[
+\boxed{
+S\_{q,r}(X)
+\le
+\frac1r+
+\frac1q
+\ln\frac Xr.
+}
+\tag{2.4}
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+S\_{q,r}(X)
+\le
+\frac{\ln X}{q}
++\frac1r.
+}
+\tag{2.5}
+]
+
+Buradaki kritik boundary quantity:
+
+[
+\boxed{\frac1r}
+]
+
+oldu.
+
+Bu, yalnız modulus (q)'nun büyük olmasının harmonic occupation'ı küçültmeye yetmediğini gösterir.
+
+---
+
+## [EXACT] 2.3. Cylinder-description explosion kaldırıldı
+
+(E), modulo:
+
+[
+Q=2^M
+]
+
+üzerinde (m) adet odd residue class'ın union'ı olsun.
+
+Tanımla:
+
+[
+\delta=\mu\_2(E)=\frac mQ.
+]
+
+Orbit state'leri:
+
+[
+3\nmid n
+]
+
+koşulunu da taşıyor.
+
+CRT nedeniyle her class modulo (Q), modulo (3Q)'da üç class'a ayrılır ve bunların tam ikisi nonzero mod (3)'tür.
+
+Dolayısıyla leading density:
+
+# [ \boxed{ \frac{2m}{3Q}
+
+\frac{2\delta}{3}.
+}
+\tag{2.6}
+]
+
+Nonzero mod (3) sınıflarının least positive representatives'ları (b\_i) olsun.
+
+Hepsi (6)'ya coprime olduğundan:
+
+[
+\sum\_i\frac1{b\_i}
+\le
+1+\frac13H\_{2m-1}.
+]
+
+Böylece:
+
+[
+\boxed{
+\sum\_{\substack{n\le X\n\in E\3\nmid n}}
+\frac1n
+\le
+\frac{2\delta}{3}\ln X
+\+
+1+\frac13H\_{2m-1}.
+}
+\tag{2.7}
+]
+
+Bu nedenle Checkpoint 3'teki:
+
+[
+(C+1)^R
+]
+
+tipindeki exponential path-description boundary tamamen kaldırılabilir.
+
+Yeni hata yaklaşık:
+
+[
+\boxed{O(\log m)}
+]
+
+seviyesindedir.
+
+---
+
+## [EXACT] 2.4. Küçük (2)-adik measure tek başına küçük harmonic mass vermez
+
+Generic transfer:
+
+[
+\mu\_2(E)\ll1
+\quad\Longrightarrow\quad
+\text{harmonic occupation}\ll1
+]
+
+yanlıştır.
+
+Karşı örnek olarak:
+
+[
+Q=2^M,
+\qquad
+m\asymp Q^{1/2}
+]
+
+ve modulo (Q)'daki ilk (m) odd residue sınıfı alınabilir.
+
+Bu durumda:
+
+[
+\delta=\frac mQ\asymp Q^{-1/2}\to0.
+]
+
+Fakat:
+
+[
+X\asymp m\<Q
+]
+
+aralığında bu cylinder union küçük odd integer'ların tamamına yakınını içerebilir.
+
+Sonuçta:
+
+[
+\sum\_{\substack{n\le X\n\in E\3\nmid n}}
+\frac1n
+\asymp
+\frac13\ln X
+]
+
+olabilirken:
+
+[
+\delta\ln X\to0.
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+\text{tiny Haar measure}
+\not\Rightarrow
+\text{tiny harmonic occupation}.
+}
+\tag{2.8}
+]
+
+Bu Checkpoint 4'ün temel negatif sonucudur.
+
+Asıl eksik bilgi cylinder'ın modulus'u değil:
+
+[
+\boxed{
+\text{least positive representative'ın büyüklüğüdür.}
+}
+]
+
+---
+
+## [EXACT] 2.5. Time-varying contraction gerçekten stretched-exponential
+
+Varsayalım:
+
+[
+s\_k
+\le
+B\log\_2k+C\_0
+\qquad(k\gg1),
+]
+
+ve:
+
+[
+B<1.
+]
+
+Dyadic block:
+
+[
+K\le k<2K
+]
+
+ve future horizon:
+
+[
+R\le K
+]
+
+olsun.
+
+Future boyunca slack ceiling:
+
+# [ C\_K
+
+B\log\_2K+O(1).
+]
+
+Checkpoint 3 row-sum:
+
+# [ r\_C
+
+1-2^{-(C+1)}
+]
+
+olduğundan:
+
+[
+1-r\_{C\_K}
+\asymp
+K^{-B}.
+]
+
+Dolayısıyla:
+
+[
+r\_{C\_K}^{R}
+\le
+\exp(-cRK^{-B})
+]
+
+bazı (c>0) için.
+
+Mechanical factors ve başlangıç slack multiplicity dahil:
+
+[
+\boxed{
+\mu\_2(E\_{K,R})
+\le
+\operatorname{poly}(K,R)
+\exp(-cRK^{-B}).
+}
+\tag{2.9}
+]
+
+Özellikle:
+
+[
+R=K
+]
+
+seçilirse:
+
+[
+\boxed{
+\mu\_2(E\_{K,K})
+\le
+\exp
+\left(
+-cK^{1-B}
+\+
+O(\log K)
+\right).
+}
+\tag{2.10}
+]
+
+Yani:
+
+[
+\boxed{
+B<1
+\Longrightarrow
+\text{future valuation cylinder mass stretched-exponential çöker}.
+}
+]
+
+Bu aday mekanizma doğrudur.
+
+---
+
+# 3. Time-varying contraction neden (B<1)'i henüz çürütmüyor?
+
+Future horizon (R) için residue modulus depth yaklaşık:
+
+[
+M\asymp\alpha R.
+]
+
+Haar mass'ta anlamlı polynomial suppression üretmek için:
+
+[
+RK^{-B}\gtrsim\log K
+]
+
+gerekir.
+
+Yani:
+
+[
+R
+\gtrsim
+K^B\log K.
+]
+
+Fakat harmonic cylinder transferindeki boundary term yaklaşık:
+
+# [ O(M)
+
+O(R)
+]
+
+olur.
+
+Dolayısıyla:
+
+[
+O(K^B\log K)
+]
+
+seviyesine çıkar.
+
+Oysa harmonic thinness'te kazanmaya çalışılan büyüklük yalnız:
+
+[
+O(\log K)
+]
+
+ölçeğindedir.
+
+Tersine:
+
+[
+R=O(\log K)
+]
+
+seçilirse boundary kabul edilebilir kalır, fakat:
+
+[
+RK^{-B}\to0
+]
+
+ve cylinder contraction kaybolur.
+
+### [FAIL]
+
+Dolayısıyla:
+
+[
+\boxed{
+\text{time-varying Haar contraction}
+\+
+\text{generic Haar}\to\text{harmonic transfer}
+}
+]
+
+zinciri:
+
+[
+B<1
+]
+
+varsayımını doğrudan çürütemez.
+
+İlk gerçek obstruction:
+
+[
+\boxed{
+\text{least-positive-residue / Archimedean anti-concentration}.
+}
+]
+
+---
+
+# 4. Slack-layer decomposition
+
+Checkpoint 3'ten:
+
+[
+U\_N=O(N^{1/9}),
+]
+
+dolayısıyla:
+
+# [ X\_N
+
+# \sum\_{k\<N}2^{D\_k}
+
+O(N^{1/9}).
+]
+
+Eğer:
+
+[
+s\_k\le J,
+]
+
+ise:
+
+[
+2^{D\_k}
+
+>
+
+2^{-(J+1)}.
+]
+
+Bu nedenle:
+
+### [EXACT]
+
+# [ \boxed{ #{k\<N\:s\_k\le J}
+
+O
+\left(
+2^JN^{1/9}
+\right).
+}
+\tag{4.1}
+]
+
+Özellikle fixed layer:
+
+[
+s\_k=j
+]
+
+için:
+
+# [ #{k\<N\:s\_k=j}
+
+O\_j(N^{1/9}).
+]
+
+Bu states injective ve (6)'ya coprime olduğundan harmonic packing:
+
+[
+\boxed{
+\sum\_{\substack{k\<N\s\_k=j}}
+\frac1{n\_k}
+\le
+\frac1{27}\ln N
+\+
+O\_j(1).
+}
+\tag{4.2}
+]
+
+Bu nontrivial bir layer theorem'idir.
+
+Ancak:
+
+[
+c\_j=\frac1{27}
+]
+
+seçilirse:
+
+[
+\sum\_{j\ge0}c\_j=\infty.
+]
+
+Dolayısıyla:
+
+### [FAIL]
+
+Slack layers'i bu bound'larla bağımsız toplayarak:
+
+[
+\sum\_jc\_j<\frac13
+]
+
+elde edilemiyor.
+
+---
+
+# 5. Mod-(3) exclusion future cylinders'ı ekstra seyreltiyor mu?
+
+Bir exact future cylinder:
+
+[
+n\equiv r\pmod{2^M}
+]
+
+olsun.
+
+Çünkü:
+
+[
+\gcd(2^M,3)=1,
+]
+
+bu arithmetic progression modulo (3)'te bütün üç residue'yu eşit şekilde dolaşır.
+
+Dolayısıyla asymptotic olarak:
+
+[
+\frac13
+]
+
+multiples of (3),
+
+[
+\frac23
+]
+
+nonmultiples of (3)'dür.
+
+Sonuç:
+
+### [EXACT]
+
+[
+\boxed{
+\text{future }2\text{-adic cylinder}
+\+
+3\nmid n
+}
+]
+
+leading density seviyesinde yalnız:
+
+[
+\boxed{\frac23}
+]
+
+faktörü verir.
+
+Yeni sabit (\eta>0) buradan gelmez.
+
+---
+
+## [EXACT] Accelerated map'in image set'i
+
+Daha güçlü olarak:
+
+# [ \boxed{ S(\text{positive odd integers})
+
+{m>0:
+m\text{ odd},\ 3\nmid m}.
+}
+\tag{5.1}
+]
+
+Kanıt:
+
+Bir odd:
+
+[
+m>0,\qquad3\nmid m
+]
+
+verilsin.
+
+(a\ge1) parity'si:
+
+[
+2^am\equiv1\pmod3
+]
+
+olacak şekilde seçilebilir.
+
+Sonra:
+
+[
+n=\frac{2^am-1}{3}.
+]
+
+Bu positive odd integer'dır ve:
+
+[
+3n+1=2^am.
+]
+
+Dolayısıyla:
+
+[
+S(n)=m.
+]
+
+Bu sonuç, “yalnız current state olma” koşulunun mod-(3) exclusion dışında başka sabit density restriction üretmediğini gösterir.
+
+---
+
+# 6. [EXACT] (8/9) relaxed dinamikte tam olarak keskin
+
+Bu checkpoint'in en güçlü yapısal sonucu budur.
+
+Mechanical increments:
+
+# [ m\_k
+
+\lfloor(k+1)\alpha\rfloor-
+\lfloor k\alpha\rfloor
+\in{1,2}.
+]
+
+Çünkü:
+
+[
+3<2\alpha<4,
+]
+
+iki consecutive mechanical increment aynı anda (1) olamaz:
+
+[
+\boxed{
+m\_k=m\_{k+1}=1
+\quad\text{imkânsız}.
+}
+\tag{6.1}
+]
+
+Dolayısıyla (m\_k=2) step'leri bounded gaps ile ortaya çıkar.
+
+Her:
+
+[
+0\<B<1
+]
+
+için slack'i yalnız (m\_k=2) step'lerinde artırarak:
+
+# [ \boxed{ s\_k
+
+B\log\_2k+O(1)
+}
+\tag{6.2}
+]
+
+sağlayan infinite admissible barrier path kurulabilir.
+
+Transition:
+
+# [ a\_k
+
+m\_k+s\_k-s\_{k+1}
+]
+
+her step'te:
+
+[
+a\_k\ge1
+]
+
+kalır.
+
+Böylece:
+
+# [ D\_k
+
+-s\_k-{k\alpha}
+]
+
+ve:
+
+# [ \boxed{ 2^{D\_k}
+
+\Theta(k^{-B}).
+}
+\tag{6.3}
+]
+
+Dolayısıyla:
+
+# [ X\_N
+
+# \sum\_{k\<N}2^{D\_k}
+
+\Theta(N^{1-B}).
+\tag{6.4}
+]
+
+Şimdi integrality condition kaldırılarak gerçek pozitif başlangıç yerine real positive state sequence tanımlanabilir.
+
+[
+x\_k:=2^{D\_k},
+\qquad
+X\_k=\sum\_{j\<k}x\_j,
+]
+
+ve:
+
+# [ \widetilde n\_k
+
+\frac{3n\_0+X\_k}{3x\_k}.
+]
+
+Doğrudan cebir:
+
+# [ \boxed{ \widetilde n\_{k+1}
+
+\frac{3\widetilde n\_k+1}{2^{a\_k}}.
+}
+\tag{6.5}
+]
+
+Yani Syracuse recurrence'ın exact affine yapısı korunur; yalnız ordinary-integer realizability kaldırılmıştır.
+
+Ayrıca:
+
+[
+\widetilde n\_k=\Theta(k).
+]
+
+Ve:
+
+# [ U\_N
+
+# 1+\frac{X\_N}{3n\_0}
+
+\Theta(N^{1-B}).
+]
+
+Böylece:
+
+# [ \boxed{ \sum\_{k\<N}\frac1{\widetilde n\_k}
+
+3(1-B)\ln N
+\+
+O(1).
+}
+\tag{6.6}
+]
+
+Şimdi:
+
+[
+B=\frac89
+]
+
+seçilirse:
+
+# [ \boxed{ 3(1-B)
+
+\frac13.
+}
+]
+
+Dolayısıyla:
+
+# [ \boxed{ \sum\_{k\<N} \frac1{\widetilde n\_k}
+
+\frac13\ln N+O(1).
+}
+\tag{6.7}
+]
+
+### Sonuç
+
+[
+\boxed{
+\frac89
+}
+]
+
+yalnız kötü bir estimate'in artefact'ı değildir.
+
+Barrier geometry, slack transition ve exact affine/carry dinamiği altında, integrality kaldırıldığında (8/9) eşiği gerçekten saturate edilebilir.
+
+Bu nedenle:
+
+### [EXACT — metodolojik no-go]
+
+[
+\boxed{
+8/9\text{'u aşacak herhangi bir kanıt,
+ordinary-integer/residue realizability bilgisini
+esaslı biçimde kullanmak zorundadır.}
+}
+\tag{6.8}
+]
+
+Yalnız:
+
+- drift,
+- slack geometry,
+- (U\_k),
+- carry identity,
+- real-valued orbit growth
+
+ile (8/9)'u aşmak mümkün değildir.
+
+---
+
+# 7. Least-realizer problemi
+
+Length-(R) odd-only valuation word'ünün toplam valuation'ı:
+
+[
+H
+]
+
+olsun.
+
+Shortcut parity representation'da yaklaşık:
+
+- toplam step sayısı (H),
+- odd step sayısı (R)
+
+olduğundan ones-ratio:
+
+[
+\boxed{
+\rho=\frac RH.
+}
+]
+
+Near-critical barrier regime'de:
+
+# [ H
+
+\alpha R+o(R),
+]
+
+dolayısıyla:
+
+# [ \boxed{ \rho \to \frac1{\alpha}
+
+# \frac1{\log\_2 3}
+
+0.6309297535\ldots
+}
+\tag{7.1}
+]
+
+Rozier'in unconditional least-realizer/entropy sonuçları daha düşük ones-density bölgesinde güçlüdür; near-critical:
+
+[
+\rho\simeq0.63093
+]
+
+bölgesi tam zor frontier'a düşmektedir.
+
+Bu nedenle mevcut anti-concentration problemi klasik Collatz parity-vector/least-realizer probleminin gerçekten kritik kısmına temas etmektedir.
+
+---
+
+# 8. Exact valuation cylinder modulus hakkında not
+
+Bir finite exact valuation word'ün toplam valuation'ı:
+
+[
+H
+]
+
+ise başlangıç state'i:
+
+[
+\boxed{
+n\equiv r(w)
+\pmod{2^{H+1}}
+}
+\tag{8.1}
+]
+
+class'ına zorlanır.
+
+Örneğin:
+
+[
+a\_0=1
+]
+
+için:
+
+[
+v\_2(3n+1)=1
+\iff
+n\equiv3\pmod4.
+]
+
+Dolayısıyla modulus:
+
+[
+2^{H+1}
+]
+
+olmalıdır; yalnız (2^H) exact valuation'ı ayırmaya yetmez.
+
+Bu factor-(2) asymptotic (8/9) analizini değiştirmez fakat least-realizer tarafında exact bookkeeping için önemlidir.
+
+---
+
+# 9. Sayısal olarak ne gözlendi?
+
+Bu checkpoint'te geniş brute-force yapılmadı.
+
+Öncelik theorem düzeyindeki obstruction'ı izole etmekti.
+
+Bu nedenle yeni doğrulanmış geniş `[NUM]` sonucu rapora eklenmemektedir.
+
+---
+
+# 10. Ne başarısız oldu?
+
+## [FAIL] Generic Haar measure → harmonic density
+
+[
+\mu\_2(E)\ll1
+]
+
+tek başına:
+
+[
+\sum\_{n\in E}\frac1n
+]
+
+için güçlü upper bound vermez.
+
+Least representatives küçük kalabilir.
+
+---
+
+## [FAIL] Time-varying contraction'ı tek başına kullanmak
+
+[
+B<1
+]
+
+altında future cylinder Haar measure stretched-exponentially küçülür.
+
+Ancak cylinder depth aynı anda büyüdüğü için harmonic boundary error kazanımı yok eder.
+
+---
+
+## [FAIL] Slack layers'i bağımsız toplamak
+
+Her fixed layer için:
+
+[
+\frac1{27}\ln N
+]
+
+bound'u elde edilse de bu coefficient'lar summable değildir.
+
+---
+
+## [FAIL] Mod-(3) ile yeni leading-density gain aramak
+
+Future dyadic cylinders ile mod-(3) exclusion tam (2/3) factor verir.
+
+Daha fazla sabit-density kazanç yoktur.
+
+---
+
+# 11. Yeni lead'ler
+
+## [LEAD] Least-positive-realizer growth
+
+Near-critical/logarithmic-slack word (w\_R) için least positive realizing integer:
+
+[
+r\_R
+]
+
+olsun.
+
+Yeni hedef:
+
+[
+\boxed{
+r\_R\to\infty
+}
+]
+
+uniformly göstermek.
+
+Bu bile güçlü olabilir.
+
+Çünkü tek bir ordinary positive integer'ın infinite valuation sequence'ini realize etmesi durumunda prefix residue representatives eventually həmin integer'a stabilize olmak zorundadır.
+
+Dolayısıyla uniform divergence stabilization'la doğrudan çelişir.
+
+---
+
+## [LEAD] Polynomial least-realizer floor
+
+Daha quantitative hedef:
+
+[
+\boxed{
+r\_R\ge R^{\varepsilon(B)}
+}
+]
+
+şeklindedir.
+
+Full exponential Lower Bound Hypothesis gerekmez.
+
+Bizim (B<1) hedefimiz için polynomial bir floor bile yeterli olabilir.
+
+---
+
+## [LEAD] Harmonic-Carleson formulation
+
+Cylinder family (\mathcal C) için yalnız:
+
+[
+\sum\_{C\in\mathcal C}\mu\_2(C)
+]
+
+değil:
+
+[
+\boxed{
+\sum\_{C\in\mathcal C}
+\frac1{\rho(C)}
+}
+]
+
+kontrol edilmelidir.
+
+Burada:
+
+# [ \rho(C)
+
+\text{least positive admissible representative}.
+]
+
+Bu quantity doğrudan harmonic occupation'ın boundary kısmıdır.
+
+---
+
+# 12. Şu anda en önemli açık problem
+
+### [OPEN-A] Logarithmic-slack least-realizer theorem
+
+Bir infinite valuation path:
+
+[
+D\_k\le0
+]
+
+ve:
+
+[
+s\_k
+\le
+B\log\_2k+O(1),
+\qquad
+B<1
+]
+
+sağlasın.
+
+Prefix length (R)'nin exact residue class'ının least positive representative'ı:
+
+[
+r\_R
+]
+
+olsun.
+
+Kanıtlanması istenen en zayıf yararlı statement:
+
+[
+\boxed{
+r\_R\to\infty.
+}
+]
+
+Daha güçlü hedef:
+
+[
+\boxed{
+r\_R\ge R^{\varepsilon(B)}.
+}
+]
+
+Bu sonuç ordinary positive integer realizability'yi ortadan kaldırabilir.
+
+---
+
+# 13. (8/9) katsayısı yükseltildi mi?
+
+Hayır.
+
+Checkpoint 4 sonunda rigorous frontier hâlâ:
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2k}
+\ge
+\frac89.
+}
+]
+
+Ancak artık önemli bir metodolojik ayrım kanıtlandı:
+
+[
+\boxed{
+\text{8/9 real-relaxed dinamikte keskindir.}
+}
+]
+
+Dolayısıyla bir sonraki:
+
+[
+\frac89+\varepsilon
+]
+
+iyileştirmesi yalnız daha iyi analytic inequality ile değil, genuine integer arithmetic obstruction ile gelmek zorundadır.
+
+---
+
+# 14. Güncel minimal-counterexample dichotomy
+
+Önceki checkpoint'lerden crossing kolu:
+
+[
+\boxed{
+K\_{\mathrm{first\ crossing}}
+\ge
+72,057,431,991.
+}
+]
+
+Forever-undercritical kolu:
+
+[
+\boxed{
+D\_k\le0\quad\forall k
+}
+]
+
+ise:
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{
+\lfloor k\log\_2 3\rfloor-A\_k
+}{
+\log\_2 k
+}
+\ge
+\frac89.
+}
+]
+
+Checkpoint 4 şunu ekliyor:
+
+> Bu (8/9) katsayısını yalnız real-valued drift/carry/slack yöntemleriyle aşmak mümkün değildir; ordinary integer residue realizability devreye girmek zorundadır.
+
+Dolayısıyla güncel iki kol:
+
+[
+\boxed{
+\text{Minimal counterexample}
+\Longrightarrow
+\begin{cases}
+\text{first crossing}
+&
+K\ge72,057,431,991,
+\\[2mm]
+\text{forever undercritical}
+&
+\displaystyle
+\limsup\frac{s\_k}{\log\_2k}\ge\frac89
+\\
+&
+\text{ve integer least-realizer obstruction'ı aşmak zorunda.}
+\end{cases}
+}
+]
+
+---
+
+# 15. Bir sonraki önerilen saldırı
+
+Araştırma yönü artık daha keskin biçimde değiştirilmelidir.
+
+Checkpoint 4 sonrası düşük getirili hatlar:
+
+- row-sum constant optimizasyonu,
+- daha uzun generic future horizons,
+- salt Haar-measure küçültme,
+- yeni sabit-modulus exclusion arama.
+
+Bunlar ana obstruction'ı çözmüyor.
+
+Bir sonraki ana hedef:
+
+[
+\boxed{
+\textbf{Near-critical/logarithmic-slack valuation words için
+least positive realizer büyümesi.}
+}
+]
+
+Önerilen sıra:
+
+1. exact residue recurrence (r\_{R+1}) ile (r\_R) arasındaki binary lift'i çıkar;
+2. representative'ın değişmeden kalabileceği step'leri tam karakterize et;
+3. logarithmic-slack condition altında uzun stabilization run'larının mümkün olup olmadığını araştır;
+4. (r\_R) için önce yalnız unboundedness, ardından polynomial lower bound hedefle;
+5. bunu Sturmian/mechanical baseline'dan uzaklaşma miktarı (s\_R) ile ilişkilendir.
+
+Ana lemma hedefi:
+
+[
+\boxed{
+s\_k\le B\log\_2k+O(1),\ B<1
+\quad\Longrightarrow\quad
+r\_k\to\infty.
+}
+]
+
+Bu kanıtlanırsa:
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2k}
+\ge1
+}
+]
+
+hedefine gerçek bir yol açılır.
+
+---
+
+## Checkpoint 4 genel durumu
+
+### [EXACT]
+
+# [ \sum\_{k\<N}\frac1{n\_k}
+
+3\ln
+\left(
+1+\frac1{3n\_0}
+\sum\_{k\<N}2^{D\_k}
+\right)
++O(1).
+]
+
+### [EXACT]
+
+Time-varying logarithmic slack altında future-cylinder Haar mass stretched-exponentially küçülür.
+
+### [EXACT]
+
+Generic small Haar measure, small harmonic occupation anlamına gelmez.
+
+### [EXACT]
+
+(8/9) eşiği integrality kaldırılmış exact affine Syracuse dinamiğinde saturate edilebilir.
+
+### [FAIL]
+
+Salt drift/slack/carry yöntemleriyle (8/9)'u aşma.
+
+### [OPEN]
+
+Near-critical valuation cylinders'ın least positive representatives'ları için deterministic growth theorem.
+
+**Araştırma durumu:** Aktif.
+**Mevcut rigorous slack frontier:** (8/9).
+**Bir sonraki checkpoint'in ana hedefi:** logarithmic-slack prefix residue'larında least-realizer stabilization'ı yasaklamak.

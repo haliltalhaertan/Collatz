@@ -1,0 +1,7 @@
+{
+  "status": "STOPPED",
+  "lane_id": "hy4-refutation",
+  "role": "Adversarially seek an actual accessible counterexample or a necessary condition that could fail. Verify quantifiers; arbitrary endpoints are inadmissible.",
+  "claim_results": [],
+  "first_missing_step": "User stop"
+}

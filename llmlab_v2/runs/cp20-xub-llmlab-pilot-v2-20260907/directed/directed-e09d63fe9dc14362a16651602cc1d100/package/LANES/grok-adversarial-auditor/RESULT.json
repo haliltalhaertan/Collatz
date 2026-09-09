@@ -1,0 +1,7 @@
+{
+  "status": "BLOCKED_DEPENDENCY",
+  "lane_id": "grok-adversarial-auditor",
+  "role": "IndependentAuditor",
+  "claim_results": [],
+  "first_missing_step": "Dependency did not complete"
+}

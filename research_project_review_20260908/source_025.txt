@@ -1,0 +1,10 @@
+COLLATZ ARCHIVE — CP12 AUDIT 01 SOURCE STATUS
+Date archived: 2026-08-15
+
+The first Checkpoint 12 adversarial audit was pasted in the project conversation and its scientific conclusions are preserved in the project history/master index. No standalone canonical file for that first audit was available in the active runtime during this archival pass.
+
+Key provenance distinction:
+- CP12 Audit 02 is archived as a standalone file.
+- CP12 Audit 01 should be added byte-for-byte if a chat export or original file becomes available.
+
+Status: TRANSCRIPT SOURCE AVAILABLE; STANDALONE EXACT BYTES PENDING

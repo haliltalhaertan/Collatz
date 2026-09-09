@@ -1,0 +1,63 @@
+{
+  "previous": 54556,
+  "additional": 653,
+  "total": 55209,
+  "remaining": 10327,
+  "forward_depth": 16,
+  "u_max": 4,
+  "v_max": 4,
+  "w_max": 4,
+  "compressed_witness_count": 275,
+  "examples": [
+    {
+      "depth": 8,
+      "k_residue": 3,
+      "j": 8,
+      "u": 1,
+      "v": 4,
+      "w": 1,
+      "target_a": 5184,
+      "target_b": 74
+    },
+    {
+      "depth": 8,
+      "k_residue": 115,
+      "j": 8,
+      "u": 1,
+      "v": 2,
+      "w": 3,
+      "target_a": 1728,
+      "target_b": 776
+    },
+    {
+      "depth": 9,
+      "k_residue": 87,
+      "j": 9,
+      "u": 1,
+      "v": 3,
+      "w": 2,
+      "target_a": 5184,
+      "target_b": 884
+    },
+    {
+      "depth": 9,
+      "k_residue": 192,
+      "j": 9,
+      "u": 3,
+      "v": 3,
+      "w": 2,
+      "target_a": 6912,
+      "target_b": 2612
+    },
+    {
+      "depth": 9,
+      "k_residue": 291,
+      "j": 9,
+      "u": 3,
+      "v": 1,
+      "w": 1,
+      "target_a": 2592,
+      "target_b": 1478
+    }
+  ]
+}

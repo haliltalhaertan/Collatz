@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "task_id": "cp20-xub-luna-five-routes-v1",
+  "run_id": "directed-aa54128adc00474fbfeac6e7ccca2719",
+  "lane_id": "luna-cycles",
+  "role": "Audit a cyclic-shift or ballot approach, resolving ties, affine shifts, even sampling and odd parity; isolate the first missing lemma.",
+  "model": "openai/gpt-5.6-luna",
+  "reasoning_effort": "high",
+  "step_id": "cp20-xub-luna-five-routes-v1:directed-aa54128adc00474fbfeac6e7ccca2719:luna-cycles:v1",
+  "provider_attempts": [
+    {
+      "attempt_id": "luna-cycles:attempt:1",
+      "client_call_id": "cp20-xub-luna-five-routes-v1:directed-aa54128adc00474fbfeac6e7ccca2719:luna-cycles:v1:luna-cycles:attempt:1",
+      "started_at": "2026-09-07T19:02:43.618227+00:00",
+      "status": "RETURNED",
+      "metadata": {
+        "id": "gen-1788807766-oj5vCwKcVtKY3J8ebTXp",
+        "model": "openai/gpt-5.6-luna",
+        "provider": "OpenAI"
+      },
+      "usage": {
+        "prompt_tokens": 4675,
+        "completion_tokens": 3853,
+        "reasoning_tokens": 3106,
+        "cached_tokens": 0,
+        "cost_usd": 0.0057922
+      }
+    }
+  ],
+  "status": "COMPLETED",
+  "public_findings": "['The cyclic/ballot route does not currently prove the claim. For an even suffix R=2J, write a=1-{beta tau}, H_j=sum_{i<=j}B_i, and d=K-2 beta J. Centering by the actual endpoint gives u_j=H_j-jK/J and the exact identity log_2 z_j=a+u_j+(j d/J). Thus the low/non-low test is a first-passage test for a rational-lattice bridge against the tilted affine barrier log_2(eta)-a-jd/J, not against a fixed zero barrier.', 'A pair-total cyclic shift preserves the even-suffix weight: under the uniform raw weak-composition law, P((B_1,...,B_J)=b | sum B_i=K) is proportional to product_i(b_i+1). Hence exchangeability and rotation invariance are available in the even case. They do not by themselves give an occupation count, because the barrier contains the phase a and the slope jd/J. Since d is only bounded, the cumulative tilt is O(1), comparable with the barrier, and cannot be discarded. Centered ties also occur on the 1/J lattice; strict versus non-strict crossings and zero/near-zero visits require an explicit uniform estimate.', 'Raw-coordinate cyclic arguments do not automatically repair even-time sampling. Pairing changes the increment law to the weighted law above, while an odd suffix has a distinguished singleton: conditional on its value s, the pair total is K-s, and one must sum uniformly over s with the corresponding weight. No displayed reduction supplies a parity-preserving cyclic lemma with these affine and boundary conventions.', 'The beta-binomial marginal formula, even if used, controls one time only and cannot imply the needed exponential lower-tail bound for occupation. The exact resonance coefficient formula likewise is only a finite counting identity and supplies no bound excluding resonant useful blocks.']",
+  "claim_results": [
+    {
+      "claim_id": "XUB-MARKED-OCC",
+      "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+      "status": "OPEN",
+      "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+      "assumptions": [
+        "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+        "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+        "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+        "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+        "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+        "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+      ],
+      "first_missing_step": {
+        "lemma": "Before adding bounded-positive and nonresonance marks, prove the following strictly narrower, parity-correct bridge estimate. For fixed eta>0 and lambda>0, uniformly over all sufficiently large actual R=2J+epsilon, epsilon in {0,1}, all admissible K,tau, and the induced weak-composition law (including the singleton summation when epsilon=1), with a=1-{beta tau}, establish E[exp(-lambda M_{J,epsilon}) | S_R=K and the stipulated exact data] <= C/J, where M_{J,epsilon}=#{1<=j<=J: a+H_j-2 beta j >= log_2 eta}.",
+        "why_first": "This is the unmarked occupation estimate needed before one can control the number of blocks that are simultaneously non-low, bounded-positive, and nonresonant. It is strictly narrower than the target because it ignores block grouping, the positive alphabet restriction, and resonance deletion.",
+        "what_is_missing": "A proof must explicitly handle the rational ties in u_j, the bounded affine phase and endpoint tilt, the even-time sampling, and the odd singleton. No supplied identity establishes this uniform Laplace inequality."
+      },
+      "evidence_files": [
+        "EVIDENCE.json"
+      ]
+    }
+  ],
+  "scope_compliance": {
+    "scope_changed": false,
+    "undeclared_tools_used": false,
+    "undeclared_inputs_used": false,
+    "budget_exceeded": false
+  },
+  "usage": {
+    "prompt_tokens": 4675,
+    "completion_tokens": 3853,
+    "reasoning_tokens": 3106,
+    "cached_tokens": 0,
+    "cost_usd": 0.0057922,
+    "wall_seconds": 287.82000269999844
+  },
+  "integrity_issues": [
+    "INVALID_CLAIM_STATUS"
+  ],
+  "independence_level": "ISOLATED_INPUTS_SHARED_COORDINATOR",
+  "unexpected_findings": [
+    {
+      "type": "ESCALATION_CANDIDATE",
+      "statement": "The cyclic symmetry that survives is weighted pair-block symmetry, not uniform composition symmetry of the centered pair increments; treating the latter as an ordinary zero-drift ballot bridge would be an additional unproved step.",
+      "action_taken": "RECORDED_ONLY",
+      "new_task_started": false,
+      "additional_budget_spent": 0
+    }
+  ],
+  "first_missing_step": {
+    "lemma": "Before adding bounded-positive and nonresonance marks, prove the following strictly narrower, parity-correct bridge estimate. For fixed eta>0 and lambda>0, uniformly over all sufficiently large actual R=2J+epsilon, epsilon in {0,1}, all admissible K,tau, and the induced weak-composition law (including the singleton summation when epsilon=1), with a=1-{beta tau}, establish E[exp(-lambda M_{J,epsilon}) | S_R=K and the stipulated exact data] <= C/J, where M_{J,epsilon}=#{1<=j<=J: a+H_j-2 beta j >= log_2 eta}.",
+    "why_first": "This is the unmarked occupation estimate needed before one can control the number of blocks that are simultaneously non-low, bounded-positive, and nonresonant. It is strictly narrower than the target because it ignores block grouping, the positive alphabet restriction, and resonance deletion.",
+    "what_is_missing": "A proof must explicitly handle the rational ties in u_j, the bounded affine phase and endpoint tilt, the even-time sampling, and the odd singleton. No supplied identity establishes this uniform Laplace inequality."
+  },
+  "output_hash_scope": "canonical JSON excluding output_sha256",
+  "output_sha256": "06e49986a4707570b921677922c4293f14e2a40c5b0fe71553a7260bf8cc6a85"
+}

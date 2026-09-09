@@ -1,0 +1,4145 @@
+{
+  "status": "PARTIAL_PROVIDER_VISIBLE",
+  "step_id": "cp20-xub-deepseek-five-routes-v1:directed-7d7d0ee20bab478b973565c4b9ad95ae:deepseek-cycles:v1",
+  "content": "",
+  "reasoning": "We need answer execute frozen task. Need produce JSON with findings, claim_status, first_missing_step, unexpected_findings. We must audit cyclic-shift/ballot approach, resolving ties, affine shift, even sampling, odd parity; isolate first missing lemma. We have inputs untrusted evidence. Need not choose research route, create tasks, change claim/scope, call tools. Need report OPEN if main estimate cannot be established, stop attempted proof and explicitly report OPEN with first missing inequality, quantifiers, why displayed reductions don't prove it. We are lane deepseek-cycles. Need provide concise inspectable final answer at most 800 words in findings. Need include checkable math.\n\nWe need reason about primary claim: For fixed eta, lambda, B0, disjoint block grid with L_R=floor(c log R) below symbolic-supply threshold, constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda sum_{q in Q_R} 1_{C_q}) | S_R=K and exact first-passage data] <= C/R. We need audit cyclic-shift or ballot approach. Need determine if can prove or refute? Likely open. Need identify first missing lemma strictly narrower than target.\n\nWe need parse. We have weak compositions Y_i nonnegative sum K. Pair totals B_j. States z_j. C_q event: block q has all pair totals in {1..B0}, entry state not low, and does not satisfy exact positive amplified-resonance. Need exponential moment of count of C_q blocks <= C/R. Equivalent perhaps need enough non-C? Actually if sum indicators. Exponential moment <= C/R is strong: means expected count maybe O(1)? Wait exp(-lambda N) <= C/R. For small lambda, this implies P(N=0) roughly? Chebyshev? Since exp(-lambda N) >= exp(-lambda M) 1_{N<=M}? To be <= C/R means very likely N large? Actually if N=0, exp(0)=1, impossible unless R<=C. Thus target implies P(N=0) <= C/R. Since exp(-lambda sum) <= C/R implies for any threshold t, P(N <= t) <= e^{lambda t} C/R. So with high probability there are many C_q blocks. They want sufficient weighted occupation of C_q blocks. Number of blocks ~ R/L_R ~ R/log R. Need show many C_q. Exponential moment small if N is large at least c R/log R? Wait exp(-lambda N). If N ~ R/L_R, exp(-lambda R/log R) super small, so target easy if N typically large. But need conditioned maybe N could be low. Claim C/R is very small vs exp(-lambda R/L) if N large; actually for N>=1, exp(-lambda) constant, not C/R. Wait if N always at least 1, exp(-lambda N) <= e^{-lambda} not O(1/R). The target <= C/R requires E[e^{-lambda N}] tends to 0 like 1/R. That means with high probability N is large growing? Since exp(-lambda N) <= C/R implies N >= (1/lambda) log(R/C). So need at least ~ log R C_q blocks with high probability. Not R",
+  "reasoning_details": [
+    {
+      "type": "reasoning.text",
+      "text": "We",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " answer",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " execute",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " frozen",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " task",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " produce",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " JSON",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " findings",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " claim",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_status",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " first",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_m",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "issing",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_step",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " unexpected",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_f",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ind",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ings",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " We",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " must",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " audit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " cyclic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-sh",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ift",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ball",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ot",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " approach",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " resolving",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ties",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " affine",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " shift",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " even",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sampling",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " odd",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " parity",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ";",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " isolate",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " first",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " missing",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " We",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " have",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " inputs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " unt",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "rusted",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " evidence",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " choose",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " research",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " route",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " create",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " tasks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " change",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " claim",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "scope",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " call",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " tools",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " report",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " OPEN",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " main",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " estimate",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " cannot",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " established",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " stop",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " attempted",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " proof",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " explicitly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " report",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " OPEN",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " first",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " missing",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " inequality",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " quant",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ifiers",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " why",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " displayed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " reductions",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " don",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "'t",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " prove",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " it",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " We",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lane",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " deep",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "seek",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "cycles",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " provide",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " concise",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " inspect",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "able",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " final",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " answer",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " most",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "800",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " words",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " findings",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " include",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " check",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "able",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " math",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "We",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " reason",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " about",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " primary",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " claim",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " For",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " fixed",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " eta",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " disjoint",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " block",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " grid",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "floor",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " below",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " symbolic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-supp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " threshold",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " constant",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " such",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " that",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " every",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sufficiently",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " large",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " actual",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " accessible",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " suffix",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " array",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " satisfies",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "[",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "})",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " |",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " S",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exact",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " first",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-pass",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "age",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " data",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "]",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " We",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " audit",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " cyclic",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-sh",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ift",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " or",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ballot",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " approach",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " determine",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " can",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " prove",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " or",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ref",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ute",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Lik",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ely",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " open",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " identify",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " first",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " missing",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lemma",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " strictly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " narrower",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " than",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " target",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".\n\n",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "We",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " parse",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " We",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " have",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " weak",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " compositions",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Y",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_i",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "negative",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " K",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " totals",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " States",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " z",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_j",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " event",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " block",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " has",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " all",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " pair",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " totals",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " in",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " {",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "..",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "B",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "},",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " entry",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " state",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " and",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " does",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " satisfy",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exact",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " positive",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " amplified",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-res",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "on",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ance",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exponential",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " moment",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " count",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Equivalent",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " perhaps",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " enough",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " non",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "-C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Actually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " indicators",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Exponential",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " moment",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " strong",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ":",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " means",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " expected",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " count",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " maybe",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " O",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Wait",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " For",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " small",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " this",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " implies",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " roughly",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Che",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "bys",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "hev",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Since",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " >=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " M",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "<=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "M",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " To",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " means",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " very",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " likely",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " large",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Actually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " impossible",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " unless",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "<=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Thus",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " target",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " implies",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Since",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sum",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " implies",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " any",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " threshold",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " t",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " P",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " t",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " e",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " t",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " So",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " high",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " probability",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " there",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " are",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " many",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " They",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " want",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " sufficient",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " weighted",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " occupation",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Number",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " of",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " show",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " many",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Exponential",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " moment",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " small",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " large",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " least",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " c",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Wait",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ").",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " If",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " super",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " small",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " so",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " target",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " easy",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " typically",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " large",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " But",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " conditioned",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " maybe",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " could",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " be",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " low",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Claim",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " very",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " small",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " vs",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/L",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " large",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ";",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " actually",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " for",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ">=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " constant",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Wait",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " if",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " always",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " least",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ",",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " e",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " O",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ").",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " The",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " target",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " requires",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " E",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "[e",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "^{-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "}]",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " tends",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " to",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "0",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " like",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " That",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " means",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " high",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " probability",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " is",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " large",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " growing",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "?",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Since",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " exp",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(-",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "lambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " <=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " implies",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " N",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " >=",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " (",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "1",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/l",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "ambda",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ")",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "(R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "/C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ").",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " So",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " need",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " at",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " least",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " ~",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " log",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " C",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": "_q",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " blocks",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " with",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " high",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " probability",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": ".",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " Not",
+      "format": "unknown",
+      "index": 0
+    },
+    {
+      "type": "reasoning.text",
+      "text": " R",
+      "format": "unknown",
+      "index": 0
+    }
+  ],
+  "provider_attempts": [
+    {
+      "attempt_id": "deepseek-cycles:attempt:1",
+      "client_call_id": "cp20-xub-deepseek-five-routes-v1:directed-7d7d0ee20bab478b973565c4b9ad95ae:deepseek-cycles:v1:deepseek-cycles:attempt:1",
+      "started_at": "2026-09-07T19:15:38.017742+00:00",
+      "status": "INTERRUPTED",
+      "metadata": {
+        "id": "gen-1788808541-q2NHFEZtmgxrMU313IlD",
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "Sail Research"
+      },
+      "usage": {},
+      "error_type": "ProviderStopped"
+    }
+  ]
+}

@@ -1,0 +1,4412 @@
+{
+  "status": "PASS",
+  "cases": 42,
+  "source_sha256": "12b464b10e060bd95c9e013caaaad23771baa19ef9cac08ad9af4680aff033a3",
+  "imported_code_sha256": "3c1e648089d942d7e62bf27029b4f83875c9341d16f21bee2c4c74615776fe10",
+  "rows": [
+    {
+      "r": 4,
+      "A": 5,
+      "b": 0.8,
+      "L": 9,
+      "j": 2,
+      "k": 2,
+      "N": 4,
+      "Q": 0,
+      "bounds": [
+        4,
+        0,
+        0
+      ],
+      "rejected_nonunit_demands": 2,
+      "terms": [
+        {
+          "R": 2,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            2,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "r": 4,
+      "A": 5,
+      "b": 1.2,
+      "L": 27,
+      "j": 1,
+      "k": 3,
+      "N": 4,
+      "Q": 2,
+      "bounds": [
+        2,
+        2,
+        2
+      ],
+      "rejected_nonunit_demands": 1,
+      "terms": [
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "Q": 1,
+          "bounds": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 1,
+          "bounds": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "r": 4,
+      "A": 6,
+      "b": 0.8,
+      "L": 9,
+      "j": 2,
+      "k": 2,
+      "N": 10,
+      "Q": 0,
+      "bounds": [
+        6,
+        1,
+        0
+      ],
+      "rejected_nonunit_demands": 3,
+      "terms": [
+        {
+          "R": 2,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            1,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            2,
+            1,
+            0
+          ]
+        },
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            2,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            2,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "r": 4,
+      "A": 6,
+      "b": 1.2,
+      "L": 27,
+      "j": 1,
+      "k": 3,
+      "N": 10,
+      "Q": 4,
+      "bounds": [
+        6,
+        4,
+        4
+      ],
+      "rejected_nonunit_demands": 1,
+      "terms": [
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 1,
+          "bounds": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            3,
+            3
+          ],
+          "Q": 3,
+          "bounds": [
+            4,
+            3,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "r": 4,
+      "A": 7,
+      "b": 0.8,
+      "L": 9,
+      "j": 2,
+      "k": 2,
+      "N": 20,
+      "Q": 3,
+      "bounds": [
+        10,
+        5,
+        3
+      ],
+      "rejected_nonunit_demands": 4,
+      "terms": [
+        {
+          "R": 2,
+          "prefix_class_counts": [
+            0,
+            2,
+            2
+          ],
+          "demand_class_counts": [
+            1,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            0
+          ],
+          "Q": 1,
+          "bounds": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            2,
+            0
+          ],
+          "Q": 1,
+          "bounds": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            2
+          ],
+          "Q": 1,
+          "bounds": [
+            2,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "r": 4,
+      "A": 7,
+      "b": 1.2,
+      "L": 27,
+      "j": 1,
+      "k": 3,
+      "N": 20,
+      "Q": 9,
+      "bounds": [
+        10,
+        9,
+        9
+      ],
+      "rejected_nonunit_demands": 4,
+      "terms": [
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "Q": 1,
+          "bounds": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 1,
+          "bounds": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            0,
+            3,
+            3
+          ],
+          "Q": 3,
+          "bounds": [
+            4,
+            3,
+            3
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            3,
+            3,
+            4
+          ],
+          "Q": 4,
+          "bounds": [
+            4,
+            4,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "r": 5,
+      "A": 6,
+      "b": 0.8,
+      "L": 16,
+      "j": 2,
+      "k": 3,
+      "N": 5,
+      "Q": 0,
+      "bounds": [
+        1,
+        0,
+        0
+      ],
+      "rejected_nonunit_demands": 0,
+      "terms": [
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "r": 5,
+      "A": 6,
+      "b": 1.2,
+      "L": 64,
+      "j": 1,
+      "k": 4,
+      "N": 5,
+      "Q": 0,
+      "bounds": [
+        3,
+        0,
+        0
+      ],
+      "rejected_nonunit_demands": 2,
+      "terms": [
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            3,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "r": 5,
+      "A": 7,
+      "b": 0.8,
+      "L": 16,
+      "j": 2,
+      "k": 3,
+      "N": 15,
+      "Q": 0,
+      "bounds": [
+        4,
+        2,
+        0
+      ],
+      "rejected_nonunit_demands": 0,
+      "terms": [
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            2,
+            1,
+            0
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "Q": 0,
+          "bounds": [
+            2,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "r": 5,
+      "A": 7,
+      "b": 1.2,
+      "L": 64,
+      "j": 1,
+      "k": 4,
+      "N": 15,
+      "Q": 1,
+      "bounds": [
+        7,
+        1,
+        1
+      ],
+      "rejected_nonunit_demands": 5,
+      "terms": [
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            0
+          ],
+          "Q": 1,
+          "bounds": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            3,
+            3,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            4,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "r": 5,
+      "A": 8,
+      "b": 0.8,
+      "L": 16,
+      "j": 2,
+      "k": 3,
+      "N": 35,
+      "Q": 2,
+      "bounds": [
+        7,
+        5,
+        2
+      ],
+      "rejected_nonunit_demands": 1,
+      "terms": [
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            2,
+            2
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            2,
+            1,
+            0
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "Q": 1,
+          "bounds": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            2,
+            4
+          ],
+          "Q": 1,
+          "bounds": [
+            3,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "r": 5,
+      "A": 8,
+      "b": 1.2,
+      "L": 64,
+      "j": 1,
+      "k": 4,
+      "N": 35,
+      "Q": 6,
+      "bounds": [
+        17,
+        6,
+        6
+      ],
+      "rejected_nonunit_demands": 10,
+      "terms": [
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            3,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            3,
+            3,
+            0
+          ],
+          "Q": 3,
+          "bounds": [
+            4,
+            3,
+            3
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            5,
+            9,
+            3
+          ],
+          "Q": 3,
+          "bounds": [
+            10,
+            3,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "r": 6,
+      "A": 8,
+      "b": 0.8,
+      "L": 27,
+      "j": 3,
+      "k": 3,
+      "N": 21,
+      "Q": 0,
+      "bounds": [
+        9,
+        7,
+        1
+      ],
+      "rejected_nonunit_demands": 1,
+      "terms": [
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            2,
+            4
+          ],
+          "demand_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            3,
+            2,
+            0
+          ]
+        },
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 0,
+          "bounds": [
+            3,
+            3,
+            1
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            3,
+            3
+          ],
+          "Q": 0,
+          "bounds": [
+            3,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "r": 6,
+      "A": 8,
+      "b": 1.2,
+      "L": 147,
+      "j": 1,
+      "k": 5,
+      "N": 21,
+      "Q": 3,
+      "bounds": [
+        5,
+        3,
+        3
+      ],
+      "rejected_nonunit_demands": 3,
+      "terms": [
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            0
+          ],
+          "Q": 1,
+          "bounds": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            2
+          ],
+          "Q": 2,
+          "bounds": [
+            3,
+            2,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "r": 6,
+      "A": 9,
+      "b": 0.8,
+      "L": 27,
+      "j": 3,
+      "k": 3,
+      "N": 56,
+      "Q": 0,
+      "bounds": [
+        16,
+        13,
+        5
+      ],
+      "rejected_nonunit_demands": 4,
+      "terms": [
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            4,
+            6
+          ],
+          "demand_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            3,
+            2,
+            0
+          ]
+        },
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            2,
+            4
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 0,
+          "bounds": [
+            5,
+            4,
+            2
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            0,
+            3,
+            3
+          ],
+          "Q": 0,
+          "bounds": [
+            5,
+            5,
+            2
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            3,
+            3,
+            4
+          ],
+          "Q": 0,
+          "bounds": [
+            3,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "r": 6,
+      "A": 9,
+      "b": 1.2,
+      "L": 147,
+      "j": 1,
+      "k": 5,
+      "N": 56,
+      "Q": 5,
+      "bounds": [
+        14,
+        5,
+        5
+      ],
+      "rejected_nonunit_demands": 10,
+      "terms": [
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            2
+          ],
+          "Q": 1,
+          "bounds": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            7,
+            8,
+            4
+          ],
+          "Q": 4,
+          "bounds": [
+            9,
+            4,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "r": 6,
+      "A": 10,
+      "b": 0.8,
+      "L": 27,
+      "j": 3,
+      "k": 3,
+      "N": 126,
+      "Q": 3,
+      "bounds": [
+        26,
+        20,
+        12
+      ],
+      "rejected_nonunit_demands": 10,
+      "terms": [
+        {
+          "R": 3,
+          "prefix_class_counts": [
+            0,
+            6,
+            9
+          ],
+          "demand_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            4,
+            2,
+            1
+          ]
+        },
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            4,
+            6
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 1,
+          "bounds": [
+            6,
+            4,
+            1
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            2,
+            4
+          ],
+          "demand_class_counts": [
+            0,
+            3,
+            3
+          ],
+          "Q": 1,
+          "bounds": [
+            6,
+            6,
+            4
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            3,
+            3,
+            4
+          ],
+          "Q": 1,
+          "bounds": [
+            6,
+            5,
+            3
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            6,
+            1,
+            8
+          ],
+          "Q": 0,
+          "bounds": [
+            4,
+            3,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "r": 6,
+      "A": 10,
+      "b": 1.2,
+      "L": 147,
+      "j": 1,
+      "k": 5,
+      "N": 126,
+      "Q": 19,
+      "bounds": [
+        35,
+        19,
+        19
+      ],
+      "rejected_nonunit_demands": 28,
+      "terms": [
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            0
+          ],
+          "Q": 1,
+          "bounds": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            2
+          ],
+          "Q": 2,
+          "bounds": [
+            3,
+            2,
+            2
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            7,
+            8,
+            4
+          ],
+          "Q": 8,
+          "bounds": [
+            9,
+            8,
+            8
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            18,
+            17,
+            8
+          ],
+          "Q": 8,
+          "bounds": [
+            21,
+            8,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "r": 7,
+      "A": 10,
+      "b": 0.8,
+      "L": 48,
+      "j": 3,
+      "k": 4,
+      "N": 84,
+      "Q": 0,
+      "bounds": [
+        13,
+        6,
+        0
+      ],
+      "rejected_nonunit_demands": 8,
+      "terms": [
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            4,
+            6
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            2,
+            4
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            5,
+            2,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            3,
+            2,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            4,
+            2,
+            0
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            3,
+            9,
+            3
+          ],
+          "Q": 0,
+          "bounds": [
+            4,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "r": 7,
+      "A": 10,
+      "b": 1.2,
+      "L": 337,
+      "j": 1,
+      "k": 6,
+      "N": 84,
+      "Q": 12,
+      "bounds": [
+        14,
+        12,
+        12
+      ],
+      "rejected_nonunit_demands": 9,
+      "terms": [
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 1,
+          "bounds": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            2,
+            3,
+            4
+          ],
+          "Q": 3,
+          "bounds": [
+            5,
+            3,
+            3
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            6,
+            6,
+            8
+          ],
+          "Q": 8,
+          "bounds": [
+            8,
+            8,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "r": 7,
+      "A": 11,
+      "b": 0.8,
+      "L": 48,
+      "j": 3,
+      "k": 4,
+      "N": 210,
+      "Q": 1,
+      "bounds": [
+        24,
+        13,
+        5
+      ],
+      "rejected_nonunit_demands": 15,
+      "terms": [
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            6,
+            9
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            4,
+            6
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            6,
+            2,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            2,
+            4
+          ],
+          "demand_class_counts": [
+            3,
+            2,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            6,
+            2,
+            1
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            3,
+            9,
+            3
+          ],
+          "Q": 1,
+          "bounds": [
+            7,
+            6,
+            3
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            7,
+            9,
+            7
+          ],
+          "Q": 0,
+          "bounds": [
+            5,
+            3,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "r": 7,
+      "A": 11,
+      "b": 1.2,
+      "L": 337,
+      "j": 1,
+      "k": 6,
+      "N": 210,
+      "Q": 33,
+      "bounds": [
+        39,
+        33,
+        33
+      ],
+      "rejected_nonunit_demands": 30,
+      "terms": [
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 1,
+          "bounds": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            2,
+            3,
+            4
+          ],
+          "Q": 4,
+          "bounds": [
+            5,
+            4,
+            4
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            6,
+            6,
+            8
+          ],
+          "Q": 6,
+          "bounds": [
+            8,
+            6,
+            6
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            21,
+            14,
+            22
+          ],
+          "Q": 22,
+          "bounds": [
+            25,
+            22,
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "r": 7,
+      "A": 12,
+      "b": 0.8,
+      "L": 48,
+      "j": 3,
+      "k": 4,
+      "N": 462,
+      "Q": 4,
+      "bounds": [
+        40,
+        27,
+        16
+      ],
+      "rejected_nonunit_demands": 25,
+      "terms": [
+        {
+          "R": 4,
+          "prefix_class_counts": [
+            0,
+            9,
+            12
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            6,
+            9
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            7,
+            2,
+            1
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            4,
+            6
+          ],
+          "demand_class_counts": [
+            3,
+            2,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            7,
+            3,
+            2
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            2,
+            4
+          ],
+          "demand_class_counts": [
+            3,
+            9,
+            3
+          ],
+          "Q": 2,
+          "bounds": [
+            11,
+            9,
+            5
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            7,
+            9,
+            7
+          ],
+          "Q": 1,
+          "bounds": [
+            9,
+            8,
+            6
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            10,
+            9,
+            15
+          ],
+          "Q": 1,
+          "bounds": [
+            6,
+            5,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "r": 7,
+      "A": 12,
+      "b": 1.2,
+      "L": 337,
+      "j": 1,
+      "k": 6,
+      "N": 462,
+      "Q": 64,
+      "bounds": [
+        80,
+        64,
+        64
+      ],
+      "rejected_nonunit_demands": 70,
+      "terms": [
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 1,
+          "bounds": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            2,
+            3,
+            4
+          ],
+          "Q": 3,
+          "bounds": [
+            5,
+            3,
+            3
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            6,
+            6,
+            8
+          ],
+          "Q": 8,
+          "bounds": [
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            21,
+            14,
+            22
+          ],
+          "Q": 14,
+          "bounds": [
+            25,
+            14,
+            14
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            40,
+            35,
+            38
+          ],
+          "Q": 38,
+          "bounds": [
+            41,
+            38,
+            38
+          ]
+        }
+      ]
+    },
+    {
+      "r": 8,
+      "A": 11,
+      "b": 0.8,
+      "L": 84,
+      "j": 3,
+      "k": 5,
+      "N": 120,
+      "Q": 0,
+      "bounds": [
+        7,
+        0,
+        0
+      ],
+      "rejected_nonunit_demands": 6,
+      "terms": [
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            4,
+            6
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            2,
+            4
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            2,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            3,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            4,
+            5,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            4,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "r": 8,
+      "A": 11,
+      "b": 1.2,
+      "L": 776,
+      "j": 1,
+      "k": 7,
+      "N": 120,
+      "Q": 17,
+      "bounds": [
+        21,
+        17,
+        17
+      ],
+      "rejected_nonunit_demands": 9,
+      "terms": [
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            2,
+            4,
+            5
+          ],
+          "Q": 4,
+          "bounds": [
+            6,
+            4,
+            4
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            6,
+            10,
+            13
+          ],
+          "Q": 13,
+          "bounds": [
+            14,
+            13,
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "r": 8,
+      "A": 12,
+      "b": 0.8,
+      "L": 84,
+      "j": 3,
+      "k": 5,
+      "N": 330,
+      "Q": 0,
+      "bounds": [
+        17,
+        5,
+        1
+      ],
+      "rejected_nonunit_demands": 18,
+      "terms": [
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            6,
+            9
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            4,
+            6
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            2,
+            4
+          ],
+          "demand_class_counts": [
+            2,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            4,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            4,
+            5,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            7,
+            3,
+            0
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            12,
+            13,
+            2
+          ],
+          "Q": 0,
+          "bounds": [
+            6,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "r": 8,
+      "A": 12,
+      "b": 1.2,
+      "L": 776,
+      "j": 1,
+      "k": 7,
+      "N": 330,
+      "Q": 44,
+      "bounds": [
+        52,
+        44,
+        44
+      ],
+      "rejected_nonunit_demands": 35,
+      "terms": [
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            1,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            2,
+            4,
+            5
+          ],
+          "Q": 5,
+          "bounds": [
+            6,
+            5,
+            5
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            6,
+            10,
+            13
+          ],
+          "Q": 10,
+          "bounds": [
+            14,
+            10,
+            10
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            26,
+            19,
+            29
+          ],
+          "Q": 29,
+          "bounds": [
+            31,
+            29,
+            29
+          ]
+        }
+      ]
+    },
+    {
+      "r": 8,
+      "A": 13,
+      "b": 0.8,
+      "L": 84,
+      "j": 3,
+      "k": 5,
+      "N": 792,
+      "Q": 0,
+      "bounds": [
+        31,
+        15,
+        9
+      ],
+      "rejected_nonunit_demands": 32,
+      "terms": [
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            9,
+            12
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            6,
+            9
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            4,
+            6
+          ],
+          "demand_class_counts": [
+            2,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            5,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            2,
+            4
+          ],
+          "demand_class_counts": [
+            4,
+            5,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            9,
+            5,
+            2
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            12,
+            13,
+            2
+          ],
+          "Q": 0,
+          "bounds": [
+            10,
+            6,
+            4
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            14,
+            20,
+            12
+          ],
+          "Q": 0,
+          "bounds": [
+            7,
+            4,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "r": 8,
+      "A": 13,
+      "b": 1.2,
+      "L": 776,
+      "j": 1,
+      "k": 7,
+      "N": 792,
+      "Q": 86,
+      "bounds": [
+        111,
+        86,
+        86
+      ],
+      "rejected_nonunit_demands": 93,
+      "terms": [
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            1,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            2,
+            4,
+            5
+          ],
+          "Q": 4,
+          "bounds": [
+            6,
+            4,
+            4
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            6,
+            10,
+            13
+          ],
+          "Q": 13,
+          "bounds": [
+            14,
+            13,
+            13
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            1,
+            0
+          ],
+          "demand_class_counts": [
+            26,
+            19,
+            29
+          ],
+          "Q": 19,
+          "bounds": [
+            31,
+            19,
+            19
+          ]
+        },
+        {
+          "R": 12,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            58,
+            44,
+            50
+          ],
+          "Q": 50,
+          "bounds": [
+            59,
+            50,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "r": 9,
+      "A": 13,
+      "b": 0.8,
+      "L": 147,
+      "j": 4,
+      "k": 5,
+      "N": 495,
+      "Q": 2,
+      "bounds": [
+        30,
+        20,
+        13
+      ],
+      "rejected_nonunit_demands": 28,
+      "terms": [
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            13,
+            22
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            7,
+            13
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            6,
+            3,
+            2
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            3,
+            7
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            2
+          ],
+          "Q": 1,
+          "bounds": [
+            8,
+            6,
+            5
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            1,
+            3
+          ],
+          "demand_class_counts": [
+            7,
+            8,
+            4
+          ],
+          "Q": 1,
+          "bounds": [
+            9,
+            7,
+            4
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            18,
+            17,
+            8
+          ],
+          "Q": 0,
+          "bounds": [
+            7,
+            4,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "r": 9,
+      "A": 13,
+      "b": 1.2,
+      "L": 1782,
+      "j": 2,
+      "k": 7,
+      "N": 495,
+      "Q": 48,
+      "bounds": [
+        64,
+        57,
+        48
+      ],
+      "rejected_nonunit_demands": 84,
+      "terms": [
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            2,
+            3
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            2,
+            2
+          ],
+          "demand_class_counts": [
+            2,
+            3,
+            1
+          ],
+          "Q": 3,
+          "bounds": [
+            5,
+            4,
+            3
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            7,
+            6,
+            9
+          ],
+          "Q": 9,
+          "bounds": [
+            12,
+            12,
+            9
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            15,
+            22,
+            26
+          ],
+          "Q": 17,
+          "bounds": [
+            22,
+            21,
+            17
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            60,
+            49,
+            54
+          ],
+          "Q": 19,
+          "bounds": [
+            25,
+            20,
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "r": 9,
+      "A": 14,
+      "b": 0.8,
+      "L": 147,
+      "j": 4,
+      "k": 5,
+      "N": 1287,
+      "Q": 4,
+      "bounds": [
+        55,
+        39,
+        25
+      ],
+      "rejected_nonunit_demands": 50,
+      "terms": [
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            22,
+            34
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            13,
+            22
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            8,
+            4,
+            2
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            7,
+            13
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            2
+          ],
+          "Q": 2,
+          "bounds": [
+            10,
+            8,
+            6
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            3,
+            7
+          ],
+          "demand_class_counts": [
+            7,
+            8,
+            4
+          ],
+          "Q": 2,
+          "bounds": [
+            14,
+            11,
+            8
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            1,
+            3
+          ],
+          "demand_class_counts": [
+            18,
+            17,
+            8
+          ],
+          "Q": 0,
+          "bounds": [
+            14,
+            11,
+            7
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            22,
+            32,
+            22
+          ],
+          "Q": 0,
+          "bounds": [
+            9,
+            5,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "r": 9,
+      "A": 14,
+      "b": 1.2,
+      "L": 1782,
+      "j": 2,
+      "k": 7,
+      "N": 1287,
+      "Q": 109,
+      "bounds": [
+        155,
+        134,
+        109
+      ],
+      "rejected_nonunit_demands": 217,
+      "terms": [
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            3,
+            3
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            2,
+            3
+          ],
+          "demand_class_counts": [
+            2,
+            3,
+            1
+          ],
+          "Q": 3,
+          "bounds": [
+            6,
+            3,
+            3
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            2,
+            2
+          ],
+          "demand_class_counts": [
+            7,
+            6,
+            9
+          ],
+          "Q": 13,
+          "bounds": [
+            15,
+            14,
+            13
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            15,
+            22,
+            26
+          ],
+          "Q": 27,
+          "bounds": [
+            30,
+            29,
+            27
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            60,
+            49,
+            54
+          ],
+          "Q": 29,
+          "bounds": [
+            46,
+            40,
+            29
+          ]
+        },
+        {
+          "R": 12,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            133,
+            115,
+            126
+          ],
+          "Q": 37,
+          "bounds": [
+            58,
+            48,
+            37
+          ]
+        }
+      ]
+    },
+    {
+      "r": 9,
+      "A": 15,
+      "b": 0.8,
+      "L": 147,
+      "j": 4,
+      "k": 5,
+      "N": 3003,
+      "Q": 13,
+      "bounds": [
+        99,
+        70,
+        50
+      ],
+      "rejected_nonunit_demands": 86,
+      "terms": [
+        {
+          "R": 5,
+          "prefix_class_counts": [
+            0,
+            34,
+            50
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            22,
+            34
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            0
+          ],
+          "Q": 1,
+          "bounds": [
+            11,
+            4,
+            3
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            13,
+            22
+          ],
+          "demand_class_counts": [
+            2,
+            1,
+            2
+          ],
+          "Q": 3,
+          "bounds": [
+            13,
+            10,
+            7
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            7,
+            13
+          ],
+          "demand_class_counts": [
+            7,
+            8,
+            4
+          ],
+          "Q": 3,
+          "bounds": [
+            20,
+            15,
+            10
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            3,
+            7
+          ],
+          "demand_class_counts": [
+            18,
+            17,
+            8
+          ],
+          "Q": 2,
+          "bounds": [
+            24,
+            18,
+            13
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            1,
+            3
+          ],
+          "demand_class_counts": [
+            22,
+            32,
+            22
+          ],
+          "Q": 2,
+          "bounds": [
+            19,
+            16,
+            12
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            36,
+            48,
+            43
+          ],
+          "Q": 2,
+          "bounds": [
+            12,
+            7,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "r": 9,
+      "A": 15,
+      "b": 1.2,
+      "L": 1782,
+      "j": 2,
+      "k": 7,
+      "N": 3003,
+      "Q": 265,
+      "bounds": [
+        329,
+        302,
+        265
+      ],
+      "rejected_nonunit_demands": 455,
+      "terms": [
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            3,
+            4
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            3,
+            3
+          ],
+          "demand_class_counts": [
+            2,
+            3,
+            1
+          ],
+          "Q": 4,
+          "bounds": [
+            6,
+            4,
+            4
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            2,
+            3
+          ],
+          "demand_class_counts": [
+            7,
+            6,
+            9
+          ],
+          "Q": 12,
+          "bounds": [
+            17,
+            15,
+            12
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            2,
+            2
+          ],
+          "demand_class_counts": [
+            15,
+            22,
+            26
+          ],
+          "Q": 32,
+          "bounds": [
+            37,
+            36,
+            32
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            60,
+            49,
+            54
+          ],
+          "Q": 53,
+          "bounds": [
+            65,
+            58,
+            53
+          ]
+        },
+        {
+          "R": 12,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            133,
+            115,
+            126
+          ],
+          "Q": 87,
+          "bounds": [
+            104,
+            94,
+            87
+          ]
+        },
+        {
+          "R": 13,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            238,
+            259,
+            256
+          ],
+          "Q": 77,
+          "bounds": [
+            100,
+            95,
+            77
+          ]
+        }
+      ]
+    },
+    {
+      "r": 10,
+      "A": 14,
+      "b": 0.8,
+      "L": 256,
+      "j": 4,
+      "k": 6,
+      "N": 715,
+      "Q": 5,
+      "bounds": [
+        32,
+        28,
+        20
+      ],
+      "rejected_nonunit_demands": 22,
+      "terms": [
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            13,
+            22
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            7,
+            13
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 0,
+          "bounds": [
+            8,
+            7,
+            3
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            3,
+            7
+          ],
+          "demand_class_counts": [
+            1,
+            2,
+            4
+          ],
+          "Q": 1,
+          "bounds": [
+            9,
+            9,
+            8
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            1,
+            3
+          ],
+          "demand_class_counts": [
+            4,
+            4,
+            7
+          ],
+          "Q": 3,
+          "bounds": [
+            8,
+            7,
+            6
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            16,
+            10,
+            15
+          ],
+          "Q": 1,
+          "bounds": [
+            7,
+            5,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "r": 10,
+      "A": 14,
+      "b": 1.2,
+      "L": 4096,
+      "j": 2,
+      "k": 8,
+      "N": 715,
+      "Q": 60,
+      "bounds": [
+        79,
+        69,
+        60
+      ],
+      "rejected_nonunit_demands": 102,
+      "terms": [
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            2,
+            3
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            2,
+            2
+          ],
+          "demand_class_counts": [
+            2,
+            3,
+            1
+          ],
+          "Q": 3,
+          "bounds": [
+            5,
+            4,
+            3
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            8,
+            10,
+            7
+          ],
+          "Q": 9,
+          "bounds": [
+            14,
+            12,
+            9
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            21,
+            31,
+            28
+          ],
+          "Q": 20,
+          "bounds": [
+            26,
+            24,
+            20
+          ]
+        },
+        {
+          "R": 12,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            71,
+            68,
+            69
+          ],
+          "Q": 28,
+          "bounds": [
+            34,
+            29,
+            28
+          ]
+        }
+      ]
+    },
+    {
+      "r": 10,
+      "A": 15,
+      "b": 0.8,
+      "L": 256,
+      "j": 4,
+      "k": 6,
+      "N": 2002,
+      "Q": 10,
+      "bounds": [
+        58,
+        47,
+        36
+      ],
+      "rejected_nonunit_demands": 56,
+      "terms": [
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            22,
+            34
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            13,
+            22
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 0,
+          "bounds": [
+            10,
+            8,
+            4
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            7,
+            13
+          ],
+          "demand_class_counts": [
+            1,
+            2,
+            4
+          ],
+          "Q": 3,
+          "bounds": [
+            12,
+            11,
+            11
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            3,
+            7
+          ],
+          "demand_class_counts": [
+            4,
+            4,
+            7
+          ],
+          "Q": 5,
+          "bounds": [
+            13,
+            11,
+            11
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            1,
+            3
+          ],
+          "demand_class_counts": [
+            16,
+            10,
+            15
+          ],
+          "Q": 1,
+          "bounds": [
+            14,
+            12,
+            8
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            34,
+            27,
+            27
+          ],
+          "Q": 1,
+          "bounds": [
+            9,
+            5,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "r": 10,
+      "A": 15,
+      "b": 1.2,
+      "L": 4096,
+      "j": 2,
+      "k": 8,
+      "N": 2002,
+      "Q": 140,
+      "bounds": [
+        191,
+        162,
+        140
+      ],
+      "rejected_nonunit_demands": 279,
+      "terms": [
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            3,
+            3
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            2,
+            3
+          ],
+          "demand_class_counts": [
+            2,
+            3,
+            1
+          ],
+          "Q": 3,
+          "bounds": [
+            6,
+            3,
+            3
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            2,
+            2
+          ],
+          "demand_class_counts": [
+            8,
+            10,
+            7
+          ],
+          "Q": 13,
+          "bounds": [
+            17,
+            16,
+            13
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            21,
+            31,
+            28
+          ],
+          "Q": 31,
+          "bounds": [
+            36,
+            33,
+            31
+          ]
+        },
+        {
+          "R": 12,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            71,
+            68,
+            69
+          ],
+          "Q": 41,
+          "bounds": [
+            60,
+            58,
+            41
+          ]
+        },
+        {
+          "R": 13,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            177,
+            157,
+            152
+          ],
+          "Q": 52,
+          "bounds": [
+            72,
+            52,
+            52
+          ]
+        }
+      ]
+    },
+    {
+      "r": 10,
+      "A": 16,
+      "b": 0.8,
+      "L": 256,
+      "j": 4,
+      "k": 6,
+      "N": 5005,
+      "Q": 21,
+      "bounds": [
+        104,
+        81,
+        66
+      ],
+      "rejected_nonunit_demands": 110,
+      "terms": [
+        {
+          "R": 6,
+          "prefix_class_counts": [
+            0,
+            34,
+            50
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 7,
+          "prefix_class_counts": [
+            0,
+            22,
+            34
+          ],
+          "demand_class_counts": [
+            1,
+            1,
+            1
+          ],
+          "Q": 2,
+          "bounds": [
+            13,
+            9,
+            5
+          ]
+        },
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            13,
+            22
+          ],
+          "demand_class_counts": [
+            1,
+            2,
+            4
+          ],
+          "Q": 4,
+          "bounds": [
+            16,
+            14,
+            13
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            7,
+            13
+          ],
+          "demand_class_counts": [
+            4,
+            4,
+            7
+          ],
+          "Q": 7,
+          "bounds": [
+            18,
+            16,
+            15
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            3,
+            7
+          ],
+          "demand_class_counts": [
+            16,
+            10,
+            15
+          ],
+          "Q": 6,
+          "bounds": [
+            23,
+            18,
+            15
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            1,
+            3
+          ],
+          "demand_class_counts": [
+            34,
+            27,
+            27
+          ],
+          "Q": 1,
+          "bounds": [
+            19,
+            15,
+            12
+          ]
+        },
+        {
+          "R": 12,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            54,
+            62,
+            54
+          ],
+          "Q": 1,
+          "bounds": [
+            15,
+            9,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "r": 10,
+      "A": 16,
+      "b": 1.2,
+      "L": 4096,
+      "j": 2,
+      "k": 8,
+      "N": 5005,
+      "Q": 347,
+      "bounds": [
+        427,
+        388,
+        347
+      ],
+      "rejected_nonunit_demands": 638,
+      "terms": [
+        {
+          "R": 8,
+          "prefix_class_counts": [
+            0,
+            3,
+            4
+          ],
+          "demand_class_counts": [
+            0,
+            0,
+            0
+          ],
+          "Q": 0,
+          "bounds": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "R": 9,
+          "prefix_class_counts": [
+            0,
+            3,
+            3
+          ],
+          "demand_class_counts": [
+            2,
+            3,
+            1
+          ],
+          "Q": 4,
+          "bounds": [
+            6,
+            4,
+            4
+          ]
+        },
+        {
+          "R": 10,
+          "prefix_class_counts": [
+            0,
+            2,
+            3
+          ],
+          "demand_class_counts": [
+            8,
+            10,
+            7
+          ],
+          "Q": 12,
+          "bounds": [
+            20,
+            17,
+            12
+          ]
+        },
+        {
+          "R": 11,
+          "prefix_class_counts": [
+            0,
+            2,
+            2
+          ],
+          "demand_class_counts": [
+            21,
+            31,
+            28
+          ],
+          "Q": 39,
+          "bounds": [
+            45,
+            43,
+            39
+          ]
+        },
+        {
+          "R": 12,
+          "prefix_class_counts": [
+            0,
+            1,
+            2
+          ],
+          "demand_class_counts": [
+            71,
+            68,
+            69
+          ],
+          "Q": 78,
+          "bounds": [
+            85,
+            81,
+            78
+          ]
+        },
+        {
+          "R": 13,
+          "prefix_class_counts": [
+            0,
+            1,
+            1
+          ],
+          "demand_class_counts": [
+            177,
+            157,
+            152
+          ],
+          "Q": 103,
+          "bounds": [
+            131,
+            109,
+            103
+          ]
+        },
+        {
+          "R": 14,
+          "prefix_class_counts": [
+            0,
+            0,
+            1
+          ],
+          "demand_class_counts": [
+            359,
+            348,
+            349
+          ],
+          "Q": 111,
+          "bounds": [
+            140,
+            134,
+            111
+          ]
+        }
+      ]
+    }
+  ]
+}

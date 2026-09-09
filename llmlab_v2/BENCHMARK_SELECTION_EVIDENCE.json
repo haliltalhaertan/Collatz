@@ -1,0 +1,245 @@
+[
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "claude-fable-5-1_max",
+    "score": "0.8780487804878049",
+    "formal_accuracy": null,
+    "stderr": "0.051739520574625435",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "gpt-6-astra_none",
+    "score": "0.8292682926829268",
+    "formal_accuracy": null,
+    "stderr": "0.05949419959829497",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "gpt-6-astra_low",
+    "score": "0.8780487804878049",
+    "formal_accuracy": null,
+    "stderr": "0.051739520574625435",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "gpt-6-astra_medium",
+    "score": "0.975609756097561",
+    "formal_accuracy": null,
+    "stderr": "0.024390243902439022",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "gpt-6-astra_high",
+    "score": "0.976",
+    "formal_accuracy": null,
+    "stderr": "0.024",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "gpt-6-astra_xhigh",
+    "score": "0.976",
+    "formal_accuracy": null,
+    "stderr": "0.024",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "gpt-6-astra_max",
+    "score": "0.976",
+    "formal_accuracy": null,
+    "stderr": "0.024",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "grok-4.6_xhigh",
+    "score": "0.3170731707317073",
+    "formal_accuracy": null,
+    "stderr": "0.07357611282438223",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "qwen3.8-max_xhigh",
+    "score": "0.4634146341463415",
+    "formal_accuracy": null,
+    "stderr": "0.07884502378168105",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "claude-opus-5_max",
+    "score": "0.7317073170731707",
+    "formal_accuracy": null,
+    "stderr": "0.07005564203095158",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "gpt-5.6-sol_promax",
+    "score": "0.8048780487804879",
+    "formal_accuracy": null,
+    "stderr": "0.06265967111543964",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "gpt-5.6-sol_max",
+    "score": "0.8292682926829268",
+    "formal_accuracy": null,
+    "stderr": "0.05949419959829497",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tier_4_v2.csv",
+    "model": "claude-fable-5_max",
+    "score": "0.902",
+    "formal_accuracy": null,
+    "stderr": "0.046",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tiers_1_3_v2.csv",
+    "model": "claude-fable-5-1_max",
+    "score": "0.9017543859649123",
+    "formal_accuracy": null,
+    "stderr": "0.017662067789031757",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tiers_1_3_v2.csv",
+    "model": "gpt-6-astra_max",
+    "score": "0.9368421052631579",
+    "formal_accuracy": null,
+    "stderr": "0.014434038295343787",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tiers_1_3_v2.csv",
+    "model": "grok-4.6_xhigh",
+    "score": "0.6596491228070176",
+    "formal_accuracy": null,
+    "stderr": "0.028116467881852295",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tiers_1_3_v2.csv",
+    "model": "qwen3.8-max_xhigh",
+    "score": "0.7473684210526316",
+    "formal_accuracy": null,
+    "stderr": "0.0257841025556124",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tiers_1_3_v2.csv",
+    "model": "claude-opus-5_max",
+    "score": "0.856140350877193",
+    "formal_accuracy": null,
+    "stderr": "0.020824894575343943",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tiers_1_3_v2.csv",
+    "model": "gpt-5.6-sol_max",
+    "score": "0.8912280701754386",
+    "formal_accuracy": null,
+    "stderr": "0.018475392571140503",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "frontiermath_tiers_1_3_v2.csv",
+    "model": "claude-fable-5_max",
+    "score": "0.8701754385964913",
+    "formal_accuracy": null,
+    "stderr": "0.019944477920133024",
+    "notes": null,
+    "source": null
+  },
+  {
+    "source_csv": "proofbench_external.csv",
+    "model": "claude-fable-5-1_max",
+    "score": null,
+    "formal_accuracy": "1.0",
+    "stderr": null,
+    "notes": "",
+    "source": "https://www.vals.ai/benchmarks/proof_bench"
+  },
+  {
+    "source_csv": "proofbench_external.csv",
+    "model": "claude-opus-5_max",
+    "score": null,
+    "formal_accuracy": "0.99",
+    "stderr": null,
+    "notes": "ProofBench v1.1 re-grade (vals.ai, 2026-08-14): corrected Lean formalizations + hardened grader (rejects sorry/admit shortcuts, larger elaboration budgets). Not comparable to v1.0-era values. Updated 2026-08-18 after multi-agent verification.",
+    "source": "https://www.vals.ai/benchmarks/proof_bench"
+  },
+  {
+    "source_csv": "proofbench_external.csv",
+    "model": "gpt-6-astra_unknown",
+    "score": null,
+    "formal_accuracy": "0.99",
+    "stderr": null,
+    "notes": "",
+    "source": "https://www.vals.ai/benchmarks/proof_bench"
+  },
+  {
+    "source_csv": "proofbench_external.csv",
+    "model": "claude-fable-5_max",
+    "score": null,
+    "formal_accuracy": "0.9500000000000001",
+    "stderr": null,
+    "notes": "ProofBench v1.1 re-grade (vals.ai, 2026-08-14): corrected Lean formalizations + hardened grader (rejects sorry/admit shortcuts, larger elaboration budgets). Not comparable to v1.0-era values. Updated 2026-08-18 after multi-agent verification.",
+    "source": "https://www.vals.ai/benchmarks/proof_bench"
+  },
+  {
+    "source_csv": "proofbench_external.csv",
+    "model": "gpt-5.6-sol_max",
+    "score": null,
+    "formal_accuracy": "0.8300000000000001",
+    "stderr": null,
+    "notes": "ProofBench v1.1 re-grade (vals.ai, 2026-08-14): corrected Lean formalizations + hardened grader (rejects sorry/admit shortcuts, larger elaboration budgets). Not comparable to v1.0-era values. Updated 2026-08-18 after multi-agent verification.",
+    "source": "https://www.vals.ai/benchmarks/proof_bench"
+  },
+  {
+    "source_csv": "proofbench_external.csv",
+    "model": "qwen3.8-max_unknown",
+    "score": null,
+    "formal_accuracy": "0.58",
+    "stderr": null,
+    "notes": "",
+    "source": "https://www.vals.ai/benchmarks/proof_bench"
+  },
+  {
+    "source_csv": "proofbench_external.csv",
+    "model": "grok-4.6_unknown",
+    "score": null,
+    "formal_accuracy": "0.51",
+    "stderr": null,
+    "notes": "",
+    "source": "https://www.vals.ai/benchmarks/proof_bench"
+  }
+]

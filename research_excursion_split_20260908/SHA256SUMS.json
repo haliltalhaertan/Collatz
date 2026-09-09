@@ -1,0 +1,35 @@
+{
+  "algorithm": "SHA256",
+  "files": [
+    {
+      "path": "BUDGET.json",
+      "bytes": 200,
+      "sha256": "38366cf61b799c91bd9419ddd790ffcc481354499774cc93b3492a67d5c9729d"
+    },
+    {
+      "path": "COMPACT_AND_RESONANT_KERNELS.md",
+      "bytes": 5297,
+      "sha256": "5b72e6893091f552de909c9fc652c20f054000e0c4f36fed011aa895ffb9e423"
+    },
+    {
+      "path": "INDEPENDENT_AUDIT.md",
+      "bytes": 1361,
+      "sha256": "917dd786825fec85e728b9a92d017591df026658171bd4efe483270ecf347a45"
+    },
+    {
+      "path": "LOW_EXCURSION_ORDER.md",
+      "bytes": 3985,
+      "sha256": "df8bb948180c90d5d5031cad41e9d724045b39e514c99a2ee72bbdc1b9fb9e47"
+    },
+    {
+      "path": "NEXT_ACTION.md",
+      "bytes": 1118,
+      "sha256": "4f1ce019a25aa1ab4f9dffedcd119d33e7dbde0e917b64cbed4d6883d6d871b6"
+    },
+    {
+      "path": "REPORT_TR.md",
+      "bytes": 1957,
+      "sha256": "771db6ee5a7e6eb00b4c0506d60a34aafc5741dafa8ecc1067eb5e749b228569"
+    }
+  ]
+}

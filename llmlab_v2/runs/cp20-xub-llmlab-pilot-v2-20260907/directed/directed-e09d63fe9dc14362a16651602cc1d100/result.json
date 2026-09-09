@@ -1,0 +1,9 @@
+{
+  "task_id": "cp20-xub-marked-occupation-advisory-v2",
+  "run_id": "directed-e09d63fe9dc14362a16651602cc1d100",
+  "status": "PARTIAL",
+  "artifact_root": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_v2\\runs\\cp20-xub-llmlab-pilot-v2-20260907\\directed\\directed-e09d63fe9dc14362a16651602cc1d100",
+  "claim_ledger_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_v2\\runs\\cp20-xub-llmlab-pilot-v2-20260907\\directed\\directed-e09d63fe9dc14362a16651602cc1d100\\package\\CLAIM_LEDGER.json",
+  "package_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_v2\\runs\\cp20-xub-llmlab-pilot-v2-20260907\\directed\\directed-e09d63fe9dc14362a16651602cc1d100\\package\\COMPLETE_PACKAGE.zip",
+  "package_sha256": "4b313c8486836941994a406588591617ef7d327b3eea99f56d8497c22eb7d012"
+}

@@ -1,0 +1,104 @@
+[
+  {
+    "lane_id": "0",
+    "role": "Theorist",
+    "independence_group": "0",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [],
+    "execution": "model",
+    "model": "fake/model",
+    "reasoning_effort": null,
+    "max_completion_tokens": 128,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": null,
+    "max_tokens": null,
+    "max_cost_usd": null,
+    "max_wall_seconds": 120,
+    "input_price_per_million": 1.0,
+    "output_price_per_million": 1.0,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  },
+  {
+    "lane_id": "1",
+    "role": "Theorist",
+    "independence_group": "1",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [],
+    "execution": "model",
+    "model": "fake/model",
+    "reasoning_effort": null,
+    "max_completion_tokens": 128,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": null,
+    "max_tokens": null,
+    "max_cost_usd": null,
+    "max_wall_seconds": 120,
+    "input_price_per_million": 1.0,
+    "output_price_per_million": 1.0,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  },
+  {
+    "lane_id": "2",
+    "role": "Theorist",
+    "independence_group": "2",
+    "can_read_other_lane_outputs": true,
+    "depends_on": [
+      "0",
+      "1"
+    ],
+    "visible_inputs": [
+      "task_contract",
+      "definitions"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [],
+    "execution": "model",
+    "model": "fake/model",
+    "reasoning_effort": null,
+    "max_completion_tokens": 128,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": null,
+    "max_tokens": null,
+    "max_cost_usd": null,
+    "max_wall_seconds": 120,
+    "input_price_per_million": 1.0,
+    "output_price_per_million": 1.0,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.1",
+  "authoritative": true,
+  "task_id": "test-task",
+  "primary_claim_id": "claim",
+  "claims": [
+    {
+      "claim_id": "claim",
+      "statement": "Given identity",
+      "status": "OPEN",
+      "domain": "real x",
+      "first_missing_step": "Provider response truncated or incomplete",
+      "classification_conflict": false,
+      "semantic_binding_conflict": false,
+      "classification_rule": "RECONCILE_CLASSIFICATIONS_WITHOUT_VOTING",
+      "independence_level": "SHARED_TRUST_BASE",
+      "supporting_evidence": [
+        {
+          "lane_id": "0",
+          "lane_status": "PARTIAL",
+          "status": "OPEN",
+          "statement": "Given identity",
+          "domain": "real x",
+          "assumptions": [
+            "Declared definition"
+          ],
+          "evidence_files": [
+            "LANES/0/EVIDENCE.json",
+            "LANES/0/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        },
+        {
+          "lane_id": "1",
+          "lane_status": "TIMEOUT",
+          "status": "OPEN",
+          "statement": "Given identity",
+          "domain": "real x",
+          "assumptions": [
+            "Declared definition"
+          ],
+          "evidence_files": [
+            "LANES/1/EVIDENCE.json",
+            "LANES/1/RESULT.json"
+          ],
+          "independence_level": "SHARED_TRUST_BASE",
+          "algorithm_provenance": "ISOLATED_INPUTS_SHARED_COORDINATOR"
+        }
+      ],
+      "evidence_files": [
+        "LANES/0/EVIDENCE.json",
+        "LANES/0/RESULT.json",
+        "LANES/1/EVIDENCE.json",
+        "LANES/1/RESULT.json"
+      ],
+      "assumptions": [
+        "Declared definition"
+      ]
+    }
+  ],
+  "downstream_claims_not_established": [
+    "New research"
+  ],
+  "authority_scope": "One consolidated reporting row per claim; not an independent truth certificate",
+  "shared_trust_base": [
+    "definitions",
+    "codebase",
+    "coordinator"
+  ],
+  "mathematical_truth_verified_by_package": false
+}

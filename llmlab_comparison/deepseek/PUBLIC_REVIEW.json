@@ -1,0 +1,49 @@
+{
+  "model": "deepseek",
+  "status": "STOPPED",
+  "usage": {
+    "calls": 4,
+    "wall_seconds": 588.599799699994,
+    "provider_cost_usd": 0.0,
+    "provider_cost_complete": false,
+    "provider_cost_upper_bound_usd": 0.10959564000000001
+  },
+  "lanes": {
+    "deepseek-counting": {
+      "status": "STOPPED",
+      "usage": {
+        "wall_seconds": 588.013498299988
+      },
+      "public_chars": 0,
+      "public_findings": null,
+      "first_missing_step": "Stop at callback boundary"
+    },
+    "deepseek-cycles": {
+      "status": "STOPPED",
+      "usage": {
+        "wall_seconds": 588.1529770999914
+      },
+      "public_chars": 0,
+      "public_findings": null,
+      "first_missing_step": "Stop at callback boundary"
+    },
+    "deepseek-low-state": {
+      "status": "STOPPED",
+      "usage": {
+        "wall_seconds": 588.0740156000247
+      },
+      "public_chars": 0,
+      "public_findings": null,
+      "first_missing_step": "Stop at callback boundary"
+    },
+    "deepseek-resonance": {
+      "status": "STOPPED",
+      "usage": {
+        "wall_seconds": 587.8516238000011
+      },
+      "public_chars": 0,
+      "public_findings": null,
+      "first_missing_step": "Stop at callback boundary"
+    }
+  }
+}

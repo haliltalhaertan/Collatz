@@ -1,0 +1,11 @@
+COLLATZ ARCHIVE — CP05 SOURCE STATUS
+Date: 2026-08-15
+
+Canonical Checkpoint 5 source/result bytes were not positively located in the currently accessible runtime/File Library during this archival pass.
+
+Policy:
+- No reconstructed or inferred document is being labeled as the canonical CP05 artifact.
+- The CP05 folder is reserved so that the exact original prompt/result/audit files can be added later without changing the archive structure.
+- CP06 explicitly continues from CP05, but downstream references are not substitutes for the canonical CP05 source document.
+
+Status: SOURCE BYTES PENDING

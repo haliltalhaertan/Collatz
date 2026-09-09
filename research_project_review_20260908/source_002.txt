@@ -1,0 +1,47 @@
+# COLLATZ CP18 — MASTER CHECKPOINT
+## Reconstructed summary from the audited CP18 archive
+Updated: 2026-08-24
+
+This is a newly created archive summary. It is not claimed to be an original historical CP18 file.
+
+## Overall audit status
+CP18 BIG ZERO-TRUST AUDIT verdict: `CP18 SOUND`.
+Tasks 1–10 were accepted as valid within their stated scopes; no Side-B theorem was obtained.
+
+## Task summaries
+
+Task 1 — Exact affine cylinder / least-realizer branch
+Exact affine-cylinder structure and canonical representative results survive. Nested costs are not independent. Global least-realizer strategy is [FAIL][FROZEN][AUDITED].
+
+Task 2 — First-passage / state-local minimum
+State-local next-record minimum mechanism was falsified. Least-realizer / residue-cost branch remains dead globally and locally. [FAIL][FROZEN][AUDITED].
+
+Task 3 — First-passage entropy
+Exact infinite family gives entropy ratio 1/r along convergent/Christoffel-type structures; no uniform exponential saving. [FAIL][FROZEN][AUDITED].
+
+Task 4 — Bounded-run bridge
+Alternating low valuation prefixes show bounded one-runs and mean below alpha at finite level, but the proposed infinite bridge fails. [FAIL][FROZEN][AUDITED].
+
+Task 5 — Global occupation pressure
+Load-bearing valid result. For hypothetical positive injective infinite odd-only orbits, excess E_k=s_k-floor(log_2 k) must be elevated for logarithmic-most time. Rare giant records alone cannot carry the CP17 requirement. Does not imply ordinary-time density or local phase synchronization. [VALID][AUDITED].
+
+Task 6 — Exact 2-adic realizer
+For a fixed valuation schedule, q_r=-B_r/3^r converges in Z_2 to the unique 2-adic realizer. Low-mean periodic/eventually periodic tails are incompatible with positive ordinary realization; general nonperiodic case remains open. [VALID][AUDITED].
+
+Task 7 — Popcount route
+No independent lower bound beyond existing structure; route redundant. [FAIL/REDUNDANT][AUDITED].
+
+Task 8 — Endpoint mod 3^r route
+Redundant with earlier endpoint/congruence machinery; no new Side-B saving. [FAIL/REDUNDANT][AUDITED].
+
+Task 9 — Phase synchronization
+Strong phase-synchronization claim is false. Exact defect identities survive; both low/high-turnover abstract paths can satisfy Task-5-style global pressure. Construction A sparse-critical branch emerged. [FAIL][AUDITED].
+
+Task 10 — Nested cylinders / finite satisfiability barrier
+Nested valuation cylinders define a unique x in Z_2. Positive ordinary realization requires eventual stabilization of canonical ordinary residues. Finite satisfiability does not imply one positive infinite realizer. [VALID][AUDITED].
+
+## Frozen CP18 barrier
+Any argument using only finitely many valuation/congruence constraints cannot distinguish finite LEVEL-2 satisfiability from a positive LEVEL-3 realizer, because finite prefixes admit arithmetic-progressive integer realizers. Future work must introduce a genuinely global coherence mechanism.
+
+## Archive contents
+The CP18 Task 1–10 archive contains individual Task package ZIPs, a combined all-outputs ZIP and a file index. The independent audit archive is stored separately in `CP18_BIG_AUDIT_PACKAGE` together with the frozen CP17 input and audit documents.

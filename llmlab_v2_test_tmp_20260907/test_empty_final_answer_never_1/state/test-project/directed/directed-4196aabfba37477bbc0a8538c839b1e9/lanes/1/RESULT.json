@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "task_id": "test-task",
+  "run_id": "directed-4196aabfba37477bbc0a8538c839b1e9",
+  "lane_id": "1",
+  "role": "Theorist",
+  "model": "fake/model",
+  "reasoning_effort": null,
+  "step_id": "test-task:directed-4196aabfba37477bbc0a8538c839b1e9:1:v1",
+  "provider_attempts": [
+    {
+      "attempt_id": "1:attempt:1",
+      "client_call_id": "test-task:directed-4196aabfba37477bbc0a8538c839b1e9:1:v1:1:attempt:1",
+      "started_at": "2026-09-07T18:30:47.963322+00:00",
+      "status": "RETURNED",
+      "metadata": {},
+      "usage": {
+        "cost_usd": 0
+      }
+    }
+  ],
+  "status": "PARTIAL",
+  "public_findings": "",
+  "claim_results": [
+    {
+      "claim_id": "claim",
+      "statement": "Given identity",
+      "status": "OPEN",
+      "domain": "real x",
+      "assumptions": [
+        "Declared definition"
+      ],
+      "first_missing_step": "No final answer; reasoning is not a scientific result",
+      "evidence_files": [
+        "EVIDENCE.json"
+      ]
+    }
+  ],
+  "scope_compliance": {
+    "scope_changed": false,
+    "undeclared_tools_used": false,
+    "undeclared_inputs_used": false,
+    "budget_exceeded": false
+  },
+  "usage": {
+    "cost_usd": 0,
+    "wall_seconds": 0.04285940001136623
+  },
+  "integrity_issues": [],
+  "independence_level": "ISOLATED_INPUTS_SHARED_COORDINATOR",
+  "unexpected_findings": [],
+  "first_missing_step": "No final answer; reasoning is not a scientific result",
+  "output_hash_scope": "canonical JSON excluding output_sha256",
+  "output_sha256": "9479d555f9592fddc3aeb870a24ed6437bb921d53741c593d499ea59edb722c8"
+}

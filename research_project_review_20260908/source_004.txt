@@ -1,0 +1,69 @@
+# CP20 MASTER CHECKPOINT — TASK 6 AUDITED
+Date: 2026-08-26
+Status: CURRENT CP20 CHECKPOINT
+
+## Frozen foundations entering CP20
+CP17 remains [PROVED][FROZEN][INDEPENDENTLY AUDITED].
+CP18 remains [VALID]/[AUDITED] at its frozen branch results.
+CP19 Task 10 formally parked the critical-density high-half/cross-adic branch. That park remains binding.
+
+## CP20 Task 1
+Produced a load-bearing upper-tail/state-growth theorem and an explicit survivor architecture. After audit/repair the theorem is retained; the explicit survivor became a target for later tasks.
+
+## CP20 Tasks 2–5
+Developed two-sided shell/packing, actual-state occupation/recurrence, endpoint/3-adic coherence, and sheet-activation/zero-sheet mechanisms.
+Several routes remained [LEAD] or [BARRIER]. Task 4 has missing separate artifacts and is not to be used as a load-bearing dependency without reconstruction/audit.
+
+## CP20 Task 6 — FINAL
+Independent resupply audit verdict:
+[PROOF VALID WITH WORDING REPAIR]
+[ARTIFACT INTEGRITY PASS]
+[CP19 PARK NOT VIOLATED]
+
+Frozen theorem:
+If a positive odd-only Syracuse orbit satisfies
+s_k=kappa log_2 k+O(1), kappa>1,
+then its valuation word must satisfy
+liminf log_2 p_a(r)/r >= alpha/kappa,
+alpha=log_2 3.
+
+Zero-critical B=3 class:
+1<kappa<alpha is impossible.
+
+Explicit CP20 controller:
+the audited structural description gives p_a(r)=O(r^2), hence factor entropy 0.
+Therefore the explicit kappa=1.053 controller is excluded as a positive ordinary LEVEL-3 realizer, and the same polynomial-complexity controller architecture cannot realize any kappa>1 under the audited hypotheses.
+
+Important repair:
+The generic bounded-alphabet corollary is sharp/vacuous from B=4 onward because
+log_2(B-1)=alpha exactly at B=4.
+
+## Current frontier
+The cheapest surviving escape is now B=4 zero-critical bounded valuation.
+
+Other live escapes:
+- critical sites a_k=g_k;
+- unbounded valuations;
+- violation of the critical-log discrepancy law.
+
+## Strategic next target
+CP20 Task 7 should attack B=4 using the discrepancy-balance constraint, not the already-exhausted raw alphabet count.
+
+For B=4 and zero-criticality:
+- if g=1, allowed defect d=g-a is {-1,-2,-3};
+- if g=2, allowed defect d is {+1,-1,-2}.
+Because s_{u+r}-s_u=O(1) on the theorem's u>=r counting windows, admissible words must have nearly zero total defect. This is expected to impose a strict weighted-pressure entropy loss.
+
+Candidate pressure to independently derive/falsify:
+h4 = inf_lambda [
+ (2-alpha) log_2(e^{-lambda}+e^{-2lambda}+e^{-3lambda})
+ +(alpha-1) log_2(e^{lambda}+e^{-lambda}+e^{-2lambda})
+].
+Preliminary calculation: h4 about 0.5619007341, giving a possible contradiction threshold
+kappa < alpha/h4 about 2.8207161949.
+These numbers are [LEAD], not frozen mathematics, until Task 7 independently proves or falsifies them.
+
+## Research status
+Collatz remains open.
+No LEVEL-1 theorem is claimed.
+Task 6 is now safe for downstream use subject to the wording repairs recorded in CP20_TASK6_FINAL_FREEZE_DECISION_2026-08-26.

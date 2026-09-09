@@ -1,0 +1,25 @@
+{
+  "retrieved_at": "2026-09-07T18:44:18.864126+00:00",
+  "operation": "GET existing generation metadata; no model dispatch",
+  "generation_id": "gen-1788806006-KxZYzE7NRMPw25D5cQp1",
+  "status": "FOUND",
+  "data": {
+    "id": "gen-1788806006-KxZYzE7NRMPw25D5cQp1",
+    "model": "qwen/qwen3.8-max-20260902",
+    "provider_name": "Alibaba",
+    "total_cost": 0.0528,
+    "usage": 0.0528,
+    "tokens_prompt": 4071,
+    "tokens_completion": 7007,
+    "native_tokens_prompt": 4701,
+    "native_tokens_completion": 7233,
+    "native_tokens_reasoning": 5364,
+    "finish_reason": "stop",
+    "native_finish_reason": "stop",
+    "generation_time": 163970,
+    "latency": 1077,
+    "streamed": true,
+    "cancelled": false,
+    "created_at": "2026-09-07T18:33:25.95Z"
+  }
+}

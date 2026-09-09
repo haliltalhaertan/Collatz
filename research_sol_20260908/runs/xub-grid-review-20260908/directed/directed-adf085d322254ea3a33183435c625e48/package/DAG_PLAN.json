@@ -1,0 +1,101 @@
+[
+  {
+    "lane_id": "rank",
+    "role": "For any real increments x1,...,xn of total zero whose partial sums s0,...,s_(n-1) are all distinct, prove the exact distribution over n cyclic rotations of N=#{1<=j<=n: rotated partial sum >=0}. Then derive the rotation-average exp(-lambda N). Explain ties and why grouping an exchangeable composition bridge into equal coarse blocks could create a log(R)/R scale. Do not assert an actual-array refutation.",
+    "independence_group": "rank",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [],
+    "execution": "model",
+    "model": "openai/gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "max_completion_tokens": 3500,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 20000,
+    "max_cost_usd": 0.08,
+    "max_wall_seconds": 0,
+    "input_price_per_million": 2.0,
+    "output_price_per_million": 10.0,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  },
+  {
+    "lane_id": "grid",
+    "role": "Audit this potential obstruction in the actual endpoint-only weak-composition law: L~c log R and entries every 2L raw times; coarse bridge has n~R/(2L) points. Does the chance of all coarse entries except time zero lying below the fixed low threshold scale as 1/n, forcing E exp(-lambda N_C) >= const L/R? Give a rigorous derivation if possible, otherwise identify exactly the uniform ballot estimate missing. Account for negative O(1) endpoint drift, O(1) threshold, ties, remainder, and variable z0. Do not replace missing estimates by Brownian intuition.",
+    "independence_group": "grid",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [],
+    "execution": "model",
+    "model": "openai/gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "max_completion_tokens": 3500,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 20000,
+    "max_cost_usd": 0.08,
+    "max_wall_seconds": 0,
+    "input_price_per_million": 2.0,
+    "output_price_per_million": 10.0,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  },
+  {
+    "lane_id": "logic",
+    "role": "Audit the logical assertion that marked-block Laplace upper bound E exp(-lambda N_C)<=C/R is EQUIVALENT to an absolute normalized complex suffix-kernel bound |E product A_j|<=C/R, when each |A_j|<=1 and every disjoint C block guarantees product of moduli <=exp(-lambda). Derive the valid direction, and a concrete counterexample to the converse as a general implication. Explain what refuting the Laplace sufficient bound would and would not establish about the complex kernel and the Collatz route.",
+    "independence_group": "logic",
+    "can_read_other_lane_outputs": false,
+    "depends_on": [],
+    "visible_inputs": [
+      "task_contract",
+      "definitions"
+    ],
+    "hidden_inputs": [
+      "producer_hidden_reasoning",
+      "producer_system_prompt",
+      "other_auditor_output"
+    ],
+    "input_paths": [],
+    "execution": "model",
+    "model": "openai/gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "max_completion_tokens": 3500,
+    "max_reasoning_tokens": null,
+    "min_final_answer_tokens": 0,
+    "max_calls": 1,
+    "max_tokens": 20000,
+    "max_cost_usd": 0.08,
+    "max_wall_seconds": 0,
+    "input_price_per_million": 2.0,
+    "output_price_per_million": 10.0,
+    "source_input": null,
+    "claim_spec": null,
+    "check_scope": null,
+    "seed": 0
+  }
+]

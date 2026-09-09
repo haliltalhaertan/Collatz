@@ -1,0 +1,7 @@
+{
+  "status": "BLOCKED_DEPENDENCY",
+  "lane_id": "2",
+  "role": "Theorist",
+  "claim_results": [],
+  "first_missing_step": "Dependency did not complete"
+}

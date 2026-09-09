@@ -1,0 +1,108 @@
+# CP20 Task 8B3 E5 — Master Findings
+
+## Primary classification
+
+**[PROVED] E5-S1: exact finite renewal/Green representation only.**
+
+E5 did not reach E5-S2, E5-S3, E5-S4, or E5-S5. No route-changing no-go
+theorem was proved, so the mandatory audit stop did not fire.
+
+## Exact result
+
+For \(r\ge2\), \(n\ge0\),
+
+\[
+h_{r,n}
+=\sum_{k=0}^{n}
+\frac{r\,n!\,(r+k-2)!}{k!\,(r+n-1)!}
+p^{\rm fin}_{r,k,4}h_{r-1,k}.
+\]
+
+The coefficient mass is \(r/(r-1)\). After dividing by \(r\), the normalized
+kernel is beta-binomial:
+
+\[
+q_{r,n}(k)
+=\frac{\binom{k+r-2}{r-2}}
+       {\binom{n+r-1}{r-1}}.
+\]
+
+The full finite problem is an exact uniform weak-composition bridge:
+
+\[
+G_{r,n}
+=\mathbb E[F_{r,4}\mid Z_1+\cdots+Z_r=n],
+\]
+
+where the \(Z_j\) may be taken iid geometric with mean \(\beta\), and \(F\)
+is the complete deterministic product of finite phases. This includes all
+intermediate row contributions and uses no remote boundary.
+
+## Degree-one status
+
+**[OPEN]** The required estimate is
+
+\[
+|\mathbb E[F_{r,4}\mid S_r=n]|
+\le M(1+|n-\beta r|)/r.
+\]
+
+Only \(|G|\le1\) and far-left-sector control were proved. The full dependency
+cone leaks to the right; absolute values, affine majorants, and a local complex
+cone do not close the estimate.
+
+## Local-limit status
+
+**[PROVED]** The positive denominator has the uniform target local limit
+
+\[
+\Pr(S_r=\lfloor\beta r\rfloor-8)
+=\frac{1+O(r^{-1})}{\sqrt{2\pi\alpha\beta r}}.
+\]
+
+**[OPEN]** The complex numerator requires the stronger uniform estimate
+
+\[
+\mathbb E[F_{r,4}\mathbf1_{\{S_r=n_r\}}]
+=\frac{\mathcal A_4(\theta_r)}
+       {\sqrt{2\pi\alpha\beta}\,r^{3/2}}
++o(r^{-3/2}),
+\]
+
+with nonzero leading coefficient. This was not proved.
+
+## Transfer status
+
+**[PROVED]** A finite cyclotomic criterion excludes exact cancellation when
+\(3\nmid\binom{n+r-1}{r-1}\).
+
+**[OPEN]** It gives neither an infinite target subsequence nor a polynomial
+lower bound. The moving boundary was not transferred, and the candidate
+coefficient was not proved to exist or be nonzero.
+
+## Sealed computation
+
+**[NUM]** The authorized source ran exactly once at the sealed scope:
+\(C=4,d=-8,r\le8000\), binary64 plus a 100-digit Decimal crosscheck.
+
+- Exact rational cases: 8,127.
+- Maximum binary64–Decimal complex error:
+  \(1.0284\times10^{-13}\).
+- Maximum disagreement with frozen E3:
+  \(1.7227\times10^{-11}\).
+- No depth, precision, frequency, window, fit, or plot was added.
+
+The numerical values are implementation and falsification diagnostics only.
+
+## Route decision
+
+**[PARK]** Park generic weighted maximum-principle, global cone, and
+positive-only local-limit approaches.
+
+**[OPEN]** Keep only the repaired exact route: analyze the oscillatory
+conditioned-geometric numerator. The single highest-information next action is
+to derive or refute its uniform \(r^{-3/2}\) asymptotic with a nonzero
+\(\theta\)-dependent coefficient. No new depth computation is indicated.
+
+Nothing in E5 proves Collatz.
+

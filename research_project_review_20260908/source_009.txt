@@ -1,0 +1,11 @@
+COLLATZ ARCHIVE — CP01 SOURCE STATUS
+Date: 2026-08-15
+
+Canonical Checkpoint 1 source/result bytes were not positively located in the currently accessible runtime/File Library during this archival pass.
+
+Policy:
+- No reconstructed or inferred document is being labeled as the canonical CP01 artifact.
+- The CP01 folder is reserved so that the exact original prompt/result/audit files can be added later without changing the archive structure.
+- Later checkpoints may refer to CP01 results, but those references are not substitutes for the canonical CP01 source document.
+
+Status: SOURCE BYTES PENDING

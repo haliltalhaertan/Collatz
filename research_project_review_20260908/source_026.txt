@@ -1,0 +1,325 @@
+# Checkpoint 12 — Bağımsız Adversarial Denetim
+
+**Tarih:** 15 Ağustos 2026 · Rapordan ve önceki checkpoint'lerden bağımsız yeniden türetme; exhaustive exact integer aritmetiği (`m≤20`, `2^20` durum), bağımsız rate-envelope rekonstrüksiyonu, hedefli literatür taraması.
+
+---
+
+## A. Executive verdict
+
+> ### **Proof düzeltilebilir.**
+
+Zinciri kırmaya çalıştım — **kıramadım**. Sekiz halkanın hepsi bağımsız olarak doğrulandı, kritik olanlar exhaustive brute force ile. Raporun bütün sayısal iddiaları (F tablosu, collision tablosu, gap formülü, `β∈(1.1234,1.1699]` bandı, `0.25956`, `4.72097`) birebir reprodüksiyon verdi.
+
+Verdict "sağlam" değil çünkü §7'nin rate envelope'i **tam tanımlanmamış** ("uygun max/min versiyonu") ve §7.1–§8'in compactness/süreklilik argümanları iddia olarak bırakılmış. Bunlar rutin ama yazılmamış; ben kendi rekonstrüksiyonumla doldurdum ve tuttu.
+
+**Ama asıl bulgu ana theorem'de değil, Checkpoint 13 hedefinde** (§J): CP12 mimarisi, collision bound ne kadar iyileşirse iyileşsin, `K ≈ 3.0166`'da **tavan yapıyor**. `B=1`'e ulaşamıyor — %0.87 farkla.
+
+---
+
+## B. Main theorem verdicts
+
+| | İddia | Verdict |
+|---|---|---|
+| **A** | `Q_J(2u)=2Q_{J−1}(u)`, `Q_J(2u+1)=1+2Q_{J−1}(3u+2 mod 2^{J−1})` | **[VALID]** ama **[KNOWN]** (§K) |
+| **B** | `w ↦ C_w` injective | **[VALID]** |
+| **C** | `M(m,q;y) ≤ 2^{m−q}` | **[VALID]** |
+| **D** | `F(J,m,q) ≤ Σ_s min{C(m,s), 2^{m−s}Y_R(s,q)}` | **[VALID]** |
+| **E** | Asymptotic envelope `R_c(β)` | **[FIXABLE]** — branch yapısı yazılmamış; rekonstrüksiyonum tutuyor |
+| **F** | `R_c(β)<βln2` nonempty açık aralıkta | **[VALID]** |
+| **G** | `c↓α` yakınında uniform pozitif-width band | **[VALID]** — ve iddiadan güçlü: width **tam `c=α`'da maksimum** |
+| **H** | `∃η_12>0: limsup H_N/lnlnN ≤ K_11−η_12` | **[VALID]** (E'nin yazılması şartıyla) |
+| — | `y < 3^s` endpoint claim | **[VALID]** — temiz tümevarım ispatı buldum (§D) |
+| — | `4.72097` yalnız `[NUM]` | ✔ rapor doğru davranmış |
+
+---
+
+## C. Rate-function mühendisliği (§2)
+
+Abstract lemma'yı sıfırdan türettim ve **doğru**.
+
+Stieltjes: `Σ_{ξ≤X}1/ξ = N(X)/X + ∫₁^X N(u)u^{-2}du`. `u=e^{θt}` ile band `[θ₁,θ₂]` katkısı
+```
+t ∫_{θ₁}^{θ₂} N(e^{θt}) e^{−θt} dθ
+```
+- Saving yoksa `N ≤ e^{θt}/3` (coprime-to-6 yoğunluğu) ⟹ katkı `= (θ₂−θ₁)t/3` — **linear**.
+- `N ≤ e^{(θ−Δ)t+o(t)}`, `Δ≥δ>0` ⟹ katkı `≤ t(θ₂−θ₁)e^{−δt} → 0` — **o(1)**, `o(t)` bile değil.
+
+**Kullanıcının 7 sorusuna cevap:**
+1. *Neden yalnız Lebesgue width düşüyor?* Çünkü katkı yoğunluğu `θ` başına sabit `1/3`. Integrand ya `1/3` ya `≈0`; ara değer yok. ⟹ `b(c) ≤ (θ_max−|E|)/3` ✔
+2. *Local uniform gap gerekli mi?* **Evet.** `o(t)` terimi `θ`'ya bağlı; compactta uniform olmazsa integral kontrol edilemez.
+3. *Tek nokta yeter mi?* **Hayır** — Lebesgue ölçüsü sıfır, integrali değiştirmez.
+4. *Endpoints ek loss?* Hayır, ölçü sıfır.
+5. *`j/t` vs `θ`, `ln2` faktörü?* Dyadic shell aralığı `ln2`; `θ = j·ln2/t` ✔ tutarlı.
+6. *`o(t)` uniformity?* Compactlarda uniform olmalı — bu tam olarak (2)'deki koşul.
+7. *Açık `β`-aralığı → `θ` width?* `θ=βln2` ⟹ width `(β₂−β₁)ln2` ✔
+
+**"9" katsayısı:** `b<3I ⟺ (θ_max−|E|)/3 < 3I ⟺ |E| > θ_max−9I` ✔. `c=α`'da `θ_max−9I = 0.31611496` (rapor: ~0.3161 ✔), yani `θ_max`'ın **%38.98**'i ✔.
+
+---
+
+## D. Kritik lemma'lar — bağımsız kanıt + exhaustive test
+
+### D.1 Parity permutation recursion — [VALID], [KNOWN]
+
+LSB-first kodlamayla: `x=2u` ⟹ bit₀=0, `T(2u)=u` ⟹ `Q_J = 2Q_{J−1}(u)` ✔. `x=2u+1` ⟹ bit₀=1, `T(2u+1)=(6u+4)/2=3u+2` ⟹ `Q_J = 1+2Q_{J−1}(3u+2)`, ve `Q_{J−1}` yalnız argümanın `2^{J−1}` modülüne bağlı (Terras) ⟹ `mod 2^{J−1}` zorunlu ✔.
+
+**Exhaustive `J=1..9`, 1022 çift: 0 başarısızlık.** Her `J` için `Q_J` permütasyon ✔. Even branch → çift, odd branch → tek ⟹ disjoint ✔.
+
+### D.2 `C_w` injectivity ve boyut — [VALID]
+
+Affine identity'yi bağımsız türettim: `2y_{i+1}=3^{b_i}y_i+b_i` ⟹ `2^m y = 3^q x + Σ_r 3^{q−1−r}2^{d_r}` ✔.
+
+Injectivity: `C_w = 3^{q−1}2^{d_0} + (yüksek 2-valuation'lı terimler)` ⟹ `v₂(C_w)=d_0` ✔; `(C_w − 3^{q−1}2^{d_0})/3` uzunluk-`(q−1)` alt-word'ün `C`'si ✔ ⟹ tümevarım kapanıyor. **`m≤12`, 8190 word: 0 çakışma.**
+
+`d_r ≤ d+r`: `d_r`'den sonra `m−1−d_r` pozisyon, `q−1−r` bir gerekiyor ⟹ `d_r ≤ m−q+r` ✔ **0 ihlal**.
+`C_w ≤ 2^d Σ_r 3^{q−1−r}2^r = 2^d(3^q−2^q)` ✔ **0 ihlal**, ve **78 kez eşitlik** — yani sınır sharp, strict değil.
+
+### D.3 Collision cap `M(m,q;y) ≤ 2^{m−q}` — [VALID]
+
+Sabit `y,q`: `3^q x = 2^m y − C_w` ⟹ çakışan word'lerin `C_w`'leri `3^q` modülünde aynı sınıfta. Hepsi `[1, 2^d(3^q−2^q)] ⊂ (0, 2^d 3^q)` içinde ⟹ o sınıftan en fazla `2^d` eleman ✔. **Strict üst uç kritik** — `C_w < 2^d3^q` strict olduğu için `2^d+1` çıkmıyor ✔.
+
+**Exhaustive `m=6..20`, tüm `q`, `2^m` durum: 0 ihlal.** Raporun max tablosu birebir: `(10,6)→4, (12,8)→4, (14,9)→5, (16,10)→8, (18,11)→12, (20,13)→12` ✔ (`m=22` bu ortamda çalıştırılmadı).
+
+### D.4 Endpoint claim `y < 3^s` — [VALID], ve raporda ispatsız
+
+Kaba tahmin `y < 3^s(1+2^{−s})` verir, yani literal iddia **çıkmıyor** gibi görünüyor. Ama exhaustive testte `m≤16`, 131070 durumda **0 ihlal**. Nedeni bir korelasyon; temiz ispatı buldum:
+
+> **Lemma.** `x ≤ λ2^m − 1` ⟹ `T^m(x) ≤ λ3^s − 1`, `s` = ilk `m` bitteki bir sayısı.
+> *İspat.* `m` üzerinde tümevarım. `x=2u`: `u ≤ λ2^{m−1}−1`, bir sayısı `s`, IH ✔. `x=2u+1`: `u ≤ λ2^{m−1}−1` ⟹ `T(x)=3u+2 ≤ 3λ2^{m−1}−1`, yani `λ'=3λ` ile IH ⟹ `T^{m−1}(3u+2) ≤ 3λ3^{s−1}−1 = λ3^s−1` ✔ ∎
+
+`λ=1` ⟹ `x<2^m ⟹ y ≤ 3^s−1 < 3^s` ✔. **Rapor bunu "fundamental rectangle property" diye ispatsız geçiyor; iki satırlık tümevarım yazılmalı.**
+
+### D.5 İki-blok bound — [VALID]
+
+`x<2^m` ↔ `m` parity biti (Terras). İlk blokta `s` bir ⟹ `≤C(m,s)` word. Endpoint `y<3^s` (D.4). Suffix'in `R=J−m` biti `y mod 2^R`'ye bağlı; her `2^R` ardışık `y` tam bir parity universe verir ⟹ geçerli `y` sayısı `≤(⌊3^s/2^R⌋+1)Σ_{k≥q−s}C(R,k)` ✔ (`+1` kısmi son blok için). Her `y` başına `≤2^{m−s}` preimage (D.3) ⟹ ikinci sınır. **`min` alınabilir çünkü iki sınır aynı `s`-dilimi için bağımsız olarak geçerli** ✔.
+
+**Brute force karşılaştırma (7 vaka), hepsi OK ve Hamming'den çok daha iyi:**
+
+| J | m | q | exact | two-block | Hamming |
+|---|---|---|---|---|---|
+| 16 | 10 | 11 | 118 | **514** | 6 885 |
+| 20 | 14 | 13 | 2 152 | **9 908** | 137 980 |
+| 23 | 16 | 15 | 6 855 | **39 203** | 880 970 |
+
+### D.6 §9.1 `F` tablosu — birebir
+
+`t=10,12,14,16,18,19` için `F = 118, 2152, 6855, 21759, 70899, 311925` — **altısı da tam** ✔, `F/2^m` ve saving sütunları dahil.
+
+---
+
+## E. Rate envelope ve gap (§7)
+
+Envelope'i sıfırdan kurdum. `A_β(x)=βH(x/β)` ✔ (natural log, `ln C(βt,xt) ≈ βt·H(x/β)` ✔).
+
+`B_{c,β}(x)` üç parçadan: `2^{m−s}` ⟹ `(β−x)ln2`; `⌊3^s/2^R⌋+1` ⟹ `max(0,(αx−(c−β))ln2)`; Hamming kuyruğu ⟹ `p=(1−x)/(c−β)` ile `(c−β)·[ln2 eğer p≤½, aksi halde H(p)]`.
+
+Full-period + entropy branch'te toplam:
+```
+B = [2β−c+(α−1)x]ln2 + (c−β)H((1−x)/(c−β))
+```
+ve `H(p)=H(1−p)` ile `(1−x)/(c−β) ↔ (c−1−β+x)/(c−β)` ✔ — **raporun formülü complement yazımıyla özdeş** (kullanıcının §11 sorusuna cevap: evet, complement, evet entropy simetrisiyle aynı).
+
+**Feasible aralık** `max(0,β−(c−1)) ≤ x ≤ min(β,1)` — `0≤s≤m`, `0≤q−s≤R` kısıtlarından ✔.
+
+**Gap formülü doğrulandı (12 hane, 6 farklı `c`):**
+```
+β_*ln2 − B(c,β_*,x_*) = [1−α(c−1)]ln2
+```
+`c=α`: `0.050500188858`. Pozitif ⟺ `c < 1+1/α = 1.630929753571` ✔; `α = 1.584962500721 <` eşik ✔. `A_{β_*}(x_*) = β_*ln2` ✔. Kritik noktada `p=1` — **suffix'in tüm bitleri 1 olmak zorunda** ✔ (§14 iddiası doğru).
+
+### E.1 [GAP] Branch yapısı yazılmamış
+
+§7 "uygun max/min versiyonu" diyor. Üç branch var (`3^s<2^R` / full-period; `p≤½` / `p>½`) ve hangisinin nerede bağlayıcı olduğu theorem statement'ında yok. Rekonstrüksiyonum raporun bütün sayılarını ürettiği için **hata yok**, ama theorem tam belirtilmemiş. Yazılmalı.
+
+### E.2 Bulgu: gerçek `R`-gap tek-nokta gap'inden **300 kat küçük**
+
+`R_c(β_*)` gap'i **1.64×10⁻⁴**, tek-nokta gap'i ise `0.0505`. Sebebi: `sup_x min{A,B}`, `x_*`'da değil, biraz sağdaki `A=B` kesişiminde alınıyor. `p→1` iken `H'(p)→−∞` olduğundan `B`'nin `x_*`'daki eğimi **sonsuz**; hızla yükseliyor. Analitik: `δ ln(1/δ) ≈ g` ⟹ `δ≈0.0113`, `R`-gap `≈ 2δ²/β ≈ 2×10⁻⁴` ✔ hesapla uyuşuyor.
+
+**Sonuca zarar vermiyor** (§C'ye göre yalnız width önemli, gap büyüklüğü değil) ama raporun "strict exponential saving" dili, gerçek exponent farkının ne kadar ince olduğunu gizliyor.
+
+### E.3 Bandın temiz karakterizasyonu (raporda yok)
+
+`β<β_*` için `x=β/2` feasible aralığın **içinde** ve `A_β`'nin tek maksimizörü ⟹ `A(β/2)=βln2`. Dolayısıyla
+```
+R_c(β) < β ln2   ⟺   B(c,β,β/2) < β ln2
+```
+Bu, grid arama yerine tek boyutlu bir kök bulma problemi. Bununla:
+
+**`c=α`: band = (1.12338125, 1.16992500]**, width `0.04654375`, θ-width `0.03226167`.
+Raporun "≈1.1234" değeri ✔ birebir.
+
+---
+
+## F. Uniformity in `c` (§18) — kullanıcının endişesi yersiz
+
+| c | β_* | β_1 | θ-width | b(c) | K(c) |
+|---|---|---|---|---|---|
+| **α** | 1.16993 | 1.12338 | **0.032262** | 0.259556 | **4.720965** |
+| α+10⁻⁵ | 1.16995 | 1.12342 | 0.032250 | 0.259565 | 4.721381 |
+| α+0.005 | 1.17993 | 1.14134 | 0.026745 | 0.263706 | 4.931399 |
+| α+0.02 | 1.20993 | 1.19062 | 0.013378 | 0.275093 | 5.600483 |
+| α+0.046 | 1.26173 | 1.26171 | 0.000010 | 0.291517 | 6.917749 |
+
+> **Width `c=α`'da MAKSİMUM** ve `c` arttıkça monoton daralıyor. Yani "width `c↓α` iken sıfıra gidebilir mi?" endişesi tersine: en geniş olduğu yer tam da limitin alındığı yer. **Uniformity sorunsuz** ✔
+
+`inf_c K = 4.72096530` at `c↓α` ⟹ **`η_12 ≥ 0.19559826`** (raporun sertifikalamadığı band tümüyle doğrulanırsa).
+
+Raporun `4.72097` değeri ✔ birebir; `b: 0.27031→0.25956` ✔ birebir.
+
+---
+
+## G. Compactness argümanı (§16) — [VALID], ve tam yazımı
+
+`β=β_*`'da: `x_*` hem feasible aralığın **sol uç noktası** hem `A_{β_*}`'nin tek maksimizörü. `B(x_*) = β_*ln2 − g`, `g>0`.
+- `x∈[x_*, x_*+ε]`: `B` sürekli ⟹ `B ≤ β_*ln2 − g/2` (küçük `ε`).
+- `x∈[x_*+ε, min(β_*,1)]`: compact, `A` strictly concave ⟹ `A ≤ β_*ln2 − δ(ε)`.
+⟹ `sup min ≤ β_*ln2 − min(g/2, δ(ε)) < β_*ln2` ✔
+
+`β`-aralığına uzatma: `R_c` `β`'da sürekli (feasible uçlar sürekli, `A,B` sürekli, branch'ler continuous max/min) ⟹ `{β: R_c(β)<βln2}` açık ✔, `β_*`'ı içeriyor ⟹ solunda açık aralık ✔. **Sağında saturated zone yok** (`θ>θ_max`), o yüzden "solunda" ✔.
+
+`(c,β)` ortak sürekliliği ⟹ `α<c<α+ε₀`'da uniform pozitif width ✔ (§F tablosu bunu sayısal olarak da gösteriyor).
+
+---
+
+## H. Computational reproduction — özet
+
+| Öğe | Sonuç |
+|---|---|
+| `Q_J` recursion, `J≤9` | 0 başarısızlık, permütasyon ✔ |
+| `C_w` injectivity, `m≤12` | 0 çakışma ✔ |
+| `d_r≤d+r`, size bound | 0 ihlal, 78 kez eşitlik (sharp) ✔ |
+| `M(m,q;y)≤2^{m−q}`, `m≤20` | 0 ihlal; max tablosu 6/6 birebir ✔ |
+| `y<3^s`, `m≤16` | 0 ihlal + ispat bulundu ✔ |
+| İki-blok bound, 7 vaka | hepsi OK ✔ |
+| `F` tablosu (§9.1) | 6/6 birebir ✔ |
+| Gap formülü | 12 hane, 6 `c` değeri ✔ |
+| Band `(1.1234, 1.1699]` | `(1.12338125, 1.16992500]` ✔ |
+| `b: 0.27031→0.25956`, `K→4.72097` | ✔ birebir |
+
+**Hiçbir mismatch yok.**
+
+---
+
+## I. Counterexamples / bugs
+
+- **[GAP]** §7 rate envelope branch yapısı belirtilmemiş (E.1).
+- **[GAP]** §6 `y<3^s` ispatsız; kaba tahmin vermiyor, tümevarım gerekiyor (D.4).
+- **[GAP]** §7.1/§8 compactness ve `(c,β)` sürekliliği iddia olarak bırakılmış (§G). Rutin ama yazılmalı.
+- **[MISALIGNMENT]** §9.2 + §15: kritik oran yanlış — aşağıda.
+
+**Ana zincire counterexample bulunamadı.** Önceki iki checkpoint'ten devralınan `n₀` kusuru **bu sefer düzeltilmiş** (§1) ✔ ve `J≤L+1` kısıtı da açıkça yazılmış ✔.
+
+---
+
+## J. En önemli bulgu: CP13 hedefi yetersiz
+
+### J.1 Bağlayıcı oran `s/m = 1/2`, `q/m = 1/α` değil
+
+Band koşulu `gapB(β) = βln2 − B(c,β,β/2) > 0` — yani collision cap `2^{m−s}` **her zaman `s/m = x/β = 1/2` oranında** kullanılıyor. Üst uçta da `x_*/β_* = (c−1)/(2(c−1)) = 1/2` ✔.
+
+Raporun §9.2 kanıt tablosu ve §15 CP13 hedefi ise `q/m ≈ 1/α = 0.6309` diyor. **Bu oran, tam `J`-word'ünün bir-oranı (`q/J = 1/c`), ilk-blok oranı değil.** Kanıt tablosu yanlış rejimde toplanmış.
+
+Doğru rejimde exhaustive ölçtüm (`s/m = 1/2`):
+
+| m | s | max M | 2^{m−s} | ln M/m | (1−s/m)ln2 | deficit |
+|---|---|---|---|---|---|---|
+| 10 | 5 | 5 | 32 | 0.16094 | 0.34657 | 0.18563 |
+| 14 | 7 | 12 | 128 | 0.17749 | 0.34657 | 0.16908 |
+| 18 | 9 | 26 | 512 | 0.18101 | 0.34657 | 0.16557 |
+| 20 | 10 | 38 | 1024 | 0.18188 | 0.34657 | 0.16469 |
+
+Gerçek exponent `≈0.182`, trivial `0.347` — deficit `≈0.165` ve stabil. Yani `η ≈ 0.165` civarı umut edilebilir.
+
+### J.2 Ama gereken `η = 0.35495` — **mümkün olandan büyük**
+
+`B=1` için band `β_1 ≤ 0.713868`'e inmeli. `gapB(β) + ηβ > 0` koşulundan:
+```
+gerekli η = 0.354950   (worst at β = 0.7139)
+```
+Oysa collision exponent `(1−s/m)ln2 − η = 0.34657 − η ≥ 0` olmak zorunda (çünkü `M ≥ 1`). Yani
+```
+η_max = ln2/2 = 0.346574  <  0.354950  gerekli
+```
+
+### J.3 Karar verici test: collision faktörünü tamamen kaldır
+
+`η = η_max` (yani `M(m,m/2) = exp(o(m))` — düşünülebilecek **en iyi** sonuç), `c` üzerinden optimize:
+
+```
+band = (0.717813, 1.169925],  θ-width = 0.313380
+gereken               = 0.316115
+eksik                 = 0.002735   (%0.87)
+K_min                 = 3.016579   (gereken < 3)
+```
+
+> ### **CP12'nin iki-blok mimarisi `K ≈ 3.0166`'da tavan yapıyor.**
+> Fixed-endpoint collision multiplicity'yi iyileştirmek — **tamamen yok etmek dahi** — bu mimari içinde `B=1`'i kıramaz. %0.87 farkla yetmiyor.
+
+Bu, raporun §11 `[LEAD]`'ini ve §15'in tek-hedefli CP13 planını doğrudan etkiliyor: hedef doğru yönde ama **tek başına yeterli değil, ve yetersizliği kanıtlanabilir**. Ek kazanç `A_β` entropi terimi veya ikinci-blok muamelesi gibi başka bir yerden gelmek zorunda.
+
+*Uyarı:* bu `[NUM]` bir sonuç — kendi envelope rekonstrüksiyonumdan, %0.87 marjla. Marj dar olduğu için bağımsız ikinci bir hesapla teyit edilmeli. Ama yön ve büyüklük robust: `η_max` ile bile `K>3`.
+
+---
+
+## K. Literature status
+
+| Öğe | Verdict |
+|---|---|
+| `Q_J` recursion / parity permutation | **[KNOWN]** — Bernstein–Lagarias conjugacy; Rozier arXiv:1805.00133 (raporun kendi kaynağı). `Q^{-1}` fonksiyonel denklemleri klasik. |
+| Affine `2^m y = 3^q x + C_w` | **[KNOWN]** — Terras/Everett–Lagarias çizgisi |
+| `w↦C_w` injectivity | **[KNOWN / kolay corollary]** — `v₂` peeling standart |
+| `M(m,q;y) ≤ 2^{m−q}` | **[NO EXACT MATCH FOUND]**, ama elementer. Stérin'in fixed-endpoint ancestor çalışması aynı nesneyi ele alıyor; bu spesifik `(m,q)`-koşullu cap'e doğrudan eşleşme bulamadım |
+| İki-blok endpoint count + `R_c(β)` | **[NO EXACT MATCH FOUND]** |
+| `K_11 − η_12` sonucu | **[NO EXACT MATCH FOUND]** |
+
+Applegate–Lagarias inverse-tree sonuçları **unconditioned** leaf growth (≈1.299^k–1.361^k) hakkında; buradaki `q/m`-koşullu fixed-endpoint multiplicity farklı bir nicelik — raporun bu ayrımı doğru yapıyor ✔.
+
+Novelty iddiası değil: tarama theorem-statement düzeyinde ve açık kaynaklar üzerinde.
+
+---
+
+## L. Publication readiness
+
+> ### **CP9–CP12 birleşik tek manuscript: theorem-level ciddi aday.**
+
+CP12 tek başına ayrı makale değil. Ama zincir birlikte, sertifikalı ondalık olmadan bile yayınlanabilir bir teoremdir: *her divergent Syracuse yörüngesi için `H_N ≤ (K_11−η)lnlnN`.*
+
+Sertifikalı ondalık **gerekli değil** ama çok değerli olurdu: interval arithmetic ile `β_1 ≤ 1.1234` alt sınırı sertifikalanırsa `K ≤ 4.7210` explicit theorem olur. Bu, envelope'in üç branch'i explicit yazıldığında rutin bir interval hesabıdır.
+
+Yayın öncesi zorunlu:
+1. §7 envelope'in piecewise tanımını tam yaz (E.1).
+2. `y<3^s` tümevarımını yaz (D.4).
+3. Compactness + `(c,β)` sürekliliği argümanlarını yaz (§G).
+4. Bandın `B(c,β,β/2)<βln2` karakterizasyonunu kullan (E.3) — hem daha temiz hem sertifikalanabilir.
+5. §9.2 tablosunu doğru rejime (`s/m=1/2`) taşı (J.1).
+6. §15 hedefini J.2–J.3 ışığında yeniden yaz.
+7. `[KNOWN]` öğeleri (`Q_J` recursion, affine identity) yeni gibi sunma.
+
+---
+
+## M. Confidence
+
+| | |
+|---|---|
+| fixed-endpoint collision `M≤2^{m−q}` | **very high** — sıfırdan ispat + `m≤20` exhaustive |
+| two-block count | **very high** — ispat + brute-force karşılaştırma |
+| asymptotic envelope `R_c(β)` | **high** — branch'ler yazılmamış, ama rekonstrüksiyonum raporun tüm sayılarını üretiyor |
+| upper-edge strict gap | **very high** — formül 12 haneye, 6 `c` değerinde |
+| uniform positive-width band | **high** — width `c=α`'da maksimum, sayısal olarak doğrulandı |
+| qualitative `K_12 < K_11` | **high** |
+| finite multiplicity evidence | **very high** — 6/6 birebir |
+| **CP13 hedefinin yetersizliği** | **high** — `[NUM]`, %0.87 marj; ikinci hesapla teyit edilmeli |
+
+---
+
+## Son cevaplar
+
+**1. CP12 gerçekten `K_11`'in strict altına iniyor mu?**
+**Evet, qualitative olarak.** `∃η_12>0` sonucunu bağımsız olarak doğruladım; kırmaya çalıştım, kıramadım. Sekiz halkanın hepsi ayakta, kritik olanlar exhaustive testten geçti. Raporun sertifikalı ondalık ilan etmemesi doğru bir karar; ama band tümüyle doğrulanırsa `η_12 ≥ 0.1956` ve `K ≤ 4.72097` — bu sayıları da birebir ürettim.
+
+**2. Fixed-endpoint collision multiplicity gerçekten kalan en değerli obstruction mı?**
+**Hayır — ve bu, raporun en önemli hatası.** İki bakımdan:
+- Kritik rejim `s/m = 1/2`, raporun topladığı `q/m ≈ 1/α` değil (J.1).
+- Daha önemlisi: collision cap'i **sıfıra indirmek bile** `K ≈ 3.0166 > 3` veriyor (J.3). Yani bu hedef, mimarinin içinde `B=1`'i kıramaz — %0.87 farkla. CP13 tek hedefe kilitlenmemeli; ek kazanç `A_β` entropi tarafından veya ikinci bloğun daha iyi işlenmesinden gelmeli.
+
+**`B=1` hâlâ açık.** Frontier `limsup s_k/log₂k ≥ 1` olarak duruyor.

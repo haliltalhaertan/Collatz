@@ -1,0 +1,7 @@
+{
+  "status": "STOPPED",
+  "lane_id": "hy4-low-state",
+  "role": "Analyze low-state occupation through an exact bridge decomposition; do not assume low visits are rare.",
+  "claim_results": [],
+  "first_missing_step": "User stop"
+}

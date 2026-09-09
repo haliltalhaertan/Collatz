@@ -1,0 +1,10 @@
+{
+  "content": "",
+  "complete": false,
+  "finish_reason": "length",
+  "usage": {
+    "completion_tokens": 128,
+    "reasoning_tokens": 128,
+    "cost_usd": 0.0001
+  }
+}

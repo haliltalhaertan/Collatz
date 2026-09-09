@@ -1,0 +1,14 @@
+[
+  {
+    "tag": "deepseek",
+    "hash": "c964884a46e30b7f376392ebb1f6249bf77a53b2bd6379ea94317014c9cf5494",
+    "max_cost_usd": 0.2,
+    "gate": "FEASIBLE_WITH_LIMITATIONS"
+  },
+  {
+    "tag": "glm",
+    "hash": "040e56d7649800e7e4b04d39409e555fbe8453044d26a52eb276f7a42beacfc0",
+    "max_cost_usd": 0.025,
+    "gate": "FEASIBLE_WITH_LIMITATIONS"
+  }
+]

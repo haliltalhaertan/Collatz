@@ -1,0 +1,9 @@
+{
+  "task_id": "xub-maximum-gap-local-question",
+  "run_id": "directed-b5ce2c215e994551b8f29062a2d07222",
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "artifact_root": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\research_sol_gap_20260908\\runs\\xub-gap-20260908\\directed\\directed-b5ce2c215e994551b8f29062a2d07222",
+  "claim_ledger_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\research_sol_gap_20260908\\runs\\xub-gap-20260908\\directed\\directed-b5ce2c215e994551b8f29062a2d07222\\package\\CLAIM_LEDGER.json",
+  "package_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\research_sol_gap_20260908\\runs\\xub-gap-20260908\\directed\\directed-b5ce2c215e994551b8f29062a2d07222\\package\\COMPLETE_PACKAGE.zip",
+  "package_sha256": "613e1b9effb05b2e2bced27a9ee0824b7da9ec60b52288476bb77286a4d868ec"
+}

@@ -1,0 +1,265 @@
+Collatz ProblemiAraştırma Checkpoint 9
+Multi-scale harmonic coherence ve 8/9 → 1 sıçraması
+14 Ağustos 2026
+CHECKPOINT SONUCU
+[EXACT]  Her injective positive odd-only Syracuse orbit için  Σ_{k<N} 1/n_k = o(log N).
+[EXACT]  Bunun sonucu olarak X_N := Σ_{k<N} 2^{D_k} = N^{o(1)}.
+[EXACT]  Forever-undercritical durumda limsup s_k / log₂ k ≥ 1.
+[OPEN]   Yeni doğal borderline B = 1; mevcut yöntem B = 1 durumunu dışlamıyor.
+
+Araştırma hattı. Tek ölçekli 8/9 saturasyonunun çok-ölçekli uyumluluk veya kayıp-faktör geri kazanımıyla kırılıp kırılamayacağı araştırıldı. Sonuçta gerçek kazanç, overlapping suffix koşullarını bağımsız saymaktan değil, t-step reciprocal balance ile modulo 3^{t+1} terminal-residue refinement’ını birleştirmekten geldi.
+1. Durum özeti
+Etiket
+Sonuç
+Durum
+[EXACT]
+t-step harmonic balance
+Kapalı
+[EXACT]
+Two-terminal-class lemma mod 3^{t+1}
+Kapalı
+[EXACT]
+Harmonic Sparsity: H_N=o(log N)
+Yeni ana theorem
+[EXACT]
+X_N=N^{o(1)}
+Yeni carry frontier
+[EXACT]
+limsup s_k/log₂k ≥ 1
+Yeni slack frontier
+[FAIL]
+Deep suffix scale constraints bağımsız çarpılabilir
+Yanlış
+[FAIL]
+İki bağımsız 2/3 filtresi → (2/3)^2
+Yanlış kullanım
+[OPEN]
+B=1 borderline / X_N=o(log N)?
+Aktif
+2. Çalışma zemini ve notasyon
+Odd-only Syracuse dönüşümü ve cumulative valuation:
+n_{k+1} = (3 n_k + 1) / 2^{a_k},     a_k = v₂(3 n_k + 1)
+A_k = Σ_{i<k} a_i,     α = log₂ 3,     D_k = A_k − kα
+s_k = ⌊kα⌋ − A_k,     D_k = −s_k − {kα}
+Forever-undercritical: D_k ≤ 0 bütün k için.
+3. Multi-scale suffix nesting
+Terminal odd rank q ve suffix depth m için son m odd event’in relative shortcut parity word’ünün least-positive realizer’ını R_m, relative shortcut length’ini J_m ile gösterelim.
+3 R_{m+1} + 1 = 2^{a_{q-m-1}} ( R_m + c_m 2^{J_m} ),     c_m ∈ {0,1,2}   (3.1)
+[EXACT] Bu, ardışık suffix realizers arasındaki genel nesting relation’dır.
+Endpoint-determining deep regime’de R_m=n_{q-m} ve R_{m+1}=n_{q-m-1}; dolayısıyla c_m=0 ve relation doğrudan gerçek Syracuse step’ine iner:
+R_m = (3 R_{m+1} + 1) / 2^{a_{q-m-1}}   (3.2)
+[FAIL] Deep suffix constraints’i bağımsız olaylar gibi çarpmak geçersizdir; aynı orbit zincirinin nested projeksiyonlarıdır.
+4. Near-top suffix koşulları çok ölçekte
+θ_m := R_m / 2^{J_m}
+Deep regime’de (3.2) ve J_{m+1}=J_m+a_{q-m-1} kullanılırsa:
+θ_{m+1} = θ_m/3 − 1/(3·2^{J_{m+1}}) < θ_m/3   (4.1)
+[EXACT] Consecutive deep suffixlerde normalized near-top ratio her adımda yaklaşık en az 3 faktörüyle düşer.
+Bu nedenle θ_m ≥ 1/polylog(j) ölçeğinde near-top olabilen consecutive deep suffix sayısı yalnız O(log log j)’dir. Dolayısıyla her scale’de sabit-factor bir kayıp olsa bile toplam kazanç yalnız polylogaritmik kalır; polynomial exponent tek başına düzelmez.
+4.1 Exact finite certificate
+Checkpoint 1 record orbit’i n₀=26,716,671 için terminal q=187 noktasında ardışık üç deep suffix aynı anda güçlü near-top davranışı gösterir:
+m
+q−m
+J_m
+R_m
+2^{J_m}/R_m
+17
+170
+31
+1,162,724,503
+1.84694
+18
+169
+33
+1,550,299,337
+5.54082
+19
+168
+34
+1,033,532,891
+16.62247
+[FAIL] “İki veya üç near-top overlapping suffix birlikte sürdürülemez” hipotezi yanlıştır.
+5. Eski 1/9 exponent’inin factor audit’i
+Eski bound iki farklı 1/3 faktörünün çarpımından geliyordu. Bunların statüsü birbirinden tamamen farklıdır.
+H_N := Σ_{k<N} 1/n_k ≤ (1/3) log N + O(1)   (5.1)
+Birinci 1/3: aritmetik packing. Injective odd states için k≥1’de gcd(n_k,6)=1; mod-6 unit density 1/3.
+log U_N = (1/3) H_N + O(1)   (5.2)
+İkinci 1/3: 3n+1 recurrence normalization. Bu leading scale’de asymptotically exact; geri kazanılabilecek factor değildir.
+FACTOR AUDIT
+1/9 = (arithmetic harmonic packing 1/3) × (recurrence normalization 1/3).
+İyileştirme harmonic packing tarafındaki ilk 1/3’ü küçültmek zorundadır.
+
+6. Doğal 2/3 filtresi
+Terminal odd unit state y için odd-only predecessor x=(2^a y−1)/3 olsun. Integer olma koşulu a’nın parity’sini belirler. Ayrıca predecessor’ın da 3’e bölünmemesi için 2^a y ≠ 1 (mod 9) gerekir.
+[EXACT] Parity-compatible üç a mod 6 sınıfından tam ikisi unit predecessor üretir; biri 3’e bölünen predecessor üretir.
+local inverse survival fraction = 2/3   (6.1)
+Bu 2/3 Collatz aritmetiğinde doğal ve exact bir faktördür. Fakat ardışık adımlarda aynı residue tower üzerinde coherent olduğundan iki bağımsız 2/3 filtresi gibi çarpılıp (2/3)^2 sonucu çıkarılamaz.
+[FAIL] Sayısal 8/9 = 1−(1/3)^2 eşitliğinden bağımsız (2/3)^2 mekanizması zorlamak geçersizdir.
+7. Tek-step reciprocal balance
+3n_k + 1 = 2^{a_k} n_{k+1}
+1/n_k = (3/2^{a_k})(1/n_{k+1}) + ε_k   (7.1)
+ε_k = 3 / [2^{a_k} n_{k+1}(2^{a_k} n_{k+1}−1)] > 0   (7.2)
+Ayrıca ε_k ≤ 3/(2n_{k+1}²). Injectivity sayesinde Σ 1/n_k² < ∞, dolayısıyla Σ ε_k < ∞.
+H_N = Σ_{k=1}^{N} [3/2^{a_{k-1}}]·1/n_k + O(1)   (7.3)
+[EXACT] Harmonic mass terminal state’in yalnız varlığına değil, ona hangi valuation ile ulaşıldığına göre graded biçimde ağırlıklandırılır.
+8. Mod 18 ile ilk explicit iyileştirme
+Terminal unit residue r mod 18 için, predecessor’ın da unit kalmasını sağlayan minimum incoming valuation a_min exact modular arithmetic ile:
+r mod 18
+1
+5
+7
+11
+13
+17
+a_min
+2
+3
+4
+1
+2
+1
+3/2^{a_min}
+3/4
+3/8
+3/16
+3/2
+3/4
+3/2
+H_N ≤ (4/15) log N + O(1)   (8.1)
+log U_N ≤ (4/45) log N + O(1)
+X_N = O(N^{4/45})
+limsup s_k/log₂k ≥ 41/45 = 0.911111…   (8.2)
+[EXACT] 41/45 ara frontier, tek-step mod-18 weighted harmonic refinement ile elde edildi.
+9. t-step harmonic balance
+Sabit t≥1 için terminal k’ye gelen son t odd step’in total valuation’ını ve reciprocal multiplier’ını tanımla:
+A_{k,t}=a_{k-t}+⋯+a_{k-1},     W_{k,t}=3^t/2^{A_{k,t}}
+Tek-step reciprocal identity t kez compose edilir. Fixed t için hata terimleri sabit (3/2)^t faktörleriyle büyür; Σ ε_k<∞ olduğundan toplam hata O_t(1) kalır.
+H_N = Σ_{k=t}^{N} W_{k,t} · 1/n_k + O_t(1)   (9.1)
+[EXACT] Bu identity, gerçek çok-ölçekli lost-factor recovery mekanizmasının başlangıcıdır.
+10. Two-terminal-class lemma
+Length-t exact valuation word a=(a₀,…,a_{t−1}), total A=Σa_i için combined affine identity:
+2^A y = 3^t x + B_{a}   (10.1)
+Başlangıç x’in mod 3 unit class’ı σ∈{1,2} seçilsin. Finite exact valuation-word realizability ve CRT nedeniyle iki seçim de mümkündür. Modulo 3^{t+1}:
+y_σ ≡ 2^{-A}(B_{a}+3^t σ)  (mod 3^{t+1})   (10.2)
+[EXACT] Her length-t exact valuation word mod 3^{t+1} içinde tam iki terminal unit class üretir.
+11. Düşük-total-valuation histories ve geometric lower tail
+Terminal unit residue y için μ_t(y), y’ye ulaşabilen unit t-step chains arasındaki minimum total valuation olsun. Actual chain’de A_{k,t}≥μ_t(y), dolayısıyla:
+W_{k,t} ≤ w_t(y):=3^t/2^{μ_t(y)}
+Total valuation A olan positive t-tuple sayısı C(A−1,t−1). Her word yalnız iki terminal unit class ürettiği için:
+#{y: μ_t(y)=A} ≤ 2·C(A−1,t−1)   (11.1)
+Geom(1/2) değişkeni G için P(G=a)=2^{-a}, a≥1 ve S_t=G₁+⋯+G_t alınırsa:
+P(S_t=A)=C(A−1,t−1)2^{-A}   (11.2)
+Bir α<c<2 seç. Low-valuation terminal classes G_t={y: μ_t(y)≤ct}. O zaman:
+Σ_{y∈G_t} w_t(y) ≤ 2·3^t · P(S_t≤ct)   (11.3)
+P(S_t≤ct) ≤ λ_c^t,     0<λ_c<1   (11.4)
+[EXACT] Orbit üzerinde probabilistic assumption yoktur; geometric notation exact composition sum’ını compact biçimde yazmaktadır.
+12. Terminal residue harmonic capacity
+Modulus Q_t=2·3^{t+1}. Bir fixed terminal unit class içinde N distinct positive integer’ın reciprocal toplamı arithmetic progression packing ile:
+h_y(N) ≤ (1/Q_t) log N + O_t(1)   (12.1)
+13. Harmonic Sparsity Theorem
+Bad classes y∉G_t için μ_t(y)>ct ve dolayısıyla:
+w_t(y) ≤ η_t := 2^{-(c−α)t}
+t-step harmonic balance good/bad split ile:
+(1−η_t) H_N ≤ [(log N)/Q_t + O_t(1)] · Σ_{y∈G_t} w_t(y) + O_t(1)
+H_N ≤ γ_t log N + O_t(1)   (13.1)
+γ_t = P(S_t≤ct) / [3(1−2^{-(c−α)t})]   (13.2)
+c<2 olduğundan geometric lower tail üstel küçülür; c>α olduğundan denominator 1’e gider. Bu nedenle γ_t→0.
+[EXACT] Her ε>0 için önce sabit t, γ_t<ε olacak şekilde seçilebilir; sonra N→∞ alınır. O_t(1) uniformity sorunu oluşmaz.
+Σ_{k<N} 1/n_k = o(log N)   (13.3)
+13.1 Finite-t sanity check [NUM]
+t
+exact finite LP coefficient β_t
+1
+0.2666666667
+2
+0.2173913043
+3
+0.1831683168
+4
+0.1533333333
+5
+0.1331626120
+6
+0.1161233258
+7
+0.1019428254
+14. Carry exponent subpolynomial oluyor
+log U_N = (1/3) H_N + O(1)
+H_N=o(log N)  ⇒  log U_N=o(log N)  ⇒  U_N=N^{o(1)}
+Exact telescoping carry identity U_N=1+X_N/(3n₀) ile:
+X_N := Σ_{k<N} 2^{D_k} = N^{o(1)}   (14.1)
+∀η>0:   X_N = O_η(N^η)   (14.2)
+[EXACT] Bu eski X_N=O(N^{1/9}) bound’unu exponent düzeyinde tamamen sıkıştırır.
+15. 8/9 → 1 theorem
+Forever-undercritical durumda D_k=−s_k−{kα}. Eğer limsup s_k/log₂k<1 ise bir B<1 ve yeterince büyük bütün k için s_k≤B log₂k seçilebilir.
+D_k ≥ −B log₂k − 1
+2^{D_k} ≥ (1/2) k^{-B}
+X_N ≥ c_B N^{1−B}   (15.1)
+Fakat X_N=N^{o(1)}. η<1−B seçilirse üst ve alt büyüme çelişir.
+YENİ RIGOROUS FRONTIER
+[EXACT]  D_k≤0 bütün k için ise
+limsup_{k→∞} (⌊k log₂3⌋−A_k) / log₂k ≥ 1.
+Önceki frontier: 8/9. Yeni frontier: 1.
+
+16. Neden B=1 yeni doğal borderline?
+B<1 için Σk^{-B} polynomial N^{1−B} büyür ve N^{o(1)} upper bound ile çelişir. Fakat B=1 olduğunda alt büyüme yalnız log N’dir:
+s_k ≤ log₂k + O(1)  ⇒  X_N ≳ log N
+Bu, X_N=N^{o(1)} ile uyumludur. Dolayısıyla bu checkpoint’in yöntemi için yeni gerçek saturation noktası B=1’dir.
+[OPEN] B=1’i dışlamak için örneğin X_N=o(log N) gibi daha keskin bir result veya farklı arithmetic obstruction gerekir.
+17. Multi-scale suffix yolunun kesin statüsü
+[FAIL] Overlapping deep suffix constraints’i independent entropy losses gibi çarpmak.
+[FAIL] Polylog-near-top koşullarını çok sayıda scale’de independent sabit-factor loss olarak kullanmak.
+[EXACT] Doğru multi-scale coherence, bir terminal state’e ulaşan length-t valuation histories’nin reciprocal weights ve mod 3^{t+1} terminal classes üzerinden birlikte sayılmasıdır.
+18. Literatür konumlandırması ve novelty disiplini
+Bu checkpoint, önceki araştırmada kullanılan üç literatür hattıyla karşılaştırılmalıdır:
+Rozier (arXiv:1510.01610): distinct trajectory states üzerinde reciprocal packing ve Lower Bound Hypothesis bağlamı.
+De Jesús 2026 preprint: mod-3 exclusion ile 8/9 logarithmic-floor seviyesi ve daha ileri graded harmonic-thinness ihtiyacı.
+Tao (arXiv:1909.03562): Syracuse dynamics, powers of 3 ve probabilistic/logarithmic-density transport; setting burada elde edilen pointwise injective-orbit theorem’den farklıdır.
+Applegate–Lagarias inverse-tree çalışmaları: powers of 3 residue trees ve inverse Collatz arithmetic için klasik bağlam.
+Bu raporda [EXACT] etiketi yalnız burada verilen bağımsız cebirsel/analitik türetimlere aittir. “Literatürde yeni” veya “ilk kez” iddiası yapılmamaktadır. Yayın/priority değerlendirmesi için theorem-level sistematik tarama ayrıca yapılmalıdır.
+19. Checkpoint 9 sorularının cevapları
+Soru
+Cevap
+R_{m+1} ile R_m exact nesting?
+Genel relation (3.1); deep regime’de doğrudan Syracuse recurrence (3.2). [EXACT]
+İki suffix scale bağımsız bilgi taşıyor mu?
+Deep endpoint constraints büyük ölçüde nested ve redundant. Independent-factor stratejisi [FAIL].
+Near-top suffixler birçok scale’de birlikte mümkün mü?
+Birkaç consecutive scale’de evet; exact finite certificate var. Consecutive polylog-near-top sayısı O(log log j).
+1/9 equality koşulları?
+İlk 1/3 mod-6 unit pool’unda harmonic saturation; ikinci 1/3 recurrence normalization ve leading scale’de exact.
+Doğal 2/3 çıktı mı?
+Evet: parity-compatible üç inverse exponent mod-6 sınıfından ikisi unit predecessor üretir. [EXACT]
+Lost-factor recovery?
+Evet: t-step weighted residue refinement sonunda H_N=o(log N). [EXACT]
+X_N exponent iyileşti mi?
+Evet: X_N=N^{o(1)}. [EXACT]
+B_*>8/9 çıktı mı?
+Evet. Ara adım 41/45, tam t-step sonuç B_*=1.
+Yeni gerçek obstruction?
+B=1 borderline; mevcut upper bound subpolynomial fakat log N’i dışlayacak kadar güçlü değil.
+20. Güncel minimal-counterexample dichotomy
+First-crossing semiconvergent kolu bu checkpoint’te [PARK] tutulmuştur. Önceki checkpoint sonucu ile forever-undercritical kolunun yeni sonucu birlikte:
+Minimal counterexample ⇒ { first crossing: K ≥ 72,057,431,991 ;  forever-undercritical: limsup s_k/log₂k ≥ 1 }
+21. Checkpoint 10 için önerilen ana hedef
+YENİ FRONTIER: B = 1
+Ana soru: Forever-undercritical orbitte s_k ≤ log₂k + O(1) eventually mümkün mü?
+Mevcut theorem: X_N=N^{o(1)}.
+Borderline lower bound: s_k≤log₂k+O(1) ⇒ X_N≳log N.
+Doğal bir sonraki hedef: X_N=o(log N) veya growing-depth harmonic sparsity için uniform control.
+
+Fixed-t harmonic theorem’deki O_t(1) sabitlerini explicit ve t’ye göre kontrollü hale getir.
+t=t(N) büyüyen rejimde geometric lower-tail gain ile boundary/error sabitleri arasındaki tradeoff’u çıkar.
+H_N için yalnız o(log N) değil, mümkünse explicit slowly-decaying coefficient γ(N)·log N üret.
+Bu bound’un X_N=o(log N) veya başka borderline contradiction’a yetip yetmediğini test et.
+Eğer B=1 yine saturate olursa, equality/near-equality orbit structure’ını exact olarak izole et.
+22. Bilimsel özet
+Checkpoint 8’in tek-scale suffix arithmetic’i 8/9 bariyerini kıramamıştı. Checkpoint 9’da overlapping suffix constraints’in bağımsız olmadığını doğruladık; dolayısıyla doğru lost-factor recovery mekanizması bu değildi.
+Gerçek kazanç, reciprocal dynamics’in valuation-dependent weights’ini t-step halinde taşımak ve exact valuation histories’yi modulo 3^{t+1} terminal unit classes ile organize etmekten geldi. Düşük-total-valuation histories’nin combinatorial ağırlığı bir Geom(1/2) lower-tail toplamına dönüşüyor ve t büyüdükçe üstel olarak azalıyor. Bu, harmonic occupation coefficient’ini keyfi küçültüyor.
+H_N=o(log N)  ⇒  X_N=N^{o(1)}  ⇒  limsup s_k/log₂k ≥ 1
+Araştırma durumu: Aktif. Checkpoint 9 itibarıyla forever-undercritical kolunda rigorous log-slack frontier 1’e yükselmiştir. Bu, Collatz conjecture’ın çözümü değildir; bir sonraki problem borderline B=1 rejimidir.
+23. Araştırma kaydı / kaynak notu
+Bu belge, Collatz araştırmasının Checkpoint 8’den devam eden Checkpoint 9 çalışmasının kalıcı durum raporudur. Ana sonuçlar rapor içinde verilen bağımsız türetimlere dayanır. Literatür bağlantıları yalnız konumlandırma içindir; novelty/priority iddiası ayrıca doğrulanmalıdır.
+Rozier — arXiv:1510.01610.
+Tao — arXiv:1909.03562.
+Applegate–Lagarias — inverse 3x+1 tree çalışmaları.
+De Jesús — 2026 preprint, logarithmic-floor / occupation hattı.

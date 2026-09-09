@@ -1,0 +1,326 @@
+{
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "final_status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "active_lanes": {},
+  "completed_lanes": [
+    "luna-low-state",
+    "luna-resonance",
+    "luna-cycles",
+    "luna-counting",
+    "luna-refutation"
+  ],
+  "usage": {
+    "calls": 5,
+    "provider_cost_usd": 0.03410785,
+    "provider_cost_complete": true,
+    "provider_cost_lower_bound_usd": 0.03410785,
+    "provider_cost_upper_bound_usd": 0.03410785,
+    "wall_seconds": 452.0383657000202
+  },
+  "lanes": {
+    "luna-counting": {
+      "status": "COMPLETED",
+      "first_missing_step": {
+        "statement": "Prove the uniform conditional marked-block hazard inequality in the findings, with quantifiers uniform over all sufficiently large actual coupled arrays and all histories of positive conditional probability.",
+        "why_it_is_missing": "The required lower bound must simultaneously exclude low entry states and exact positive amplified resonances. The supplied marginal coefficient identities count words but provide no uniform arithmetic or joint-history bound for those exclusions."
+      },
+      "usage": {
+        "prompt_tokens": 4669,
+        "completion_tokens": 4399,
+        "reasoning_tokens": 3624,
+        "cached_tokens": 0,
+        "cost_usd": 0.0064459,
+        "wall_seconds": 287.9399717999913
+      },
+      "public_answer_characters": 1871,
+      "provider_attempts": [
+        {
+          "attempt_id": "luna-counting:attempt:1",
+          "client_call_id": "cp20-xub-luna-five-routes-v1:directed-aa54128adc00474fbfeac6e7ccca2719:luna-counting:v1:luna-counting:attempt:1",
+          "started_at": "2026-09-07T19:02:43.528933+00:00",
+          "status": "RETURNED",
+          "metadata": {
+            "id": "gen-1788807766-yzitWa0EJMpSfmJYRLPZ",
+            "model": "openai/gpt-5.6-luna",
+            "provider": "OpenAI"
+          },
+          "usage": {
+            "prompt_tokens": 4669,
+            "completion_tokens": 4399,
+            "reasoning_tokens": 3624,
+            "cached_tokens": 0,
+            "cost_usd": 0.0064459
+          }
+        }
+      ],
+      "public_findings": "['Under the uniform weak-composition law conditioned only on S_R=K, let Z_{R,K}=binom(K+R-1,R-1) and define Phi_n(u)=binom(u+n-1,n-1) for n>=1, Phi_0(u)=1_{u=0}, with Phi_n(u)=0 for u<0. For a block beginning after j pairs, of length L, and word b=(b_1,...,b_L) in {1,...,B_0}^L, exact counting gives P(C_q | S_R=K)=Z_{R,K}^{-1} sum_{h>=0} sum_b Phi_{2j}(h) prod_l(b_l+1) 1_{C_q(h,b)} Phi_{R-2j-2L}(K-h-|b|). The factor prod_l(b_l+1) counts the two raw-coordinate splits of each pair total. This includes both parity cases and all boundary conventions.', 'If the marker depends only on w=|b|, the inner word sum reduces to a_L(w)=[x^w](sum_{b=1}^{B_0}(b+1)x^b)^L. The same identity applies to G_q intersect resonance or to C_q by inserting the corresponding indicator. It is an exact one-block coefficient identity, not an independence statement.', 'The identity does not control E[exp(-lambda sum_q 1_{C_q})]. That quantity requires joint counts for several disjoint blocks, including the evolving prefix total h and the arithmetic low/nonresonance indicators. Neither the displayed coefficient formula nor exchangeability supplies those joint bounds.', 'A sufficient narrower missing estimate is the following local hazard statement. There should exist p_*>0 and, for every sufficiently large actual array, a deterministic ordered subgrid of n_R=ceil(log R / -log rho) disjoint blocks, where rho=1-p_*(1-exp(-lambda))<1, such that for every admissible revealed history H_i before block i, P(C_{q_i} | H_i, S_R=K, exact first-passage data) >= p_* for i=1,...,n_R. Iterated conditioning would then give E[exp(-lambda sum_q 1_{C_q})] <= rho^{n_R} <= 1/R. This asks only for O(log R) blocks rather than the full global estimate, but it is not established; low entry phases and positive amplified resonances prevent deriving the hazard from the coefficient identity alone.']",
+      "claim_results": [
+        {
+          "claim_id": "XUB-MARKED-OCC",
+          "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+          "status": "OPEN",
+          "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+          "assumptions": [
+            "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+            "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+            "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+            "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+            "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+            "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+          ],
+          "first_missing_step": {
+            "statement": "Prove the uniform conditional marked-block hazard inequality in the findings, with quantifiers uniform over all sufficiently large actual coupled arrays and all histories of positive conditional probability.",
+            "why_it_is_missing": "The required lower bound must simultaneously exclude low entry states and exact positive amplified resonances. The supplied marginal coefficient identities count words but provide no uniform arithmetic or joint-history bound for those exclusions."
+          },
+          "evidence_files": [
+            "EVIDENCE.json"
+          ]
+        }
+      ]
+    },
+    "luna-cycles": {
+      "status": "COMPLETED",
+      "first_missing_step": {
+        "lemma": "Before adding bounded-positive and nonresonance marks, prove the following strictly narrower, parity-correct bridge estimate. For fixed eta>0 and lambda>0, uniformly over all sufficiently large actual R=2J+epsilon, epsilon in {0,1}, all admissible K,tau, and the induced weak-composition law (including the singleton summation when epsilon=1), with a=1-{beta tau}, establish E[exp(-lambda M_{J,epsilon}) | S_R=K and the stipulated exact data] <= C/J, where M_{J,epsilon}=#{1<=j<=J: a+H_j-2 beta j >= log_2 eta}.",
+        "why_first": "This is the unmarked occupation estimate needed before one can control the number of blocks that are simultaneously non-low, bounded-positive, and nonresonant. It is strictly narrower than the target because it ignores block grouping, the positive alphabet restriction, and resonance deletion.",
+        "what_is_missing": "A proof must explicitly handle the rational ties in u_j, the bounded affine phase and endpoint tilt, the even-time sampling, and the odd singleton. No supplied identity establishes this uniform Laplace inequality."
+      },
+      "usage": {
+        "prompt_tokens": 4675,
+        "completion_tokens": 3853,
+        "reasoning_tokens": 3106,
+        "cached_tokens": 0,
+        "cost_usd": 0.0057922,
+        "wall_seconds": 287.82000269999844
+      },
+      "public_answer_characters": 1741,
+      "provider_attempts": [
+        {
+          "attempt_id": "luna-cycles:attempt:1",
+          "client_call_id": "cp20-xub-luna-five-routes-v1:directed-aa54128adc00474fbfeac6e7ccca2719:luna-cycles:v1:luna-cycles:attempt:1",
+          "started_at": "2026-09-07T19:02:43.618227+00:00",
+          "status": "RETURNED",
+          "metadata": {
+            "id": "gen-1788807766-oj5vCwKcVtKY3J8ebTXp",
+            "model": "openai/gpt-5.6-luna",
+            "provider": "OpenAI"
+          },
+          "usage": {
+            "prompt_tokens": 4675,
+            "completion_tokens": 3853,
+            "reasoning_tokens": 3106,
+            "cached_tokens": 0,
+            "cost_usd": 0.0057922
+          }
+        }
+      ],
+      "public_findings": "['The cyclic/ballot route does not currently prove the claim. For an even suffix R=2J, write a=1-{beta tau}, H_j=sum_{i<=j}B_i, and d=K-2 beta J. Centering by the actual endpoint gives u_j=H_j-jK/J and the exact identity log_2 z_j=a+u_j+(j d/J). Thus the low/non-low test is a first-passage test for a rational-lattice bridge against the tilted affine barrier log_2(eta)-a-jd/J, not against a fixed zero barrier.', 'A pair-total cyclic shift preserves the even-suffix weight: under the uniform raw weak-composition law, P((B_1,...,B_J)=b | sum B_i=K) is proportional to product_i(b_i+1). Hence exchangeability and rotation invariance are available in the even case. They do not by themselves give an occupation count, because the barrier contains the phase a and the slope jd/J. Since d is only bounded, the cumulative tilt is O(1), comparable with the barrier, and cannot be discarded. Centered ties also occur on the 1/J lattice; strict versus non-strict crossings and zero/near-zero visits require an explicit uniform estimate.', 'Raw-coordinate cyclic arguments do not automatically repair even-time sampling. Pairing changes the increment law to the weighted law above, while an odd suffix has a distinguished singleton: conditional on its value s, the pair total is K-s, and one must sum uniformly over s with the corresponding weight. No displayed reduction supplies a parity-preserving cyclic lemma with these affine and boundary conventions.', 'The beta-binomial marginal formula, even if used, controls one time only and cannot imply the needed exponential lower-tail bound for occupation. The exact resonance coefficient formula likewise is only a finite counting identity and supplies no bound excluding resonant useful blocks.']",
+      "claim_results": [
+        {
+          "claim_id": "XUB-MARKED-OCC",
+          "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+          "status": "OPEN",
+          "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+          "assumptions": [
+            "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+            "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+            "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+            "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+            "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+            "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+          ],
+          "first_missing_step": {
+            "lemma": "Before adding bounded-positive and nonresonance marks, prove the following strictly narrower, parity-correct bridge estimate. For fixed eta>0 and lambda>0, uniformly over all sufficiently large actual R=2J+epsilon, epsilon in {0,1}, all admissible K,tau, and the induced weak-composition law (including the singleton summation when epsilon=1), with a=1-{beta tau}, establish E[exp(-lambda M_{J,epsilon}) | S_R=K and the stipulated exact data] <= C/J, where M_{J,epsilon}=#{1<=j<=J: a+H_j-2 beta j >= log_2 eta}.",
+            "why_first": "This is the unmarked occupation estimate needed before one can control the number of blocks that are simultaneously non-low, bounded-positive, and nonresonant. It is strictly narrower than the target because it ignores block grouping, the positive alphabet restriction, and resonance deletion.",
+            "what_is_missing": "A proof must explicitly handle the rational ties in u_j, the bounded affine phase and endpoint tilt, the even-time sampling, and the odd singleton. No supplied identity establishes this uniform Laplace inequality."
+          },
+          "evidence_files": [
+            "EVIDENCE.json"
+          ]
+        }
+      ]
+    },
+    "luna-low-state": {
+      "status": "COMPLETED",
+      "first_missing_step": {
+        "inequality": "For some a>0 and C<∞ depending only on the fixed parameters, uniformly over all sufficiently large accessible actual arrays, prove P(Σ_{q∈Q_R} 1_{z_{j_q}≥η} < a log R | S_R=K and exact first-passage data) ≤ C/R.",
+        "scope": "This is strictly narrower than the target: it counts only non-low block entries and omits bounded positivity and amplified nonresonance.",
+        "why_missing": "The exact bridge decomposition supplies marginals and conditional segment laws, but no joint lower-tail estimate under even-time sampling, rational ties, or the bounded affine threshold. Proving this narrower estimate would still not prove the marked C_q estimate; it is the first unresolved low-state occupation step."
+      },
+      "usage": {
+        "prompt_tokens": 4666,
+        "completion_tokens": 4354,
+        "reasoning_tokens": 3624,
+        "cached_tokens": 0,
+        "cost_usd": 0.00639115,
+        "wall_seconds": 273.5134065000166
+      },
+      "public_answer_characters": 1632,
+      "provider_attempts": [
+        {
+          "attempt_id": "luna-low-state:attempt:1",
+          "client_call_id": "cp20-xub-luna-five-routes-v1:directed-aa54128adc00474fbfeac6e7ccca2719:luna-low-state:v1:luna-low-state:attempt:1",
+          "started_at": "2026-09-07T19:02:43.692576+00:00",
+          "status": "RETURNED",
+          "metadata": {
+            "id": "gen-1788807766-72NXpaSsB81CWFnm6fxW",
+            "model": "openai/gpt-5.6-luna",
+            "provider": "OpenAI"
+          },
+          "usage": {
+            "prompt_tokens": 4666,
+            "completion_tokens": 4354,
+            "reasoning_tokens": 3624,
+            "cached_tokens": 0,
+            "cost_usd": 0.00639115
+          }
+        }
+      ],
+      "public_findings": "['Under the stated uniform weak-composition bridge, let S_h=Y_1+...+Y_h. For 1≤h<R, exact counting gives P(S_h=a | S_R=K) = [C(a+h-1,h-1) C(K-a+R-h-1,R-h-1)] / C(K+R-1,R-1). More generally, conditional on S_h=a, the next ℓ coordinates have total w with probability C(w+ℓ-1,ℓ-1) C(K-a-w+R-h-ℓ-1,R-h-ℓ-1) / C(K-a+R-h-1,R-h-1). This is the required bridge decomposition; it does not introduce independent increments.', 'At pair time j, h=2j and log_2 z_j=1-{βτ}+S_h-βh. Thus z_j<η iff S_h<βh+c_η, where c_η=log_2(η/z_0) is fixed. Since K=βR+O(1), the bridge mean is hK/R=βh+O(1). Its exact variance is K h(R-h)(K+R)/(R^2(R+1)), which is Θ(R) when h/R stays in a compact subinterval of (0,1). A direct Stirling expansion of the displayed beta-binomial mass gives a centered Gaussian local scale, so at every fixed bulk fraction P(z_j<η | S_R=K)→1/2. Therefore low entries are not an exceptional event.', 'There is also an exact positive-probability entrance mechanism. If the first d=2L raw coordinates vanish, then z_L=z_0(4/9)^L. Choosing L with 2(4/9)^L<η forces a low entry, while the exact probability is C(K+R-d-1,R-d-1)/C(K+R-1,R-1)→(1+β)^(-d)>0. This supports neither the target estimate nor a refutation, because the target allows low blocks.', 'The bridge formulas and one-time asymptotics do not control the joint lower tail of low/non-low entries on the disjoint block grid. In particular, they do not establish the required occupation Laplace bound, and they say nothing about the additional bounded-positive and nonresonance marks. No rigorous proof or actual accessible counterexample to the primary claim was obtained.']",
+      "claim_results": [
+        {
+          "claim_id": "XUB-MARKED-OCC",
+          "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+          "status": "OPEN",
+          "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+          "assumptions": [
+            "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+            "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+            "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+            "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+            "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+            "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+          ],
+          "first_missing_step": {
+            "inequality": "For some a>0 and C<∞ depending only on the fixed parameters, uniformly over all sufficiently large accessible actual arrays, prove P(Σ_{q∈Q_R} 1_{z_{j_q}≥η} < a log R | S_R=K and exact first-passage data) ≤ C/R.",
+            "scope": "This is strictly narrower than the target: it counts only non-low block entries and omits bounded positivity and amplified nonresonance.",
+            "why_missing": "The exact bridge decomposition supplies marginals and conditional segment laws, but no joint lower-tail estimate under even-time sampling, rational ties, or the bounded affine threshold. Proving this narrower estimate would still not prove the marked C_q estimate; it is the first unresolved low-state occupation step."
+          },
+          "evidence_files": [
+            "EVIDENCE.json"
+          ]
+        }
+      ]
+    },
+    "luna-refutation": {
+      "status": "COMPLETED",
+      "first_missing_step": "A strictly narrower sufficient estimate is the following marked lower-tail bound. Writing N_R=sum_{q in Q_R} 1_{C_q}, prove that there exist A>1/lambda, C_0, and R_0, uniform over every sufficiently large actual accessible array and its declared conditioning data, such that P(N_R < A log R | S_R=K and exact first-passage data) <= C_0/R for R>=R_0. Indeed, on N_R >= A log R, exp(-lambda N_R) <= R^{-lambda A}; choosing A=2/lambda would yield the target from this bound. The exact coefficient formula above does not imply this inequality because it is single-block/local, while the required estimate must control correlations among disjoint blocks, affine boundary shifts, even-time sampling, low entries, and amplified resonances simultaneously.",
+      "usage": {
+        "prompt_tokens": 4677,
+        "completion_tokens": 5166,
+        "reasoning_tokens": 4590,
+        "cached_tokens": 0,
+        "cost_usd": 0.0073683,
+        "wall_seconds": 176.85093700001016
+      },
+      "public_answer_characters": 1128,
+      "provider_attempts": [
+        {
+          "attempt_id": "luna-refutation:attempt:1",
+          "client_call_id": "cp20-xub-luna-five-routes-v1:directed-aa54128adc00474fbfeac6e7ccca2719:luna-refutation:v1:luna-refutation:attempt:1",
+          "started_at": "2026-09-07T19:07:18.666509+00:00",
+          "status": "RETURNED",
+          "metadata": {
+            "id": "gen-1788808041-OwIhOsl5cfSXHlar6kXQ",
+            "model": "openai/gpt-5.6-luna",
+            "provider": "OpenAI"
+          },
+          "usage": {
+            "prompt_tokens": 4677,
+            "completion_tokens": 5166,
+            "reasoning_tokens": 4590,
+            "cached_tokens": 0,
+            "cost_usd": 0.0073683
+          }
+        }
+      ],
+      "public_findings": "No rigorous counterexample or proof was obtained. A finite identity can be checked directly: the total number of weak compositions is binom(K+R-1,R-1). Fixing j pair totals with prefix sum h, a positive word of length L with total w has multiplicity [x^w](sum_{b=1}^{B_0}(b+1)x^b)^L, while the prefix and suffix contribute binom(h+2j-1,2j-1) and binom(K-h-w+R-2j-2L-1,R-2j-2L-1), respectively. Dividing their sum by the total count gives the corresponding exact local probability, including endpoint conditioning. This identity does not control the joint lower tail of marked blocks. Likewise, for fixed u, the event that the first u raw coordinates vanish has probability binom(K+R-u-1,R-u-1)/binom(K+R-1,R-1), tending to (1+beta)^(-u) along K/R -> beta. That supplies no refutation: it concerns only a fixed prefix, whereas suppression of every marked block is a global bridge event. No admissible actual-array event with probability asymptotically larger than order 1/R and with zero or sublogarithmically many C_q blocks was established. The supplied local reductions therefore neither prove nor refute the claimed estimate.",
+      "claim_results": [
+        {
+          "claim_id": "XUB-MARKED-OCC",
+          "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+          "status": "OPEN",
+          "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+          "assumptions": [
+            "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+            "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+            "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+            "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+            "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+            "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+          ],
+          "first_missing_step": "A strictly narrower sufficient estimate is the following marked lower-tail bound. Writing N_R=sum_{q in Q_R} 1_{C_q}, prove that there exist A>1/lambda, C_0, and R_0, uniform over every sufficiently large actual accessible array and its declared conditioning data, such that P(N_R < A log R | S_R=K and exact first-passage data) <= C_0/R for R>=R_0. Indeed, on N_R >= A log R, exp(-lambda N_R) <= R^{-lambda A}; choosing A=2/lambda would yield the target from this bound. The exact coefficient formula above does not imply this inequality because it is single-block/local, while the required estimate must control correlations among disjoint blocks, affine boundary shifts, even-time sampling, low entries, and amplified resonances simultaneously.",
+          "evidence_files": [
+            "EVIDENCE.json"
+          ]
+        }
+      ]
+    },
+    "luna-resonance": {
+      "status": "COMPLETED",
+      "first_missing_step": {
+        "statement": "Uniform resonance masking inequality: there exist constants A >= 4/lambda and C such that, for every sufficiently large accessible R and every actual coupled array under the stated conditioning, P(N_res > N_G/2 and N_G >= A log R | S_R=K and exact first-passage data) <= C/R.",
+        "why_missing": "The exact coefficient sum rederived above retains the correct prefix, block, suffix, and endpoint weights but gives no arithmetic density estimate for the positive-resonance indicators rho_{j,L}(h), nor a joint estimate across the disjoint blocks."
+      },
+      "usage": {
+        "prompt_tokens": 4669,
+        "completion_tokens": 5786,
+        "reasoning_tokens": 5151,
+        "cached_tokens": 0,
+        "cost_usd": 0.0081103,
+        "wall_seconds": 274.0523040999833
+      },
+      "public_answer_characters": 1910,
+      "provider_attempts": [
+        {
+          "attempt_id": "luna-resonance:attempt:1",
+          "client_call_id": "cp20-xub-luna-five-routes-v1:directed-aa54128adc00474fbfeac6e7ccca2719:luna-resonance:v1:luna-resonance:attempt:1",
+          "started_at": "2026-09-07T19:02:43.793087+00:00",
+          "status": "RETURNED",
+          "metadata": {
+            "id": "gen-1788807766-gtu6DWWq5PiE8OBTf6R2",
+            "model": "openai/gpt-5.6-luna",
+            "provider": "OpenAI"
+          },
+          "usage": {
+            "prompt_tokens": 4669,
+            "completion_tokens": 5786,
+            "reasoning_tokens": 5151,
+            "cached_tokens": 0,
+            "cost_usd": 0.0081103
+          }
+        }
+      ],
+      "public_findings": "['The claim remains OPEN. I obtained neither a proof nor an accessible counterexample.', 'Under the stated uniform weak-composition law, fixing a block beginning after j pairs and writing n_s = R - 2j - 2L, the joint non-low positive-resonance weight is exactly T_R(K)^(-1) times the sum over h,w of 1{z_j(h) >= eta} 1{rho_{j,L}(h)} binom(h+2j-1,2j-1) a_L(w) binom(K-h-w+n_s-1,n_s-1), where T_R(K)=binom(K+R-1,R-1), a_L(w)=[x^w](sum_{b=1}^{B_0}(b+1)x^b)^L, and rho_{j,L}(h) is the stated positive amplified-resonance indicator. This follows by independently counting prefix compositions, the bounded-positive block, and suffix compositions; boundary cases require the usual zero-component convention.', 'This identity is only a weighted finite sum. It supplies no uniform upper bound on the set of h for which rho_{j,L}(h)=1. Full multiplicative-order information for powers of 2 modulo powers of 3 does not control the short accessible h-window, and the displayed reduction does not control dependence between different block starts.', 'The first missing resonance-specific estimate is the following strictly narrower masking bound. Define N_G as the number of grid blocks that are bounded-positive and non-low, and N_res as the number of those blocks that additionally satisfy amplified resonance. For some fixed A >= 4/lambda and C, uniformly over all sufficiently large accessible arrays and the exact conditioning data, one needs P(N_res > N_G/2 and N_G >= A log R | data) <= C/R. This does not establish abundance of N_G and therefore is strictly weaker than the target.', 'No supplied calculation proves this masking inequality. A per-start resonance estimate followed by a union bound is insufficient for the required global O(1/R) scale. Independently, the lower-tail estimate that N_G is at least logarithmic with probability 1-O(1/R) also remains unproved because low-state occupation is not rare.']",
+      "claim_results": [
+        {
+          "claim_id": "XUB-MARKED-OCC",
+          "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+          "status": "OPEN",
+          "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+          "assumptions": [
+            "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+            "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+            "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+            "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+            "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+            "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+          ],
+          "first_missing_step": {
+            "statement": "Uniform resonance masking inequality: there exist constants A >= 4/lambda and C such that, for every sufficiently large accessible R and every actual coupled array under the stated conditioning, P(N_res > N_G/2 and N_G >= A log R | S_R=K and exact first-passage data) <= C/R.",
+            "why_missing": "The exact coefficient sum rederived above retains the correct prefix, block, suffix, and endpoint weights but gives no arithmetic density estimate for the positive-resonance indicators rho_{j,L}(h), nor a joint estimate across the disjoint blocks."
+          },
+          "evidence_files": [
+            "EVIDENCE.json"
+          ]
+        }
+      ]
+    }
+  },
+  "zip": {
+    "members": 54,
+    "crc_error": null,
+    "sha256": "4385d014a3de08c9c77bdc55626e8499e7047a93b8357695f5d2d9a54cb83ba7",
+    "bytes": 425893
+  }
+}

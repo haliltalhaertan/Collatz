@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "task_id": "cp20-xub-luna-five-routes-v1",
+  "run_id": "directed-aa54128adc00474fbfeac6e7ccca2719",
+  "lane_id": "luna-resonance",
+  "role": "Analyze weighted amplified-resonance counting on actual coupled arrays, and its interaction with useful-block occupation.",
+  "model": "openai/gpt-5.6-luna",
+  "reasoning_effort": "high",
+  "step_id": "cp20-xub-luna-five-routes-v1:directed-aa54128adc00474fbfeac6e7ccca2719:luna-resonance:v1",
+  "provider_attempts": [
+    {
+      "attempt_id": "luna-resonance:attempt:1",
+      "client_call_id": "cp20-xub-luna-five-routes-v1:directed-aa54128adc00474fbfeac6e7ccca2719:luna-resonance:v1:luna-resonance:attempt:1",
+      "started_at": "2026-09-07T19:02:43.793087+00:00",
+      "status": "RETURNED",
+      "metadata": {
+        "id": "gen-1788807766-gtu6DWWq5PiE8OBTf6R2",
+        "model": "openai/gpt-5.6-luna",
+        "provider": "OpenAI"
+      },
+      "usage": {
+        "prompt_tokens": 4669,
+        "completion_tokens": 5786,
+        "reasoning_tokens": 5151,
+        "cached_tokens": 0,
+        "cost_usd": 0.0081103
+      }
+    }
+  ],
+  "status": "COMPLETED",
+  "public_findings": "['The claim remains OPEN. I obtained neither a proof nor an accessible counterexample.', 'Under the stated uniform weak-composition law, fixing a block beginning after j pairs and writing n_s = R - 2j - 2L, the joint non-low positive-resonance weight is exactly T_R(K)^(-1) times the sum over h,w of 1{z_j(h) >= eta} 1{rho_{j,L}(h)} binom(h+2j-1,2j-1) a_L(w) binom(K-h-w+n_s-1,n_s-1), where T_R(K)=binom(K+R-1,R-1), a_L(w)=[x^w](sum_{b=1}^{B_0}(b+1)x^b)^L, and rho_{j,L}(h) is the stated positive amplified-resonance indicator. This follows by independently counting prefix compositions, the bounded-positive block, and suffix compositions; boundary cases require the usual zero-component convention.', 'This identity is only a weighted finite sum. It supplies no uniform upper bound on the set of h for which rho_{j,L}(h)=1. Full multiplicative-order information for powers of 2 modulo powers of 3 does not control the short accessible h-window, and the displayed reduction does not control dependence between different block starts.', 'The first missing resonance-specific estimate is the following strictly narrower masking bound. Define N_G as the number of grid blocks that are bounded-positive and non-low, and N_res as the number of those blocks that additionally satisfy amplified resonance. For some fixed A >= 4/lambda and C, uniformly over all sufficiently large accessible arrays and the exact conditioning data, one needs P(N_res > N_G/2 and N_G >= A log R | data) <= C/R. This does not establish abundance of N_G and therefore is strictly weaker than the target.', 'No supplied calculation proves this masking inequality. A per-start resonance estimate followed by a union bound is insufficient for the required global O(1/R) scale. Independently, the lower-tail estimate that N_G is at least logarithmic with probability 1-O(1/R) also remains unproved because low-state occupation is not rare.']",
+  "claim_results": [
+    {
+      "claim_id": "XUB-MARKED-OCC",
+      "statement": "For fixed admissible eta, lambda, bounded positive alphabet cutoff B_0, and a preregistered disjoint block grid with L_R=floor(c log R) below the stated symbolic-supply threshold, there is a constant C such that every sufficiently large actual accessible suffix array satisfies E[exp(-lambda * sum_{q in Q_R} 1_{C_q}) | S_R=K and the exact first-passage data] <= C/R. Here C_q is the event that block q has all pair totals in {1,...,B_0}, its entry state is not low, and it does not satisfy the exact positive amplified-resonance condition recorded in the inputs.",
+      "status": "OPEN",
+      "domain": "Uniformly over sufficiently large accessible suffix lengths R=2J+epsilon, epsilon in {0,1}, and the actual coupled integer arrays (r,R,tau,K) with K-beta R in (-15-2beta,-13-2beta), beta=log_2(3)-1, z_0=2^(1-{beta tau}) in (1,2), and S_R=K under the uniform weak-composition law; constants may depend only on the preregistered fixed parameters eta, lambda, B_0, c and the fixed grid rule, not on r,R,tau,K.",
+      "assumptions": [
+        "Y_1,...,Y_R are nonnegative integers uniformly distributed over weak compositions with sum S_R=K; pair totals are B_j=Y_(2j-1)+Y_(2j).",
+        "At pair time j, H_j=B_1+...+B_j and z_j=2^(tau+floor(beta tau)+1+2j+H_j)/3^(tau+2j)=2^(1-{beta tau}+H_j-2beta j).",
+        "A low entry means z_j<eta. Low-state visits themselves are not rare and may not be discarded as an exceptional event.",
+        "For a bounded-positive L_R-word starting at j, positive amplified resonance is the exact event dist(2^(E_j)/3^(D_j+2L_R), Z)<eta/9^L_R with positive nearest integer, where E_j=tau+floor(beta tau)+1+2j+H_j and D_j=tau+2j.",
+        "C_q means bounded-positive useful block, non-low at entry, and nonresonant. The target permits many low or resonant blocks; it only requires sufficient weighted occupation of C_q blocks.",
+        "The desired estimate is an analytic uniform bound. Finite examples, numerical fits, agreement among models, or an unproved appeal to a named theorem do not prove it."
+      ],
+      "first_missing_step": {
+        "statement": "Uniform resonance masking inequality: there exist constants A >= 4/lambda and C such that, for every sufficiently large accessible R and every actual coupled array under the stated conditioning, P(N_res > N_G/2 and N_G >= A log R | S_R=K and exact first-passage data) <= C/R.",
+        "why_missing": "The exact coefficient sum rederived above retains the correct prefix, block, suffix, and endpoint weights but gives no arithmetic density estimate for the positive-resonance indicators rho_{j,L}(h), nor a joint estimate across the disjoint blocks."
+      },
+      "evidence_files": [
+        "EVIDENCE.json"
+      ]
+    }
+  ],
+  "scope_compliance": {
+    "scope_changed": false,
+    "undeclared_tools_used": false,
+    "undeclared_inputs_used": false,
+    "budget_exceeded": false
+  },
+  "usage": {
+    "prompt_tokens": 4669,
+    "completion_tokens": 5786,
+    "reasoning_tokens": 5151,
+    "cached_tokens": 0,
+    "cost_usd": 0.0081103,
+    "wall_seconds": 274.0523040999833
+  },
+  "integrity_issues": [],
+  "independence_level": "ISOLATED_INPUTS_SHARED_COORDINATOR",
+  "unexpected_findings": [],
+  "first_missing_step": {
+    "statement": "Uniform resonance masking inequality: there exist constants A >= 4/lambda and C such that, for every sufficiently large accessible R and every actual coupled array under the stated conditioning, P(N_res > N_G/2 and N_G >= A log R | S_R=K and exact first-passage data) <= C/R.",
+    "why_missing": "The exact coefficient sum rederived above retains the correct prefix, block, suffix, and endpoint weights but gives no arithmetic density estimate for the positive-resonance indicators rho_{j,L}(h), nor a joint estimate across the disjoint blocks."
+  },
+  "output_hash_scope": "canonical JSON excluding output_sha256",
+  "output_sha256": "16b25871bd7e02f6b518298e7795fbac9fffff266079c9689a243d1c8702b7d1"
+}

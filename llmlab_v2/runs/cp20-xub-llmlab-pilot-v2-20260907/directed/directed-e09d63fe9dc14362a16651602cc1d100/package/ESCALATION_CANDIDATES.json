@@ -1,0 +1,9 @@
+[
+  {
+    "type": "ESCALATION_CANDIDATE",
+    "statement": "{'candidate': 'The concrete preregistered grid rule, the numerical admissibility conditions on eta and c, and the stated symbolic-supply threshold are not displayed in the supplied documents.', 'impact': 'This does not refute the frozen claim, but it prevents independent verification of boundary-block conventions, the number of grid blocks, and whether L_R is actually below the asserted threshold. Escalation should request those frozen definitions without changing the task or grid.'}",
+    "action_taken": "RECORDED_ONLY",
+    "new_task_started": false,
+    "additional_budget_spent": 0
+  }
+]

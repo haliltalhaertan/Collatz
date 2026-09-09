@@ -1,0 +1,8 @@
+{
+  "content": "{\"findings\":\"\"}",
+  "complete": true,
+  "finish_reason": "stop",
+  "usage": {
+    "cost_usd": 0
+  }
+}

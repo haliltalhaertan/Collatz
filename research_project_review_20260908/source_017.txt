@@ -1,0 +1,1238 @@
+# Checkpoint 9 — Adversarial Independent Proof & Novelty Audit
+
+## 1. Verdict
+
+**Resmî verdict: proof düzeltilebilir.**
+
+Ancak bu verdict iki parçaya ayrılmalı:
+
+**Ana theorem zinciri için:**
+[
+H\_N:=\sum\_{k\<N}\frac1{n\_k}=o(\log N)
+]
+sonucunu Checkpoint 9’dan bağımsız olarak yeniden türettim. Kritik terminal-residue sayımı, geometric lower-tail, arithmetic-progression packing ve quantifier sırası birlikte çalışıyor. Ardından
+[
+X\_N=\sum\_{k\<N}2^{D\_k}=N^{o(1)}
+]
+ve forever-undercritical durumda
+[
+\limsup\_{k\to\infty}\frac{s\_k}{\log\_2k}\ge1
+]
+gerçekten rigorous biçimde follow ediyor.
+
+Dolayısıyla **ana sonuçlar açısından kritik gap bulamadım.**
+
+Checkpoint’in kendisi bu üç sonucu `[EXACT]` olarak ilan ediyor. Audit sonucum bu etiketlerden bağımsız olarak aynı yönde.
+
+Bununla birlikte belgenin Section 8 ve “finite LP coefficient” sanity-check kısmında reprodüksiyon problemi var. Section 8’de verilen mod-18 minimum valuation tablosu tek başına
+[
+H\_N\le\frac4{15}\log N+O(1)
+]
+sonucunu vermiyor; doğrudan classwise packing hesabı (9/32) veriyor. Ayrıca raporun (\beta\_t) LP tablosunda LP’nin değişkenleri, constraints’i ve objective’i hiç tanımlanmıyor. Bu iki iddia gizli ek constraints ile doğru olabilir, fakat mevcut rapordan bağımsız olarak doğrulanamıyor.
+
+Bu sorun **ana (o(\log N)) ispatını düşürmüyor**, çünkü Section 13 theorem’i finite LP tablosunu kullanmıyor.
+
+---
+
+## 2. En kırılgan 5 adım
+
+### 1. Two-terminal-class → combinatorial upper bound
+
+İlk bakışta en şüpheli nokta buydu:
+[
+\#{y:\mu\_t(y)=A}\le
+2\binom{A-1}{t-1}.
+]
+
+Burada collision’ların inequality yönünü tersine çevirebileceğini özellikle test ettim. Çevirmiyor.
+
+Total valuation (A) olan positive (t)-tuple sayısı tam olarak
+[
+\binom{A-1}{t-1}.
+]
+Her word en fazla — aslında tam — iki terminal class üretiyor. Farklı word’ler aynı terminal class’a çarparsa union yalnız küçülür. Ayrıca (\mu\_t(y)=A) olan her class, total valuation (A) olan en az bir word’ün image’ında bulunmak zorunda.
+
+Dolayısıyla upper-bound yönü doğrudur.
+
+### 2. Modulus (Q\_t=2\cdot3^{t+1})
+
+Terminal lemma doğal olarak önce modulo (3^{t+1}) çalışıyor. Harmonic packing ise odd integers üzerinde olduğundan parity de sabitlenmeli.
+
+Her unit
+[
+y\pmod {3^{t+1}}
+]
+için tam bir odd lift vardır:
+[
+r\pmod {2\cdot3^{t+1}},
+]
+çünkü
+[
+\gcd(2,3^{t+1})=1.
+]
+
+Dolayısıyla
+[
+Q\_t=2\cdot3^{t+1}
+]
+doğru modüldür.
+
+### 3. Orbit-length (N) ile integer cutoff (N) karışıklığı
+
+Bu özellikle tehlikeli görünüyordu.
+
+# Bir residue class içindeki orbit elemanlarının sayısı (M\le N) olsun. Bunlar büyüklük sırasına konulduğunda en küçük mümkün değerler [ r,\ r+Q\_t,\ r+2Q\_t,\ldots ] olduğu için [ \sum\_{\substack{k\<N\n\_k\equiv r\pmod{Q\_t}}}\frac1{n\_k} \le \sum\_{j=0}^{M-1}\frac1{r+jQ\_t}
+
+\frac1{Q\_t}\log M+O\_t(1)
+\le
+\frac1{Q\_t}\log N+O\_t(1).
+]
+
+Buradaki (N), integer-size cutoff olmak zorunda değildir. Orbit prefix’indeki **eleman sayısı** olması yeterlidir.
+
+Dolayısıyla burada değişken anlamı karışmış görünse de proof collapse etmiyor.
+
+### 4. Fixed (t) → (t\to\infty) quantifier sırası
+
+Bu da doğru:
+
+[
+\forall\varepsilon>0
+\quad
+\exists t=t(\varepsilon)
+\quad
+\exists N\_0(t,\varepsilon)
+\quad
+\forall N\ge N\_0:
+\frac{H\_N}{\log N}<\varepsilon.
+]
+
+(O\_t(1)) sabitinin (t) ile astronomik büyümesi fixed-(t) proof için sorun değildir.
+
+Ama (t=t(N)) seçilirse aynı şey artık doğru değildir; o durumda uniform estimates gerekir. Checkpoint’in sonraki aşama için bunu ayrıca açık problem olarak ayırması doğru.
+
+### 5. “Geometric probability”nin independence varsayımına dönüşmesi
+
+Dönüşmüyor.
+
+# [ \Pr(S\_t=A)
+
+\binom{A-1}{t-1}2^{-A}
+]
+yalnızca compositions’ları kompakt yazmak için kullanılan exact generating-function notation’dır.
+
+Orbit valuation’larının bağımsız olduğu hiçbir yerde varsayılmıyor.
+
+Bu ayrım doğru kurulmuş.
+
+---
+
+# 3. Bağımsız proof
+
+## 3.1 Tek-adım reciprocal identity
+
+Odd-only Syracuse:
+[
+3n\_k+1=2^{a\_k}n\_{k+1}.
+]
+
+# (M=2^{a\_k}n\_{k+1}) yazalım. O zaman [ n\_k=\frac{M-1}{3} ] ve dolayısıyla [ \frac1{n\_k}
+
+# \frac3{M-1}
+
+\frac3M+\frac3{M(M-1)}.
+]
+
+# Yani [ \boxed{ \frac1{n\_k}
+
+\frac3{2^{a\_k}}\frac1{n\_{k+1}}+\varepsilon\_k
+}
+]
+ve
+[
+\boxed{
+\varepsilon\_k=
+\frac3{2^{a\_k}n\_{k+1}
+(2^{a\_k}n\_{k+1}-1)}>0.
+}
+]
+
+Geçerli positive odd step için (M\ge4). Ayrıca
+[
+\varepsilon\_k
+\le
+\frac{3}{2n\_{k+1}^2}
+]
+yeterli bir bound’dur.
+
+Injectivity nedeniyle (n\_k)'ler distinct positive odd integers olduğundan
+[
+\sum\_k\frac1{n\_k^2}<\infty.
+]
+
+Böylece
+[
+\boxed{\sum\_k\varepsilon\_k<\infty.}
+]
+
+Checkpoint’in tek-adım formülüyle aynı identity’ye bağımsız ulaşılıyor.
+
+---
+
+## 3.2 Fixed-(t) reciprocal identity
+
+[
+c\_j:=\frac3{2^{a\_j}},
+\qquad
+I\_j:=\frac1{n\_j}.
+]
+
+Tek-step:
+[
+I\_j=c\_jI\_{j+1}+\varepsilon\_j.
+]
+
+# (t) kez açınca [ I\_j
+
+\left(\prod\_{r=0}^{t-1}c\_{j+r}\right)I\_{j+t}
+\+
+\sum\_{\ell=0}^{t-1}
+\left(\prod\_{r=0}^{\ell-1}c\_{j+r}\right)
+\varepsilon\_{j+\ell}.
+]
+
+# Burada [ \prod\_{r=0}^{t-1}c\_{j+r}
+
+\frac{3^t}
+{2^{a\_j+\cdots+a\_{j+t-1}}}.
+]
+
+Her (a\_j\ge1) olduğundan
+[
+c\_j\le\frac32.
+]
+
+# Bu nedenle tüm composed-error toplamı [ \le \left[ \sum\_{\ell=0}^{t-1}\left(\frac32\right)^\ell \right]\sum\_m\varepsilon\_m
+
+O\_t(1).
+]
+
+# (j=0,\ldots,N-t-1) üzerinden toplayınca ve son (t) boundary term’i geri ekleyince [ \boxed{ H\_N
+
+\sum\_{k=t}^{N-1}
+\frac{3^t}{2^{A\_{k,t}}}\frac1{n\_k}
+\+
+O\_t(1),
+}
+]
+burada
+[
+A\_{k,t}=a\_{k-t}+\cdots+a\_{k-1}.
+]
+
+Checkpoint’teki (k=t,\ldots,N) indexing’i kullanılan (H\_N) convention’ına göre bir terminal term kaydırıyor; bu yalnız (O(1)) boundary farkıdır.
+
+Bir küçük teknik ayrıntı: (n\_0) üçe bölünebilir. Fakat bütün (n\_k,\ k\ge1), mod 3 unit’tir. Bu nedenle terminal-residue theorem uygulanırken ilk exceptional block gerekiyorsa (O\_t(1))’e atılmalıdır.
+
+---
+
+## 3.3 Affine valuation-word identity
+
+Bir exact word al:
+[
+\mathbf a=(a\_0,\ldots,a\_{t-1}),
+\qquad
+A=\sum\_{i=0}^{t-1}a\_i.
+]
+
+Ara durumları (x\_0=x,\ldots,x\_t=y) olarak yazalım:
+[
+2^{a\_j}x\_{j+1}=3x\_j+1.
+]
+
+# Prefix sums [ A\_j:=a\_0+\cdots+a\_{j-1}, \qquad A\_0=0 ] ile iterasyon: [ \boxed{ 2^Ay=3^tx+B\_{\mathbf a} } ] burada [ \boxed{ B\_{\mathbf a}
+
+\sum\_{j=0}^{t-1}
+3^{t-1-j}2^{A\_j}.
+}
+]
+
+Bu identity doğrudan induction ile doğrulanıyor.
+
+---
+
+## 3.4 Exact valuation word gerçekten realize edilebilir mi?
+
+Evet.
+
+Daha güçlü statement:
+
+> Her positive valuation word (\mathbf a), modulo (2^{A+1}) tam bir odd starting residue class tarafından realize edilir ve bu class unique’tir.
+
+Bunu induction ile kanıtlayabiliriz.
+
+(t=1) için exact
+[
+v\_2(3x+1)=a
+]
+şartı
+[
+3x+1\equiv2^a\pmod{2^{a+1}}
+]
+ile eşdeğerdir. (3), (2^{a+1}) modulo’sunda invertible olduğundan unique (x) class vardır.
+
+Induction’da tail word’ün exact initial state class’ı (r\pmod{2^{A'+1}}) olsun. İlk step
+[
+3x+1=2^{a\_0}x\_1
+]
+ve (x\_1\equiv r) şartını modulo (2^{A+1}) çözer. Sağ tarafın (2)-adic valuation’ı tam (a\_0)’dır çünkü (r) odd’dur. Böylece ilk valuation exact, quotient de tail word’ü exact realize eder.
+
+Dolayısıyla parity-vector realizability burada varsayım değil, doğrudan kanıtlanabilir.
+
+---
+
+## 3.5 Two-terminal-class lemma
+
+Şimdi başlangıç state’inin mod-3 unit class’ını
+[
+\sigma\in{1,2}
+]
+olarak sabitle.
+
+Exact word starting residue’ı modulo (2^{A+1}) sabittir.
+
+CRT’de kullanılan modüller:
+[
+2^{A+1}
+\quad\text{ve}\quad
+3\.
+]
+
+Bunlar coprime:
+[
+\gcd(2^{A+1},3)=1.
+]
+
+Dolayısıyla her iki (\sigma) için de exact word’ü realize eden positive starting integer vardır.
+
+Affine identity modulo (3^{t+1}):
+[
+2^Ay\equiv B\_{\mathbf a}+3^t\sigma
+\pmod{3^{t+1}}.
+]
+
+(2^A) invertible olduğundan
+[
+\boxed{
+y\_\sigma\equiv
+2^{-A}
+(B\_{\mathbf a}+3^t\sigma)
+\pmod{3^{t+1}}.
+}
+]
+
+“Unit” kontrolü:
+[
+B\_{\mathbf a}
+\equiv
+2^{A\_{t-1}}
+\not\equiv0\pmod3,
+]
+çünkü toplamın diğer bütün terimleri 3 faktörü taşır.
+
+Dolayısıyla
+[
+y\_\sigma\not\equiv0\pmod3.
+]
+
+İki class farklıdır:
+[
+y\_2-y\_1
+\equiv
+2^{-A}3^t
+\not\equiv0\pmod{3^{t+1}}.
+]
+
+Son olarak aynı (\sigma)'ya sahip bütün exact realizers starting state’te
+[
+3\cdot2^{A+1}
+]
+katları kadar farklıdır. Affine identity’de bu terminal (y)'yi
+[
+2\cdot3^{t+1}
+]
+katları kadar değiştirir.
+
+Dolayısıyla fixed word + fixed (\sigma) gerçekten tek terminal residue verir.
+
+Sonuç:
+[
+\boxed{\text{Her valuation word tam iki terminal unit class üretir.}}
+]
+
+Checkpoint’in ana local lemma’sı bu nedenle doğru.
+
+---
+
+## 3.6 Kritik combinatorial bound
+
+# [ \mu\_t(y)
+
+\min
+\left{
+\sum\_i a\_i:
+\text{unit exact (t)-chain ending at }y
+\right}.
+]
+
+Total valuation (A) olan positive composition sayısı
+[
+\binom{A-1}{t-1}.
+]
+
+Her composition iki terminal class verdiğine göre total-(A) image union’ı en fazla
+[
+2\binom{A-1}{t-1}
+]
+class içerir.
+
+Ama
+[
+{\mu\_t(y)=A}
+]
+bu union’ın subset’idir.
+
+Dolayısıyla
+[
+\boxed{
+\#{y:\mu\_t(y)=A}
+\le
+2\binom{A-1}{t-1}.
+}
+]
+
+Collision’lar bu inequality’yi **daha güçlü** yapar.
+
+Bu checkpoint’in en kritik combinatorial adımıdır ve audit’te ayakta kaldı.
+
+---
+
+## 3.7 Geometric lower tail
+
+(G) için
+[
+\Pr(G=a)=2^{-a},
+\qquad a=1,2,\ldots
+]
+tanımla.
+
+# (S\_t=G\_1+\cdots+G\_t) ise [ \boxed{ \Pr(S\_t=A)
+
+\binom{A-1}{t-1}2^{-A}.
+}
+]
+
+Bu yalnız compositions identity’sidir.
+
+(1\<c<2) ve (0\<z<1) için
+[
+\Pr(S\_t\le ct)
+\le
+z^{-ct}\mathbb E z^{S\_t}.
+]
+
+# Ama [ \mathbb E z^G
+
+# \sum\_{a\ge1}\frac{z^a}{2^a}
+
+\frac{z}{2-z}.
+]
+
+Dolayısıyla
+[
+\Pr(S\_t\le ct)
+\le
+\left[
+\frac{z^{1-c}}{2-z}
+\right]^t.
+]
+
+# Optimal [ z\_c=\frac{2(c-1)}c ] seçilirse [ \boxed{ \lambda\_c
+
+\frac c2
+\left(\frac{2(c-1)}c\right)^{1-c}<1
+}
+]
+ve
+[
+\boxed{
+\Pr(S\_t\le ct)\le\lambda\_c^t.
+}
+]
+
+Örneğin
+[
+c=\frac{\log\_2 3+2}{2}
+\approx1.792481
+]
+için
+[
+\lambda\_c\approx0.988033<1.
+]
+
+Decay yavaştır fakat asymptotically yeterlidir.
+
+---
+
+## 3.8 Harmonic Sparsity Theorem
+
+[
+\alpha=\log\_2 3.
+]
+
+(\alpha\<c<2) sabitle.
+
+Good classes:
+[
+G\_t={y:\mu\_t(y)\le ct}.
+]
+
+Bir terminal class için
+[
+w\_t(y)=\frac{3^t}{2^{\mu\_t(y)}}.
+]
+
+Actual history total valuation’ı minimumdan küçük olamayacağı için
+[
+\frac{3^t}{2^{A\_{k,t}}}\le w\_t(y).
+]
+
+Good weight toplamı:
+[
+\begin{aligned}
+\sum\_{y\in G\_t}w\_t(y)
+&=
+3^t\sum\_{A\le ct}
+\#{\mu\_t=A}2^{-A}\\
+&\le
+2\cdot3^t
+\sum\_{A\le ct}
+\binom{A-1}{t-1}2^{-A}\\
+&=
+\boxed{
+2\cdot3^t\Pr(S\_t\le ct).
+}
+\end{aligned}
+]
+
+# Bad class için [ \mu\_t(y)>ct ] olduğundan [ w\_t(y) \le 3^t2^{-ct}
+
+2^{-(c-\alpha)t}
+\=:\eta\_t.
+]
+
+Fixed-(t) balance’ı good/bad ayır:
+[
+H\_N
+\le
+\sum\_{y\in G\_t}w\_t(y)h\_y(N)
++\eta\_tH\_N
++O\_t(1).
+]
+
+Yani
+[
+(1-\eta\_t)H\_N
+\le
+\sum\_{y\in G\_t}w\_t(y)h\_y(N)+O\_t(1).
+]
+
+Her terminal class modulo
+[
+Q\_t=2\cdot3^{t+1}
+]
+için
+[
+h\_y(N)
+\le
+\frac{\log N}{Q\_t}+O\_t(1).
+]
+
+Böylece
+[
+(1-\eta\_t)H\_N
+\le
+\left[
+\frac{\log N}{2\cdot3^{t+1}}+O\_t(1)
+\right]
+2\cdot3^t\Pr(S\_t\le ct)+O\_t(1).
+]
+
+# Ana coefficient: [ \frac{2\cdot3^t} {2\cdot3^{t+1}}
+
+\frac13.
+]
+
+Sonuç:
+[
+\boxed{
+H\_N\le
+\gamma\_t\log N+O\_t(1),
+}
+]
+[
+\boxed{
+\gamma\_t=
+\frac{\Pr(S\_t\le ct)}
+{3\left(1-2^{-(c-\alpha)t}\right)}.
+}
+]
+
+Bu, Checkpoint’in gerçek formülüyle aynıdır.
+
+Çünkü (c<2):
+[
+\Pr(S\_t\le ct)\le\lambda\_c^t\to0.
+]
+
+Çünkü (c>\alpha):
+[
+2^{-(c-\alpha)t}\to0.
+]
+
+Dolayısıyla
+[
+\boxed{\gamma\_t\to0.}
+]
+
+---
+
+## 3.9 Formal quantifier proof
+
+Her (\varepsilon>0) verilsin.
+
+Önce **sabit** bir (t) seç:
+[
+\gamma\_t<\frac{\varepsilon}{2}.
+]
+
+Bu (t) için
+[
+H\_N\le\gamma\_t\log N+C\_t
+]
+olacak bir finite (C\_t) vardır.
+
+Sonra (N)'yi öyle büyük seç ki
+[
+\frac{C\_t}{\log N}<\frac{\varepsilon}{2}.
+]
+
+O zaman
+[
+\frac{H\_N}{\log N}
+\le
+\gamma\_t+\frac{C\_t}{\log N}
+<
+\varepsilon.
+]
+
+Böylece
+[
+\boxed{
+H\_N=o(\log N).
+}
+]
+
+(C\_t) isterse double-exponential büyüsün; (t), (N\to\infty) alınmadan önce dondurulmuştur.
+
+Buna karşılık (t=t(N)) ise artık
+[
+\frac{C\_{t(N)}}{\log N}\to0
+]
+olduğu ayrıca kanıtlanmalıdır. Checkpoint 10’un uniform-control problemi tam olarak budur.
+
+---
+
+## 3.10 (H\_N=o(\log N)\Rightarrow X\_N=N^{o(1)})
+
+[
+D\_k=A\_k-k\alpha,
+\qquad
+2^{k\alpha}=3^k.
+]
+
+# Tanımla [ u\_k:=n\_k2^{D\_k}
+
+\frac{n\_k2^{A\_k}}{3^k}.
+]
+
+# Recurrence: [ n\_{k+1}2^{A\_{k+1}}
+
+(3n\_k+1)2^{A\_k}.
+]
+
+# (3^{k+1})'e böl: [ u\_{k+1}
+
+u\_k+\frac13,2^{D\_k}.
+]
+
+# Dolayısıyla [ u\_N
+
+n\_0+\frac13X\_N,
+\qquad
+X\_N:=\sum\_{k\<N}2^{D\_k}.
+]
+
+Normalize:
+[
+U\_N:=\frac{u\_N}{n\_0}.
+]
+
+O halde exact:
+[
+\boxed{
+U\_N=1+\frac{X\_N}{3n\_0}.
+}
+]
+
+# Öte yandan [ \frac{u\_{k+1}}{u\_k}
+
+# 1+\frac1{3n\_k}, ] yani [ U\_N
+
+\prod\_{k\<N}
+\left(1+\frac1{3n\_k}\right).
+]
+
+# Natural logarithm ile [ \log U\_N
+
+\sum\_{k\<N}
+\log\left(1+\frac1{3n\_k}\right).
+]
+
+Taylor:
+[
+\log(1+x)=x+O(x^2).
+]
+
+# Injectivity ile (\sum1/n\_k^2<\infty), dolayısıyla [ \boxed{ \log U\_N
+
+\frac13H\_N+O(1).
+}
+]
+
+Checkpoint’in carry kısmı bunu kullanıyor.
+
+Şimdi
+[
+H\_N=o(\log N)
+]
+ise
+[
+\log U\_N=o(\log N).
+]
+
+Dolayısıyla
+[
+U\_N=\exp(o(\log N))=N^{o(1)}.
+]
+
+Exact affine relation’dan
+[
+X\_N=3n\_0(U\_N-1),
+]
+bu yüzden
+[
+\boxed{
+X\_N=N^{o(1)}.
+}
+]
+
+Base-(e) ile base-2 log farkı yalnız sabit (\ln2) faktörüdür; asymptotic statement değişmez.
+
+---
+
+## 3.11 (8/9\to1) sonucu
+
+Forever-undercritical:
+[
+D\_k\le0.
+]
+
+Ayrıca
+[
+s\_k=\lfloor k\alpha\rfloor-A\_k
+]
+olduğundan
+[
+\boxed{
+D\_k=-s\_k-{k\alpha}.
+}
+]
+
+Aksini varsay:
+[
+L:=
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2 k}<1.
+]
+
+(L\<B<1) seç.
+
+Limsup tanımından yeterince büyük bütün (k) için
+[
+s\_k\le B\log\_2k.
+]
+
+({k\alpha}<1) olduğu için
+[
+D\_k
+\ge
+-B\log\_2k-1.
+]
+
+Dolayısıyla
+[
+2^{D\_k}
+\ge
+\frac12k^{-B}.
+]
+
+Böylece
+[
+X\_N
+\ge
+\frac12
+\sum\_{k=K}^{N-1}k^{-B}
+\gg\_B
+N^{1-B}.
+]
+
+Ama
+[
+X\_N=N^{o(1)}
+]
+demek her (\eta>0) için
+[
+X\_N=O\_\eta(N^\eta)
+]
+demektir.
+
+[
+0<\eta<1-B
+]
+seçilirse
+[
+N^{1-B}\not=O(N^\eta).
+]
+
+Çelişki.
+
+Dolayısıyla
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2k}\ge1.
+}
+]
+
+Checkpoint’in Section 15 sonucu rigorously follow ediyor.
+
+---
+
+# 4. Counterexamples / bugs
+
+Ana theorem’e counterexample bulamadım.
+
+Ama iki belge-level bug/gap var.
+
+### Bug/GAP 1 — Section 8’de (4/15) stated data’dan çıkmıyor
+
+Checkpoint’in mod-18 tablosu:
+[
+a\_{\min}=(2,3,4,1,2,1)
+]
+veriyor.
+
+# Sadece bu table + one-class harmonic capacity kullanılırsa coefficient: [ \frac1{18} \left( \frac34+\frac38+\frac3{16} +\frac32+\frac34+\frac32 \right)
+
+# \boxed{\frac9{32}}
+
+0.28125.
+]
+
+Checkpoint ise
+[
+\frac4{15}=0.266666\ldots
+]
+iddia ediyor.
+
+Bu nedenle:
+
+[
+\boxed{
+\text{(4/15), verilen a(\_{\min}) tablosundan tek başına follow etmiyor.}
+}
+]
+
+Daha kuvvetli bir flow/LP constraint kullanıldıysa rapora yazılması gerekiyor.
+
+Bu **ana Harmonic Sparsity proof’unu etkilemiyor**.
+
+### Bug/GAP 2 — finite LP coefficient tablosu tanımsız
+
+Checkpoint:
+[
+\beta\_1=.2666667,\ldots,\beta\_7=.1019428
+]
+tablosu veriyor.
+
+Fakat raporda LP’nin:
+
+- variables,
+- feasible constraints,
+- normalization,
+- objective
+
+tanımı yok.
+
+Dolayısıyla bağımsız olarak “aynı LP’yi” çalıştırmak mümkün değil.
+
+Ben yalnız checkpoint’in açıkça tanımladığı (\mu\_t)-weights ile doğal classwise coefficient’i hesapladım:
+
+| (t)exact natural coefficient |                              |
+| ---------------------------- | ---------------------------- |
+| 1                            | (9/32=0.28125)               |
+| 2                            | (61/256=0.23828125)          |
+| 3                            | (419/2048=0.20458984375)     |
+| 4                            | (1463/8192=0.17858886719)    |
+| 5                            | (5181/32768=0.15811157227)   |
+| 6                            | (37065/262144=0.14139175415) |
+
+Bunlar checkpoint (\beta\_t) tablosuyla aynı değil.
+
+Bunu “LP yanlıştır” diye sınıflandırmıyorum; **LP specification eksik olduğu için claim reproducible değil** diyorum.
+
+---
+
+# 5. Computational verification
+
+Exact integer arithmetic ile bağımsız program yazıldı.
+
+Test edilenler:
+
+[
+t=1,\ldots,6.
+]
+
+Toplam
+[
+24,195
+]
+farklı valuation word; her biri için iki
+[
+\sigma\in{1,2}
+]
+başlangıç class’ı.
+
+Toplamda yaklaşık (48,390) exact realizability instance’ı.
+
+Şunların hiçbirinde mismatch çıkmadı:
+
+- exact (v\_2) word realizability,
+- affine identity,
+- CRT realization,
+- all-intermediate-state unit condition,
+- terminal formula,
+- two terminal classes’ın distinct oluşu,
+- (#{\mu\_t=A}) combinatorial upper bound.
+
+Tam (\mu\_t) distributions:
+
+[
+t=1:
+\quad
+(1:2),(2:2),(3:1),(4:1).
+]
+
+[
+t=2:
+\quad
+(2:2),(3:4),(4:4),(5:4),(6:3),(7:1).
+]
+
+[
+t=3:
+\quad
+(3:2),(4:6),(5:9),(6:12),(7:12),(8:8),(9:4),(10:1).
+]
+
+[
+t=4:
+]
+[
+(4:2),(5:8),(6:16),(7:27),(8:36),(9:33),
+(10:24),(11:13),(12:3).
+]
+
+[
+t=5:
+]
+[
+(5:2),(6:10),(7:25),(8:51),(9:84),(10:105),
+(11:97),(12:68),(13:35),(14:9).
+]
+
+[
+t=6:
+]
+[
+(6:2),(7:12),(8:36),(9:86),(10:167),(11:260),
+(12:311),(13:279),(14:190),(15:91),(16:23),(17:1).
+]
+
+Her durumda toplam class sayısı
+[
+2\cdot3^t,
+]
+yani terminal unit residue universe tamamen doluyor.
+
+**Küçük exact falsification sonucu:** main local lemmas için counterexample yok.
+
+---
+
+# 6. Literature comparison
+
+Literatür denetimi theorem statement seviyesinde yapıldı. ArXiv, journal/primary-source sayfaları ve 2025–2026 Collatz preprintleri üzerinde exact ve yakın ifadeler arandı. Subscription-only MathSciNet üzerinde tam kapsamlı sorgu yapamadığım için novelty sonucu “exhaustive bibliography proof” değildir.
+
+### Rozier
+
+Rozier’in *The 3x+1 problem: a lower bound hypothesis*, Theorem 2.6’sı distinct trajectory states üzerinden reciprocal harmonic packing kullanıyor. Özellikle proof’ta distinct odd states için reciprocal sum en küçük odd integers ile majorize ediliyor ve bundan (j^{-1/6}) loss elde ediliyor.
+
+Bu Checkpoint 9’un kullandığı harmonic-packing fikrinin açık bir prior-art atasıdır.
+
+Fakat Rozier:
+[
+H\_N=o(\log N)
+]
+gibi bir pointwise theorem kanıtlamıyor.
+
+### De Jesús 2026
+
+De Jesús’un 26 Haziran 2026 tarihli *A Global Occupation Conjecture...* preprint’i Theorem 7.10’da distinct-odd packing ile (B<5/6) logarithmic-floor exclusion elde ediyor; Appendix D’de mod-3 exclusion kullanılarak frontier (8/9)'a yükseltiliyor.
+
+Daha önemlisi Appendix D/E, (8/9)'dan ileri gitmek için fixed congruence density’den farklı bir “graded harmonic-thinness” gerektiğini açıkça söylüyor; örnek olarak
+[
+\sum\_{k\<N}\frac1{m\_k}
+\le
+\left(\frac13-\eta\right)\log N+O(1)
+]
+tipi bir bound veriyor.
+
+Checkpoint 9’un
+[
+H\_N=o(\log N)
+]
+theorem’i doğruysa bunun çok daha güçlüsüdür.
+
+### Tao
+
+Tao’nun theorem’i başlangıç seed’lerinin logarithmic-density (1) olan kısmı için Syracuse orbits’in arbitrarily slowly growing bounds altına indiğini kanıtlıyor. Bu bir “almost all starting values” theorem’idir; arbitrary single injective orbit üzerinde pointwise reciprocal-harmonic statement değildir.
+
+Dolayısıyla yöntemsel olarak 3-adic/Syracuse arka planıyla ilgili, fakat main statement açısından aynı theorem değildir.
+
+### Applegate–Lagarias
+
+Applegate–Lagarias’ın inverse-tree çalışmaları backward (3x+1) trees’i ve root congruence classes modulo powers of (3)’ü sistematik olarak inceliyor; *The Distribution of 3x+1 Trees* özellikle invertible (3)-adic integers üzerinde congruence-class dependence’i ele alıyor.
+
+Bu nedenle Checkpoint’in modulo (3^{t+1}) terminal-residue organizasyonu klasik inverse-tree arithmetic ile aynı genel ailede.
+
+Ancak incelediğim Applegate–Lagarias statements arasında:
+[
+H\_N=o(\log N)
+]
+veya burada kullanılan exact weighted two-terminal counting sonucu ile aynı global theorem’e rastlamadım.
+
+### 2025–2026 yakın çalışmalar
+
+Rozier–Terracol 2025/2026 çalışması paradoxical finite Collatz sequences/parity vectors üzerinde çalışıyor.
+
+Tong Niu’nun Mayıs 2026 preprint’i parity-vector density ve bounded-length paradoxical sequence counting’e odaklanıyor.
+
+Edward Chang’ın Mart 2026 preprint’i compressed odd map’i fixed-modulus orbit-mixing problemine indiriyor.
+
+Bu kaynakların theorem statements’ında Checkpoint 9’daki üç ana sonuçla exact match bulamadım.
+
+---
+
+# 7. Novelty status
+
+## A. Önceden biliniyor
+
+**(8/9) logarithmic-floor frontier:** evet.
+
+De Jesús’un 2026 preprint’inde Theorem 7.10’un (5/6) argument’ı Appendix D’de mod-3 harmonic packing ile (8/9)'a yükseltiliyor. Appendix sonucu ayrı theorem numarasıyla etiketlenmemiş, fakat derivation açık biçimde yer alıyor.
+
+Dolayısıyla
+[
+\limsup\frac{s\_k}{\log\_2k}\ge\frac89
+]
+seviyesi Checkpoint 9’dan önce mevcut.
+
+Rozier’in distinct-state reciprocal packing mechanism’i de Theorem 2.6 proof’unda prior art’tır.
+
+Exact valuation/parity word residue realizability ise Terras–Everett parity-vector geleneğinin klasik bir parçasıdır; Rozier de Terras theorem’ini parity vectors modulo (2^j) biçiminde kullanıyor.
+
+## B. Yakın ama aynı değil
+
+De Jesús’un graded harmonic-thinness hedefi:
+[
+\sum\_{k\<N}\frac1{m\_k}
+\le
+\left(\frac13-\eta\right)\log N+O(1)
+]
+Checkpoint 9’a son derece yakın, fakat sabit (\eta>0) kazancı arıyor.
+
+Checkpoint 9:
+[
+H\_N=o(\log N)
+]
+iddiasıyla herhangi bir fixed positive coefficient’i asymptotically sıfıra indiriyor. Bu matematiksel olarak çok daha güçlü.
+
+Tao’nun sonucu ise pointwise arbitrary injective trajectory yerine logarithmic-density almost-all seeds hakkındadır.
+
+Applegate–Lagarias inverse (3x+1) trees, powers of (3), pruned trees ve 3-adic residue dependence açısından yöntemsel yakın prior art’tır, ama theorem statement aynı değildir.
+
+## C. Bulamadım
+
+Sistematik taramada şu statement’ların exact match’ine rastlamadım:
+
+[
+\boxed{
+\sum\_{k\<N}\frac1{n\_k}=o(\log N)
+}
+]
+her infinite injective positive odd-only Syracuse orbit için;
+
+[
+\boxed{
+X\_N=N^{o(1)}
+}
+]
+aynı hypothesis altında;
+
+ve forever-undercritical durumda
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{\lfloor k\log\_2 3\rfloor-A\_k}
+{\log\_2 k}
+\ge1.
+}
+]
+
+Özellikle son (1)-frontier, bulduğum 2026 De Jesús (8/9) theorem’inden daha güçlüdür.
+
+Buradaki doğru novelty ifadem:
+
+> **İncelediğim kaynaklarda aynı theorem statement’ına rastlamadım.**
+
+“İlk kez”, “yeni theorem” veya “literatürde bilinmiyor” demek için henüz yeterli bibliographic certainty yok.
+
+---
+
+# 8. Publication readiness
+
+**Resmî durum: expert review gerekli.**
+
+Bunun yanında, literatür açısından **ciddi bir preprint/makale adayı** olarak ele alınmaya değer.
+
+Yayın öncesi mutlaka şu temizlik yapılmalı:
+
+1. Section 8’deki (4/15) derivation ya tamamen yazılmalı ya çıkarılmalı.
+2. Finite LP için variables, constraints, objective ve exact rational certificates eklenmeli.
+3. (H\_N) indexing convention tek biçime getirilmeli.
+4. (n\_0\equiv0\pmod3) olabilecek tek initial boundary açıkça ayrılmalı.
+5. Two-terminal-class lemma bağımsız proposition olarak, CRT modülleriyle birlikte yazılmalı.
+6. (\mu\_t(y)=\infty) convention’ı formal tanımlanmalı.
+7. Arithmetic-progression packing lemma’da (N)'nin orbit-prefix cardinality olduğu açıkça belirtilmeli.
+8. Fixed-(t) quantifier proof ayrı lemma/corollary biçiminde yazılmalı.
+9. Exact computational code supplementary material olarak yayınlanmalı.
+10. En az bir Collatz/iteration theory uzmanından bağımsız line-by-line review alınmalı.
+
+Ana theorem gerçekten dış review’dan da geçerse, De Jesús’un Ağustos 2026 itibarıyla açıkça (8/9\to1) yönünde aradığı graded harmonic-thinness obstruction’ı çok güçlü biçimde çözmüş oluyor. De Jesús, (8/9)'u fixed-congruence packing’in terminal noktası olarak tanımlıyor.
+
+Bu nedenle sonucu sıradan bir computational improvement gibi değerlendirmem.
+
+Ama expert validation yapılmadan priority veya breakthrough iddiasında bulunmamak gerekir.
+
+---
+
+# 9. Son güven seviyesi
+
+### (H\_N=o(\log N))
+
+**Confidence: very high.**
+
+Nedenleri:
+
+- one-step identity bağımsız türetildi;
+- composed errors doğru weight’lerle tekrar hesaplandı;
+- summability checked;
+- exact valuation-word realizability sıfırdan kanıtlandı;
+- CRT modülleri checked;
+- two-terminal lemma checked;
+- combinatorial inequality yönü checked;
+- (t=1,\ldots,6) exact enumeration’da counterexample yok;
+- geometric lower-tail bağımsız Chernoff/generating-function hesabıyla çıkarıldı;
+- modulus (Q\_t) checked;
+- orbit-count/integer-cutoff ayrımı checked;
+- epsilon/quantifier proof formal olarak çalışıyor.
+
+Bulduğum kusurlar bu theorem’in derivation path’inde değil.
+
+### (\displaystyle\limsup s\_k/\log\_2k\ge1)
+
+**Confidence: very high.**
+
+Bu sonuç artık yalnız iki basit girdiye dayanıyor:
+
+[
+X\_N=N^{o(1)}
+]
+ve
+[
+D\_k=-s\_k-{k\alpha}.
+]
+
+Aksi durumda herhangi bir (B<1) için eventually
+[
+s\_k\le B\log\_2k
+]
+ve dolayısıyla
+[
+X\_N\gg N^{1-B},
+]
+ki subpolynomial upper bound ile doğrudan çelişiyor.
+
+Bu implication’da ilave Collatz-specific probabilistic veya modular assumption yoktur.
+
+---
+
+## Son hüküm
+
+Checkpoint 9’un en önemli sonucu audit sonrasında hâlâ ayakta:
+
+[
+\boxed{
+H\_N=o(\log N)
+\Longrightarrow
+X\_N=N^{o(1)}
+\Longrightarrow
+\limsup\_{k\to\infty}\frac{s\_k}{\log\_2k}\ge1.
+}
+]
+
+Şu aşamada bulduğum problem theorem’i çürüten bir counterexample değil; raporun auxiliary finite-(t) hesaplarında eksik specification/derivation.
+
+Bu nedenle **Checkpoint 9'u çöpe atmamalıyız**. Ana theorem’i finite LP ve eski Section 8 materyalinden ayırıp, minimum sayıda lemma ile standalone bir proof manuscript’e dönüştürmek ve ardından gerçekten bağımsız bir insan matematikçiye audit ettirmek en doğru sonraki adımdır.

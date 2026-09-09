@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "task_id": "test-task",
+  "run_id": "directed-68400553822d46dbbf94168c55953e61",
+  "lane_id": "0",
+  "role": "Theorist",
+  "model": "fake/model",
+  "reasoning_effort": null,
+  "step_id": "test-task:directed-68400553822d46dbbf94168c55953e61:0:v1",
+  "provider_attempts": [
+    {
+      "attempt_id": "0:attempt:1",
+      "client_call_id": "test-task:directed-68400553822d46dbbf94168c55953e61:0:v1:0:attempt:1",
+      "started_at": "2026-09-07T18:30:46.345241+00:00",
+      "status": "RETURNED",
+      "metadata": {
+        "generation_id": "gen-0"
+      },
+      "usage": {
+        "completion_tokens": 128,
+        "reasoning_tokens": 128,
+        "cost_usd": 0.0001
+      }
+    }
+  ],
+  "status": "PARTIAL",
+  "public_findings": "",
+  "claim_results": [
+    {
+      "claim_id": "claim",
+      "statement": "Given identity",
+      "status": "OPEN",
+      "domain": "real x",
+      "assumptions": [
+        "Declared definition"
+      ],
+      "first_missing_step": "Provider response truncated or incomplete",
+      "evidence_files": [
+        "EVIDENCE.json"
+      ]
+    }
+  ],
+  "scope_compliance": {
+    "scope_changed": false,
+    "undeclared_tools_used": false,
+    "undeclared_inputs_used": false,
+    "budget_exceeded": false
+  },
+  "usage": {
+    "completion_tokens": 128,
+    "reasoning_tokens": 128,
+    "cost_usd": 0.0001,
+    "wall_seconds": 0.04210680001415312
+  },
+  "integrity_issues": [],
+  "independence_level": "ISOLATED_INPUTS_SHARED_COORDINATOR",
+  "unexpected_findings": [],
+  "first_missing_step": "Provider response truncated or incomplete",
+  "output_hash_scope": "canonical JSON excluding output_sha256",
+  "output_sha256": "ba37875d050b9ee780a47ceee2cb11e25290de2fa9e7361d0c31d2a71395c473"
+}

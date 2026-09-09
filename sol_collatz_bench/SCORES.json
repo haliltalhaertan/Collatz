@@ -1,0 +1,133 @@
+{
+  "method": "Manual principal grading against pre-dispatch frozen answer key; grade.py records reviewed judgments, not an independent automated semantic grader.",
+  "score": 16,
+  "maximum": 16,
+  "fully_correct": 8,
+  "questions": 8,
+  "provider_cost_usd": 0.030242,
+  "provider_cost_complete": true,
+  "wall_seconds": 61.38532300002407,
+  "median_call_seconds": 22.94791105002514,
+  "rows": [
+    {
+      "id": "b1",
+      "score": 2,
+      "max_score": 2,
+      "grading_note": "Full trajectory and 8 steps correct; each map application verified.",
+      "public_answer": "{'trajectory': [6, 3, 10, 5, 16, 8, 4, 2, 1], 'applications_of_T': 8, 'justification': 'Successive applications give 6/2=3, 3·3+1=10, 10/2=5, 3·5+1=16, 16/2=8, 8/2=4, 4/2=2, and 2/2=1. This is the first visit to 1.'}",
+      "usage": {
+        "prompt_tokens": 433,
+        "completion_tokens": 213,
+        "reasoning_tokens": 53,
+        "cached_tokens": 0,
+        "cost_usd": 0.002996,
+        "wall_seconds": 25.99713650002377
+      }
+    },
+    {
+      "id": "b2",
+      "score": 2,
+      "max_score": 2,
+      "grading_note": "22=2*11, 34=2*17, 52=4*13; all values and exact valuations correct.",
+      "public_answer": "Starting from 7: 3·7+1=22=2·11, so v2=1 and U(7)=11. Next, 3·11+1=34=2·17, so v2=1 and U(11)=17. Finally, 3·17+1=52=4·13, so v2=2 and U(17)=13. Thus the next three U-values are 11, 17, 13, with exact exponents 1, 1, 2.",
+      "usage": {
+        "prompt_tokens": 445,
+        "completion_tokens": 233,
+        "reasoning_tokens": 80,
+        "cached_tokens": 0,
+        "cost_usd": 0.00322,
+        "wall_seconds": 18.404097100021318
+      }
+    },
+    {
+      "id": "b3",
+      "score": 2,
+      "max_score": 2,
+      "grading_note": "Branch validity n=1 mod4, odd endpoint n=1 mod8, affine expression correct.",
+      "public_answer": "[{'answer': 'For the branch word odd, even, even, the valid inputs are positive integers n ≡ 1 (mod 4), and T^3(n) = (3n+1)/4. The output T^3(n) is odd exactly for the stronger class n ≡ 1 (mod 8).', 'justification': 'Starting with odd n gives T(n)=3n+1, which is even. The next value is T^2(n)=(3n+1)/2. For the third branch operation to be even, 4 must divide 3n+1, equivalent to n ≡ 1 (mod 4). Thus T^3(n)=(3n+1)/4. This quotient is odd exactly when 3n+1 ≡ 4 (mod 8), equivalent to n ≡ 1 (mod 8).'}]",
+      "usage": {
+        "prompt_tokens": 448,
+        "completion_tokens": 408,
+        "reasoning_tokens": 176,
+        "cached_tokens": 0,
+        "cost_usd": 0.004976,
+        "wall_seconds": 38.46820389997447
+      }
+    },
+    {
+      "id": "b4",
+      "score": 2,
+      "max_score": 2,
+      "grading_note": "Elimination gives 8n=9n+5 and n=-5, excluding positive starts; exact conditions correctly used.",
+      "public_answer": "[{'answer': 'No positive integer start exists.', 'justification': 'Let n1 be the first odd value and n2 the next. Exact exponents k1=1 and k2=2 require 2n2=3n1+1 and 4n1=3n2+1. Eliminating n2 gives 8n1=9n1+5, equivalently (2^(1+2)-9)n1=3+2^1, so n1=-5. Therefore the cycle equation has no positive integer solution.'}]",
+      "usage": {
+        "prompt_tokens": 441,
+        "completion_tokens": 439,
+        "reasoning_tokens": 279,
+        "cached_tokens": 0,
+        "cost_usd": 0.005272,
+        "wall_seconds": 19.89868560002651
+      }
+    },
+    {
+      "id": "b5",
+      "score": 2,
+      "max_score": 2,
+      "grading_note": "Both convergent sums correct; independence and discarded additive term identified as surrogate assumptions; no universal proof claim.",
+      "public_answer": "E[A] = sum_{j>=1} 2^{-j}(3/2^j) = 3 sum_{j>=1} 4^{-j} = 1. Also, E[k] = sum_{j>=1} j2^{-j} = 2, so E[log A] = log 3 - E[k]log 2 = log 3 - 2log 2 = log(3/4) < 0. This negative expected logarithmic drift does not prove deterministic Collatz convergence. It applies only to the stated stochastic surrogate, which assumes independent geometric samples for k and discards the additive +1. Actual Collatz valuations are determined by the orbit and need not satisfy those independence assumptions; moreover, an expectation statement is not a guarantee for every trajectory.",
+      "usage": {
+        "prompt_tokens": 466,
+        "completion_tokens": 321,
+        "reasoning_tokens": 115,
+        "cached_tokens": 0,
+        "cost_usd": 0.004142,
+        "wall_seconds": 16.683852699992713
+      }
+    },
+    {
+      "id": "b6",
+      "score": 2,
+      "max_score": 2,
+      "grading_note": "Rejects finite-to-universal inference and identifies the uncovered range.",
+      "public_answer": "No. The implication is invalid. The program establishes only the finite statement: for every integer n with 1 <= n <= 1,000,000, the Collatz iteration reaches 1. What is missing is a valid argument covering every integer n > 1,000,000. Finite verification alone does not imply the universal claim that all positive integers reach 1.",
+      "usage": {
+        "prompt_tokens": 455,
+        "completion_tokens": 145,
+        "reasoning_tokens": 0,
+        "cached_tokens": 0,
+        "cost_usd": 0.00236,
+        "wall_seconds": 10.534121000033338
+      }
+    },
+    {
+      "id": "b7",
+      "score": 2,
+      "max_score": 2,
+      "grading_note": "Both expectations correct and lower bound 1/2 rules out C/R. Remains within the supplied abstract count example; does not claim an actual Collatz counterexample.",
+      "public_answer": "{'answer': 'E[N_R]=R/2 and E[exp(-lambda N_R)]=(1+exp(-lambda R))/2.', 'justification': 'Since N_R equals 0 and R with probability 1/2 each, E[N_R]=(0+R)/2=R/2. Likewise, E[exp(-lambda N_R)]=(1+exp(-lambda R))/2, which is at least 1/2. Therefore a bound E[exp(-lambda N_R)]<=C/R would require C>=R/2 for every R, impossible for a constant C independent of R. Thus a large mean alone cannot establish that bound.'}",
+      "usage": {
+        "prompt_tokens": 474,
+        "completion_tokens": 247,
+        "reasoning_tokens": 68,
+        "cached_tokens": 0,
+        "cost_usd": 0.003418,
+        "wall_seconds": 29.87233930005459
+      }
+    },
+    {
+      "id": "b8",
+      "score": 2,
+      "max_score": 2,
+      "grading_note": "Strong induction handles base, even and odd cases; explicitly distinguishes H from its conditional consequence.",
+      "public_answer": "Assume H. We prove by strong induction on n that every positive integer n reaches 1 under the standard Collatz map. Base case: n=1 already equals 1. Inductive step: let n>1 and assume every positive integer m<n reaches 1. If n is even, then T(n)=n/2<n, so the induction hypothesis shows that n/2, and hence n, reaches 1. If n is odd, H supplies some k such that m=T^k(n) is positive and m<n. By the induction hypothesis, m reaches 1; appending that trajectory to the first k iterates from n shows that n reaches 1. Thus, conditional on H, every positive integer reaches 1. This proves only the implication H => the stated Collatz conclusion; it does not prove H itself.",
+      "usage": {
+        "prompt_tokens": 454,
+        "completion_tokens": 295,
+        "reasoning_tokens": 82,
+        "cached_tokens": 0,
+        "cost_usd": 0.003858,
+        "wall_seconds": 29.279259099974297
+      }
+    }
+  ]
+}

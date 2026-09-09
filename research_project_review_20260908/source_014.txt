@@ -1,0 +1,2419 @@
+# Collatz Problemi Araştırma Checkpoint 6
+
+**Tarih:** 14 Ağustos 2026
+**Ana araştırma hattı:** Critical-ballot/logarithmic-corridor parity words için least-positive realizer minimizasyonu; mechanical/Christoffel extremality, adjacent-swap ordering ve shortcut-level binary lift.
+
+Bu checkpoint, Checkpoint 5'te izole edilen restricted least-realizer probleminden devam etmektedir. Araştırma özellikle verilen counterexample-first ve exact finite optimization planına göre yürütüldü.
+
+## Ana sonuç
+
+Checkpoint 6'nın başlangıcındaki en umut verici kestirme:
+
+[
+\boxed{
+\text{critical-ballot corridor'daki minimum realizer
+mechanical/Christoffel sınır word'ünde oluşur}
+}
+]
+
+hipotezi **yanlış çıktı**.
+
+Daha güçlü biçimde:
+
+[
+\boxed{
+\text{least-positive realizer,
+ballot dominance order altında hiçbir yönde monotone değildir.}
+}
+]
+
+Sebep açık biçimde izole edildi:
+
+[
+\boxed{
+\textbf{modular wraparound}.
+}
+]
+
+Ordinary affine numerator functional üzerinde
+
+[
+10\to01
+]
+
+swap'ı temiz ve tek yönlü bir monotonicity taşırken, inverse residue
+
+[
+R\_j(v)\equiv-3^{-q}C(v)\pmod{2^j}
+]
+
+modulo (2^j) alındığı anda bu order kayboluyor.
+
+Dolayısıyla:
+
+[
+\boxed{
+\text{Christoffel/balanced extremality}
+\not\Rightarrow
+\text{least-realizer extremality}.
+}
+]
+
+Buna rağmen önemli exact ilerlemeler elde edildi:
+
+- finite inverse-residue functional eksiksiz türetildi;
+- critical-ballot condition'ın doğru integer-rounded formu çıkarıldı;
+- odd-only slack ile parity-corridor discrepancy arasındaki exact/asymptotic dönüşüm belirlendi;
+- rank-position representation'da slack'in tam olarak mechanical displacement olduğu bulundu;
+- adjacent-swap'ın least residue üzerindeki **exact wrap criterion**'ı çıkarıldı;
+- shortcut-level tek-bit lift recurrence türetildi;
+- mechanical least residues için yeni bir exact subsequential growth sonucu elde edildi;
+- finite exact optimization, minimizer'ların çoğunlukla mechanical veya Christoffel olmadığını gösterdi.
+
+Ancak ana theorem:
+
+[
+M\_j(C,C\_0)\to\infty
+]
+
+henüz kanıtlanamadı.
+
+Dolayısıyla:
+
+[
+\boxed{
+\frac89\to1
+}
+]
+
+iyileştirmesi bu checkpoint'te gerçekleşmedi.
+
+---
+
+# 1. Finite inverse parity formula
+
+Shortcut map:
+
+[
+T(n)=
+\begin{cases}
+(3n+1)/2,&n\text{ odd},\\
+n/2,&n\text{ even}
+\end{cases}
+]
+
+olsun.
+
+Length-(j) parity word:
+
+[
+v=(\varepsilon\_0,\ldots,\varepsilon\_{j-1})
+]
+
+ve toplam ones sayısı:
+
+[
+q=\sum\_{i=0}^{j-1}\varepsilon\_i.
+]
+
+(1)'lerin pozisyonları:
+
+[
+0\le d\_0\<d\_1<\cdots\<d\_{q-1}\<j.
+]
+
+İterasyonu doğrudan açarsak:
+
+# [ \boxed{ T^j(n)
+
+\frac{3^qn+C(v)}{2^j},
+}
+\tag{1.1}
+]
+
+burada:
+
+# [ \boxed{ C(v)
+
+\sum\_{r=0}^{q-1}
+3^{q-1-r}2^{d\_r}.
+}
+\tag{1.2}
+]
+
+Bu [EXACT].
+
+Gerçekten (r)-inci odd operation'dan gelen (+1), kalan (q-1-r) odd operation nedeniyle (3^{q-1-r}) ve bulunduğu shortcut position nedeniyle (2^{d\_r}) ağırlığı taşır.
+
+Integrality:
+
+[
+3^qn+C(v)\equiv0\pmod{2^j}.
+]
+
+(3), (2^j) modulo'sunda invertible olduğundan:
+
+[
+n
+\equiv
+-3^{-q}C(v)
+\pmod{2^j}.
+]
+
+(1.2) yerine konursa:
+
+## [EXACT] Finite inverse parity formula
+
+[
+\boxed{
+R\_j(v)
+\equiv
+-\sum\_{r=0}^{q-1}
+3^{-(r+1)}2^{d\_r}
+\pmod{2^j}.
+}
+\tag{1.3}
+]
+
+Buradaki (3^{-r})'ler modulo (2^j) inverseleridir.
+
+Bu formula klasik Terras/Everett parity-vector bijection ve Bernstein tipi inverse transform ile aynıdır. Rozier'in modern formülasyonunda her length-(j) parity vector'ün tek bir residue class modulo (2^j) belirlediği ve inverse formula açıkça veriliyor.
+
+### [NUM] Exact verification
+
+Bütün:
+
+[
+2^j
+]
+
+parity word'ler:
+
+[
+1\le j\le8
+]
+
+için doğrudan enumeration yapıldı.
+
+Her word için:
+
+1. (1,\ldots,2^j) içindeki gerçek parity class bulundu;
+2. (1.3) exact modular arithmetic ile hesaplandı;
+3. iki sonuç karşılaştırıldı.
+
+Hiç mismatch çıkmadı.
+
+Bu, theorem'in kanıtı değildir; kanıt yukarıdaki affine derivation'dır. Enumeration yalnız indexing/factor hatası kontrolüdür.
+
+---
+
+# 2. Odd başlangıç bit'i
+
+Collatz-relevant critical-ballot sınıfında:
+
+# [ \rho:=\frac1{\alpha}
+
+# \frac1{\log\_2 3}
+
+0.6309297535\ldots
+]
+
+olsun.
+
+İlk prefix için:
+
+[
+h(1)\ge\lceil\rho\rceil=1.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+[
+\boxed{\varepsilon\_0=1.}
+]
+
+Yani çalışma sınıfımızdaki bütün parity vectors odd başlangıç integer'larına karşılık gelir.
+
+---
+
+# 3. Critical-ballot condition'ın doğru integer formu
+
+Tanımla:
+
+# [ h\_v(\ell)
+
+\sum\_{i=0}^{\ell-1}\varepsilon\_i.
+]
+
+Checkpoint 5'teki real inequality:
+
+[
+h\_v(\ell)\ge\frac{\ell}{\alpha}
+]
+
+integer-valued (h\_v) nedeniyle tam olarak:
+
+## [EXACT]
+
+[
+\boxed{
+h\_v(\ell)
+\ge
+\left\lceil
+\frac{\ell}{\alpha}
+\right\rceil
+\qquad
+(1\le\ell\le j).
+}
+\tag{3.1}
+]
+
+Bu yalnız gerekli değil, odd-only barrier ile **eşdeğerdir**.
+
+Gerçekten (1)'lerin positions'ları:
+
+[
+A\_0=0,A\_1,A\_2,\ldots
+]
+
+ise:
+
+[
+A\_k<\ell\le A\_{k+1}
+\Longrightarrow
+h(\ell)=k+1.
+]
+
+Eğer:
+
+[
+A\_{k+1}\le\alpha(k+1),
+]
+
+o zaman:
+
+[
+\ell\le\alpha(k+1)
+]
+
+ve (3.1) gelir.
+
+Tersine (\ell=A\_k) seçersek:
+
+[
+h(A\_k)=k.
+]
+
+(3.1):
+
+[
+k\ge\frac{A\_k}{\alpha},
+]
+
+yani:
+
+[
+A\_k\le\alpha k.
+]
+
+Sonuç:
+
+[
+\boxed{
+D\_k\le0\ \forall k
+\iff
+h\_v(\ell)
+\ge
+\left\lceil\rho\ell\right\rceil
+\ \forall\ell.
+}
+\tag{3.2}
+]
+
+---
+
+# 4. Corridor için doğru normalization
+
+Mechanical minimum height:
+
+# [ b(\ell)
+
+\left\lceil\rho\ell\right\rceil.
+]
+
+Tanımla:
+
+# [ \boxed{ e\_v(\ell)
+
+## h\_v(\ell)
+
+\left\lceil\rho\ell\right\rceil.
+}
+\tag{4.1}
+]
+
+Critical-ballot:
+
+[
+e\_v(\ell)\ge0.
+]
+
+Bu formulation'ın avantajı:
+
+[
+C=0,\quad C\_0=0
+]
+
+durumunda mechanical boundary word tam olarak elde edilir.
+
+Bu nedenle finite class'ı şöyle tanımlamak en temizidir:
+
+# [ \boxed{ \mathcal B\_j(C,C\_0)
+
+\left{
+v:
+0\le e\_v(\ell)
+\le
+C\log\_2(\ell+1)+C\_0
+\quad\forall\ell\le j
+\right}.
+}
+\tag{4.2}
+]
+
+(e\_v) integer olduğu için upper bound istenirse floor alınabilir.
+
+### Kritik düzeltme
+
+Checkpoint 6 için yalnız:
+
+[
+M\_j(C)
+]
+
+yazmak asıl asymptotic theorem için yeterli değildir.
+
+Odd-only hypothesis:
+
+[
+s\_k
+\le
+B\log\_2 k+O(1)
+]
+
+arbitrary fixed additive constant taşır.
+
+Dolayısıyla hedef theorem'in doğru hali:
+
+[
+\boxed{
+M\_j(C,C\_0)\to\infty
+\quad
+\text{her sabit }C\_0
+}
+]
+
+olmalıdır.
+
+(C\_0) yalnız finite experimentlerde (0)'a normalize edilebilir.
+
+---
+
+# 5. Odd slack ile corridor coefficient'in dönüşümü
+
+Bir rank (k)'de:
+
+[
+d\_k=A\_k
+]
+
+tam olarak (k)-inci (1)'in pozisyonudur.
+
+Critical mechanical latest position:
+
+[
+\boxed{
+d\_k^\*=\lfloor\alpha k\rfloor
+}
+\qquad(k\ge1).
+]
+
+Çünkü critical ballot, (k)-inci (1)'in bundan daha sağa itilmesini yasaklar.
+
+Dolayısıyla:
+
+## [EXACT]
+
+# [ \boxed{ d\_k
+
+\lfloor\alpha k\rfloor-s\_k.
+}
+\tag{5.1}
+]
+
+Yani slack aslında yaklaşık değil:
+
+[
+\boxed{
+s\_k=d\_k^\*-d\_k
+}
+]
+
+tam rank-position displacement'tır.
+
+Bu, Checkpoint 5'te aranan displacement formulation'ını tamamen çözüyor.
+
+---
+
+## Corridor coefficient
+
+Length tarafındaki real discrepancy:
+
+[
+g(\ell)=h(\ell)-\rho\ell
+]
+
+olsun.
+
+(\ell=A\_k)'de:
+
+# [ g(A\_k)
+
+# k-\rho A\_k
+
+# \frac{\alpha k-A\_k}{\alpha}
+
+\frac{s\_k+{k\alpha}}{\alpha}.
+\tag{5.2}
+]
+
+Dolayısıyla leading logarithmic coefficient:
+
+[
+\boxed{
+C=\frac{B}{\alpha}.
+}
+\tag{5.3}
+]
+
+Ters yönde de aynı coefficient elde edilir; additive constants değişir.
+
+Sonuç:
+
+[
+\boxed{
+B<1
+\iff
+C<\frac1\alpha=\rho
+}
+]
+
+leading logarithmic coefficient düzeyinde.
+
+Bu nedenle doğru restricted theorem:
+
+[
+\boxed{
+\forall C<\rho,\ \forall C\_0<\infty:
+\quad
+M\_j(C,C\_0)\to\infty
+\quad?
+}
+\tag{5.4}
+]
+
+şeklindedir.
+
+---
+
+# 6. Ana extremal quantity
+
+Tanımla:
+
+# [ \boxed{ M\_j(C,C\_0)
+
+\min\_{v\in\mathcal B\_j(C,C\_0)}
+R\_j(v).
+}
+\tag{6.1}
+]
+
+Parity-vector bijection nedeniyle aynı quantity:
+
+# [ \boxed{ M\_j(C,C\_0)
+
+\min
+\left{
+n\ge1:
+V\_j(n)\in\mathcal B\_j(C,C\_0)
+\right}.
+}
+\tag{6.2}
+]
+
+Bu finite optimization için çok kullanışlıdır.
+
+Bütün parity tree'yi enumerate etmek yerine positive integers sırasıyla test edilebilir; ilk başarılı integer exact minimumdur.
+
+Ayrıca classes prefix-closed olduğundan:
+
+## [EXACT]
+
+[
+\boxed{
+M\_{j+1}(C,C\_0)\ge M\_j(C,C\_0).
+}
+\tag{6.3}
+]
+
+Yani (M\_j) bir monotone staircase'dir.
+
+---
+
+# 7. Mechanical-minimum hipotezi küçük (j)'de kırılıyor
+
+Normalize edilmiş:
+
+[
+C=0.5,\qquad C\_0=0
+]
+
+alalım.
+
+Bu:
+
+[
+C<\rho
+]
+
+olduğundan doğrudan Collatz-relevant coefficient bölgesindedir.
+
+### (j=4)
+
+Mechanical boundary word:
+
+[
+v\_{\rm mech}=1101.
+]
+
+Inverse residue:
+
+[
+\boxed{
+R\_4(1101)=11.
+}
+]
+
+Ancak corridor içindeki:
+
+[
+v=1110
+]
+
+word'ü için:
+
+[
+\boxed{
+R\_4(1110)=7.
+}
+]
+
+Her iki word de (4.2)'yi sağlar.
+
+Dolayısıyla:
+
+## [FAIL] Candidate A
+
+[
+\boxed{
+\text{minimum allowable height mechanical path
+least realizer'ı minimize etmez.}
+}
+\tag{7.1}
+]
+
+Bu başarısızlık büyük-(j) fenomeni değil; (j=4)'te başlıyor.
+
+---
+
+# 8. Christoffel candidate da minimum değil
+
+(j=5) ve (q=4) alalım.
+
+2026 Fernández–Ibáñez convention'ındaki Christoffel word:
+
+# [ d^{\rm chr}\_{5,4}
+
+11110.
+
+]
+
+Bu word için:
+
+[
+\boxed{
+R\_5(11110)=15.
+}
+]
+
+Fakat aynı (C=0.5) corridor'unda ve aynı (q=4) ile:
+
+[
+v=11101
+]
+
+bulunuyor ve:
+
+[
+\boxed{
+R\_5(11101)=7.
+}
+]
+
+Dolayısıyla:
+
+## [FAIL] Candidate C
+
+[
+\boxed{
+\text{Christoffel word fixed }(j,q)
+\text{ altında bile least residue'yu minimize etmiyor.}
+}
+\tag{8.1}
+]
+
+Yakın tarihli Christoffel çalışmasının kanıtladığı extremality farklı bir functional içindir: fixed length ve density'de rotation-invariant (C\_{\min}(d)) functional'ının maximizer'larının Christoffel words olduğu gösteriliyor; aynı çalışma (10\to01) swap'ının kendi ordinary numerator functional (C(d))'sini artırdığını kullanıyor. Bu, modulo (2^j) least-positive residue ordering'i değildir.
+
+Dolayısıyla literatürdeki Christoffel extremality theorem'i bizim hedefimize taşınamaz.
+
+---
+
+# 9. “Ones mümkün olduğunca erken” candidate da yanlış
+
+Aynı:
+
+[
+j=5,\quad q=4
+]
+
+örneğinde erken ones candidate:
+
+[
+11110
+]
+
+olup:
+
+[
+R=15.
+]
+
+Daha sağa kaymış:
+
+[
+11101
+]
+
+ise:
+
+[
+R=7.
+]
+
+Dolayısıyla:
+
+## [FAIL] Candidate B
+
+[
+\boxed{
+\text{ones'i mümkün olduğunca erken yerleştirmek de minimum vermez.}
+}
+]
+
+Bu aşamada finite data Candidate D'yi destekliyor:
+
+[
+\boxed{
+\text{modular wraparound nedeniyle minimizer düzensiz olabilir.}
+}
+]
+
+Bu son statement yalnız `[NUM]/[LEAD]` olarak tutulmalıdır.
+
+---
+
+# 10. Adjacent swap exact hesabı
+
+Word içinde:
+
+[
+10\to01
+]
+
+swap'ı yapalım.
+
+Taşınan (1):
+
+- position (d),
+- rank (r)
+
+olsun.
+
+Inverse sum'da ilgili terim:
+
+[
+-3^{-(r+1)}2^d.
+]
+
+Swap sonrası:
+
+[
+-3^{-(r+1)}2^{d+1}.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+[
+\boxed{
+R\_j(v')-R\_j(v)
+\equiv
+-3^{-(r+1)}2^d
+\pmod{2^j}.
+}
+\tag{10.1}
+]
+
+Prompt'taki aday formula doğrudur.
+
+Ordinary numerator functional için ise:
+
+## [ C(v')
+
+# C(v)
+
+\boxed{
+3^{q-1-r}2^d
+}
+
+> 0\.
+> \tag{10.2}
+> ]
+
+Yani:
+
+[
+10\to01
+]
+
+gerçek integer functional (C(v))'yi kesin artırır.
+
+Bu aynı local monotonicity'nin yakın tarihli Christoffel çalışmasındaki Proposition 5.2 ile uyumlu olduğunu da doğruluyor.
+
+---
+
+# 11. Least representative için exact wrap criterion
+
+Tanımla:
+
+# [ \boxed{ u
+
+\left[
+3^{-(r+1)}2^d
+\right]\_{2^j},
+}
+]
+
+burada:
+
+[
+1\le u<2^j
+]
+
+least nonnegative modular representative.
+
+(10.1):
+
+[
+R'=R-u\pmod{2^j}.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+[
+\boxed{
+R>u
+\Longrightarrow
+R'=R-u\<R,
+}
+\tag{11.1}
+]
+
+ve:
+
+[
+\boxed{
+R\<u
+\Longrightarrow
+R'=R-u+2^j>R.
+}
+\tag{11.2}
+]
+
+Ballot-preserving swap için (d\ge1), dolayısıyla (u) even; (R) ise odd olduğundan:
+
+[
+R=u
+]
+
+durumu oluşmaz.
+
+Bu, least-residue monotonicity'nin tam kırılma mekanizmasıdır.
+
+---
+
+# 12. İki minimal counterexample ile dominance monotonicity tamamen kırılıyor
+
+### Örnek 1
+
+[
+1110\to1101.
+]
+
+İlk word prefix-height açısından ikincisini dominate eder:
+
+[
+h\_{1110}(\ell)
+\ge
+h\_{1101}(\ell).
+]
+
+Fakat:
+
+# [ \boxed{ 7
+
+# R\_4(1110) < R\_4(1101)
+
+11.
+
+}
+]
+
+Burada swap residue'yu **artırıyor**.
+
+---
+
+### Örnek 2
+
+[
+11110\to11101.
+]
+
+Yine ilk word dominate eder.
+
+Ancak:
+
+# [ \boxed{ 15
+
+R\_5(11110)
+
+>
+
+# R\_5(11101)
+
+7.
+
+}
+]
+
+Bu defa aynı tür swap residue'yu **azaltıyor**.
+
+Her iki örnek de (C=0.5) corridor'unda.
+
+Sonuç:
+
+## [FAIL] Dominance monotonicity
+
+Ne:
+
+[
+v\succeq w
+\Longrightarrow
+R\_j(v)\ge R\_j(w)
+]
+
+ne de:
+
+[
+v\succeq w
+\Longrightarrow
+R\_j(v)\le R\_j(w)
+]
+
+doğrudur.
+
+[
+\boxed{
+\text{Global ballot-poset ordering least residue üzerinde yoktur.}
+}
+\tag{12.1}
+]
+
+Bu Checkpoint 6'nın araştırma yönünü değiştiren en önemli negatif sonucudur.
+
+---
+
+# 13. Corridor constraint wraparound'ı engelliyor mu?
+
+Hayır.
+
+Yukarıdaki iki wrap yönü de:
+
+[
+C=0.5<\rho
+]
+
+corridor'unda gerçekleşmektedir.
+
+Dolayısıyla:
+
+## [FAIL]
+
+[
+\boxed{
+\text{logarithmic corridor modular wraparound'ı
+yerel olarak ortadan kaldırmıyor.}
+}
+]
+
+Bu yüzden adjacent swaps üzerinden mechanical boundary'ye monoton taşınma stratejisi kullanılamaz.
+
+---
+
+# 14. Exact finite optimization
+
+Finite optimization, parity bijection sayesinde doğrudan:
+
+[
+n=1,3,5,\ldots
+]
+
+sırasıyla taranarak gerçekleştirildi.
+
+Bir (n)'nin ilk (j) shortcut parity bit'i corridor içindeyse:
+
+[
+R\_j(v)=n,
+]
+
+ve daha küçük bütün odd integers zaten test edildiğinden bu (n) exact minimumdur.
+
+Aşağıdaki sonuçlar:
+
+[
+C\_0=0
+]
+
+normalization'ı içindir.
+
+### [NUM] Exact finite minima
+
+| (C)(j)(M\_j(C,0)) |     |            |
+| ----------------- | --- | ---------- |
+| 0                 | 10  | 1,019      |
+| 0                 | 20  | 941,051    |
+| 0                 | 25  | 29,252,603 |
+| 0.25              | 10  | 1,019      |
+| 0.25              | 20  | 89,083     |
+| 0.25              | 25  | 154,619    |
+| 0.25              | 26  | 613,371    |
+| 0.50              | 10  | 27         |
+| 0.50              | 20  | 27         |
+| 0.50              | 30  | 47         |
+| 0.50              | 40  | 3,399      |
+| 0.50              | 50  | 15,055     |
+| 0.50              | 70  | 226,527    |
+| 0.50              | 90  | 579,687    |
+| 0.50              | 100 | 579,687    |
+| 0.50              | 110 | 16,066,151 |
+| 0.60              | 10  | 27         |
+| 0.60              | 20  | 27         |
+| 0.60              | 30  | 47         |
+| 0.60              | 40  | 47         |
+| 0.60              | 50  | 71         |
+| 0.60              | 70  | 11,291     |
+| 0.60              | 80  | 128,743    |
+| 0.60              | 100 | 579,687    |
+| 0.60              | 120 | 5,460,807  |
+| 0.60              | 140 | 5,460,807  |
+
+Bunlar asymptotic theorem değildir.
+
+Ancak üç önemli pattern var:
+
+1. (M\_j) uzun plateaus yapabiliyor.
+2. Minimum word'ler küçük (j) dışında çoğunlukla mechanical değil.
+3. Aynı şekilde Christoffel değil.
+
+Örneğin (C=0.5):
+
+[
+M\_{10}=M\_{20}=27.
+]
+
+(C=0.6):
+
+[
+M\_{120}=M\_{140}=5,460,807.
+]
+
+Bu, least-realizer minimization'ın “balanced word'e indirgenmesi”nden çok, küçük integer'ların actual parity prefix'lerinin corridor'da ne kadar uzun yaşayabildiğini ölçtüğünü gösteriyor.
+
+---
+
+# 15. Additive corridor constant gerçekten nuisance değildir
+
+(C\_0)'ın teoriden tamamen atılması doğru olmaz.
+
+Örneğin targeted exact computation'da:
+
+[
+C=0.5
+]
+
+için (n=27):
+
+- (C\_0=0) ile corridor'u length (21)'e kadar,
+- (C\_0=2) ile length (58)'e kadar
+
+koruyabiliyor.
+
+Benzer şekilde (C=0.6,C\_0=2) altında küçük realizers yüzlerce bit yaşayabiliyor.
+
+### [NUM]
+
+Bu nedenle theorem'in doğru asymptotic hali mutlaka:
+
+[
+\boxed{
+\forall C\_0<\infty
+}
+]
+
+quantifier'ını taşımalıdır.
+
+---
+
+# 16. Mechanical path için yeni exact growth sonucu
+
+(C=C\_0=0) ise corridor'da yalnız bir word vardır:
+
+[
+h(\ell)=\lceil\rho\ell\rceil.
+]
+
+Bu upper mechanical/Sturmian word'dür.
+
+Checkpoint 2'de associated (2)-adic integer'ın positive ordinary integer olmadığı kanıtlanmıştı.
+
+Shortcut-level residue'ın binary expansion'ı:
+
+[
+R\_j=\sum\_{m=0}^{j-1}b\_m2^m
+]
+
+olsun.
+
+Positive ordinary integer olsaydı:
+
+[
+b\_m=0
+]
+
+eventually olurdu.
+
+Olmadığına göre sonsuz sayıda (m):
+
+[
+b\_m=1.
+]
+
+Bu indices boyunca:
+
+[
+R\_{m+1}\ge2^m.
+]
+
+Her zaman:
+
+[
+R\_j<2^j.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+# [ \boxed{ \limsup\_{j\to\infty} \frac{\log\_2 R\_j^{\rm mech}}{j}
+
+1.
+
+}
+\tag{16.1}
+]
+
+Bu mechanical least residues için önceki yalnız-divergence sonucunu güçlendirir.
+
+Ancak all-(j) lower bound değildir.
+
+Uzun binary-zero blocks nedeniyle plateaus hâlâ mümkündür.
+
+Ve mechanical word genel corridor minimumu olmadığından bu theorem tek başına (M\_j(C,C\_0))'ya aktarılmaz.
+
+---
+
+# 17. Shortcut-level binary lift recurrence
+
+Length-(\ell) prefix residue'ını:
+
+[
+R\_\ell\pmod{2^\ell}
+]
+
+ve endpoint'ini:
+
+[
+Y\_\ell=T^\ell(R\_\ell)
+]
+
+olarak tanımlayalım.
+
+Prefix'teki ones sayısı:
+
+[
+q\_\ell=h(\ell).
+]
+
+Yeni parity bit:
+
+[
+\varepsilon\_\ell\in{0,1}.
+]
+
+İki possible lifts:
+
+[
+R\_\ell,
+\qquad
+R\_\ell+2^\ell.
+]
+
+Affine iterate nedeniyle:
+
+# [ \boxed{ T^\ell(R\_\ell+b2^\ell)
+
+Y\_\ell+b3^{q\_\ell}.
+}
+\tag{17.1}
+]
+
+(3^{q\_\ell}) odd olduğu için desired parity'yi elde eden unique:
+
+[
+b\_\ell\in{0,1}
+]
+
+vardır.
+
+Tam olarak:
+
+## [EXACT]
+
+[
+\boxed{
+b\_\ell
+\equiv
+\varepsilon\_\ell-Y\_\ell
+\pmod2.
+}
+\tag{17.2}
+]
+
+Dolayısıyla:
+
+# [ \boxed{ R\_{\ell+1}
+
+R\_\ell+b\_\ell2^\ell.
+}
+\tag{17.3}
+]
+
+Bu Checkpoint 5 odd-block (t\_k)'nin shortcut-bit analogue'udur.
+
+---
+
+## Endpoint state recurrence
+
+Tanımla:
+
+# [ Z\_\ell
+
+Y\_\ell+b\_\ell3^{q\_\ell}.
+]
+
+O zaman:
+
+[
+Z\_\ell\equiv\varepsilon\_\ell\pmod2
+]
+
+ve:
+
+# [ \boxed{ Y\_{\ell+1}
+
+\begin{cases}
+Z\_\ell/2,&\varepsilon\_\ell=0,\\[1mm]
+(3Z\_\ell+1)/2,&\varepsilon\_\ell=1.
+\end{cases}
+}
+\tag{17.4}
+]
+
+Böylece parity-input → realizer-binary-output transform exact bir transducer gibi yazılmış oldu.
+
+Ancak state:
+
+[
+Y\_\ell
+]
+
+unbounded integer'dır.
+
+### [FAIL/OPEN]
+
+Critical-ballot corridor, bu transducer'ı finite-state bir makineye indirgemedi.
+
+Bir sonraki output bit için yalnız (Y\_\ell\bmod2) yeterli olsa da subsequent output'lar giderek daha yüksek (2)-adic precision gerektirir.
+
+Dolayısıyla bu recurrence Bernstein–Lagarias conjugacy problemini otomatik olarak basitleştirmiyor.
+
+---
+
+# 18. Affine numerator (C(v)) neden yine de yararlı?
+
+Adjacent swaps üzerinde:
+
+[
+C(v)
+]
+
+gerçek monotonicity taşır.
+
+Fakat:
+
+# [ R\_j(v)
+
+[-3^{-q}C(v)]\_{2^j}
+]
+
+modular image'dir.
+
+Bir modular inverse representative:
+
+[
+a\_j=[3^{-q}]\_{2^j}
+]
+
+seçersek:
+
+# [ R\_j
+
+[-a\_jC(v)]\_{2^j}.
+]
+
+(C(v))'de monoton artış, (a\_jC(v))'nin kaç kez (2^j) sınırını geçtiğini kontrol etmeden (R\_j)'ye hiçbir order vermez.
+
+Yukarıdaki (j=4,5) counterexample'ları bunun en küçük örnekleridir.
+
+Dolayısıyla:
+
+### [FAIL]
+
+[
+\boxed{
+\text{ordinary }C(v)\text{ extremality}
+\Longrightarrow
+R\_j(v)\text{ extremality}
+}
+]
+
+çıkarımı geçersizdir.
+
+---
+
+# 19. Daha temiz dual endpoint formulation
+
+Least realizer:
+
+[
+R=R\_j(v)
+]
+
+ve endpoint:
+
+[
+Y=T^j(R)
+]
+
+olsun.
+
+Affine identity:
+
+[
+\boxed{
+3^qR+C(v)=2^jY.
+}
+\tag{19.1}
+]
+
+Bu aynı least-realizer problemini mod (3^q)'ya çevirebilir:
+
+[
+\boxed{
+Y
+\equiv
+2^{-j}C(v)
+\pmod{3^q}.
+}
+\tag{19.2}
+]
+
+Ayrıca:
+
+[
+R>0
+\iff
+Y>\frac{C(v)}{2^j}.
+]
+
+Dolayısıyla least-positive (R), residue class (19.2) içindeki:
+
+[
+\boxed{
+Y>\frac{C(v)}{2^j}
+}
+]
+
+şartını sağlayan en küçük endpoint'e karşılık gelir.
+
+Bu [EXACT].
+
+### [LEAD]
+
+Least-realizer problemindeki mod-(2) wraparound'ın dual bir mod-(3^q) “next admissible endpoint” problemi olarak incelenmesi mümkün.
+
+Bu, basit Christoffel ordering başarısız olduktan sonra kalan daha umut verici aritmetik reformülasyonlardan biri.
+
+---
+
+# 20. Rank-position formu daha da sadeleşti
+
+(r)-inci (1)'in position'ı:
+
+[
+d\_r=A\_r.
+]
+
+Checkpoint 5 slack:
+
+[
+s\_r=\lfloor\alpha r\rfloor-A\_r.
+]
+
+Dolayısıyla exact:
+
+# [ \boxed{ d\_r
+
+\lfloor\alpha r\rfloor-s\_r.
+}
+\tag{20.1}
+]
+
+Affine numerator:
+
+# [ C(v)
+
+\sum\_{r=0}^{q-1}
+3^{q-1-r}
+2^{\lfloor\alpha r\rfloor-s\_r}.
+]
+
+Ama:
+
+# [ \frac{2^{\lfloor\alpha r\rfloor}}{3^r}
+
+2^{-{r\alpha}}.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+# [ \boxed{ C(v)
+
+3^{q-1}
+\sum\_{r=0}^{q-1}
+2^{-{r\alpha}-s\_r}.
+}
+\tag{20.2}
+]
+
+Bu çok önemli bir köprü:
+
+Checkpoint 4'teki carry/slack sum aynen affine numerator'ın içinde yeniden ortaya çıkıyor.
+
+Barrier altında:
+
+[
+s\_r\ge0,
+]
+
+dolayısıyla:
+
+[
+\boxed{
+C(v)\<q,3^{q-1}.
+}
+\tag{20.3}
+]
+
+Fakat bu size bound modular residue'yu kontrol etmeye yetmiyor.
+
+---
+
+# 21. Powers of (3) modulo (2^m)
+
+Standard LTE application:
+
+[
+\boxed{
+v\_2\left(3^{2^r}-1\right)=r+2.
+}
+\tag{21.1}
+]
+
+Dolayısıyla (m\ge3) için:
+
+[
+\boxed{
+\operatorname{ord}\_{2^m}(3)=2^{m-2}.
+}
+\tag{21.2}
+]
+
+Bu, inverse coefficients:
+
+[
+3^{-r}
+\pmod{2^m}
+]
+
+için çok uzun power-of-two period bulunduğunu gösterir.
+
+Ancak bizim regime'de rank:
+
+[
+r=O(j)
+]
+
+iken relevant modulus precision sıklıkla:
+
+[
+m=\Theta(j)
+]
+
+olduğundan order:
+
+[
+2^{\Theta(j)}
+]
+
+seviyesindedir.
+
+### [FAIL]
+
+Powers of (3)'ün kısa bir modulo-(2^m) period'una indirgenmesi mümkün değildir.
+
+### [LEAD]
+
+Tam tersine bu uzun-order yapısı, structured terms arasında gerçek modular anti-concentration kanıtında faydalı olabilir; fakat böyle bir theorem bu checkpoint'te çıkarılamadı.
+
+---
+
+# 22. Finite minimizer'lar nasıl görünüyor?
+
+Exact optimization'daki minimizer'lar, küçük birkaç örnek dışında balanced family'ye oturmuyor.
+
+Örneğin (C=0.5):
+
+[
+M\_{20}=27.
+]
+
+(27)'nin ilk 20 shortcut parity bit'i:
+
+[
+11011111010110111011\.
+]
+
+Bu word mechanical değildir ve same-((j,q)) Christoffel word değildir.
+
+(C=0.6), (j=140) için:
+
+[
+M\_{140}=5,460,807.
+]
+
+İlk prefix de mechanical/Christoffel değildir.
+
+### [NUM]
+
+Minimizer'lar daha çok:
+
+[
+\boxed{
+\text{küçük actual integer trajectory'nin
+corridor'u ne kadar uzun koruduğu}
+}
+]
+
+tarafından seçiliyor gibi görünüyor.
+
+Bu güçlü bir uyarı:
+
+> least-realizer optimization, purely combinatorial balance functional'ından daha arithmetic bir problemdir.
+
+---
+
+# 23. Corridor minimizer'ları upper boundary'yi kullanıyor mu?
+
+Finite deneylerde minimizer'ların discrepancy'si corridor'un tamamını sık sık kullanıyor.
+
+Örneğin:
+
+- (n=27), length (20): maximum normalized excess (2);
+- (n=579687), length (100): maximum excess (3);
+- (n=5,460,807), length (140): maximum excess (3).
+
+### [NUM]
+
+Bu, minimizer'ın mechanical lower boundary'ye yapışmak yerine izin verilen extra height'i kullanabildiğini gösteriyor.
+
+Dolayısıyla corridor width'i theorem'de aktif biçimde kullanılmak zorunda.
+
+---
+
+# 24. Christoffel literatürünün bizim probleme tam etkisi
+
+2026 Christoffel preprint'i fixed (N,r) altında ordinary positive functional:
+
+[
+C(d)
+]
+
+ve rotation-invariant:
+
+[
+C\_{\min}(d)
+]
+
+üzerinde çalışıyor. (10\to01) transposition'ının (C)'yi artırdığı gösteriliyor ve Christoffel words'ün (C\_{\min})'in unique maximizers olduğu iddia edilip kanıtlanıyor.
+
+Bizim quantity:
+
+# [ \boxed{ R\_j(v)
+
+[-3^{-q}C(v)]\_{2^j}.
+}
+]
+
+Aradaki modulo reduction, preprint'teki order theorem'ini yok ediyor.
+
+Bu nedenle:
+
+[
+\boxed{
+\text{Christoffel extremality literatürde gerçek,
+ama bizim least-positive residue functional'ımız için değil.}
+}
+]
+
+Bu ayrım artık exact counterexample ile doğrulanmış durumda.
+
+---
+
+# 25. Rozier frontier ile karşılaştırma
+
+Rozier'in yayımlanmış Lower Bound Hypothesis çalışmasındaki unconditional Theorem 2.6:
+
+[
+r=\frac qj
+\le
+\frac1{\log\_2 3}
+]
+
+ve distinct iterates koşulu altında:
+
+[
+n
+\ge
+j^{-1/6}
+2^{(1-(\log\_2 3)r)j}
+]
+
+bound'unu verir. Daha güçlü entropy bound ise yalnız:
+
+[
+r\le
+0.609089767\ldots
+]
+
+bölgesinde kanıtlanmıştır.
+
+Bizim ballot corridor:
+
+# [ \frac qj \ge \rho
+
+\frac1{\log\_2 3},
+]
+
+ve logarithmic corridor'da:
+
+# [ \frac qj
+
+\rho+
+O\left(\frac{\log j}{j}\right)
+]
+
+**yukarıdan** yaklaşır.
+
+Dolayısıyla Rozier'in unconditional exponential factor'ı bizim tarafta doğrudan kullanılabilir bir lower bound üretmiyor.
+
+Bu restricted problem gerçekten kanıtlanmış LBH frontier'ının hemen öte tarafında.
+
+---
+
+# 26. López–Stoll frontier
+
+López–Stoll, parity density'nin strict biçimde:
+
+[
+\liminf h(\ell)/\ell
+
+>
+
+\frac{\ln2}{\ln3}
+]
+
+olduğu aperiodic inputs için conjugacy image'ın aperiodic olduğunu kanıtlıyor; olası rational divergent orbit'in density'sinin kritik değere eşit olmak zorunda olduğunu gösteriyor.
+
+Bizim sınıf ise:
+
+[
+h(\ell)/\ell
+\to
+\frac{\ln2}{\ln3}
+]
+
+ve yalnız logarithmic relative-height discrepancy taşıyor.
+
+Dolayısıyla strict-density theorem bizim rejimi çözmüyor.
+
+López–Stoll ayrıca critical Sturmian word üzerindeki relative height
+
+# [ n\_\ell
+
+h(\ell)-\lceil\rho\ell\rceil
+]
+
+ile ilgili daha ince real-series kriterleri inceliyor.
+
+Ancak bu sonuçlardan:
+
+[
+M\_j(C,C\_0)\to\infty
+]
+
+çıkarılamıyor.
+
+Böylece literature frontier ile bizim restricted problem arasındaki boşluk net kalıyor.
+
+---
+
+# 27. Shortcut transducer restricted periodicity'yi çözdü mü?
+
+Hayır.
+
+Recurrence:
+
+[
+b\_\ell
+\equiv
+\varepsilon\_\ell-Y\_\ell\pmod2
+]
+
+çok temiz.
+
+Fakat:
+
+[
+Y\_\ell
+]
+
+actual endpoint/carry bilgisini taşımaya devam ediyor.
+
+Critical-ballot condition:
+
+[
+3^{q\_\ell}>2^\ell
+]
+
+nedeniyle endpoint multiplier'ın (1)'in üzerinde kalmasını sağlar, fakat (Y\_\ell)'nin gerekli binary carry bits'lerini sınırlamaz.
+
+### [OPEN]
+
+[
+\boxed{
+\text{critical-ballot logarithmic input}
+\Longrightarrow
+b\_\ell=1\text{ infinitely often}
+}
+]
+
+restricted transducer theorem'i henüz kanıtlanmadı.
+
+Bu statement least-realizer divergence ile yeniden eşdeğerdir.
+
+---
+
+# 28. Mechanical/Christoffel extremality neden ana yol olmaktan çıktı?
+
+Checkpoint başında beklenen zincir:
+
+[
+\text{corridor}
+\to
+\text{dominance}
+\to
+\text{mechanical/Christoffel extremizer}
+\to
+R\_j\to\infty
+]
+
+idi.
+
+Şimdi:
+
+[
+\boxed{
+\text{dominance}\to R\_j\text{ monotonicity}
+}
+]
+
+adımı (j=4,5)'te exact counterexample ile kırıldı.
+
+Dolayısıyla bu zincir kapandı.
+
+Mechanical word'ün kendi residue growth'u güçlü olsa da:
+
+[
+R\_j^{\rm mech}
+]
+
+global minimum değildir.
+
+### [FAIL]
+
+Mechanical/Christoffel reduction ana theorem'i çözmek için yeterli değildir.
+
+---
+
+# 29. Asıl açık problem şimdi daha net
+
+Inverse residue:
+
+## [ \boxed{ R\_j(v) \equiv
+
+\sum\_{r\<q}
+3^{-(r+1)}
+2^{\lfloor\alpha r\rfloor-s\_r}
+\pmod{2^j}
+}
+\tag{29.1}
+]
+
+ve:
+
+[
+0\le s\_r
+\le
+B\log\_2 r+O(1),
+\qquad
+B<1.
+]
+
+Ana soru:
+
+[
+\boxed{
+\text{Bu structured near-critical sum,
+mod }2^j
+\text{ bounded positive residue üretebilir mi?}
+}
+\tag{29.2}
+]
+
+Artık problemin gerçek adı:
+
+[
+\boxed{
+\textbf{restricted modular anti-cancellation}.
+}
+]
+
+Bu, ordinary order/extremality probleminden daha doğru formulation.
+
+---
+
+# 30. Yeni yüksek değerli lead — dual (3)-adic endpoint problem
+
+(19.1):
+
+[
+3^qR+C(v)=2^jY.
+]
+
+Fixed küçük:
+
+[
+R\le M
+]
+
+varsayılırsa logarithmic corridor altında:
+
+- (3^q/2^j) yalnız polynomial büyür,
+- (C(v)/2^j) de yalnız polynomial büyür,
+
+dolayısıyla endpoint:
+
+[
+Y
+]
+
+polynomial scale'de olmak zorundadır.
+
+Ama aynı anda:
+
+[
+Y
+\equiv
+2^{-j}C(v)
+\pmod{3^q}
+]
+
+ve modulus:
+
+[
+3^q
+]
+
+exponential'dır.
+
+### [LEAD]
+
+Least-realizer obstruction'ı şu şekilde çevirmek mümkün olabilir:
+
+> Near-critical position sequence tarafından belirlenen modulo (3^q) endpoint residue'sı, polynomially-small positive representative taşıyabilir mi?
+
+Bu dual formulation, binary wraparound yerine ternary/high-(3)-adic carry structure'a bakıyor.
+
+Checkpoint 7 için en umut verici yeni aritmetik kol bu görünüyor.
+
+---
+
+# 31. Checkpoint 6 sorularının cevapları
+
+### 1. Finite parity inverse residue formula nedir?
+
+[
+\boxed{
+R\_j(v)
+\equiv
+-\sum\_{r=0}^{q-1}
+3^{-(r+1)}2^{d\_r}
+\pmod{2^j}.
+}
+]
+
+**[EXACT]**
+
+---
+
+### 2. Doğru critical-ballot/log-corridor tanımı?
+
+[
+\boxed{
+h(\ell)\ge\lceil\rho\ell\rceil.
+}
+]
+
+Normalized excess:
+
+[
+e(\ell)=h(\ell)-\lceil\rho\ell\rceil.
+]
+
+Corridor:
+
+[
+\boxed{
+0\le e(\ell)
+\le
+C\log\_2(\ell+1)+C\_0.
+}
+]
+
+Relevant coefficient:
+
+[
+\boxed{
+C=B/\alpha.
+}
+]
+
+**[EXACT]**
+
+---
+
+### 3. Finite optimization'da minimizer hangi word?
+
+Genel mechanical/Christoffel family değil.
+
+Exact finite minima tablosu yukarıda verilmiştir.
+
+**[NUM]**
+
+---
+
+### 4. Mechanical/Christoffel gerçek minimizer mı?
+
+[
+\boxed{\text{Hayır.}}
+]
+
+Mechanical candidate (j=4)'te, Christoffel candidate (j=5)'te kırılıyor.
+
+**[FAIL]**
+
+---
+
+### 5. Adjacent (10\leftrightarrow01) swap nasıl değiştiriyor?
+
+[
+\boxed{
+R(v')-R(v)
+\equiv
+-3^{-(r+1)}2^d
+\pmod{2^j}.
+}
+]
+
+**[EXACT]**
+
+---
+
+### 6. Least-positive representatives üzerinde monotonicity var mı?
+
+Global olarak:
+
+[
+\boxed{\text{yok.}}
+]
+
+Wrap criterion (11.1)-(11.2) hangi yönde hareket olacağını exact belirler.
+
+---
+
+### 7. Dominance order ile (R\_j) arasında theorem?
+
+Naive iki monotone yön de false.
+
+[
+\boxed{\text{[FAIL]}}
+]
+
+---
+
+### 8. Modular wraparound extremality yaklaşımını öldürüyor mu?
+
+Basit mechanical/Christoffel order reduction'ı için:
+
+[
+\boxed{\text{evet.}}
+]
+
+---
+
+### 9. Corridor wraparound'ı kontrol etmeye yetiyor mu?
+
+Yerel düzeyde:
+
+[
+\boxed{\text{hayır.}}
+]
+
+Counterexample'lar doğrudan (C=0.5<\rho) corridor'unda.
+
+---
+
+### 10. Mechanical least residues growth hakkında yeni exact sonuç?
+
+Evet:
+
+[
+\boxed{
+\limsup
+\frac{\log\_2R\_j^{\rm mech}}{j}
+\=1.
+}
+]
+
+Ancak all-(j) lower bound yok.
+
+---
+
+### 11. Shortcut-level bit-lift recurrence çıkarıldı mı?
+
+Evet:
+
+[
+\boxed{
+R\_{\ell+1}=R\_\ell+b\_\ell2^\ell,
+\qquad
+b\_\ell\equiv\varepsilon\_\ell-Y\_\ell\pmod2.
+}
+]
+
+**[EXACT]**
+
+---
+
+### 12. Restricted transducer obstruction bulundu mu?
+
+[
+\boxed{\text{Hayır.}}
+]
+
+Carry state (Y\_\ell) unbounded kalıyor.
+
+---
+
+### 13. Herhangi bir (C<1/\alpha) için (M\_j(C,C\_0)\to\infty) kanıtlandı mı?
+
+Yalnız:
+
+[
+C=C\_0=0
+]
+
+mechanical singleton class için divergence biliniyor.
+
+Her pozitif (C<\rho) için genel theorem:
+
+[
+\boxed{\text{kanıtlanmadı.}}
+]
+
+---
+
+### 14. İlk gerçek obstruction nedir?
+
+[
+\boxed{
+\text{modular wraparound / modular anti-cancellation}.
+}
+]
+
+Ordinary affine functional üzerinde order var; least modular representative'da kayboluyor.
+
+---
+
+### 15. (8/9) frontier (1)'e yükseldi mi?
+
+[
+\boxed{\textbf{Hayır.}}
+]
+
+Mevcut rigorous frontier:
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2k}
+\ge\frac89.
+}
+]
+
+---
+
+# 32. Ne başarısız oldu?
+
+### [FAIL]
+
+Minimum allowable-height mechanical path minimum realizer değildir.
+
+### [FAIL]
+
+Maximum-early-ones path minimum realizer değildir.
+
+### [FAIL]
+
+Christoffel word minimum realizer değildir.
+
+### [FAIL]
+
+Adjacent-swap least residue üzerinde tek yönlü değildir.
+
+### [FAIL]
+
+Ballot dominance least residue üzerinde monotone değildir.
+
+### [FAIL]
+
+Corridor constraint local wraparound'ı yasaklamaz.
+
+### [FAIL]
+
+Ordinary (C(v))-functional extremality'sini modular (R\_j(v))'ye taşımak.
+
+### [FAIL]
+
+Standard order of (3\bmod2^m) bilgisini tek başına kısa-period reduction olarak kullanmak.
+
+---
+
+# 33. Kesin olarak ne ilerledi?
+
+## [EXACT]
+
+Finite inverse transform ve affine numerator aynı functional olarak birleştirildi.
+
+## [EXACT]
+
+Barrier:
+
+[
+\iff
+]
+
+every-prefix integer critical-ballot.
+
+## [EXACT]
+
+Slack:
+
+[
+\boxed{
+s\_k=\lfloor\alpha k\rfloor-d\_k
+}
+]
+
+tam rank displacement'tır.
+
+## [EXACT]
+
+Adjacency swap için complete wrap criterion bulundu.
+
+## [EXACT]
+
+Shortcut-level parity-input → binary-realizer-output recurrence bulundu.
+
+## [EXACT]
+
+Mechanical least residues'ın limsup exponential scale'i belirlendi.
+
+## [EXACT]
+
+Least-realizer problemi dual modulo-(3^q) endpoint formulation'a çevrildi.
+
+---
+
+# 34. Ana açık problem
+
+Doğru theorem adayı artık mechanical extremality değildir.
+
+### [OPEN] Restricted Modular Anti-Cancellation Theorem
+
+Her:
+
+[
+B<1
+]
+
+ve fixed (C\_0) için:
+
+[
+0\le s\_r\le B\log\_2(r+1)+C\_0
+]
+
+ve critical ballot sağlayan prefix'lerde:
+
+## [ \boxed{ \left[
+
+\sum\_{r\<q}
+3^{-(r+1)}
+2^{\lfloor\alpha r\rfloor-s\_r}
+\right]\_{2^j}
+\to\infty
+}
+]
+
+uniform biçimde kanıtlanabilir mi?
+
+Bu:
+
+[
+M\_j(C,C\_0)\to\infty
+]
+
+probleminin aritmetik özüdür.
+
+---
+
+# 35. Checkpoint 7 için önerilen araştırma yönü
+
+Mechanical/Christoffel minimization hattı artık ana yol olmamalı.
+
+Bir sonraki sıra:
+
+### 1. Fixed-small-residue formulation
+
+Bir:
+
+[
+R\le M
+]
+
+sabitlenip:
+
+[
+C(v)+3^qR
+\equiv0\pmod{2^j}
+]
+
+koşulunun critical-ballot logarithmic corridor ile ne kadar uzun uyumlu kalabileceği incelensin.
+
+Amaç önce:
+
+[
+R=1,3,5,\ldots
+]
+
+için structural obstruction bulmak; sonra uniform (M)'ye geçmek.
+
+### 2. Dual modulo-(3^q) endpoint formulation
+
+[
+Y
+\equiv2^{-j}C(v)\pmod{3^q}
+]
+
+ve (Y)'nin logarithmic-corridor altında polynomial büyüklükte olması birlikte kullanılsın.
+
+### 3. Suffix/rank decomposition
+
+Mod (3^m)'de (C(v))'nin yalnız son (m) odd positions tarafından belirlendiği yapı exploit edilsin.
+
+Bu, prefix mod-(2^j) constraint'e complementary bir **suffix arithmetic constraint** verebilir.
+
+### 4. Powers of (2\bmod3^m)
+
+Dual formulation artık:
+
+[
+2^{-j}\pmod{3^q}
+]
+
+içerdiğinden powers-of-two modulo powers-of-three yapısı araştırılsın.
+
+Bu belki original powers-of-three modulo powers-of-two yaklaşımından daha uygun olabilir.
+
+---
+
+# 36. Checkpoint 6 genel bilimsel özeti
+
+Checkpoint 5 sonunda umut:
+
+[
+\boxed{
+\text{critical-ballot corridor}
+\Rightarrow
+\text{balanced/mechanical extremal least residue}
+}
+]
+
+idi.
+
+Checkpoint 6 bunu falsify etti.
+
+Asıl yapı şu:
+
+[
+\boxed{
+\text{ordinary affine numerator ordered,
+least residue modularly unordered.}
+}
+]
+
+Bu önemli çünkü yanlış bir extremality theorem'inin peşinden gitmeyi erken durduruyor.
+
+Least-realizer problemi artık daha net şekilde:
+
+[
+\boxed{
+\textbf{structured modular anti-cancellation}
+}
+]
+
+problemidir.
+
+Yakın tarihli Christoffel çalışmaları Collatz'ın bazı **real-valued/rotation-invariant** functionals'ında balanced words'ün gerçekten extremal olabildiğini gösteriyor, fakat bizim least residue functional'ımız farklı ve exact küçük counterexample'lar bunu açıkça ayırıyor.
+
+Rozier'in mevcut unconditional lower-bound theorem'i ise tam kritik ratio'nun diğer tarafında duruyor. López–Stoll'un periodicity sonuçları da strict-supercritical density'yi kapsarken bizim logarithmic corridor kritik density'ye tam olarak yaklaşmaktadır.
+
+Dolayısıyla mevcut açık problem literatürdeki iki bilinen bölgenin arasındaki son derece dar fakat aritmetik olarak zor kritik rejimdedir:
+
+# [ \boxed{ \frac qj
+
+\frac1{\log\_2 3}
+\+
+O\left(\frac{\log j}{j}\right).
+}
+]
+
+**Mevcut rigorous slack frontier:**
+
+[
+\boxed{\frac89.}
+]
+
+**Checkpoint 6 sonucu:** (8/9\to1) henüz yok.
+
+**Yeni ana obstruction:** modular wraparound / anti-cancellation.
+
+**Checkpoint 7 ana hedefi:** fixed-small-realizer ve dual mod-(3^q) endpoint formulation üzerinden critical-ballot corridor için ilk gerçek arithmetic exclusion lemma'sını bulmak.

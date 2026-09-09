@@ -1,0 +1,26 @@
+[
+  {
+    "name": "ALL_LOG_COEFFICIENTS_PROOF.md",
+    "sha256": "f95bbe61eaceed1c0ae74d27646d8c31801b93be2dac8874589d9e5bf4c2f859"
+  },
+  {
+    "name": "BUDGET.json",
+    "sha256": "769ae727d17c564a4d8179a2b68a07922f234126953f7b7c4b00f151ca23607a"
+  },
+  {
+    "name": "INDEPENDENT_AUDIT.md",
+    "sha256": "3852a1606941768fcfcfd6fc192f2ef88342acad626938baef2a8738c75d3e37"
+  },
+  {
+    "name": "NEXT_ACTION.md",
+    "sha256": "4b1815b78a5b38ccf027170009b5d0b309cdf8142802f14dfce6e1194aa7b220"
+  },
+  {
+    "name": "REPORT_TR.md",
+    "sha256": "214368af90d2a9972617e74fa31d20dadde041036bd3b892707d3ab3ffec5a42"
+  },
+  {
+    "name": "SUBLOG_COROLLARY.md",
+    "sha256": "3837fd428254f86887bfb5434dde9fcec82ccaccf67e539196c536b59745238b"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-09-08T07:30:44.884807+00:00",
+  "scoring": "Per item 0 incorrect/missing, 1 correct core answer with substantive missing required detail, 2 all required facts and reasoning correct. All-or-nothing exact-match rate reported separately as items scoring 2. Manual principal grading; not a standardized or blind benchmark. Time/cost are secondary. No retries or question changes after dispatch.",
+  "answers": [
+    {
+      "id": "b1",
+      "expected": "[6,3,10,5,16,8,4,2,1]; 8 steps."
+    },
+    {
+      "id": "b2",
+      "expected": "Values 11,17,13; exponents 1,1,2."
+    },
+    {
+      "id": "b3",
+      "expected": "(3n+1)/4; valid n=1 mod 4; odd output iff n=1 mod 8."
+    },
+    {
+      "id": "b4",
+      "expected": "Second iterate (9n+5)/8; 8n=9n+5 -> n=-5; no positive integer cycle."
+    },
+    {
+      "id": "b5",
+      "expected": "E A=1; E log A=log3-2log2=log(3/4)<0. No: independence/distribution and neglected additive term are surrogate assumptions, not a proof for all deterministic orbits."
+    },
+    {
+      "id": "b6",
+      "expected": "Invalid. Finite range only, assuming correct verification. Missing argument covering every larger integer; no universal theorem follows."
+    },
+    {
+      "id": "b7",
+      "expected": "Mean R/2; Laplace (1+exp(-lambda R))/2>=1/2, so no. Need lower-tail control. This is an abstract logical counterexample, not an actual Collatz orbit counterexample."
+    },
+    {
+      "id": "b8",
+      "expected": "Strong induction or smallest counterexample: even reduces immediately; odd H reduces after finite steps to smaller convergent integer. Base1. H itself remains unproved here."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "b1",
+    "question": "Compute the standard Collatz trajectory starting at 6 up to its FIRST visit to 1, inclusive. Give the full list and the number of applications of T."
+  },
+  {
+    "id": "b2",
+    "question": "Let U(n)=(3n+1)/2^v2(3n+1) on positive odd n. Starting at 7, give the next three U-values and the three exact exponents v2."
+  },
+  {
+    "id": "b3",
+    "question": "For standard T, consider the three-step branch word odd,even,even. Derive T^3(n), specify the residue class of positive n making this word valid, and the stronger residue class making T^3(n) odd."
+  },
+  {
+    "id": "b4",
+    "question": "Can an odd-only Collatz cycle of exactly two U-steps have successive exact exponents k1=1,k2=2? Derive the cycle equation and decide whether a positive integer start exists."
+  },
+  {
+    "id": "b5",
+    "question": "In a HEURISTIC surrogate, k is independently sampled with P(k=j)=2^-j for j>=1 and the additive +1 is discarded, giving multiplier A=3/2^k. Compute E[A] and E[log A] exactly. Does negative expected log drift prove deterministic Collatz convergence? Explain."
+  },
+  {
+    "id": "b6",
+    "question": "A program verifies that every integer 1<=n<=1000000 reaches 1. A proposed proof says: there are no counterexamples in that interval, therefore every positive integer reaches 1. Is the implication valid? State exactly what was proved and what is missing."
+  },
+  {
+    "id": "b7",
+    "question": "In a proposed Collatz occupation argument, a random count N_R is 0 with probability 1/2 and R with probability 1/2. For fixed lambda>0 compute E[N_R] and E[exp(-lambda N_R)]. Can a large mean by itself establish E[exp(-lambda N_R)]<=C/R with C independent of R?"
+  },
+  {
+    "id": "b8",
+    "question": "Assume H: every odd integer n>1 has a standard Collatz iterate T^k(n) that is a positive integer strictly below n. Prove that H would imply that every positive integer reaches 1. Distinguish proving the implication from proving H."
+  }
+]

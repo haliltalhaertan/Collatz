@@ -1,0 +1,2484 @@
+# A. Executive verdict
+
+## **Tek verdict: proof sağlam**
+
+Checkpoint 11'in ana yeni implication zincirini kırmaya çalıştım:
+
+[
+A\_t(x)\le L
+]
+
+[
+\Downarrow
+]
+
+[
+\text{ilk parity prefix'te en fazla }L-t\text{ zero}
+]
+
+[
+\Downarrow
+]
+
+[
+N\_t(2^J-1,c)
+\le
+\sum\_{z\le L-t}\binom{J-1}{z}
+]
+
+[
+\Downarrow
+]
+
+[
+B\_t(c)
+\le
+\frac{2(c-1)\ln2}{3}t+O\_c(\sqrt t)
+]
+
+[
+\Downarrow
+]
+
+[
+\limsup\_{N\to\infty}
+\frac{H\_N}{\ln\ln N}
+\le
+4.9165635509499968808\ldots
+]
+
+Bu zincirde:
+
+- off-by-one collapse,
+- yanlış parity bijection,
+- hidden factor (2),
+- entropy normalization hatası,
+- dyadic shells'de gizli lineer-(t) terim,
+- support endpoint'ten ek lineer kayıp
+
+bulamadım.
+
+Ana yeni theorem'ler bağımsız olarak tekrar kanıtlanabiliyor.
+
+Bununla birlikte önemli bir kavramsal gözlem çıktı:
+
+> Parity-prefix theorem, canonical/minimum-history bilgisinin büyük kısmını **hiç kullanmıyor**.
+
+Yani Checkpoint 11 mevcut katsayıyı ciddi biçimde iyileştiriyor fakat hâlâ canonical seti, bütün low-weight starts kümesi gibi majorize ediyor. Kalan iyileştirme için en doğal açık kapı tam burada.
+
+---
+
+# B. Main theorem verdicts
+
+| StatementVerdict                                                                      |                                            |
+| ------------------------------------------------------------------------------------- | ------------------------------------------ |
+| (\displaystyle N\_t(2^J-1,c)\le\sum\_{z=0}^{L-t}\binom{J-1}{z})                       | **[VALID]**                                |
+| (\displaystyle B\_t(c)\le\frac{2(c-1)\ln2}{3}t+O\_c(\sqrt t))                         | **[VALID]**                                |
+| (\displaystyle \limsup H\_N/\ln\ln N\le4.91656355095\ldots)                           | **[VALID]**                                |
+| (\displaystyle X\_N=O\_{\varepsilon,n\_0}((\ln N)^{1.63885451698\ldots+\varepsilon})) | **[VALID]**                                |
+| second-order slack frontier                                                           | **[VALID]**                                |
+| “kalan linear loss yalnız saturated zone”                                             | **[VALID within this proof architecture]** |
+
+Önemli ayrım:
+
+[
+\boxed{\text{Checkpoint 11 Collatz problemini çözmüyor.}}
+]
+
+B=1 corridor'u hâlâ
+
+[
+H\_N\ge3\ln\ln N+O(1)
+]
+
+ile uyumlu; upper coefficient hâlâ
+
+[
+4.91656355\ldots>3.
+]
+
+---
+
+# C. Canonical tie audit
+
+## C1. (t=3,;y=65\pmod{81})
+
+Raporun verdiği iki word:
+
+[
+(1,3,3),
+\qquad
+(2,4,1).
+]
+
+İkisinin de total valuation'ı:
+
+[
+1+3+3=7,
+\qquad
+2+4+1=7.
+]
+
+Exact enumeration ile (A=3,4,5,6) bütün positive length-3 compositions tarandı.
+
+Hiçbiri terminal class
+
+[
+65\pmod{81}
+]
+
+üretmiyor.
+
+Dolayısıyla:
+
+[
+\boxed{\mu\_3(65)=7.}
+]
+
+### Word ((1,3,3))
+
+Least odd terminal representative:
+
+[
+r=65.
+]
+
+Backward reconstructed start:
+
+[
+x=307.
+]
+
+Forward Syracuse:
+
+[
+307
+\xrightarrow{a=1}
+461
+\xrightarrow{a=3}
+173
+\xrightarrow{a=3}
+65\.
+]
+
+Exact valuation vector:
+
+[
+\boxed{(1,3,3)}.
+]
+
+### Word ((2,4,1))
+
+Backward start:
+
+[
+x=305.
+]
+
+Forward:
+
+[
+305
+\xrightarrow{a=2}
+229
+\xrightarrow{a=4}
+43
+\xrightarrow{a=1}
+65\.
+]
+
+Exact valuation vector:
+
+[
+\boxed{(2,4,1)}.
+]
+
+Dolayısıyla raporun tie counterexample'ı:
+
+[
+\boxed{\text{[VALID]}}
+]
+
+ve eski
+
+> “minimum history unique auxiliary start verir”
+
+iddiası gerçekten false.
+
+---
+
+## C2. Canonical tanım
+
+Tanımlayalım:
+
+# [ \xi\_t(y)
+
+\min{
+x:
+x\text{ minimum-total-valuation history ile }r\_y\text{'ye gider}
+}.
+]
+
+Burada (r\_y), (y\bmod3^{t+1})'in modulo
+
+[
+Q\_t=2\cdot3^{t+1}
+]
+
+least positive odd representative'ıdır.
+
+### Injectivity
+
+Varsayalım:
+
+[
+\xi\_t(y)=\xi\_t(y')=x.
+]
+
+Bir positive start (x)'in ilk (t) odd-only Syracuse step'i deterministiktir:
+
+- valuation sequence unique,
+- terminal integer unique.
+
+Dolayısıyla aynı (x)'ten iki farklı (r\_y,r\_{y'}) oluşamaz.
+
+Bu yüzden:
+
+[
+r\_y=r\_{y'}
+]
+
+ve dolayısıyla
+
+[
+y=y'.
+]
+
+Sonuç:
+
+[
+\boxed{
+y\neq y'
+\Longrightarrow
+\xi\_t(y)\neq\xi\_t(y').
+}
+]
+
+**[VALID]**
+
+Canonicalization matematiksel injectivity'yi kurtarmaktan ziyade seçimi **well-defined ve choice-independent** hale getiriyor.
+
+---
+
+# D. Canonical boundary inequality
+
+Minimum word'ün total valuation'ı:
+
+[
+\mu=\mu\_t(y).
+]
+
+Affine identity:
+
+# [ 2^\mu r\_y
+
+3^t\xi\_t(y)+B\_y,
+\qquad
+B\_y>0.
+]
+
+Bundan doğrudan:
+
+[
+2^\mu r\_y>3^t\xi\_t(y).
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+\frac{3^t}{2^\mu r\_y}
+<
+\frac1{\xi\_t(y)}.
+}
+]
+
+Strict inequality doğru; çünkü (B\_y) gerçekten strictly positive.
+
+---
+
+## D1. Support bound
+
+Least odd representative:
+
+# [ 1\le r\_y\<Q\_t
+
+# 2\cdot3^{t+1}
+
+6\cdot3^t.
+]
+
+Dolayısıyla:
+
+[
+\xi\_t(y)
+<
+\frac{2^\mu r\_y}{3^t}
+<
+6\cdot2^\mu.
+]
+
+Eğer:
+
+[
+\mu\le L
+]
+
+ise:
+
+[
+\boxed{
+\xi\_t(y)<6\cdot2^L.
+}
+]
+
+Sabit (6) doğru, strictness de doğru.
+
+**[VALID]**
+
+---
+
+# E. Distributional formulation
+
+Tanımla:
+
+# [ N\_t(M,c)
+
+\#{
+y:\mu\_t(y)\le L,\ \xi\_t(y)\le M
+}.
+]
+
+Boundary:
+
+# [ B\_t(c)
+
+\sum\_{\mu\_t(y)\le L}
+\frac{3^t}{2^{\mu\_t(y)}r\_y}
+<
+\sum\_{\mu\_t(y)\le L}\frac1{\xi\_t(y)}.
+]
+
+Canonical starts distinct olduğu için bunu sıradan counting function ile yazabiliriz.
+
+---
+
+## E1. Partial summation
+
+[
+A(u)=N\_t(u,c).
+]
+
+Finite Stieltjes integration:
+
+# [ \sum\_{\xi\le X}\frac1\xi
+
+\int\_{1^-}^{X}\frac1u,dA(u).
+]
+
+Integration by parts:
+
+# [ \boxed{ \sum\_{\xi\le X}\frac1\xi
+
+\frac{A(X)}X+
+\int\_1^X\frac{A(u)}{u^2},du.
+}
+]
+
+Doğru.
+
+---
+
+## E2. Dyadic shells
+
+Tanımla:
+
+# [ N\_{t,j}
+
+\#{y:2^j\le\xi\_t(y)<2^{j+1}}.
+]
+
+Her shell içinde:
+
+[
+\frac1{\xi\_t(y)}\le2^{-j}.
+]
+
+Dolayısıyla exact upper bound:
+
+[
+\boxed{
+B\_t(c)
+<
+\sum\_{j\ge0}2^{-j}N\_{t,j}.
+}
+]
+
+Burada **factor 2 yok**.
+
+Factor 2 ancak shell count'u bir cumulative count ile çok kaba değiştirirken farklı index convention seçilirse görünebilir; leading coefficient üzerinde etkisi yok.
+
+**[VALID]**
+
+---
+
+# F. Start-first crude bound
+
+Her canonical start:
+
+[
+\xi\_t(y)\le M
+]
+
+ve
+
+[
+A\_t(\xi\_t(y))=\mu\_t(y)\le L.
+]
+
+Dolayısıyla:
+
+[
+N\_t(M,c)\le C\_t(M,c),
+]
+
+burada
+
+# [ C\_t(M,c)
+
+\#{
+1\le x\le M:
+(x,6)=1,\ A\_t(x)\le L
+}.
+]
+
+---
+
+## F1. Word count
+
+Length (t), total valuation (A) positive compositions:
+
+[
+\binom{A-1}{t-1}.
+]
+
+Her exact word modulo
+
+[
+2^{A+1}
+]
+
+tek starting residue class belirler.
+
+Dolayısıyla ([1,M])'de o residue class'ın eleman sayısı:
+
+[
+\le
+\frac{M}{2^{A+1}}+1.
+]
+
+Burada ayrıca (1/3) factor koymaya gerek yok.
+
+Neden?
+
+Çünkü mod-3 unit restriction ancak seti küçültür; mevcut ifade zaten upper bound.
+
+Böylece:
+
+[
+C\_t(M,c)
+\le
+\sum\_{A=t}^{L}
+\binom{A-1}{t-1}
+\left(
+\frac{M}{2^{A+1}}+1
+\right).
+]
+
+İlk parça:
+
+# [ \frac M2 \sum\_{A=t}^{L} \binom{A-1}{t-1}2^{-A}
+
+\frac M2p\_t(c).
+]
+
+İkinci parça:
+
+# [ \sum\_{A=t}^{L} \binom{A-1}{t-1}
+
+\binom Lt.
+]
+
+Sonuç:
+
+[
+\boxed{
+C\_t(M,c)
+\le
+\frac M2p\_t(c)+\binom Lt.
+}
+]
+
+**[VALID]**
+
+Collisions upper bound'u yalnız iyileştirir.
+
+---
+
+# G. Crossover scale
+
+Large deviation:
+
+# [ p\_t(c)
+
+e^{-I(c)t+o(t)}.
+]
+
+Stirling:
+
+# [ \binom Lt
+
+\frac{e^{h(c)t+o(t)}}{\sqrt t}.
+]
+
+İki leading exponential term'i eşitle:
+
+[
+M e^{-I(c)t}
+\asymp
+e^{h(c)t}.
+]
+
+Dolayısıyla:
+
+[
+\ln M
+\sim
+(I(c)+h(c))t.
+]
+
+Ama:
+
+[
+I(c)+h(c)=c\ln2.
+]
+
+Yani:
+
+[
+\boxed{
+M\sim e^{c\ln2,t}=2^{ct}.
+}
+]
+
+Polynomial (\sqrt t) yalnız lower-order shift verir.
+
+Dolayısıyla crude count'un gerçek zor alanı gerçekten:
+
+[
+\boxed{M<2^{ct}.}
+]
+
+---
+
+# H. Parity-prefix theorem audit
+
+## H1. Odd-only / shortcut sözlüğü
+
+Shortcut map:
+
+[
+T(n)=
+\begin{cases}
+(3n+1)/2,&n\text{ odd},\\
+n/2,&n\text{ even}.
+\end{cases}
+]
+
+Odd-only valuation word:
+
+[
+a\_0,\ldots,a\_{t-1}.
+]
+
+Prefix times:
+
+[
+\tau\_0=0,
+]
+
+# [ \tau\_j
+
+a\_0+\cdots+a\_{j-1},
+\qquad
+1\le j\le t.
+]
+
+Toplam:
+
+[
+\tau\_t=A\_t(x).
+]
+
+Shortcut parity bits:
+
+[
+b\_m=T^m(x)\pmod2.
+]
+
+O zaman:
+
+# [ b\_{\tau\_0}
+
+# b\_{\tau\_1}
+
+# \cdots
+
+b\_{\tau\_t}
+\=1.
+]
+
+İki consecutive odd event arasındaki bitler zero'dur.
+
+Dolayısıyla indices:
+
+[
+0,\ldots,A\_t(x)
+]
+
+arasında **tam**:
+
+[
+t+1
+]
+
+adet one vardır.
+
+Zero sayısı:
+
+# [ (A\_t+1)-(t+1)
+
+A\_t-t.
+]
+
+---
+
+## H2. (A\_t\le L)
+
+Eğer:
+
+[
+A\_t(x)\le L,
+]
+
+ise ilk:
+
+[
+L+1
+]
+
+parity bit içinde en az ilk (A\_t+1) bloktaki (t+1) adet one bulunur.
+
+Dolayısıyla zero sayısı en fazla:
+
+[
+(L+1)-(t+1)=L-t.
+]
+
+Tanımla:
+
+[
+D=L-t.
+]
+
+Sonuç:
+
+[
+\boxed{
+\text{ilk }L+1\text{ parity bit'te zero count}\le D.
+}
+]
+
+Off-by-one yok.
+
+---
+
+## H3. Parity-vector bijection
+
+Length (J) parity vector:
+
+# [ V\_J(x)
+
+(x,T(x),\ldots,T^{J-1}(x))\pmod2.
+]
+
+Map:
+
+[
+x\bmod2^J
+\longleftrightarrow
+V\_J(x)
+]
+
+bijective.
+
+Bunu literature kullanmadan induction ile de kanıtlayabiliriz.
+
+Tail residue (y\bmod2^{J-1}) verilmiş olsun.
+
+İlk bit (0) ise:
+
+[
+x\equiv2y\pmod{2^J}.
+]
+
+İlk bit (1) ise:
+
+[
+\frac{3x+1}{2}\equiv y\pmod{2^{J-1}},
+]
+
+yani:
+
+[
+3x+1\equiv2y\pmod{2^J}.
+]
+
+(3) invertible modulo (2^J), dolayısıyla unique odd solution vardır.
+
+Induction bijection'ı verir.
+
+Bu klasik sonuç literatürde de açıkça vardır: Rozier, finite parity vectors'ın length (j) için congruence classes modulo (2^j) ile birebir olduğunu ve herhangi (2^j) consecutive integer block'un bütün parity vectors'ı tam bir kez verdiğini yazıyor. Niu'nun 2026 Theorem 2'si de her length-(k) parity word'ün tek residue class modulo (2^k) olduğunu ve initial interval count'un (N/2^k)'den en fazla bir ayrıldığını veriyor.
+
+---
+
+## H4. Initial-segment count
+
+Canonical:
+
+[
+x=\xi\_t(y).
+]
+
+Bildiğimiz:
+
+[
+A\_t(x)=\mu\_t(y)\le L.
+]
+
+Eğer:
+
+[
+x\le2^J-1
+]
+
+ise:
+
+[
+0\<x<2^J.
+]
+
+Dolayısıyla distinct canonical starts distinct residues modulo (2^J) verir.
+
+Ayrıca (x) odd olduğu için parity prefix'in ilk biti:
+
+[
+1\.
+]
+
+(J\le L+1) ise ilk (J) bit'teki zero sayısı da en fazla (D).
+
+İlk bit sabit (1), kalan:
+
+[
+J-1
+]
+
+pozisyon içinde (z) zero seçme sayısı:
+
+[
+\binom{J-1}{z}.
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+N\_t(2^J-1,c)
+\le
+\sum\_{z=0}^{D}\binom{J-1}{z}
+}
+]
+
+daha doğrusu (D>J-1) durumunda doğal olarak (z\le J-1).
+
+### Verdict
+
+[
+\boxed{\text{[VALID]}}
+]
+
+---
+
+## H5. On kritik soru — kısa cevaplar
+
+1. Odd-only (t) step = shortcut uzunluğu (A\_t). **Doğru.**
+2. (t+1) one, başlangıç ve terminal odd state'ler dahil. **Doğru.**
+3. Off-by-one yok.
+4. İlk bit fixed (1), dolayısıyla (\binom{J-1}{z}). **Doğru.**
+5. (J\le L+1) gerekli; sonrasındaki parity bits kontrol edilmiyor.
+6. Canonical start için (A\_t(\xi)=\mu\_t(y)). **Doğru.**
+7. Parity map modulo (2^J) gerçek bijection. **Doğru.**
+8. Minimum condition count proof'ta neredeyse kullanılmıyor; yalnız (A\_t(\xi)=\mu\le L) için.
+9. Aynı parity prefix farklı (y) verebilir; bu yalnız count upper bound'u iyileştirir.
+10. (2^J-1) endpoint doğru; (x<2^J) tam gereken condition.
+
+---
+
+# I. Exhaustive parity-prefix falsification
+
+Exact enumeration:
+
+[
+t=1,\ldots,6.
+]
+
+Her:
+
+[
+t\le L<2t
+]
+
+ve her:
+
+[
+1\le J\le L+1
+]
+
+test edildi.
+
+Karşılaştırılan:
+
+[
+N\_t(2^J-1,c)
+]
+
+ile
+
+[
+\sum\_{z\le L-t}\binom{J-1}{z}.
+]
+
+### Sonuç
+
+[
+\boxed{\text{0 failure}}
+]
+
+Equality örnekleri de var:
+
+[
+(t,L,J)=(2,2,3),
+]
+
+[
+(4,4,5),
+]
+
+[
+(6,6,7),
+]
+
+bu örneklerde actual count = bound = (1).
+
+Bu finite computation theorem proof'u yerine geçmiyor, fakat off-by-one falsification açısından temiz.
+
+**[NUM]**
+
+---
+
+# J. Strength transition (J\simeq2D)
+
+Bound:
+
+[
+\sum\_{z\le D}\binom{J-1}{z}.
+]
+
+Binomial distribution:
+
+[
+Z\sim\operatorname{Bin}(J-1,1/2).
+]
+
+Mean:
+
+[
+\frac{J-1}{2}.
+]
+
+Eğer:
+
+[
+D<\frac{J-1}{2},
+]
+
+lower tail exponential saving verir.
+
+Transition:
+
+[
+J-1\simeq2D.
+]
+
+Yani:
+
+[
+\boxed{J\_0=2D+O(1)}.
+]
+
+(O(1)) fark, harmonic cutoff'ta yalnız (O(1)) contribution değiştirir:
+
+[
+\frac13\ln2^{O(1)}=O(1).
+]
+
+Leading coefficient etkilenmez.
+
+---
+
+# K. Boundary coefficient derivation
+
+Bu ana yeni adım.
+
+[
+D=L-t=(c-1)t+O(1).
+]
+
+## K1. Small saturated zone
+
+Cutoff'u örneğin:
+
+[
+X\_0=2^{2D+1}
+]
+
+seç.
+
+Canonical starts:
+
+- distinct,
+- coprime to (6).
+
+Bu yüzden reciprocal sum, aynı cutoff'taki bütün mod-6 unit integers ile majorize edilir:
+
+[
+\sum\_{\substack{\xi\<X\_0\\(\xi,6)=1}}\frac1\xi
+\le
+\sum\_{\substack{m\<X\_0\\(m,6)=1}}\frac1m.
+]
+
+Classical harmonic density:
+
+# [ \sum\_{\substack{m\le X\\(m,6)=1}}\frac1m
+
+\frac13\ln X+O(1).
+]
+
+Dolayısıyla:
+
+[
+\text{small contribution}
+\le
+\frac13(2D+1)\ln2+O(1)
+]
+
+ve:
+
+# [ \boxed{
+
+\frac{2D\ln2}{3}+O(1).
+}
+]
+
+Yani:
+
+[
+\boxed{
+\frac{2(c-1)\ln2}{3}t+O(1).
+}
+]
+
+---
+
+## K2. Upper shells
+
+Shell:
+
+[
+[2^j,2^{j+1}).
+]
+
+Contribution:
+
+[
+\le
+2^{-j}N\_t(2^{j+1}-1,c).
+]
+
+Parity-prefix theorem uygulanır, (j\le L):
+
+[
+\le
+2^{-j}
+\sum\_{z\le D}\binom{j}{z}.
+]
+
+Bu tam olarak:
+
+[
+\boxed{
+P(\operatorname{Bin}(j,1/2)\le D).
+}
+]
+
+Şimdi:
+
+[
+j=2D+r.
+]
+
+Mean:
+
+[
+j/2=D+r/2.
+]
+
+Hoeffding:
+
+[
+P(X-E X\le-r/2)
+\le
+\exp\left(
+-\frac{2(r/2)^2}{j}
+\right)
+]
+
+yani:
+
+[
+\boxed{
+P(X\le D)
+\le
+e^{-r^2/(2j)}.
+}
+]
+
+Checkpoint exponent doğru.
+
+---
+
+## K3. Shell sum
+
+Bu upper region'da:
+
+[
+j\le L=O\_c(t).
+]
+
+Dolayısıyla:
+
+[
+e^{-r^2/(2j)}
+\le
+e^{-r^2/(2L)}.
+]
+
+Ve:
+
+# [ \sum\_{r\ge1} e^{-r^2/(2L)}
+
+# O(\sqrt L)
+
+O\_c(\sqrt t).
+]
+
+Sonuç:
+
+[
+\boxed{
+\text{upper shells}=O\_c(\sqrt t).
+}
+]
+
+---
+
+## K4. Support endpoint
+
+Support:
+
+[
+\xi<6\cdot2^L<2^{L+3}.
+]
+
+Parity-prefix theorem doğrudan yalnız (J\le L+1) için uygulanıyor.
+
+Geriye en fazla sabit sayıda dyadic shell kalır:
+
+[
+j=L+1,L+2
+]
+
+gibi.
+
+Her shell'de bütün coprime-to-6 integers'ın reciprocal toplamı:
+
+[
+O(1).
+]
+
+Dolayısıyla support endpoint:
+
+[
+\boxed{O(1)}.
+]
+
+Burada da hidden linear term yok.
+
+---
+
+## K5. Final boundary theorem
+
+Bütün parçalar:
+
+[
+\boxed{
+B\_t(c)
+\le
+\frac{2D\ln2}{3}
+\+
+O\_c(\sqrt t)
+}
+]
+
+ve:
+
+[
+D=(c-1)t+O(1).
+]
+
+Sonuç:
+
+[
+\boxed{
+B\_t(c)
+\le
+\frac{2(c-1)\ln2}{3}t
+\+
+O\_c(\sqrt t).
+}
+]
+
+### Verdict
+
+[
+\boxed{\text{[VALID]}}
+]
+
+Bu (4.91656) theorem'inin gerçek taşıyıcı kolonudur ve audit'te kırılmadı.
+
+---
+
+# L. Finite boundary theorem search
+
+İstenen:
+
+[
+c=
+1.59,\ 1.60,\ 1.62,\ 1.65,\ 1.70
+]
+
+ve:
+
+[
+t\le12
+]
+
+tarandı.
+
+Örneğin (t=12):
+
+| (c)(B\_{12}(c))leading linear term (2(c-1)\ln2,t/3)fark |           |         |          |
+| ------------------------------------------------------- | --------- | ------- | -------- |
+| 1.59                                                    | 0.5518293 | 3.27165 | -2.71983 |
+| 1.60                                                    | 0.5518293 | 3.32711 | -2.77528 |
+| 1.62                                                    | 0.5518293 | 3.43801 | -2.88618 |
+| 1.65                                                    | 0.5518293 | 3.60437 | -3.05254 |
+| 1.70                                                    | 0.6693172 | 3.88162 | -3.21231 |
+
+Bu sign'in theorem açısından özel anlamı yok; remainder (O(\sqrt t)) unknown constant taşır.
+
+Ama testte herhangi bir anomalous linear-growth belirtisi çıkmadı.
+
+**[NUM]**
+
+---
+
+# M. Growing-(t) master inequality
+
+Checkpoint 10'dan bağımsız yeniden gereken form:
+
+[
+(1-\eta\_t)H\_N
+\le
+\frac{p\_t(c)}3
+(\ln N+O(1))
+\+
+B\_t(c)
+\+
+O\_c((\ln t)^2).
+]
+
+Burada:
+
+- good bulk:
+  [
+  \frac{p\_t(c)}3\ln N;
+  ]
+- bad histories:
+  [
+  \eta\_tH\_N;
+  ]
+- terminal boundary:
+  [
+  B\_t(c);
+  ]
+- composition errors:
+  [
+  O(\ln^2t);
+  ]
+- final (t) orbit terms:
+  [
+  O(\ln t).
+  ]
+
+### (n\_0) exceptional start
+
+(n\_0) mod 3 unit olmak zorunda değil.
+
+Dolayısıyla (s=0) t-step block'u terminal-residue classification dışında tutulabilir.
+
+Ama exact reciprocal decomposition'dan o weighted term:
+
+[
+\frac{W\_{0,t}}{n\_t}
+<
+\frac1{n\_0}.
+]
+
+Yani:
+
+[
+O\_{n\_0}(1).
+]
+
+Growing-depth coefficient'i etkilemez.
+
+---
+
+# N. (4.91656355) derivation
+
+Boundary theorem'i koy:
+
+[
+(1-\eta\_t)H\_N
+\le
+\frac{p\_t(c)}3\ln N
+\+
+\frac{2(c-1)\ln2}{3}t
+\+
+o(t).
+]
+
+Fix:
+
+[
+c>\alpha.
+]
+
+Sonra:
+
+# [ t
+
+\frac{\ln\ln N+2\ln\ln\ln N}{I(c)}
++O(1).
+]
+
+Böylece:
+
+[
+p\_t(c)\ln N=o(1),
+]
+
+[
+\eta\_t=o(1),
+]
+
+[
+\sqrt t=o(t),
+]
+
+[
+\ln^2t=o(t).
+]
+
+Ayrıca:
+
+[
+\frac{t}{\ln\ln N}
+\to
+\frac1{I(c)}.
+]
+
+Sonuç:
+
+[
+\boxed{
+\limsup\_{N\to\infty}
+\frac{H\_N}{\ln\ln N}
+\le
+K\_{11}(c)
+}
+]
+
+burada:
+
+# [ \boxed{ K\_{11}(c)
+
+\frac{2(c-1)\ln2}{3I(c)}.
+}
+]
+
+---
+
+# O. Optimization audit
+
+[
+I(c)=c\ln2-h(c).
+]
+
+Derivative:
+
+# [ I'(c)
+
+\ln\frac{2(c-1)}c.
+]
+
+Şimdi:
+
+[
+G(c)=\frac{c-1}{I(c)}.
+]
+
+Derivative:
+
+# [ G'(c)
+
+\frac{
+I(c)-(c-1)I'(c)
+}{
+I(c)^2
+}.
+]
+
+Doğrudan cebir:
+
+# [ I(c)-(c-1)I'(c)
+
+\ln\frac2c.
+]
+
+(1\<c<2) için:
+
+[
+\ln\frac2c>0.
+]
+
+Dolayısıyla:
+
+[
+\boxed{G'(c)>0}.
+]
+
+Yani (K\_{11}(c)) strictly increasing.
+
+İç noktada daha iyi (c) yok.
+
+Optimum:
+
+# [ \boxed{ \inf\_{\alpha\<c<2}K\_{11}(c)
+
+\lim\_{c\downarrow\alpha}K\_{11}(c).
+}
+]
+
+---
+
+## O1. High-precision constants
+
+# [ \alpha
+
+1.5849625007211561814537389439478165087598\ldots
+]
+
+# [ I(\alpha)
+
+0.05497947281081707167285039039020556613374\ldots
+]
+
+Ve:
+
+# [ \boxed{ K\_{11}
+
+4.9165635509499968808466300650190207823021\ldots
+}
+]
+
+Raporun:
+
+[
+4.91656355095\ldots
+]
+
+değeri doğru.
+
+### Verdict
+
+[
+\boxed{\text{[VALID]}}
+]
+
+---
+
+# P. Carry exponent
+
+# [ H\_N
+
+3\ln U\_N+O(1).
+]
+
+Dolayısıyla:
+
+[
+\ln U\_N
+\le
+\left(
+\frac{K\_{11}}3+o(1)
+\right)
+\ln\ln N.
+]
+
+Bundan:
+
+[
+U\_N
+\le
+(\ln N)^{K\_{11}/3+o(1)}.
+]
+
+Exact carry:
+
+# [ X\_N
+
+3n\_0(U\_N-1).
+]
+
+Dolayısıyla:
+
+# [ X\_N
+
+O\_{\varepsilon,n\_0}
+\left(
+(\ln N)^{p\_{11}+\varepsilon}
+\right),
+]
+
+burada:
+
+# [ \boxed{ p\_{11}
+
+# \frac{K\_{11}}3
+
+1.6388545169833322936155433550063402607674\ldots
+}
+]
+
+Checkpoint değeri doğru.
+
+### Verdict
+
+[
+\boxed{\text{[VALID]}}
+]
+
+---
+
+# Q. Second-order slack frontier
+
+Varsayalım eventually:
+
+## [ s\_k \le \log\_2k
+
+\beta\log\_2\log\_2k
++C.
+]
+
+Forever-undercritical identity:
+
+[
+D\_k=-s\_k-{k\alpha}.
+]
+
+Dolayısıyla:
+
+[
+D\_k
+\ge
+-\log\_2k
+\+
+\beta\log\_2\log\_2k
+-O(1).
+]
+
+Bundan:
+
+[
+2^{D\_k}
+\gg
+\frac{(\log\_2k)^\beta}{k}
+\asymp
+\frac{(\ln k)^\beta}{k}.
+]
+
+Integral comparison:
+
+[
+X\_N
+\gg
+(\ln N)^{\beta+1}.
+]
+
+Upper bound:
+
+# [ X\_N
+
+O\_\varepsilon
+((\ln N)^{p\_{11}+\varepsilon}).
+]
+
+Eğer:
+
+[
+\beta+1>p\_{11},
+]
+
+küçük yeterli (\varepsilon) seçilerek contradiction.
+
+Threshold:
+
+[
+\beta
+
+>
+
+# p\_{11}-1
+
+0.6388545169833322936\ldots
+]
+
+---
+
+## Q1. Limsup quantifier
+
+Eğer aksine:
+
+[
+\limsup
+\frac{s\_k-\log\_2k}
+{\log\_2\log\_2k}
+<
+-(p\_{11}-1),
+]
+
+ise arada bir:
+
+[
+\beta>p\_{11}-1
+]
+
+seçilebilir ve eventually:
+
+[
+s\_k-\log\_2k
+\le
+-\beta\log\_2\log\_2k.
+]
+
+Bu yukarıdaki contradiction'ı verir.
+
+Dolayısıyla:
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k-\log\_2k}
+{\log\_2\log\_2k}
+\ge
+-0.6388545169833322936\ldots
+}
+]
+
+### Verdict
+
+[
+\boxed{\text{[VALID]}}
+]
+
+---
+
+# R. Rate-function normalization audit
+
+Tanım:
+
+# [ \Psi\_c(\theta)
+
+\limsup\_{t\to\infty}
+\frac1t
+\ln N\_t(e^{\theta t},c).
+]
+
+Burada:
+
+[
+J
+\sim
+\frac{\theta t}{\ln2}.
+]
+
+Ve:
+
+[
+D\sim(c-1)t.
+]
+
+Dolayısıyla:
+
+# [ p
+
+\frac DJ
+\sim
+\frac{(c-1)\ln2}{\theta}.
+]
+
+Binomial count:
+
+# [ \sum\_{z\le pJ}\binom Jz
+
+\exp(JH\_{\rm nat}(p)+o(J)),
+]
+
+burada:
+
+# [ H\_{\rm nat}(p)
+
+-p\ln p-(1-p)\ln(1-p).
+]
+
+Eğer binary entropy:
+
+# [ H\_2(p)
+
+-p\log\_2p-(1-p)\log\_2(1-p)
+]
+
+kullanılıyorsa:
+
+# [ H\_{\rm nat}(p)
+
+(\ln2)H\_2(p).
+]
+
+O halde:
+
+# [ \frac1t\ln N \le \frac{\theta}{\ln2} (\ln2)H\_2(p)
+
+\boxed{\theta H\_2(p)}.
+]
+
+Yani rapordaki:
+
+[
+\boxed{
+\Psi\_c(\theta)
+\le
+\theta
+H\_2!\left(
+\frac{(c-1)\ln2}{\theta}
+\right)
+}
+]
+
+**binary entropy base-2 convention'ı altında tamamen doğru.**
+
+Burada normalization bug yok.
+
+Eğer (H) natural entropy olarak tanımlansaydı doğru ifade:
+
+[
+\frac{\theta}{\ln2}
+H\_{\rm nat}(p)
+]
+
+olurdu.
+
+Ana (4.916) proof zaten rate-function formulation'a ihtiyaç duymuyor; bu bölüm auxiliary interpretation.
+
+---
+
+# S. Required additional saving
+
+Current boundary coefficient:
+
+# [ b\_{11}(\alpha)
+
+\frac{2(\alpha-1)\ln2}{3}.
+]
+
+High precision:
+
+# [ \boxed{ b\_{11}(\alpha)
+
+0.2703100720721095879853420769762327577\ldots
+}
+]
+
+B=1 contradiction için required:
+
+[
+b<3I(\alpha).
+]
+
+# [ \boxed{ 3I(\alpha)
+
+0.1649384184324512150185511711706166984\ldots
+}
+]
+
+Relative additional saving:
+
+[
+1-
+\frac{3I(\alpha)}{b\_{11}(\alpha)}
+]
+
+# [
+
+\boxed{
+0.38981771131172936247345263522352648\ldots
+}
+]
+
+yani:
+
+[
+\boxed{38.9817711312%\text{ ek saving}.}
+]
+
+Rapordaki “yaklaşık %39” doğru.
+
+---
+
+# T. Saturated-zone diagnosis
+
+Master decomposition'ın asymptotic katkıları:
+
+| TermBoyut                  |                                            |
+| -------------------------- | ------------------------------------------ |
+| composition error          | (O(\ln^2t)=o(t))                           |
+| good bulk (p\_t(c)\ln N)   | growing-depth seçiminde (o(1))             |
+| bad absorption             | (\eta\_tH\_N,;\eta\_t\to0)                 |
+| upper dyadic parity shells | (O\_c(\sqrt t)=o(t))                       |
+| support endpoint           | (O(1))                                     |
+| saturated small-start zone | (\displaystyle \frac{2(c-1)\ln2}{3}t+O(1)) |
+
+Dolayısıyla:
+
+[
+\boxed{
+\text{bu proof architecture'daki tek surviving linear-(t) term saturated zone'dur.}
+}
+]
+
+Bu statement doğru.
+
+Ama bunun anlamı:
+
+> “Collatz probleminin matematiksel olarak tek kalan yolu budur”
+
+değildir.
+
+Yalnız mevcut harmonic/least-realizer architecture için böyledir.
+
+---
+
+# U. Canonical minimum condition gerçekten kullanılıyor mu?
+
+Burada önemli `[LEAD]` var.
+
+Parity theorem aslında yalnız:
+
+[
+A\_t(x)\le L
+]
+
+kullanıyor.
+
+Şunları kullanmıyor:
+
+1. (A\_t(x))'in terminal class için **minimum** olması;
+2. aynı minimum weight tie'ları içinde (x)'in **en küçük** auxiliary start olması;
+3. (x)'in specific least terminal representative (r\_y) ile canonical ilişkisi;
+4. başka valuation histories'nin aynı terminal class'a daha pahalı biçimde collision yapması.
+
+Yani mevcut proof:
+
+[
+{\text{canonical minimum-history starts}}
+]
+
+kümesini
+
+[
+{\text{bütün low-weight starts}}
+]
+
+ile majorize ediyor.
+
+Bu potansiyel olarak ciddi bilgi kaybı.
+
+---
+
+## U1. Finite strict sparsity ölçümü
+
+(c=1.6) için saturated scale'i yaklaşık:
+
+[
+M=2^{2D+1}-1
+]
+
+aldım.
+
+Canonical starts count ile bütün mod-6-unit low-weight starts:
+
+[
+A\_t(x)\le L
+]
+
+count'unu karşılaştırdım.
+
+Örnekler:
+
+| (t)canonical small startsall low-weight startsoran |      |      |       |
+| -------------------------------------------------- | ---- | ---- | ----- |
+| 5                                                  | 11   | 15   | 0.733 |
+| 7                                                  | 43   | 58   | 0.741 |
+| 9                                                  | 114  | 151  | 0.755 |
+| 10                                                 | 460  | 623  | 0.738 |
+| 12                                                 | 1388 | 1931 | 0.719 |
+
+Bu yalnız finite evidence.
+
+Ama canonical minimum-history restriction'ın gerçekten nontrivial sparsity taşıdığı görülüyor.
+
+### `[LEAD]`
+
+Kalan %39 saving için en doğal hedef:
+
+[
+\boxed{
+\text{canonical low-weight starts'ın saturated initial intervals içinde}
+}
+]
+
+bütün low-weight starts'a göre exponentially veya harmonic-density seviyesinde strict sparse olduğunu göstermek.
+
+Parity-prefix theorem bu bilgiyi henüz kullanmıyor.
+
+---
+
+# V. (B\_t(1.6)) full reproduction
+
+Checkpoint 11 tablosu bağımsız C++ integer enumeration ile yeniden üretildi.
+
+| (t)(B\_t(1.6)) |                       |
+| -------------- | --------------------- |
+| 1              | 0.224598930481283     |
+| 2              | 0.347032690238123     |
+| 3              | 0.261121385493524     |
+| 4              | 0.243570827921648     |
+| 5              | 0.347977603414046     |
+| 6              | 0.351399537026962     |
+| 7              | 0.458062035029248     |
+| 8              | 0.431247257103905     |
+| 9              | 0.497642812946142     |
+| 10             | 0.559226569151272     |
+| 11             | 0.502239591092298     |
+| 12             | 0.551829304420257     |
+| 13             | 0.485503738637867     |
+| 14             | 0.536192196484967     |
+| 15             | 0.583784575447304     |
+| 16             | 0.509786868730013     |
+| 17             | 0.552959600316847     |
+| 18             | **0.485564227852481** |
+
+Özellikle:
+
+# [ B\_{18}/18
+
+0.0269757904362490.
+]
+
+Rapor tablosuyla uyum tam.
+
+### Canonical tie neden (B\_t)'yi değiştirmiyor?
+
+Çünkü:
+
+# [ B\_t(c)
+
+\sum\_y
+\frac{3^t}
+{2^{\mu\_t(y)}r\_y}
+]
+
+yalnız:
+
+- (\mu\_t(y)),
+- (r\_y)
+
+kullanıyor.
+
+Hangi minimum word'ün seçildiği veya hangi auxiliary (x)'in canonical olduğu (B\_t)'nin **definition'ına girmiyor**.
+
+Canonical choice yalnız inequality:
+
+[
+B\_t<\sum\frac1{\xi\_t(y)}
+]
+
+ve distributional (N\_t) analysis için gerekli.
+
+Bu yüzden Checkpoint 10 ve 11 (B\_t) tablolarının aynı olması beklenen sonuçtur.
+
+---
+
+# W. Subadditivity counterexample
+
+(c=1.59):
+
+# [ B\_4
+
+0.243570827921648\ldots
+]
+
+# [ B\_5
+
+0.235950525031192\ldots
+]
+
+Toplam:
+
+# [ B\_4+B\_5
+
+0.479521352952840\ldots
+]
+
+Ama:
+
+# [ B\_9
+
+0.497642812946142\ldots
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+B\_9>B\_4+B\_5.
+}
+]
+
+Yani:
+
+[
+\boxed{
+B\_{t+u}\le B\_t+B\_u
+}
+]
+
+false.
+
+**[COUNTEREXAMPLE]**
+
+Naive multiplicative form:
+
+[
+B\_{t+u}\le B\_tB\_u
+]
+
+daha da hızlı çöküyor.
+
+En küçük test:
+
+[
+t=u=1.
+]
+
+# [ B\_2
+
+0.3470326902\ldots
+]
+
+oysa:
+
+# [ B\_1^2
+
+0.0504446796\ldots
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+B\_2>B\_1^2.
+}
+]
+
+---
+
+# X. (x=31) persistence
+
+Exact odd-only Syracuse computation:
+
+| (t)(A\_t(31))(A\_t/t) |    |         |
+| --------------------- | -- | ------- |
+| 31                    | 45 | 1.45161 |
+| 32                    | 47 | 1.46875 |
+| 33                    | 49 | 1.48485 |
+| 34                    | 53 | 1.55882 |
+| 35                    | 56 | 1.60000 |
+| 36                    | 57 | 1.58333 |
+| 37                    | 58 | 1.56757 |
+| 38                    | 63 | 1.65789 |
+
+Dolayısıyla:
+
+[
+A\_t(31)\le1.6t
+]
+
+(t=37)'ye kadar doğru,
+
+[
+t=38
+]
+
+için yanlış.
+
+Raporun finite example'ı exact reproduce edildi.
+
+Bu şunu çürütür:
+
+> “small fixed starts low-weight population'dan hemen veya monotonik olarak kaybolur.”
+
+Ama asymptotic statement:
+
+[
+B\_t=o(t)
+]
+
+veya canonical-distribution saving hakkında hiçbir counterexample değildir.
+
+**[NUM]**
+
+---
+
+# Y. (B\_t=O(1)) hypothesis audit
+
+Finite data:
+
+[
+B\_t(1.6)\approx0.2-0.6
+]
+
+bandında kalıyor ve (B\_t/t) küçülüyor.
+
+Ama (t\le18) verisi:
+
+- (O(1)),
+- (O(\log t)),
+- (t^\delta),
+- çok küçük coefficient'li linear growth
+
+arasında güvenilir asymptotic ayrım yapamaz.
+
+Bu yüzden:
+
+[
+\boxed{B\_t=O(1)\text{ hâlâ yalnız [OPEN/CONJ].}}
+]
+
+Parity-prefix theorem tek başına (O(1)) veremez, çünkü saturated bölge için yalnız:
+
+[
+N\_t(M,c)\lesssim M
+]
+
+tipi full-density exponent bırakıyor.
+
+Harmonic integration:
+
+[
+\int\_1^{e^{\theta\_0t}}\frac{du}{u}
+]
+
+lineer (t) üretmeye devam ediyor.
+
+(O(1)) için saturated range'in büyük kısmında genuinely sub-full logarithmic occupancy gerekir.
+
+---
+
+# Z. Literature audit
+
+## Z1. Parity-vector bijection
+
+Bu kısım yeni değildir.
+
+Rozier'in parity-sequence çalışması açıkça:
+
+[
+x\bmod2^j
+\leftrightarrow
+\text{length-}j\text{ parity vector}
+]
+
+birebir correspondence'ını veriyor ve bunu Everett/Terras çizgisine bağlıyor.
+
+Niu'nun Mayıs 2026 tarihli Theorem 2'si daha da doğrudan: her parity word tek residue class modulo (2^k) oluşturuyor ve ([1,N]) initial interval'ındaki sayısı (N/2^k)'den en fazla bir sapıyor.
+
+### Status
+
+[
+\boxed{\text{[KNOWN]}}
+]
+
+---
+
+## Z2. Checkpoint parity-prefix inequality
+
+Exact statement:
+
+[
+N\_t(2^J-1,c)
+\le
+\sum\_{z\le L-t}\binom{J-1}{z}
+]
+
+şeklini incelediğim primary sources'da verbatim bulmadım.
+
+Ancak mathematically bu:
+
+1. classical parity-vector bijection,
+2. (A\_t\le L\Rightarrow) at most (L-t) zeros,
+3. canonical starts'ın initial interval'da injective olması
+
+üçlüsünün oldukça doğrudan corollary'sidir.
+
+Bu yüzden bunu “derin yeni parity theorem” olarak sunmak doğru olmaz.
+
+### Status
+
+[
+\boxed{\text{[NO EXACT MATCH FOUND], fakat klasik bijection'ın kolay bir corollary'si.}}
+]
+
+Asıl ilginç nokta, bu corollary'nin (B\_t) harmonic boundary decomposition'ına bağlanmasıdır.
+
+---
+
+## Z3. Stérin
+
+Stérin'in çalışması bounded (T\_1)-budget ile Collatz ancestors'ın binary expressions'ını regular-language araçlarıyla inceliyor ve binary ancestor structure için doğrudan prior art sağlıyor.
+
+Fakat Checkpoint 11'deki specific canonical (N\_t(M,c)) initial-segment large-deviation theorem'ini vermiyor.
+
+### Status
+
+[
+\boxed{\text{[CLOSE PRIOR ART]}}
+]
+
+---
+
+## Z4. Rozier LBH
+
+Rozier'in Lower Bound Hypothesis'i finite iterations, number of odd terms, first-term lower bounds ve binary entropy/ones-ratio ilişkisini tam olarak bu komşu alanda inceliyor.
+
+Checkpoint 11 LBH kullanmıyor; yalnız aynı entropy geometry'sine temas ediyor.
+
+### Status
+
+[
+\boxed{\text{[CLOSE PRIOR ART]}}
+]
+
+---
+
+## Z5. Terras–Everett
+
+Terras'ın 1976 çalışması stopping-time density hattının klasik kaynağıdır. Everett'in 1977 çalışması aynı erken “almost all stopping” geleneğinin diğer temel kaynağıdır.
+
+Bunlarda Checkpoint 11'in pointwise injective-orbit harmonic statement'ını bulmadım.
+
+### Status
+
+[
+\boxed{\text{[CLOSE PRIOR ART]}}
+]
+
+---
+
+## Z6. Tao
+
+Tao'nun theorem'i almost-all initial seeds için logarithmic-density setting'indedir ve Syracuse iteration/3-adic stochastic transport kullanır. Arbitrary single injective orbit için burada kullanılan harmonic theorem değildir.
+
+### Status
+
+[
+\boxed{\text{[CLOSE PRIOR ART]}}
+]
+
+---
+
+## Z7. 2025–2026
+
+Rozier–Terracol parity/“paradoxical sequence” çalışması finite parity-block combinatorics ve stopping behavior açısından yakın güncel prior art'tır.
+
+Niu'nun 2026 sharp finitary Terras result'u initial interval parity counts'a özellikle yakındır.
+
+Hedefli arXiv taramasında:
+
+[
+\limsup
+\frac{H\_N}{\ln\ln N}
+\le4.91656355095\ldots
+]
+
+veya
+
+# [ X\_N
+
+O((\ln N)^{1.6388545\ldots})
+]
+
+ile exact eşleşen bir theorem statement'ı bulamadım.
+
+### Status
+
+[
+\boxed{\text{[NO EXACT MATCH FOUND]}}
+]
+
+Burada kullanılabilecek güvenli novelty ifadesi:
+
+> **İncelediğim primary sources ve hedefli 2025–2026 aramasında aynı global theorem statement'ına rastlamadım.**
+
+Bunun ötesinde “ilk”, “yeni” veya “literatürde bilinmiyor” demek için kapsamlı bibliographic review gerekir.
+
+---
+
+# AA. Publication readiness
+
+## **Verdict: theorem-level ciddi aday**
+
+Ama doğrudan gönderilecek biçimde henüz değil.
+
+Checkpoint 10 ve 11'i **ayrı iki makale yerine tek manuscript** yapmak daha mantıklı.
+
+Sebep:
+
+Checkpoint 11'in (4.916) sonucu şunlara organik olarak bağımlı:
+
+1. (t)-step reciprocal balance;
+2. uniform (O(\ln^2t)) composition error;
+3. terminal classes ve (B\_t);
+4. growing-depth master inequality;
+5. canonical auxiliary starts;
+6. parity-prefix boundary improvement.
+
+Bunları iki ayrı proof chain'e bölmek okuyucunun dependency graph'ını gereksiz zorlaştırır.
+
+Önerilen manuscript omurgası:
+
+- Theorem A: (H\_N=O(\ln\ln N));
+- Theorem B: explicit (4.91656355094999\ldots);
+- Corollary: polylog (X\_N);
+- Corollary: second-order slack;
+- Section: boundary distribution and remaining (B=1) obstruction;
+- Appendix: exact computations.
+
+İnsan uzman review'u hâlâ şart.
+
+---
+
+# AB. Confidence
+
+### Parity-prefix theorem
+
+**very high**
+
+Sebep: doğrudan exact parity timing + classical modulo-(2^J) bijection; exhaustive (t\le6) falsification de temiz.
+
+### (B\_t) boundary theorem
+
+**very high**
+
+Small saturated region coefficient, Hoeffding upper shells ve support endpoint ayrı ayrı yeniden türetildi. Gizli linear term çıkmadı.
+
+### (K\_{11}=4.91656355095\ldots)
+
+**very high**
+
+Analytic monotonicity proof ve 60-digit numerical evaluation aynı sonucu veriyor.
+
+### Polylog (X\_N)
+
+**very high**
+
+Exact carry identity'den formal consequence.
+
+### Second-order slack
+
+**very high**
+
+Basit power-of-log lower bound ile carry upper exponent arasında doğrudan contradiction.
+
+### Saturated-zone reduction
+
+**high**
+
+Mevcut proof architecture içinde kesin. Fakat başka aritmetik yolların olmadığı anlamına gelmez.
+
+---
+
+# AC. Final answer to the two main questions
+
+## 1. Checkpoint 11 gerçekten (6.3274\to4.91656) improvement'ını rigorously kanıtlıyor mu?
+
+[
+\boxed{\textbf{Evet.}}
+]
+
+Adversarial audit sonunda yeni bound:
+
+[
+\boxed{
+\limsup\_{N\to\infty}
+\frac{H\_N}{\ln\ln N}
+\le
+4.9165635509499968808466300650\ldots
+}
+]
+
+ayakta kaldı.
+
+Bundan:
+
+# [ \boxed{ X\_N
+
+O\_{\varepsilon,n\_0}
+\left(
+(\ln N)^{1.6388545169833322936\ldots+\varepsilon}
+\right)
+}
+]
+
+ve:
+
+[
+\boxed{
+\limsup
+\frac{s\_k-\log\_2k}
+{\log\_2\log\_2k}
+\ge
+-0.6388545169833322936\ldots
+}
+]
+
+gerçekten follow ediyor.
+
+## 2. Kalan linear loss gerçekten yalnız saturated small-start zone mu?
+
+[
+\boxed{
+\textbf{Bu proof architecture içinde evet.}
+}
+]
+
+Asymptotic ledger:
+
+[
+\underbrace{
+\frac{2(c-1)\ln2}{3}t
+}*{\text{saturated zone}}*
+*+*
+*\underbrace{O(\sqrt t)}*{\text{upper parity shells}}
+\+
+\underbrace{O(\ln^2t)}\_{\text{composition}}
+\+
+o(t).
+]
+
+Ve en önemli yeni araştırma ipucu:
+
+[
+\boxed{
+\text{mevcut parity theorem canonical minimum-history özelliğini kullanmıyor.}
+}
+]
+
+Bu yüzden Checkpoint 12 için en mantıklı saldırı:
+
+[
+\boxed{
+\text{all low-weight starts}
+\quad\text{ile}\quad
+\text{canonical minimum-history starts}
+}
+]
+
+arasındaki strict initial-segment sparsity'yi kanıtlamak.
+
+Finite exact veride bu sparsity zaten görülüyor; fakat henüz asymptotic theorem yok.
+
+Bu, şu anda kalan %38.98 coefficient saving için en somut matematiksel hedef.

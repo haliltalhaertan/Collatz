@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "scope": "algebraic witnesses, not critical-band evidence",
+  "common_parameters": {
+    "j": 1,
+    "k": 2,
+    "R": 9,
+    "L": 3
+  },
+  "witnesses": [
+    {
+      "word": [
+        2,
+        7
+      ],
+      "B": 7,
+      "Z": 20,
+      "low": 2,
+      "high": 2,
+      "target": 2
+    },
+    {
+      "word": [
+        5,
+        4
+      ],
+      "B": 35,
+      "Z": 19,
+      "low": 1,
+      "high": 2,
+      "target": 2
+    },
+    {
+      "word": [
+        8,
+        1
+      ],
+      "B": 259,
+      "Z": 11,
+      "low": 2,
+      "high": 1,
+      "target": 1
+    }
+  ],
+  "energy_examples": [
+    {
+      "j": 1,
+      "k": 2,
+      "R": 8,
+      "L": 9,
+      "low_energy": 9,
+      "demand_energy": 25
+    },
+    {
+      "j": 2,
+      "k": 2,
+      "R": 9,
+      "L": 9,
+      "low_energy": 12,
+      "demand_energy": 8
+    }
+  ]
+}

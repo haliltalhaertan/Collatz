@@ -1,0 +1,59 @@
+# COLLATZ ARAŞTIRMA ARŞİVİ — COMPLETENESS MANIFEST
+Updated: 2026-08-26
+
+## Purpose
+This document records which checkpoint/task artifacts are present, which split folders were consolidated, and which original raw artifacts could not be located. Missing raw code/data are never silently reconstructed.
+
+## Checkpoints
+- CP01–CP13: canonical folders are present under the project archive root.
+- CP17: a root-level `CP17 — FROZEN FINAL` folder was restored for direct access. It contains a copy of `CP17_FINAL_PACKAGE_V3.zip`, the final standalone zero-trust audit, and the post-handoff research-manager prompt. Original frozen copies remain preserved inside the CP18 audit archive.
+- CP18: Task 1–10 package archive is present, together with the all-outputs ZIP, file index and independent audit archive. A reconstructed master checkpoint summary is stored alongside the archive and is explicitly labeled as a summary, not an original raw file.
+- CP19: canonical Task 1–10 folders are present. Split Task 7–10 result folders were nested back under their canonical task folders. `CP19_PROMPT_INDEX` now covers Tasks 1–10. `CP19_MASTER_CHECKPOINT_2026-08-25` was added.
+- CP20: canonical Task 1–6 folders are present. Split result folders for Tasks 1–6 were nested under the matching canonical task folders. `CP20_PROMPT_INDEX` and `CP20_MASTER_CHECKPOINT_2026-08-26_TASK6_PRE_AUDIT` were added.
+
+## CP19 consolidation map
+- Task 7: `RESULTS_AND_ALL_ARTIFACTS`
+- Task 8: `RESULTS_PACKAGE_AND_ALL_ARTIFACTS`
+- Task 9: `RESULTS_PACKAGE_AND_ALL_ARTIFACTS`
+- Task 10: `RESULTS_PARK_AUDIT_AND_ALL_ARTIFACTS`
+No original result files were deleted.
+
+## CP20 consolidation map
+- Task 1: `RESULTS_AND_AUDIT_ARTIFACTS`
+- Task 2: `RESULTS_AND_ALL_ARTIFACTS`
+- Task 3: `RESULTS_ARCHIVE`
+- Task 4: `RESULTS_ARCHIVE`
+- Task 5: `RESULTS_AND_ALL_ARTIFACTS`
+- Task 6: `RESULTS_MAJOR_THEOREM_AND_AUDIT_PACKAGE`
+No original result files were deleted.
+
+## Genuine missing-original artifacts
+### CP20 Task 3
+Drive-wide search found the research prompt and findings, but not the separate raw/theorem/data/engine files requested by the original prompt. A `CP20_TASK3_MISSING_ARTIFACTS_MANIFEST` was created. No synthetic code or numerical data were fabricated.
+
+### CP20 Task 4
+Drive-wide search found the research prompt and findings, but not the separate endpoint theorem/tree/search/data/engine/package files requested by the original prompt. A `CP20_TASK4_MISSING_ARTIFACTS_MANIFEST` was created. No synthetic code or numerical data were fabricated.
+
+## Numbering gaps
+No canonical project-root folders named CP14, CP15, or CP16 were located by the archive scan. This manifest does not invent historical checkpoint files for those labels. If they were intentionally skipped, no action is needed; if originals exist elsewhere, they should be imported and indexed later.
+
+## Current research state
+CP20 Task 6 has now passed the independent resupply zero-trust audit: [PROOF VALID WITH WORDING REPAIR], artifact integrity [PASS], CP19 park [NOT VIOLATED]. The final audit verdict and CP20_TASK6_FINAL_FREEZE_DECISION_2026-08-26 are archived under canonical Task 6. The truncated BIG_AUDIT_PACKAGE copies are non-canonical; CP20_TASK6_PACKAGE.zip is the complete canonical package. CP20 Task 7 is now active on the B=4 zero-critical weighted-pressure barrier.
+
+## Integrity policy
+1. Preserve original raw files when found.
+2. Prefer moving/nesting split archive folders over duplicating or deleting result files.
+3. Clearly label newly reconstructed summaries as summaries.
+4. Never fabricate missing engines, CSV/JSON outputs, proofs or audit results.
+5. Every future research/audit prompt and its outputs should live under its canonical Task folder
+
+## Legacy checkpoint source gaps
+- CP01 contains only `CP01 — SOURCE STATUS — Canonical Bytes Pending`; no canonical original checkpoint/source bytes were found by the Drive scan.
+- CP05 contains only `CP05 — SOURCE STATUS — Canonical Bytes Pending`; no canonical original checkpoint/source bytes were found by the Drive scan.
+- CP02–CP04 and CP06–CP08 contain checkpoint result reports, but several research-prompt entries are source-reference/status placeholders rather than recovered original prompt bytes.
+- CP09–CP12 contain substantive checkpoint/audit documents; CP13 contains research log and intermediate checkpoint report.
+These gaps are recorded rather than reconstructed as fake historical originals.
+
+## Complete recovery archives
+A root-level `ARCHIVE_COMPLETENESS_RECOVERY_2026-08-26` folder is present. Its `COMPLETE_RECOVERY_ARCHIVES` subfolder contains safety ZIP recoveries for CP18, CP19 and CP20 plus a combined CP18–CP20 recovery archive and a build report. These are redundancy copies and do not alter proof/audit status.
+.

@@ -1,0 +1,9 @@
+{
+  "input": "research_checkpoint_bridge_20260908/CERTIFICATES.json",
+  "sha256": "fc12afa7422e44deb5d1b4afb2a8717260c6c38ca821abb7fd600ce323291b6a",
+  "forward_depth": 16,
+  "inverse_exponent_max": 6,
+  "doublings_max": 6,
+  "new_openrouter_spend_usd": 0,
+  "cumulative_openrouter_spend_usd": 0.061356
+}

@@ -1,0 +1,85 @@
+{
+  "depth": 16,
+  "k_modulus": 65536,
+  "certified_classes": 50568,
+  "unresolved_classes": 14968,
+  "first_hits": {
+    "10": 4288,
+    "12": 3056,
+    "5": 6144,
+    "9": 4352,
+    "6": 5120,
+    "8": 5632,
+    "7": 5632,
+    "4": 4096,
+    "11": 3104,
+    "16": 2002,
+    "15": 2090,
+    "13": 2912,
+    "14": 2140
+  },
+  "examples": [
+    {
+      "k_residue": 2,
+      "step": 10,
+      "output_a": 419904,
+      "output_b": 20
+    },
+    {
+      "k_residue": 3,
+      "step": 12,
+      "output_a": 314928,
+      "output_b": 20
+    },
+    {
+      "k_residue": 6,
+      "step": 5,
+      "output_a": 1492992,
+      "output_b": 155
+    },
+    {
+      "k_residue": 7,
+      "step": 9,
+      "output_a": 839808,
+      "output_b": 101
+    },
+    {
+      "k_residue": 8,
+      "step": 6,
+      "output_a": 746496,
+      "output_b": 101
+    },
+    {
+      "k_residue": 10,
+      "step": 9,
+      "output_a": 279936,
+      "output_b": 47
+    },
+    {
+      "k_residue": 11,
+      "step": 8,
+      "output_a": 559872,
+      "output_b": 101
+    },
+    {
+      "k_residue": 12,
+      "step": 7,
+      "output_a": 373248,
+      "output_b": 74
+    },
+    {
+      "k_residue": 13,
+      "step": 4,
+      "output_a": 995328,
+      "output_b": 209
+    },
+    {
+      "k_residue": 16,
+      "step": 5,
+      "output_a": 497664,
+      "output_b": 128
+    }
+  ],
+  "all_certificates_verified": true,
+  "scope": "Every n=20+27*(r+2^16*t), t>=0 in a certified class reaches a smaller member of S within 16 accelerated steps. Unresolved means only no certificate of this form."
+}

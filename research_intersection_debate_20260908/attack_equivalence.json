@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "equivalence_parameter_cases": 188,
+  "actual_prefix_identity_cases": 200,
+  "scope": "Full-word continuation laws; not all scalar-weight algorithms"
+}

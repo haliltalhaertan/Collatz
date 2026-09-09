@@ -1,0 +1,90 @@
+{
+  "status": "PARTIAL",
+  "mode": "directed_task",
+  "run_id": "directed-e09d63fe9dc14362a16651602cc1d100",
+  "task_id": "cp20-xub-marked-occupation-advisory-v2",
+  "pid": 43340,
+  "heartbeat_at": "2026-09-07T18:43:22.983591+00:00",
+  "updated_at": "2026-09-07T18:43:22.983603+00:00",
+  "completed_lanes": [
+    "sol-proof-builder",
+    "qwen-independent-refuter",
+    "grok-adversarial-auditor"
+  ],
+  "active_lanes": {},
+  "lanes": {
+    "sol-proof-builder": "COMPLETED",
+    "qwen-independent-refuter": "TIMEOUT",
+    "grok-adversarial-auditor": "BLOCKED_DEPENDENCY"
+  },
+  "usage": {
+    "calls": 2,
+    "reserved_tokens": 58580,
+    "reserved_cost_usd": 0.26116,
+    "prompt_tokens": 4639,
+    "completion_tokens": 1722,
+    "reasoning_tokens": 620,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.028816,
+    "provider_cost_complete": false,
+    "wall_seconds": 601.0064531000098,
+    "lanes": {
+      "sol-proof-builder": {
+        "calls": 1,
+        "reserved_tokens": 29277,
+        "reserved_cost_usd": 0.154554,
+        "attempts": {
+          "sol-proof-builder:attempt:1": {
+            "reserved_tokens": 29277,
+            "reserved_cost_usd": 0.154554,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 4639,
+              "completion_tokens": 1722,
+              "reasoning_tokens": 620,
+              "cached_tokens": 0,
+              "cost_usd": 0.028816
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.028816,
+        "provider_cost_upper_bound_usd": 0.028816,
+        "last_usage": {
+          "prompt_tokens": 4639,
+          "completion_tokens": 1722,
+          "reasoning_tokens": 620,
+          "cached_tokens": 0,
+          "cost_usd": 0.028816
+        },
+        "provider_cost_usd": 0.028816,
+        "actual_tokens": 6361
+      },
+      "qwen-independent-refuter": {
+        "calls": 1,
+        "reserved_tokens": 29303,
+        "reserved_cost_usd": 0.106606,
+        "attempts": {
+          "qwen-independent-refuter:attempt:1": {
+            "reserved_tokens": 29303,
+            "reserved_cost_usd": 0.106606,
+            "recorded": false,
+            "cost_complete": false
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.106606,
+        "provider_cost_complete": false,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.106606
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.106606,
+    "provider_cost_lower_bound_usd": 0.028816,
+    "provider_cost_upper_bound_usd": 0.13542200000000001
+  },
+  "final_status": "PARTIAL",
+  "current_step": "Directed task",
+  "last_error": ""
+}

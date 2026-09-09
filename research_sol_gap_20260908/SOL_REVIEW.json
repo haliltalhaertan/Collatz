@@ -1,0 +1,11 @@
+{
+  "model": "openai/gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "calls": 1,
+  "contribution": "A valid alternative local donor injection: raise a chosen maximum using mass from its next coarse group. It reduces a uniform gap probability to a path-selected donor lower-tail estimate, left open. This is not the complete obstruction proof.",
+  "principal_assessment": "Exact weight ratio and injectivity checked. Useful bounded partial result; did not solve the requested uniform gap bound.",
+  "schema_issue": "INVALID_CLAIM_STATUS was recorded; claim retained OPEN. This does not replace mathematical review.",
+  "cost_usd": 0.020004,
+  "duration_seconds": 42.818787900032476,
+  "package_verification": "Byte consistency and CRC passed for 22 members; not formal mathematical verification."
+}

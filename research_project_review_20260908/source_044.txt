@@ -1,0 +1,71 @@
+# CP20 TASK 8B3 — E2 MASTER FINDINGS
+
+**Final branch verdict:**
+
+\[
+\boxed{\texttt{[LEAD — SUBEXPONENTIAL RESONANCE NUMERICALLY SURVIVES]}}
+\]
+
+No load-bearing universal theorem was proved, so the audit stop rule did not fire.
+
+## What changed from E1
+
+E1 saw structured negative-offset rates around 0.08–0.10 at shallow depth. E2 derived an exact reduced dynamic program and pushed the same fixed structured family to \(r=2200\).
+
+For \(d=-8,C=4\):
+
+- \(\gamma_{100}\approx0.03143\)
+- \(\gamma_{400}\approx0.01321\)
+- \(\gamma_{800}\approx0.00792\)
+- \(\gamma_{2200}\approx0.003565\)
+
+Meanwhile \(r|F|\) stays approximately constant and tail power-law fits cluster very near exponent 1.
+
+This strongly supports Hsub and falsifies the shallow finite-exponential interpretation, but it remains numerical evidence.
+
+## Exact structural result
+
+The structured family is invariant under the conditioned recursion and obeys
+
+\[
+G_{r,n,C}
+=
+\frac{n}{r+n-1}G_{r,n-1,C}
++
+\frac{r-1}{r+n-1}
+ e_{3^r}(2^{r+n-1-C})G_{r-1,n,C}.
+\]
+
+This is `[EXACT — STRUCTURAL REDUCTION]`, not an asymptotic theorem.
+
+## Branch classifications
+
+- `[FAIL]`: a positive exponential rate inferred from shallow \(r\le100\) numerics is stable.
+- `[LEAD]`: structured \(1/r\)-scale resonance with quasiperiodic amplitude.
+- `[OPEN]`: rigorous positive-rate theorem.
+- `[OPEN]`: rigorous structured-resonance countertheorem.
+
+## Task-6 relevance
+
+Using the unconstrained fixed-mass entropy diagnostic, even \(\kappa=1.053\) needs a sufficient high-conductor rate above about 0.00907. The worst structured finite rate at \(r=2200\) is about 0.003556 and continues downward. For larger \(\kappa\), the required rate is dramatically larger.
+
+Thus the simple uniform high-conductor exponential theorem is quantitatively implausible unless Task8A/type information materially changes the entropy/rate demand, or the completion argument is modified so that this structured primitive family does not need a pointwise exponential bound.
+
+## Exact next theorem target
+
+Do **not** attempt the full high-conductor exponential theorem next.
+
+Target the structured recursion itself:
+
+> For fixed \(d,C\), prove either an infinite-subsequence lower bound
+> \[
+> |F_{r,\lfloor\alpha r\rfloor+d,C}|\ge r^{-K(d,C)},
+> \]
+> or a sharper asymptotic
+> \[
+> rF_{r,\lfloor\alpha r\rfloor+d,C}
+> =K_{d,C}(\{\alpha r\})+o(1)
+> \]
+> with a nonzero value on an infinite phase subsequence.
+
+Either result would force \(\liminf\gamma_r=0\) for a primitive/full-conductor family and close the simple uniform exponential high-conductor route. That would be audit-worthy.

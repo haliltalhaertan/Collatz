@@ -1,0 +1,77 @@
+{
+  "task_id": "test-task",
+  "run_id": "directed-68400553822d46dbbf94168c55953e61",
+  "status": "PARTIAL",
+  "usage": {
+    "calls": 2,
+    "reserved_tokens": 4174,
+    "reserved_cost_usd": 0.004174,
+    "prompt_tokens": 0,
+    "completion_tokens": 128,
+    "reasoning_tokens": 128,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.0001,
+    "provider_cost_complete": false,
+    "wall_seconds": 0.2568103999947198,
+    "lanes": {
+      "0": {
+        "calls": 1,
+        "reserved_tokens": 2087,
+        "reserved_cost_usd": 0.002087,
+        "attempts": {
+          "0:attempt:1": {
+            "reserved_tokens": 2087,
+            "reserved_cost_usd": 0.002087,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "completion_tokens": 128,
+              "reasoning_tokens": 128,
+              "cost_usd": 0.0001
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.0001,
+        "provider_cost_upper_bound_usd": 0.0001,
+        "last_usage": {
+          "completion_tokens": 128,
+          "reasoning_tokens": 128,
+          "cost_usd": 0.0001
+        },
+        "provider_cost_usd": 0.0001,
+        "actual_tokens": 128
+      },
+      "1": {
+        "calls": 1,
+        "reserved_tokens": 2087,
+        "reserved_cost_usd": 0.002087,
+        "attempts": {
+          "1:attempt:1": {
+            "reserved_tokens": 2087,
+            "reserved_cost_usd": 0.002087,
+            "recorded": false,
+            "cost_complete": false
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.002087,
+        "provider_cost_complete": false,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.002087
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.002087,
+    "provider_cost_lower_bound_usd": 0.0001,
+    "provider_cost_upper_bound_usd": 0.0021869999999999997
+  },
+  "lanes": {
+    "0": "PARTIAL",
+    "1": "TIMEOUT",
+    "2": "BLOCKED_DEPENDENCY"
+  },
+  "new_tasks_started": 0,
+  "limitations": [
+    "No automatic proof promotion from model text or generated code"
+  ]
+}

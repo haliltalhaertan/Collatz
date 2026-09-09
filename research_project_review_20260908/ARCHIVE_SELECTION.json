@@ -1,0 +1,356 @@
+{
+  "archive_sha256": "f9a501670013f59ae56c3249e7e2daa9ff47d8b7ee1b50ba58acafd769acef12",
+  "archive_members": 1008,
+  "selected": [
+    {
+      "id": 1,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/00_CURRENT_CHECKPOINTS/CP17_MASTER_CHECKPOINT_FROZEN_RECONSTRUCTED_SUMMARY.docx",
+      "sha256": "32c99d6f2bfcdbb24fd8b8eb59b9ff575c682165e808799ac950d52af668c4db",
+      "text_file": "source_001.txt",
+      "chars": 1186
+    },
+    {
+      "id": 2,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/00_CURRENT_CHECKPOINTS/CP18_MASTER_CHECKPOINT_2026-08-24_RECONSTRUCTED_FROM_AUDITED_ARCHIVE.docx",
+      "sha256": "483c03b8b278de3fd14a2c561563ad15c657c82e89e06aab02ff95de9a7d7cca",
+      "text_file": "source_002.txt",
+      "chars": 3211
+    },
+    {
+      "id": 3,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/00_CURRENT_CHECKPOINTS/CP19_MASTER_CHECKPOINT_2026-08-25.docx",
+      "sha256": "e8e76ed259ab3881aafb23573347ea76d72caea38a37a68b344cede4b0668b34",
+      "text_file": "source_003.txt",
+      "chars": 2866
+    },
+    {
+      "id": 4,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/00_CURRENT_CHECKPOINTS/CP20_MASTER_CHECKPOINT_2026-08-26_TASK6_AUDITED.docx",
+      "sha256": "2297806775b6e9036cb8250cf29ef7e04ccfc4bbf559e1a4d82dff3f171bbaeb",
+      "text_file": "source_004.txt",
+      "chars": 3004
+    },
+    {
+      "id": 5,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/00_MASTER_INDEX/COLLATZ_ARCHIVE_COMPLETENESS_MANIFEST_2026-08-26.docx",
+      "sha256": "62cd3efad1cec5e8c43bd5904595f089a70cb4aaee7c49cef7c3f8a58181fd8e",
+      "text_file": "source_005.txt",
+      "chars": 4774
+    },
+    {
+      "id": 6,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/00_MASTER_INDEX/COLLATZ_CHECKPOINT_ARCHIVE_STATUS_2026-08-26.md",
+      "sha256": "fa4192d3037fb53dac03dca6632ef547306be9bb1c0acf2087a198e61a4b3c99",
+      "text_file": "source_006.txt",
+      "chars": 2454
+    },
+    {
+      "id": 7,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/00_MASTER_INDEX/MASTER INDEX v2 — Collatz Araştırma Arşivi — 2026-08-15.txt",
+      "sha256": "681f3882d7672603d02642456b48c14a2cde1113c89ca3d60304d2f4820d01a5",
+      "text_file": "source_007.txt",
+      "chars": 6734
+    },
+    {
+      "id": 8,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/00_MASTER_INDEX/MASTER INDEX — Collatz Araştırma Arşivi — 2026-08-15.txt",
+      "sha256": "391ecb4da9e84d05c58d69789e43734453b6b8c73bb344ee9bf3790b467d54f1",
+      "text_file": "source_008.txt",
+      "chars": 6564
+    },
+    {
+      "id": 9,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP01/CP01 — SOURCE STATUS — Canonical Bytes Pending.txt",
+      "sha256": "4bd9e470f78e3820dfe6ae1cfa1c2f21c7aaf45308127e25a9637f87ece84adc",
+      "text_file": "source_009.txt",
+      "chars": 600
+    },
+    {
+      "id": 10,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+      "sha256": "ea7b7c2c777d99c3302722ef16e717082455fc9062d6cec6d986fb7098dd0cf5",
+      "text_file": "source_010.txt",
+      "chars": 35137
+    },
+    {
+      "id": 11,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP03/CP03 — Checkpoint Sonuç Raporu.txt",
+      "sha256": "08d3a4cf9ae4f377ed50dbe36d3d6689772f1537cd42e8b8cba2074bed63368b",
+      "text_file": "source_011.txt",
+      "chars": 19086
+    },
+    {
+      "id": 12,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP04/CP04 — Checkpoint Sonuç Raporu.txt",
+      "sha256": "322fd17b7cd0a40deb5cea16bccce94b17458f660a53b1662f060559048bdab5",
+      "text_file": "source_012.txt",
+      "chars": 18330
+    },
+    {
+      "id": 13,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP05/CP05 — SOURCE STATUS — Canonical Bytes Pending.txt",
+      "sha256": "3271a5c772060cae6608cdf3916b9d63143172e04bdab9ef56d4a98e5b0845e6",
+      "text_file": "source_013.txt",
+      "chars": 597
+    },
+    {
+      "id": 14,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+      "sha256": "d57d6d69e95043225ca221442abf07280fbbd830cdfdd01253769a33d5577b15",
+      "text_file": "source_014.txt",
+      "chars": 33658
+    },
+    {
+      "id": 15,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP07/CP07 — Checkpoint Sonuç Raporu.txt",
+      "sha256": "8b7e95cbde27c8fa7336baa7728bc9cc4a403d27ed2cfbb3677403dad5277f2d",
+      "text_file": "source_015.txt",
+      "chars": 31711
+    },
+    {
+      "id": 16,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP08/CP08 — Checkpoint Sonuç Raporu.txt",
+      "sha256": "23b111fa2128bc51dfc36740ecb7e044c45c8f8f6e33267be6d12a42e5d609bb",
+      "text_file": "source_016.txt",
+      "chars": 28654
+    },
+    {
+      "id": 17,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP09/CP09 — Audit 01 — Adversarial Independent Proof & Novelty Audit.txt",
+      "sha256": "2f51d2367f0ed73d7d6c0f185f88d087cf793741a95852a4d5675df479e64d99",
+      "text_file": "source_017.txt",
+      "chars": 24751
+    },
+    {
+      "id": 18,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP09/CP09 — Collatz_Checkpoint_9_2026-08-14.docx",
+      "sha256": "86614b15707b1d3f6935d06f2d66c199e3d5014c8a284e4ee68d8fdd84960a7f",
+      "text_file": "source_018.txt",
+      "chars": 14058
+    },
+    {
+      "id": 19,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP10/CP10 — Audit — Bağımsız Adversarial Denetim.txt",
+      "sha256": "f5d01962c44a4a28b5f6fd8e58f577fe1b0f0dd3273489ee23e09da63629d220",
+      "text_file": "source_019.txt",
+      "chars": 23254
+    },
+    {
+      "id": 20,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP10/CP10 — Collatz_Checkpoint_10_2026-08-15.docx",
+      "sha256": "f23ec854654e0120af57b2963c07167cc859c11c9ab58f59748d89799228a992",
+      "text_file": "source_020.txt",
+      "chars": 15264
+    },
+    {
+      "id": 21,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP11/CP11 — Audit 01 — Executive Verdict Proof Sağlam.txt",
+      "sha256": "ca4191c1b7e4253fe124638cd563b519b99a1784fb2e6ffee05cb6846297dad1",
+      "text_file": "source_021.txt",
+      "chars": 32557
+    },
+    {
+      "id": 22,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP11/CP11 — Audit 02 — Claude Bağımsız Adversarial Denetim.txt",
+      "sha256": "64734ac3dc9550348b74657274e6972071b9ae6e1bc1e9b82155bf1527fe545f",
+      "text_file": "source_022.txt",
+      "chars": 21425
+    },
+    {
+      "id": 23,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP11/CP11 — Collatz_Checkpoint_11_2026-08-15.docx",
+      "sha256": "0d5981fcde3d64db1d8a2703f144fd75331437104f65fe05be3830356e76e8bc",
+      "text_file": "source_023.txt",
+      "chars": 16516
+    },
+    {
+      "id": 24,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP12/COLLATZ_CP12_THIRD_CLEAN_ROOM_AUDIT_2026-08-15.md",
+      "sha256": "2a8fc40b98bd73008e15aef2ebbe87949df60c691eb67d983370929a27073b31",
+      "text_file": "source_024.txt",
+      "chars": 28843
+    },
+    {
+      "id": 25,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP12/CP12 — Audit 01 — Source Status.txt",
+      "sha256": "26aee0e540284f5deb5bac56d2aae848714efbcd88cb46b7f7876a006c466fc4",
+      "text_file": "source_025.txt",
+      "chars": 596
+    },
+    {
+      "id": 26,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP12/CP12 — Audit 02 — Bağımsız Adversarial Denetim — Collision Barrier Bulgusu.txt",
+      "sha256": "e059f9862bed400a2175e9315a164c2ad9c7296a045a8329dd1674da6909108d",
+      "text_file": "source_026.txt",
+      "chars": 17388
+    },
+    {
+      "id": 27,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP12/CP12 — Collatz_Checkpoint_12_2026-08-15.docx",
+      "sha256": "b6ee6e10240a08d77ccf9bb34bd834e958d81bad64a08a272895bec1f0e7abf8",
+      "text_file": "source_027.txt",
+      "chars": 18022
+    },
+    {
+      "id": 28,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP13/CP13 — Collatz Checkpoint 13 Ara Rapor — Partial-period Endpoint Discrepancy.docx",
+      "sha256": "4abc3c3b890a7711da738e6be8252f9fc516f3050efaa5f8ae44e84645f12e32",
+      "text_file": "source_028.txt",
+      "chars": 6099
+    },
+    {
+      "id": 29,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP14 — RECOVERED ARCHIVE/CP14_SOURCE_RECOVERY_MANIFEST_AND_SUMMARY.docx",
+      "sha256": "42a2f2a55fee33b6e0088038263d020d6efdf283823db7e687ce41acfe18a4b8",
+      "text_file": "source_029.txt",
+      "chars": 1615
+    },
+    {
+      "id": 30,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP15 — RECOVERED ARCHIVE/CP15_SOURCE_RECOVERY_MANIFEST_AND_SUMMARY.docx",
+      "sha256": "28df8da9161d22d9d843aaf32b4a403adcb70191513059d6e0e40a1f31b16af3",
+      "text_file": "source_030.txt",
+      "chars": 0
+    },
+    {
+      "id": 31,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP17 — FROZEN FINAL/CP17_FINAL_STANDALONE_V3_ZERO_TRUST_AUDIT.md",
+      "sha256": "b0f165ceb9c279b4f0ba49b247018cfae57a6cb04257bd6b7c17a4c6e08eadcb",
+      "text_file": "source_031.txt",
+      "chars": 12114
+    },
+    {
+      "id": 32,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP17 — FROZEN FINAL/CP17_MASTER_CHECKPOINT_FROZEN_RECONSTRUCTED_SUMMARY.docx",
+      "sha256": "32c99d6f2bfcdbb24fd8b8eb59b9ff575c682165e808799ac950d52af668c4db",
+      "text_file": "source_032.txt",
+      "chars": 1186
+    },
+    {
+      "id": 33,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP17/CP17_FINAL_STANDALONE_V3_ZERO_TRUST_AUDIT.md",
+      "sha256": "b0f165ceb9c279b4f0ba49b247018cfae57a6cb04257bd6b7c17a4c6e08eadcb",
+      "text_file": "source_033.txt",
+      "chars": 12114
+    },
+    {
+      "id": 34,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_MASTER_CHECKPOINT_2026-08-24_RECONSTRUCTED_FROM_AUDITED_ARCHIVE.docx",
+      "sha256": "483c03b8b278de3fd14a2c561563ad15c657c82e89e06aab02ff95de9a7d7cca",
+      "text_file": "source_034.txt",
+      "chars": 3211
+    },
+    {
+      "id": 35,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK1_10_FILE_INDEX.txt",
+      "sha256": "e3e3fe951e7f853e371da928fadd7858596c4c4cbccce96d3cac5f4cccc97a42",
+      "text_file": "source_035.txt",
+      "chars": 7463
+    },
+    {
+      "id": 36,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP19/CP19_MASTER_CHECKPOINT_2026-08-25.docx",
+      "sha256": "e8e76ed259ab3881aafb23573347ea76d72caea38a37a68b344cede4b0668b34",
+      "text_file": "source_036.txt",
+      "chars": 2866
+    },
+    {
+      "id": 37,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/CP20_MASTER_CHECKPOINT_2026-08-26_TASK6_AUDITED.docx",
+      "sha256": "2297806775b6e9036cb8250cf29ef7e04ccfc4bbf559e1a4d82dff3f171bbaeb",
+      "text_file": "source_037.txt",
+      "chars": 3004
+    },
+    {
+      "id": 38,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Module E Results/CP20_TASK8B3_E0_MASTER_FINDINGS.md",
+      "sha256": "6a9db30279eaf10032ffe77063bd844a22d6ed7c7663f548ed930e7af3c675ef",
+      "text_file": "source_038.txt",
+      "chars": 1483
+    },
+    {
+      "id": 39,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/CP20_TASK8B0_MASTER_FINDINGS.md",
+      "sha256": "a637bd29336e587507240b4f40c914ec9be3d1cc0ca07c906601aee72b9d47eb",
+      "text_file": "source_039.txt",
+      "chars": 2918
+    },
+    {
+      "id": 40,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module B — Pressure-Constrained Residue-Rate Extremal Search/CP20_TASK8B1_MODULE_B_MASTER_FINDINGS_V2.md",
+      "sha256": "697a9488402aaead509f2730e55c31c8874494e9b0097078cc093cceaf612945",
+      "text_file": "source_040.txt",
+      "chars": 1693
+    },
+    {
+      "id": 41,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module B — Pressure-Constrained Residue-Rate Extremal Search/Canonical Files/CP20_TASK8B1_MODULE_B_MASTER_FINDINGS.md",
+      "sha256": "066805d1eddb3f161520236f7953f8bfb2d8ef907e2f7732194353ff611b2ff1",
+      "text_file": "source_041.txt",
+      "chars": 4527
+    },
+    {
+      "id": 42,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module B — Pressure-Constrained Residue-Rate Extremal Search/Results/CP20_TASK8B1_MODULE_B_MASTER_FINDINGS.md",
+      "sha256": "066805d1eddb3f161520236f7953f8bfb2d8ef907e2f7732194353ff611b2ff1",
+      "text_file": "source_042.txt",
+      "chars": 4527
+    },
+    {
+      "id": 43,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E1 — Low-High Conductor Decomposition/CP20_TASK8B3_E1_MASTER_FINDINGS.md",
+      "sha256": "2e1097e09f673b93a6270da6f43048f2449b2780da8d76c7b527f876854054a2",
+      "text_file": "source_043.txt",
+      "chars": 2914
+    },
+    {
+      "id": 44,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E2 — Structured Primitive Resonance/CP20_TASK8B3_E2_MASTER_FINDINGS.md",
+      "sha256": "efb9e37911405e94378bd6dfb5e1ae8d30dc832f0bdf9dc9f4903277921e01c3",
+      "text_file": "source_044.txt",
+      "chars": 2605
+    },
+    {
+      "id": 45,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E3 — Quasiperiodic Critical-Ray Transfer/CP20_TASK8B3_E3_MASTER_FINDINGS.md",
+      "sha256": "c7d66225ee6ef9bbcc8fbf8ec988672b1f8ffd568febc4225d991fe8cdd9ad61",
+      "text_file": "source_045.txt",
+      "chars": 4602
+    },
+    {
+      "id": 46,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E4 — Weighted-Offset Compactness & Critical Walk/CP20_TASK8B3_E4_MASTER_FINDINGS.md",
+      "sha256": "32a8a21044b6bbc6253bfe00337c0590c497a98768a7e2b5f75d8364864e506a",
+      "text_file": "source_046.txt",
+      "chars": 5117
+    },
+    {
+      "id": 47,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_MASTER_FINDINGS.md",
+      "sha256": "6624f8b9873460652edc2593fdf1e60b2e85eccee4f58a7e1c68d7f2114ecde4",
+      "text_file": "source_047.txt",
+      "chars": 2940
+    },
+    {
+      "id": 48,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md",
+      "sha256": "d8e2f7c125744e50bf299b38a890ac0c7ff0d6c47d9fd08506a41b519b2faaec",
+      "text_file": "source_048.txt",
+      "chars": 2659
+    },
+    {
+      "id": 49,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Results/CP20_TASK8B2_D1D_MASTER_FINDINGS.md",
+      "sha256": "f5c33a92b3b4049837a56b7e3c73690d48d8982fc61ff791d30c84428e19a970",
+      "text_file": "source_049.txt",
+      "chars": 2528
+    },
+    {
+      "id": 50,
+      "archive_member": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Results/D1-E — Defect-Coupled Return + Repeated-Factor Conjunction/CP20_TASK8B2_D1E_MASTER_FINDINGS.md",
+      "sha256": "3b7d6602ca881d7deb6003d7844b27ae3a7e6d83f5efe4dcbb338f9d7351dfe1",
+      "text_file": "source_050.txt",
+      "chars": 5263
+    }
+  ]
+}

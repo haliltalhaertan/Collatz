@@ -1,0 +1,1782 @@
+# Collatz Problemi Araştırma Checkpoint 3
+
+**Tarih:** 14 Ağustos 2026
+**Ana araştırma hattı:** Forever-undercritical odd-only Collatz yörüngelerinde bounded slack'in imkânsızlığı ve slack için niceliksel büyüme zorunluluğu.
+
+## Araştırma özeti
+
+Checkpoint 2 sonunda forever-undercritical rejim için bilinen sonuç:
+
+[
+D\_k\le0\quad\forall k
+]
+
+altında
+
+[
+0\le s\_k\le2
+]
+
+şeklindeki bounded-slack davranışının imkânsız olduğuydu.
+
+Bu checkpoint'te hedef tek tek (C=3,4,\ldots) durumlarını kapatmak yerine genel:
+
+[
+\boxed{
+\forall C<\infty:
+\quad
+0\le s\_k\le C\quad\forall k
+\text{ imkânsızdır}
+}
+]
+
+teoremini kanıtlamaktı.
+
+Önerilen weighted future-residue counting yöntemi ayrıntılı biçimde sınandı. Transition row-sum, residue-density, Sturmian factor complexity, finite-interval boundary error ve orbit envelope adımlarının tamamı kapandı.
+
+Bunun sonucunda bounded-slack theorem bütün finite (C) için kanıtlandı.
+
+Araştırma daha sonra bir adım ileri götürüldü. Forever-undercritical yörüngenin yalnızca unbounded slack üretmek zorunda olmadığı, slack'in en az logaritmik ölçekte keyfi büyük excursions üretmek zorunda olduğu gösterildi:
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2 k}
+\ge\frac89.
+}
+]
+
+Bu, Checkpoint 3'ün en güçlü sonucu oldu.
+
+---
+
+# 1. Çalışma zemini
+
+Odd-only Syracuse dönüşümü:
+
+# [ n\_{k+1}
+
+\frac{3n\_k+1}{2^{a\_k}},
+\qquad
+a\_k=v\_2(3n\_k+1).
+]
+
+Tanımlar:
+
+[
+A\_0=0,
+\qquad
+A\_k=\sum\_{i=0}^{k-1}a\_i,
+]
+
+[
+\alpha=\log\_2 3,
+]
+
+[
+D\_k=A\_k-k\alpha.
+]
+
+Forever-undercritical koşulu:
+
+[
+D\_k\le0
+\qquad\forall k.
+]
+
+Slack:
+
+[
+\boxed{
+s\_k=
+\lfloor k\alpha\rfloor-A\_k\ge0.
+}
+]
+
+Dolayısıyla:
+
+# [ D\_k
+
+-s\_k-{k\alpha}.
+\tag{1.1}
+]
+
+Mechanical increment:
+
+[
+m\_k=
+\lfloor(k+1)\alpha\rfloor-
+\lfloor k\alpha\rfloor
+\in{1,2}.
+]
+
+Ve exact slack transition:
+
+[
+\boxed{
+a\_k=m\_k+s\_k-s\_{k+1}.
+}
+\tag{1.2}
+]
+
+Valuation koşulu (a\_k\ge1) nedeniyle:
+
+[
+s\_{k+1}\le s\_k+m\_k-1.
+]
+
+---
+
+# 2. Weighted transition sistemi
+
+Sabit:
+
+[
+C<\infty
+]
+
+varsayalım ve:
+
+[
+0\le s\_k\le C
+]
+
+olsun.
+
+Bir transition:
+
+[
+s\to s'
+]
+
+ve mechanical increment:
+
+[
+m\in{1,2}
+]
+
+için:
+
+[
+a=m+s-s'.
+]
+
+Transition ancak:
+
+[
+a\ge1
+]
+
+ise admissible.
+
+Ağırlık:
+
+# [ \boxed{ W\_m(s,s')
+
+2^{-(m+s-s')}.
+}
+\tag{2.1}
+]
+
+Buna göre:
+
+# [ (M\_m)\_{s,s'}
+
+\begin{cases}
+2^{-(m+s-s')},
+&
+0\le s'\le C,\quad s'\le s+m-1,\\
+0,&\text{aksi halde}.
+\end{cases}
+]
+
+Bir (R)-step slack path için:
+
+# [ \prod\_{i=0}^{R-1} W\_{m\_i}(s\_i,s\_{i+1})
+
+2^{-H},
+]
+
+burada:
+
+[
+H=
+\sum\_{i=0}^{R-1}a\_i.
+]
+
+Dolayısıyla:
+
+### [EXACT]
+
+# [ \boxed{ e\_{s\_0}^T M\_{m\_0}\cdots M\_{m\_{R-1}}\mathbf1
+
+\sum\_{\text{admissible slack paths}}
+2^{-H}.
+}
+\tag{2.2}
+]
+
+Bu, future valuation word'lerinin toplam (2)-adic ağırlığını matrix product olarak ifade eder.
+
+---
+
+# 3. Transition row-sum
+
+En kritik aday:
+
+[
+r\_C<1
+]
+
+iddiası bağımsız olarak kontrol edildi.
+
+Bir row için:
+
+# [ R(m,s)
+
+\sum\_{\substack{0\le s'\le C\m+s-s'\ge1}}
+2^{-(m+s-s')}.
+]
+
+Tanımla:
+
+[
+u=m+s.
+]
+
+İzin verilen:
+
+[
+0\le s'\le\min(C,u-1).
+]
+
+Eğer:
+
+[
+u\le C+1,
+]
+
+ise:
+
+# [ R(m,s)
+
+# \sum\_{a=1}^{u}2^{-a}
+
+1-2^{-u}.
+]
+
+Dolayısıyla:
+
+[
+R(m,s)
+\le
+1-2^{-(C+1)}.
+]
+
+Eğer:
+
+[
+u\ge C+2,
+]
+
+ise:
+
+# [ R(m,s)
+
+\sum\_{a=u-C}^{u}2^{-a},
+]
+
+ve bu değer önceki maksimumdan daha küçüktür.
+
+Maksimum:
+
+[
+m=1,\qquad s=C
+]
+
+durumunda gerçekleşir.
+
+Sonuç:
+
+### [EXACT]
+
+# [ \boxed{ r\_C^{\rm true}
+
+1-2^{-(C+1)}
+<1.
+}
+\tag{3.1}
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+|M\_1|*\infty,*
+*|M\_2|*\infty
+\le r\_C.
+}
+]
+
+Her switching word için:
+
+[
+\boxed{
+\left|
+M\_{m\_0}\cdots M\_{m\_{R-1}}
+\right|\_\infty
+\le
+r\_C^R.
+}
+\tag{3.2}
+]
+
+Böylece joint spectral radius veya Perron–Frobenius tipi daha ağır araçlara ihtiyaç kalmadı.
+
+### [FAIL/PARK]
+
+Spectral-radius rescue hattı gerekli değil.
+
+---
+
+# 4. Future valuation word → residue class
+
+Bir current odd state:
+
+[
+x=n\_k
+]
+
+ve future valuation word:
+
+[
+w=(a\_0,\ldots,a\_{R-1})
+]
+
+olsun.
+
+Toplam valuation:
+
+[
+H=\sum\_{i=0}^{R-1}a\_i.
+]
+
+Tek step için:
+
+[
+v\_2(3x+1)=a
+]
+
+şu residue koşulunu verir:
+
+[
+3x+1
+\equiv
+2^a
+\pmod{2^{a+1}}.
+]
+
+(3), (2^{a+1}) modülünde invertible olduğundan (x) tek bir residue class'a zorlanır.
+
+İndüksiyonla bütün future word için:
+
+### [KNOWN] + [EXACT application]
+
+[
+\boxed{
+x
+\equiv
+r(w)
+\pmod{2^{H+1}}.
+}
+\tag{4.1}
+]
+
+Bu statement yalnız orbit başlangıcında değil, herhangi bir shifted state (n\_k) için geçerlidir.
+
+Dolayısıyla integer universe içindeki density:
+
+[
+\boxed{
+2^{-H-1}.
+}
+\tag{4.2}
+]
+
+Odd integers'a göre normalize edilirse relative density:
+
+[
+2^{-H}.
+]
+
+Pigeonhole hesabında bütün positive integers sayıldığı için doğru katsayı:
+
+[
+2^{-H-1}
+]
+
+olarak tutulmuştur.
+
+---
+
+# 5. Mechanical factor complexity
+
+Mechanical sequence:
+
+# [ m\_k
+
+\lfloor(k+1)\alpha\rfloor-
+\lfloor k\alpha\rfloor
+]
+
+için:
+
+[
+m\_k-1
+]
+
+irrational mechanical binary word'dür.
+
+(\alpha) irrational olduğundan bu word Sturmian'dır.
+
+Klasik Sturmian factor complexity theorem:
+
+### [KNOWN]
+
+[
+\boxed{
+p(R)=R+1.
+}
+\tag{5.1}
+]
+
+Yani orbit hangi phase'den başlarsa başlasın length-(R) mechanical future için yalnız:
+
+[
+R+1
+]
+
+farklı factor söz konusudur.
+
+---
+
+# 6. Residue-density theorem
+
+Bir mechanical factor:
+
+[
+f=(m\_0,\ldots,m\_{R-1})
+]
+
+ve bir başlangıç slack:
+
+[
+s\_0
+]
+
+sabitlensin.
+
+Matrix bound'dan:
+
+[
+\sum\_{\text{admissible paths}}2^{-H}
+\le r\_C^R.
+]
+
+Bütün:
+
+[
+s\_0\in{0,\ldots,C}
+]
+
+başlangıç slack'lerini toplarsak:
+
+[
+\sum 2^{-H}
+\le
+(C+1)r\_C^R.
+]
+
+Integer residue density'si bunun yarısıdır:
+
+[
+\le
+\frac{C+1}{2}r\_C^R.
+]
+
+Bütün (R+1) mechanical factor için union-bound:
+
+### [EXACT]
+
+# [ \boxed{ \delta\_{C,R}
+
+\frac{(C+1)(R+1)}2
+\left(
+1-2^{-(C+1)}
+\right)^R.
+}
+\tag{6.1}
+]
+
+Dolayısıyla sabit her (C) için:
+
+[
+\boxed{
+\delta\_{C,R}\to0
+\qquad(R\to\infty).
+}
+\tag{6.2}
+]
+
+Decay üstel olup yalnız polynomial (R+1) factor'üyle çarpılmaktadır.
+
+---
+
+## 6.1. Overlap problemi
+
+Aynı valuation word farklı slack/factor descriptions üzerinden oluşabilir.
+
+Bu problem değildir.
+
+Union-bound aynı residue class'ı birden fazla sayarsa yalnız upper bound büyür.
+
+Dolayısıyla overlap:
+
+[
+\boxed{\text{density theorem'ini bozmaz.}}
+]
+
+---
+
+## 6.2. Finite interval boundary error
+
+Bir residue class:
+
+[
+x\equiv r\pmod q
+]
+
+için:
+
+[
+\#{x\le X\:x\equiv r\pmod q}
+\le
+\frac Xq+1.
+]
+
+Possible path descriptions kaba olarak:
+
+[
+P\_{C,R}
+\le
+(R+1)(C+1)^{R+1}.
+]
+
+Bu nedenle bounded-slack (R)-future taşıyabilecek positive integers union'ı (U\_{C,R}) için:
+
+### [EXACT]
+
+[
+\boxed{
+\#(U\_{C,R}\cap[1,X])
+\le
+\delta\_{C,R}X
+\+
+(R+1)(C+1)^{R+1}.
+}
+\tag{6.3}
+]
+
+Buradaki ikinci terim (C,R) sabit seçildikten sonra (X)'e göre yalnız sabittir.
+
+Bu, density argument'taki boundary problemini kapatır.
+
+---
+
+# 7. Bounded slack altında orbit envelope
+
+Checkpoint 1'in exact orbit identity'si:
+
+# [ \frac{n\_k}{n\_0}
+
+2^{-D\_k}
+\left(
+1+
+\frac1{3n\_0}
+\sum\_{j\<k}2^{D\_j}
+\right).
+]
+
+Dolayısıyla:
+
+# [ n\_k
+
+2^{-D\_k}
+\left(
+n\_0+
+\frac13
+\sum\_{j\<k}2^{D\_j}
+\right).
+]
+
+Bounded slack:
+
+[
+0\le s\_k\le C
+]
+
+altında:
+
+# [ D\_k
+
+-s\_k-{k\alpha}.
+]
+
+Bu nedenle:
+
+# [ 2^{-D\_k}
+
+2^{s\_k+{k\alpha}}
+<
+2^{C+1}.
+]
+
+Ayrıca:
+
+[
+\sum\_{j\<k}2^{D\_j}\le F\_k.
+]
+
+Checkpoint 2 sonucu:
+
+[
+F\_k
+\le
+\frac78k+\frac18.
+]
+
+Dolayısıyla:
+
+[
+n\_k
+<
+2^{C+1}
+\left[
+n\_0+
+\frac13
+\left(
+\frac78k+\frac18
+\right)
+\right].
+]
+
+Yani:
+
+### [EXACT]
+
+[
+\boxed{
+n\_k<
+B\_Ck+B\_C'(n\_0),
+}
+\tag{7.1}
+]
+
+burada:
+
+[
+\boxed{
+B\_C=
+\frac{7,2^{C+1}}{24},
+}
+]
+
+ve:
+
+# [ \boxed{ B\_C'(n\_0)
+
+2^{C+1}
+\left(
+n\_0+\frac1{24}
+\right).
+}
+]
+
+Dolayısıyla bütün:
+
+[
+0\le k\le K
+]
+
+için:
+
+[
+\boxed{
+n\_k<
+B\_CK+B\_C'(n\_0).
+}
+\tag{7.2}
+]
+
+Asymptotik optimal coefficient ise:
+
+[
+F\_k
+\sim
+\frac{k}{2\ln2}
+]
+
+nedeniyle:
+
+# [ \boxed{ L\_C= \frac{2^{C+1}}{6\ln2}
+
+\frac{2^C}{3\ln2}.
+}
+\tag{7.3}
+]
+
+---
+
+# 8. Density + envelope → genel bounded-slack obstruction
+
+Sabit (C) seçilsin.
+
+Çünkü:
+
+[
+r\_C<1,
+]
+
+şu quantity:
+
+# [ \delta\_{C,R}
+
+\frac{(C+1)(R+1)}2r\_C^R
+]
+
+sıfıra gider.
+
+Dolayısıyla (R) öyle seçilebilir ki:
+
+[
+\boxed{
+\delta\_{C,R}B\_C<1.
+}
+\tag{8.1}
+]
+
+Şimdi forever bounded-slack orbit varsayalım.
+
+Her orbit state:
+
+[
+n\_0,n\_1,\ldots,n\_K
+]
+
+önünde bounded-slack bir (R)-future bulunduğu için:
+
+[
+n\_k\in U\_{C,R}.
+]
+
+Orbit envelope nedeniyle:
+
+[
+n\_k
+<
+B\_CK+B\_C'.
+]
+
+Eğer ilk (K+1) state'in hepsi farklıysa:
+
+[
+K+1
+\le
+\#\left(
+U\_{C,R}
+\cap
+[1,B\_CK+B\_C']
+\right).
+]
+
+Residue-density theorem:
+
+[
+K+1
+\le
+\delta\_{C,R}
+(B\_CK+B\_C')
+\+
+P\_{C,R}.
+]
+
+Dolayısıyla:
+
+[
+\left(
+1-\delta\_{C,R}B\_C
+\right)K
+\le
+\delta\_{C,R}B\_C'
+\+
+P\_{C,R}-1.
+]
+
+Sol taraftaki coefficient:
+
+[
+1-\delta\_{C,R}B\_C>0.
+]
+
+Sağ taraf sabittir.
+
+Bu nedenle yeterince büyük (K) için eşitsizlik mümkün değildir.
+
+Dolayısıyla:
+
+[
+\exists u\<v:
+n\_u=n\_v.
+]
+
+Odd-only Syracuse map deterministic olduğundan yörünge periodic olur.
+
+---
+
+# 9. Forever-undercritical positive cycle neden imkânsız?
+
+Bir period:
+
+[
+p=v-u
+]
+
+ve period valuation sum:
+
+[
+H
+]
+
+olsun.
+
+Period affine identity:
+
+# [ 2^Hn\_u
+
+3^pn\_u+B,
+\qquad
+B>0.
+]
+
+Dolayısıyla:
+
+[
+2^H>3^p.
+]
+
+Yani:
+
+[
+H-p\alpha>0.
+]
+
+Her period sonrasında:
+
+# [ D\_{u+\ell p}
+
+D\_u+
+\ell(H-p\alpha).
+]
+
+(\ell\to\infty) iken bu eventually pozitif olur.
+
+Bu:
+
+[
+D\_k\le0
+\quad\forall k
+]
+
+ile çelişir.
+
+---
+
+# 10. Ana sonuç — Bounded-Slack Theorem
+
+### [EXACT]
+
+Her finite:
+
+[
+C<\infty
+]
+
+için hiçbir positive odd-only Collatz orbit'i aynı anda:
+
+[
+D\_k\le0
+\qquad\forall k
+]
+
+ve:
+
+[
+0\le
+\lfloor k\log\_2 3\rfloor-A\_k
+\le C
+\qquad\forall k
+]
+
+sağlayamaz.
+
+Başka deyişle:
+
+[
+\boxed{
+D\_k\le0\quad\forall k
+\Longrightarrow
+\sup\_k
+\left(
+\lfloor k\log\_2 3\rfloor-A\_k
+\right)
+\=\infty.
+}
+\tag{BST}
+]
+
+Bu Checkpoint 2'nin (C\le2) sonucunu bütün finite (C)'lere genişletir.
+
+Forever-undercritical hypothetical counterexample kritik çizginin sonlu uzaklığında yaşayamaz.
+
+---
+
+# 11. Daha güçlü quantitative saldırı
+
+Bounded-slack theorem başarıyla kapanınca araştırma planına göre:
+
+[
+s\_k
+]
+
+için niceliksel büyüme alt sınırına geçildi.
+
+Tanımla:
+
+# [ E\_k
+
+\sum\_{i=0}^{k-1}
+\log\_2
+\left(
+1+\frac1{3n\_i}
+\right),
+]
+
+ve:
+
+# [ U\_k=2^{E\_k}
+
+\prod\_{i\<k}
+\left(
+1+\frac1{3n\_i}
+\right).
+]
+
+Odd-only step'lerin çarpımından:
+
+### [EXACT]
+
+# [ \boxed{ \frac{n\_k}{n\_0}
+
+2^{-D\_k}U\_k.
+}
+\tag{11.1}
+]
+
+Bundan:
+
+# [ \boxed{ 2^{D\_k}
+
+\frac{n\_0}{n\_k}U\_k.
+}
+\tag{11.2}
+]
+
+Ayrıca:
+
+# [ U\_{k+1}
+
+U\_k
+\left(
+1+\frac1{3n\_k}
+\right),
+]
+
+dolayısıyla:
+
+# [ U\_{k+1}-U\_k
+
+\frac{U\_k}{3n\_k}.
+]
+
+(11.2) kullanılırsa:
+
+### [EXACT]
+
+# [ \boxed{ U\_{k+1}-U\_k
+
+\frac{2^{D\_k}}{3n\_0}.
+}
+\tag{11.3}
+]
+
+Bu identity, (D\_k)'yi monoton bir accumulated-carry quantity'sine bağlar.
+
+---
+
+# 12. Forever-undercritical orbit injective olmak zorundadır
+
+Eğer:
+
+[
+n\_u=n\_v,
+\qquad u\<v,
+]
+
+olursa yörünge positive cycle'a girer.
+
+Önceki cycle argument'i nedeniyle böyle bir cycle:
+
+[
+H-p\alpha>0
+]
+
+drift üretir ve sonunda (D\_k>0) olur.
+
+Dolayısıyla:
+
+### [EXACT]
+
+[
+\boxed{
+D\_k\le0\quad\forall k
+\Longrightarrow
+(n\_k)\text{ injective}.
+}
+\tag{12.1}
+]
+
+Bu quantitative counting için önemlidir.
+
+---
+
+# 13. Mod-(3) exclusion
+
+Her (k\ge1):
+
+[
+3n\_{k-1}+1\equiv1\pmod3.
+]
+
+Dolayısıyla:
+
+# [ n\_k
+
+\frac{3n\_{k-1}+1}{2^{a\_{k-1}}}
+\not\equiv0\pmod3.
+]
+
+(n\_k) zaten odd olduğundan:
+
+### [EXACT]
+
+[
+\boxed{
+k\ge1
+\Longrightarrow
+\gcd(n\_k,6)=1.
+}
+\tag{13.1}
+]
+
+Forever-undercritical orbit injective olduğu için orbit'in farklı state'leri, (6)'ya coprime positive integers arasından seçilmek zorundadır.
+
+---
+
+# 14. Harmonic packing
+
+(6)'ya coprime positive integers'ın artan dizisini:
+
+[
+b\_1\<b\_2\<b\_3<\cdots
+]
+
+olarak yazalım.
+
+Asymptotik density:
+
+[
+\frac13.
+]
+
+Kaba fakat yeterli olarak:
+
+[
+b\_j\ge3j-2.
+]
+
+Orbit injective olduğundan ilk (N) state için reciprocal sum maksimum, mümkün olan en küçük admissible integers seçildiğinde elde edilir.
+
+Dolayısıyla:
+
+[
+\sum\_{k\<N}\frac1{n\_k}
+\le
+\frac13\ln N+O(1).
+\tag{14.1}
+]
+
+Şimdi:
+
+[
+\log\_2(1+x)
+\le
+\frac{x}{\ln2}.
+]
+
+Bundan:
+
+[
+E\_N
+\le
+\frac1{3\ln2}
+\sum\_{k\<N}\frac1{n\_k}.
+]
+
+Dolayısıyla:
+
+### [EXACT]
+
+[
+\boxed{
+E\_N
+\le
+\frac19\log\_2N+O(1).
+}
+\tag{14.2}
+]
+
+Ve:
+
+# [ \boxed{ U\_N
+
+O(N^{1/9}).
+}
+\tag{14.3}
+]
+
+---
+
+# 15. Logarithmic Floor Theorem
+
+Bir:
+
+[
+B<\frac89
+]
+
+seçilsin.
+
+Varsayalım yeterince büyük bütün (k) için:
+
+[
+D\_k\ge-B\log\_2k.
+]
+
+O halde:
+
+[
+2^{D\_k}\ge k^{-B}.
+]
+
+Exact increment identity:
+
+# [ U\_{k+1}-U\_k
+
+\frac{2^{D\_k}}{3n\_0}
+]
+
+nedeniyle:
+
+[
+U\_N
+\ge
+\frac1{3n\_0}
+\sum\_{k\le N}k^{-B}
++O(1).
+]
+
+(B<1) olduğundan:
+
+[
+\sum\_{k\le N}k^{-B}
+\asymp
+N^{1-B}.
+]
+
+Dolayısıyla:
+
+[
+U\_N
+\gg
+N^{1-B}.
+]
+
+Ama harmonic packing:
+
+# [ U\_N
+
+O(N^{1/9}).
+]
+
+Eğer:
+
+[
+B<\frac89,
+]
+
+ise:
+
+[
+1-B>\frac19.
+]
+
+Çelişki.
+
+Sonuç:
+
+### [EXACT]
+
+Her forever-undercritical positive odd-only orbit için ve her:
+
+[
+B<\frac89
+]
+
+değeri için sonsuz sayıda (k):
+
+[
+\boxed{
+D\_k<
+-B\log\_2k.
+}
+\tag{15.1}
+]
+
+---
+
+# 16. Slack için quantitative sonuç
+
+Barrier altında:
+
+# [ D\_k
+
+-s\_k-{k\alpha}.
+]
+
+Dolayısıyla (15.1):
+
+[
+s\_k+{k\alpha}
+
+>
+
+B\log\_2k.
+]
+
+Çünkü:
+
+[
+0\le{k\alpha}<1,
+]
+
+şu elde edilir:
+
+[
+s\_k
+
+>
+
+B\log\_2k-1
+]
+
+sonsuz sayıda (k) için.
+
+Her:
+
+[
+B<\frac89
+]
+
+için geçerli olduğundan:
+
+### [EXACT]
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2k}
+\ge
+\frac89.
+}
+\tag{16.1}
+]
+
+Yani hypothetical forever-undercritical Collatz counterexample kritik çizgiden yalnızca unbounded biçimde değil, en az logaritmik ölçekte uzaklaşmak zorundadır.
+
+---
+
+# 17. Literatür durumu
+
+### [KNOWN]
+
+Finite parity/valuation word'lerin tek bir (2)-power residue class belirlemesi klasik parity-vector / (2)-adic Collatz teorisinin parçasıdır.
+
+### [KNOWN]
+
+Irrational mechanical word'lerin Sturmian olması ve length-(R) factor complexity:
+
+[
+p(R)=R+1
+]
+
+klasik Sturmian word teorisidir.
+
+### Literatürde çok yakın sonuç
+
+2026 tarihli bir preprint'te injective accelerated Collatz orbit'leri için logaritmik-floor exclusion ve mod-(3) packing kullanılarak (8/9) eşiği raporlanmıştır.
+
+Bu nedenle:
+
+[
+\boxed{
+\limsup s\_k/\log\_2 k\ge8/9
+}
+]
+
+sonucu için novelty iddiası yapılmamalıdır.
+
+Ancak burada kullanılan derivation bağımsız olarak yeniden çıkarılmıştır.
+
+Preprint olması nedeniyle kaynak tek başına theorem kabul edilmemiştir.
+
+---
+
+# 18. Ne başarısız oldu?
+
+### [FAIL yok] Weighted-transition ana stratejisi
+
+Planın kritik adımlarından hiçbiri kırılmadı.
+
+Özellikle:
+
+- row-sum contraction doğru,
+- finite future residue class doğru,
+- (R+1) mechanical factor doğru,
+- density union-bound doğru,
+- overlap zararsız,
+- boundary error kontrol edilebilir,
+- orbit envelope uniform,
+- pigeonhole argument kapanıyor.
+
+---
+
+### [PARK] Spectral radius / joint spectral radius
+
+Gerekmedi.
+
+[
+\lambda\_C\le r\_C<1
+]
+
+elementary matrix norm ile doğrudan geliyor.
+
+---
+
+### [FAIL] Sabit-(C) yöntemini doğrudan (C=C(K)) yapma
+
+Burada gerçek problem ortaya çıkıyor.
+
+# [ r\_C
+
+1-2^{-(C+1)}
+]
+
+olduğu için (C) büyüdükçe contraction çok yavaşlıyor.
+
+Anlamlı density decay için kabaca:
+
+[
+R\gtrsim C,2^C
+]
+
+uzunluk gerekir.
+
+Fakat finite-interval boundary term:
+
+[
+P\_{C,R}
+\le
+(R+1)(C+1)^{R+1}
+]
+
+çok hızlı büyür.
+
+Örneğin:
+
+[
+C\asymp c\log K
+]
+
+durumunda naive density proof artık pigeonhole için yeterli değildir.
+
+Bu, weighted-residue yönteminin quantitative genişlemesindeki ilk gerçek obstruction'dır.
+
+---
+
+# 19. Şu anda en önemli açık problem
+
+Checkpoint başındaki hedef:
+
+[
+\sup s\_k=\infty
+]
+
+tamamen kapandı ve daha güçlü:
+
+[
+\limsup
+\frac{s\_k}{\log\_2k}
+\ge\frac89
+]
+
+elde edildi.
+
+Dolayısıyla yeni aktif hedef:
+
+### [OPEN]
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2k}
+\ge1
+\quad?
+}
+]
+
+Başka deyişle mevcut:
+
+[
+\frac89
+]
+
+eşiği yükseltilebilir mi?
+
+---
+
+# 20. (8/9) eşiğinin kaynağı
+
+Eşik tamamen şu harmonic estimate'dan geliyor:
+
+[
+\sum\_{k\<N}\frac1{n\_k}
+\le
+\frac13\ln N+O(1).
+]
+
+Bu:
+
+[
+E\_N
+\le
+\frac19\log\_2N+O(1)
+]
+
+ve:
+
+[
+U\_N=O(N^{1/9})
+]
+
+veriyor.
+
+Dolayısıyla (8/9)'u iyileştirmenin temiz yolu:
+
+[
+\boxed{
+\sum\_{k\<N}\frac1{n\_k}
+\le
+\left(
+\frac13-\eta
+\right)
+\ln N+O(1)
+}
+]
+
+şeklinde herhangi bir:
+
+[
+\eta>0
+]
+
+kazanmaktır.
+
+Bu durumda:
+
+[
+E\_N
+\le
+\left(
+\frac19-\frac{\eta}{3}
+\right)
+\log\_2N+O(1),
+]
+
+ve eşik:
+
+[
+\boxed{
+B<
+\frac89+\frac{\eta}{3}.
+}
+]
+
+Dolayısıyla problem artık:
+
+> Forever-undercritical gerçek orbit state'leri, yalnızca mod (6) exclusion'ın öngördüğünden daha seyrek olmak zorunda mı?
+
+şeklinde yeniden formüle edilmiştir.
+
+---
+
+# 21. Yeni araştırma hattı
+
+Bir sonraki en yüksek değerli saldırı:
+
+[
+\boxed{
+\text{future valuation residue constraints}
+\+
+\text{Archimedean harmonic packing}
+}
+]
+
+birleştirmesidir.
+
+Amaç yalnız state density'sini küçültmek değil:
+
+[
+\boxed{
+\sum\_{k\<N}\frac1{n\_k}
+}
+]
+
+harmonic weight'ini mod-(6) packing sınırının altına indirmektir.
+
+Bu, weighted-residue teorisinin logarithmic slack problemine doğru genişlemesi için daha doğal quantity görünmektedir.
+
+---
+
+# 22. Checkpoint 3 ana sonuçları
+
+### [EXACT] Transition contraction
+
+[
+\boxed{
+r\_C=
+1-2^{-(C+1)}<1.
+}
+]
+
+### [EXACT] Future residue density
+
+[
+\boxed{
+\delta\_{C,R}
+\le
+\frac{(C+1)(R+1)}2
+\left(
+1-2^{-(C+1)}
+\right)^R
+\to0.
+}
+]
+
+### [EXACT] Bounded-Slack Theorem
+
+[
+\boxed{
+D\_k\le0\quad\forall k
+\Longrightarrow
+\sup\_k s\_k=\infty.
+}
+]
+
+### [EXACT] Stronger logarithmic obstruction
+
+[
+\boxed{
+\forall B<\frac89,
+\quad
+s\_k>B\log\_2k-1
+\text{ sonsuz kez}.
+}
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2 k}
+\ge\frac89.
+}
+]
+
+---
+
+# 23. Güncel minimal-counterexample dichotomy
+
+Checkpoint 2'de crossing kolu:
+
+[
+\boxed{
+K\_{\mathrm{first\ crossing}}
+\ge
+72,057,431,991
+}
+]
+
+olarak daraltılmıştı.
+
+Checkpoint 3 sonunda forever-undercritical kolu da artık:
+
+[
+\boxed{
+D\_k\le0\quad\forall k
+}
+]
+
+ile sınırlı değildir.
+
+Böyle bir yörünge zorunlu olarak:
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{
+\lfloor k\log\_2 3\rfloor-A\_k
+}{
+\log\_2 k
+}
+\ge\frac89
+}
+]
+
+sağlamalıdır.
+
+Dolayısıyla minimal counterexample varsa:
+
+[
+\boxed{
+\begin{cases}
+\text{kritik çizgiyi geçer}
+&
+\Rightarrow
+K\ge72,057,431,991,
+\\[3mm]
+\text{kritik çizgiyi hiç geçmez}
+&
+\Rightarrow
+\displaystyle
+\limsup
+\frac{s\_k}{\log\_2k}
+\ge\frac89.
+\end{cases}
+}
+]
+
+Bu, Checkpoint 3 itibarıyla araştırmanın ana çalışma zemini olmalıdır.
+
+---
+
+# 24. Sonraki öncelik
+
+**[OPEN-1]** (8/9) eşiğini yükselt.
+
+Öncelikli hedef:
+
+[
+\boxed{
+\sum\_{k\<N}\frac1{n\_k}
+\le
+\left(
+\frac13-\eta
+\right)\ln N+O(1)
+}
+]
+
+tipinde deterministic harmonic thinness theorem'i.
+
+**[OPEN-2]** Weighted future-residue bilgisini yalnız natural density olarak değil harmonic density olarak kontrol et.
+
+**[OPEN-3]** Mod (3) exclusion'ın üzerine, valuation future'larından gelen daha yüksek (2)-power residue exclusion'larını ekle.
+
+**[PARK]** (72,057,431,991) semiconvergent saldırısı; forever-undercritical hattı ilerlemeye devam ettiği için şimdilik bekletilmeli.
+
+**[PARK]** CST, generalized (an+b), asal yapı ve geniş stopping-time brute force.
+
+---
+
+## Güncel araştırma statüsü
+
+Checkpoint 2:
+
+[
+\boxed{
+s\_k\le2\quad\forall k
+\text{ imkânsız}
+}
+]
+
+seviyesindeydi.
+
+Checkpoint 3:
+
+[
+\boxed{
+s\_k\le C
+\quad\forall k,
+\quad
+\forall C<\infty
+\text{ imkânsız}
+}
+]
+
+sonucunu kanıtladı.
+
+Ardından bu da güçlendirilerek:
+
+[
+\boxed{
+s\_k
+\text{ sonsuz kez yaklaşık }
+\frac89\log\_2 k
+\text{ ölçeğine ulaşmak zorundadır.}
+}
+]
+
+seviyesine taşındı.
+
+**Araştırma durumu:** Aktif.
+**Bir sonraki ana hedef:** harmonic thinness üzerinden (8/9) katsayısını mümkün olduğunca (1)'e, tercihen daha yukarıya taşımak.

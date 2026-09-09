@@ -1,0 +1,18 @@
+{
+  "public_findings": "[{'type': 'checked_identity', 'statement': 'Under the stated uniform weak-composition law, for 0<h<R and 0<=a<=K, direct counting gives P(S_h=a | S_R=K) = binom(a+h-1,h-1) binom(K-a+R-h-1,R-h-1) / binom(K+R-1,R-1). The numerator independently counts compositions of a into h coordinates and K-a into R-h coordinates. Thus the supplied beta-binomial marginal identity is valid.'}, {'type': 'checked_obstruction', 'statement': 'Low-state rarity cannot prove the claim. For fixed n with 2(4/9)^n<eta, the event Y_1=...=Y_(2n)=0 implies z_n=z_0(4/9)^n<eta because z_0<2. Its exact conditional probability is binom(K+R-2n-1,R-2n-1)/binom(K+R-1,R-1), which tends to (1+beta)^(-2n)>0 when K/R tends to beta. Hence entry into the low region has nonvanishing probability.'}, {'type': 'review_conclusion', 'statement': 'No rigorous proof or actual accessible counterexample to XUB-MARKED-OCC follows from the supplied records. The exact one-block coefficient formula, even if accepted after direct composition counting, supplies only marginal probabilities. It gives no lower-tail or exponential-moment control for the number of marked blocks under the global endpoint constraint. Blocks are not conditionally independent, and a per-start union bound cannot supply the required Laplace estimate.'}, {'type': 'logical_separation', 'statement': 'Even establishing occupation of bounded-positive non-low blocks would not prove the claim: resonant blocks are deleted from C_q. A separate joint estimate must show that amplified resonances cannot remove too many of the occupied blocks. Full multiplicative order modulo 3^Q does not provide the required discrepancy bound on the much shorter accessible exponent window.'}]",
+  "first_missing_step": {
+    "name": "Non-low bounded-positive block occupation inequality",
+    "inequality": "Let A_q be the event that every pair total in block q lies in {1,...,B_0} and the block entry satisfies z>=eta, with no resonance restriction. Prove that there exist C<infinity and R_0 such that, for every sufficiently large accessible R=2J+epsilon and every actual coupled array (r,R,tau,K) satisfying the frozen constraints, E[exp(-lambda * sum_{q in Q_R} 1_{A_q}) | S_R=K and the exact first-passage data] <= C/R.",
+    "why_strictly_narrower": "Since C_q is a subset of A_q, sum_q 1_{A_q} >= sum_q 1_{C_q}, so exp(-lambda sum 1_{A_q}) <= exp(-lambda sum 1_{C_q}). Therefore the primary claim implies this inequality. It removes the short-orbit resonance arithmetic and isolates the first unresolved occupation problem.",
+    "why_not_proved_by_displayed_reductions": "The beta-binomial formula controls one sampled height, and exact composition counts control one prescribed word. Neither controls the joint lower tail across a growing disjoint grid. Endpoint conditioning creates dependence, low visits have positive probability, and no proved cycle/ballot identity resolves the affine threshold, rational ties, even-time sampling, and odd singleton conventions. Moreover, proving this inequality alone would still not establish the primary claim because resonant deletion remains."
+  },
+  "usage": {
+    "prompt_tokens": 4694,
+    "completion_tokens": 1470,
+    "reasoning_tokens": 516,
+    "cached_tokens": 0,
+    "cost_usd": 0.0264335,
+    "wall_seconds": 28.51530259998981
+  },
+  "status": "COMPLETED"
+}

@@ -1,0 +1,101 @@
+{
+  "task_id": "cp20-xub-glm-capped-five-routes-v1",
+  "run_id": "directed-02fc562e633a4f2581f879a2b91e10cf",
+  "status": "STOPPED",
+  "usage": {
+    "calls": 4,
+    "reserved_tokens": 101998,
+    "reserved_cost_usd": 0.01324985,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.0,
+    "provider_cost_complete": false,
+    "wall_seconds": 483.845861800015,
+    "lanes": {
+      "glm-counting": {
+        "calls": 1,
+        "reserved_tokens": 25510,
+        "reserved_cost_usd": 0.00331325,
+        "attempts": {
+          "glm-counting:attempt:1": {
+            "reserved_tokens": 25510,
+            "reserved_cost_usd": 0.00331325,
+            "recorded": false,
+            "cost_complete": false
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.00331325,
+        "provider_cost_complete": false,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.00331325
+      },
+      "glm-cycles": {
+        "calls": 1,
+        "reserved_tokens": 25509,
+        "reserved_cost_usd": 0.0033131750000000002,
+        "attempts": {
+          "glm-cycles:attempt:1": {
+            "reserved_tokens": 25509,
+            "reserved_cost_usd": 0.0033131750000000002,
+            "recorded": false,
+            "cost_complete": false
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0033131750000000002,
+        "provider_cost_complete": false,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.0033131750000000002
+      },
+      "glm-low-state": {
+        "calls": 1,
+        "reserved_tokens": 25480,
+        "reserved_cost_usd": 0.003311,
+        "attempts": {
+          "glm-low-state:attempt:1": {
+            "reserved_tokens": 25480,
+            "reserved_cost_usd": 0.003311,
+            "recorded": false,
+            "cost_complete": false
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.003311,
+        "provider_cost_complete": false,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.003311
+      },
+      "glm-resonance": {
+        "calls": 1,
+        "reserved_tokens": 25499,
+        "reserved_cost_usd": 0.0033124250000000004,
+        "attempts": {
+          "glm-resonance:attempt:1": {
+            "reserved_tokens": 25499,
+            "reserved_cost_usd": 0.0033124250000000004,
+            "recorded": false,
+            "cost_complete": false
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0033124250000000004,
+        "provider_cost_complete": false,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.0033124250000000004
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.01324985,
+    "provider_cost_lower_bound_usd": 0.0,
+    "provider_cost_upper_bound_usd": 0.01324985
+  },
+  "lanes": {
+    "glm-resonance": "STOPPED",
+    "glm-low-state": "STOPPED",
+    "glm-counting": "STOPPED",
+    "glm-cycles": "STOPPED",
+    "glm-refutation": "STOPPED"
+  },
+  "new_tasks_started": 0,
+  "limitations": [
+    "No automatic proof promotion from model text or generated code"
+  ]
+}

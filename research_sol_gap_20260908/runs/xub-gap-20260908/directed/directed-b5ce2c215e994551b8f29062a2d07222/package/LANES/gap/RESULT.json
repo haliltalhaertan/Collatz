@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "task_id": "xub-maximum-gap-local-question",
+  "run_id": "directed-b5ce2c215e994551b8f29062a2d07222",
+  "lane_id": "gap",
+  "role": "Let U_1,...,U_n be totals of n disjoint d-coordinate blocks from a uniform weak composition of K into R=dn coordinates. Their mass is proportional to product_i binom(U_i+d-1,d-1), sum U_i=K. Put s_j=sum_(i<=j) U_i-jK/n, j=0,...,n-1. Delta is largest minus second-largest s_j, with zero for tied maxima. For fixed B>0, prove a positive uniform lower bound P(Delta>B)>=c_B>0 as d~a log R grows, or give a precise obstruction. Focus on one elementary injection/comparison of the exact weights, or a fully justified bound on the number of vertices within B of the maximum. No Brownian heuristic as proof, no unsupported theorem citations, no claim about Collatz. If unable, return the most specific missing finite inequality and any proved partial result. At most 650 words.",
+  "model": "openai/gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "step_id": "xub-maximum-gap-local-question:directed-b5ce2c215e994551b8f29062a2d07222:gap:v1",
+  "provider_attempts": [
+    {
+      "attempt_id": "gap:attempt:1",
+      "client_call_id": "xub-maximum-gap-local-question:directed-b5ce2c215e994551b8f29062a2d07222:gap:v1:gap:attempt:1",
+      "started_at": "2026-09-08T07:52:51.314896+00:00",
+      "status": "RETURNED",
+      "metadata": {
+        "id": "gen-1788853972-EkjP0IoJ1XdGOUeMc5Hc",
+        "model": "openai/gpt-5.6-sol",
+        "provider": "OpenAI"
+      },
+      "usage": {
+        "prompt_tokens": 697,
+        "completion_tokens": 1861,
+        "reasoning_tokens": 1142,
+        "cached_tokens": 0,
+        "cost_usd": 0.020004
+      }
+    }
+  ],
+  "status": "COMPLETED",
+  "public_findings": "[{'type': 'proved_partial_result', 'statement': 'Fix an integer h>B and ρ>0. Let A={Δ≤B}. For each composition u=(u_1,…,u_n) in A, choose the least index m∈{0,…,n−1} attaining the maximum of s_j. Define the donor D(u)=u_{m+1} when m≥1, and D(u)=u_1 when m=0. If D(u)≥ρd+h, transfer h units across the edge adjacent to m: for m≥1, replace (u_m,u_{m+1}) by (u_m+h,u_{m+1}−h); for m=0, replace (u_n,u_1) by (u_n+h,u_1−h). The total remains K.'}, {'type': 'injection', 'statement': 'For m≥1 this operation raises only s_m by h; for m=0 it lowers every s_j, j≥1, by h while leaving s_0=0. Since the original chosen vertex was maximal and h>B, the image has a unique maximum and Δ>B. Its unique maximum identifies m, after which the transfer is reversible. Hence the map is injective from A∩{D≥ρd+h} into {Δ>B}.'}, {'type': 'exact_weight_comparison', 'statement': 'Writing w_d(v)=binom(v+d−1,d−1), increasing the recipient cannot decrease its weight. For donor v≥ρd+h, w_d(v−h)/w_d(v)=∏_{r=0}^{h−1}(v−r)/(v+d−1−r)≥(ρ/(ρ+1))^h. Therefore, with c_{ρ,h}=(ρ/(ρ+1))^h, exact weighted mass satisfies W(Δ>B)≥c_{ρ,h} W(A∩{D≥ρd+h}).'}, {'type': 'conditional_conclusion', 'statement': 'If one proves the finite inequality P(D≥ρd+h | Δ≤B)≥q for constants ρ,q>0 independent of R, then p=P(Δ>B) obeys p≥c_{ρ,h}q(1−p), hence p≥c_{ρ,h}q/(1+c_{ρ,h}q)>0.'}, {'type': 'scope_distinction', 'statement': 'This is only an exact endpoint-conditioned composition-law reduction. It supplies no first-passage transfer and proves no Collatz-array claim.'}]",
+  "claim_results": [
+    {
+      "claim_id": "GAP-LOWER-BOUND",
+      "statement": "Find a rigorous bounded-step advance on the maximum-gap probability under the endpoint-only uniform composition law.",
+      "status": "OPEN",
+      "domain": "R=dn, n>=2, d grows like a fixed positive constant times log R, K/R approaches beta=log2(3)-1. B>0 fixed. No first-passage transfer claimed.",
+      "assumptions": [
+        "Actual reference model: Y_i are uniform nonnegative integer weak compositions of K into R coordinates. beta=log2(3)-1, K-beta R in (-15-2beta,-13-2beta). R=2J+epsilon. z_j=z0*2^(S_(2j)-2beta*j), z0 in (1,2).",
+        "Disjoint useful blocks have L=floor(c log R) pairs. C_q requires nonlow entry z>=eta, every pair total in {1,...,B0}, and nonresonance. Target E exp(-lambda N_C)<=C/R. Additional exact first-passage conditioning is a separate law issue."
+      ],
+      "first_missing_step": "Prove that for the least maximizing vertex M of the exact weighted bridge, its adjacent donor satisfies P(D≥ρd+h | Δ≤B)≥q for some fixed ρ,q>0 uniformly as R=dn→∞ and d is a fixed positive constant times log R. A marginal block lower-tail estimate alone is insufficient because M is path-dependent; a union bound over n can fail for small logarithmic constants.",
+      "evidence_files": [
+        "EVIDENCE.json"
+      ]
+    }
+  ],
+  "scope_compliance": {
+    "scope_changed": false,
+    "undeclared_tools_used": false,
+    "undeclared_inputs_used": false,
+    "budget_exceeded": false
+  },
+  "usage": {
+    "prompt_tokens": 697,
+    "completion_tokens": 1861,
+    "reasoning_tokens": 1142,
+    "cached_tokens": 0,
+    "cost_usd": 0.020004,
+    "wall_seconds": 42.60917569999583
+  },
+  "integrity_issues": [
+    "INVALID_CLAIM_STATUS"
+  ],
+  "independence_level": "ISOLATED_INPUTS_SHARED_COORDINATOR",
+  "unexpected_findings": [],
+  "first_missing_step": "Prove that for the least maximizing vertex M of the exact weighted bridge, its adjacent donor satisfies P(D≥ρd+h | Δ≤B)≥q for some fixed ρ,q>0 uniformly as R=dn→∞ and d is a fixed positive constant times log R. A marginal block lower-tail estimate alone is insufficient because M is path-dependent; a union bound over n can fail for small logarithmic constants.",
+  "output_hash_scope": "canonical JSON excluding output_sha256",
+  "output_sha256": "c222ed2c168ae8909920e4d13c5aeeff3250b91b97ca9ed2677284940cfef81c"
+}

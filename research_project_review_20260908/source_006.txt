@@ -1,0 +1,45 @@
+# COLLATZ — CHECKPOINT / TASK ARCHIVE STATUS — 2026-08-26
+
+This is an archive-completeness index, not a mathematical checkpoint.
+
+## Main archive
+- Collatz Problemi — Araştırma Arşivi: `1mRJGjUsali3eOYtRyMnvO19afK_M4SY5`
+
+## Checkpoint folders in main archive
+- CP01: `1BGjkdImAu7n3IZraawucZRYMmVPKTAUg` — canonical source bytes still marked pending in existing archive.
+- CP02: `1aBT7BTQ4ikSIGZZgm5lc9B4yDHP3N0ch` — checkpoint result present.
+- CP03: `1QRcnyoJS9ABNPkMdcZcYRciGZGabdSX4` — checkpoint result present.
+- CP04: `1sGgk5d4jpgTaTIgOx6EE5OKXX4nPkG3h` — checkpoint result present.
+- CP05: `1M72RLzwDIdRQ0MTh4CdsDcMI56OGsZY8` — canonical source bytes still marked pending in existing archive.
+- CP06: `1JdvCCs9MPdGnladZ13pSZ9QeKDitKSbv` — checkpoint result present.
+- CP07: `1csgSsFtwoHZkEWVVYPxt2N6vOs7XlqAz` — checkpoint result present.
+- CP08: `1IanbCk0lxGTV13w1PH-W63yYDPBX6Fgj` — checkpoint result present.
+- CP09: `15EvnzRrYwfAvCQ6NMkz_KvjYd89uBxa3` — checkpoint report + audit present.
+- CP10: `1SgwtVoGHpLrocsIZRb-BZdm1sst0y-Bm` — checkpoint report + audit present.
+- CP11: `1yBOIsxOekUo1UMUOANvUCHIAgqYKWher` — checkpoint report + audits present.
+- CP12: `1n4Gt9bG3DuwjijbQO0bVLQTQkOI3E1bP` — checkpoint report + audits/certificate present.
+- CP13: `14eZxbz0rqzipjEUoHi3IbrYUiZsad19m` — research log + intermediate checkpoint report present.
+
+## CP14–CP16
+No canonical Drive folder named CP14, CP15 or CP16 was found in the archive search on 2026-08-26. No content was fabricated to fill this gap.
+
+## CP17
+A frozen CP17 folder existed elsewhere in Drive (`00_CP17_FROZEN`, id `1OlOgIIhDuSoeZKzHjFEWwlcyNnJ3iTTv`) containing:
+- `CP17_FINAL_PACKAGE_V3.zip`
+- `CP17_FINAL_STANDALONE_V3_ZERO_TRUST_AUDIT.md`
+
+Both were copied into a new `CP17` folder directly under the main Collatz archive on 2026-08-26.
+
+## CP18–CP20 task roots
+- CP18 Task 1–10: `1-q6SAGds8cljN8RrTZucSxAqDQL7MVEU`
+- CP19: `1IfyYKAiJHGaaBcPiFEclDZi1KMOqL5WU`
+- CP20: `1AQdsFvnL6ogSUGHxL_FQEoNAXAPNehhz`
+
+## Recovery archives created on 2026-08-26
+The archive-completeness recovery folder contains full recoveries assembled from top-level local artifacts plus every available Task package member:
+- CP18 complete recovery: 124 files.
+- CP19 complete recovery: 194 files.
+- CP20 complete recovery: 126 files.
+- One combined CP18–CP20 master recovery archive.
+
+These recovery archives are redundancy/safety copies. They do not change proof status or frozen theorem status.

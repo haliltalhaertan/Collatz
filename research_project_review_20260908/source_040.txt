@@ -1,0 +1,101 @@
+# CP20 TASK 8B1 — MODULE B MASTER FINDINGS
+
+**Date:** 2026-08-26
+
+## Final structural status
+
+\[
+\boxed{
+\texttt{[PROVED][INDEPENDENTLY AUDITED][BRANCH CLOSURE][FROZEN]}
+}
+\]
+
+This status applies only to the repaired residue-redundancy branch closure.
+
+## Numerical obstruction status
+
+\[
+\boxed{\texttt{[B-LEAD]}}
+\]
+
+The extremal search did not prove
+\[
+\liminf\rho_r(k)\ge c(\kappa)>0.
+\]
+
+U3/U4 finite pressure checks remain experimental surrogates and are not
+frozen theorem statements.
+
+## Audited structural closure
+
+For every finite positive exponent word,
+\[
+\boxed{M_k=X_k}
+\]
+exactly, where
+\[
+X_k=(3^kr_k+B_k)/2^{A_k}.
+\]
+
+Under the global critical-log law
+\[
+s_k=\kappa\log_2k+O(1),\qquad\kappa>1,
+\]
+\[
+\boxed{
+\rho_M(k)
+=
+\max\{0,\rho_r(k)-\ln(3/2)\}
++
+O(\log k/k).
+}
+\]
+
+Hence
+\[
+\boxed{
+\liminf\rho_M>0
+\Rightarrow
+\liminf\rho_r
+=
+\ln(3/2)+\liminf\rho_M>0.
+}
+\]
+
+The 3-adic Kramer obstruction is therefore not an independent asymptotic
+branch once the problem is restricted to global critical-log.
+
+## Surviving question
+
+\[
+\boxed{
+\text{Can an infinite critical-log / frozen-Task8A survivor have }
+\rho_r(k)\to0?
+}
+\]
+
+This is unresolved.
+
+## Numerical corpus preserved
+
+The original extremal engine, results JSON, Pareto CSV, nesting search and
+scaling analysis are retained as `[NUM]/[B-LEAD]` evidence.
+
+They do not prove a positive start-rate gap.
+
+## Next authorized branch
+
+After this freeze, Module D is authorized only as a **pure 2-adic
+start-rate** branch:
+
+Sturmian return words / continued-fraction near-returns
+
++
+
+Task-6 repeated-factor divisibility/spacing
+
++
+
+canonical 2-adic start-residue stabilization/rate.
+
+It is not a 2-adic/3-adic conjunction branch.

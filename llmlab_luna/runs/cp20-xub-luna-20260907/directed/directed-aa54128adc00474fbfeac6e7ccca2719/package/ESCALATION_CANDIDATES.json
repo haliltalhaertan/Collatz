@@ -1,0 +1,23 @@
+[
+  {
+    "type": "ESCALATION_CANDIDATE",
+    "statement": "The cyclic symmetry that survives is weighted pair-block symmetry, not uniform composition symmetry of the centered pair increments; treating the latter as an ordinary zero-drift ballot bridge would be an additional unproved step.",
+    "action_taken": "RECORDED_ONLY",
+    "new_task_started": false,
+    "additional_budget_spent": 0
+  },
+  {
+    "type": "ESCALATION_CANDIDATE",
+    "statement": "Escalation candidate: the coefficient identity above is directly valid for the uniform law conditioned on S_R=K. If 'exact first-passage data' imposes any additional restriction beyond that restarted composition law, its conditional numerator and denominator must be rederived; exchangeability alone does not justify using the same ratio.",
+    "action_taken": "RECORDED_ONLY",
+    "new_task_started": false,
+    "additional_budget_spent": 0
+  },
+  {
+    "type": "ESCALATION_CANDIDATE",
+    "statement": "Escalation candidate: the phrase \"exact first-passage data\" does not specify whether the law remains the uniform weak-composition law conditioned only on S_R=K or is further conditioned on additional data. If it is further conditioning, an explicit conditional law or comparison bound is required before the stated uniform-composition identities can be applied.",
+    "action_taken": "RECORDED_ONLY",
+    "new_task_started": false,
+    "additional_budget_spent": 0
+  }
+]

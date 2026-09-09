@@ -1,0 +1,9 @@
+{
+  "task_id": "cp20-xub-astra-low-v1",
+  "run_id": "directed-919412f8a9ae40e8b6c58715896f1edc",
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "artifact_root": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_astra\\runs\\cp20-xub-astra-low-20260908\\directed\\directed-919412f8a9ae40e8b6c58715896f1edc",
+  "claim_ledger_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_astra\\runs\\cp20-xub-astra-low-20260908\\directed\\directed-919412f8a9ae40e8b6c58715896f1edc\\package\\CLAIM_LEDGER.json",
+  "package_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_astra\\runs\\cp20-xub-astra-low-20260908\\directed\\directed-919412f8a9ae40e8b6c58715896f1edc\\package\\COMPLETE_PACKAGE.zip",
+  "package_sha256": "a2c6f965e2ceeb9bdf416c7c5e0ea2bb9ef630512403f5bcea5b392d0f49c867"
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "task_id": "xub-grid-obstruction-review",
+  "run_id": "directed-adf085d322254ea3a33183435c625e48",
+  "lane_id": "rank",
+  "role": "For any real increments x1,...,xn of total zero whose partial sums s0,...,s_(n-1) are all distinct, prove the exact distribution over n cyclic rotations of N=#{1<=j<=n: rotated partial sum >=0}. Then derive the rotation-average exp(-lambda N). Explain ties and why grouping an exchangeable composition bridge into equal coarse blocks could create a log(R)/R scale. Do not assert an actual-array refutation.",
+  "model": "openai/gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "step_id": "xub-grid-obstruction-review:directed-adf085d322254ea3a33183435c625e48:rank:v1",
+  "provider_attempts": [
+    {
+      "attempt_id": "rank:attempt:1",
+      "client_call_id": "xub-grid-obstruction-review:directed-adf085d322254ea3a33183435c625e48:rank:v1:rank:attempt:1",
+      "started_at": "2026-09-08T07:43:27.379222+00:00",
+      "status": "RETURNED",
+      "metadata": {
+        "id": "gen-1788853409-7zByGNXeRNqHsbBaZwNh",
+        "model": "openai/gpt-5.6-sol",
+        "provider": "OpenAI"
+      },
+      "usage": {
+        "prompt_tokens": 557,
+        "completion_tokens": 1115,
+        "reasoning_tokens": 347,
+        "cached_tokens": 0,
+        "cost_usd": 0.012264
+      }
+    }
+  ],
+  "status": "COMPLETED",
+  "public_findings": "[{'type': 'surrogate_theorem', 'statement': 'Let s_0=0 and s_j=x_1+...+x_j, with s_n=0. For the rotation beginning after index k, 0<=k<n, its j-step partial sum equals s_{(k+j) mod n}-s_k, using periodicity s_{m+n}=s_m. As j ranges from 1 to n, the referenced residues range over all indices 0,...,n-1 exactly once. Hence N_k=#{0<=l<n:s_l>=s_k}. If s_0,...,s_{n-1} are distinct, their descending ranks are 1,...,n, so {N_k:0<=k<n}={1,...,n} exactly.'}, {'type': 'rotation_average', 'statement': 'Therefore, for lambda>0, (1/n) sum_{k=0}^{n-1} exp(-lambda N_k)=(1/n) sum_{m=1}^n exp(-lambda m)=exp(-lambda)(1-exp(-lambda n))/(n(1-exp(-lambda))). In particular this is at most exp(-lambda)/(n(1-exp(-lambda))).'}, {'type': 'ties', 'statement': 'Distinctness is essential for the exact uniform-rank conclusion. With ties and the weak inequality >=, if the distinct partial-sum levels have ascending multiplicities a_1,...,a_t, then every rotation based at level i has N=a_i+...+a_t, and that value occurs a_i times. Thus the average is (1/n) sum_i a_i exp(-lambda(a_i+...+a_t)), not generally the uniform-rank formula.'}, {'type': 'scale_explanation', 'statement': 'For an exchangeable bridge grouped into n equal coarse blocks, cyclic rotations have the same law. Conditional on a realization with distinct coarse boundary sums, averaging over the rotation index gives O(1/n). If each block has length L=floor(c log R) and the bridge has order R elementary positions, then n is order R/L, so this mechanism yields O(L/R)=O(log R/R), not O(1/R).'}, {'type': 'scope_limitation', 'statement': 'This is only a rank/rotation surrogate. It does not establish the actual Collatz-array marked-block bound: the useful-block event also requires a nonlow z entry, bounded positive pair totals, nonresonance, disjointness, and potentially a separate exact first-passage-conditioned law. No transfer of exchangeability or distinct boundary sums to that model has been supplied.'}]",
+  "claim_results": [
+    {
+      "claim_id": "GRID-AUDIT",
+      "statement": "Audit necessary occupation conditions for the open marked-block Laplace bound.",
+      "status": "OPEN",
+      "domain": "As specified in each lane; do not silently transfer a surrogate result.",
+      "assumptions": [
+        "Actual reference model: Y_i are uniform nonnegative integer weak compositions of K into R coordinates. beta=log2(3)-1, K-beta R in (-15-2beta,-13-2beta). R=2J+epsilon. z_j=z0*2^(S_(2j)-2beta*j), z0 in (1,2).",
+        "Disjoint useful blocks have L=floor(c log R) pairs. C_q requires nonlow entry z>=eta, every pair total in {1,...,B0}, and nonresonance. Target E exp(-lambda N_C)<=C/R. Additional exact first-passage conditioning is a separate law issue."
+      ],
+      "first_missing_step": "Prove under the actual composition-bridge law, and separately under any required first-passage conditioning, a quantitative occupation statement connecting coarse rotations to the full useful-block event C_q with enough strength to improve the natural log(R)/R surrogate scale to C/R.",
+      "evidence_files": [
+        "EVIDENCE.json"
+      ]
+    }
+  ],
+  "scope_compliance": {
+    "scope_changed": false,
+    "undeclared_tools_used": false,
+    "undeclared_inputs_used": false,
+    "budget_exceeded": false
+  },
+  "usage": {
+    "prompt_tokens": 557,
+    "completion_tokens": 1115,
+    "reasoning_tokens": 347,
+    "cached_tokens": 0,
+    "cost_usd": 0.012264,
+    "wall_seconds": 53.03061210003216
+  },
+  "integrity_issues": [
+    "INVALID_CLAIM_STATUS"
+  ],
+  "independence_level": "ISOLATED_INPUTS_SHARED_COORDINATOR",
+  "unexpected_findings": [
+    {
+      "type": "ESCALATION_CANDIDATE",
+      "statement": "{'escalation_candidate': 'Equal coarse blocks of logarithmic length intrinsically leave only about R/log R cyclic ranks, so the bare rotation argument produces log(R)/R rather than the requested 1/R.'}",
+      "action_taken": "RECORDED_ONLY",
+      "new_task_started": false,
+      "additional_budget_spent": 0
+    },
+    {
+      "type": "ESCALATION_CANDIDATE",
+      "statement": "{'escalation_candidate': 'Ties in coarse boundary sums invalidate the exact uniform distribution of N unless separately excluded or controlled.'}",
+      "action_taken": "RECORDED_ONLY",
+      "new_task_started": false,
+      "additional_budget_spent": 0
+    }
+  ],
+  "first_missing_step": "Prove under the actual composition-bridge law, and separately under any required first-passage conditioning, a quantitative occupation statement connecting coarse rotations to the full useful-block event C_q with enough strength to improve the natural log(R)/R surrogate scale to C/R.",
+  "output_hash_scope": "canonical JSON excluding output_sha256",
+  "output_sha256": "c657f96871f620c924aed223fac67f704d82aaf2eeb4e36dc09fa4387d3f2122"
+}

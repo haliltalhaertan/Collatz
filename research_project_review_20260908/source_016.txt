@@ -1,0 +1,2526 @@
+# Collatz Problemi Araştırma Checkpoint 8
+
+**Tarih:** 14 Ağustos 2026
+**Ana araştırma hattı:** Critical-ballot/logarithmic-corridor parity prefix'lerinde, aynı suffix'in (3)-adik modüler çıktısı ile Archimedean carry katkısı arasındaki joint coupling.
+
+Checkpoint 7 sonunda suffix residue support'un tek başına fazla esnek olduğu görülmüştü. Bu checkpoint'te verilen plan doğrultusunda suffix'i
+
+[
+(E\_m,P\_{\rm suf})
+]
+
+çiftiyle değil, iki koordinatın exact ortak aritmetik kaynağı üzerinden analiz ettim.
+
+---
+
+# 1. Ana sonuç
+
+Checkpoint 8'in en önemli sonucu pozitif ve negatif iki parçadan oluşuyor.
+
+İlk olarak gerçekten:
+
+[
+\boxed{
+P\_{\rm suf}=\frac{S\_m}{3^q}
+}
+]
+
+ve
+
+[
+\boxed{
+E\_m=[2^{-j}S\_m]\_{3^m}
+}
+]
+
+olduğu doğrulandı.
+
+Yani modular suffix output ile Archimedean suffix contribution gerçekten **aynı integer (S\_m)'nin iki projection'ı**.
+
+Bu coupling düşündüğümüzden de güçlü çıktı: doğru normalize edilmiş joint functional
+
+[
+W\_m
+:=
+2^{-\Delta\_j}E\_m-P\_{\rm suf}
+]
+
+için:
+
+# [ \boxed{ W\_m
+
+2^{D\_{q-m}}
+R\_{\rm suf},
+}
+\tag{1.1}
+]
+
+burada (R\_{\rm suf}), son (m) odd event'in oluşturduğu relative suffix parity word'ünün **least-positive realizer'ıdır**.
+
+Dolayısıyla joint modular–Archimedean problem yeni bağımsız bir invariant üretmiyor.
+
+Tam tersine:
+
+[
+\boxed{
+\text{suffix joint coupling,
+least-realizer problemini daha kısa bir suffix üzerinde yeniden üretir.}
+}
+]
+
+İkinci önemli sonuç ise exact conditional anti-concentration:
+
+[
+\boxed{
+W\_m
+\text{ değerleri }
+\asymp (q-m)^{-B}
+\text{ aralıklı bir lattice üzerinde yaşar.}
+}
+]
+
+Aynı (E\_m) residue fiber'ındaki farklı (P\_{\rm suf}) değerleri de en az bu ölçekte ayrılmıştır.
+
+Ancak full orbit compatibility altında prefix target'ı **tam olarak aynı lattice üzerinde** bulunuyor.
+
+Dolayısıyla elde edilen gap theorem gerçek, fakat target'ı dışlamıyor.
+
+Bu yüzden:
+
+[
+\boxed{
+8/9+\varepsilon
+}
+]
+
+bu checkpoint'te elde edilmedi.
+
+---
+
+# 2. Exact prefix/suffix decomposition
+
+Full affine remainder:
+
+# [ C(v)
+
+\sum\_{r=0}^{q-1}
+3^{q-1-r}2^{d\_r}.
+]
+
+Split rank:
+
+[
+r=q-m.
+]
+
+Prefix functional:
+
+# [ \boxed{ A\_{\rm pre}
+
+\sum\_{u=0}^{q-m-1}
+3^{q-m-1-u}2^{d\_u}.
+}
+\tag{2.1}
+]
+
+Suffix:
+
+# [ \boxed{ S\_m
+
+\sum\_{u=0}^{m-1}
+3^{m-1-u}
+2^{d\_{q-m+u}}.
+}
+\tag{2.2}
+]
+
+İlk (q-m) term'de:
+
+# [ 3^{q-1-u}
+
+3^m3^{q-m-1-u}.
+]
+
+Son (m) term tam (S\_m)'dir.
+
+Dolayısıyla:
+
+## [EXACT]
+
+[
+\boxed{
+C(v)=3^mA\_{\rm pre}+S\_m.
+}
+\tag{2.3}
+]
+
+Bu, Checkpoint 8'in temel decomposition'ıdır.
+
+---
+
+# 3. (P\_{\rm pre}) ve (P\_{\rm suf})
+
+Normalize:
+
+[
+P(v)=\frac{C(v)}{3^q}.
+]
+
+(2.3):
+
+# [ P(v)
+
+\frac{A\_{\rm pre}}{3^{q-m}}
+\+
+\frac{S\_m}{3^q}.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+# [ \boxed{ P\_{\rm pre}
+
+\frac{A\_{\rm pre}}{3^{q-m}},
+}
+\tag{3.1}
+]
+
+# [ \boxed{ P\_{\rm suf}
+
+\frac{S\_m}{3^q}.
+}
+\tag{3.2}
+]
+
+Ve:
+
+[
+\boxed{
+P=P\_{\rm pre}+P\_{\rm suf}.
+}
+]
+
+Bu, prompt'taki en kritik aday identity'yi tamamen doğruluyor.
+
+---
+
+# 4. Archimedean weighted-sum formu ile aynı şey
+
+Rank displacement:
+
+# [ d\_r
+
+\lfloor\alpha r\rfloor-s\_r.
+]
+
+Bundan:
+
+# [ \frac{2^{d\_r}}{3^r}
+
+2^{-s\_r-{r\alpha}}.
+]
+
+Dolayısıyla:
+
+# [ P\_{\rm suf}
+
+\frac13
+\sum\_{u=0}^{m-1}
+2^{-s\_{q-m+u}
+-{(q-m+u)\alpha}}.
+\tag{4.1}
+]
+
+Yani prompt'taki:
+
+# [ P\_{\rm suf}
+
+\frac13
+\sum
+w\_{q,m,u}2^{-\delta\_u}
+]
+
+formu doğrudur; burada:
+
+# [ w\_{q,m,u}
+
+2^{-{(q-m+u)\alpha}}
+\in(1/2,1].
+]
+
+Ancak önemli yeni observation:
+
+> Bu görünürde “real weighted sum”, aslında tam olarak rational
+>
+> [
+> S\_m/3^q
+> ]
+>
+> sayısıdır.
+
+Bu nedenle Bernoulli-convolution benzeri generic real anti-concentration problemi olarak görmek gereğinden fazla genel kalıyor.
+
+---
+
+# 5. (P\_{\rm suf}) aslında suffix'i tek başına belirliyor
+
+Başlangıçta farklı suffix displacement vector'lerinin aynı (P\_{\rm suf})'u üretmesi olası görünüyordu.
+
+Bu yanlış.
+
+(S\_m):
+
+# [ S\_m
+
+3^{m-1}2^{d\_0}
+\+
+3^{m-2}2^{d\_1}
++\cdots+
+2^{d\_{m-1}},
+]
+
+burada:
+
+[
+d\_0\<d\_1<\cdots\<d\_{m-1}.
+]
+
+İlk terimin coefficient'i odd, kalan bütün terms en az bir ek (2) factor taşır.
+
+Dolayısıyla:
+
+[
+\boxed{
+v\_2(S\_m)=d\_0.
+}
+]
+
+(d\_0)'ı bulduktan sonra:
+
+[
+S\_m-3^{m-1}2^{d\_0}
+]
+
+alınır.
+
+Yeni (2)-adic valuation:
+
+[
+d\_1
+]
+
+olur.
+
+Bu işlem iteratif devam eder.
+
+Sonuç:
+
+## [EXACT] Suffix decoding theorem
+
+[
+\boxed{
+S\_m
+\text{ suffix exponent vector }
+(d\_0,\ldots,d\_{m-1})
+\text{'ı uniquely belirler.}
+}
+\tag{5.1}
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+P\_{\rm suf}
+\text{ da suffix'i uniquely belirler.}
+}
+\tag{5.2}
+]
+
+Yani exact Archimedean collisions yoktur.
+
+Modular projection (E\_m) collisions üretir; (P\_{\rm suf}) üretmez.
+
+---
+
+# 6. İlk farklı coordinate için exact (2)-adic sensitivity
+
+İki exponent vector ilk kez (u)'da ayrılsın.
+
+WLOG:
+
+[
+d\_u\<d'\_u.
+]
+
+Önceki terms cancel.
+
+(u)'daki difference:
+
+[
+3^{m-1-u}
+(2^{d\_u}-2^{d'\_u})
+]
+
+ve:
+
+# [ v\_2(2^{d\_u}-2^{d'\_u})
+
+d\_u.
+]
+
+Daha sonraki bütün terms:
+
+[
+2^{d\_u+1}
+]
+
+ile bölünür.
+
+Dolayısıyla:
+
+## [EXACT]
+
+# [ \boxed{ v\_2(S\_m-S'\_m)
+
+\min(d\_u,d'\_u).
+}
+\tag{6.1}
+]
+
+Bu, Checkpoint 7'deki triangular (3)-adic sensitivity'nin dual (2)-adic counterpart'ıdır.
+
+---
+
+# 7. Joint coupling integer
+
+Tanımla:
+
+# [ \boxed{ Z\_m
+
+\frac{
+2^jE\_m-S\_m
+}{
+3^m
+}.
+}
+\tag{7.1}
+]
+
+Bu integer'dır çünkü:
+
+[
+2^jE\_m\equiv S\_m\pmod{3^m}.
+]
+
+Ayrıca:
+
+# [ P\_{\rm suf}
+
+\frac{S\_m}{3^q}
+]
+
+ve:
+
+# [ 2^{-\Delta\_j}
+
+\frac{2^j}{3^q}.
+]
+
+Dolayısıyla:
+
+# [ 2^{-\Delta\_j}E\_m-P\_{\rm suf}
+
+\frac{2^jE\_m-S\_m}{3^q}.
+]
+
+Yani:
+
+## [EXACT]
+
+# [ \boxed{ W\_m := 2^{-\Delta\_j}E\_m-P\_{\rm suf}
+
+\frac{Z\_m}{3^{q-m}}.
+}
+\tag{7.2}
+]
+
+Prompt'taki:
+
+# [ G\_m
+
+P\_{\rm suf}-2^{-\Delta\_j}E\_m
+]
+
+dolayısıyla sadece:
+
+[
+\boxed{
+G\_m=-W\_m.
+}
+]
+
+---
+
+# 8. (H\_m) functional'ı da tamamen çözüldü
+
+Prompt'ta:
+
+# [ H\_m
+
+## 2^{\Delta\_j} (R+P\_{\rm pre}+P\_{\rm suf})
+
+E\_m
+]
+
+önerilmişti.
+
+Fakat:
+
+# [ 2^{\Delta\_j} (R+P)
+
+Y.
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+[
+\boxed{
+H\_m=Y-E\_m.
+}
+\tag{8.1}
+]
+
+Çünkü:
+
+[
+Y\equiv E\_m\pmod{3^m},
+]
+
+bir:
+
+[
+\tau\_m\in\mathbb Z\_{\ge0}
+]
+
+vardır ve:
+
+[
+\boxed{
+Y=E\_m+\tau\_m3^m.
+}
+\tag{8.2}
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+H\_m=\tau\_m3^m.
+}
+\tag{8.3}
+]
+
+Yani proposed shrinking-target discrepancy yeni bir analytic quantity değil; yalnız endpoint'in modulo (3^m) quotient'ıdır.
+
+Eğer:
+
+[
+3^m>Y,
+]
+
+then:
+
+[
+\tau\_m=0,
+]
+
+ve:
+
+[
+H\_m=0.
+]
+
+---
+
+# 9. (Z\_m)'nin prefix tarafı
+
+Full affine equation:
+
+# [ 2^jY
+
+3^qR
+\+
+3^mA\_{\rm pre}
+\+
+S\_m.
+]
+
+(8.2):
+
+[
+Y=E\_m+\tau\_m3^m.
+]
+
+Yerine koy:
+
+# [ 2^jE\_m + 2^j\tau\_m3^m
+
+3^qR
+\+
+3^mA\_{\rm pre}
+\+
+S\_m.
+]
+
+Düzenle:
+
+# [ 2^jE\_m-S\_m
+
+## 3^m \left[ 3^{q-m}R + A\_{\rm pre}
+
+2^j\tau\_m
+\right].
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+# [ \boxed{ Z\_m
+
+## 3^{q-m}R + A\_{\rm pre}
+
+2^j\tau\_m.
+}
+\tag{9.1}
+]
+
+Deep suffix regime:
+
+[
+3^m>Y
+]
+
+olduğunda:
+
+[
+\tau\_m=0.
+]
+
+Ve:
+
+# [ \boxed{ Z\_m
+
+3^{q-m}R+A\_{\rm pre}.
+}
+\tag{9.2}
+]
+
+Bu prompt'taki (27.3)'ü doğruluyor.
+
+---
+
+# 10. Meet-in-the-middle equality
+
+Deep regime'de:
+
+# [ Z\_m^{\rm pre}
+
+3^{q-m}R+A\_{\rm pre},
+]
+
+ve:
+
+# [ Z\_m^{\rm suf}
+
+\frac{2^jE\_m-S\_m}{3^m}.
+]
+
+Compatibility:
+
+## [EXACT]
+
+# [ \boxed{ Z\_m^{\rm pre}
+
+Z\_m^{\rm suf}.
+}
+\tag{10.1}
+]
+
+Bu formal olarak temiz bir meet-in-the-middle equation'dır.
+
+Ancak aşağıdaki self-duality nedeniyle düşündüğümüzden daha az yeni bilgi taşır.
+
+---
+
+# 11. Relative suffix word
+
+Split:
+
+[
+r=q-m.
+]
+
+İlk suffix (1)'inin absolute position'ı:
+
+[
+L=d\_r.
+]
+
+Relative suffix length:
+
+[
+\boxed{
+J=j-L.
+}
+\tag{11.1}
+]
+
+Relative ones positions:
+
+[
+\boxed{
+g\_u=d\_{r+u}-L,
+\qquad
+0\le u\<m.
+}
+]
+
+Böylece:
+
+[
+g\_0=0.
+]
+
+Tanımla:
+
+# [ \boxed{ \widetilde S\_m
+
+# \frac{S\_m}{2^L}
+
+\sum\_{u=0}^{m-1}
+3^{m-1-u}2^{g\_u}.
+}
+\tag{11.2}
+]
+
+Bu tam olarak relative suffix parity word'ünün affine numerator'ıdır.
+
+---
+
+# 12. Dual fundamental-rectangle lemma
+
+Burada önemli yeni exact lemma elde edildi.
+
+Bir length-(J) parity word:
+
+- ilk bit (1),
+- toplam (m) ones
+
+taşısın.
+
+Least-positive starting residue:
+
+[
+1\le R\_J<2^J.
+]
+
+Endpoint:
+
+[
+Y\_J=T^J(R\_J).
+]
+
+Then:
+
+## [EXACT]
+
+[
+\boxed{
+1\le Y\_J<3^m.
+}
+\tag{12.1}
+]
+
+### Kanıt
+
+İndüksiyon.
+
+İlk bit (1) için:
+
+[
+R\_1=1,
+\qquad
+Y\_1=2<3.
+]
+
+Bir length-(\ell) prefix için:
+
+[
+Y\_\ell<3^h
+]
+
+olsun.
+
+Bir bit extension'da start residue:
+
+# [ R\_{\ell+1}
+
+R\_\ell+b2^\ell,
+\qquad b\in{0,1}.
+]
+
+Affine lift:
+
+# [ T^\ell(R\_\ell+b2^\ell)
+
+Y\_\ell+b3^h.
+]
+
+Dolayısıyla pre-extension state:
+
+[
+Z<2\cdot3^h.
+]
+
+Yeni parity zero ise:
+
+[
+Y\_{\ell+1}=Z/2<3^h.
+]
+
+Yeni parity one ise (Z) odd ve:
+
+[
+Z\le2\cdot3^h-1.
+]
+
+Bu nedenle:
+
+# [ Y\_{\ell+1}
+
+\frac{3Z+1}{2}
+\le
+3^{h+1}-1.
+]
+
+İndüksiyon tamamlanır.
+
+---
+
+# 13. Dual endpoint gerçekten least endpoint'tir
+
+Relative suffix affine equation:
+
+# [ \boxed{ 2^JY
+
+3^mX+\widetilde S\_m.
+}
+\tag{13.1}
+]
+
+Relative suffix least realizer'ına:
+
+[
+R\_{\rm suf}
+]
+
+diyelim.
+
+Lemma 12 nedeniyle endpoint'i:
+
+[
+Y\_{\rm suf}<3^m.
+]
+
+Ayrıca:
+
+[
+Y\_{\rm suf}
+\equiv
+2^{-J}\widetilde S\_m
+\pmod{3^m}.
+]
+
+Ama:
+
+[
+2^{-J}\widetilde S\_m
+\equiv
+2^{-j}S\_m
+\pmod{3^m}.
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+Y\_{\rm suf}=E\_m.
+}
+\tag{13.2}
+]
+
+Böylece (13.1):
+
+# [ \boxed{ R\_{\rm suf}
+
+\frac{
+2^JE\_m-\widetilde S\_m
+}{
+3^m}.
+}
+\tag{13.3}
+]
+
+Multiplying by (2^L):
+
+# [ \boxed{ Z\_m
+
+2^LR\_{\rm suf}.
+}
+\tag{13.4}
+]
+
+Bu Checkpoint 8'in en önemli exact structural identity'lerinden biridir.
+
+---
+
+# 14. Joint functional'ın gerçek anlamı
+
+(7.2) ve (13.4):
+
+# [ W\_m
+
+\frac{2^LR\_{\rm suf}}{3^{q-m}}.
+]
+
+Ama:
+
+# [ D\_r
+
+# d\_r-\alpha r
+
+L-\alpha(q-m).
+]
+
+Dolayısıyla:
+
+## [EXACT] Joint self-duality theorem
+
+# [ \boxed{ W\_m
+
+2^{D\_{q-m}}
+R\_{\rm suf}.
+}
+\tag{14.1}
+]
+
+Yani:
+
+[
+\boxed{
+2^{-\Delta\_j}E\_m-P\_{\rm suf}
+}
+]
+
+tam olarak:
+
+> relative suffix parity word'ünün least-positive realizer'ının critical drift ile normalize edilmiş hali.
+
+Bu joint modular–Archimedean functional'ın gerçek aritmetik anlamıdır.
+
+---
+
+# 15. Full orbit compatibility altında ne oluyor?
+
+Full word gerçekten (R)'nin orbit'inden geliyorsa ve:
+
+[
+3^m>Y,
+]
+
+relative suffix başlangıcı actual intermediate state'tir:
+
+[
+n\_{q-m}.
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+R\_{\rm suf}=n\_{q-m}.
+}
+\tag{15.1}
+]
+
+Ve:
+
+# [ W\_m
+
+2^{D\_{q-m}}n\_{q-m}.
+]
+
+Checkpoint 3 exact carry identity:
+
+# [ 2^{D\_r}n\_r
+
+R+\frac13\sum\_{u\<r}2^{D\_u}.
+]
+
+Ama:
+
+# [ P\_{\rm pre}
+
+\frac13
+\sum\_{u\<q-m}2^{D\_u}.
+]
+
+Sonuç:
+
+## [EXACT]
+
+# [ \boxed{ W\_m
+
+R+P\_{\rm pre}.
+}
+\tag{15.2}
+]
+
+Dolayısıyla:
+
+# [ \boxed{ G\_m
+
+-R-P\_{\rm pre}.
+}
+]
+
+Bu, prompt'taki key equation'ı doğruluyor; ancak aynı zamanda yeni yöntemin sınırını ortaya çıkarıyor.
+
+---
+
+# 16. Büyük metodolojik sonuç
+
+Joint suffix functional:
+
+[
+(E\_m,P\_{\rm suf})
+]
+
+birleştiğinde:
+
+[
+W\_m=2^{D\_r}R\_{\rm suf}.
+]
+
+Compatible global orbit'te:
+
+[
+R\_{\rm suf}=n\_r.
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+\text{joint modular–Archimedean matching}
+}
+]
+
+aslında:
+
+[
+\boxed{
+\text{intermediate state'in suffix least realizer olması}
+}
+]
+
+statement'ıdır.
+
+Başka deyişle:
+
+[
+\boxed{
+\text{Checkpoint 8 joint problem,
+Checkpoint 6 least-realizer problemini
+daha kısa bir suffix üzerinde yeniden üretmektedir.}
+}
+]
+
+### [FAIL]
+
+Single-scale joint coupling yeni bağımsız arithmetic obstruction üretmedi.
+
+Bu sonuç araştırma yönü açısından çok önemlidir.
+
+---
+
+# 17. Joint map aslında injective
+
+Define corridor ceiling at split rank:
+
+# [ U\_r
+
+\left\lfloor
+B\log\_2(r+1)+C\_0
+\right\rfloor.
+]
+
+Because:
+
+[
+s\_r\le U\_r.
+]
+
+(14.1):
+
+# [ W\_m
+
+2^{-{r\alpha}-s\_r}R\_{\rm suf}.
+]
+
+Define:
+
+# [ \boxed{ g\_r
+
+2^{-{r\alpha}-U\_r}.
+}
+\tag{17.1}
+]
+
+Then:
+
+# [ \boxed{ \frac{W\_m}{g\_r}
+
+2^{U\_r-s\_r}R\_{\rm suf}.
+}
+\tag{17.2}
+]
+
+Relative suffix begins with a (1), so:
+
+[
+R\_{\rm suf}
+]
+
+is odd.
+
+Therefore:
+
+# [ \boxed{ v\_2(W\_m/g\_r)
+
+U\_r-s\_r.
+}
+\tag{17.3}
+]
+
+Thus (W\_m) determines (s\_r).
+
+Then it determines (L=d\_r), hence (J=j-L).
+
+Finally:
+
+[
+R\_{\rm suf}
+]
+
+is recovered from (17.2), and the length-(J) parity vector of (R\_{\rm suf}) is unique.
+
+Sonuç:
+
+## [EXACT]
+
+[
+\boxed{
+\text{suffix}
+\longmapsto
+W\_m
+}
+]
+
+is injective.
+
+Dolayısıyla joint pair:
+
+[
+(E\_m,P\_{\rm suf})
+]
+
+de injective'dir.
+
+---
+
+# 18. Joint Fiber Lattice Theorem
+
+(17.2):
+
+[
+W\_m
+\in
+g\_r\mathbb N.
+]
+
+Distinct suffix'ler distinct (W\_m) verdiğinden:
+
+## [EXACT]
+
+[
+\boxed{
+|W\_m-W\_m'|
+\ge
+g\_r.
+}
+\tag{18.1}
+]
+
+Ve:
+
+# [ g\_r
+
+2^{-{r\alpha}-U\_r}.
+]
+
+Çünkü:
+
+[
+0<2^{-{r\alpha}}\le1
+]
+
+ve:
+
+[
+U\_r
+\le
+B\log\_2(r+1)+C\_0,
+]
+
+şu gelir:
+
+[
+\boxed{
+g\_r
+
+>
+
+2^{-C\_0-1}(r+1)^{-B}.
+}
+\tag{18.2}
+]
+
+Bu, aradığımız conditional anti-concentration'ın gerçekten bir formunu kanıtlıyor.
+
+---
+
+# 19. Same-residue fiber gap
+
+Eğer iki suffix:
+
+[
+E\_m=e
+]
+
+aynı modular output'u veriyorsa:
+
+# [ P\_{\rm suf}
+
+2^{-\Delta\_j}e-W\_m.
+]
+
+Dolayısıyla:
+
+# [ |P\_{\rm suf}-P'\_{\rm suf}|
+
+|W\_m-W'\_m|.
+]
+
+Böylece:
+
+## [EXACT] Conditional fiber gap
+
+[
+\boxed{
+E\_m=e,\quad
+P\_{\rm suf}\ne P'*{\rm suf}*
+*\Longrightarrow*
+*|P*{\rm suf}-P'\_{\rm suf}|
+\ge
+g\_r
+
+>
+
+c,r^{-B}.
+}
+\tag{19.1}
+]
+
+Bu Checkpoint 8 Candidate C'nin güçlü deterministic versiyonudur.
+
+Her interval (I) için:
+
+[
+\boxed{
+\#{
+P\_{\rm suf}\in\mathcal F\_m(e)\cap I
+}
+\le
+1+\frac{|I|}{g\_r}.
+}
+\tag{19.2}
+]
+
+Özellikle:
+
+[
+|I|=O(r^{-B})
+]
+
+ise her residue fiber içinde yalnız (O(1)) distinct Archimedean suffix values vardır.
+
+Bu gerçek bir `[EXACT]` joint anti-concentration lemma'sıdır.
+
+---
+
+# 20. Fakat gap target'ı neden dışlamıyor?
+
+Full compatible orbit için:
+
+# [ W\_{\rm target}
+
+# R+P\_{\rm pre}
+
+2^{D\_r}n\_r.
+]
+
+Aynı (g\_r) ile:
+
+# [ \boxed{ \frac{W\_{\rm target}}{g\_r}
+
+2^{U\_r-s\_r}n\_r.
+}
+]
+
+(n\_r) odd olduğundan target da suffix output'larıyla **aynı lattice üzerinde, aynı (2)-adic layer'da** yer alır.
+
+Yani:
+
+[
+\boxed{
+\text{suffix gap}
+\quad\text{ve}\quad
+\text{prefix target quantization}
+}
+]
+
+tam olarak eşleşiyor.
+
+### [EXACT / FAIL]
+
+Conditional fiber gap target incompatibility üretmiyor.
+
+Bu checkpoint'in esas obstruction'ı budur.
+
+---
+
+# 21. Gap theorem finite experiment'te sharp
+
+Synthetic exact test:
+
+[
+q=1000,
+\qquad
+B=\frac9{10},
+\qquad
+m=7,
+\qquad
+j=\lfloor1000\alpha\rfloor=1584.
+]
+
+Split:
+
+[
+r=993.
+]
+
+Exact corridor ceiling:
+
+[
+U\_r=8.
+]
+
+Mechanical baseline:
+
+[
+\lfloor993\alpha\rfloor=1573.
+]
+
+Dolayısıyla:
+
+[
+L\_{\min}=1565.
+]
+
+İki admissible suffix slack vector:
+
+[
+(8,5,6,6,7,7,2)
+]
+
+ve:
+
+[
+(6,5,6,6,7,7,2)
+]
+
+aynı:
+
+[
+\boxed{E\_7=722}
+]
+
+residue'unu üretmektedir.
+
+Fakat (S)-difference exact:
+
+# [ \boxed{ |S-S'|
+
+2^{1565}3^7.
+}
+]
+
+Dolayısıyla:
+
+# [ \boxed{ |P\_{\rm suf}-P'\_{\rm suf}|
+
+# \frac{2^{1565}}{3^{993}}
+
+g\_r.
+}
+]
+
+Numerik olarak:
+
+[
+g\_r
+\approx0.0021406086572,
+]
+
+[
+1000^{-0.9}
+\approx0.001995262315.
+]
+
+Yani teorik lattice gap gerçek finite suffix'lerde exact attain edilebiliyor.
+
+### [NUM — exact finite certificate]
+
+Bu nedenle (19.1)'deki (r^{-B}) scale'i generic olarak dramatik biçimde iyileştirmek beklenmemeli.
+
+---
+
+# 22. (W\_m) coordinate monotone mu?
+
+Hayır.
+
+Exact küçük counterexample:
+
+[
+q=6,\qquad m=4,\qquad B=0.9.
+]
+
+Suffix slack:
+
+[
+(0,0,1,0)
+\to
+(1,0,1,0)
+]
+
+değişiminde:
+
+[
+Z:
+56\to228,
+]
+
+dolayısıyla (W\_m) artar.
+
+Fakat:
+
+[
+(0,0,0,0)
+\to
+(1,0,0,0)
+]
+
+değişiminde:
+
+[
+Z:
+472\to132,
+]
+
+dolayısıyla (W\_m) azalır.
+
+### [FAIL]
+
+[
+\boxed{
+\delta\_u\mapsto\delta\_u+1
+}
+]
+
+joint functional üzerinde tek yönlü monotonicity üretmez.
+
+Checkpoint 6 modular wraparound problemi, joint functional'da tamamen kaybolmamıştır.
+
+---
+
+# 23. Existing (1/9) carry exponent joint probleme giriyor
+
+Actual forever-undercritical orbit için Checkpoint 3:
+
+# [ \boxed{ X\_q := \sum\_{r\<q}2^{D\_r}
+
+O(q^{1/9}).
+}
+\tag{23.1}
+]
+
+Ve:
+
+[
+P(v)=\frac{X\_q}{3}.
+]
+
+Dolayısıyla:
+
+## [EXACT consequence]
+
+[
+\boxed{
+P(v)=O(q^{1/9}).
+}
+\tag{23.2}
+]
+
+Bu Checkpoint 7'de kullanılan kaba:
+
+[
+P\le q/3
+]
+
+bound'undan dramatik biçimde daha güçlüdür.
+
+---
+
+# 24. Sharpened endpoint bound
+
+Corridor:
+
+[
+\Delta\_j
+\le
+B\log\_2j+O(1).
+]
+
+Fixed:
+
+[
+R\le M.
+]
+
+Then:
+
+# [ Y
+
+2^{\Delta\_j}(R+P).
+]
+
+(23.2):
+
+# [ \boxed{ Y
+
+O\_{M,C\_0}
+\left(
+j^{B+1/9}
+\right).
+}
+\tag{24.1}
+]
+
+Bu prompt'taki önemli bootstrap adımını doğruluyor.
+
+Checkpoint 7:
+
+[
+j^{B+1}
+]
+
+veriyordu.
+
+Yeni:
+
+[
+\boxed{
+j^{B+1/9}.
+}
+]
+
+---
+
+# 25. Bootstrap suffix depth
+
+Endpoint'in tamamını suffix'ten determine etmek için:
+
+[
+3^m>Y
+]
+
+yeterlidir.
+
+(24.1) nedeniyle bir constant (K) ile:
+
+# [ \boxed{ m
+
+\left(
+B+\frac19
+\right)
+\log\_3j
+\+
+O(1)
+}
+\tag{25.1}
+]
+
+seçmek yeterlidir.
+
+Bu prompt'taki canonical bootstrap scaling'i doğruluyor.
+
+Özellikle:
+
+[
+B=\frac89
+]
+
+için coefficient:
+
+[
+\boxed{1}.
+]
+
+Yani current frontier'da:
+
+[
+m\sim\log\_3j.
+]
+
+---
+
+# 26. Minimal endpoint-determination depth
+
+Daha temiz olarak:
+
+# [ m\_\*
+
+\min{m:3^m>Y}.
+]
+
+O zaman:
+
+[
+3^{m\_*-1}\le Y<3^{m\_*}.
+]
+
+Dolayısıyla:
+
+# [ \boxed{ m\_\*
+
+\log\_3Y+O(1).
+}
+\tag{26.1}
+]
+
+Ve (24.1):
+
+[
+\boxed{
+m\_\*
+\le
+\left(
+B+\frac19
+\right)
+\log\_3j
+\+
+O(1).
+}
+\tag{26.2}
+]
+
+Bu adaptive depth fixed upper bootstrap depth'ten daha doğaldır.
+
+---
+
+# 27. Relative suffix length için exact relation
+
+Split:
+
+[
+r=q-m.
+]
+
+Relative shortcut suffix length:
+
+[
+J=j-d\_r.
+]
+
+Çünkü:
+
+[
+j=\alpha q-\Delta\_j,
+]
+
+[
+d\_r=\alpha r+D\_r,
+]
+
+ve:
+
+[
+q-r=m,
+]
+
+exact real identity:
+
+## [EXACT]
+
+# [ \boxed{ J
+
+\alpha m-\Delta\_j-D\_r.
+}
+\tag{27.1}
+]
+
+Minimal depth (m\_\*) için:
+
+[
+\log\_2Y
+<
+\alpha m\_\*
+\le
+\log\_2Y+\alpha.
+]
+
+Ama:
+
+# [ \log\_2Y
+
+\Delta\_j+
+\log\_2(R+P\_q).
+]
+
+Dolayısıyla:
+
+## [EXACT]
+
+[
+\boxed{
+-D\_r+\log\_2(R+P\_q)
+<
+J
+\le
+-D\_r+\log\_2(R+P\_q)+\alpha.
+}
+\tag{27.2}
+]
+
+Bu, relative suffix'in gerçek scale'ini doğrudan carry ve split slack ile bağlıyor.
+
+---
+
+# 28. Suffix least realizer modulus'a ne kadar yakın?
+
+Deep minimal suffix'te:
+
+[
+R\_{\rm suf}=n\_r.
+]
+
+Exact state identity:
+
+# [ n\_r
+
+2^{-D\_r}(R+P\_r).
+]
+
+Ayrıca:
+
+# [ 2^J
+
+# 2^{\alpha m-\Delta\_j-D\_r}
+
+3^m2^{-\Delta\_j-D\_r}.
+]
+
+Dolayısıyla:
+
+# [ \frac{2^J}{n\_r}
+
+\frac{
+3^m2^{-\Delta\_j}
+}{
+R+P\_r
+}.
+]
+
+Minimal (m):
+
+# [ 3^m\le3Y
+
+3\cdot2^{\Delta\_j}(R+P\_q).
+]
+
+Bu nedenle:
+
+[
+\frac{2^J}{n\_r}
+\le
+3
+\frac{R+P\_q}{R+P\_r}.
+]
+
+Ama:
+
+[
+P\_q=P\_r+P\_{\rm suf}.
+]
+
+Ve:
+
+[
+P\_{\rm suf}\le\frac m3.
+]
+
+Sonuç:
+
+## [EXACT] Near-top suffix realizer theorem
+
+[
+\boxed{
+1
+<
+\frac{2^J}{R\_{\rm suf}}
+\le
+m+3.
+}
+\tag{28.1}
+]
+
+Yani:
+
+[
+\boxed{
+\frac{2^J}{m+3}
+\le
+R\_{\rm suf}
+<
+2^J.
+}
+\tag{28.2}
+]
+
+Bu oldukça güçlü bir exact restriction:
+
+> Endpoint'i ilk kez modulo (3^m) tam belirleyen logarithmic suffix'in least realizer'ı, kendi (2^J) modulus'unun yalnız (O(\log j)) factor altında olmak zorundadır.
+
+Ancak bu da contradiction değildir; örneğin dense-ones parity words doğal olarak modulus'a yakın realizers üretebilir.
+
+---
+
+# 29. Neden (8/9) yeniden ortaya çıkıyor?
+
+Joint lattice step:
+
+[
+g\_r\asymp j^{-B}.
+]
+
+Carry target interval:
+
+# [ W\_m=R+P\_r
+
+O(j^{1/9}).
+]
+
+Dolayısıyla bu interval içine sığabilecek lattice point sayısı kaba olarak:
+
+[
+\boxed{
+O(j^{B+1/9}).
+}
+\tag{29.1}
+]
+
+Tam aynı exponent endpoint bootstrap'ta çıktı:
+
+[
+Y=O(j^{B+1/9}).
+]
+
+Dolayısıyla yöntem içinde doğal phase count:
+
+[
+B+\frac19.
+]
+
+Bir pigeonhole/counting gain ancak:
+
+[
+B+\frac19<1
+]
+
+olduğunda ortaya çıkar.
+
+Yani:
+
+[
+\boxed{
+B<\frac89.
+}
+]
+
+Bu zaten Checkpoint 3 frontier'ıdır.
+
+### Metodolojik sonuç
+
+[
+\boxed{
+\text{single-scale joint suffix counting,
+doğal olarak yine }8/9\text{ sınırında saturate oluyor.}
+}
+]
+
+Bu, neden (1/9) carry exponent'ini suffix arithmetic'e sokmanın tek başına coefficient'i yükseltmediğini açıklıyor.
+
+---
+
+# 30. Joint Fiber Gap Conjecture ne oldu?
+
+Prompt'ta (j^{-B}) seviyesinde fiber gap ihtimali önerilmişti.
+
+Sonuç:
+
+[
+\boxed{
+\text{Evet, hatta exact theorem var.}
+}
+]
+
+[
+\operatorname{gap}
+\gtrsim
+j^{-B}.
+]
+
+Fakat bu yeterli değil.
+
+Çünkü prefix target da aynı:
+
+[
+j^{-B}
+]
+
+quantization üzerinde.
+
+Daha kuvvetli ifade:
+
+[
+\boxed{
+\text{gap theorem target'ı ayırmıyor;
+target theorem'in kendi lattice'ına aittir.}
+}
+]
+
+Dolayısıyla Candidate Joint Fiber Gap doğru olsa bile (8/9\to1) sonucu çıkmıyor.
+
+---
+
+# 31. Yeni self-similarity / renormalization obstruction
+
+Joint suffix problem:
+
+[
+(E\_m,P\_{\rm suf})
+]
+
+birleştirilince:
+
+[
+R\_{\rm suf}
+]
+
+isimli daha kısa bir least-realizer ortaya çıkıyor.
+
+Yani:
+
+[
+\boxed{
+\text{global least-realizer}
+\rightarrow
+\text{logarithmic-length suffix least-realizer}.
+}
+]
+
+Bu reduction yararlı olabilir; ancak problem ortadan kalkmıyor.
+
+Üstelik relative suffix kendi iç koordinatlarında necessarily critical-logarithmic corridor'da değildir.
+
+Global:
+
+[
+O(\log j)
+]
+
+slack farkı, suffix'in yalnız:
+
+[
+O(\log j)
+]
+
+uzunluğunda olması nedeniyle relative slope'ta (O(1)) distortion yaratabilir.
+
+Dolayısıyla restricted main theorem'i birebir daha küçük ölçekte induction ile uygulamak mümkün değil.
+
+### [OPEN]
+
+Bu renormalization'ı genuine contraction'a dönüştürecek yeni invariant bulunamadı.
+
+---
+
+# 32. Literature comparison
+
+Powers of (3) modulo inverse-tree bilgisi yeni bir genel fikir değildir. Applegate–Lagarias'ın inverse (3x+1) tree çalışmaları inverse paths'i residue classes modulo powers of (3) ile organize eder; bu, suffix/endpoint (3)-adik locality'nin klasik bir öncülüdür.
+
+2026 tarihli Kramer preprint'i de finite accelerated exponent code'larında real drift, (2)-adic start representative ve (3)-adic endpoint representative'ı birlikte izleyen bir diagnostic kuruyor; çalışma açıkça bunun Collatz doğrulama/ispat yöntemi olmadığını belirtiyor.
+
+Simultaneous real/(p)-adic approximation ve (p)-adic equidistribution için genel teoriler mevcut, ancak kontrol ettiğim primary kaynaklar sabit algebraic targets veya torsion/(S)-unit equidistribution gibi farklı setting'leri ele alıyor; bizim growing, deterministic critical-ballot suffix family için doğrudan uygulanabilir bir target-avoidance theorem vermiyorlar.
+
+Bu checkpoint'teki exact self-duality nedeniyle generic adelic machinery'ye hemen geçmek ayrıca gereksiz görünüyor: iki “place” projection'ı birleştiğinde zaten finite suffix least-realizer'ı geri elde ediyoruz.
+
+---
+
+# 33. Checkpoint 8 sorularının kesin cevapları
+
+### 1. (C(v)=3^mA\_{\rm pre}+S\_m) doğru mu?
+
+[
+\boxed{\text{Evet. [EXACT]}}
+]
+
+---
+
+### 2. (P\_{\rm suf}=S\_m/3^q) doğru mu?
+
+[
+\boxed{\text{Evet. [EXACT]}}
+]
+
+---
+
+### 3. Modular ve Archimedean quantities aynı (S\_m)'nin iki projection'ı mı?
+
+[
+\boxed{\text{Evet.}}
+]
+
+[
+E\_m=[2^{-j}S\_m]*{3^m},*
+*\qquad*
+*P*{\rm suf}=S\_m/3^q.
+]
+
+---
+
+### 4. (Z\_m) hangi prefix quantity'ye eşit?
+
+Genel:
+
+# [ \boxed{ Z\_m
+
+3^{q-m}R+A\_{\rm pre}-2^j\tau\_m,
+}
+]
+
+[
+Y=E\_m+\tau\_m3^m.
+]
+
+Deep regime:
+
+[
+\boxed{
+Z\_m=3^{q-m}R+A\_{\rm pre}.
+}
+]
+
+---
+
+### 5. Joint map finite data'da nasıl?
+
+Marginal (E\_m) çok collision üretse de joint quantity (W\_m) injective.
+
+[
+\boxed{\text{[EXACT]}}
+]
+
+---
+
+### 6. Same-residue fiber'da (P\_{\rm suf}) ne kadar dense?
+
+Distinct values:
+
+[
+\boxed{
+\gtrsim j^{-B}
+}
+]
+
+spacing taşır.
+
+(q=1000,B=0.9) exact experiment'inde bu lower scale exact attain edildi.
+
+---
+
+### 7. Relevant (j^{-B}) scale'de gap var mı?
+
+[
+\boxed{\text{Evet. [EXACT]}}
+]
+
+Ama target aynı lattice üzerinde olduğu için contradiction üretmiyor.
+
+---
+
+### 8. (X\_q=O(q^{1/9})) target center'a aktarılabiliyor mu?
+
+[
+\boxed{\text{Evet.}}
+]
+
+[
+P=X\_q/3=O(q^{1/9}).
+]
+
+---
+
+### 9. Endpoint:
+
+[
+Y=O(j^{B+1/9})
+]
+
+çıktı mı?
+
+[
+\boxed{\text{Evet. [EXACT consequence]}}
+]
+
+---
+
+### 10. Bootstrap suffix depth:
+
+[
+m\sim(B+1/9)\log\_3j
+]
+
+doğru mu?
+
+Sufficient depth olarak:
+
+[
+\boxed{\text{Evet.}}
+]
+
+Daha doğal exact choice:
+
+[
+m\_\*=\min{m:3^m>Y}.
+]
+
+---
+
+### 11. Joint fibers anti-concentration gösteriyor mu?
+
+Evet, deterministic gap anlamında.
+
+Ancak **target avoidance** anlamında hayır.
+
+---
+
+### 12. Herhangi bir:
+
+[
+B\_\*>8/9
+]
+
+çıktı mı?
+
+[
+\boxed{\textbf{Hayır.}}
+]
+
+---
+
+### 13. İlk gerçek obstruction nedir?
+
+[
+\boxed{
+\textbf{Prefix target ve suffix joint output
+aynı least-realizer lattice'ını paylaşmaktadır.}
+}
+]
+
+Daha yapısal olarak:
+
+# [ \boxed{ W\_m
+
+2^{D\_r}R\_{\rm suf}
+}
+]
+
+ile problem recursive olarak eski least-realizer problemine dönüyor.
+
+---
+
+### 14. Problem adelic anti-concentration'a indirgenebiliyor mu?
+
+Adelic biçimde yazılabilir.
+
+Fakat exact coupling iki projection'ı tekrar tek integer least-realizer'a indirdiği için generic adelic anti-concentration şu aşamada gerekli missing lemma değil.
+
+---
+
+### 15. Rigorous frontier değişti mi?
+
+[
+\boxed{\textbf{Hayır.}}
+]
+
+Mevcut:
+
+[
+\boxed{
+\limsup\_{k\to\infty}
+\frac{s\_k}{\log\_2 k}
+\ge
+\frac89.
+}
+]
+
+---
+
+# 34. Bu checkpoint'te başarısız olan yollar
+
+### [FAIL]
+
+(G\_m)'nin yeni bağımsız invariant olması.
+
+### [FAIL]
+
+(H\_m)'nin yeni shrinking-target discrepancy olması.
+
+Aslında:
+
+[
+H\_m=Y-E\_m.
+]
+
+### [FAIL]
+
+Single-coordinate joint monotonicity.
+
+### [FAIL]
+
+Fiber gap'in target incompatibility üretmesi.
+
+### [FAIL]
+
+(j^{-B}) gap'in tek başına (B<1) contradiction vermesi.
+
+### [FAIL]
+
+Single bootstrap suffix scale ile (8/9)'u geçmek.
+
+### [PARK]
+
+Generic adelic/Littlewood–Offord machinery; exact self-duality çözülmeden önce bu araçlar fazla genel kalıyor.
+
+---
+
+# 35. Checkpoint 8'in en güçlü yeni sonuçları
+
+### [EXACT]
+
+[
+\boxed{
+P\_{\rm suf}=S\_m/3^q.
+}
+]
+
+### [EXACT]
+
+(S\_m) suffix exponent vector'ünü uniquely decode eder.
+
+### [EXACT]
+
+# [ \boxed{ W\_m
+
+# 2^{-\Delta\_j}E\_m-P\_{\rm suf}
+
+2^{D\_{q-m}}R\_{\rm suf}.
+}
+]
+
+### [EXACT]
+
+Joint suffix map injective'dir.
+
+### [EXACT]
+
+Conditional fiber gap:
+
+[
+\boxed{
+\operatorname{gap}
+
+>
+
+c,j^{-B}.
+}
+]
+
+### [EXACT]
+
+Actual orbit'te:
+
+# [ \boxed{ W\_m
+
+# 2^{D\_{q-m}}n\_{q-m}
+
+R+P\_{\rm pre}.
+}
+]
+
+### [EXACT]
+
+Existing carry bound:
+
+[
+X\_q=O(q^{1/9})
+]
+
+endpoint'i:
+
+[
+\boxed{
+Y=O(j^{B+1/9})
+}
+]
+
+seviyesine indirir.
+
+### [EXACT]
+
+Minimal endpoint-determining suffix'in least realizer'ı:
+
+[
+\boxed{
+\frac{2^J}{m+3}
+\le
+R\_{\rm suf}<2^J.
+}
+]
+
+---
+
+# 36. Araştırmanın yeni gerçek obstruction'ı
+
+Checkpoint 7 sonunda obstruction:
+
+[
+\text{suffix residue ile target center korelasyonu}
+]
+
+olarak görünüyordu.
+
+Checkpoint 8 bunu daha keskin hale getirdi.
+
+Korelasyon gizemli bir statistical effect değil.
+
+Exact olarak:
+
+[
+\boxed{
+\text{suffix modular + real outputs}
+\Longleftrightarrow
+\text{relative suffix least realizer}.
+}
+]
+
+Bu yüzden yeni problem:
+
+[
+\boxed{
+\textbf{single suffix anti-concentration değil,
+overlapping suffix least-realizer coherence.}
+}
+]
+
+olmalıdır.
+
+Bir fixed scale'de herhangi bir target uyumsuzluğu beklemek yanlış; actual intermediate state target'ı otomatik olarak aynı lattice'a yerleştiriyor.
+
+---
+
+# 37. Checkpoint 9 için önerilen ana yön
+
+Bir sonraki checkpoint'te aynı suffix'i daha ayrıntılı saymak yerine **birden fazla overlapping suffix scale'i aynı anda** kullanmak daha yüksek değerli görünüyor.
+
+Ana yeni obje:
+
+[
+\boxed{
+R\_{\rm suf}^{(m)}
+}
+]
+
+olsun: terminal (q)'dan geriye son (m) odd event'in least realizer'ı.
+
+Deep regime'de actual orbit için:
+
+# [ \boxed{ R\_{\rm suf}^{(m)}
+
+n\_{q-m}.
+}
+]
+
+Dolayısıyla farklı (m)'ler bağımsız değildir:
+
+[
+R\_{\rm suf}^{(m+1)}
+\longmapsto
+R\_{\rm suf}^{(m)}
+]
+
+bir gerçek Syracuse step'iyle bağlıdır.
+
+Yeni hedef:
+
+[
+\boxed{
+\textbf{multi-scale suffix coherence}
+}
+]
+
+olmalıdır.
+
+Özellikle:
+
+1. (m), (m+\ell), (m+2\ell) suffix realizers'ını aynı anda analiz et.
+2. Her scale'deki near-top modulus condition:
+   [
+   R\_{\rm suf}^{(m)}
+   \gtrsim
+   2^{J\_m}/\operatorname{polylog}(j)
+   ]
+   birlikte sürdürülebilir mi?
+3. Overlapping suffix words'ün least-realizer binary expansions'ı arasında exact nesting relation çıkar.
+4. Current (X\_q=O(q^{1/9})) carry bound ile bu multi-scale constraints'i birleştir.
+5. Tek-scale lattice saturation'ın aksine, iki veya daha fazla scale arasında gerçek entropy kaybı doğup doğmadığını araştır.
+
+Buna alternatif minimal open lemma:
+
+[
+\boxed{
+\text{Logarithmic corridor altında,
+endpoint-determining overlapping suffix'lerin
+hepsi aynı anda near-maximal least realizer olamaz.}
+}
+]
+
+Bu kanıtlanabilirse ilk kez single-scale (8/9) saturation'ı aşan yeni bilgi üretilebilir.
+
+---
+
+# 38. Checkpoint 8 genel bilimsel özeti
+
+Checkpoint 8 başlangıcındaki ümit:
+
+[
+\boxed{
+\text{modular }E\_m
+\+
+\text{real }P\_{\rm suf}
+\Rightarrow
+\text{yeni joint anti-concentration}
+}
+]
+
+idi.
+
+Kısmen doğru:
+
+[
+\boxed{
+\text{joint fiber gap gerçekten }j^{-B}\text{ ölçeğinde var.}
+}
+]
+
+Fakat daha derin exact identity:
+
+# [ \boxed{ 2^{-\Delta\_j}E\_m-P\_{\rm suf}
+
+2^{D\_{q-m}}R\_{\rm suf}
+}
+]
+
+gösterdi ki bu yeni koordinatlar esasen **aynı least-realizer problemine ait**.
+
+Ve full orbit target'ı:
+
+# [ \boxed{ R+P\_{\rm pre}
+
+2^{D\_{q-m}}n\_{q-m}
+}
+]
+
+tam olarak aynı lattice structure'ı taşıyor.
+
+Sonuç olarak joint gap target'ı kaçırmıyor.
+
+Bu nedenle rigorous slack frontier hâlâ:
+
+[
+\boxed{
+\frac89.
+}
+]
+
+Ancak Checkpoint 8 önemli bir yanlış yolu kapatmış ve problemi tekrar daha keskin bir biçimde daraltmıştır:
+
+[
+\boxed{
+\textbf{tek ölçekli residue anti-concentration değil,
+çok ölçekli least-realizer coherence gerekli.}
+}
+]
+
+**Araştırma durumu:** Aktif.
+**Yeni exact ana identity:** (W\_m=2^{D\_{q-m}}R\_{\rm suf}).
+**Yeni exact gap:** (j^{-B}) scale, fakat target aynı lattice'da.
+**Coefficient improvement:** Yok.
+**Checkpoint 9 önerilen hedefi:** overlapping logarithmic suffix'lerin near-maximal least-realizer koşullarını eşzamanlı olarak sürdüremeyeceğini kanıtlamak.

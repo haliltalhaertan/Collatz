@@ -1,0 +1,19 @@
+{
+  "status": "PARTIAL_PROVIDER_VISIBLE",
+  "step_id": "test-task:directed-2da2a0b9f12749dea761a4baeee066ff:0:v1",
+  "content": "",
+  "reasoning": "",
+  "reasoning_details": [],
+  "provider_attempts": [
+    {
+      "attempt_id": "0:attempt:1",
+      "client_call_id": "test-task:directed-2da2a0b9f12749dea761a4baeee066ff:0:v1:0:attempt:1",
+      "started_at": "2026-09-07T18:30:47.290791+00:00",
+      "status": "RETURNED",
+      "metadata": {},
+      "usage": {
+        "cost_usd": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+import json,hashlib,subprocess
+from pathlib import Path
+from datetime import datetime,timezone
+H=Path(__file__).resolve().parent; B=H.parent
+c=json.loads((B/'sol_collatz_bench/TASK_CONTRACT.json').read_text(encoding='utf-8'))
+c.update(task_id='xub-grid-obstruction-review',project_id='xub-grid-review-20260908',created_at=datetime.now(timezone.utc).isoformat(),objective='Solve only your bounded analytic research subproblem. Return a concise checkable argument, at most 700 words. Distinguish a surrogate theorem from the actual Collatz-array claim. No tools, experiments, or canonical changes. No time cutoff.')
+c['primary_claim']={'claim_id':'GRID-AUDIT','statement':'Audit necessary occupation conditions for the open marked-block Laplace bound.','status_at_start':'OPEN','quantifiers':'As specified in each lane; do not silently transfer a surrogate result.','definitions':['Actual reference model: Y_i are uniform nonnegative integer weak compositions of K into R coordinates. beta=log2(3)-1, K-beta R in (-15-2beta,-13-2beta). R=2J+epsilon. z_j=z0*2^(S_(2j)-2beta*j), z0 in (1,2).','Disjoint useful blocks have L=floor(c log R) pairs. C_q requires nonlow entry z>=eta, every pair total in {1,...,B0}, and nonresonance. Target E exp(-lambda N_C)<=C/R. Additional exact first-passage conditioning is a separate law issue.']}
+roles=[('rank','For any real increments x1,...,xn of total zero whose partial sums s0,...,s_(n-1) are all distinct, prove the exact distribution over n cyclic rotations of N=#{1<=j<=n: rotated partial sum >=0}. Then derive the rotation-average exp(-lambda N). Explain ties and why grouping an exchangeable composition bridge into equal coarse blocks could create a log(R)/R scale. Do not assert an actual-array refutation.'),('grid','Audit this potential obstruction in the actual endpoint-only weak-composition law: L~c log R and entries every 2L raw times; coarse bridge has n~R/(2L) points. Does the chance of all coarse entries except time zero lying below the fixed low threshold scale as 1/n, forcing E exp(-lambda N_C) >= const L/R? Give a rigorous derivation if possible, otherwise identify exactly the uniform ballot estimate missing. Account for negative O(1) endpoint drift, O(1) threshold, ties, remainder, and variable z0. Do not replace missing estimates by Brownian intuition.'),('logic','Audit the logical assertion that marked-block Laplace upper bound E exp(-lambda N_C)<=C/R is EQUIVALENT to an absolute normalized complex suffix-kernel bound |E product A_j|<=C/R, when each |A_j|<=1 and every disjoint C block guarantees product of moduli <=exp(-lambda). Derive the valid direction, and a concrete counterexample to the converse as a general implication. Explain what refuting the Laplace sufficient bound would and would not establish about the complex kernel and the Collatz route.')]
+base=c['agent_plan']['lanes'][0]; lanes=[]
+for i,role in roles:
+ x=dict(base);x.update(lane_id=i,role=role,independence_group=i,max_completion_tokens=3500,max_tokens=20000,max_cost_usd=.08);lanes.append(x)
+c['agent_plan'].update(lanes=lanes,max_parallel_workers=3)
+c['budget'].update(max_total_llm_calls=3,max_total_tokens=60000,max_tokens_per_lane=20000,max_total_cost_usd=.24,max_parallel_workers=3)
+c['scope']['included']=['Three bounded analytic audits of an exploratory open condition.']
+(H/'TASK_CONTRACT.json').write_text(json.dumps(c,indent=2),encoding='utf-8')
+(H/'FROZEN_HASHES.json').write_text(json.dumps({'TASK_CONTRACT.json':hashlib.sha256((H/'TASK_CONTRACT.json').read_bytes()).hexdigest()}))
+(H/'BUDGET.json').write_text(json.dumps({'user_session_ceiling_usd':2,'authorized_wave_ceiling_usd':.24,'max_calls':3,'retries':0,'time_cutoff':None,'further_dispatch_requires_new_local_reservation':True},indent=2))
+runner=(B/'sol_collatz_bench/run.py').read_text().replace("'calls':8,'max_cost_usd':.32","'calls':3,'max_cost_usd':.24").replace('collatz-sol-low-bench-20260908','xub-grid-review-20260908')
+(H/'run.py').write_text(runner,encoding='utf-8')
+print('Prepared three small calls; maximum reservation $0.24 of $2.00.')

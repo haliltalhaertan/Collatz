@@ -1,0 +1,925 @@
+{
+  "checks": {
+    "archive_hash": true,
+    "archive_size": true,
+    "archive_members": true,
+    "archive_crc": true,
+    "journal_chain": true
+  },
+  "repository_files": [
+    {
+      "path": "START_HERE_CURRENT_HANDOFF.md",
+      "ok": true
+    },
+    {
+      "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+      "ok": true
+    },
+    {
+      "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-04.txt",
+      "ok": true
+    },
+    {
+      "path": "research_manager/CONTINUITY_PROTOCOL.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/RESEARCH_JOURNAL.jsonl",
+      "ok": true
+    },
+    {
+      "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E5_S1_INTEGRATION_2026-09-01.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E6_INTEGRATION_2026-09-01.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E6_STAGE1_AUTHORIZATION_2026-09-01.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_V1_INPUT_INTEGRITY_FAILURE_CLOSEOUT_2026-09-04.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_ACCEPTANCE_2026-09-04.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUTHORIZATION_2026-09-04.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE0_SEAL_ACCEPTANCE_2026-09-01.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E7_STAGE1_AUTHORIZATION_2026-09-01.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/prompts/CP20_TASK8B3_E6_CONDITIONED_GEOMETRIC_COMPLEX_NUMERATOR_PROMPT_2026-09-01.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/prompts/CP20_TASK8B3_E6_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/prompts/CP20_TASK8B3_E7_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-01.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/records/CP20_TASK8B3_E7R_B4_V1_MAIN_PLACEHOLDER_REVERT_PROVENANCE_2026-09-04.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_DRIVE_PERSISTENCE.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_PACKAGE_REFERENCE.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_RECORD.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_REPORT.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_SHA256SUMS.txt",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_RUN_WITNESS_AS_PRODUCED.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SEAL.zip",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SHA256SUMS.txt",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PROJECT_DEFINITIONS.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/si_github/main.pdf",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/si_github/main.tex",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/si_zenodo/main.pdf",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/tao/tao_1909.03562v7.pdf",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/sources/tao/tao_1909.03562v7_source.tar",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDIT_STOP.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_DRIVE_PERSISTENCE_RECORD.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_INDEPENDENT_FINITE_PHASE.py",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MECHANICAL_RESULTS.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PACKAGE_RECORD.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PROVENANCE.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_RESULT.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_SHA256SUMS.txt",
+      "ok": true
+    },
+    {
+      "path": "tools/build_current_archive.py",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_ACCEPTANCE_AND_CANONICALIZATION_2026-09-05.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_TRANSACTION_2026-09-05.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_A_READBACK_2026-09-05.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_B_READBACK_2026-09-05.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_AUTHORIZATION_BASE_SELF_REFERENCE_REPAIR_RECORD.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_BLOCKED_CANDIDATE_CLASSIFICATION.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_INPUTS.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_STATE_PATH_REPAIR_RECORD.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CONFIG.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_MECHANICAL_CHECKS.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_SCIENTIFIC_DIFF_CHECK.py",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_STDOUT.txt",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SHA256SUMS.txt",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_PROGRAM_PRESERVATION.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_FINAL_RECORD.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE_SCHEMA.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS_SCHEMA.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_CHECK.py",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST.py",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py",
+      "ok": true
+    },
+    {
+      "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
+      "ok": true
+    },
+    {
+      "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.json",
+      "ok": true
+    },
+    {
+      "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt",
+      "ok": true
+    },
+    {
+      "path": "tools/verify_handoff.py",
+      "ok": true
+    },
+    {
+      "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTION_2026-09-07.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json",
+      "ok": true
+    },
+    {
+      "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt",
+      "ok": true
+    }
+  ],
+  "archive_dependencies": [
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/CONTINUITY/START_HERE_CURRENT_HANDOFF.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/CONTINUITY/START_HERE_CURRENT_HANDOFF.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/CP20/Task 8 \u00e2\u20ac\u201d Literature Reconnaissance and Branch Selection/Task 8B0 \u00e2\u20ac\u201d Literature Mechanism Falsification/Module D \u00e2\u20ac\u201d 2-adic Start-Rate + Return-Word Recurrence/Module E \u00e2\u20ac\u201d Critical-Mass Endpoint Anti-Concentration/E5 \u00e2\u20ac\u201d Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/CP20/Task 8 \u2014 Literature Reconnaissance and Branch Selection/Task 8B0 \u2014 Literature Mechanism Falsification/Module D \u2014 2-adic Start-Rate + Return-Word Recurrence/Module E \u2014 Critical-Mass Endpoint Anti-Concentration/E5 \u2014 Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/CP20/Task 8 \u00e2\u20ac\u201d Literature Reconnaissance and Branch Selection/Task 8B0 \u00e2\u20ac\u201d Literature Mechanism Falsification/Module D \u00e2\u20ac\u201d 2-adic Start-Rate + Return-Word Recurrence/Module E \u00e2\u20ac\u201d Critical-Mass Endpoint Anti-Concentration/E6 \u00e2\u20ac\u201d Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_COMPLETE_PACKAGE.zip",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/CP20/Task 8 \u2014 Literature Reconnaissance and Branch Selection/Task 8B0 \u2014 Literature Mechanism Falsification/Module D \u2014 2-adic Start-Rate + Return-Word Recurrence/Module E \u2014 Critical-Mass Endpoint Anti-Concentration/E6 \u2014 Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_COMPLETE_PACKAGE.zip",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/CP20/Task 8 \u00e2\u20ac\u201d Literature Reconnaissance and Branch Selection/Task 8B0 \u00e2\u20ac\u201d Literature Mechanism Falsification/Module D \u00e2\u20ac\u201d 2-adic Start-Rate + Return-Word Recurrence/Module E \u00e2\u20ac\u201d Critical-Mass Endpoint Anti-Concentration/E6 \u00e2\u20ac\u201d Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/CP20/Task 8 \u2014 Literature Reconnaissance and Branch Selection/Task 8B0 \u2014 Literature Mechanism Falsification/Module D \u2014 2-adic Start-Rate + Return-Word Recurrence/Module E \u2014 Critical-Mass Endpoint Anti-Concentration/E6 \u2014 Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_MASTER_FINDINGS.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/CP20/Task 8 \u00e2\u20ac\u201d Literature Reconnaissance and Branch Selection/Task 8B0 \u00e2\u20ac\u201d Literature Mechanism Falsification/Module D \u00e2\u20ac\u201d 2-adic Start-Rate + Return-Word Recurrence/Module E \u00e2\u20ac\u201d Critical-Mass Endpoint Anti-Concentration/E6 \u00e2\u20ac\u201d Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/CP20/Task 8 \u2014 Literature Reconnaissance and Branch Selection/Task 8B0 \u2014 Literature Mechanism Falsification/Module D \u2014 2-adic Start-Rate + Return-Word Recurrence/Module E \u2014 Critical-Mass Endpoint Anti-Concentration/E6 \u2014 Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/CP20/Task 8 \u00e2\u20ac\u201d Literature Reconnaissance and Branch Selection/Task 8B0 \u00e2\u20ac\u201d Literature Mechanism Falsification/Module D \u00e2\u20ac\u201d 2-adic Start-Rate + Return-Word Recurrence/Module E \u00e2\u20ac\u201d Critical-Mass Endpoint Anti-Concentration/E6 \u00e2\u20ac\u201d Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.zip",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/CP20/Task 8 \u2014 Literature Reconnaissance and Branch Selection/Task 8B0 \u2014 Literature Mechanism Falsification/Module D \u2014 2-adic Start-Rate + Return-Word Recurrence/Module E \u2014 Critical-Mass Endpoint Anti-Concentration/E6 \u2014 Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SEAL.zip",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/CP20/Task 8 \u00e2\u20ac\u201d Literature Reconnaissance and Branch Selection/Task 8B0 \u00e2\u20ac\u201d Literature Mechanism Falsification/Module D \u00e2\u20ac\u201d 2-adic Start-Rate + Return-Word Recurrence/Module E \u00e2\u20ac\u201d Critical-Mass Endpoint Anti-Concentration/E6 \u00e2\u20ac\u201d Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SHA256SUMS.txt",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/CP20/Task 8 \u2014 Literature Reconnaissance and Branch Selection/Task 8B0 \u2014 Literature Mechanism Falsification/Module D \u2014 2-adic Start-Rate + Return-Word Recurrence/Module E \u2014 Critical-Mass Endpoint Anti-Concentration/E6 \u2014 Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_PRE_RUN_SHA256SUMS.txt",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/CP20/Task 8 \u00e2\u20ac\u201d Literature Reconnaissance and Branch Selection/Task 8B0 \u00e2\u20ac\u201d Literature Mechanism Falsification/Module D \u00e2\u20ac\u201d 2-adic Start-Rate + Return-Word Recurrence/Module E \u00e2\u20ac\u201d Critical-Mass Endpoint Anti-Concentration/E6 \u00e2\u20ac\u201d Conditioned-Geometric Complex Numerator/SHA256SUMS.txt",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/CP20/Task 8 \u2014 Literature Reconnaissance and Branch Selection/Task 8B0 \u2014 Literature Mechanism Falsification/Module D \u2014 2-adic Start-Rate + Return-Word Recurrence/Module E \u2014 Critical-Mass Endpoint Anti-Concentration/E6 \u2014 Conditioned-Geometric Complex Numerator/SHA256SUMS.txt",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/CP20/Task 8 \u00e2\u20ac\u201d Literature Reconnaissance and Branch Selection/Task 8B0 \u00e2\u20ac\u201d Literature Mechanism Falsification/Module D \u00e2\u20ac\u201d 2-adic Start-Rate + Return-Word Recurrence/Module E \u00e2\u20ac\u201d Critical-Mass Endpoint Anti-Concentration/E7 \u00e2\u20ac\u201d Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/CP20/Task 8 \u2014 Literature Reconnaissance and Branch Selection/Task 8B0 \u2014 Literature Mechanism Falsification/Module D \u2014 2-adic Start-Rate + Return-Word Recurrence/Module E \u2014 Critical-Mass Endpoint Anti-Concentration/E7 \u2014 Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/CP20/Task 8 \u00e2\u20ac\u201d Literature Reconnaissance and Branch Selection/Task 8B0 \u00e2\u20ac\u201d Literature Mechanism Falsification/Module D \u00e2\u20ac\u201d 2-adic Start-Rate + Return-Word Recurrence/Module E \u00e2\u20ac\u201d Critical-Mass Endpoint Anti-Concentration/E7 \u00e2\u20ac\u201d Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.zip",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/CP20/Task 8 \u2014 Literature Reconnaissance and Branch Selection/Task 8B0 \u2014 Literature Mechanism Falsification/Module D \u2014 2-adic Start-Rate + Return-Word Recurrence/Module E \u2014 Critical-Mass Endpoint Anti-Concentration/E7 \u2014 Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.zip",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/CP20/Task 8 \u00e2\u20ac\u201d Literature Reconnaissance and Branch Selection/Task 8B0 \u00e2\u20ac\u201d Literature Mechanism Falsification/Module D \u00e2\u20ac\u201d 2-adic Start-Rate + Return-Word Recurrence/Module E \u00e2\u20ac\u201d Critical-Mass Endpoint Anti-Concentration/E7 \u00e2\u20ac\u201d Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SHA256SUMS.txt",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/CP20/Task 8 \u2014 Literature Reconnaissance and Branch Selection/Task 8B0 \u2014 Literature Mechanism Falsification/Module D \u2014 2-adic Start-Rate + Return-Word Recurrence/Module E \u2014 Critical-Mass Endpoint Anti-Concentration/E7 \u2014 Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SHA256SUMS.txt",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-04.txt",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-04.txt",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/REPOSITORY_TOOLING/build_current_archive.py",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/REPOSITORY_TOOLING/build_current_archive.py",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/CONTINUITY_PROTOCOL.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/CONTINUITY_PROTOCOL.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_V1_INPUT_INTEGRITY_FAILURE_CLOSEOUT_2026-09-04.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_V1_INPUT_INTEGRITY_FAILURE_CLOSEOUT_2026-09-04.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_ACCEPTANCE_2026-09-04.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_ACCEPTANCE_2026-09-04.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUTHORIZATION_2026-09-04.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUTHORIZATION_2026-09-04.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7_RECOVERY_B3_AUDIT_INTEGRATION_2026-09-04.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_V1_MAIN_PLACEHOLDER_REVERT_PROVENANCE_2026-09-04.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_V1_MAIN_PLACEHOLDER_REVERT_PROVENANCE_2026-09-04.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_DRIVE_PERSISTENCE.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_DRIVE_PERSISTENCE.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_PACKAGE_REFERENCE.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_PACKAGE_REFERENCE.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_RECORD.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_RECORD.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_REPORT.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_REPORT.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_SHA256SUMS.txt",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE_SHA256SUMS.txt",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_RUN_WITNESS_AS_PRODUCED.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_RUN_WITNESS_AS_PRODUCED.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SEAL.zip",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SEAL.zip",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SHA256SUMS.txt",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SHA256SUMS.txt",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PROJECT_DEFINITIONS.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PROJECT_DEFINITIONS.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDIT_STOP.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDIT_STOP.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_DRIVE_PERSISTENCE_RECORD.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_DRIVE_PERSISTENCE_RECORD.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_INDEPENDENT_FINITE_PHASE.py",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_INDEPENDENT_FINITE_PHASE.py",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MECHANICAL_RESULTS.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MECHANICAL_RESULTS.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PACKAGE_RECORD.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PACKAGE_RECORD.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PROVENANCE.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PROVENANCE.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_RESULT.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_RESULT.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_SHA256SUMS.txt",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_SHA256SUMS.txt",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_ACCEPTANCE_AND_CANONICALIZATION_2026-09-05.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_ACCEPTANCE_AND_CANONICALIZATION_2026-09-05.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_TRANSACTION_2026-09-05.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_TRANSACTION_2026-09-05.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_A_READBACK_2026-09-05.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_A_READBACK_2026-09-05.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_B_READBACK_2026-09-05.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_B_READBACK_2026-09-05.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_AUTHORIZATION_BASE_SELF_REFERENCE_REPAIR_RECORD.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_AUTHORIZATION_BASE_SELF_REFERENCE_REPAIR_RECORD.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_BLOCKED_CANDIDATE_CLASSIFICATION.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_BLOCKED_CANDIDATE_CLASSIFICATION.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_INPUTS.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_INPUTS.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_STATE_PATH_REPAIR_RECORD.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_STATE_PATH_REPAIR_RECORD.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CONFIG.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CONFIG.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_MECHANICAL_CHECKS.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_MECHANICAL_CHECKS.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_SCIENTIFIC_DIFF_CHECK.py",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_SCIENTIFIC_DIFF_CHECK.py",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_STDOUT.txt",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_STDOUT.txt",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SHA256SUMS.txt",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SHA256SUMS.txt",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_PROGRAM_PRESERVATION.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_PROGRAM_PRESERVATION.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_FINAL_RECORD.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_FINAL_RECORD.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE_SCHEMA.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE_SCHEMA.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS_SCHEMA.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS_SCHEMA.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_CHECK.py",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_CHECK.py",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST.py",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST.py",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/REPOSITORY_TOOLING/verify_handoff.py",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/REPOSITORY_TOOLING/verify_handoff.py",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTION_2026-09-07.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTION_2026-09-07.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json",
+      "diagnostic_decoded_hash_match": true
+    },
+    {
+      "path": "Collatz Problemi \u00e2\u20ac\u201d Ara\u00c5\u0178t\u00c4\u00b1rma Ar\u00c5\u0178ivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt",
+      "exists": false,
+      "ok": false,
+      "diagnostic_decoded_path": "Collatz Problemi \u2014 Ara\u015ft\u0131rma Ar\u015fivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt",
+      "diagnostic_decoded_hash_match": true
+    }
+  ],
+  "journal_rows": 22,
+  "actual_branch": "",
+  "expected_branch": "main",
+  "canonical_handoff_verifier": "FAIL: detached checkout branch mismatch; not repaired or rerun as canonical",
+  "scope": "Snapshot byte checks only; no mathematical validation or publication read-back"
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "test-task",
+  "run_id": "directed-68400553822d46dbbf94168c55953e61",
+  "status": "PARTIAL",
+  "artifact_root": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_v2_test_tmp_20260907\\test_partial_timeout_blocks_au0\\state\\test-project\\directed\\directed-68400553822d46dbbf94168c55953e61",
+  "claim_ledger_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_v2_test_tmp_20260907\\test_partial_timeout_blocks_au0\\state\\test-project\\directed\\directed-68400553822d46dbbf94168c55953e61\\package\\CLAIM_LEDGER.json",
+  "package_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\llmlab_v2_test_tmp_20260907\\test_partial_timeout_blocks_au0\\state\\test-project\\directed\\directed-68400553822d46dbbf94168c55953e61\\package\\COMPLETE_PACKAGE.zip",
+  "package_sha256": "8d267ea904f0d98f198e00a711cf743fbe0ce6579797826ce4819efe94002987"
+}

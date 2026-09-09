@@ -1,0 +1,124 @@
+# CP20 TASK 8B3 — E3 MASTER FINDINGS
+
+## Primary branch verdict
+
+`[LEAD — CRITICAL-BRIDGE PROFILE SURVIVES]`
+
+No rigorous asymptotic theorem was obtained, and the audit stop rule did not
+fire.
+
+## 1. What was re-derived exactly?
+
+The following were independently re-derived from the E2 reduced recursion:
+
+1. On the fixed-((d,C)) critical line and after the explicit finite-domain
+   threshold,
+   
+   \[
+   e_{3^r}(2^{r+n_r(d)-1-C})
+   =\exp\!\left(2\pi i\,2^{d-1-C-\theta_r}\right).
+   \]
+
+2. The same-row term couples to (d-1), while the previous-row term couples
+   to (d+\varepsilon_r), where
+   (\varepsilon_r=1) for (\theta_r<\beta) and 0 for
+   (\theta_r>\beta).
+
+3. The inverse phase rotation is
+   (T\theta=\{\theta-\beta\}), with the exact left/right branch convention at
+   (\beta).
+
+4. For (H_{r,d,C}=rG_{r,n_r(d),C}),
+
+   \[
+   H_{r,d,C}
+   =\frac{\beta r+d-\theta_r}{\alpha r+d-1-\theta_r}H_{r,d-1,C}
+   +\frac{rP_{d,C}(\theta_r)}{\alpha r+d-1-\theta_r}
+   H_{r-1,d+\varepsilon_r,C}.
+   \]
+
+   Both exact (1/r) coefficient corrections are recorded in the limit report.
+
+5. Any sufficiently strong phase-profile limit must solve the infinite-offset
+   transfer equation
+
+   \[
+   K_d(\theta)=\frac\beta\alpha K_{d-1}(\theta)
+   +\frac1\alpha P_{d,C}(\theta)
+   K_{d+\varepsilon(\theta)}(T\theta).
+   \]
+
+   The operator is well defined and norm at most one on
+   (L^\infty(\mathbb T;\ell^\infty(\mathbb Z))), but that statement provides
+   neither an actual limit nor a nonzero fixed point.
+
+The unnormalized recursion also yields an exact Hadamard-product generating
+function identity.  Edge cases (n=0), (r=1), negative offsets, fixed signed
+(C), and approach to the branch discontinuity were accounted for explicitly.
+
+## 2. What was falsified?
+
+- A stable positive exponential-rate interpretation of the structured family
+  is further falsified as a finite-depth model: for ((-8,4)),
+  (gamma_{8000}\approx0.0012199); for ((-8,7)),
+  (gamma_{8000}\approx0.0012132).
+- A common stable alternative power (p\ne1) was not found.  All 25 final
+  frozen-window exponents lie in ([0.989269,1.023423]).
+- A square-root stretched exponential and an ordinary exponential both lose
+  the frozen final-window RMSE comparison to the power model for all 25 pairs.
+- The finite-precision-artifact hypothesis fails at the five predeclared
+  Decimal complex checkpoints.
+- A universal nonzero lower envelope for (r|F|) across all fixed pairs is
+  numerically untenable: ((3,0)) reaches (r|F|\approx3.13\times10^{-5}).
+
+These are finite-range falsifications and do not exclude eventual crossovers.
+
+## 3. What is only numerical?
+
+- The apparent (1/r) scale.
+- Stabilization of the 64-bin complex phase profiles.
+- The record-pair tail bounds
+  (8.44\le r|F_{-8,4}|\le9.58) and
+  (8.97\le r|F_{-8,7}|\le9.84) on (6800\le r\le8000).
+- Near-zero phase regions for pairs such as ((3,0)).
+- Every claim about which fit is preferable asymptotically.
+
+The computation itself is reproducible: 199,525 saved complex rows, 84 small
+enumeration checks, direct-phase engine comparisons, and 90-digit Decimal
+checks all pass the deterministic verifier.
+
+## 4. Was T1, T2, or T3 proved?
+
+No.
+
+- T1: not proved.
+- T2: not proved.
+- T3: not proved.
+
+## 5. What exact proof gap remains?
+
+The exact recurrence supplies no uniform bound or phase regularity for the
+scaled family and no closed finite-offset state space.  Even if compactness is
+assumed, the limiting equation is homogeneous and admits the zero solution.
+The branch at (\beta) couples (d+1) near phase (1^-) to (d) near phase
+(0^+), and its rotation orbit is dense.  No boundary/growth condition in
+(d), invariant functional, complex cone, or renewal forcing has been proved
+that both comes from the finite recursion and excludes zero.  This is the
+load-bearing gap.
+
+## 6. Did the audit stop rule fire?
+
+No.  There is no rigorous polynomial subsequence lower bound, nonzero profile
+asymptotic, positive-rate theorem, or other route-changing theorem.
+
+## 7. Single highest-information next action
+
+Prove or refute a **closed weighted-offset compactness/nontriviality lemma** for
+the exact critical recurrence: derive a rigorous boundary-layer truncation with
+uniform tail error, identify the induced (L^\infty) or bounded-variation
+transfer operator including the (\beta) branch matching, and determine whether
+every fixed point satisfying the inherited offset boundary condition is zero.
+This single step would decide whether the stable numerical profile can become
+T2 or whether the apparent (1/r) bridge must be replaced.
+
+Nothing in E3 proves Collatz.

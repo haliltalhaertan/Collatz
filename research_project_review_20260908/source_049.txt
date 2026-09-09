@@ -1,0 +1,50 @@
+# CP20 TASK 8B2 — D1-D ADVERSARIAL SPARSE-INJURY MASTER FINDINGS
+
+**Date:** 2026-08-27
+
+**Status:** `[NUM]` with finite `[LEAD]` plateau witnesses; no theorem.
+
+## Exact search rule
+
+The engine never prescribes injury status. It solves the canonical local congruence exactly and obtains `m_k`; `m_k=0` is therefore a genuine no-injury event.
+
+## Baseline finite search
+
+For kappa in `{1.06,1.5,2.0,2.7}` and corridor widths `M=3,4,6`, exact beam searches found moderate finite plateaus but no evidence of the D1-required unbounded multiplicative injury-gap subsequence.
+
+Best finite ongoing plateau ratios found after the startup region were about 1.83, 1.85, 1.63, and 2.25 respectively. Confirmed consecutive-injury ratios in the same finite prefixes stayed about 2.33 or below. These are `[NUM]`, not upper bounds.
+
+## Recursive controller
+
+An exact controller alternated corridor correction, genuine no-injury continuation when available, and canonical reset when required. At M=4:
+
+- kappa=1.06 survived to depth 691, maximum observed confirmed ratio ~2.1786;
+- kappa=1.5 survived to depth 101, maximum ~2.0;
+- kappa=2.0 survived to depth 10,000, maximum ~2.0;
+- kappa=2.7 survived to depth 10,000, maximum ~2.0.
+
+No recursive supermultiplicative-gap construction was found. No theorem forbidding it was found.
+
+## Task-8A finite-scale filter
+
+Selected finite candidates reaching diagnostic windows passed the finite U2/U3/U4-style pressure surrogates. Thus finite Task-8A feasibility does not by itself kill moderate exact plateaus. This is not a theorem-level Task-8A conclusion.
+
+## Finding-D interior dynamics
+
+Every tested pair of consecutive no-injury steps satisfied the exact Syracuse equality `a_k=v2(3c_k+1)`. Interior equality rate was 1.0 whenever defined.
+
+## D1-E bridge warning
+
+A concrete kappa=2.7, M=4 candidate has an open plateau after injury 48 through depth 108. At convergent denominator shift q=12, the mechanical phase word has common-prefix length 44 while the valuation word at the same aligned start has common-prefix length 0.
+
+Therefore a phase near-return alone does not force a valuation return. Any D1-E theorem must control the defect/choice mask.
+
+## Verdict
+
+No infinite LEVEL-2 countermodel was constructed. No universal obstruction was proved.
+
+Final D1-D status: `[OPEN]`, with finite `[LEAD]` witnesses and `[NUM]` search evidence.
+
+## Next task
+
+Proceed to D1-E as a defect-coupled return/repeated-factor attack targeted specifically at supermultiplicative exact-realizer plateaus.

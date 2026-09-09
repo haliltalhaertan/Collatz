@@ -1,0 +1,23 @@
+{
+  "status": "PARTIAL_PROVIDER_VISIBLE",
+  "step_id": "test-task:directed-68400553822d46dbbf94168c55953e61:0:v1",
+  "content": "",
+  "reasoning": "Synthetic reasoning only",
+  "reasoning_details": [],
+  "provider_attempts": [
+    {
+      "attempt_id": "0:attempt:1",
+      "client_call_id": "test-task:directed-68400553822d46dbbf94168c55953e61:0:v1:0:attempt:1",
+      "started_at": "2026-09-07T18:30:46.345241+00:00",
+      "status": "RETURNED",
+      "metadata": {
+        "generation_id": "gen-0"
+      },
+      "usage": {
+        "completion_tokens": 128,
+        "reasoning_tokens": 128,
+        "cost_usd": 0.0001
+      }
+    }
+  ]
+}

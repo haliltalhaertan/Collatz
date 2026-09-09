@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "start_checks": 2047,
+  "weight_cells": 66,
+  "scope": "theta=1 exact rational verification of conditional moment and Markov bound"
+}

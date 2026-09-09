@@ -1,0 +1,30 @@
+[
+  {
+    "type": "ESCALATION_CANDIDATE",
+    "statement": "{'escalation_candidate': 'Equal coarse blocks of logarithmic length intrinsically leave only about R/log R cyclic ranks, so the bare rotation argument produces log(R)/R rather than the requested 1/R.'}",
+    "action_taken": "RECORDED_ONLY",
+    "new_task_started": false,
+    "additional_budget_spent": 0
+  },
+  {
+    "type": "ESCALATION_CANDIDATE",
+    "statement": "{'escalation_candidate': 'Ties in coarse boundary sums invalidate the exact uniform distribution of N unless separately excluded or controlled.'}",
+    "action_taken": "RECORDED_ONLY",
+    "new_task_started": false,
+    "additional_budget_spent": 0
+  },
+  {
+    "type": "ESCALATION_CANDIDATE",
+    "statement": "{'escalation_candidate': 'The O(1) drift of the complete endpoint does not pass to the last full coarse-grid point because of the omitted remainder.'}",
+    "action_taken": "RECORDED_ONLY",
+    "new_task_started": false,
+    "additional_budget_spent": 0
+  },
+  {
+    "type": "ESCALATION_CANDIDATE",
+    "statement": "{'escalation_candidate': 'A generic exchangeability/cycle-lemma argument is insufficient; negative endpoint and exchangeability alone do not force a 1/n persistence probability.'}",
+    "action_taken": "RECORDED_ONLY",
+    "new_task_started": false,
+    "additional_budget_spent": 0
+  }
+]

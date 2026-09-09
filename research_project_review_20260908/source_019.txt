@@ -1,0 +1,340 @@
+# Checkpoint 10 — Bağımsız Adversarial Denetim
+
+**Denetim tarihi:** 15 Ağustos 2026 · **Yöntem:** rapordan ve önceki checkpoint'lerden bağımsız yeniden türetme + exact integer arithmetic + 60-hane decimal aritmetik + hedefli literatür taraması. Raporun `[EXACT]` etiketleri ve güven değerlendirmesi girdi olarak kullanılmadı.
+
+---
+
+## A. Executive verdict
+
+> ### **Proof düzeltilebilir.**
+
+Ana theorem zincirini kırmayı denedim ve **kıramadım**. Özellikle raporun iki yeni ve kritik adımı — `Σ_s E_{s,t} = O(ln²t)` composition error ve least-representative → auxiliary-start injection — sıfırdan, raporun ispat taslağına bakmadan yeniden kanıtlandı ve exact aritmetikle exhaustive test edildi. İkisi de ayakta.
+
+Bulduğum iki kusur **bookkeeping** düzeyinde, fakat biri literal haliyle growing-depth theorem'i çökertir. İkisi de tek satırla onarılıyor (§D).
+
+Verdict "proof sağlam" değil çünkü mevcut yazılı haliyle §5'teki uniform inequality bütün orbit'ler için doğru değil; "kritik gap var" da değil çünkü onarım matematiksel içerik gerektirmiyor.
+
+---
+
+## B. Ana theorem verdict'leri
+
+| İddia | Verdict | Not |
+|---|---|---|
+| `H_N = O(log log N)` her injective positive odd-only Syracuse orbit için | **[VALID]** (§D onarımlarıyla) | Bağımsız standalone proof §E'de |
+| `limsup H_N / ln ln N ≤ K* = 6.3274088946…` | **[VALID]** | K* 60 haneye doğrulandı; ayrıca **infimum'un gerçekten `c↓α`'da olduğu kanıtlandı** — rapor bunu yalnız limit olarak almıştı |
+| `X_N = O_ε((ln N)^{2.1091362982…+ε})` | **[VALID, düzeltmeyle]** | Sabit **orbit-dependent**: `X_N = 3n₀(U_N−1)`, yani `O_ε` içindeki sabit `n₀`'a lineer bağlı. Rapor bunu belirtmiyor |
+| `s_k ≤ log₂k + C eventually ⇒ H_N ≥ 3 ln ln N + O(1)` | **[VALID]** | `O(1)` sabiti `C` ve `n₀`'a bağlı; asymptotic ifade etkilenmiyor |
+| `H_N ≤ 3 ln ln N − ω(1) ⟺ X_N = o(log N)`, kritik katsayı `C=3` | **[VALID]** | `H_N = C ln ln N + o(·) ⇒ X_N = (ln N)^{C/3+o(1)}` de doğru |
+
+---
+
+## C. En kırılgan 5 lemma — tek tek sonuç
+
+### C.1 `Σ_s E_{s,t} = O((ln t)²)` — **[VALID]**
+
+Bu, raporun en riskli iddiasıydı ve raporda tek paragrafa sıkıştırılmış. Tam ispatı sıfırdan yazdım.
+
+**Adım 1 — tek-adım identity.** `ε_i = 1/[n_i(3n_i+1)] = 2^{-a_i}/(n_i n_{i+1})`. ✔ (exact)
+
+**Adım 2 — `n_i > Q_{s,i} n_s` yönü.** Affine identity `2^{A_{s,i}} n_i = 3^{i-s} n_s + B_{s,i}` ile `B_{s,i} = Σ_j 3^{i-s-1-j} 2^{A_{s,s+j}} > 0` (i>s). Bölünce `n_i = Q_{s,i}n_s + B_{s,i}2^{-A_{s,i}} > Q_{s,i}n_s`. **Yön ve strictness doğru.** Gerçek yörüngelerde test: 0 ihlal, minimum oran `n_i/(Q n_s) = 1.000108` — strict ama sıkı.
+
+**Adım 3 — kritik eşitsizlik.**
+```
+Q_{s,i} ε_i = (Q_{s,i}/n_i) · 1/(2^{a_i} n_{i+1}) < (1/n_s) · 1/(2 n_{i+1}) = 1/(2 n_s n_{i+1})
+```
+`a_i ≥ 1` kullanıldı. **[VALID]** — testte 0 ihlal, worst ratio tam 1.000000 (i=s, a_i=1'de eşitliğe yaklaşıyor).
+
+**Adım 4 — pair-graph toplamı.** Buradan
+```
+Σ_{s} E_{s,t} ≤ ½ Σ_{s} Σ_{j=s+1}^{s+t} 1/(n_s n_j).
+```
+`T = t²` eşiği, `S = {k : n_k ≤ T}`, `L = {k : n_k > T}`:
+
+- **her ikisi de S:** ≤ `(Σ_{k∈S} 1/n_k)² ≤ (Σ_{m tek ≤ t²} 1/m)² = (ln t + C₀)²`. *(Injectivity burada devreye giriyor: S'deki değerler farklı tek sayılar.)*
+- **s∈S, j∈L (ve simetriği):** her sabit uç için pencerede ≤ t eleman, hepsi > t² ⟹ iç toplam ≤ 1/t. Toplam ≤ `2(ln t + C₀)/t`.
+- **her ikisi de L:** AM–GM `1/(n_sn_j) ≤ ½(1/n_s² + 1/n_j²)`, her vertex ≤ 2t pair'de ⟹ ≤ `t·Σ_{m tek > t²} 1/m² ≤ 1/(2t)`.
+
+```
+Σ_s E_{s,t} ≤ ½(ln t + C₀)² + (ln t + C₀)/t + 1/(4t) = O((ln t)²)
+```
+
+**Kullanıcının 7 sorusuna cevap:**
+1. *Her pair kaç kez sayılıyor?* Her sıralı `(s,j)` çifti tam bir kez; "her ikisi de S" durumunda kasıtlı olarak fazla sayılıyor (üst sınır, geçerli).
+2. *Degree O(t) mi?* Evet, her vertex ≤ 2t pair'de (t ileri, t geri).
+3. *Small-state contribution?* Injectivity + tek sayı olma ⟹ `Σ_{k∈S}1/n_k ≤ ln t + O(1)`; karesi alınıyor. **Leading `ln²t` tam olarak buradan geliyor.**
+4. *Cauchy hangi quantity'ye?* Rapor "Cauchy" diyor; ben AM–GM ile `Σ1/n_k²` üzerinde yaptım — aynı sonuç, `square-summability` doğru quantity.
+5. *Injectivity yeterli mi?* **Evet, ve zorunlu.** Tek kullanıldığı yerler: `Σ 1/n_k² ≤ π²/8` ve small-set harmonic bound.
+6. *Uniform mu?* **Evet.** `C₀` mutlak (tek sayıların harmonic toplamından), `N`'den ve orbit'ten bağımsız. Bu, growing-depth için hayati.
+7. *Gizli t / t ln t / exponential faktör?* **Yok.** Ben de bulamadım; gerçek yörüngelerde `Σ_s E_{s,t}` t=2…256 arasında 0.05–0.29 bandında kaldı, `ln²t`'nin çok altında.
+
+> Bu lemma raporun en büyük gerçek kazancı ve **doğru**. Checkpoint 9'daki `O((3/2)^t)` error'ü ben de kullanmıştım; bu onun yerine geçiyor ve growing-`t`'yi mümkün kılan tek şey bu.
+
+### C.2 Least representative → auxiliary start — **[VALID]**
+
+Kullanıcının özellikle saldırmamı istediği 6–8 numaralı sorular dahil, tamamı temiz çıktı.
+
+**Kanıt.** `y` terminal unit class, `a` minimum word, `r_y` = `Q_t = 2·3^{t+1}` modülünde en küçük pozitif tek temsilci. Geriye adım: `x_j = (2^{a_j}x_{j+1} − 1)/3`.
+
+- **Integrality:** `3 | 2^{a_j}x_{j+1} − 1 ⟺ x_{j+1} ≡ (−1)^{a_j} (mod 3)`. Bu koşul `x_{j+1} mod 3`'e bağlı, o da `x_t mod 3^{t-j}`'ye. Hepsi `3^{t+1}` içinde, yani **yalnız `y`'nin class'ına bağlı, temsilciye değil.** Class forward-realizable olduğu için koşullar sağlanıyor.
+- **Oddness:** `2^{a}x − 1` tek, 3'e bölününce tek kalır. Otomatik.
+- **Positivity:** `x_{j+1} ≥ 1 ⟹ 2^{a_j}x_{j+1} − 1 ≥ 1 ⟹ x_j ≥ 1`. Aşağı doğru tümevarım. **Otomatik.**
+- **Exact valuation:** `3x_j + 1 = 2^{a_j}x_{j+1}`, `x_{j+1}` tek ⟹ `v₂ = a_j` tam. Otomatik.
+- **Unit mod 3:** `x_0 ≡ σ (mod 3)`, `σ∈{1,2}`; tek olduğu için `gcd(x_y,6)=1`.
+- **Injectivity `y ↦ x_y`:** `x_y`'nin valuation word'ü kendi Syracuse geçmişidir, yani `a` deterministik; forward `t` adım `r_y`'yi verir, `r_y` `y`'yi belirler. Dolayısıyla `x_y ↦ y` iyi tanımlı ⟹ `y ↦ x_y` injective.
+- **Eşitsizlik:** `2^{μ}r_y = 3^t x_y + B_a`, `B_a > 0` ⟹ `w_t(y)/r_y = 3^t/(2^{μ}r_y) < 1/x_y`. **Strict.**
+
+**Kullanıcının 6–8 numaralı şüphelerine doğrudan cevap:**
+- **(6) Minimum word ile least representative uyumlu olmak zorunda mı?** Zorunlu değil, **her zaman uyumlular**: integrality yalnız class'a bağlı, minimum word class'ı üretiyor. Test: t=3'te `y`'yi üreten **her** (word, class) çifti `r_y`'den sorunsuz invert oldu — 434/434.
+- **(7) Arbitrary representative geriye götürülebilir mi?** **Evet.** t=1,2,3 için `r_y, r_y+Q, …, r_y+5Q` temsilcilerinin tamamı (468 çift) test edildi: 0 başarısızlık.
+- **(8) 2-adic realizability ile 3-adic terminal congruence karıştırılıyor mu?** **Hayır.** Karıştırma yok çünkü backward inversion 2-adic realizability'ye hiç ihtiyaç duymuyor — yalnız mod 3 integrality zinciri ve pozitiflik kullanılıyor, ikisi de yukarıda otomatik.
+
+**Exhaustive test (t=1..5, tüm `2·3^t` unit class):** forward re-run word'ü ve `r_y`'yi birebir üretiyor, affine identity tutuyor, `B_y>0`, `w/r < 1/x` strict, `x_y` çiftler halinde farklı ve `gcd(x_y,6)=1`. **Toplam 0 başarısızlık.**
+
+### C.3 Boundary harmonic katsayısı `1/3` — **[VALID]**
+
+`x_y`'ler 6'ya asal farklı pozitif tam sayılar; yoğunluk `φ(6)/6 = 1/3`. İlk `M` tanesi ≈ `3M`'e kadar uzanır, `Σ_{n≤3M, (n,6)=1} 1/n = (1/3)ln(3M) + O(1) = (1/3)ln M + O(1)`. ✔
+
+Stirling: `ln(2·C(⌊ct⌋,t)) = h(c)t + O(ln t)` — `ln t` terimleri tam olarak sadeleşiyor, `⌊·⌋` farkı `O(1)`. ✔ Hockey-stick `Σ_{A=t}^{L} C(A−1,t−1) = C(L,t)` ✔ ve `#G_t ≤ 2C(L,t)` sayısal olarak t=2..10'da doğrulandı (collision'lar sınırı **gevşetiyor**, sıkılaştırmıyor — yön doğru).
+
+### C.4 Uniform fixed-`t` inequality — **[VALID, iki onarımla]** → §D
+
+### C.5 Growing depth `t = t(N)` — **[VALID]**
+
+`t(N) = ⌈(lnlnN + 2lnlnlnN)/I(c)⌉` ile:
+- `p_t(c)·lnN ≤ e^{−I(c)t}lnN ≤ 1/(lnlnN)² → 0` ✔
+- `η_t ≤ 2^{−(c−α)t} → 0` ✔ (`c>α` şart, sağlanıyor)
+- `(ln t)² = o(t)` ✔
+- `[h(c)/3]t = F(c)·lnlnN·(1+o(1))`, `F(c) = h(c)/(3I(c))` ✔
+
+**Quantifier sırası (raporda açık yazılmamış, doğrusu):**
+> `∀c ∈ (α,2)` **önce sabitlenir** → `∀ε>0 ∃N₀ ∀N≥N₀ : H_N/lnlnN < F(c)+ε` → dolayısıyla `limsup ≤ F(c)` → **sonra** `inf_{c>α} F(c)` alınır.
+
+`c`'de uniformity **gerekmiyor**, çünkü infimum limsup'tan sonra alınıyor ve `F` `c=α`'da sürekli (`I(α) = ln3 − h(α) = 0.0549794… > 0`). ✔ Legitimate.
+
+**Ek bulgu (rapor bunu yapmamış):** rapor yalnızca `c↓α` limitini alıyor; iç noktada daha iyi bir `c` olup olmadığını sormuyor. Kanıtladım ki yok:
+```
+d/dc [h/(3I)]  ∝  c·h′(c) − h(c) = −ln(c−1) > 0   (1<c<2)
+```
+(60 hane kontrolüyle doğrulandı). Yani **`F` `(1,2)` üzerinde kesin artan**, infimum gerçekten `c↓α`'da ve `K*` bu proof architecture içinde **optimal**. Rapor doğru sabiti bulmuş ama optimalliğini göstermemiş.
+
+---
+
+## D. Bulunan kusurlar
+
+### [GAP — FIXABLE, literal haliyle theorem'i çökertir] İlk blok exceptional term
+
+`§5`'in uniform inequality'sinde initial exceptional terim yok. Telescoping `s = 0`'dan başlarsa `k = t` teriminde zincir `n₀`'dan başlar ve `n₀ ≡ 0 (mod 3)` mümkündür; o durumda domination lemma uygulanamaz ve elde kalan tek sınır
+
+```
+W_{0,t}/n_t ≤ (3/2)^t
+```
+
+Growing depth'te `t ≈ 18.2·lnlnN`, dolayısıyla `(3/2)^t ≈ (lnlnN)^{7.38}` — **`lnlnN`'i ezip geçer, `H_N = O(lnlnN)` çöker.**
+
+**Onarım (tek satır):** `H_N = 1/n₀ + Σ_{1≤s<N} 1/n_s` yazıp telescoping'i `s ≥ 1`'den başlat. `n_k` her `k ≥ 1` için mod 3 unit olduğundan bütün zincirler unit chain olur, exceptional terim `1/n₀ ≤ 1`'e iner. Matematiksel içerik gerekmiyor; ama yazılmalı.
+
+*(Not: bu terim benim Checkpoint 9 manuscript'imde de vardı ve orada `t` sabit olduğu için zararsızdı. Growing `t`'de zararsız değil.)*
+
+### [GAP — FIXABLE, ihmal edilebilir] Bad-class toplamının indeks aralığı
+
+Telescoping `k ≤ N+t−1`'e kadar terim üretiyor, dolayısıyla bad-class absorption `η_t·H_N` değil `η_t·H_{N+t}` veriyor. `H_{N+t} ≤ H_N + t` ve `η_t·t ≤ t·2^{−(c−α)t} → 0`, yani `o(1)`. Sonucu etkilemiyor ama inequality'de görünmeli.
+
+### [OVER-INTERPRETATION] §12 cross-t coherence
+
+`W_{k,t+1} = W_{k,t}·3/2^{a_{k−t−1}}` exact ✔, all-`a=1` word'lerin realizable olması da ✔. Fakat rapordaki `[FAIL]` etiketi fazla güçlü: bu yalnız **local** bir counterexample. All-1 word'ün realizer'ları `2^{A+1}` modülünde bir sınıf oluşturur, yani **büyük** integer'lardır — bu tam olarak `x_y`'nin büyüklüğünü zorlayan mekanizmadır ve §18'in aradığı correlation'ın ta kendisi. "Cross-t coherence tek başına entropy loss vermiyor" doğru; "cross-t coherence + least-representative kısıtı entropy loss vermiyor" **gösterilmedi**. Etiketi `[FAIL as standalone]` → `[OPEN, birleşik haliyle]` olmalı.
+
+### Doğru bulunan diğer yan iddialar
+
+- **§14 synthetic B=1 path — [VALID].** `2α ∈ (3,4)` ⟹ `⌊x+2α⌋−⌊x⌋ ≥ 3` ⟹ ardışık iki `m_k=1` imkânsız ✔. `a_k = m_k + s_k − s_{k+1}` ✔. Her finite prefix realizable (Terras/Everett sınıfı mod `2^{A+1}` boş değil) ✔. Infinite word'ün tek bir pozitif tam sayı tarafından realize edilmesinin **follow etmemesi** de doğru: iç içe sınıflar bir 2-adic integer'a yakınsar, rasyonel/pozitif olması gerekmez. Raporun bu bölümü sağlam.
+- **§13 mod 5/7 local surjectivity — [VALID].** Trivial: `p ∤ 6` için `x = (2^a y − 1)/3` mod `p^m` tek türlü çözülür ve `2^{a+1}`, `3`, `p^m` modülleri ikişer ikişer aralarında asal olduğundan CRT ile bağımsız seçilir. Yeni forbidden residue yok. ✔
+- **§10 Taylor correction `[EXACT/FAIL]` — [VALID].** `0 ≤ H_N − 3lnU_N ≤ (1/6)Σ1/n_k² ≤ π²/48` ✔ sabitini bağımsız çıkardım, birebir.
+
+**Counterexample bulunamadı.** Ne ana theorem'e, ne iki kritik lemma'ya.
+
+---
+
+## E. Bağımsız standalone proof (sıkıştırılmış)
+
+Yörüngeyi `n₁`'den başlat (WLOG, `n_k` her `k≥1` için mod 3 unit). `α=log₂3`, `c∈(α,2)`, `L=⌊ct⌋`, `Q_t=2·3^{t+1}`.
+
+1. **Reciprocal identity.** `1/n_k = (3/2^{a_k})/n_{k+1} + ε_k`, `ε_k = 1/[n_k(3n_k+1)]`.
+2. **Composition.** `1/n_s = W_{s,t}/n_{s+t} + E_{s,t}`, `W_{s,t}=3^t/2^{A_{s,t}}`; §C.1 ile `Σ_s E_{s,t} ≤ ½(ln t + C₀)²`.
+3. **Domination.** `A_{s,t} ≥ μ_t(y)`, `y = n_{s+t} mod 3^{t+1}` ⟹ `W_{s,t} ≤ w_t(y) = 3^t2^{−μ_t(y)}`.
+4. **Packing.** Sınıf içi elemanlar `r_y mod Q_t`'de ⟹ `Σ 1/n_k ≤ 1/r_y + (1+ln M)/Q_t`.
+5. **Good/bad.** `μ_t ≤ L`: `Σ_{good} w_t(y) ≤ 2·3^t p_t(c)`, `2·3^t/Q_t = 1/3`. `μ_t > L`: `w_t(y) ≤ η_t = 2^{αt−L−1}`, absorbe edilir.
+6. **Boundary.** §C.2 injection + §C.3 ⟹ `B_t(c) ≤ Σ_{good}1/x_y ≤ (1/3)ln#G_t + O(1) ≤ [h(c)/3]t + O(ln t)`.
+7. **Uniform inequality.**
+   ```
+   (1−η_t)H_N ≤ [p_t(c)/3](ln N + 2) + [h(c)/3]t + O((ln t)²) + η_t t + 1
+   ```
+   — bütün sabitler mutlak, orbit'ten ve `N`'den bağımsız.
+8. **Chernoff.** `p_t(c) ≤ e^{−I(c)t}`, `I(c) = c ln2 − h(c)`; bunu bağımsız çıkardım ve Checkpoint 9'daki `λ_c = (c/2)(2(c−1)/c)^{1−c}` ile **birebir aynı** olduğunu doğruladım: `ln λ_c = h(c) − c ln 2 = −I(c)`.
+9. **Growing depth + `c↓α`.** §C.5 ⟹ `limsup H_N/lnlnN ≤ K* = h(α)/[3(ln3−h(α))]`.
+
+---
+
+## F. Computational reproduction
+
+Raporun kodu kullanılmadı; `μ_t`'yi tamamen farklı bir formülasyonla hesapladım — affine `B_a` yerine normalize edilmiş özyineleme
+```
+z₀ = 0,   z_{j+1} = 2^{−a_j}(3z_j + 1) mod 3^{t+1},   y = z_t + 3^t·τ,  τ∈{1,2}
+```
+(Bu özdeşliği t=1'de elle de doğruladım: a=1→{2,8}, a=2→{1,4}, a=3→{2,5}, a=4→{7,1}.)
+
+**`μ_t` dağılımları:** t=1..6 için toplamlar tam `2·3^t` (6, 18, 54, 162, 486, 1458) ve Checkpoint 9 tablosuyla **birebir aynı**. Counting lemma `#{μ_t=A} ≤ 2C(A−1,t−1)` hiçbir yerde ihlal edilmedi.
+
+**`B_t(1.6)` — bağımsız exact (Fraction) reprodüksiyon:**
+
+| t | L | #G_t | B_t (benim) | B_t (rapor) | fark |
+|---|---|---|---|---|---|
+| 4 | 6 | 26 | 0.243571 | 0.243571 | — |
+| 8 | 12 | 771 | 0.431247 | 0.431248 | son hane yuvarlama |
+| 10 | 16 | 10 881 | 0.559227 | 0.559227 | — |
+| 12 | 19 | 66 897 | 0.551829 | 0.551829 | — |
+
+**Mismatch yok.** `r_y` tanımının `Q_t = 2·3^{t+1}` modülünde least positive **odd** representative olduğu teyit edildi (`y` tek ise `y`, değilse `y + 3^{t+1}`). t=14/16 hesabı bu ortamda (numpy yok, saf Python) hâlâ sürüyor; t≤12'nin tam uyumu göz önüne alındığında t=14,16 değerlerinin de doğru olduğunu varsaymak makul, ama **bağımsız teyit edilmedi** olarak kaydediyorum.
+
+Ek olarak `Σ_{y∈G_t} 1/x_y` hesaplandı ve her t için `B_t < Σ1/x_y ≤ (1/3)ln#G_t + 1` zinciri sayısal olarak doğrulandı.
+
+---
+
+## G. Coefficient audit — `3` vs `6.3274…`
+
+Yüksek hassasiyet (60 hane) doğrulaması:
+
+```
+α          = 1.58496250072115618145373894394781650876
+h(α)       = 1.04363281585729261972239484653232013851
+α·ln2      = 1.09861228866810969139524523692252570465 = ln 3      ✔
+I(α)       = 0.05497947281081707167285039039020556613
+3I(α)      = 0.16493841843245121501855117117061669840   (rapor: 0.1649384184 ✔)
+h(α)/3     = 0.34787760528576420657413161551077337950   (rapor: 0.3478776053 ✔)
+K*         = 6.32740889463967670234522816827908235886   (rapor: 6.327408894639676 ✔)
+K*/3       = 2.10913629821322556744840938942636078629   (rapor: 2.109136298213225 ✔)
+gereken tasarruf = 52.5872272528…%                       (rapor: %52.59 ✔)
+```
+
+**Gap'in tam kaynağı.** Upper bound'un `lnlnN` katsayısı tam olarak `B_t(c)`'nin lineer-`t` katsayısının `I(c)`'ye oranıdır. Zincirdeki diğer her şey `o(t)`:
+
+| terim | büyüklük | katsayıya katkısı |
+|---|---|---|
+| composition error | `O(ln²t)` | 0 |
+| tail / Stirling | `O(ln t)` | 0 |
+| bad-class absorption | `η_t → 0` | 0 |
+| good-class × ln N | `p_t(c)lnN → 0` | 0 |
+| **least-representative boundary `B_t(c)`** | **`≤ [h(c)/3]t`** | **`h(c)/(3I(c))`** |
+
+`c↓α`'da `h(α)/3 = 0.34788` ve gereken `3I(α) = 0.16494` ⟹ oran **2.10914**. Bu sayı `K*/3` ile aynıdır ve `K*/3 − 1 = 1.1091362982…` de §7.1'deki second-order corollary eşiğidir — rapor tutarlı.
+
+**Neden bu architecture içinde `K* < 3` imkânsız:** `F(c) < 3 ⟺ 10h(c) < 9c·ln2 ⟺ h(c)/c < 0.9ln2 = 0.62383`. `h(c)/c` artan ve `h(α)/α = 0.65846`. Yani `c ≲ 1.47` gerekirdi, ama `c > α = 1.585` zorunlu. **Çelişki — mevcut `B_t` sınırıyla `3` altına inmek matematiksel olarak mümkün değil.** Gap gerçek, kozmetik değil.
+
+---
+
+## H. Missing Boundary Lemma — evet, her şey `B_t(c)`'ye iniyor
+
+**Cevap: Evet.** §G tablosu bunu terim terim gösteriyor. Raporun bu indirgemesi doğru ve iddiasından daha güçlü biçimde doğru.
+
+**Yeterlilik cebirsel olarak doğrulandı:** `t ≍ lnlnN/I(c)` olduğundan `B_t(c) ≤ (3I(c)−δ)t + o(t)` ⟹ `H_N ≤ (3 − δ/I(c))lnlnN` ⟹ B=1'in zorunlu `3lnlnN` lower bound'uyla çelişir. ✔ `B_t(c) = o(t)` ise `H_N = o(lnlnN)` — fazlasıyla yeter.
+
+### H.1 Rapor kendi verisini hafife alıyor
+
+`c=1.6` için gereken eşik `3I(1.6)·t = 0.15160·t`. Raporun kendi tablosu:
+
+| t | B_t | gereken eşik | **oran** | rigorous sınır `h·t/3` |
+|---|---|---|---|---|
+| 4 | 0.2436 | 0.6064 | **0.402** | 1.411 |
+| 8 | 0.4312 | 1.2128 | **0.356** | 2.823 |
+| 10 | 0.5592 | 1.5160 | **0.369** | 3.528 |
+| 12 | 0.5518 | 1.8192 | **0.303** | 4.234 |
+| 14 | 0.5362 | 2.1224 | **0.253** | 4.940 |
+| 16 | 0.5098 | 2.4257 | **0.210** | 5.645 |
+
+Finite veri gerekli eşiğin **zaten 5 kat altında** ve oran `t=10`'dan itibaren monoton düşüyor. Dahası `B_t` t=10'da tepe yapıp **azalıyor** — bu `B_t = o(t)` değil, doğrudan `B_t = O(1)` profili.
+
+**`B_t = O(1)` kanıtlanırsa ne olur:** `H_N ≤ B_∞ + O((ln lnlnN)²) + o(1) = O((lnlnlnN)²)`, ki `3lnlnN + O(1)` ile çelişir. Yani **her `C` için `s_k ≤ log₂k + C` imkânsız olur ⟹ `limsup(s_k − log₂k) = +∞`** — B=1 sadece kırılmaz, ezilir. Rapor bunu "umut verici lead" diye geçiyor; aslında verisi çok daha keskin bir hedefe işaret ediyor.
+
+### H.2 **Kritik yeni bulgu: `B_t(c)` Rozier'in LBH'siyle aynı nesne — ve LBH yetmiyor**
+
+Rozier'in Lower Bound Hypothesis'i (Hypothesis 2.3, *Funct. Approx.* 56 (2017)):
+> `∃C ≥ 0` öyle ki `n, T(n), …, T^{j−1}(n)` tam `q` tek terim içeriyorsa `n ≥ j^{−C}·2^{(1−H(q/j))j}`, `H` = binary entropy.
+
+**Sözlük.** `t` Syracuse adımı, total valuation `A = ct` ⟹ T-map'te `j = A` adım, `q = t` tek terim, ones-ratio `r = 1/c`. Exponent'i çevirdim ve **tam özdeşlik** çıktı (38 haneye doğrulandı):
+```
+(1 − H(1/c))·c = I(c)/ln 2
+```
+Yani **LBH'nin entropy exponent'i tam olarak Checkpoint 10'un `I(c)` rate function'ıdır.** `x_y`'ler tam olarak LBH'nin konuştuğu "verilen ones-ratio'lu parity vector'ün least starting value"larıdır. Bu tesadüf değil; `B_t(c)` LBH'nin **harmonic-ağırlıklı** versiyonudur.
+
+**Ama — ve bu önemli — LBH tek başına yetmiyor.** LBH ⟹ her `x_y ≥ t^{−C}e^{I(c)t}`; `#G_t ≈ e^{h(c)t}` tane distinct 6'ya-asal tam sayının harmonic toplamı ⟹
+```
+B_t(c) ≤ [(h(c) − I(c))/3]·t + O(ln t)
+```
+`c↓α`'da `(h−I)/3 = 0.32955`, gereken `3I = 0.16494`. **Oran 1.998** — mevcut 2.109'dan yalnız %5 iyileşme. Hâlâ 2 kat yetersiz.
+
+> **Sonuç:** `B_t(c) = o(t)`, LBH'nin *pointwise minimum* ifadesinden çıkmıyor. Gereken şey `x_y`'lerin **dağılımıdır** — yani `#{y ∈ G_t : x_y ≤ M}` sayma fonksiyonu üzerinde kontrol. Checkpoint 11 hedefi bu şekilde formüle edilmeli.
+
+### H.3 Doğru mekanizma nerede (§20 için)
+
+Heuristik olarak `x_y ≤ M` olması `x`'in `t`-adım Syracuse word'ünün total valuation'ının `≤ ct` olmasını gerektirir; Terras/Everett ile bu `2^{A+1}` modülünde `≈ e^{−I(c)t}` yoğunluklu bir olaydır. Buradan
+```
+#{y : x_y ≤ M} ≲ (M/3)·e^{−I(c)t}  ⟹  Σ 1/x_y ≲ (1/3)e^{−I(c)t}·ct·ln2 → 0
+```
+ki bu `B_t = o(1)` verir ve finite veriyle uyumludur. **Rigorous engel tam olarak şudur:** bu yoğunluk ifadesi ancak `M ≫ 2^{ct}` için Terras'tan çıkar; `M` küçükken "iyi residue sınıfları küçük tam sayı içermez" demek gerekir — ki bu tam olarak LBH'dir. Yani ihtiyaç duyulan şey LBH'nin *ortalama/dağılımsal* bir formu: pointwise minimum değil, sayma fonksiyonu.
+
+Ek olarak §12'deki all-`a=1` gözlemi burada **negatif değil pozitif** kanıt: minimum-valuation word'lerin realizer'ları `2^{A+1}` modülünde yaşadığı için büyük olmak zorundadır; aranan korelasyon budur.
+
+---
+
+## I. Literatür / novelty
+
+**Verdict: [CLOSE PRIOR ART] (makine) + [NO EXACT MATCH FOUND] (statement).**
+
+- **Rozier (2017), LBH.** `B_t(c)`'nin doğrudan atası. Entropy exponent'i `I(c)` ile **tam özdeş** (§H.2). Fakat LBH bir hipotezdir ve bir `H_N` ifadesi vermez.
+- **De Jesús (2026), *A Global Occupation Conjecture…*** Aynı çevre: injective orbit'ler üzerinde harmonic packing, Eliahou–Rozier product identity, ve **aynı `I(log₂3)` rate function**. Orada LBH ⟹ `O_c(m₀) ≤ I(log₂3)^{−1}log₂m₀ + O(log log m₀)`. Bu bir *occupation count* ifadesidir, `Σ1/n_k` değil.
+- **Tao (2019/2022).** Geometric(1/2) valuation modeli ve 3-adic transport — aynı araç ailesi, ama logarithmic-density almost-all setting'i; pointwise injective orbit ifadesi değil.
+- **Terras/Everett.** Parity-vector realizability klasik.
+
+Hedefli taramada `H_N = O(log log N)` (her injective positive odd-only Syracuse orbit için), `limsup H_N/lnlnN < ∞`, veya pointwise `X_N = O((log N)^C)` ifadelerinin doğrudan eşleşmesini **bulamadım**. Bu bir öncelik iddiası değildir: tarama theorem-statement düzeyinde, açık erişimli kaynaklar üzerinde yapıldı; MathSciNet tam taraması yapılmadı.
+
+Raporun §18'deki temkinli dili doğru ve korunmalı.
+
+---
+
+## J. Publication readiness
+
+> ### **Expert review gerekli — ve standalone preprint adayı.**
+
+Checkpoint 9 manuscript'inden farklı olarak buradaki iki yeni lemma gerçekten yeni matematiktir ve ikisi de denetimden geçti. Yayın öncesi zorunlu iş listesi:
+
+1. §D'deki initial-block onarımını yaz (**zorunlu** — literal haliyle theorem yanlış).
+2. Bad-class indeks aralığını düzelt (`η_t·t = o(1)`).
+3. `X_N` bound'undaki `n₀`-bağımlılığını açıkça belirt.
+4. `F(c)`'nin kesin artan olduğunu ve dolayısıyla `K*`'ın bu architecture içinde optimal olduğunu ekle (`c·h′−h = −ln(c−1)`).
+5. §C.1 ve §C.2'yi tam ispat olarak yaz — şu an her biri tek paragraf; ikisi de theorem'in taşıyıcı kolonu.
+6. §12'nin `[FAIL]` etiketini `[OPEN]`'a çevir.
+7. Quantifier sırasını (`c` sabit → `N→∞` → `inf_c`) açıkça yaz.
+8. `B_t(c)` ↔ LBH sözlüğünü ekle (§H.2) — hem literatür konumlandırması hem de Checkpoint 11'in doğru hedefi için.
+9. Exact enumeration kodunu supplementary olarak yayınla.
+
+---
+
+## K. Confidence
+
+| İddia | Güven | Gerekçe |
+|---|---|---|
+| `H_N = O(log log N)` | **high** | Zincirin her adımı bağımsız türetildi; iki kritik lemma sıfırdan kanıtlandı + exhaustive test. Checkpoint 9'a göre bir tık düşük tutuyorum çünkü §D'deki onarım gerekli ve zincir belirgin biçimde daha uzun. |
+| `K* = 6.3274088946…` | **very high** | 60 hane doğrulama + optimalliğin analitik kanıtı. |
+| `X_N` polylog | **high** | `H_N`'den mekanik olarak çıkıyor; tek çekince `n₀`-bağımlılığının yazılması. |
+| Reduction to `B_t(c)` | **very high** | Terim terim doğrulandı; başka hiçbir terim lineer-`t` katkı yapmıyor. |
+| `B_t(c) = o(t)` (açık lemma) | *conjecture* | Finite veri güçlü, LBH bağlantısı yapısal — ama LBH'nin kendisi bile yetmiyor (§H.2). Bunu "yakında düşecek" diye okumayın. |
+
+---
+
+## Son cevap — iki ana soru
+
+**1. Checkpoint 10 gerçekten `H_N = O(log log N)` kanıtlıyor mu?**
+**Evet** — §D'deki iki bookkeeping onarımıyla. Kırmaya çalıştım; kıramadım. İki yeni lemma da bağımsız olarak ayakta.
+
+**2. Collatz'ı çözüyor mu / B=1 yalnız `B_t(c)`'ye mi kalıyor?**
+**Çözmüyor.** Elde `3 ≤ borderline katsayı ≤ 6.3274` gap'i kalıyor ve `3 < 6.3274` olduğu için hiçbir çelişki yok. Bütün mevcut sonuçları birleştirdim — ikinci mertebe corollary dahil — B=1'i contradiction'a götüren gizli bir zincir **yok**.
+
+Ve evet, gap tamamen `B_t(c)`'ye iniyor; bunu terim terim doğruladım. Ama raporun ima ettiğinden daha zor bir yere iniyor: `B_t(c)` Rozier'in LBH'siyle aynı aritmetik nesnedir, **ve LBH'nin kendisi bile yeterli değildir**. Gereken, LBH'nin dağılımsal bir güçlendirmesidir.

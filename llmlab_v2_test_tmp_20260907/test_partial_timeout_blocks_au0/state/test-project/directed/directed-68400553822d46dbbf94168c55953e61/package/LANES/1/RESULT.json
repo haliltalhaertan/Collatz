@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "task_id": "test-task",
+  "run_id": "directed-68400553822d46dbbf94168c55953e61",
+  "lane_id": "1",
+  "role": "Theorist",
+  "model": "fake/model",
+  "reasoning_effort": null,
+  "step_id": "test-task:directed-68400553822d46dbbf94168c55953e61:1:v1",
+  "provider_attempts": [
+    {
+      "attempt_id": "1:attempt:1",
+      "client_call_id": "test-task:directed-68400553822d46dbbf94168c55953e61:1:v1:1:attempt:1",
+      "started_at": "2026-09-07T18:30:46.358335+00:00",
+      "status": "INTERRUPTED",
+      "metadata": {
+        "generation_id": "gen-1"
+      },
+      "usage": {},
+      "error_type": "TimeoutError"
+    }
+  ],
+  "status": "TIMEOUT",
+  "public_findings": "",
+  "claim_results": [
+    {
+      "claim_id": "claim",
+      "statement": "Given identity",
+      "status": "OPEN",
+      "domain": "real x",
+      "assumptions": [
+        "Declared definition"
+      ],
+      "first_missing_step": "Synthetic timeout",
+      "evidence_files": [
+        "EVIDENCE.json"
+      ]
+    }
+  ],
+  "scope_compliance": {
+    "scope_changed": false,
+    "undeclared_tools_used": false,
+    "undeclared_inputs_used": false,
+    "budget_exceeded": false
+  },
+  "usage": {
+    "wall_seconds": 0.04177700000582263
+  },
+  "integrity_issues": [],
+  "independence_level": "ISOLATED_INPUTS_SHARED_COORDINATOR",
+  "unexpected_findings": [],
+  "first_missing_step": "Synthetic timeout",
+  "output_hash_scope": "canonical JSON excluding output_sha256",
+  "output_sha256": "2670f60078e7d87bcfeee97c959b061b4153e03106f6fe218fec8cf781a2a041"
+}

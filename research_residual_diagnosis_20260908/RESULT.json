@@ -1,0 +1,20 @@
+{
+  "original_unresolved": 10327,
+  "categories": {
+    "tail_descent": 1,
+    "no_contracting_checkpoint": 10323,
+    "no_checkpoint": 3
+  },
+  "new_minimum_excluded": 1,
+  "remaining": 10326,
+  "max_threshold": 1,
+  "base_checks": [
+    {
+      "r": 0,
+      "t": 0,
+      "n": 20,
+      "steps": 6
+    }
+  ],
+  "scope": "Tail merging plus individually verified finite bases; not convergence of entire cylinders."
+}

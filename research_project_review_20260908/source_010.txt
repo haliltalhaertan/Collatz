@@ -1,0 +1,2569 @@
+# Collatz Problemi Araştırma Checkpoint 2
+
+**Tarih:** 14 Ağustos 2026
+**Ana araştırma hattı:** (F\_K) extremal problemi → explicit finite bound → first-crossing Diophantine obstruction → CST bağlantısı → mechanical barrier path'in (2)-adik/Archimedean analizi.
+
+Bu checkpoint, Checkpoint 1'de belirlenen iki karşı-örnek rejimini mümkün olduğunca sıkıştırmak üzere hazırlanmıştır. Yan hatlar — asal yapı, genel (an+b) sistemleri, geniş görselleştirmeler ve bağımsız istatistik deneyleri — **[PARK]** durumunda tutulmuştur.
+
+---
+
+## Beş ana sorunun kısa cevabı
+
+### 1. (F\_K) eşitliği doğru mu?
+
+**Evet. [EXACT]**
+
+[
+\boxed{
+F\_K=
+\sum\_{j=0}^{K-1}
+2^{-{j\log\_2 3}}
+}
+]
+
+burada ({x}=x-\lfloor x\rfloor).
+
+Extremizer:
+
+[
+\boxed{
+A\_j=\lfloor j\log\_2 3\rfloor
+}
+]
+
+ve valuation word:
+
+[
+\boxed{
+a\_j=
+\lfloor(j+1)\log\_2 3\rfloor-
+\lfloor j\log\_2 3\rfloor
+\in{1,2}.
+}
+]
+
+Coordinatewise optimizasyon gerçekten aynı anda gerçekleştirilebiliyor.
+
+---
+
+### 2. En güçlü rigorous finite-(K) upper bound ne?
+
+Üç seviye elde edildi.
+
+Elementary, bütün (K) için:
+
+[
+\boxed{
+F\_K\le\frac78K+\frac18.
+}
+]
+
+Daha güçlü pointwise Denjoy–Koksma/Ostrowski bound:
+
+[
+\boxed{
+F\_K\le
+\frac{K}{2\ln2}+s\_\beta(K),
+}
+]
+
+burada
+
+[
+\beta=\log\_2(3/2)
+]
+
+ve (s\_\beta(K)), (K)'nin canonical Ostrowski expansion'ındaki digit toplamıdır.
+
+Özellikle certified continued-fraction prefix kullanılarak:
+
+[
+\boxed{
+F\_K\le
+\frac{K}{2\ln2}+121
+\qquad
+(1\le K<137,528,045,312).
+}
+]
+
+Daha dar aralıkta:
+
+[
+\boxed{
+F\_K\le
+\frac{K}{2\ln2}+120
+\qquad
+(K<65,470,613,321).
+}
+]
+
+Asymptotik katsayı:
+
+# [ \boxed{ \mu=\frac1{2\ln2}
+
+0.7213475204444817\ldots
+}
+]
+
+---
+
+### 3. İlk-crossing bound ne kadar yükseldi?
+
+Checkpoint 1 sonucu sıfırdan yeniden üretildi:
+
+[
+\boxed{
+K\ge49,547,666,544.
+}
+]
+
+Yalnız yeni (F\_K) bound'u kullanılıp eski Legendre mimarisi korunursa:
+
+[
+\boxed{
+K\ge58,337,919,098.
+}
+]
+
+Bu yaklaşık:
+
+[
++17.741%
+]
+
+iyileştirmedir.
+
+Fakat one-sided continued-fraction/Farey analizi daha güçlü:
+
+[
+\boxed{
+K\ge72,057,431,991.
+}
+]
+
+Bu Checkpoint 1 bound'una göre:
+
+[
+\boxed{
++22,509,765,447
+}
+]
+
+odd-only adım ve yaklaşık:
+
+[
+\boxed{
++45.43%
+}
+]
+
+iyileşmedir.
+
+Önemli ayrım:
+
+> (49.5\to58.3) milyar sıçraması esas olarak yeni (F\_K) bound'undan;
+> (58.3\to72.1) milyar sıçraması ise Legendre yerine one-sided rational approximation kullanılmasından geliyor.
+
+---
+
+### 4. (K\_D=K\_S), Terras CST ile aynı şey mi?
+
+**Hayır; doğrudan aynı statement değil.**
+
+[EXACT]
+
+[
+\boxed{
+\text{CST}\Longrightarrow K\_D=K\_S.
+}
+]
+
+Odd başlangıç için daha kesin olarak:
+
+[
+\boxed{
+K\_D=q\_{\tau(n)},
+\qquad
+K\_S=q\_{t(n)},
+}
+]
+
+burada (q\_j), ilk (j) shortcut adımındaki odd terim sayısıdır.
+
+Dolayısıyla (K\_D=K\_S):
+
+[
+q\_{\tau(n)}=q\_{t(n)}
+]
+
+demektir; yani coefficient crossing ile gerçek stopping aynı **odd block** içinde gerçekleşir.
+
+CST ise çok daha hassas olarak:
+
+[
+\boxed{
+\tau(n)=t(n)
+}
+]
+
+ister.
+
+Bu nedenle (K\_D=K\_S), CST'nin **block-level consequence**'ıdır.
+
+Ters yönün gerçek Collatz dinamiğinde zorunlu olup olmadığı şu anda kanıtlanmış görünmüyor:
+
+[
+\boxed{
+K\_D=K\_S\Rightarrow\mathrm{CST}
+\quad\text{[OPEN].}
+}
+]
+
+Dolayısıyla önceki sayısal gözlem CST'nin birebir yeniden yazımı değildir.
+
+---
+
+### 5. Extremal mechanical word'ün (2)-adik integer'ı pozitif ordinary integer olabilir mi?
+
+**Hayır. [EXACT]**
+
+Mechanical word:
+
+[
+A\_k=\lfloor k\alpha\rfloor,
+\qquad
+\alpha=\log\_2 3
+]
+
+için belirlenen (2)-adik integer:
+
+[
+\boxed{
+x\_\*=
+-\sum\_{j=0}^{\infty}
+\frac{2^{\lfloor j\alpha\rfloor}}{3^{j+1}}
+\in\mathbb Z\_2.
+}
+]
+
+Bu serinin (2)-adik anlamı klasik parity-vector conjugacy teorisinin doğrudan özel halidir. Bernstein–Lagarias, shortcut Collatz map'inin (2)-adik shift ile conjugate olduğunu gösterir; López–Stoll açık conjugacy serisini verir ve Sturmian parity words'i doğrudan inceler.
+
+Fakat burada yalnız “real seri (-\infty)'ye gidiyor” denmedi.
+
+Mechanical path'in bir (n\in\mathbb N^+) tarafından gerçekleştirildiği varsayılırsa exact orbit identity + (F\_K) bound + pigeonhole ile orbitin tekrar etmek zorunda olduğu; bunun mechanical word'ü eventually periodic yapacağı; fakat mechanical word'ün irrational slope nedeniyle eventually periodic olamayacağı kanıtlandı.
+
+Dolayısıyla:
+
+[
+\boxed{
+x\_\*\notin\mathbb N^+.
+}
+]
+
+Üstelik sonuç bounded-slack ailesinin bir kısmına genişletildi:
+
+[
+\boxed{
+0\le
+\lfloor k\alpha\rfloor-A\_k
+\le2
+\quad\forall k
+}
+]
+
+sağlayan hiçbir infinite barrier path bir pozitif ordinary integer tarafından gerçekleştirilemez.
+
+Bu checkpoint'in (2)-adik kolundaki en güçlü yeni sonuç budur.
+
+---
+
+# 1. Ne araştırıldı?
+
+Öncelik sırasına aynen uyuldu:
+
+1. (F\_K) extremizer'ı sıfırdan doğrulandı.
+2. Elementary ve continued-fraction tabanlı finite-(K) upper bound'lar çıkarıldı.
+3. Minimal karşı örneğin first crossing inequality'si yeniden optimize edildi.
+4. Terras coefficient stopping time ile odd-only (K\_D,K\_S) arasındaki tam indeks dönüşümü çıkarıldı.
+5. Mechanical extremal path'in associated (2)-adic integer'ı doğrudan analiz edildi.
+6. Mechanical proof bounded-slack path'lere genişletilmeye çalışıldı.
+
+---
+
+# 2. Kesin olarak ne bulundu?
+
+## [EXACT] 2.1. (F\_K) extremizer'ının eksiksiz kanıtı
+
+Tanımla:
+
+[
+\alpha=\log\_2 3.
+]
+
+Barrier:
+
+[
+D\_j=A\_j-j\alpha\le0.
+]
+
+(A\_j) integer olduğundan:
+
+[
+A\_j\le j\alpha
+\iff
+A\_j\le\lfloor j\alpha\rfloor.
+]
+
+Her objective terimi:
+
+[
+2^{D\_j}=2^{A\_j-j\alpha}
+]
+
+(A\_j)'de strict increasing'dir.
+
+Bu nedenle her admissible path için coordinatewise:
+
+[
+2^{D\_j}
+\le
+2^{\lfloor j\alpha\rfloor-j\alpha}.
+]
+
+Toplayınca:
+
+[
+F\_K
+\le
+\sum\_{j\<K}
+2^{\lfloor j\alpha\rfloor-j\alpha}.
+\tag{2.1}
+]
+
+Şimdi önemli nokta: Bu coordinate maxima'lar aynı path üzerinde eşzamanlı elde edilebilir mi?
+
+Tanımla:
+
+[
+A\_j^\*=\lfloor j\alpha\rfloor.
+]
+
+O zaman:
+
+# [ a\_j^\*
+
+# A\_{j+1}^*-A\_j^*
+
+\lfloor(j+1)\alpha\rfloor-
+\lfloor j\alpha\rfloor.
+]
+
+Çünkü:
+
+[
+1<\alpha<2,
+]
+
+her fark:
+
+[
+a\_j^\*\in{1,2}.
+]
+
+Dolayısıyla bütün increment'ler pozitif integer'dır.
+
+Yani:
+
+[
+(A\_j^\*)\_{j\ge0}
+]
+
+gerçekten admissible bir lattice path'tir.
+
+Üstelik finite realizability burada tam olarak yeterlidir.
+
+İlk (K) objective coordinate'ı için yalnız finite bir valuation prefix gerekir. Bu prefix shortcut parity vector'e:
+
+[
+1,0^{a\_0-1}
+1,0^{a\_1-1}\cdots
+]
+
+şeklinde çevrilir. Klasik Terras/Everett parity-vector sonucu her finite parity vector'ün tek bir residue class modulo uygun (2)-kuvvetinde gerçekleştiğini söyler; Rozier–Terracol da aynı property'yi açıkça kullanır.
+
+Dolayısıyla upper bound attain edilir:
+
+[
+\boxed{
+F\_K=
+\sum\_{j=0}^{K-1}
+2^{\lfloor j\alpha\rfloor-j\alpha}.
+}
+]
+
+Ve:
+
+[
+\lfloor j\alpha\rfloor-j\alpha=-{j\alpha}.
+]
+
+Sonuç:
+
+[
+\boxed{
+F\_K=
+\sum\_{j=0}^{K-1}2^{-{j\alpha}}.
+}
+\tag{2.2}
+]
+
+Ayrıca:
+
+[
+2^{j\alpha}=3^j
+]
+
+olduğundan her terim aslında:
+
+# [ \boxed{ 2^{-{j\alpha}}
+
+\frac{2^{\lfloor j\alpha\rfloor}}{3^j}.
+}
+]
+
+Dolayısıyla finite (F\_K), görünürde irrational rotation içerse bile, floor değerleri belirlendikten sonra exact bir rational sayıdır.
+
+### Önemli mantıksal ayrım
+
+Finite realizability:
+
+[
+\boxed{\text{(F\_K)'nin her finite (K) için attain edilmesine yeterlidir.}}
+]
+
+Fakat bundan:
+
+[
+\boxed{
+A\_k=\lfloor k\alpha\rfloor
+\quad\forall k
+}
+]
+
+infinite word'ünün tek bir positive integer tarafından realize edildiği çıkmaz.
+
+Nitekim aşağıda bunun imkânsız olduğunu kanıtlıyoruz.
+
+---
+
+## [KNOWN] + [EXACT application] 2.2. Asymptotik (F\_K)
+
+(\alpha) irrational'dır.
+
+Aksi halde:
+
+[
+\alpha=p/q
+]
+
+olsa:
+
+[
+2^p=3^q
+]
+
+olurdu; unique factorization bunu imkânsız kılar.
+
+Dolayısıyla irrational rotation:
+
+[
+{j\alpha}
+]
+
+uniformly distributed modulo (1)'dir.
+
+(f(x)=2^{-x}) Riemann integrable olduğundan Weyl equidistribution:
+
+# [ \lim\_{K\to\infty} \frac{F\_K}{K}
+
+\int\_0^1 2^{-x},dx.
+]
+
+Integral:
+
+# [ \int\_0^1 2^{-x},dx
+
+# \frac{1-1/2}{\ln2}
+
+\frac1{2\ln2}.
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+F\_K
+\sim
+\frac{K}{2\ln2}.
+}
+]
+
+Numerik katsayı:
+
+# [ \boxed{ \mu= \frac1{2\ln2}
+
+0.7213475204444817036799\ldots
+}
+]
+
+Bu asymptotic, finite counterexample analizi için tek başına yeterli değildir; aşağıdaki explicit bound'lar gerekir.
+
+---
+
+## [EXACT] 2.3. Elementary bound
+
+Tanımla:
+
+[
+t\_j=2^{-{j\alpha}}.
+]
+
+Mechanical increment:
+
+[
+a\_j^\*\in{1,2}.
+]
+
+Buna göre:
+
+# [ \frac{t\_{j+1}}{t\_j}
+
+\frac{2^{a\_j^\*}}{3}
+\in
+\left{\frac23,\frac43\right}.
+]
+
+Şimdi:
+
+[
+a\_j^\*=1
+\iff
+{j\alpha}<2-\alpha.
+]
+
+Bu durumda:
+
+# [ t\_j> 2^{-(2-\alpha)}
+
+# 2^{\alpha-2}
+
+\frac34.
+]
+
+Ve:
+
+[
+t\_{j+1}=\frac23t\_j.
+]
+
+Dolayısıyla:
+
+# [ t\_j+t\_{j+1} \le 1+\frac23
+
+\frac53
+<
+\frac74.
+]
+
+Diğer durumda:
+
+[
+t\_j\le\frac34
+]
+
+ve:
+
+# [ t\_{j+1}
+
+\frac43t\_j
+\le1.
+]
+
+Dolayısıyla:
+
+# [ t\_j+t\_{j+1} \le \frac34+1
+
+\frac74.
+]
+
+Her adjacent pair için:
+
+[
+\boxed{
+t\_j+t\_{j+1}\le\frac74.
+}
+]
+
+Çift (K) için:
+
+[
+F\_K\le\frac78K.
+]
+
+Tek (K) için son terim en fazla (1):
+
+# [ F\_K \le \frac78(K-1)+1
+
+\frac78K+\frac18.
+]
+
+Sonuç:
+
+[
+\boxed{
+F\_K\le\frac78K+\frac18
+\qquad\forall K\ge1.
+}
+\tag{2.3}
+]
+
+Checkpoint prompt'undaki aday bound doğrudur.
+
+---
+
+## [KNOWN] + [EXACT application] 2.4. Denjoy–Koksma / Ostrowski bound
+
+Şimdi:
+
+[
+\beta=\alpha-1=\log\_2(3/2).
+]
+
+Fractional parts değişmez:
+
+[
+{j\alpha}={j\beta}.
+]
+
+Circle üzerinde:
+
+[
+g(x)=2^{-{x}}
+]
+
+fonksiyonunun mean'i:
+
+[
+\mu=\frac1{2\ln2}
+]
+
+ve total variation'ı:
+
+[
+V(g)=1.
+]
+
+Bir convergent denominator (q\_m) için Denjoy–Koksma:
+
+[
+\left|
+\sum\_{j=0}^{q\_m-1}g(x+j\beta)
+-\mu q\_m
+\right|
+\le1
+]
+
+uniform olarak (x)'te geçerlidir. Conze–Le Borgne irrational rotations için bu standard Denjoy–Koksma bound'unu ve Ostrowski block decomposition'ını açık biçimde kullanır.
+
+Şimdi canonical Ostrowski expansion:
+
+[
+K=\sum\_i b\_iq\_i
+]
+
+olsun.
+
+Orbit toplamı (b\_i) adet (q\_i)-block'a parçalanabilir. Her block'un centered error'ı en fazla (1).
+
+Dolayısıyla:
+
+[
+\boxed{
+|F\_K-\mu K|
+\le
+\sum\_i b\_i.
+}
+]
+
+Tanımla:
+
+[
+s\_\beta(K)=\sum\_i b\_i.
+]
+
+Böylece:
+
+[
+\boxed{
+F\_K
+\le
+\mu K+s\_\beta(K).
+}
+\tag{2.4}
+]
+
+Bu checkpoint'te elde edilen en güçlü **pointwise finite-(K)** bound budur.
+
+---
+
+### Uniform all-(K) versiyon
+
+Herhangi bir convergent denominator (q) seç.
+
+[
+K=mq+r,
+\qquad
+0\le r\<q.
+]
+
+(m) tam (q)-block için DK, kalan (r) terim için (g\le1):
+
+[
+F\_K
+\le
+m(\mu q+1)+r.
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+F\_K
+\le
+\left(\mu+\frac1q\right)K
+\+
+(1-\mu)(q-1).
+}
+\tag{2.5}
+]
+
+Bu bütün (K) için geçerlidir.
+
+Buradaki slope:
+
+[
+\mu+\frac1q
+]
+
+istenildiği kadar (\mu)'ya yaklaştırılabilir.
+
+Ancak sabit (C,C\_0) ile global:
+
+[
+F\_K\le\mu K+C\log K+C\_0
+]
+
+şeklinde bir theorem bu yöntemden otomatik çıkmaz; bunun için (\beta)'nın partial quotient'ları üzerinde uniform Diophantine kontrol gerekir. (\log\_2(3/2)) için bounded partial quotients bilinmediğinden böyle bir iddia yapılmadı.
+
+---
+
+## [EXACT] 2.5. Relevant finite range için sabit error
+
+(\alpha)'nın continued fraction prefix'i exact interval arithmetic ile:
+
+[
+\alpha=
+[1;
+1,1,2,2,3,1,5,2,23,2,2,1,1,55,1,4,3,1,1,15,1,9,2,\ldots].
+]
+
+Relevant convergent denominators:
+
+[
+6,586,818,670,
+]
+
+[
+65,470,613,321,
+]
+
+[
+137,528,045,312.
+]
+
+Canonical Ostrowski digit restrictions'in finite exact optimization'ı:
+
+[
+K<137,528,045,312
+\Longrightarrow
+s\_\beta(K)\le121.
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+F\_K
+\le
+\mu K+121
+\qquad
+(K<137,528,045,312).
+}
+\tag{2.6}
+]
+
+Ayrıca:
+
+[
+K<65,470,613,321
+\Longrightarrow
+s\_\beta(K)\le120,
+]
+
+dolayısıyla:
+
+[
+\boxed{
+F\_K
+\le
+\mu K+120.
+}
+\tag{2.7}
+]
+
+Bu, first-crossing ölçeğinde elementary (0.875K) bound'una göre ciddi sıkıştırmadır.
+
+---
+
+# 3. First-crossing Diophantine obstruction
+
+Minimal karşı örnek (N) ve ilk:
+
+[
+D\_K>0
+]
+
+indeksi (K) olsun.
+
+Checkpoint 1'in exact identity'sinden:
+
+[
+2^{D\_K}-1
+\le
+\frac1{3N}
+\sum\_{j\<K}2^{D\_j}.
+]
+
+Exact extremal sonuçla:
+
+[
+\boxed{
+2^{D\_K}-1
+\le
+\frac{F\_K}{3N}.
+}
+\tag{3.1}
+]
+
+Dolayısıyla:
+
+[
+D\_K
+\le
+\log\_2
+\left(
+1+\frac{F\_K}{3N}
+\right).
+]
+
+(D\_K=A\_K-K\alpha) olduğundan:
+
+[
+\boxed{
+0<
+\frac{A\_K}{K}-\alpha
+\le
+\frac1K
+\log\_2
+\left(
+1+\frac{F\_K}{3N}
+\right).
+}
+\tag{3.2}
+]
+
+Barina'nın 2025 tarihli yayımlanmış hesaplamalı çalışması Collatz yakınsamasını (2^{71}) sınırına kadar doğruluyor; dolayısıyla minimal counterexample varsa (N>2^{71}) kullanabiliriz.
+
+---
+
+## [EXACT] 3.1. Checkpoint 1 bound'unu yeniden üretme
+
+Önce kaba:
+
+[
+F\_K\le K.
+]
+
+Ayrıca:
+
+[
+\log(1+x)\le x.
+]
+
+Böylece:
+
+[
+0<
+\frac{A\_K}{K}-\alpha
+<
+\frac1{3\cdot2^{71}\ln2}.
+]
+
+Tanımla:
+
+# [ \varepsilon\_0
+
+# \frac1{3\cdot2^{71}\ln2}
+
+2.03668372078890335\ldots\times10^{-22}.
+]
+
+Legendre kriteri:
+
+[
+\left|
+\alpha-\frac pq
+\right|
+<
+\frac1{2q^2}
+]
+
+ise (p/q) bir continued-fraction convergent olmak zorundadır.
+
+Threshold:
+
+# [ \sqrt{\frac1{2\varepsilon\_0}}
+
+49,547,666,543.2279\ldots
+]
+
+olduğundan previous argument yeniden:
+
+[
+\boxed{
+K\ge49,547,666,544
+}
+]
+
+veriyor.
+
+Checkpoint 1 sonucu doğrulandı.
+
+---
+
+## [EXACT] 3.2. Yalnız (F\_K) iyileştirmesinin etkisi
+
+Relevant range'de:
+
+[
+F\_K\le\mu K+120.
+]
+
+Dolayısıyla:
+
+[
+\frac{A\_K}{K}-\alpha
+<
+\frac{\mu+120/K}
+{3\cdot2^{71}\ln2}.
+]
+
+Legendre threshold equation:
+
+# [ \frac{\mu+120/K} {3\cdot2^{71}\ln2}
+
+\frac1{2K^2}
+]
+
+çözülünce pozitif root:
+
+[
+58,337,919,097.0735\ldots
+]
+
+elde edilir.
+
+Bundan:
+
+[
+\boxed{
+K\ge58,337,919,098.
+}
+\tag{3.3}
+]
+
+Yani yeni (F\_K) bound'u tek başına:
+
+[
+49,547,666,544
+\to
+58,337,919,098
+]
+
+iyileştirmesi verir.
+
+---
+
+# 4. One-sided continued fraction saldırısı
+
+Legendre burada bilgi kaybediyor çünkü bizim rational approximation'ımız iki taraflı değil:
+
+[
+\boxed{
+\frac{A\_K}{K}>\alpha.
+}
+]
+
+Yani yalnız **upper rational approximants** önemlidir.
+
+Certified CF'de ilgili üç rational:
+
+[
+U=
+\frac{10,439,860,591}
+{6,586,818,670}
+
+> \alpha,
+> ]
+
+[
+L=
+\frac{103,768,467,013}
+{65,470,613,321}
+<\alpha.
+]
+
+Bunların determinantı exact olarak:
+
+[
+p\_Lq\_U-p\_Uq\_L=-1.
+]
+
+Dolayısıyla Farey neighbors'dırlar.
+
+Mediant:
+
+# [ M= \frac{p\_L+p\_U}{q\_L+q\_U}
+
+\boxed{
+\frac{114,208,327,604}
+{72,057,431,991}
+}.
+]
+
+Certified ordering:
+
+[
+\boxed{
+L<\alpha\<M\<U.
+}
+]
+
+Errors:
+
+# [ U-\alpha
+
+2.21724377580880245\ldots\times10^{-21},
+]
+
+# [ M-\alpha
+
+1.10336069332083493\ldots\times10^{-22}.
+]
+
+Bu ordering floating-point kararı değildir.
+
+### Exact numerical certification
+
+Kullanılan identities:
+
+# [ \ln2
+
+2\sum\_{m=0}^\infty
+\frac{1}
+{(2m+1)3^{2m+1}},
+]
+
+# [ \ln3
+
+2\sum\_{m=0}^\infty
+\frac{1}
+{(2m+1)2^{2m+1}}.
+]
+
+Tail için geometric rational bound kullanıldı.
+
+80 terimlik (\ln2) ve 120 terimlik (\ln3) truncation'ları:
+
+[
+\alpha=\frac{\ln3}{\ln2}
+]
+
+için genişliği:
+
+[
+<4.52\times10^{-75}
+]
+
+olan rational interval üretti.
+
+Continued-fraction prefix, (L<\alpha\<M\<U) işaretleri ve yukarıdaki rational determinant'lar bu interval/exact integers üzerinden sertifikalandı.
+
+Gösterilen decimal'lar yalnız okunabilirlik içindir.
+
+---
+
+## [EXACT] One-sided denominator lemma
+
+(L) ve (M) de Farey neighbors'dır.
+
+Bu nedenle (L) ile (M) arasındaki herhangi bir reduced rational'ın denominator'ı en az:
+
+[
+q\_L+q\_M
+
+>
+
+q\_M
+]
+
+olmak zorundadır.
+
+Benzer şekilde (M) ile (U) arasında denominator (\<q\_M) olan rational yoktur.
+
+Dolayısıyla:
+
+[
+\boxed{
+\frac pq>\alpha,\quad q\<q\_M
+\Longrightarrow
+\frac pq\ge U.
+}
+]
+
+O halde:
+
+[
+\frac pq-\alpha
+\ge
+U-\alpha
+
+>
+
+2.2172\times10^{-21}.
+]
+
+Fakat first-crossing inequality, kaba (F\_K\le K) ile bile:
+
+[
+\frac{A\_K}{K}-\alpha
+<
+2.0367\times10^{-22}.
+]
+
+Çelişki.
+
+Sonuç:
+
+[
+\boxed{
+K\ge72,057,431,991.
+}
+\tag{4.1}
+]
+
+Bu checkpoint'teki şu ana kadarki en güçlü first-crossing alt sınırıdır.
+
+---
+
+## Bu bound şu an daha ileri taşınabiliyor mu?
+
+Bir sonraki upper admissible candidate tam olarak mediant (M)'dir.
+
+Burada:
+
+[
+M-\alpha
+\approx
+1.1033606933\times10^{-22}.
+]
+
+Ayrıca (q\_M)'nin Ostrowski digit sum'ı yalnız:
+
+[
+s\_\beta(q\_M)=2,
+]
+
+dolayısıyla:
+
+[
+F\_{q\_M}\le\mu q\_M+2.
+]
+
+Bunu (3.2)'de kullanınca mevcut (N>2^{71}) ile izin verilen upper error yaklaşık:
+
+[
+1.46915675197\times10^{-22}.
+]
+
+Bu:
+
+[
+1.4691\times10^{-22}
+
+>
+
+1.1033\times10^{-22}.
+]
+
+Dolayısıyla:
+
+[
+\boxed{\text{(M) henüz dışlanamıyor.}}
+]
+
+Yani (F\_K)'yi bu seviyede daha birkaç birim iyileştirmek sonucu değiştirmez; arada yaklaşık %33'lük bir gap vardır.
+
+### [LEAD] Bir sonraki sıçrama için gereken verification seviyesi
+
+(M)'yi dışlamak için yaklaşık:
+
+[
+\boxed{
+N>
+3.14398394\times10^{21}
+}
+]
+
+yeterli olur.
+
+Bu:
+
+[
+\boxed{
+N\gtrsim1.331529\cdot2^{71}
+}
+]
+
+demektir.
+
+Bu eşik aşılırsa one-sided Farey structure, denominator'ı bir sonraki upper approximation seviyesine:
+
+[
+137,528,045,312
+]
+
+civarına sıçratabilir.
+
+---
+
+## [FAIL] Baker/Matveev bu finite scale'de neden kullanılmadı?
+
+Linear forms in logarithms yaklaşımı prensipte:
+
+[
+|A\ln2-K\ln3|
+]
+
+için global lower bounds üretir.
+
+Ancak burada denominator aralığı yalnız (10^{11}) mertebesindedir ve continued-fraction/Farey hesaplaması bu finite interval'daki **gerçek best one-sided approximants'ı exact olarak belirlemektedir**.
+
+Dolayısıyla bu aralıkta generic Baker/Matveev estimate kullanmak exact continued-fraction geometry'den daha fazla bilgi sağlayamaz.
+
+Bu checkpoint'te:
+
+[
+\boxed{
+\text{CF/Farey finite-denominator problemi için optimal araç;}
+}
+]
+
+Baker/Matveev ancak denominator çok daha ileri seviyelere itilirse tekrar değerlendirilecektir.
+
+---
+
+# 5. CST bağlantısının kesinleştirilmesi
+
+Rozier–Terracol, shortcut map:
+
+[
+T(n)=
+\begin{cases}
+(3n+1)/2,&n\text{ odd},\\
+n/2,&n\text{ even}
+\end{cases}
+]
+
+üzerinde:
+
+[
+T^j(n)=C\_j(n)n+E\_j(n),
+]
+
+[
+C\_j(n)=\frac{3^{q\_j(n)}}{2^j}
+]
+
+tanımlar. Terras'ın orijinal çalışmasında aynı decomposition ve coefficient stopping-time formalizmi bulunur.
+
+Rozier–Terracol'un 2026'da Discrete Mathematics'te yayımlanan çalışması stopping time ile coefficient stopping time'ı açık biçimde tanımlıyor ve Terras CST conjecture'ını:
+
+[
+t(n)=\tau(n)
+]
+
+olarak veriyor.
+
+Terras'ın orijinal Conjecture 2.9'u da:
+
+[
+\tau(n)=\chi(n)
+]
+
+eşitliğini bütün (n\ge2) için conjecture eder.
+
+---
+
+## 5.1. Dört stopping objesi
+
+Shortcut (T) convention'ı altında:
+
+### 1. Classical stopping time
+
+[
+\boxed{
+t(n)=
+\min{j\ge1\:T^j(n)\<n}.
+}
+]
+
+Terras'ın notation'ında (\chi(n)).
+
+---
+
+### 2. Total stopping time
+
+[
+\boxed{
+t\_\infty(n)=
+\min{j\ge0\:T^j(n)=1}.
+}
+]
+
+Original unshortened (C)-map ile sayılan adım sayısı farklıdır; burada CST ile aynı clock kullanılabilmesi için shortcut clock kullanıyoruz.
+
+---
+
+### 3. Coefficient stopping time
+
+[
+C\_j(n)=
+\frac{3^{q\_j(n)}}{2^j}.
+]
+
+Tanımla:
+
+[
+\boxed{
+\tau(n)=
+\min{j\ge1\:C\_j(n)<1}.
+}
+]
+
+Remainder positive olduğu için:
+
+[
+\boxed{
+\tau(n)\le t(n).
+}
+]
+
+Bu Terras'ın Proposition 1.8'inde de yer alır.
+
+---
+
+### 4. Odd-only stopping indices
+
+Odd başlangıç (n=n\_0) için:
+
+[
+\boxed{
+K\_D=
+\min{k\ge1\:D\_k>0},
+}
+]
+
+[
+\boxed{
+K\_S=
+\min{k\ge1\:n\_k\<n\_0}.
+}
+]
+
+---
+
+## [EXACT] 5.2. Shortcut clock ile odd-only clock arasındaki dönüşüm
+
+(k)'inci odd endpoint'e ulaşmak için shortcut map'te tam:
+
+[
+A\_k
+]
+
+adım gerekir.
+
+Bu blokta tam (k) odd source kullanılmıştır.
+
+Dolayısıyla:
+
+# [ C\_{A\_k}(n)
+
+# \frac{3^k}{2^{A\_k}}
+
+2^{-D\_k}.
+]
+
+Bir coefficient, bir odd step sırasında (3/2) ile büyür; ardından even halving'ler sırasında monoton azalır.
+
+Bu nedenle coefficient'ın ilk kez (1)'in altına düştüğü shortcut step hangi odd block'taysa, o block'un odd endpoint'i ilk (D\_k>0) endpoint'idir.
+
+Sonuç:
+
+[
+\boxed{
+K\_D=q\_{\tau(n)}.
+}
+\tag{5.1}
+]
+
+Aynı şekilde bir odd block içindeki post-odd değerler successive halving ile azalır.
+
+Block içinde herhangi bir değer (n\_0)'ın altına düşerse odd endpoint de altındadır.
+
+Dolayısıyla:
+
+[
+\boxed{
+K\_S=q\_{t(n)}.
+}
+\tag{5.2}
+]
+
+Bu iki identity problemi tam olarak çözüyor.
+
+---
+
+## CST hangi statement'ı imply ediyor?
+
+CST:
+
+[
+t(n)=\tau(n).
+]
+
+Dolayısıyla:
+
+[
+q\_t=q\_\tau.
+]
+
+(5.1)-(5.2):
+
+[
+\boxed{
+\mathrm{CST}
+\Longrightarrow
+K\_D=K\_S.
+}
+]
+
+Bu [EXACT].
+
+---
+
+## Tersi?
+
+[
+K\_D=K\_S
+]
+
+yalnız:
+
+[
+q\_{\tau}=q\_t
+]
+
+der.
+
+Yani (\tau) ile (t) aynı odd block'tadır.
+
+Fakat shortcut step index'leri:
+
+[
+\tau,\qquad t
+]
+
+block içinde farklı halving positions olabilir.
+
+Dolayısıyla bilgi kaybı vardır:
+
+[
+t=\tau
+\quad\Longrightarrow\quad
+q\_t=q\_\tau,
+]
+
+ama ters yön definitions'tan çıkmaz.
+
+Şu anda doğru classification:
+
+[
+\boxed{
+K\_D=K\_S
+\text{ CST'nin block-level consequence'ıdır.}
+}
+]
+
+Universal block equality'nin kendi başına CST'yi zorladığını gösteren bir theorem bulmadım.
+
+Aynı şekilde actual Collatz dynamics içinde “strictly weaker” olduğunu göstermek de bir CST counterexample gerektirebileceğinden kanıtlanmış değildir.
+
+Bu nedenle:
+
+[
+\boxed{
+K\_D=K\_S\Rightarrow\mathrm{CST}
+\quad\text{[OPEN].}
+}
+]
+
+Checkpoint 1'deki (n\le20,000,000) sayısal equality gözlemi bu nedenle korunuyor ama artık doğru bağlamda:
+
+[
+\boxed{\text{[NUM] CST'nin odd-block projection'ı ile uyumludur.}}
+]
+
+Rozier–Terracol'un “paradoxical sequence” kavramı tam olarak (C\_j<1) iken endpoint'in hâlâ başlangıcın altında olmaması durumunu izler ve CST'yi üç eşdeğer full-shortcut statement üzerinden tartışır.
+
+---
+
+# 6. OPEN-A ve klasik (2)-adik teori
+
+Bernstein–Lagarias'ın (2)-adik conjugacy'sinde shortcut parity vector:
+
+[
+v=\sum\_{i\ge0}\epsilon\_i2^i
+]
+
+bir unique:
+
+[
+x\in\mathbb Z\_2
+]
+
+belirler.
+
+Odd-only valuation sequence'imizde shortcut parity vector'deki (1)'lerin positions'ları:
+
+[
+A\_0,A\_1,A\_2,\ldots
+]
+
+olur.
+
+López–Stoll conjugacy formula'sına göre:
+
+# [ \Phi\left( \sum\_{j\ge0}2^{A\_j} \right)
+
+-\sum\_{j\ge0}
+\frac{2^{A\_j}}{3^{j+1}}.
+]
+
+Dolayısıyla bizim notation'ımızda associated (2)-adic başlangıç:
+
+[
+\boxed{
+x=
+-\sum\_{j=0}^{\infty}
+\frac{2^{A\_j}}{3^{j+1}}
+\in\mathbb Z\_2.
+}
+\tag{6.1}
+]
+
+Bu genel yapı **[KNOWN]**'dır; yeni olarak sunulmamalıdır. López–Stoll 2009 çalışması conjugacy map'i Sturmian/mechanical words üzerinde doğrudan inceler ve general aperiodic parity vector → eventually periodic (2)-adic image sorusunun zor olduğunu özellikle vurgular.
+
+2021 López–Stoll preprint'i de kritik parity density:
+
+[
+\frac{\ln2}{\ln3}
+]
+
+rejimini rational/noncyclic (2)-adic trajectories açısından özel sınır olarak tanımlar; bunu yalnız literatür bağlamı olarak kullanıyorum, aşağıdaki sonuçların kanıtı buna dayanmıyor.
+
+---
+
+# 7. Mechanical extremal path
+
+Şimdi:
+
+[
+A\_k=\lfloor k\alpha\rfloor.
+]
+
+Valuation word:
+
+[
+a\_k=
+\lfloor(k+1)\alpha\rfloor-
+\lfloor k\alpha\rfloor.
+]
+
+İlk terimler:
+
+[
+\boxed{
+1,2,1,2,1,2,2,1,2,1,2,2,1,2,1,2,1,2,2,1,\ldots
+}
+]
+
+ve (a\_k-1), irrational slope:
+
+[
+\beta=\alpha-1
+]
+
+olan lower mechanical/Sturmian binary word'dür.
+
+Associated (2)-adic integer:
+
+[
+\boxed{
+x\_\*=
+-\sum\_{j=0}^{\infty}
+\frac{2^{\lfloor j\alpha\rfloor}}{3^{j+1}}.
+}
+\tag{7.1}
+]
+
+Seri (2)-adically converges çünkü:
+
+# [ v\_2 \left( \frac{2^{\lfloor j\alpha\rfloor}}{3^{j+1}} \right)
+
+\lfloor j\alpha\rfloor
+\to\infty.
+]
+
+Real absolute magnitude ise:
+
+# [ \frac{2^{\lfloor j\alpha\rfloor}}{3^{j+1}}
+
+\frac13,2^{-{j\alpha}}
+]
+
+olduğundan terimler sıfıra gitmez.
+
+Dolayısıyla formal real series (-\infty)'ye gider.
+
+**Fakat bu, (x\_\*\notin\mathbb N^+) kanıtı olarak kullanılmadı.**
+
+---
+
+## [EXACT] 7.1. Prefix residue sequence
+
+Least-positive prefix residues:
+
+[
+r\_k
+\equiv x\_\*
+\pmod{2^{A\_k+1}}.
+]
+
+İlk exact değerler:
+
+| (k)(A\_k)(r\_k)modulus |    |        |        |
+| ---------------------- | -- | ------ | ------ |
+| 1                      | 1  | 3      | 4      |
+| 2                      | 3  | 11     | 16     |
+| 3                      | 4  | 27     | 32     |
+| 4                      | 6  | 123    | 128    |
+| 5                      | 7  | 251    | 256    |
+| 6                      | 9  | 1019   | 1024   |
+| 7                      | 11 | 3067   | 4096   |
+| 8                      | 12 | 7163   | 8192   |
+| 9                      | 14 | 23547  | 32768  |
+| 10                     | 15 | 23547  | 65536  |
+| 11                     | 17 | 154619 | 262144 |
+
+Dikkat:
+
+[
+r\_9=r\_{10}=23547.
+]
+
+Yani tek bir extension step'te representative değişmeyebilir.
+
+Bu nedenle:
+
+> “Her step residue büyümeli” argümanı yanlıştır.
+
+Gerekli olan **eventual** stabilization'dır.
+
+---
+
+# 8. [EXACT] Mechanical (x\_\*) pozitif integer değildir
+
+Şimdi esas kanıt.
+
+Aksini varsayalım.
+
+Bir:
+
+[
+n\in\mathbb N^+
+]
+
+mechanical valuation sequence'i sonsuza kadar realize etsin.
+
+Mechanical path için:
+
+# [ D\_k
+
+# \lfloor k\alpha\rfloor-k\alpha
+
+-{k\alpha}.
+]
+
+Dolayısıyla:
+
+# [ 2^{-D\_k}
+
+2^{{k\alpha}}
+<2.
+]
+
+Exact orbit identity:
+
+# [ \frac{n\_k}{n}
+
+2^{-D\_k}
+\left(
+1+\frac{F\_k}{3n}
+\right)
+]
+
+verir:
+
+[
+n\_k
+<
+2
+\left(
+n+\frac{F\_k}{3}
+\right).
+]
+
+Elementary exact bound:
+
+[
+F\_k
+\le
+\frac78k+\frac18.
+]
+
+Böylece:
+
+[
+\boxed{
+n\_k
+<
+2n+\frac7{12}k+\frac1{12}.
+}
+\tag{8.1}
+]
+
+Şimdi (0\le j\le K) için:
+
+[
+n\_j
+<
+2n+\frac7{12}K+\frac1{12}.
+]
+
+Bütün (n\_j)'ler positive odd integer'dır.
+
+Sağ taraftan küçük positive odd integer sayısı en fazla yaklaşık:
+
+[
+n+\frac7{24}K+\frac{13}{24}.
+]
+
+Eğer:
+
+[
+17K+11>24n
+]
+
+ise:
+
+[
+K+1
+
+>
+
+n+\frac7{24}K+\frac{13}{24}.
+]
+
+Dolayısıyla (K+1) odd state'i yerleştirecek kadar farklı positive odd integer yoktur.
+
+Pigeonhole:
+
+[
+\exists,u\<v\le K:
+n\_u=n\_v.
+]
+
+Odd-only Syracuse map deterministic olduğundan bundan sonra orbit periodic'dir.
+
+Dolayısıyla valuation sequence de eventually periodic olur.
+
+Fakat mechanical word eventually periodic olamaz.
+
+Çünkü:
+
+# [ \frac{A\_k}{k}
+
+\frac{\lfloor k\alpha\rfloor}{k}
+\longrightarrow
+\alpha.
+]
+
+Eventually periodic integer word'ün average valuation'ı:
+
+[
+\frac{\text{period valuation sum}}
+{\text{period length}}
+\in\mathbb Q
+]
+
+olmak zorundadır.
+
+Oysa:
+
+[
+\alpha=\log\_2 3\notin\mathbb Q.
+]
+
+Çelişki.
+
+Sonuç:
+
+[
+\boxed{
+x\_\*\notin\mathbb N^+.
+}
+\tag{8.2}
+]
+
+Bu mechanical OPEN-A test objesini tamamen kapatıyor.
+
+---
+
+## [EXACT] Residue'ların Archimedean davranışı
+
+Nested residues nedeniyle:
+
+[
+r\_{k+1}
+\equiv
+r\_k
+\pmod{2^{A\_k+1}}.
+]
+
+Least-positive reps için:
+
+# [ r\_{k+1}
+
+r\_k+c\_k2^{A\_k+1},
+\qquad
+c\_k\ge0.
+]
+
+Dolayısıyla:
+
+[
+r\_{k+1}\ge r\_k.
+]
+
+Eğer sequence bounded olsaydı integer ve monotone olduğundan eventually constant olurdu.
+
+Ama (8.2) nedeniyle eventually constant olamaz.
+
+Dolayısıyla:
+
+[
+\boxed{
+r\_k\to+\infty
+\quad\text{Archimedean olarak.}
+}
+]
+
+Aynı sequence (2)-adically (x\_\*)'a converges.
+
+Böylece burada Archimedean ve (2)-adik davranış arasındaki ayrım exact olarak görülüyor.
+
+---
+
+# 9. [EXACT] Daha güçlü bounded-slack obstruction
+
+Mechanical case aslında daha genişletilebilir.
+
+Tanımla:
+
+[
+s\_k=
+\lfloor k\alpha\rfloor-A\_k.
+]
+
+Barrier altında:
+
+[
+s\_k\ge0.
+]
+
+Ayrıca:
+
+# [ D\_k
+
+-s\_k-{k\alpha}.
+]
+
+Varsayalım:
+
+[
+0\le s\_k\le C
+\qquad\forall k.
+]
+
+O zaman:
+
+# [ 2^{-D\_k}
+
+2^{s\_k+{k\alpha}}
+<
+2^{C+1}.
+]
+
+Barrier extremal property'den:
+
+[
+\sum\_{j\<k}2^{D\_j}
+\le F\_k.
+]
+
+Exact orbit identity:
+
+[
+n\_k
+<
+2^{C+1}
+\left(
+n+\frac{F\_k}{3}
+\right).
+]
+
+Asymptotik:
+
+[
+F\_k=(\mu+o(1))k.
+]
+
+Dolayısıyla:
+
+[
+\limsup\_{k\to\infty}
+\frac{n\_k}{k}
+\le
+\frac{2^{C+1}\mu}{3}.
+]
+
+(C=2) için worst case:
+
+# [ \frac{8\mu}{3}
+
+1.923593387851951\ldots
+<2.
+]
+
+Dolayısıyla (C\le2) için bütün sufficiently large odd states:
+
+[
+n\_k<(2-\varepsilon)k
+]
+
+tipi bir linear envelope altında kalır.
+
+İlk (K) odd state'i barındırabilecek positive odd integer sayısı asymptotik olarak:
+
+[
+<(1-\varepsilon/2)K.
+]
+
+Pigeonhole tekrar verir.
+
+Tekrar valuation sequence'i eventually periodic yapar.
+
+Ama bounded slack:
+
+# [ A\_k
+
+\lfloor k\alpha\rfloor-O(1)
+]
+
+olduğundan:
+
+[
+\frac{A\_k}{k}\to\alpha.
+]
+
+Eventually periodic valuation sequence'in rational mean'e sahip olması gerekir.
+
+Çelişki.
+
+Sonuç:
+
+[
+\boxed{
+\text{Hiçbir }n\in\mathbb N^+
+\text{ sonsuza kadar }
+0\le
+\lfloor k\alpha\rfloor-A\_k
+\le2
+\text{ sağlayamaz.}
+}
+\tag{9.1}
+]
+
+Bu mechanical (C=0) case'inden ciddi biçimde daha güçlüdür.
+
+---
+
+# 10. [EXACT] Eventually periodic barrier words de pozitif olamaz
+
+Bir valuation tail'i period (p) ve period toplamı (H) ile eventually periodic olsun.
+
+Barrier nedeniyle:
+
+[
+\frac Hp
+\le\alpha.
+]
+
+Ama (H/p) rational, (\alpha) irrational olduğundan:
+
+[
+\frac Hp<\alpha.
+]
+
+Yani:
+
+[
+2^H<3^p.
+]
+
+Period block'un affine map'i:
+
+[
+x\mapsto
+\frac{3^px+B}{2^H},
+\qquad
+B>0.
+]
+
+Infinite periodic valuation tail aynı (2)-adik state'i period sonrasında yeniden üretmek zorunda olduğundan fixed point:
+
+[
+x=
+\frac{B}{2^H-3^p}.
+]
+
+Pay pozitif, denominator negatif:
+
+[
+x<0.
+]
+
+Dolayısıyla:
+
+[
+\boxed{
+\text{Eventually periodic infinite barrier valuation word }
+\mathbb N^+
+\text{'den gelemez.}
+}
+\tag{10.1}
+]
+
+All-ones word bunun özel halidir:
+
+[
+A\_k=k,
+]
+
+ve associated (2)-adic integer:
+
+# [ -\sum\_{j\ge0}\frac{2^j}{3^{j+1}}
+
+-1.
+]
+
+Bu, Checkpoint 1'de görülen:
+
+[
+r\_k=2^{k+1}-1\to-1
+\quad(2\text{-adically})
+]
+
+davranışını açıklar.
+
+---
+
+# 11. Sayısal / certified hesap kısmı
+
+Bu aşamada geniş orbit brute-force yapılmadı; görev finite Diophantine ve exact structure idi.
+
+### [EXACT computational certificate]
+
+(\ln2,\ln3) rational interval yöntemiyle:
+
+[
+\alpha
+\in
+[
+1.58496250072115618145373894394781650875981440769248\ldots,
+]
+
+[
+1.58496250072115618145373894394781650875981440769249\ldots
+].
+]
+
+Interval width:
+
+[
+<4.52\times10^{-75}.
+]
+
+Bu certificate ile:
+
+- CF prefix,
+- convergent signs,
+- semiconvergent ordering,
+- Farey determinants,
+- (U-\alpha),
+- (M-\alpha)
+
+kararları floating-point dependence olmadan doğrulandı.
+
+---
+
+# 12. Yeni lead'ler
+
+## [LEAD-A] OPEN-A artık daha dar
+
+Önceki OPEN-A:
+
+> Barrier altında sonsuza kadar kalan herhangi bir path positive integer olabilir mi?
+
+Yeni sonuçlarla şu aileler kapandı:
+
+- all-ones,
+- mechanical extremizer,
+- eventually periodic valuation words,
+- bounded-slack:
+  [
+  s\_k\le2.
+  ]
+
+Dolayısıyla gerçek unresolved regime:
+
+[
+\boxed{
+\text{barrier forever}
+\+
+\limsup s\_k\ge3
+}
+]
+
+ve özellikle unbounded-slack paths'tir.
+
+Bir minimal counterexample forever-undercritical ise kritik çizginin yalnız birkaç integer unit altında yaşayamaz.
+
+---
+
+## [LEAD-B] Slack dynamics
+
+Mechanical increments:
+
+[
+m\_k=
+\lfloor(k+1)\alpha\rfloor-
+\lfloor k\alpha\rfloor
+\in{1,2}.
+]
+
+Genel barrier path için:
+
+# [ a\_k
+
+m\_k+s\_k-s\_{k+1}.
+]
+
+(a\_k\ge1) olduğundan:
+
+[
+s\_{k+1}
+\le
+s\_k+m\_k-1.
+]
+
+Dolayısıyla:
+
+- (m\_k=1) olduğunda slack artamaz;
+- (m\_k=2) olduğunda slack en fazla (1) artabilir;
+- slack düşüşleri yüksek valuation üzerinden ani olabilir.
+
+Bu finite-state/irrational-rotation coupling, (C\ge3) bounded-slack case'i için bir sonraki doğal saldırı noktasıdır.
+
+---
+
+## [LEAD-C] Diophantine kol artık net
+
+Minimal counterexample için first crossing varsa:
+
+[
+\boxed{
+K\ge72,057,431,991.
+}
+]
+
+Bu seviyede bir sonraki gerçek obstacle:
+
+[
+\frac{114,208,327,604}
+{72,057,431,991}
+]
+
+upper semiconvergent'ıdır.
+
+Yeni (F\_K) teorisi bunun niçin henüz elenemediğini de quantitatively gösterdi.
+
+Dolayısıyla denominator bound'u daha ileri taşımak için üç gerçek seçenek kaldı:
+
+1. minimal (N) lower bound'unu artırmak;
+2. first-crossing inequality'de (F\_K)'den başka yeni arithmetic information kullanmak;
+3. (A\_K/K=M) durumunun valuation/residue yapısını doğrudan yasaklamak.
+
+Üçüncü seçenek en ilginç olanıdır.
+
+---
+
+# 13. Ne başarısız oldu?
+
+### [FAIL] (F\_K) optimizasyonunun coordinate coupling yüzünden bozulacağı şüphesi
+
+Bozulmuyor.
+
+Extremal floor path bütün coordinate maxima'ları aynı anda gerçekleştiriyor.
+
+---
+
+### [FAIL] (7K/8) civarında kalmak
+
+Bound doğru fakat asymptotic optimumdan uzakta:
+
+[
+0.875
+\quad\text{vs}\quad
+0.7213475.
+]
+
+Denjoy–Koksma/Ostrowski bunu ciddi biçimde iyileştiriyor.
+
+---
+
+### [FAIL] Yalnız Legendre ile devam etmek
+
+Legendre iki taraflı approximation kullandığı için one-sided first-crossing bilgisini kaybediyor.
+
+Sonuç:
+
+[
+58.3\text{ milyar}
+]
+
+civarında kalırken Farey/semiconvergent:
+
+[
+72.1\text{ milyar}
+]
+
+veriyor.
+
+---
+
+### [FAIL] “Aperiodic parity word ⇒ associated (2)-adic irrational/noninteger” demek
+
+Bu genel implication klasik (2)-adik Collatz teorisinde açık bir periodicity problemine dokunuyor; López–Stoll da bu zorluğu açıkça vurgular.
+
+Mechanical case bu genel conjecture'a dayanılarak değil, bağımsız Archimedean pigeonhole argument ile çözüldü.
+
+---
+
+### [FAIL] “Real series negatif/divergent, dolayısıyla (2)-adic sayı pozitif değildir”
+
+Geçersiz argument.
+
+(2)-adik ve real convergence farklıdır.
+
+Mechanical positivity obstruction exact orbit growth üzerinden ayrıca kanıtlandı.
+
+---
+
+# 14. Şu anda en önemli açık problemler
+
+## [OPEN-A2] Slack (\ge3) barrier obstruction
+
+Şunu dışla:
+
+[
+A\_k\le\lfloor k\alpha\rfloor
+\quad\forall k
+]
+
+ve:
+
+[
+\sup\_k
+(\lfloor k\alpha\rfloor-A\_k)\ge3.
+]
+
+Özellikle önce:
+
+[
+\boxed{
+0\le s\_k\le3
+}
+]
+
+case'i hedeflenmeli.
+
+(C=2) artık theorem ile kapalıdır.
+
+---
+
+## [OPEN-B2] Semiconvergent (M) first-crossing case
+
+Şu çok özel yapı incelenmeli:
+
+[
+K=72,057,431,991,
+]
+
+[
+A\_K=114,208,327,604.
+]
+
+First crossing bunu zorunlu kılmıyor fakat mevcut Diophantine filtration'dan kurtulan ilk upper rational budur.
+
+Soru:
+
+> (D\_j\le0) bütün (j\<K) iken (A\_K/K=M) ve minimal-counterexample orbit koşulları residue düzeyinde aynı anda gerçekleşebilir mi?
+
+Bu artık genel Collatz yerine çok keskin finite arithmetic problemidir.
+
+---
+
+## [OPEN-CST]
+
+Universal:
+
+[
+K\_D=K\_S
+]
+
+statement'ının CST ile ters implication ilişkisi:
+
+[
+K\_D=K\_S
+\stackrel{?}{\Longrightarrow}
+t=\tau
+]
+
+çözülmedi.
+
+Bir sonraki iş burada conjecture üretmek değil; aynı-block coefficient crossing ile same-block actual descent arasında deterministic lemma olup olmadığını araştırmaktır.
+
+---
+
+# 15. Bir sonraki önerilen saldırı
+
+Öncelik artık değişti.
+
+OPEN-C büyük ölçüde çözüldüğü için sıradaki en yüksek değerli problem:
+
+[
+\boxed{
+\textbf{bounded slack }C=3
+}
+]
+
+olmalıdır.
+
+Çünkü elimizde:
+
+[
+C=0,1,2
+\quad\Rightarrow\quad
+\text{imkânsız}
+]
+
+theorem'i var.
+
+(C=3) ilk gerçekten açık case.
+
+Burada:
+
+# [ a\_k
+
+m\_k+s\_k-s\_{k+1},
+\qquad
+m\_k\in{1,2},
+]
+
+transition system'i exact irrational rotation:
+
+[
+{k\alpha}
+]
+
+ile birlikte analiz edilmeli.
+
+Amaç yalnız:
+
+[
+n\_k=O(k)
+]
+
+göstermek değil; odd-state sayısını pigeonhole'a sokacak:
+
+[
+\boxed{
+\#{\text{possible odd states up to time }K}\<K
+}
+]
+
+tipi deterministic bound üretmek.
+
+Paralel ikinci saldırı:
+
+[
+\boxed{
+(A,K)=
+(114,208,327,604,,
+72,057,431,991)
+}
+]
+
+first-crossing semiconvergent'ının finite valuation/residue constraints'ini analiz etmek.
+
+---
+
+# Genel araştırma durumu
+
+Checkpoint 1'de iki rejim vardı:
+
+[
+\text{minimal counterexample}
+\Rightarrow
+\begin{cases}
+D\_k>0\text{ bir gün} & \text{Diophantine}\\
+D\_k\le0\text{ sonsuza dek} & 2\text{-adic/Archimedean}
+\end{cases}
+]
+
+Bu checkpoint'te iki kol da daraldı.
+
+### Crossing kolu
+
+Eski:
+
+[
+K\ge49,547,666,544.
+]
+
+Yeni:
+
+[
+\boxed{
+K\ge72,057,431,991.
+}
+]
+
+---
+
+### Forever-undercritical kolu
+
+Artık şu path'lerin hiçbiri positive counterexample olamaz:
+
+[
+\boxed{
+\text{mechanical extremizer},
+}
+]
+
+[
+\boxed{
+\text{eventually periodic barrier words},
+}
+]
+
+[
+\boxed{
+0\le
+\lfloor k\alpha\rfloor-A\_k
+\le2.
+}
+]
+
+Dolayısıyla hypothetical forever-barrier counterexample kritik çizgiye mekanik biçimde yapışamaz; slack yapısında daha büyük ve daha karmaşık excursions üretmek zorundadır.
+
+Şu anda en keskin araştırma özeti:
+
+[
+\boxed{
+\begin{aligned}
+\text{Minimal counterexample crossing yaparsa: }
+&K\ge72,057,431,991,\\[1mm]
+\text{crossing yapmazsa: }
+&\sup\_k\bigl(\lfloor k\alpha\rfloor-A\_k\bigr)\ge3.
+\end{aligned}
+}
+]
+
+İkinci satırdaki “(\ge3)” henüz Collatz'ı çözmüyor; fakat Checkpoint 1'deki tamamen genel infinite (2)-adic obstruction sorununu ilk kez somut bir quantitative slack restriction'a indiriyor.
+
+**Araştırma durumu:** Aktif.
+**Sonraki ana hedef:** bounded-slack (C=3) case'ini kanıtla veya karşı örnek mechanism'i bul.
+**İkinci hedef:** (72,057,431,991) denominator'lı ilk surviving upper semiconvergent'ı residue/valuation düzeyinde saldır.

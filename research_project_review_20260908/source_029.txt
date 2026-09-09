@@ -1,0 +1,20 @@
+# CP14 — SOURCE RECOVERY MANIFEST & RECONSTRUCTED SUMMARY
+Updated: 2026-08-26
+
+This folder was created because the main Drive archive had no canonical CP14 folder. The original CP14 handoff file is present in ChatGPT File Library as `COLLATZ_CP14_COLLISION_ENERGY_HANDOFF_TO_LEAD_RESEARCHER_2026-08-18.md`. The connector used here cannot copy File Library raw bytes directly into Drive, so this document records provenance and a reconstructed summary; it must not be treated as byte-identical source recovery.
+
+## Recovered CP14 content/status
+CP14 developed the fixed-weight to Syracuse collision-energy comparison. Writing one-positions as reverse gaps gives a Geom(2)-weighted representation and the exact pointwise domination
+p_fixed_{m,s}(y) <= [2^m / C(m,s)] p_Syrac_s(y).
+Consequently
+chi_fixed_{m,s} <= [2^m / C(m,s)]^2 chi_Syrac_s.
+At the centre m=2s, the conditioning factor is asymptotically polynomial (~pi s), so subexponential Syracuse collision energy transfers to subexponential fixed-weight collision energy.
+
+Status: the reduction itself is [EXACT] background. It did not by itself close B=1. It became an upstream ingredient for CP15/CP16R/CP17 before the final CP17 proof architecture was repaired and frozen.
+
+## Provenance
+Original File Library title: `COLLATZ_CP14_COLLISION_ENERGY_HANDOFF_TO_LEAD_RESEARCHER_2026-08-18.md`.
+File Library contains duplicate recovered copies dated 2026-08-18.
+
+## Integrity note
+If the original raw file is later exported from File Library, place it in this folder and retain this manifest as provenance. Do not replace this summary with fabricated code/data.

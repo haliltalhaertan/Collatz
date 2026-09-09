@@ -1,0 +1,11 @@
+{
+  "user_session_ceiling_usd": 2,
+  "authorized_wave_ceiling_usd": 0.24,
+  "max_calls": 3,
+  "retries": 0,
+  "time_cutoff": null,
+  "further_dispatch_requires_new_local_reservation": true,
+  "settled_cost_usd": 0.041352,
+  "remaining_session_budget_usd": 1.958648,
+  "outstanding_openrouter_calls": 0
+}

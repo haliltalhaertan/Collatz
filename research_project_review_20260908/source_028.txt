@@ -1,0 +1,89 @@
+COLLATZ ARAŞTIRMASI — CHECKPOINT 13
+ARA RAPOR — Partial-period endpoint discrepancy ve prefix-cylinder saving
+Durum: araştırma devam ediyor; bu belge final Checkpoint 13 değildir.
+A. Executive summary
+[KNOWN] CP12 üçüncü clean-room audit sonrası güvenli çalışma zemini: limsup H_N/ln ln N < 4.723565548607766; collision-only idealizasyonunda K > 3.01652611280307. Dolayısıyla collision multiplicity tek başına B=1 eşiğini kıramaz.
+[EXACT] CP12 repaired bookkeeping korunuyor: w→C_w yalnız fixed-q için injective; two-block s-sum full range max(0,q-R)≤s≤m; s>q automatic-success branch ayrı; full piecewise rate envelope kullanılmalı.
+[EXACT] Yeni prefix-cylinder theorem elde edildi. Her j≤R için parity-prefix cylinders [0,3^s) içinde en fazla ceil(3^s/2^j) nokta içerdiğinden Y(R,s,r) için optimize edilebilir yeni bir initial-segment upper bound var.
+[CERTIFIED NUM] Kullanıcının verdiği üç preliminary Y-count exact enumeration ile yeniden üretildi: 31, 553, 419. Full two-block örneği de exact olarak 1227 çıktı.
+[LEAD] Bu theorem CP12’nin j=R kaba endpoint bound’unun ötesinde gerçek bir second deterministic saving mekanizmasıdır. Henüz final K<3 sonucu çıkarılmamıştır; rate optimization ve self-audit devam ediyor.
+B. Repaired CP12 working ground
+limsup_{N→∞} H_N / ln ln N < 4.723565548607766
+K_collision-only > 3.01652611280307 > 3
+Üçüncü clean-room audit ayrıca CP12 upper-edge optimizer yakınında first-block density için s/m ≈ 0.5083701195 değerini rapor ediyor. Bu, eski q/m≈1/α collision oranının variational bottleneck’i temsil etmediğini gösteriyor.
+C. Partial-period endpoint discrepancy nesnesi
+Tanım:
+Y(R,s,r) = #{0 ≤ y < 3^s : h_R(y) ≥ r}
+Burada h_R(y), shortcut map altında ilk R parity bitindeki ones sayısıdır. CP12’nin kaba theorem’i:
+Y(R,s,r) ≤ Σ_{k=r}^R C(R,k)
+Uniform heuristic ise partial-period factor’ünü korur:
+Y ≈ (3^s / 2^R) · Σ_{k=r}^R C(R,k)
+Checkpoint 13’ün amacı bu kaybolan factor’ün herhangi pozitif exponential kısmını deterministik olarak geri kazanmaktır.
+D. Yeni prefix-cylinder theorem
+Length-j parity map mod 2^j bir permutation’dır. Bu nedenle sabit bir parity prefix v, ordinary integers içinde tek bir residue class modulo 2^j belirler. Initial interval [0,3^s) içinde herhangi bir residue class en fazla ceil(3^s/2^j) kez görünür.
+[EXACT] Dolayısıyla her 0≤j≤R için:
+Y(R,s,r) ≤ ceil(3^s / 2^j) · Σ_{a ≥ r-(R-j)} C(j,a)
+Burada binomial tail, threshold 0’ın altındaysa 2^j; j’in üstündeyse 0 olarak yorumlanır. j=R seçimi CP12’nin eski endpoint-period bound’una geri döner; j<R seçimleri geç kalan R−j parity bitlerini adversarial kabul edip erken balanced prefix’i kullanır.
+[EXACT] Optimize edilmiş finite theorem:
+Y(R,s,r) ≤ min_{0≤j≤R} { ceil(3^s/2^j) · HamTail(j, r-(R-j)) }
+E. Proof sketch ve neden yeni bilgi taşıyor
+Her length-j parity prefix, Q_j bijection nedeniyle tam bir residue class mod 2^j’dir.
+[0,3^s) initial interval’ında bu residue class’ın occupancy’si floor/ceil olarak 3^s/2^j civarındadır; upper bound ceil(3^s/2^j).
+Full R-bit success h_R≥r ise, son R−j bit adversarial olarak tamamen 1 kabul edilse bile ilk j bitte en az r−(R−j) ones gerekir.
+Bu nedenle başarılı j-prefix sayısı HamTail(j,r-(R-j)); her prefix’in initial-interval occupancy’si yukarıdaki ceil factor ile sınırlıdır.
+Bu bilgi fixed-endpoint collision multiplicity’den bağımsızdır: ordinary initial interval ile parity cylinder geometrisinin doğrudan kesişimidir.
+F. Exact finite reproduction
+Case
+t
+s
+R
+r
+Actual Y
+Uniform exp.
+1
+20
+7
+18
+14
+31
+33.77142334
+2
+24
+9
+22
+16
+553
+516.47001457
+3
+28
+10
+25
+19
+419
+432.04080445
+[CERTIFIED NUM] Exact integer iteration ile üç preliminary count birebir reproduce edildi. Ratios sırasıyla 0.91794, 1.07073 ve 0.96982. Bu constant-factor dalgalanmalar equidistribution theorem kanıtı değildir; exponential-rate davranışı ayrıca incelenmelidir.
+[CERTIFIED NUM] Full two-block test: t=28, m=20, s=10, R=25, q=29 için
+#{x<2^20 : h_20(x)=10 ve h_45(x)≥29} = 1227
+Bu da raporlanan exact değeri yeniden üretir.
+G. Collision-only barrier — doğrulanmış stratejik sınır
+CP12 clean-room audit’in repaired rate envelope’i ideal collision cost M=e^{o(m)} ile yeniden optimize edildiğinde certified lower barrier:
+K_collision-only > 3.01652611280307
+Numerical optimum yaklaşık 3.01657928771617. Dolayısıyla Checkpoint 13 collision multiplicity’yi tek başına büyütmeye devam etmeyecek; ikinci saving partial-period/initial-segment discrepancy veya weighted endpoint correlation’dan gelmelidir.
+H. Açık rate hesabı ve sonraki işler
+[OPEN] Prefix-cylinder theorem’in repaired CP12 full piecewise envelope’e eklenmesi ve minimum rho_min’in üç collision modelinde optimize edilmesi.
+[OPEN] Broad (R,s,r) rate surface: D=Y/[(3^s/2^R)HamTail], δ=(1/R)ln D ve rho_eff ölçümü.
+[OPEN] Worst-case exponential concentration ailesi olup olmadığı; özellikle M=3^s endpoint’inin arbitrary M’ye göre özel davranışı.
+[OPEN] Weighted multiplicity×suffix success sumunu product-of-maxima yerine doğrudan sınırlamak.
+[OPEN] Eğer K<3 görünürse tüm floor/ceil, s>q branch, uniformity ve growing-t master inequality için ayrı adversarial self-audit.
+I. Status ledger
+[KNOWN] Finite parity-vector bijection / 2-adic parity permutation.
+[EXACT] Repaired CP12 fixed-q injectivity ve full two-block branch accounting çalışma zemini.
+[EXACT] Prefix-cylinder initial-segment bound ve j-optimizasyonu.
+[CERTIFIED NUM] Y-counts 31, 553, 419 ve full two-block count 1227.
+[KNOWN/CERTIFIED NUM] CP12 clean-room coefficient <4.723565548607766 ve collision-only barrier >3.01652611280307.
+[LEAD] Partial-period factor’ün positive exponential kısmını prefix-cylinder/multi-scale yöntemle geri kazanmak.
+[OPEN] K<3 için gereken minimum rho ve joint (eta,rho) phase diagram.
+[OPEN] Weighted endpoint image geometry ve multiplicity-tail negative correlation.
+[FAIL] Collision-only stratejisinin B=1’i tek başına kırabileceği iddiası.
+J. Kaynak notu
+Bu ara rapor, Checkpoint 13 kullanıcı araştırma talimatı ile Google Drive’daki “COLLATZ_CP12_THIRD_CLEAN_ROOM_AUDIT_2026-08-15.md” dosyasındaki repaired CP12 çalışma zeminine dayanır. Final Checkpoint 13 henüz tamamlanmamıştır.

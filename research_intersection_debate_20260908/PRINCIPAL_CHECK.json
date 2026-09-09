@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "joint_cells": 105,
+  "dp_seconds": 0.038286800030618906,
+  "direct_seconds": 2.1320156000438146,
+  "starts": 524288,
+  "peak_states": 5617,
+  "weight16": 41142
+}

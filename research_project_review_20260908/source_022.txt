@@ -1,0 +1,332 @@
+# Checkpoint 11 — Bağımsız Adversarial Denetim
+
+**Tarih:** 15 Ağustos 2026 · Rapordan, önceki checkpoint'lerden ve önceki audit'lerden bağımsız yeniden türetme; exact integer/Fraction aritmetiği, 60-hane decimal, brute-force falsification denemeleri, hedefli literatür taraması.
+
+---
+
+## A. Executive verdict
+
+> ### **Proof düzeltilebilir.**
+
+Ana zinciri kırmayı denedim:
+
+```
+A_t(x)≤L  ⟹  parity prefix'te ≤ L−t zero  ⟹  N_t(2^J−1,c) ≤ Σ_{z≤D}C(J−1,z)
+          ⟹  B_t(c) ≤ [2(c−1)ln2/3]t + O(√t)  ⟹  limsup H_N/lnlnN ≤ 4.91656355095…
+```
+
+**Dört halkanın hiçbirinde off-by-one, yanlış bijection, shell-counting kaybı, entropy-normalization hatası veya gizli linear-`t` terimi bulamadım.** Aksine iki halkanın beklediğimden *daha güçlü* olduğunu buldum (§D.2, §J).
+
+Verdict "sağlam" değil çünkü CP11, CP10'un master inequality'sini **`n₀` exceptional-block onarımı yapılmadan** aynen alıntılıyor (§I.1). Bu, önceki audit'te işaret ettiğim ve growing-`t`'de öldürücü olan kusurun aynısı. Onarım yine tek satır, ama yapılmamış.
+
+---
+
+## B. Main theorem verdicts
+
+| İddia | Verdict |
+|---|---|
+| `N_t(2^J−1,c) ≤ Σ_{z≤L−t}C(J−1,z)`, `J ≤ L+1` | **[VALID]** — üstelik `J=L+1`'de **eşitlik** (§D.2) |
+| `B_t(c) ≤ [2(c−1)ln2/3]·t + O_c(√t)` | **[VALID]** (shell `J>L+1` kuyruğu yazılmalı, katkısı `e^{−I(c)t}→0`) |
+| `limsup H_N/lnlnN ≤ 4.91656355095…` | **[VALID]** — `n₀` onarımıyla |
+| `X_N = O_{ε,n₀}((lnN)^{1.63885451698…+ε})` | **[VALID]** — `n₀`-bağımlılığı bu kez doğru yazılmış ✔ |
+| `limsup (s_k−log₂k)/log₂log₂k ≥ −0.63885451698…` | **[VALID]**, ve **hipotezsiz** (forever-undercritical gerekmiyor) |
+| `B_{t+u} ≤ B_t+B_u` false | **[VALID counterexample]** — birebir reprodüksiyon |
+| CP10'un `x_y` tanımı `[FAIL]` | **[OVERSTATED]** — §C |
+
+---
+
+## C. Canonical tie audit
+
+**Tie örneği exact doğrulandı.** `t=3`, `y=65 (mod 81)`:
+
+| word | `B_a` | `x` | forward kontrol |
+|---|---|---|---|
+| `(1,3,3)` | 31 | **307** | `3·307+1=922=2·461`, `3·461+1=1384=8·173`, `3·173+1=520=8·65` ✔ |
+| `(2,4,1)` | 85 | **305** | `3·305+1=916=4·229`, `3·229+1=688=16·43`, `3·43+1=130=2·65` ✔ |
+
+`2⁷·65 = 8320 = 27·307+31 = 27·305+85` ✔. Bağımsız exhaustive aramayla `μ₃(65)=7` ve **minimum word'lerin tam olarak bu ikisi** olduğunu doğruladım. `ξ₃(65)=305` ✔.
+
+**Ama raporun `[FAIL]` etiketi fazla güçlü.** CP10'un ihtiyaç duyduğu tek şey `y ↦ x_y`'nin **injective** olmasıydı, ve bu **her tie-breaking seçimi için** doğrudur: `x`'in kendi Syracuse geçmişi deterministiktir, dolayısıyla `x ↦ word ↦ terminal ↦ y` iyi tanımlıdır. Önceki audit'te bunu t=1..5 için exhaustive doğrulamıştım (0 collision). Ties **well-definedness** sorunudur, **correctness** sorunu değil.
+
+Bu ayrım pratikte önemli: raporun §19'da sorduğu "canonical tie-fix `B_t`'yi neden değiştirmedi?" sorusunun cevabı budur —
+
+> `B_t(c) = Σ 3^t/(2^{μ_t(y)}·r_y)` tanımında `x_y` veya `ξ_t(y)` **hiç geçmiyor**. `B_t` sadece `μ_t` ve `r_y`'ye bağlı. Auxiliary start yalnızca `B_t`'yi *yukarıdan sınırlayan* toplamda görünür. Bu yüzden canonical seçim `B_t`'yi değiştiremez — ve gerçekten de t=1..13'te bütün değerler CP10'unkilerle özdeş çıktı.
+
+Raporun tabloyu "canonical ξ_t tie-fix ile" diye sunması yanıltıcı; değerler tie-fix'ten bağımsızdır.
+
+`ξ_t` tanımının doğruluğu: `ξ_t(y)` = minimum-weight word'ler arasında `B_a`'yı **maksimize** eden word'ün `r_y`'den inversion'ı (çünkü `ξ = (2^μ r_y − B_a)/3^t`). Terminal'in `r_y` olması zorunlu, çünkü sınıftaki daha büyük her temsilci daha büyük `ξ` verir. ✔ Injectivity aynı deterministik-forward argümanıyla korunuyor ✔ (t≤13'te bütün `ξ_t(y)` farklı, tek, 6'ya asal — kontrol edildi).
+
+`ξ_t(y) < 6·2^L`: `2^μ r_y = 3^t ξ + B_y > 3^t ξ` ve `r_y ≤ Q_t−1 < 2·3^{t+1}` ⟹ `ξ < 2^L·2·3^{t+1}/3^t = 6·2^L` ✔ **strict**, sabitler doğru.
+
+`3^t/(2^μ r_y) = 1/(ξ + B_y/3^t) < 1/ξ` ✔ **strict** (çünkü `B_y > 0` strict).
+
+---
+
+## D. Parity-prefix theorem audit — audit'in merkezi
+
+### D.1 Kullanıcının 10 sorusuna cevaplar
+
+1. **Sözlük.** Odd-only Syracuse adımı `n_j → n_{j+1}` valuation `a_j` ile, shortcut map `T(n)=(3n+1)/2` (tek) / `n/2` (çift) altında **tam `a_j` adıma** karşılık gelir; bu bloktaki ilk pozisyon tek (`n_j`), kalan `a_j−1` pozisyon çifttir (çünkü `v₂(3n_j+1)=a_j≥2` ise `(3n_j+1)/2` çifttir). Dolayısıyla `t` Syracuse adımı = `A=A_t(x)` shortcut adımı, içinde **tam `t` tane 1**.
+2. **Neden ≥ t+1 bir?** Bit `0..A−1` içinde tam `t` tane 1 var; bit `A` ise `n_t`'nin paritesi = **1** (tek). `A ≤ L` olduğundan `A ∈ {0,…,L}`, yani ilk `L+1` bit `t+1` tane 1 içerir ✔.
+3. **Off-by-one?** Yok. `zeros ≤ (L+1)−(t+1) = L−t = D` ✔. Bağımsız ikinci yol: bit `0..A` içinde `A−t` zero, bit `A+1..L` içinde ≤ `L−A` zero, toplam `≤ L−t` ✔ — iki yol aynı `D`'yi veriyor.
+4. **`C(J−1,z)` katsayısı.** `x` tek ⟹ bit₀ = 1, o yüzden serbest bitler `1..J−1`, yani `J−1` tane; `z` tanesi zero: `C(J−1,z)` ✔.
+5. **`J ≤ L+1` neden gerekli?** Kısıt yalnız ilk `L+1` bit üzerinde geçerli; daha uzun prefix'te ek zero serbesttir. **Brute force'ta bu sınırın keskin olduğunu gösterdim:** `J = L+2`'de bound *hemen* çöküyor (t=3: actual 10 > bound 6; t=4: 44 > 29; t=5: 186 > 130). Yani hipotez dekoratif değil, zorunlu.
+6. **`A_t(ξ_t(y)) = μ_t(y)` kesin mi?** Evet — `ξ`, minimum-weight word'ün inversion'ıdır ve forward re-run word'ü birebir üretir (t≤13'te doğrulandı) ✔.
+7. **Bijection.** Terras: `x mod 2^J ↔ ilk J parity bit`, bijeksiyon. `1 ≤ x ≤ 2^J−1` aralığında her sınıfın **tam bir** temsilcisi var, yani bu aralıkta `x ↔ prefix` gerçekten birebir ✔.
+8. **Terminal-class minimum şartı kullanılıyor mu?** **Hayır.** Theorem yalnız `A_t(x) ≤ L` kullanıyor. Bu, §J'nin konusu.
+9. **Aynı prefix farklı `y` üretebilir mi?** Prefix `x`'i (mod `2^J`) belirler, `x` de `y`'yi belirler; aralıkta tek temsilci olduğundan bir prefix ↔ bir `x` ↔ bir `y`. Upper bound yönü zaten güvenli.
+10. **Endpoint `x = 2^J−1`.** Tek ve `< 2^J` ⟹ dahil ✔.
+
+### D.2 Brute-force sonucu — ve beklenmedik bulgu
+
+`t=1..6`, `c=1.6` (ayrıca 1.59, 1.7 tarandı), tüm `J ≤ L+1`:
+
+```
+premise ihlali: 0        theorem ihlali: 0
+```
+
+**Ama daha fazlası çıktı: `J = L+1`'de her vakada TAM EŞİTLİK.**
+
+| t | L | D | J=L+1 | actual | bound |
+|---|---|---|---|---|---|
+| 2 | 3 | 1 | 4 | 4 | 4 |
+| 3 | 4 | 1 | 5 | 5 | 5 |
+| 4 | 6 | 2 | 7 | 22 | 22 |
+| 5 | 8 | 3 | 9 | 93 | 93 |
+| 6 | 9 | 3 | 10 | 130 | 130 |
+
+Bunun sebebi, implication'ın aslında **ekivalans** olması:
+
+> **`A_t(x) ≤ L` ⟺ ilk `L+1` parity bit'inde en az `t+1` tane 1 vardır.**
+
+(⟸ yönü: `L+1` bit içinde `≥ t+1` bir varsa, `(t+1)`-inci bir pozisyon `≤ L`'de gerçekleşir, o pozisyon tam olarak `A_t(x)`'tir.) Bu bir ispattır; ayrıca yukarıdaki beş bağımsız vakada `J=L+1` eşitliği bunu doğruluyor. *(Daha geniş bir `(t,c,x)` taraması bu ortamda hâlâ çalışıyor; sonucu bu rapora dahil edilmedi.)*
+
+**Sonucu önemli:** parity-prefix theorem bir üst sınır değil, `J=L+1`'de **exact count**'tur. Yani bu yöntem hattı içinde başka slack yoktur — geriye kalan tek gevşeklik (a) coprime-to-3 kısıtı ve (b) canonical-minimum kısıtıdır. §J'ye bakınız.
+
+### D.3 Novelty
+
+Theorem, klasik parity-vector bijection'ının doğrudan sonucudur. Rozier'in makalesinde zaten `#I₀(j,q) = C(j,q)` (uzunluk `j` parity vector'ünde tam `q` bir olan `n ≤ 2^j` sayısı) yer alıyor — CP11'in sayımı bunun prefix-kısıtlı yeniden düzenlemesidir.
+
+> **Verdict: theorem'in kendisi `[KNOWN]` (klasik bijection'ın kolay corollary'si). Yeni olan, bunu harmonic boundary problemine bağlamak ve `2(c−1)ln2/3` katsayısını çıkarmaktır.**
+
+Rapor `[EXACT] Yeni parity-prefix discrepancy theorem` diyor; "yeni" kelimesi theorem için değil, uygulama için kullanılmalı.
+
+---
+
+## E. Boundary coefficient derivation
+
+Bağımsız yeniden türetme:
+
+**Saturated zone (`ξ ≤ 2^{2D}`).** `ξ`'ler farklı, 6'ya asal pozitif tam sayılar ⟹
+`Σ 1/ξ ≤ (1/3)ln(2^{2D}) + O(1) = (2D ln2)/3 + O(1)` ✔ (yoğunluk `φ(6)/6 = 1/3`).
+
+**Neden tam `2D`?** `Σ_{z≤D}C(J−1,z) ≈ 2^{J−1}` ancak `D ≈ (J−1)/2` iken, yani `J ≈ 2D+1`'de geçiş olur ✔. Alt tarafta parity kısıtı bilgi vermiyor.
+
+*Bunu kontrol ettim:* `J ≤ 2D`'de shell başına iki sınır — coprime `(1/3)ln2 = 0.2310` ve parity `P(Bin(J−1,½)≤D) ≥ ½` — **coprime her zaman daha iyi**. `±1` farkları katsayıyı değiştirmiyor. Rapor doğru sınırı seçmiş.
+
+**Upper shells (`J = 2D+r`).** Shell `[2^{J},2^{J+1})` katkısı `≤ N_t(2^{J+1}−1)/2^J ≤ 2^{−J}Σ_{z≤D}C(J,z) = P(Bin(J,½) ≤ D)`.
+Hoeffding: ortalama `J/2 = D+r/2`, sapma `r/2` ⟹ `P ≤ exp(−2(r/2)²/J) = exp(−r²/(2J))` ✔ **exponent ve sabit doğru**.
+`J ≤ L+1 = O(t)` ile `Σ_{r≥0}exp(−r²/(2(L+1))) = O(√L) = O(√t)` ✔.
+
+**`J > L+1` kuyruğu (raporda yok).** Support `ξ < 6·2^L < 2^{L+3}`. `J ∈ {L+2,L+3}` shell'lerinde theorem uygulanamaz; generic sayım: katkı `≤ #G_t/2^{L+1} ≤ 2C(L,t)/2^{ct} ≈ e^{−I(c)t} → 0` ✔. **İhmal edilebilir ama yazılmalı** — [GAP, kozmetik].
+
+**Sonuç:** `B_t(c) ≤ [2(c−1)ln2/3]t + O(√t)` ✔ **[VALID]**
+
+**Not:** `C(J,z)` (rapor) vs `C(J−1,z)` (theorem) farkı zararsız — `C(J,z) > C(J−1,z)`, yani rapor daha zayıf ama geçerli bir sınır kullanıyor.
+
+---
+
+## F. Growing-depth + optimizasyon
+
+**Monotonluk kimliği bağımsız doğrulandı (58 hane):**
+```
+I(c) − (c−1)I′(c) = ln(2/c) > 0   (c<2)
+```
+⟹ `d/dc[(c−1)/I(c)] = ln(2/c)/I(c)² > 0` ⟹ `K₁₁` kesin artan ⟹ **infimum gerçekten `c↓α`'da**, iç noktada daha iyi `c` yok ✔. (Scan ile de doğrulandı.)
+
+**60-hane sabitler:**
+```
+b₁₁(α) = 2(α−1)ln2/3 = 0.270310072072109587985342076976232757714660282308
+3I(α)                = 0.164938418432451215018551171170616698401225144794
+K₁₁                  = 4.91656355094999688084663006501902078230210561892836
+p₁₁ = K₁₁/3          = 1.63885451698333229361554335500634026076736853964279
+p₁₁ − 1              = 0.63885451698333229361554335500634026076736853964279
+K₁₁/K₁₀              = 0.777026367794107541086122977600254300682982589119
+gereken ek saving    = 0.389817711311729362473452635223526479745045528  (%38.98)
+```
+Raporun bütün rakamları birebir ✔ (`%39` ✔).
+
+**Quantifier sırası (raporda örtük, doğrusu):** `c` sabitle → `t(N) = ⌈(lnlnN + 2lnlnlnN)/I(c)⌉` → `N→∞` ⟹ `limsup ≤ K₁₁(c)`; **sonra** `inf_{c>α}`. `c`'de uniformity gerekmiyor, `K₁₁` `c=α`'da sürekli (`I(α)>0`) ✔.
+
+---
+
+## G. Carry + second-order slack
+
+`H_N = 3lnU_N + O(1)`, `X_N = 3n₀(U_N−1)` ⟹ `X_N ≤ (lnN)^{p₁₁+o(1)}`; sabit `n₀`'a bağlı ve rapor bunu `O_{ε,n₀}` ile **doğru** yazmış ✔ (CP10'da eksikti).
+
+Second-order: `s_k ≤ log₂k − β log₂log₂k + C` eventually ⟹ `2^{D_k} ≫ (log k)^β/k` ⟹ `X_N ≫ (lnN)^{β+1}`. `β+1 > p₁₁` çelişki verir ⟹ her `β > p₁₁−1` için hipotez imkânsız ⟹
+`limsup (s_k−log₂k)/log₂log₂k ≥ −(p₁₁−1) = −0.63885451698…` ✔
+
+**Quantifier kontrolü:** negasyon "her `C` için sonsuz çok `k`'da `s_k > log₂k − βlog₂log₂k + C`" verir; `limsup ≥ −β` her `β > β₁₁` için ⟹ `limsup ≥ −β₁₁` ✔.
+
+**Düzeltme:** rapor bunu "forever-undercritical durumda" diye sunuyor; **hipotez kullanılmıyor**. Türetme yalnız `D_k = −s_k−{kα}` tanımını ve `X_N` üst sınırını kullanıyor, ikisi de koşulsuz. Sonuç göründüğünden güçlü. (Aynı gözlemi CP10 audit'inde de yapmıştım; düzeltilmemiş.)
+
+---
+
+## H. Computational reproduction
+
+Raporun kodu kullanılmadı; `μ_t` normalize `z`-özyinelemesiyle, `ξ_t` ise minimum-weight word'ler arasında `B_a`-maksimizasyonuyla bağımsız hesaplandı.
+
+**`B_t(1.6)`, t=1…13 — 13 değerin 13'ü de 10 ondalık hanede birebir:**
+
+`0.2245989305, 0.3470326902, 0.2611213855, 0.2435708279, 0.3479776034, 0.3513995370, 0.4580620350, 0.4312472571, 0.4976428129, 0.5592265692, 0.5022395911, 0.5518293044, 0.4855037386`
+
+`t=14`: bağımsız hesabım `0.536192…` — raporun `0.5361921965` değeriyle uyumlu (önceki oturumdaki uzun DP koşusu da aynı sonucu verdi). `t=16,18` bu ortamda (numpy yok) tamamlanamadı; **bağımsız teyit edilmedi** olarak kaydediyorum. Raporun `t=18` için verdiği `L=28`, `13 123 110` composition sayısı `C(28,18)`'e birebir eşit ✔ — iç tutarlılık kontrolü geçti.
+
+**`ξ_t` sağlık kontrolü** (t=1…13): bütün `ξ_t(y)` pozitif, tek, 3'e asal ve **çiftler halinde farklı** ✔.
+
+**§14 subadditivity counterexample — birebir:**
+```
+B₄(1.59)=0.2435708279  B₅(1.59)=0.2359505250  B₉(1.59)=0.4976428129 > 0.4795213530 ✔
+```
+`[FAIL]` doğru. (İç tutarlılık: `⌊1.59·4⌋=⌊1.6·4⌋=6` olduğu için `B₄(1.59)=B₄(1.6)` ✔; `⌊1.59·9⌋=⌊1.6·9⌋=14` olduğu için `B₉(1.59)=B₉(1.6)` ✔ — tablo kendi içinde tutarlı.)
+
+**§21 `A_t(31)` — birebir:** t=31…37 için `A_t/t` = 1.4516, 1.4688, 1.4848, 1.5588, 1.6000, 1.5833, 1.5676; ilk ihlal **t=38** (`A=63`, oran 1.6579) ✔. Raporun tablosu doğru.
+
+**§15 rate-function normalization — kullanıcının şüphesi yersiz.** İki uç noktada tam tutarlılık:
+```
+θ = c·ln2      : θ·H₂((c−1)/c) = 1.043632815857292619722…  = h(c)   (60 hane özdeş)
+θ = 2(c−1)ln2  : θ·H₂(1/2) = θ                              (saturated zone ile sürekli)
+```
+Birincisi cebirsel bir kimliktir: `c·ln2·H₂((c−1)/c) = c ln c − (c−1)ln(c−1) = h(c)`. Yani `H₂` **base-2** entropy alınırsa ifade doğru ve `ln2` faktörü zaten yerinde. Normalization hatası **yok**. Raporun açıklama cümlesi kafa karıştırıcı ama formül doğru.
+
+`§12` sözlüğü `c(1−H₂(1/c)) = I(c)/ln2` de doğrulandı (52 hane) ✔ — bu, önceki audit'te bağımsız türettiğim LBH↔`I(c)` özdeşliğinin aynısı.
+
+---
+
+## I. Counterexamples / bugs
+
+### I.1 [GAP — devralınmış, literal haliyle theorem'i çökertir] `n₀` exceptional block
+
+CP11 §8, CP10'un master inequality'sini **onarımsız** alıntılıyor. `3 | n₀` ise telescoping'in `k=t` terimi domination lemma'sının dışında kalır ve elde yalnız `(3/2)^t` sınırı olur. Growing depth'te `t ≈ lnlnN/I(α) ≈ 18.2 lnlnN` ⟹ `(3/2)^t ≈ (lnlnN)^{7.4}`, ki `4.9166·lnlnN`'i ezer.
+
+**Onarım (tek satır):** `H_N = 1/n₀ + Σ_{1≤s<N}1/n_s` yazıp telescoping'i `s≥1`'den başlat; `n_k` her `k≥1` için mod 3 unit'tir.
+
+Bu, önceki audit'te aynen bildirilmişti. Checkpoint 12'ye taşınmadan kapatılmalı.
+
+### I.2 [GAP — kozmetik] `J > L+1` shell'leri
+
+§7'nin shell ayrıştırması `J ≤ L+1` sınırını aşan iki shell'i (`ξ ∈ [2^{L+2}, 6·2^L)`) adreslemiyor. Katkı `e^{−I(c)t}→0`, ama theorem'in geçerlilik sınırı brute force'ta **keskin** olduğu için (§D.1-5) bu boşluk yazıyla kapatılmalı.
+
+### I.3 [OVERSTATED] §2 ve §15'teki `[FAIL]` etiketleri
+
+CP10'un `x_y`'si ties nedeniyle **yanlış değil, yalnız non-canonical**. Injectivity her seçimde korunur (§C).
+
+### I.4 [MINOR] §9'un gereksiz hipotezi
+
+Second-order slack sonucu forever-undercritical varsayımını kullanmıyor (§G).
+
+**Ana zincire counterexample bulunamadı.**
+
+---
+
+## J. Saturated-zone diagnosis
+
+### J.1 Terim terim: gerçekten tek linear kaynak mı?
+
+| terim | `t ≍ lnlnN/I(c)` altında | linear-`t` katkı |
+|---|---|---|
+| composition error | `O((ln t)²)` | yok |
+| good bulk `p_t(c)lnN/3` | `o(1)` (t seçimi) | yok |
+| bad absorption `η_t H_N` | `η_t → 0`, çarpımsal | yok |
+| **saturated shells `ξ ≤ 2^{2D}`** | **`2(c−1)ln2·t/3`** | **EVET — tek kaynak** |
+| upper dyadic shells | `O(√t)` | yok |
+| support endpoint `J>L+1` | `e^{−I(c)t}` | yok |
+| `n₀` initial block | `O(1)` *(onarımdan sonra)* | yok |
+
+> **Raporun iddiası doğru: kalan linear loss'un tamamı saturated small-start zone'undan geliyor.** ✔ **[VALID]**
+
+### J.2 Ama bu bölge, göründüğünden daha sıkı kapalı — [LEAD, zayıf]
+
+Parity-prefix theorem `J=L+1`'de **eşitlik** verdiği için (§D.2), bu yöntem hattında geriye yalnız iki gevşeklik kalıyor:
+
+**(a) coprime-to-3 ile parity kısıtının kesişimi.** Ölçtüm: saturated bölgede shell başına coprime sınırı `(1/3)ln2 = 0.2310`, parity sınırı `≥ 1/2`. Kesişim en iyi ihtimalle çarpımsal davranırsa shell başına `(2/3)·P ≥ 0.667` verir — **daha kötü**. Çünkü coprime sınırı shell içindeki `1/ξ` değişimini kullanıyor, parity sınırı kullanmıyor. **Bu yoldan leading-order kazanç yok.**
+
+**(b) canonical-minimum kısıtı (raporun §18 önerisi).** Ölçtüm — `N_t(2^J−1)` (canonical) vs `C_t(2^J−1)` (bütün low-weight starts):
+
+| t | J aralığı | `N_t/C_t` |
+|---|---|---|
+| 4 | 4–7 | 1.00, 1.00, 0.80 |
+| 5 | 5–9 | 1.00, 1.00, 0.73, 0.83, 0.70 |
+| 6 | 5–10 | 1.00, 1.00, 0.79, 0.89, 0.78, 0.76 |
+
+Küçük `J`'de oran **tam 1** — yani saturated bölgenin en alt kısmında canonical kısıt **hiçbir şey kazandırmıyor**; büyük `J`'de yalnız `0.7–0.9` sabit çarpan. Bu ölçekte exponential seyreklik **yok**.
+
+> **Checkpoint 12'ye dürüst uyarı:** raporun önerdiği "canonical minimum histories şartını aktif kullan" hattı, `t ≤ 6` verisinde sabit-çarpan düzeyinde görünüyor. `2(c−1)ln2/3 → <3I(c)` için gereken **%39**'luk kazanç, sabit çarpandan gelemez (linear katsayıyı değiştirmez). Gereken şey, saturated bölgede `Ψ_c(θ) < θ` veren gerçek bir **initial-segment equidistribution** teoremidir — yani "low-zero-count parity cylinder'ları `[1,2^{2D}]` başlangıç aralığında yoğunlaşamaz" tipi bir ifade.
+
+### J.3 §22'nin soruları
+
+1. *Data linear growth ile uyumlu mu?* Çift-`t` alt dizisi (10→18: 0.559, 0.552, 0.536, 0.510, 0.486) **azalıyor**; linear büyümeyle uyumlu değil. Ama `ln t` tipi büyüme `t≤18`'de ayırt edilemez.
+2. *`B_t/t→0` için finite evidence ne kadar anlamlı?* `t=18`'de `B_t/t = 0.027`, gereken `<3I(1.6)=0.1516` — 5.6 kat marj. Yine de 18 nokta.
+3. *Structural mechanism?* Evet, heuristik: `#{y: ξ_t(y)≤M} ≲ (M/3)e^{−I(c)t}` ⟹ `B_t ≈ (1/3)e^{−I(c)t}·ct·ln2 → 0`. Bu, `O(1)`'i değil **`o(1)`**'i öngörür ve veriyle uyumlu.
+4. *Parity-prefix tek başına neden `O(1)` veremez?* Çünkü **tight** (§D.2): `J=L+1`'de exact. Saturated bölgede gerçekten saturate ediyor. Ek girdi zorunlu.
+5. *Hangi discrepancy theorem gerekli?* `Ψ_c(θ) ≤ θ − δ` bir `θ ∈ (0, 2(c−1)ln2]` bölgesinde — yani Collatz parity permütasyonunun initial-segment discrepancy'si.
+
+---
+
+## K. Literature status
+
+> **Verdict: sayım teoremi `[KNOWN]` (klasik corollary); `4.91656…` statement'ı `[NO EXACT MATCH FOUND]`.**
+
+- **Terras/Everett bijection** klasik: `x mod 2^J ↔ ilk J parity bit`.
+- **Rozier (2017)** zaten `#I₀(j,q) = C(j,q)` sayımını içeriyor — CP11'in `Σ_{z≤D}C(J−1,z)` ifadesi bunun prefix-kısıtlı yeniden düzenlemesi. Dolayısıyla parity-prefix theorem **yeni matematik değil**; klasik bijection'ın doğrudan corollary'si.
+- **Stérin (arXiv:1907.00775)**, parity word ↔ ancestor'ların ikili gösterimi ve regular-expression yapısını veriyor; initial-segment formulation'ın doğal olduğunu destekliyor ama gereken restricted large-deviation teoremini vermiyor. Raporun bu konumlandırması doğru.
+- **Rozier LBH** ile ilişki: raporun §12'si benim önceki audit'imde türettiğim `[h(c)−I(c)]/3` karşılaştırmasını doğru aktarıyor. **Kayda değer:** CP11'in *koşulsuz* katsayısı `0.27031`, LBH'nin *koşullu* olarak vereceği `0.32955`'ten **daha iyi**. Yani bu adım LBH'yi gerektirmediği gibi onu geçiyor — raporda vurgulanmamış, vurgulanmalı.
+
+`N_t(M,c)` için gereken initial-segment large-deviation teoremine veya `4.91656355095` katsayısıyla aynı statement'a doğrudan eşleşme bulamadım. Bu bir öncelik iddiası değildir; tarama theorem-statement düzeyinde ve açık kaynaklar üzerinde yapıldı.
+
+---
+
+## L. Publication readiness
+
+> ### **CP10 ile birleşik tek manuscript — theorem-level ciddi aday.**
+
+CP11'i ayrı bir makale olarak değerlendirmezdim: tek başına yeni matematiği bir klasik-corollary sayımı + bir dyadic ayrıştırmadır. Ama CP9→CP10→CP11 zinciri birlikte tek ve tutarlı bir teoremdir:
+
+> *Her divergent Syracuse yörüngesi için `Σ_{k<N}1/n_k ≤ (4.9166+o(1))lnlnN` ve `X_N = O_{ε,n₀}((lnN)^{1.6389+ε})`.*
+
+Yayın öncesi zorunlu iş listesi:
+1. **`n₀` exceptional-block onarımı** (I.1) — hâlâ açık, iki checkpoint'tir taşınıyor.
+2. `J>L+1` shell kuyruğunu yaz (I.2).
+3. `[FAIL]` etiketlerini `[non-canonical]` / `[OPEN]` olarak yumuşat (I.3).
+4. Second-order sonuçtan gereksiz hipotezi kaldır (I.4).
+5. Parity-prefix theorem'in **ekivalans** olduğunu ve `J=L+1`'de eşitlik verdiğini yaz — hem daha güçlü hem yöntemin sınırını dürüstçe gösteriyor.
+6. Novelty dilini düzelt: theorem klasik, uygulama yeni.
+7. `B_t`'nin `ξ_t` seçiminden bağımsız olduğunu açıkça belirt (§C).
+8. `K₁₁`'in bu architecture içinde optimal olduğunu (`ln(2/c)>0`) theorem olarak yaz.
+
+---
+
+## M. Confidence
+
+| | |
+|---|---|
+| parity-prefix theorem | **very high** — sıfırdan kanıtlandı, ekivalans olduğu gösterildi, `t≤7` exhaustive, hipotezin keskinliği doğrulandı |
+| `B_t ≤ [2(c−1)ln2/3]t + O(√t)` | **high** — her adım bağımsız türetildi; `J>L+1` kuyruğu yazılmamış ama zararsız |
+| `K₁₁ = 4.91656355095…` | **very high** — 60 hane + optimalliğin analitik kanıtı |
+| polylog `X_N` | **high** — mekanik; `n₀` notasyonu bu kez doğru |
+| second-order slack | **high** — hipotezi gereksiz, sonuç daha güçlü |
+| saturated-zone reduction | **high** — terim terim doğrulandı; ayrıca §J.2 ile bu bölgenin *neden* kapalı olduğu netleşti |
+| `B_t(1.6) = O(1)` | *conjecture* — `t≤18` verisi destekliyor, teorem yok, ve parity-prefix tek başına asla veremez |
+
+---
+
+## Son cevaplar
+
+**1. CP11 gerçekten `6.3274 → 4.91656` iyileştirmesini rigorously kanıtlıyor mu?**
+**Evet** — `n₀` exceptional-block onarımıyla. Zincirin dört halkasını da bağımsız kanıtladım; kırmayı denedim, kıramadım. Sabitlerin hepsi 60 haneye doğru, optimizasyon gerçekten `c↓α`'da.
+
+**2. Kalan linear loss gerçekten yalnız saturated small-start zone'undan mı geliyor?**
+**Evet** (§J.1, terim terim). Ama rapor bunu bir "fırsat" olarak sunuyor; benim ölçümlerim bunun **kapalı bir kapı** olduğunu gösteriyor: parity-prefix theorem o bölgede tight (eşitlik), coprime kesişimi leading-order kazanç vermiyor, canonical kısıt ise `t≤6`'da yalnız `0.7–0.9` sabit çarpan — hiçbiri linear katsayıyı değiştirmez. Gereken **%39**'luk kazanç için Collatz parity permütasyonunun initial-segment equidistribution'ına dair gerçekten yeni bir teorem şart.
+
+`B = 1` kırılmadı; frontier `limsup s_k/log₂k ≥ 1` olarak duruyor.

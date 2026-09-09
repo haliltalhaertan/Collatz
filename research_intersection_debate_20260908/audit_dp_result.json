@@ -1,0 +1,157 @@
+{
+  "status": "PASS",
+  "small_joint_checks": 60,
+  "partial_joint_checks": 215,
+  "original_interval_checks": [
+    {
+      "r": 10,
+      "A": 15,
+      "L": 256,
+      "X": "8388608/59049",
+      "m": 8,
+      "N0": 71,
+      "F": 10
+    },
+    {
+      "r": 10,
+      "A": 15,
+      "L": 4096,
+      "X": "134217728/59049",
+      "m": 12,
+      "N0": 1136,
+      "F": 140
+    }
+  ],
+  "benchmark": {
+    "m": 20,
+    "t": 5,
+    "total_weight_16_count": 41142,
+    "represented_starts": 524288,
+    "peak_states": 5617,
+    "sum_states": 26357,
+    "final_states": 522,
+    "seconds": 0.030431599996518344,
+    "trace": [
+      {
+        "depth": 1,
+        "states": 1,
+        "multiplicity": 1,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 2,
+        "states": 2,
+        "multiplicity": 2,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 3,
+        "states": 4,
+        "multiplicity": 4,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 4,
+        "states": 8,
+        "multiplicity": 8,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 5,
+        "states": 16,
+        "multiplicity": 16,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 6,
+        "states": 32,
+        "multiplicity": 32,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 7,
+        "states": 63,
+        "multiplicity": 64,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 8,
+        "states": 121,
+        "multiplicity": 128,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 9,
+        "states": 229,
+        "multiplicity": 256,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 10,
+        "states": 432,
+        "multiplicity": 512,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 11,
+        "states": 813,
+        "multiplicity": 1024,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 12,
+        "states": 1529,
+        "multiplicity": 2048,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 13,
+        "states": 2854,
+        "multiplicity": 4096,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 14,
+        "states": 4842,
+        "multiplicity": 8192,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 15,
+        "states": 5617,
+        "multiplicity": 16384,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 16,
+        "states": 4134,
+        "multiplicity": 32768,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 17,
+        "states": 2635,
+        "multiplicity": 65536,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 18,
+        "states": 1589,
+        "multiplicity": 131072,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 19,
+        "states": 914,
+        "multiplicity": 262144,
+        "represented_starts": 524288
+      },
+      {
+        "depth": 20,
+        "states": 522,
+        "multiplicity": 524288,
+        "represented_starts": 524288
+      }
+    ]
+  }
+}

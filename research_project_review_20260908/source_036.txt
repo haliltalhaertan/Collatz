@@ -1,0 +1,43 @@
+# COLLATZ CP19 — MASTER CHECKPOINT
+Updated: 2026-08-25
+
+## Frozen input
+CP17 is frozen/audited. CP18 was independently audited and judged sound; its Task 1–10 packages are archived separately.
+
+## CP19 Task status
+
+Task 1 — Critical Sparse-Defect Inverse-Limit Classification
+Status: [FAIL: Construction A itself does not exclude positive LEVEL 3], with exact sparse-defect/2-adic classification results.
+
+Task 2 — Critical-Gap State Barrier
+Status: [LEAD: Construction-A gap cost grows]. Exact local gap/cylinder barrier derived; missing lower growth bridge motivated Task 3.
+
+Task 3 — Sparse-Critical Packing Theorem
+Status: [PROVED][AUDITED][FROZEN]. New general sparse-critical theorem. Construction A excluded from positive ordinary LEVEL 3.
+
+Task 4 — Occupation–Complexity–Turnover Dichotomy
+Status: [PROVED][AUDITED][FROZEN]. Weighted packing theorem and entropy threshold kappa_* = 1.0526808586...; Construction B excluded.
+
+Task 5 — Negative Discrepancy Excursions & Superlinear State Escape
+Status: [FAIL: SURVIVING ABSTRACT REGIME EXISTS]. Explicit symbolic high-state survivor constructed; ordinary LEVEL 3 realization remains open.
+
+Task 6 — Survivor 2-adic Coherence & Ordinary-Integrality
+Status: [LEAD: NONSTABILIZATION STRUCTURE FOUND]. Exact finite-surgery and separated correction structure; ordinary-positive realization not excluded.
+
+Task 7 — Event-Cancellation Rigidity & Protected Blocks
+Status: [LEAD: PROTECTED BLOCK MISMATCH STRUCTURE]. Fixed-width mismatch criterion derived; infinite mismatch not proved.
+
+Task 8 — Reference-Block Recurrence & Infinite Mismatch
+Status: [LEAD: REFERENCE-BLOCK RECURRENCE FOUND]. Pure-neutral three-interval irrational rotation coding and gain operator derived; reference realizer classification open.
+
+Task 9 — Pure-Neutral Critical-Density High-Half Cocycle
+Status: [FAIL: DYADIC HIGH-HALF REMAINS NONLOCAL]. Exact high-half/carry recurrence found but requires growing state; no fixed-width recurrence.
+
+Task 10 — Critical-Density Barrier Escape or Branch Park
+Status: [VALID][AUDITED][PARKED]. Critical-density high-half branch formally parked. Reopen only with a genuinely new o(F_t) invariant, a critical-density equality theorem, or another cross-adic rigidity mechanism.
+
+## CP19 frontier
+The research eliminated several natural high-state symbolic survivor architectures but did not prove Collatz. The remaining escape after CP19 is a high-state ordinary-integrality/coherence regime. CP20 therefore pivoted away from the parked high-half classifier and toward quantile/state-growth, endpoint residue, and global coherence mechanisms.
+
+## Storage
+Task 1–6 have canonical folders with prompts and result artifacts. Split Task 7–10 result folders were consolidated as nested result/archive folders under their canonical Task folders on 2026-08-26. CP19_PROMPT_INDEX was updated to cover Tasks 1–10.

@@ -1,0 +1,7 @@
+{
+  "method": "Exact integer and rational inequalities only; no numerical path experiment",
+  "checks_passed": 7,
+  "rate_lower_exact": "57025871/129000000",
+  "pi_lower_exact": "71050000/157778721",
+  "scientific_scope": "Supports fixed constants in analytic proof; not a formal proof checker."
+}

@@ -1,0 +1,73 @@
+# CP20 TASK 8B0 — MASTER FINDINGS
+
+**Date:** 2026-08-26  
+**Status:** `[AUDIT CANDIDATE — STOP RULE TRIGGERED IN MODULE A]`
+
+## Strategic outcome
+
+Module A produced a load-bearing theorem candidate, so the computation was
+stopped exactly as required.
+
+Modules B, C, D, E and conjunction search were not executed.
+
+## Module A
+
+One-line verdict:
+
+`[MAJOR THEOREM CANDIDATE] — critical-log kappa>1 makes the López–Stoll real
+series converge absolutely, but forces its real pseudo-orbit to escape to
+-infinity linearly.`
+
+This simultaneously validates the real-series bridge and falsifies the
+proposed Task-8A-density → López-accumulation bridge.
+
+## Why this crosses the audit threshold
+
+Future Task-8B branch selection changes depending on this result:
+
+- the López real-series existence question is closed inside critical-log;
+- the López real-accumulation route is closed negatively inside critical-log;
+- Task-8A critical density should not be spent on attempting to rescue that
+  real accumulation mechanism;
+- the next serious branch, after audit, should return to the true LEVEL-3
+  obstruction: ordinary-start residue stabilization/coherence.
+
+## Final manager summary — exactly the nine requested questions
+
+1. **Did the López–Stoll kappa>1 convergence bridge survive?**  
+   Yes. `[MAJOR THEOREM CANDIDATE]`. The series term is exactly
+   \((1/3)2^{-s_k-\{\alpha k\}}=\Theta(k^{-\kappa})\).
+
+2. **Did Task 8A density help upgrade convergence to accumulation?**  
+   No. Stronger: under the same global critical-log law the complete López
+   real pseudo-orbit tends to \(-\infty\), independently of critical density.
+
+3. **Does ordinary-start residue show a nonzero extremal growth rate?**  
+   Not tested. Mandatory stop rule fired before Module B.
+
+4. **Can a finite-memory Sturmian controller realize kappa log k?**  
+   Not tested in this run. Module C was stopped before execution.
+
+5. **Do convergent-time repeats produce a genuine n0 obstruction?**  
+   Not tested. Module D was stopped before execution.
+
+6. **Is there evidence of a second 3-adic exponential saving under the pressure law?**  
+   Not tested. Module E was stopped before execution.
+
+7. **Which conjunction is strongest?**  
+   No conjunction was formally tested because of the stop rule. Provisional
+   post-audit priority is B+D: ordinary-start residue stabilization plus
+   convergent-time repeated-factor spacing.
+
+8. **What should Task 8B actually be?**  
+   After independent audit of Module A, Task 8B should primarily attack the
+   LEVEL-2→LEVEL-3 ordinary-start stabilization/coherence problem. Do not
+   spend the next branch trying to obtain López real pseudo-orbit accumulation.
+
+9. **Did any result cross the threshold requiring independent audit?**  
+   Yes. Module A did. Research stopped and a zero-trust audit package was
+   produced.
+
+## STOP
+
+Do not begin Task 8B proper until the Module-A audit verdict is integrated.

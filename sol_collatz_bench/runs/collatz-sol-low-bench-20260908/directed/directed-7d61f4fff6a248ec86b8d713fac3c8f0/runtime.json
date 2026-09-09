@@ -1,0 +1,314 @@
+{
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "mode": "directed_task",
+  "run_id": "directed-7d61f4fff6a248ec86b8d713fac3c8f0",
+  "task_id": "collatz-sol-low-mini-benchmark-v1",
+  "pid": 34300,
+  "heartbeat_at": "2026-09-08T07:32:39.780082+00:00",
+  "updated_at": "2026-09-08T07:32:39.780104+00:00",
+  "completed_lanes": [
+    "b2",
+    "b4",
+    "b1",
+    "b6",
+    "b5",
+    "b3",
+    "b7",
+    "b8"
+  ],
+  "active_lanes": {},
+  "lanes": {
+    "b2": "COMPLETED",
+    "b4": "COMPLETED",
+    "b1": "COMPLETED",
+    "b6": "COMPLETED",
+    "b5": "COMPLETED",
+    "b3": "COMPLETED",
+    "b7": "COMPLETED",
+    "b8": "COMPLETED"
+  },
+  "usage": {
+    "calls": 8,
+    "reserved_tokens": 36128,
+    "reserved_cost_usd": 0.168256,
+    "prompt_tokens": 3616,
+    "completion_tokens": 2301,
+    "reasoning_tokens": 853,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.030242,
+    "provider_cost_complete": true,
+    "wall_seconds": 61.38532300002407,
+    "lanes": {
+      "b1": {
+        "calls": 1,
+        "reserved_tokens": 4459,
+        "reserved_cost_usd": 0.020918,
+        "attempts": {
+          "b1:attempt:1": {
+            "reserved_tokens": 4459,
+            "reserved_cost_usd": 0.020918,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 433,
+              "completion_tokens": 213,
+              "reasoning_tokens": 53,
+              "cached_tokens": 0,
+              "cost_usd": 0.002996
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.002996,
+        "provider_cost_upper_bound_usd": 0.002996,
+        "last_usage": {
+          "prompt_tokens": 433,
+          "completion_tokens": 213,
+          "reasoning_tokens": 53,
+          "cached_tokens": 0,
+          "cost_usd": 0.002996
+        },
+        "provider_cost_usd": 0.002996,
+        "actual_tokens": 646
+      },
+      "b2": {
+        "calls": 1,
+        "reserved_tokens": 4434,
+        "reserved_cost_usd": 0.020868,
+        "attempts": {
+          "b2:attempt:1": {
+            "reserved_tokens": 4434,
+            "reserved_cost_usd": 0.020868,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 445,
+              "completion_tokens": 233,
+              "reasoning_tokens": 80,
+              "cached_tokens": 0,
+              "cost_usd": 0.00322
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.00322,
+        "provider_cost_upper_bound_usd": 0.00322,
+        "last_usage": {
+          "prompt_tokens": 445,
+          "completion_tokens": 233,
+          "reasoning_tokens": 80,
+          "cached_tokens": 0,
+          "cost_usd": 0.00322
+        },
+        "provider_cost_usd": 0.00322,
+        "actual_tokens": 678
+      },
+      "b3": {
+        "calls": 1,
+        "reserved_tokens": 4506,
+        "reserved_cost_usd": 0.021012,
+        "attempts": {
+          "b3:attempt:1": {
+            "reserved_tokens": 4506,
+            "reserved_cost_usd": 0.021012,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 448,
+              "completion_tokens": 408,
+              "reasoning_tokens": 176,
+              "cached_tokens": 0,
+              "cost_usd": 0.004976
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.004976,
+        "provider_cost_upper_bound_usd": 0.004976,
+        "last_usage": {
+          "prompt_tokens": 448,
+          "completion_tokens": 408,
+          "reasoning_tokens": 176,
+          "cached_tokens": 0,
+          "cost_usd": 0.004976
+        },
+        "provider_cost_usd": 0.004976,
+        "actual_tokens": 856
+      },
+      "b4": {
+        "calls": 1,
+        "reserved_tokens": 4484,
+        "reserved_cost_usd": 0.020968,
+        "attempts": {
+          "b4:attempt:1": {
+            "reserved_tokens": 4484,
+            "reserved_cost_usd": 0.020968,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 441,
+              "completion_tokens": 439,
+              "reasoning_tokens": 279,
+              "cached_tokens": 0,
+              "cost_usd": 0.005272
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.005272,
+        "provider_cost_upper_bound_usd": 0.005272,
+        "last_usage": {
+          "prompt_tokens": 441,
+          "completion_tokens": 439,
+          "reasoning_tokens": 279,
+          "cached_tokens": 0,
+          "cost_usd": 0.005272
+        },
+        "provider_cost_usd": 0.005272,
+        "actual_tokens": 880
+      },
+      "b5": {
+        "calls": 1,
+        "reserved_tokens": 4568,
+        "reserved_cost_usd": 0.021136,
+        "attempts": {
+          "b5:attempt:1": {
+            "reserved_tokens": 4568,
+            "reserved_cost_usd": 0.021136,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 466,
+              "completion_tokens": 321,
+              "reasoning_tokens": 115,
+              "cached_tokens": 0,
+              "cost_usd": 0.004142
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.004142,
+        "provider_cost_upper_bound_usd": 0.004142,
+        "last_usage": {
+          "prompt_tokens": 466,
+          "completion_tokens": 321,
+          "reasoning_tokens": 115,
+          "cached_tokens": 0,
+          "cost_usd": 0.004142
+        },
+        "provider_cost_usd": 0.004142,
+        "actual_tokens": 787
+      },
+      "b6": {
+        "calls": 1,
+        "reserved_tokens": 4564,
+        "reserved_cost_usd": 0.021128,
+        "attempts": {
+          "b6:attempt:1": {
+            "reserved_tokens": 4564,
+            "reserved_cost_usd": 0.021128,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 455,
+              "completion_tokens": 145,
+              "reasoning_tokens": 0,
+              "cached_tokens": 0,
+              "cost_usd": 0.00236
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.00236,
+        "provider_cost_upper_bound_usd": 0.00236,
+        "last_usage": {
+          "prompt_tokens": 455,
+          "completion_tokens": 145,
+          "reasoning_tokens": 0,
+          "cached_tokens": 0,
+          "cost_usd": 0.00236
+        },
+        "provider_cost_usd": 0.00236,
+        "actual_tokens": 600
+      },
+      "b7": {
+        "calls": 1,
+        "reserved_tokens": 4572,
+        "reserved_cost_usd": 0.021144,
+        "attempts": {
+          "b7:attempt:1": {
+            "reserved_tokens": 4572,
+            "reserved_cost_usd": 0.021144,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 474,
+              "completion_tokens": 247,
+              "reasoning_tokens": 68,
+              "cached_tokens": 0,
+              "cost_usd": 0.003418
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.003418,
+        "provider_cost_upper_bound_usd": 0.003418,
+        "last_usage": {
+          "prompt_tokens": 474,
+          "completion_tokens": 247,
+          "reasoning_tokens": 68,
+          "cached_tokens": 0,
+          "cost_usd": 0.003418
+        },
+        "provider_cost_usd": 0.003418,
+        "actual_tokens": 721
+      },
+      "b8": {
+        "calls": 1,
+        "reserved_tokens": 4541,
+        "reserved_cost_usd": 0.021082,
+        "attempts": {
+          "b8:attempt:1": {
+            "reserved_tokens": 4541,
+            "reserved_cost_usd": 0.021082,
+            "recorded": true,
+            "cost_complete": true,
+            "usage": {
+              "prompt_tokens": 454,
+              "completion_tokens": 295,
+              "reasoning_tokens": 82,
+              "cached_tokens": 0,
+              "cost_usd": 0.003858
+            }
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.0,
+        "provider_cost_complete": true,
+        "provider_cost_lower_bound_usd": 0.003858,
+        "provider_cost_upper_bound_usd": 0.003858,
+        "last_usage": {
+          "prompt_tokens": 454,
+          "completion_tokens": 295,
+          "reasoning_tokens": 82,
+          "cached_tokens": 0,
+          "cost_usd": 0.003858
+        },
+        "provider_cost_usd": 0.003858,
+        "actual_tokens": 749
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.0,
+    "provider_cost_lower_bound_usd": 0.030242,
+    "provider_cost_upper_bound_usd": 0.030242
+  },
+  "final_status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "current_step": "Directed task",
+  "last_error": ""
+}

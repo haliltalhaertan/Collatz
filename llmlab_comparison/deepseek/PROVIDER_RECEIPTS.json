@@ -1,0 +1,59 @@
+[
+  {
+    "lane": "deepseek-counting",
+    "id": "gen-1788808541-P4S2MTPlJJpHqwi8RTV0",
+    "retrieved_at": "2026-09-07T19:27:07.180386+00:00",
+    "data": {
+      "model": "deepseek/deepseek-v4-pro-20260813",
+      "provider_name": "StreamLake",
+      "total_cost": 0,
+      "native_tokens_prompt": 4127,
+      "native_tokens_completion": 2608,
+      "native_tokens_reasoning": 2608,
+      "finish_reason": null,
+      "generation_time": 342447,
+      "latency": 1890,
+      "cancelled": false
+    }
+  },
+  {
+    "lane": "deepseek-cycles",
+    "id": "gen-1788808541-q2NHFEZtmgxrMU313IlD",
+    "retrieved_at": "2026-09-07T19:27:07.713111+00:00",
+    "http_status": 404
+  },
+  {
+    "lane": "deepseek-low-state",
+    "id": "gen-1788808540-M1joeZ1wkX4hvBnrcgbR",
+    "retrieved_at": "2026-09-07T19:27:08.192685+00:00",
+    "data": {
+      "model": "deepseek/deepseek-v4-pro-20260813",
+      "provider_name": "Phala",
+      "total_cost": 0.04182115,
+      "native_tokens_prompt": 4787,
+      "native_tokens_completion": 8000,
+      "native_tokens_reasoning": 8000,
+      "finish_reason": "length",
+      "generation_time": 121512,
+      "latency": 1148,
+      "cancelled": false
+    }
+  },
+  {
+    "lane": "deepseek-resonance",
+    "id": "gen-1788808541-xShndkhLxS7onasSIZnr",
+    "retrieved_at": "2026-09-07T19:27:08.505567+00:00",
+    "data": {
+      "model": "deepseek/deepseek-v4-pro-20260813",
+      "provider_name": "CoreWeave",
+      "total_cost": 0.0379549,
+      "native_tokens_prompt": 4790,
+      "native_tokens_completion": 8000,
+      "native_tokens_reasoning": 5388,
+      "finish_reason": "length",
+      "generation_time": 252093,
+      "latency": 875,
+      "cancelled": false
+    }
+  }
+]

@@ -1,0 +1,131 @@
+{
+  "gate_status": "FEASIBLE_WITH_LIMITATIONS",
+  "llm_calls_made": 0,
+  "inputs": [
+    {
+      "path": "research_manager/exploratory/sync_20260907/xub_multiscale/XUB_MULTISCALE_MASTER_FINDINGS.md",
+      "status": "PASS",
+      "sha256": "e7b9d3fa45bdc4616ca430b1a3d7748fddf3e43691229a638779d140f38e4363"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260907/xub_multiscale/LOW_STATE_OCCUPATION_AUDIT.md",
+      "status": "PASS",
+      "sha256": "d54203042b7686bfc98ce247cf1820572c891e126a9b686391e8d7543b5a3158"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260907/xub_multiscale/AMPLIFIED_RESONANCE_WEIGHTED_COUNT.md",
+      "status": "PASS",
+      "sha256": "90a0468f0a0f042ac82afc09b38d276589836bcb6f77afe5f2a481e1e6c057b0"
+    },
+    {
+      "path": "research_manager/exploratory/sync_20260907/xub_multiscale/NEXT_ACTION.md",
+      "status": "PASS",
+      "sha256": "736f23134059666d68f2f1d7ebc41c51d85924e6d2efc05607ebd83ac3527ddc"
+    }
+  ],
+  "capabilities": {},
+  "limitations": [
+    "Model text is not a proof certificate",
+    "Only declared inputs are exposed; no autonomous network retrieval",
+    "Budget cost ceiling uses frozen declared price ceilings; unknown usage retains full reservation",
+    "Reasoning and final answer share the completion ceiling. Numeric reasoning caps and reasoning_effort=none are provider requests, not verified guarantees; some routes translate numeric caps into effort. min_final_answer_tokens is a nominal allowance, not a promised answer length or scientific result. No automatic finalization call is made.",
+    "Reasoning exhaustion risk: at least one model lane uses effort-only or provider-default reasoning, which may consume its entire completion budget before a final answer."
+  ],
+  "contract_hash": "6ca8a89ee8ba848cf68728f5adaf5a1f12a97ad17f457bdd1dab0faf86dd6e7c",
+  "task_id": "cp20-xub-luna-five-routes-v1",
+  "input_root": "C:\\Users\\MDP\\Documents\\ChatGPT\\Collatz",
+  "parent_repo": "C:\\Users\\MDP\\Documents\\ChatGPT\\Collatz",
+  "output_budget_policies": [
+    {
+      "lane_id": "luna-counting",
+      "model": "openai/gpt-5.6-luna",
+      "max_completion_tokens": 8000,
+      "max_reasoning_tokens": null,
+      "min_final_answer_tokens": 0,
+      "reasoning_effort": "high",
+      "policy": "EFFORT_ONLY_OR_PROVIDER_DEFAULT",
+      "provider_support_verified": false,
+      "final_answer_guaranteed": false,
+      "automatic_finalization_call": false
+    },
+    {
+      "lane_id": "luna-cycles",
+      "model": "openai/gpt-5.6-luna",
+      "max_completion_tokens": 8000,
+      "max_reasoning_tokens": null,
+      "min_final_answer_tokens": 0,
+      "reasoning_effort": "high",
+      "policy": "EFFORT_ONLY_OR_PROVIDER_DEFAULT",
+      "provider_support_verified": false,
+      "final_answer_guaranteed": false,
+      "automatic_finalization_call": false
+    },
+    {
+      "lane_id": "luna-low-state",
+      "model": "openai/gpt-5.6-luna",
+      "max_completion_tokens": 8000,
+      "max_reasoning_tokens": null,
+      "min_final_answer_tokens": 0,
+      "reasoning_effort": "high",
+      "policy": "EFFORT_ONLY_OR_PROVIDER_DEFAULT",
+      "provider_support_verified": false,
+      "final_answer_guaranteed": false,
+      "automatic_finalization_call": false
+    },
+    {
+      "lane_id": "luna-resonance",
+      "model": "openai/gpt-5.6-luna",
+      "max_completion_tokens": 8000,
+      "max_reasoning_tokens": null,
+      "min_final_answer_tokens": 0,
+      "reasoning_effort": "high",
+      "policy": "EFFORT_ONLY_OR_PROVIDER_DEFAULT",
+      "provider_support_verified": false,
+      "final_answer_guaranteed": false,
+      "automatic_finalization_call": false
+    },
+    {
+      "lane_id": "luna-refutation",
+      "model": "openai/gpt-5.6-luna",
+      "max_completion_tokens": 8000,
+      "max_reasoning_tokens": null,
+      "min_final_answer_tokens": 0,
+      "reasoning_effort": "high",
+      "policy": "EFFORT_ONLY_OR_PROVIDER_DEFAULT",
+      "provider_support_verified": false,
+      "final_answer_guaranteed": false,
+      "automatic_finalization_call": false
+    }
+  ],
+  "provider": "openai-compatible-v1",
+  "endpoint": "https://openrouter.ai/api/v1",
+  "scientific_claim_status": "OPEN",
+  "maximum_concurrency": 4,
+  "estimated_call_ceiling": 5,
+  "token_ceiling": 150000,
+  "cost_ceiling": 0.1,
+  "effective_model_call_ceiling": 5,
+  "effective_model_token_ceiling": 150000,
+  "effective_model_cost_ceiling": 0.1,
+  "parent_binding": {
+    "commit_scope": "HEAD_ONLY",
+    "working_tree_frozen_by_commit": false,
+    "scientific_input_binding": "EXPLICIT_INPUT_FILES_AND_MANIFESTS_ONLY",
+    "execution_sources": "Separately hashed in signed run context"
+  },
+  "native_symbolic_scope": "small_b_v1 only; not a general CAS or formal kernel",
+  "package_verification_scope": "Byte integrity and ledger/Markdown consistency; not mathematical truth",
+  "dag_valid": true,
+  "forbidden_operations": [
+    "network",
+    "canonical_write",
+    "sealed_stage_execution",
+    "numerical_depth_extension",
+    "assume low-state hits are rare",
+    "assume conditioned increments are independent",
+    "use a per-start union bound as if it reached O(1/R)",
+    "cite Chung-Feller or a cycle lemma without resolving ties, affine shift, even-time sampling and odd parity",
+    "infer proof from model agreement",
+    "expand the research scope"
+  ]
+}

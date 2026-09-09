@@ -1,0 +1,255 @@
+COLLATZ ARAŞTIRMASI — CHECKPOINT 12
+Saturated small-start zone • Collatz parity permutation • Initial-segment discrepancy
+15 Ağustos 2026  |  Ana hedef: B = 1 borderline rejimini kırabilecek genuine discrepancy
+0. Yönetici özeti
+Checkpoint 12, Checkpoint 11’de kalan tek leading kayıp olan saturated small-start boundary bölgesini doğrudan ordinary-size × parity-structure korelasyonu üzerinden inceledi. Saf parity-prefix counting kritik uçta tight olduğundan aynı Hamming-ball hesabını optimize etmek yerine Collatz parity permutation’ın Archimedean initial intervals üzerindeki davranışı analiz edildi.
+[EXACT] Finite parity permutation için exact recursion elde edildi:
+Q_J(2u) = 2 Q_{J-1}(u),
+Q_J(2u+1) = 1 + 2 Q_{J-1}(3u+2 mod 2^{J-1}).
+[EXACT] Fixed endpoint’e giden length-m, q-ones parity histories için collision multiplicity:
+M(m,q;y) ≤ 2^{m-q}.
+Bu bound ordinary-size bilgisini endpoint geometry ile birleştirerek ilk Collatz-specific initial-segment recursion’ını verdi. Daha sonra recursion tek blokta açılarak daha güçlü, explicit iki-blok endpoint count elde edildi.
+[EXACT] İki-blok endpoint discrepancy bound, saturated zone’un üst ucunda strict exponential initial-segment saving üretir. Dolayısıyla parity-prefix boundary katsayısı b_11(c) bazı pozitif θ-aralığında kesin olarak düşer.
+[EXACT] Bu saving c ↓ α limitine uniform küçük bir komşulukta devam ettiğinden, bir mutlak η_12>0 vardır ve Checkpoint 11 harmonic katsayısı niteliksel olarak strict biçimde iyileşir:
+limsup H_N / ln ln N ≤ K_11 − η_12,   K_11 = 4.91656355094999688…
+Bu checkpoint’te η_12 için bağımsız interval-arithmetic sertifikalı bir ondalık değer üretilmedi; dolayısıyla 4.91656’nın altında yeni bir ondalık theorem katsayısı ilan edilmiyor.
+[NUM] Asymptotic rate envelope’in yüksek hassasiyetli finite evaluation’ı, c≈α için upper saturated edge’de yaklaşık β∈(1.1234,1.1699] aralığında strict saving ve yaklaşık K≈4.72 potansiyeli gösteriyor. Bu sayı theorem olarak kullanılmıyor.
+[FAIL] Mevcut collision bound 2^{m-q} tek başına saturated zone’un yeterince büyük bir bölümünde exponential saving vermiyor; basit recursive use finite seviyede kazanım gösterse de leading-rate saturation büyük ölçüde geri geliyor.
+[OPEN] B=1 kırılmadı. Kalan en dar lemma: fixed-endpoint collision multiplicity veya eşdeğer ordinary initial-segment discrepancy için critical q/m rejiminde exponential-rate strict saving’i geniş bir θ-bandında kanıtlamak.
+1. Çalışma zemini ve audit düzeltmeleri
+Bu checkpoint aşağıdaki çalışma zeminini kullanır:
+H_N = Σ_{k<N} 1/n_k,     X_N = Σ_{k<N} 2^{D_k},
+limsup H_N/ln ln N ≤ K_11 = 4.91656355094999688…,
+X_N = O_{ε,n0}((ln N)^{1.63885451698333…+ε}).
+Forever-undercritical borderline s_k ≤ log_2 k + O(1) ise H_N ≥ 3 ln ln N + O(1). Dolayısıyla B=1 için 3 ile mevcut upper coefficient arasında gap kalır.
+Growing-t telescoping, n_0 exceptional initial block ayrılarak k≥1 üzerinden yürütülür.
+Checkpoint 11 parity-prefix theorem yalnız J≤L+1 için uygulanır; J>L+1 support tail ayrı ele alınır.
+A_t(x)≤L ⇔ ilk L+1 shortcut parity bit içinde en az t+1 adet 1 vardır. Bu critical endpoint’te exact equivalence’tır.
+2. Rate-function hedefinin exact mühendisliği
+L=⌊ct⌋, D=L−t ve natural-log small-start scale M=e^{θt} olsun. Canonical distribution function:
+N_t(M,c) = #{ y : μ_t(y)≤L, ξ_t(y)≤M }.
+Saturated zone:
+0 < θ ≤ θ_max(c) := 2(c−1) ln 2.
+Checkpoint 11 burada yalnız N_t(e^{θt},c)≤e^{θt+o(t)} kullanarak boundary coefficient
+b_11(c) = θ_max(c)/3 = 2(c−1)ln2/3
+elde eder.
+[EXACT] Suppose bir açık E⊂(0,θ_max) üzerinde her compact K⊂E için Δ_c(θ)≥δ_K>0 olacak biçimde
+N_t(e^{θt},c) ≤ exp((θ−Δ_c(θ))t + o(t)).
+Stieltjes/dyadic harmonic decomposition’da E içindeki shell’lerin toplamı o(t) olur. E dışındaki distinct gcd(·,6)=1 starts için 1/3 harmonic capacity kullanılır. Böylece saturated boundary leading coefficient en fazla
+b(c) ≤ (θ_max(c) − |E|)/3.
+B=1’i kırmak için yeterli koşul:
+|E| > θ_max(c) − 9 I(c),     I(c)=c ln2−h(c).
+c↓α limitinde gerekli saved natural-log width yaklaşık 0.3161, yani saturated boundary’nin yaklaşık %38.98’idir. Bu, yeni discrepancy theorem’in ne kadar geniş bir θ-bandında çalışması gerektiğini quantitatively sabitler.
+3. Collatz parity permutation — exact recursion
+Shortcut map T(n)=n/2 (n even), (3n+1)/2 (n odd). İlk J parity bit’in integer encoding’ine Q_J(x) denilsin. Terras parity bijection nedeniyle Q_J, Z/2^JZ üzerinde permutation’dır.
+[EXACT] Even/odd ordinary split:
+Q_J(2u) = 2Q_{J−1}(u),
+Q_J(2u+1) = 1 + 2Q_{J−1}(3u+2 mod 2^{J−1}).
+İkinci formula, ilk parity bit’in 1 ve sonraki state’in T(2u+1)=3u+2 olmasından gelir. Böylece saturated problem exact olarak dyadic permutation discrepancy problemidir.
+[KNOWN] 2-adic infinite parity transform Q bir bijection/isometry’dir ve shift ile Collatz map arasında conjugacy verir. Bu global Haar regularity ordinary initial intervals için gerekli Archimedean discrepancy’yi sağlamaz.
+4. Parity-prefix counting duvarı gerçekten tight
+S_{J,D} = {x<2^J : ilk J parity bit’te ≤D zero}.
+|S_{J,D}| = Σ_{z≤D} C(J,z).
+A_t(x)≤L equivalence’i J=L+1’de tam olduğundan, ordinary-size bilgisi eklenmeden low-weight class universe Hamming-ball count’unun kendisidir.
+[FAIL] Aynı parity-prefix entropy hesabını moderate-deviation veya endpoint rounding ile optimize ederek gereken leading %39 saving’i üretme yolu kapalıdır. Yeni bilgi ordinary magnitude ile parity output arasındaki correlation’dan gelmek zorundadır.
+5. Fixed-endpoint collision theorem
+Length m parity word w, q ones positions d_0<⋯<d_{q−1} için affine identity:
+2^m y = 3^q x + C_w,
+C_w = Σ_{r=0}^{q−1} 3^{q−1−r} 2^{d_r}.
+[EXACT] w↦C_w injective’dir. Çünkü v_2(C_w)=d_0; ilk term çıkarılıp işlem recursive devam eder.
+d=m−q olsun. d_r≤d+r olduğundan:
+0 < C_w ≤ 2^d(3^q−2^q) < 2^d3^q.
+Fixed endpoint y ve fixed q için iki colliding word’ün C-values’ı aynı residue class modulo 3^q’dedir. Yukarıdaki interval içinde bu residue class en fazla 2^d kez bulunabilir.
+[EXACT] Bu nedenle:
+M(m,q;y) := #{x<2^m : T^m(x)=y, h_m(x)=q} ≤ 2^{m−q}.
+Odd-start restriction eklenirse x’ler odd olduğundan C-values arasındaki step 2·3^q olur; bu yalnız constant-factor sharpening verir ve exponential rate’i değiştirmez.
+6. İki-blok endpoint discrepancy theorem
+J>m. İlk m parity bit’te s ones olsun. İlk blok parity word sayısı C(m,s). Fundamental rectangle property ile endpoint after m steps y<3^s. Fixed endpoint başına preimage multiplicity ≤2^{m−s}.
+R=J−m ve toplam gerekli ones q olsun. Endpoint’in sonraki R parity bit’inde en az q−s ones taşıması gerekir. Her 2^R consecutive y bir tam parity-vector universe verdiğinden,
+Y_R(s,q) ≤ (⌊3^s/2^R⌋+1) · Σ_{k=q−s}^{R} C(R,k).
+[EXACT] Böylece initial interval joint count için finite bound:
+F(J,m,q) ≤ Σ_s min{ C(m,s), 2^{m−s} Y_R(s,q) }.
+Bu bound saf Hamming bound’dan farklı olarak ordinary-size → endpoint-size → suffix-parity chain’ini kullanır. Checkpoint 12’nin ilk genuine Collatz-specific discrepancy theorem’idir.
+7. Asymptotic rate envelope ve strict upper-saturated saving
+J≈ct, q≈t, m≈βt ve s≈xt yazalım. Feasible x interval:
+max(0, β−(c−1)) ≤ x ≤ min(β,1).
+Binary entropy’nin natural-log formu H(p)=−p ln p−(1−p)ln(1−p). First-block exponent:
+A_β(x)=β H(x/β).
+Endpoint interval en az bir full suffix period kapsadığında (αx≥c−β), suffix zero allowance z/t=c−1−β+x ve exponent:
+B_{c,β}(x) = [2β−c+(α−1)x]ln2 + (c−β) H((c−1−β+x)/(c−β)),
+burada tail threshold 1/2’yi geçtiğinde entropy term (c−β)ln2 ile cap edilir. Genel exact asymptotic envelope bu iki branch’in uygun max/min versiyonudur.
+[EXACT] Rate upper bound:
+limsup_{t→∞} t^{-1} ln F(⌊ct⌋+1,⌊βt⌋,t+1) ≤ R_c(β) := sup_x min{A_β(x),B_{c,β}(x)}.
+7.1 Saturated upper edge’de strict gap
+β_*(c)=2(c−1) saturated upper edge olsun. Feasible interval’in lower endpoint’i ve A_β’nin unique maximum point’i aynı noktadır:
+x_* = β_*/2 = c−1.
+Bu noktada suffix’in bütün remaining parity bit’leri 1 olmak zorundadır. A_{β_*}(x_*)=β_*ln2 iken endpoint branch exponent farkı:
+β_*ln2 − B_{c,β_*}(x_*) = [1−α(c−1)] ln2.
+Bu quantity c<1+1/α için pozitiftir; özellikle c=α civarında pozitiftir. x≠x_* için strict entropy concavity A_β(x)<βln2. Compactness nedeniyle:
+[EXACT] Her c yeterince α’ya yakın ve c>α için β_*(c)’nin solunda nonempty açık bir β-interval vardır ve bu intervalde
+R_c(β) < β ln2.
+Yani saturated zone’un üst kısmında genuine exponential initial-segment saving kesin olarak vardır. Bu sonuç parity-prefix bound’un tight olmasına rağmen ordinary-size × endpoint geometry’nin yeni bilgi ürettiğini gösterir.
+8. Harmonic coefficient ledger sonucu
+Önceki exact rate-function engineering’e göre strict saving β-interval’i natural θ=βln2 koordinatında pozitif measure taşır ve boundary’nin o kısmı linear-t harmonic contribution yapmaz.
+[EXACT] Üst-edge gap c=α noktasında strict olduğu ve rate envelope continuous olduğu için α<c<α+ε_0 aralığında uniform pozitif-width bir saving bandı vardır. Sonuç olarak bazı mutlak η_12>0 için:
+limsup_{N→∞} H_N/ln ln N ≤ K_11 − η_12,
+K_11 = 4.91656355094999688… .
+Bu checkpoint’te η_12 için independently interval-certified explicit decimal verilmedi. Dolayısıyla yeni official numerical coefficient K_12 ilan edilmiyor.
+[NUM] Rate-function numerical evaluation (c≈α) upper-edge saving bandını yaklaşık β∈(1.1234,1.1699] olarak gösteriyor. Bu bandın tamamı rigorously certified edilirse boundary coefficient yaklaşık 0.27031→0.25956 ve harmonic coefficient yaklaşık 4.91656→4.72097 olurdu. Bu yalnız numerical guide’dır.
+9. Exact finite falsification / evidence
+9.1 Saturated-top ordinary initial interval counts
+c≈α, L=⌊αt⌋, J=L+1, q=t+1, D=L−t ve saturated upper-edge m=2D seçildi. Aşağıdaki counts doğrudan exact integer iteration ile elde edildi.
+t
+J
+m
+q
+count F
+F/2^m
+saving (nat/t)
+10
+16
+10
+11
+118
+0.115234
+0.216079
+12
+20
+14
+13
+2,152
+0.131348
+0.169159
+14
+23
+16
+15
+6,855
+0.104599
+0.161259
+16
+26
+18
+17
+21,759
+0.083004
+0.155554
+18
+29
+20
+19
+70,899
+0.067615
+0.149663
+19
+31
+22
+20
+311,925
+0.074369
+0.136775
+
+[NUM] Finite data exponential-scale suppression ile uyumludur; fakat finite trend asymptotic theorem değildir.
+9.2 Fixed-endpoint collision multiplicities
+M(m,q)=max_y M(m,q;y), q≈m/α. Trivial theorem 2^{m−q}; observed exact maxima çok daha küçüktür:
+m
+q
+d=m−q
+M(m,q)
+2^d
+ln M/m
+10
+6
+4
+4
+16
+0.13863
+12
+8
+4
+4
+16
+0.11552
+14
+9
+5
+5
+32
+0.11496
+16
+10
+6
+8
+64
+0.12997
+18
+11
+7
+12
+128
+0.13805
+20
+13
+7
+12
+128
+0.12425
+22
+14
+8
+18
+256
+0.13138
+
+[CONJ] Critical fixed-endpoint multiplicity exponent’i trivial (m−q)ln2’den strict küçük olabilir. Bu, Checkpoint 12 sonrası en yüksek değerli doğrudan theorem hedefidir.
+10. Recursive initial-segment bound ve neden tek başına yetmiyor
+[EXACT] Endpoint collision theorem’i recursive kullanınca:
+F(J,m,q) ≤ Σ_{q1=0}^{m} min{ C(m,q1), 2^{m−q1} F(J−m,⌈αq1⌉,q−q1) }.
+Bu recursion finite J’de pure Hamming bound’u belirgin biçimde iyileştirir. Ancak mevcut collision factor 2^{m−q1} ile variational envelope saturated region’in büyük kısmında full-density exponent’e yaklaşabilir.
+[FAIL] “Recursive use of the same 2^{m−q} collision theorem alone will produce the needed ~39% boundary saving” iddiası desteklenmiyor. Rate audit’inde strict gap yalnız upper-edge bandında garanti edilebildi.
+11. Fixed-endpoint inverse-tree obstruction
+Backward shortcut dynamics’te endpoint y’den even predecessor 2y daima vardır; odd predecessor (2y−1)/3 yalnız congruence izin verdiğinde vardır. Fixed endpoint collision problem bu pruned inverse tree’de length m, q odd-branches taşıyan path sayısının uniform maksimumudur.
+M(m,q) = max_y #{ length-m inverse paths to y with exactly q odd branches }.
+Known inverse-tree literature toplam leaf growth’unu ve residue-type branching’i inceler; ancak burada gereken quantity fixed q/m≈1/α conditioning altında uniform fixed-endpoint multiplicity’dir. Unconditioned tree-growth bounds bu critical collision bound’dan farklı ve mevcut trivial 2^{m−q} exponent’ini doğrudan iyileştirmiyor.
+[LEAD] A theorem of the form
+M(m,q) ≤ exp(((m−q)ln2 − η m) + o(m))
+critical q/m bandının harmonic-relevant bir bölümünde herhangi η>0 ile kanıtlanırsa two-block recursion üzerinden positive-measure θ saving genişler. Yeterli toplam saved θ-width > θ_max−9I(c) olursa B=1 corridor kapanır.
+12. Denenen mekanizmalar ve falsification sonucu
+[FAIL] Global 2-adic isometry / Haar measure: parity transform global olarak perfect bijection olduğu için ordinary initial interval discrepancy’sini tek başına vermez.
+[FAIL] Saf Hamming-ball / parity-prefix optimization: J=L+1’de exact equivalence nedeniyle critical endpoint’te tight.
+[FAIL] Odd-start veya mod-3 unit refinement collision theorem’e yalnız constant-factor improvement verir; exponential rate’i değiştirmez.
+[FAIL] Mevcut 2^{m−q} fixed-endpoint multiplicity’yi recursive tekrar kullanmak, saturated region’in gerekli geniş kısmında rate gap’i garanti etmiyor.
+[OPEN] High-bit vanishing / Q^{-1} carry process: small ordinary representative, parity realizer’ın high binary output bits’ini sıfırlar; ancak bu constraints için asymptotic independent-rank theorem çıkarılmadı.
+[OPEN] Walsh/Fourier veya finite-state transfer matrix: parity transform 2-adic recursion taşıyor fakat ordinary order coupling için bounded-state spectral-gap theorem bulunmadı.
+[NUM] B_t(1.6)=O(1) conjecture Checkpoint 11’de t≤18 finite evidence ile yaşamaya devam ediyor; Checkpoint 12’de daha ileri exact t sertifikası üretilmedi.
+13. Literatür konumlandırması
+Rozier’in parity-sequence çalışması, finite parity vectors ile residue classes modulo 2^J arasında birebir correspondence’u ve 2-adic parity transform Q’nun isometry/conjugacy yapısını açıkça verir. Functional equations Q^{-1}(2x)=2Q^{-1}(x) ve Q^{-1}(2x+1)=(2Q^{-1}(x)−1)/3 high-bit/carry yaklaşımının doğal cebirsel temelidir.
+Stérin, fixed endpoint ancestors ile constrained parity vectors ve binary expressions arasındaki sıkı bağı kullanarak T1-distance k ancestors için regular-expression construction geliştirir; bu, fixed-endpoint collision probleminin literatürde doğal bir nesne olduğunu destekler fakat burada gereken critical fixed-(m,q) exponential multiplicity bound’u sağlamaz.
+Applegate–Lagarias inverse-tree literatürü roots modulo powers of 3 ve inverse-tree leaf growth’unu kapsamlı biçimde inceler. Annotated literature’de sufficiently large depth için unconditioned leaf counts yaklaşık 1.299^k–1.361^k aralığında bound’lanır; critical q/m≈1/α için bizim elementary collision cap’imiz 2^{(1−1/α)m}≈1.291^m olduğundan bu unconditioned upper bound doğrudan yeterli değildir.
+Targeted literature search’te ordinary initial interval × high-Hamming parity output için doğrudan bizim required exponential discrepancy theorem’ini veren primary theorem bulunmadı. Bu novelty claim değildir; publication öncesi daha geniş bibliographic audit gerekir.
+14. Checkpoint 12 zorunlu sonuç sorularının cevapları
+1. Collatz parity permutation exact recursion? Evet. Q_J(2u)=2Q_{J−1}(u) ve Q_J(2u+1)=1+2Q_{J−1}(3u+2 mod 2^{J−1}). [EXACT]
+2. Saturated-zone genuine discrepancy theorem? Evet, upper saturated edge’de ordinary-size + endpoint geometry iki-blok theorem’i strict exponential saving verir. Tüm saturated zone için değil. [EXACT]
+3. Parity-prefix bound critical endpoint’te tight? Evet. A_t(x)≤L iff ilk L+1 parity bit’te en az t+1 one bulunur. Saf parity count burada exact universe count’udur. [EXACT]
+4. Canonical minimum-history exponential saving? Kanıtlanmadı. Canonical condition ana theorem mekanizması olmadı. [OPEN]
+5. Small-start discrepancy için en iyi exact theorem? Fixed-endpoint collision M≤2^{m−q}, iki-blok endpoint count ve bunun upper saturated edge’de strict rate gap sonucu.
+6. Ψ_c(θ)<θ nontrivial θ-aralığında? Evet, c yeterince α’ya yakınken saturated upper edge’in solunda nonempty open interval için. [EXACT]
+7. Yeni coefficient b(c)? Exact olarak b_11(c)’den strict küçük olduğu bir c-neighborhood kanıtlandı; independently certified explicit decimal coefficient bu checkpoint’te verilmedi.
+8. b(c)<3I(c)? Hayır, mevcut certified saving genişliği threshold’u aşacak kadar gösterilmedi. [OPEN]
+9. Harmonic upper coefficient 4.91656 daha aşağı indi mi? Niteliksel olarak evet: bazı η_12>0 için K≤4.91656355095−η_12. Explicit decimal η_12 sertifikalanmadı. [EXACT qualitative]
+10. B=1 kırıldı mı? Hayır.
+11. B_t=O(1) finite conjecture? Yaşıyor; yeni asymptotic proof yok. [CONJ]
+12. Hangi mechanisms FAIL? Saf parity count, global 2-adic measure, constant-factor congruence refinements ve mevcut collision bound’un kendi kendine recursive kullanımı.
+13. Kalan en dar obstruction? Critical fixed-endpoint collision multiplicity / equivalently saturated ordinary initial-segment discrepancy’de yeterince geniş θ-bandında exponential-rate saving.
+15. Güncel frontier ve Checkpoint 13 hedefi
+Forever-undercritical:  limsup_{k→∞} s_k/log_2 k ≥ 1.
+Bu frontier değişmedi. Checkpoint 12 supporting harmonic coefficient’i strict biçimde aşağı iter, fakat 3 ln ln N borderline lower bound’un altına inmediği için B=1 corridor henüz dışlanmadı.
+[OPEN] Checkpoint 13 için tek ana theorem hedefi:
+max_y #{ x<2^m : T^m(x)=y, h_m(x)=q }
+≤ exp(((m−q)ln2 − ηm)+o(m))
+critical q/m≈1/α bandının yeterli bir bölümünde. Alternatif eşdeğer hedef, rate-function dilinde total natural-log saved width > θ_max(c)−9I(c) sağlayacak Ψ_c(θ)<θ theorem’idir.
+16. Kaynak notları
+O. Rozier, “Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding,” arXiv:1805.00133 (updated version). Finite parity-vector bijection, inverse transform and 2-adic conjugacy/isometry.
+T. Stérin, “Binary expression of ancestors in the Collatz graph,” arXiv:1907.00775 (2019). Fixed-endpoint ancestors, constrained parity vectors and binary representations.
+J. C. Lagarias, “The 3x+1 Problem: An Annotated Bibliography (1963–1999),” arXiv:math/0309224. Includes Bernstein–Lagarias conjugacy and Applegate–Lagarias inverse-tree results.
+D. Applegate and J. C. Lagarias, inverse-tree / density-bound papers cited in the Lagarias bibliography. Their tree-size results concern unconditioned inverse-tree growth, not the fixed-(m,q) collision quantity isolated here.

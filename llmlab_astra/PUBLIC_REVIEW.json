@@ -1,0 +1,19 @@
+{
+  "public_findings": "[{'type': 'verdict', 'text': 'OPEN. Neither a rigorous proof of XUB-MARKED-OCC nor a refutation on an actual accessible sequence is established. The first unresolved low-state estimate identified below removes both the symbolic marks and the resonance exclusion. It is necessary, not sufficient, for the frozen target.'}, {'type': 'checked_finite_counting', 'text': 'Write P_A for the stipulated uniform weak-composition law at an actual array A=(r,R,tau,K), including the frozen conditioning. There are Z=binom(K+R-1,R-1) compositions. For 1<=h<R, fixing S_h=a leaves binom(a+h-1,h-1) choices for the prefix and binom(K-a+R-h-1,R-h-1) for the suffix. Their product divided by Z is therefore the exact partial-sum probability. This is a counting identity, not an independence assertion.'}, {'type': 'checked_low_entrance', 'text': 'Choose a fixed integer ell with 2*(4/9)^ell<eta. When the first d=2ell coordinates vanish, z_ell=z_0*(4/9)^ell<eta. Counting the remaining compositions gives probability binom(K+R-d-1,R-d-1)/Z = product_{i=1}^d (R-i)/(K+R-i). Along any sufficiently large actual sequence, K/R tends to beta, so this probability tends to (1+beta)^(-d)>0. Consequently, an argument discarding every path that ever enters the low region cannot provide an O(1/R) exceptional probability. This does not refute an occupation estimate.'}, {'type': 'necessary_reduction', 'text': 'Set a_tau=1-{beta*tau} and M_eta=sum_{j=0}^{J-1} 1{a_tau+H_j-2*beta*j>=log_2 eta}. Every C_q block has a distinct non-low pair-time entry because the grid is disjoint. Thus N_C=sum_q 1_{C_q}<=M_eta pathwise, and E_A[exp(-lambda*M_eta)]<=E_A[exp(-lambda*N_C)]. The frozen target therefore implies the missing inequality below. The converse does not follow: non-low times need not begin bounded-positive words or avoid resonance.'}, {'type': 'why_reductions_stop', 'text': 'The exact partial-sum formula supplies individual-time marginals, not the joint lower tail of M_eta. Chord-centering gives log_2 z_j=a_tau+[H_j-2jK/R]+(2j/R)(K-beta*R). Hence the relevant boundary is an affine, uniformly bounded shift, not the zero chord. Rational chord ties can occur, observations are at even raw times, and an odd singleton remains in the endpoint law. No finite occupation identity or uniform inequality resolving these features has been derived here. A cycle-lemma label alone does not fill this gap. Even closing this unmarked estimate would leave the grid, growing-word marks, and arithmetic resonance losses unresolved. The attempted proof stops at this necessary low-state inequality.'}]",
+  "first_missing_step": {
+    "name": "Necessary unmarked even-time occupation-Laplace inequality",
+    "inequality": "E_A[exp(-lambda * sum_{j=0}^{floor(R/2)-1} 1{1-{beta*tau}+H_j-2*beta*j >= log_2 eta})] <= C_low/R",
+    "quantifiers": "For the frozen admissible eta and lambda, there must exist finite C_low and R_0, independent of r,R,tau,K, such that the inequality holds for every actual accessible array with R>=R_0, R=2J+epsilon, epsilon in {0,1}, and K-beta*R in (-15-2*beta,-13-2*beta), under the stipulated uniform-composition law with the exact first-passage conditioning. No extension to arbitrary independently chosen endpoints is asserted.",
+    "relation_to_target": "Strictly narrower necessary subproblem: all non-low pair-time entries are counted, without requiring grid membership, bounded-positive words, or nonresonance. Its proof would not establish the frozen marked estimate.",
+    "missing_evidence": "A uniform joint occupation bound, rather than single-time counting or low-hit rarity."
+  },
+  "usage": {
+    "prompt_tokens": 4695,
+    "completion_tokens": 1135,
+    "reasoning_tokens": 159,
+    "cached_tokens": 0,
+    "cost_usd": 0.11543,
+    "wall_seconds": 41.73552019998897
+  },
+  "status": "COMPLETED"
+}

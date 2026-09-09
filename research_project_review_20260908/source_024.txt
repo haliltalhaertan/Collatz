@@ -1,0 +1,1160 @@
+# COLLATZ CHECKPOINT 12 — THIRD INDEPENDENT CLEAN-ROOM ADVERSARIAL PROOF AUDIT
+
+**Date:** 2026-08-15  
+**Audit mode:** clean-room theorem reconstruction + exact finite enumeration + asymptotic rate reconstruction + rational interval certificate + post-verdict historical-audit comparison + primary-source literature check.
+
+## A. Executive verdict
+
+### Overall verdict: `[PROOF VALID AFTER MINOR REPAIRS]`
+
+The central Checkpoint 12 conclusion survives independent reconstruction:
+
+\[
+\exists \eta_{12}>0:\qquad
+\limsup_{N\to\infty}\frac{H_N}{\ln\ln N}
+\le K_{11}-\eta_{12},
+\qquad
+K_{11}=4.9165635509499968808\ldots
+\]
+
+However, two real defects were found.
+
+1. The statement “\(w\mapsto C_w\) is injective” is **false globally across different Hamming weights \(q\)**. A concrete collision is
+\[
+q=2,\ d=(0,4):\ C=3+16=19,
+\]
+\[
+q=3,\ d=(0,1,2):\ C=9+6+4=19.
+\]
+The theorem needed later is only **fixed-\(q\) injectivity**, and that repaired statement is valid.
+
+2. For
+\[
+F(J,m,q)=\#\{x<2^m:\text{the first }J\text{ parity bits contain at least }q\text{ ones}\},
+\]
+the partition cannot stop at \(s\le\min(m,q)\). The cases \(s>q\) are automatically successful and must be included. The correct finite range is
+\[
+\max(0,q-R)\le s\le m,\qquad R=J-m.
+\]
+The omitted \(s>q\) branch is non-dominant in the CP12 critical band, so the strict upper-edge saving survives, but the theorem statement/rate envelope must be repaired.
+
+A stronger result was obtained during this audit. Using exact rational interval arithmetic with rigorous logarithm remainders, the conservative cutoff
+\[
+\beta_0=1.124
+\]
+is certified throughout the upper saving band. Consequently:
+\[
+\boxed{
+\limsup_{N\to\infty}\frac{H_N}{\ln\ln N}<4.724
+}
+\]
+and, more sharply,
+\[
+\boxed{
+\limsup_{N\to\infty}\frac{H_N}{\ln\ln N}
+<4.723565548607766.
+}
+\]
+
+The frequently quoted \(4.72097\) remains `[NUM]`; this audit certifies a slightly weaker but rigorous decimal coefficient.
+
+Finally, even with **perfect fixed-endpoint collision multiplicity** \(M=e^{o(m)}\), while freezing the rest of the CP12 two-block model, the best coefficient remains above 3. A rigorous conservative barrier is
+\[
+K>3.01652611280307,
+\]
+with numerical optimum
+\[
+K_{\rm collision-only}\approx3.01657928771617.
+\]
+Therefore B=1 remains open and collision-only improvement cannot by itself cross \(K=3\) in the frozen CP12 architecture.
+
+---
+
+## B. Files and dependencies actually inspected
+
+Clean-room phase inspected before using prior CP12 audits:
+
+- `CP12 — Collatz_Checkpoint_12_2026-08-15.docx`
+- `CP11 — Collatz_Checkpoint_11_2026-08-15.docx`
+- `CP10 — Collatz_Checkpoint_10_2026-08-15.docx`
+- `MASTER INDEX v2 — Collatz Araştırma Arşivi — 2026-08-15`
+- CP10 audit material needed to identify inherited bookkeeping repairs.
+- CP11 audit material needed to verify the inherited boundary/rate framework.
+
+Only after the clean-room verdict was formed was `CP12 — Audit 02 — Bağımsız Adversarial Denetim — Collision Barrier Bulgusu` opened.
+
+`CP12 Audit 01` does not currently exist in Drive as standalone canonical bytes. Drive provenance says the transcript source exists but exact standalone bytes remain pending, so no line-by-line Audit-01 comparison is claimed.
+
+Inherited dependencies used:
+
+\[
+H_N=3\ln U_N+O(1),\qquad
+U_N=1+\frac{X_N}{3n_0}.
+\]
+
+The CP10 exceptional initial block must remain separated: growing-\(t\) telescoping is applied from \(k\ge1\). The orbit-dependent constants involving \(n_0\) remain orbit-dependent.
+
+From CP11:
+\[
+b_{11}(c)=\frac{2(c-1)\ln2}{3},
+\]
+\[
+I(c)=c\ln2-h(c),
+\qquad
+K_{11}(c)=\frac{2(c-1)\ln2}{3I(c)}.
+\]
+The parity-prefix theorem is used only in its valid domain \(J\le L+1\); the \(J>L+1\) support tail remains separate.
+
+---
+
+## C. Clean-room theorem reconstruction
+
+Let
+\[
+T(n)=
+\begin{cases}
+n/2,&n\equiv0\pmod2,\\
+(3n+1)/2,&n\equiv1\pmod2.
+\end{cases}
+\]
+
+For a length-\(J\) parity vector encoded LSB-first:
+\[
+Q_J(x)=\sum_{i=0}^{J-1}(T^i(x)\bmod2)\,2^i.
+\]
+Directly:
+\[
+Q_J(2u)=2Q_{J-1}(u),
+\]
+\[
+Q_J(2u+1)=1+2Q_{J-1}(3u+2\bmod2^{J-1}).
+\]
+Exhaustive verification for \(J=1,\dots,10\) found no failure and each \(Q_J\) is a permutation of \(\mathbb Z/2^J\mathbb Z\).
+
+For a length-\(m\) parity word with \(q\) ones at
+\[
+0\le d_0<\cdots<d_{q-1}\le m-1,
+\]
+induction gives
+\[
+2^m y=3^q x+C_w,
+\qquad
+C_w=\sum_{r=0}^{q-1}3^{q-1-r}2^{d_r}.
+\]
+
+The correct fixed-\(q\) injectivity proof uses successive 2-adic valuations. Define
+\[
+R_j=C_w-\sum_{r<j}3^{q-1-r}2^{d_r}.
+\]
+Then
+\[
+R_j
+=
+2^{d_j}
+\left(
+3^{q-1-j}
++
+\sum_{r>j}3^{q-1-r}2^{d_r-d_j}
+\right),
+\]
+and the bracket is odd. Therefore
+\[
+v_2(R_j)=d_j.
+\]
+This successively recovers \(d_0,d_1,\ldots,d_{q-1}\). No division by 3 is needed.
+
+---
+
+## D. Bugs and counterexamples
+
+### D.1 `[FALSE]` Global \(w\mapsto C_w\) injectivity
+
+Counterexample:
+\[
+(d_0,d_1)=(0,4),\ q=2
+\quad\Rightarrow\quad C=19,
+\]
+\[
+(d_0,d_1,d_2)=(0,1,2),\ q=3
+\quad\Rightarrow\quad C=19.
+\]
+
+Thus the literal global statement is false.
+
+### D.2 `[BUG]` “subtract and divide by 3” peeling
+
+The historical proof route is invalid. For the audit test:
+\[
+q=2,\quad(d_0,d_1)=(0,1),\quad C=5.
+\]
+Since the first term is \(3\), subtraction gives \(2\), which is not divisible by 3.
+
+Correct route:
+\[
+d_0=v_2(5)=0,
+\]
+subtract \(3\):
+\[
+R_1=2,
+\]
+then
+\[
+d_1=v_2(2)=1.
+\]
+
+### D.3 `[BUG]` Truncated two-block \(s\)-range
+
+For “at least \(q\) ones”, \(s>q\) first blocks must not be omitted.
+
+Small counterexample:
+\[
+J=4,\quad m=3,\quad q=1.
+\]
+The actual count is \(F=7\), while the truncated \(s\le q\) upper sum gives only 4 and is therefore not an upper bound.
+
+Corrected exhaustive comparison for all \(J\le22\), all \(m<J\), all \(q\): 3773 parameter triples, zero violations.
+
+---
+
+## E. Fixed-endpoint collision audit
+
+Let \(d=m-q\). Since there are \(q-1-r\) later ones after \(d_r\),
+\[
+d_r\le d+r.
+\]
+Hence
+\[
+C_w
+\le
+2^d\sum_{r=0}^{q-1}3^{q-1-r}2^r
+=
+2^d(3^q-2^q)
+<
+2^d3^q.
+\]
+
+For fixed \(y,q\):
+\[
+3^q x=2^m y-C_w,
+\]
+so all compatible \(C_w\) lie in one residue class modulo \(3^q\). Since
+\[
+0<C_w<2^d3^q,
+\]
+that residue class occurs at most \(2^d=2^{m-q}\) times. Fixed-\(q\) injectivity then gives
+\[
+\boxed{
+M(m,q;y)\le2^{m-q}.
+}
+\]
+
+The strict upper endpoint is what removes a possible \(2^d+1\) count.
+
+Exhaustive search through \(m\le20\), all \(q\), found no violation.
+
+Selected maxima reproduced:
+
+| \(m\) | \(q\) | \(\max_y M(m,q;y)\) | theorem cap |
+|---:|---:|---:|---:|
+| 10 | 6 | 4 | 16 |
+| 12 | 8 | 4 | 16 |
+| 14 | 9 | 5 | 32 |
+| 16 | 10 | 8 | 64 |
+| 18 | 11 | 12 | 128 |
+| 20 | 13 | 12 | 128 |
+
+Verdict: `[VALID]`.
+
+---
+
+## F. Endpoint rectangle audit
+
+A stronger theorem is valid.
+
+**Lemma.** If \(\lambda\ge1\) and
+\[
+x\le\lambda2^m-1,
+\]
+and the first \(m\) parity bits contain \(s\) ones, then
+\[
+\boxed{
+T^m(x)\le\lambda3^s-1.
+}
+\]
+
+Proof is by induction on \(m\).
+
+If \(x=2u\), then \(u\le\lambda2^{m-1}-1\) and the remaining \(m-1\) bits contain \(s\) ones.
+
+If \(x=2u+1\), then \(u\le\lambda2^{m-1}-1\) and
+\[
+T(x)=3u+2\le3\lambda2^{m-1}-1.
+\]
+Apply induction with \(3\lambda\) and \(s-1\) remaining ones.
+
+For \(\lambda=1\):
+\[
+\boxed{
+x<2^m\Rightarrow T^m(x)\le3^s-1<3^s.
+}
+\]
+
+Exhaustive \(m\le16\): zero failures.
+
+Verdict: theorem `[VALID]`; CP12 exposition `[VALID AFTER REPAIR]` because this lemma must be written explicitly.
+
+---
+
+## G. Two-block combinatorial theorem
+
+Let \(J>m\), \(R=J-m\), total required ones \(q\), first-block ones \(s\).
+
+After the first block:
+\[
+y=T^m(x)<3^s.
+\]
+
+Every \(2^R\) consecutive endpoint integers contain every length-\(R\) parity vector exactly once, because the parity map modulo \(2^R\) is a permutation.
+
+Hence:
+\[
+Y_R(s,q)
+\le
+\left(
+\left\lfloor\frac{3^s}{2^R}\right\rfloor+1
+\right)
+\sum_{k=\max(q-s,0)}^R\binom Rk,
+\]
+with the sum interpreted as zero when \(q-s>R\).
+
+For a fixed \(s\)-slice:
+\[
+\#\text{slice}
+\le
+\min\left\{
+\binom ms,\,
+2^{m-s}Y_R(s,q)
+\right\}.
+\]
+
+The corrected theorem is:
+\[
+\boxed{
+F(J,m,q)
+\le
+\sum_{s=\max(0,q-R)}^{m}
+\min\left\{
+\binom ms,\,
+2^{m-s}Y_R(s,q)
+\right\}.
+}
+\]
+
+Verdict: `[VALID AFTER REPAIR]`.
+
+---
+
+## H. Full piecewise asymptotic rate function
+
+Scale:
+\[
+J=ct+O(1),\quad q=t+O(1),\quad m=\beta t+O(1),\quad s=xt+O(1).
+\]
+
+For the branch \(s\le q\) (\(x\le1\)):
+\[
+\Gamma(c,\beta)
+=
+[\max(0,\beta-(c-1)),\min(\beta,1)].
+\]
+
+Define
+\[
+A_\beta(x)=\beta H(x/\beta).
+\]
+
+The endpoint exponent is
+\[
+\boxed{
+\mathcal B_{c,\beta}(x)
+=
+(\beta-x)\ln2
++
+[\alpha x-(c-\beta)]_+\ln2
++
+(c-\beta)\Phi\!\left(\frac{1-x}{c-\beta}\right),
+}
+\]
+where
+\[
+\alpha=\log_2 3,
+\]
+and
+\[
+\Phi(p)=
+\begin{cases}
+\ln2,&0\le p\le1/2,\\
+H(p),&1/2\le p\le1.
+\end{cases}
+\]
+
+The three sources are, respectively:
+
+- collision multiplicity \(2^{m-s}\);
+- endpoint-period factor \(\lfloor3^s/2^R\rfloor+1\);
+- suffix Hamming tail.
+
+The corrected \(s>q\) branch (\(x>1\), possible only for \(\beta>1\)) has automatic suffix success. In the relevant saturated domain \(\beta<2\), \(A_\beta(x)\) decreases on \(x\ge1\), so its total exponential contribution is bounded by
+\[
+A_\beta(1).
+\]
+
+Therefore the repaired global envelope is
+\[
+\boxed{
+\widetilde R_c(\beta)
+=
+\max\left\{
+\sup_{x\in\Gamma(c,\beta)}
+\min(A_\beta(x),\mathcal B_{c,\beta}(x)),
+\ \mathbf 1_{\{\beta>1\}}A_\beta(1)
+\right\}.
+}
+\]
+
+The finite \(s\)-sum has \(O(t)\) terms, uniform entropy/Stirling errors are \(o(t)\), floors and the `+1` period correction contribute no missing exponential branch.
+
+Verdict: `[VALID AFTER REPAIR]`.
+
+---
+
+## I. Upper-edge gap and optimizer
+
+Let
+\[
+\beta_*(c)=2(c-1),\qquad x_*=c-1=\beta_*/2.
+\]
+Then \(x_*\) is the unique maximizer of \(A_{\beta_*}\):
+\[
+A_{\beta_*}(x_*)=\beta_*\ln2.
+\]
+
+Also
+\[
+c-\beta_*=2-c,
+\]
+and
+\[
+1-x_*=2-c,
+\]
+so the suffix must be all ones.
+
+Direct algebra yields
+\[
+\boxed{
+\beta_*\ln2-\mathcal B_{c,\beta_*}(x_*)
+=
+[1-\alpha(c-1)]\ln2.
+}
+\]
+
+This is positive iff
+\[
+c<1+\frac1\alpha.
+\]
+At \(c=\alpha\), the point gap is approximately
+\[
+0.050500188857655.
+\]
+
+A one-point gap is not sufficient by itself. The full supremum proof uses:
+- continuity of \(\mathcal B\) near \(x_*\);
+- a neighborhood where \(\mathcal B\) retains a positive gap;
+- strict concavity of \(A\), giving a positive gap on the compact complement.
+
+Thus
+\[
+\widetilde R_c(\beta_*)<\beta_*\ln2.
+\]
+
+Numerically at \(c=\alpha\), the true optimizer is near
+\[
+x_{\rm opt}\approx0.5947549128,
+\]
+not \(x_*=c-1\approx0.5849625007\).
+The actual rate gap is only about
+\[
+1.64\times10^{-4},
+\]
+roughly 300 times smaller than the point gap.
+
+---
+
+## J. Positive-width discrepancy theorem
+
+At a fixed \(\beta\), if the unique entropy maximum \(x=\beta/2\) satisfies
+\[
+\mathcal B_{c,\beta}(\beta/2)<\beta\ln2,
+\]
+then compactness gives
+\[
+\widetilde R_c(\beta)<\beta\ln2.
+\]
+
+Joint continuity in \((c,\beta,x)\), including the explicit positive-part and entropy branches, extends strictness to an open \(\beta\)-interval.
+
+At \(c=\alpha\), independent numerical root finding gives
+\[
+\beta_{\rm low}
+\approx
+1.12338125454106623956,
+\]
+and
+\[
+\beta_*(\alpha)
+=
+1.16992500144231236291.
+\]
+
+Hence the numerical strict band is
+\[
+\beta\in(1.1233812545\ldots,1.1699250014\ldots].
+\]
+
+Verdict: positive-width theorem `[VALID AFTER REPAIR]`; numerical root `[NUM]`.
+
+---
+
+## K. Uniformity as \(c\downarrow\alpha\)
+
+Define
+\[
+G(c,\beta)=\beta\ln2-\widetilde R_c(\beta).
+\]
+
+At
+\[
+(c,\beta)=(\alpha,\beta_*(\alpha))
+\]
+the gap is positive. The corrected envelope is jointly continuous in a compact neighborhood and \(c-\beta>0\) there. Therefore a fixed rectangle exists on which \(G>0\).
+
+Since \(\beta_*(c)\) is continuous, there are \(\epsilon_0>0\) and a fixed \(\beta\)-width \(w_\beta>0\) such that for all
+\[
+\alpha<c<\alpha+\epsilon_0
+\]
+a strict-saving interval of width at least \(w_\beta\) exists.
+
+In natural-log scale:
+\[
+w_0=w_\beta\ln2>0.
+\]
+
+Verdict: `[VALID AFTER REPAIR]`.
+
+---
+
+## L. Harmonic coefficient ledger
+
+For canonical starts, the generic harmonic capacity is exactly density
+\[
+\frac{\varphi(6)}6=\frac13.
+\]
+
+With
+\[
+u=e^{\theta t},
+\]
+Stieltjes gives
+\[
+\sum_{\xi\le X}\frac1\xi
+=
+\frac{N(X)}X
++
+\int_1^X\frac{N(u)}{u^2}\,du.
+\]
+
+On a compact saving band where
+\[
+N_t(e^{\theta t},c)
+\le
+\exp((\theta-\Delta(\theta))t+o(t)),
+\qquad
+\Delta\ge\delta>0
+\]
+uniformly,
+\[
+t\int e^{-\delta t+o(t)}\,d\theta=o(1).
+\]
+
+Thus the saving-band contribution is stronger than \(o(t)\): it is \(o(1)\) on each compact sub-band.
+
+If \(E\subset(0,\theta_{\max})\) is an open saving set,
+\[
+\boxed{
+b(c)\le\frac{\theta_{\max}(c)-|E|}{3}.
+}
+\]
+
+Since
+\[
+\theta=\beta\ln2,
+\]
+a \(\beta\)-width \(w_\beta\) becomes natural-log width \(w_\beta\ln2\).
+
+The B=1 condition \(b(c)<3I(c)\) becomes
+\[
+\boxed{
+|E|>\theta_{\max}(c)-9I(c).
+}
+\]
+The factor 9 is correct.
+
+---
+
+## M. Independent numerical reproduction
+
+At \(c=\alpha=\log_2 3\):
+
+\[
+\alpha
+=
+1.58496250072115618145\ldots
+\]
+
+\[
+\beta_*
+=
+1.16992500144231236291\ldots
+\]
+
+\[
+\beta_{\rm low}
+\approx
+1.12338125454106623956.
+\]
+
+Numerical saved width:
+\[
+W=(\beta_*-\beta_{\rm low})\ln2
+\approx0.03226166694.
+\]
+
+This gives
+\[
+b_{12}^{\rm NUM}
+\approx0.2595561830930,
+\]
+and
+\[
+\boxed{
+K_{12}^{\rm NUM}
+\approx4.72096529528643.
+}
+\]
+
+Thus CP12's quoted \(4.72097\) is independently reproduced.
+
+Finite saturated-top table:
+
+| \(t\) | \(J\) | \(m\) | \(q\) | \(F\) | \(F/2^m\) | \(t^{-1}\ln(2^m/F)\) |
+|---:|---:|---:|---:|---:|---:|---:|
+| 10 | 16 | 10 | 11 | 118 | 0.1152343750 | 0.2160787181 |
+| 12 | 20 | 14 | 13 | 2152 | 0.1313476563 | 0.1691589672 |
+| 14 | 23 | 16 | 15 | 6855 | 0.1045989990 | 0.1612586641 |
+| 16 | 26 | 18 | 17 | 21759 | 0.0830039978 | 0.1555541566 |
+| 18 | 29 | 20 | 19 | 70899 | 0.0676145554 | 0.1496628891 |
+| 19 | 31 | 22 | 20 | 311925 | 0.0743687153 | 0.1367747326 |
+
+All six \(F\)-values reproduce CP12.
+
+---
+
+## N. Rigorous decimal certificate status
+
+A clean rational-interval certificate was constructed without relying on binary floating point.
+
+For \(x\ge1\), logarithms were enclosed using
+\[
+z=\frac{x-1}{x+1},
+\]
+\[
+\ln x
+=
+2\sum_{k=0}^{N}\frac{z^{2k+1}}{2k+1}+R_N,
+\]
+with
+\[
+0<R_N
+\le
+\frac{2z^{2N+3}}{(2N+3)(1-z^2)}.
+\]
+Range reduction by exact powers of two keeps \(0\le z\le1/3\). All arithmetic in the certificate was exact rational arithmetic.
+
+Certified base constants include:
+\[
+\ln2\in[
+0.693147180559945309417232121458176568075500134,
+0.693147180559945309417232121458176568075500135],
+\]
+\[
+\ln3\in[
+1.09861228866810969139524523692252570464749055,
+1.09861228866810969139524523692252570464749056],
+\]
+\[
+\alpha\in[
+1.58496250072115618145373894394781650875981440,
+1.58496250072115618145373894394781650875981441].
+\]
+
+At
+\[
+\beta_0=\frac{281}{250}=1.124,
+\]
+the center-gap certificate gives
+\[
+g(1.124)\in[
+0.00038766714420367333987976221676683429684216008,
+0.00038766714420367333987976221676683429684223754],
+\]
+strictly positive.
+
+The derivative is certified:
+\[
+g'(1.124)\in[
+0.629396265574260566816268005123401189475934640,
+0.629396265574260566816268005123401189475934890],
+\]
+strictly positive.
+
+In this branch
+\[
+g'(\beta)
+=
+\ln\frac{R}{\sqrt{ab}}
+-\frac12(\ln2+\ln3),
+\]
+where \(a-b=2-\alpha\) is constant and \(R=a+b\) decreases with \(\beta\). Therefore
+\[
+R/\sqrt{ab}
+=
+\frac{2R}{\sqrt{R^2-(2-\alpha)^2}}
+\]
+increases with \(\beta\), so \(g'\) is increasing. Thus
+\[
+g(\beta)>0
+\quad
+\forall\beta\in[1.124,\beta_*].
+\]
+
+The rate branch conditions (period active, \(1/2<p\le1\)) hold throughout this interval.
+
+The corresponding coefficient interval is
+\[
+K_0
+=
+\frac{1.124\,\ln2}{3I(\alpha)}
+\in
+[
+4.72356554860776503306689703127166555836654019,
+4.72356554860776503306689703127166555836654364].
+\]
+
+Therefore:
+\[
+\boxed{
+\limsup_{N\to\infty}\frac{H_N}{\ln\ln N}
+<
+4.723565548607766
+<
+4.724.
+}
+\]
+
+Status: `[CERTIFIED NUM]`.
+
+The tighter \(4.720965\ldots\) root-based value is still `[NUM]`, because this audit did not interval-isolate the exact left root tightly enough to certify that specific decimal.
+
+---
+
+## O. Previous-audit comparison
+
+| Claim | Third clean-room audit | Audit 01 | Audit 02 | Resolution |
+|---|---|---|---|---|
+| Global \(w\mapsto C_w\) injective | `[FALSE]` | exact standalone bytes unavailable | `[VALID]` | Historical Audit 02 overclaimed |
+| Fixed-\(q\) injectivity | `[VALID]` | unavailable | implicitly used | Correct repaired theorem |
+| “subtract then divide by 3” proof | `[BUG]` | cannot verify exact bytes | used in Audit 02 | Invalid proof |
+| \(M(m,q;y)\le2^{m-q}\) | `[VALID]` | unavailable | `[VALID]` | Agreement after fixed-\(q\) repair |
+| endpoint \(y<3^s\) | `[VALID]` | unavailable | `[VALID]` | Agreement |
+| two-block finite theorem | `[VALID AFTER REPAIR]` | unavailable | `[VALID]` | Audit 02 missed explicit \(s>q\) issue in asymptotic statement |
+| full piecewise rate | `[VALID AFTER REPAIR]` | unavailable | `[FIXABLE]` | Add full branches + \(s>q\) tail |
+| upper-edge gap | `[VALID]` | unavailable | `[VALID]` | Agreement |
+| positive-width band | `[VALID AFTER REPAIR]` | unavailable | `[VALID]` | Agreement after formal repair |
+| uniform \(c\downarrow\alpha\) | `[VALID AFTER REPAIR]` | unavailable | `[VALID]` | Agreement |
+| qualitative \(K<K_{11}\) | `[VALID AFTER REPAIR]` | historical conclusion preserved | `[VALID]` | Survives |
+| \(K\approx4.72097\) | `[NUM]` | historical conclusion preserved | `[NUM]` | Reproduced |
+| explicit \(K<4.724\) | `[CERTIFIED NUM]` | not available | not certified there | New result of this audit |
+| collision-only barrier | rigorous \(>3.016526\), NUM optimum 3.016579 | unavailable | NUM \(\approx3.0166\) | Independently strengthened |
+
+---
+
+## P. Literature / novelty status
+
+Primary-source review supports these safe labels:
+
+- finite parity-vector bijection: `[KNOWN]` — Everett/Terras-era classical structure;
+- 2-adic conjugacy and mod-\(2^n\) permutation: `[KNOWN]` — Bernstein–Lagarias;
+- affine parity-word iterate formulas: `[KNOWN / CLOSE PRIOR ART]`;
+- entropy/ones-ratio lower-bound framework: `[CLOSE PRIOR ART]` — Rozier;
+- binary predecessor/ancestor structure: `[CLOSE PRIOR ART]` — Stérin;
+- recent parity-vector density work: `[CLOSE PRIOR ART]` — Rozier–Terracol (2025), Niu (2026);
+- exact fixed-endpoint bound \(M(m,q;y)\le2^{m-q}\): `[NO EXACT MATCH FOUND]`;
+- exact CP12 two-block endpoint count: `[NO EXACT MATCH FOUND]`;
+- positive-width initial-segment discrepancy band in this precise form: `[NO EXACT MATCH FOUND]`;
+- coefficient \(\limsup H_N/\ln\ln N<4.91656355\ldots\): `[NO EXACT MATCH FOUND]`.
+
+`[NO EXACT MATCH FOUND]` is not a novelty claim.
+
+Relevant primary references checked include:
+Riho Terras (1976), C. J. Everett (1977), Bernstein–Lagarias (1996), Applegate–Lagarias (2001/2004), Lagarias bibliographies, Olivier Rozier (2015), Tristan Stérin (2019), Rozier–Terracol (2025), and Tong Niu (2026).
+
+---
+
+## Q. B=1 status
+
+The borderline lower coefficient remains
+\[
+3.
+\]
+
+This audit now certifies
+\[
+\limsup\frac{H_N}{\ln\ln N}<4.724,
+\]
+but
+\[
+4.724>3.
+\]
+
+Therefore:
+\[
+\boxed{
+B=1\text{ remains open.}
+}
+\]
+
+No “almost solved” conclusion is justified.
+
+---
+
+## R. Collision-only barrier and future-strategy implications
+
+Set the fixed-endpoint collision cost ideally to \(e^{o(m)}\), while keeping the suffix endpoint-period and Hamming-tail structure unchanged.
+
+The idealized endpoint exponent loses the collision term:
+\[
+\mathcal B^{\rm ideal}_{c,\beta}(x)
+=
+[\alpha x-(c-\beta)]_+\ln2
++
+(c-\beta)\Phi\!\left(\frac{1-x}{c-\beta}\right).
+\]
+
+At \(c=\alpha\), numerical root:
+\[
+\beta_{\rm ideal}
+\approx
+0.71781265328102374074.
+\]
+This yields:
+\[
+K_{\rm ideal}^{\rm NUM}
+\approx
+3.016579287716169.
+\]
+
+A conservative rational certificate at
+\[
+\beta_1=0.7178
+\]
+gives
+\[
+g_{\rm ideal}(0.7178)<0,
+\]
+hence the true root is \(>0.7178\). Correspondingly:
+\[
+\boxed{
+K_{\rm collision-only}
+>
+3.01652611280307
+>
+3.
+}
+\]
+
+This is a **collision-only barrier**, not a theorem that every conceivable two-block correlation fails.
+
+The CP12 proposed Checkpoint-13 collision ratio is also misidentified for the actual CP12 variational optimizer.
+
+CP12 proposes approximately:
+\[
+q/m\approx1/\alpha\approx0.6309297536.
+\]
+
+At the actual upper-edge optimizer:
+\[
+\frac{s}{m}
+=
+\frac{x_{\rm opt}}{\beta_*}
+\approx
+0.5083701195.
+\]
+
+Therefore the proposed \(q/m\) collision regime is not the critical first-block ratio of the two-block optimizer.
+
+Verdict:
+\[
+\boxed{\text{[STRATEGIC MISALIGNMENT]}}
+\]
+
+Improving collision multiplicity remains mathematically interesting and can lower \(K\), but it is not by itself the narrowest route to B=1.
+
+---
+
+## S. Repaired standalone theorem
+
+A corrected CP12 theorem can be stated as follows.
+
+**Theorem (repaired CP12).** Let the CP10–CP11 repaired growing-depth framework hold, with canonical starts \(\xi_t(y)\), the \(k\ge1\) exceptional-block separation, and the valid parity-prefix/support-tail bookkeeping. Then there exists an absolute \(\eta_{12}>0\) such that
+\[
+\limsup_{N\to\infty}\frac{H_N}{\ln\ln N}
+\le
+K_{11}-\eta_{12}.
+\]
+
+**Proof skeleton.**
+
+1. The parity map modulo \(2^J\) is a permutation and obeys the exact even/odd recursion.
+2. The affine identity
+   \[
+   2^m y=3^q x+C_w
+   \]
+   holds.
+3. For fixed \(q\), \(C_w\) is injective via successive residual 2-adic valuations.
+4. \(C_w<2^{m-q}3^q\).
+5. Therefore
+   \[
+   M(m,q;y)\le2^{m-q}.
+   \]
+6. The endpoint rectangle lemma gives
+   \[
+   x<2^m\Rightarrow T^m(x)<3^s.
+   \]
+7. Partitioning by first-block Hamming weight \(s\), including \(s>q\), yields the corrected finite two-block bound.
+8. Uniform entropy asymptotics give the repaired global rate envelope \(\widetilde R_c(\beta)\).
+9. At \(\beta_*(c)=2(c-1)\), the entropy maximum \(x_*=c-1\) has strict endpoint gap
+   \[
+   [1-\alpha(c-1)]\ln2>0
+   \]
+   for \(c\) near \(\alpha\).
+10. Continuity plus strict entropy concavity converts the point gap into a supremum gap.
+11. Joint continuity gives a positive-width \(\beta\)-band.
+12. The width persists uniformly for \(c\downarrow\alpha\).
+13. Stieltjes integration and the \(1/3\) unit harmonic density remove that natural-log width from the leading boundary coefficient.
+14. Hence
+   \[
+   K<K_{11}.
+   \]
+
+Moreover, the rational certificate with \(\beta_0=1.124\) gives the explicit rigorous corollary:
+\[
+\boxed{
+\limsup_{N\to\infty}\frac{H_N}{\ln\ln N}<4.724.
+}
+\]
+
+---
+
+## T. Publication readiness
+
+Current status: **serious rewrite required**.
+
+The mathematics is strong enough to justify preparing a manuscript, but the current CP12 text should not be submitted unchanged.
+
+Mandatory changes:
+
+1. Replace global \(C_w\)-injectivity by fixed-\(q\) injectivity.
+2. Remove every divide-by-3 peeling proof.
+3. Insert the successive-\(v_2\) proof.
+4. State and prove the endpoint rectangle lemma.
+5. Correct the finite \(s\)-range to include \(s>q\).
+6. Add the \(s>q\) branch to the asymptotic rate envelope.
+7. Write every period/Hamming branch explicitly rather than “appropriate max/min”.
+8. Write the compactness proof converting point gap to supremum gap.
+9. Write the joint-continuity/uniform-\(c\) argument.
+10. Preserve CP10 exceptional-block and CP11 support-tail bookkeeping.
+11. Include the rational interval certificate as a reproducibility appendix.
+12. Downgrade novelty language to `[NO EXACT MATCH FOUND]` until a broader expert bibliographic review is complete.
+13. Clearly separate the theorem \(K<4.724\) from the numerical guide \(K\approx4.720965\).
+14. Replace the proposed CP13 collision ratio by a target aligned with the actual variational optimizer or move beyond collision-only improvement.
+
+After these changes and independent expert review, the result is a plausible preprint candidate.
+
+---
+
+## U. Confidence table
+
+| Item | Confidence |
+|---|---|
+| global \(C_w\) injectivity is false | very high |
+| fixed-\(q\) \(C_w\) injectivity | very high |
+| collision bound | very high |
+| endpoint rectangle | very high |
+| corrected two-block theorem | very high |
+| corrected full rate envelope | high |
+| positive-width discrepancy | high |
+| \(c\)-uniformity | high |
+| qualitative coefficient improvement | high |
+| certified \(K<4.724\) | very high |
+| exact \(K\approx4.720965\) | high as NUM, not theorem |
+| collision-only barrier \(>3\) | very high within frozen model |
+| publication-readiness assessment | high |
+
+### Main verdict matrix
+
+| ID | Statement | Verdict |
+|---|---|---|
+| T1 | parity recursion | `[VALID] [KNOWN]` |
+| T2 | affine \(C_w\) identity | `[VALID]` |
+| T3 | global \(w\mapsto C_w\) injective | `[FALSE]`; fixed-\(q\) repair `[VALID]` |
+| T4 | \(M(m,q;y)\le2^{m-q}\) | `[VALID]` |
+| T5 | \(x<2^m\Rightarrow T^m(x)<3^s\) | `[VALID AFTER REPAIR]` |
+| T6 | two-block finite bound | `[VALID AFTER REPAIR]` |
+| T7 | full asymptotic rate envelope | `[VALID AFTER REPAIR]` |
+| T8 | upper-edge strict gap | `[VALID]` |
+| T9 | positive-width \(\beta\)-interval | `[VALID AFTER REPAIR]` |
+| T10 | uniform \(c\downarrow\alpha\) band | `[VALID AFTER REPAIR]` |
+| T11 | boundary coefficient saving | `[VALID]` |
+| T12 | \(\exists\eta_{12}>0\) strict coefficient improvement | `[VALID AFTER REPAIR]` |
+| T13 | \(K\approx4.72097\) | `[NUM]` |
+| T14 | B=1 contradiction | `[OPEN / NOT ESTABLISHED]` |
+
+---
+
+## V. Answers to Q1–Q14
+
+### Q1. Does CP12 rigorously prove a coefficient below \(4.9165635509499968808\ldots\)?
+
+**Yes, after explicit repairs.** The global injectivity wording and missing \(s>q\) rate branch must be corrected, but the qualitative strict coefficient improvement survives independent reconstruction.
+
+### Q2. What exact repairs are required?
+
+Fixed-\(q\) instead of global \(C_w\)-injectivity; successive-\(v_2\) proof; endpoint rectangle proof; corrected \(s\)-range; explicit \(s>q\) asymptotic branch; full piecewise rate statement; formal supremum compactness; formal \(c\downarrow\alpha\) uniformity; inherited CP10/CP11 bookkeeping.
+
+### Q3. Is there now a rigorous explicit decimal bound below \(4.91656\)?
+
+**Yes.**
+\[
+\boxed{
+\limsup H_N/\ln\ln N<4.724.
+}
+\]
+A sharper certified safe decimal is \(4.723565548607766\).
+
+### Q4. Is \(4.72097\) certified?
+
+**No.** It is independently reproduced numerically but remains `[NUM]`. The certified theorem from this audit is slightly weaker: \(K<4.724\).
+
+### Q5. Is \(M(m,q;y)\le2^{m-q}\) correct?
+
+**Yes.** `[VALID]`.
+
+### Q6. Is \(C_w\)-injectivity correct, and what is the correct proof?
+
+Global injectivity across different \(q\) is **false**. Fixed-\(q\) injectivity is **true**. The correct proof recovers each one-position from successive 2-adic valuations of residuals; no division by 3 is used.
+
+### Q7. Is the two-block count correct?
+
+**Yes after repair.** The finite theorem must include \(s>q\), so its upper \(s\)-limit is \(m\), not \(\min(m,q)\).
+
+### Q8. Is the full piecewise rate envelope correct?
+
+The CP12 core formula is correct on the \(s\le q\) branch, but the global rate theorem is incomplete until the \(s>q\) tail \(A_\beta(1)\) is added. The repaired envelope is valid.
+
+### Q9. Does the strict gap occupy positive natural-log width?
+
+**Yes.** A positive \(\beta\)-width gives positive natural-log width after multiplication by \(\ln2\).
+
+### Q10. Is that width uniform as \(c\downarrow\alpha\)?
+
+**Yes after formal continuity repair.** A fixed positive-width rectangle persists in a neighborhood of \((\alpha,\beta_*(\alpha))\).
+
+### Q11. Does B=1 remain open?
+
+**Yes.**
+
+### Q12. Was CP12’s proposed next collision ratio the correct critical ratio?
+
+**No.** Proposed \(q/m\approx0.63093\), while the actual first-block optimizer has \(s/m\approx0.50837\). `[STRATEGIC MISALIGNMENT]`.
+
+### Q13. Can collision-only improvement cross \(K=3\) within the frozen remainder of CP12’s rate model?
+
+**No.** Even perfect collision multiplicity leaves a certified barrier above
+\[
+3.01652611280307.
+\]
+
+### Q14. What is the narrowest mathematically justified next theorem target?
+
+Do **not** target only fixed-endpoint collision multiplicity at \(q/m\approx1/\alpha\). The narrowest target should attack the actual variational bottleneck near
+\[
+s/m\approx0.50837
+\]
+and produce additional correlation between first-block ordinary magnitude, endpoint location, and suffix parity occupancy beyond the frozen generic endpoint-period/Hamming-tail estimate.
+
+Equivalently, prove a stronger joint initial-segment discrepancy theorem whose total certified natural-log saving width exceeds
+\[
+\theta_{\max}(\alpha)-9I(\alpha),
+\]
+using a mechanism not reducible solely to improving the collision factor.
+
+---
+
+## Final disposition
+
+\[
+\boxed{
+\text{CP12 main strict-improvement theorem survives.}
+}
+\]
+
+\[
+\boxed{
+\text{Global }C_w\text{-injectivity is false; fixed-}q\text{ repair is valid.}
+}
+\]
+
+\[
+\boxed{
+\text{Two-block/rate theorem needs an }s>q\text{ branch repair.}
+}
+\]
+
+\[
+\boxed{
+\limsup_{N\to\infty}\frac{H_N}{\ln\ln N}<4.724
+\quad\text{is rigorously certifiable.}
+}
+\]
+
+\[
+\boxed{
+B=1\text{ remains open.}
+}
+\]
+
+\[
+\boxed{
+\text{Collision-only perfection cannot reach }K=3
+\text{ in the frozen CP12 model.}
+}

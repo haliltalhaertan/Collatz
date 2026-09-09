@@ -1,0 +1,101 @@
+{
+  "task_id": "cp20-xub-deepseek-five-routes-v1",
+  "run_id": "directed-7d7d0ee20bab478b973565c4b9ad95ae",
+  "status": "STOPPED",
+  "usage": {
+    "calls": 4,
+    "reserved_tokens": 102054,
+    "reserved_cost_usd": 0.10959564000000001,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "provider_cost_usd": 0.0,
+    "provider_cost_complete": false,
+    "wall_seconds": 588.6589505999873,
+    "lanes": {
+      "deepseek-counting": {
+        "calls": 1,
+        "reserved_tokens": 25524,
+        "reserved_cost_usd": 0.02740584,
+        "attempts": {
+          "deepseek-counting:attempt:1": {
+            "reserved_tokens": 25524,
+            "reserved_cost_usd": 0.02740584,
+            "recorded": false,
+            "cost_complete": false
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.02740584,
+        "provider_cost_complete": false,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.02740584
+      },
+      "deepseek-cycles": {
+        "calls": 1,
+        "reserved_tokens": 25523,
+        "reserved_cost_usd": 0.02740518,
+        "attempts": {
+          "deepseek-cycles:attempt:1": {
+            "reserved_tokens": 25523,
+            "reserved_cost_usd": 0.02740518,
+            "recorded": false,
+            "cost_complete": false
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.02740518,
+        "provider_cost_complete": false,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.02740518
+      },
+      "deepseek-low-state": {
+        "calls": 1,
+        "reserved_tokens": 25494,
+        "reserved_cost_usd": 0.02738604,
+        "attempts": {
+          "deepseek-low-state:attempt:1": {
+            "reserved_tokens": 25494,
+            "reserved_cost_usd": 0.02738604,
+            "recorded": false,
+            "cost_complete": false
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.02738604,
+        "provider_cost_complete": false,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.02738604
+      },
+      "deepseek-resonance": {
+        "calls": 1,
+        "reserved_tokens": 25513,
+        "reserved_cost_usd": 0.027398580000000002,
+        "attempts": {
+          "deepseek-resonance:attempt:1": {
+            "reserved_tokens": 25513,
+            "reserved_cost_usd": 0.027398580000000002,
+            "recorded": false,
+            "cost_complete": false
+          }
+        },
+        "unresolved_reserved_cost_usd": 0.027398580000000002,
+        "provider_cost_complete": false,
+        "provider_cost_lower_bound_usd": 0.0,
+        "provider_cost_upper_bound_usd": 0.027398580000000002
+      }
+    },
+    "unresolved_reserved_cost_usd": 0.10959564000000001,
+    "provider_cost_lower_bound_usd": 0.0,
+    "provider_cost_upper_bound_usd": 0.10959564000000001
+  },
+  "lanes": {
+    "deepseek-resonance": "STOPPED",
+    "deepseek-cycles": "STOPPED",
+    "deepseek-counting": "STOPPED",
+    "deepseek-low-state": "STOPPED",
+    "deepseek-refutation": "STOPPED"
+  },
+  "new_tasks_started": 0,
+  "limitations": [
+    "No automatic proof promotion from model text or generated code"
+  ]
+}

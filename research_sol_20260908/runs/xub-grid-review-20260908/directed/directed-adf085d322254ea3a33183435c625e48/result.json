@@ -1,0 +1,9 @@
+{
+  "task_id": "xub-grid-obstruction-review",
+  "run_id": "directed-adf085d322254ea3a33183435c625e48",
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "artifact_root": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\research_sol_20260908\\runs\\xub-grid-review-20260908\\directed\\directed-adf085d322254ea3a33183435c625e48",
+  "claim_ledger_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\research_sol_20260908\\runs\\xub-grid-review-20260908\\directed\\directed-adf085d322254ea3a33183435c625e48\\package\\CLAIM_LEDGER.json",
+  "package_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\research_sol_20260908\\runs\\xub-grid-review-20260908\\directed\\directed-adf085d322254ea3a33183435c625e48\\package\\COMPLETE_PACKAGE.zip",
+  "package_sha256": "005672e7d32677a1d89bc07f8e072b76040e9f53eb2cd757b38e4491eb03dbb8"
+}

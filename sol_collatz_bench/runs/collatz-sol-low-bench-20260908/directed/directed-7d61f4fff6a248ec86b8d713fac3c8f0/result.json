@@ -1,0 +1,9 @@
+{
+  "task_id": "collatz-sol-low-mini-benchmark-v1",
+  "run_id": "directed-7d61f4fff6a248ec86b8d713fac3c8f0",
+  "status": "COMPLETED_WITH_OPEN_CLAIMS",
+  "artifact_root": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\sol_collatz_bench\\runs\\collatz-sol-low-bench-20260908\\directed\\directed-7d61f4fff6a248ec86b8d713fac3c8f0",
+  "claim_ledger_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\sol_collatz_bench\\runs\\collatz-sol-low-bench-20260908\\directed\\directed-7d61f4fff6a248ec86b8d713fac3c8f0\\package\\CLAIM_LEDGER.json",
+  "package_path": "C:\\Users\\MDP\\.codex\\worktrees\\555f\\Collatz\\sol_collatz_bench\\runs\\collatz-sol-low-bench-20260908\\directed\\directed-7d61f4fff6a248ec86b8d713fac3c8f0\\package\\COMPLETE_PACKAGE.zip",
+  "package_sha256": "2da306a389532e4646ddaec23df3cea8f5d8e291b03bdb76dad90898e180ea4d"
+}
