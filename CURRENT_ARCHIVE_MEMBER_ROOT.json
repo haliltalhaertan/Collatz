@@ -1,0 +1,8 @@
+{
+  "schema": "COLLATZ_ARCHIVE_MEMBER_ROOT_V1",
+  "archive": "Collatz_Research_Archive_CURRENT.zip",
+  "archive_sha256": "f9a501670013f59ae56c3249e7e2daa9ff47d8b7ee1b50ba58acafd769acef12",
+  "member_count": 1008,
+  "algorithm": "sha256(sorted UTF-8 lines: path\\0uncompressed_size\\0member_sha256\\n)",
+  "member_root_sha256": "ef7d1d3572d0043b9b4fdeaebebfc45f8eeb4bc772550dbb9135e4525a7b1255"
+}
