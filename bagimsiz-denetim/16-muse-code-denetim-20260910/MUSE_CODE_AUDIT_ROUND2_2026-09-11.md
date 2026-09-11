@@ -10,6 +10,13 @@ tools determinizmi, 6 klasörde derin matematik-kod uyumu.
 denetçinin değil, round-1 doğrulama scriptinin (`verify_madde07.py`) audit klasörüne
 eklenmiş olması. Muse'un scratch'i yalnız /tmp (madde07_fast.py), proje ağacı temiz.
 
+**PROVENANCE NOTU:** Bu denetim, düzeltme-öncesi ağaçta koştu. Denetim bitiminde
+uzak dala (aynı PR dalı) 12 remediation commit'i geldi (2b7d2f2..4e09d12, 2026-09-11,
+araştırma yöneticisi): madde07 serileştirme düzeltmesi, handoff verifier hardening,
+mpmath kaldırma, döngü tespiti, aralık-aritmetiği sertifikaları, B=4 DP düzeltmesi,
+GOREV001 portable checker + regression testler. Round-2 bulgularının çoğu bu
+commit'lerle kapanmış durumda.
+
 **Karar: ŞARTLI GEÇERLİ.** Sayısal çekirdek sağlam; üç çekince sınıfı: madde07 birincil
 scripti, raporun geri aldığı eski çıktıları basan scriptler, verify_handoff'un mevcut
 checkout'ta FAIL vermesi. Matematiksel içeriği çürüten bulgu yok.
