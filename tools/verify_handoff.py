@@ -7,7 +7,9 @@ The verifier distinguishes content integrity from Git-history availability:
   fetched is reported as a warning rather than a false corruption failure;
 - a HELD lock still requires its base commit and ancestry to be verifiable;
 - detached HEAD is accepted only when HEAD exactly matches the expected local
-  branch/ref tip, and is reported explicitly.
+  branch/ref tip, and is reported explicitly;
+- every non-directory archive member is hashed and reduced to a deterministic
+  member-root, in addition to whole-ZIP SHA/size/count/CRC verification.
 """
 
 from __future__ import annotations
@@ -22,6 +24,7 @@ import zipfile
 REPO = Path(__file__).resolve().parents[1]
 STATE_PATH = REPO / "CURRENT_RESEARCH_STATE.json"
 BUILD_PATH = REPO / "CURRENT_ARCHIVE_BUILD.json"
+MEMBER_ROOT_PATH = REPO / "CURRENT_ARCHIVE_MEMBER_ROOT.json"
 JOURNAL_PATH = REPO / "research_manager" / "RESEARCH_JOURNAL.jsonl"
 
 
@@ -35,6 +38,19 @@ def digest_file(path: Path) -> str:
 
 def digest_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def archive_member_root(zf: zipfile.ZipFile) -> tuple[int, str]:
+    root = hashlib.sha256()
+    count = 0
+    for item in sorted((x for x in zf.infolist() if not x.is_dir()), key=lambda x: x.filename):
+        h = hashlib.sha256()
+        with zf.open(item) as stream:
+            for block in iter(lambda: stream.read(1 << 20), b""):
+                h.update(block)
+        root.update(f"{item.filename}\0{item.file_size}\0{h.hexdigest()}\n".encode("utf-8"))
+        count += 1
+    return count, root.hexdigest()
 
 
 def verify_journal() -> int:
@@ -114,10 +130,13 @@ def main() -> None:
     warnings: list[str] = []
     state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
     build = json.loads(BUILD_PATH.read_text(encoding="utf-8"))
+    member_record = json.loads(MEMBER_ROOT_PATH.read_text(encoding="utf-8"))
     if state["schema"] != "COLLATZ_CURRENT_RESEARCH_STATE_V1":
         raise AssertionError("state schema mismatch")
     if build["schema"] != "COLLATZ_CURRENT_ARCHIVE_BUILD_V1":
         raise AssertionError("build schema mismatch")
+    if member_record["schema"] != "COLLATZ_ARCHIVE_MEMBER_ROOT_V1":
+        raise AssertionError("archive member-root schema mismatch")
     allowed_stages = {"STAGE_1_AUTHORIZED_NOT_EXECUTED", "STAGE_1_RUNNING", "RESULT_RETURNED_UNVERIFIED", "AUDIT_PENDING", "ACCEPTED", "STAGE_0_READY_NOT_DISPATCHED", "STAGE_0_REPAIR_READY_NOT_DISPATCHED", "STAGE_0_RUNNING", "PRE_RUN_SEAL_AWAITING_AUTHORIZATION", "STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED"}
     if state["active_task"]["stage"] not in allowed_stages:
         raise AssertionError("unrecognized active stage")
@@ -152,10 +171,13 @@ def main() -> None:
     archive = REPO / build["archive"]
     if archive.name != state["archive"]["current_archive"]:
         raise AssertionError("archive name mismatch")
-    if digest_file(archive) != build["archive_sha256"]:
+    archive_sha256 = digest_file(archive)
+    if archive_sha256 != build["archive_sha256"]:
         raise AssertionError("current archive hash mismatch")
     if archive.stat().st_size != build["zip_bytes"]:
         raise AssertionError("current archive size mismatch")
+    if member_record["archive"] != archive.name or member_record["archive_sha256"] != archive_sha256:
+        raise AssertionError("archive member-root record does not bind to current archive")
 
     with zipfile.ZipFile(archive) as zf:
         if len(zf.infolist()) != build["member_count"]:
@@ -169,6 +191,11 @@ def main() -> None:
                 raise AssertionError(f"archive member missing: {row['path']}")
             if digest_bytes(zf.read(row["path"])) != row["sha256"]:
                 raise AssertionError(f"archive member hash mismatch: {row['path']}")
+        full_count, full_root = archive_member_root(zf)
+        if full_count != member_record["member_count"] or full_count != build["member_count"]:
+            raise AssertionError("full archive member-root count mismatch")
+        if full_root != member_record["member_root_sha256"]:
+            raise AssertionError("full archive member-root hash mismatch")
 
     journal_rows = verify_journal()
     print(f"branch={branch}")
@@ -177,6 +204,7 @@ def main() -> None:
     print(f"active_stage={state['active_task']['stage']}")
     print(f"journal_rows={journal_rows}")
     print(f"archive_members={build['member_count']}")
+    print(f"archive_member_root={member_record['member_root_sha256']}")
     print(f"archive_sha256={build['archive_sha256']}")
     for warning in warnings:
         print(f"WARNING: {warning}")
