@@ -2,46 +2,59 @@
 Collatz deneyi.
 
 Kural (tamami bu):
-  - Sayi ciftse:  ikiye bol
-  - Sayi tekse:   uc ile carp, bir ekle
+  - Sayi ciftse: ikiye bol
+  - Sayi tekse: uc ile carp, bir ekle
   - Sonuc 1 olana kadar tekrarla
 
 Soru: her sayi eninde sonunda 1'e iner mi?
 Kimse bilmiyor. Bu dosya, bilinmeyene bilgisayarla bakma denemesidir.
+
+Bu surum 1 disinda bir donguyle karsilasirsa sessizce sonsuza girmek yerine
+acik bir RuntimeError uretir.
 """
 
 LIMIT = 1_000_000
 
 
+def sonraki(n):
+    return n // 2 if n % 2 == 0 else 3 * n + 1
+
+
 def yolculuk(n):
-    """n sayisinin 1'e inene kadarki (adim_sayisi, gordugu_en_buyuk_sayi) degeri."""
     adim = 0
     zirve = n
+    gorulen = set()
     while n != 1:
-        n = n // 2 if n % 2 == 0 else 3 * n + 1
+        if n in gorulen:
+            raise RuntimeError(f"1 disinda dongu tespit edildi; tekrar eden deger: {n}")
+        gorulen.add(n)
+        n = sonraki(n)
         zirve = max(zirve, n)
         adim += 1
     return adim, zirve
 
 
 def main():
-    # Ayni hesabi tekrar tekrar yapmamak icin hafiza (cache).
     adim_hafiza = {1: 0}
 
     def adim_sayisi(n):
         yigin = []
+        yigin_set = set()
         m = n
         while m not in adim_hafiza:
+            if m in yigin_set:
+                raise RuntimeError(f"1 disinda dongu tespit edildi; tekrar eden deger: {m}")
             yigin.append(m)
-            m = m // 2 if m % 2 == 0 else 3 * m + 1
+            yigin_set.add(m)
+            m = sonraki(m)
         d = adim_hafiza[m]
         while yigin:
             d += 1
             adim_hafiza[yigin.pop()] = d
         return adim_hafiza[n]
 
-    en_uzun = (0, 0)      # (adim, sayi)
-    en_yuksek = (0, 0)    # (zirve, sayi)
+    en_uzun = (0, 0)
+    en_yuksek = (0, 0)
     toplam_adim = 0
 
     for n in range(1, LIMIT + 1):
@@ -50,7 +63,6 @@ def main():
         if a > en_uzun[0]:
             en_uzun = (a, n)
 
-    # Zirve icin ayri (hafizasiz) tarama - sadece ilk 100 binde, yavas oldugu icin.
     for n in range(1, 100_001):
         _, z = yolculuk(n)
         if z > en_yuksek[0]:
@@ -66,7 +78,6 @@ def main():
     print(f"  -> yani basladigi yerin {en_yuksek[0] // en_yuksek[1]:,} kati kadar yukari cikti")
     print()
 
-    # Kucuk bir sasirtici ornek: 27
     a27, z27 = yolculuk(27)
     print(f"Ilginc olan: 27 gibi kucucuk bir sayi {a27} adim suruyor")
     print(f"  ve yol boyunca {z27:,}'e kadar tirmaniyor.")
