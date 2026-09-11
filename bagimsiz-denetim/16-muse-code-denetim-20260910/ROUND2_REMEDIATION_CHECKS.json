@@ -1,0 +1,28 @@
+{
+  "schema": "COLLATZ_MUSE_ROUND2_REMEDIATION_CHECKS_V1",
+  "date": "2026-09-11",
+  "repository": "haliltalhaertan/Collatz",
+  "pr": 1,
+  "branch": "external-audit/muse-code-round1-20260910",
+  "status": "REPAIRED_ON_PR_BRANCH_NOT_CANONICAL",
+  "checks": {
+    "cp19_task5_stale_exclusion_removed": true,
+    "task8a_grid_phase_cost_stale_verdict_removed": true,
+    "task8a_feasible_constraint_recorded": true,
+    "d0_transient_plateau_not_counterexample": true,
+    "d1_finite_inf_not_liminf_verdict": true,
+    "task6_counterexample_discipline_wording_fixed": true,
+    "archive_all_members_hashed": true,
+    "archive_member_count": 1008,
+    "archive_member_root_sha256": "ef7d1d3572d0043b9b4fdeaebebfc45f8eeb4bc772550dbb9135e4525a7b1255",
+    "archive_sha256": "f9a501670013f59ae56c3249e7e2daa9ff47d8b7ee1b50ba58acafd769acef12",
+    "verify_handoff_checks_tracked_worktree": true,
+    "verify_handoff_checks_ancestry": true,
+    "drive_external_anchor_created": true,
+    "drive_external_anchor_id": "1iB7TGc-BkY4IdLx4UjrZnRbyqqVqP11t",
+    "main_modified": false,
+    "canonical_archive_rebuilt_after_repairs": false
+  },
+  "open_publication_gate": "Run canonical integrator publication cycle before merge/main acceptance.",
+  "scientific_status": "NO NEW COLLATZ PROOF; asymptotic W/D2 bound remains open"
+}
