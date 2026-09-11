@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
-"""Read-only verifier for a fresh Collatz research handoff."""
+"""Read-only verifier for a fresh Collatz research handoff.
+
+The verifier distinguishes content integrity from Git-history availability:
+- a present historical base commit must be an ancestor of HEAD;
+- in a shallow clone, a RELEASED historical lock whose base object was not
+  fetched is reported as a warning rather than a false corruption failure;
+- a HELD lock still requires its base commit and ancestry to be verifiable;
+- detached HEAD is accepted only when HEAD exactly matches the expected local
+  branch/ref tip, and is reported explicitly.
+"""
 
 from __future__ import annotations
 
@@ -9,7 +18,6 @@ import json
 import subprocess
 import sys
 import zipfile
-
 
 REPO = Path(__file__).resolve().parents[1]
 STATE_PATH = REPO / "CURRENT_RESEARCH_STATE.json"
@@ -46,39 +54,71 @@ def verify_journal() -> int:
     return len(raw_lines)
 
 
+def git_run(*args: str) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(["git", *args], cwd=REPO, text=True, encoding="utf-8", capture_output=True, check=False)
+
+
 def git_value(*args: str) -> str:
-    proc = subprocess.run(
-        ["git", *args],
-        cwd=REPO,
-        text=True,
-        encoding="utf-8",
-        capture_output=True,
-        check=False,
-    )
+    proc = git_run(*args)
     if proc.returncode != 0:
-        raise AssertionError(proc.stdout + proc.stderr)
+        raise AssertionError((proc.stdout + proc.stderr).strip())
     return proc.stdout.strip()
 
 
+def git_ok(*args: str) -> bool:
+    return git_run(*args).returncode == 0
+
+
+def git_is_shallow() -> bool:
+    return git_value("rev-parse", "--is-shallow-repository") == "true"
+
+
+def commit_exists(sha: str) -> bool:
+    return git_ok("cat-file", "-e", f"{sha}^{{commit}}")
+
+
+def require_ancestor(base: str, tip: str = "HEAD") -> None:
+    if not git_ok("merge-base", "--is-ancestor", base, tip):
+        raise AssertionError(f"required base commit is not an ancestor of {tip}: {base}")
+
+
+def verify_history_commit(sha: str, *, required: bool, label: str, warnings: list[str]) -> None:
+    if commit_exists(sha):
+        require_ancestor(sha)
+        return
+    if git_is_shallow() and not required:
+        warnings.append(f"{label} {sha} is outside shallow history; ancestry was not checked. Use git fetch --unshallow (or deepen the clone) for full historical verification.")
+        return
+    raise AssertionError(f"required commit object unavailable: {label}={sha}")
+
+
+def verify_branch_context(expected: str, warnings: list[str]) -> str:
+    branch = git_value("branch", "--show-current")
+    if branch:
+        if branch != expected:
+            raise AssertionError(f"branch mismatch: {branch} != {expected}")
+        return branch
+    head = git_value("rev-parse", "HEAD")
+    candidates = (f"refs/heads/{expected}", f"refs/remotes/origin/{expected}")
+    matched = []
+    for ref in candidates:
+        if git_ok("show-ref", "--verify", "--quiet", ref) and git_value("rev-parse", ref) == head:
+            matched.append(ref)
+    if not matched:
+        raise AssertionError(f"detached HEAD {head} does not match an available {expected} branch tip")
+    warnings.append(f"detached HEAD accepted at expected branch tip: {matched[0]}")
+    return f"DETACHED@{expected}"
+
+
 def main() -> None:
+    warnings: list[str] = []
     state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
     build = json.loads(BUILD_PATH.read_text(encoding="utf-8"))
     if state["schema"] != "COLLATZ_CURRENT_RESEARCH_STATE_V1":
         raise AssertionError("state schema mismatch")
     if build["schema"] != "COLLATZ_CURRENT_ARCHIVE_BUILD_V1":
         raise AssertionError("build schema mismatch")
-    allowed_stages = {
-        "STAGE_1_AUTHORIZED_NOT_EXECUTED",
-        "STAGE_1_RUNNING",
-        "RESULT_RETURNED_UNVERIFIED",
-        "AUDIT_PENDING",
-        "ACCEPTED",
-        "STAGE_0_READY_NOT_DISPATCHED",
-        "STAGE_0_REPAIR_READY_NOT_DISPATCHED",
-        "STAGE_0_RUNNING",
-        "PRE_RUN_SEAL_AWAITING_AUTHORIZATION",
-        "STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED",
-    }
+    allowed_stages = {"STAGE_1_AUTHORIZED_NOT_EXECUTED", "STAGE_1_RUNNING", "RESULT_RETURNED_UNVERIFIED", "AUDIT_PENDING", "ACCEPTED", "STAGE_0_READY_NOT_DISPATCHED", "STAGE_0_REPAIR_READY_NOT_DISPATCHED", "STAGE_0_RUNNING", "PRE_RUN_SEAL_AWAITING_AUTHORIZATION", "STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED"}
     if state["active_task"]["stage"] not in allowed_stages:
         raise AssertionError("unrecognized active stage")
     if not state["next_action"]["instruction"]:
@@ -96,16 +136,17 @@ def main() -> None:
             raise AssertionError("active_integrator is HELD with no holder")
         if not lock["scope"]:
             raise AssertionError("active_integrator scope is empty")
-        git_value("cat-file", "-e", f"{lock['base_commit']}^{{commit}}")
+        verify_history_commit(lock["base_commit"], required=lock["status"] == "HELD", label="active_integrator.base_commit", warnings=warnings)
 
-    branch = git_value("branch", "--show-current")
-    if branch != state["continuity"]["repository_branch"]:
-        raise AssertionError(f"branch mismatch: {branch}")
+    minimum_required = state.get("continuity", {}).get("minimum_required_commit")
+    if minimum_required:
+        verify_history_commit(minimum_required, required=False, label="continuity.minimum_required_commit", warnings=warnings)
+
+    branch = verify_branch_context(state["continuity"]["repository_branch"], warnings)
 
     for row in state["integrity"]["repository_files"]:
         path = REPO / row["path"]
-        actual = digest_file(path)
-        if actual != row["sha256"]:
+        if digest_file(path) != row["sha256"]:
             raise AssertionError(f"repository hash mismatch: {row['path']}")
 
     archive = REPO / build["archive"]
@@ -137,6 +178,8 @@ def main() -> None:
     print(f"journal_rows={journal_rows}")
     print(f"archive_members={build['member_count']}")
     print(f"archive_sha256={build['archive_sha256']}")
+    for warning in warnings:
+        print(f"WARNING: {warning}")
     print("HANDOFF VERIFICATION: PASS")
 
 
