@@ -1,0 +1,227 @@
+{
+  "schema": "COLLATZ_PEAK_PEELING_INDEPENDENT_AUDIT_V1",
+  "arithmetic": "Scalar Python integer endpoint enumeration; direct translated counts; Fraction variance; aggregate-bin source and tail half-difference energies; no numpy, FFT, probe imports, or copied budget formula",
+  "panels": [
+    {
+      "r": 12,
+      "A": 19,
+      "m": 15,
+      "t": 4,
+      "q": 16,
+      "starts": 16384,
+      "W": "2795/4",
+      "W_flat": "7987/16",
+      "ratio": "11180/7987",
+      "rows": [
+        {
+          "k": 8,
+          "j": 4,
+          "count": 3432,
+          "V": "527/8",
+          "W_flat": "527/8"
+        },
+        {
+          "k": 9,
+          "j": 3,
+          "count": 3003,
+          "V": "449/16",
+          "W_flat": "459/8"
+        },
+        {
+          "k": 10,
+          "j": 2,
+          "count": 2002,
+          "V": "7763/16",
+          "W_flat": "4287/16"
+        },
+        {
+          "k": 11,
+          "j": 1,
+          "count": 1001,
+          "V": "1663/16",
+          "W_flat": "1477/16"
+        },
+        {
+          "k": 12,
+          "j": 0,
+          "count": 364,
+          "V": "251/16",
+          "W_flat": "251/16"
+        }
+      ],
+      "seconds": 0.03999319998547435
+    },
+    {
+      "r": 20,
+      "A": 31,
+      "m": 24,
+      "t": 7,
+      "q": 128,
+      "starts": 8388608,
+      "W": "1056368259/4096",
+      "W_flat": "824144183/4096",
+      "ratio": "1056368259/824144183",
+      "rows": [
+        {
+          "k": 13,
+          "j": 7,
+          "count": 1352078,
+          "V": "15422863/4096",
+          "W_flat": "15422863/4096"
+        },
+        {
+          "k": 14,
+          "j": 6,
+          "count": 1144066,
+          "V": "125651215/4096",
+          "W_flat": "107409755/4096"
+        },
+        {
+          "k": 15,
+          "j": 5,
+          "count": 817190,
+          "V": "169223135/4096",
+          "W_flat": "224164719/4096"
+        },
+        {
+          "k": 16,
+          "j": 4,
+          "count": 490314,
+          "V": "546240479/4096",
+          "W_flat": "272111399/4096"
+        },
+        {
+          "k": 17,
+          "j": 3,
+          "count": 245157,
+          "V": "598321055/16384",
+          "W_flat": "597264959/16384"
+        },
+        {
+          "k": 18,
+          "j": 2,
+          "count": 100947,
+          "V": "177710879/16384",
+          "W_flat": "202122143/16384"
+        },
+        {
+          "k": 19,
+          "j": 1,
+          "count": 33649,
+          "V": "22563439/16384",
+          "W_flat": "20027791/16384"
+        },
+        {
+          "k": 20,
+          "j": 0,
+          "count": 8855,
+          "V": "726895/16384",
+          "W_flat": "726895/16384"
+        }
+      ],
+      "seconds": 23.694001500029117
+    }
+  ],
+  "comparisons": [
+    {
+      "r": 12,
+      "exact_totals_match": true,
+      "all_contributing_strata_match": true,
+      "strata": 5
+    },
+    {
+      "r": 20,
+      "exact_totals_match": true,
+      "all_contributing_strata_match": true,
+      "strata": 8
+    }
+  ],
+  "all_panel_numerical_sanity": {
+    "checks": 48,
+    "tolerance": 1e-12,
+    "pass": true,
+    "roundoff_out_of_unit_interval": [
+      {
+        "r": 7,
+        "L": "1",
+        "tail_share": 1.0000000000000002,
+        "residual": -2.900174431673878e-16
+      },
+      {
+        "r": 7,
+        "L": "2",
+        "tail_share": 1.0000000000000002,
+        "residual": -2.900174431673878e-16
+      },
+      {
+        "r": 7,
+        "L": "4",
+        "tail_share": 1.0000000000000002,
+        "residual": -2.900174431673878e-16
+      },
+      {
+        "r": 8,
+        "L": "1",
+        "tail_share": 1.0000000000000004,
+        "residual": -3.643808901333847e-16
+      },
+      {
+        "r": 8,
+        "L": "2",
+        "tail_share": 1.0000000000000004,
+        "residual": -3.643808901333847e-16
+      },
+      {
+        "r": 8,
+        "L": "4",
+        "tail_share": 1.0000000000000004,
+        "residual": -3.643808901333847e-16
+      },
+      {
+        "r": 10,
+        "L": "2",
+        "tail_share": 1.0000000000000002,
+        "residual": -1.4593945792248527e-16
+      },
+      {
+        "r": 10,
+        "L": "4",
+        "tail_share": 1.0000000000000002,
+        "residual": -1.4593945792248527e-16
+      },
+      {
+        "r": 11,
+        "L": "2",
+        "tail_share": 1.0000000000000002,
+        "residual": -1.2407840406179104e-16
+      },
+      {
+        "r": 11,
+        "L": "4",
+        "tail_share": 1.0000000000000002,
+        "residual": -1.2407840406179104e-16
+      },
+      {
+        "r": 12,
+        "L": "4",
+        "tail_share": 1.0000000000000002,
+        "residual": -2.2774375905169107e-16
+      },
+      {
+        "r": 13,
+        "L": "4",
+        "tail_share": 1.0000000000000002,
+        "residual": -1.0722565434679693e-16
+      }
+    ],
+    "per_pair_ranking_certified": false
+  },
+  "overflow_review": {
+    "max_m": 24,
+    "int64_max": 9223372036854775807,
+    "safe_upper_bound_intermediate_3x_plus_1": 564859072962,
+    "dot_product_bound": 8388608,
+    "pass": true
+  },
+  "status": "EXACT_TOTALS_AND_STRATA_MATCH_NUMERICAL_SHARES_DIAGNOSTIC_ONLY"
+}

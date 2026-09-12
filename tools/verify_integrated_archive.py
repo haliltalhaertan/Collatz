@@ -20,7 +20,7 @@ if '--refresh-integrity' in sys.argv:
    row['sha256']=sha(dynamic[row['path']].read_bytes())
  # Bind the new accepted reports and reproducibility sources explicitly.
  existing={x['path'] for x in d['integrity']['repository_files']}
- for folder in ['research_integration_20260912','research_w_continuation_20260912']:
+ for folder in ['research_integration_20260912','research_w_continuation_20260912','research_peak_peeling_20260912']:
   for f in sorted((R/folder).iterdir()):
    if not f.is_file() or f.suffix not in {'.md','.py','.json'}:continue
    rel=f.relative_to(R).as_posix()
@@ -48,5 +48,7 @@ else:
  assert sha(b.OUTPUT.read_bytes())==before,'Non-deterministic second build'
  out={'schema':'COLLATZ_INTEGRATED_ARCHIVE_VERIFICATION_V1','original_archive_sha256':sha(original),'archive_sha256':before,'static_members_byte_preserved':static,'dynamic_members_byte_equal':len(dynamic),'exploratory_members':len(exploratory),'total_members':count,'second_build_byte_identical':True,'crc':'PASS','scope':'Archive bytes and membership; not proof of archived scientific claims'}
  dest=R/'publication_receipts';dest.mkdir(exist_ok=True)
- (dest/'BUILD_VERIFICATION_20260912.json').write_text(json.dumps(out,indent=2)+'\n',encoding='utf-8',newline='\n')
+ receipt_name=sys.argv[sys.argv.index('--receipt')+1] if '--receipt' in sys.argv else 'BUILD_VERIFICATION_20260912.json'
+ assert Path(receipt_name).name==receipt_name and receipt_name.endswith('.json')
+ (dest/receipt_name).write_text(json.dumps(out,indent=2)+'\n',encoding='utf-8',newline='\n')
  print(json.dumps(out))

@@ -1,12 +1,12 @@
-# CURRENT HANDOFF — INTEGRATED RESEARCH AND MUSE REMEDIATION, 2026-09-12
+# CURRENT HANDOFF — ACTUAL SPECTRAL PEAK PEELING, 2026-09-12
 
-Current task: `CP20_EXPLORATORY_INTEGRATION_W_20260912`. The accepted integration combines the complete research snapshot with Muse rounds 1–2 remediation. Read `research_integration_20260912/AUDIT_REVIEW.md`, then `research_w_continuation_20260912/PROPOSAL.md`. The prior detailed frontier is `research_visible_defect_20260908/REPORT_TR.md`.
+Current task: `CP20_EXPLORATORY_PEAK_PEELING_20260912`. Read `research_peak_peeling_20260912/REPORT_TR.md`, `ANALYTIC_REVIEW.md` and `INDEPENDENT_AUDIT.md`. The previous integration and W continuation reports remain valid within their stated scope.
 
-The next mathematical task is quantitative control of actual high-conductor source-tail alignment sufficient to bound W. W, D2 and Collatz remain OPEN. Finite numerical agreement, exact finite identities and implementation fixes do not imply an asymptotic estimate. Historical reports retain their dates and must be read with the later correction notices.
+Fixed panels r=5..20 were exhaustively evaluated. W and W_flat are exact rationals; independent scalar r12/r20 totals match. FFT pair shares and evaluated U_L bounds are diagnostic. Peeling gives a valid monotone enclosure, but fixed-L dominance and a uniform W/W_flat constant remain unproved. Next: actual source-energy-weighted multiplier tails, together with sufficient W_flat control. W, D2 and Collatz remain OPEN.
 
-Publication artifacts: `CURRENT_ARCHIVE_BUILD.json`, `CURRENT_ARCHIVE_MEMBER_ROOT.json`, and `publication_receipts/` for external readback receipts after publication. The canonical archive preserves historical members and adds exploratory reports in `EXPLORATORY_CONTINUATION`; receipt files are outside the frozen ZIP to avoid circular hashes.
+Publication artifacts: `CURRENT_ARCHIVE_BUILD.json`, `CURRENT_ARCHIVE_MEMBER_ROOT.json` and `publication_receipts/`. The deterministic canonical ZIP preserves historical members and includes the new exploratory package. External receipts are outside the frozen ZIP to avoid circular hashes.
 
-The following B4 V2 record is preserved as historical governance, not the current exploratory task. No B4 execution or reseal is authorized by this integration.
+The following B4 V2 closure is historical governance; it is not the current exploratory task or live authorization.
 
 ## Historical B4 V2 closure
 

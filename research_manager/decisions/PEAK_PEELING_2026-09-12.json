@@ -1,0 +1,17 @@
+{
+  "schema": "COLLATZ_EXPLORATORY_DECISION_V1",
+  "event": "ACTUAL_SPECTRAL_PEAK_PEELING_20260912",
+  "timestamp_utc": "2026-09-12T13:51:10.977951+00:00",
+  "source_commit": "12c6f918382c051b0cf98addd36c645eb63c8153",
+  "accepted": "Finite exact W and W_flat at r5..20; independent scalar r12/r20 agreement; exact analytic peeling enclosure",
+  "not_established": [
+    "interval-certified FFT rankings",
+    "uniform W bound",
+    "D2",
+    "Collatz"
+  ],
+  "next_action": "Study energy-weighted aggregate tails of actual normalized cyclic multipliers. Prove a uniform integrable tail bound, or identify obstruction; also retain the required W_flat bound. Fixed-L dominance and uniform W/W_flat have not been proved. Read the peak-peeling report and analytic review. Historical consumed B4 authorizations remain closed.",
+  "report": "research_peak_peeling_20260912/REPORT_TR.md",
+  "sealed_execution": false,
+  "paid_calls": 0
+}

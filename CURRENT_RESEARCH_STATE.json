@@ -1,17 +1,17 @@
 {
   "active_integrator": {
-    "holder": "codex-integrated-research-20260912",
-    "scope": "User-authorized snapshot/audit integration, deterministic archive and dual publication, and bounded exploratory W continuation; no consumed B4 execution or new seal.",
-    "base_commit": "2461573739147763eb011faf03c344370a184d69",
-    "acquired_at": "2026-09-12T13:04:58.745374+00:00",
-    "released_at": "2026-09-12T13:04:58.745374+00:00",
+    "holder": "codex-peak-peeling-20260912",
+    "scope": "User-authorized bounded exploratory continuation and dual publication; no sealed execution",
+    "base_commit": "12c6f918382c051b0cf98addd36c645eb63c8153",
+    "acquired_at": "2026-09-12T13:51:10.977951+00:00",
+    "released_at": "2026-09-12T13:51:10.977951+00:00",
     "status": "RELEASED"
   },
   "active_task": {
-    "code": "CP20_EXPLORATORY_INTEGRATION_W_20260912",
-    "name": "Integrated Muse remediation and actual filtered source energy research",
+    "code": "CP20_EXPLORATORY_PEAK_PEELING_20260912",
+    "name": "Actual cyclic spectral peeling and energy-weighted tail control",
     "stage": "ACCEPTED",
-    "objective": "Accept audited implementation and interpretation repairs; preserve exploratory research and continue quantitative W control. Acceptance describes this integration, not a proof of the open asymptotic bound.",
+    "objective": "Accept independently checked finite totals and analytic enclosure. Uniform W control, D2 and Collatz remain OPEN.",
     "scientific_route_change": false
   },
   "archive": {
@@ -309,13 +309,14 @@
     "literature_transfer_stage1_audit": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
     "literature_transfer_stage1_result": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
-    "current_integration_decision": "research_manager/decisions/INTEGRATED_RESEARCH_MUSE_W_2026-09-12.json"
+    "current_integration_decision": "research_manager/decisions/INTEGRATED_RESEARCH_MUSE_W_2026-09-12.json",
+    "current_exploratory_decision": "research_manager/decisions/PEAK_PEELING_2026-09-12.json"
   },
   "integrity": {
     "archive_members": [
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CONTINUITY/START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "28f14ee84077a0c19dd5303e35db8f5846387c4cfbf0d99da67484c2fe27a990"
+        "sha256": "511e482898b0bbd87672628b2e48bf3d25cee73c50f5677df2c6241ed9ffcf11"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip",
@@ -375,7 +376,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "3656f8f11519bcd8c7d0e883484ab868e44a2be1ece5029cb49a50f7205ef1d9"
+        "sha256": "cbf431f1746ae935915a791757c299c271014b42c9a88fb47a049297bd44eb04"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -641,7 +642,7 @@
     "repository_files": [
       {
         "path": "START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "28f14ee84077a0c19dd5303e35db8f5846387c4cfbf0d99da67484c2fe27a990"
+        "sha256": "511e482898b0bbd87672628b2e48bf3d25cee73c50f5677df2c6241ed9ffcf11"
       },
       {
         "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
@@ -657,7 +658,7 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "3656f8f11519bcd8c7d0e883484ab868e44a2be1ece5029cb49a50f7205ef1d9"
+        "sha256": "cbf431f1746ae935915a791757c299c271014b42c9a88fb47a049297bd44eb04"
       },
       {
         "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -1026,6 +1027,46 @@
       {
         "path": "research_w_continuation_20260912/RESULTS.json",
         "sha256": "a3ba7d962dfba95463e5b5c9d9dc79b76e4d3a807761999f7b5998d2ae264a1b"
+      },
+      {
+        "path": "research_peak_peeling_20260912/ANALYTIC_REVIEW.md",
+        "sha256": "c63dc0fd15f2be10afb36feba8c26c1bf08b13aa7b8f3c39b15f9374f094b588"
+      },
+      {
+        "path": "research_peak_peeling_20260912/BOUND_RESULTS.json",
+        "sha256": "496db1f9591b171c6f6cd0bea5a034d6ee5400329987f8532496530c96629033"
+      },
+      {
+        "path": "research_peak_peeling_20260912/evaluate_bounds.py",
+        "sha256": "32987592bbb22a8db549b19b8d1c6a3adbb6dd7b749c4bfbdef0dd463e07080d"
+      },
+      {
+        "path": "research_peak_peeling_20260912/INDEPENDENT_AUDIT.md",
+        "sha256": "7350a0f5cb2d08a4f929629faf57d82ceff21b79f33dc04578969cca7fcfad74"
+      },
+      {
+        "path": "research_peak_peeling_20260912/INDEPENDENT_RESULTS.json",
+        "sha256": "98d8206b747bb5fd88ef4c9fb037d10a7c08bdb70ddfe3ed952aec993985ce44"
+      },
+      {
+        "path": "research_peak_peeling_20260912/PLAN.json",
+        "sha256": "0f7fc59a65d2d77af6443b1c90cb5a25ccad6f8a6fd091575dbb869479a9c4a0"
+      },
+      {
+        "path": "research_peak_peeling_20260912/prepare_continuity.py",
+        "sha256": "fbecb2e2f0fe0d34d53060eaa9247e27511e40d53e6c0f72ba93d835574248f7"
+      },
+      {
+        "path": "research_peak_peeling_20260912/probe.py",
+        "sha256": "c5b846fb3bae91dbb6a5cd0f9fc39f5210a2238143a64b9ba439648cd9fddf7c"
+      },
+      {
+        "path": "research_peak_peeling_20260912/REPORT_TR.md",
+        "sha256": "b0f48338403674b65ae4fac1156d75d7fdbf5ed690850e2848612527a6174f2c"
+      },
+      {
+        "path": "research_peak_peeling_20260912/RESULTS.json",
+        "sha256": "5fd62f0c37c6ad8f105e9082c91255c8f21148d73996ad2707b2f8be41a58637"
       }
     ]
   },
@@ -1148,7 +1189,7 @@
     "authorization_available": false,
     "authorized_stage": null,
     "executed_in_this_transaction": false,
-    "instruction": "Continue separately authorized exploratory analysis of actual high-conductor source-tail alignment sufficient to bound W. Read the 2026-09-12 integration and W continuation reports first. No asymptotic W/D2 bound has been proved. The historical B4 V1/V2 authorizations remain consumed and closed.",
+    "instruction": "Study energy-weighted aggregate tails of actual normalized cyclic multipliers. Prove a uniform integrable tail bound, or identify obstruction; also retain the required W_flat bound. Fixed-L dominance and uniform W/W_flat have not been proved. Read the peak-peeling report and analytic review. Historical consumed B4 authorizations remain closed.",
     "prohibited": [
       "reuse or execution of consumed B4 V1/V2 tuples",
       "promote finite checks to asymptotic bounds",
@@ -1238,7 +1279,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-12T13:04:58.745374+00:00",
+  "updated_at": "2026-09-12T13:51:10.977951+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
@@ -1252,10 +1293,12 @@
     "integration_merge_commit": "c10ac750910a2b4736424bd1528c8321f18c8289",
     "audit_review": "research_integration_20260912/AUDIT_REVIEW.md",
     "latest_prior_report": "research_visible_defect_20260908/REPORT_TR.md",
-    "continuation_report": "research_w_continuation_20260912/PROPOSAL.md",
+    "continuation_report": "research_peak_peeling_20260912/REPORT_TR.md",
     "W_status": "OPEN",
     "D2_status": "OPEN",
     "collatz_status": "OPEN",
-    "scope": "Exploratory evidence is archived with its original epistemic labels; not retroactive acceptance of every historical claim."
+    "scope": "Exploratory evidence is archived with its original epistemic labels; not retroactive acceptance of every historical claim.",
+    "previous_continuation_report": "research_w_continuation_20260912/PROPOSAL.md",
+    "peak_audit": "research_peak_peeling_20260912/INDEPENDENT_AUDIT.md"
   }
 }

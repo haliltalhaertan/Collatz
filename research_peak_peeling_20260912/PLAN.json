@@ -1,0 +1,13 @@
+{
+  "status": "FIXED_BEFORE_COMPUTATION",
+  "date": "2026-09-12",
+  "panels_r": [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+  "A": "floor(log2(3^r)) by integer bit_length",
+  "m": "ceil(6r/5)",
+  "population": "all odd h in [1,2^m), exact m-step endpoints and prefix weights",
+  "pair_counts": [1,2,4],
+  "selection": "Top L conjugate pairs by tail multiplier alone within each (k,s); joint-product ranking only as an explicitly labelled diagnostic oracle",
+  "normalization": "Removed contribution measured against original W; residual / original W_flat, no silent renormalization",
+  "arithmetic": "Exact integer histograms, exact rational variance and W_flat. FFT ranks/shares are numerical diagnostics checked against exact layer variances.",
+  "scope": "Finite diagnostic only. No asymptotic growth inference, no sealed execution, no paid model calls."
+}
