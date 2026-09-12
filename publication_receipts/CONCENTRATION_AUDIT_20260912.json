@@ -1,0 +1,24 @@
+{
+  "verified_commit": "d5cedc62acdea2c4d3518d74ab05103be341b071",
+  "github_files": [
+    {
+      "path": "research_concentration_audit_20260912/check_claim.py",
+      "sha256": "b21b71fb7e968680cd6e3275100c6eef126490d3d0a5872a914560bb7d420aaf"
+    },
+    {
+      "path": "research_concentration_audit_20260912/REPORT_TR.md",
+      "sha256": "5d809bec04144ea9c817ab5a586b041ae959d3850fb71d84d1ec77951523b8da"
+    },
+    {
+      "path": "research_concentration_audit_20260912/RESULTS.json",
+      "sha256": "166b0f5da22efd8fe8302e2a1cd37246a10c2527b40955858c588cd88a414471"
+    }
+  ],
+  "all_github_bytes_equal": true,
+  "drive_id": "12etD-CQ6o6fUdfamI_Y2bm-AAwvxcdXX",
+  "drive_bytes": 91830,
+  "drive_sha256": "149965594989ae3f071d51e89144e6259360bc4de8370917ef266446181b3963",
+  "drive_raw_readback": "PASS",
+  "crc": "PASS",
+  "scope": "Supplemental claim audit and source dependencies. Canonical archive from previous turn remains unchanged."
+}
