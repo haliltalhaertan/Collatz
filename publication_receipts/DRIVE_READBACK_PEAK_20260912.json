@@ -1,0 +1,22 @@
+{
+  "snapshot_commit": "188a19d6dd4feb7a6ff6d53f25f10381c0ae41f7",
+  "folder_id": "1Tg5P5wfILAgKYg-CiUmJS60kzdRFL2AU",
+  "files": [
+    {
+      "id": "1zwj3gw6Cv50PPnzrxoAnyKysP8YO2VnA",
+      "name": "Collatz_Research_Archive_PEAK_20260912.zip",
+      "bytes": 93512954,
+      "sha256": "eaa22dade4588f7830e85ccfa03f7a36171cb9453376ce846d99a00f96a45ef2",
+      "byte_readback": "PASS",
+      "crc": "PASS"
+    },
+    {
+      "id": "1Xqze3_2UfNpD0qoUeRx9o_kg3HRRnosm",
+      "name": "COLLATZ_PEAK_REPOSITORY_20260912.zip",
+      "bytes": 32777415,
+      "sha256": "357406219e787bb1f6a59cc68330f9136af461186f28719b273d864c542cf650",
+      "byte_readback": "PASS",
+      "crc": "PASS"
+    }
+  ]
+}
