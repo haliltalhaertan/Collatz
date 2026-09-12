@@ -1,0 +1,24 @@
+{
+  "verified_commit": "4b9627b0341ee327ed8e185a87a1f2ce2dfb435d",
+  "github_files": [
+    {
+      "path": "research_galois_audit_20260912/check_claim.py",
+      "sha256": "25d75953db47006218d35ec5ea07647dc3dee1faff1dface1ad465d9a4b6cd01"
+    },
+    {
+      "path": "research_galois_audit_20260912/REPORT_TR.md",
+      "sha256": "d2601e2feba0b5bb807c959b69dc001dd50727b4e3f4843905757da64c1ba1ee"
+    },
+    {
+      "path": "research_galois_audit_20260912/RESULTS.json",
+      "sha256": "b1eea4b953439ced551522f4619c185df5fb5bb073d7e1364f5448d09abbb9e7"
+    }
+  ],
+  "all_github_bytes_equal": true,
+  "drive_id": "1NesWVSuDghYhgVknQohTvjGgAuDIiCvU",
+  "drive_bytes": 86369,
+  "drive_sha256": "ff8c5ba01de16aea51c9c9201beacfd5eb1bfdfccbe57d5e865195febe93b2d8",
+  "drive_raw_readback": "PASS",
+  "crc": "PASS",
+  "scope": "Supplemental claim audit and dependencies; canonical archive unchanged."
+}
