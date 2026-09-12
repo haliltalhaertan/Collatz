@@ -1,0 +1,97 @@
+{
+  "verified_commit": "1fa0f4bdd9d2956f088f60fc909f4b11db67e6ad",
+  "files": [
+    {
+      "path": "CURRENT_RESEARCH_STATE.json",
+      "bytes": 88572,
+      "sha256": "ca54c2a8feebbcf917b60d25dcf3e6ae68bd7c0a3379c9915971f1ca53eed7a9"
+    },
+    {
+      "path": "CURRENT_ARCHIVE_BUILD.json",
+      "bytes": 757,
+      "sha256": "dddafb4a664d635d273f1593ea7304d00b69f37ab6762ee4a51ae0e6277dcb5e"
+    },
+    {
+      "path": "CURRENT_ARCHIVE_MEMBER_ROOT.json",
+      "bytes": 396,
+      "sha256": "782095bcf1e10930fc6a4213cc134f850fd1c7c7851b36fe1be3a1884c7c1f32"
+    },
+    {
+      "path": "START_HERE_CURRENT_HANDOFF.md",
+      "bytes": 3626,
+      "sha256": "3f54c5eb5f60e51cb645394be28cb92b52ae181800c39891c418e6b72c9af0a1"
+    },
+    {
+      "path": "research_manager/RESEARCH_JOURNAL.jsonl",
+      "bytes": 26040,
+      "sha256": "894ddc04d459ace65c7bd5af280ff4d455d2af1798aae1778cc7e167abcf9dcd"
+    },
+    {
+      "path": "research_manager/decisions/CROSS_TERMS_2026-09-12.json",
+      "bytes": 1292,
+      "sha256": "2e4090883516095077814bec05fc9093262d2c21328964f7bb747fa8e279bf68"
+    },
+    {
+      "path": "publication_receipts/DRIVE_READBACK_CROSS_20260912.json",
+      "bytes": 697,
+      "sha256": "815dc3b57f1c29d7616deba77462f95af889f354f179ae4bcb827fb128ff120c"
+    },
+    {
+      "path": "research_cross_terms_20260912/ATTACK.md",
+      "bytes": 6859,
+      "sha256": "01e2330d1013f79a389150b2c7bd60542d336ad0644990b8802fbe058fdba6de"
+    },
+    {
+      "path": "research_cross_terms_20260912/attack_results.json",
+      "bytes": 191820,
+      "sha256": "ca2f9046f8685bb9b475dd1b1d55e8208575c77328337be314edb2b248030a6b"
+    },
+    {
+      "path": "research_cross_terms_20260912/IDENTITIES.md",
+      "bytes": 10898,
+      "sha256": "89f3b1174dfcd8e1e83b18b965610620f43777edf94b3193949bf45ab7d123a9"
+    },
+    {
+      "path": "research_cross_terms_20260912/INDEPENDENT.md",
+      "bytes": 8927,
+      "sha256": "0b05ed15e7138ae18aa1833bb79c03212706de6be23c04905c15f663fbbf9a07"
+    },
+    {
+      "path": "research_cross_terms_20260912/independent_results.json",
+      "bytes": 134122,
+      "sha256": "45211850c5c7b744775ad294b22df7c7522061e2a6ea8940b6a6c7274d437b61"
+    },
+    {
+      "path": "research_cross_terms_20260912/PLAN.json",
+      "bytes": 269,
+      "sha256": "4ddc1494a7abbe0441a0af981aad165ac15a9169dad030f562864a51b3b2ca70"
+    },
+    {
+      "path": "research_cross_terms_20260912/prepare_continuity.py",
+      "bytes": 5162,
+      "sha256": "c714e15295bb660a9fe7064df0fe3736929538726a4fbb937d6d8a09bdab4448"
+    },
+    {
+      "path": "research_cross_terms_20260912/probe.py",
+      "bytes": 3885,
+      "sha256": "3185fc68eaaa7eb2c297e486e34fd3886e19f05fdf2d9549b74d7c87eafc7006"
+    },
+    {
+      "path": "research_cross_terms_20260912/REPORT_TR.md",
+      "bytes": 6603,
+      "sha256": "9d76eca9a2b917858c29177bfe1b183c88408d6ea2bc953530bce101a19e5f1a"
+    },
+    {
+      "path": "research_cross_terms_20260912/RESULTS.json",
+      "bytes": 203859,
+      "sha256": "5439bd0488ae4e292eaeab7da7086ea156c85dccb734e58596e8c86095c87ad0"
+    }
+  ],
+  "canonical_archive": {
+    "path": "Collatz_Research_Archive_CURRENT.zip",
+    "bytes": 93641675,
+    "sha256": "5e59b280cba1cfdf626f2f67a2869f91318362d63131de2af67770216b6315f3"
+  },
+  "all_bytes_equal": true,
+  "scope": "Receipt added after verified commit to avoid self-reference"
+}
