@@ -58,10 +58,12 @@ Two D1 scripts retained historical finite-minimum comparisons that could print `
 
 `04-cp20-task6-denetim/madde08_karsi_ornek_disiplini.py` contained two overstatements:
 
-1. the `kappa=0.5` construction was described only as violating H2, although the realized finite construction also displays linear drift and therefore fails H1;
+1. the proposed `kappa=0.5` violates H2. The fresh 2026-09-12 run of the existing arithmetic actually gives `s_N=6` at `N=60000`, hence `s_N/N=0.0001`; the earlier description of this controller as visibly linear was itself incorrect. This finite sample neither certifies nor refutes H1;
 2. a random zero-critical example with `|s_N|=37289` at `N=60000` was called `sqrt(k)`-scale despite being visibly linear-scale in that finite sample.
 
-The script now reports `s_N/N` directly, identifies H1/H2 separately, and does not use the incorrect square-root description.
+The script now reports `s_N/N` directly, distinguishes the H2 parameter violation from finite evidence concerning H1, and does not use the incorrect square-root description. For the constant and periodic examples, nonzero asymptotic drift follows separately from their exact means. For the finite greedy controller and seeded random sample, the diagnostic does not certify H1 failure.
+
+**Integration review correction, 2026-09-12:** the initial remediation still overstated the finite drift inference in this section and in the script. The controller's fresh output also contradicts the earlier linear-drift description, as recorded above; the random sample still gives `s_N=-37289`. The two D1 diagnostic scripts now describe sampled decreasing tail discrepancies as observations consistent with a separate asymptotic argument, rather than claiming that finite sampling proves a limit. Arithmetic is unchanged, verified by comparing the computation AST after excluding print statements and docstrings.
 
 ## Handoff/archive integrity hardening
 

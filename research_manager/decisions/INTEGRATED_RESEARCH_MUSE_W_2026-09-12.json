@@ -1,0 +1,20 @@
+{
+  "schema": "COLLATZ_INTEGRATION_DECISION_V1",
+  "date": "2026-09-12",
+  "user_authorization": "evet bunlari yap ve arastirmalarimiza kaldigimiz yerden devam edelim",
+  "source_commits": {
+    "snapshot_commit": "b49f630808b72e40a9da47df89466b3e838fd439",
+    "muse_audit_commit": "dc43110d5ae7672aa8a08fecfe95518b20e662c9",
+    "integration_merge_commit": "c10ac750910a2b4736424bd1528c8321f18c8289",
+    "audit_review": "research_integration_20260912/AUDIT_REVIEW.md",
+    "latest_prior_report": "research_visible_defect_20260908/REPORT_TR.md",
+    "continuation_report": "research_w_continuation_20260912/PROPOSAL.md",
+    "W_status": "OPEN",
+    "D2_status": "OPEN",
+    "collatz_status": "OPEN",
+    "scope": "Exploratory evidence is archived with its original epistemic labels; not retroactive acceptance of every historical claim."
+  },
+  "accepted_scope": "Verified code and interpretation remediation; snapshot preservation. Original exploratory reports are evidence, not blanket theorem acceptance.",
+  "historical_sealed_programs": "UNCHANGED; no execution or reseal",
+  "next_action": "Continue separately authorized exploratory analysis of actual high-conductor source-tail alignment sufficient to bound W. Read the 2026-09-12 integration and W continuation reports first. No asymptotic W/D2 bound has been proved. The historical B4 V1/V2 authorizations remain consumed and closed."
+}

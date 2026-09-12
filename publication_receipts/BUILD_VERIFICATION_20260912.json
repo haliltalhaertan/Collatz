@@ -1,0 +1,12 @@
+{
+  "schema": "COLLATZ_INTEGRATED_ARCHIVE_VERIFICATION_V1",
+  "original_archive_sha256": "f9a501670013f59ae56c3249e7e2daa9ff47d8b7ee1b50ba58acafd769acef12",
+  "archive_sha256": "426d1a7abbb4800c69b9b3ce80dc9dedf274b342c0ad186d2c2c79c9c3fd1037",
+  "static_members_byte_preserved": 804,
+  "dynamic_members_byte_equal": 645,
+  "exploratory_members": 401,
+  "total_members": 1449,
+  "second_build_byte_identical": true,
+  "crc": "PASS",
+  "scope": "Archive bytes and membership; not proof of archived scientific claims"
+}

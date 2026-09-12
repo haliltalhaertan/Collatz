@@ -1,0 +1,39 @@
+{
+  "schema": "COLLATZ_INTEGRATION_BOUNDED_AUDIT_V1",
+  "date": "2026-09-12",
+  "reviewed_merge_commit": "c10ac750910a2b4736424bd1528c8321f18c8289",
+  "status": "ARITHMETIC_REGRESSIONS_PASS_WORDING_CORRECTED_PUBLICATION_GATES_SEPARATE",
+  "executed": {
+    "git_context_regression": "PASS",
+    "madde07_100000_raw_byte_reference": "PASS",
+    "rational_pressure_certificate": "PASS",
+    "stdlib_pressure_and_dp_tables": "PASS",
+    "gorev001_exact_panels": [5, 10, 12, 14],
+    "gorev001_all_internal_assertions": "PASS",
+    "gorev001_boundary": "PASS",
+    "ordinary_27_trajectory": "PASS",
+    "synthetic_direct_nonone_cycle_rejection": "PASS",
+    "synthetic_cached_nonone_cycle_rejection": "PASS",
+    "post_review_three_edited_scripts_full_execution": "PASS",
+    "post_review_three_edited_scripts_syntax": "PASS",
+    "post_review_computation_ast_unchanged_excluding_prints_and_docstrings": "PASS",
+    "post_review_greedy_kappa_half_sN_at_60000": 6,
+    "post_review_seeded_random_sN_at_60000": -37289,
+    "post_review_d1_integer_range_injury_checks": 9688,
+    "post_review_d1_plateau_point_checks": 5999,
+    "post_review_d1_monotonicity_checks": 1480,
+    "post_review_d1_reported_check_failures": 0,
+    "post_review_two_wording_findings_closed": true
+  },
+  "not_executed": [
+    "full_1_to_1000000_collatz_census",
+    "every_historical_script",
+    "final_rebuilt_archive_and_final_handoff",
+    "remote_publication_readback"
+  ],
+  "open_items": [
+    "Final archive must explicitly cover accepted root research directories",
+    "Asymptotic actual W or D2 bound remains open"
+  ],
+  "scientific_claim": "NO_NEW_COLLATZ_PROOF_OR_ORBIT_EXCLUSION"
+}

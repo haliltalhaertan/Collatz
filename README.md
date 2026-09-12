@@ -1,5 +1,7 @@
 # Collatz Research Archive
 
+**12 Eylül 2026 güncellemesi:** Tam araştırma snapshot'ı ve Muse Round 1–2 düzeltmeleri birleştirildi. Güncel başlangıç noktası [handoff](START_HERE_CURRENT_HANDOFF.md), doğrulama raporu [entegrasyon denetimi](research_integration_20260912/AUDIT_REVIEW.md), araştırma devamı [W çalışması](research_w_continuation_20260912/PROPOSAL.md). Collatz ve gereken asimptotik W/D2 sınırları açık. Aşağıdaki eski checkpoint anlatımları tarihsel bağlamdır; güncel dosya kimliği `CURRENT_ARCHIVE_BUILD.json` ve `CURRENT_ARCHIVE_MEMBER_ROOT.json` içindedir.
+
 Bu depo iki ayrı katman taşıyor. Karışmamaları önemli.
 
 | Katman | Yer | Ne |

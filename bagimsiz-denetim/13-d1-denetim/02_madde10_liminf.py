@@ -55,4 +55,4 @@ for j in range(max(1,len(inj)-7),len(inj)-1):
 print("\nC) CURRENT STATUS")
 print("   No asymptotic verdict is inferred from a single finite global minimum.")
 print("   Run 03_madde10_kuyruk.py for increasing tail cutoffs; there the aligned")
-print("   trough discrepancy is observed to tend toward zero, matching the report correction.")
+print("   sampled trough discrepancies decrease, consistent with the separate asymptotic argument; these finite observations do not prove a limit.")

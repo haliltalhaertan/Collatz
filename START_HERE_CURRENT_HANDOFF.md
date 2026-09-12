@@ -1,4 +1,14 @@
-# CURRENT HANDOFF — B4 V2 CLOSED AFTER INPUT-INTEGRITY FAILURE
+# CURRENT HANDOFF — INTEGRATED RESEARCH AND MUSE REMEDIATION, 2026-09-12
+
+Current task: `CP20_EXPLORATORY_INTEGRATION_W_20260912`. The accepted integration combines the complete research snapshot with Muse rounds 1–2 remediation. Read `research_integration_20260912/AUDIT_REVIEW.md`, then `research_w_continuation_20260912/PROPOSAL.md`. The prior detailed frontier is `research_visible_defect_20260908/REPORT_TR.md`.
+
+The next mathematical task is quantitative control of actual high-conductor source-tail alignment sufficient to bound W. W, D2 and Collatz remain OPEN. Finite numerical agreement, exact finite identities and implementation fixes do not imply an asymptotic estimate. Historical reports retain their dates and must be read with the later correction notices.
+
+Publication artifacts: `CURRENT_ARCHIVE_BUILD.json`, `CURRENT_ARCHIVE_MEMBER_ROOT.json`, and `publication_receipts/` for external readback receipts after publication. The canonical archive preserves historical members and adds exploratory reports in `EXPLORATORY_CONTINUATION`; receipt files are outside the frozen ZIP to avoid circular hashes.
+
+The following B4 V2 record is preserved as historical governance, not the current exploratory task. No B4 execution or reseal is authorized by this integration.
+
+## Historical B4 V2 closure
 
 Canonical task: `CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2`  
 Active stage: `STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED`

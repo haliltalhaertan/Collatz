@@ -1,0 +1,38 @@
+{
+  "method": "Integer cyclic autocorrelation and primitive Ramanujan sum; independent of conditional variance projections",
+  "rows_verified": 64,
+  "all_variances_and_R_D_match": true,
+  "real_conjugate_pair_bound": "PASS",
+  "first_two_conductors_exact_flat": "PASS",
+  "flat_alignment_counterexamples": [
+    {
+      "r": 10,
+      "k": 8,
+      "j": 2,
+      "s": 3,
+      "ratio": "31/21"
+    },
+    {
+      "r": 12,
+      "k": 10,
+      "j": 2,
+      "s": 4,
+      "ratio": "3692/1941"
+    },
+    {
+      "r": 12,
+      "k": 11,
+      "j": 1,
+      "s": 4,
+      "ratio": "529/466"
+    },
+    {
+      "r": 14,
+      "k": 13,
+      "j": 1,
+      "s": 3,
+      "ratio": "1343/1305"
+    }
+  ],
+  "scope": "Exact finite identities and counterexamples only; no asymptotic claim"
+}

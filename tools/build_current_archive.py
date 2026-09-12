@@ -19,6 +19,7 @@ from pathlib import Path, PurePosixPath
 import hashlib
 import json
 import os
+import subprocess
 import zipfile
 
 REPO = Path(__file__).resolve().parents[1]
@@ -44,7 +45,40 @@ DYNAMIC_PREFIXES = (
     f"{ARCHIVE_ROOT_NAME}/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/",
     f"{ARCHIVE_ROOT_NAME}/REPOSITORY_TOOLING/",
     f"{ARCHIVE_ROOT_NAME}/CONTINUITY/",
+    f"{ARCHIVE_ROOT_NAME}/EXPLORATORY_CONTINUATION/",
 )
+
+REVIEWED_NEW_ROOTS = {"research_integration_20260912", "research_w_continuation_20260912"}
+REVIEWED_NEW_SUFFIXES = {".md", ".py", ".json", ".jsonl", ".txt"}
+
+def exploratory_entries() -> list[tuple[Path, str]]:
+    """Select versioned research and the two explicitly reviewed continuation roots.
+
+    Packages/readbacks duplicate source records and are never archive inputs.
+    Git discovery fails closed: a failed index read cannot broaden the selection.
+    """
+    result = subprocess.run(["git", "ls-files", "-z"], cwd=REPO, check=True, capture_output=True)
+    tracked = {PurePosixPath(p.decode("utf-8")) for p in result.stdout.split(b"\0") if p}
+    selected = set(tracked)
+    for root_name in REVIEWED_NEW_ROOTS:
+        root = REPO / root_name
+        if root.is_dir():
+            selected.update(PurePosixPath(p.relative_to(REPO).as_posix()) for p in iter_files(root)
+                            if p.suffix.lower() in REVIEWED_NEW_SUFFIXES)
+    entries = []
+    for rel in sorted(selected, key=str):
+        if str(rel) != "RESEARCH_INDEX_20260908.md":
+            if len(rel.parts) < 2 or not rel.parts[0].startswith("research_") or rel.parts[0] == "research_manager":
+                continue
+        path = REPO.joinpath(*rel.parts)
+        if any(p in {"__pycache__", ".git", ".pytest_cache"} for p in rel.parts):
+            continue
+        if path.suffix.lower() in {".zip", ".pyc", ".pyo", ".key", ".sqlite", ".sqlite3", ".guard", ".lock"} or "readback" in path.name.lower():
+            continue
+        if not path.is_file() or path.is_symlink():
+            raise FileNotFoundError(f"exploratory input missing or symlink: {path}")
+        entries.append((path, arc_join(ARCHIVE_ROOT_NAME, "EXPLORATORY_CONTINUATION", str(rel))))
+    return entries
 
 def digest(path: Path) -> str:
     h = hashlib.sha256()
@@ -100,6 +134,7 @@ def dynamic_entries() -> list[tuple[Path, str]]:
         if not path.is_file():
             raise FileNotFoundError(path)
         entries.append((path, arc_join(ARCHIVE_ROOT_NAME, "CONTINUITY", path.name)))
+    entries.extend(exploratory_entries())
     return entries
 
 def zipinfo(name: str) -> zipfile.ZipInfo:
@@ -194,6 +229,7 @@ def main() -> None:
             "canonical zero-trust audit records",
             "repository tooling",
             "continuity handoff snapshot",
+            "versioned exploratory research and reviewed 2026-09-12 integration/continuation sources",
         ],
         "static_member_count": static_count,
         "total_uncompressed_bytes": total_uncompressed,
