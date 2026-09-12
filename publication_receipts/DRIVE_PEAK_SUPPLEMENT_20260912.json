@@ -1,0 +1,8 @@
+{
+  "id": "1CM3fQoGKEemrXbeQc2kxzvvB3VVLF4MM",
+  "bytes": 4867,
+  "sha256": "f17990cd19d785d870733f1dafcc1cd03fb107ed02effaf27baf91047e98cf1a",
+  "byte_readback": "PASS",
+  "crc": "PASS",
+  "scope": "Supplemental receipt package; its own upload receipt is stored on GitHub to avoid recursive packages."
+}

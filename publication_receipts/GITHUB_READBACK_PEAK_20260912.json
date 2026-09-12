@@ -1,0 +1,97 @@
+{
+  "verified_commit": "25454397055a428282e74e71641eb70d9fe33dec",
+  "files": [
+    {
+      "path": "CURRENT_RESEARCH_STATE.json",
+      "bytes": 83359,
+      "sha256": "74cf89e18faa2dad30fb9adbf8eb0630bdae2f37a1ce0c158535a2607518c085"
+    },
+    {
+      "path": "CURRENT_ARCHIVE_BUILD.json",
+      "bytes": 757,
+      "sha256": "ceb54321f36d3758d73ee7707fec242f4e6ccb412f6cc26154fa2c7f4095887e"
+    },
+    {
+      "path": "CURRENT_ARCHIVE_MEMBER_ROOT.json",
+      "bytes": 396,
+      "sha256": "acacf40ef14cea7a6a91db13f01d8ff0e91f1ba9803a637233655fae1c9b78bd"
+    },
+    {
+      "path": "START_HERE_CURRENT_HANDOFF.md",
+      "bytes": 3482,
+      "sha256": "511e482898b0bbd87672628b2e48bf3d25cee73c50f5677df2c6241ed9ffcf11"
+    },
+    {
+      "path": "research_manager/RESEARCH_JOURNAL.jsonl",
+      "bytes": 24166,
+      "sha256": "cbf431f1746ae935915a791757c299c271014b42c9a88fb47a049297bd44eb04"
+    },
+    {
+      "path": "research_manager/decisions/PEAK_PEELING_2026-09-12.json",
+      "bytes": 932,
+      "sha256": "a8e9c6a1dd4cc67899cb31607615aeb6a6b4dc7b40d119a32a55fced8afebb8d"
+    },
+    {
+      "path": "publication_receipts/DRIVE_READBACK_PEAK_20260912.json",
+      "bytes": 695,
+      "sha256": "dedb95abe231493522f838859826e14a62ef6e22571776a1b0a815062c6cd691"
+    },
+    {
+      "path": "research_peak_peeling_20260912/ANALYTIC_REVIEW.md",
+      "bytes": 14639,
+      "sha256": "c63dc0fd15f2be10afb36feba8c26c1bf08b13aa7b8f3c39b15f9374f094b588"
+    },
+    {
+      "path": "research_peak_peeling_20260912/BOUND_RESULTS.json",
+      "bytes": 15312,
+      "sha256": "496db1f9591b171c6f6cd0bea5a034d6ee5400329987f8532496530c96629033"
+    },
+    {
+      "path": "research_peak_peeling_20260912/evaluate_bounds.py",
+      "bytes": 1989,
+      "sha256": "32987592bbb22a8db549b19b8d1c6a3adbb6dd7b749c4bfbdef0dd463e07080d"
+    },
+    {
+      "path": "research_peak_peeling_20260912/INDEPENDENT_AUDIT.md",
+      "bytes": 6218,
+      "sha256": "7350a0f5cb2d08a4f929629faf57d82ceff21b79f33dc04578969cca7fcfad74"
+    },
+    {
+      "path": "research_peak_peeling_20260912/INDEPENDENT_RESULTS.json",
+      "bytes": 5115,
+      "sha256": "98d8206b747bb5fd88ef4c9fb037d10a7c08bdb70ddfe3ed952aec993985ce44"
+    },
+    {
+      "path": "research_peak_peeling_20260912/PLAN.json",
+      "bytes": 862,
+      "sha256": "0f7fc59a65d2d77af6443b1c90cb5a25ccad6f8a6fd091575dbb869479a9c4a0"
+    },
+    {
+      "path": "research_peak_peeling_20260912/prepare_continuity.py",
+      "bytes": 4625,
+      "sha256": "fbecb2e2f0fe0d34d53060eaa9247e27511e40d53e6c0f72ba93d835574248f7"
+    },
+    {
+      "path": "research_peak_peeling_20260912/probe.py",
+      "bytes": 3952,
+      "sha256": "c5b846fb3bae91dbb6a5cd0f9fc39f5210a2238143a64b9ba439648cd9fddf7c"
+    },
+    {
+      "path": "research_peak_peeling_20260912/REPORT_TR.md",
+      "bytes": 7111,
+      "sha256": "b0f48338403674b65ae4fac1156d75d7fdbf5ed690850e2848612527a6174f2c"
+    },
+    {
+      "path": "research_peak_peeling_20260912/RESULTS.json",
+      "bytes": 474793,
+      "sha256": "5fd62f0c37c6ad8f105e9082c91255c8f21148d73996ad2707b2f8be41a58637"
+    }
+  ],
+  "canonical_archive": {
+    "path": "Collatz_Research_Archive_CURRENT.zip",
+    "bytes": 93512954,
+    "sha256": "eaa22dade4588f7830e85ccfa03f7a36171cb9453376ce846d99a00f96a45ef2"
+  },
+  "all_bytes_equal": true,
+  "scope": "Receipt added after verified commit to avoid self-reference"
+}
