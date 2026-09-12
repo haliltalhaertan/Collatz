@@ -1,17 +1,17 @@
 {
   "active_integrator": {
-    "holder": "codex-affine-shift-20260912",
-    "scope": "User-authorized research with three agents, archive integration and dual publication; no sealed execution",
-    "base_commit": "8ab0146a9feec203f157ecf4d3a86c81c4b9d1df",
-    "acquired_at": "2026-09-12T15:32:07.925691+00:00",
-    "released_at": "2026-09-12T15:32:07.925691+00:00",
+    "holder": "codex-cross-terms-20260912",
+    "scope": "User-authorized three-agent continuation, exact finite probes and archive/publication; no sealed execution",
+    "base_commit": "984b036027eefc28ced620191878605e0eb756a4",
+    "acquired_at": "2026-09-12T16:12:08.527516+00:00",
+    "released_at": "2026-09-12T16:12:08.527516+00:00",
     "status": "RELEASED"
   },
   "active_task": {
-    "code": "CP20_EXPLORATORY_AFFINE_SHIFT_20260912",
-    "name": "Exact affine joint parity recursion and integer fourth moments",
+    "code": "CP20_EXPLORATORY_CROSS_TERMS_20260912",
+    "name": "Exact even cross-term closure and reflection decomposition",
     "stage": "ACCEPTED",
-    "objective": "Accept proved affine closure and single-shift computational bound, independently checked algorithms and finite results. Uniform W, D2 and Collatz remain OPEN.",
+    "objective": "Accept E=NB, positive reflection decomposition and one-step factor-two bound. Scalar iteration is no better than the known trivial bound; uniform W/D2/Collatz remain OPEN.",
     "scientific_route_change": false
   },
   "archive": {
@@ -310,13 +310,13 @@
     "literature_transfer_stage1_result": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
     "current_integration_decision": "research_manager/decisions/INTEGRATED_RESEARCH_MUSE_W_2026-09-12.json",
-    "current_exploratory_decision": "research_manager/decisions/AFFINE_SHIFT_2026-09-12.json"
+    "current_exploratory_decision": "research_manager/decisions/CROSS_TERMS_2026-09-12.json"
   },
   "integrity": {
     "archive_members": [
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CONTINUITY/START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "5ad52a1b4e5c7d0ab777858b04a81e689229eec35d2e5a034395b6acda403671"
+        "sha256": "3f54c5eb5f60e51cb645394be28cb92b52ae181800c39891c418e6b72c9af0a1"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip",
@@ -376,7 +376,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "8c409d15fe70e6abb8d33a3c17a1201f9b1c94955417cd848e153cc728238fcb"
+        "sha256": "894ddc04d459ace65c7bd5af280ff4d455d2af1798aae1778cc7e167abcf9dcd"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -642,7 +642,7 @@
     "repository_files": [
       {
         "path": "START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "5ad52a1b4e5c7d0ab777858b04a81e689229eec35d2e5a034395b6acda403671"
+        "sha256": "3f54c5eb5f60e51cb645394be28cb92b52ae181800c39891c418e6b72c9af0a1"
       },
       {
         "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
@@ -658,7 +658,7 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "8c409d15fe70e6abb8d33a3c17a1201f9b1c94955417cd848e153cc728238fcb"
+        "sha256": "894ddc04d459ace65c7bd5af280ff4d455d2af1798aae1778cc7e167abcf9dcd"
       },
       {
         "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -1139,6 +1139,46 @@
       {
         "path": "research_shift_recurrence_20260912/REPORT_TR.md",
         "sha256": "6d28d2029c0f342782ad5625520966622886b005783ac33e4d963536c3b4202d"
+      },
+      {
+        "path": "research_cross_terms_20260912/ATTACK.md",
+        "sha256": "01e2330d1013f79a389150b2c7bd60542d336ad0644990b8802fbe058fdba6de"
+      },
+      {
+        "path": "research_cross_terms_20260912/attack_results.json",
+        "sha256": "ca2f9046f8685bb9b475dd1b1d55e8208575c77328337be314edb2b248030a6b"
+      },
+      {
+        "path": "research_cross_terms_20260912/IDENTITIES.md",
+        "sha256": "89f3b1174dfcd8e1e83b18b965610620f43777edf94b3193949bf45ab7d123a9"
+      },
+      {
+        "path": "research_cross_terms_20260912/INDEPENDENT.md",
+        "sha256": "0b05ed15e7138ae18aa1833bb79c03212706de6be23c04905c15f663fbbf9a07"
+      },
+      {
+        "path": "research_cross_terms_20260912/independent_results.json",
+        "sha256": "45211850c5c7b744775ad294b22df7c7522061e2a6ea8940b6a6c7274d437b61"
+      },
+      {
+        "path": "research_cross_terms_20260912/PLAN.json",
+        "sha256": "4ddc1494a7abbe0441a0af981aad165ac15a9169dad030f562864a51b3b2ca70"
+      },
+      {
+        "path": "research_cross_terms_20260912/prepare_continuity.py",
+        "sha256": "c714e15295bb660a9fe7064df0fe3736929538726a4fbb937d6d8a09bdab4448"
+      },
+      {
+        "path": "research_cross_terms_20260912/probe.py",
+        "sha256": "3185fc68eaaa7eb2c297e486e34fd3886e19f05fdf2d9549b74d7c87eafc7006"
+      },
+      {
+        "path": "research_cross_terms_20260912/REPORT_TR.md",
+        "sha256": "9d76eca9a2b917858c29177bfe1b183c88408d6ea2bc953530bce101a19e5f1a"
+      },
+      {
+        "path": "research_cross_terms_20260912/RESULTS.json",
+        "sha256": "5439bd0488ae4e292eaeab7da7086ea156c85dccb734e58596e8c86095c87ad0"
       }
     ]
   },
@@ -1261,7 +1301,7 @@
     "authorization_available": false,
     "authorized_stage": null,
     "executed_in_this_transaction": false,
-    "instruction": "Use the exact affine shift recursion to seek weighted control of signed sibling differences and their mixed/dilated/reflected channel cross terms. One-shift poly(s)2^(s/2) computation and fast integer convolution are established; scalar global moment closure and uniform C_Y/W bounds are not. Retain actual source-filter alignment and W_flat targets. Historical consumed B4 authorizations remain closed.",
+    "instruction": "Retain the mixed overlap NB and reflection-positive component N_plus in a weighted affine-channel estimate. Exact E=NB and S=N0+N1+6N_plus+2N_minus are proved; S_even<=S<=2S_even is local and S_even is not W_flat. Naive scalar moment iteration never beats the trivial conjugate-pair bound. Seek growing-family weighted control or a precise obstruction. W_flat and actual source alignment remain open; consumed B4 authorizations remain closed.",
     "prohibited": [
       "reuse or execution of consumed B4 V1/V2 tuples",
       "promote finite checks to asymptotic bounds",
@@ -1351,7 +1391,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-12T15:32:07.925691+00:00",
+  "updated_at": "2026-09-12T16:12:08.527516+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
@@ -1365,17 +1405,18 @@
     "integration_merge_commit": "c10ac750910a2b4736424bd1528c8321f18c8289",
     "audit_review": "research_integration_20260912/AUDIT_REVIEW.md",
     "latest_prior_report": "research_visible_defect_20260908/REPORT_TR.md",
-    "continuation_report": "research_shift_recurrence_20260912/REPORT_TR.md",
+    "continuation_report": "research_cross_terms_20260912/REPORT_TR.md",
     "W_status": "OPEN",
     "D2_status": "OPEN",
     "collatz_status": "OPEN",
     "scope": "Exploratory evidence is archived with its original epistemic labels; not retroactive acceptance of every historical claim.",
-    "previous_continuation_report": "research_peak_peeling_20260912/REPORT_TR.md",
+    "previous_continuation_report": "research_shift_recurrence_20260912/REPORT_TR.md",
     "peak_audit": "research_peak_peeling_20260912/INDEPENDENT_AUDIT.md",
     "shift_audit": "research_shift_recurrence_20260912/ADVERSARIAL.md",
     "reviewed_supplements": [
       "research_concentration_audit_20260912/REPORT_TR.md",
       "research_galois_audit_20260912/REPORT_TR.md"
-    ]
+    ],
+    "cross_term_audit": "research_cross_terms_20260912/INDEPENDENT.md"
   }
 }

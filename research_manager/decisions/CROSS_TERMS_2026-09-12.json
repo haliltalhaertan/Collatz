@@ -1,0 +1,30 @@
+{
+  "schema": "COLLATZ_EXPLORATORY_DECISION_V1",
+  "event": "CROSS_TERM_REFLECTION_20260912",
+  "timestamp_utc": "2026-09-12T16:12:08.527516+00:00",
+  "source_commit": "984b036027eefc28ced620191878605e0eb756a4",
+  "accepted": [
+    "Exact even cross=NB",
+    "Reflection decomposition and nonnegative combined cross contribution",
+    "One-step S_even<=S<=2S_even",
+    "Scalar iteration no better than trivial bound",
+    "247 main vs independent rows exactly matched"
+  ],
+  "not_established": [
+    "Uniform W/W_flat<=2",
+    "Uniform strict correlation gap",
+    "Global mixed-channel closure",
+    "W",
+    "D2",
+    "Collatz"
+  ],
+  "next_action": "Retain the mixed overlap NB and reflection-positive component N_plus in a weighted affine-channel estimate. Exact E=NB and S=N0+N1+6N_plus+2N_minus are proved; S_even<=S<=2S_even is local and S_even is not W_flat. Naive scalar moment iteration never beats the trivial conjugate-pair bound. Seek growing-family weighted control or a precise obstruction. W_flat and actual source alignment remain open; consumed B4 authorizations remain closed.",
+  "report": "research_cross_terms_20260912/REPORT_TR.md",
+  "sealed_execution": false,
+  "paid_calls": 0,
+  "agents": [
+    "cross_identity",
+    "cross_attack",
+    "cross_independent"
+  ]
+}

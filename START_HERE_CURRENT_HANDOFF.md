@@ -1,12 +1,12 @@
-# CURRENT HANDOFF — AFFINE SHIFT RECURSION, 2026-09-12
+# CURRENT HANDOFF — CROSS-TERM REFLECTION IDENTITIES, 2026-09-12
 
-Current task: `CP20_EXPLORATORY_AFFINE_SHIFT_20260912`. Read `research_shift_recurrence_20260912/REPORT_TR.md`, `RECURRENCE.md`, `ADVERSARIAL.md` and `ALGORITHM.md`. Earlier concentration and Galois claim audits are now included in the canonical archive too.
+Current task: `CP20_EXPLORATORY_CROSS_TERMS_20260912`. Read `research_cross_terms_20260912/REPORT_TR.md`, `IDENTITIES.md`, `ATTACK.md` and `INDEPENDENT.md`. Prior affine recursion and exact-moment tools remain valid.
 
-Established: exact affine-pair closure; one specified shift uses at most O(sqrt(s)2^(s/2)) states, with additional polynomial/bit arithmetic costs; exact no-carry integer convolution computes finite fourth moments. Independent affine comparisons and direct moment comparisons pass. Larger timings are finite host measurements. Full fourth-moment scalar closure and uniform C_Y, W, D2, Collatz bounds remain OPEN.
+Proved: even cross term E=NB; S=N0+N1+6N_plus+2N_minus; combined cross contribution nonnegative; S_even<=S<=2S_even. S_even is NOT W_flat. Actual filters saturate Cauchy, so no unconditional strict correlation gap is available. Repeated scalar moment bounds never improve the known trivial conjugate-pair estimate.
 
-Next: signed sibling-difference channels under the affine recursion, especially dilated/reflected cross terms, with actual source-filter and W_flat weights. A small cache is not a moment bound. Do not assume the filter is flat: exact (t,j)=(60,38) measurements reach C_Y approximately109.56 at s18.
+Next: preserve mixed overlap and reflection projection in a weighted affine-channel recurrence; control growing actual families or find a scoped obstruction. Uniform W, D2 and Collatz remain OPEN. Exact finite tables and approximate decimal renderings are distinguished in the report. The independent scalar audit matches all247 main small cases.
 
-Publication artifacts: `CURRENT_ARCHIVE_BUILD.json`, `CURRENT_ARCHIVE_MEMBER_ROOT.json`, `publication_receipts/`. Deterministic canonical ZIP preserves historical static members and incorporates all versioned exploratory supplements. External publication receipts remain outside it to avoid hash recursion.
+Publication: `CURRENT_ARCHIVE_BUILD.json`, `CURRENT_ARCHIVE_MEMBER_ROOT.json`, `publication_receipts/`. The deterministic ZIP preserves historical members and includes this reviewed continuation. External receipts remain outside it to avoid recursive hashes.
 
 The following B4 V2 closure is historical governance, not live authorization.
 

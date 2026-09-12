@@ -1,0 +1,7 @@
+{
+ "status":"FIXED_BEFORE_MAIN_COMPUTATION",
+ "scope":"Exact even/odd cross-channel decomposition; no uniform contraction assumed",
+ "direct_filter_checks":{"t_max":9,"s_max":7,"all_j":true},
+ "large_family":{"t":60,"j":38,"s":[2,4,6,8,10,12,14,16]},
+ "paid_calls":0
+}
