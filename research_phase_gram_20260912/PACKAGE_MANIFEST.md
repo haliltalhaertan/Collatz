@@ -1,0 +1,24 @@
+# Round 2 package manifest
+
+Full byte package is mirrored in Google Drive because the GitHub connector in this chat accepts only UTF-8 text writes and has no local-file/binary upload parameter.
+
+Drive folder: https://drive.google.com/drive/folders/12TlWLF6nrYxKAXudjE7UPqakPOJ2saKw
+Drive ZIP file id: 1WmvJfADVV_AG3A5OApx9BW-tEE8zDHbr
+ZIP name: COLLATZ_PHASE_GRAM_ROUND2_20260912.zip
+ZIP bytes: 135475
+ZIP SHA-256: a8205d2f03b49df3e619c0244fd56ce523ef535da1716dafdc82f476de864af7
+
+The ZIP contains every Round-2 file listed below. GitHub keeps the human-readable report plus this byte-level manifest; Drive holds all full code/results files and the exact ZIP. This limitation is connector-specific and is not represented as a complete binary GitHub mirror.
+
+File SHA-256 values:
+
+b51cae00af2edab471ead9549b3cb4eddfd54a8a041eaf14e790e75ce28ad1a4  research_phase_gram_20260912/DIRECT_CROSSCHECK.json
+129b7253d18ae4827cf4bae98a24b228b848927f6e1dd10b3332dfeddce7f79b  research_phase_gram_20260912/DIRECT_CROSSCHECK_OUTPUT.txt
+250b3dba830f9c73f1c99f93a73f528e1b9cfe32bf0aa676cfea72c5e8c677bc  research_phase_gram_20260912/PROVENANCE.json
+dc2df97d0201498d4dab11ebf02b8b67854d66a71107a6f5680c91eda3416507  research_phase_gram_20260912/REPORT_TR.md
+8c02a9740a09b2f6d18cd0d69ab9948cb4d4ceca940b6c0e61f8a21fc9742f71  research_phase_gram_20260912/RESULTS.json
+abc8ca5db9e9634c2101b0994a9c11928a38d9177c5f82d41b21c2ce022e1e40  research_phase_gram_20260912/RESULTS_SUMMARY.json
+abc8ca5db9e9634c2101b0994a9c11928a38d9177c5f82d41b21c2ce022e1e40  research_phase_gram_20260912/RUN_OUTPUT.txt
+b76b7a70972dad421ed44593d9e1bd1f4bac291afd1afa79a82c8747f5b21194  research_phase_gram_20260912/direct_phase_crosscheck.py
+c3d5ad8485f92ba0c42a1a2249e99f894f8a160998e7048697bc2caeeabd753c  research_phase_gram_20260912/phase_gram_round2.py
+346147a7b2b86c362fc6583bd6ddd82c25b71d96d7c51a2f1596ed58ce902731  research_phase_gram_20260912/FIRST_CROSSCHECK_FAILURE.txt

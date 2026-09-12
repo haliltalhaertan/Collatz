@@ -1,0 +1,8 @@
+First direct_phase_crosscheck.py attempt: FAILED
+
+Error:
+ValueError: could not convert string to float: '9/2'
+
+Cause: a Fraction-valued reflection_plus_norm string was passed directly to float().
+Repair: parse with fractions.Fraction first, then convert only for the numerical cross-check.
+Scientific use: NONE. Only the corrected second run (PASS) is used.

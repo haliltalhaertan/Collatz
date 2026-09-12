@@ -1,0 +1,10 @@
+{
+  "date":"2026-09-12",
+  "canonical_main_commit":"434d8fc55544207b35a4c4390600598dd6623d28",
+  "branch":"research/mixed-gram-round1-20260912",
+  "depends_on":"research_shift_haar_20260912",
+  "real_subagent_used":false,
+  "paid_provider_calls":false,
+  "b4_authorization_reused":false,
+  "status":"exact local source transfer and first-level mixed-channel identity; no W/D2/Collatz proof"
+}
