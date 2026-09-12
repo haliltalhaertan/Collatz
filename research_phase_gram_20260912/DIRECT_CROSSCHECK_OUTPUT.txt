@@ -1,0 +1,6 @@
+{
+  "status": "PASS numerical direct-DFT cross-check only",
+  "cases": 156,
+  "max_abs_error": 2.3283064365386963e-08,
+  "max_rel_error": 1.5401013797600172e-12
+}
