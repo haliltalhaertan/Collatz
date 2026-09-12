@@ -5,6 +5,11 @@ Primary mode uses the historical extracted tree when available. Recovery mode
 rebuilds from the already committed current archive, preserving all static
 historical members byte-for-byte after decompression while replacing canonical
 management/tooling/continuity/audit overlays from the repository.
+
+The build also writes CURRENT_ARCHIVE_MEMBER_ROOT.json. Its root is computed
+from every non-directory ZIP member as sorted UTF-8 records
+`path\0uncompressed_size\0sha256(member_bytes)\n`, so the handoff verifier can
+re-hash all archive members without storing a 1000-entry manifest in Git.
 """
 
 from __future__ import annotations
@@ -30,6 +35,7 @@ CURRENT_STATE = REPO / "CURRENT_RESEARCH_STATE.json"
 OUTPUT = REPO / "Collatz_Research_Archive_CURRENT.zip"
 TEMP = REPO / "Collatz_Research_Archive_CURRENT.zip.tmp"
 BUILD_RECORD = REPO / "CURRENT_ARCHIVE_BUILD.json"
+MEMBER_ROOT_RECORD = REPO / "CURRENT_ARCHIVE_MEMBER_ROOT.json"
 GITHUB_FILE_LIMIT = 100_000_000
 
 DYNAMIC_PREFIXES = (
@@ -46,6 +52,23 @@ def digest(path: Path) -> str:
         for block in iter(lambda: stream.read(1 << 20), b""):
             h.update(block)
     return h.hexdigest()
+
+def digest_stream(stream) -> str:
+    h = hashlib.sha256()
+    for block in iter(lambda: stream.read(1 << 20), b""):
+        h.update(block)
+    return h.hexdigest()
+
+def archive_member_root(path: Path) -> tuple[int, str]:
+    root = hashlib.sha256()
+    count = 0
+    with zipfile.ZipFile(path) as zf:
+        for item in sorted((x for x in zf.infolist() if not x.is_dir()), key=lambda x: x.filename):
+            with zf.open(item) as stream:
+                member_sha = digest_stream(stream)
+            root.update(f"{item.filename}\0{item.file_size}\0{member_sha}\n".encode("utf-8"))
+            count += 1
+    return count, root.hexdigest()
 
 def iter_files(root: Path):
     for path in sorted(root.rglob("*"), key=lambda item: item.as_posix()):
@@ -145,6 +168,19 @@ def main() -> None:
     archive_sha256 = digest(TEMP)
     os.replace(TEMP, OUTPUT)
 
+    full_member_count, member_root_sha256 = archive_member_root(OUTPUT)
+    if full_member_count != member_count:
+        raise AssertionError("archive member-root count mismatch")
+    member_record = {
+        "algorithm": "sha256(sorted UTF-8 lines: path\\0uncompressed_size\\0member_sha256\\n)",
+        "archive": OUTPUT.name,
+        "archive_sha256": archive_sha256,
+        "member_count": member_count,
+        "member_root_sha256": member_root_sha256,
+        "schema": "COLLATZ_ARCHIVE_MEMBER_ROOT_V1",
+    }
+    MEMBER_ROOT_RECORD.write_text(json.dumps(member_record, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+
     record = {
         "archive": OUTPUT.name,
         "archive_sha256": archive_sha256,
@@ -164,7 +200,7 @@ def main() -> None:
         "zip_bytes": zip_bytes,
     }
     BUILD_RECORD.write_text(json.dumps(record, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
-    print(json.dumps(record, ensure_ascii=False, sort_keys=True))
+    print(json.dumps({**record, "member_root_sha256": member_root_sha256}, ensure_ascii=False, sort_keys=True))
 
 if __name__ == "__main__":
     main()

@@ -1,6 +1,11 @@
 """Ic ice optimizasyon: her nu icin lambda optimize, sonra nu uzerinde tara.
 Kisit: kritik yogunluk <= eps  ->  nu <= 0  (Chernoff cezasi)
 F(lam,nu) = (2-a)log2(2^nu + A(lam)) + (a-1)log2(2^nu + B(lam)) - nu*eps
+
+UYARI: CP19 T5 survivor'ina ait son sayisal karsilastirma yalnizca yuzey
+sayisini raporlar. Dondurulan Task 8A karari, survivor'in logarithmic excursion
+cekirdeklerinin global kritik-log hipotezini ihlal ettigini saptamistir.
+Dolayisiyla bu script survivor icin DISLAMA sonucu vermez.
 """
 from mpmath import mp, mpf, exp, log, findroot, diff
 mp.dps=30
@@ -21,16 +26,14 @@ def h_eps(eps):
             if lam<=0: return None,None
             return F(lam,nu,eps),lam
         except Exception: return None,None
-    # nu <= 0 uzerinde kaba tarama, sonra incelt
     grid=[mpf(x)/4 for x in range(-160,1)]
     for nu in grid:
         v,lam=inner(nu)
         if v is not None and (best is None or v<best[0]): best=(v,lam,nu)
     if best is None: return None
-    # incelt
     nu0=best[2]
-    for _ in range(4):
-        step=mpf('0.25')/(10**_)
+    for it in range(4):
+        step=mpf('0.25')/(10**it)
         for k in range(-12,13):
             nu=nu0+k*step/10
             if nu>0: continue
@@ -50,19 +53,17 @@ print("SEYREK KRITIK SITE — titiz (iki-Lagrange) vs kaba (karisim)\n")
 print(f"{'eps':>12} {'h titiz':>12} {'esik titiz':>12} {'h kaba':>12} {'esik kaba':>11}")
 sonuc={}
 for eps in [mpf('1e-5'), T5, mpf('1e-3'), mpf('0.01'), mpf('0.05')]:
-    r=h_eps(eps)
-    hk=h_kaba(eps)
+    r=h_eps(eps); hk=h_kaba(eps)
     if r:
-        sonuc[str(eps)]=r
-        m="  <- T5" if eps==T5 else ""
-        print(f"{mp.nstr(eps,5):>12} {mp.nstr(r[0],8):>12} {mp.nstr(A/r[0],8):>12} "
-              f"{mp.nstr(hk,8):>12} {mp.nstr(A/hk,8):>11}{m}")
+        sonuc[str(eps)]=r; m="  <- T5" if eps==T5 else ""
+        print(f"{mp.nstr(eps,5):>12} {mp.nstr(r[0],8):>12} {mp.nstr(A/r[0],8):>12} {mp.nstr(hk,8):>12} {mp.nstr(A/hk,8):>11}{m}")
 
 r=h_eps(T5)
-print(f"\nCP19 T5 SURVIVOR TESTI")
+print("\nCP19 T5 SAYISAL YUZEY KARSILASTIRMASI — DISLAMA TESTI DEGIL")
 print(f"  eps (kritik site yogunlugu) = {mp.nstr(T5,8)}")
-print(f"  titiz h = {mp.nstr(r[0],12)}   (lambda*={mp.nstr(r[1],7)}, nu*={mp.nstr(r[2],7)})")
-print(f"  esik: kappa >= {mp.nstr(A/r[0],12)}")
-print(f"  survivor kappa = 1.06")
-print(f"  1.06 < esik ?  {mpf('1.06') < A/r[0]}")
-print(f"  -> {'SURVIVOR DISLANIR' if mpf('1.06')<A/r[0] else 'survivor hayatta'}")
+print(f"  yuzey h = {mp.nstr(r[0],12)}   (lambda*={mp.nstr(r[1],7)}, nu*={mp.nstr(r[2],7)})")
+print(f"  yuzey esigi: kappa >= {mp.nstr(A/r[0],12)}")
+print("  survivor kappa = 1.06")
+print(f"  salt sayisal karsilastirma 1.06 < esik ?  {mpf('1.06') < A/r[0]}")
+print("  -> SONUC YOK: CP19 T5 survivor global kritik-log hipotezini saglamiyor.")
+print("     Kanonik durum: [CP19 TASK5 SURVIVOR NOT EXCLUDED — HYPOTHESIS MISMATCH]")
