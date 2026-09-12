@@ -1,0 +1,112 @@
+{
+  "schema": "COLLATZ_GITHUB_READBACK_V1",
+  "verified_commit": "cb5193dabd19ec184ec9eb4ad78bb45982cb1b16",
+  "branches": [
+    "main",
+    "codex/integrated-research-20260912"
+  ],
+  "canonical_archive": {
+    "path": "Collatz_Research_Archive_CURRENT.zip",
+    "bytes": 93418973,
+    "sha256": "426d1a7abbb4800c69b9b3ce80dc9dedf274b342c0ad186d2c2c79c9c3fd1037"
+  },
+  "files": [
+    {
+      "path": "CURRENT_RESEARCH_STATE.json",
+      "bytes": 81551,
+      "sha256": "9fbd01cb5b0bf41a8bc6bc45daddd9e9781e7a80d7bb08dec42509d7dce849cd"
+    },
+    {
+      "path": "CURRENT_ARCHIVE_BUILD.json",
+      "bytes": 757,
+      "sha256": "5cbf1d32586a2258ca420cc096e3f08cc038876d475f182baa4b5356f44e4b45"
+    },
+    {
+      "path": "CURRENT_ARCHIVE_MEMBER_ROOT.json",
+      "bytes": 396,
+      "sha256": "8736af873e0e7fe54c5fad7a08dbd616068c9695c25fc3a2efec9152bb3ff564"
+    },
+    {
+      "path": "START_HERE_CURRENT_HANDOFF.md",
+      "bytes": 3624,
+      "sha256": "28f14ee84077a0c19dd5303e35db8f5846387c4cfbf0d99da67484c2fe27a990"
+    },
+    {
+      "path": "research_manager/RESEARCH_JOURNAL.jsonl",
+      "bytes": 23318,
+      "sha256": "3656f8f11519bcd8c7d0e883484ab868e44a2be1ece5029cb49a50f7205ef1d9"
+    },
+    {
+      "path": "research_manager/decisions/INTEGRATED_RESEARCH_MUSE_W_2026-09-12.json",
+      "bytes": 1399,
+      "sha256": "af08b43ec884e32a07fcac85e8ba7d907fc39fab7bd51f52e6f65a12e1bc19c8"
+    },
+    {
+      "path": "publication_receipts/DRIVE_READBACK_20260912.json",
+      "bytes": 581,
+      "sha256": "b665961821c6f19422315ec54e557dbe2ad67365f8747e0a3922ceb91d5e064d"
+    },
+    {
+      "path": "research_integration_20260912/ARCHIVE_REVIEW.md",
+      "bytes": 2377,
+      "sha256": "ee34eab4611cb427dbcb732485729b5ce4c90bdb8e1320ee91086891567d4e0c"
+    },
+    {
+      "path": "research_integration_20260912/AUDIT_CHECKS.json",
+      "bytes": 1667,
+      "sha256": "3239747f759ccdf57d21f9e6b55fa2a51ca9ee61f5fe300e5d2f2fba5763eceb"
+    },
+    {
+      "path": "research_integration_20260912/AUDIT_REVIEW.md",
+      "bytes": 8299,
+      "sha256": "1027d77ec674f2ec0f2d1925ecdfb2b768983767db4f2b2e3dcbb8c1d4a00e7a"
+    },
+    {
+      "path": "research_integration_20260912/prepare_state.py",
+      "bytes": 4279,
+      "sha256": "4c1fe83275f8f1b98756cf07e6f7c8b49a438ad2dd3d00292594e91c5e604477"
+    },
+    {
+      "path": "research_integration_20260912/REPORT_TR.md",
+      "bytes": 1985,
+      "sha256": "02862aac50dd628b1ad71ad141ff1075fabacec86ca543ace942e3793b656b24"
+    },
+    {
+      "path": "research_w_continuation_20260912/check_shell_alignment.py",
+      "bytes": 4242,
+      "sha256": "a57d4e5be36ece2b0372229e8ca6114e07893ee6ac607324550b27b577977270"
+    },
+    {
+      "path": "research_w_continuation_20260912/independent_alignment_check.py",
+      "bytes": 2173,
+      "sha256": "4d79febdc8ec1c1807a4a749dc8ee8ee952925b7ce96ce779fd078cad039e478"
+    },
+    {
+      "path": "research_w_continuation_20260912/INDEPENDENT_CHECK.json",
+      "bytes": 783,
+      "sha256": "1c8c08881757bf1bc75cfe8336c216fa28a7760b490d38f388d6daf291cce724"
+    },
+    {
+      "path": "research_w_continuation_20260912/PRINCIPAL_REVIEW.md",
+      "bytes": 1867,
+      "sha256": "ae044c64a6218cfc306aff1adf5fd44e7a3de750641e9fef5f48ea6c75a7de1b"
+    },
+    {
+      "path": "research_w_continuation_20260912/PROPOSAL.md",
+      "bytes": 7811,
+      "sha256": "a57a5eaf8716b9d9d99a65eba2bb73f0e0dc1ddf8d9b2dfbd8f49aa651bf96eb"
+    },
+    {
+      "path": "research_w_continuation_20260912/REPORT_TR.md",
+      "bytes": 1685,
+      "sha256": "5efc6190ab12ceb1f3e070c04a92ec26622022d8078aa3c90f4c4c92a670513d"
+    },
+    {
+      "path": "research_w_continuation_20260912/RESULTS.json",
+      "bytes": 13967,
+      "sha256": "a3ba7d962dfba95463e5b5c9d9dc79b76e4d3a807761999f7b5998d2ae264a1b"
+    }
+  ],
+  "all_bytes_equal": true,
+  "scope": "Immutable commit raw-file readback; receipt is committed afterward to avoid self-reference."
+}

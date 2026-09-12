@@ -1,0 +1,21 @@
+{
+  "schema": "COLLATZ_DUAL_PERSISTENCE_V1",
+  "date": "2026-09-12",
+  "status": "COMPLETE",
+  "research_commit": "b98b1cad85ab07e33f2a8b9c1359c1782748944f",
+  "verified_publication_commit": "cb5193dabd19ec184ec9eb4ad78bb45982cb1b16",
+  "branches": ["main", "codex/integrated-research-20260912"],
+  "muse_pr": {"number": 1, "state": "closed", "merged": true, "merge_commit": "c10ac750910a2b4736424bd1528c8321f18c8289"},
+  "archive_sha256": "426d1a7abbb4800c69b9b3ce80dc9dedf274b342c0ad186d2c2c79c9c3fd1037",
+  "archive_member_root_sha256": "90be4b88d6408b6ce1f7798347e8e2bf3e44f18a9d4070732dfedd3bff99113b",
+  "archive_members": 1449,
+  "static_members_preserved": 804,
+  "exploratory_members": 401,
+  "drive_folder_id": "1Tg5P5wfILAgKYg-CiUmJS60kzdRFL2AU",
+  "drive_archive_id": "15g7c7z-lfmpLNNcx5na6mIhXziJIepBk",
+  "drive_repository_id": "1lHIdMhRvQ851CUmhTp4_bO9TRdM1T1P6",
+  "drive_verification": "Both complete downloads matched SHA256 and ZIP CRC",
+  "github_verification": "Complete canonical ZIP and 19 canonical/research files matched immutable-commit bytes; both branch refs confirmed",
+  "scope": "The repository export contains the research commit, while this publication receipt and readback helpers are added afterward to avoid recursive hashes. Publication metadata does not modify the scientific archive.",
+  "research_status": "Exact finite shell identities and averaging obstruction accepted; asymptotic W/D2 and Collatz OPEN; no paid model calls or sealed B4 executions."
+}
