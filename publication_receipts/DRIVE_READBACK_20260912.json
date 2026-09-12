@@ -1,0 +1,20 @@
+{
+  "files": [
+    {
+      "id": "15g7c7z-lfmpLNNcx5na6mIhXziJIepBk",
+      "bytes": 93418973,
+      "sha256": "426d1a7abbb4800c69b9b3ce80dc9dedf274b342c0ad186d2c2c79c9c3fd1037",
+      "byte_readback": "PASS",
+      "crc": "PASS"
+    },
+    {
+      "id": "1lHIdMhRvQ851CUmhTp4_bO9TRdM1T1P6",
+      "bytes": 32676136,
+      "sha256": "9f356e3a6f8b92e8e8f787501f7c460260252d7ca6daa05e9aef69246ff88b40",
+      "byte_readback": "PASS",
+      "crc": "PASS"
+    }
+  ],
+  "folder_id": "1Tg5P5wfILAgKYg-CiUmJS60kzdRFL2AU",
+  "snapshot_commit": "b98b1cad85ab07e33f2a8b9c1359c1782748944f"
+}
