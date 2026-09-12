@@ -1,0 +1,9 @@
+{
+  "status": "FIXED_BEFORE_LOCAL_PROBE",
+  "scope": "Exact affine-pair recursion, single-shift state count and exact cyclic fourth-moment algorithm. No uniform moment estimate claimed.",
+  "exhaustive_joint_checks_s": [1,2,3,4,5,6,7,8,9],
+  "state_count_s": [8,12,16,20,24,28],
+  "state_count_shift": "floor(2^s/3), made odd",
+  "algorithm_filter": {"t":60,"j":38,"s":[8,10,12,14]},
+  "paid_calls":0
+}

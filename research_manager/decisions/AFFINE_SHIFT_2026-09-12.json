@@ -1,0 +1,28 @@
+{
+  "schema": "COLLATZ_EXPLORATORY_DECISION_V1",
+  "event": "AFFINE_SHIFT_RECURSION_20260912",
+  "timestamp_utc": "2026-09-12T15:32:07.925691+00:00",
+  "source_commit": "8ab0146a9feec203f157ecf4d3a86c81c4b9d1df",
+  "accepted": [
+    "Exact affine pair recursion",
+    "O(sqrt(s)2^(s/2)) single-shift state count, with polynomial arithmetic factors",
+    "Exact integer-convolution moment algorithm with no-carry certificate",
+    "Finite checks and explicit asymptotic limits"
+  ],
+  "not_established": [
+    "Literature priority",
+    "Scalar global fourth-moment closure",
+    "Uniform C_Y or W bound",
+    "D2",
+    "Collatz"
+  ],
+  "next_action": "Use the exact affine shift recursion to seek weighted control of signed sibling differences and their mixed/dilated/reflected channel cross terms. One-shift poly(s)2^(s/2) computation and fast integer convolution are established; scalar global moment closure and uniform C_Y/W bounds are not. Retain actual source-filter alignment and W_flat targets. Historical consumed B4 authorizations remain closed.",
+  "report": "research_shift_recurrence_20260912/REPORT_TR.md",
+  "sealed_execution": false,
+  "paid_calls": 0,
+  "agents": [
+    "shift_recurrence",
+    "attack_shift",
+    "moment_algorithm"
+  ]
+}

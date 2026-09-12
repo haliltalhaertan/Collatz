@@ -1,17 +1,17 @@
 {
   "active_integrator": {
-    "holder": "codex-peak-peeling-20260912",
-    "scope": "User-authorized bounded exploratory continuation and dual publication; no sealed execution",
-    "base_commit": "12c6f918382c051b0cf98addd36c645eb63c8153",
-    "acquired_at": "2026-09-12T13:51:10.977951+00:00",
-    "released_at": "2026-09-12T13:51:10.977951+00:00",
+    "holder": "codex-affine-shift-20260912",
+    "scope": "User-authorized research with three agents, archive integration and dual publication; no sealed execution",
+    "base_commit": "8ab0146a9feec203f157ecf4d3a86c81c4b9d1df",
+    "acquired_at": "2026-09-12T15:32:07.925691+00:00",
+    "released_at": "2026-09-12T15:32:07.925691+00:00",
     "status": "RELEASED"
   },
   "active_task": {
-    "code": "CP20_EXPLORATORY_PEAK_PEELING_20260912",
-    "name": "Actual cyclic spectral peeling and energy-weighted tail control",
+    "code": "CP20_EXPLORATORY_AFFINE_SHIFT_20260912",
+    "name": "Exact affine joint parity recursion and integer fourth moments",
     "stage": "ACCEPTED",
-    "objective": "Accept independently checked finite totals and analytic enclosure. Uniform W control, D2 and Collatz remain OPEN.",
+    "objective": "Accept proved affine closure and single-shift computational bound, independently checked algorithms and finite results. Uniform W, D2 and Collatz remain OPEN.",
     "scientific_route_change": false
   },
   "archive": {
@@ -310,13 +310,13 @@
     "literature_transfer_stage1_result": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
     "current_integration_decision": "research_manager/decisions/INTEGRATED_RESEARCH_MUSE_W_2026-09-12.json",
-    "current_exploratory_decision": "research_manager/decisions/PEAK_PEELING_2026-09-12.json"
+    "current_exploratory_decision": "research_manager/decisions/AFFINE_SHIFT_2026-09-12.json"
   },
   "integrity": {
     "archive_members": [
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CONTINUITY/START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "511e482898b0bbd87672628b2e48bf3d25cee73c50f5677df2c6241ed9ffcf11"
+        "sha256": "5ad52a1b4e5c7d0ab777858b04a81e689229eec35d2e5a034395b6acda403671"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip",
@@ -376,7 +376,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "cbf431f1746ae935915a791757c299c271014b42c9a88fb47a049297bd44eb04"
+        "sha256": "8c409d15fe70e6abb8d33a3c17a1201f9b1c94955417cd848e153cc728238fcb"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -642,7 +642,7 @@
     "repository_files": [
       {
         "path": "START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "511e482898b0bbd87672628b2e48bf3d25cee73c50f5677df2c6241ed9ffcf11"
+        "sha256": "5ad52a1b4e5c7d0ab777858b04a81e689229eec35d2e5a034395b6acda403671"
       },
       {
         "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
@@ -658,7 +658,7 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "cbf431f1746ae935915a791757c299c271014b42c9a88fb47a049297bd44eb04"
+        "sha256": "8c409d15fe70e6abb8d33a3c17a1201f9b1c94955417cd848e153cc728238fcb"
       },
       {
         "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -1067,6 +1067,78 @@
       {
         "path": "research_peak_peeling_20260912/RESULTS.json",
         "sha256": "5fd62f0c37c6ad8f105e9082c91255c8f21148d73996ad2707b2f8be41a58637"
+      },
+      {
+        "path": "research_concentration_audit_20260912/check_claim.py",
+        "sha256": "b21b71fb7e968680cd6e3275100c6eef126490d3d0a5872a914560bb7d420aaf"
+      },
+      {
+        "path": "research_concentration_audit_20260912/REPORT_TR.md",
+        "sha256": "5d809bec04144ea9c817ab5a586b041ae959d3850fb71d84d1ec77951523b8da"
+      },
+      {
+        "path": "research_concentration_audit_20260912/RESULTS.json",
+        "sha256": "166b0f5da22efd8fe8302e2a1cd37246a10c2527b40955858c588cd88a414471"
+      },
+      {
+        "path": "research_galois_audit_20260912/check_claim.py",
+        "sha256": "25d75953db47006218d35ec5ea07647dc3dee1faff1dface1ad465d9a4b6cd01"
+      },
+      {
+        "path": "research_galois_audit_20260912/REPORT_TR.md",
+        "sha256": "d2601e2feba0b5bb807c959b69dc001dd50727b4e3f4843905757da64c1ba1ee"
+      },
+      {
+        "path": "research_galois_audit_20260912/RESULTS.json",
+        "sha256": "b1eea4b953439ced551522f4619c185df5fb5bb073d7e1364f5448d09abbb9e7"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/ADVERSARIAL.md",
+        "sha256": "1c63552d566910dccd3793586a0982e1586b77f89deb48898bd756c898c1c2d2"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/ALGORITHM.md",
+        "sha256": "e27d09fe2b2f22c511467adbaae1116344897c7322a1223955a65092502cdc1e"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/algorithm_results.json",
+        "sha256": "cb0b375aac5d27bde20dd5a01a01cdca12a894eab8d19f643bb5dde900c51bba"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/exact_moment.py",
+        "sha256": "cd40541f6c02f9a22031a023290f7cb01f871f4c6857446bfadef9166559c953"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/full_joint_followup.py",
+        "sha256": "d19d83d2983df43bfd6c93f76e0e61bf3e0da72310094ab74aab2bf68e3be820"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/FULL_JOINT_RESULTS.json",
+        "sha256": "0e9e27548e878290a0833299d12cdce3793ff02c71dfac29670fdea52fe1a73b"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/joint_probe.py",
+        "sha256": "7385a90afa63b60714adfb238116a43b6d17a3a07709724623de68044971d547"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/JOINT_RESULTS.json",
+        "sha256": "ca0f7aa202ad403bdf14db046ab56525cb72e95c68ece61cfb44fa362efed5b4"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/PLAN.json",
+        "sha256": "1ed14aac89b7d6c192bba409907f7badd46e122ab1e8fff303bbbce2943c1e06"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/prepare_continuity.py",
+        "sha256": "622620d22b50ac37cd650f2384399c196e4c0dd5f8a5eb1e153494b299cc730f"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/RECURRENCE.md",
+        "sha256": "b5c3bd3508a6029a0c7b78a3d3d60721589f79ac14597ff2d28131fc1dcdc740"
+      },
+      {
+        "path": "research_shift_recurrence_20260912/REPORT_TR.md",
+        "sha256": "6d28d2029c0f342782ad5625520966622886b005783ac33e4d963536c3b4202d"
       }
     ]
   },
@@ -1189,7 +1261,7 @@
     "authorization_available": false,
     "authorized_stage": null,
     "executed_in_this_transaction": false,
-    "instruction": "Study energy-weighted aggregate tails of actual normalized cyclic multipliers. Prove a uniform integrable tail bound, or identify obstruction; also retain the required W_flat bound. Fixed-L dominance and uniform W/W_flat have not been proved. Read the peak-peeling report and analytic review. Historical consumed B4 authorizations remain closed.",
+    "instruction": "Use the exact affine shift recursion to seek weighted control of signed sibling differences and their mixed/dilated/reflected channel cross terms. One-shift poly(s)2^(s/2) computation and fast integer convolution are established; scalar global moment closure and uniform C_Y/W bounds are not. Retain actual source-filter alignment and W_flat targets. Historical consumed B4 authorizations remain closed.",
     "prohibited": [
       "reuse or execution of consumed B4 V1/V2 tuples",
       "promote finite checks to asymptotic bounds",
@@ -1279,7 +1351,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-12T13:51:10.977951+00:00",
+  "updated_at": "2026-09-12T15:32:07.925691+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
@@ -1293,12 +1365,17 @@
     "integration_merge_commit": "c10ac750910a2b4736424bd1528c8321f18c8289",
     "audit_review": "research_integration_20260912/AUDIT_REVIEW.md",
     "latest_prior_report": "research_visible_defect_20260908/REPORT_TR.md",
-    "continuation_report": "research_peak_peeling_20260912/REPORT_TR.md",
+    "continuation_report": "research_shift_recurrence_20260912/REPORT_TR.md",
     "W_status": "OPEN",
     "D2_status": "OPEN",
     "collatz_status": "OPEN",
     "scope": "Exploratory evidence is archived with its original epistemic labels; not retroactive acceptance of every historical claim.",
-    "previous_continuation_report": "research_w_continuation_20260912/PROPOSAL.md",
-    "peak_audit": "research_peak_peeling_20260912/INDEPENDENT_AUDIT.md"
+    "previous_continuation_report": "research_peak_peeling_20260912/REPORT_TR.md",
+    "peak_audit": "research_peak_peeling_20260912/INDEPENDENT_AUDIT.md",
+    "shift_audit": "research_shift_recurrence_20260912/ADVERSARIAL.md",
+    "reviewed_supplements": [
+      "research_concentration_audit_20260912/REPORT_TR.md",
+      "research_galois_audit_20260912/REPORT_TR.md"
+    ]
   }
 }

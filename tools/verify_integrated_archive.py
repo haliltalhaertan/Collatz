@@ -20,7 +20,7 @@ if '--refresh-integrity' in sys.argv:
    row['sha256']=sha(dynamic[row['path']].read_bytes())
  # Bind the new accepted reports and reproducibility sources explicitly.
  existing={x['path'] for x in d['integrity']['repository_files']}
- for folder in ['research_integration_20260912','research_w_continuation_20260912','research_peak_peeling_20260912']:
+ for folder in ['research_integration_20260912','research_w_continuation_20260912','research_peak_peeling_20260912','research_concentration_audit_20260912','research_galois_audit_20260912','research_shift_recurrence_20260912']:
   for f in sorted((R/folder).iterdir()):
    if not f.is_file() or f.suffix not in {'.md','.py','.json'}:continue
    rel=f.relative_to(R).as_posix()

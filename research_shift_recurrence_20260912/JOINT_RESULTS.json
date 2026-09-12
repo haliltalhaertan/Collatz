@@ -1,0 +1,281 @@
+{
+  "plan": {
+    "status": "FIXED_BEFORE_LOCAL_PROBE",
+    "scope": "Exact affine-pair recursion, single-shift state count and exact cyclic fourth-moment algorithm. No uniform moment estimate claimed.",
+    "exhaustive_joint_checks_s": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "state_count_s": [
+      8,
+      12,
+      16,
+      20,
+      24,
+      28
+    ],
+    "state_count_shift": "floor(2^s/3), made odd",
+    "algorithm_filter": {
+      "t": 60,
+      "j": 38,
+      "s": [
+        8,
+        10,
+        12,
+        14
+      ]
+    },
+    "paid_calls": 0
+  },
+  "exact_joint_checks": [
+    {
+      "s": 1,
+      "shifts": 2,
+      "ordered_pairs": 4,
+      "passed": true,
+      "cached_states_all_shifts": 3,
+      "seconds": 0.00021389999892562628
+    },
+    {
+      "s": 2,
+      "shifts": 4,
+      "ordered_pairs": 16,
+      "passed": true,
+      "cached_states_all_shifts": 7,
+      "seconds": 0.0001319999573752284
+    },
+    {
+      "s": 3,
+      "shifts": 8,
+      "ordered_pairs": 64,
+      "passed": true,
+      "cached_states_all_shifts": 19,
+      "seconds": 0.0002525000600144267
+    },
+    {
+      "s": 4,
+      "shifts": 16,
+      "ordered_pairs": 256,
+      "passed": true,
+      "cached_states_all_shifts": 43,
+      "seconds": 0.0007099000504240394
+    },
+    {
+      "s": 5,
+      "shifts": 32,
+      "ordered_pairs": 1024,
+      "passed": true,
+      "cached_states_all_shifts": 107,
+      "seconds": 0.002186099998652935
+    },
+    {
+      "s": 6,
+      "shifts": 64,
+      "ordered_pairs": 4096,
+      "passed": true,
+      "cached_states_all_shifts": 251,
+      "seconds": 0.006403699982911348
+    },
+    {
+      "s": 7,
+      "shifts": 128,
+      "ordered_pairs": 16384,
+      "passed": true,
+      "cached_states_all_shifts": 571,
+      "seconds": 0.02430429996456951
+    },
+    {
+      "s": 8,
+      "shifts": 256,
+      "ordered_pairs": 65536,
+      "passed": true,
+      "cached_states_all_shifts": 1275,
+      "seconds": 0.0562138999812305
+    },
+    {
+      "s": 9,
+      "shifts": 512,
+      "ordered_pairs": 262144,
+      "passed": true,
+      "cached_states_all_shifts": 2715,
+      "seconds": 0.16634660004638135
+    }
+  ],
+  "single_shift_state_counts": [
+    {
+      "s": 8,
+      "shift": 85,
+      "states": 49,
+      "leaves_naive": 256,
+      "levels": {
+        "0": 1,
+        "1": 2,
+        "2": 4,
+        "3": 7,
+        "4": 12,
+        "5": 12,
+        "6": 8,
+        "7": 2,
+        "8": 1
+      },
+      "seconds": 0.00010040006600320339
+    },
+    {
+      "s": 12,
+      "shift": 1365,
+      "states": 205,
+      "leaves_naive": 4096,
+      "levels": {
+        "0": 1,
+        "1": 2,
+        "2": 4,
+        "3": 7,
+        "4": 12,
+        "5": 20,
+        "6": 32,
+        "7": 50,
+        "8": 50,
+        "9": 16,
+        "10": 8,
+        "11": 2,
+        "12": 1
+      },
+      "seconds": 0.0003203999949619174
+    },
+    {
+      "s": 16,
+      "shift": 21845,
+      "states": 817,
+      "leaves_naive": 65536,
+      "levels": {
+        "0": 1,
+        "1": 2,
+        "2": 4,
+        "3": 7,
+        "4": 12,
+        "5": 20,
+        "6": 32,
+        "7": 51,
+        "8": 80,
+        "9": 125,
+        "10": 193,
+        "11": 199,
+        "12": 64,
+        "13": 16,
+        "14": 8,
+        "15": 2,
+        "16": 1
+      },
+      "seconds": 0.0016743000596761703
+    },
+    {
+      "s": 20,
+      "shift": 349525,
+      "states": 3115,
+      "leaves_naive": 1048576,
+      "levels": {
+        "0": 1,
+        "1": 2,
+        "2": 4,
+        "3": 7,
+        "4": 12,
+        "5": 20,
+        "6": 32,
+        "7": 51,
+        "8": 80,
+        "9": 125,
+        "10": 197,
+        "11": 309,
+        "12": 472,
+        "13": 682,
+        "14": 774,
+        "15": 256,
+        "16": 64,
+        "17": 16,
+        "18": 8,
+        "19": 2,
+        "20": 1
+      },
+      "seconds": 0.005318599985912442
+    },
+    {
+      "s": 24,
+      "shift": 5592405,
+      "states": 10905,
+      "leaves_naive": 16777216,
+      "levels": {
+        "0": 1,
+        "1": 2,
+        "2": 4,
+        "3": 7,
+        "4": 12,
+        "5": 20,
+        "6": 32,
+        "7": 51,
+        "8": 80,
+        "9": 125,
+        "10": 197,
+        "11": 309,
+        "12": 478,
+        "13": 741,
+        "14": 1171,
+        "15": 1774,
+        "16": 2363,
+        "17": 2175,
+        "18": 1016,
+        "19": 256,
+        "20": 64,
+        "21": 16,
+        "22": 8,
+        "23": 2,
+        "24": 1
+      },
+      "seconds": 0.022806000080890954
+    },
+    {
+      "s": 28,
+      "shift": 89478485,
+      "states": 35952,
+      "leaves_naive": 268435456,
+      "levels": {
+        "0": 1,
+        "1": 2,
+        "2": 4,
+        "3": 7,
+        "4": 12,
+        "5": 20,
+        "6": 32,
+        "7": 51,
+        "8": 80,
+        "9": 125,
+        "10": 197,
+        "11": 309,
+        "12": 478,
+        "13": 741,
+        "14": 1174,
+        "15": 1829,
+        "16": 2858,
+        "17": 4325,
+        "18": 6160,
+        "19": 7019,
+        "20": 5597,
+        "21": 3560,
+        "22": 1024,
+        "23": 256,
+        "24": 64,
+        "25": 16,
+        "26": 8,
+        "27": 2,
+        "28": 1
+      },
+      "seconds": 0.08970900007989258
+    }
+  ]
+}

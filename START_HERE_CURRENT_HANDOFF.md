@@ -1,12 +1,14 @@
-# CURRENT HANDOFF — ACTUAL SPECTRAL PEAK PEELING, 2026-09-12
+# CURRENT HANDOFF — AFFINE SHIFT RECURSION, 2026-09-12
 
-Current task: `CP20_EXPLORATORY_PEAK_PEELING_20260912`. Read `research_peak_peeling_20260912/REPORT_TR.md`, `ANALYTIC_REVIEW.md` and `INDEPENDENT_AUDIT.md`. The previous integration and W continuation reports remain valid within their stated scope.
+Current task: `CP20_EXPLORATORY_AFFINE_SHIFT_20260912`. Read `research_shift_recurrence_20260912/REPORT_TR.md`, `RECURRENCE.md`, `ADVERSARIAL.md` and `ALGORITHM.md`. Earlier concentration and Galois claim audits are now included in the canonical archive too.
 
-Fixed panels r=5..20 were exhaustively evaluated. W and W_flat are exact rationals; independent scalar r12/r20 totals match. FFT pair shares and evaluated U_L bounds are diagnostic. Peeling gives a valid monotone enclosure, but fixed-L dominance and a uniform W/W_flat constant remain unproved. Next: actual source-energy-weighted multiplier tails, together with sufficient W_flat control. W, D2 and Collatz remain OPEN.
+Established: exact affine-pair closure; one specified shift uses at most O(sqrt(s)2^(s/2)) states, with additional polynomial/bit arithmetic costs; exact no-carry integer convolution computes finite fourth moments. Independent affine comparisons and direct moment comparisons pass. Larger timings are finite host measurements. Full fourth-moment scalar closure and uniform C_Y, W, D2, Collatz bounds remain OPEN.
 
-Publication artifacts: `CURRENT_ARCHIVE_BUILD.json`, `CURRENT_ARCHIVE_MEMBER_ROOT.json` and `publication_receipts/`. The deterministic canonical ZIP preserves historical members and includes the new exploratory package. External receipts are outside the frozen ZIP to avoid circular hashes.
+Next: signed sibling-difference channels under the affine recursion, especially dilated/reflected cross terms, with actual source-filter and W_flat weights. A small cache is not a moment bound. Do not assume the filter is flat: exact (t,j)=(60,38) measurements reach C_Y approximately109.56 at s18.
 
-The following B4 V2 closure is historical governance; it is not the current exploratory task or live authorization.
+Publication artifacts: `CURRENT_ARCHIVE_BUILD.json`, `CURRENT_ARCHIVE_MEMBER_ROOT.json`, `publication_receipts/`. Deterministic canonical ZIP preserves historical static members and incorporates all versioned exploratory supplements. External publication receipts remain outside it to avoid hash recursion.
+
+The following B4 V2 closure is historical governance, not live authorization.
 
 ## Historical B4 V2 closure
 
