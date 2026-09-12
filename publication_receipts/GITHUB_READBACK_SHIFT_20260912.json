@@ -1,0 +1,107 @@
+{
+  "verified_commit": "d005699ce32901c1cc72d7da12afdb054a58f2c7",
+  "files": [
+    {
+      "path": "CURRENT_RESEARCH_STATE.json",
+      "bytes": 86794,
+      "sha256": "8f9bebd08de3e27b2edbf025fe262f2987281de0a24675a84b2e787cd13172ae"
+    },
+    {
+      "path": "CURRENT_ARCHIVE_BUILD.json",
+      "bytes": 757,
+      "sha256": "f2f89677a8fdd7f66879afe14ad919fd50a17a9ceddf0c980d8bcb8b7a3042d2"
+    },
+    {
+      "path": "CURRENT_ARCHIVE_MEMBER_ROOT.json",
+      "bytes": 396,
+      "sha256": "4066bb1044851347eeaf5d57d84cfa54d8f8236eed17d5fc701b95f9e05b15dd"
+    },
+    {
+      "path": "START_HERE_CURRENT_HANDOFF.md",
+      "bytes": 3756,
+      "sha256": "5ad52a1b4e5c7d0ab777858b04a81e689229eec35d2e5a034395b6acda403671"
+    },
+    {
+      "path": "research_manager/RESEARCH_JOURNAL.jsonl",
+      "bytes": 25079,
+      "sha256": "8c409d15fe70e6abb8d33a3c17a1201f9b1c94955417cd848e153cc728238fcb"
+    },
+    {
+      "path": "research_manager/decisions/AFFINE_SHIFT_2026-09-12.json",
+      "bytes": 1256,
+      "sha256": "86d49aa511811b00d707703dd9d21e8fffe44a94b1f60eb8bbd8b599dd395020"
+    },
+    {
+      "path": "publication_receipts/DRIVE_READBACK_SHIFT_20260912.json",
+      "bytes": 697,
+      "sha256": "012e047374e3a97e2840c9c781e7188be429482fd84be56cc2d9cb8476ebb54f"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/ADVERSARIAL.md",
+      "bytes": 8878,
+      "sha256": "1c63552d566910dccd3793586a0982e1586b77f89deb48898bd756c898c1c2d2"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/ALGORITHM.md",
+      "bytes": 8523,
+      "sha256": "e27d09fe2b2f22c511467adbaae1116344897c7322a1223955a65092502cdc1e"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/algorithm_results.json",
+      "bytes": 14732,
+      "sha256": "cb0b375aac5d27bde20dd5a01a01cdca12a894eab8d19f643bb5dde900c51bba"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/exact_moment.py",
+      "bytes": 5173,
+      "sha256": "cd40541f6c02f9a22031a023290f7cb01f871f4c6857446bfadef9166559c953"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/full_joint_followup.py",
+      "bytes": 1116,
+      "sha256": "d19d83d2983df43bfd6c93f76e0e61bf3e0da72310094ab74aab2bf68e3be820"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/FULL_JOINT_RESULTS.json",
+      "bytes": 52668,
+      "sha256": "0e9e27548e878290a0833299d12cdce3793ff02c71dfac29670fdea52fe1a73b"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/joint_probe.py",
+      "bytes": 2389,
+      "sha256": "7385a90afa63b60714adfb238116a43b6d17a3a07709724623de68044971d547"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/JOINT_RESULTS.json",
+      "bytes": 5255,
+      "sha256": "ca0f7aa202ad403bdf14db046ab56525cb72e95c68ece61cfb44fa362efed5b4"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/PLAN.json",
+      "bytes": 403,
+      "sha256": "1ed14aac89b7d6c192bba409907f7badd46e122ab1e8fff303bbbce2943c1e06"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/prepare_continuity.py",
+      "bytes": 5388,
+      "sha256": "622620d22b50ac37cd650f2384399c196e4c0dd5f8a5eb1e153494b299cc730f"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/RECURRENCE.md",
+      "bytes": 6881,
+      "sha256": "b5c3bd3508a6029a0c7b78a3d3d60721589f79ac14597ff2d28131fc1dcdc740"
+    },
+    {
+      "path": "research_shift_recurrence_20260912/REPORT_TR.md",
+      "bytes": 6875,
+      "sha256": "6d28d2029c0f342782ad5625520966622886b005783ac33e4d963536c3b4202d"
+    }
+  ],
+  "canonical_archive": {
+    "path": "Collatz_Research_Archive_CURRENT.zip",
+    "bytes": 93570549,
+    "sha256": "063fbdded093ab7f4bb65b1ca669fa76b58b9679c1f6deff24c8ab8281f61feb"
+  },
+  "all_bytes_equal": true,
+  "scope": "Receipt added after verified commit to avoid self-reference"
+}
