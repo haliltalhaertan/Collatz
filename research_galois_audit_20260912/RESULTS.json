@@ -1,0 +1,339 @@
+{
+  "scope": "Exact algebraic identities and sign corrections; angular losses inherit FFT diagnostics. No uniform Collatz estimate.",
+  "trace_identity_checks": [
+    {
+      "t": 10,
+      "j": 6,
+      "s": 2,
+      "trace": 1960,
+      "trace_square": 1920800,
+      "C_Y": "1"
+    },
+    {
+      "t": 10,
+      "j": 6,
+      "s": 3,
+      "trace": 2352,
+      "trace_square": 2612288,
+      "C_Y": "17/9"
+    },
+    {
+      "t": 10,
+      "j": 6,
+      "s": 4,
+      "trace": 2944,
+      "trace_square": 1654400,
+      "C_Y": "12925/8464"
+    },
+    {
+      "t": 10,
+      "j": 6,
+      "s": 5,
+      "trace": 3840,
+      "trace_square": 1646976,
+      "C_Y": "4289/2400"
+    },
+    {
+      "t": 10,
+      "j": 6,
+      "s": 6,
+      "trace": 5248,
+      "trace_square": 1631104,
+      "C_Y": "12743/6724"
+    },
+    {
+      "t": 10,
+      "j": 6,
+      "s": 7,
+      "trace": 7680,
+      "trace_square": 2426880,
+      "C_Y": "79/30"
+    },
+    {
+      "t": 12,
+      "j": 8,
+      "s": 2,
+      "trace": 27450,
+      "trace_square": 376751250,
+      "C_Y": "1"
+    },
+    {
+      "t": 12,
+      "j": 8,
+      "s": 3,
+      "trace": 28404,
+      "trace_square": 260796996,
+      "C_Y": "804929/622521"
+    },
+    {
+      "t": 12,
+      "j": 8,
+      "s": 4,
+      "trace": 30376,
+      "trace_square": 155488264,
+      "C_Y": "19436033/14417209"
+    },
+    {
+      "t": 12,
+      "j": 8,
+      "s": 5,
+      "trace": 33680,
+      "trace_square": 95573904,
+      "C_Y": "5973369/4431025"
+    },
+    {
+      "t": 12,
+      "j": 8,
+      "s": 6,
+      "trace": 38880,
+      "trace_square": 77005344,
+      "C_Y": "802139/492075"
+    },
+    {
+      "t": 12,
+      "j": 8,
+      "s": 7,
+      "trace": 47040,
+      "trace_square": 83776960,
+      "C_Y": "261803/108045"
+    },
+    {
+      "t": 14,
+      "j": 9,
+      "s": 2,
+      "trace": 327668,
+      "trace_square": 53683159112,
+      "C_Y": "1"
+    },
+    {
+      "t": 14,
+      "j": 9,
+      "s": 3,
+      "trace": 335896,
+      "trace_square": 39828556504,
+      "C_Y": "340043/240818"
+    },
+    {
+      "t": 14,
+      "j": 9,
+      "s": 4,
+      "trace": 353312,
+      "trace_square": 20046305168,
+      "C_Y": "1252894073/975229448"
+    },
+    {
+      "t": 14,
+      "j": 9,
+      "s": 5,
+      "trace": 381760,
+      "trace_square": 11498075584,
+      "C_Y": "179657431/142324900"
+    },
+    {
+      "t": 14,
+      "j": 9,
+      "s": 6,
+      "trace": 424384,
+      "trace_square": 8668855040,
+      "C_Y": "67725430/43970161"
+    },
+    {
+      "t": 14,
+      "j": 9,
+      "s": 7,
+      "trace": 486528,
+      "trace_square": 7300752000,
+      "C_Y": "19012375/9631734"
+    }
+  ],
+  "slack": [
+    {
+      "r": 5,
+      "W": "37/4",
+      "sign_loss_exact": "0",
+      "sign_preserving_magnitude_bound_over_W": 1.0,
+      "absolute_actual_correction_bound_over_W": 1.0,
+      "sign_fraction_of_slack": null,
+      "angular_loss_over_W": 0.0
+    },
+    {
+      "r": 6,
+      "W": "25/2",
+      "sign_loss_exact": "0",
+      "sign_preserving_magnitude_bound_over_W": 1.0,
+      "absolute_actual_correction_bound_over_W": 1.0,
+      "sign_fraction_of_slack": null,
+      "angular_loss_over_W": 0.0
+    },
+    {
+      "r": 7,
+      "W": "49/4",
+      "sign_loss_exact": "0",
+      "sign_preserving_magnitude_bound_over_W": 1.0,
+      "absolute_actual_correction_bound_over_W": 1.0,
+      "sign_fraction_of_slack": null,
+      "angular_loss_over_W": 0.0
+    },
+    {
+      "r": 8,
+      "W": "39/4",
+      "sign_loss_exact": "0",
+      "sign_preserving_magnitude_bound_over_W": 1.0,
+      "absolute_actual_correction_bound_over_W": 1.0,
+      "sign_fraction_of_slack": null,
+      "angular_loss_over_W": 0.0
+    },
+    {
+      "r": 9,
+      "W": "1659/64",
+      "sign_loss_exact": "0",
+      "sign_preserving_magnitude_bound_over_W": 1.0,
+      "absolute_actual_correction_bound_over_W": 1.0,
+      "sign_fraction_of_slack": null,
+      "angular_loss_over_W": 0.0
+    },
+    {
+      "r": 10,
+      "W": "819/32",
+      "sign_loss_exact": "0",
+      "sign_preserving_magnitude_bound_over_W": 1.0,
+      "absolute_actual_correction_bound_over_W": 1.0,
+      "sign_fraction_of_slack": null,
+      "angular_loss_over_W": 0.0
+    },
+    {
+      "r": 11,
+      "W": "3089/32",
+      "sign_loss_exact": "36",
+      "sign_preserving_magnitude_bound_over_W": 1.0,
+      "absolute_actual_correction_bound_over_W": 1.372936225315636,
+      "sign_fraction_of_slack": 1.0,
+      "angular_loss_over_W": 0.0
+    },
+    {
+      "r": 12,
+      "W": "2795/4",
+      "sign_loss_exact": "249/4",
+      "sign_preserving_magnitude_bound_over_W": 1.0251806746411303,
+      "absolute_actual_correction_bound_over_W": 1.089087656529517,
+      "sign_fraction_of_slack": 0.7796355789643447,
+      "angular_loss_over_W": 0.025180674641130194
+    },
+    {
+      "r": 13,
+      "W": "99009/128",
+      "sign_loss_exact": "5127/8",
+      "sign_preserving_magnitude_bound_over_W": 1.3055961203041322,
+      "absolute_actual_correction_bound_over_W": 1.8285307396297306,
+      "sign_fraction_of_slack": 0.7305450288674468,
+      "angular_loss_over_W": 0.3055961203041322
+    },
+    {
+      "r": 14,
+      "W": "274211/256",
+      "sign_loss_exact": "25031/32",
+      "sign_preserving_magnitude_bound_over_W": 1.4719537029086218,
+      "absolute_actual_correction_bound_over_W": 1.730269755772015,
+      "sign_fraction_of_slack": 0.6074326286840545,
+      "angular_loss_over_W": 0.4719537029086218
+    },
+    {
+      "r": 15,
+      "W": "583395/256",
+      "sign_loss_exact": "79563/32",
+      "sign_preserving_magnitude_bound_over_W": 1.9943515705787553,
+      "absolute_actual_correction_bound_over_W": 2.091034376365927,
+      "sign_fraction_of_slack": 0.5231810341699153,
+      "angular_loss_over_W": 0.9943515705787552
+    },
+    {
+      "r": 16,
+      "W": "1735491/128",
+      "sign_loss_exact": "6313/2",
+      "sign_preserving_magnitude_bound_over_W": 1.4899558244594204,
+      "absolute_actual_correction_bound_over_W": 1.2328055864305836,
+      "sign_fraction_of_slack": 0.32210572247335156,
+      "angular_loss_over_W": 0.4899558244594204
+    },
+    {
+      "r": 17,
+      "W": "19044307/1024",
+      "sign_loss_exact": "65657/16",
+      "sign_preserving_magnitude_bound_over_W": 1.2824394694201522,
+      "absolute_actual_correction_bound_over_W": 1.220645886458352,
+      "sign_fraction_of_slack": 0.43858538890096094,
+      "angular_loss_over_W": 0.2824394694201521
+    },
+    {
+      "r": 18,
+      "W": "186212183/4096",
+      "sign_loss_exact": "853275/128",
+      "sign_preserving_magnitude_bound_over_W": 1.565729451613302,
+      "absolute_actual_correction_bound_over_W": 1.1466327259586446,
+      "sign_fraction_of_slack": 0.205840133818496,
+      "angular_loss_over_W": 0.5657294516133019
+    },
+    {
+      "r": 19,
+      "W": "989433429/8192",
+      "sign_loss_exact": "16952275/512",
+      "sign_preserving_magnitude_bound_over_W": 2.264222826596807,
+      "absolute_actual_correction_bound_over_W": 1.274133046297145,
+      "sign_fraction_of_slack": 0.1781987192478724,
+      "angular_loss_over_W": 1.2642228265968072
+    },
+    {
+      "r": 20,
+      "W": "1056368259/4096",
+      "sign_loss_exact": "20706137/512",
+      "sign_preserving_magnitude_bound_over_W": 2.1624356249758736,
+      "absolute_actual_correction_bound_over_W": 1.1568099898768351,
+      "sign_fraction_of_slack": 0.11886337776028363,
+      "angular_loss_over_W": 1.1624356249758736
+    }
+  ],
+  "algebraic_only_counterfamily": [
+    {
+      "s": 2,
+      "H": 2,
+      "C_Y": "1",
+      "scope": "Block indicator, not the Collatz parity-weight filter"
+    },
+    {
+      "s": 3,
+      "H": 4,
+      "C_Y": "3/2",
+      "scope": "Block indicator, not the Collatz parity-weight filter"
+    },
+    {
+      "s": 4,
+      "H": 8,
+      "C_Y": "11/4",
+      "scope": "Block indicator, not the Collatz parity-weight filter"
+    },
+    {
+      "s": 5,
+      "H": 16,
+      "C_Y": "43/8",
+      "scope": "Block indicator, not the Collatz parity-weight filter"
+    },
+    {
+      "s": 6,
+      "H": 32,
+      "C_Y": "171/16",
+      "scope": "Block indicator, not the Collatz parity-weight filter"
+    },
+    {
+      "s": 7,
+      "H": 64,
+      "C_Y": "683/32",
+      "scope": "Block indicator, not the Collatz parity-weight filter"
+    },
+    {
+      "s": 8,
+      "H": 128,
+      "C_Y": "2731/64",
+      "scope": "Block indicator, not the Collatz parity-weight filter"
+    }
+  ]
+}
