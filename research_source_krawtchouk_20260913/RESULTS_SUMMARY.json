@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "theorems": {
+    "source_k_gauge": "proved exact",
+    "krawtchouk_singular_values": "lambda_l=1+cos(phi)(1-2l/m)",
+    "operator_norm_squared": "1+abs(cos(phi))",
+    "weighted_source_energy_bound": "Ecal(m+1,s)<=rho_s Ecal(m,s+1), rho_s=1+cos(pi/2^s)",
+    "worst_norm_iteration": "only constant-factor gain versus 2^L, not exponential"
+  },
+  "primary_checks": {
+    "gauge_coefficients": 429,
+    "gauge_max_abs_error": 8.659170228218011e-14,
+    "krawtchouk_integer_recurrence_checks": 10415,
+    "actual_source_energy_cases": 108,
+    "actual_source_energy_above_one": 0,
+    "actual_source_energy_equal_one": 1
+  },
+  "same_session_second_implementation": {
+    "status": "PASS",
+    "jacobi_entries": 3310,
+    "jacobi_max_abs_residual": 1.4551915228366852e-11,
+    "actual_source_energy_cases": 39,
+    "actual_source_energy_above_one": 0,
+    "first_run_failure_preserved": true,
+    "independent_agent_audit": false
+  },
+  "open": [
+    "extremal Krawtchouk projection for actual source",
+    "W_flat exponent",
+    "signed source-tail alignment",
+    "uniform W",
+    "D2",
+    "Collatz"
+  ]
+}
