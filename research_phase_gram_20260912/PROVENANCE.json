@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-12",
+  "base_main": "434d8fc55544207b35a4c4390600598dd6623d28",
+  "parent_research_branch": "research/mixed-gram-round1-20260912",
+  "parent_pr": 2,
+  "real_subagents_available": false,
+  "paid_provider_calls": false,
+  "sealed_B4_authorization_reused": false,
+  "primary_script": "phase_gram_round2.py",
+  "separate_crosscheck": "direct_phase_crosscheck.py",
+  "first_crosscheck_attempt": {
+    "status": "FAILED",
+    "error": "ValueError converting Fraction string '9/2' directly with float()",
+    "used_for_scientific_results": false
+  },
+  "second_crosscheck_attempt": {
+    "status": "PASS",
+    "cases": 156,
+    "max_relative_error": 1.5401013797600172e-12,
+    "role": "finite numerical normalization/implementation check, not proof"
+  },
+  "proof_status": {
+    "phase_gram_psd": "PROVED",
+    "3x3_schur_bound": "PROVED",
+    "G1_bound_dominates_round1_phase_blind": "PROVED",
+    "weighted_sum_of_PSD_grams": "PROVED",
+    "real_gram_nonclosure_toy": "PROVED ALGEBRAIC COUNTEREXAMPLE",
+    "full_phase_quartic_character_recurrence": "PROVED",
+    "uniform_W_or_D2_bound": "OPEN",
+    "collatz": "OPEN"
+  }
+}

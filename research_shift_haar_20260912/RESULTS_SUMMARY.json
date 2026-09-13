@@ -1,0 +1,23 @@
+{
+  "status": "proved identities + exact finite checks + separately labelled inherited FFT diagnostics",
+  "theorem_checks": {
+    "cases": 426,
+    "bridge_nonnegative_checks": 1822,
+    "first_level_Nplus_checks": 426,
+    "valuation_recurrence_checks": 1396,
+    "first_nonmonotone_bridge": {"t":6,"j":3,"s":5,"B":[16,24,16,16]}
+  },
+  "exact_source_panels": [
+    {"r":5,"W":"37/4","Wflat":"37/4","W_over_Wflat":"1","retained_upper_over_W":{"0":"1","1":"1","2":"1","3":"1"}},
+    {"r":10,"W":"819/32","Wflat":"779/32","W_over_Wflat":"819/779","retained_upper_over_W":{"0":"1","1":"1","2":"1","3":"1"},"aggregate_signed_level_contribution_over_W":{"1":"40/819","2":"0"}},
+    {"r":12,"W":"2795/4","Wflat":"7987/16","W_over_Wflat":"11180/7987","retained_upper_over_W":{"0":"1.11426833117064718974917961647154962267470546482027382396496","1":"1.06654740608228980322003577817531305903398926654740608228980","2":"1","3":"1"},"aggregate_signed_level_contribution_over_W":{"1":"2329/11180","2":"216/2795","3":"0"}},
+    {"r":14,"W":"274211/256","Wflat":"374259/256","W_over_Wflat":"274211/374259","retained_upper_over_W":{"0":"2.20222345868063702390744000321258796323555503207575441258482","1":"1.52269444000733622611450456692904613412510007451938849751017","2":"1.06313386406818107223999037237747573948528687762343596719315","3":"1"},"aggregate_signed_level_contribution_over_W":{"1":"-47360/274211","2":"-1024/6377","3":"-8656/274211","4":"0"}}
+  ],
+  "inherited_fft_diagnostics": {
+    "label": "post-processing of already-published floating FFT pair diagnostics; not exact certification",
+    "r18_U0_U1_U2_U3_over_W": [1.7123621776,1.4087626955,1.1914413180,1.0502645522],
+    "r19_U0_U1_U2_U3_over_W": [2.5383558729,1.6868381138,1.4065275106,1.2736486904],
+    "r20_U0_U1_U2_U3_over_W": [2.3192456149,1.5459543593,1.2765954895,1.1911965624]
+  },
+  "full_results_location": "Drive package COLLATZ_SHIFT_HAAR_ROUND2_20260912.zip"
+}

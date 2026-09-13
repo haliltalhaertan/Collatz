@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "source_transfer_exact_checks": 360,
+  "first_level_mixed_plus_exact_checks": 250,
+  "fourier_transfer_numeric_coeff_checks": 2480,
+  "max_fourier_numeric_error": 8.78634738313887e-13,
+  "same_session_check": true,
+  "independent_agent_audit": false
+}

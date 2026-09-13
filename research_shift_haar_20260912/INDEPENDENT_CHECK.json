@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "same_session_second_implementation": true,
+  "not_independent_agent_audit": true,
+  "arbitrary_vector_alignment_cases": 79,
+  "max_direct_DFT_error": 1.0547118733938987e-14,
+  "actual_filter_block_formula_cases": 124,
+  "actual_filter_cumulative_levels_checked": 415
+}

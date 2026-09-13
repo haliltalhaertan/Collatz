@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "prescribed_cases": 108,
+  "posthoc_cases": 47,
+  "positive_lift_cases": 5,
+  "min_M_over_L_positive": "17/8",
+  "generic_counterexample_output_over_input": "10/9",
+  "elapsed_seconds": 8.774247564999769
+}

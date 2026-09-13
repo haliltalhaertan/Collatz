@@ -1,0 +1,28 @@
+exit_code=0
+
+STDOUT
+{
+  "operator_identity_cases": 310,
+  "hierarchy_inequality_cases": 736,
+  "hierarchy_equality_cases": 12,
+  "critical_summary": {
+    "scope": "t=8..30; j=round(t/log2(3)) +/-1 clipped to interior; s=2..min(t,10); exact; no sampling",
+    "cases": 612,
+    "hierarchy_strictly_below_trivial": 0,
+    "hierarchy_equal_trivial": 6,
+    "hierarchy_below_old_scalar_Uiter": 101
+  },
+  "two_scale_reflection_counterexample": [
+    {"t":11,"j":6,"s":4,"N0":"653072","N1":"230496","NB":"384160","Nplus":"384160","Nminus":"0","Nminus_over_NB":"0","node_ratio_2S_over_N0plusN1":"166/23"},
+    {"t":10,"j":6,"s":3,"N0":"153664","N1":"38416","NB":"76832","Nplus":"76832","Nminus":"0","Nminus_over_NB":"0","node_ratio_2S_over_N0plusN1":"34/5"},
+    {"t":9,"j":6,"s":2,"N0":"38416","N1":"38416","NB":"38416","Nplus":"0","Nminus":"38416","Nminus_over_NB":"1","node_ratio_2S_over_N0plusN1":"4"}
+  ],
+  "small_source_weighted_reflection_diagnostic": [
+    {"r":10,"t":3,"Wflat_weighted_Nminus_over_NB_s_ge_2":"23/37","decimal":0.6216216216216216,"zero_reflection_deficit_rows":[{"k":8,"j":2,"s":3}]},
+    {"r":12,"t":4,"Wflat_weighted_Nminus_over_NB_s_ge_2":"9886/13323","decimal":0.7420250694288073,"zero_reflection_deficit_rows":[]},
+    {"r":14,"t":5,"Wflat_weighted_Nminus_over_NB_s_ge_2":"6391859/10726947","decimal":0.5958693559313755,"zero_reflection_deficit_rows":[{"k":13,"j":1,"s":3}]}
+  ]
+}
+
+STDERR
+Spreadsheet runtime warmup failed during python startup. This was an unrelated environment warmup error; the research script itself exited 0 and all internal assertions passed. Full traceback is preserved in the Drive package's original RUN_OUTPUT.txt.

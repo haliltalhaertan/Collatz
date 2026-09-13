@@ -1,0 +1,29 @@
+{
+  "schema": "COLLATZ_MIXED_GRAM_ROUND1_PROVENANCE_V1",
+  "date": "2026-09-12",
+  "source_commit": "434d8fc55544207b35a4c4390600598dd6623d28",
+  "drive_repository_package": {
+    "file_id": "1nzsf_jKi9A2RORkbf9SZQ0DoN6pu_H-r",
+    "bytes": 32924513,
+    "sha256": "000519a99d0c04009f6cbbb50053630f37f4394f905a357e83e6d9f817da5840"
+  },
+  "python_version": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "real_subagents_used": false,
+  "note": "No real subagent tool was available. Proposal/adversarial/computation roles were performed sequentially in one assistant session and are not independent-agent audits.",
+  "files": {
+    "REPORT_TR.md": "d23dd12a55d9bdc0713f65fa3471e7f1ebea17024a9765cfc4add29e89b4efe0",
+    "weighted_gram_round1.py": "fb60c1aedc9bcf666a69e27005921032bc605ffbda0aeaecdf88869357a3cea9",
+    "RESULTS.json": "b7822f115235ad309963a435de4eefaa6ea2fbbe114a788235a33cff1e3c6b1e",
+    "RUN_OUTPUT.txt": "2e58f0e7ec0eb85d2318a915b0f689952219cbd09777d28f28424aedb7a87c2d",
+    "RESULTS_SUMMARY.json": "d89473df0a68bd1bc11bcdd05bbd2d61135d017bee9029191b2f1024ed6c32bc"
+  },
+  "drive_round_package": {
+    "file_id": "1mSdgxlyt0BMrKYN76a9Fhl10VLUt7Oy_",
+    "file_name": "COLLATZ_MIXED_GRAM_ROUND1_20260912.zip",
+    "bytes": 62053,
+    "sha256": "58bb7191ef1a73daf782c2b22e29fa2dc13e828d6acfd2e3d433a0ecb713c5e6"
+  },
+  "run_exit_code": 0,
+  "stderr_note": "Environment emitted an artifact-tool spreadsheet warmup error on stderr; research script exited 0 and its assertions passed."
+}
