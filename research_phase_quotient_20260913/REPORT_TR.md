@@ -1,9 +1,11 @@
-# Phase Quotient Round 5 — tam faz recurrence için exact quotient ve sub-enumeration state bound
+# Phase Quotient Round 6 — tam faz recurrence için exact quotient ve sub-enumeration state bound
 
 **Tarih:** 13 Eylül 2026  
 **Kanonik main:** `434d8fc55544207b35a4c4390600598dd6623d28`  
 **Araştırma dalı:** `research/mixed-gram-round1-20260912` / PR #2  
 **Statü:** **yeni exact simetriler + exact state-count teoremi + tam sonlu kontroller. Uniform W, D2 ve Collatz açık.**
+
+**Sıralama notu:** Çalışma sırasında aynı PR dalına bağımsız bir source Krawtchouk/Jacobi çalışması önce entegre edilerek Round 5 oldu. Bu phase-quotient turu ilk hazırlıkta çalışma etiketi olarak Round 5 diye adlandırılmıştı; proje sıralamasında **Round 6** olarak yeniden etiketlendi. Matematiksel içerik bu yeniden numaralandırma nedeniyle değişmedi.
 
 ## Basit sonuç
 
@@ -41,7 +43,7 @@ Burada `P={(d_i,eps_i)}_(i=1..4)`, `eps_i in {+1,-1}`; M4 kökü
 
 `P0={(0,+),(0,+),(0,-),(0,-)}`, `C=0`.
 
-Exact recurrence'te her adım dört faktörden bir alt kümeyi `d_i -> d_i+1` yapar. Primitive parity şartı nedeniyle 16 maskenin tam 8'i geçerlidir. Faz karakteri de Round 4'te verilen
+Exact recurrence'te her adım dört faktörden bir alt kümesini `d_i -> d_i+1` yapar. Primitive parity şartı nedeniyle 16 maskenin tam 8'i geçerlidir. Faz karakteri de Round 4'te verilen
 
 `C' = [C + c * sum_(i in mask) eps_i 3^(-d_i)] / 2 mod 2^(n-1)`
 
