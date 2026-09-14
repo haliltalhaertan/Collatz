@@ -1,0 +1,12 @@
+muse: workspace root: /home/mdp/muse-work/cp24-scope-review-1789394391712288530 (cwd default)
+muse: workspace trust: trusted source=run-flag
+Audit complete. All three deliverables exist in the workspace root: [AUDIT.md](/home/mdp/muse-work/cp24-scope-review-1789394391712288530/AUDIT.md), [checks.py](/home/mdp/muse-work/cp24-scope-review-1789394391712288530/checks.py) (ran ALL_OK, exit 0, exact integers/`Fraction`s), [final_summary.json](/home/mdp/muse-work/cp24-scope-review-1789394391712288530/final_summary.json) (`gate_ok`, `checks_passed`, `completion` all true). `inputs/` untouched.
+
+Conclusive findings:
+
+- **Reflection (proved).** `H₋(−x) = −H₊(x)`, plus mod-`2^m` word periodicity, gives word equality, `B⁻ = −B⁺`, `e⁻ + e⁺ = 3ᵏ` for `h ↔ 2ᵐ−h`. Ecal-blindness follows at *every* `(m,r)` (half-pairs permuted by an odd translation-reflection), not just sampled pairs. It kills Ecal as a distinguisher but bars nothing else: same-`h` behaviour differs (110/128 disagree at `m=8`), signed functionals separate the maps, and sign-sensitive combinations with `3n−1`-true lemmas remain legitimate.
+- **Self-consistency (prior claim refuted).** Divisibility ⇔ integer self-consistency for *both* signs (proof via `x ≡ h mod 2ᵐ`); only the positivity filter `x > 0` is strictly stronger. The `div == self` pattern in prior tables is predicted, not evidence. Instances for both signs plus exhaustive `m ≤ 8` check pass.
+- **Ecal (proved identity).** `Ecal = 2^{m−1}·Σ πₖJᵣ(pₖ)`; raw growth may be just the prefactor. No mixing or monotonicity claim is supported.
+- **Probe.** Bounded sieve reproduced (`Hp` nontrivial-free to `m ≤ 12`; `Hm`/`5n+1` controls show non-vacuity); nothing infinite established. One bounded validation recommended: `m = 16` dropping count, acceptance exactly `27823/32768` by two independent routes.
+
+No novelty claims made; explicit gaps and a 10-row corrections table (including one wrong expectation in my own draft script, fixed) are in AUDIT.md.

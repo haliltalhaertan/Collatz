@@ -1,0 +1,83 @@
+{
+  "bug_reproductions": [
+    {
+      "m": 25,
+      "s": 1,
+      "all_historical_fields_reproduced_by_slice_bug": true,
+      "input_starts_lost": 16251818,
+      "output_starts_lost": 33029710
+    },
+    {
+      "m": 25,
+      "s": 2,
+      "all_historical_fields_reproduced_by_slice_bug": true,
+      "input_starts_lost": 15726873,
+      "output_starts_lost": 32504180
+    },
+    {
+      "m": 25,
+      "s": 3,
+      "all_historical_fields_reproduced_by_slice_bug": true,
+      "input_starts_lost": 14677590,
+      "output_starts_lost": 31454786
+    },
+    {
+      "m": 25,
+      "s": 4,
+      "all_historical_fields_reproduced_by_slice_bug": true,
+      "input_starts_lost": 12579820,
+      "output_starts_lost": 29356371
+    },
+    {
+      "m": 25,
+      "s": 5,
+      "all_historical_fields_reproduced_by_slice_bug": true,
+      "input_starts_lost": 8384194,
+      "output_starts_lost": 25161213
+    },
+    {
+      "m": 25,
+      "s": 6,
+      "all_historical_fields_reproduced_by_slice_bug": true,
+      "input_starts_lost": 0,
+      "output_starts_lost": 16770532
+    },
+    {
+      "m": 26,
+      "s": 2,
+      "all_historical_fields_reproduced_by_slice_bug": true,
+      "input_starts_lost": 31454786,
+      "output_starts_lost": 65009258
+    },
+    {
+      "m": 26,
+      "s": 3,
+      "all_historical_fields_reproduced_by_slice_bug": true,
+      "input_starts_lost": 29356371,
+      "output_starts_lost": 62912070
+    },
+    {
+      "m": 26,
+      "s": 4,
+      "all_historical_fields_reproduced_by_slice_bug": true,
+      "input_starts_lost": 25161213,
+      "output_starts_lost": 58715810
+    },
+    {
+      "m": 26,
+      "s": 5,
+      "all_historical_fields_reproduced_by_slice_bug": true,
+      "input_starts_lost": 16770532,
+      "output_starts_lost": 50325167
+    },
+    {
+      "m": 26,
+      "s": 6,
+      "all_historical_fields_reproduced_by_slice_bug": true,
+      "input_starts_lost": 0,
+      "output_starts_lost": 33546825
+    }
+  ],
+  "red_control_rejected": true,
+  "correct_fold_mass_conservation": true
+}
