@@ -1,0 +1,41 @@
+muse: workspace root: /home/mdp/muse-work/cp22-attack (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+## Outcome
+
+**[EXACT COMPUTATION]** Gate reproduced 26/26 from scratch (all `(m,s)` rows, both adversaries, the `(18,2)[14,14]` radius-1 witness, numpy==small consistency). Hot window `m=19..24 × s=2,3,4` computed exactly: **zero radius-2 violations on real rows, global minimum supply/demand ratio `29517649/28111980` at `(20,3)[14,16]` — strictly inside `(21/20, 1051/1000)`, nothing below `21/20`, nothing below 1.** The flat/spiky mechanism is confirmed quantitatively in the hot window. **Major adversarial result: a histogram family respecting exact masses, exact caps, true supports, and integrality violates radius-2 charging on 91 intervals** — independently verified through a second code path — so caps+supports cannot imply radius-2; a proof must use per-stratum affine realizability. A finite table is never a uniform theorem; all scan claims below are finite-row facts only.
+
+### 1. Gate [EXACT COMPUTATION]
+All reproduced: `(4,2): I=40/3, F=16, Out=31/3, L=8/3, M=17/3, defect=3`; `(3,2): I=12, F=12, Out=8, L=0, M=4`; `(2,1): 4,4,4,0,0`; ADV1 `L=2, M=2/3`; ADV2 `L=9, M=101/15`; `(18,2)[14,14]` demand `3/35`, supply `4033/69615`, gap `1934/69615`, using lower end `a` (not `a-1`).
+
+### 2. Hot-window scan [EXACT COMPUTATION]
+18/18 rows, full ratio tables over every interval with `L>0` at both endpoints; full-interval re-scan: **0 violations**. Tightest rows: `(20,3)[14,16]` ratio `29517649/28111980` (demand `72082/6783`, matching the lead's value); runner-ups `(21,3)[14,16]` ratio `4026518/3478293`, `(20,2)[15,17]` ratio `72816309/42737240`. Exact bound: `20·num − 21·den = 1400 > 0` and `1051/1000 − ratio = 1402099/1405599000 > 0`, so the minimum lies strictly inside `(21/20, 1051/1000)`. `(24,2)` has zero positive `L_k` (all `L_k ≤ 0`, e.g. `L_2=−48/23`) — vacuous row, a regime boundary worth probing next.
+
+### 3. Mechanism [EXACT COMPUTATION]
+Confirmed: at `(20,3)`, demand strata are the flat ones (`k=14`: max/mean `2304/2261`, bins `1648..1728` around mean `27132/16`; `k=15`: `3032/2907`; `k=16`: `356/323`), while normalized bin-gap energy `G2_j = S_j/(n_j²n_{j−1}²)` rises ~1000× from interior (`j=13`: `14723/2856319362`) to tail (`j=18`: `21220/2816883`). Two low-mass tail links (`n_17=969, n_18=171`; 2.7% of demand mass) pay `(M_17+M_18)/supply = 1897948/4216807 ≈ 45%` of the binding supply. Same signature at `(18,2)`: `j=15` max-gap `3/4760`, `M_15=5/2142` ≈ nothing, spiky neighbour `M_16=229/102` covers. Caps pin interior strata hard (`k=14` slack only `516`, bins forced into `[1212,1728]`) — yet see next point.
+
+### 4. Adversarial family — MAJOR [EXACT COMPUTATION + verified witness]
+Multi-restart exact integer hill-climbing under exact masses + box caps + true supports finds radius-2 violations on `(20,3)[14,16]` in **both** readings (weak `lo=0`, strong `lo=1` full-use), and on `(18,2)` radius-2 as well. Persisted witness ([attack_witness.json](/home/mdp/muse-work/cp22-attack/attack_witness.json)): gap `[14,16] = 13498621/176358 > 0`, 91 violating intervals (31 with `L>0` at both endpoints, e.g. `[9,15]` gap `22406651/1119195`), masses/caps/supports asserted bin-by-bin and gap re-confirmed via the independent `attack_engine` path. Single-stratum probes show why: box-constrained max `L_k` exceeds truth ~10–20× (`k=16`: true `3664/969` vs box-max `69280/969`). **What stops the real source is therefore NOT caps/supports/integrality — it is per-stratum affine realizability (which collision "combs" the `B_w` congruence structure actually produces).** Radius-2 [CONJECTURE] survives the real scan but a proof must use that deeper structure. [FAIL] for the "caps+supports suffice" hope — killed with exact witnesses.
+
+### 5. Next targets with 10× compute
+1. `(25..28, s=2,3)` — falsification hunt past the checked `m=25,26`; traj cost ~8×/row is affordable and tests whether the `20–22` cluster recurs.
+2. `(20,21,22, s=5,6)` — nearly free (same trajectories, `N=64/128` histograms) to test modulus dependence of the `21/20` bottleneck.
+3. `(26,2),(28,2),(25,2),(27,2)` — map the `(24,2)` all-nonpositive-lift boundary (even/odd effect?).
+4. Word-level max-`L_k` under affine realizability for `(20,3) k=14..16` — decisive for replacing caps with the true constraint.
+
+```json
+{
+  "gate_ok": true,
+  "rows_computed": ["19,2","19,3","19,4","20,2","20,3","20,4","21,2","21,3","21,4","22,2","22,3","22,4","23,2","23,3","23,4","24,2","24,3","24,4"],
+  "min_ratio": "29517649/28111980",
+  "min_ratio_row": {"m": 20, "s": 3, "a": 14, "b": 16, "demand": "72082/6783", "supply": "4216807/377910"},
+  "below_1050": false,
+  "violation_found": false,
+  "adv_caps_supports_violation": true,
+  "adv_witness_gap": "13498621/176358",
+  "mechanism": "Flat interior demand strata (k=14 max/mean 2304/2261) with G2 rising ~1000x to spiky low-mass tail (j=18 G2 21220/2816883); tail links M17+M18 pay 1897948/4216807 of binding supply. Caps pin bins (k=14 slack 516) yet box-max L_k exceeds truth 10-20x, so caps+supports do not imply radius-2; per-stratum affine realizability is the missing constraint.",
+  "next_targets": ["(25..28,2,3): recurrence hunt past m=26", "(20,21,22,5,6): modulus dependence of 21/20 bottleneck", "(26,2),(28,2),(25,2),(27,2): map all-nonpositive-lift boundary", "word-level affine max-L_k at (20,3) k=14..16"],
+  "files": ["/home/mdp/muse-work/cp22-attack/attack_engine.py", "/home/mdp/muse-work/cp22-attack/attack_gate.py", "/home/mdp/muse-work/cp22-attack/attack_hot.py", "/home/mdp/muse-work/cp22-attack/attack_hot_results.json", "/home/mdp/muse-work/cp22-attack/attack_flat.py", "/home/mdp/muse-work/cp22-attack/attack_flat_results.json", "/home/mdp/muse-work/cp22-attack/attack_mech.py", "/home/mdp/muse-work/cp22-attack/attack_adv.py", "/home/mdp/muse-work/cp22-attack/attack_adv_results.json", "/home/mdp/muse-work/cp22-attack/attack_adv_witness.py", "/home/mdp/muse-work/cp22-attack/attack_witness.json", "/home/mdp/muse-work/cp22-attack/attack_verify_rows.py"]
+}
+```

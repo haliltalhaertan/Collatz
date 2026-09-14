@@ -1,0 +1,160 @@
+muse: workspace root: /home/mdp/muse-work/cp22-scout (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 3/10)
+```json
+{
+  "gate_ok": true,
+  "gate_note": "[EXACT COMPUTATION] Implemented histogram/J/transfer/L_k/M_j from scratch in gate.py and reproduced every calibration row: (4,2) I=40/3 F=16 Out=31/3 L=8/3 M=17/3 defect=3; (3,2) I=12 F=12 Out=8 L=0 M=4; (2,1) I=F=Out=4 L=M=0; ADV1 L=2 M=2/3; ADV2 L=9 M=101/15; (18,2)[14,14] demand=3/35 supply=4033/69615 gap=1934/69615; also verified sum L_k=F-I and sum M_j=F-Out on real rows.",
+  "options": [
+    {
+      "id": "O6",
+      "title": "[CONJECTURE] Extend exact real-source verification past m=26 plus margin-trend audit",
+      "idea": "[CONJECTURE] Push the exact Fraction pipeline to m=27..32 for s in {2,3} and the tight k-region, recording global M-L and the full radius-2 interval table; compare narrowest supply/demand excess as exact Fractions across m. This is pure extension of the existing 365-row/221-row tables, no new math.",
+      "buys": "[CONJECTURE] Directly tests whether the target or (A) breaks at the next scale and turns the fragile 1/20 excess at (20,3)[14,16] into a trend: widening excess means robust, shrinking excess localizes the danger zone for all other options.",
+      "experiment": "[CONJECTURE] Run one optimized exact script for (m,s) in {27..32}x{2,3}: assert gate rows first, then emit min_{intervals} (supply-demand) and min global M-L as Fractions; stop on any negative value.",
+      "prob": "[CONJECTURE] 4/5 that it executes and returns decisive trend information; 1/10 that it finds an outright counterexample.",
+      "resembles": "[CONJECTURE] Resembles no dead path; verification-only work is not on the dead list, and unlike dead path 4 it tests the true radius-2 window with the correct lower end a, not a-1.",
+      "value": "[CONJECTURE] high",
+      "cost": "[CONJECTURE] 1 unit of CPU hours",
+      "status": "[CONJECTURE] live"
+    },
+    {
+      "id": "O1",
+      "title": "[CONJECTURE] Cap-plus-support adversarial falsification in the tight region",
+      "idea": "[CONJECTURE] Randomly sample and hill-climb histograms that respect binomial masses AND real supports AND the M(m,k) cap table, seeded from the W(4,2)/W(6,2) transfer-image construction, maximizing exact L-M at the tight (20,3)[14,16]-type intervals. The sampler lives exactly where the post-mortem says the real source differs from adversaries.",
+      "buys": "[CONJECTURE] Either kills the target/(A) with a cap-respecting witness or produces a quantified robustness certificate (best L-M found over N samples) plus the binding-region map for proof attempts.",
+      "experiment": "[CONJECTURE] Build a sampler over Z/8..Z/32тока: enforce masses, zero outside real supports, entries bounded by M(m,k); hill-climb exact L-M with Fractions only; report the maximum found and the seed.",
+      "prob": "[CONJECTURE] 3/5 of delivering decisive information one way or the other; 1/10 of finding a genuine violation if the target is false.",
+      "resembles": "[CONJECTURE] Most resembles dead path 2 (supports without caps, killed by ADV2 with M-L=-34/15), but differs by enforcing caps AND supports AND transfer-image membership together, which is exactly the combination the induction post-mortem identifies as excluding W(4,2)/W(6,2).",
+      "value": "[CONJECTURE] high",
+      "cost": "[CONJECTURE] 2 units (sampler engineering plus CPU)",
+      "status": "[CONJECTURE] live"
+    },
+    {
+      "id": "O5",
+      "title": "[CONJECTURE] Machine-check the identities and the gate (Lean pilot)",
+      "idea": "[CONJECTURE] Formalize in Lean only the undisputed kernel: M_merge=sum M_j>=0 identity, R1/R2/R3 statements, and the six gate rows as exact Fraction computations. Pilot scope is days, not the whole programme.",
+      "buys": "[CONJECTURE] Makes future [PROOF] labels trustworthy and prevents a second T7r-class event where a false statement carries [PROOF] until someone runs code.",
+      "experiment": "[CONJECTURE] Formalize M_merge>=0 plus one gate row (4,2); the pilot succeeds if Lean accepts both with no axioms beyond rationals.",
+      "prob": "[CONJECTURE] 4/5 for the pilot; 1/5 that full formalization ever pays off.",
+      "resembles": "[CONJECTURE] Resembles no dead path; it is process work, orthogonal to all 13 mathematical kills.",
+      "value": "[CONJECTURE] medium-high",
+      "cost": "[CONJECTURE] 3 units",
+      "status": "[CONJECTURE] live"
+    },
+    {
+      "id": "O4",
+      "title": "[CONJECTURE] Freeze route (B) per-frequency positivity and move its budget to (A)",
+      "idea": "[CONJECTURE] Declare (B) dormant: its minimum fell by roughly a factor of 1/7 from (5,4) to (13,4), the active frequency drifts near q/3 with m, and the index theorem already forbids the natural mod-N refinement, so each new row costs Fourier bookkeeping for shrinking insight.",
+      "buys": "[CONJECTURE] Frees compute and attention for (A) and falsification at zero mathematical risk, since (B) is not needed for the target if (A) succeeds.",
+      "experiment": "[CONJECTURE] No experiment; decision plus archiving the 118-pair table with a dormant label and a reactivation trigger (e.g. a proved mod-q lower bound).",
+      "prob": "[CONJECTURE] 4/5 that freezing (B) is the correct resource call even if (B) happens to be true.",
+      "resembles": "[CONJECTURE] Resembles no dead path; abandoning a route is a meta-option, and (B) itself is live, only fragile.",
+      "value": "[CONJECTURE] medium",
+      "cost": "[CONJECTURE] 0 units",
+      "status": "[CONJECTURE] live"
+    },
+    {
+      "id": "O7",
+      "title": "[CONJECTURE] Retarget the programme theorem from M>=L to radius-2 charging (A)",
+      "idea": "[CONJECTURE] Make (A) the official target statement, since (A) on [1,m] implies M_merge>=L_lift in one line, while (A) has interval locality that matches the parent-sharing horizon j in [k-1,k+2]. All future reports prove or falsify (A) first.",
+      "buys": "[CONJECTURE] Clarity: stops the programme from overfitting to global cancellations and forces every lemma to pay in the currency (intervals, caps, supports) that the R1-R3 analysis shows is load-bearing.",
+      "experiment": "[CONJECTURE] Write the one-line [PROOF] that (A) for a=b..b implies the global target, and re-express the 32 radius-1 witnesses as (A)-with-narrower-window failures to confirm the retarget preserves them.",
+      "prob": "[CONJECTURE] 3/5 that retargeting accelerates progress conditional on (A) being true.",
+      "resembles": "[CONJECTURE] Resembles no dead path; it strengthens rather than weakens the goal, unlike dead paths 3 and 4 which narrowed the supply window.",
+      "value": "[CONJECTURE] medium",
+      "cost": "[CONJECTURE] 0 units",
+      "status": "[CONJECTURE] live"
+    },
+    {
+      "id": "O8",
+      "title": "[CONJECTURE] Characterize supports from the proved forward direction of T7 plus T2",
+      "idea": "[CONJECTURE] Use only proved tools (T7 forward: equal affine offsets iff B_w congruent mod 3^k; T2 range bounds; v2 isometry) to compute allowed-collision graphs per (m,k,r) and compare against empirical supports; never invoke the false T7r converse.",
+      "buys": "[CONJECTURE] Turns support from an observed table into a proved constraint that feeds O1/O2/O3 and shrinks the adversary space without reintroducing the 12%-failure converse.",
+      "experiment": "[CONJECTURE] At m<=10 predict forbidden collisions from B_w mod 3^k classes and check zero false-forwards against actual histograms with exact integer arithmetic.",
+      "prob": "[CONJECTURE] 1/4 of yielding a usable support theorem; 4/5 of at least tightening the sampler.",
+      "resembles": "[CONJECTURE] Most resembles dead path 13 (T7r iff, 12% failure) but differs by using ONLY the proved forward implication, which the kill explicitly spared.",
+      "value": "[CONJECTURE] medium-high",
+      "cost": "[CONJECTURE] 3 units",
+      "status": "[CONJECTURE] live"
+    },
+    {
+      "id": "O2",
+      "title": "[CONJECTURE] Bound demand via the negacyclic form R1 plus entry caps",
+      "idea": "[CONJECTURE] From (R1) L_k=(q/2n_k)<w_k,T^{3^k}w_k>, apply Cauchy-Schwarz and |w_k|<=cap to bound positive lift by (q/2n_k)||w_k||^2, then convert ||w_k||^2 into J-energy terms comparable to M_j supply. Cap enters the quadratic form, not raw pile counts.",
+      "buys": "[CONJECTURE] A proved demand ceiling that uses exactly the missing ingredient (caps) the post-mortem blames for the induction death, including the LX cross-term channel.",
+      "experiment": "[CONJECTURE] Compute the ratio of this Cauchy-cap ceiling to actual max(L_k,0) over all rows m<=22; the route is viable only if the ratio stays modest in the tight m in {20,21,22} region.",
+      "prob": "[CONJECTURE] 1/20 given the proved/true cap ratio degrades to 12/1 at m-k=8 and 140/1 at m-k=14.",
+      "resembles": "[CONJECTURE] Most resembles dead paths 10 and 11 (cap<=2^(m-r), absolute-constant caps) but differs by bounding the signed quadratic autocorrelation rather than the linear pile height, so the cited counterexamples do not transfer.",
+      "value": "[CONJECTURE] very high if it works",
+      "cost": "[CONJECTURE] 5 units",
+      "status": "[CONJECTURE] live"
+    },
+    {
+      "id": "O3",
+      "title": "[CONJECTURE] Floor the supply via anti-concentration of Y_j",
+      "idea": "[CONJECTURE] From (R2) M_j=(q/4)||Y_j||^2/(n_j n_{j-1}(n_j+n_{j-1})) with Y_j=n_{j-1}E(w_j)-n_j O(w_{j-1}), prove ||Y_j||^2 cannot be small when neighbouring demand is large, using support disjointness structure of E versus O rather than raw masses.",
+      "buys": "[CONJECTURE] A proved supply floor for the right-hand side of (A), complementing O2 from the other side.",
+      "experiment": "[CONJECTURE] Tabulate exact ||Y_j||^2 against neighbouring demand over m<=22; viability needs the floor to clear demand precisely at the 12 tightest intervals.",
+      "prob": "[CONJECTURE] 1/20 since supply contracts on 64/65 transfer levels and zeros of M_j exist, e.g. (6,1) j=3.",
+      "resembles": "[CONJECTURE] Most resembles dead path 1 (masses alone imply positivity, killed by ADV1) but differs by adding support-disjointness and cap inputs that ADV1 never constrained.",
+      "value": "[CONJECTURE] very high if it works",
+      "cost": "[CONJECTURE] 5 units",
+      "status": "[CONJECTURE] live"
+    },
+    {
+      "id": "O9",
+      "title": "[FAIL] Identical-lift conjecture F=I always",
+      "idea": "[FAIL] Hope the transfer preserves energy exactly so L_lift=0 identically and the target follows from M_merge>=0 [PROOF]; tempting because gate rows (2,1) and (3,2) both show L_lift=0.",
+      "buys": "[FAIL] Would have proved the target in one line from the proved merge identity.",
+      "experiment": "[EXACT COMPUTATION] Evaluate exact F-I at (4,2); kill.py asserts I=40/3, F=16, L=8/3.",
+      "prob": "[FAIL] 0/1, killed.",
+      "resembles": "[FAIL] Near dead path 5 (s>=3 implies L<=0) but stronger (equality for all s); killed even earlier at (4,2).",
+      "value": "[FAIL] moot",
+      "cost": "[FAIL] 0 units",
+      "status": "[FAIL] killed"
+    },
+    {
+      "id": "O10",
+      "title": "[FAIL] Per-stratum lift non-negativity L_k>=0",
+      "idea": "[FAIL] Hope each stratum lifts non-negatively so max(L_k,0) in (A) is redundant and intervals sum cleanly; tempting because the (4,2) row has Lk values 0, 8/3, 0, 0, all non-negative.",
+      "buys": "[FAIL] Would have simplified every charging argument by dropping the max.",
+      "experiment": "[EXACT COMPUTATION] Evaluate exact L_k at (4,3); kill.py asserts L_3=-8/3 with cross-check sum L_k=F-I=-8/3; scan to m=10 finds 113 negative L_k cases.",
+      "prob": "[FAIL] 0/1, killed.",
+      "resembles": "[FAIL] No dead path claims per-stratum non-negativity; dead path 5 concerns global L_lift sign for s>=3, a different quantifier.",
+      "value": "[FAIL] moot",
+      "cost": "[FAIL] 0 units",
+      "status": "[FAIL] killed"
+    }
+  ],
+  "ranking": "[CONJECTURE] Ranked by expected value = value x probability / cost: O6 first because one exact script answers the lead question at minimal cost; O1 second as the broader falsification campaign built on O6; O5 third because it prevents the costliest failure mode (false [PROOF]) cheaply at pilot scope; O4 fourth as a zero-cost focus gain; O7 fifth as a free clarity win; O8 sixth as medium-cost support theory feeding O1-O3; O2 and O3 last because their value is very high but their probability is 1/20 against the documented 140/1 cap-ratio degradation; O9 and O10 are unranked with value zero after kills.",
+  "top_choice": "[CONJECTURE] Top choice is O6: extend the exact tables to m=27..32 for s in {2,3} with the full radius-2 interval audit, because it is the cheapest decisive step, it directly tests whether the 1/20 excess at (20,3) is noise or a trend toward falsity, and every other live option (O1 sampler seeding, O8 support checks, O2/O3 ratio tests) consumes its output.",
+  "cheap_kills": [
+    {
+      "id": "K1",
+      "claim": "[FAIL] The conjecture that F=I (L_lift=0) for all (m,s) is FALSE.",
+      "witness": "[EXACT COMPUTATION] At (m,s)=(4,2): I=40/3, F=16, hence L_lift=F-I=8/3, nonzero; cross-checked via sum_k L_k=8/3 with L_2=8/3 and others 0.",
+      "output": "[EXACT COMPUTATION] kill.py printed: K1 (4,2) I= 40/3 F= 16 L=F-I= 8/3, asserts on 40/3, 16/1, 8/3 passed."
+    },
+    {
+      "id": "K2",
+      "claim": "[FAIL] The conjecture that L_k>=0 for every stratum k is FALSE.",
+      "witness": "[EXACT COMPUTATION] At (m,s,k)=(4,3,3): L_3=-8/3, with full vector (0,0,-8/3,0) and cross-check sum L_k=F-I=-8/3.",
+      "output": "[EXACT COMPUTATION] kill.py printed: K2 (4,3) Lk={1:0,2:0,3:-8/3,4:0}, Lsum=-8/3 F-I=-8/3, asserts passed; wider scan finds 113 negative-L_k cases at m<=10."
+    }
+  ],
+  "target_may_be_false": "[CONJECTURE] Yes, it may be false, and the fragility is weak but genuine evidence in that direction: the narrowest (A) excess is only 1/20 at (20,3)[14,16], all 12 tightest margins cluster exactly where radius-1 already collapses, (B) lost most of its margin while its active frequency drifts, and mass-respecting adversaries already violate the target. Against that: zero real-source violations in 365 rows, the excess is still positive, and fragility of strictly stronger statements (A)/(B) need not transfer to the weaker global target. Net read: raise the subjective probability of eventual falsity, but treat it as an instruction to falsify-first (O6/O1), not as a verdict.",
+  "cheapest_test": "[CONJECTURE] Three phases, all exact Fractions, no floating point: Phase 1 extends real-source exact rows to m=27..32 with s in {2,3}, asserting the six gate rows first, then records global M-L and every radius-2 interval excess as Fractions with the correct lower end max(a-1,2). Phase 2 hill-climbs cap-plus-support-respecting adversaries seeded from W(4,2)/W(6,2) at the tight intervals, maximizing exact L-M. Phase 3 compares narrowest excess across m with exact Fraction ordering. Decision rule: any M-L<0 kills the target; any interval with demand>supply kills (A); shrinking positive excess triggers the full O1 campaign; widening excess stands down the falsity alarm. Estimated cost is single-digit CPU hours from the existing gate.py kernel.",
+  "process_change": "[CONJECTURE] Adopt a two-agent [PROOF] rule plus a finite-table disclaimer rule: no AI-authored statement carries [PROOF] until (i) an executable exact-arithmetic script with absolute path reproduces it from scratch, and (ii) a second independent agent re-implements the check by a different code path and confirms, with both hashes logged; until then it is labeled [CONJECTURE]. Every finite-table claim must append the sentence that a finite table is never a uniform theorem, with row counts and exact coverage bounds. Every sign or index convention (e.g. window lower end a versus a-1) must be tested both ways, citing the (18,2)[14,14] trap as the template. New proposals must name the dead path they nearest resemble and the ingredient (cap, support, or transfer-image) that distinguishes them, or they are returned without review.",
+  "files": [
+    "/home/mdp/muse-work/cp22-scout/gate.py",
+    "/home/mdp/muse-work/cp22-scout/kill.py",
+    "/home/mdp/muse-work/cp22-scout/scan.py",
+    "/home/mdp/muse-work/cp22-scout/margins.py",
+    "/home/mdp/muse-work/cp22-scout/narrow.py",
+    "/home/mdp/muse-work/cp22-scout/zeroM.py"
+  ]
+}
+```
