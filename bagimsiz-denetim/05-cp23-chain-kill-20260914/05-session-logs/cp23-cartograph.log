@@ -1,0 +1,37 @@
+muse: workspace root: /home/mdp/muse-work/cp23-cartograph (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+[EXACT COMPUTATION] Gate: Ecal(4,3) = 40/3 and Ecal(5,2) = 31/3, both reproduced from scratch with exact Fraction arithmetic in [gate.py](/home/mdp/muse-work/cp23-cartograph/gate.py).
+
+[EXACT COMPUTATION] Full per-stratum tables and the m=1..8 × r=1..4 grid were recomputed to ground the analysis; key derived facts: Ecal(1,R) = 2^(R−1), and column r=2 oscillates (2, 4, 4, 8, 31/3, 38/5, …).
+
+[JUDGEMENT] Verdict up front: the chain terminates at "almost all," which Tao already owns — not at Collatz — and the programme should retarget.
+
+**Graded chain** (detail in [cartograph.md](/home/mdp/muse-work/cp23-cartograph/cartograph.md)):
+
+- [CONJECTURE] L1, one-step mixing Ecal(m,s+1) ≥ Ecal(m+1,s): [CONJECTURED, formulated]; 239 rows, 0 violations is support, never a theorem.
+- [CONJECTURE] L2, iteration to fixed-resolution decay Ecal(m,r) ≤ δ(m)→0 with rate: [NOT EVEN FORMULATED].
+- [PROOF] L2 has no such corollary because iteration gives only Ecal(m,r) ≥ … ≥ Ecal(m+r−1,1) ≥ 0 and Ecal(m,r) ≤ … ≤ Ecal(1,m+r−1) = 2^(m+r−2) — a trivial floor and an exponential ceiling.
+- [FAIL] L2's naive hope is false: fixed-r values oscillate, so diagonal monotonicity coexists with fixed-resolution growth.
+- [CONJECTURE] L3, top-bit J_r control → full mixing: [KNOWN BARRIER], by the programme's own proved ≥1/2 Fourier obstruction and the A7 no-refinement result.
+- [CONJECTURE] L4, census uniformity → density-one orbit control: [NOT EVEN FORMULATED]; no transfer lemma exists programme-side.
+- [CONJECTURE] L5, typical behaviour → no divergent orbit: [KNOWN BARRIER] (B1; one orbit has density zero).
+- [CONJECTURE] L6, typical behaviour → no nontrivial cycle: [KNOWN BARRIER] (exact return H^p(x)=x is Diophantine, invisible to statistics).
+- [CONJECTURE] L7, finite windows → one infinite orbit: [KNOWN BARRIER] (B2/CP18 wall).
+- [PROOF] L8, assembly (no cycles + no divergence ⇒ Collatz): [PROVED], by the classical bounded-infinite-repeats pigeonhole argument.
+
+[JUDGEMENT] Weakest link is the statistical-to-single-orbit passage (the lead's step 3, fusing L5+L7).
+
+[CONJECTURE] The needed Transfer Thesis: ∃ fixed r ≥ 1, δ(m)→0, c > 0 such that (∀ large m: Ecal(m,r) ≤ δ(m)) ⇒ every H-orbit reaches 1; equivalently, a counterexample x₀ forces lim sup Ecal(m,r) ≥ c(x₀) > 0.
+
+[FAIL] No statement of that shape with explicit quantifiers exists anywhere in the programme — step 3 is a hope, not a conjecture — and to my knowledge none exists in the literature; Tao's theorems have deliberately opposite (density-one) quantifiers.
+
+[PROOF] What the target buys: assuming it, each diagonal m+r = const carries a bounded monotone sequence converging to some unidentified L ≥ 0 with no rate — and nothing else; with no rate, no fixed-resolution limit, one-bit projections only, and shifting resolution, zero orbit theorems follow.
+
+[JUDGEMENT] On B1/B2: both survive challenge as genuine ceilings, and the lead's "no measurable progress toward Collatz" is if anything slightly too kind, since Links 2–4 are missing before the ceilings are even reached.
+
+[JUDGEMENT] Honest translation: Ecal(4,3)=40/3 describes only the 8 odd starts below 16 run 4 steps (endpoints 1,2,1,13,17,20,8,80); Ecal(5,2)=31/3 describes only the 16 odd starts below 32 run 5 steps; "239 rows, 0 violations" says this shifting-resolution non-increase held 239 times at small scale and nothing about any larger integer, longer orbit, uniformity in general, cycles, or divergence.
+
+[EXACT COMPUTATION] Deliverable JSON with keys gate_ok, chain, weakest_link, what_target_buys, endpoint_verdict, honest_translation, files is validated at [results.json](/home/mdp/muse-work/cp23-cartograph/results.json) (8 chain entries, gate_ok true).
+

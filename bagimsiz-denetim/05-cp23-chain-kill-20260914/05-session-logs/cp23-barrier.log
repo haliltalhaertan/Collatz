@@ -1,0 +1,61 @@
+muse: workspace root: /home/mdp/muse-work/cp23-barrier (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Gate first — both numbers reproduced from scratch before any strategy:
+
+- [EXACT COMPUTATION] `Ecal(4,3) = 40/3` — match.
+- [EXACT COMPUTATION] `Ecal(5,2) = 31/3` — match.
+- Exact `Fraction` arithmetic; script re-ran clean twice. Full labelled analysis is in [barrier_analysis.md](/home/mdp/muse-work/cp23-barrier/barrier_analysis.md); reproducer is [gate.py](/home/mdp/muse-work/cp23-barrier/gate.py).
+
+Collatz is NOT solved. Nothing here claims otherwise.
+
+## Chain audit
+
+[JUDGEMENT] The 5-step chain is INCOMPLETE as stated, not sound: step 3 ("mixing ⇒ nowhere to hide") has no transfer lemma. Mixing here is a typical-start statement; a single exceptional orbit is compatible with perfect typical mixing. B1 is exactly this gap, and B2 bites at step 4→3 even if the target inequality is proved (a family of finite statements still needs a uniform limit argument that is unwritten).
+
+## B1: formalisation and verdict — PARTIAL
+
+- B1-weak [PROOF]: density-1 ⇏ all. Trivial logic.
+- B1-medium [PROOF]: Lᵖ-averaged bounds (Ecal, discrepancy, averaged Fourier) are stable under density-0 changes, so no such bound BY ITSELF excludes one orbit/cycle. Airtight — the true core.
+- B1-strong [JUDGEMENT/CONJECTURE]: "no mixing-based programme can ever reach every-case." Not a theorem; false as a universal.
+- [JUDGEMENT] Counter-patterns exist where mixing + rigidity gives every-case: (a) uniform-hitting + descent ⇒ infinite descent; (b) analytic bound + finite check; (c) cycle equation + transcendence (Steiner 1-cycles; Simons–de Weger-type lower bounds — qualitative pattern high-confidence, constants deliberately not quoted); (d) expansion ⇒ deterministic hitting (with the programme's own Fourier ≥1/2 obstruction constraining which gap to ask for). What "something else" must be here: a uniform hitting/covering lemma + descent lemma, or an explicit bridge bound — none owned today.
+- Verdict: PARTIAL (FATAL to averaging-alone, OVERSTATED as universal). Confidence HIGH on logic, MEDIUM on whether the rigid ingredient exists for divergence.
+
+## B2: formalisation and verdict — PARTIAL (FATAL in-scope, OVERSTATED out-of-scope)
+
+- B2-weak [PROOF]: ∀m∃n ⇏ ∃n∀m. Finite realisability ≠ global realiser.
+- B2-medium [PROOF, standard]: compactness gives a 2-adic realiser (Z₂), not an N-realiser. The honest wall is Z₂⇒N. [JUDGEMENT, CP18 text unseen] this is likely what CP18 hit.
+- B2-strong [FAIL]: "no finite-window argument can ever exclude an infinite object" — refuted by induction, descent, bound+check, and the cycle equation.
+- [JUDGEMENT] CP18 generalises ONLY to same-quantifier-shape arguments with no bridge (no height, bound, equation, or correct-space compactness) — not to all finite-window methods. It bites the current chain and would survive even a proof of the target (uniformity still missing), so it is the more durable barrier for divergence.
+
+## Literature barriers
+
+- Conway (1972) / Kurtz–Simon [PROOF, qualitative, HIGH confidence]: undecidability/hardness quantified OVER parametrised families, not over fixed 3n+1. Family-hardness ⇏ member-hardness (cf. MRDP vs. x²+y²=z²) [PROOF by logic]. Verdict [JUDGEMENT, MEDIUM-HIGH]: NOT a barrier to this programme; over-cited. Moral reverses: proof must use 3-specific facts — which are exactly assets A1/A3/A4. Exact complexity classes not vouched here.
+- Tao ceiling [JUDGEMENT]: frontier, not impossibility proof.
+- Fourier ≥1/2 obstruction [PROOF, as briefed]: genuine permanent shape constraint.
+
+## Cycles — the loud finding
+
+[JUDGEMENT, built on PROOFs] Cycle exclusion is genuinely more tractable and the programme undervalues its fit: a length-m cycle is fully captured by window m plus `(2ᵐ−3ᵏ)n = B_w` [PROOF from A1]; integrality `n = B_w/(2ᵐ−3ᵏ) ∈ N` IS the explicit transfer B2 demands elsewhere; the literature already runs mixing-plus-rigidity for cycles. A1–A4 are the rigid half of that pattern. Retargeting the mixing target as cycle-bound input replaces the missing bridge with one that exists. This is the headline pivot.
+
+## What survives with barriers intact
+
+Proved mixing inequality as its own theorem; cycle-restricted every-case results (highest value/effort); quantitative almost-all refinements; proved obstructions (Fourier/A7/A9 line); a conditional "mixing + hitting/descent ⇒ no divergence" specification; human + Lean re-verification of A1–A8 (with zero human review so far, undetected error is the largest near-term risk, not B1/B2).
+
+On the lead's "NO measurable progress": [JUDGEMENT] about right for divergence, too harsh for cycles, lemma stock, and obstructions. "Cannot reach stated goal via mixing alone; should retarget" is available as a first-class result.
+
+```json
+{
+  "gate_ok": true,
+  "B1_formal": "B1-weak [PROOF]: density-1 does not imply all. B1-medium [PROOF]: L^p-averaged bounds (Ecal etc.) are density-0-stable, so averaging ALONE cannot exclude one orbit/cycle. B1-strong (universal: mixing can never join an every-case proof) is [CONJECTURE/JUDGEMENT], not a theorem; refuted as a universal by mixing-plus-rigidity patterns.",
+  "B1_verdict": "PARTIAL — FATAL to averaging-alone and to the current 5-step chain as stated (no second ingredient); OVERSTATED as a universal impossibility. Confidence HIGH on logic, MEDIUM on divergence-rigidity forecast.",
+  "B2_formal": "B2-weak [PROOF]: forall-m-exists-n does not imply exists-n-forall-m. B2-medium [PROOF, standard]: compactness yields Z_2 realisers, wall is Z_2=>N. B2-strong (no finite-window argument can ever exclude an infinite counterexample) is [FAIL]: induction, descent, bound+check, cycle equation are finite-window arguments with bridges.",
+  "B2_verdict": "PARTIAL (FATAL in-scope, OVERSTATED out-of-scope) — correctly kills local-realisability=>global-N-realiser with no bridge (presumed CP18 shape; reconstruction MEDIUM confidence, text unseen); does not generalise to bridged finite-window arguments. Bites current chain and survives even a proof of the target (uniform limit still needed).",
+  "literature_barriers": "Conway 1972 / Kurtz-Simon are family-level undecidability/hardness [PROOF qualitative, HIGH]; family-hardness does not imply fixed-3n+1 hardness [PROOF by logic]. NOT a barrier to this programme (over-cited); moral favours 3-specific assets A1/A3/A4 [JUDGEMENT, MEDIUM-HIGH]. Tao almost-all is frontier, not ceiling proof [JUDGEMENT]. Programme Fourier >=1/2 obstruction is genuine permanent shape constraint [PROOF as briefed].",
+  "cycles_analysis": "Cycles are finite objects with exact equation (2^m-3^k)n=B_w [PROOF from A1]; integrality check is the explicit transfer B2 otherwise lacks. B1 still blinds pure averaging but the literature cycle pattern (Steiner; Simons-de Weger transcendence bounds; computation from below) already runs mixing-plus-rigidity to every-case family theorems. A1-A4 are the rigid half. Retarget to cycle-restricted theorems is the highest-value pivot [JUDGEMENT].",
+  "achievable_with_barriers": ["Prove Ecal(m,s+1)>=Ecal(m+1,s) as finite combinatorics", "Cycle-restricted every-case bounds/exclusions via A1-A4", "Quantitative almost-all refinements", "Proved-obstruction catalogue (Fourier/A7/A9 line)", "Conditional bridge theorem specifying the missing hitting+descent hypotheses", "Human + Lean re-verification of A1-A8 and 239 rows (A10)"],
+  "files": ["/home/mdp/muse-work/cp23-barrier/gate.py", "/home/mdp/muse-work/cp23-barrier/barrier_analysis.md"]
+}
+```

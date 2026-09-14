@@ -1,0 +1,109 @@
+muse: workspace root: /home/mdp/muse-work/cp23-redirect (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+# CP23 REDIRECT report
+
+## Gate (reproduced from scratch before any strategy)
+
+[EXACT COMPUTATION] `Ecal(4,3) = 40/3`. [EXACT COMPUTATION] `Ecal(5,2) = 31/3`. [EXACT COMPUTATION] Both match the required values exactly (`fractions.Fraction`, script [gate_check.py](/home/mdp/muse-work/cp23-redirect/gate_check.py)). Gate passes; I proceed.
+
+## Barrier verdicts
+
+[JUDGEMENT] B1 (measure-zero escape) stands for divergent orbits — nothing here weakens it — but is evaded, not refuted, by cycles: a cycle is a finite exact Diophantine condition, not a statistic. [JUDGEMENT] B2 (finite-information wall) stands: cycles evade it for the same reason (length-m cycle is finitely checkable). [JUDGEMENT] The lead's "NO measurable progress toward Collatz" is about right as stated but mislocated: worse than stalled, because the intended chain's step 3 is refuted as stated (Section 4), while the assets (A3/A4, audit methodology, failure library) are worth more than claimed — just not for the stated goal.
+
+## 1. Cycles analysis, with computation ([cycle_analysis.py](/home/mdp/muse-work/cp23-redirect/cycle_analysis.py))
+
+[EXACT COMPUTATION] I re-verified A1, the closed form `B_w = Σ_{odd j} 3^{suf_j}·2^j`, `B_w` odd, `B_w ≢ 0 mod 3` for all odd `h < 2^m`, `m ≤ 8`, and A3 (endpoint collision ⟺ `B_w ≡ B_w' mod 3^k`) on all within-stratum pairs, `m ≤ 8`.
+
+[PROOF] From A1, a shortcut-map cycle of length `m` and weight `k` satisfies `x = B_w/D` with `D = 2^m − 3^k`, so `D > 0`, `D | B_w`, and the quotient's length-m word must equal `w` (self-consistency, strictly stronger than divisibility).
+
+[PROOF] `gcd(D,6) = 1` always (`D` is odd; `D ≡ (−1)^m ≢ 0 mod 3`). A2 is 2-adic and A3 is 3-adic; the cycle divisor lives on disjoint prime support. That structural mismatch needs no computation.
+
+[EXACT COMPUTATION] Word-enumeration scan for `m ≤ 12` and `m ∈ {14,16,18,20}`: the only `D`-divisible words are trivial-cycle (`x=1`) repetitions; zero nontrivial cycles. (Mechanism demo only — never a bound.)
+
+[EXACT COMPUTATION] On small-`D` strata, `D`-divisibility runs at/below chance — `(8,5)`: 0/35 vs `1/13`; `(10,6)`: 0/126 vs `1/295`; `(13,8)`: 0/792 vs `1/1631` — and conditioning on A3 class never enriches it (`cond_max = 0` throughout at `n ≥ 6`). Finite tables: consistent with independence, proves nothing.
+
+[PROOF] The 3n−1 map has affine form `(3^k·h − B_w)/2^m` with the same `B_w` (signs flip, magnitudes identical), so its cycles live at `D < 0`. Any future `B_w`-based cycle attack must be sign-sensitive; any ±`D`-symmetric argument is dead on arrival with 3n−1 as witness.
+
+[JUDGEMENT] Verdict: A1+A3 reformulate cycles but exclude nothing. The counting view reproduces the classical doorway (`D|B_w` forces `m/k ≈ log₂3`), but the missing engine — lower bounds for `|2^m − 3^k|` — belongs to Diophantine approximation, which this programme does not own. Honest play: timeboxed lemma hunt aimed below the literature, with a pre-registered kill.
+
+## 2. Ranked directions (probabilities [JUDGEMENT]; details in [REDIRECT.md](/home/mdp/muse-work/cp23-redirect/REDIRECT.md))
+
+| # | ID | Direction (cat.) | P | Cost |
+|---|---|---|---|---|
+| 1 | D4 | Mandatory 3n−1/5n+1 analogue filter (b) | 0.9 | days |
+| 2 | D9 | Join ccchallenge.org as auditors (d) | 0.8 | days |
+| 3 | D10 | Preprint negatives + chain-kill; outside experts (e) | 0.6 verdict | weeks |
+| 4 | D3 | Cycle lemma-or-kill, 2-week timebox (b) | 0.4 scoped / 0.05 full | 2 wks |
+| 5 | D11 | Publish failure library + dataset, stop proving (f) | 0.85 | weeks |
+| 6 | D8 | Lean the kernel A1–A3,A5,A7,A8 (d) | 0.7 | months |
+| 7 | D7 | Pure parity-word combinatorics paper, no Collatz claims (c) | 0.3 | weeks |
+| 8 | D5 | Terras-type stopping-time density from census (b) | 0.5 | weeks |
+| 9 | D2 | Weakened averaged mixing for almost-all (a) | 0.15 | weeks |
+| 10 | D6 | 2-adic ergodic theory beyond literature (c) | 0.2 | months |
+| 11 | D12 | Full stop + archive (f) | baseline | zero |
+| 12 | D1 | Grind current target to proof (a) | 0.05 | months |
+
+[JUDGEMENT] D4 is first: it already produced this session's largest finding at minutes of compute; institutionalising it costs ~nothing and blocks years of false-generality work. [JUDGEMENT] D9 is second: exact complementary fit — the programme owns audit methodology with zero formalisation, the ecosystem owns 375 sources with zero auditors — days of cost, near-certain useful output. [JUDGEMENT] D10 is third: the crisis is direction, not effort (63 kills prove effort is abundant); only outside review converts that record into a verdict, and its cheapest test (draft the abstract crisply or admit unreadiness) is free. [JUDGEMENT] D3 is the sole technical bet because it alone evades B1+B2. [JUDGEMENT] D1 ranks below stopping: A9 shows the needed ingredient is unidentified, and the chain-kill zeroes its chained value — grinding has negative expected value.
+
+Each direction's write-up (idea, payoff, cheapest test, probability, nearest dead path and why it differs) is in [REDIRECT.md](/home/mdp/muse-work/cp23-redirect/REDIRECT.md). Two notes: [EXACT COMPUTATION] fixed-`s` energy shows no decay to `m=16` (`s=1` bounces in 2–8.3, `s=2,3` noisy/growing), which demotes D2's motivation without refuting asymptotics. [JUDGEMENT] D5/D7/D8 survive because they claim only statistical or proved things, where B1/B2 don't bite.
+
+## 3. Cheap kill ([analogue_kill.py](/home/mdp/muse-work/cp23-redirect/analogue_kill.py))
+
+[JUDGEMENT] Killed: "Ecal-mixing as a Collatz detector" — proving the target (or any symmetry-blind mixing statement) as a step toward excluding counterexamples.
+
+[PROOF] 3n+1 and 3n−1 share Ecal tables exactly: `Hp(−x) = −Hm(x)`, same-`B_w` affine form, odd residues paired `h ↔ 2^m − h`, endpoints mapped by `u ↦ −u + 3^k` under which `J_r` is invariant — hence identical Ecal per stratum for all `m,r` (modulo the standard word-periodicity lemma in the granted A1/A2 circle). [EXACT COMPUTATION] 45/45 `(m,r)` pairs match exactly, total and per-stratum. [EXACT COMPUTATION] Yet 3n−1 provably cycles (`Hm(1) = 1`; `5 → 7 → 10 → 5`), and 5n+1 mixes on 118/118 exact rows while provably 5-cycling (`1 → 3 → 8 → 4 → 2 → 1`).
+
+[FAIL] Mixing in exactly this programme's sense coexists with cycles, so no proof of the target can by itself exclude a cycle. The intended chain's step 3 is false as stated.
+
+## 4. Direct recommendation
+
+Freeze the mixing grind immediately and recharter the programme around falsification and outside contact: make the 3n−1/5n+1 analogue filter mandatory for every existing and future claim, give one researcher a two-week timeboxed attempt at a sign-sensitive cycle lemma with a pre-registered kill condition (kill it if the independence computation does not budge), and put everyone else on writing the failure-library plus chain-kill preprint and taking it to ccchallenge.org and two outside experts for audit and review, accepting in advance that if review confirms the chain is dead the programme closes with the write-up as its contribution.
+
+## Final JSON
+
+```json
+{
+  "gate_ok": true,
+  "gate_values": {"Ecal(4,3)": "40/3", "Ecal(5,2)": "31/3"},
+  "directions": [
+    {"id": "D4", "label": "[JUDGEMENT]", "category": "(b) retarget within Collatz", "idea": "Mandatory 3n-1/5n+1 analogue filter for every claim", "buys": "kills false generality in days; already yielded the chain-kill", "cheapest_test": "[EXACT COMPUTATION] done this session; institutionalise as ship-gate", "probability": 0.9, "resembles": "Lopez-Stoll bridge", "differs": "used as FALSIFIER, not bridge", "ev_rank": 1},
+    {"id": "D9", "label": "[JUDGEMENT]", "category": "(d) verification", "idea": "Join ccchallenge.org as auditors with the programme's audit methodology", "buys": "outside eyes + formalisation infrastructure; exact complementary fit (375 sources, 0 auditors)", "cheapest_test": "one email plus one audited formalisation", "probability": 0.8, "resembles": "none; first outside-eyes move ever", "differs": "n/a", "ev_rank": 2},
+    {"id": "D10", "label": "[JUDGEMENT]", "category": "(e) outside eyes", "idea": "Preprint the negatives + chain-kill; send to 2-3 experts", "buys": "a verdict (rescue or clean kill); ends the direction crisis", "cheapest_test": "draft the abstract crisply or admit unreadiness (free)", "probability": 0.6, "resembles": "none; review never sought", "differs": "n/a", "ev_rank": 3},
+    {"id": "D3", "label": "[JUDGEMENT]", "category": "(b) retarget within Collatz", "idea": "Sign-sensitive cycle lemma-or-kill, 2-week timebox", "buys": "the only technical bet evading B1+B2; a genuine Collatz lemma if it hits", "cheapest_test": "[EXACT COMPUTATION] independence stats (done: no enrichment) + sign-regime lemma attempt", "probability": 0.4, "resembles": "forward-T7r (circular counting)", "differs": "finite Diophantine target, evades B1+B2", "ev_rank": 4},
+    {"id": "D11", "label": "[JUDGEMENT]", "category": "(f) stop and write up", "idea": "Publish the 63-kill failure library + 239-row dataset as the contribution", "buys": "citable anti-false-path value for the field", "cheapest_test": "table of contents plus one witness entry", "probability": 0.85, "resembles": "none", "differs": "negative results AS the deliverable", "ev_rank": 5},
+    {"id": "D8", "label": "[JUDGEMENT]", "category": "(d) verification", "idea": "Lean the proved kernel A1-A3,A5,A7,A8", "buys": "permanence; machine-checked auditability", "cheapest_test": "formalise A1 in one sitting, recalibrate on time", "probability": 0.7, "resembles": "A10 audit methodology", "differs": "machine-checked, not human-checked", "ev_rank": 6},
+    {"id": "D7", "label": "[JUDGEMENT]", "category": "(c) outside Collatz", "idea": "Pure parity-word combinatorics paper from A3/A4, zero Collatz claims", "buys": "publishable regardless of Collatz", "cheapest_test": "novelty check vs Applegate-Lagarias/Terras plus draft statements", "probability": 0.3, "resembles": "Christoffel-word extremality", "differs": "claims only already-proved facts", "ev_rank": 7},
+    {"id": "D5", "label": "[JUDGEMENT]", "category": "(b) retarget within Collatz", "idea": "Reprove Terras-type stopping-time density from the census", "buys": "validation + publication; honestly statistical so B1/B2 do not bite", "cheapest_test": "[EXACT COMPUTATION] stopping-time distribution to m=20 vs classical", "probability": 0.5, "resembles": "direct Tao/Si transfer", "differs": "aims BELOW Tao (classical), not above", "ev_rank": 8},
+    {"id": "D2", "label": "[JUDGEMENT]", "category": "(a) continue target", "idea": "Weakened averaged/asymptotic mixing for an almost-all theorem", "buys": "Tao-adjacent publishable partial result", "cheapest_test": "[EXACT COMPUTATION] fixed-s trend to m=16 shows NO decay; motivation demoted", "probability": 0.15, "resembles": "naive Fourier decay (killed: coefficient >= 1/2)", "differs": "needs only averaged decay; B1 still bites", "ev_rank": 9},
+    {"id": "D6", "label": "[JUDGEMENT]", "category": "(c) outside Collatz", "idea": "2-adic ergodic theory: what A1-A4 add beyond literature", "buys": "a theorem where statistics IS the goal (B1 moot)", "cheapest_test": "literature check plus one lemma attempt", "probability": 0.2, "resembles": "none", "differs": "n/a", "ev_rank": 10},
+    {"id": "D12", "label": "[JUDGEMENT]", "category": "(f) stop and write up", "idea": "Full stop and archive", "buys": "opportunity cost saved; baseline that grinding must beat", "cheapest_test": "n/a", "probability": 1.0, "resembles": "none", "differs": "n/a", "ev_rank": 11},
+    {"id": "D1", "label": "[JUDGEMENT]", "category": "(a) continue target", "idea": "Grind the current one-step target to proof", "buys": "the conjecture; chained value ~0 after chain-kill", "cheapest_test": "already running via specialists; A9 says the needed ingredient is unidentified", "probability": 0.05, "resembles": "all 63 dead paths", "differs": "no structural difference — that is the indictment", "ev_rank": 12}
+  ],
+  "cycles_finding": {
+    "label": "[EXACT COMPUTATION]",
+    "equation": "cycle(m,k) => x = B_w/(2^m-3^k), D>0, D|B_w, quotient word == w",
+    "structural_mismatch": "[PROOF] gcd(D,6)=1 always; A2/A3 control 2-/3-adic data only",
+    "scan": "m<=12 plus {14,16,18,20}: only trivial-cycle words D-divisible; zero nontrivial cycles (mechanism demo, never a bound)",
+    "independence": "D-divisibility at/below chance on small-D strata; conditioning on A3 class never enriches (cond_max=0 at n>=6)",
+    "sign_constraint": "[PROOF] 3n-1 shares B_w; its cycles live at D<0, so any attack must be sign-sensitive",
+    "verdict": "[JUDGEMENT] A1+A3 reformulate cycles but exclude nothing; the missing engine is Diophantine approximation the programme does not own"
+  },
+  "top_three": ["D4", "D9", "D10"],
+  "top_three_defense": "[JUDGEMENT] D4 already produced this session's largest finding at minutes of compute and blocks years of false-generality work at ~zero cost. D9 is an exact complementary fit (audit methodology for a 0-auditor queue) with days of cost and near-certain useful output. D10 is the only move that converts 63 kills into a verdict, because the crisis is direction, not effort.",
+  "direct_recommendation": "Freeze the mixing grind immediately and recharter the programme around falsification and outside contact: make the 3n-1/5n+1 analogue filter mandatory for every existing and future claim, give one researcher a two-week timeboxed attempt at a sign-sensitive cycle lemma with a pre-registered kill condition (kill it if the independence computation does not budge), and put everyone else on writing the failure-library plus chain-kill preprint and taking it to ccchallenge.org and two outside experts for audit and review, accepting in advance that if review confirms the chain is dead the programme closes with the write-up as its contribution.",
+  "cheap_kill": {
+    "label": "[FAIL]",
+    "target": "Ecal-mixing as a Collatz detector (mixing => no counterexamples)",
+    "witness": "3n+1 and 3n-1 share Ecal exactly on 45/45 pairs (total and per-stratum, plus proof) yet 3n-1 provably cycles (1 fixed; 5-7-10-5); 5n+1 mixes on 118/118 exact rows yet provably 5-cycles (1-3-8-4-2-1)",
+    "script": "/home/mdp/muse-work/cp23-redirect/analogue_kill.py"
+  },
+  "files": [
+    "/home/mdp/muse-work/cp23-redirect/gate_check.py",
+    "/home/mdp/muse-work/cp23-redirect/cycle_analysis.py",
+    "/home/mdp/muse-work/cp23-redirect/analogue_kill.py",
+    "/home/mdp/muse-work/cp23-redirect/REDIRECT.md"
+  ]
+}
+```
