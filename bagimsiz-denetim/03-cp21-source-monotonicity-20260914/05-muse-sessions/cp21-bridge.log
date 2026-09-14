@@ -1,0 +1,110 @@
+tbh: reasoning effort ultra is not available (gate ultra_reasoning_effort is closed); using xhigh
+muse: workspace root: /home/mdp/muse-work/cp21-bridge (cwd default)
+muse: Agent delegation: auto unavailable: workspace is untrusted.
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+# BRIDGE — connections and ranked options
+
+## GATE
+
+[EXACT COMPUTATION] Copied `ref/source_defect_round7.py` to scratch and ran it unmodified. Reproduced **exactly**: prescribed_cases 108, posthoc_cases 47, positive_lift_cases 5, min_M_over_L_positive "17/8", generic_counterexample_output_over_input "10/9" (~10 s). Gate **PASS** — everything below builds on verified numbers.
+
+Conventions: every statement below carries its label. Every finite table cited is a finite table only, **never a uniform theorem**. All claimed identities were checked on ≥20 exact cases (counts given); a second implementation that does not import the first cross-checks each headline.
+
+## 1. L_lift vs Lemma L: same phenomenon? — Verdict: NO
+
+[NUM] I recomputed log₂3 to 80 digits (Decimal): CF = [1; 1,1,2,2,3,1,5,2,23,2,2,1,1,…], convergent denominators 1,1,2,5,12,41,53,306,665,15601,31867,79335,…. All five Lemma-L landmarks (53, 306, 15601, 31867, 79335) confirm as convergent denominators — the background checks out, but that is where the agreement ends.
+
+[EXACT COMPUTATION] Per-stratum lift L_k via two independent routes (transfer-energy difference vs autocorrelation shift formula) agreeing on all 110 rows (m=2..18, s≤min(8,m−1), plus (10,9),(11,9)). Positive-L_k strata of the five positive rows:
+
+- (4,2): k=2 (8/3). (8,2): k=4,5,6. (10,2): k=2,4,5,9. (10,9): k=6,8. (11,9): k=6,7,8,9.
+
+[NUM] + [EXACT COMPUTATION] Convergent denominators in range are {1,2,5,12}. Positive strata include k=4,6,8,9 with {kα}-distance to nearest integer 0.34, 0.49, 0.32, 0.26 — large. The best-approximated k=12 (dist 0.0196) is unremarkable (7/37 positive), k=2 (a convergent!) is the *least* positive stratum anywhere (2/38, 5%), and k=1 is structurally zero on all 110 rows ([PROOF]: n₁=1 single-delta mass, shift 3≢0 mod N). Meanwhile non-convergent k=11,13 lead (34%, 48% positive rate). Census table is finite — not a theorem — but the direction is anti-correlation if anything.
+
+[DIAGNOSTIC] The two mechanisms are arithmetically different objects: Lemma L is 2-adic divisibility (2^A(W) | index gaps) forcing gaps in an *infinite orbit*; L_lift is signed sampling of a *spatial* autocorrelation at the modular shift 3^k mod 2^(s+1). Worse, Lemma L lives at scales q≥53, beyond every stratum of the m≤24 grid — the overlap region (k≤18) shows no signal. **Do not chase this bridge; bank it as a separation (option 6).**
+
+## 2. L_lift vs E0 conductor-3 obstruction — Verdict: NO (shared theme only)
+
+[EXACT COMPUTATION] For the five rows (N, ord_N(3), m): (4,2): 8,2,4 — wraps. (8,2),(10,2): same N, wrap. (10,9),(11,9): 1024,256,10/11 — no wrap, all shifts distinct. Positivity occurs in **both** regimes, so wrap/order structure does not gate it.
+
+[EXACT COMPUTATION] Full-orbit scan C_k(3^j)−C_k(3^j+q): at s=2 the orbit is trivial (2 points). At s=9 the gauge shift ranks **44–134 out of 256** in its own orbit (e.g. (10,9) k=6: value 1 vs max 69) — the 3^k shift is utterly undistinguished there. Large-s lift is sparse-regime q-amplification: caps ≤4 (mostly 1–2), unit orbit diffs × q=512 (e.g. (10,9) k=8: C=1/0 → L=128/9). Small-s lift is the opposite: dense (cap up to 19), big C, q=4.
+
+[DIAGNOSTIC] E0's floor is uniform, always-on, magnitude ≥1/2 at all scales; L_lift is rare (5/155), signed (negative far more often than positive at every k), regime-dependent. A magnitude floor cannot be the same object as a sign-indefinite sampling. Caveat: no 8B3 files exist in my workspace, so this compares against the one-line E0 summary — flag as partially sourced (see §5).
+
+## 3. Task-6 repeat mechanism transferred — Verdict: PARTIAL (divisibility transfers, counting does not)
+
+[PROOF] New exact lemma (from R-affine + word↔start bijection): for distinct same-weight words, **v2(B_w−B_{w′}) = v2(h_w−h_{w′})**. Proof: 2^mΔE = 3^kΔh+ΔB; write Δh=2^u·s (s odd, 1≤u≤m−1); then ΔB=2^u(odd), done. [EXACT COMPUTATION] Verified on 25,816 pairs (m=6,8,10), B odd everywhere; colliding-pair census is monotone in r, stabilizing at the exact-equality floor (m=10,k=5: 15876→170). Pair-census vs histogram C: 28/28 agree; bridge_a L_k headlines re-verified stratum-by-stratum.
+
+[DIAGNOSTIC] The transfer **fails at the counting step**: Task 6 needs an infinite sequence with polynomial growth to contradict exponential gap demands. Here starts are confined to [1,2^m) — finite universe — and the modulus 2^(m+r) outgrows it, so the constraint migrates into B-differences, whose odd-cancellation distribution no reachability invariant constrains. The only derivable bound collapses to |L_k| ≤ q·cap_s ([PROOF], 1440/1440 exact cases — finite check of a proved bound): true but useless — tightness max 2/3 at (4,2,2), and 1/252 where it matters ((10,9) k=6). **GAP (stated, not papered over): control of Δ=N_d−N_{d+q} beyond the triangle bound.** The generic (3,2) witness proves no bound of this shape works without deeper word-level structure.
+
+## 4. RANKED OPTIONS for the next round
+
+Ranked by (value if true)/(risk). Finite-evidence items are labeled as such.
+
+### Option 1 — Extend candidate B beyond s=2 (reproduce, then s=3,4)
+Statement: per-frequency defect Δ^(a) ≥ 0 ∀ odd a at s=3 (then s=4), or a witness killing B.
+Machinery: Round-5 gauge + exact arithmetic in Q(ζ₈)=Q(i,√2) (small exact type), then real cyclotomic fields.
+Effort: 1–2 days coding/compute; no missing lemma for the test itself.
+Payoff: highest in programme if true — localizes the whole lemma to one frequency, strictly stronger than (A).
+Likely failure: B's evidence (6 rows at s=2) is the thinnest in the programme; expect it to break at s≥3 exactly the way "s≥3 ⇒ L≤0" broke. A kill here is also first-class.
+
+### Option 2 — Falsification push on radius-2 to m≤28
+Statement: radius-2 charging holds to m≤28 (or an exact counterexample).
+Machinery: compiled (C/numba) source enumerator; my independent recheck already gives 0 violations on 110 rows at m≤18 (finite, not a theorem).
+Effort: ~1 day coding + hours of compute; pure falsification needs no lemma.
+Payoff: decisive either way — a kill saves the programme from a dead end; survival ×1000 in mass.
+Likely failure: enumeration wall near m~30 without new math; counterexample needs luck.
+
+### Option 3 — Bank the Lemma-L separation at full grid scale
+Statement: no convergent-denominator signal in L_k for k≤24; the mechanisms sit at disjoint scales.
+Machinery: §1 analysis rerun with a compiled enumerator to match (A)'s m≤24 scope.
+Effort: hours. Payoff: stops future bleed into a wrong bridge. Likely failure: none (finite check); must not be over-claimed as a theorem.
+
+### Option 4 — Two-regime proof scaffold (the actual M≥L attempt)
+Statement: split L^+ into sparse-regime (collision-floor × q) and dense-regime (cap/concentration) pieces, each charged to adjacent M.
+Machinery: §2 regime finding + collision-decay census + v2-isometry + R-cap.
+Effort: 1–2 weeks of hard analysis; missing lemma is the §3 GAP.
+Payoff: the only listed route that could become a proof. Likely failure: the GAP — nothing bounds N_d−N_{d+q}, and (3,2) shows reachability-free bounds are hopeless; this line is probably a dead end unless option 5 delivers.
+
+### Option 5 — Which word-pairs collide (attack the GAP directly)
+Statement: (B_w−B_{w′})/2^u mod 2^t takes restricted values forcing N_d ≈ N_{d+q}.
+Machinery: 2-adic analysis of B_w via LTE.
+Effort: weeks, high difficulty. Payoff: closes the GAP, first reachability-native lift bound.
+Likely failure: B-differences may equidistribute — my s=9 orbit tables look uniform-ish — in which case no restriction exists and this line is dead; test equidistribution first (cheap) before investing.
+
+### Option 6 — Krawtchouk cross-term map (guide for option 4)
+Statement: identify the (ℓ,ℓ′) mode pairs carrying M−L on the grid.
+Machinery: Round-5 code + mode projection. Effort: days.
+Payoff: tells the prover where the slack lives. Likely failure: probably a dead end as proof route — slack looks diffuse (s=9 data) — useful only as a map, so keep it cheap.
+
+### Option 7 — Interval-supcap DP on solved cells
+Statement: min over real-support+cap+mass families of (interval supply−demand) ≥ 0 at (5,2),(5,3),(6,2),(6,3).
+Machinery: existing exact DP + interval bookkeeping. Effort: days + heavy compute; state explosion risk.
+Payoff: upgrades (A) from observation toward per-cell certificates. Likely failure: DP blowup; and per-cell minima compose across neither (m,s) nor intervals — certifies without proving. Probably not worth it before options 1–2 resolve.
+
+### Option 8 — Execute sealed E7 (out of lane, listed for completeness)
+Statement: |E[F_{r,4}|S_r=n_r]| ≤ 4/r via the Feynman–Kac block kernel.
+Machinery: B4-N1..N7 + stochastic block estimates (owns to the 8B3 team).
+Effort: weeks–months. Payoff: closes the analytic ladder independently of the source lemma.
+Likely failure: E0's proved ≥1/2 floor at conductor 3 threatens the target estimate itself — E7 must thread around a proved obstruction by unknown means; highest risk on this list.
+
+## 5. What I could NOT settle and why
+
+- Candidate B reproduction/extension: the per-frequency definition + exact cyclotomic setup exceeds this turn's budget; ranked as option 1 instead.
+- E0's exact statement: no 8B3 sources in my workspace; the E0 verdict leans on the prompt's summary — treat as partially sourced, though the discriminator (uniform magnitude vs rare signed) is robust to details.
+- Radius-2 recheck stops at m≤18 (110 rows; 0 violations): full m≤24 scope needs compiled enumeration (option 2).
+- The §3 GAP is genuine: odd-cancellation distribution of endpoint differences is unconstrained by every reachability invariant on hand.
+
+## 6. Files written
+
+- [bridge_a.py](/home/mdp/muse-work/cp21-bridge/bridge/bridge_a.py) — missions 1+2: CF/[NUM] diagnostics, per-k L_k (dual implementation), census, shift-class, conductor orbits.
+- [bridge_b.py](/home/mdp/muse-work/cp21-bridge/bridge/bridge_b.py) — mission 3: v2-isometry, pair census, decay, cap bound. Deliberately duplicates enumeration (second implementation, no shared imports).
+- [bridge_A_results.json](/home/mdp/muse-work/cp21-bridge/bridge/bridge_A_results.json) — per-k tables, census, conductor orbits.
+- [bridge_B_results.json](/home/mdp/muse-work/cp21-bridge/bridge/bridge_B_results.json) — isometry counts, decay table, tightness.
+
+```json
+{"gate_ok": true, "lemmaL_link": "no - positive strata ignore convergent denominators; s=9 gauge shift ranks 44-134/256 in own orbit", "E0_link": "no - E0 is a uniform always-on magnitude floor, L_lift is rare (5/155), signed and regime-dependent", "repeat_transfer": "partial - v2-isometry plus refinement hold exactly (25816 pairs) but counting step cannot transfer; bound degrades to useless cap bound", "ranked_options": [{"rank": 1, "statement": "per-frequency defect >=0 for all odd a at s=3 (then s=4), or an exact witness killing B", "machinery": "Round-5 gauge plus exact Q(zeta8) then real-cyclotomic arithmetic", "effort": "1-2 days coding/compute; no missing lemma for the test", "payoff": "localises whole lemma to one frequency; strictly stronger than radius-2", "likely_failure": "B has only 6 rows of evidence; expect breakage at s>=3 as with the last s>=3 conjecture"}, {"rank": 2, "statement": "radius-2 charging holds to m<=28 on real source, or an exact counterexample", "machinery": "compiled C/numba source enumerator", "effort": "~1 day coding plus hours of compute", "payoff": "decisive either way; kill saves programme, survival extends mass 1000x", "likely_failure": "enumeration wall near m~30; counterexample needs luck"}, {"rank": 3, "statement": "no convergent-denominator signal in L_k for k<=24; disjoint scales", "machinery": "section-1 analysis rerun with compiled enumerator", "effort": "hours", "payoff": "banks the separation, stops bleed into wrong bridge", "likely_failure": "none; finite check only, must not be over-claimed"}, {"rank": 4, "statement": "split L^+ into sparse-regime and dense-regime pieces each charged to adjacent M", "machinery": "two-regime finding plus collision census, v2-isometry, R-cap", "effort": "1-2 weeks hard analysis; missing lemma is the section-3 GAP", "payoff": "only listed route that could become a proof", "likely_failure": "the GAP: nothing bounds N_d-N_{d+q}; probably dead unless option 5 delivers"}, {"rank": 5, "statement": "(B_w-B_w')/2^u mod 2^t takes restricted values forcing N_d approx N_{d+q}", "machinery": "2-adic analysis of B_w via LTE; equidistribution pre-test first", "effort": "weeks, high difficulty", "payoff": "closes the GAP; first reachability-native lift bound", "likely_failure": "B-differences may equidistribute (s=9 orbits look uniform); then dead"}, {"rank": 6, "statement": "identify (ell,ell') mode pairs carrying M-L on the grid", "machinery": "Round-5 code plus mode projection", "effort": "days", "payoff": "map of where the slack lives, guides option 4", "likely_failure": "slack looks diffuse; map only, probably dead as proof route"}, {"rank": 7, "statement": "certified interval supply-demand minima over real-support+cap+mass families on 4 cells", "machinery": "existing exact DP plus interval bookkeeping", "effort": "days plus heavy compute; state-explosion risk", "payoff": "upgrades radius-2 toward per-cell certificates", "likely_failure": "DP blowup; minima compose across nothing; certifies without proving"}, {"rank": 8, "statement": "|E[F_{r,4}|S_r=n_r]| <= 4/r via sealed E7 Feynman-Kac block kernel", "machinery": "B4-N1..N7 plus stochastic block estimates (8B3 team)", "effort": "weeks-months", "payoff": "closes analytic ladder independently of source lemma", "likely_failure": "E0's proved >=1/2 floor threatens the target itself; highest risk on list"}], "files": ["bridge/bridge_a.py", "bridge/bridge_b.py", "bridge/bridge_A_results.json", "bridge/bridge_B_results.json"]}
+```
