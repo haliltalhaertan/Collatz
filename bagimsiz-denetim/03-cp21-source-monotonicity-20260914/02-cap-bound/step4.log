@@ -1,0 +1,24 @@
+=== STEP 4 VERIFICATION ===
+word pairs: 362099
+  T4a   checks=   362099 failures=0
+  T4b   checks=   362099 failures=0
+  T4c   checks=     1222 failures=0
+  T6    checks=     7938 failures=0
+  T7    checks=   362099 failures=0
+  T7r   checks=  2896792 failures=356259
+  T8    checks=     1222 failures=0
+TOTAL exact checks: 3993471  ANY FAILURE: True
+
+T4/T8 M-bound: cases=209 violations=0
+  M-bound tightness bound/actual: min 1.00  median 3.00  max 121.6
+  worst cell: (20, 6, 39, 4743)
+
+T5 cap-bound: cases=832 violations=0
+  strictly beats trivial n_k in 314 of 832 cells (38%)
+  tightness on those cells: min 1.00  median 4.00  max 139.2
+  tightest cell (m,k,r,actual,bound): (3, 2, 3, 1) 1
+  loosest cell (m,k,r,actual,bound): (14, 10, 9, 5) 696
+
+  stabilised regime (2^r >= 3^k-1): 308 cells, tightness min 1.00 median 1.00 max 20.2
+  T6 corollary cap<=2cap+2cap: cases=728 violations=14
+EXIT=0
