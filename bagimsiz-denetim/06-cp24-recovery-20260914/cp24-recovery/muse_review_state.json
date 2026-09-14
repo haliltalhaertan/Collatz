@@ -1,0 +1,23 @@
+{
+  "workspace": "/home/mdp/muse-work/cp24-scope-review-1789394391712288530",
+  "started": 1789394391.9095132,
+  "pid": 441,
+  "exit_code": 0,
+  "elapsed_s": 311.17,
+  "inputs_unchanged": true,
+  "artifacts": {
+    "AUDIT.md": {
+      "bytes": 10059,
+      "sha256": "8f0efd37dfd9c1e669252c30ac18bd20a1791c818eb231949d4a9ac8d1663eed"
+    },
+    "checks.py": {
+      "bytes": 8704,
+      "sha256": "297d58f81c03dff2af092d6b74639892465d676964aca7b88c1be69ed8bde02c"
+    },
+    "final_summary.json": {
+      "bytes": 1285,
+      "sha256": "9e9f0d8b9a897dc35108d4588d7a4ce7faebad7ee4ec0ab458870dcb937cefc2"
+    }
+  },
+  "all_required_artifacts_present": true
+}

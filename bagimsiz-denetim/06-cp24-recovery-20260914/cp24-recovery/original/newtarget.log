@@ -1,0 +1,3 @@
+muse: workspace root: /home/mdp/muse-work/cp24-newtarget (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)

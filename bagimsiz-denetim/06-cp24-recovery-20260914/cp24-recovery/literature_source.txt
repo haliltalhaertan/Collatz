@@ -1,0 +1,20 @@
+arXiv is now an independent nonprofit! [Learn more](https://info.arxiv.org/about) ×
+arXiv logo Back to arXiv
+[Why HTML?](https://info.arxiv.org/about/accessible_HTML.html) Report Issue Back to Abstract Download PDF
+[License: CC BY-NC-ND 4.0](https://info.arxiv.org/help/license/index.html)
+arXiv:2502.00948v5 [math.GM] 17 May 2026
+
+# Paradoxical behavior in Collatz sequences
+Olivier Rozier Claude Terracol
+
+## Abstract
+On the set of positive integers, we consider the iterative process that maps $n$ to either $\frac{3n+1}{2}$ or $\frac{n}{2}$ depending on the parity of $n$ . The Collatz conjecture states that all such sequences eventually enter the trivial cycle $(1,2)$ .
+In a seminal paper, Terras further conjectured that the proportion of odd terms encountered when starting with an integer $n\geq 2$ is sufficient to determine its stopping time, namely, the number of iterations needed to descend below $n$ .
+
+...
+
+## Instructions for reporting errors
+We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+methods listed below:
+* Click the "Report Issue" () button, located in the page header.
