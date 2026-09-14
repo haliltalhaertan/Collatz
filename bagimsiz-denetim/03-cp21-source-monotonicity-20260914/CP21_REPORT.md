@@ -213,6 +213,22 @@ it was only ever an observed fact. CP21 attacked it via the 2-adic isometry
 
     v₂(B_w − B_w') = v₂(h_w − h_w')     (same-weight words; 4.36M exact pair checks, 0 failures)
 
+**The cap itself remains unproved.** But four supporting lemmas were proved along the way, each
+re-derived from scratch and re-verified by the lead researcher in independent code:
+
+| lemma | statement | independent re-verification |
+|---|---|---|
+| **T2** range | `1 ≤ e_w ≤ 3^k − 1` | 8,190 cases, 0 violations |
+| **T7** 3-adic criterion | `e_w = e_w'` ⟺ `B_w ≡ B_w' (mod 3^k)` | 68,887 pairs, 0 failures |
+| **T4** spread | `M(m,k) ≤ ⌊2^(m−k)(3^(k−1)−2^(k−1))/3^k⌋ + 1` | 135 cells, 0 violations, exact in 48 |
+| **T6** parent identity | `cap(m,k,r) ≤ 2·cap(m−1,k,r+1) + 2·cap(m−1,k−1,r+1)` | 3,224 array equalities, 714 cells, 0 violations |
+
+**T7 is the sharpest:** an endpoint collision is *exactly* a congruence of affine offsets mod `3^k`.
+
+> **Pitfall recorded.** A naive check of the T6 corollary reports **14 violations** — all at `m=2`,
+> where the parent level is absent from the table and `.get(key,0)` silently returns `0`, making the
+> bound vacuously `0`. Missing data, not violations. Filter to cells whose parent exists.
+
 ### 5.1 Two natural targets REFUTED
 
 * `cap ≤ 2^(m−r)` is **FALSE** — 123 counterexamples (e.g. `(m,k,r) = (2,1,3)`: cap 1 vs bound 0)
