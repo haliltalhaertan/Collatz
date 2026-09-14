@@ -58,6 +58,30 @@ corollary holds on 714 cells, 0 violations.*
 > returns `0`, making the bound vacuously `0`. These are **missing data, not violations**. Filter to
 > cells whose parent actually exists before reporting.
 
+### 2.1 T7r (general `r`) — the `iff` is FALSE `[FAIL]`
+
+`step4_3adic.py` labelled this `[PROOF]`:
+
+    e_w = e_w' (mod 2^r)  <==>  exists t, |t| <= (3^k-2)/2^r,  B_w - B_w' = 2^(m+r)*t (mod 3^k)
+
+Running the script gives **356,259 failures / 2,896,792 checks (12%)**. Lead's independent
+minimal counterexample: `(m,k,r) = (4,2,1)`, `h=1` vs `h=13`, `e=1` vs `e'=8` — the `t`-condition
+holds, the endpoints do not collide mod 2.
+
+**One direction survives, and it is the useful one** (lead, 17,808 checks):
+
+| direction | result |
+|---|---|
+| `e = e' (mod 2^r)` implies `exists t` | 2,032 ok, **0 broken** |
+| `exists t` implies `e = e' (mod 2^r)` | 2,032 ok, **2,143 broken** |
+
+The `t`-condition is **necessary, not sufficient** — the admissible `t`-range over-counts. Since an
+*upper* bound on the cap only needs the necessary direction, `Mbnd`/`capbnd` are unaffected (832
+cells, 0 violations). **Cite the forward implication; never cite the `iff`.**
+
+Lesson: this is the one claim in the checkpoint where an agent attached `[PROOF]` to a false
+statement. It survived undetected only because the script had never been run.
+
 ## 3. Two targets REFUTED `[EXACT COMPUTATION]`
 
 | target | verdict | evidence |
@@ -102,12 +126,12 @@ counting input the isometry does not supply.
 ## 6. Provenance
 
 This directory's agent session was interrupted (subscription quota) after `step5_refined.py` was
-written. The lead researcher ran `step3_bounds.py` and `step5_refined.py` to completion, and
-re-derived T2, T7, T4 and T6 from scratch in independent code rather than trusting the scripts.
-`step4_3adic.py` was left unrun: its `T7r` loop iterates over a range of size `~3^13`, which does
-not terminate in reasonable time. Its *conclusions* (the `Mbnd`/`capbnd` tables, the T6 corollary)
-were evaluated separately by the lead and are reported above; its `T7r` general-`r` claim is
-therefore **NOT verified** and must not be cited.
+written. The lead researcher ran `step3_bounds.py`, `step5_refined.py` and `step4_3adic.py` to
+completion, and re-derived T2, T7, T4, T6 and T7r from scratch in independent code rather than
+trusting the scripts. `step4_3adic.py` is slow (its `T7r` loop is wide) but does terminate — an
+earlier note in this report claiming it does not was wrong and is corrected here. **Running it is
+what exposed T7r (§2.1): the agent had labelled a false statement `[PROOF]`, and only execution
+caught it.**
 
 ## 7. Status summary
 
@@ -115,7 +139,7 @@ therefore **NOT verified** and must not be cited.
 |---|---|
 | Isometry `v2(B-B') = v2(h-h')` | `[PROOF]`, 4.36M checks |
 | T2 range, T7 3-adic criterion, T4 spread, T6 parent identity | `[PROOF]`, all re-verified independently |
-| T7r (general `r` criterion) | **unverified** — script never ran |
+| T7r (general `r` criterion) | **`iff` REFUTED** — 12% failure; forward direction holds |
 | Stabilisation `2^r >= 3^k - 1` | `[EXACT COMPUTATION]`, 312 + 65 independent |
 | `cap <= 2^(m-r)`, `cap <= C` | `[FAIL]` — refuted |
 | **A proved bound on the cap** | **`[CONJECTURE]` — still open** |

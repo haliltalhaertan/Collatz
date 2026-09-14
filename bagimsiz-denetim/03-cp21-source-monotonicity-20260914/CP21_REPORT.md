@@ -229,6 +229,27 @@ re-derived from scratch and re-verified by the lead researcher in independent co
 > where the parent level is absent from the table and `.get(key,0)` silently returns `0`, making the
 > bound vacuously `0`. Missing data, not violations. Filter to cells whose parent exists.
 
+**T7r (general `r`) — the stated `iff` is FALSE `[FAIL]`, but one direction survives and it is the
+direction that matters.** The script asserted
+
+    e_w = e_w' (mod 2^r)   <==>   exists t, |t| <= (3^k-2)/2^r,  B_w - B_w' = 2^(m+r)*t  (mod 3^k)
+
+Run to completion it gives **356,259 failures out of 2,896,792 checks (12%)**. Independently
+re-derived by the lead: the minimal counterexample is `(m,k,r) = (4,2,1)`, words `h=1` and `h=13`
+with `e=1`, `e'=8` — the `t`-condition holds while the endpoints do **not** collide mod 2.
+
+Splitting by direction (lead, 17,808 checks):
+
+| direction | result |
+|---|---|
+| `e = e' (mod 2^r)` implies `exists t` | **2,032 ok, 0 broken** — holds |
+| `exists t` implies `e = e' (mod 2^r)` | 2,032 ok, **2,143 broken** — fails |
+
+So the `t`-condition is **necessary but not sufficient**: the admissible `t`-range is too generous
+and over-counts. Crucially, **an upper bound on the cap only needs the necessary direction**, which
+is why `Mbnd`/`capbnd` survive intact (832 cells, 0 violations) despite the `iff` being false.
+The `iff` must be struck from the record; the forward implication may be cited.
+
 ### 5.1 Two natural targets REFUTED
 
 * `cap ≤ 2^(m−r)` is **FALSE** — 123 counterexamples (e.g. `(m,k,r) = (2,1,3)`: cap 1 vs bound 0)
