@@ -1,28 +1,29 @@
 {
   "active_integrator": {
-    "holder": "codex-cross-terms-20260912",
-    "scope": "User-authorized three-agent continuation, exact finite probes and archive/publication; no sealed execution",
-    "base_commit": "984b036027eefc28ced620191878605e0eb756a4",
-    "acquired_at": "2026-09-12T16:12:08.527516+00:00",
-    "released_at": "2026-09-12T16:12:08.527516+00:00",
+    "holder": "hermes-cp23-cp24-continuity-20260920",
+    "scope": "Integrate accepted CP23/CP24 scope repair, executable analogue diagnostic, continuity metadata and open the CP25 sign-sensitive pilot; no Collatz proof claim",
+    "base_commit": "4dad2698205863600f775b5f4955e8b6608e4f36",
+    "acquired_at": "2026-09-20T20:30:04.419183+00:00",
+    "released_at": "2026-09-20T20:30:04.419183+00:00",
     "status": "RELEASED"
   },
   "active_task": {
-    "code": "CP20_EXPLORATORY_CROSS_TERMS_20260912",
-    "name": "Exact even cross-term closure and reflection decomposition",
-    "stage": "ACCEPTED",
-    "objective": "Accept E=NB, positive reflection decomposition and one-step factor-two bound. Scalar iteration is no better than the known trivial bound; uniform W/D2/Collatz remain OPEN.",
-    "scientific_route_change": false
+    "code": "CP25_SIGN_SENSITIVE_CYCLE_PILOT_20260920",
+    "name": "Sign-sensitive affine cycle equation pilot",
+    "stage": "STAGE_0_READY_NOT_DISPATCHED",
+    "objective": "Test whether the sign of 2^m-3^k plus exact integrality and parity-word realisability separates positive 3n+1 cycle candidates from positive 3n-1 candidates; finite evidence is not proof and novelty is unassessed.",
+    "scientific_route_change": true
   },
   "archive": {
     "budget_policy": {
       "canonical_main_policy": "small reports/JSON/hashes/manifests/Drive identifiers/small reproducibility source only; no duplicated sealed PDFs/source archives/Stage-0 seal ZIPs; no historical deletion for headroom",
-      "github_builder_hard_limit_bytes": 100000000,
+      "github_builder_hard_limit_bytes": 104857600,
       "large_stage1_package_drive_file_id": "1PqiwA2CnnXuA6ZkjM7edaKdSBqB1CYXN",
       "large_stage1_package_drive_folder_id": "1MfxD3sXu3j-Op7jlbS9umNefzhb2--7f",
       "large_stage1_package_drive_readback": "PASS",
       "large_stage1_package_materialized_on_main": false,
-      "large_stage1_package_sha256": "978d8b90c58131dcf350699920a241fee7a7d7b4c2abeff5cb1ea45da96e120e"
+      "large_stage1_package_sha256": "978d8b90c58131dcf350699920a241fee7a7d7b4c2abeff5cb1ea45da96e120e",
+      "next_growth_action": "Before a future build reaches 100 MiB, migrate to hash-manifested split volumes, base+overlay, Git LFS, or a release/Drive artifact; do not omit historical evidence."
     },
     "build_record": "CURRENT_ARCHIVE_BUILD.json",
     "current_archive": "Collatz_Research_Archive_CURRENT.zip",
@@ -310,13 +311,15 @@
     "literature_transfer_stage1_result": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
     "current_integration_decision": "research_manager/decisions/INTEGRATED_RESEARCH_MUSE_W_2026-09-12.json",
-    "current_exploratory_decision": "research_manager/decisions/CROSS_TERMS_2026-09-12.json"
+    "current_exploratory_decision": "research_manager/decisions/CP23_CP24_CHAIN_KILL_INTEGRATION_AND_CP25_SIGN_SENSITIVE_PILOT_2026-09-20.md",
+    "archive_limit_decision": "research_manager/decisions/ARCHIVE_LIMIT_100_MIB_CLARIFICATION_2026-09-20.md",
+    "analogue_gate_lf_repair_decision": "research_manager/decisions/ANALOGUE_GATE_LF_CANONICALIZATION_REPAIR_2026-09-20.md"
   },
   "integrity": {
     "archive_members": [
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CONTINUITY/START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "3f54c5eb5f60e51cb645394be28cb92b52ae181800c39891c418e6b72c9af0a1"
+        "sha256": "0e3f46488d6df000b71f9fc1433b69646923a4415652de79d3804c91b0b8e0a1"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_COMPLETE_PACKAGE.zip",
@@ -359,6 +362,18 @@
         "sha256": "3d0321a2b9d2d04efbe7b80a17704f12c6e1ab2e1ee2a9dcbb12f66fee72bb67"
       },
       {
+        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.json",
+        "sha256": "efda35345d58ee1a0109dbb47b25ef4001c894d449c536ce62ac4ac56117bd1e"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
+        "sha256": "81f8908bc15b2b03c9db4f214831b7c73a1116a3b6d50e003597a3e0575ad0c7"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt",
+        "sha256": "0ccdbad263ac7960fa6052cfba9f108abe466279117c3577c025faa322fd61a5"
+      },
+      {
         "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
         "sha256": "9c99922b314523090444ea4f665015b4e161eb48c151b3c6a054331601306a45"
       },
@@ -367,8 +382,28 @@
         "sha256": "ee298f410355cea4b1e60cdd065a7165a407ffab577c9841b299a2d9a3e43889"
       },
       {
+        "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/ANALOGUE_GATE.md",
+        "sha256": "0549efc768ec0c818882296f65b479fd10c321fb523f8af7bd995ae3aaf2a3e5"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/analogue_gate.py",
+        "sha256": "85ef99abd977e315a4b56a5c4348b0a4e299d92e52b0822116a3368d7d4c9c60"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/analogue_gate_verdict.json",
+        "sha256": "a8ac85a4632339cdff6239b845083c1ae5f545965ce06945130aa028f93f6e52"
+      },
+      {
         "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/build_current_archive.py",
-        "sha256": "7a76cdd230d9c9dc4c547696e3ca2b6c977098f744d708ef4747219fa9e9bfc7"
+        "sha256": "e1f2ac02e22f9a5163b800834a540a6d998d8ea1c2b4d0db2977dc499310e171"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/test_analogue_gate.py",
+        "sha256": "5df5238478c912c8a17d9835f19dd9c481f91d7ef71b42852b6b1c7df573d62c"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/verify_handoff.py",
+        "sha256": "a5f1883ad52b57b01039684ca264b2208a8537f6951251609e15504212cce22b"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/CONTINUITY_PROTOCOL.md",
@@ -376,15 +411,35 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "894ddc04d459ace65c7bd5af280ff4d455d2af1798aae1778cc7e167abcf9dcd"
+        "sha256": "646010079d2219895061b51017b1ea2c9e1d131f655845d7e979c1bee863eba1"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
         "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"
       },
       {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/ANALOGUE_GATE_LF_CANONICALIZATION_REPAIR_2026-09-20.md",
+        "sha256": "e7842549487dccd93c4e7eeb92d997b6e1b36a1af6068181b359bdf9ab2cb41c"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/ARCHIVE_LIMIT_100_MIB_CLARIFICATION_2026-09-20.md",
+        "sha256": "cca8efab19036db53ac2f87aba5354d83589c649b3bfa4a5a587df22a45bc4c6"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_ACCEPTANCE_AND_CANONICALIZATION_2026-09-05.json",
+        "sha256": "04624fa439df3b608aadcaadd755d000634228a815fb8d679d367154d2f80f84"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
+        "sha256": "581dd6d09e2958c0f87a1498e51405a2541e52c42f97cf6cbaabca49811ec591"
+      },
+      {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_V1_INPUT_INTEGRITY_FAILURE_CLOSEOUT_2026-09-04.md",
         "sha256": "682397e979dd88c77e212d61450e1938cc5635db1f102bf0182b6751a71a74f0"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTION_2026-09-07.json",
+        "sha256": "bfb3d1532ac61cad496a4723dfde459bc6fc743805071751503c6480edbd276b"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
@@ -403,12 +458,28 @@
         "sha256": "4a0435415330453ca919272734a8c5bfa27f11781f9c37d6b9401eb849b58990"
       },
       {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP23_CP24_CHAIN_KILL_INTEGRATION_AND_CP25_SIGN_SENSITIVE_PILOT_2026-09-20.md",
+        "sha256": "c0e01db36f18d1a4592ba529de6fb2b5d712cea192e9f8c60d8b1397d537184b"
+      },
+      {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/prompts/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_REPAIR_RESEAL_PROMPT_2026-09-04.md",
         "sha256": "e42037247ae915f829ec2b1eaae37c6466c23031a23bdcf7b6c759da5761e174"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/prompts/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MANAGER_AUTHORIZATION_PROMPT_2026-09-04.md",
         "sha256": "5f51efc062d96a6dd6cd6f51e02248f7cb72adcf945a469eb9ab372ca1ca03a9"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_TRANSACTION_2026-09-05.json",
+        "sha256": "6c9500f619651965520c328b07c7161a9a32e7c69afb2820871cf0522be41f41"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_A_READBACK_2026-09-05.json",
+        "sha256": "ce0c22e8837b4e9b43d05deef364160cd28e15c33f399329dc1078e9c4bb2f6a"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_B_READBACK_2026-09-05.json",
+        "sha256": "31ccfebaac0cd406661bc3c5af4a7aa735b1253949575a3c7deda9c5eedac2ce"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_V1_MAIN_PLACEHOLDER_REVERT_PROVENANCE_2026-09-04.json",
@@ -437,82 +508,6 @@
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_RUN_WITNESS_AS_PRODUCED.json",
         "sha256": "2f15a06d765d728706903a17671b25e0b90ee0decb19b9dd2cd1e59294ec7675"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SEAL.zip",
-        "sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SHA256SUMS.txt",
-        "sha256": "f486d82365ca77066b328660bf48cd891eacb8aeed7a439d8bfc67b87d5b9276"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PROJECT_DEFINITIONS.md",
-        "sha256": "7a8cdb45e31ff03a337e8cf4378c5326af4f47f736dbc3925ee9e357f821e007"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json",
-        "sha256": "ef1f46e57e5dcbc3755be10a090148fa8a803378dffb1bb7cc276ceebbf0cab6"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py",
-        "sha256": "7114fe2c56004a344c05e56cac305e593077eac43aa09ac084a196d1378ad4e2"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDIT_STOP.md",
-        "sha256": "ae3b4fc9b734ce2585ce0ba8d22971c4f5246eacdd8f0fac97f3429867a5664b"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_DRIVE_PERSISTENCE_RECORD.json",
-        "sha256": "20728c931a51d7bac395ada0f6a982104603c83cc5f06da73d6e2a2aa789c87d"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_INDEPENDENT_FINITE_PHASE.py",
-        "sha256": "a6384e10c11b1e7b61183d1009811eaed4837112666c715bfca70f9d8df106b4"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MECHANICAL_RESULTS.json",
-        "sha256": "f69ccb877bc340745078217c226ec2744c1eed3d1222ff89868d72a8e1ada9a8"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PACKAGE_RECORD.json",
-        "sha256": "a5b6cba99e55604cb102551c95ed1ffcb4f53634b354e5e407b748ab00ff48a2"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PROVENANCE.json",
-        "sha256": "323d6bca730a92a0c08863922e938902a9d0a9f70caf118698be2755879533e7"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
-        "sha256": "f194c227e880b8b7370d28379abd8db2bf535663ccb74ec075b6efb224c1c841"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_RESULT.json",
-        "sha256": "7d1b2defa4e4a9f5f2cb6a2ff63bbaf6a265aa6b12cfe427101a2f5e779cef3f"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_SHA256SUMS.txt",
-        "sha256": "f8afcf1778722bd8715a78792d9855c65c0849c8fc722f00096fd67bc6c9d4c4"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_ACCEPTANCE_AND_CANONICALIZATION_2026-09-05.json",
-        "sha256": "04624fa439df3b608aadcaadd755d000634228a815fb8d679d367154d2f80f84"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
-        "sha256": "581dd6d09e2958c0f87a1498e51405a2541e52c42f97cf6cbaabca49811ec591"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_TRANSACTION_2026-09-05.json",
-        "sha256": "6c9500f619651965520c328b07c7161a9a32e7c69afb2820871cf0522be41f41"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_A_READBACK_2026-09-05.json",
-        "sha256": "ce0c22e8837b4e9b43d05deef364160cd28e15c33f399329dc1078e9c4bb2f6a"
-      },
-      {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_B_READBACK_2026-09-05.json",
-        "sha256": "31ccfebaac0cd406661bc3c5af4a7aa735b1253949575a3c7deda9c5eedac2ce"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_AUTHORIZATION_BASE_SELF_REFERENCE_REPAIR_RECORD.json",
@@ -579,6 +574,14 @@
         "sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403"
       },
       {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json",
+        "sha256": "1997355b8cc2c505df44175b2467598b0e96ded41ab0e45bf9c4d5b6e06ec30a"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt",
+        "sha256": "fad5d23d92ba219aeb6057aaa6c70ed798d79b1229f9a31a261cbcbb1f9d5f34"
+      },
+      {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA.json",
         "sha256": "2edf4198adeeb65602d3d8259c429a1853bc58ac5bd6c47e5e0e151283517795"
       },
@@ -611,38 +614,78 @@
         "sha256": "59c7c81511602469387160cdd5e737eb862b40fb91950ed599147ad2aa699bdd"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
-        "sha256": "81f8908bc15b2b03c9db4f214831b7c73a1116a3b6d50e003597a3e0575ad0c7"
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SEAL.zip",
+        "sha256": "403633178f22f703d83f8e7ffaddc9e416a0d733eaa203f7b7cf796d343b7c79"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.json",
-        "sha256": "efda35345d58ee1a0109dbb47b25ef4001c894d449c536ce62ac4ac56117bd1e"
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SHA256SUMS.txt",
+        "sha256": "f486d82365ca77066b328660bf48cd891eacb8aeed7a439d8bfc67b87d5b9276"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/INDEPENDENT_AUDITS/CANONICAL_ZERO_TRUST/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt",
-        "sha256": "0ccdbad263ac7960fa6052cfba9f108abe466279117c3577c025faa322fd61a5"
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PROJECT_DEFINITIONS.md",
+        "sha256": "7a8cdb45e31ff03a337e8cf4378c5326af4f47f736dbc3925ee9e357f821e007"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/verify_handoff.py",
-        "sha256": "a5f1883ad52b57b01039684ca264b2208a8537f6951251609e15504212cce22b"
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0_FINAL_RECORD.json",
+        "sha256": "ef1f46e57e5dcbc3755be10a090148fa8a803378dffb1bb7cc276ceebbf0cab6"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/CP20_TASK8B3_E7R_B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTION_2026-09-07.json",
-        "sha256": "bfb3d1532ac61cad496a4723dfde459bc6fc743805071751503c6480edbd276b"
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_EXACT_SYMBOLIC_CHECKS.py",
+        "sha256": "7114fe2c56004a344c05e56cac305e593077eac43aa09ac084a196d1378ad4e2"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json",
-        "sha256": "1997355b8cc2c505df44175b2467598b0e96ded41ab0e45bf9c4d5b6e06ec30a"
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDIT_STOP.md",
+        "sha256": "ae3b4fc9b734ce2585ce0ba8d22971c4f5246eacdd8f0fac97f3429867a5664b"
       },
       {
-        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt",
-        "sha256": "fad5d23d92ba219aeb6057aaa6c70ed798d79b1229f9a31a261cbcbb1f9d5f34"
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_DRIVE_PERSISTENCE_RECORD.json",
+        "sha256": "20728c931a51d7bac395ada0f6a982104603c83cc5f06da73d6e2a2aa789c87d"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_INDEPENDENT_FINITE_PHASE.py",
+        "sha256": "a6384e10c11b1e7b61183d1009811eaed4837112666c715bfca70f9d8df106b4"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_MECHANICAL_RESULTS.json",
+        "sha256": "f69ccb877bc340745078217c226ec2744c1eed3d1222ff89868d72a8e1ada9a8"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PACKAGE_RECORD.json",
+        "sha256": "a5b6cba99e55604cb102551c95ed1ffcb4f53634b354e5e407b748ab00ff48a2"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_PROVENANCE.json",
+        "sha256": "323d6bca730a92a0c08863922e938902a9d0a9f70caf118698be2755879533e7"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_REPORT.md",
+        "sha256": "f194c227e880b8b7370d28379abd8db2bf535663ccb74ec075b6efb224c1c841"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_RESULT.json",
+        "sha256": "7d1b2defa4e4a9f5f2cb6a2ff63bbaf6a265aa6b12cfe427101a2f5e779cef3f"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_AUDIT_STOP/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE1_SHA256SUMS.txt",
+        "sha256": "f8afcf1778722bd8715a78792d9855c65c0849c8fc722f00096fd67bc6c9d4c4"
       }
     ],
     "repository_files": [
       {
         "path": "START_HERE_CURRENT_HANDOFF.md",
-        "sha256": "3f54c5eb5f60e51cb645394be28cb92b52ae181800c39891c418e6b72c9af0a1"
+        "sha256": "0e3f46488d6df000b71f9fc1433b69646923a4415652de79d3804c91b0b8e0a1"
+      },
+      {
+        "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.json",
+        "sha256": "efda35345d58ee1a0109dbb47b25ef4001c894d449c536ce62ac4ac56117bd1e"
+      },
+      {
+        "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
+        "sha256": "81f8908bc15b2b03c9db4f214831b7c73a1116a3b6d50e003597a3e0575ad0c7"
+      },
+      {
+        "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt",
+        "sha256": "0ccdbad263ac7960fa6052cfba9f108abe466279117c3577c025faa322fd61a5"
       },
       {
         "path": "bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
@@ -653,16 +696,108 @@
         "sha256": "ee298f410355cea4b1e60cdd065a7165a407ffab577c9841b299a2d9a3e43889"
       },
       {
+        "path": "research_concentration_audit_20260912/REPORT_TR.md",
+        "sha256": "5d809bec04144ea9c817ab5a586b041ae959d3850fb71d84d1ec77951523b8da"
+      },
+      {
+        "path": "research_concentration_audit_20260912/RESULTS.json",
+        "sha256": "166b0f5da22efd8fe8302e2a1cd37246a10c2527b40955858c588cd88a414471"
+      },
+      {
+        "path": "research_concentration_audit_20260912/check_claim.py",
+        "sha256": "b21b71fb7e968680cd6e3275100c6eef126490d3d0a5872a914560bb7d420aaf"
+      },
+      {
+        "path": "research_cross_terms_20260912/ATTACK.md",
+        "sha256": "01e2330d1013f79a389150b2c7bd60542d336ad0644990b8802fbe058fdba6de"
+      },
+      {
+        "path": "research_cross_terms_20260912/IDENTITIES.md",
+        "sha256": "89f3b1174dfcd8e1e83b18b965610620f43777edf94b3193949bf45ab7d123a9"
+      },
+      {
+        "path": "research_cross_terms_20260912/INDEPENDENT.md",
+        "sha256": "0b05ed15e7138ae18aa1833bb79c03212706de6be23c04905c15f663fbbf9a07"
+      },
+      {
+        "path": "research_cross_terms_20260912/PLAN.json",
+        "sha256": "4ddc1494a7abbe0441a0af981aad165ac15a9169dad030f562864a51b3b2ca70"
+      },
+      {
+        "path": "research_cross_terms_20260912/REPORT_TR.md",
+        "sha256": "9d76eca9a2b917858c29177bfe1b183c88408d6ea2bc953530bce101a19e5f1a"
+      },
+      {
+        "path": "research_cross_terms_20260912/RESULTS.json",
+        "sha256": "5439bd0488ae4e292eaeab7da7086ea156c85dccb734e58596e8c86095c87ad0"
+      },
+      {
+        "path": "research_cross_terms_20260912/attack_results.json",
+        "sha256": "ca2f9046f8685bb9b475dd1b1d55e8208575c77328337be314edb2b248030a6b"
+      },
+      {
+        "path": "research_cross_terms_20260912/independent_results.json",
+        "sha256": "45211850c5c7b744775ad294b22df7c7522061e2a6ea8940b6a6c7274d437b61"
+      },
+      {
+        "path": "research_cross_terms_20260912/prepare_continuity.py",
+        "sha256": "c714e15295bb660a9fe7064df0fe3736929538726a4fbb937d6d8a09bdab4448"
+      },
+      {
+        "path": "research_cross_terms_20260912/probe.py",
+        "sha256": "3185fc68eaaa7eb2c297e486e34fd3886e19f05fdf2d9549b74d7c87eafc7006"
+      },
+      {
+        "path": "research_galois_audit_20260912/REPORT_TR.md",
+        "sha256": "d2601e2feba0b5bb807c959b69dc001dd50727b4e3f4843905757da64c1ba1ee"
+      },
+      {
+        "path": "research_galois_audit_20260912/RESULTS.json",
+        "sha256": "b1eea4b953439ced551522f4619c185df5fb5bb073d7e1364f5448d09abbb9e7"
+      },
+      {
+        "path": "research_galois_audit_20260912/check_claim.py",
+        "sha256": "25d75953db47006218d35ec5ea07647dc3dee1faff1dface1ad465d9a4b6cd01"
+      },
+      {
+        "path": "research_integration_20260912/ARCHIVE_REVIEW.md",
+        "sha256": "ee34eab4611cb427dbcb732485729b5ce4c90bdb8e1320ee91086891567d4e0c"
+      },
+      {
+        "path": "research_integration_20260912/AUDIT_CHECKS.json",
+        "sha256": "3239747f759ccdf57d21f9e6b55fa2a51ca9ee61f5fe300e5d2f2fba5763eceb"
+      },
+      {
+        "path": "research_integration_20260912/AUDIT_REVIEW.md",
+        "sha256": "1027d77ec674f2ec0f2d1925ecdfb2b768983767db4f2b2e3dcbb8c1d4a00e7a"
+      },
+      {
+        "path": "research_integration_20260912/REPORT_TR.md",
+        "sha256": "02862aac50dd628b1ad71ad141ff1075fabacec86ca543ace942e3793b656b24"
+      },
+      {
+        "path": "research_integration_20260912/prepare_state.py",
+        "sha256": "4c1fe83275f8f1b98756cf07e6f7c8b49a438ad2dd3d00292594e91c5e604477"
+      },
+      {
         "path": "research_manager/CONTINUITY_PROTOCOL.md",
         "sha256": "e302b6338b2b2176fa6575918529add95c915d62251bf038e68d4a532105779b"
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "894ddc04d459ace65c7bd5af280ff4d455d2af1798aae1778cc7e167abcf9dcd"
+        "sha256": "646010079d2219895061b51017b1ea2c9e1d131f655845d7e979c1bee863eba1"
       },
       {
         "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
         "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"
+      },
+      {
+        "path": "research_manager/decisions/ANALOGUE_GATE_LF_CANONICALIZATION_REPAIR_2026-09-20.md",
+        "sha256": "e7842549487dccd93c4e7eeb92d997b6e1b36a1af6068181b359bdf9ab2cb41c"
+      },
+      {
+        "path": "research_manager/decisions/ARCHIVE_LIMIT_100_MIB_CLARIFICATION_2026-09-20.md",
+        "sha256": "cca8efab19036db53ac2f87aba5354d83589c649b3bfa4a5a587df22a45bc4c6"
       },
       {
         "path": "research_manager/decisions/CP20_TASK8B3_E5_S1_INTEGRATION_2026-09-01.md",
@@ -677,8 +812,20 @@
         "sha256": "713e4e64e4bb2b955b100b6066586a84a2d0246563d1387998a7a567e38d7077"
       },
       {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_ACCEPTANCE_AND_CANONICALIZATION_2026-09-05.json",
+        "sha256": "04624fa439df3b608aadcaadd755d000634228a815fb8d679d367154d2f80f84"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
+        "sha256": "581dd6d09e2958c0f87a1498e51405a2541e52c42f97cf6cbaabca49811ec591"
+      },
+      {
         "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_V1_INPUT_INTEGRITY_FAILURE_CLOSEOUT_2026-09-04.md",
         "sha256": "682397e979dd88c77e212d61450e1938cc5635db1f102bf0182b6751a71a74f0"
+      },
+      {
+        "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTION_2026-09-07.json",
+        "sha256": "bfb3d1532ac61cad496a4723dfde459bc6fc743805071751503c6480edbd276b"
       },
       {
         "path": "research_manager/decisions/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_AUDITED_INTEGRATION_2026-09-04.md",
@@ -705,6 +852,10 @@
         "sha256": "e653e6e9d627e8793eb8661c14063d463e7ffc5877dbfc3bdd0245b55b152dc1"
       },
       {
+        "path": "research_manager/decisions/CP23_CP24_CHAIN_KILL_INTEGRATION_AND_CP25_SIGN_SENSITIVE_PILOT_2026-09-20.md",
+        "sha256": "c0e01db36f18d1a4592ba529de6fb2b5d712cea192e9f8c60d8b1397d537184b"
+      },
+      {
         "path": "research_manager/prompts/CP20_TASK8B3_E6_CONDITIONED_GEOMETRIC_COMPLEX_NUMERATOR_PROMPT_2026-09-01.md",
         "sha256": "e6cc37f7e3836d174c52dc34e85699500293074b3a9d446dfc5b201a292e7c25"
       },
@@ -727,6 +878,18 @@
       {
         "path": "research_manager/prompts/CP20_TASK8B3_E7_TWO_SIDED_BLOCK_KERNEL_PROMPT_2026-09-01.md",
         "sha256": "94106512926dd887a93ebfa056a810ccd31000b03f5d34b077c886efe9be73b0"
+      },
+      {
+        "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_TRANSACTION_2026-09-05.json",
+        "sha256": "6c9500f619651965520c328b07c7161a9a32e7c69afb2820871cf0522be41f41"
+      },
+      {
+        "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_A_READBACK_2026-09-05.json",
+        "sha256": "ce0c22e8837b4e9b43d05deef364160cd28e15c33f399329dc1078e9c4bb2f6a"
+      },
+      {
+        "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_B_READBACK_2026-09-05.json",
+        "sha256": "31ccfebaac0cd406661bc3c5af4a7aa735b1253949575a3c7deda9c5eedac2ce"
       },
       {
         "path": "research_manager/records/CP20_TASK8B3_E7R_B4_V1_MAIN_PLACEHOLDER_REVERT_PROVENANCE_2026-09-04.json",
@@ -755,6 +918,110 @@
       {
         "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_INPUT_INTEGRITY_FAILURE/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V1_STAGE1_RUN_WITNESS_AS_PRODUCED.json",
         "sha256": "2f15a06d765d728706903a17671b25e0b90ee0decb19b9dd2cd1e59294ec7675"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_AUTHORIZATION_BASE_SELF_REFERENCE_REPAIR_RECORD.json",
+        "sha256": "085e1dc07159032b0f5335e28fb1d8043b79844387c9790c76cccfbacdb6d637"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_BLOCKED_CANDIDATE_CLASSIFICATION.json",
+        "sha256": "4755917f79a337ea70a567babc2757a00fc681343129e18b2bfec3869d16a1ce"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_INPUTS.md",
+        "sha256": "a919ad0d9443c9049d3ae5478b56a862ca284170e4ab5c48fdbf64571999a5e0"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_STATE_PATH_REPAIR_RECORD.json",
+        "sha256": "302f9fe934e883aa74d12af7ecc90c0c9bf52efe05c4505a4bca92a0157cd73a"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CONFIG.json",
+        "sha256": "2fbc7bd09ab2cae89095b537342cf63c85f53f821d4ddf21c7860a2ec53b1f4b"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_MECHANICAL_CHECKS.json",
+        "sha256": "146262c197408fa0051c5db2ab0def925957fbc9d12203d1664754848bcd6f1b"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_SCIENTIFIC_DIFF_CHECK.py",
+        "sha256": "73e4907fff95159353534c143fc32bae7966052a3f6a2fb21e4c28d4bf333de6"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE.json",
+        "sha256": "1d1c7ecfb9e411da440e16516fe0076e1b1eae291ee0647812274107b3a6128e"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_STDOUT.txt",
+        "sha256": "0648a8d6f69385a4fd57d3efb91a8ac7ba89ad8709df1071230f41c6ed26fdf4"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.md",
+        "sha256": "7a3741533d6116086cf3c739f0d8c48b6af2966ef157132a419cb62da01a5e6f"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SHA256SUMS.txt",
+        "sha256": "7f48807db5733c85759324d4f94e357aa6941de0ecd911b4180f5bc2101d6dcb"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT.json",
+        "sha256": "f4e2d05554976f898d6fbc943cf79e330d8869007f7ae83bac8858dd15c864a2"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_PROGRAM_PRESERVATION.md",
+        "sha256": "8fad7e2f4f6b8c624a1e2f0e95c4a7a5ec1eea038835c9503e7f0376eea53f3e"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_FINAL_RECORD.json",
+        "sha256": "0a37c2e651f5fff2bb450d99dab38080b30667914951d4c280997d323a26e1cd"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py",
+        "sha256": "9222d0e0a8079e3560bc880520dd5ead44869f5fd4fa541520e225c841b8a732"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
+        "sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json",
+        "sha256": "1997355b8cc2c505df44175b2467598b0e96ded41ab0e45bf9c4d5b6e06ec30a"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt",
+        "sha256": "fad5d23d92ba219aeb6057aaa6c70ed798d79b1229f9a31a261cbcbb1f9d5f34"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA.json",
+        "sha256": "2edf4198adeeb65602d3d8259c429a1853bc58ac5bd6c47e5e0e151283517795"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE_SCHEMA.json",
+        "sha256": "b6d7fe7602c291690d82d2bcde292403712003be1433878b247b22f1b24b55e2"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS_SCHEMA.json",
+        "sha256": "c6e12499f3de2acb7fa34be81a4b54d5d0424abb351ca2fcbbc3ab7808447f01"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_CHECK.py",
+        "sha256": "5e2c7e9a944bb3dcb52a18ddb2faa5bd16e42b1982b8cbfed5c8b5ae0bb6b7fd"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS.json",
+        "sha256": "e52c52e572c1382d581278988f3917ee200472bdcb5efab5079bd56e5860aaaf"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST.py",
+        "sha256": "2407c797676c3af0a91024f84c051d3de7252874eb912c12a6ab6e664fe36662"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS.json",
+        "sha256": "10132ba0a0e52a2ebee658174076824362ffe53f243cb1a44499df6f00477433"
+      },
+      {
+        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py",
+        "sha256": "59c7c81511602469387160cdd5e737eb862b40fb91950ed599147ad2aa699bdd"
       },
       {
         "path": "research_manager/results/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_STAGE0/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_PRE_RUN_SEAL.zip",
@@ -833,180 +1100,92 @@
         "sha256": "f8afcf1778722bd8715a78792d9855c65c0849c8fc722f00096fd67bc6c9d4c4"
       },
       {
-        "path": "tools/build_current_archive.py",
-        "sha256": "7a76cdd230d9c9dc4c547696e3ca2b6c977098f744d708ef4747219fa9e9bfc7"
+        "path": "research_peak_peeling_20260912/ANALYTIC_REVIEW.md",
+        "sha256": "c63dc0fd15f2be10afb36feba8c26c1bf08b13aa7b8f3c39b15f9374f094b588"
       },
       {
-        "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_ACCEPTANCE_AND_CANONICALIZATION_2026-09-05.json",
-        "sha256": "04624fa439df3b608aadcaadd755d000634228a815fb8d679d367154d2f80f84"
+        "path": "research_peak_peeling_20260912/BOUND_RESULTS.json",
+        "sha256": "496db1f9591b171c6f6cd0bea5a034d6ee5400329987f8532496530c96629033"
       },
       {
-        "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_AUTHORIZATION.json",
-        "sha256": "581dd6d09e2958c0f87a1498e51405a2541e52c42f97cf6cbaabca49811ec591"
+        "path": "research_peak_peeling_20260912/INDEPENDENT_AUDIT.md",
+        "sha256": "7350a0f5cb2d08a4f929629faf57d82ceff21b79f33dc04578969cca7fcfad74"
       },
       {
-        "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_TRANSACTION_2026-09-05.json",
-        "sha256": "6c9500f619651965520c328b07c7161a9a32e7c69afb2820871cf0522be41f41"
+        "path": "research_peak_peeling_20260912/INDEPENDENT_RESULTS.json",
+        "sha256": "98d8206b747bb5fd88ef4c9fb037d10a7c08bdb70ddfe3ed952aec993985ce44"
       },
       {
-        "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_A_READBACK_2026-09-05.json",
-        "sha256": "ce0c22e8837b4e9b43d05deef364160cd28e15c33f399329dc1078e9c4bb2f6a"
+        "path": "research_peak_peeling_20260912/PLAN.json",
+        "sha256": "0f7fc59a65d2d77af6443b1c90cb5a25ccad6f8a6fd091575dbb869479a9c4a0"
       },
       {
-        "path": "research_manager/records/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PHASE_B_READBACK_2026-09-05.json",
-        "sha256": "31ccfebaac0cd406661bc3c5af4a7aa735b1253949575a3c7deda9c5eedac2ce"
+        "path": "research_peak_peeling_20260912/REPORT_TR.md",
+        "sha256": "b0f48338403674b65ae4fac1156d75d7fdbf5ed690850e2848612527a6174f2c"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_AUTHORIZATION_BASE_SELF_REFERENCE_REPAIR_RECORD.json",
-        "sha256": "085e1dc07159032b0f5335e28fb1d8043b79844387c9790c76cccfbacdb6d637"
+        "path": "research_peak_peeling_20260912/RESULTS.json",
+        "sha256": "5fd62f0c37c6ad8f105e9082c91255c8f21148d73996ad2707b2f8be41a58637"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_BLOCKED_CANDIDATE_CLASSIFICATION.json",
-        "sha256": "4755917f79a337ea70a567babc2757a00fc681343129e18b2bfec3869d16a1ce"
+        "path": "research_peak_peeling_20260912/evaluate_bounds.py",
+        "sha256": "32987592bbb22a8db549b19b8d1c6a3adbb6dd7b749c4bfbdef0dd463e07080d"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_INPUTS.md",
-        "sha256": "a919ad0d9443c9049d3ae5478b56a862ca284170e4ab5c48fdbf64571999a5e0"
+        "path": "research_peak_peeling_20260912/prepare_continuity.py",
+        "sha256": "fbecb2e2f0fe0d34d53060eaa9247e27511e40d53e6c0f72ba93d835574248f7"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CANONICAL_STATE_PATH_REPAIR_RECORD.json",
-        "sha256": "302f9fe934e883aa74d12af7ecc90c0c9bf52efe05c4505a4bca92a0157cd73a"
+        "path": "research_peak_peeling_20260912/probe.py",
+        "sha256": "c5b846fb3bae91dbb6a5cd0f9fc39f5210a2238143a64b9ba439648cd9fddf7c"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_CONFIG.json",
-        "sha256": "2fbc7bd09ab2cae89095b537342cf63c85f53f821d4ddf21c7860a2ec53b1f4b"
+        "path": "research_shift_recurrence_20260912/ADVERSARIAL.md",
+        "sha256": "1c63552d566910dccd3793586a0982e1586b77f89deb48898bd756c898c1c2d2"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_MECHANICAL_CHECKS.json",
-        "sha256": "146262c197408fa0051c5db2ab0def925957fbc9d12203d1664754848bcd6f1b"
+        "path": "research_shift_recurrence_20260912/ALGORITHM.md",
+        "sha256": "e27d09fe2b2f22c511467adbaae1116344897c7322a1223955a65092502cdc1e"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_FINALIZATION_SCIENTIFIC_DIFF_CHECK.py",
-        "sha256": "73e4907fff95159353534c143fc32bae7966052a3f6a2fb21e4c28d4bf333de6"
+        "path": "research_shift_recurrence_20260912/FULL_JOINT_RESULTS.json",
+        "sha256": "0e9e27548e878290a0833299d12cdce3793ff02c71dfac29670fdea52fe1a73b"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_EVIDENCE.json",
-        "sha256": "1d1c7ecfb9e411da440e16516fe0076e1b1eae291ee0647812274107b3a6128e"
+        "path": "research_shift_recurrence_20260912/JOINT_RESULTS.json",
+        "sha256": "ca0f7aa202ad403bdf14db046ab56525cb72e95c68ece61cfb44fa362efed5b4"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_HANDOFF_VERIFICATION_STDOUT.txt",
-        "sha256": "0648a8d6f69385a4fd57d3efb91a8ac7ba89ad8709df1071230f41c6ed26fdf4"
+        "path": "research_shift_recurrence_20260912/PLAN.json",
+        "sha256": "1ed14aac89b7d6c192bba409907f7badd46e122ab1e8fff303bbbce2943c1e06"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SEAL.md",
-        "sha256": "7a3741533d6116086cf3c739f0d8c48b6af2966ef157132a419cb62da01a5e6f"
+        "path": "research_shift_recurrence_20260912/RECURRENCE.md",
+        "sha256": "b5c3bd3508a6029a0c7b78a3d3d60721589f79ac14597ff2d28131fc1dcdc740"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PRE_RUN_SHA256SUMS.txt",
-        "sha256": "7f48807db5733c85759324d4f94e357aa6941de0ecd911b4180f5bc2101d6dcb"
+        "path": "research_shift_recurrence_20260912/REPORT_TR.md",
+        "sha256": "6d28d2029c0f342782ad5625520966622886b005783ac33e4d963536c3b4202d"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_DIFF_REPORT.json",
-        "sha256": "f4e2d05554976f898d6fbc943cf79e330d8869007f7ae83bac8858dd15c864a2"
+        "path": "research_shift_recurrence_20260912/algorithm_results.json",
+        "sha256": "cb0b375aac5d27bde20dd5a01a01cdca12a894eab8d19f643bb5dde900c51bba"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_SCIENTIFIC_PROGRAM_PRESERVATION.md",
-        "sha256": "8fad7e2f4f6b8c624a1e2f0e95c4a7a5ec1eea038835c9503e7f0376eea53f3e"
+        "path": "research_shift_recurrence_20260912/exact_moment.py",
+        "sha256": "cd40541f6c02f9a22031a023290f7cb01f871f4c6857446bfadef9166559c953"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0_FINAL_RECORD.json",
-        "sha256": "0a37c2e651f5fff2bb450d99dab38080b30667914951d4c280997d323a26e1cd"
+        "path": "research_shift_recurrence_20260912/full_joint_followup.py",
+        "sha256": "d19d83d2983df43bfd6c93f76e0e61bf3e0da72310094ab74aab2bf68e3be820"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1.py",
-        "sha256": "9222d0e0a8079e3560bc880520dd5ead44869f5fd4fa541520e225c841b8a732"
+        "path": "research_shift_recurrence_20260912/joint_probe.py",
+        "sha256": "7385a90afa63b60714adfb238116a43b6d17a3a07709724623de68044971d547"
       },
       {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_EXECUTION_INTEGRITY_AND_OUTPUT_CONTRACT.md",
-        "sha256": "7f2531743db7c2987d6efa785784852bc6fe066ccc23cfc607296de96f3eb403"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_OUTPUT_SCHEMA.json",
-        "sha256": "2edf4198adeeb65602d3d8259c429a1853bc58ac5bd6c47e5e0e151283517795"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_PRE_T1_GATE_SCHEMA.json",
-        "sha256": "b6d7fe7602c291690d82d2bcde292403712003be1433878b247b22f1b24b55e2"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_RUN_WITNESS_SCHEMA.json",
-        "sha256": "c6e12499f3de2acb7fa34be81a4b54d5d0424abb351ca2fcbbc3ab7808447f01"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_CHECK.py",
-        "sha256": "5e2c7e9a944bb3dcb52a18ddb2faa5bd16e42b1982b8cbfed5c8b5ae0bb6b7fd"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STATIC_CONTROL_FLOW_RESULTS.json",
-        "sha256": "e52c52e572c1382d581278988f3917ee200472bdcb5efab5079bd56e5860aaaf"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST.py",
-        "sha256": "2407c797676c3af0a91024f84c051d3de7252874eb912c12a6ab6e664fe36662"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_SELFTEST_RESULTS.json",
-        "sha256": "10132ba0a0e52a2ebee658174076824362ffe53f243cb1a44499df6f00477433"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_WITNESS_VALIDATOR.py",
-        "sha256": "59c7c81511602469387160cdd5e737eb862b40fb91950ed599147ad2aa699bdd"
-      },
-      {
-        "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
-        "sha256": "81f8908bc15b2b03c9db4f214831b7c73a1116a3b6d50e003597a3e0575ad0c7"
-      },
-      {
-        "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.json",
-        "sha256": "efda35345d58ee1a0109dbb47b25ef4001c894d449c536ce62ac4ac56117bd1e"
-      },
-      {
-        "path": "bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_SHA256SUMS_2026-09-05.txt",
-        "sha256": "0ccdbad263ac7960fa6052cfba9f108abe466279117c3577c025faa322fd61a5"
-      },
-      {
-        "path": "tools/verify_handoff.py",
-        "sha256": "a5f1883ad52b57b01039684ca264b2208a8537f6951251609e15504212cce22b"
-      },
-      {
-        "path": "research_manager/decisions/CP20_TASK8B3_E7R_B4_V2_STAGE1_INPUT_INTEGRITY_FAILURE_STATUS_CORRECTION_2026-09-07.json",
-        "sha256": "bfb3d1532ac61cad496a4723dfde459bc6fc743805071751503c6480edbd276b"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INPUT_INTEGRITY_FAILURE.json",
-        "sha256": "1997355b8cc2c505df44175b2467598b0e96ded41ab0e45bf9c4d5b6e06ec30a"
-      },
-      {
-        "path": "research_manager/results/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE0/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_STAGE1_INTEGRITY_STDOUT.txt",
-        "sha256": "fad5d23d92ba219aeb6057aaa6c70ed798d79b1229f9a31a261cbcbb1f9d5f34"
-      },
-      {
-        "path": "research_integration_20260912/ARCHIVE_REVIEW.md",
-        "sha256": "ee34eab4611cb427dbcb732485729b5ce4c90bdb8e1320ee91086891567d4e0c"
-      },
-      {
-        "path": "research_integration_20260912/AUDIT_CHECKS.json",
-        "sha256": "3239747f759ccdf57d21f9e6b55fa2a51ca9ee61f5fe300e5d2f2fba5763eceb"
-      },
-      {
-        "path": "research_integration_20260912/AUDIT_REVIEW.md",
-        "sha256": "1027d77ec674f2ec0f2d1925ecdfb2b768983767db4f2b2e3dcbb8c1d4a00e7a"
-      },
-      {
-        "path": "research_integration_20260912/prepare_state.py",
-        "sha256": "4c1fe83275f8f1b98756cf07e6f7c8b49a438ad2dd3d00292594e91c5e604477"
-      },
-      {
-        "path": "research_integration_20260912/REPORT_TR.md",
-        "sha256": "02862aac50dd628b1ad71ad141ff1075fabacec86ca543ace942e3793b656b24"
-      },
-      {
-        "path": "research_w_continuation_20260912/check_shell_alignment.py",
-        "sha256": "a57d4e5be36ece2b0372229e8ca6114e07893ee6ac607324550b27b577977270"
-      },
-      {
-        "path": "research_w_continuation_20260912/independent_alignment_check.py",
-        "sha256": "4d79febdc8ec1c1807a4a749dc8ee8ee952925b7ce96ce779fd078cad039e478"
+        "path": "research_shift_recurrence_20260912/prepare_continuity.py",
+        "sha256": "622620d22b50ac37cd650f2384399c196e4c0dd5f8a5eb1e153494b299cc730f"
       },
       {
         "path": "research_w_continuation_20260912/INDEPENDENT_CHECK.json",
@@ -1029,156 +1208,36 @@
         "sha256": "a3ba7d962dfba95463e5b5c9d9dc79b76e4d3a807761999f7b5998d2ae264a1b"
       },
       {
-        "path": "research_peak_peeling_20260912/ANALYTIC_REVIEW.md",
-        "sha256": "c63dc0fd15f2be10afb36feba8c26c1bf08b13aa7b8f3c39b15f9374f094b588"
+        "path": "research_w_continuation_20260912/check_shell_alignment.py",
+        "sha256": "a57d4e5be36ece2b0372229e8ca6114e07893ee6ac607324550b27b577977270"
       },
       {
-        "path": "research_peak_peeling_20260912/BOUND_RESULTS.json",
-        "sha256": "496db1f9591b171c6f6cd0bea5a034d6ee5400329987f8532496530c96629033"
+        "path": "research_w_continuation_20260912/independent_alignment_check.py",
+        "sha256": "4d79febdc8ec1c1807a4a749dc8ee8ee952925b7ce96ce779fd078cad039e478"
       },
       {
-        "path": "research_peak_peeling_20260912/evaluate_bounds.py",
-        "sha256": "32987592bbb22a8db549b19b8d1c6a3adbb6dd7b749c4bfbdef0dd463e07080d"
+        "path": "tools/ANALOGUE_GATE.md",
+        "sha256": "0549efc768ec0c818882296f65b479fd10c321fb523f8af7bd995ae3aaf2a3e5"
       },
       {
-        "path": "research_peak_peeling_20260912/INDEPENDENT_AUDIT.md",
-        "sha256": "7350a0f5cb2d08a4f929629faf57d82ceff21b79f33dc04578969cca7fcfad74"
+        "path": "tools/analogue_gate.py",
+        "sha256": "85ef99abd977e315a4b56a5c4348b0a4e299d92e52b0822116a3368d7d4c9c60"
       },
       {
-        "path": "research_peak_peeling_20260912/INDEPENDENT_RESULTS.json",
-        "sha256": "98d8206b747bb5fd88ef4c9fb037d10a7c08bdb70ddfe3ed952aec993985ce44"
+        "path": "tools/analogue_gate_verdict.json",
+        "sha256": "a8ac85a4632339cdff6239b845083c1ae5f545965ce06945130aa028f93f6e52"
       },
       {
-        "path": "research_peak_peeling_20260912/PLAN.json",
-        "sha256": "0f7fc59a65d2d77af6443b1c90cb5a25ccad6f8a6fd091575dbb869479a9c4a0"
+        "path": "tools/build_current_archive.py",
+        "sha256": "e1f2ac02e22f9a5163b800834a540a6d998d8ea1c2b4d0db2977dc499310e171"
       },
       {
-        "path": "research_peak_peeling_20260912/prepare_continuity.py",
-        "sha256": "fbecb2e2f0fe0d34d53060eaa9247e27511e40d53e6c0f72ba93d835574248f7"
+        "path": "tools/test_analogue_gate.py",
+        "sha256": "5df5238478c912c8a17d9835f19dd9c481f91d7ef71b42852b6b1c7df573d62c"
       },
       {
-        "path": "research_peak_peeling_20260912/probe.py",
-        "sha256": "c5b846fb3bae91dbb6a5cd0f9fc39f5210a2238143a64b9ba439648cd9fddf7c"
-      },
-      {
-        "path": "research_peak_peeling_20260912/REPORT_TR.md",
-        "sha256": "b0f48338403674b65ae4fac1156d75d7fdbf5ed690850e2848612527a6174f2c"
-      },
-      {
-        "path": "research_peak_peeling_20260912/RESULTS.json",
-        "sha256": "5fd62f0c37c6ad8f105e9082c91255c8f21148d73996ad2707b2f8be41a58637"
-      },
-      {
-        "path": "research_concentration_audit_20260912/check_claim.py",
-        "sha256": "b21b71fb7e968680cd6e3275100c6eef126490d3d0a5872a914560bb7d420aaf"
-      },
-      {
-        "path": "research_concentration_audit_20260912/REPORT_TR.md",
-        "sha256": "5d809bec04144ea9c817ab5a586b041ae959d3850fb71d84d1ec77951523b8da"
-      },
-      {
-        "path": "research_concentration_audit_20260912/RESULTS.json",
-        "sha256": "166b0f5da22efd8fe8302e2a1cd37246a10c2527b40955858c588cd88a414471"
-      },
-      {
-        "path": "research_galois_audit_20260912/check_claim.py",
-        "sha256": "25d75953db47006218d35ec5ea07647dc3dee1faff1dface1ad465d9a4b6cd01"
-      },
-      {
-        "path": "research_galois_audit_20260912/REPORT_TR.md",
-        "sha256": "d2601e2feba0b5bb807c959b69dc001dd50727b4e3f4843905757da64c1ba1ee"
-      },
-      {
-        "path": "research_galois_audit_20260912/RESULTS.json",
-        "sha256": "b1eea4b953439ced551522f4619c185df5fb5bb073d7e1364f5448d09abbb9e7"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/ADVERSARIAL.md",
-        "sha256": "1c63552d566910dccd3793586a0982e1586b77f89deb48898bd756c898c1c2d2"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/ALGORITHM.md",
-        "sha256": "e27d09fe2b2f22c511467adbaae1116344897c7322a1223955a65092502cdc1e"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/algorithm_results.json",
-        "sha256": "cb0b375aac5d27bde20dd5a01a01cdca12a894eab8d19f643bb5dde900c51bba"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/exact_moment.py",
-        "sha256": "cd40541f6c02f9a22031a023290f7cb01f871f4c6857446bfadef9166559c953"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/full_joint_followup.py",
-        "sha256": "d19d83d2983df43bfd6c93f76e0e61bf3e0da72310094ab74aab2bf68e3be820"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/FULL_JOINT_RESULTS.json",
-        "sha256": "0e9e27548e878290a0833299d12cdce3793ff02c71dfac29670fdea52fe1a73b"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/joint_probe.py",
-        "sha256": "7385a90afa63b60714adfb238116a43b6d17a3a07709724623de68044971d547"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/JOINT_RESULTS.json",
-        "sha256": "ca0f7aa202ad403bdf14db046ab56525cb72e95c68ece61cfb44fa362efed5b4"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/PLAN.json",
-        "sha256": "1ed14aac89b7d6c192bba409907f7badd46e122ab1e8fff303bbbce2943c1e06"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/prepare_continuity.py",
-        "sha256": "622620d22b50ac37cd650f2384399c196e4c0dd5f8a5eb1e153494b299cc730f"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/RECURRENCE.md",
-        "sha256": "b5c3bd3508a6029a0c7b78a3d3d60721589f79ac14597ff2d28131fc1dcdc740"
-      },
-      {
-        "path": "research_shift_recurrence_20260912/REPORT_TR.md",
-        "sha256": "6d28d2029c0f342782ad5625520966622886b005783ac33e4d963536c3b4202d"
-      },
-      {
-        "path": "research_cross_terms_20260912/ATTACK.md",
-        "sha256": "01e2330d1013f79a389150b2c7bd60542d336ad0644990b8802fbe058fdba6de"
-      },
-      {
-        "path": "research_cross_terms_20260912/attack_results.json",
-        "sha256": "ca2f9046f8685bb9b475dd1b1d55e8208575c77328337be314edb2b248030a6b"
-      },
-      {
-        "path": "research_cross_terms_20260912/IDENTITIES.md",
-        "sha256": "89f3b1174dfcd8e1e83b18b965610620f43777edf94b3193949bf45ab7d123a9"
-      },
-      {
-        "path": "research_cross_terms_20260912/INDEPENDENT.md",
-        "sha256": "0b05ed15e7138ae18aa1833bb79c03212706de6be23c04905c15f663fbbf9a07"
-      },
-      {
-        "path": "research_cross_terms_20260912/independent_results.json",
-        "sha256": "45211850c5c7b744775ad294b22df7c7522061e2a6ea8940b6a6c7274d437b61"
-      },
-      {
-        "path": "research_cross_terms_20260912/PLAN.json",
-        "sha256": "4ddc1494a7abbe0441a0af981aad165ac15a9169dad030f562864a51b3b2ca70"
-      },
-      {
-        "path": "research_cross_terms_20260912/prepare_continuity.py",
-        "sha256": "c714e15295bb660a9fe7064df0fe3736929538726a4fbb937d6d8a09bdab4448"
-      },
-      {
-        "path": "research_cross_terms_20260912/probe.py",
-        "sha256": "3185fc68eaaa7eb2c297e486e34fd3886e19f05fdf2d9549b74d7c87eafc7006"
-      },
-      {
-        "path": "research_cross_terms_20260912/REPORT_TR.md",
-        "sha256": "9d76eca9a2b917858c29177bfe1b183c88408d6ea2bc953530bce101a19e5f1a"
-      },
-      {
-        "path": "research_cross_terms_20260912/RESULTS.json",
-        "sha256": "5439bd0488ae4e292eaeab7da7086ea156c85dccb734e58596e8c86095c87ad0"
+        "path": "tools/verify_handoff.py",
+        "sha256": "a5f1883ad52b57b01039684ca264b2208a8537f6951251609e15504212cce22b"
       }
     ]
   },
@@ -1298,15 +1357,17 @@
     }
   },
   "next_action": {
-    "authorization_available": false,
-    "authorized_stage": null,
+    "authorization_available": true,
+    "authorized_stage": "STAGE_0_EXACT_PILOT",
     "executed_in_this_transaction": false,
-    "instruction": "Retain the mixed overlap NB and reflection-positive component N_plus in a weighted affine-channel estimate. Exact E=NB and S=N0+N1+6N_plus+2N_minus are proved; S_even<=S<=2S_even is local and S_even is not W_flat. Naive scalar moment iteration never beats the trivial conjugate-pair bound. Seek growing-family weighted control or a precise obstruction. W_flat and actual source alignment remain open; consumed B4 authorizations remain closed.",
+    "instruction": "Derive and exactly enumerate the sign-sensitive affine cycle equation (2^m-3^k)x=b B_w for b=+1,-1, with integrality, positivity and parity-word realisability; test 3n-1 and 5n+1 analogues under preregistered kill conditions.",
     "prohibited": [
-      "reuse or execution of consumed B4 V1/V2 tuples",
-      "promote finite checks to asymptotic bounds",
-      "use invalid V1 mathematical drafts",
-      "claim Collatz proved"
+      "claim Collatz proved",
+      "promote finite analogue-grid checks to universal theorems",
+      "treat every lemma shared with 3n-1 as useless",
+      "reuse the withdrawn finite raw-energy asymptotic inference",
+      "claim Mixed-Gram impossibility without a bridge theorem",
+      "reuse or execute consumed B4 V1/V2 authorization tuples"
     ]
   },
   "historical_b4_frozen_program_requirements": [
@@ -1391,7 +1452,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-12T16:12:08.527516+00:00",
+  "updated_at": "2026-09-20T20:38:52.361161+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
@@ -1418,5 +1479,17 @@
       "research_galois_audit_20260912/REPORT_TR.md"
     ],
     "cross_term_audit": "research_cross_terms_20260912/INDEPENDENT.md"
+  },
+  "cp23_cp24_transition": {
+    "status": "ACCEPTED_WITH_SCOPE_REPAIR",
+    "decision": "research_manager/decisions/CP23_CP24_CHAIN_KILL_INTEGRATION_AND_CP25_SIGN_SENSITIVE_PILOT_2026-09-20.md",
+    "cp24_unique_rows": 221,
+    "analogue_gate": "tools/analogue_gate.py",
+    "analogue_gate_tests": "tools/test_analogue_gate.py",
+    "finite_default_grid_rows": 44,
+    "finite_3n_minus_1_rows_differing": 0,
+    "finite_5n_plus_1_rows_differing": 38,
+    "scope": "The 44-row table is a regression diagnostic. General Ecal reflection blindness comes from CP24's analytic derivation and applies only under its stated invariant/shared-hypothesis scope.",
+    "collatz_status": "OPEN_NOT_PROVED"
   }
 }

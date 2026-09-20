@@ -1,10 +1,90 @@
-# CURRENT HANDOFF — CROSS-TERM REFLECTION IDENTITIES, 2026-09-12
+# CURRENT HANDOFF — CHAIN-KILL INTEGRATED, 2026-09-20
 
-Current task: `CP20_EXPLORATORY_CROSS_TERMS_20260912`. Read `research_cross_terms_20260912/REPORT_TR.md`, `IDENTITIES.md`, `ATTACK.md` and `INDEPENDENT.md`. Prior affine recursion and exact-moment tools remain valid.
+**Collatz is NOT solved; no new universal orbit or cycle-exclusion theorem is claimed.**
 
-Proved: even cross term E=NB; S=N0+N1+6N_plus+2N_minus; combined cross contribution nonnegative; S_even<=S<=2S_even. S_even is NOT W_flat. Actual filters saturate Cauchy, so no unconditional strict correlation gap is available. Repeated scalar moment bounds never improve the known trivial conjugate-pair estimate.
+Current state: CP21–CP24 are merged into `main` (PRs #3, #4, #5, #6, #2 — merged 2026-09-20).
+Start by reading, in this order:
 
-Next: preserve mixed overlap and reflection projection in a weighted affine-channel recurrence; control growing actual families or find a scoped obstruction. Uniform W, D2 and Collatz remain OPEN. Exact finite tables and approximate decimal renderings are distinguished in the report. The independent scalar audit matches all247 main small cases.
+1. `bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md` — **scope and numerical corrections take precedence over CP21–23**
+2. `bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md` — historical route assessment, subject to CP24
+3. `bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md`
+4. `bagimsiz-denetim/04-cp22-adversarial-brainstorm-20260914/CP22_REPORT.md`
+
+## The energy-only cycle-exclusion route is blocked — scoped result
+
+For all integers `m>=1, r>=1`, `Ecal(m,r;3,+1) = Ecal(m,r;3,-1)` by the analytic
+reflection argument in **CP24 section 3**: `H_-(−x) = −H_+(x)`, matching parity words,
+endpoint reflection, and invariance of squared complementary-bin differences.
+The positive cycle `5 -> 7 -> 10 -> 5` is a witness for `3n-1`.
+
+**Only an inference using reflection-invariant observations and the same hypotheses
+valid on both maps is blocked as a cycle-exclusion argument.** The target inequality
+`Ecal(m,s+1) >= Ecal(m+1,s)` alone cannot make that distinction. An auxiliary lemma
+shared with an analogue can still contribute to a proof using additional sign-, size-,
+initial-label- or map-specific hypotheses. This is not an impossibility theorem for all
+mixing, modular or combinatorial approaches. The target inequality itself remains open.
+
+CP23's historical 50/50 energy pairs and 30/30 defect rows are finite checks, not the
+proof. The current CLI regression has 44 rows: `3n-1` differs on 0, `5n+1` on 38.
+The `5n+1` value differences are **not** a claim-level verdict or a second reflection theorem.
+
+Chain grading corrected by CP24 section 5: L2 `[WITHDRAWN — earlier FAIL inference]`.
+The finite raw-energy sequence does not refute asymptotic decay of raw or normalized
+energy. `Ecal(m,r)/2^(m-1)` is the normalized quantity; a fixed `m+r` diagonal is finite
+and gives no infinite-sequence limit. The missing bridge from L1 to a fixed-r limit is
+not a counterexample to such a limit. L4 `[NOT EVEN FORMULATED]` and L3/L5/L6
+`[KNOWN BARRIER]` are historical CP23 assessments, not new impossibility theorems.
+
+**The previous handoff's "Next" directive (preserve mixed overlap and reflection projection in a
+weighted affine-channel recurrence / Mixed-Gram) is WITHDRAWN.** This is a **strategic withdrawal**
+of budget from the energy-only route, not a proof that this specific recurrence is false or
+incapable of helping. No lemma identifying its full information with the reflection-invariant
+class is supplied by CP23/CP24. Do not assert such an impossibility without that missing link.
+REDIRECT's ranking (last of 12 directions, below stopping) is a prioritization decision.
+
+## Mandatory claim review: the analogue filter
+
+Cycle-exclusion proposals must state the exact conclusion, quantifiers, hypotheses and the
+information that distinguishes `3n+1` from cycling analogues `3n-1` and `5n+1`. There is no
+mandatory raw-value separation requirement for each auxiliary lemma. Shared lemmas are not
+useless; raw-value differences do not imply different truth values for a proposed inequality.
+
+`tools/analogue_gate.py` is a finite value diagnostic with a **fail-closed** default ship gate:
+`BLIND_ON_TEST_GRID` / `VALUE_SEPARATES_ON_TEST_GRID` do not approve any claim.
+Only the built-in Ecal has a separately cited, scoped `PROVED_BLIND` analytic result.
+Default exit 1 means blocked/unassessed, invalid/empty input exits 2. Explicit `--diagnostic`
+exits 0 for completed computation only. See `tools/ANALOGUE_GATE.md` for the full contract.
+
+## What the programme owns (still valid)
+
+- **A3+A4+counting corollary `[PROOF]`, gap closed, publishable:** same-stratum endpoint collision
+  <=> `B`-congruence mod `3^k`; `B` is never `0 mod 3`; hence per stratum #distinct endpoints
+  `<= 2*3^(k-1)`. Verified to `m=16`, zero failures, occupancy saturates (54/54 at `(12,4)`).
+- **A6 cap stabilisation** (`2^r >= 3^k - 1`) — plausibly new.
+- **Cross-term identities (2026-09-12, still valid):** even cross term `E=NB`;
+  `S=N0+N1+6N_plus+2N_minus`; combined cross contribution nonnegative; `S_even <= S <= 2*S_even`.
+  **`S_even` is NOT `W_flat`** — reading this as `W/W_flat <= 2` is wrong.
+- **Phase-quotient computation theorem** (`research_phase_quotient_20260913`):
+  `sum_d N_d = O(s^4 * 2^(3s/4))`, an asymptotically smaller exponent than direct `2^s` enumeration.
+- 69-entry failure library; 221-row verified dataset.
+
+## Corrections carried by CP24 (use these numbers)
+
+- **221** distinct rows, not 239. CP22's 18 rows were recomputation, not new parameter coverage.
+- "35 new rows" should read "35 computed rows, 16 new parameter pairs".
+- The claim "none dropped below 1" is **withdrawn**: `(4,2)` has `defect/M = 9/17 < 1`.
+- 11 rows of `cp21_lead_extension_m25_m26.json` were wrong (histogram truncation: coarsening needs
+  `coarse[z] = sum(fine[z::N])`, not `arr[:q]`). Corrected in `cp24-recovery/corrected_extension.json`.
+
+## Next
+
+No technical target is dispatched by this handoff. The adopted direction (CP23 section 5) is:
+write up the negative result as the deliverable, seek outside review and formal verification, and
+optionally run ONE timeboxed sign-sensitive cycle bet with pre-registered kill conditions.
+Uniform `W`, `D2` and Collatz remain **OPEN**.
+
+All `[PROOF]` labels in this programme mean "hand-checked, not Lean". There has been **zero human
+review and zero formal verification** — this is the largest near-term risk.
 
 Publication: `CURRENT_ARCHIVE_BUILD.json`, `CURRENT_ARCHIVE_MEMBER_ROOT.json`, `publication_receipts/`. The deterministic ZIP preserves historical members and includes this reviewed continuation. External receipts remain outside it to avoid recursive hashes.
 
