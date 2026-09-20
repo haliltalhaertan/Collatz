@@ -1,10 +1,67 @@
-# CURRENT HANDOFF — CROSS-TERM REFLECTION IDENTITIES, 2026-09-12
+# CURRENT HANDOFF — CHAIN-KILL INTEGRATED, 2026-09-20
 
-Current task: `CP20_EXPLORATORY_CROSS_TERMS_20260912`. Read `research_cross_terms_20260912/REPORT_TR.md`, `IDENTITIES.md`, `ATTACK.md` and `INDEPENDENT.md`. Prior affine recursion and exact-moment tools remain valid.
+**Collatz is NOT solved and nothing here bears on it.**
 
-Proved: even cross term E=NB; S=N0+N1+6N_plus+2N_minus; combined cross contribution nonnegative; S_even<=S<=2S_even. S_even is NOT W_flat. Actual filters saturate Cauchy, so no unconditional strict correlation gap is available. Repeated scalar moment bounds never improve the known trivial conjugate-pair estimate.
+Current state: CP21–CP24 are merged into `main` (PRs #3, #4, #5, #6, #2 — merged 2026-09-20).
+Start by reading, in this order:
 
-Next: preserve mixed overlap and reflection projection in a weighted affine-channel recurrence; control growing actual families or find a scoped obstruction. Uniform W, D2 and Collatz remain OPEN. Exact finite tables and approximate decimal renderings are distinguished in the report. The independent scalar audit matches all247 main small cases.
+1. `bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md` — **read this first, it invalidates the previous route**
+2. `bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md` — corrections to CP21–23 numbers
+3. `bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md`
+4. `bagimsiz-denetim/04-cp22-adversarial-brainstorm-20260914/CP22_REPORT.md`
+
+## The intended route is DEAD — proved
+
+`3n+1` and `3n-1` have **identical** `Ecal` tables (50/50 `(m,r)` pairs, 30/30 defect rows, zero
+differences), because `H_{3n-1}(-x) = -H_{3n+1}(x)` and the energy functional is **blind to the sign
+of the affine constant**. But `3n-1` provably has nontrivial cycles (`5 -> 7 -> 10 -> 5`). Therefore
+any proof of the target inequality `Ecal(m,s+1) >= Ecal(m+1,s)` applies verbatim to `3n-1`, where
+cycles exist: **the inequality cannot exclude a cycle.** `5n+1` gives the same verdict.
+
+Chain grading (CARTOGRAPH, 8 links): L2 `[FAIL]`, L4 `[NOT EVEN FORMULATED]`, L3/L5/L6
+`[KNOWN BARRIER]`. The chain breaks before the barriers are even reached.
+
+**The previous handoff's "Next" directive (preserve mixed overlap and reflection projection in a
+weighted affine-channel recurrence) is WITHDRAWN.** It is not false — it looks true — but CP23 proves
+it cannot do the job it was chosen for. Do not spend budget grinding it; REDIRECT ranked it **last of
+12 directions, below stopping entirely**.
+
+## Mandatory ship-gate: the analogue filter
+
+Every existing and future claim must be tested against `3n-1` and `5n+1`. **If a claim holds there
+too, it cannot be about Collatz specifically** and may not be labelled as Collatz progress. This
+filter produced CP23's largest result in minutes of compute.
+
+## What the programme owns (still valid)
+
+- **A3+A4+counting corollary `[PROOF]`, gap closed, publishable:** same-stratum endpoint collision
+  <=> `B`-congruence mod `3^k`; `B` is never `0 mod 3`; hence per stratum #distinct endpoints
+  `<= 2*3^(k-1)`. Verified to `m=16`, zero failures, occupancy saturates (54/54 at `(12,4)`).
+- **A6 cap stabilisation** (`2^r >= 3^k - 1`) — plausibly new.
+- **Cross-term identities (2026-09-12, still valid):** even cross term `E=NB`;
+  `S=N0+N1+6N_plus+2N_minus`; combined cross contribution nonnegative; `S_even <= S <= 2*S_even`.
+  **`S_even` is NOT `W_flat`** — reading this as `W/W_flat <= 2` is wrong.
+- **Phase-quotient computation theorem** (`research_phase_quotient_20260913`):
+  `sum_d N_d = O(s^4 * 2^(3s/4))`, an asymptotically smaller exponent than direct `2^s` enumeration.
+- 69-entry failure library; 221-row verified dataset.
+
+## Corrections carried by CP24 (use these numbers)
+
+- **221** distinct rows, not 239. CP22's 18 rows were recomputation, not new parameter coverage.
+- "35 new rows" should read "35 computed rows, 16 new parameter pairs".
+- The claim "none dropped below 1" is **withdrawn**: `(4,2)` has `defect/M = 9/17 < 1`.
+- 11 rows of `cp21_lead_extension_m25_m26.json` were wrong (histogram truncation: coarsening needs
+  `coarse[z] = sum(fine[z::N])`, not `arr[:q]`). Corrected in `cp24-recovery/corrected_extension.json`.
+
+## Next
+
+No technical target is dispatched by this handoff. The adopted direction (CP23 section 5) is:
+write up the negative result as the deliverable, seek outside review and formal verification, and
+optionally run ONE timeboxed sign-sensitive cycle bet with pre-registered kill conditions.
+Uniform `W`, `D2` and Collatz remain **OPEN**.
+
+All `[PROOF]` labels in this programme mean "hand-checked, not Lean". There has been **zero human
+review and zero formal verification** — this is the largest near-term risk.
 
 Publication: `CURRENT_ARCHIVE_BUILD.json`, `CURRENT_ARCHIVE_MEMBER_ROOT.json`, `publication_receipts/`. The deterministic ZIP preserves historical members and includes this reviewed continuation. External receipts remain outside it to avoid recursive hashes.
 

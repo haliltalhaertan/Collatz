@@ -1,0 +1,72 @@
+{
+ "gate": "analogue_filter",
+ "source": "CP23 chain-kill, 2026-09-14",
+ "quantity": "Ecal(m,r) \u2014 odd-character source energy",
+ "grid_rows": 44,
+ "max_m": 11,
+ "comparisons": {
+  "3n-1": {
+   "rows_compared": 44,
+   "rows_differing": 0,
+   "identical": true,
+   "first_differences": [],
+   "has_nontrivial_cycles": true,
+   "example_cycles": [
+    [
+     5,
+     7,
+     10
+    ],
+    [
+     17,
+     25,
+     34,
+     37,
+     41,
+     55,
+     61,
+     68,
+     82,
+     91,
+     136
+    ]
+   ]
+  },
+  "5n+1": {
+   "rows_compared": 44,
+   "rows_differing": 38,
+   "identical": false,
+   "first_differences": [
+    "3,1",
+    "3,2",
+    "4,1",
+    "4,2",
+    "4,3"
+   ],
+   "has_nontrivial_cycles": true,
+   "example_cycles": [
+    [
+     1,
+     2,
+     3,
+     4,
+     8
+    ],
+    [
+     13,
+     26,
+     33,
+     52,
+     83,
+     104,
+     208
+    ]
+   ]
+  }
+ },
+ "blind_to": [
+  "3n-1"
+ ],
+ "verdict": "BLIND",
+ "meaning": "BLIND: the quantity takes identical values on a map that provably HAS cycles, so no claim built on it can exclude cycles for 3n+1. It is not Collatz-specific. SEPARATES: the quantity distinguishes 3n+1 from its cycling analogues and may carry a Collatz-specific claim (necessary, not sufficient)."
+}
