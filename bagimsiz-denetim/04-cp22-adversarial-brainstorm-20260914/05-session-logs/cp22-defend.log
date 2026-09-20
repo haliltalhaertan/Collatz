@@ -1,0 +1,39 @@
+muse: workspace root: /home/mdp/muse-work/cp22-defend (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Defence complete. All numbers below are exact (`int`/`Fraction`, no floats); every finite-table check is evidence only, never a uniform theorem.
+
+```json
+{
+  "gate_ok": "[EXACT COMPUTATION] PASS all rows: (4,2) I=40/3 F=16 Out=31/3 L=8/3 M=17/3 defect=3; (3,2) I=12 F=12 Out=8 L=0 M=4; (2,1) I=F=Out=4 L=M=0; ADV1 L=2 M=2/3; ADV2 L=9 M=101/15; radius-1 (18,2)[14,14] demand=3/35 supply=4033/69615 gap=1934/69615; shifted lower end max(a-1,2) gives gap -41747/139230, confirming the convention trap hides the witness.",
+  "identities_verified": {
+    "R1": "[EXACT COMPUTATION] 41/41 levels: L_k=(q/n_k)<w_k,T^{3^k}w_k> with q-point inner product. [FAIL] As stated (q/2n_k) it is FALSE under the q-point reading (matches only the 13/41 levels where <w,Tw>=0); TRUE under the N-point antiperiodic-extension reading, which is algebraically identical. Normalization, not substance.",
+    "R2": "[EXACT COMPUTATION] 41/41: M_j=(q/2)||Y_j||^2/den with Y_j length-(q/2) sibling diff (equivalently (q/4)||Y||^2 with length-q duplicated Y — identical); the E/O-on-diffs maps verified entrywise (dE==sibling-diff(E), dO==sibling-diff(O)). So M depends only on w. [PROOF] by substitution into J_s.",
+    "parent_identity": "[EXACT COMPUTATION] P_{m,k,s+1}=E^par(Q_k)+O^par(Q_{k-1}), 41/41 levels.",
+    "R3_unsigned_as_stated": "[FAIL] FALSE: holds 4/41 (only where offending W' entries vanish). Counterexample (4,2) k=3: unsigned O' gives (1,1,0,0), true diff is (-1,1,0,0).",
+    "R3_corrected": "[PROOF + EXACT COMPUTATION] Corrected signed maps dA[u]=W'[2u]+sE*W'[(2u-c) mod N], dB[u]=sO1*W'[t1]+sO2*W'[t2] with signs +/-1 from the mod-2N lift ((.-.) mod 2N < N?), verified 58/58 levels; ~37% of signs are -1, so the unsigned form is not a minor slip. The signs need one bit beyond mod N (c mod 2N), a structural finding.",
+    "LX_split": "[PROOF + EXACT COMPUTATION] The stated LX_k=2<A,TB> is FALSE (T^d not symmetric: (7,6)k=5 has LXa=0, LXb=64/15). Correct symmetric form L_k=(q/n_k)(LE+LO+LXa+LXb) verified everywhere tested, incl. exact brief witnesses (7,6)k=5: L=64/15=LE0+LO0+LX64/15; (13,12)k=8: L=11776/99, LE=-3584/99, LO=-5120/99, LX=20480/99."
+  },
+  "lx_bound_result": "[PROOF] |LX_k|<=8q^2*C_E*C_O/n_k (triangle + T-orthogonality; C_E/C_O = parent real caps; WHERE cap enters: entrywise |A|<=2C_E, |B|<=2C_O). [EXACT COMPUTATION] Sound 438/438 strata, zero violations; tightest nonzero ratio 32/3 at (6,2)k=4 (|LX|=12/5 vs bound 128/5); typical ratios 10-60x. Support-refined variant barely better. Verdict: sound but >=10x too loose to transport demand.",
+  "composite_verdict": "[FAIL] fails-with-witness. T6 law itself holds 156/156 ([EXACT COMPUTATION], tight at (5,3,2) ratio 1) so propagation closes; but T6-propagated caps are NOT strong enough: W(4,2) satisfies parent radius-2 (L'=0, M'={16/3,16/3), zero violations) AND all T6-propagated caps (child piles<=prop on all 4 strata), yet violates child radius-2 (demand 16/3 vs supply 14/3, 4 interval violations). So {radius-2 AND T6-cap} is not inductively closed. Separately, factored cap/support demand-bounds exceed real supply on 1743/1744 real intervals (triangle 1744/1744), e.g. (9,2)k=5: L=34/35 vs support-bound 296/5 vs supply 458/105 — no rescue by tightening within this form; only the lone interval (7,1)[3,3] (8/15<=29/15) closes. The real-cap (non-T6) composite is neither proved nor killed here — no witness either way.",
+  "obstruction": "[EXACT COMPUTATION] Two exact obstructions: (1) W(4,2): parent Q=(e_14, 2e_6, e_4) on Z/16, correct child masses (1,3,3,1), parent-Hyp holds, T6-caps hold, child demand 16/3 > supply 14/3. Excluded from the real source ONLY by real cap (Q2 pile 2 > cap(3,2,4)=1) — and T6 propagation (prop 4) lets it back in. (2) Bound-family weakness: even with TRUE caps+supports, per-stratum factored bounds overshoot real supply by 10-70x, so absolute-value bounds structurally cannot close the step; real LX is small by sign cancellation the bounds discard.",
+  "adversary_gate": "[EXACT COMPUTATION] PASS: ADV1 (L=2>M=2/3), ADV2 (L=9>M=101/15), W(4,2)-child (16/3>14/3) all violate the target — my verdict entails nothing for them (composite declared failed, bounds are one-sided uppers). Corrected R1 + merge identity re-verified ON ADV1 (k=2: L=R1=2; merge sum 2/3=M) — equalities, no over-proof. Exclusion roles confirmed: ADV1 satisfies real caps (max 1) but support wrong ([0,7] vs real [2,4] at k=2); ADV2 piles 3 where real max is 1. W(6,2) untestable — no construction in the brief. [CONJECTURE] none used; target M_merge>=L_lift remains open.",
+  "files": [
+    "/home/mdp/muse-work/cp22-defend/defend_gate.py",
+    "/home/mdp/muse-work/cp22-defend/defend_radius1.py",
+    "/home/mdp/muse-work/cp22-defend/defend_R.py",
+    "/home/mdp/muse-work/cp22-defend/defend_debugR3.py",
+    "/home/mdp/muse-work/cp22-defend/defend_R3fix.py",
+    "/home/mdp/muse-work/cp22-defend/defend_LXsplit.py",
+    "/home/mdp/muse-work/cp22-defend/defend_LXbound.py",
+    "/home/mdp/muse-work/cp22-defend/defend_composite.py",
+    "/home/mdp/muse-work/cp22-defend/defend_step.py",
+    "/home/mdp/muse-work/cp22-defend/defend_adversary.py"
+  ]
+}
+```
+
+Headline [FAIL-with-witness, first-class]: the composite {radius-2 charging + T6-propagated cap} does not close — W(4,2) is the exact obstruction. T6 propagates fine (156/156), but its bounds (e.g. 4 vs real 1) re-admit the very witness the real cap excludes. Supporting kills: the handed-down R3 and LX formulas were both wrong as stated (missing mod-2N signs; asymmetric cross term) — corrected versions proved and verified (58/58, exact witnesses) — and factored cap/support bounds overshoot supply by 10–70× on reals, so no bound-tightening within absolute-value form can rescue the step. Where cap/support enter is stated at each step; nothing I claim proves the target for ADV1/ADV2/W(4,2). The real-cap composite remains open with no witness either way.
