@@ -1,0 +1,31 @@
+{
+  "calibration": [
+    {
+      "m": 8,
+      "starts": 128,
+      "descents": 94,
+      "pointwise_agreement": true,
+      "D_positive_but_no_endpoint_descent": [
+        1,
+        7,
+        9,
+        19,
+        25
+      ]
+    },
+    {
+      "m": 16,
+      "starts": 32768,
+      "descents": 27823,
+      "pointwise_agreement": true,
+      "D_positive_but_no_endpoint_descent": [
+        1
+      ]
+    }
+  ],
+  "auditor_prose_corrections_verified": [
+    "m=1 reflection fixed source h=1",
+    "Hp trivial orbit is a 2-cycle, not a fixed point"
+  ],
+  "scope": "No novelty, density limit, all-start descent, or Collatz proof claim."
+}

@@ -1,0 +1,81 @@
+{
+  "gate": {
+    "E_4_3": "40/3",
+    "E_5_2": "31/3"
+  },
+  "quarantined_original_extension": {
+    "file": "cp21_lead_extension_m25_m26.json",
+    "rows": 11,
+    "merge_sum_mismatch_rows": 11,
+    "reason": "Per-stratum merge sums disagree with stored totals; fresh trajectory reconstruction also disagrees. Original preserved; corrected rows used below."
+  },
+  "radius_archive": {
+    "batches": [
+      {
+        "file": "r8-hunt-scratch/hunt_grid.json",
+        "rows": 210,
+        "new_unique_rows": 210
+      },
+      {
+        "file": "cp24-recovery/corrected_extension.json",
+        "rows": 11,
+        "new_unique_rows": 11
+      },
+      {
+        "file": "cp22-attack-files/attack_hot_results.json",
+        "rows": 18,
+        "new_unique_rows": 0
+      }
+    ],
+    "unique_rows": 221,
+    "conflicts": [],
+    "intervals": 33540,
+    "positive_demand_intervals": 18259,
+    "violations": 0,
+    "scope": "Recomputed from archived L/M fractions; not a fresh enumeration of every source."
+  },
+  "frequency_coverage": {
+    "old": 41,
+    "later": 35,
+    "overlap": 19,
+    "new_unique": 16,
+    "union": 57,
+    "scope": "Coverage and common defect values only; cyclotomic signs not rerun here. Gauge D versus later convention requires separate review."
+  },
+  "reflection": {
+    "checks": 16383,
+    "failures": 0,
+    "m_range": [
+      1,
+      14
+    ]
+  },
+  "attack_constraints": {
+    "m": 20,
+    "s": 3,
+    "independent_real_histogram_match": true,
+    "exact_support_equality": true,
+    "mass_cap_integrality": true
+  },
+  "original_files_unchanged": true,
+  "cycles": {
+    "-1": 29,
+    "1": 7
+  },
+  "normalisation_examples": [
+    {
+      "m": 4,
+      "r": 2,
+      "raw": "8",
+      "normalised": "1"
+    },
+    {
+      "m": 12,
+      "r": 2,
+      "raw": "498/35",
+      "normalised": "249/35840"
+    }
+  ]
+}
+
+STDERR:

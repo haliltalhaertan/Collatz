@@ -1,0 +1,27 @@
+[
+  {
+    "script": "recompute_extension.py",
+    "exit_code": 0,
+    "log": "cp24-recovery\\recompute_extension.py.run.log"
+  },
+  {
+    "script": "regression_truncation.py",
+    "exit_code": 0,
+    "log": "cp24-recovery\\regression_truncation.py.run.log"
+  },
+  {
+    "script": "lead_verify.py",
+    "exit_code": 0,
+    "log": "cp24-recovery\\lead_verify.py.run.log"
+  },
+  {
+    "script": "calibration.py",
+    "exit_code": 0,
+    "log": "cp24-recovery\\calibration.py.run.log"
+  },
+  {
+    "script": "muse_checks.py",
+    "exit_code": 0,
+    "log": "cp24-recovery\\muse_checks.py.run.log"
+  }
+]

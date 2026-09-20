@@ -1,0 +1,66 @@
+PASS gate(a) 128 odd h<256 affine+B odd+Bmod3 | fails=0
+PASS gate(b) Ecal(4,3)=40/3 | 40/3
+PASS gate(b) Ecal(5,2)=31/3 | 31/3
+PASS gate(c) Hm 5->7->10->5
+PASS reflect pairing m=4 (word,B neg,ep+em=3^k) | bad=0
+PASS reflect pairing m=6 (word,B neg,ep+em=3^k) | bad=0
+PASS reflect pairing m=8 (word,B neg,ep+em=3^k) | bad=0
+PASS Hm(-x)=-Hp(x) on [-50,50]
+PASS Ecal blind Hp==Hm (4,3) | 40/3
+PASS Ecal blind Hp==Hm (5,2) | 31/3
+PASS Ecal blind Hp==Hm (6,2) | 38/5
+PASS Q1 cross-identity m=6
+PASS same-h k differs somewhere (blind!=same) | disagree=110/128
+PASS Q4 separates maps m=6 | Hp=100640 Hm=37920
+PASS cycle Hp w=(1, 0) x=1 | B=1 D=1 x=1
+PASS cycle Hp w=(1, 0, 1, 0) x=1 | B=7 D=7 x=1
+PASS cycle Hp w=(1, 1) x=-1 | B=5 D=-5 x=-1
+PASS cycle Hm w=(1, 1, 0) x=5 | B=5 D=-1 x=5
+PASS cycle Hm w=(1, 0, 1) x=7 | B=7 D=-1 x=7
+PASS cycle Hm w=(1, 1, 1) x=1 | B=19 D=-19 x=1
+PASS exhaust m=1 Hp: div==self_any (positivity extra) | div=1 self_any=1 self_pos=0
+PASS   Hp m=1: positives need D>0 only
+PASS exhaust m=1 Hm: div==self_any (positivity extra) | div=1 self_any=1 self_pos=1
+PASS exhaust m=2 Hp: div==self_any (positivity extra) | div=2 self_any=2 self_pos=1
+PASS   Hp m=2: positives need D>0 only
+PASS exhaust m=2 Hm: div==self_any (positivity extra) | div=2 self_any=2 self_pos=1
+PASS exhaust m=3 Hp: div==self_any (positivity extra) | div=3 self_any=3 self_pos=0
+PASS   Hp m=3: positives need D>0 only
+PASS exhaust m=3 Hm: div==self_any (positivity extra) | div=3 self_any=3 self_pos=3
+PASS exhaust m=4 Hp: div==self_any (positivity extra) | div=2 self_any=2 self_pos=1
+PASS   Hp m=4: positives need D>0 only
+PASS exhaust m=4 Hm: div==self_any (positivity extra) | div=2 self_any=2 self_pos=1
+PASS exhaust m=5 Hp: div==self_any (positivity extra) | div=1 self_any=1 self_pos=0
+PASS   Hp m=5: positives need D>0 only
+PASS exhaust m=5 Hm: div==self_any (positivity extra) | div=1 self_any=1 self_pos=1
+PASS exhaust m=6 Hp: div==self_any (positivity extra) | div=4 self_any=4 self_pos=1
+PASS   Hp m=6: positives need D>0 only
+PASS exhaust m=6 Hm: div==self_any (positivity extra) | div=4 self_any=4 self_pos=3
+PASS exhaust m=7 Hp: div==self_any (positivity extra) | div=1 self_any=1 self_pos=0
+PASS   Hp m=7: positives need D>0 only
+PASS exhaust m=7 Hm: div==self_any (positivity extra) | div=1 self_any=1 self_pos=1
+PASS exhaust m=8 Hp: div==self_any (positivity extra) | div=2 self_any=2 self_pos=1
+PASS   Hp m=8: positives need D>0 only
+PASS exhaust m=8 Hm: div==self_any (positivity extra) | div=2 self_any=2 self_pos=1
+PASS   J(p) bound k=2 (m=4,r=3) | Jp=4/3
+PASS   J(p) bound k=1 (m=4,r=3) | Jp=4
+PASS   J(p) bound k=3 (m=4,r=3) | Jp=4/9
+PASS   J(p) bound k=4 (m=4,r=3) | Jp=4
+PASS normalisation Ecal==2^(m-1) sum pi J(p) (4,3) | Ecal=40/3 norm-sum=5/3
+PASS   J(p) bound k=3 (m=5,r=2) | Jp=5/9
+PASS   J(p) bound k=2 (m=5,r=2) | Jp=1/2
+PASS   J(p) bound k=4 (m=5,r=2) | Jp=1/4
+PASS   J(p) bound k=1 (m=5,r=2) | Jp=2
+PASS   J(p) bound k=5 (m=5,r=2) | Jp=2
+PASS normalisation Ecal==2^(m-1) sum pi J(p) (5,2) | Ecal=31/3 norm-sum=31/48
+normalised (4,3)=5/3 (5,2)=31/48
+PASS probe Hp m<=12: zero nontrivial | {1: (0, 0), 2: (1, 0), 3: (0, 0), 4: (1, 0), 5: (0, 0), 6: (1, 0), 7: (0, 0), 8: (1, 0), 9: (0, 0), 10: (1, 0), 11: (0, 0), 12: (1, 0)}
+PASS probe Hp m<=12: only trivial q=1 at even m
+PASS probe Hm m=3 witnesses {1,5,7} | [1, 5, 7]
+PASS probe F5 witness q=1 self-consistent
+PASS probe F5 cycle closes at 1 | [1, 3, 8, 4, 2, 1]
+PASS dropping fraction m=8 (observation, not theorem) | 94/128
+PASS dropping fraction m=16 (observation, not theorem) | 27823/32768
+ALL_OK
+
+STDERR:
