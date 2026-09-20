@@ -1,0 +1,146 @@
+tbh: reasoning effort ultra is not available (gate ultra_reasoning_effort is closed); using xhigh
+muse: workspace root: /home/mdp/muse-work/cp21-audit (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 3/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+# AUDIT — CP21 adversarial audit of Round 8
+
+## GATE: literal output + md5 before/after
+
+[EXACT COMPUTATION] Copied `ref/source_defect_round7.py` to `/tmp/cp21-audit/` and ran it there. Literal output:
+
+```json
+{
+  "status": "PASS",
+  "prescribed_cases": 108,
+  "posthoc_cases": 47,
+  "positive_lift_cases": 5,
+  "min_M_over_L_positive": "17/8",
+  "generic_counterexample_output_over_input": "10/9",
+  "elapsed_seconds": 9.195604996999919
+}
+```
+
+All five mandated values reproduce EXACTLY. [GATE OK]
+
+md5 before (also saved at `/tmp/md5_before.txt`):
+
+```
+2f9071e621f8724e3e94cfa8a914631e  ref/extended_s17.py
+f338c903cca7feda3cf9a14cd2b3fa64  ref/extended_s18.py
+ed8b4ba4b20098f0af52f111b30cbfd0  ref/fixed_family_check.py
+1827bc8db102f0c53cd104dcfbc5c320  ref/independent_defect_check.py
+f63b8f18686167c6335209dab31cd20b  ref/independent_kraw_check.py
+249e76f28905ce9af608f294e8aa8219  ref/independent_symmetry_check.py
+401be1af55e925f6d3b154182d720f78  ref/phase_quotient_core.py
+6d6f878e26fb05df9df054fc83cb2668  ref/source_defect_round7.py
+7700800440dd905464af28298cb25067  ref/source_krawtchouk_round5.py
+```
+
+md5 after: identical (see Read-only proof). No producer file was imported by audit code; all audit scripts live in `/tmp/cp21-audit/` and use only integers/`Fraction`. No floating point in any claimed verification.
+
+## Verdict summary
+
+- H1: CONFIRMED WITH CAVEAT (numbers exact; 12/210 rows merge-only; table-scoped only)
+- H2: CONFIRMED WITH CAVEAT (8-count matches adjacent-supply definition, mislabelled as pointwise; nuance True)
+- H3: CONFIRMED
+- H4: CONFIRMED WITH CAVEAT (3/4 minima exhaustively confirmed; (6,3) sampled only; anchor and counts confirmed)
+- H5: CONFIRMED WITH CAVEAT (27 and 0 exact; vacuity fraction undisclosed; s=1 counted)
+- H6: NOT SUPPORTED (unverified exactly, not refuted; SAYING SO explicitly per task)
+- H7: CONFIRMED WITH CAVEAT ("both sides" wording is false; only L-side vanishes)
+
+## H1/H3 independent recomputation
+
+[EXACT COMPUTATION] Method: own from-scratch code, no producer imports. Two implementations: pure-Python direct enumeration (`audit_probe.py`) and numpy-vectorised direct-lift counting (`audit_grid.py`). Headline path: for each odd `h<2^m`, walk `m` shortcut steps to get `(k,x=H^m(h))`; set `y=x+3^k`; the even endpoint maps via `x/2` into `E_k`, the odd via `(3x+1)/2` into `O_k`, both mod `2^s`. `Pin` is the direct endpoint histogram. `I,F` from direct `E/O`; `Out` from merged `E+O`, cross-checked against separately enumerated `P_{m+1,*,s}`.
+
+- Transfer formulas `E[z]=P[2z]+P[2z-c]`, `O[z]=P[r(2z-1)]+P[r(2z-1)-c]` were re-derived, not copied, and asserted equal to direct counts on every tested row.
+- Merge identity `P'_{k}=E_k+O_{k-1}` asserted against direct `(m+1)` enumeration wherever available.
+- Identities `L=F-I=q·Σ[C_k(3^k)-C_k(3^k+q)]/n_k`, `M=F-Out=ΣJ_s(n_{k-1}E_k-n_kO_{k-1})/[n_kn_{k-1}(n_k+n_{k-1})]`, `D=M-L` asserted on all 210 rows. 210/210 PASS.
+
+[EXACT COMPUTATION] Grid `m=2..24, s=1..min(12,m-1)` = 210 rows:
+
+- Defect violations (`D<0`): 0/210.
+- Positive-lift rows: exactly 5 — `(4,2): L=8/3,M=17/3`; `(8,2): L=16/7,M=223/15`; `(10,2): L=40/63,M=2804/315`; `(10,9): L=256/21,M=40256/15`; `(11,9): L=6016/105,M=11518208/3465`. Values match Round-7 positives bit-for-bit. A finite table is NEVER a uniform theorem.
+- No row with `m>=12` has `L>0` in this table. A finite table is NEVER a uniform theorem.
+- `min M/L` over positives is `17/8` at `(4,2)` (`1561/240`, `701/50`, `4403/20`, `89986/1551` are all larger). [EXACT COMPUTATION]
+- `m=24` rows (12/210) are merge-only for `Out` (need `Pin[25]`, i.e. 16M starts, not enumerated); the other 198 rows have `Out` double-enumerated and merge-equality asserted. So H1 is confirmed with that stated caveat.
+- Minimum 20-case rule: satisfied (210 rows, plus witness, plus 2304 generic families).
+
+[EXACT COMPUTATION] H3 witness `(5,2)` support-only family recomputed: `I=94/3, F=121/3, Out=168/5, L=9, M=101/15, M-L=-34/15, Out/I=252/235`. All six match. Masses correct. Real-support check at `(5,2)`: witness supports `{2},{1,2},{1,4,6},{0,4},{2}` are all subsets of real supports `{2},{1,2,4,5},{1,2,4,6},{0,2,4,7},{2}`. Cap check: real maxima `(1,1,3,1,1)` vs witness maxima `(1,3,3,3,1)` — exceeds exactly at strata 2 and 4 as claimed. Stratum 3 equals cap (3), not an exceed. Discrepancies: none.
+
+## H4 class-definition audit
+
+[EXACT COMPUTATION] Reconstructed class as: per-`k`, entries supported inside real hit-set, each entry `≤` real max, sum `=` `binom(m-1,k-1)`. Independent bounded-composition counts:
+
+- `(5,2)`: `1·1·44·1·1=44`; `(5,3)`: `45`; `(6,2)`: `1·1·161·101·16·1=260176`; `(6,3)`: `2907·2128=6186096`. Sum `44+45+260176+6186096=6446361`, reproducing the claimed `6,446,361` exactly. A finite table is NEVER a uniform theorem.
+
+Is the real source inside its own class? Yes, by construction [PROOF]: its support is the defining set, its max equals the cap, its mass equals the binomial mass (checked: e.g. `(6,3,4)` case has mass 10 on 9 points max 2, matching the `R-cap` example). If the class had meant exact support equality (no zeros inside the hit-set) the real source would still be inside but the search space would be smaller; the count match proves the producer used subset semantics, which does contain the source. The search is therefore not vacuous. [EXACT COMPUTATION]
+
+Minima:
+
+- `(5,2)` exhaustive over 44: min `32/5`, argmin `k=3:[0,0,3,0,0,0,3,0]`, zero violations. CONFIRMED.
+- `(5,3)` exhaustive over 45: min `48/5`, zero violations. CONFIRMED.
+- `(6,2)` exhaustive over 260176 (≈14 s): min `43/15`, zero violations, real defect `13`. CONFIRMED.
+- `(6,3)` (6,186,096 families): NOT exhaustively re-run. Random sampling of 30000 capped families found best `118/15`, zero `M-L<0`, no value below `14/5`. Consistent but the claimed exact minimum `14/5` is single-implementation and unverified here. Producer recorded no argmin in `ref/`, so achievement cannot be checked. GAP.
+- Sanity anchor: generic `(3,2)` class (no support/cap restriction) brute-forced over `8·36·8=2304` families: global minimum `M-L=-4/3`, 64 argmins all with `I=12,F=14,Out=40/3`. CONFIRMED. A finite table is NEVER a uniform theorem.
+
+Real defects at the four points are `42/5`, `236/15`, `13`, `298/15` — all strictly above claimed minima, so no contradiction.
+
+## H5 radius-2 audit
+
+[EXACT COMPUTATION] Definitions re-derived: `L_k=q[C_k(3^k)-C_k(3^k+q)]/n_k`, `M_j=J_s(n_{j-1}E_j-n_jO_{j-1})/[n_jn_{j-1}(n_j+n_{j-1})]`. Natural adjacency for `L_k` is `M_k+M_{k+1}` (verified: at `(18,2)`, `M_14=7741/139230`, `M_15=5/2142`, sum `4033/69615`). Hence radius-1 interval supply is `j∈[a,b+1]`, radius-2 is `j∈[max(a-1,2),min(b+2,m)]`, matching the prompt's formula.
+
+- Radius-1 witness independently reproduced: `(18,2)` cut `[14,14]`, demand `3/35`, supply `4033/69615`, violation `1934/69615`. CONFIRMED.
+- Full-interval scan over all 210 rows (29835 intervals): radius-1 violations = 27 on 9 rows, exactly the claimed 27. A finite table is NEVER a uniform theorem.
+- Radius-2 violations = 0/29835. CONFIRMED. A finite table is NEVER a uniform theorem.
+
+Binding/vacuity [EXACT COMPUTATION]: demand `Σmax(L_k,0)` is zero on 14036/29835 intervals (47.05% vacuous). Overall binding fraction `15799/29835 ≈ 0.5295`. Excluding the degenerate `s=1` block (2599 intervals, 8.71% of the total, all `L_k=0`): non-`s=1` binding is `15799/27236 ≈ 0.5801`, vacuous `11437/27236 ≈ 0.4199`. Rows with any `L_k>0`: 159/210; rows with total `L>0`: 5/210. So the "zero violations" headline rests on ~58% binding intervals outside `s=1` — substantial, not mostly vacuous, but the 42% vacuous share and the 23 degenerate `s=1` rows counted in the "210-row" denominator must be disclosed and were not.
+
+## H2 nuance check
+
+[EXACT COMPUTATION] Two possible readings:
+
+- Strict pointwise `L_k>M_k (k≥2)`: 46 failures (list includes `(7,3)k=5: 16/5>12/5`; `(18,3)k=16: 36/17>277/170`; `(18,2)k=14: 3/35>7741/139230`; plus 43 more at `m≥19`, all with total `L<0`). So under the Round-7 dead-#3 definition, the "8 witnesses" count is FALSE ([FAIL] as stated).
+- Adjacent/singleton `L_k^+>M_k+M_{k+1}`: exactly 8 failures — `(18,2)k14`, `(19,2)k11`, `(20,3)k15`, `(20,4)k10`, `(22,2)k15`, `(23,2)k6`, `(23,2)k11`, `(24,3)k15` — matching H2's count and its `(18,2)` numbers (`3/35` vs `4033/69615`).
+
+H2's example numbers are radius-1 singleton numbers, not strict-pointwise numbers (strict would quote `M_14=7741/139230`). Since `M_14<M_14+M_15<L_14`, the pointwise violation at `(18,2)k14` is still real, but the quoted supply is the wrong one for that definition. Nuance "all failures on total-`L≤0` rows": True under both definitions (46/46 and 8/8). A finite table is NEVER a uniform theorem.
+
+## H6 scope-honesty check
+
+NOT SUPPORTED as an independent exact verification — explicitly SAYING SO instead of passing it. [GAP, not a refutation]
+
+Scope as stated (`s=2` only, `m∈{4,5,6,7,8,10}`, both odd orbits) is honestly narrow. What I did: [NUM] floating diagnostic confirmed the DFT normalisation (`J_sib=N·Σ_odd|Phat_unitary|²`; at `(4,2)`, sib `4,12,4,4` vs DFT `0.5,1.5,0.5,0.5`, factor 8) and that total defect `3` at `(4,2)` is consistent with `3/2+3/2`. That is necessary, not sufficient, for per-orbit positivity. Exact per-orbit defects live in `Q(√2)` (cos values `±√2/2` at `N=8`), require cyclotomic exact arithmetic and a decomposition spec (how `F^(a)`, `Out^(a)` map `q=4` frequencies to `N=8` gauge classes) that is absent from `ref/` and the claim text. No producer decomposition code was available to audit, and I did not invent one and call it a check. Needed for a real check: the exact per-`a` definitions of `I^(a),F^(a),Out^(a)` plus an exact `Q(√2)` (or cyclotomic) implementation, then `Δ^(a)=3/2` recomputed rationally on at least two rows.
+
+## Overclaim register
+
+1. Quote: "ALL have defect ≥ 0 (no monotonicity violation)" over 210 rows. Correction: true in the table [EXACT COMPUTATION]; a finite table is NEVER a uniform theorem — it does not imply `M≥L` uniformly or Collatz.
+2. Quote: "the positive-lift set is EXACTLY {(4,2),(8,2),(10,2),(10,9),(11,9)}". Correction: exact within the 210-row table only; `(10,9),(11,9)` themselves were post-hoc additions beyond the prescribed grid, proving the set grows with the grid. A finite table is NEVER a uniform theorem.
+3. Quote: "no row with m≥12 has L>0". Correction: table-scoped only; same history warns against promoting absence to a lemma (cf. dead #6 `s≥3` claim). A finite table is NEVER a uniform theorem.
+4. Quote: "min M/L … is exactly 17/8". Correction: table minimum, not a uniform lower bound `M≥(17/8)L`. A finite table is NEVER a uniform theorem.
+5. Quote: "radius-2 charging has zero violations over all intervals on the 210-row grid". Correction: `0/29835` confirmed, but `47.05%` of those intervals (41.99% outside `s=1`) have demand zero and pass vacuously; binding fraction is `≈0.5295` overall, `≈0.5801` non-`s=1`. The 23 `s=1` rows (2599 intervals) are degenerate (`L_k≡0`) and carry no charging information yet inflate the denominator.
+6. Quote (H2): "pointwise-k charging is false — 8 witnesses, e.g. (18,2) k=14: lift 3/35 exceeds adjacent merge 4033/69615". Correction: 8 is the radius-1 singleton count; strict pointwise `L_k>M_k` has 46 failures on this grid. The quoted supply `4033/69615=M_14+M_15` is the adjacent sum, not `M_14=7741/139230`. Either rename the claim to radius-1-singleton or correct the count/supply.
+7. Quote (H4): "EXACT global minima … 32/5, 48/5, 43/15, 14/5 — no violation anywhere". Correction: first three re-verified exhaustively here; `14/5` at `(6,3)` (6.1M families) was sampled only (30k trials, best `118/15`, no violation) and no producer argmin is on file, so that one minimum remains single-implementation. A finite table is NEVER a uniform theorem.
+8. Quote (H6): per-frequency defects "strictly positive for BOTH odd frequencies". Correction: narrow conjecture, honestly scoped, but currently single-implementation with no decomposition spec in evidence; cite as [CONJECTURE]/[DIAGNOSTIC], not as verified fact.
+9. Quote (H7): "for s=1 both sides vanish identically". Correction: only the lift side vanishes (`L≡0`, every `L_k=0`, verified on all 23 rows). `M>0` generally (e.g. `(3,1): M=4/3`) and `F≠Out`, so "both sides" is false. `s=1` rows carry zero information about lift/charging but still exercise masses/merge machinery.
+10. Quote pattern: "verified 0 violations over 210 rows" / "independent" second implementations. Correction: any check sharing the producer's `H`, odd-starts-only, `J` normalisation, or transfer convention is not fully independent (see Common-mode). The `s=1` block (23/210 rows) must be excluded from any "evidence for the source" count.
+
+## Common-mode error analysis
+
+Risk: all three Round-8 sessions plausibly inherit the same conventions from the producer codebase: shortcut `H`, odd-starts-only histograms, mass `binom(m-1,k-1)`, energy normalisation `J_r=2^{r-1}Σdiff²`, transfer pair `(E_c,O_c)` with `r=3^{-1} mod N`, and the window conventions `[a,b+1]`/`[a-1,b+2]`. A shared mis-encoding (e.g. wrong `r`, wrong `c_k=3^k`, even starts mishandled, `J` off by a factor, folding mod the wrong modulus) would pass every "second implementation" that re-imports or retypes the same formulas.
+
+What this audit did to rule part of it out [EXACT COMPUTATION]: direct lifted-pair counting (`y=x+3^k`, parity-split, `H` applied mod `q`) without calling any transfer helper, then asserted transfer-formula equality and `P'=E+O` merge equality against separately enumerated `P_{m+1}` on 198/210 rows — all passed. Count-sum `6446361` and generic minimum `-4/3` were reproduced from independent brute force. That rules out a transfer-coding common mode for the tested grid.
+
+What remains (independent evidence still needed): (a) that odd-starts-only plus `binom` masses is the right model of the research question (even starts are excluded by definition — a convention error here is shared by design); (b) that `J`'s normalisation is the Fourier odd-character energy (my [NUM] check `J=N·Σ_odd|Phat|²` supports it up to the scale factor, but an exact Fourier-side proof was not re-done here); (c) the radius window off-by-one convention (`[a,b+1]` vs `[a-1,b+1]`) — my numbers confirm the prompt's convention reproduces the quoted violation `1934/69615`, but an off-by-one shared by all sessions would move violations between "pointwise / radius-1 / radius-2" labels (as seen in H2); (d) H6's entire decomposition and H4's `(6,3)` DP minimum remain single-implementation. A genuinely independent check would re-derive `J` from the Fourier definition, re-derive `(E_c,O_c)` from the parity-word affine form `x→(3^kx+B_w)/2^m` with odd `B_w`, and publish H6's per-`a` formulas plus the `(6,3)` argmin family.
+
+## Read-only proof
+
+`md5sum ref/*.py` after the whole run is byte-identical to before (diff empty, `MD5 IDENTICAL`). No file in `ref/` or the workspace root was created, modified, or deleted; `ref/` mtimes unchanged; all scratch (including the gate's `RESULTS.json`) went to `/tmp/cp21-audit/`. `readonly_held=true`.
+
+```json
+{"gate_ok": true, "md5_before": "2f9071e621f8724e3e94cfa8a914631e f338c903cca7feda3cf9a14cd2b3fa64 ed8b4ba4b20098f0af52f111b30cbfd0 1827bc8db102f0c53cd104dcfbc5c320 f63b8f18686167c6335209dab31cd20b 249e76f28905ce9af608f294e8aa8219 401be1af55e925f6d3b154182d720f78 6d6f878e26fb05df9df054fc83cb2668 7700800440dd905464af28298cb25067", "md5_after": "2f9071e621f8724e3e94cfa8a914631e f338c903cca7feda3cf9a14cd2b3fa64 ed8b4ba4b20098f0af52f111b30cbfd0 1827bc8db102f0c53cd104dcfbc5c320 f63b8f18686167c6335209dab31cd20b 249e76f28905ce9af608f294e8aa8219 401be1af55e925f6d3b154182d720f78 6d6f878e26fb05df9df054fc83cb2668 7700800440dd905464af28298cb25067", "readonly_held": true, "verdicts": {"H1": "CONFIRMED WITH CAVEAT", "H2": "CONFIRMED WITH CAVEAT", "H3": "CONFIRMED", "H4": "CONFIRMED WITH CAVEAT", "H5": "CONFIRMED WITH CAVEAT", "H6": "NOT SUPPORTED", "H7": "CONFIRMED WITH CAVEAT"}, "independent_cases": 210, "discrepancies": ["H2 count is 46 under strict pointwise Lk>Mk, 8 only under adjacent Mk+M(k+1); quoted supply 4033/69615 is the adjacent sum, not M14", "H7 'both sides vanish' is false: L vanishes, M does not", "H4 (6,3) minimum 14/5 not exhaustively re-verified (30k samples, best 118/15)", "H6 per-frequency decomposition has no spec/code in ref and was not exactly re-verified", "m=24 Out (12 rows) is merge-only, not double-enumerated"], "binding_fraction": 0.5295458354281883, "overclaims": ["table-wide ALL/EXACTLY/no-m>=12 read as uniform", "radius-2 zero violations without vacuity fraction (42% non-s1 vacuous, s=1 block counted)", "H2 pointwise label for radius-1-singleton numbers", "H4 exact minima incl. unverified (6,3)", "H6 conjecture phrased as verified fact", "H7 both-sides-vanish wording", "s=1 rows counted as source evidence"], "common_mode_risks": ["shared H/odd-starts/mass/J/transfer/window conventions across sessions", "transfer ruled out on 198 rows by direct-lift cross-check; J scale checked numerically only", "remaining single-implementation items: H6 decomposition, (6,3) DP minimum"]}
+```
