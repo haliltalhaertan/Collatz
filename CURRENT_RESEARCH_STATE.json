@@ -312,7 +312,8 @@
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
     "current_integration_decision": "research_manager/decisions/INTEGRATED_RESEARCH_MUSE_W_2026-09-12.json",
     "current_exploratory_decision": "research_manager/decisions/CP23_CP24_CHAIN_KILL_INTEGRATION_AND_CP25_SIGN_SENSITIVE_PILOT_2026-09-20.md",
-    "archive_limit_decision": "research_manager/decisions/ARCHIVE_LIMIT_100_MIB_CLARIFICATION_2026-09-20.md"
+    "archive_limit_decision": "research_manager/decisions/ARCHIVE_LIMIT_100_MIB_CLARIFICATION_2026-09-20.md",
+    "analogue_gate_lf_repair_decision": "research_manager/decisions/ANALOGUE_GATE_LF_CANONICALIZATION_REPAIR_2026-09-20.md"
   },
   "integrity": {
     "archive_members": [
@@ -386,7 +387,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/analogue_gate.py",
-        "sha256": "5a826bfc32cbe40a4d552ab7953c98578ea30d13cbe3401bbd1b54df3c7f38e0"
+        "sha256": "85ef99abd977e315a4b56a5c4348b0a4e299d92e52b0822116a3368d7d4c9c60"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/analogue_gate_verdict.json",
@@ -398,7 +399,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/test_analogue_gate.py",
-        "sha256": "676f42088852cf34ecb8054df1c787d54ed61070deabf426f6a2235dc4b50d8e"
+        "sha256": "5df5238478c912c8a17d9835f19dd9c481f91d7ef71b42852b6b1c7df573d62c"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/verify_handoff.py",
@@ -410,11 +411,15 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "fac8c83ec4f104f55e35b35cc5d725077a1476804cab57c55bd51ebf49e9963c"
+        "sha256": "646010079d2219895061b51017b1ea2c9e1d131f655845d7e979c1bee863eba1"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
         "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"
+      },
+      {
+        "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/ANALOGUE_GATE_LF_CANONICALIZATION_REPAIR_2026-09-20.md",
+        "sha256": "e7842549487dccd93c4e7eeb92d997b6e1b36a1af6068181b359bdf9ab2cb41c"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/decisions/ARCHIVE_LIMIT_100_MIB_CLARIFICATION_2026-09-20.md",
@@ -780,11 +785,15 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "fac8c83ec4f104f55e35b35cc5d725077a1476804cab57c55bd51ebf49e9963c"
+        "sha256": "646010079d2219895061b51017b1ea2c9e1d131f655845d7e979c1bee863eba1"
       },
       {
         "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
         "sha256": "d2d749c38eee2b05ce081c27d5abb763df0d08f90624c56da4cae79e2d970562"
+      },
+      {
+        "path": "research_manager/decisions/ANALOGUE_GATE_LF_CANONICALIZATION_REPAIR_2026-09-20.md",
+        "sha256": "e7842549487dccd93c4e7eeb92d997b6e1b36a1af6068181b359bdf9ab2cb41c"
       },
       {
         "path": "research_manager/decisions/ARCHIVE_LIMIT_100_MIB_CLARIFICATION_2026-09-20.md",
@@ -1212,7 +1221,7 @@
       },
       {
         "path": "tools/analogue_gate.py",
-        "sha256": "5a826bfc32cbe40a4d552ab7953c98578ea30d13cbe3401bbd1b54df3c7f38e0"
+        "sha256": "85ef99abd977e315a4b56a5c4348b0a4e299d92e52b0822116a3368d7d4c9c60"
       },
       {
         "path": "tools/analogue_gate_verdict.json",
@@ -1224,7 +1233,7 @@
       },
       {
         "path": "tools/test_analogue_gate.py",
-        "sha256": "676f42088852cf34ecb8054df1c787d54ed61070deabf426f6a2235dc4b50d8e"
+        "sha256": "5df5238478c912c8a17d9835f19dd9c481f91d7ef71b42852b6b1c7df573d62c"
       },
       {
         "path": "tools/verify_handoff.py",
@@ -1443,7 +1452,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-20T20:34:01.958501+00:00",
+  "updated_at": "2026-09-20T20:38:52.361161+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
