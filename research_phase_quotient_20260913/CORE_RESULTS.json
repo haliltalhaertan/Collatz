@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "small_exact_checks": 188,
+  "selected_quotient_counts": [
+    {"s": 4, "states": 57, "direct": 16, "ratio": "57/16", "value": "20880"},
+    {"s": 8, "states": 2008, "direct": 256, "ratio": "251/32", "value": "801232266240"},
+    {"s": 12, "states": 27120, "direct": 4096, "ratio": "1695/256", "value": "182233130044797771776"},
+    {"s": 16, "states": 243027, "direct": 65536, "ratio": "243027/65536", "value": "71431152922219420386532524032"}
+  ],
+  "independent_agent_audit": false,
+  "same_session_implementation": true,
+  "symmetries": ["common offset", "primitive half-character anti-periodicity", "xi->-xi sign conjugation"],
+  "elapsed_seconds": 8.380380031999948
+}

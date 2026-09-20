@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-13",
+  "canonical_main": "434d8fc55544207b35a4c4390600598dd6623d28",
+  "research_branch": "research/mixed-gram-round1-20260912",
+  "pr": 2,
+  "head_before_round5": "121f86b12cb31c115edca96e9e7f2ede89ea0ab0",
+  "real_subagents_available": false,
+  "paid_provider_calls": false,
+  "successful_runs": [
+    "phase_quotient_core.py: 188 exact root checks; selected state counts through s=16",
+    "independent_symmetry_check.py: 80 checks for each of three exact symmetries",
+    "fixed_family_check.py: (60,38,16) quotient recurrence reproduction",
+    "extended_s17.py: PASS",
+    "extended_s18.py: PASS"
+  ],
+  "failed_or_timed_out_runs": [
+    "phase_quotient_round5.py broad monolithic run: timeout 180s, not used",
+    "second narrowed monolithic run: timeout 180s, not used",
+    "extended_probe.py: timed out after writing s=17; s=17 later rerun separately before acceptance",
+    "extended_s19.py: timeout 120s; no s=19 result accepted"
+  ],
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "status": "local theorem/proof + same-session finite checks; no independent-agent audit; W/D2/Collatz open",
+  "integrated_round": 6,
+  "renumbering_note": "Concurrent source Krawtchouk/Jacobi work was integrated first as Round 5; this phase-quotient work is Round 6."
+}

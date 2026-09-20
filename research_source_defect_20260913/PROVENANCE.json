@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-13",
+  "canonical_main": "434d8fc55544207b35a4c4390600598dd6623d28",
+  "research_branch": "research/mixed-gram-round1-20260912",
+  "pr": 2,
+  "round": 7,
+  "real_subagents_available": false,
+  "paid_provider_calls": false,
+  "primary_script": "source_defect_round7.py",
+  "second_implementation": "independent_defect_check.py",
+  "proof_status": {
+    "lift_autocorrelation_identity": "PROVED",
+    "merge_slack_identity": "PROVED",
+    "monotonicity_defect_identity": "PROVED",
+    "generic_nonnegative_histogram_monotonicity": "FALSE — explicit counterexample",
+    "actual_source_monotonicity": "OPEN — finite checks only",
+    "uniform_W_or_D2_bound": "OPEN",
+    "collatz": "OPEN"
+  },
+  "failed_runs": [
+    "first extended defect scan recomputed histograms redundantly and hit the 60s execution limit; no result from that run was used"
+  ],
+  "same_session_second_implementation_not_independent_agent": true
+}

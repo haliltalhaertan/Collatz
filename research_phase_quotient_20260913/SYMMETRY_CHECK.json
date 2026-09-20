@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "common_shift_checks": 80,
+  "half_character_checks": 80,
+  "sign_conjugation_checks": 80,
+  "same_session_second_implementation": true,
+  "independent_agent_audit": false
+}
