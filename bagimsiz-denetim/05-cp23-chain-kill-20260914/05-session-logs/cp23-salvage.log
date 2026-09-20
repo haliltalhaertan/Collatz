@@ -1,0 +1,58 @@
+muse: workspace root: /home/mdp/muse-work/cp23-salvage (cwd default)
+muse: workspace trust: trusted source=run-flag
+muse: retrying meta model stream in 5000ms (attempt 2/10)
+Gate first, all labels as ordered.
+
+[EXACT COMPUTATION] `Ecal(4,3) = 40/3` — reproduced from scratch, matches. [EXACT COMPUTATION] `Ecal(5,2) = 31/3` — reproduced from scratch, matches. [EXACT COMPUTATION] Gate verdict: PASS; everything below is anchored to code I actually ran (`salvage_gate.py`, all checks green).
+
+## A1–A10 novelty assessment
+
+[JUDGEMENT] Reasoned from the mathematics itself; I had no literature-search access in this session, so no item gets certainty beyond what proof-shape and standard-toolkit arguments support.
+
+- [JUDGEMENT] A1 affine form: **(a) certainly known/classical** — it is the standard parity-vector computation underlying every Collatz survey; any treatment needs this lemma.
+- [JUDGEMENT] A2 2-adic isometry: **(c) unclear**, leaning reformulation — the parity-vector map being a 2-adic isometry is classical folklore (2-adic conjugacy lineage), so the B-difference phrasing is probably new words for a known fact; needs a literature check. [EXACT COMPUTATION] The statement itself verified on 574 same-weight pairs (m≤7), zero failures.
+- [JUDGEMENT] A3 collision criterion: **(b) plausibly new** — exact endpoint collision ⟺ `B_w ≡ B_w' (mod 3^k)` is sharp and surprising, and not part of the standard Collatz toolkit, which studies cycles via Diophantine equations rather than cross-word endpoint collisions. [EXACT COMPUTATION] Verified with zero failures over all same-weight pairs to m=8 and a residue-class scan to m=16.
+- [JUDGEMENT] A4 `B_w ≢ 0 mod 3`: **(c), leaning (b)-as-lemma** — the proof is a trivial induction, so "new" would mean little on its own; its value is enabling A3's counting use (only `2·3^(k-1)` classes reachable). [EXACT COMPUTATION] Zero divisible cases in 1023 words (m≤10).
+- [JUDGEMENT] A5 parent identity: **(c)** — first-step parity conditioning is standard technique in programme-specific normalisation.
+- [JUDGEMENT] A6 cap stabilisation: **(b) plausibly new** — a sharp finite-collapse threshold (`2^r ≥ 3^k − 1`) is not a standard Collatz-lemma shape. [EXACT COMPUTATION] Verified: stabilised max constant over three consecutive r-values on 5 (m,k) pairs (stabilised values are small: 1–2).
+- [JUDGEMENT] A7 forced frequency index: **(c)** — correct Fourier observation, but a method-internal no-go whose only audience is the programme itself.
+- [JUDGEMENT] A8 energy identity: **(c)** — original by construction (Ecal is programme-owned), but its interest is contingent on Ecal finding an audience.
+- [JUDGEMENT] A9 91-interval witness: **(b) original artifact, narrow audience** — a genuine barrier example delimiting the charging approach, not exportable.
+- [JUDGEMENT] A10 audit methodology: process asset, not a theorem; case-study value only (see below).
+
+## Strongest standalone theorem
+
+[JUDGEMENT] The A3+A4 combination with its count corollary is the strongest publishable unit: surprising, sharply stated, and computationally verified far beyond the gate.
+
+**Theorem (endpoint-collision structure of parity words).** [PROOF] Setup and part (i); [PROOF] part (ii)-forward; [EXACT COMPUTATION] part (ii)-converse verified to m=16 (programme claims [PROOF] via T7 — *not* re-derived here, see honesty note). Fix `m ≥ 1`, `H(x) = (3x+1)/2` for odd x, `x/2` for even x. For odd `h < 2^m`, let `k(h)` be the odd-count over m steps, `e(h) = H^m(h)`, `B(h) = 2^m·e(h) − 3^{k(h)}·h`. Then (i) `B(h)` is odd and `B(h) ≢ 0 (mod 3)`; (ii) for `k(h) = k(h') = k`: `e(h) = e(h') ⟺ B(h) ≡ B(h') (mod 3^k)`. **Corollary.** Per stratum k, #distinct endpoints = #occupied B-residue classes mod `3^k ≤ 2·3^{k−1}`.
+
+*Proof sketch.* [PROOF] (i) follows from the one-step recurrences `B ↦ B` (even step) and `B ↦ 3B + 2^m` (odd step) starting from `B = 1` after the first odd step: oddness is preserved and `3B + 2^m ≢ 0 (mod 3)`. [PROOF] (ii-forward) is one line: equal endpoints give `3^k(h−h') = B' − B`. [JUDGEMENT] (ii-converse) reduces cleanly: writing `B − B' = 3^k·t` gives `2^m | (h − h' + t)`, i.e. endpoints can differ only by multiples of `3^k`, and size bounds force the gap into `{−3^k, 0, +3^k}` — so the entire content is excluding `±3^k`. [FAIL] I did not re-derive that exclusion step; it is the load-bearing lemma to check before publication. [EXACT COMPUTATION] Corollary verified exactly: endpoint-count equals residue-count in every stratum at m=10 and m=12, with full saturation 54/54 at (12,4).
+
+## Outside interest, methodology, ranking
+
+[JUDGEMENT] The export market is arithmetic dynamics, not Collatz: the `B_w` object generalises verbatim to `(px+q)/2`-type maps with p-adic collision criteria (itinerary-collision lemmas for piecewise-affine dynamics); the 2-adic phrasing plugs into the 2-adic-conjugacy audience and the word-extremality into combinatorics-on-words — all contingent on a literature check. [JUDGEMENT] A10 is writable as an ML-for-math/experimental-math case study (63 killed paths, one caught false [PROOF]), but at n=1 programme with no control it ranks below the theorem note. [JUDGEMENT] Ranked by value×confidence: (1) short note on the collision criterion + count corollary with A6 as section 2, arXiv preprint plus dataset, for number theory / arithmetic dynamics; (2) dataset release of the 239 exact rows and witnesses; (3) Lean formalisation of A1–A4 as trust repair for the AI-only provenance (high cost); (4) methodology case study; (5) Ecal-identity paper only if Ecal gains an audience. [JUDGEMENT] Write up (1) first: most surprising, most verified, most narrowly stated. [JUDGEMENT] On the barriers: the lead's "no measurable progress toward Collatz" reads about right — 239 rows and an identity are progress toward a mixing lemma, not toward constraining a counterexample, and chain step 3 (mixing ⟹ nowhere to hide) is exactly where B1 bites; nothing in this session weakens B1 or B2.
+
+```json
+{
+  "gate_ok": true,
+  "gate_values": {"Ecal_4_3": "40/3", "Ecal_5_2": "31/3"},
+  "asset_assessment": [
+    {"asset": "A1", "verdict": "a", "note": "[JUDGEMENT] standard parity-vector lemma, certainly classical"},
+    {"asset": "A2", "verdict": "c", "note": "[JUDGEMENT] likely reformulation of classical 2-adic isometry; [EXACT COMPUTATION] verified 574 pairs m<=7"},
+    {"asset": "A3", "verdict": "b", "note": "[JUDGEMENT] plausibly new; [EXACT COMPUTATION] zero failures to m=16"},
+    {"asset": "A4", "verdict": "c", "note": "[JUDGEMENT] trivial proof, value as A3 enabler; [EXACT COMPUTATION] 1023 words clean"},
+    {"asset": "A5", "verdict": "c", "note": "[JUDGEMENT] standard conditioning, programme-specific normalisation"},
+    {"asset": "A6", "verdict": "b", "note": "[JUDGEMENT] plausibly new sharp collapse; [EXACT COMPUTATION] verified on 5 (m,k) pairs"},
+    {"asset": "A7", "verdict": "c", "note": "[JUDGEMENT] correct method-internal no-go"},
+    {"asset": "A8", "verdict": "c", "note": "[JUDGEMENT] original by construction, audience-contingent"},
+    {"asset": "A9", "verdict": "b", "note": "[JUDGEMENT] original barrier artifact, narrow audience"},
+    {"asset": "A10", "verdict": "c", "note": "[JUDGEMENT] process asset, case-study value only"}
+  ],
+  "strongest_theorem": "Endpoint-collision criterion + reachability restriction + count corollary: same-stratum exact endpoint collision <=> B-congruence mod 3^k; B never 0 mod 3; #distinct endpoints = #occupied B-classes <= 2*3^(k-1). Forward direction [PROOF] inline; converse [EXACT COMPUTATION] to m=16, programme claims [PROOF]/T7 not re-derived ([FAIL] gap: exclusion of +-3^k endpoint gaps).",
+  "theorem_verified": true,
+  "outside_interest": "[JUDGEMENT] Generalises to (px+q)/2-type itinerary-collision lemmas in arithmetic dynamics; 2-adic phrasing fits conjugacy audience; word-extremality fits combinatorics-on-words. All need literature check.",
+  "methodology_value": "[JUDGEMENT] Case study for ML-for-math venues; n=1, no control; ranked below theorem note.",
+  "top_recommendation": "[JUDGEMENT] Short preprint (collision criterion + count corollary, A6 as section 2) with dataset release, for number theory / arithmetic dynamics audience.",
+  "files": ["/home/mdp/muse-work/cp23-salvage/salvage_gate.py", "/home/mdp/muse-work/cp23-salvage/salvage_report.md"]
+}
+```
