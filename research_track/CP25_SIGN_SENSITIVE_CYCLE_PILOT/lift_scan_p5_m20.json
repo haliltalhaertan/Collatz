@@ -1,0 +1,62 @@
+{
+  "p": 5,
+  "max_m": 20,
+  "primitive_raw_starting_one": 1047479,
+  "primitive_necklaces": 111012,
+  "dominance_survivors": 4,
+  "integral_survivors": 4,
+  "nonintegral_survivors": 0,
+  "by_sign": {
+    "+1": {
+      "necklaces": 30518,
+      "all_q_at_least_one": 4796,
+      "dominance_survivors": 3,
+      "integral_survivors": 3
+    },
+    "-1": {
+      "necklaces": 80494,
+      "all_q_at_least_one": 9987,
+      "dominance_survivors": 1,
+      "integral_survivors": 1
+    }
+  },
+  "survivors": [
+    {
+      "word": "01",
+      "m": 2,
+      "k": 1,
+      "b": -1,
+      "A": 1,
+      "B": 2,
+      "integral": true
+    },
+    {
+      "word": "00011",
+      "m": 5,
+      "k": 2,
+      "b": 1,
+      "A": 7,
+      "B": 56,
+      "integral": true
+    },
+    {
+      "word": "0000111",
+      "m": 7,
+      "k": 3,
+      "b": 1,
+      "A": 3,
+      "B": 624,
+      "integral": true
+    },
+    {
+      "word": "0010011",
+      "m": 7,
+      "k": 3,
+      "b": 1,
+      "A": 3,
+      "B": 324,
+      "integral": true
+    }
+  ],
+  "seconds": 55.216758012771606
+}

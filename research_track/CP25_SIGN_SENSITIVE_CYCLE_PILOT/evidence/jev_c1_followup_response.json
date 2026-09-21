@@ -1,0 +1,1 @@
+{"model":"jev-1.13.0","answers":{"evidence_is_only_bounded":{"type":"noul","noul":0.98},"statement_is_non_circular":{"type":"noul","noul":0.91},"proof_label_is_justified":{"type":"noul","noul":0.03},"open_nontrivial_label_is_appropriate":{"type":"noul","noul":0.86}},"usage":{"input_tokens":863,"output_tokens":94}}

@@ -9,10 +9,33 @@
   },
   "active_task": {
     "code": "CP25_SIGN_SENSITIVE_CYCLE_PILOT_20260920",
-    "name": "Sign-sensitive affine cycle equation pilot",
-    "stage": "STAGE_0_READY_NOT_DISPATCHED",
-    "objective": "Test whether the sign of 2^m-3^k plus exact integrality and parity-word realisability separates positive 3n+1 cycle candidates from positive 3n-1 candidates; finite evidence is not proof and novelty is unassessed.",
+    "name": "Sign-sensitive cycle pilot — oriented lift/Product Barrier continuation",
+    "stage": "BASE_ROUTE_KILLED_C1_OPEN_NONTRIVIAL",
+    "objective": "The original sign + integrality + realizability split is killed. Test or prove the bounded-carry Product Barrier sufficient for oriented-lift integrality; finite evidence is not proof, novelty is unassessed, and Collatz remains open.",
     "scientific_route_change": true
+  },
+  "cp25_sign_sensitive_cycle_pilot": {
+    "base_route": "KILL",
+    "c1_oriented_lift": "OPEN-NONTRIVIAL",
+    "product_barrier": "OPEN-NONTRIVIAL",
+    "collatz_status": "OPEN / NOT PROVED",
+    "local_c1_raw_words_m22_per_p": 4194303,
+    "local_c1_nonintegral_survivors_p3_p5_p7": 0,
+    "local_product_barrier_p3_m22_nonintegral_necklaces": 401423,
+    "local_product_barrier_p3_m22_falsifiers": 0,
+    "local_product_barrier_odd_p3_101_m16_nonintegral_necklaces": 439934,
+    "local_product_barrier_odd_p3_101_m16_falsifiers": 0,
+    "chatgpt_web_verdict": "OPEN-NONTRIVIAL",
+    "muse_proof_verdict": "OPEN-NONTRIVIAL",
+    "muse_falsifier_verdict": "BOUNDED-PASS",
+    "jev_role": "ADVISORY only",
+    "jev_followup": {
+      "accept": 0.33,
+      "needs_lemma": 0.67,
+      "reject": 0.0
+    },
+    "report": "research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_C1_LIFT_COHERENCE_REPORT.md",
+    "next_action": "Prove or falsify the bounded-carry Product Barrier, prioritizing near-resonance cases |2^m-p^k| small, and compare it explicitly with Rukhin's quotient-cylinder prefix/suffix integrality tests."
   },
   "archive": {
     "budget_policy": {
@@ -312,6 +335,8 @@
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
     "current_integration_decision": "research_manager/decisions/INTEGRATED_RESEARCH_MUSE_W_2026-09-12.json",
     "current_exploratory_decision": "research_manager/decisions/CP23_CP24_CHAIN_KILL_INTEGRATION_AND_CP25_SIGN_SENSITIVE_PILOT_2026-09-20.md",
+    "cp25_base_and_c1_report": "research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_C1_LIFT_COHERENCE_REPORT.md",
+    "cp25_base_kill_c1_continuation_decision": "research_manager/decisions/CP25_BASE_KILL_AND_C1_PRODUCT_BARRIER_CONTINUATION_2026-09-21.md",
     "archive_limit_decision": "research_manager/decisions/ARCHIVE_LIMIT_100_MIB_CLARIFICATION_2026-09-20.md",
     "analogue_gate_lf_repair_decision": "research_manager/decisions/ANALOGUE_GATE_LF_CANONICALIZATION_REPAIR_2026-09-20.md"
   },
@@ -403,7 +428,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/verify_handoff.py",
-        "sha256": "a5f1883ad52b57b01039684ca264b2208a8537f6951251609e15504212cce22b"
+        "sha256": "f6a157346e89671da4a9e2ecf145f6e6e7f53988226ff3e9e4fc77669461aaac"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/CONTINUITY_PROTOCOL.md",
@@ -411,7 +436,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "646010079d2219895061b51017b1ea2c9e1d131f655845d7e979c1bee863eba1"
+        "sha256": "399615dfa4045ba84a187448ee6f1863fe948c95d53eea50850ff91d419b7549"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -785,7 +810,7 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "646010079d2219895061b51017b1ea2c9e1d131f655845d7e979c1bee863eba1"
+        "sha256": "399615dfa4045ba84a187448ee6f1863fe948c95d53eea50850ff91d419b7549"
       },
       {
         "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -1237,7 +1262,7 @@
       },
       {
         "path": "tools/verify_handoff.py",
-        "sha256": "a5f1883ad52b57b01039684ca264b2208a8537f6951251609e15504212cce22b"
+        "sha256": "f6a157346e89671da4a9e2ecf145f6e6e7f53988226ff3e9e4fc77669461aaac"
       }
     ]
   },

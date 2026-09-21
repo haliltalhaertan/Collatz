@@ -1,0 +1,553 @@
+{
+  "3n+1": {
+    "p": 3,
+    "b": 1,
+    "max_m": 22,
+    "words": 4194303,
+    "divisible": 61,
+    "positive_integer": 11,
+    "realized_word_rows": 11,
+    "cycles": [
+      [
+        1,
+        2
+      ]
+    ],
+    "by_m": [
+      {
+        "m": 1,
+        "words": 1,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 2,
+        "words": 2,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 3,
+        "words": 4,
+        "divisible": 3,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 4,
+        "words": 8,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 5,
+        "words": 16,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 6,
+        "words": 32,
+        "divisible": 4,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 7,
+        "words": 64,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 8,
+        "words": 128,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 9,
+        "words": 256,
+        "divisible": 3,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 10,
+        "words": 512,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 11,
+        "words": 1024,
+        "divisible": 8,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 12,
+        "words": 2048,
+        "divisible": 4,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 13,
+        "words": 4096,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 14,
+        "words": 8192,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 15,
+        "words": 16384,
+        "divisible": 3,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 16,
+        "words": 32768,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 17,
+        "words": 65536,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 18,
+        "words": 131072,
+        "divisible": 4,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 19,
+        "words": 262144,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 20,
+        "words": 524288,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 21,
+        "words": 1048576,
+        "divisible": 3,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 22,
+        "words": 2097152,
+        "divisible": 9,
+        "positive_integer": 1,
+        "realized": 1
+      }
+    ]
+  },
+  "3n-1": {
+    "p": 3,
+    "b": -1,
+    "max_m": 22,
+    "words": 4194303,
+    "divisible": 61,
+    "positive_integer": 50,
+    "realized_word_rows": 50,
+    "cycles": [
+      [
+        1
+      ],
+      [
+        5,
+        7,
+        10
+      ],
+      [
+        17,
+        25,
+        37,
+        55,
+        82,
+        41,
+        61,
+        91,
+        136,
+        68,
+        34
+      ]
+    ],
+    "by_m": [
+      {
+        "m": 1,
+        "words": 1,
+        "divisible": 1,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 2,
+        "words": 2,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 3,
+        "words": 4,
+        "divisible": 3,
+        "positive_integer": 3,
+        "realized": 3
+      },
+      {
+        "m": 4,
+        "words": 8,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 5,
+        "words": 16,
+        "divisible": 1,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 6,
+        "words": 32,
+        "divisible": 4,
+        "positive_integer": 3,
+        "realized": 3
+      },
+      {
+        "m": 7,
+        "words": 64,
+        "divisible": 1,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 8,
+        "words": 128,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 9,
+        "words": 256,
+        "divisible": 3,
+        "positive_integer": 3,
+        "realized": 3
+      },
+      {
+        "m": 10,
+        "words": 512,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 11,
+        "words": 1024,
+        "divisible": 8,
+        "positive_integer": 8,
+        "realized": 8
+      },
+      {
+        "m": 12,
+        "words": 2048,
+        "divisible": 4,
+        "positive_integer": 3,
+        "realized": 3
+      },
+      {
+        "m": 13,
+        "words": 4096,
+        "divisible": 1,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 14,
+        "words": 8192,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 15,
+        "words": 16384,
+        "divisible": 3,
+        "positive_integer": 3,
+        "realized": 3
+      },
+      {
+        "m": 16,
+        "words": 32768,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 17,
+        "words": 65536,
+        "divisible": 1,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 18,
+        "words": 131072,
+        "divisible": 4,
+        "positive_integer": 3,
+        "realized": 3
+      },
+      {
+        "m": 19,
+        "words": 262144,
+        "divisible": 1,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 20,
+        "words": 524288,
+        "divisible": 2,
+        "positive_integer": 1,
+        "realized": 1
+      },
+      {
+        "m": 21,
+        "words": 1048576,
+        "divisible": 3,
+        "positive_integer": 3,
+        "realized": 3
+      },
+      {
+        "m": 22,
+        "words": 2097152,
+        "divisible": 9,
+        "positive_integer": 8,
+        "realized": 8
+      }
+    ]
+  },
+  "5n+1": {
+    "p": 5,
+    "b": 1,
+    "max_m": 22,
+    "words": 4194303,
+    "divisible": 37,
+    "positive_integer": 26,
+    "realized_word_rows": 26,
+    "cycles": [
+      [
+        1,
+        3,
+        8,
+        4,
+        2
+      ],
+      [
+        13,
+        33,
+        83,
+        208,
+        104,
+        52,
+        26
+      ],
+      [
+        17,
+        43,
+        108,
+        54,
+        27,
+        68,
+        34
+      ]
+    ],
+    "by_m": [
+      {
+        "m": 1,
+        "words": 1,
+        "divisible": 0,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 2,
+        "words": 2,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 3,
+        "words": 4,
+        "divisible": 0,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 4,
+        "words": 8,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 5,
+        "words": 16,
+        "divisible": 2,
+        "positive_integer": 2,
+        "realized": 2
+      },
+      {
+        "m": 6,
+        "words": 32,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 7,
+        "words": 64,
+        "divisible": 6,
+        "positive_integer": 6,
+        "realized": 6
+      },
+      {
+        "m": 8,
+        "words": 128,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 9,
+        "words": 256,
+        "divisible": 0,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 10,
+        "words": 512,
+        "divisible": 3,
+        "positive_integer": 2,
+        "realized": 2
+      },
+      {
+        "m": 11,
+        "words": 1024,
+        "divisible": 0,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 12,
+        "words": 2048,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 13,
+        "words": 4096,
+        "divisible": 0,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 14,
+        "words": 8192,
+        "divisible": 7,
+        "positive_integer": 6,
+        "realized": 6
+      },
+      {
+        "m": 15,
+        "words": 16384,
+        "divisible": 2,
+        "positive_integer": 2,
+        "realized": 2
+      },
+      {
+        "m": 16,
+        "words": 32768,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 17,
+        "words": 65536,
+        "divisible": 0,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 18,
+        "words": 131072,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 19,
+        "words": 262144,
+        "divisible": 0,
+        "positive_integer": 0,
+        "realized": 0
+      },
+      {
+        "m": 20,
+        "words": 524288,
+        "divisible": 3,
+        "positive_integer": 2,
+        "realized": 2
+      },
+      {
+        "m": 21,
+        "words": 1048576,
+        "divisible": 6,
+        "positive_integer": 6,
+        "realized": 6
+      },
+      {
+        "m": 22,
+        "words": 2097152,
+        "divisible": 1,
+        "positive_integer": 0,
+        "realized": 0
+      }
+    ]
+  }
+}

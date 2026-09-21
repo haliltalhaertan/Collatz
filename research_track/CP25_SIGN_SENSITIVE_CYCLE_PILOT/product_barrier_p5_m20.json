@@ -1,0 +1,12 @@
+{
+  "p": 5,
+  "max_m": 20,
+  "primitive_necklaces": 111012,
+  "nonintegral_necklaces": 111008,
+  "nonintegral_by_sign": {
+    "+1": 30515,
+    "-1": 80493
+  },
+  "counterexamples": [],
+  "seconds": 90.82886576652527
+}

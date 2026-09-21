@@ -1,0 +1,33 @@
+CP25 C1 takip turu. Önceki cevabındaki oriented cyclic lift coherence adayını bağımsız sınadık.
+
+BAĞIMSIZ SONUÇLAR:
+- İki ayrı Muse Spark 1.3 salt-okunur oturumu m<=18 kapısını tam üretti.
+- Muse'un repo kodunu kullanmadan yazdığı exact Python, p=3,5,7 için m<=22'de C1 öncülünü sağlayıp integral olmayan hiçbir kelime bulmadı.
+- Ayrı yerel uygulama p=3,5,7 için m<=20'de aynı sonucu ve senin 15010/16100/4796 sayılarını yeniden üretti. Bu üç sayı toplam primitive kelime değil; bütün rotasyonlarda q>=1 ön-filtresini geçen primitive necklace sayılarıdır.
+- Jev-1.13.0 ADVISORY: C1 positivity'den güçlü 0.70; integralliğe gerçek köprü olur 0.79; şu an ispatlı 0.03; tek karşıörnek öldürür 0.96.
+
+KESİN NOTASYON DÜZELTMESİ:
+M=2^m, A=|M-p^k|, b=sign(M-p^k).
+h_r, -b B_r (p^k)^(-1) mod M'nin {1,...,M} temsilcisi.
+B_r-A h_r her zaman M'ye bölünür. Şunu kullan:
+  t_r := (B_r-A h_r)/M ∈ Z.
+O halde q_r=B_r/A = h_r + (M/A)t_r; C1 öncülü tam olarak bütün r için t_r>=0; sonuç A|B_r, eşdeğer olarak A|t_r.
+Önceki cevapta ekranda görünen n_r=2^m B_r-Ah_r ifadesi cebirle uyumsuzdu; doğru taşıyıcı t_r yukarıdaki bölümle tanımlı.
+
+Ardışık sol rotasyon için epsilon=r'nin ilk biti:
+  2 B_{r+1} = p^epsilon B_r + b A epsilon.
+Temsilci carry'si
+  c_r := (p^epsilon h_r + b epsilon - 2 h_{r+1})/M ∈ Z
+ile
+  2 t_{r+1} = p^epsilon t_r + A c_r.
+A|t özelliği rotasyonlar boyunca korunur, fakat Muse bütün t_r>=0'dan A|t_r'ye geçişi kapatamadı ve bunu OPEN-NONTRIVIAL olarak sınıflandırdı.
+
+GÖREV:
+1. Bu düzeltilmiş recurrence ile C1'i genel olarak ispatla veya açık bir karşıörnek üret.
+2. A|B'yi herhangi bir noktada gizlice varsayma.
+3. Özellikle c_r'nin tam değer aralığını ve h temsilci seçiminin getirdiği global kısıtı çıkar. Sadece mod-A recurrence yeterli değildir.
+4. Eğer tam ispat yoksa, ispat boşluğunu tek bir kesin alt-lemmaya indir ve o alt-lemma için en küçük falsifier tarif et.
+5. Son karar yalnız: PROOF / COUNTEREXAMPLE / OPEN-NONTRIVIAL / TRIVIAL-CIRCULAR.
+6. Collatz çözülmedi; sonlu tarama teorem değildir.
+
+Kısa ama tam nicelenmiş Türkçe cevap ver. Önceki üç adaydan yalnız C1'e odaklan.

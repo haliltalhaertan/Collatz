@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://eudml.org/doc/290184",
+      "title": "Böhm and Sontacchi (1978): cycles of given length",
+      "accessed": "2026-09-20",
+      "quotes": [
+        {
+          "text": "Böhm, Corrado, and Sontacchi, Giovanna. \"On the existence of cycles of given length in integer sequences like $x_{n+1} = x_{n}/2$ if $x_{n}$ even, and $x_{n+1} = 3 x_{n} + 1$.\"",
+          "added": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://www.cecm.sfu.ca/organics/papers/lagarias/paper/html/node4-an.shtml",
+      "title": "Lagarias survey: parity vectors and residue classes",
+      "accessed": "2026-09-20",
+      "quotes": [
+        {
+          "text": "Theorem B allows one to associate with each vector of length k a unique congruence class.",
+          "added": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://www.cecm.sfu.ca/organics/papers/lagarias/paper/html/node8-an.shtml",
+      "title": "Lagarias survey: non-trivial cycles",
+      "accessed": "2026-09-20",
+      "quotes": [
+        {
+          "text": "Böhm and Sontacchi also noted that this gives an (inefficient) finite procedure for deciding if there are any cycles of a given length k.",
+          "added": "2026-09-20"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://arxiv.org/abs/1506.07622v8",
+      "title": "Rukhin (2018): dual-radix modular division and integrality tests",
+      "accessed": "2026-09-21",
+      "quotes": [
+        {
+          "text": "This division algorithm yields two novel methods for testing the integrality of the Bohm-Sontacchi numbers.",
+          "added": "2026-09-21"
+        },
+        {
+          "text": "Theorem 4.9 yields a method (the prefix test) for deciding the integrality of the rational expression.",
+          "added": "2026-09-21"
+        }
+      ]
+    }
+  ]
+}

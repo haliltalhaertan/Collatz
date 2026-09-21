@@ -1,0 +1,1 @@
+Böhm, Corrado, and Sontacchi, Giovanna. "On the existence of cycles of given length in integer sequences like $x_{n+1} = x_{n}/2$ if $x_{n}$ even, and $x_{n+1} = 3 x_{n} + 1$." Atti della Accademia Nazionale dei Lincei. Classe di Scienze Fisiche, Matematiche e Naturali. Rendiconti 64.3 (1978): 260-264.
