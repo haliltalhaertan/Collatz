@@ -1,0 +1,21 @@
+### Çapraz eleştiri
+
+| Yön | Hata / kapılar | Örtüşme ve (b) sonrası değer |
+|---|---|---|
+| **X-A** | Koridor eşitsizliği doğru: \(\Delta_t>0\) ise \(\Delta_t<t\log(1+1/X)\). \(3n-1\) için ileri sürülen negatif işaret de gerçek döngüleri dışlamaz. COLLAPSE’u geçer; literatürde özgül yenilik **DOĞRULANMADI**. | **Y-1 ve Z-B ile aynı minimum–prefix yakınlık fikri.** Farkı, ilk geçiş yerine bütün pozitif-\(\Delta_t\) prefix’leri kapsaması. Bu farkın klasik tam-döngü sınırına *ek eleme* verdiği gösterilmedi. |
+| **X-B** | Determinant kimliği ve koşullu ayrışım doğru. Hata, bundan mevcut sayılarla otomatik \(h_t=0\) sonucu beklemek olur: \(t\) burada **blok**, (b)’de **tek adım** sayısıdır. COLLAPSE’u geçer; güç ve yenilik **DOĞRULANMADI**. | X-A’nın iki yakınlık koşulunu birleştiriyor; şimdilik yeni dışlama yok. |
+| **Y-1** | İlk-geçiş eşitsizliği esasen doğru. Ancak “LMN ile explicit \(E_{t_*}\ge c_1\log X-c_2\)” satırı sabitler ve uygulama verilmeden **[PROOF]** sayılamaz; LMN atfı bu biçimiyle **DOĞRULANMADI**. | X-A/Z-B’nin daha zayıf bir ilk-geçiş sürümü. (b)’deki \(t\) eşiğinin üstüne gösterilmiş bir kazanç yok. |
+| **Y-2** | Kritik kopukluk: “ilk dipten önce yerel minimum yok” çıkmaz. Global minimumun üstünde başka yerel minimumlar bulunabilir; öne sürülen Dyck \(\to\) minimum sayısı köprüsü ispatlanmamış. | COLLAPSE sorunu değil, eksik köprü sorunu; mevcut haliyle **PARK**. |
+| **Y-3** | \(\delta\) desillerindeki “monotonluk” varsayım; \(\ge0{,}95\) oranını B için **KILL** eşiği yapmak ölçek kapısından kalır. Küçük rasyonel örnekle \(n_{\min}>2^{71}\) tamsayı rejimi öldürülemez. | Yalnız keşif amaçlı pilot; teorem veya karar testi değil. |
+| **Z-A** | Koordinatörün \(k=256\) örneği doğruluyor. İspatın rasyonel adaylarla sınırlı olduğu açık tutulmalı; \(D\mid B\) sonrası erkenlik hakkında hüküm vermez. | **Ayrı bir no-go:** minimum eşiğinden tek başına erken geçiş çıkarılamaz. Ölçek uyarısını somutlaştırır; \(3n-1\)’e uygulanmaz. |
+| **Z-B** | Yazıldığı haliyle \(C_t<t3^{t-1}\) **\(t=1\)’de yanlış**: \(+1\) döngüsü \((1)\) için \(C_1=1=t3^0\). \(t\ge2\)’de doğru; \(X=2^{71}\) uygulaması bu istisnadan etkilenmez. | X-A/Y-1’in ilk-geçiş eleği. (b)’de ilk izinli tek-adım \(t=72.057.431.991\): prefix’e taşınmış klasik uzunluk ölçeği; bunun ötesinde dışlama henüz yok. |
+
+**X-B’nin sayısal testi.** \(H_X=\log2/\log(1+2^{-71})\approx1{,}63665\cdot10^{21}\). \(h_t\ne0\) ise \(Kt_{\rm blok}>H_X\) **veya** \(S_tq>H_X\) gerekir. (b), \(S_t\ge114.208.327.604\) tek adım verir; **\(t_{\rm blok}\ge72.057.431.991\) vermez**. Sınır değerlere yakın \(K=137{,}5\cdot10^9\) için \(H_X/K\approx11{,}90\cdot10^9\) *blok*, \(H_X/S_t\approx14{,}33\cdot10^9\) *blok*tur. Bilinen \(q\ge92\) bu eşiklerden uzaktır: örneğin \(t_{\rm blok}=1,q=92\) alındığında \(Kt_{\rm blok}=1{,}375\cdot10^{11}\) ve \(S_tq\approx1{,}05\cdot10^{13}\), ikisi de \(H_X\)’in altındadır. Dolayısıyla bu veriler **genel olarak \(h_t=0\)’a zorlamaz**; yalnız bu eşiklerin altında kaldığı ayrıca kanıtlanan bloklar için zorlar.
+
+**Nihai oy**
+1. **Z-A:** Rasyonel rejimdeki erken-geçiş beklentisini kesin olarak sınırladığı için. **Kill:** inşa veya \(k=256\) exact doğrulaması çürütülürse; tamsayı döngülerini dışladığı iddiasına genişletilmez.
+2. **X-A:** Doğru, integrallikten bağımsız ve bütün ilgili prefix’leri kapsıyor. **Kill/PARK:** sertifikalı büyük-\(X\) testinde klasik tam-döngü koşuluna göre ek eleme sağlamazsa araştırma yönü olarak park edilir; lemma korunur.
+
+**Aday B oyu: PARK** — kısa iç-rezonans vaadi Z-A ile temelsiz, (b)’deki ilk-geçiş ölçeği ise şimdilik klasik sınırı aşmıyor; bağımsız ek eleme gösterilirse yeniden açılabilir.
+
+CP27_CONSORTIUM_R2_20260923_COMPLETE

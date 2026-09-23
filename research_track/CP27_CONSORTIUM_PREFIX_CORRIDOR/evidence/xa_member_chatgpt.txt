@@ -1,0 +1,245 @@
+Lemma V denetimi. α=log
+2
+	​
+
+3, γ=α−1=0.5849625007… yazalım.
+
+(i) Doğru. s≥2 için s(α−1)>1, dolayısıyla ⌊sα⌋≥s+1, yani d=e−s+1≥2. Son blokta
+
+e
+q−1
+	​
+
+=M−
+j<q−1
+∑
+	​
+
+⌊s
+j
+	​
+
+α⌋>Kα−S
+q−1
+	​
+
+α=s
+q−1
+	​
+
+α,
+
+dolayısıyla orada da şart sağlanır.
+
+(ii) Doğru.
+
+E
+t
+	​
+
+=
+j<t
+∑
+	​
+
+⌊s
+j
+	​
+
+α⌋≤⌊S
+t
+	​
+
+α⌋<S
+t
+	​
+
+α,
+
+dolayısıyla her t<q için Δ
+t
+	​
+
+<0.
+
+Global-minimum rotasyonunda boşluk yok. b=+1 için t blok sonra
+
+n
+t
+	​
+
+=
+2
+E
+t
+	​
+
+3
+S
+t
+	​
+
+n
+0
+	​
+
++C
+t
+	​
+
+	​
+
+,C
+t
+	​
+
+>0.
+
+Δ
+t
+	​
+
+<0⇒3
+S
+t
+	​
+
+/2
+E
+t
+	​
+
+>1, dolayısıyla n
+t
+	​
+
+>n
+0
+	​
+
+. Böylece blok 0, değerini ayrıca hesaplamadan, bütün blok-başı yerel minimumlar arasında strict global minimumdur.
+
+Ama (iii)'te bir niceleyici boşluğu var. Lemma V her (K,M,q) için bir kombinatorik/rasyonel kelime üretir. Eğer “global fizibil kümesi” yalnız aggregate şartlar 2
+M
+>3
+K
+, blok sayıları vb. demekse (iii) doğrudur. Fakat fizibilite “en az bir integral/parity-realizable aday vardır” anlamındaysa, üretilen Lemma-V kelimesinin integral olması gösterilmedi. Dolayısıyla “integral adaylar üzerinde corridor hiçbir (K,M,q)'yu silemez” sonucu henüz çıkmaz. Koordinatörün “rasyonel adayın minimumu blok 0” kontrolü bu integrality niceleyici boşluğunu kapatmaz.
+
+Dar rejimin exact yapısı. K/2<q olduğunda
+
+r=2q−K
+
+adet s=1, u=K−q adet s=2 seçilebilir. Ayrıca H=M−K−q≥0.
+
+u adet s=2'yi önce, sonra r−1 adet s=1'i, en sona bir s=1 koy; proper bloklarda e=s+1, bütün H fazlalığını son bloğa koy. O zaman tüm proper prefixlerin en büyüğü son proper prefixtir ve
+
+ln2
+Δ
+q−1
+	​
+
+	​
+
+=q−1−γ(K−1).
+
+Bundan exact eşik çıkıyor:
+
+q≤γK+1−γ
+	​
+
+
+ise bütün proper prefixleri Δ
+t
+	​
+
+≤0 yapan bir düzen vardır; corridor yine tamamen vacuous yapılabilir.
+
+Tersine,
+
+q>γK+1−γ
+	​
+
+
+ise herhangi bir kelime ve herhangi bir rotasyon için, son blok boyu s
+f
+	​
+
+≥1 olduğundan
+
+ln2
+Δ
+q−1
+	​
+
+	​
+
+≥q−1−γ(K−s
+f
+	​
+
+)≥q−1−γ(K−1)>0.
+
+Yani bu ince üst şeritte corridor gerçekten zorunlu olarak devreye girer.
+
+Dahası q=92,…,120, K<2q için bu pozitif alt sınırın finite integer minimumu
+
+(q,K)=(118,201)
+
+noktasında
+
+Δ
+q−1
+	​
+
+≥317ln2−200ln3≈0.00519850388.
+
+Corridorun mümkün olan en büyük sağ tarafı ise
+
+119ln(1+2
+−71
+)<5.04×10
+−20
+.
+
+Arada >10
+17
+ faktör var. Dolayısıyla bu üst şerit, X=2
+71
+ altında kesin elenir.
+
+Özetle dar rejim ikiye ayrılıyor:
+
+2
+1
+	​
+
+<
+K
+q
+	​
+
+≲0.5849625
+
+bölgesinin büyük kısmı için corridor hâlâ boş; yalnız
+
+q>γK+1−γ
+
+şeridinde gerçek yeni eleme var.
+
+[DOĞRULANMADI — CP27 notasyon eşlemesi] Simons–de Weger'in 2010 v1.44 çalışmasında m yerel minimum sayısı, K toplam tek-adım sayısıdır; yani doğal eşleme m=q. Aynı çalışma 91≤m≤515619 için K>7.5311×10
+11
+ veriyor. Bu eşleme kabul edilirse q=92..120 için
+
+q/K<1.60×10
+−10
+,
+
+yani gerçek hipotetik döngüler dar q>K/2 rejiminden astronomik ölçüde uzakta olur. 
+De Weger's Math Page
++1
+
+Karar oyu. X-A → PARK. Lemma V'nin (i),(ii)'si sağlam ve global-minimum rotasyonu da kombinatorik olarak kapanıyor; fakat integrality-conditioned fizibilite kastediliyorsa (iii) KILL kararını henüz ispatlamıyor. “Global fizibilite” aggregate-only olarak tanımlanmışsa bunun yerine KILL uygundur.
+
+Dar rejim → PARK. Salt kombinatorik olarak yeni ve gerçek bir corridor-eleme şeridi var; fakat bilinen m-cycle bounds doğru eşleniyorsa bu şerit gerçek q=92..120 döngü aramasında zaten ulaşılamaz. Lemma saklanmalı, rota büyütülmemeli.
+
+CP27_XA_AUDIT_20260923_COMPLETE

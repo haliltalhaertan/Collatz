@@ -1477,7 +1477,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-23T09:35:11.855247+00:00",
+  "updated_at": "2026-09-23T10:58:16.779165+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
@@ -1525,5 +1525,14 @@
     "report_sha256": "4cb0e97a36e0227ea4d116ce9749f4374eda5f247f07c893eec3d88429683168",
     "code_sha256": "d6db8dc6e81a8bb068836fc927b4eb419e51db8f2aea05d1cc1d34bc6aed90f9",
     "next_action": "CP27: test candidate B under n_min>=2^71 constraint; success = systematic S*/K << 1"
+  },
+  "cp27_consortium_prefix_corridor": {
+    "timestamp": "2026-09-23T10:58:16.779165+00:00",
+    "checkpoint": "CP27_CONSORTIUM_PREFIX_CORRIDOR",
+    "status": "CLOSED",
+    "method": "consortium Rev4 (ChatGPT Web, Muse 1.3, Unreal Agent; Hermes coordinator)",
+    "scientific_status": "Candidate B PARK (3/3); X-B KILL; X-A main regime KILL/PARK via Lemma V (vacuity, exact 15/15, audited 3/3); narrow regime PARK (already excluded by global X condition); Collatz OPEN",
+    "report_sha256": "da8412d58bd1c32dba59dcdf75a9299fd610295a3a44197e38df313484802591",
+    "next_action": "New consortium Round 1 for a direction not reducible to product+continued-fraction skeleton"
   }
 }

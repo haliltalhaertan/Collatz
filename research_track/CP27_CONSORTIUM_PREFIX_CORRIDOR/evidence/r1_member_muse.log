@@ -1,0 +1,48 @@
+muse: workspace root: /home/mdp/muse-work/cp27 (cwd default)
+muse: Agent delegation: auto unavailable: workspace is untrusted.
+## 1. Koordinatör CP27 değerlendirmesi: DEĞİŞTİR
+
+X büyüdükçe C_t/n_min küçülür; erken dip varsa gereken yaklaşıklık sertleşir, bu B lehine görünür. Fakat pilotun kendi bulgusu ters seçim etkisidir: log(2^M/3^K) küçükken ilk geçiş %96–100 tam döngüde. Büyük-X rejimi tam da en iyi global rezonansları seçer, yani B'nin işleyeceği erken-dip popülasyonunu kurutur.
+Dolayısıyla ağır "(S,E) kısıt çözümü" önce bu seçim etkisini ölçmeden yapılırsa ya global LMN'i yeniden üretir ya boş (t*=tam döngü) vakaları sayar. Önce ucuz tabakalı test, sonra — ancak erken-dip sağkalımı varsa — kısıt çözümü.
+
+## 2. Yönler
+
+**Yön 1 — İç-LMN derinlik lemması (analitik B).**
+Önerme: e_i≥1, M=Σe_i, K tek adım; prefix t'de k_t,E_t,C_t ile n_t=(3^{k_t}n_0+C_t)/2^{E_t}, n_0=n_min≥X. t*=min{t>0: 3^{k_t}<2^{E_t}} (yoksa ∞). t*<T ise:
+0 < E_{t*}ln2−k_{t*}ln3 ≤ C_t/(3^{k_t}X), ve C_t/3^{k_t}≤E_{t*} (elementer, e_i≥1'den).
+LMN-1995 ile birleşince X=2^71 için E_{t*}≥c_1 log X−c_2 (explicit sabitler). Etiket: [PROOF] (LMN black-box + elementer cebir).
+COLLAPSE: X büyüklük bilgisidir, D|B'de yoktur; residue/bit-filtre değildir.
+Literatür: Eliahou 1993 / Simons–de Weger 2005 global yaklaşıklık kullanır; yenilik prefix-seviyesidir. Hercher 2023 (≥92 minimum) ortogonaldir. Steiner hattıyla kesişmez.
+Exact falsification: K≤18 primitive necklace tam sayımı (pilot kodu yeniden), Fraction exact; eşitsizlik + 3n−1 kontrolleri (1),(5,7),(17..91) — küçük X'te bound gevşek kalmalı, kontroller korunmalı.
+Kill: X=2^71'de bound önemsiz (örn. E*≥5 altı) çıkarsa veya kontrolleri dışlarsa KILL.
+Başarı (güçlü bound verme): 0.25. Maliyet: düşük.
+
+**Yön 2 — B×Hercher bağlaşımı: Dyck-zorunluluğu vs minimum sayısı.**
+Önerme: Yön 1'in E_{t*} alt sınırı, sağ kalan kelimeleri L(X) uzunluğunda prefix-Dyck olmaya zorlar (ilk dipten önce yerel minimum yok); bu, K verilen aralıkta Hercher'in ≥92 yerel-minimum alt sınırıyla (m≤91 yokluğu üzerinden) çelişir. Etiket: [CONJECTURE] (Dyck→minimum-sayısı üst sınırı köprüsü sanı).
+COLLAPSE: sıralama/minimum-sayısı bilgisi D|B'de yoktur.
+Literatür: Hercher 2023 + Aday B'nin birleşimi; tek başına ikisinde de yok — yenilik budur.
+Exact falsification: K≤18'de t* ile minima-sayısı korelasyonu (exact sayım) + 3n−1 kontrollerinin minima sayıları.
+Kill: korelasyon yoksa / kontroller ters yöndeyse KILL.
+Başarı: 0.15. Maliyet: orta.
+
+**Yön 3 — Tabakalı sağkalım ölçümü (B'nin ucuz celladı).**
+Önerme: δ=|M/K−log_2 3| küçüldükçe P(ilk geçiş=tam döngü)→1 (monoton). Etiket: [HEURISTIC] (ampirik, teorem değil).
+COLLAPSE: geçmezse B'yi öldüren ölçüdür; kendisi teori iddiası değildir.
+Literatür: bağımsız;sonsten global-rezonans yeniden-paketleme şüphesini teste döker.
+Exact falsification: K=19..24 yalnızca near-resonant M dilimi (tam sayım değil), D|B yok, Fraction exact; δ desillerinde tam-döngü oranı. Sonlu hesap teorem değildir, yalnızca falsifikasyon.
+Kill (B'ye): en iyi δ desilinde oran ≥0.95 ise Aday B KILL.
+Başarı (net karar üretme): 0.6. Maliyet: düşük.
+
+## 3. Sıralama
+
+1. Yön 3 (en ucuz, B hakkında 1 checkpointte karar verdirir).
+2. Yön 1 (B ancak analitik lemmasıyla teori olur; kaba kısıt-taramasından önce).
+3. Koordinatör CP27 kısıt-çözümü (yalnız Yön 3 erken-dip sağkalımı bulursa).
+4. Yön 2 (bağlaşım; Yön 1 güçlü bound vermeden değmez).
+
+## 4. En büyük metodolojik hata
+
+Gerçek rejimden (n_min>2^71, Hercher+Barina ile K>1.375·10^11) kopuk küçük-ölçek rasyonel istatistiği (S*/K medyanı, %42–100 tam-döngü) üzerinden Aday B'nin gücünü okumak: ölçek-dışı genelleme. COLLAPSE'u fikir-doğumunda değil sonradan uygulayıp C1/carry-band'a emek harcamak da aynı köktendir.
+
+CP27_CONSORTIUM_R1_20260923_COMPLETE
+

@@ -1,0 +1,38 @@
+muse: workspace root: /home/mdp/muse-work/cp27 (cwd default)
+muse: Agent delegation: auto unavailable: workspace is untrusted.
+Üç yanıtın çekirdek eşitsizliği aynı; fark yalnız sunum ve ek testte. (a) ve (b) doğrulamaları bunu sabitliyor.
+
+### 1. Kısa tablo
+
+| Yön | Hata | Kapı | Örtüşme |
+|---|---|---|---|
+| X-A | yok, koşullu | C✓iş✓öl✓L? | Z-B log formu |
+| X-B | yok, boş | C✓L? | yeni, güçsüz |
+| Y-1 | şartlı doğru | C✓L? | Z-B+LMN |
+| Y-2 | köprü yok | öl✗ | bağlanmaz |
+| Y-3 | yok, heuristik | muaf | bağımsız cellat |
+| Z-A | yok, doğrulandı | tümü✓ | bağımsız no-go |
+| Z-B | yok, doğrulandı | tümü✓ | taban lemma |
+
+Hata satırları: X-A yalnız `Δ_t>0` prefixlerde çalışır, `Δ_t≤0` için kısıt yok — bu Z-A ile tutarlı, hata değil. Y-1'in `C/3^k≤E` adımı koşulsuz yazılmış; `e=[10,1]` örneğinde patlar, yalnız `t*` minimalitesiyle (`2^{E_j}<3^j`, `j<t*`) doğru olur — aynı Z-B'nin `C<t3^{t-1}` sınırı. Y-2'nin `Dyck→minimum-sayısı` köprüsü yok: uzun dipsiz prefix, döngünün geri kalanında ≥92 minimum birikmesine engel değil. X-B'de `Kt` ile `S_t q` esasen aynı çarpım (`K×prefix-uzunluğu`); notasyon çakışması sonucu değiştirmez.
+
+Kapılar: X-A, X-B, Y-1, Z-B COLLAPSE'tan geçer (sıralama/`n_j≥X` bilgisi `D|B`'de yok). İşaret hepsinde korunur (X-A/Y-1/Z-B yalnız `b=+1`'de bağ kurar, 3n-1 kontrolleri dışlanmaz). Y-2 ölçekten kalır (`K≤18` korelasyonu `10^11` rejimine taşınamaz). Y-3 teori iddia etmediği için COLLAPSE'tan muaf, cellat-ölçü olarak güvenli. Literatür: X doğru şekilde Wang `m≤95` preprintini DOĞRULANMADI sayıyor; X-A/X-B/Y-1/Z-B yenilik iddiasını DOĞRULANMADI bırakıyor (doğru); Barina-`2^71` girdisi burada bağımsız doğrulanmadı, koordinatör varsayımı olarak alındı.
+
+Örtüşme: X-A, Y-1, Z-B aynı çekirdek (`X(2^S-3^t)≤C<t3^{t-1}` / `Δ<t·log(1+1/X)` / `C/(3^kX)`). (b) ışığında bu ailenin ilk-geçiş eleği klasik sınırın aynısını üretiyor (`t=72.057.431.991`); klasik sınırın prefix'e taşınmasından öte ek güç henüz sayılmadı.
+
+### 2. X-B zorlaması oluyor mu? Hayır
+
+`H_X=ln2/ln(1+2^-71)≈1,63665×10^21` (X'in sayısı doğru). `K,q>1,375×10^11` ile `h_t≠0` için `Kt>H_X` veya `S_tq>H_X` gerekir; eşik prefix-uzunluğu blok sayımında `≈1,19×10^10`, üs sayımında `≈7,5×10^9`. Oysa (b)'de sağ kalan ilk `t=72.057.431.991`; burada `K·t≈9,9×10^21≈6,05·H_X`, yani `h_t≠0` dalı açık. Zorlama yalnız `t≲10^10` bölgesinde işler ki orası Z-B'de zaten yasak. Ayrıca `h_t=0` dalından primitivity/affine çelişki çıkarılmadı — X'in kendi kill şartı da bunu istiyor.
+
+### 3. Oy (en iyi 2)
+
+1. Y-3 (tabakalı sağkalım): en ucuz karar testi. Kill: en iyi `δ` desilinde tam-döngü oranı `≥0,95` ise Aday B KILL; sağkalım varsa 2'ye geç.
+2. Z-B + X-A sayımı birleşik (X=2^71, q=92..120, certified one-sided CF): proper-prefix koşulunun global koşula eklediği dışlamayı say. Kill: ölçülebilir ek eleme yoksa rota PARK (lemma saklanır); varsa GO.
+
+Dışlananlar: Z-A görevini yaptı (koruma bandı, yeni checkpoint gerektirmez). Y-1 sabitler hesaplanmadan Z-B'ye indirgenir. X-B sağ kalan rejimde boş (§2). Y-2 köprüsüz. Koordinatör-CP27 ağır kısıt-çözümü yalnız Y-3 sağkalım bulursa (seçim etkisi ölçülmeden global rezonans yeniden paketlenir).
+
+### 4. Aday B kararı
+
+PARK — prefix koridoru lemma olarak saklanır, bağımsız rota durdurulur; Y-3 eşiği aşılırsa KILL.
+
+CP27_CONSORTIUM_R2_20260923_COMPLETE

@@ -1,0 +1,28 @@
+muse: workspace root: /home/mdp/muse-work/cp27 (cwd default)
+muse: Agent delegation: auto unavailable: workspace is untrusted.
+## 1. Lemma V denetimi
+
+Notasyon: $\alpha=\log_2 3\approx1{,}5849625$, $\beta=\alpha-1\approx0{,}5849625$ irrasyonel. $\Delta_t=E_t\ln2-S_t\ln3$.
+
+(i) DOĞRU. $s\ge 2\Rightarrow s\beta>1\Rightarrow \lfloor s\alpha\rfloor=s+\lfloor s\beta\rfloor\ge s+1$. $2q\le K\Rightarrow \lfloor K/q\rfloor\ge 2$, tüm $s_j\ge2$. Son blok: $e_j\le s_j\alpha$ (kesin, irrasyonellik) ve $M>K\alpha$ olduğundan $e_{q-1}=M-\sum_{j<q-1}e_j>(K-S_{q-1})\alpha=s_{q-1}\alpha>s_{q-1}+1$; yani $d_{q-1}\ge3\ge2$.
+
+(ii) DOĞRU. $\sum\lfloor s_j\alpha\rfloor\le\lfloor S_t\alpha\rfloor<S_t\alpha$ (toplam-floor eşitsizliği + irrasyonellik). Yani $E_t<S_t\alpha$, $\Delta_t<0$. Koridor öncülü $\Delta_t>0$ boş, kısıt yok.
+
+(iii) DOĞRU (üçlü-düzey kombinatorik). Rotasyon boşluğu YOK: $\Delta_t<0\Rightarrow n_t=(3^{S_t}n_0+C)/2^{E_t}\ge 3^{S_t}n_0/2^{E_t}>n_0$ ($C\ge0$). Blok-içi $(3n+1)/2>n$ ($n>1$). Yani 0, blok-başlangıçlarının ve tüm döngünün strict minimumudur; değer bilgisi gerekmez, $\Delta<0$ dizisi minimumluğu sertifikalar. Değer-bilgisiz "survives" bu kelime için geçerli.
+Uyarı: bu yalnızca $(K,M,q)$ kombinatorik eleksizliği; modüler gerçeklenebilirlikle birleşince koridorun dolaylı katkısı olabileceği ayrıca gösterilmedi — iddia edilen kapsamda boşluk değil.
+Exact kontrol 15/15 tarafımdan doğrulandı (Decimal-50): tüm $K,q$'da $2q\le K$, $d\ge2$, proper prefix $\Delta_t<0$. Son blok tüm rounding açığını yutar (örn. $d_{\text{last}}$ 27–156), geçerli ama ekstrem.
+
+## 2. Dar rejim $K/2<q\le M-K$
+
+$s=1,e=2$: $\delta=\ln(4/3)\approx0{,}28768>0$. Uzun blok ($e=\lfloor s\alpha\rfloor$): $\delta=-\{s\alpha\}\ln2<0$. Minimal $e_j=s_j+1$ + azalan $s$ + fazlanın son bloğa yığılması en iyi düzen; proper koşul $t\le\lfloor S_t\beta\rfloor$'a iner. Sınırda ($s\in\{1,2\}$, $q=\lceil K\beta\rceil$) bu, $\{K\beta\}\ge\beta$'ya denktir (ispatlandı, $K<40$'ta brute-force ile birebir tuttu). Yani koridor burada KISMİ eleme verir:
+
+- Sağkalım örneği $K=5,q=3,M=8$: $[2,2,1]/[3,3,2]$, $\Delta_1=\ln(8/9)<0$, $\Delta_2=\ln(64/81)<0$. Geçer.
+- Eleme örneği $K=4,q=3,M=7$: $s=\{2,1,1\},e=\{3,2,2\}$ zorunlu; 3 sıranın hepsinde proper $\Delta>0$ ($\approx0{,}17$–$0{,}58$). $S\le500$'de en küçük pozitif $\Delta$ bile $120\ln(1+2^{-71})\approx5{,}1\times10^{-20}$'nin çok üstünde (taratıldı), yani gerçek koridor ihlali. Üçlü elenir.
+
+$q/K$ literatürü: DOĞRULANMADI — $q/K>1/2$'nin gerçek döngülerde imkânsız olduğuna dair doğrulanmış bir sonuç bulamadım; ama $q\le120$ kesitinde dar rejim $K<240$ demektir, koordinatörün global $K>10^{11}$ varsayımı altında zaten ölü bölgedir.
+
+## 3. Oy
+
+X-A ana rejim ($q\le K/2$, $X=2^{71}$, $q=92$..$120$): KILL — bağımsız eleme rotası bitti, Lemma V boşluk lemması olarak saklanır. Dar rejim: PARK — kısmi eleme gerçek ama $q\le120$'de işe yaramaz; GO yok.
+
+CP27_XA_AUDIT_20260923_COMPLETE
