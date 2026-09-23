@@ -1,0 +1,398 @@
+Teori A — Valuation dizilerinde “entropi borcu”
+
+Fikir. Tek sayılar üzerindeki Syracuse dönüşümünü
+
+S(x)=
+2
+a(x)
+3x+1
+	​
+
+,a(x)=v
+2
+	​
+
+(3x+1)
+
+olarak yazalım ve a
+j
+	​
+
+=a(S
+j
+x) olsun. Tam olarak
+
+logS
+n
+(x)−logx=nlog3−log2
+j<n
+∑
+	​
+
+a
+j
+	​
+
++
+j<n
+∑
+	​
+
+log(1+
+3S
+j
+(x)
+1
+	​
+
+).
+
+Rastgele tek tamsayı sezgisinde a
+j
+	​
+
+ için doğal referans dağılım p
+k
+	​
+
+=2
+−k
+, k≥1, ve ortalaması 2; buna karşılık uzun süre büyüyen bir yörünge kabaca 
+n
+1
+	​
+
+∑a
+j
+	​
+
+≤log
+2
+	​
+
+3 zorunluluğu taşır. Önerim, böyle bir yörüngenin yalnızca “nadir” olduğunu değil, her uzun blokta pozitif bir bilgi maliyeti
+
+I
+∗
+	​
+
+=
+∑kq
+k
+	​
+
+≤log
+2
+	​
+
+3
+inf
+	​
+
+D(q∥p)>0
+
+ödemek zorunda olduğunu deterministik olarak göstermeye çalışmak. Asıl nesne bağımsız değişkenler değil, gerçekten gerçekleştirilebilir valuation-word'lerin göreli entropi oranı olur.
+
+Neden işe yarayabilir? Klasik rastgele yürüyüş sezgisi negatif drift söylüyor fakat deterministik korelasyonlar deliği açık bırakıyor. Eğer gerçekleştirilebilir kötü valuation dizilerinin sayısı da bağımsız modeldeki büyük-sapma oranına yakın biçimde üstel küçültülebilirse, ıraksama “aritmetik olarak sürekli entropi üretmek zorunda olan” bir fenomen haline gelir.
+
+İlk küçük adım. Uzunluğu r olan gerçekleştirilebilir valuation-word'ler için, koşul
+
+j<r
+∑
+	​
+
+a
+j
+	​
+
+≤(log
+2
+	​
+
+3+ε)r
+
+altındaki sınıfların toplam 2-adik silindir ölçüsüne doğrudan bir üstel üst sınır veren sonlu-r lemma çıkarmak.
+
+Kısmi başarı neye benzer? Collatz çözülmeden, uzun pozitif-drift Syracuse segmentlerine sahip başlangıçların logaritmik yoğunluğu için
+
+δ
+log
+	​
+
+(E
+r
+	​
+
+)≤e
+−cr
+
+tipinde yeni ve açık bir büyük-sapma teoremi yayınlanabilir.
+
+Yenilik tahmini. Valuation'ların geometrik dağılımı ve rastgele yürüyüş modelleri bilinen temalar. Fakat problemi doğrudan gerçekleştirilebilir itinerary'lerin KL-entropi oranı olarak kuran ve deterministik bağımlılık maliyetini ölçen bu biçimin literatürde olup olmadığını BİLMİYORUM.
+
+Cesaret puanı: 4/5
+
+Teori B — Iraksama, 2-adik parity kodunda kalıcı “normal olmama” gerektirir
+
+Fikir. Hızlandırılmamış dönüşümü
+
+T(x)={
+x/2,
+(3x+1)/2,
+	​
+
+x≡0(mod2),
+x≡1(mod2)
+	​
+
+
+ve parity kodunu ϵ
+j
+	​
+
+=T
+j
+(x)mod2 alalım. Eğer T
+j
+(x)→∞ ise,
+
+logT
+N
+(x)−logx=K
+N
+	​
+
+log3−Nlog2+o(N),K
+N
+	​
+
+=
+j<N
+∑
+	​
+
+ϵ
+j
+	​
+
+,
+
+dolayısıyla zorunlu olarak
+
+N→∞
+liminf
+	​
+
+N
+K
+N
+	​
+
+	​
+
+≥
+log3
+log2
+	​
+
+≈0.63093.
+
+Oysa Haar-2-adik sembolik dinamiğin doğal parity yoğunluğu 1/2'dir. Teori şu: pozitif tamsayılardan gelen parity kodlarının, bütün yeterince uzun prefixlerde 0.6309'un üzerinde kalan kadar ağır bir biası sürdüremeyeceğini aritmetik bir “normalite/entropy-dimension” teoremiyle kanıtlamak.
+
+Neden işe yarayabilir? Iraksama burada bir döngü denklemi değil, sonsuz sembolik davranışa ilişkin çok sert bir zorunluluğa dönüşüyor: yörüngenin yaklaşık %50 değil en az %63.1 oranında odd-adım üretmesi gerekiyor. 2-adik dinamik ile gerçek pozitif tamsayıların gömülüşü arasındaki fark tam olarak bu tür sonsuz exceptional kodları sınırlayabilecek bir yer.
+
+İlk küçük adım. Yukarıdaki 0.63093 eşiğini tam lemma haline getirip ardından
+
+E
+N
+	​
+
+(ρ)={n:
+m
+1
+	​
+
+j<m
+∑
+	​
+
+ϵ
+j
+	​
+
+(n)≥ρ t
+u
+¨
+m m∈[N,2N]}
+
+için ρ>
+2
+1
+	​
+
+ olduğunda kuvvetli logaritmik-yoğunluk üst sınırı elde etmek.
+
+Kısmi başarı neye benzer? Belirli herhangi bir ρ>1/2 için uzun süre kalıcı parity biası gösteren başlangıçların Hausdorff/entropy boyutu veya logaritmik yoğunluğu hakkında yeni bir nicel teorem gerçek bir ara sonuç olur.
+
+Yenilik tahmini. Collatz'ın 2-adik parity kodlaması ve shift ile ilişkisi bilinen bir yön; parity frekansı üzerinden büyüme sezgisi de doğal. Fakat özellikle “ıraksayan pozitif tamsayılar = kalıcı yüksek-biaslı 2-adik kodların aritmetik exceptional kümesi” programının mevcut en güçlü sonuçlarla ne ölçüde çakıştığını BİLMİYORUM.
+
+Cesaret puanı: 3/5
+
+Teori C — Ters Syracuse ağacını bir spektral transfer operatörü olarak incelemek
+
+Fikir. Tek y için olası tek öncüller
+
+R
+a
+	​
+
+(y)=
+3
+2
+a
+y−1
+	​
+
+,2
+a
+y≡1(mod3)
+
+şeklindedir. Şimdi ters ağacı tek tek düğümler yerine
+
+(L
+s
+	​
+
+f)(y)=
+a≥1
+3∣2
+a
+y−1
+	​
+
+∑
+	​
+
+2
+−sa
+f(R
+a
+	​
+
+(y))
+
+gibi bir transfer operatörüyle ele alalım; durum uzayında hem küçük modüller hem de logy ölçeği tutulsun. Temel fikir, “1'in ters ağacı bütün tamsayıları yakalar mı?” sorusunu doğrudan çözmek yerine, kaçan kütlenin operatör altında spektral olarak sürdürülebilir olup olmadığına bakmak. Eğer uygun bir Banach uzayında kötü bölgeye kısıtlı operatörün spektral yarıçapı <1 yapılabilirse, ters ağacın tamamlayıcısı ölçek büyüdükçe kütle kaybetmek zorunda kalır.
+
+Neden işe yarayabilir? Collatz grafiği genellikle kombinatorik ağaç olarak inceleniyor; spektral bakış dallanma, residue tipi ve ölçek değişimini tek nesnede birleştirir. Özellikle sonsuz sayıda inverse branch'in geometrik ağırlıkları 2
+−a
+, operatör teorisine doğal bir kompaktlık/decay mekanizması verebilir.
+
+İlk küçük adım. a≤A kesmesi ve mod 3⋅2
+r
+ durumları için sonlu transfer matrisini türetmek; sonra A→∞ kuyruğunun normunu analitik olarak sınırlayabilecek bir oyuncak lemma kurmak.
+
+Kısmi başarı neye benzer? Ters Syracuse ağacının belirli residue sınıflarında veya belirli ağırlıklı yoğunluklarda üstel kapsama oranı gösterdiğine dair rigorlu bir spektral teorem, Collatz çözülmese bile bağımsız yayınlanabilir.
+
+Yenilik tahmini. Collatz preimage ağaçları ve operatör benzeri yaklaşımlar kuşkusuz komşu literatüre sahip. Fakat yukarıdaki sonsuz-branch ağırlıklı L
+s
+	​
+
+ ailesinin spektral yarıçapını doğrudan “kaçan kütle” ölçüsü olarak kullanan tam formülasyon için BİLMİYORUM.
+
+Cesaret puanı: 4/5
+
+Teori D — Mesoskopik invarians ilkesi: Collatz log-yüksekliği Brownian drift'e yaklaşır
+
+Fikir. Başlangıç N
+X
+	​
+
+'i 1≤n≤X arasında logaritmik ölçüyle,
+
+Pr(N
+X
+	​
+
+=n)∝
+n
+1
+	​
+
+,
+
+seçelim. Hızlandırılmamış Collatz için rastgele-parity modelinin ortalama log drift'i
+
+m=
+2
+1
+	​
+
+log3−log2<0.
+
+Önerilen güçlü ifade, yalnız sabit sayıda adımda değil, O(logX) uzunluğundaki “mesoskopik” zaman ölçeğinde
+
+Z
+X
+	​
+
+(t)=
+logX
+	​
+
+logT
+⌊tlogX⌋
+(N
+X
+	​
+
+)−logN
+X
+	​
+
+−mtlogX
+	​
+
+
+sürecinin, yörünge çok küçük değerlere çarpmadan önce, uygun varyanslı Brown hareketine yaklaşmasıdır. Yani Syracuse rastgele-yürüyüş sezgisini tek-adım istatistiğinden gerçek bir fonksiyonel limit teoremine yükseltmek.
+
+Neden işe yarayabilir? O(logX) tam kritik ölçek: negatif drift'in X büyüklüğündeki bir sayıyı ciddi biçimde aşağı taşıyabildiği zaman burada. Bu ölçekte deterministik sistem gerçekten Brownian negatif drift gibi davranıyorsa, çok uzun yukarı kaçışların olasılığı klasik first-passage teorisindeki kadar keskin biçimde bastırılabilir.
+
+İlk küçük adım. Önce yörünge X
+η
+'nın üzerinde kaldığı sürece, j≤clogX aralığında parity-block korelasyonlarını kontrol edip
+
+Var
+	​
+
+j<N
+∑
+	​
+
+(ϵ
+j
+	​
+
+−
+2
+1
+	​
+
+)
+	​
+
+=
+4
+N
+	​
+
++o(N)
+
+ve iki/bloklu merkezi-limit tipi bir sonuç elde etmeye çalışmak.
+
+Kısmi başarı neye benzer? N≍clogX zamanlarına kadar geçerli bir CLT, moderate-deviation bound veya fonksiyonel invarians ilkesi tek başına ciddi bir sonuç olur; mevcut “hemen hemen tüm” sonuçlara dinamik bir yol şekli ve first-passage dağılımı ekler.
+
+Yenilik tahmini. Collatz için rastgele yürüyüş modelleri ve Tao tipi olasılıksal/yoğunluk yöntemleri mevcut. Fakat logaritmik başlangıç ölçüsü altında, clogX zaman ufkunda ve düşük-yükseklik sınırına kadar bir mesoskopik fonksiyonel invarians ilkesinin bilinen literatürde kanıtlanıp kanıtlanmadığını BİLMİYORUM.
+
+Cesaret puanı: 5/5
+
+CP28_T0_CHATGPT_20260923_COMPLETE

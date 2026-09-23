@@ -1,0 +1,19 @@
+ROLE MARKER: CP28_PBM_PROOF_20260923
+
+Konsorsiyum kararı (ChatGPT+Unreal bağımsız olarak aynı eksik lemmaya vardı): ilk birleşik teori "PBM — Post-Budget Mixing".
+
+TANIM: U(x)=(3x+1)/2^{a(x)}, a=v2(3x+1). X_m tekdüze tek sayı ∈ [2^m,2^{m+1}). S_j=Σ_{i<j} a(U^i X_m). τ=min{j: S_j>m} (bit-bütçesi çıkış zamanı; Terras: τ'ya kadar valuation kelimesi exact iid Geom(1/2)).
+LEMMA PBM (hedef): sabit 0<δ<1 ve sabit k için, τ'dan sonraki L=⌊δm⌋ valuation'ın ampirik sıklığı #{τ≤i<τ+L: a_i=k}/L → 2^{-k} (olasılıkta, m→∞).
+
+KOORDİNATÖR EXACT VERİSİ (tüm tek x, yerel):
+(1) L=⌊m/4⌋ blok toplamı Σa_i'nin iid-Geom konvolüsyonuna TV uzaklığı: m=14:0.0145, 16:0.0169, 18:0.0081, 20:0.0048, 22:0.0023, 24:0.0020. P(a=1): 0.4920→0.4989; ortalama 2.0126→2.0012.
+(2) Bağımlılık: τ anındaki yükseklik h=log2(U^τ x / x) çeyreklerine göre (üst vs alt çeyrek) blok-toplam dağılımı TV farkı. Permütasyon null'una oranı: skip=0 (blok τ'da başlar) m=16/20/22: 2.05/2.18/3.08; skip=3 (blok τ+3'te başlar): 3.84/6.09/8.52. Ham TV m ile üstel azalıyor, log2-eğimi ≈ −0.35 (skip 0,1), −0.24 (skip 3) — örnekleme gürültüsü ise −0.5 eğimle azalıyor. Ortalama farkı çok küçük (|Δ ortalama|/adım ≤ 0.006). Yani: gerçek, ama m ile üstel sönümlenen bir sonlu-boyut korelasyonu var; ve blok τ'dan uzaklaştıkça (skip↑) göreli olarak DAHA belirgin — bu şaşırtıcı.
+
+GÖREV:
+1. İspat iskeleti: PBM'yi kanıtlamak için adım adım plan. Özellikle: (a) τ anında U^τ(X_m)'in dağılımı nedir — X_m tek bir valuation silindirinde bütün serbest bitlerini tüketmiş; U^τ X_m = (3^τ X_m + C_τ)/2^{S_τ} ifadesinden, bu sayının 2-adik alt bitleri hangi "yeni" kaynaktan (3^τ ile çarpımın taşıma/Archimedean yapısı) rastgelelik alıyor? (b) Tao 2019'un Syracuse rastgele değişkeni / 3-adik karakteristik fonksiyon tahmini bu adımda nasıl kullanılır — tam olarak hangi önermesi, hangi şekilde (numara veremiyorsan "DOĞRULANMADI")? (c) En zor adım hangisi ve orada kırılma riski ne?
+2. Verideki (2) bulgusunun mekanizması: yüksek h'li yörüngeler için U^τ x daha fazla bit taşır (≈ m + τlog2 3 − S_τ). Bu, skip arttıkça göreli bağımlılığın büyümesini açıklar mı? Tahmini bir rate (2^{-cm}) türet ve veriyle (c≈0.24–0.35) karşılaştır.
+3. En zayıf versiyon: 1–2 haftada kanıtlanabilir olan en zayıf ama Terras'ın ÖTESİNDE olan PBM varyantı (ör. yalnız k=1 sıklığı, yalnız L=O(1) blok, logaritmik yoğunluk, vb.). [PROOF] ya da [SANI] etiketiyle.
+4. Literatür: PBM ya da eşdeğeri yazılmış mı (Tao 2019, Inselmann 2024, Lagarias–Soundararajan Benford, Kontorovich–Lagarias)? Uydurma yok.
+
+Türkçe, formül serbest. Son satır tam olarak:
+CP28_PBM_PROOF_20260923_COMPLETE

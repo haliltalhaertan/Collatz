@@ -1,0 +1,20 @@
+ROLE MARKER: CP28_T3_VERDICT_20260923
+
+Konsorsiyum Tur 3. Önceki tur sonucu: T10 (Brown) PARK, T3 (tehlike) KILL/PARK, T7 (entropi borcu) KILL — çekirdeği Terras valuation-silindir bijeksiyonu + Cramér (I* = 0.0549794728…) olduğu için tautoloji. Sıradaki T9, sonra T6.
+
+=== T9 "Ters ağaçta 3-adik dallanma basıncı" ===
+Orijinal: tek y'nin tek ters çocukları x=(2^a y−1)/3 (tam sayıysa). Z_{r,A}(s)=Σ_yollar Π_kenar (3/2^a)^s, a≤A. Hipotez: büyüme basıncı bağımsız-dallanma modelinden farklıdır (çocuk üretmek 3-adik bilgi taşır). İlk adım: mod 3^h durumlarına göre dallanma istatistiği; kısmi başarı: bağımsız-dallanmadan keskin kanıtlı üs.
+
+KOORDİNATÖR EXACT HESABI (yerel Python, Fraction): mod 3^h (h=1..5) durum uzayında ağırlıklı transfer matrisi M_h(A,s) (durum y mod 3^h; x mod 3^{h−1} y'den belirli, üst 3-adik rakam 3 eşit olasılıklı kaldırma; 3|x olan durumun çocuğu yok). Sonuç:
+ - Perron kökü h'den BAĞIMSIZ: s=1'de A=4,8,12 için tam olarak 15/16, 255/256, 4095/4096, yani λ(A,1)=1−2^{−A}; s=0'da 4/3, 8/3, 4 (=2A/6 → A/3); s=1/2'de 1.04539, 1.30673, 1.37207 — hepsi h=1..5 için aynı.
+ - h=2,3,4 satır toplamları aynı kesir kümesini veriyor (s=1: {15/64,15/32,207/256,207/128,243/256,243/128}); yani h≥2 yapısı h=2'ye (hatta Perron düzeyinde h=1'e) indirgeniyor.
+ Koordinatör yorumu: 2 mod 3^h birimler grubunda (ilkel kök) çarpım olarak birimleri permüte ettiği için birimler üzerindeki düzgün ölçü değişmez; 3-adik durum bilgisi Perron büyümesini değiştirmiyor. Bu, T9'un çekirdek hipotezini (bağımsız modelden farklı basınç) transfer-operatör düzeyinde ÇÜRÜTÜYOR gibi görünüyor.
+
+GÖREV (A): (i) Bu hesap/yorum doğru mu? λ(A,1)=1−2^{−A} ve λ(A,0)=A/3 için kısa [PROOF] yaz ya da hatayı göster. (ii) Transfer operatörü seviyesinde fark yoksa T9'da kurtarılabilir bir şey kalıyor mu (ör. sonlu derinlik dalgalanmaları, kök=1 etkisi, a sınırının kaldırılması)? Bu, Applegate–Lagarias'ın ters ağaç sonuçlarıyla (ör. "Density bounds for the 3x+1 problem" I/II, n^{0.84} alt sınırı — DOĞRULA ya da DOĞRULANMADI yaz) nasıl ilişkili? (iii) T9 oyu GO/PARK/KILL.
+
+=== T6 "Uzun yaşayan yörüngelerde ön ve son bitlerin kilitlenmesi" (ön inceleme) ===
+Orijinal: B_b(m)= m'nin baştaki b biti; V(m)=min{v2(3m+1),vmax}. n∈[X,2X], j=⌊c log X⌋, τ(n)>j koşulunda I(B_b(U^j n); V(U^j n) | τ>j). Cesur hipotez: uygun b,c için X→∞'da 0'a gitmez. İlk adım: n∈[2^22,2^23], birkaç j; karıştırma testi ile yanlılık kontrolü.
+GÖREV (B): (i) COLLAPSE kapısı: j ≤ ~m bölgesinde Terras bijeksiyonu U^j n'nin alt bitlerini ve (yaklaşık) üst bitlerini nasıl dağıtıyor — I burada exact 0'a ya da bilinen bir değere mi iniyor? (ii) Trivial olmayan sinyal hangi (c, b) bölgesinde mümkün? (iii) Tek sert test + kill kriteri (testten ÖNCE), (iv) T6 oyu GO/PARK/KILL.
+
+Türkçe, kısa, formül serbest. Son satır tam olarak:
+CP28_T3_VERDICT_20260923_COMPLETE

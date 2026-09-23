@@ -1,0 +1,610 @@
+Evet: kritik ayrım şu. j≤m için T10’un Brownian kısmı esasen yeni değil; Terras–Everett parite bijeksiyonu + standart Donsker teoreminin doğrudan bir sonucu. Gerçek araştırma sınırı j>m, fakat burada “tüm parite kelimesi iid olsun” yaklaşımı matematiksel olarak imkânsız; yalnız sıkıştırılmış gözlenebilirlerin Brownian/normal davranışı hedeflenebilir.
+
+1. j≤m: tam önerme
+
+H
+m
+	​
+
+=[2
+m
+,2
+m+1
+)∩Z, X
+m
+	​
+
+∼Unif(H
+m
+	​
+
+) olsun ve
+
+T(x)={
+x/2,
+(3x+1)/2,
+	​
+
+x≡0(mod2),
+x≡1(mod2),
+	​
+
+ε
+i
+	​
+
+(x)=1
+{T
+i
+(x) odd}
+	​
+
+.
+
+Terras’ın sonucu, Lagarias’ın Theorem B formülasyonunda, ilk j parite bitlerinin xmod2
+j
+ ile birebir olduğunu; Q
+j
+	​
+
+'nin Z/2
+j
+Z üzerinde permütasyon olduğunu söyler. 
+EuDML
++1
+
+Önerme [PROOF]. Her j≤m için
+
+(ε
+0
+	​
+
+,…,ε
+j−1
+	​
+
+)
+∼
+exact
+Bernoulli(1/2)
+⊗j
+.
+
+Çünkü H
+m
+	​
+
+, mod 2
+j
+'de her kalıntıyı tam 2
+m−j
+ kez içerir ve Terras parite dönüşümü bu 2
+j
+ kalıntıyı 2
+j
+ binary kelimeye permüte eder. Bu “yaklaşık bağımsızlık” değil, exact iid’dir. Kontorovich–Lagarias da bunu “Parity Sequence Symbolic Dynamics” olarak Terras 1976/Everett 1977’ye atfeder. 
+ResearchGate
++1
+
+Şimdi
+
+S
+k
+	​
+
+:=
+i<k
+∑
+	​
+
+(ε
+i
+	​
+
+log3−log2).
+
+Tek adımda
+
+logT(x)−logx=εlog3−log2+εlog(1+
+3x
+1
+	​
+
+),
+
+dolayısıyla exact olarak
+
+logT
+k
+(x)−logx−S
+k
+	​
+
+=R
+k
+	​
+
+(x):=
+i<k
+∑
+	​
+
+ε
+i
+	​
+
+log(1+
+3T
+i
+(x)
+1
+	​
+
+).
+
+Ayrıca T
+i
+(x)≥x/2
+i
+≥2
+m−i
+, bundan
+
+0≤R
+k
+	​
+
+(x)≤
+i<k
+∑
+	​
+
+log(1+
+3
+2
+i−m
+	​
+
+)≤
+32
+m
+2
+k
+−1
+	​
+
+.
+
+Özellikle k≤m için R
+k
+	​
+
+<1/3; k≤(1−η)m ise R
+k
+	​
+
+=O(2
+−ηm
+).
+
+Burada
+
+μ=
+2
+1
+	​
+
+log3−log2=log(
+3
+	​
+
+/2),σ=
+2
+log3
+	​
+
+.
+
+O halde
+
+W
+m
+	​
+
+(t):=
+σ
+m
+	​
+
+logT
+⌊mt⌋
+(X
+m
+	​
+
+)−logX
+m
+	​
+
+−μ⌊mt⌋
+	​
+
+,0≤t≤1
+
+standart Brown hareketine yakınsar: ilk m increment exact iid, R/
+m
+	​
+
+=o(1), gerisi Donsker. Yani Brownian cümlesi Terras’ın makalesinde bu biçimde yazılı olmak zorunda değil; fakat klasik teoremden neredeyse tek satırlık bir corollary.
+
+2. m<j≤cm: gerçek sınır
+
+Önce önemli bir negatif sonuç var. j>m için tam parite vektörünü iid Bernoulli’ye TV’de yaklaştırmak imkânsızdır. Gerçek dağılım en fazla 2
+m
+ kelime üzerinde desteklenirken iid dağılım 2
+j
+ kelimeye yayılır. Standart d
+TV
+	​
+
+=
+2
+1
+	​
+
+∥⋅∥
+1
+	​
+
+ tanımıyla
+
+d
+TV
+	​
+
+(P
+m,j
+	​
+
+,U
+j
+	​
+
+)≥1−2
+m−j
+.
+
+Dolayısıyla j=(1+δ)m ise
+
+d
+TV
+	​
+
+≥1−2
+−δm
+→1.
+
+Bu nedenle T10’un doğru formu “pariteler iid olmaya devam eder” değil; parite kelimesinin düşük boyutlu fonksiyonları — odd-count, log-yükseklik, first-passage zamanı — Brownian modele yaklaşır olmalı.
+
+Literatür durumu:
+
+Terras/Everett exact bit bütçesini m'ye kadar verir; ötesinde yeni bağımsız bit üretmez. Kontorovich–Lagarias/Lagarias–Weiss ise analiz edilebilir stokastik modellerden deterministik Collatz için heuristik tahminler çıkarır; actual dyadic-shell orbit için j>(m) Brownian FCLT değildir. 
+arXiv
+
+Borovkov–Pfeifer stokastik model, bir yaklaşım-hızı tahmini ve stopping-time asimptotikleri geliştiriyor. Fakat incelediğim theorem/abstract materyalinde bunu actual shell üzerinde j=(1+δ)m Brownian invariance biçiminde veren bir sonuç doğrulayamadım: DOĞRULANMADI. 
+SIAM
+
+Tao’da iki şeyi ayırmak şart. Proposition 1.9, yeterince çok 2-adik başlangıç biti varsa (n
+′
+≥(2+c
+0
+	​
+
+)n) ilk n Syracuse valuation’ını iid Geom(2)'ye exponentially-small TV ile yaklaştırıyor. Proposition 1.14 ise bu stokastik Syracuse modelinin 3-adik offset’inin ince-ölçek mixing sonucudur. Bu, m bittikten sonra actual integer orbitine yeni bağımsız 2-adik parity bitleri sağlamaz. Yani sorunun doğrudan cevabı: Tao’nun 3-adik mixing’i j>m parite bağımsızlığını doğrudan vermiyor. Hatta yukarıdaki destek engeli full-path TV iddiasını zaten yasaklıyor. Tao’nun mekanizması first-passage/ölçekler-arası dağılım taşımaya daha yakın; dolayısıyla T3 için T10’dan daha doğrudan kullanılabilir. 
+Cambridge University Press
+
+Burada çok önemli daha yeni bir sonuç var: Inselmann 2024 preprinti. Terras/Everett’in klasik yaklaşık-yörünge zarfını
+
+0≤k≤(log2)
+−1
+logn=log
+2
+	​
+
+n
+
+ufkundan
+
+0≤k≤
+log(4/3)
+2
+	​
+
+logn
+
+ufkuna genişletiyor ve natural-density-one başlangıçlar için eşzamanlı
+
+(
+2
+3
+	​
+
+	​
+
+)
+k
+n
+1−ϵ
+≤T
+k
+(n)≤(
+2
+3
+	​
+
+	​
+
+)
+k
+n
+1+ϵ
+
+kanıtlıyor. 
+arXiv
+
+n≍2
+m
+ yazarsak bu
+
+k≤c
+∗
+	​
+
+m,c
+∗
+	​
+
+=
+log(4/3)
+2log2
+	​
+
+=
+log(2/
+3
+	​
+
+)
+log2
+	​
+
+≈4.8188.
+
+Dolayısıyla m<j<4.8188m bölgesinin drift/LLN ölçeği zaten büyük ölçüde kapsanmış durumda:
+
+∣logT
+k
+(n)−logn−μk∣≤ϵlogn.
+
+Yeni T10 sonucu bunun Θ(m) hata ölçeğini Θ(
+m
+	​
+
+) Brownian fluctuation ölçeğine indirmek olmalı.
+
+Bence hedeflenebilecek en güçlü makul önerme: sabit 1<c<c
+∗
+	​
+
+ ve sabit 0<t
+1
+	​
+
+<⋯<t
+r
+	​
+
+≤c için
+
+(
+σ
+m
+	​
+
+logT
+⌊t
+ℓ
+	​
+
+m⌋
+(X
+m
+	​
+
+)−logX
+m
+	​
+
+−μ⌊t
+ℓ
+	​
+
+m⌋
+	​
+
+)
+ℓ=1
+r
+	​
+
+
+vektörünün kovaryansı min(t
+a
+	​
+
+,t
+b
+	​
+
+) olan Brown hareketinin sonlu-boyutlu dağılımlarına yakınsaması. İncelediğim kaynaklarda c>1 için bu 
+m
+	​
+
+-ölçekli actual-orbit CLT/FCLT’yi bulmadım.
+
+3. 1–2 haftalık ARA LEMMA
+
+Sabit δ>0 ile (1+δ)m CLT’sini ilk lemma olarak seçmezdim; bu, büyük olasılıkla ana problemin kendisi. Buna karşılık şu gerçekten kanıtlanabilir ve temiz bir ara sonuç:
+
+SUBDIFFUSIVE-OVERSHOOT LEMMA. Her sabit η>0, 0≤r
+m
+	​
+
+≤m
+1/2−η
+, j=m+r
+m
+	​
+
+ için
+
+d
+K
+	​
+
+(
+σ
+m
+	​
+
+logT
+j
+(X
+m
+	​
+
+)−logX
+m
+	​
+
+−μj
+	​
+
+,N(0,1))≪m
+−η
++m
+−1/2
++e
+−cm
+.
+
+İspat mekanizması kısa: ilk m parity biti exact iid olduğundan Berry–Esseen O(m
+−1/2
+) verir. Sonraki r bilinmeyen bitler ne kadar kötü korele olursa olsun,
+
+	​
+
+i=m
+∑
+m+r−1
+	​
+
+(Y
+i
+	​
+
+−μ)
+	​
+
+≤σr,
+
+dolayısıyla normalize edilmiş bozuntu ≤r/
+m
+	​
+
+=O(m
+−η
+). Ayrıca exact ilk-m random walk büyük sapma sınırıyla T
+m
+(X
+m
+	​
+
+)≥e
+am
+ olasılığı 1−e
+−Ω(m)
+; r=o(m) boyunca bundan dolayı sonraki +1 düzeltmelerinin toplamı exponentially small kalır.
+
+Bu lemma T10’u m'den gerçekten öteye, hiçbir varsayımsal mixing kullanmadan geçirir.
+
+Sonraki esas kapı sabit δ olmalı. Orada full-TV değil, düşük frekans karakteristik fonksiyonu hedeflenmeli. K
+j
+	​
+
+=∑
+i<j
+	​
+
+ε
+i
+	​
+
+, j=(1+δ)m için örneğin
+
+∣u∣≤m
+κ
+sup
+	​
+
+	​
+
+Ee
+iu2(K
+j
+	​
+
+−j/2)/
+j
+	​
+
+−e
+−u
+2
+/2
+	​
+
+≤m
+−γ
+.
+
+Esseen smoothing bunu scalar Kolmogorov CLT’ye çevirir. Gerekli araç doğrudan Tao Prop. 1.14 değil, T
+m
+(X
+m
+	​
+
+)'nin sonraki 2
+δm
+-ölçekli parity bilgisini gören 2-adik endpoint Fourier/decorrelation tahmini olmalı. Tao’nun karakteristik-fonksiyon tekniği metodolojik şablon olabilir; 3-adik offset estimate’i tek başına bu köprüyü sağlamıyor. 
+Cambridge University Press
+
+4. Kod ajanı için kill / strengthen
+
+KILL: Sabit bir δ>0 için j=(1+δ)m sonrası stopping-time/standardize log-height farkının Kolmogorov mesafesi m=18→24 boyunca küçülmek yerine belirgin O(1) plato yapıyor ve sapma sistematik olarak tam j≃m sonrasında açılıyorsa, fixed-δ T10 formu ciddi biçimde falsifiye edilir.
+
+STRENGTHEN: j>m bölgesinde scalar CDF/first-passage farkı m arttıkça düzenli azalıyor, varyans σ
+2
+j ve çok-zamanlı kovaryans σ
+2
+min(j
+1
+	​
+
+,j
+2
+	​
+
+) ile uyuşuyorsa, destek engeline rağmen coarse Brownian invariance hipotezi güçlü biçimde desteklenir.
+
+CP28_T10_THEORY_20260923_COMPLETE

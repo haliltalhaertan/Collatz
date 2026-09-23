@@ -1,0 +1,15 @@
+**C1 — DOĞRU.** Uzunluğu \(r\) olan kelimenin başlangıçlarını mod \(r\) ayırınca her sınıftaki bit blokları ayrık; Hoeffding’de \(M_s\le 2M/r\) kullanımı (3)’ü veriyor. (4)–(6)’daki üstel sabitler tutarlı. En fazla \(n+1\) prefix ve sonlu sayıda kelime için birleşim sınırı, ayrıca (7)–(8)’de sıfır koşusu sınırı geçerli. \(D>0\), seçilmiş sabit parametrelere bağlıdır; \(m\)’ye bağlı değildir.
+
+**C2 — DOĞRU.** \(S_{\tau-1}\le m<S_\tau\) olduğundan \(S_\tau\), \(m\)’den *sonraki* ilk tek-zamanıdır. \(T^m x\) tekse mevcut tek durum \(S_{\tau-1}=m\)’dedir; atlanması doğrudur. Sıfır-koşusu koşulu çift \(y\) için \(d\le\eta\log_2y\), tek \(y\) için \(d\le\eta\log_2y+1\) verir.
+
+**C3 — DOĞRU.** \(\delta<c\beta/2\) seçilebilir ve (29), \((1/2-\varepsilon)(R-k)>L+2\)’yi sağlar. Bu sınır \(t_L+k\le R\) için yeterlidir. \(w_k=10^{k-1}1\)’in frekansı \(2^{-(k+1)}\), tek başlangıçların frekansı \(1/2\) olduğundan oran \(2^{-k}\)’dir. (32) ve (38)’deki olası \(t=0\) sınır terimleri doğru sayılmıştır.
+
+**C4 — DOĞRU.** (45), gereken \(F(x),F^2(x),F^3(x),F^4(x)\in P\) koşullarını tam verir. Kapasiteler \(A_3=0.9591035170\ldots<1\) ve \(A_4=1.1563121796\ldots>1\). (52)–(67), boşlukları ve kısa son parçayı \(O(((1-c)+\alpha+\eta)m)\), dolayısıyla \(L\)’ye bölününce \(O(((1-c)+\alpha+\eta)/\delta)\) olarak sınırlar. \(F^j\) ölçeği, Theorem 3.1’de \(\lambda=\beta\) seçimiyle elde edilen \(F\) ölçeğinin Lemma 2.16 aracılığıyla sonlu kez yinelenmesinden çıkıyor; teoremin doğrudan \(F^j\)’ye uygulanması varsayılmıyor.
+
+**C5 — DOĞRU.** Kabuktaki \(2^{m-1}\) tek sayıya bölmek, kabuk istisna oranına yalnızca 2 çarpanı ekler; (20) geçerli.
+
+**C6 — DOĞRU.** Yenilik notu bağımsız bir mixing teoremi veya “literatürde ilk” iddiasında bulunmuyor; kullanılan Inselmann sonuçları ile buradaki uygulama adımlarını ayırıyor. Belirtilenlerin dışında bir Inselmann sonucu kullanılmıyor.
+
+**Genel hüküm:** (a) **[PROOF]**; (b) **[PROOF]**.
+
+CP28_PBM_LINEAUDIT_20260923_COMPLETE

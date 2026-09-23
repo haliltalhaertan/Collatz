@@ -1,0 +1,37 @@
+ROLE MARKER: CP28_PBM_AUDIT_20260923
+
+Görev: SATIR SATIR DENETİM (öldürmeye çalış). Konsorsiyumun bir üyesi, "Post-Budget Mixing" (PBM) lemmasının Inselmann 2024 (arXiv:2402.03276v3) Lemma 2.16'nın doğrudan bir sonucu olduğunu iddia ediyor. Doğruysa PBM "yeni derin lemma" değil, yazılmamış bir corollary olur. Görevin: bu iddiayı kır ya da onayla.
+
+TANIMLAR. T(n)=n/2 (çift), (3n+1)/2 (tek); p(m)_k = T^k(m)'nin paritesi. Syracuse U(x)=(3x+1)/2^{a(x)}, a=v2(3x+1). Tek x için U^j(x)=T^{S_j}(x), S_j=Σ_{i<j} a_i. X_m tekdüze tek ∈[2^m,2^{m+1}); τ=min{j:S_j>m}.
+PBM: sabit k, sabit 0<δ<1: #{τ≤i<τ+⌊δm⌋ : a_i=k}/⌊δm⌋ → 2^{-k} olasılıkta.
+
+INSELMANN'DAN KULLANILAN (koordinatör PDF'den doğruladı):
+ - Tanım 2.6: S⊆Z+ "*-dense" ⇔ ∃C>0, 0<D≤1: μ_[1..N](S∩[1..N]) ≥ 1 − C/N^D ∀N. Sonlu kesişimler *-dense (Lemma 2.7).
+ - Lemma 2.8: kabuk bazlı eşdeğerlik (her [a^n,a^{n+1}) kabuğunda istisna oranı ≤ C a^{-Dn}).
+ - Prop 2.4 (Terras/Everett): [M, M+2^N) üzerinde (p_0..p_{N−1}) tam düzgün.
+ - Lemma 2.16 (giriş bölümündeki ifade (1.5)): S *-dense ⇒ {m : T^{⌊log2 m⌋}(m) ∈ S} *-dense.
+
+İDDİA EDİLEN İSPAT:
+ (1) P_{w,c,ε} = {y : y'nin ilk R(y)=⌊c log2 y⌋ parite bitinde, yeterince uzun her prefix'te sabit ikili kelime w'nin frekansı 2^{-|w|} ± ε, ve lineer uzunlukta 0-koşusu yok} kümesi *-dense (c<1). Sebep: Prop 2.4 + sabit uzunluklu örtüşen kalıp göstergelerini |w| sınıfa bölüp Hoeffding; istisna ≪ y^{-D}.
+ (2) Lemma 2.16 ⇒ {x : T^{⌊log2 x⌋}(x) ∈ P} *-dense. Yani x'in parite dizisinin [m, m + c·log2(T^m x)] penceresinde kalıp frekansları doğru. T^m x ≈ x^{β}, β=log2√3=0.79248 (Inselmann Thm 1.1).
+ (3) a=k olayı, bir tek duruma karşılık gelen T-parite dizisinde "1 0^{k−1} 1" kalıbıdır (tek başlangıç biti 1, sonra k−1 çift adım, sonra tek). Oran #(10^{k−1}1)/#(1) → 2^{-(k+1)}/(1/2)=2^{-k}.
+ (4) τ-senkronizasyonu: U^τ X_m = T^m X_m'den sonraki ilk tek durum; gecikme o(m) (lineer 0-koşuları istisna). Böylece tek bir taze blok, L=⌊δm⌋ Syracuse adımı için, δ < β/2 ≈ 0.396 için yeterli ("[PROOF, kısa bookkeeping sonrası]").
+ (5) Tüm 0<δ<1 için: F(y)=T^{⌊log2 y⌋}(y) ile P∩F^{-1}P∩F^{-2}P∩F^{-3}P kullanılır; blok uzunlukları βm, β²m, β³m, β⁴m, toplam 2.3126m T-adımı ≈ 1.1563m Syracuse adımı > δm. "[SANI — güçlü]".
+
+KOORDİNATÖR EXACT VERİSİ (tüm tamsayılar [2^m,2^{m+1}), T-parite dizisi; kalıp frekansı × 2^{|w|}, 1 = ideal):
+ pencere [m,2m]:  m=16: '1' .9941 '11' .9785 '101' 1.0089 '0000' .9777 | m=22: '1' .9979 '11' .9938 '101' 1.0018 '0000' 1.0004  → 1'e yakınsıyor.
+ pencere [2m,3m]: m=16: '11' .891 '101' 1.313 '0000' .703 | m=22: '11' .933 '101' 1.183 '0000' .839 → yavaş yakınsıyor.
+ pencere [3m,4m]: m=16: '101' 1.90 '0000' .387 | m=22: '101' 1.74 '0000' .514 → hâlâ büyük sapma (koordinatör yorumu: 1-4-2 döngüsüne erken düşen yörüngelerin kirlenmesi; toplam durma ≈ 4.82m ortalama, dağılım geniş).
+ Syracuse bütçe-sonrası blok (L=m/4): TV(Σa, iid Geom konvolüsyonu) 0.0145 (m=14) → 0.0020 (m=24).
+
+DENETİM SORULARI (her birine: DOĞRU / HATALI / BOŞLUK + tek paragraf):
+ Q1. (1)'deki küme gerçekten *-dense mi? Özellikle: "yeterince uzun HER prefix'te" (uniform-in-prefix) koşulu ve "lineer 0-koşusu yok" koşulu istisna oranını y^{-D} tutuyor mu? Kalıplar örtüşürken Hoeffding nasıl uygulanıyor?
+ Q2. Lemma 2.16'nın hipotez/sonuç biçimi (2)'deki kullanıma birebir uyuyor mu? T^{⌊log2 m⌋} ile bizim T^m (m=⌊log2 X_m⌋) aynı; ama P'nin tanımı y'nin KENDİ bit uzunluğuna göre (R(y)=c log2 y). Bu doğru mu uygulanmış?
+ Q3. (3)'teki kalıp sayımı: T-parite dizisinde bir tek durumdan sonra a=k ⇔ "1 0^{k−1} 1"? (Dikkat: T tek adımda (3n+1)/2 yapar, yani v2(3n+1)=a ise T-dizisinde tek adımdan sonra a−1 çift adım gelir.) Oran 2^{-k} doğru mu?
+ Q4. (4)'te "tek taze blok δ<β/2 için yeter" sayımı doğru mu? τ≈m/2 Syracuse ≈ m T-adımı; blok uzunluğu c·βm T-adımı ≈ cβm/2 Syracuse. Gerekli: δm ≤ cβm/2 − o(m).
+ Q5. (5) dört-blok iterasyonu: F^{-j}P kesişimleri *-dense mi, ve blok sınırlarında senkronizasyon (F'nin adım sayısı ⌊log2 y⌋ her blokta yeniden hesaplanıyor) sorun yaratıyor mu? Koordinatörün [3m,4m] verisindeki büyük sapma bu iddiayla çelişiyor mu (sonlu m artefaktı mı, gerçek engel mi)?
+ Q6. Sonuç: PBM (a) δ<β/2 için ve (b) tüm δ<1 için Inselmann'dan çıkıyor mu? Etiket: [PROOF] / [PROOF-with-gap: …] / [HATALI: …].
+ Q7. Yenilik: Bu sonuç (en azından (a)) Inselmann'da veya başka yerde açıkça yazılı mı? Bilmiyorsan "BİLMİYORUM".
+
+Türkçe, kısa, formül serbest. Son satır tam olarak:
+CP28_PBM_AUDIT_20260923_COMPLETE
