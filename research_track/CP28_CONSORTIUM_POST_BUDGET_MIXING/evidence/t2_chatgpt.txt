@@ -1,0 +1,192 @@
+(A) T10 ve T3
+
+T10 — PARK. Koordinatörün “r≤m
+1/2−η
+ overshoot lemması trivial” teşhisi esasen doğru. Eğer j=m için gerçek log-yüksekliğin Berry–Esseen/CLT kontrolü zaten eldeyse, sonraki r adım log-yüksekliği deterministik olarak yalnız O(r) değiştirebilir; 
+m
+	​
+
+ ölçeğinde bu O(r/
+m
+	​
+
+)=O(m
+−η
+). Yani önerilen lemma yeni Collatz aritmetiği çözmüyor; asıl içerik j=m sınırındaki CLT’de. Öte yandan sabit δ>0 için j=(1+δ)m diagonal CLT gerçekten farklıdır: Kontorovich–Sinai Brown/Wiener sonucu önce başlangıç kesimini X→∞ götürüp iterasyon sayısını sabit tutuyor, sonra iterasyon sayısını büyütüyor; Lagarias’ın özeti bu iki limitin değiştirilemeyeceğini özellikle vurguluyor. 
+ResearchGate
++1
+ Inselmann ise O(logn) ufkunda yoğunluk-1 LLN tipi iki taraflı zarf veriyor, 
+logn
+	​
+
+ dalgalanma CLT’si değil. 
+arXiv
+ Dolayısıyla sabit-δ CLT “Collatz’a eşdeğer” demek fazla güçlü; fakat ciddi yeni triangular-array kontrol gerektiriyor ve 1–2 haftalık hedef görünmüyor. Hesaptaki sistematik sapma yokluğu da aciliyeti düşürüyor.
+
+T3 — KILL (mevcut formuyla). Hesap matematiksel olarak “her asimptotik tehlike yasasını” çürütmez; m≤24 yalnız mevcut ölçekteki etkiyi test ediyor. Fakat teorinin motivasyonu, m eşiğinden sonra yükseklik koşullamasının görünür bir hazard sapması üretmesiyse, tam o bölgede farkın gürültü seviyesinde kalması ve kabuktan kabuğa işaret değiştirmesi mekanizmayı ciddi biçimde destekten yoksun bırakıyor. Daha ince o(1) asimptotik etki teorik olarak kalabilir, ama ayrı bir yeni hipotez gerekir.
+
+(B) T7 — valuation “entropi borcu”
+
+(i) Evet: bit bütçesi içinde çekirdek argüman klasik geometri + Cramér. Syracuse valuation vektörü için bilinen 2-adik yapı şudur: (a
+0
+	​
+
+,…,a
+r−1
+	​
+
+), toplamı s olan her kelime tek bir odd residue class mod 2
+s+1
+ belirler; Haar altında koordinatlar iid ve P(a=k)=2
+−k
+. Tao bunu standart 2-adik formalizm olarak açıkça kaydediyor. 
+cambridge.org
++1
+
+Daha keskin söylersek, x odd ve [2
+m
+,2
+m+1
+) kabuğunda düzgün olsun. α=log
+2
+	​
+
+3. Eğer
+
+⌊αr⌋+1≤m,
+
+ise
+
+P(
+i<r
+∑
+	​
+
+a
+i
+	​
+
+≤αr)=P(
+i=1
+∑
+r
+	​
+
+G
+i
+	​
+
+≤αr),G
+i
+	​
+
+∼
+iid
+Geom(1/2),
+
+exact; ardından Cramér/Chernoff:
+
+P≤e
+−I
+∗
+	​
+
+r
+,I
+∗
+	​
+
+=0.05497947…
+
+Burada önemli sınır r≲m/log
+2
+	​
+
+3≃0.631m; sadece “r≤m” demek fazla gevşek. Bu bölgede T7’nin entropy-debt sonucu bağımsız yeni içerik değil.
+
+(ii) “Keyfi segment başlangıcı” tek başına kurtarmıyor. 2-adik Haar Syracuse dinamiği ölçüyü koruyor ve bütün valuation koordinatları iid Geom(2); dolayısıyla herhangi bir sabit j
+0
+	​
+
+’dan başlayan r-blok aynı Cramér maliyetine sahip. 
+Cambridge University Press
+ Hatta “yörüngenin herhangi bir yerinde böyle bir r-blok var mı?” şeklinde j
+0
+	​
+
+’ı sınırsız bırakırsanız tersine olay Haar-a.s. gerçekleşir: pozitif olasılıklı sabit bir r-blok bağımsız ayrık bloklarda sonsuz kez görünür. Yani global “hiç böyle blok olmasın” yönü çalışmaz.
+
+Gerçek yeni bölge digit budget sonrasıdır: r≳m/α, özellikle r≫logx, veya j
+0
+	​
+
+ ile r’nin m ile birlikte büyüdüğü uniform sliding-window tahminleri. Tao’nun sonucu buna Cramér-oranlı blok LDP vermiyor; kullandığı araç yaklaşık transport ve 3-adik Fourier karışımıdır. 
+Cambridge University Press
++1
+ Inselmann da başlangıçtan itibaren belirli O(logx) ufkunda LLN ölçekli zarf kanıtlıyor; keyfi segmentlerde keskin large-deviation exponent vermiyor. 
+arXiv
+
+(iii) Temiz önerme. Gerçekten yeni hedef şu olur:
+
+r
+m
+	​
+
+=⌊(1+δ)
+log
+2
+	​
+
+3
+m
+	​
+
+⌋,
+
+sabit δ>0 için ve her ε>0,
+
+P
+x∈[2
+m
+,2
+m+1
+),x odd
+	​
+
+(
+i<r
+m
+	​
+
+∑
+	​
+
+a
+i
+	​
+
+(x)≤(log
+2
+	​
+
+3)r
+m
+	​
+
+)≤exp(−(I
+∗
+	​
+
+−ε)r
+m
+	​
+
+)
+
+yeterince büyük m için.
+
+Bu, exact-cylinder bölgesini sabit oranda aşan post-budget Cramér bound olur; Tao/Inselmann’dan doğrudan çıkmıyor. Ben bunu 1–2 haftada kanıtlanabilir diye değerlendirmem: burada tam olarak kaybolan bağımsızlığı/entropy’yi yeniden üretmek gerekiyor. Buna karşılık (1−δ)m/α versiyonu birkaç sayfalık klasik argümandır ve yayın değeri düşüktür.
+
+T7 oyu: KILL. Orijinal “entropi borcu” çekirdeği COLLAPSE kapısından geçmiyor: yeni görünen üstel maliyet, bilinen valuation-cylinder bijeksiyonu + Cramér. Kurtarılabilecek post-budget LDP ise aslında ayrı ve çok daha zor bir problem; onu T7’nin kısmi başarısı diye saymamak gerekir.
+
+CP28_T2_VERDICT_20260923_COMPLETE

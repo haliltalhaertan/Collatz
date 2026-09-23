@@ -1,0 +1,19 @@
+{
+ "CP27_REPORT.md": "da8412d58bd1c32dba59dcdf75a9299fd610295a3a44197e38df313484802591",
+ "WORKFLOW_ROLES_REV4.md": "b94eb8ca5c056fab4b544279daafd9458e3e5c6b7b3c8164b3a8096bc316b29a",
+ "cp27_xa_construct.py": "7b80d661f5a62d37f46b2a66988fef9275af21b2f12c08fc6a4b08a44e76b953",
+ "evidence/cp27_xa_construct.json": "f0c92e7a9a5a5a20eaa4161c4cd9daf3acc94fbe6ae108d55f6db106cbafca4b",
+ "evidence/r1_brief.txt": "bcaf0eec3c307360cefcc3029f00abc7be51be92b8f3d1d66dedb663c5c22387",
+ "evidence/r1_coordinator_checks.json": "d10041d62ccc4ddad9365c2d0fba1efebc9c7aab4f46a9254600f1ef8249c209",
+ "evidence/r1_member_chatgpt.txt": "70a091c20ce6e1f68baa22c4ce8bdcf8ad510cfaf36a1b6fb117e32ec632591f",
+ "evidence/r1_member_muse.log": "579415e38598179d28acd54018e4b1224d35b60577c33648dfa9fa89e9db9de0",
+ "evidence/r1_member_unreal.txt": "5987db49395af9a81112cd159cf7c5b40b303667e422c393e1562b2db37d79f2",
+ "evidence/r2_brief.txt": "b1e14dba1dba86f8eaf763b41a732970a19f89d7aa3897d1b0c11501b74ea0e1",
+ "evidence/r2_member_chatgpt.txt": "ae5b68e9f5f0334ea64534e8a663ec5c93d70e6ce86a5aa2aa654d6617b49d65",
+ "evidence/r2_member_muse.log": "6db1c5fb8de787d10e309cc59a3595ed6f36b3677ef2e0f95f1295b507648106",
+ "evidence/r2_member_unreal.txt": "0b4676b48df52a0b2dd902ca5c41b5ae63570eda459e1a9daf8cea058bb77e0d",
+ "evidence/xa_audit_brief.txt": "2d5e32c9a88c949c9d44c831aba36c912822bd1857915b968b169907c5623a69",
+ "evidence/xa_member_chatgpt.txt": "5825b3d9bb65b919d204bd8c0bbbf4eb64982249180654a17ec5ecf9ce90ec52",
+ "evidence/xa_member_muse.log": "d568f1c34df9392f4a73a0e728e9ce0ea63fc9fb24d7e8741ddea69e26742a03",
+ "evidence/xa_member_unreal.txt": "1f716ed95dbba2e2d536c3bcabf638b2979d515aa906dc338b3955d129e06f30"
+}

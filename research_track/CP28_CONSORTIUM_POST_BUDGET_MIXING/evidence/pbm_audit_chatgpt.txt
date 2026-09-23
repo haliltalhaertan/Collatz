@@ -1,0 +1,121 @@
+Q1 — BOŞLUK. Fikir doğru, fakat “yeterince uzun HER prefix” nicel olarak tanımlanmadıkça *-dense sonucu çıkmıyor. Prop. 2.4 gerçekten ilk N parity bitini tam adil bit dizisi yapıyor. 
+arXiv
+ Sabit r=∣w∣ için örtüşen w-göstergelerini başlangıç indeksi mod r sınıflarına ayırınca her sınıfta kullanılan bit blokları ayrık, dolayısıyla bağımsız; Hoeffding uygulanabilir. Eğer “yeterince uzun” h≥ρlog
+2
+	​
+
+y demekse, O(logy) prefix üzerinde union bound hâlâ O(y
+−D
+) verir. Aynı şekilde uzunluğu ρlog
+2
+	​
+
+y olan bir 0-koşusu olasılığı O((logy)y
+−ρ
+). Ama eşik sabit veya o(logy) ise sabit bir D>0 garantisi yok. Lemma 2.8 tam olarak bu polinomik kabuk hatasını *-density’ye çeviriyor. 
+arXiv
+
+Q2 — DOĞRU. Lemma 2.16’nın ifadesi tam olarak P *-dense ise F
+−1
+P, F(n)=T
+⌊log
+2
+	​
+
+n⌋
+(n), *-dense diyor. 
+arXiv
+ Dolayısıyla P’nin üyeliğinin y=F(x)’in kendi log
+2
+	​
+
+y’sine göre tanımlanması sorun değil; tam tersine Lemma 2.16 sonrası P zaten y üzerinde test ediliyor. Ancak log
+2
+	​
+
+F(x)∼βlog
+2
+	​
+
+x bilgisi Lemma 2.16’dan değil, ayrıca Inselmann’ın trajectory-envelope sonucundan alınmalı. Kabukta çalışmak için doğal yoğunluk sürümünden ziyade makaledeki *-dense Theorem 3.1’i kullanmak daha temiz. 
+arXiv
+
+Q3 — DOĞRU. Bir odd state n için a=v
+2
+	​
+
+(3n+1)=k ise ilk T-adımı (3n+1)/2 yapar; ardından tam k−1 adet even state gelir ve sonra yeniden odd state’e ulaşılır. Yani parity kelimesi tam olarak 10
+k−1
+1. Adil bitlerde bunun T-zaman frekansı 2
+−(k+1)
+, odd-state frekansı 1/2; sınırdaki O(1) kelimeler ihmal edilince Syracuse-adımı başına oran 2
+−k
+.
+
+Q4 — DOĞRU, fakat Q1’in nicel düzeltilmesi şart. y=T
+m
+X
+m
+	​
+
+ için log
+2
+	​
+
+y=(β+o(1))m, dolayısıyla tek taze parity bloğunun uzunluğu cβm+o(m) T-adımıdır. Odd-state yoğunluğu 1/2+o(1) olduğundan taşıdığı Syracuse geçişi sayısı cβm/2+o(m). Gerekli eşitsizlik gerçekten δ<cβ/2; c<1 keyfi olarak 1’e yaklaştırılabildiğinden her δ<β/2 elde edilir. τ, m T-zamanından sonraki ilk odd-state indeksidir; T
+m
+X
+m
+	​
+
+ odd olsa bile τ “S
+j
+	​
+
+>m” nedeniyle bir sonraki odd state’i seçer. Bu kaymanın o(m) olması, her η>0 için ηm-ölçekli 0-runları dışlayarak sağlanabilir.
+
+Q5 — BOŞLUK, fakat gördüğüm kadarıyla tamir edilebilir. F
+−j
+P’lerin *-dense olması doğru: Lemma 2.16’yı indüktif olarak P,F
+−1
+P,F
+−2
+P,… üzerine uygularsınız; sonra sonlu kesişim yine *-dense. Inselmann’ın kendi ana ispatı da Lemma 2.16’yı bu tür iteratif taşıma için kullanıyor. 
+arXiv
+ Eksik bookkeeping şudur: P her F
+j
+(x)’te yalnız ilk clog
+2
+	​
+
+F
+j
+(x) bitini kontrol ediyor; blok sonuna kadar kalan (1−c)log kısımlar “boşluk” ve dört iyi prefix doğrudan bitişik değil. Ayrıca β
+j
+m ölçekleri için scale-good setleri de A∩F
+−1
+A∩⋯ şeklinde eklemek gerekir. Çözüm: hedef hata ε için c=1−η seçip dört uncontrolled gap’in toplam T-uzunluğunu O(ηm) yapmak; sınırları geçen sabit uzunluklu kelimeler de O(1). Dört ölçeğin toplamı (β+β
+2
++β
+3
++β
+4
+)m=2.312624…m, iyi parçaların odd kapasitesi c1.156312…m; c yeterince 1’e yakınsa bütün δ<1 için yeter. Verilen [3m,4m] sapması buna asimptotik bir karşı-örnek değil: dört blok yalnız yaklaşık m ile 3.3126m arasına uzanıyor ve Inselmann’ın *-dense envelope’i tipik yörüngenin 3m’de hâlâ pozitif kuvvet ölçeğinde kaldığını söyler; m=22’de 1-4-2 kontaminasyonu ciddi bir finite-size etkisi olabilir. 
+arXiv
+
+Q6 — (a) [PROOF-with-gap: “yeterince uzun prefix” tanımını ≥ρlogy şeklinde nicelleştir]. Bu düzeltmeden sonra δ<β/2 için esasen Prop. 2.4 + Hoeffding + Lemma 2.16 + *-dense scale envelope corollary’sidir; yeni bir mixing lemması gerekmiyor. (b) [PROOF-with-gap: dört c<1 bloğu arasındaki uncontrolled gap’leri ve F
+j
+-ölçek kontrolünü açıkça hesapla]. Burada temel engel görmüyorum; eksik olan gerçekten bookkeeping düzeyinde, fakat yazıldığı haliyle “blok uzunluklarını topla, bitti” argümanı henüz ispat değil. Lemma 2.16’nın kendisi bu iteratif *-density taşımasını açıkça sağlıyor. 
+arXiv
+
+Q7 — BİLMİYORUM. Inselmann v3’te açıkça gördüğüm ilgili sonuç parity’nin birinci momentinin uzun ufukta 1/2’ye yakın olması; *-dense sürümü Theorem 3.3’te veriliyor. 
+arXiv
+ Makalede “valuation” veya kelime-frekansı biçiminde PBM ifadesini bulamadım. Tao’da ise yaklaşık uniform bir odd residue girdisinden ilk n Syracuse valuation vektörünün Geom(2)
+n
+’e TV-yakınlığını veren Proposition 1.9 var, fakat bu PBM’nin post-budget first-passage başlangıç dağılımını doğrudan kapsayan aynı önerme değil. 
+Cambridge University Press
+ Dolayısıyla “açıkça literatürde yazılmıştır” diyemem.
+
+Net hüküm: Konsorsiyum üyesinin “PBM Lemma 2.16’nın doğrudan sonucu” cümlesi fazla güçlü. δ<β/2 kısmı çok yakın ve esasen kısa bir corollary’ye indirgeniyor; tüm δ<1 kısmı da muhtemelen aynı mekanizmadan çıkıyor, fakat dört-blok/gap bookkeeping’i yazılmadan [PROOF] etiketi vermem.
+
+CP28_PBM_AUDIT_20260923_COMPLETE

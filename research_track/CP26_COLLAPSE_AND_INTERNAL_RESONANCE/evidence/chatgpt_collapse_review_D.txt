@@ -1,0 +1,837 @@
+Sonuç: çekirdek “COLLAPSE” sonucu, kapsamı doğru yazılırsa PROOF. Daha da önemlisi, ∣D∣ için gereken genel alt sınır gerçekten kapanıyor; bunun için belirsiz bir “Rhin yeterince büyük k” argümanına ihtiyaç yok. Laurent–Mignotte–Nesterenko’nun 1995’teki açık iki-logaritma alt sınırı + k≤17012 için exact sonlu kontrol yeterli. Ancak “bütün 2-adik/bit-boyu filtreleri tam olarak integrality ile aynıdır” cümlesi literal olarak fazla güçlü: doğru ifade, bunların sabit tam gap word üzerinde integrality sonrasında ilave bilgi taşımadığıdır; tek başlarına integrality ile aynı predicate olmak zorunda değiller.
+
+1. COLLAPSE lemması — satır satır
+1.1 B üst sınırı — PROOF
+
+A
+0
+	​
+
+=0, A
+j
+	​
+
+=a
+0
+	​
+
++⋯+a
+j−1
+	​
+
+ olsun. Her a
+i
+	​
+
+≥1 olduğundan, j. prefix’ten sonra en az k−j birim gap kalır:
+
+A
+j
+	​
+
+≤m−(k−j)=m−k+j.
+
+Dolayısıyla
+
+B
+	​
+
+=
+j=0
+∑
+k−1
+	​
+
+3
+k−1−j
+2
+A
+j
+	​
+
+≤
+j=0
+∑
+k−1
+	​
+
+3
+k−1−j
+2
+m−k+j
+=2
+m−k
+j=0
+∑
+k−1
+	​
+
+3
+k−1−j
+2
+j
+=2
+m−k
+(3
+k
+−2
+k
+).
+	​
+
+
+Bu kısım tamamen doğru.
+
+Pozitif-işaretli adayda
+
+x
+0
+	​
+
+=
+∣D∣
+B
+	​
+
+.
+
+Eğer
+
+∣D∣>
+2
+k+1
+3
+k
+−2
+k
+	​
+
+,
+
+ise
+
+x
+0
+	​
+
+<
+(3
+k
+−2
+k
+)/2
+k+1
+2
+m−k
+(3
+k
+−2
+k
+)
+	​
+
+=2
+m+1
+.
+
+Dolayısıyla ölçek lemması doğru.
+
+Ben ayrıca sizin m≤16 gözleminizi sıfırdan exact taradım: toplam 65.535 pozitif kompozisyonun tamamında pozitif-sign adayı için maksimum
+
+2
+m+1
+x
+0
+	​
+
+	​
+
+=
+16
+7
+	​
+
+=0.4375
+
+çıktı; maksimum m=3,k=2,a=(2,1), D=−1,B=7,x
+0
+	​
+
+=7. Yani verdiğiniz 0.4375 değeri de bağımsız olarak yeniden çıktı.
+
+1.2 ∣D∣ koşulu bütün m,k için kapanıyor mu? — PROOF
+
+Burada en temiz araç Rhin değil, Laurent–Mignotte–Nesterenko’nun iki logaritma için explicit sonucu.
+
+Tersini varsayalım:
+
+∣2
+m
+−3
+k
+∣≤
+2
+k+1
+3
+k
+−2
+k
+	​
+
+.
+t=
+3
+k
+2
+m
+	​
+
+,Λ=mlog2−klog3=logt.
+
+O zaman
+
+∣t−1∣≤
+2
+k+1
+1−(2/3)
+k
+	​
+
+<2
+−(k+1)
+.
+
+Buradan iki önemli sonuç geliyor.
+
+Birincisi, t<5/4. Eğer m≥2k olsaydı,
+
+t≥(4/3)
+k
+≥4/3>5/4,
+
+çelişki. Dolayısıyla
+
+m<2k.
+
+İkincisi,
+
+∣Λ∣<2
+−k
+.
+
+t>1 durumunda logt<t−1; t<1 durumunda
+−log(1−u)<u/(1−u)<2u uygulanıyor.
+
+Şimdi LMN Corollary 2’yi α
+1
+	​
+
+=2,α
+2
+	​
+
+=3 için uygula. Alan derecesi d
+fld
+	​
+
+=1, alınabilir yükseklikler
+
+h
+1
+	​
+
+=1,h
+2
+	​
+
+=log3.
+
+Katsayı parametresi
+
+b
+′
+=
+log3
+m
+	​
+
++k<m+k<3k.
+
+LMN şu explicit alt sınırı veriyor:
+
+log∣Λ∣≥−24.34log3(max{logb
+′
++0.14,21})
+2
+.
+
+Dolayısıyla daha zayıf ama kullanışlı olarak
+
+log∣Λ∣≥−24.34log3(max{log(3k)+0.14,21})
+2
+.
+
+Bu, Laurent–Mignotte–Nesterenko’nun 1995 tarihli iki-logaritma sonucunun doğrudan özel hali. 
+ScienceDirect
++1
+
+Şimdi eşik şaşırtıcı derecede makul:
+
+24.34(log3)21
+2
+=11792.438389…
+
+ve
+
+17013log2=11792.512982….
+
+Yani k=17013'ten itibaren LMN alt sınırı, varsaydığımız
+
+log∣Λ∣<−klog2
+
+üst sınırıyla çelişiyor.
+
+Üstelik bu yalnız k=17013 noktası değil. log(3k)+0.14≤21 olduğu bölgede LMN sağ tarafının büyüklüğü sabit, klog2 ise artıyor. Sonra log(3k)+0.14>21 olduğunda
+
+k
+(log(3k)+0.14)
+2
+	​
+
+
+azalan fonksiyon; çünkü L=log(3k)+0.14>21 için türev işareti L(2−L)<0. Dolayısıyla bir daha kesişme yok.
+
+Geriye yalnız
+
+1≤k≤17012
+
+kalıyor.
+
+Bunu da exact big-integer ile bağımsız kontrol ettim. Her k için q=3
+k
+ alıp
+
+m
+0
+	​
+
+=⌊log
+2
+	​
+
+q⌋
+
+değerini doğrudan bit_length ile exact buldum. ∣2
+m
+−q∣'yu bütün m'ler arasında minimize edebilecek yalnız m
+0
+	​
+
+,m
+0
+	​
+
++1 olduğundan, toplam 34.024 exact karşılaştırma yeterli:
+
+2
+k+1
+∣2
+m
+−3
+k
+∣>3
+k
+−2
+k
+.
+
+0 ihlal çıktı.
+
+Dolayısıyla:
+
+∣2
+m
+−3
+k
+∣>
+2
+k+1
+3
+k
+−2
+k
+	​
+
+t
+u
+¨
+m k≥1
+	​
+
+
+ve böylece
+
+x
+0
+	​
+
+<2
+m+1
+	​
+
+
+pozitif-sign bütün adaylar için genel olarak kapanıyor.
+
+Rhin/Wu–Wang tipi irrationality-measure sonuçları asimptotik olarak elbette yeterli olurdu; örneğin Wu–Wang etkili bir H
+0
+	​
+
+(ε) ile 4.1163051+ε üslü bir linear-independence bound veriyor. Fakat teorem ifadesi sayısal H
+0
+	​
+
+'ı vermediği için doğrudan “şuraya kadar brute force, sonrası theorem” sertifikası oluşturmak LMN kadar temiz değil. 
+doi.org
+
+1.3 Tam gap word’ün 2
+m+1
+ residue’su — PROOF
+
+Burada küçük ama önemli nokta şu: residue formülü için henüz cycle eşitliğine bile ihtiyaç yok.
+
+Tam gap segmenti sonunda x
+k
+	​
+
+ yine odd olduğundan
+
+2
+m
+x
+k
+	​
+
+=3
+k
+x
+0
+	​
+
++bB.
+
+Modulo 2
+m+1
+,
+
+2
+m
+x
+k
+	​
+
+≡2
+m
+(mod2
+m+1
+)
+
+çünkü x
+k
+	​
+
+ odd. Dolayısıyla
+
+3
+k
+x
+0
+	​
+
+≡2
+m
+−bB(mod2
+m+1
+),
+
+yani
+
+x
+0
+	​
+
+≡ρ:=(3
+k
+)
+−1
+(2
+m
+−bB)(mod2
+m+1
+).
+	​
+
+
+3
+k
+ odd olduğu için inverse mevcut. Ayrıca B odd olduğundan ρ da odd.
+
+Bu, standart parity-vector bijection’ın tam olarak beklediği sonuç: uzunluğu m+1 olan parity prefix, başlangıç değerini modulo 2
+m+1
+ tek sınıfa sabitler. Böhm–Sontacchi/Lagarias çizgisindeki klasik periodic parity-vector formülü de aynı yapıyı verir. 
+CiteSeerX
++1
+
+1.4 ρ=x
+0
+	​
+
+⟺ integrality — PROOF, bir qualifier ile
+
+Cycle adayı
+
+q:=
+D
+bB
+	​
+
+.
+
+Pozitif-sign seçildiğinde q>0. Eğer q∈Z ise B,D odd olduğundan q odd.
+
+Cycle denklemi
+
+Dq=bB
+
+eşdeğer olarak
+
+3
+k
+q+bB=2
+m
+q
+
+verir. q odd olduğundan mod 2
+m+1
+
+q≡ρ.
+
+Az önce kanıtladığımız global bound ise
+
+0<q<2
+m+1
+.
+
+ρ'yu 1≤ρ<2
+m+1
+ canonical odd representative seçersek artık
+
+q≡ρ(mod2
+m+1
+)⟹q=ρ.
+
+Ters yön trivial: q=ρ ise q integer.
+
+Dolayısıyla
+
+q∈Z⟺q=ρ.
+	​
+
+
+Ve parity-vector realizability nedeniyle bu integer q, verilen exact gap word’ü gerçekten gerçekleştirir ve m adım sonunda kendisine döner. b=−1 için aynı induction çalışır; odd branch hâlâ odd affine map’tir. Pozitiflik de korunur: 3x−1>0 bütün x≥1 için.
+
+Qualifier: “cycle” burada verilen cyclic word’ü gerçekleştirir demektir; primitive period daha küçük olabilir.
+
+Ben m≤16 bütün 65.535 kompozisyonda ayrıca
+
+q∈Z⟺q=ρ
+
+kontrolünü de exact yaptım: 0 uyuşmazlık.
+
+1.5 “Bütün local filtreler integrality’nin aynısıdır” — CONDITIONAL / ifade düzeltilmeli
+
+Şu ifade kanıtlı:
+
+Sabit tam gap word için, integrality sağlandığında bütün exact 2-adik parity/gap koşulları, carry değerleri ve doğru orbitten türetilen bit-boyu koşulları otomatik olarak sağlanır. Dolayısıyla bunlar integrality üzerine ek bir engel koyamaz.
+
+Ama şu ifade fazla güçlü:
+
+“Her local carry/shell predicate, word üzerinde mantıksal olarak D∣B ile birebir aynıdır.”
+
+Bu doğru olmak zorunda değil. Bir local bit-length filtresi integrality'den daha zayıf olabilir: nonintegral bir word de local filtreden geçebilir.
+
+Dolayısıyla doğru “COLLAPSE” cümlesi:
+
+fixed full word + positivity altında integrality zaten complete realizability criterion’dur
+	​
+
+
+ve local 2-adik/orbit filtreleri post-integrality yeni bilgi vermez.
+
+Bu ayrım önemli.
+
+2. Hangi rotalar gerçekten collapse oluyor?
+
+Residue-shell: mevcut tam-word formunda yeni bilgi değil. 2
+m+1
+ residue’su ρ tek integer adayını belirliyor; cycle candidate q<2
+m+1
+. Cycle closure istediğinde geriye q=ρ, yani integrality kalıyor. Integrality’nin yeniden yazımı.
+
+SIGNED_CRT_DEPTH_01’in saf 2-adik kısmı: x
+i
+	​
+
+mod2
+a
+i
+	​
+
++1
+ gibi exact gap congruence’ları zaten gap word realizability bilgisidir. Integral periodic candidate bunları otomatik sağlar. Tek başına yeni bilgi değil. Fakat bunun 3-adik bilgiyle CRT üzerinden bir Archimedean alt sınıra dönüştürülmesi farklı bir mekanizmadır; aşağıda onu ayırıyorum.
+
+Carry-band + propagated shell: mevcut haliyle post-integrality yeni bir obstruction değil. Carry pattern integral orbitten deterministik çıkar. Ayrıca
+
+i
+∑
+	​
+
+κ
+i
+	​
+
+−m=ℓ(x
+k
+	​
+
+)−ℓ(x
+0
+	​
+
+)
+
+olduğundan carry-budget türü kapanışlar çoğu zaman “endpoint aynı bit uzunluğunda mı?” gibi cycle equality’den çok daha kaba relaxations. Yani mantıksal olarak integrality ile birebir aynı değiller; çoğunlukla integrality’den daha zayıflar. Verdiğiniz N≥33 stress sonucunda sign ayrışmasının tamamen kaybolması da bu mekanizmanın ölçek büyüdükçe körleşmesiyle uyumlu, fakat o finite stress tek başına theorem değil.
+
+C1 / Product Barrier: mevcut hedefi bakımından collapse en sert burada. C1'in amacı gerekli local/residue eşitsizliklerinden sonunda A∣B, yani integrality çıkarmak. Product Barrier da bu köprünün ispat motoru. Başarılı olsa bile yeni bir cycle obstruction üretmiyor; cycles'ın zaten sağlamak zorunda olduğu global divisibility'yi başka yoldan yeniden elde ediyor. C1 matematiksel olarak ilginç olabilir; fakat CP25'in “integrality dışına çıkan engel bul” hedefinde yeni bilgi üretmiyor.
+
+Bir başka hızlı teşhis de b işareti: saf integrality
+
+D∣bB⟺D∣B
+
+olduğu için b=+1 ile b=−1'i ayıramaz. Dolayısıyla gerçek kaçış rotasında b, bir unit olarak kaybolmamalı; inequality, positivity veya başka bir prime-local yapı içinde kalmalı.
+
+3. COLLAPSE’tan kaçabilen en fazla üç yön
+A. Cross-prime residue → Archimedean lower bound
+
+Bu, CRT_DEPTH içindeki korunmaya değer çekirdek.
+
+Local 2-adic gap residue tek başına yeni bilgi değil. Ama onu bağımsız bir 3-adic block residue ile birleştirip CRT’nin en küçük pozitif temsilcisinden
+
+x
+i
+	​
+
+≥R
+i
+	​
+
+(L)
+
+gibi Archimedean bir sonuç çıkarırsanız, artık yalnız integrality yazmıyorsunuz.
+
+Sonra exact telescoping identity:
+
+2
+m
+=3
+k
+i=0
+∏
+k−1
+	​
+
+(1+
+3x
+i
+	​
+
+b
+	​
+
+).
+
+R=min
+i
+	​
+
+R
+i
+	​
+
+ ise b=+1 için gerekli koşul
+
+2
+m
+R
+k
+≤(3R+1)
+k
+,
+
+b=−1 için
+
+(3R−1)
+k
+≤2
+m
+R
+k
+.
+
+Bunlar D∣B testi değil; residue bilgisini state-size bilgisine çevirip signed Archimedean product ile çarpıştırıyor.
+
+En ucuz exact falsification: m≤16 bütün 65.535 word üzerinde, full 2
+m+1
+ shell'e çıkmadan yalnız local 2
+a
+i
+	​
+
++1
++3
+L
+ CRT kullan; L≤k+1 gibi önceden sabit bir cap seç; yukarıdaki iki inequality'yi integer arithmetic ile test et. Sonradan audit etiketi olarak integrality'ye bakılabilir ama algoritma D∣B kullanmamalı. Tek bir sistematik survivor ailesi proposed depth-cap'i öldürür.
+
+3n−1 kapısında kör değil, çünkü b hem residue’da hem de
+
+3R+1vs3R−1
+
+olarak açıkça kalıyor. Exact negative controls: x=1,a=(1) fixed cycle ve 5↔7, gap word a=(1,2), kesinlikle sağ kalmalı.
+
+B. Global run/minima combinatorics
+
+Gap word’ü local residue’lara değil, a
+i
+	​
+
+=1 run'ları ve a
+i
+	​
+
+≥2 drops olarak parçala. Bir a=1 run'ı boyunca exact formül çok basit:
+
+x
+j+r
+	​
+
++b=(
+2
+3
+	​
+
+)
+r
+(x
+j
+	​
+
++b).
+
+Bu yüzden local minima/maxima bloklarını doğrudan affine inequalities ile bağlayabilirsiniz. Aranan şey tek tek carry bitleri değil; örneğin belirli run-length kombinasyonlarının cyclic olarak imkânsızlığı veya minima sayısı ile m−k arasında global bir density constraint.
+
+Bu rota D∣B hesaplamıyor.
+
+En ucuz falsification: en fazla 3 local minimum ve toplam k≤20 için run signature'ları enumerate edip interval uçlarını Fraction/integer arithmetic ile exact propagate edin. Önerilen herhangi bir forbidden-pattern lemma’yı tek bir feasible rational periodic block öldürür. Ayrıca b=−1 için 1 ve 5↔7 hard controls olmalı.
+
+Bu aile literatürde de gerçek bir rota: Steiner–Simons–de Weger çizgisi cycle'ları local minima/run blokları üzerinden ele alıp linear forms in logarithms ile ciddi exclusion sonuçları elde etti; yani parity-residue integrality formülünden farklı bir bilgi katmanı olduğu biliniyor. 
+EuDML
++1
+
+C. Signed Archimedean correction + linear forms
+
+Doğrudan
+
+Λ:=mlog2−klog3=
+i
+∑
+	​
+
+log(1+
+3x
+i
+	​
+
+b
+	​
+
+)
+
+kimliğini kullanın.
+
+Burada çok önemli sign asymmetry var:
+
+b=+1⇒Λ>0,
+
+oysa nontrivial b=−1 positive cycle için
+
+Λ<0.
+
+Ama bu rotanın yeni bilgi vermesi için ∑1/x
+i
+	​
+
+, minimum state, minima dağılımı vb. hakkında integrality/residue shell'den bağımsız bir global bound gerekir. Sonra bu Archimedean bound LMN/continued fractions alt sınırıyla çarpıştırılabilir.
+
+En ucuz falsification: önerilen state-distribution inequality'yi önce m≤16 bütün positive rational periodic candidates üzerinde test edin; bu inequality integrality kullanmıyorsa rational candidates üzerinde de geçerli olmak zorunda. Sonra b=−1 gerçek küçük cycle'ları hard negative control olarak çalıştırın. Bir tanesi bile generic lemma'yı bozarsa büyük transcendence hesabına hiç girilmez.
+
+Bu rota 3n−1'e kör değil çünkü işaret log summand'ın içinde kalıyor; reflection/integrality gibi cebirsel bir unit olarak silinmiyor.
+
+4. Araştırma kararı
+Rota	Karar	Neden
+C1 / Product Barrier	KILL	Hedefi sonunda integrality üretmek. Başarılı olsa bile cycle'lar için yeni gerekli koşul eklemiyor. Product kısmı ancak başka bir Archimedean hedefe yeniden yönlendirilirse yeni rota olur.
+CRT_DEPTH	KEEP — refactor	Saf 2-adik tarafı collapse oluyor; fakat shallow 2-adic × 3-adic CRT → state lower bound → signed product inequality integrality olmayan gerçek bir mekanizma. Full 2
+m+1
+ shell'e veya Dρ−bB testine dönmesine izin verilmemeli.
+Carry-band / propagated shell	KILL, mevcut form	Exact orbitin coarse/local yeniden kodlanması; post-integrality yeni bilgi yok ve büyük-N sign ayrışması stress'te kayboluyor. Ancak carry'den türetilmiş yeni bir global forbidden-language theorem bulunursa o ayrı bir rota sayılmalı.
+
+En önemli metodolojik sonuç şu: COLLAPSE integrality'yi çözmüyor; integrality'ye ulaşmaya çalışan 2-adik local rotaların araştırma değerini düşürüyor. Bundan sonra bir aday mekanizmanın ilk kapısı şu olmalı:
+
+“Bu sonu
+c
+¸
+	​
+
+ D∣B bilindi
+g
+˘
+	​
+
+inde h
+a
+ˆ
+l
+a
+ˆ
+ yeni bir 
+s
+¸
+	​
+
+ey s
+o
+¨
+yl
+u
+¨
+yor mu?”
+
+Cevap hayırsa CP25 açısından büyük olasılıkla yeniden paketlenmiş integrality'dir. Cevap evetse—özellikle cross-prime Archimedean lower bound, global run combinatorics veya signed positivity kullanıyorsa—COLLAPSE'tan gerçekten kaçmıştır.
+
+Verdiğiniz milyonluk stress sayılarını raw artifact olmadığı için bağımsız yeniden çalıştırmadım; burada bağımsız yaptığım hesaplar 65.535-composition m≤16 taraması ve LMN cutoff'u kapatan 34.024 exact (k,m) karşılaştırmasıdır. Sonlu hesapların hiçbiri tek başına genel cycle nonexistence teoremi değildir; genel x
+0
+	​
+
+<2
+m+1
+ sonucu ise LMN theorem + sonlu exact remainder birlikte kullanıldığı için kapanıyor.
+
+CP25_COLLAPSE_REVIEW_20260922_D_COMPLETE

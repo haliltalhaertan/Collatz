@@ -1,0 +1,36 @@
+GÖREV: CP26_INTERNAL_RESONANCE_SCAN (exact hesaplama; ispat iddiası YOK)
+
+Bu klasörde (workspace) çalış. Python 3 ve yalnız Fraction / tamsayı aritmetiği kullan. Float yalnız son raporlamada (oranlar) kullanılabilir; hiçbir karar float ile verilmez.
+
+TANIMLAR
+- b ∈ {+1,-1}. Gap word a=(a_0..a_{K-1}), a_i≥1, M=Σa_i. Odd-state haritası: x_{i+1}=(3x_i+b)/2^{a_i}.
+- D=2^M-3^K, B=Σ_{j<K} 3^{K-1-j}·2^{A_j} (A_j=a_0+..+a_{j-1}), x_0=b·B/D (Fraction). Integrality (D|B) HİÇBİR filtrede KULLANILMAYACAK; yalnız sonunda etiket olarak raporlanabilir.
+- Aday: b·D>0 (o zaman tüm x_i>0). Yalnız near-resonant M: M0=bitlength(3^K)-1 ise b=-1 için M=M0, b=+1 için M=M0+1.
+- Yalnız primitive kelimeler, her necklace sınıfından bir temsilci (lex-min rotasyon).
+- Blok ayrıştırması: q=#{i: a_i≥2}. Her a_i≥2 bir bloğu bitirir. Blok başlangıçları (local minimum durumları) n_j: a_{i-1}≥2 olan x_i'ler. q=0 ise kelimeyi atla ve say.
+- Blok j: s_j tek adım (son gap d_j≥2, önceki s_j-1 gap =1). α_j=3^{s_j}/2^{s_j-1+d_j}, c_j=α_j-2^{1-d_j}. Kimlik: n_{j+1}=α_j n_j + b c_j.
+- Global minimum bloğuna rotasyon: n_0=min_j n_j (Fraction karşılaştırması). Prefix: A_t=Π_{j<t}α_j, C_t: C_0=0, C_{t+1}=α_t C_t + c_t. KONTROL: n_t == A_t n_0 + b C_t (her t için assert; hem bu hem doğrudan orbit ile).
+
+ÖLÇÜLECEKLER (K=2..18, mümkün olduğu kadar; K için süre >10 dk olursa dur ve nereye kadar geldiğini yaz)
+1. Teorem kontrolü (ihlal sayısı raporla, sıfır bekleniyor):
+   b=+1: (A_t-1)n_0 + C_t ≥ 0, 1≤t<q.
+   b=-1: A_t>1 ve (A_t-1)n_0 - C_t ≥ 0, 1≤t<q.
+2. b=+1 için İLK ALT GEÇİŞ: t* = min{t≥1: 3^{S_t} < 2^{E_t}} (S_t=Σ_{j<t}s_j, E_t=Σ_{j<t}(s_j-1+d_j)), exact tamsayı karşılaştırması. t*≤q olmalı. Kaydet: S*/K, t*/q, C_{t*}/n_0, ve t*=q (yani tam döngü) olan adayların oranı.
+3. ÇOKLU REZONANS: b=+1 için global-min rotasyonunda, A_t'nin 1'in ALTINA indiği her yeni "alt geçiş" (A_{t-1}≥1, A_t<1) sayısını ve bunların S aralıklarını kaydet. Soru: bir döngü içinde birbirinden ayrık kaç tane kısa iç yakın-rezonans bloğu var? Dağılımı raporla.
+4. b=-1 kontrolü: global-min rotasyonunda A_t≤1 olan proper prefix sayısı (0 bekleniyor).
+
+NEGATİF KONTROLLER (zorunlu, sonuçta ayrı raporla)
+- b=-1 gerçek döngüler: (5,7): gaps (1,2) ; (17,25,37,55,41,61,91): gaps (1,1,2,1,1,1,4) — rotasyon/sıra kendin doğrula. Teorem kontrollerini geçmeli.
+- b=-1, x=1, gaps=(1): q=0, ayrı "trivial" olarak raporla.
+- Bozuk bir kelimenin (tek a_i değiştirilmiş) periyodik aday olmadığı / kimliğin bozulduğu gösterilsin.
+- Kodda D|B filtresi hiçbir dalda kullanılmıyor: bunu kod içinde bir assert/sayaç ile belgele.
+
+ÇIKTI
+- Kod: resonance_scan.py (çalıştırılabilir, tek dosya).
+- results.json şeması:
+{"config":{...,"integrality_filter_used":false},
+ "per_K":{"<K>":{"b+1":{"candidates":0,"q0_skipped":0,"theorem_violations":0,"first_crossing_missing":0,"full_cycle_crossing_fraction":0.0,"S_over_K_quantiles":{"min":0,"q25":0,"median":0,"q75":0,"max":0},"C_over_n0_quantiles":{...},"crossings_histogram":{"1":0,"2":0}},
+             "b-1":{"candidates":0,"theorem_violations":0,"proper_prefix_A_le_1":0}}},
+ "negative_controls":{...},
+ "seconds":0}
+- Son cevabında (final answer) results.json'un kısa özetini ve kodun SHA-256'sını ver. Bulguyu abartma; sonlu hesap teorem değildir.

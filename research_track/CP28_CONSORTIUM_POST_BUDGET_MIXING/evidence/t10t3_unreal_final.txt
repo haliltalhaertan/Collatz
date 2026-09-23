@@ -1,0 +1,18 @@
+Tam sayım tamamlandı; beş kabuğun tamamı, **m=24 dâhil**, hesaplandı. `D(j)` için ilk sıfır olmayan değer ile `10⁻⁹` eşiğini ilk aşan değer her kabukta aynı adımdadır.
+
+| m | Kabuktaki en büyük σ | İlk sapma j | j/m | D(2m) | D(4m) |
+|---:|---:|---:|---:|---:|---:|
+| 16 | 124 | 18 | 9/8 | 7,4959×10⁻⁵ | 1,0452×10⁻⁴ |
+| 18 | 173 | 20 | 10/9 | 4,5585×10⁻⁵ | 4,5153×10⁻⁵ |
+| 20 | 224 | 21 | 21/20 | 2,4816×10⁻⁴ | 7,3122×10⁻⁵ |
+| 22 | 246 | 23 | 23/22 | 3,3988×10⁻⁵ | 1,7307×10⁻⁶ |
+| 24 | 298 | 26 | 13/12 | 3,4261×10⁻⁵ | 4,0554×10⁻⁶ |
+
+Her kabukta `j≤m` için `D(j)=0`. Ayrıca gerçek yörüngenin parite dizisini koruyup yükseklik hesabından `+1` terimini çıkaran kontrolle, **j≤4m boyunca durdurma dağılımında fark bulunmadı**; bu ufukta gözlenen ilk sapma `+1` kaynaklı değil.
+
+Yüksekliğe koşullu tehlike farkına bir örnek: `m=24, j=25`, yükseklik oranı `[5/4, 3/2)` diliminde sonraki-adım tehlikesi gerçekte `27611/55005`, modelde `1/2`; fark `217/110010`. Tüm dilimler ve tam kesirler JSON’da. Model DP’si `j≤12` için doğrudan bit dizisi sayımıyla, gerçek sayım da küçük bir kabukta bağımsız tamsayı-yörünge hesabıyla doğrulandı.
+
+Dosyalar: [t10t3_scan.py](t10t3_scan.py) · [results.json](results.json)  
+Kodun **SHA-256** değeri: `a2421926b3fcbb83bfc4f206d3455a6205af37f662abd626fb5cda2cf2dd54af`
+
+Bunlar belirtilen sonlu kabuk ve ufukların exact sonuçlarıdır; genel bir teorem iddiası değildir.

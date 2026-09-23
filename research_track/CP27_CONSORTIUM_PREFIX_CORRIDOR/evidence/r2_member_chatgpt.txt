@@ -1,0 +1,78 @@
+Benim çapraz okuma sonucum: Üye Z’nin (a) ve (b) sonuçları, “ilk geçiş” fikrinin tek başına beklenenden çok daha az yeni bilgi taşıdığını gösteriyor. Buna karşılık Üye X’in blok-seviyeli tüm-prefix formu, aynı iskeleti kullansa da tam olarak aynı nesne değil.
+
+| Yön                          | HATA / eksik                                                                                                                                              | KAPILAR                                                                                             | ÖRTÜŞME / net değer                                                                                                                                      |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **X-A ALL_PREFIX**           | Ana eşitsizlik doğru. Ama “bütün proper prefixler” değil, kesin olarak **\(\Delta_t>0\) olan block-prefixler** koridora girer.                            | COLLAPSE ✓; işaret ✓: \(+1\) için pozitif koridor, \(-1\) için \(\Delta_t<0\); ölçek ✓; literatür ⚠ | Y-1/Z-B ile aynı temel mekanizma, fakat \(t\) burada local-minimum **blok sayısı**. Ek değer ancak birden fazla prefix koşulu birlikte kullanılırsa var. |
+| **X-B determinant**          | Kimlik ve disjunction doğru. Fakat “yalnız \(K_{\max}(q)\) ile \(h_t=0\) zorla” adımı eksik: **iki** kaçış kolunu da kapatmak gerekir.                    | COLLAPSE ✓; işaret \(+1\); ölçek ✓; literatür ⚠                                                     | Full-cycle ve prefix rezonansını gerçekten bağlıyor; fakat mevcut sınırlar generic \(h_t=0\) zorlamıyor.                                                 |
+| **Y-1 İç-LMN**               | İlk \(\Delta\) boundu doğru. “LMN ile explicit \(c_1\log X-c_2\)” kısmı sabitler/hipotezler verilmeden `[PROOF]` değil.                                   | COLLAPSE ✓; işaret yalnız \(+1\); ölçek ✓; literatür **yüksek örtüşme**                             | Esasen Z-B’nin logaritmik ve daha gevşek hali. (b) sonrasında bağımsız kazancı yok.                                                                      |
+| **Y-2 Dyck×Hercher**         | Kritik köprü yok: “ilk rezonans geçişi yok ⇒ yerel minimum yok” doğru değildir. Cumulative log-sign ile Hercher’in local-minimum sayısı aynı nesne değil. | COLLAPSE teorik olarak ✓; işaret \(+1\); ölçek ✓; fakat mantık köprüsü ✗                            | Hercher ile doğrudan örtüşüyor; şu haliyle spekülatif.                                                                                                   |
+| **Y-3 tabakalı oran**        | \(P\) için doğal ölçü belirtilmemiş; monotonluk yalnız heuristic. \(K=19..24\) sonucu dev gerçek rejimi **öldüremez**.                                    | ölçek **✗**; COLLAPSE tanısal; işaret N/A                                                           | (b) geldikten sonra büyük ölçüde gereksiz. Küçük-rasyonel istatistik karar kapısı olamaz.                                                                |
+| **Z-A no-go**                | Koordinatör exact kontrolü verilen örneği doğruluyor; belirtilen kullanımında hata yok.                                                                   | COLLAPSE ✓ çünkü cycle eleği değil, beklenti no-go’su; işaret yalnız \(+1\); ölçek ✓                | Çok değerli metodolojik sonuç: \(X\) büyüklüğü tek başına erken geçiş vermez. Fakat integer cycle dışlamaz.                                              |
+| **Z-B first-crossing sieve** | Matematik doğru.                                                                                                                                          | COLLAPSE ✓; işaret \(+1\); ölçek ✓; literatür **yüksek örtüşme**                                    | Sayısal olarak klasik odd-count/CF tabanına tam oturuyor. Ek bilgi yalnız “ilk \(7.2\times10^{10}\) odd-prefix boyunca aynı tarafta kalma” yapısıdır.    |
+| **CP27 değiştirilmiş**       | Bir lemma değil; ancak \(t_{\rm block}\), prefix odd-count \(S_t\) ve full \(K\) ayrılırsa metodolojik olarak temiz.                                      | Kapıları geçebilir; literatür örtüşmesi ciddi                                                       | Ağır solve ancak **global klasik CF’nin ötesinde ek dışlama** ölçerse anlamlı.                                                                           |
+
+Dolayısıyla **X-A, Y-1, Z-B tam olarak aynı fikir değildir**. Y-1 ile Z-B hemen hemen aynı odd-step first-crossing argümanıdır; Z-B exact ve daha güçlü formdur. X-A ise odd-runları local-minimum bloklarına sıkıştırır: hata terimi yaklaşık \(S_t/X\) yerine block-prefix için \(t/X\) olur. Bu potansiyel olarak daha güçlüdür. Fakat mekanizma yine “global minimum + küçük affine correction + \(\log2/\log3\) Diophantine koridoru”dur. Simons–de Weger zaten \(m\)-cycle’larda continued fractions/lattice reduction ve \(\log3/\log2\) yaklaşımını merkezde kullanıyor. ([Groningen Research Portal][1]) Hercher local-minimum sayısını \(m\ge92\)’ye çıkarıyor ve \(K\ge1.375\times10^{11}\) eşiğini computational verification ile ilişkilendiriyor; Barina’nın hakemli sonucu \(2^{71}\)’e kadar doğrulamayı sağlıyor. ([Cheriton School of Computer Science][2]) Ayrıca Haziran 2026 Wang çalışması halen preprint görünümünde ve açıkça global minimum + suffix-balanced blocks + continued fractions kombinasyonunu kullanıyor; dolayısıyla X-A’nın literatür yeniliği şu aşamada **DOĞRULANMADI**. ([ResearchGate][3])
+
+**X-B’de \(h_t=0\) gerçekten zorlanıyor mu? Hayır.** Burada önemli bir notasyon tuzağı var. (b)’deki
+
+$$
+t_Z=72\,057\,431\,991
+$$
+
+**odd-step sayısıdır**. X-B’deki \(t\) ise block-prefix sayısıdır; (b)’deki nicelik X-B notasyonunda kabaca \(S_t\)’ye karşılık gelir. Bunları eşitlemek doğru değildir.
+
+Üstelik yanlışlıkla eşitlesek bile sonuç ters yönde olur. X-B’nin eşiği
+
+$$
+H_X=\frac{\log2}{\log(1+2^{-71})}
+   \approx1.6366475066\times10^{21}.
+$$
+
+Bilinen alt sınırla
+
+$$
+(1.375\times10^{11})(72\,057\,431\,991)
+ =9.9078969\times10^{21}
+ \approx6.054\,H_X.
+$$
+
+Dolayısıyla \(Kt>H_X\) kaçış kolu zaten açık olur; **\(h_t=0\) değil, \(h_t\neq0\) olasılığına izin verilir.**
+
+Doğru değişkenlerle \(h_t=0\) zorlamak için aynı anda
+
+$$
+Kt_{\rm block}\le H_X,\qquad S_tq\le H_X
+$$
+
+gerekiyor. Elimizdeki \(K>1.375\times10^{11}\) ve \(S_t\ge72\,057\,431\,991\) ise **alt sınırlar**; gerekenler üst sınır. Dolayısıyla bu iki bilinen sonuç tek başına determinantı sıfıra zorlayamaz. Hatta X’in “yalnız \(K_{\max}(q)\)” önerisi de ikinci \(S_tq\) kolu için prefix-spesifik bir \(S_t\) üst sınırı olmadan yeterli değildir.
+
+**Nihai oyum:**
+
+1. **X-A — ALL_PREFIX_CORRIDOR.** Verilen havuzda ilk-geçişten gerçekten farklı bir şey yapabilecek en temiz yön. **KILL kriteri:** \(X=2^{71}\), \(q=92..120\) ve certified global sınırlar altında bütün pozitif proper block-prefix corridorları eklendiğinde feasible \((K,M,q)\) kümesi global product/CF koşuluna göre hiç küçülmüyorsa rota KILL/PARK.
+
+2. **YENİ — PAIRWISE_PREFIX_DETERMINANT.** İki pozitif block-prefix için
+
+$$
+g_{t,u}=S_uE_t-S_tE_u,\qquad
+g_{t,u}\log2=S_u\Delta_t-S_t\Delta_u,
+$$
+
+böylece X-B’de sorun çıkaran dev full-cycle \(K\) tamamen elimin edilir. Yenilik literatürde **DOĞRULANMADI**. **KILL kriteri:** certified prefix üst sınırlarıyla hiçbir \(t<u\) çifti için
+
+$$
+(S_ut+S_tu)L_X<\log2
+$$
+
+sağlanıp \(g_{t,u}=0\) zorlanamıyorsa rota KILL.
+
+Z-A’yı bu ikisinin üstüne koymuyorum çünkü araştırma yönünden ziyade artık kanıtlanmış bir **guardrail/no-go**: mutlaka korunmalı, fakat ileri köprü üretmiyor.
+
+**Aday B kararı: PARK —** tek “ilk geçiş” eşitsizliği (b)’de sayısal olarak klasik \(72\,057\,431\,991\) odd-step sınırına geri dönüyor; ancak çoklu block-prefix bağlaşımı klasik sınırın ötesinde yeni bilgi üretirse yeniden açılmalı.
+
+Hercher hattında ayrıca 2026 tarihli bir corrigendum mevcut; Theorem 21’in bir türetim hatası düzeltilmiş, dolayısıyla bundan sonraki literatür karşılaştırmalarında düzeltilmiş sürüm esas alınmalı. 
+
+CP27_CONSORTIUM_R2_20260923_COMPLETE
+
+[1]: https://research.rug.nl/en/publications/theoretical-and-computational-bounds-for-m-cycles-of-the-3n1-prob/?utm_source=chatgpt.com "Theoretical and computational bounds for m-cycles of the 3n+1-problem - the University of Groningen research portal"
+[2]: https://cs.uwaterloo.ca/journals/JIS/VOL26/Hercher/hercher5.html "There are no Collatz m-Cycles with m ≤ 91"
+[3]: https://www.researchgate.net/publication/408180567_NON-EXISTENCE_OF_COLLATZ_m-CYCLES_FOR_m_95?utm_source=chatgpt.com "(PDF) NON-EXISTENCE OF COLLATZ m-CYCLES FOR m ≤ 95"

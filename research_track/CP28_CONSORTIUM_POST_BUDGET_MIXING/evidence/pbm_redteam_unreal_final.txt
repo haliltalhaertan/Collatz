@@ -1,0 +1,113 @@
+## Hakem kararı: KÜÇÜK DÜZELTME — ölümcül hata bulamadım
+
+Metni reddettirecek bir karşı-örnek aradım; özellikle (b)’deki dört blok ve kontrolsüz aralık hesabını hedefledim. Kaynaktan kontrol ettiğim sonuçlar, ispatın ihtiyaç duyduğu biçimleri destekliyor. Bu karar, PBM’nin yeni veya yayımlanmaya yeterince özgün olduğu yönünde bir değerlendirme değildir; **sunulan ispatta ölümcül bir mantık hatası saptayamadığım** anlamına gelir.
+
+### R1 — En zayıf üç adım ve karşı-senaryo denemeleri
+
+1. **Lemma A’da değişken prefix uzunlukları.** \(R(y)\) ve izin verilen \(\ell\)’ler \(y\)’ye bağlı olduğu için, sabit \(\ell\) üzerindeki Hoeffding sınırını doğrudan rastgele \(\ell\)’ye uygulamak hatalı olurdu. Metin bunun yerine kabuktaki *bütün* \(\ell\)’ler üzerinde birleşim sınırı alıyor. \(O(n)e^{-\gamma n}\) hâlâ üstel küçüktür; denediğim log/polinom çarpanı karşı-senaryosu işlemiyor. Sabitlerin \(K,\alpha,\varepsilon\)’a bağlı olması da sorun değil: parametreler \(m\to\infty\) alınmadan önce sabitleniyor.
+
+2. **\(*\)-dense özelliğinin \(F^{-1}\) altında korunması.** Genel bir yoğunluk savı için bu adım güvenli olmazdı; özellikle dört post-budget blokta yanlış bir indeks, \(y_3\in P\)’yi sağlamazdı. Fakat kaynak Lemma 2.16 gerçekten \(P\) \(*\)-dense ise
+   \[
+   \{n:T^{\lfloor\log _2n\rfloor}(n)\in P\}
+   \]
+   kümesinin \(*\)-dense olduğunu söylüyor. Metindeki dış \(F^{-1}\) içeren (45) de \(F(x),\ldots,F^4(x)\in P\) koşulunu doğru veriyor. Sabit sayıda uygulamada yoğunluk üssünün kötüleşmesi, pozitif kaldığı sürece ispatı bozmaz.
+
+3. **(b)’de blok sınırları ve boşluklar.** Bir valuation başlangıcı kontrollü bir prefixte olup onu tamamlayan bitler prefix dışında kalabilir. (62) bunu son \(k\) başlangıcı olarak, bloklar arasındaki başlangıçlar ise (64)’te kontrolsüz olarak sayılıyor. Dört blok sabit sayıda olduğundan bu sınır hataları \(O_k(1)\); üç boşluğun toplam uzunluğu \(O((1-c)m)\). \(c\uparrow1\) seçimi \(\delta<cA_4\) kapasite şartıyla da uyumlu. Buradan bir kayıp valuation karşı-senaryosu çıkaramadım.
+
+**Kaynak kontrolü.** İnternetten [arXiv:2402.03276v3’ün HTML metnini](https://arxiv.org/html/2402.03276v3) okudum. Proposition 2.4 ardışık \(2^N\) tamsayı üzerindeki ilk \(N\) parite bitlerinin tam düzgünlüğünü; Definition 2.6 yoğunluk şartının **her pozitif \(N\)** için olduğunu; Lemma 2.7 sonlu kesişimi; Lemma 2.8 dyadik-kabuk eşdeğerliğini doğruluyor. Lemma 2.13–2.15, Lemma 2.16’nın ispatındaki ara araçlar; Lemma 2.16’nın alıntılanan sonucu doğru. Theorem 3.1’de paydadaki terim \(1-\log _2\sqrt3=1-\beta\); \(\lambda=\beta\) seçimi metindeki ölçek sonucunu veriyor.
+
+### R2 — Sayısal denetim
+
+Aşağıdaki Python kodu (3)’ü küçük bir örnekte **tam sayımla**, (29) ile (42)–(43)’ü sayısal olarak sınar. Ardından istenen kabuklardaki **bütün tek \(x\)** değerlerini exact tamsayı Syracuse iterasyonuyla işler. \(\tau\)’yu oluşturan \(a_{\tau-1}\) sayılmaz; sayım \(a_\tau\) ile başlar. Dosyayı çalışma alanı köküne `pbm_audit.py` olarak da kaydettim.
+
+```python
+import math
+import numpy as np
+
+r, w, ell, eps = 1, (1,), 16, 0.4
+M = ell - r + 1
+bad = 0
+for bits in range(1 << ell):
+    a = sum(tuple((bits >> (i+j)) & 1 for j in range(r)) == w
+            for i in range(M))
+    bad += abs(a - M/(1 << r)) > eps*M
+bound = 2*r*math.exp(-eps**2*M/r)
+print("eq(3): exact=%.9f bound=%.9f" % (bad/(1 << ell), bound))
+
+beta = math.log2(3)/2
+for j in (3, 4):
+    print("A%d=%.12f" %
+          (j, sum(beta**i for i in range(1, j+1))/2))
+c, rho, e, delta = .99, .001, .001, .3
+print("eq(29): lhs=%.9f > delta=%.9f" %
+      ((.5-e)*c*(beta-rho), delta))
+
+for m in range(16, 23):
+    L = (3*m)//10
+    x = np.arange((1 << m)+1, 1 << (m+1), 2, dtype=np.uint64)
+    n = len(x)
+    s = np.zeros(n, dtype=np.uint16)
+    j = np.zeros(n, dtype=np.uint8)
+    counts = np.zeros(n, dtype=np.uint8)
+    tau = np.zeros(n, dtype=np.uint8)
+    pending = np.ones(n, dtype=bool)
+
+    while np.any(pending):
+        ids = np.flatnonzero(pending)
+        v = 3*x[ids] + np.uint64(1)
+        a = np.zeros(len(ids), dtype=np.uint8)
+        even = (v & np.uint64(1)) == 0
+        while np.any(even):
+            v[even] >>= np.uint64(1)
+            a[even] += 1
+            even = (v & np.uint64(1)) == 0
+
+        start = (tau[ids] == 0) & (s[ids] + a > m)
+        tau[ids[start]] = j[ids[start]] + 1
+        pick = ((tau[ids] != 0) & ~start &
+                (j[ids] >= tau[ids]) & (j[ids] < tau[ids] + L))
+        counts[ids[pick]] += (a[pick] == 1)
+        s[ids] += a
+        j[ids] += 1
+        x[ids] = v
+        pending[ids] = (tau[ids] == 0) | (j[ids] < tau[ids] + L)
+
+    f = counts.astype(np.float64)/L
+    print("m=%d N=%d L=%d mean=%.9f var=%.9f" %
+          (m, n, L, f.mean(), f.var()))
+```
+
+Çıktı (`var`, kabuk üzerindeki popülasyon varyansıdır):
+
+```text
+eq(3): exact=0.000518799 bound=0.154609481
+A3=0.959103517005
+A4=1.156312179562
+eq(29): lhs=0.390999652 > delta=0.300000000
+m=16 N=32768   L=4 mean=0.492774963 var=0.064410461
+m=17 N=65536   L=5 mean=0.493371582 var=0.051949472
+m=18 N=131072  L=5 mean=0.494778442 var=0.051601153
+m=19 N=262144  L=5 mean=0.496162415 var=0.051326826
+m=20 N=524288  L=6 mean=0.496194522 var=0.043018747
+m=21 N=1048576 L=6 mean=0.497275829 var=0.042736235
+m=22 N=2097152 L=6 mean=0.498164415 var=0.042421296
+```
+
+Ortalamalar \(1/2\)’ye yaklaşıyor. Bu dar aralıkta \(L\) yalnızca 4–6 olduğu için varyansın henüz sıfıra yakın olmaması, \(m\to\infty\) iddiasına karşı-örnek değildir; veriler tek başlarına o limiti ispatlamaz da.
+
+### R3 — \(4.82m\) ile çelişki var mı?
+
+**Yok.** Kaynak Theorem 3.4, ilk \(1\)’e ulaşma zamanı için yaklaşık \(4.82\log _2x\) ölçeğinin *altındaki* her sabit katsayıya yönelik bir **alt sınır** verir; bu, yörüngelerin \(4.82m\)’de 1’e ulaştığını söylemez. Ayrıca (b)’nin \(\delta<1\) penceresi, tipik \(m+2\delta m<3m\) T-adımı ölçeğindedir. Bu nedenle öne sürülen \(4.82m\) karşı-senaryosu PBM (b)’yi çürütmez. Kaynağın ilk-1 zamanı gösterimi ile bu metindeki bit-bütçesi \(\tau\)’su da karıştırılmamalıdır.
+
+### İstenen küçük düzeltmeler
+
+- Lemma C’nin oranlarını dizgide açıkça
+  \(\log F^{j+1}(x)/\log F^j(x)\to\beta\) ve
+  \(\log F^j(x)/\log x\to\beta^j\)
+  olarak yazın; ters oranlar yanlış olur.
+- (14)’teki \(d=o_P(m)\) ifadesinin **önce \(\eta\) sabitlenip \(m\to\infty\), sonra hata hedefi için \(\eta\) seçilmesi** biçimindeki niceleyicilerini belirtin.
+- (b)’nin parçalama adımında cutoff’un bir boşluğa düşmesi hâlini ve her kontrollü prefixin son \(k\) başlangıcının (62) tarafından karşılandığını bir cümleyle açık edin.
+
+Bunlar açıklık düzeltmeleridir; incelediğim üç riskten hiçbiri **RED** kararını gerektiren bir hata vermedi.
+
+CP28_PBM_REDTEAM_20260923_COMPLETE

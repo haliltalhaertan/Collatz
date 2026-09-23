@@ -1,0 +1,2 @@
+A first observation is that there are other cycles if negative integers are allowed in the domain of the function. There is a cycle of period 1 starting from n = -1, and there are cycles of length 3 and 11 starting from n = -5 and n = -17, respectively.
+Böhm and Sontacchi also noted that this gives an (inefficient) finite procedure for deciding if there are any cycles of a given length k.

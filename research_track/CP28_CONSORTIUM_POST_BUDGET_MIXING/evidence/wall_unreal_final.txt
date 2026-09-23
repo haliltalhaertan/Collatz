@@ -1,0 +1,15 @@
+**Duvar.** \(U(x)=(3x+1)/2^{v_2(3x+1)}\), \(S_j=\sum_{i=0}^{j-1}v_2(3U^i(x)+1)\) olsun. \(S_j\) başlangıçtaki \(m\) bitin içindeyken valuation silindirleri Terras bijeksiyonuyla sayılır; \(S_j>m\) olduğunda bu sayım yeni bilgi vermez. Dahası, \(x\)’in **bütün** ilk \(m\) biti biliniyorsa sonraki valuation’lar zaten deterministiktir: koşullu bağımsızlık istenemez.
+
+**Eksik lemma, tek cümle:** Tekdüze seçilmiş \(m\)-bitlik tek \(x\) için \(\tau=\min\{j:S_j>m\}\) ve sabit \(0<\delta<1\) alınırsa, \(\tau\)’dan sonraki \(\lfloor\delta m\rfloor\) valuation’ın her sabit \(a\) değerindeki ampirik sıklığı, \(m\to\infty\) iken olasılıkta \(2^{-a}\)’ya yakınsar.
+
+Bu, tam kelimenin rastgeleliği değil, bütçe sonrası **özetin** yasasıdır. Güçlü bir köprü olur; tek başına Collatz’ı çözmez, çünkü yoğunluğu sıfır olabilecek istisnai yörüngeleri dışlamaz.
+
+| | Yeni teori ve köprü | İlk küçük exact test; kısmi başarı | Literatür riski |
+|---|---|---|---|
+| **A — bütçe çıkışında 3-adik yenilenme** | Tao’nun 3-adik karışım yaklaşımını, sabit zamana değil \(\tau\) çıkış zamanına uygula. \(U^\tau(x)\bmod 3^h\) dağılımının, birkaç sonraki adımda başlangıç kabuğuna duyarlılığını kaybedip kaybetmediğine bak. Bu, döngü/ıraksama iddiası değil, bir dağılım teoremidir. | \(m=12,\ldots,20\), \(h=2,3\): tüm tek tohumlarda \(\tau\) ve \(\tau+\lfloor m/4\rfloor\) kalıntı histogramlarını exact say; kabuklar arası TV farkının azalması kısmi başarıdır. Sabit-zaman karışımından çıkış-zamanına geçişin özgünlüğü: **BİLMİYORUM**. | Yüksek |
+| **B — koşullu ters-ağaç basıncı** | Krasikov hattında, yalnızca \(3^h\)-kalıntı transfer matrisinin Perron kökünü yeniden hesaplama: sabit sütun toplamı duvarına döner. Bunun yerine belirli yükseklik/valuation bütçesini aşan dalları sertifikalı biçimde budayıp **yaşayan** dallar için eşitsizlik veya ağırlıklı altözvektör ara. | Küçük \(h\) ve derinlikte ters dalları exact üret; sertifikalı budamayla elde edilen alt sınırı, aynı bütçedeki budanmamış sınıra karşılaştır. Kazanç derinlik artırılınca sürerse kısmi başarıdır. Krasikov eşitsizlikleriyle çakışma riski yüksek; yeni bir kazanç olup olmayacağı **BİLMİYORUM**. | Çok yüksek |
+| **C — döngü sözcükleri için iki-aritmetik elek** | Cesur hedef: Baker/LMN’nin \(S\log2-k\log3\) ayrımını, periyodik valuation sözcüğünün gerektirdiği tam-bölünebilirlik ve \(3\)-adik koşullarla aynı sertifikada birleştir. Amaç tek tek uzunlukları elemek değil, uzunluk büyürken de işleyen bir dışlama eşitsizliği. | \(k\le8,\ S\le24\) için bütün pozitif valuation bileşimlerini tara; \(x=(\sum_{i=0}^{k-1}3^{k-1-i}2^{S_i})/(2^S-3^k)\) tamsayılık ve gerçek valuation koşullarını exact denetle. Bilinen trivial döngü dışında aday kalmaması yalnızca sağlamlık testidir; kısmi başarı, eleğin arama hacmini kanıtlı ve ölçeklenebilir azaltmasıdır. Özgünlük **BİLMİYORUM**. | Çok yüksek |
+
+**Kısa oy:** T12 **PARK** — rekor verisi mekanizma önerebilir, iki stratejiyi ayıran sertifikalı öngörü henüz yok. T5 **PARK** — sabit modülde gerçek Turing gömmenin tanımı ve kanıtı olmadan evrensellik iddiasına GO yok.
+
+CP28_WALL_20260923_COMPLETE

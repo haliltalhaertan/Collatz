@@ -1,0 +1,78 @@
+muse: workspace root: /mnt/c/Users/MDP/collatz-analysis/Collatz (explicit)
+muse: Agent delegation: auto unavailable: workspace is untrusted.
+# CP25-PROVE report (adversarial, read-only)
+
+Executed as Muse Code (scratch only `/tmp/cp25-prove`; no repo edits; no web).
+Role requested model Muse 1.3; executing model is Muse Code powered by Meta Muse Spark — treat model identity as a limitation, not as evidence.
+
+Collatz is OPEN / NOT PROVED. All finite scans below are [EXACT COMPUTATION], never theorem.
+
+## 1. Gate (must pass before any new claim)
+
+Reproduced from repo exact code ([cycle_word_sign_pilot.py](/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/cycle_word_sign_pilot.py)) with `enumerate_map(p,b,max_m=18)`:
+
+- 3n+1: 262143 words, divisible 46, positive 9, cycles `((1,2),)`
+- 3n-1: 262143 words, divisible 46, positive 37, cycles `((1,),(5,7,10),(17,25,37,55,82,41,61,91,136,68,34))`
+- 5n+1: 262143 words, divisible 27, positive 18, cycles `((1,3,8,4,2),(13,33,83,208,104,52,26),(17,43,108,54,27,68,34))`
+
+Matches required census exactly. **GATE_PASS.**
+Cross-checked against [CP25_REPORT.md](/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_REPORT.md), [results_m22.json](/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/results_m22.json), CP23 ([CP23_REPORT.md](/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md)) and CP24 (`bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md`). No energy/average route reused.
+
+## 2. Formal statement and assumptions (C1)
+
+Fix odd `p>=3`. For nonempty `w=(eps_0..eps_{m-1})`, `eps_0=1`, `k=sum eps`:
+
+- `B_w=sum_{j:eps_j=1} 2^j p^{sum_{t>j}eps_t}`, `D=2^m-p^k`, `A=|D|`, `b=sign(D)`.
+- Formal composition: `H_w(x)=(p^k x+bB_w)/2^m` as rationals (verified on 2000 random words).
+- Formal positive candidate `q(w)=B_w/A` (since `x=bB_w/D=B_w/|D|`).
+- For rotation `r` (length `m`, same `k`; may start with 0), `B_r` by same formula.
+- `h_b(r)` = unique `h in {1..2^m}` with `h==-bB_r(p^k)^{-1} mod 2^m` (`0`→`2^m`).
+
+C1: for every primitive `w` (aperiodic; not `u^t`, `t>1`), if for every cyclic rotation `r`, `q(r)=B_r/A >= h_b(r)` (i.e. `B_r>=A h_b(r)` as integers), then `A|B_w`.
+
+## 3. Definition validation
+
+- `D!=0`: `2^m` vs odd `p^k` cannot be equal (unique factorization). Checked all `m<25`.
+- `B_w>0`: `k>=1` (first bit 1), sum has positive term.
+- `A` odd, `gcd(2^m,A)=1`, `gcd(p,A)=1` (since `A==2^m mod p !=0`).
+- `b=sign(D)` is the positive branch: `B>0` gives `x=bB/D>0` iff `b=sign(D)`.
+- `h` residue: verified for all `2^m` words, `m<=8`, `p=3,5`, both `b`, that starting from `h` and applying actual `H_{p,b}` reproduces the word for `m` steps. Parity matches: `B==e0 mod 2`, `-b==1 mod 2`, `p^k` odd, so `h==e0 mod 2`. `h==2^m` occurs only when `2^m|B`, hence `B` even and first bit 0 — consistent.
+- `B` under rotation: proved and machine-checked (all words `m<=11`, `p=3,5,7`) that with `D=2^m-p^k`, adjacent left rotation satisfies `B'=B/2` if `e0=0` (then `B` even), `B'=(pB+D)/2` if `e0=1` (then `pB+D` even as odd+odd). No divisibility assumed: parity follows from `B==e0 mod 2` and `D` odd. After `m` steps returns to `B`.
+- Primitive convention: primitive = aperiodic; then `m` rotations distinct. C1 restricts to primitive, but scan finds zero non-integral survivors even among non-primitive rows through 22.
+- Key congruence: `p^k==2^m-bA==-bA mod 2^m`, so `-b(p^k)^{-1}==A^{-1} mod 2^m`; hence `h==BA^{-1}==q mod 2^m` as 2-adic integers (odd denominator). So integer `q` always satisfies `q>=h` (write `q=h+s2^m`, `s>=0` since `q>=1`, `h<=2^m`, difference a multiple of `2^m`).
+
+## 4. Search result: no counterexample through 22
+
+Independent scratch exhaustive search (`/tmp/cp25-prove/c1_search2.py`), exact integer arithmetic (`B_r>=A h` with `h0==0`→`2^m`, `inv=pow(p^k,-1,2^m)`), `B`-walk via proved recurrence, early exit on first violation:
+
+- p=3 through 22: premise rows 61, all integral, per-`m` counts `1,2,3,2,1,4,1,2,3,2,8,4,1,2,3,2,1,4,1,2,3,9` — exactly the divisible row counts in `results_m22.json`. No primitive (or non-primitive) non-integral survivor.
+- p=5 through 22: premise rows 37, all integral, per-`m` matching divisible counts.
+- p=7 through 22: premise rows 7 (`m=3,6,9,12,15,18,21` one each), all integral, matching independently counted divisible rows 7.
+
+In particular ChatGPT's unverified "no nonintegral survivor through m<=20 for p=3,5" is confirmed as [EXACT COMPUTATION] through 22 and extended to p=7. This is not a proof.
+
+Smallest premise-holding integral examples: `p=3,w=(1,0)`: `m=2,k=1,D=1,A=1,b=1,B=1,q=1,h=1`; rotations `(0,1):B=2,h=2,q=2`. `p=3,w=(1,1,0)`: `m=3,k=2,D=-1,A=1,b=-1,B=5,q=5,h=5`; rotations `B=7,h=7`; `B=10,h=2` (`10>=2`). Known `3n-1`/`5n+1` cycles all satisfy premise, so C1 does not falsely exclude them.
+
+## 5. Recurrence for `n_r` and what it means
+
+Task quantity `n_r=2^m B_r-A h_b(r)`:
+
+- `n_r>=0` iff `B_r/A>=h_b(r)/2^m`. Since `2^m>=1`, C1 premise `B_r>=A h_b(r)` implies `n_r>=0`, but converse is false and much weaker. Separation example `p=3,m=4,w=(1,1,0,0)`, `A=7`: all `n_r` are `59,85,236,118>=0` while all `B_r-Ah_r` are `-16,-80,-64,-32<0`.
+- `A|n_r iff A|B_r`: `n_r==2^m B_r mod A`, `A` odd so `2^m` invertible mod `A`.
+- `N_r=B_r-Ah_r` satisfies `2^m|N_r`: from `e_r=(p^k h_r+bB_r)/2^m` integer and `p^k=2^m-bA`, `e_r=h_r+bN_r/2^m`, so `N_r=b2^m(e_r-h_r)`, `t_r=N_r/2^m=b(e_r-h_r)` integer. Premise is `N_r>=0` (`t_r>=0`); desired divisibility is `A|N_r` iff `A|t_r` (since `gcd(A,2^m)=1`). Divisibility propagates: `B'==B/2` or `(pB+bA)/2` gives `A|B iff A|B'` (multiply by `inv2`, `p` mod `A`).
+
+Proof gap: from `t_r>=0` for all `r` to `A|t_r` for some `r` needs Diophantine input beyond the scalar equation. `n/B` recurrences do not close in `n` alone: even step gives `t'=t/2` or `(t-A)/2` with lift `h'=h/2` or `h/2+2^{m-1}`; odd step gives `t'=(pt+As)/2` where `s=(ph+b-2h')/2^m` depends on the `h` lift. Assuming `A|B` anywhere in deriving these lifts is the circularity to avoid; the lifts use only `p` odd and word bits. No descent forcing `t_min=0` was found. This is the same missing engine CP23/CP25 name: lower bounds for `|2^m-p^k|` and residue-lift structure.
+
+## 6. Comparison with proved CP25 lemma
+
+Proved: `D|B_w` implies the integer `x=bB_w/D` really follows `w` and returns (hence all `q(r)>=h_b(r)`; §3). So divisibility ⇒ lower bound is [PROOF]. C1 is the converse (lower bound ⇒ divisibility). It is therefore new (not contained in the lemma), not circular in statement, not sign-blind (`b=sign(D)`, `h_b` depends on `b`), and does not falsely exclude known cycles. Since premise coincides with divisibility through 22, if proved it would give an equivalence, i.e. a reformulation rather than a new filter — but the implication itself is nontrivial and genuinely open.
+
+## 7. Common-mode risk
+
+Gate reuse of repo code shares any repo bug; mitigated by independent scratch reimplementation of `B` (direct sum vs recurrence walk checked equal), `h` (checked by actual simulation that `h` generates its word), composition formula (checked as rationals), parity/zero convention, and `integral⇒premise` direction. Residual shared risk: bit order (`eps_j` = coefficient of `2^j`, LSB-first) and `B` exponent convention; both were validated against trajectory simulation, not just copied. Finite-search absence of counterexample is [EXACT COMPUTATION] with independent code, but still bounded to stated range.
+
+Verdict: OPEN-NONTRIVIAL
+
+```json
+{"gate": "GATE_PASS", "verdict": "OPEN-NONTRIVIAL", "counterexample": null, "checked_range": {"p": [3, 5, 7], "m_max": 22, "premise_rows": {"3": 61, "5": 37, "7": 7}, "all_integral": true, "note": "exact computation only, not a theorem"}, "proof_gap": "from N_r=B_r-Ah_r>=0 (t_r>=0) to A|N_r (A|t_r) with no circular use of A|B; h-lift recurrences do not close in n_r alone"}
+```

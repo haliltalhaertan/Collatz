@@ -9,10 +9,33 @@
   },
   "active_task": {
     "code": "CP25_SIGN_SENSITIVE_CYCLE_PILOT_20260920",
-    "name": "Sign-sensitive affine cycle equation pilot",
-    "stage": "STAGE_0_READY_NOT_DISPATCHED",
-    "objective": "Test whether the sign of 2^m-3^k plus exact integrality and parity-word realisability separates positive 3n+1 cycle candidates from positive 3n-1 candidates; finite evidence is not proof and novelty is unassessed.",
+    "name": "Sign-sensitive cycle pilot — oriented lift/Product Barrier continuation",
+    "stage": "BASE_ROUTE_KILLED_C1_OPEN_NONTRIVIAL",
+    "objective": "The original sign + integrality + realizability split is killed. Test or prove the bounded-carry Product Barrier sufficient for oriented-lift integrality; finite evidence is not proof, novelty is unassessed, and Collatz remains open.",
     "scientific_route_change": true
+  },
+  "cp25_sign_sensitive_cycle_pilot": {
+    "base_route": "KILL",
+    "c1_oriented_lift": "OPEN-NONTRIVIAL",
+    "product_barrier": "OPEN-NONTRIVIAL",
+    "collatz_status": "OPEN / NOT PROVED",
+    "local_c1_raw_words_m22_per_p": 4194303,
+    "local_c1_nonintegral_survivors_p3_p5_p7": 0,
+    "local_product_barrier_p3_m22_nonintegral_necklaces": 401423,
+    "local_product_barrier_p3_m22_falsifiers": 0,
+    "local_product_barrier_odd_p3_101_m16_nonintegral_necklaces": 439934,
+    "local_product_barrier_odd_p3_101_m16_falsifiers": 0,
+    "chatgpt_web_verdict": "OPEN-NONTRIVIAL",
+    "muse_proof_verdict": "OPEN-NONTRIVIAL",
+    "muse_falsifier_verdict": "BOUNDED-PASS",
+    "jev_role": "ADVISORY only",
+    "jev_followup": {
+      "accept": 0.33,
+      "needs_lemma": 0.67,
+      "reject": 0.0
+    },
+    "report": "research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_C1_LIFT_COHERENCE_REPORT.md",
+    "next_action": "Prove or falsify the bounded-carry Product Barrier, prioritizing near-resonance cases |2^m-p^k| small, and compare it explicitly with Rukhin's quotient-cylinder prefix/suffix integrality tests."
   },
   "archive": {
     "budget_policy": {
@@ -312,6 +335,8 @@
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
     "current_integration_decision": "research_manager/decisions/INTEGRATED_RESEARCH_MUSE_W_2026-09-12.json",
     "current_exploratory_decision": "research_manager/decisions/CP23_CP24_CHAIN_KILL_INTEGRATION_AND_CP25_SIGN_SENSITIVE_PILOT_2026-09-20.md",
+    "cp25_base_and_c1_report": "research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_C1_LIFT_COHERENCE_REPORT.md",
+    "cp25_base_kill_c1_continuation_decision": "research_manager/decisions/CP25_BASE_KILL_AND_C1_PRODUCT_BARRIER_CONTINUATION_2026-09-21.md",
     "archive_limit_decision": "research_manager/decisions/ARCHIVE_LIMIT_100_MIB_CLARIFICATION_2026-09-20.md",
     "analogue_gate_lf_repair_decision": "research_manager/decisions/ANALOGUE_GATE_LF_CANONICALIZATION_REPAIR_2026-09-20.md"
   },
@@ -403,7 +428,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/verify_handoff.py",
-        "sha256": "a5f1883ad52b57b01039684ca264b2208a8537f6951251609e15504212cce22b"
+        "sha256": "f6a157346e89671da4a9e2ecf145f6e6e7f53988226ff3e9e4fc77669461aaac"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/CONTINUITY_PROTOCOL.md",
@@ -411,7 +436,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "646010079d2219895061b51017b1ea2c9e1d131f655845d7e979c1bee863eba1"
+        "sha256": "399615dfa4045ba84a187448ee6f1863fe948c95d53eea50850ff91d419b7549"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -785,7 +810,7 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "646010079d2219895061b51017b1ea2c9e1d131f655845d7e979c1bee863eba1"
+        "sha256": "399615dfa4045ba84a187448ee6f1863fe948c95d53eea50850ff91d419b7549"
       },
       {
         "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -1237,7 +1262,7 @@
       },
       {
         "path": "tools/verify_handoff.py",
-        "sha256": "a5f1883ad52b57b01039684ca264b2208a8537f6951251609e15504212cce22b"
+        "sha256": "f6a157346e89671da4a9e2ecf145f6e6e7f53988226ff3e9e4fc77669461aaac"
       }
     ]
   },
@@ -1452,7 +1477,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-20T20:38:52.361161+00:00",
+  "updated_at": "2026-09-23T13:22:15.637901+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
@@ -1491,5 +1516,33 @@
     "finite_5n_plus_1_rows_differing": 38,
     "scope": "The 44-row table is a regression diagnostic. General Ecal reflection blindness comes from CP24's analytic derivation and applies only under its stated invariant/shared-hypothesis scope.",
     "collatz_status": "OPEN_NOT_PROVED"
+  },
+  "cp26_collapse_and_internal_resonance": {
+    "timestamp": "2026-09-23T09:35:11.855247+00:00",
+    "checkpoint": "CP26_COLLAPSE_AND_INTERNAL_RESONANCE",
+    "status": "CLOSED",
+    "scientific_status": "COLLAPSE lemma PROOF (LMN1995 + k<=17012 exact); C1 KILL; carry-band KILL; SIGNED_CRT_DEPTH PARK; CP26 cand A PROOF(weak), B CONDITIONAL/PARK, C PARK, D KILL, E untested; Collatz OPEN",
+    "report_sha256": "4cb0e97a36e0227ea4d116ce9749f4374eda5f247f07c893eec3d88429683168",
+    "code_sha256": "d6db8dc6e81a8bb068836fc927b4eb419e51db8f2aea05d1cc1d34bc6aed90f9",
+    "next_action": "CP27: test candidate B under n_min>=2^71 constraint; success = systematic S*/K << 1"
+  },
+  "cp27_consortium_prefix_corridor": {
+    "timestamp": "2026-09-23T10:58:16.779165+00:00",
+    "checkpoint": "CP27_CONSORTIUM_PREFIX_CORRIDOR",
+    "status": "CLOSED",
+    "method": "consortium Rev4 (ChatGPT Web, Muse 1.3, Unreal Agent; Hermes coordinator)",
+    "scientific_status": "Candidate B PARK (3/3); X-B KILL; X-A main regime KILL/PARK via Lemma V (vacuity, exact 15/15, audited 3/3); narrow regime PARK (already excluded by global X condition); Collatz OPEN",
+    "report_sha256": "da8412d58bd1c32dba59dcdf75a9299fd610295a3a44197e38df313484802591",
+    "next_action": "New consortium Round 1 for a direction not reducible to product+continued-fraction skeleton"
+  },
+  "cp28_consortium_post_budget_mixing": {
+    "timestamp": "2026-09-23T13:22:15.637901+00:00",
+    "checkpoint": "CP28_CONSORTIUM_POST_BUDGET_MIXING",
+    "status": "CLOSED",
+    "method": "consortium CP28 (free T0, anonymous Borda T1, sequential review; ChatGPT Web, Muse 1.3 [quota-out later rounds], Unreal Agent; Hermes coordinator)",
+    "scientific_status": "T10 PARK; T3 PARK/KILL; T7 KILL; T9 KILL (exact); T12 KILL (pre-registered MI). Wall = Terras free budget. PBM theorem (post-budget valuation frequencies -> 2^-k, delta<1) PROOF-with-minor-revisions via Inselmann 2402.03276 Lemma 2.16 + Thm 3.1; audits UA line + UA red-team; Muse pending. Collatz OPEN",
+    "report_sha256": "505cc5177496818ca73c9afa68d546a1680359d9424094a5a10009a0a44b0423",
+    "code_sha256": "2ed81f58f5a6765c249a973bd9ff8cd0ecb9465b873deff9579db8b8ae555d31",
+    "next_action": "Muse line audit; apply red-team clarity fixes; consortium: iterate PBM to growing delta (log m blocks) with *-density exponent control"
   }
 }

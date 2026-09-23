@@ -1,0 +1,21 @@
+**A — Oylar.** **T10: PARK. T3: KILL** (mevcut yükseklik-bağımlı tehlike sinyali olarak). T10’da \(j\le m\) eşitliği bilinen bölge; \(j>m\) için tam parite vektörünü iid modele yaklaştırmak destek engeline takılıyor. Önerilen “subdiffusive overshoot” lemması *son konumun* \(\sqrt m\)-ölçekli dağılımı hakkındaysa koordinatör haklı: \(r=o(\sqrt m)\) ek adım log-yüksekliği en çok \(O(r)\) değiştirir; ilk \(m\) adımdaki CLT’ye yeni bir mekanizma eklemez. Bu, **ilk-geçiş olayının koşullu dağılımı** için otomatik bir ispat değildir. \(j=(1+\delta)m\) düzeyinde, özellikle sağkalım/ilk-geçiş için bir CLT ise ciddi ve mevcut LLN-zarfından daha güçlü bir hedeftir; “Collatz varsayımına eşdeğer” demek için gerekçe yok, fakat kısa vadeli erişilebilir hedef de görünmüyor. T3’ün hesapları tehlikenin her yükseklikte bağımsızlığını **kanıtlamaz**; ölçülen \(m,j\) ve dilimlerde sömürülebilir sistematik fark iddiasını öldürür. Başka bir ölçek için yeniden tanımlanmış T3 ayrı değerlendirilir.
+
+**B — T7 ön inceleme.** Tek bir *başlangıç* için önerilen sınır esasen **COLLAPSE**: tek valuation-word \(a_1,\ldots,a_r\), \(A=\sum a_i\) ile, tek sayılar üzerindeki 2-adik ölçüde tam \(2^{-A}\) ağırlıklıdır. Dolayısıyla \(A\le\alpha r\), \(\alpha=\log _2 3+\varepsilon<2\), olasılığı iid geometrik değişkenlere Cramér sınırı uygulanarak \(\le e^{-rI(\alpha)}\) olur. Sabit \(r\) için aynı sonuç logaritmik yoğunluğa da geçer. Burada integrality veya yeni bir dinamik kısıt kullanılmıyor.
+
+**Açık ve 1–2 haftada ispatlanabilir önerme** — hatta ispatı hemen çıkar: \(x\), \([2^m,2^{m+1})\) kabuğundaki tek sayılardan eşit seçilsin. \(\lfloor\alpha r\rfloor\le m-1\) ise
+\[
+ \Pr_x\!\left(\sum_{i=1}^{r}a_i(x)\le\alpha r\right)
+ =\Pr\!\left(\sum_{i=1}^{r}G_i\le\alpha r\right)
+ \le e^{-rI(\alpha)},\qquad
+ \Pr(G_i=k)=2^{-k},
+\]
+\[
+ I(\alpha)=\log(2/\alpha)+(\alpha-1)\log\!\bigl(2(\alpha-1)/\alpha\bigr)>0.
+\]
+Gerekçe: ilgili her silindirin modülü \(2^{A+1}\), kabukta tam eşit sıklıkla temsil edilir. **Kanıtlanabilir, fakat yayın hedefi değil.**
+
+“Segment başlangıcı keyfi bir \(j_0\)” koşulu tek başına güçlendirme değildir. Sabit \(r\) için *herhangi bir gelecekteki* \(j_0\)’da düşük-valuation bloğu bulunması, başlangıç sayıları arasında yoğunluk **1** olan bir olaydır: sonlu sayıda ayrık \(r\)-bloğunun bağımsız silindirlerini alıp blok sayısını artırmak yeter. \(j_0\le H\) gibi sınırlı ufukta ise ilk kaba üst sınır \(H e^{-rI}\) olur. Gerçekten yeni soru, örneğin \(r\gg\log x\) ufkunda **açıkça tanımlanmış, yüksekliğini koruyan** segmentler için *uniform* bir büyük-sapma sınırı olurdu. Verilen Inselmann zarfı LLN ölçeğindedir; bu üstel segment sınırını doğrudan vermez (**makale içeriği burada ayrıca DOĞRULANMADI**). Tao 2019’un neredeyse tüm yörüngelerin küçük değerlere inişi sonucu da böyle bir uniform segment sınırı değildir. Bu güçlü versiyon için 1–2 haftalık inandırıcı ispat yolu görmüyorum.
+
+Bir mantık uyarısı: “\(S^r(x)\ge x\) ise \(A\le r\log _2 3\)” eşdeğerliği \(+1\) terimleri yüzünden koşulsuz doğru değildir; ara yükseklikler için alt sınır konmadan düşük-valuation olayıyla “büyüyen segment” özdeşleştirilmemeli. **T7 oyu: PARK** — mevcut entropi-borcu sınırı tautolojik; ancak ufuk-ötesi, yükseklik-koşullu net bir önerme kurulursa yeniden açılabilir.
+
+CP28_T2_VERDICT_20260923_COMPLETE

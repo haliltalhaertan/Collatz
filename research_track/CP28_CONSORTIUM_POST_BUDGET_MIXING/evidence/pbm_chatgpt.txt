@@ -1,0 +1,803 @@
+Kritik sonuç şu: PBM için Tao’nun 3-adik Fourier makinesini zorlamak ilk tercih olmamalı. Inselmann 2024’teki genel *-dense pullback lemması, sonlu parity-pattern normalitesini bit bütçesinin ötesine taşıyacak kadar güçlü görünüyor. Hatta dikkatli bookkeeping ile tam hedefteki sabit k, sabit 0<δ<1 PBM’ye kadar ulaşma ihtimali var. Tao rotasında ise gerçekten yeni ve zor bir 3-adik→2-adik “bridge lemma” gerekiyor.
+
+Önce küçük ama önemli bir indeksleme düzeltmesi: sabit valuation kelimesi 
+a
+, toplam S=∣
+a
+∣ ise başlangıç x'i tek bir tek residue sınıfına mod 2
+S+1
+ kilitler. Tao’nun Proposition 1.9 ispatında bu açıkça yazıyor. Dolayısıyla dyadik kabukta “exact iid” ifadesini kullanırken güvenli sınır S+1≤m; crossing valuation’ın kendisi zaten bütçe sınırında/ötesindedir. Bu, PBM fikrini bozmaz ama formal metinde “τ’ya kadar exact” cümlesi off-by-one düzeltilmeli. 
+arXiv
++1
+
+1. PBM için ispat iskeleti
+
+T'yi shortcut Collatz haritası olarak yazalım:
+
+T(n)={
+n/2,
+(3n+1)/2,
+	​
+
+n even
+n odd.
+	​
+
+
+Odd başlangıç için exact ilişki
+
+U
+j
+(x)=T
+S
+j
+	​
+
+(x)
+
+olduğundan
+
+τ=min{j:S
+j
+	​
+
+>m}
+
+şunu söyler:
+
+Z
+m
+	​
+
+:=U
+τ
+X
+m
+	​
+
+
+T-zamanında m'den kesin olarak sonra gelen ilk odd state’tir.
+
+Bu bağlantı çok önemli. PBM’yi “gizemli bir stopping-time sonrası yeniden rastgeleleşme” olarak değil, T
+m
+X
+m
+	​
+
+'den sonraki parity dizisinin normalitesi olarak yeniden yazabiliyoruz.
+
+(a) U
+τ
+X
+m
+	​
+
+'in “yeni bitleri” nereden geliyor?
+
+Burada “yeni randomness oluşuyor” anlatımı doğru değil.
+
+Sabit bir crossing-prefix (a
+0
+	​
+
+,…,a
+τ−1
+	​
+
+) şartlandığında
+
+U
+τ
+x=
+2
+S
+τ
+	​
+
+3
+τ
+x+C
+τ
+	​
+
+	​
+
+
+ve S
+τ
+	​
+
+>m. Aynı valuation prefix’i x'i mod 2
+S
+τ
+	​
+
++1
+ tek bir odd residue sınıfına sokar. Başlangıç kabuğunun uzunluğu yalnız 2
+m
+ mertebesinde olduğuna göre, tam prefix’i bildiğinizde shell içinde genellikle artık serbest x-bit’i kalmamıştır. Deterministik harita entropi yaratamaz.
+
+Dolayısıyla düşük 2-adik bitlerin kaynağı:
+
+3
+τ
+x+C
+τ
+	​
+
+
+sayısının yüksek bitlerinin division/carry yoluyla aşağı taşınmasıdır. 3
+τ
+ odd olduğundan 2-adik residue’larda çarpma permütasyondur; 2
+S
+τ
+	​
+
+'ye bölmek ise yukarıdaki bitleri low-bit konumlarına indirir. “Randomlık”, tek bir conditioned prefix içinde değil, çok sayıdaki farklı prefix/carry konfigürasyonu üzerinde ensemble olarak ortaya çıkabilir.
+
+Bu ayrım Tao rotası için kritik: bize lazım olan şey yeni entropi değil, mevcut başlangıç entropisinin yeniden dağılımı/equidistribution.
+
+Daha iyi rota: finite-pattern normality + Inselmann pullback
+
+Sabit k için binary kelimeyi
+
+w
+k
+	​
+
+=10
+k−1
+1
+
+olarak tanımlayın. Bir odd T-state’te başlayan w
+k
+	​
+
+ tam olarak
+
+a=k
+
+olayıdır. Fair parity modelinde
+
+P(w
+k
+	​
+
+)=2
+−(k+1)
+,P(p
+i
+	​
+
+=1)=1/2,
+
+dolayısıyla odd başlangıçlar arasında
+
+P(a=k)=
+1/2
+2
+−(k+1)
+	​
+
+=2
+−k
+.
+
+Şimdi sabit c<1, ε>0 için P
+k,c,ε
+	​
+
+ kümesini şöyle seçin: y∈P ise ilk
+
+R(y)=⌊clog
+2
+	​
+
+y⌋
+
+parity bitinde, yeterince uzun bütün prefix’lerde hem 1 frekansı 1/2+O(ε), hem w
+k
+	​
+
+ frekansı 2
+−(k+1)
++O(ε), ayrıca lineer uzunlukta sıfır-run bulunmasın.
+
+Bu küme *-densedir. Sebep klasik Terras parity bijection’ı: R≤log
+2
+	​
+
+y olduğundan ilgili parity kelimeleri exact fair-bit kelimeleridir; sabit uzunluktaki overlapping pattern göstergelerini k+1 residue sınıfına ayırıp Hoeffding uygulayın. Kötü oran
+
+≪e
+−c
+ε,k
+	​
+
+R
+=y
+−D
+ε,k,c
+	​
+
+
+olur. Yani sadece LLN değil, power-saving exceptional set elde edilir.
+
+Burada Inselmann’ın Lemma 2.16’sı tam ihtiyaç duyulan operatördür:
+
+P ∗-dense⟹{y:T
+⌊log
+2
+	​
+
+y⌋
+y∈P} ∗-dense.
+
+Üstelik finite intersection’lar da *-dense. Bu lemma özel olarak sadece yükseklik veya parity first moment için yazılmamış; herhangi bir *-dense hedef kümesini bir digit-block geriye çekiyor. 
+arXiv
++2
+arXiv
++2
+
+Dolayısıyla
+
+F(y)=T
+⌊log
+2
+	​
+
+y⌋
+y
+
+yazıp
+
+P∩F
+−1
+P∩F
+−2
+P∩F
+−3
+P
+
+kullanabilirsiniz. Bu da *-dense. Bir kez daha F
+−1
+ alırsanız, başlangıç X
+m
+	​
+
+'den sonra gelen ilk dört “fresh logarithmic block”ın hepsinde finite-pattern normality kazanırsınız.
+
+Bu nokta PBM açısından beklediğimden çok daha güçlü.
+
+Neden dört blok δ<1 için yeterli görünüyor?
+β=log
+2
+	​
+
+3
+	​
+
+=0.79248125036…
+
+olsun. Tipik bir m-bit sayı bir T-digit block sonrasında yaklaşık βm bit taşır. Inselmann bunu çok daha uzun ufka kadar natural density 1 üzerinde rigorize ediyor; ayrıca Syracuse versiyonunu da veriyor. 
+arXiv
++2
+arXiv
++2
+
+İlk bütçe m bittikten sonraki block uzunlukları yaklaşık
+
+βm,β
+2
+m,β
+3
+m,β
+4
+m.
+
+Toplamı
+
+(β+β
+2
++β
+3
++β
+4
+)m=2.312624…m.
+
+Fair parity altında bunun yaklaşık yarısı odd state’tir, yani
+
+1.156312…m
+
+Syracuse step’i. Bu, her sabit δ<1 için gereken δm valuation’ı rahatça kapsıyor.
+
+Son bookkeeping:
+
+U
+τ
+X
+m
+	​
+
+, T
+m
+X
+m
+	​
+
+'den sonraki ilk odd state.
+
+Normal bir parity block’ta bu ilk odd state’e kadar gecikme o(m); lineer zero-run’lar power-saving exceptional.
+
+İlk L U-step’i, parity dizisindeki ilk L odd başlangıca karşılık geliyor.
+
+a=k sayısı 10^{k-1}1 pattern sayısı.
+
+Final hedef dört bloktan birinin ortasında kalırsa “uniform-in-prefix” normality kullanılır.
+
+Block sınırlarında kaybolan en fazla O(k) pattern, L=Θ(m)'ye bölünce yok olur.
+
+Bu tamamlandığında
+
+L
+1
+	​
+
+#{τ≤i<τ+L:a
+i
+	​
+
+=k}=
+#(1)
+#(10
+k−1
+1)
+	​
+
+⟶
+1/2
+2
+−(k+1)
+	​
+
+=2
+−k
+.
+
+Yani asıl PBM’nin tamamı Inselmann Lemma 2.16’nın bir finite-pattern güçlendirmesi/corollary’si olabilir. Şu anda bunu [PROOF] diye mühürlemezdim; iki şey bağımsız audit edilmeli: uniform-prefix *-density lemması ve dört block + τ senkronizasyonunun tüm floor/off-by-one detayları. Fakat burada artık yeni bir derin Fourier teoremi görünmüyor.
+
+(b) Tao 2019 tam olarak nerede kullanılabilir?
+
+Tao rotasını yine de netleştireyim.
+
+Proposition 1.9: Eğer restart state N, yeterince derin mod 2
+M
+'de yaklaşık Haar-uniform ise ve M≥(2+c
+0
+	​
+
+)n, sonraki n Syracuse valuation’ın TV dağılımı Geom(2)
+n
+'ye exponentially yakındır. 
+arXiv
++1
+
+Proposition 1.14: Syracuse offset
+
+F
+n
+	​
+
+(Geom(2)
+n
+)(mod3
+n
+)
+
+fine 3-adic scales’ta superpolynomial biçimde karışır. Proposition 1.17 bunun high-frequency characteristic-function biçimidir:
+
+	​
+
+Ee
+−2πiξSyrac/3
+n
+	​
+
+≪
+A
+	​
+
+n
+−A
+,
+
+ve Tao bunların esasen eşdeğer olduğunu söylüyor. 
+arXiv
++1
+
+Proposition 1.11: Bu fine-scale offset mixing’i Proposition 1.9 ile birleştirip first-passage distribution’ın scale’ler arasında stabilize olduğunu kanıtlıyor. 
+arXiv
+
+PBM için eksik doğrudan zincir ise:
+
+3-adic offset mixing⟹U
+τ
+X
+m
+	​
+
+mod2
+r
+ Haar-like.
+
+Bu çıkarım Tao’da yok. DOĞRULANMADI.
+
+Daha da önemlisi Tao Remark 1.16’da, daha güçlü bir sonuç için yalnız offset’i değil, bütün random affine map
+
+Aff
+Geom(2)
+n
+	​
+
+
+için fine-scale mixing gerekebileceğini açıkça söylüyor. Bu, PBM için bizim “marked first-passage / affine bridge” ihtiyacımızla neredeyse birebir aynı yapısal engel. 
+arXiv
++1
+
+Dolayısıyla Tao rotasında en zor adım:
+
+stopping-time ile seçilmiş Y=U
+τ
+X
+m
+	​
+
+'in düşük 2-adik residue’larını, 3-adik offset karışımından kontrol eden uniform bir affine/CRT bridge.
+
+Kırılma riski yüksek. Çünkü τ bizzat 2-adik bitlerden tanımlanıyor; τ'yı bağımsız bir stopping time gibi ayıramazsınız. Ayrıca Tao’nun n
+−A
+ Fourier bound’u, 2
+Θ(m)
+ kadar dyadik residue testini naïf union-bound ile kontrol etmeye yetmez.
+
+Bu yüzden mevcut tabloda Inselmann route > Tao route.
+
+Bir ikinci uyarı da önemli: tam post-τ bloğunun Geom(2)
+L
+'ye TV yakınlığını hedeflemeyin. Geom(1/2)’nin Shannon entropisi 2 bit/sample’dır. L=δm için iid ürün yaklaşık 2δm bit entropi isterken başlangıçta yalnız O(m) bit entropi var. Özellikle δ>1/2'de tam-product-TV tipi iddia support/entropy engeline çarpar. PBM’nin yalnız empirical frequency istemesi tam da doğru zayıflıkta.
+
+2. Skip arttıkça korelasyon neden göreli büyüyor?
+
+Burada çok temiz bir sayısal heuristic çıkıyor.
+
+Reference renewal modelinde
+
+τ=
+2
+m
+	​
+
++O
+P
+	​
+
+(
+m
+	​
+
+),S
+τ
+	​
+
+=m+O
+P
+	​
+
+(1).
+
+Dolayısıyla
+
+h=log
+2
+	​
+
+x
+U
+τ
+x
+	​
+
+≈τlog
+2
+	​
+
+3−S
+τ
+	​
+
+
+ve tipik olarak
+
+h=(
+2
+log
+2
+	​
+
+3
+	​
+
+−1)m+O
+P
+	​
+
+(
+m
+	​
+
+)=−0.20751875m+O
+P
+	​
+
+(
+m
+	​
+
+).
+
+Böylece post-budget state’in bit uzunluğu
+
+B
+0
+	​
+
+≈m+h=βm=0.79248125m.
+
+Şimdi sizin deneyinizde L=m/4. L Syracuse valuation’ın toplam tükettiği binary depth tipik olarak
+
+r≈2L=m/2.
+
+Eğer Y=U
+τ
+x ensemble’ı 2
+r
+ residue ölçeğinde, yaklaşık 2
+B
+0
+	​
+
+ genişliğinde bir Archimedean pencere üzerinde düzgün dağılmış gibi davranıyorsa, en basit lattice/boundary hatası
+
+2
+B
+0
+	​
+
+2
+r
+	​
+
+≈2
+−(β−
+2
+1
+	​
+
+)m
+=2
+−0.29248125m
+.
+
+Yani parametresiz kaba tahmin:
+
+c
+heuristic
+	​
+
+≈0.2925
+	​
+
+.
+
+Sizin ölçtüğünüz c≃0.24–0.35 aralığının tam ortasında. Bu bence anlamlı bir uyuşma; kanıt değil, fakat rate’in nereden çıkabileceğine dair somut mekanizma veriyor.
+
+Genel L=δm için aynı one-shot model
+
+c(δ)≈β−2δ
+
+verir. Pozitif kalması ancak
+
+δ<β/2=0.3962406…
+
+iken mümkün. Bu da tek bir “fresh state”ten Proposition-1.9-benzeri uzun bir iid blok çıkarma yaklaşımının neden yaklaşık 0.4m civarında duvara vuracağını açıklıyor. Daha uzun PBM için restart/block iteration gerekiyor.
+
+Skip etkisi daha da ilginç. Bir Syracuse step’inde ortalama log-bit drift
+
+log
+2
+	​
+
+3−Ea=log
+2
+	​
+
+3−2=−0.4150375…
+
+olur. Sabit s skip sonrası state yaklaşık s(2−log
+2
+	​
+
+3) bit daha küçüktür. Aynı L-block artık state’in bit bütçesinin daha derinine bakar. Boundary/carry hatası yaklaşık
+
+2
+s(2−log
+2
+	​
+
+3)
+=(
+3
+4
+	​
+
+)
+s
+
+ile büyür.
+
+s=3 için:
+
+(4/3)
+3
+=2.37037.
+
+Sizin ratio-to-permutation-null değerlerinde skip3/skip0 oranı m=20'de yaklaşık 2.79, m=22'de 2.77. Bunlar aynı observable olmadığından “2.37 tahmini doğrulandı” denemez, fakat ölçek şaşırtıcı derecede uygun.
+
+Bir düzeltme: “yüksek h → daha çok bit → daha çok bağımlılık” tek başına doğru açıklama değil. Basit boundary modelinde daha yüksek h, daha büyük B demektir ve kendi residue hatasını aslında azaltmalıdır. Daha olası mekanizma şudur: h-conditioning taşıma/high-bit yapısını seçiyor; birkaç U-step/division bu high-bit yapısını valuation-sensitive low-bit bölgesine indiriyor. Aynı zamanda state küçüldüğü için sabit uzunluktaki gelecek block relatif olarak daha derine nüfuz ediyor.
+
+Ayrıca fixed skip s=O(1), asymptotik exponent c'yi değiştirmemeli; sadece prefactor’ı değiştirmeli. Dolayısıyla skip0’daki −0.35 ile skip3’teki −0.24 farkını kalıcı iki ayrı exponent olarak yorumlamak için veri henüz erken. Daha doğal model
+
+D
+s
+	​
+
+(m)=A
+s
+	​
+
+2
+−c
+1
+	​
+
+m
++B
+s
+	​
+
+2
+−c
+2
+	​
+
+m
+,c
+2
+	​
+
+<c
+1
+	​
+
+,
+
+ve skip arttıkça B
+s
+	​
+
+/A
+s
+	​
+
+'nin büyümesidir. Küçük m aralığında fitted slope böylece .35'ten .24'e kayabilir.
+
+3. 1–2 haftada alınabilecek en zayıf sağlam sonuç
+
+Burada önce düşündüğümüzden daha iyi bir aday var.
+
+[PROOF] Deterministik post-budget finite-pattern lemma. Sabit binary kelime w, sabit 0<c<1 ve ε>0 için, x uniform bir dyadik shell’den seçildiğinde, y=T
+m
+x ile başlayıp sonraki
+
+⌊clog
+2
+	​
+
+y⌋
+
+parity bitinde w'nin ampirik frekansı
+
+2
+−∣w∣
++o
+P
+	​
+
+(1)
+
+olur.
+
+İspat çekirdeği sadece iki şey:
+
+local parity-cylinder bijection + finite-pattern concentration ⇒ bu özelliğe sahip y'ler *-dense;
+
+Inselmann Lemma 2.16 ⇒ T
+⌊log
+2
+	​
+
+x⌋
+x bu *-dense kümeye düşer, yine *-density 1.
+
+Bu açıkça Terras’ın “ilk m bit” sınırının ötesindedir; gözlenen block m adımından sonra başlar. Inselmann bunu bu finite-pattern biçiminde ifade etmiyor, ama lemma doğrudan uygulanıyor. 
+arXiv
++1
+
+Bundan bir adım sonra:
+
+[PROOF, kısa bookkeeping sonrası] sabit k ve
+
+0<δ<
+2
+log
+2
+	​
+
+3
+	​
+
+	​
+
+≈0.39624
+
+için τ-senkronize PBM. Tek post-budget fresh block yeter; 1 ve 10
+k−1
+1 pattern’larının oranını alın.
+
+Ve daha iddialı ama şu an hâlâ audit ister:
+
+[SANI — güçlü] aynı *-dense pullback’i dört kez iterate ederek orijinal PBM’nin bütün sabit 0<δ<1 aralığını kanıtlamak mümkün. Yukarıdaki 1.1563m odd-state bütçesi bunun nicel nedenidir. Bunu konsorsiyumda bir sonraki iş olarak seçerdim: Tao Fourier teorisine girmeden önce bu dört-block argümanını satır satır öldürmeye çalışın.
+
+Bu doğru çıkarsa PBM “yeni derin lemma” olmaktan çok Inselmann 2.16 + Terras finite-pattern concentration’ın görünmeyen bir corollary’si haline gelir. Bu aynı zamanda yayınlanabilirlik açısından dikkat gerektirir: explicit olarak yazılmamış olmak, matematiksel yenilik anlamına gelmez.
+
+4. Literatür durumu
+
+Kontrol ettiğim birincil kaynaklarda τ-sonrası L=δm Syracuse valuation frekanslarının 2
+−k
+'ye yakınsadığını açıkça söyleyen bir PBM teoremi bulmadım. Ancak artık “literatürde altyapısı yok” da denemez.
+
+Tao’nun 2019 preprint’i, 2022 Forum of Mathematics, Pi makalesi ve güncel arXiv v7’sinde valuation approximation Proposition 1.9, first-passage stabilization Proposition 1.11, 3-adic fine-scale offset mixing Proposition 1.14 ve characteristic-function decay Proposition 1.17 var. Fakat post-budget state’in 2-adik residue’larının karıştığını söylemiyor; Remark 1.16 bütün affine map’in daha güçlü mixing’ini ayrı, yapılmamış bir hedef olarak işaretliyor. 
+arXiv
++2
+arXiv
++2
+
+Inselmann 2024 çok daha doğrudan komşu. Ana teoremi Terras/Everett approximation horizon’ını k≤log
+2
+	​
+
+m'den teorik maksimuma kadar uzatıyor; Theorem 1.6 parity first moment’i aynı uzun ufukta kontrol ediyor, Theorem 1.10 da Syracuse yükseklik law’unu natural density 1’de uzun ufka taşıyor. En kritik parça ise Lemma 2.16: her *-dense seti bir full digit-block geriye taşıyor. Explicit valuation-pattern PBM yazılmamış olsa da bizim finite-pattern setimizi bu lemmaya sokmak oldukça doğal görünüyor. 
+arXiv
++2
+arXiv
++2
+
+Lagarias–Soundararajan’ın Benford’s Law for the 3x+1 Function sonucu, çoğu başlangıç için ilk N iterate’in significand/log-fraction dağılımının yaklaşık Benford olduğunu gösteriyor. Bu Archimedean magnitude equidistribution’ına yakın bir olgu; τ-sonrası 2-adik valuation gap mixing ile eşdeğer değil. 
+arXiv
+
+Kontorovich–Lagarias’ın Stochastic Models for the 3x+1 and 5x+1 Problems çalışması ise uzun-orbit davranışı için matematiksel olarak analiz edilebilir stochastic modeller kurup gerçek Collatz için heuristic tahminler çıkarıyor; gerçek yörüngelerde PBM tipinde bir mixing teoremi vermiyor. 
+arXiv
+
+Konsorsiyum açısından benim güncel kararım: PBM’yi PARK etmeyin; fakat “Tao bridge lemma kanıtlayalım” planını ikinci sıraya alın. Birinci iş Inselmann Lemma 2.16’dan finite-pattern pullback’i formalize edip dört-block τ-senkronizasyonunu audit etmek olsun. Eğer orada gizli bir engel çıkmazsa, elinizde hedef PBM’ye çok daha kısa bir yol var.
+
+CP28_PBM_PROOF_20260923_COMPLETE

@@ -1,0 +1,12 @@
+{
+ "CP26_REPORT.md": "4cb0e97a36e0227ea4d116ce9749f4374eda5f247f07c893eec3d88429683168",
+ "evidence/chatgpt_collapse_review_D.txt": "03e4b5caeacc089a419d485d2683fe254c1f2d0d9e7de22678b9e8e95cb1ebf8",
+ "evidence/chatgpt_cp26_brainstorm_E.txt": "3733dfea5b7927639fa43a6de15619054d0da45e036c6cc7f3a54ce8e26a4a89",
+ "evidence/cp25_carry_gap_stress_pilot.json": "8f00bc32743d59cd0a4a9fde566df563972a53e511fdb419430426f85880a3d0",
+ "evidence/cp25_collapse_crt_depth_check.json": "14dfd0d9c6ccc93fcad2936bd8745a7ab1805079dc0abd1c4a1216468efec9c1",
+ "evidence/cp25_collapse_prompt.txt": "22e5059b1ed103969686080da979131aa50b010e1dbf1975942928090075c6e8",
+ "evidence/cp26_brainstorm_prompt.txt": "8e68bf7a49cbc103571c9b72e617eab7a7b0f664514d53033b3f465a4b693a0a",
+ "evidence/resonance_scan_results_K2_18.json": "7e38d506f89bd16c9504417eb47446d1b4f65f77654423363d09d50be463e66f",
+ "evidence/unreal_agent_task_prompt.txt": "121c02c2f30b53ad60976c02ce103a95a1dffeae19bcb36676ba7d1ed456f045",
+ "resonance_scan.py": "d6db8dc6e81a8bb068836fc927b4eb419e51db8f2aea05d1cc1d34bc6aed90f9"
+}
