@@ -1,0 +1,23 @@
+ROLE MARKER: CP26_BRAINSTORM_20260922_E
+
+Bağlam (Collatz tipi 3x+b, b=±1, pozitif döngüler). Gap word a=(a_0..a_{k-1}), m=Σa_i, D=2^m-3^k, B=Σ_j 3^{k-1-j}2^{A_j}, x_0=bB/D.
+
+CP25 kapanışında kanıtlanan COLLAPSE kapısı:
+- Aşikâr olmayan pozitif döngü adayında x_0<2^{m+1} (LMN 1995 + k≤17012 exact kontrol).
+- Tam gap word x_0'ı mod 2^{m+1} tek sınıfa kilitler ⇒ 2-adik/residue/bit-boyu yerel filtreler integrality'ye yeni bilgi eklemez.
+- ÖLÜ: C1/Product Barrier (integrality'yi yeniden üretir), carry-band/residue-shell (N büyüyünce ayrışma kaybolur), SIGNED_CRT_DEPTH (gereken derinlik ~k; m≤16 taramasında en zor adaylar L=k'da elendi).
+- İlk kapı: "D|B biliniyor olsa bile bu fikir yeni bir şey söylüyor mu?" Hayırsa reddet. 3n−1 analog kapısı: b=−1'in gerçek döngüleri (1), (5,7), (17,25,37,55,41,61,91) asla dışlanmamalı.
+
+Elimizdeki kimlikler:
+- Λ := m·log2 − k·log3 = Σ_i log(1 + b/(3x_i)). b=+1 ⇒ Λ>0; b=−1 nontrivial ⇒ Λ<0.
+- a_i=1 run'ı boyunca: x_{j+r}+b = (3/2)^r (x_j+b).
+- Bitlength: n_{i+1}−n_i = κ_i − a_i, κ∈{1,2}.
+
+GÖREV (beyin fırtınası + teori üretimi)
+1. COLLAPSE kapısını geçebilecek 5 yeni teori/lemma adayı üret. Odak: (i) run/local-minimum kombinatoriği (Steiner/Simons–de Weger m-cycle çizgisi), (ii) işaretli log toplamı Λ ile minimum durumun ilişkisi (ör. Σ1/x_i ≤ k/x_min ve Λ ≈ bΣ1/(3x_i)), (iii) ikisinin birleşimi, (iv) serbest bir yaratıcı fikir.
+   Her aday için: tam nicelenmiş önerme; [PROOF]/[CONJECTURE] etiketi; neden integrality'nin yeniden yazımı olmadığı; neden 3n−1'e kör olmadığı; en ucuz exact falsification testi (m ve k aralığı ile, rational periodic adaylar üzerinde, D|B KULLANMADAN); kill kriteri.
+2. Özellikle şu somut soruyu değerlendir: x_min için klasik alt sınırlar (ör. döngü minimumunun çok büyük olması gerekir — Eliahou, Simons–de Weger) ile |Λ| alt sınırları (LMN) birleştiğinde döngü uzunluğu k için bir alt sınır çıkıyor; bu literatürde nereye kadar götürüldü? Local minimum sayısı ("m-cycle", Hercher 2023 gibi) ile ilgili en güncel sonuçlar neler? Bizim yeni bir katkı yapabileceğimiz boşluk nerede? Kaynakları yazar-yıl-başlık ile ver; emin olmadığını açıkça işaretle.
+3. Adayları "yenilik olasılığı × test edilebilirlik" ile sırala; ilk 2'si için Unreal Agent'a verilecek kod görevi spesifikasyonu yaz (girdi aralığı, exact aritmetik, çıktı JSON şeması, beklenen negatif kontroller).
+
+KURALLAR: Collatz çözüldü iddiası yok. Sonlu hesap teorem değildir. Literatür iddiasını uydurma. Türkçe, sade ama exact. Son satır tam olarak:
+CP26_BRAINSTORM_20260922_E_COMPLETE

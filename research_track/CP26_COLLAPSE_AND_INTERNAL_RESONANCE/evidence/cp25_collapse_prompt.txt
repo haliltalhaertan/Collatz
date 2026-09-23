@@ -1,0 +1,21 @@
+ROLE MARKER: CP25_COLLAPSE_REVIEW_20260922_D
+
+Bağlam: Collatz tipi 3x+b (b=±1) pozitif döngüleri. Gap word a=(a_0..a_{k-1}), m=sum a_i, D=2^m-3^k, B=sum_j 3^{k-1-j} 2^{A_j}, aday döngü başlangıcı x0=bB/D.
+
+Önceki turda önerdiğin carry-band + propagated shell kriterini exact uyguladık:
+- Kriter doğrudan orbit üretimiyle 4248 vakada birebir eşleşti (0 uyuşmazlık).
+- CP25_CARRY_GAP_STRESS_01 (k=4..12, A/B aileleri, tüm carry maskeleri, N=1..32): 4.207.296 karşılaştırma, 3.450 A/B ayrışması; hepsi N<=27. N=33..48 arasında 2.103.648 ek karşılaştırmada 0 ayrışma.
+
+Yeni gözlemimiz (senden bağımsız denetim istiyoruz):
+(1) Açık segment için büyük N'de ayrışma kayboluyor; ancak gerçek döngüde N serbest değil, x0=bB/D ile sabitleniyor.
+(2) m<=16 tüm kompozisyonlarda, pozitif-işaretli bütün adaylarda x0=bB/D < 2^{m+1} (en büyük oran 0.4375, m=3). Genel üst sınır: B <= 2^{m-k}(3^k-2^k), dolayısıyla |D| > (3^k-2^k)/2^{k+1} ise x0<2^{m+1}.
+(3) Tam gap word x0'ı tek residue sınıfına sabitler: x0 ≡ rho (mod 2^{m+1}), rho=(3^k)^{-1}(2^m-bB). x0<2^{m+1} olduğundan döngü varlığı ⇔ rho = bB/D ⇔ integrality. Yani 2-adik residue + bit-boyu tipindeki bütün yerel filtreler, döngü ölçeğinde tam olarak integrality'ye çöküyor ("COLLAPSE lemması").
+
+GÖREV
+1. COLLAPSE lemmasını satır satır denetle. |D| > (3^k-2^k)/2^{k+1} koşulunun hangi literatür sonucu (ör. Rhin / Baker tipi |m log2 - k log3| alt sınırları) ve hangi sonlu kontrolle genel olarak kapandığını kesin yaz; kapanmıyorsa açıkça söyle. PROOF/CONDITIONAL etiketi kullan.
+2. Bu lemmanın hangi rota ailelerini birlikte öldürdüğünü listele: carry-band, residue-shell, SIGNED_CRT_DEPTH_01'in 2-adik kısmı, C1/Product Barrier. Her biri için "yeni bilgi mi, integrality'nin yeniden yazımı mı" kararını gerekçele.
+3. COLLAPSE'tan kaçabilen, yani integrality'yi yeniden hesaplamayan bir döngü engeli ancak hangi tür bilgiyi kullanmalı? (Arşimet boyut + birden fazla asal, gap word üzerinde global kombinatorik, farklı b işaretini ayıran pozitiflik...) En fazla 3 somut yön ver; her biri için en ucuz exact falsification testi ve 3n-1 analog kapısında neden körleşmeyeceğini yaz.
+4. Karar: C1, CRT_DEPTH ve carry rotaları için KILL / PARK / KEEP tablosu.
+
+KURALLAR: Collatz çözüldü iddiası yok. Sonlu hesap teorem değildir. Türkçe, sade ama exact. Son satır tam olarak:
+CP25_COLLAPSE_REVIEW_20260922_D_COMPLETE

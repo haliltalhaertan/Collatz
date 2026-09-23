@@ -1,0 +1,1106 @@
+{
+  "status": "EXACT_COMPUTATION_PRELIMINARY_NOT_PROOF",
+  "arithmetic": "Python integers only; no float/log",
+  "criterion_validation": {
+    "exhaustive_cases": 4248,
+    "mismatches": 0,
+    "scope": "k<=4, gaps in 1..4, valid carry weights, b=+-1, N=1..9; compared criterion to direct orbit enumeration"
+  },
+  "stress": {
+    "k_range": [
+      4,
+      12
+    ],
+    "N_range_primary": [
+      1,
+      32
+    ],
+    "N_range_extension": [
+      33,
+      48
+    ],
+    "total_AB_comparisons_primary": 4207296,
+    "total_AB_divergences_primary": 3450,
+    "divergences_at_N32": 0,
+    "latest_N_with_any_divergence": 27,
+    "total_AB_comparisons_extension": 2103648,
+    "extension_divergences": 0,
+    "per_k_sign": {
+      "4": {
+        "-1": {
+          "m": 6,
+          "E": 2,
+          "masks": 6,
+          "B_words": 1,
+          "comparisons": 192,
+          "divergences": 1,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 3,
+          "examples": [
+            {
+              "N": 3,
+              "c": "1010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                2,
+                1
+              ]
+            }
+          ]
+        },
+        "1": {
+          "m": 7,
+          "E": 3,
+          "masks": 4,
+          "B_words": 2,
+          "comparisons": 256,
+          "divergences": 4,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 11,
+          "examples": [
+            {
+              "N": 10,
+              "c": "1101",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "N": 11,
+              "c": "1101",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "N": 5,
+              "c": "1011",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                3,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "5": {
+        "-1": {
+          "m": 7,
+          "E": 2,
+          "masks": 10,
+          "B_words": 2,
+          "comparisons": 640,
+          "divergences": 9,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 12,
+          "examples": [
+            {
+              "N": 9,
+              "c": "01010",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                2,
+                1
+              ]
+            },
+            {
+              "N": 10,
+              "c": "01010",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                2,
+                1
+              ]
+            },
+            {
+              "N": 11,
+              "c": "01010",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                2,
+                1
+              ]
+            }
+          ]
+        },
+        "1": {
+          "m": 8,
+          "E": 3,
+          "masks": 10,
+          "B_words": 4,
+          "comparisons": 1280,
+          "divergences": 37,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 12,
+          "examples": [
+            {
+              "N": 11,
+              "c": "10110",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "N": 12,
+              "c": "10110",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "N": 11,
+              "c": "10101",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                3,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "6": {
+        "-1": {
+          "m": 9,
+          "E": 3,
+          "masks": 20,
+          "B_words": 6,
+          "comparisons": 3840,
+          "divergences": 38,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 15,
+          "examples": [
+            {
+              "N": 9,
+              "c": "101010",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "N": 12,
+              "c": "011010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                3,
+                1
+              ]
+            },
+            {
+              "N": 12,
+              "c": "010110",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                3,
+                1
+              ]
+            }
+          ]
+        },
+        "1": {
+          "m": 10,
+          "E": 4,
+          "masks": 15,
+          "B_words": 9,
+          "comparisons": 4320,
+          "divergences": 38,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 14,
+          "examples": [
+            {
+              "N": 11,
+              "c": "110101",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                4,
+                1
+              ]
+            },
+            {
+              "N": 12,
+              "c": "110101",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                4,
+                1
+              ]
+            },
+            {
+              "N": 13,
+              "c": "110101",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                4,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "7": {
+        "-1": {
+          "m": 11,
+          "E": 4,
+          "masks": 35,
+          "B_words": 12,
+          "comparisons": 13440,
+          "divergences": 124,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 17,
+          "examples": [
+            {
+              "N": 15,
+              "c": "1101010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                4,
+                1
+              ]
+            },
+            {
+              "N": 16,
+              "c": "1101010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                4,
+                1
+              ]
+            },
+            {
+              "N": 14,
+              "c": "1011010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                4,
+                1
+              ]
+            }
+          ]
+        },
+        "1": {
+          "m": 12,
+          "E": 5,
+          "masks": 21,
+          "B_words": 16,
+          "comparisons": 10752,
+          "divergences": 21,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 16,
+          "examples": [
+            {
+              "N": 16,
+              "c": "1101011",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1
+              ]
+            },
+            {
+              "N": 13,
+              "c": "1101011",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                5,
+                1,
+                1,
+                1
+              ]
+            },
+            {
+              "N": 14,
+              "c": "1101011",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                5,
+                1,
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "8": {
+        "-1": {
+          "m": 12,
+          "E": 4,
+          "masks": 70,
+          "B_words": 15,
+          "comparisons": 33600,
+          "divergences": 86,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 18,
+          "examples": [
+            {
+              "N": 15,
+              "c": "01011010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                4,
+                1
+              ]
+            },
+            {
+              "N": 16,
+              "c": "01011010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                4,
+                1
+              ]
+            },
+            {
+              "N": 14,
+              "c": "01010110",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                4,
+                1
+              ]
+            }
+          ]
+        },
+        "1": {
+          "m": 13,
+          "E": 5,
+          "masks": 56,
+          "B_words": 20,
+          "comparisons": 35840,
+          "divergences": 191,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 18,
+          "examples": [
+            {
+              "N": 17,
+              "c": "11010110",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1
+              ]
+            },
+            {
+              "N": 13,
+              "c": "11010101",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1
+              ]
+            },
+            {
+              "N": 16,
+              "c": "11010101",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "9": {
+        "-1": {
+          "m": 14,
+          "E": 5,
+          "masks": 126,
+          "B_words": 24,
+          "comparisons": 96768,
+          "divergences": 217,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 20,
+          "examples": [
+            {
+              "N": 14,
+              "c": "101101010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1
+              ]
+            },
+            {
+              "N": 18,
+              "c": "101101010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1
+              ]
+            },
+            {
+              "N": 19,
+              "c": "101101010",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1
+              ]
+            }
+          ]
+        },
+        "1": {
+          "m": 15,
+          "E": 6,
+          "masks": 84,
+          "B_words": 30,
+          "comparisons": 80640,
+          "divergences": 169,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 20,
+          "examples": [
+            {
+              "N": 16,
+              "c": "110101101",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                6,
+                1
+              ]
+            },
+            {
+              "N": 17,
+              "c": "110101101",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                6,
+                1
+              ]
+            },
+            {
+              "N": 18,
+              "c": "110101101",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                6,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "10": {
+        "-1": {
+          "m": 15,
+          "E": 5,
+          "masks": 252,
+          "B_words": 28,
+          "comparisons": 225792,
+          "divergences": 76,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 21,
+          "examples": [
+            {
+              "N": 19,
+              "c": "0101101010",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1
+              ]
+            },
+            {
+              "N": 20,
+              "c": "0101011010",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1
+              ]
+            },
+            {
+              "N": 21,
+              "c": "0101011010",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                5,
+                1
+              ]
+            }
+          ]
+        },
+        "1": {
+          "m": 16,
+          "E": 6,
+          "masks": 210,
+          "B_words": 35,
+          "comparisons": 235200,
+          "divergences": 477,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 21,
+          "examples": [
+            {
+              "N": 17,
+              "c": "1101011010",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                6,
+                1
+              ]
+            },
+            {
+              "N": 18,
+              "c": "1101011010",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                6,
+                1
+              ]
+            },
+            {
+              "N": 19,
+              "c": "1101011010",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                6,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "11": {
+        "-1": {
+          "m": 17,
+          "E": 6,
+          "masks": 462,
+          "B_words": 40,
+          "comparisons": 591360,
+          "divergences": 432,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 23,
+          "examples": [
+            {
+              "N": 22,
+              "c": "10101101010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                6,
+                1
+              ]
+            },
+            {
+              "N": 19,
+              "c": "10101011010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                6,
+                1
+              ]
+            },
+            {
+              "N": 21,
+              "c": "10101011010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                6,
+                1
+              ]
+            }
+          ]
+        },
+        "1": {
+          "m": 18,
+          "E": 7,
+          "masks": 330,
+          "B_words": 48,
+          "comparisons": 506880,
+          "divergences": 318,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 23,
+          "examples": [
+            {
+              "N": 22,
+              "c": "11010110101",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                7,
+                1
+              ]
+            },
+            {
+              "N": 21,
+              "c": "11010101101",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                7,
+                1
+              ]
+            },
+            {
+              "N": 22,
+              "c": "11010101101",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                7,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      "12": {
+        "-1": {
+          "m": 19,
+          "E": 7,
+          "masks": 792,
+          "B_words": 54,
+          "comparisons": 1368576,
+          "divergences": 885,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 25,
+          "examples": [
+            {
+              "N": 21,
+              "c": "110101101010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                7,
+                1
+              ]
+            },
+            {
+              "N": 22,
+              "c": "110101101010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                7,
+                1
+              ]
+            },
+            {
+              "N": 23,
+              "c": "110101101010",
+              "A": false,
+              "B": true,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                7,
+                1
+              ]
+            }
+          ]
+        },
+        "1": {
+          "m": 20,
+          "E": 8,
+          "masks": 495,
+          "B_words": 63,
+          "comparisons": 997920,
+          "divergences": 327,
+          "divergences_N32": 0,
+          "last_N_with_divergence": 27,
+          "examples": [
+            {
+              "N": 21,
+              "c": "110101101011",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                8,
+                1
+              ]
+            },
+            {
+              "N": 22,
+              "c": "110101101011",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                8,
+                1
+              ]
+            },
+            {
+              "N": 23,
+              "c": "110101101011",
+              "A": true,
+              "B": false,
+              "Bword": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                8,
+                1
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "interpretation": "A/B gap-geometry separation exists only at small shells in this tested range and disappears by N=28; no separation at N=32 or N=33..48. This supports PARK/KILL under the proposed criterion, but finite computation is not a theorem."
+}

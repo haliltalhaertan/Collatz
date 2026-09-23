@@ -1477,7 +1477,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-20T20:38:52.361161+00:00",
+  "updated_at": "2026-09-23T09:35:11.855247+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
@@ -1516,5 +1516,14 @@
     "finite_5n_plus_1_rows_differing": 38,
     "scope": "The 44-row table is a regression diagnostic. General Ecal reflection blindness comes from CP24's analytic derivation and applies only under its stated invariant/shared-hypothesis scope.",
     "collatz_status": "OPEN_NOT_PROVED"
+  },
+  "cp26_collapse_and_internal_resonance": {
+    "timestamp": "2026-09-23T09:35:11.855247+00:00",
+    "checkpoint": "CP26_COLLAPSE_AND_INTERNAL_RESONANCE",
+    "status": "CLOSED",
+    "scientific_status": "COLLAPSE lemma PROOF (LMN1995 + k<=17012 exact); C1 KILL; carry-band KILL; SIGNED_CRT_DEPTH PARK; CP26 cand A PROOF(weak), B CONDITIONAL/PARK, C PARK, D KILL, E untested; Collatz OPEN",
+    "report_sha256": "4cb0e97a36e0227ea4d116ce9749f4374eda5f247f07c893eec3d88429683168",
+    "code_sha256": "d6db8dc6e81a8bb068836fc927b4eb419e51db8f2aea05d1cc1d34bc6aed90f9",
+    "next_action": "CP27: test candidate B under n_min>=2^71 constraint; success = systematic S*/K << 1"
   }
 }
