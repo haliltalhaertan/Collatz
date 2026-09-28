@@ -1,0 +1,132 @@
+# CP01–CP13 bağımsız yenilik denetimi
+
+**Sonuç:** Collatz çözülmüş değildir. Programın teoremleri, gerçek pozitif *sonsuz/injective* yörüngeler hakkındadır; sonlu parity sertifikalarından evrensel Collatz ispatı çıkmaz. Yenilik ve matematiksel doğruluk ayrı değerlendirmelerdir. 2026-08-24 tarihli Curry yayını CP01–13 belgelerinden *sonradır*; 1999 Garcia–Tal ise *öncedir*.
+
+## A. Sayım
+
+| Karar | Kayıt |
+|---|---:|
+| SUPERSEDED | 12 |
+| KNOWN | 0 |
+| PARTIAL | 6 |
+| STANDARD | 21 |
+| NEW-CANDIDATE | 3 |
+| INTERNAL | 20 |
+| FLAWED | 6 |
+| **Toplam** | **68** |
+
+Burada `SUPERSEDED` daha güçlü **aynı nicel iddianın sonucu** yayımlanmış demektir; aynı ispat/yöntem yayımlandı demek değildir. `INTERNAL` tez/karşıörnek veya yöntem sınırı, `FLAWED` sadece belirtilen **orijinal yanlış formül/kanıt sürümü** içindir. Matematiksel olarak doğru bir sonucu yanlış gerekçeyle desteklemek birincil raporun kanıt açığıdır.
+
+## B. Literatürde kritik, açılmış birincil kaynaklar
+
+1. **Garcia–Tal, 1999**, [Acta Arith. 90, s.245–250, tam PDF](https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf), Teorem 1, (6), Koroler 1: “**The Banach density of the orbit O(n) under H is zero.**” Daha önemlisi ispatta bütün pencere başlangıçları için `#(P∩{a,…,a+k−1}) ≤ 2(⌊log₂k⌋+1)(k^{1−δ₁}+g(k))` ve `g(k)=O(k^{δ₂})`, `δ₁,δ₂∈(0,1)` bulunuyor. Dolayısıyla her aperiodik yörünge için *uniform* `O(k^θ log k)` pencere sayımı, bir `θ<1` ile, 1999 ispatının içinde mevcut. Dyadic değer pencerelerinde kısmi toplama ile `Σ_{x∈orbit}1/x<∞`; odd-only orbit altkümesidir ve injective ise yinelenen terim yoktur. Bu **zaman indeksli** `H_N=O(1)` verir; tek başına “Banach yoğunluğu sıfır” cümlesi `Σ1/x<∞` vermez: kullanılan kritik ek kanıt (6)’daki *polinom tasarruftur*. [Lagarias, 1963–1999 bibliyografyası §69](https://arxiv.org/pdf/math/0309224) aynı koroleri kaydeder. Bu 1999 bağlantısını CP09 audit “no exact match” taraması kaçırmıştır.
+2. **Curry, 24 Ağustos 2026**, [Zenodo birincil PDF, DOI 10.5281/zenodo.22087163](https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content), Teorem 2.3 / Önerme 3.1 / Koroler 4.3: “**every divergent orbit has summable reciprocals**” ve `g_n≤B log₂ n+K` sonunda hiçbir divergent orbitte `B<1.0358567…` olamaz. Garcia–Tal çıkarımını açıklaştırıp etkili `β*>0.96538` pencere bound’u elde eder. CP09’un `H_N=o(log N)`, CP10–12’nin `H_N=O(loglog N)` ve üst katsayıları daha güçlüsüyle kapsamaktadır; CP03’ün 8/9’u ve CP09’un 1 eşiğini de geçer. (Curry sonradan çıktığı için CP09 yazarı zamanında Curry’yi atlamış sayılamaz; Garcia–Tal’i atlamıştır.)
+3. **De Jesús (2026)**, [Zenodo birincil PDF/özet](https://zenodo.org/api/records/21481692), Ek D: “**sharpening Theorem C from 5/6 to 8/9**”; CP03 zaten 8/9 için öncelik talep etmemiştir. CP04’ün real-relaxed örneği ile Ek E’nin *fixed-modulus* bariyeri aynı ifade değildir.
+4. **Tao (2019)** [arXiv 1909.03562](https://export.arxiv.org/api/query?id_list=1909.03562): “`Col_min(N) ≤ f(N)` for almost all N ... **in the sense of logarithmic density**.” **Inselmann (2024)** [arXiv 2402.03276](https://export.arxiv.org/api/query?id_list=2402.03276): “**almost all m** ... simultaneously for all `0≤k≤α log m`.” Bunlar başlangıçlar için *almost-all* sonuçlardır; tek bir olası divergent orbitin zaman indeksli `H_N` bound’u olarak kullanılmadı. Lagarias’ın [2000–09 bibliyografyası](https://arxiv.org/pdf/math/0608208) da açıldı. Böylece yanıltıcı “density” kelime eşleşmeleri, gerçek teorem eşitliği sanılmadı.
+
+**Taramadaki nesne sorguları (örnek, her kayıtta üçü ayrıca listelenmiştir):** `Garcia Tal 1999 Collatz Banach density divergent orbits`; `Collatz divergent trajectories upper Banach density reciprocal sum`; `Collatz Syracuse divergent orbit harmonic sum log log N`; `Collatz divergent orbit windowed count sparsity`; `Collatz parity vector stopping time distribution Terras Everett`; `Collatz lower bound cycle length Eliahou Simons de Weger Hercher`; `Collatz inverse tree density Krasikov Lagarias`; `Collatz 3x-1 cycles affine offset Steiner`; `Collatz logarithmic discrepancy valuation least realizer`; `Collatz density divergent orbit Inselmann`. arXiv API, OpenAlex ve Zenodo yanıtları; Crossref’te kısmi 200/429, Semantic Scholar’da 429 hız sınırı kaydedildi. Sorgu sonuçları aday tespit eder, hükmü açılan **birincil** metin sağlar. 429 sonrası eşdeğer bulunmadı demek tam literatür taraması değildir.
+
+## C. NEW-CANDIDATE (en güçlüden zayıfa)
+
+- **CP12-01:** Sabit `(m,q,y)` için `M≤2^{m−q}`: özel çarpışma bound’u; finite parity bijeksiyonu eski, bu *nicel koşullu* biçimin aynı yayımlanmış teoremi bulunmadı. CP12 audit düzeltmeleriyle okunmalı. Yapılan üç sorgu: `Collatz parity vector stopping time distribution Terras Everett`; `Collatz logarithmic discrepancy valuation least realizer`; `Collatz inverse tree density Krasikov Lagarias`. **NEW-CANDIDATE yeni olduğuna dair onay değildir.**
+- **CP02-05:** İlk-crossing `K≥72,057,431,991`: one-sided Farey eşiği, döngü uzunluğu bound’uyla karıştırılmamalı. CP01 kaynak baytları olmadığından öncelik ve bağımsız tam sertifika kontrolü sınırlı. Yapılan üç sorgu: `Collatz lower bound cycle length Eliahou Simons de Weger Hercher`; `Collatz 3x-1 cycles affine offset Steiner`; `Collatz parity vector stopping time distribution Terras Everett`. **NEW-CANDIDATE yeni olduğuna dair onay değildir.**
+- **CP06-07:** Mekanik least-realizer `limsup_j log₂R_j/j=1`: 2-adik yaklaşım literatürü ile karşılaştırıldı; tam aynı nicel ifade açılan kaynaklarda bulunmadı. Yapılan üç sorgu: `Collatz parity vector stopping time distribution Terras Everett`; `Collatz logarithmic discrepancy valuation least realizer`; `Collatz inverse tree density Krasikov Lagarias`. **NEW-CANDIDATE yeni olduğuna dair onay değildir.**
+
+## D. KNOWN / SUPERSEDED ve diğer kalemlerin tek tek dökümü
+
+**KNOWN: 0 bağımsız satır.** Birçok alışılmış parity eşitliği `STANDARD`; 8/9 gibi aynısı bilinen fakat daha güçlü eski sonucun kapsadığı sonuçlar `SUPERSEDED` seçilmiştir. Aşağıdaki her satırın tam kaynak yolu, program etiketi, açılmış kaynak alıntısı veya kaynak yokluğu ve ayrı sorguları JSON’dadır.
+
+### SUPERSEDED (12)
+
+- **CP02-07** `[program: EXACT]` — Mekanik sonsuz parity sözcüğünün 2-adik gerçekleyicisi pozitif tamsayı değildir. **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026. **Not:** Mekanik yolun drift s_k≤0; Garcia–Tal pencere büyümesi/Curry B≤1 bu tür diverjansı dışlar; koşullu tüm diziler için değil ordinary pozitif orbit için.
+- **CP02-08** `[program: EXACT]` — D_k≤0 ve 0≤s_k≤2 bütün k için tutan pozitif odd-only orbit yoktur. **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026.
+- **CP03-01** `[program: EXACT]` — Her sonlu C için D_k≤0 iken sup s_k=∞ olmak zorundadır. **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026. **Not:** 1999 pencere seyreklikten H∞<∞; bounded slack varsa carry çarpımıyla n_k=O(1), imkânsız; daha genel B≤1 de imkânsız.
+- **CP03-02** `[program: EXACT / KNOWN]` — D_k≤0 iken limsup s_k/log₂k≥8/9 olur. **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026. **Not:** De Jesús Appendix D aynı 8/9; Garcia–Tal 1999 eq(6) eski ve daha güçlü türetim, Curry 2026 B<1.03585.
+- **CP09-01** `[program: EXACT / audit fixable]` — Her sonsuz injective pozitif odd-only orbit için H_N=Σ_{k<N}1/n_k=o(ln N). **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026. **Not:** 1999 eq(6) uniform O(X^θ log X), θ<1 ⇒ değerler üzerinde Σ1/n_k<∞; Curry Prop 3.1 açıkça belirtir. Farklı kanıt yöntemi yeniliği iddiası değil.
+- **CP09-02** `[program: EXACT]` — X_N=N^{o(1)} her injective orbit için ve undercritical limsup s_k/log₂k≥1. **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026. **Not:** Garcia–Tal pencere hesabından H∞<∞ ⇒ X_N=O(1); Curry B≤1 ve B<1.03585 dışlaması.
+- **CP10-01** `[program: EXACT / audit fixable]` — Injective odd-only orbitte H_N=O(ln ln N) ve limsup H_N/ln ln N≤6.3274088946… iddia edilir. **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026. **Not:** Garcia–Tal 1999 uniform power-window ⇒ H_N=O(1); CP10 başlangıç n₀ blok açığı CP12de düzeltilmiş.
+- **CP10-02** `[program: EXACT]` — X_N=O_ε((ln N)^{2.1091362983…+ε}) her injective odd-only orbitte geçerlidir. **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026. **Not:** H∞<∞ ve carry product özdeşliği ⇒ X_N=O(1).
+- **CP11-04** `[program: EXACT / audit fixable]` — limsup H_N/lnln N≤4.91656355095… ve X_N için log exponent 1.63885451698… bulunur. **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026.
+- **CP11-05** `[program: EXACT / audit fixable]` — limsup (s_k−log₂k)/log₂log₂k≥−0.63885451698… hesaplanır. **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026. **Not:** Curry 2026 limsup s/log₂k≥1.03585… (undercritical gerekmeksizin divergent) bundan kesin güçlü.
+- **CP12-02** `[program: EXACT / repair]` — İki-blok endpoint count ile üst rate K<K₁₁−η₁₂ sağlanır. **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026. **Not:** H∞<∞ daha kuvvetli; yöntem özgül hesabı ve audit düzeltmeleri ayrı tutulur.
+- **CP12-03** `[program: PROOF VALID AFTER MINOR REPAIRS / CERTIFIED]` — Repaired two-block bound sertifikasında limsup H_N/lnln N<4.723565548607766 bulunur. **Kapsayan:** Garcia–Tal 1999 (6) + Curry 2026.
+
+### PARTIAL (6)
+
+- **CP03-03** `[program: EXACT]` — Sınırlı slack geçiş matrisi satır normu r_C=1−2^{−(C+1)}<1 sağlar. **Not:** Terras–Everett sayımına yakın özel finite-state lemma; bu tam matris ifadesi primerde bulunmadı; genel yöntem benzer.
+- **CP04-04** `[program: EXACT / methodological no-go]` — Real-relaxed affine Syracuse şemasında B=8/9 saturasyonu vardır; 8/9 üstüne çıkan bu yoldaki kanıt tamsayı yapısı kullanmalıdır. **Not:** De Jesús Appendix E sabit-modül congruence packing tavanını gösterir; gerçek gevşetme örneğinin eşdeğeri bulunmadı; zorunluluk yalnız belirtilen gevşetilmiş model içindir.
+- **CP08-02** `[program: EXACT]` — Suffix functional S_m, bit peeling ile suffix vektörünü tekil belirler; fixed fiber gap g_r>2^{−C₀−1}(r+1)^{−B}. **Not:** Parity bijeksiyonunun özel nicel sabitli sonucu; genel bijeksiyon eski, exact gap öncülü bulunmadı; hedef aynı kafes üstündedir.
+- **CP09-05** `[program: EXACT]` — Her length-t valuation word mod 3^{t+1} tam iki unit terminal class verir ve #{μ_t=A}≤2·C(A−1,t−1). **Not:** Sonlu parity/Congruence sayımı klasik; iki terminal sınıfındaki μ_t bound özel uygulama, eşdeğer primer theorem bulunmadı.
+- **CP10-03** `[program: EXACT / audit fixable]` — Fixed t reciprocal telescope hatası O((ln t)²) ve uniform inequality raporlanır. **Not:** Özgül pair-graph muhasebe literatürde eşdeğer bulunmadı, fakat genel 1999 sonucu hedef oranı tamamen kapsar; CP10 n₀ gap gerekir.
+- **CP11-03** `[program: EXACT / audit fixable]` — B_t(c)≤[2(c−1)ln2/3]t+O(√t) sınır katsayısı elde edilir. **Not:** Bu özel B_t katsayısı primerlerde eşleştirilmedi, genel H sonucu Garcia–Tal altında aşılmıştır.
+
+### STANDARD (21)
+
+- **CP02-01** `[program: EXACT]` — D_j≤0 boyunca F_K üst sınırı A_j=⌊j log₂3⌋ ile sağlanır; F_K=Σ_{j<K}2^{−{j log₂3}}.
+- **CP02-02** `[program: EXACT]` — F_K≤(7/8)K+1/8 bütün K≥1 için geçerlidir.
+- **CP02-03** `[program: KNOWN]` — F_K≤K/(2 ln2)+s_β(K) Ostrowski–Denjoy–Koksma ayrışımıyla elde edilir. **Not:** Klasik Denjoy–Koksma/Ostrowski ayrışımının standart uygulaması; özgül +121 sertifikası ayrı kalemdir.
+- **CP02-06** `[program: EXACT / OPEN]` — CST τ(n)=t(n) ⇒ K_D=K_S; tersi açık kalır. **Not:** Bu implication indeks tanımları ve odd-block projection ile hemen çıkar; tersine hüküm yok.
+- **CP02-09** `[program: EXACT]` — D≤0 altında sonsuz eventually-periodic parity/valuation word pozitif tamsayı yörüngesi vermez. **Not:** Periyodik çarpan 3^p/2^H≥1 ve +offset pozitifliği ile basit sabit nokta hesabı.
+- **CP04-01** `[program: EXACT]` — Carry-harmonik eşitliği H_N=3 ln(1+X_N/(3n₀))+O(1), hata ≤π²/48 olarak yazılır. **Not:** Çarpım özdeşliği ve log(1+x) Taylor hatası; ≤π²/48 hesabı ayrı tekrarlanmadı.
+- **CP04-02** `[program: EXACT]` — Bir residue sınıfı için harmonik toplam Σ_{n≤X,n≡r mod q}1/n ≤(ln X)/q+1/r.
+- **CP06-01** `[program: EXACT]` — Sonlu parity sözcüğü v için T^j(n)=(3^qn+C(v))/2^j ve R_j(v)≡−Σ3^{−r−1}2^{d_r} (mod 2^j).
+- **CP06-02** `[program: EXACT]` — D_k≤0 koşulu shortcut sözcüğünde bütün ℓ için h_v(ℓ)≥⌈ℓ/log₂3⌉ ballot şartına denktir.
+- **CP06-05** `[program: EXACT]` — Least-realizer için bir swap R_j(v′)−R_j(v)≡−3^{−r−1}2^d mod 2^j verir; wraparound sıralamayı bozabilir.
+- **CP06-08** `[program: EXACT]` — R_{ℓ+1}=R_ℓ+b_ℓ2^ℓ ve b_ℓ≡ε_ℓ−Y_ℓ (mod 2) bit-lift ile gerçekleşir.
+- **CP07-01** `[program: EXACT]` — Dual 3-adik uçta Y≡2^{−j}C(v) mod 3^q ve küçük realizer için Y=O(j^{1+B}) bulunur. **Not:** Affine formül ve bounded logarithmic drift hesabı.
+- **CP07-02** `[program: EXACT]` — C(v) mod 3^m yalnız son m one-pozisyonundan belirlenir.
+- **CP07-04** `[program: EXACT / FAIL obstruction]` — E_{m+1}=E_m+λ_m3^m, λ_m∈{0,1,2}; 3^m>Y iken zero-lift otomatikleşir.
+- **CP07-06** `[program: EXACT]` — ord_{3^m}(2)=2·3^{m−1} ve suffix triangular sensitivity v₃(ΔS_m)=m−1−u.
+- **CP08-01** `[program: EXACT / FAIL solo strategy]` — W_m=2^{−Δ}E_m−P_suf=2^{D_{q−m}}R_suf self-duality ile kısa least-realizer problemine eşittir. **Not:** Affine değişken dönüşümü; solo bağımsız engel iddiası kendi dosyasında terk edilir.
+- **CP11-02** `[program: EXACT / KNOWN easy corollary]` — Parity-prefix count N_t(2^J−1,c)≤Σ_{z≤D}C(J−1,z). **Not:** Parite-sözcüğü bijeksiyonu ve binomial prefix sayımı.
+- **CP13-01** `[program: EXACT]` — 0≤j≤R için Y(R,s,r)≤⌈3^s/2^j⌉ Σ_{a≥r−(R−j)}C(j,a) ve j üzerinden min üst sınırı geçerlidir. **Not:** CP13 kanıtı doğrudan parity-cylinder bijeksiyonu + initial interval residue count + union bound; özgül Y notasyonu yayımlanmamış olabilir, teknik standart.
+- **CP08-04** `[program: EXACT]` — Yakın üst suffix gerçekleyicisi için 2^J/(m+3)≤R_suf<2^J formülü geçerlidir.
+- **CP09-07** `[program: EXACT]` — Geom(1/2) toplamı S_t kullanarak γ_t=P(S_t≤ct)/[3(1−2^{−(c−α)t})]→0, c<2 yakın α, hesaplanır. **Not:** Klasik negatif binom/large-deviation alt kuyruğunun uygulaması; özel μ_t terminal sayımı 09-05 ayrıdır.
+- **CP12-07** `[program: EXACT / repaired]` — Length-m shortcut parity permutation finite endpoint count için sabit-q bijeksiyon verir; farklı q için global C_w bijeksiyonunu vermez.
+
+### INTERNAL (20)
+
+- **CP02-04** `[program: EXACT]` — K<137528045312 için F_K≤K/(2ln2)+121 ve K<65470613321 için +120 sertifikalıdır. **Not:** Özel CF hesabı; ham sertifika yeniden üretilmedi.
+- **CP02-10** `[program: NUM / FAIL]` — Mekanik residue temsilcileri r₉=r₁₀=23547; her adımda katı büyüme iddiası yanlıştır.
+- **CP04-03** `[program: EXACT / FAIL]` — Küçük Haar cylinder ölçüsü tek başına küçük harmonik işgal sağlamaz; m≈Q^{1/2} karşıörneği verilmiştir.
+- **CP06-03** `[program: FAIL / EXACT counterexample]` — Mekanik minimum iddiası j=4 için R₄(1101)=11>R₄(1110)=7 ile çürür.
+- **CP06-04** `[program: FAIL / EXACT counterexample]` — Christoffel minimumu j=5 için R₅(11110)=15>R₅(11101)=7 ile çürür; dominance genel monotone değildir.
+- **CP06-06** `[program: NUM]` — C=0.5 için M₁₀=M₂₀=27, M₁₀₀=579687 ve C=0.6 için M₁₄₀=5460807 raporlanır. **Not:** Sonlu tablo; kod ve tüm state space yeniden hesaplanmadı.
+- **CP07-05** `[program: NUM]` — q=10³…10⁶ doğal derinlik örneklerinde suffix residue desteği bütün 3-adik birimleri kaplar. **Not:** Örneklem; tüm parametrelerde theorem değildir.
+- **CP08-03** `[program: EXACT / methodological]` — Carry bootstrap Y=O(j^{B+1/9}) ve tek-ölçekli bound 8/9 tavanını yeniden üretir. **Not:** Önceki 8/9 mimarisine bağımlı artık aşılmış strateji hesabı.
+- **CP09-06** `[program: FAIL / NUM]` — Overlap deep suffix constraints bağımsız çarpılamaz; n₀=26716671 ve q=187 için üç near-top örneği bulunur.
+- **CP10-04** `[program: OPEN / reduction]` — B_t(c)=o(t) sınır lemması H_N=O((lnlnln N)²) için yeterli olarak önerilir. **Not:** İspat edilmiş B_t(c)=o(t) teoremi yok; Garcia–Tal hedef H_N=O(1) zaten sağlıyor.
+- **CP11-01** `[program: FAIL / EXACT fix]` — t=3,y=65 için iki en kısa word (1,3,3)→307 ve (2,4,1)→305; kanonik ξ_t seçimi gerekir.
+- **CP11-06** `[program: FAIL / NUM]` — B_t için subadditivity öngörüsü B₉≈0.49764 > B₄+B₅≈0.47952 ile çürür.
+- **CP12-04** `[program: CERTIFIED / methodological no-go]` — Frozen collision-only rate mimarisinin en iyi katsayısı >3.01652611280307 olduğundan K<3 bu mimariden çıkmaz. **Not:** Yalnız tanımlanmış mimariye dair optimizasyon; evrensel imkânsızlık değil.
+- **CP13-02** `[program: CERTIFIED NUM]` — Y örneklerinde 31,553,419 ve iki-blok testinde 1227 exact sayılmıştır. **Not:** Sonlu örneklem; orijinal docx embedded öğeler metin çıkarımında doğrulanmadı.
+- **CP13-03** `[program: FAIL / KNOWN from CP12]` — Collision-only stratejisi B=1 sınırına kendi başına erişmez, K>3.01652611280307. **Not:** CP12 audit sonucunun tekrarı; yeni teorem değil.
+- **CP13-04** `[program: LEAD / OPEN]` — Partial-period exponential ρ>0 ve weighted endpoint correlation şimdilik açık hedeftir. **Not:** Hipotez, kanıtlanmış sonuç değildir.
+- **CP02-11** `[program: EXACT / reproduced]` — K≥49547666544 önceki CP01 first-crossing basamağı CP02de 2^71 başlangıç eşiğinden yeniden elde edilir. **Not:** CP01 asıl belge eksiktir; 72,057,431,991 güçlendirme ayrı satırdadır.
+- **CP04-05** `[program: EXACT / FAIL]` — Zamana göre değişen slack contraction Haar ölçüsünü stretched-exponential azaltır fakat O(R) boundary hatası log K tasarrufunu yutar.
+- **CP06-09** `[program: OPEN / corrected target]` — Corridor least-realizer için M_j(C,C₀)→∞ her sabit C,C₀ altında kanıtlanması hedeflenir; CP06 bunu ispatlamaz. **Not:** Sadece önerilen karşıt-iptal teoremi; kesin çıktı değildir.
+- **CP10-06** `[program: AUDIT / OPEN]` — CP10 audit B_t(c) nesnesinin Rozier LBH finite-boundary ölçüsüyle örtüştüğünü, LBH tek başına gereken 3I(α) tasarrufunu vermediğini bildirir. **Not:** Rozier primer makalesine DOI 10.7169/facm/1583 üzerinden ulaşıldı ancak tam PDF açılmadı: öncelik eşleştirmesi DOĞRULANMADI.
+
+### FLAWED (6)
+
+- **CP07-03** `[program: FAIL / EXACT correction]` — Yanlış S_{m+1}=3S_m+2^d yerine S_{m+1}=S_m+3^m2^d gerekir. **Not:** FLAWED yalnız ilk formül için; aynı dosya hatayı düzeltir.
+- **CP09-03** `[program: EXACT]` — Mod-18 tablosundan H_N≤(4/15)ln N ve 41/45 limsup çıkarıldığı iddia edilir. **Not:** CP09 audit: basılı tablodan yalnız 9/32; 4/15 bu kanıtla elde edilmiyor. Ayrı doğru teorem olabilir fakat bu gerekçe geçersiz.
+- **CP09-04** `[program: NUM]` — CP09 finite-LP β_t=0.2667…0.1019 tablosu tanımlanmış LP olmaksızın sertifika olarak sunulur. **Not:** CP09 audit: variables/constraints/objective tanımsız, doğal katsayılar 9/32,61/256,...
+- **CP10-05** `[program: GAP / FIXABLE]` — İlk n₀ exceptional block atlanınca büyüyen t için uniform inequality bütün orbitlerde yanlış olabilir. **Not:** CP10 ve CP11 yazımı; CP12 §1 repair: teleskopu s≥1’den başlat.
+- **CP12-05** `[program: FALSE / repair]` — Global w↦C_w injectivity iddiası C=19 için q=2 ve q=3 çarpışmasıyla yanlıştır. **Not:** Fixed-q injectivity kalır; CP12 audit aynı dosyada düzeltir.
+- **CP12-06** `[program: BUG / repair]` — Two-block toplamını s≤min(m,q) ile sınırlamak J=4,m=3,q=1 örneğinde doğru 7 yerine 4 verir. **Not:** Geçerli aralık max(0,q−R)≤s≤m; corrected certified upper bound ayrı girdide.
+
+## E. Hatalı yenilik/overclaim ve kanıt sınırları
+
+- **CP09 audit’inin “NO EXACT MATCH FOUND” ifadesi eksik literatür sonucudur:** 1999 makalesinin “Banach density” sonucunu kontrol etmiş olsaydı Teorem 1 ispatındaki pencere `(6)` polinom bound’unun `H_N=O(1)` verdiği görülürdü. Bir theorem statement kelimesiyle arama yerine **nesne + birincil ispat** okumak belirleyici oldu. 1999 yalnız density-zero diye alıntılanıp bu ileri çıkarımı kanıtsız ilan edilmemelidir.
+- **CP10–12 “yeni harmonic rate” matematiksel olarak daha zayıf:** ayrı yöntemin teknik yeniliği olabilir, ancak küresel iddia bakımından 1999’dan güçlü değil. CP13’teki “yeni prefix-cylinder theorem” aynı notasyonda özgül bound, kanıtı temel residue-permutation/pigeonhole; `STANDARD`, yayın önceliği iddiası değil.
+- **Yazılı kanıt kusurları:** CP09’daki `4/15` basılı mod-18 tablodan çıkmıyor (audit: `9/32`); tanımsız LP tablosu sertifika değildir. CP10–11 büyüyen-`t` `n₀` blok açığı CP12’de tamir edilmiş. CP12 global `w↦C_w` injectivity (`C=19`) yanlıştır; sadece fixed-`q` doğrudur. CP12 iki-blok `s` toplamı yanlış kesilmiş; onarılmış sürüm `max(0,q−R)≤s≤m` kullanır. CP07 yanlış recurrence belgenin içinde düzeltilmiştir. Bu kusurlar otomatik olarak düzeltilmiş CP12 teoremini çürütmez.
+- **Kapsam sınırı:** CP12 audit’in `K>3.016526…` tavanı yalnız kendi “collision-only / frozen two-block architecture” modelindedir; bütün Collatz yöntemleri için olanaksızlık değildir. `B_t=o(t)`, `ρ>0`, `M_j→∞`, `K<3` bu çağda ispatlanmış değildir. Curry teoremi yalnız **divergent/injective** orbitlere uygulanır, sonlu çevrim dışlama teoremi değildir.
+
+## F. Okuma ve eksikler
+
+- Önce digest `arch-era-a.log`; ardından CP01–CP13 altındaki bütün okunabilir özgün `.txt` rapor/denetimler ile CP09–13 `.docx.txt` dönüştürmeleri, CP12 rational JSON/clean-room raporu; `00_MASTER_INDEX` ve `00_CURRENT_CHECKPOINTS` altındaki metinler tarandı. Daha geç CP17–CP20 metinleri yalnız bağlam için, bu ledger kapsamına eklenmedi. `.docx` ikili içeriklerin dönüştürülmüş eşlerini kullandım, gömülü ikili/şekilleri bağımsız incelemedim.
+- **Eksik asıllar:** CP01 ve CP05 klasörleri yalnız “canonical bytes pending” manifestidir; CP01/05 için teorem uydurulmadı. CP12 Audit 01 canonical aslı da eksik; diğer audit’lere dayandırıldı. CP02,03,04,06,07,08 araştırma promptlarının bazısı kaynak statüsü notudur; teorem kaynağı değiller. CP13 *ara rapordur*, tamamlanmış final CP13 değil.
+- Araştırma bulgusu değil: yerel çalışma dosyaları yalnız cwd’ye yazıldı; `/mnt/c` değiştirilmedi. `NEW-CANDIDATE` maddelerinde yayın önceliği kesin değil; MathSciNet ve özgül makale PDF taraması/bağımsız sertifika üretimi açık iş.
+
+NOVELTY_SCAN_E1_CP01_13_20260923_COMPLETE

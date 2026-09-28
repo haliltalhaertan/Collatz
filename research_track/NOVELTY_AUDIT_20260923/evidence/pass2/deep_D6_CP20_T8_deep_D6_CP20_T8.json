@@ -1,0 +1,802 @@
+[
+  {
+    "idx": 16,
+    "claim": "A01 — kritik-site basınç",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8A — Post-Audit Repair and Freeze/Task 8A V3 — FROZEN CORE + Full-Scale Audit Extension Candidate/CP20_TASK8A_CRITICAL_SITE_DENSITY_PRESSURE_THEOREM_V3.md",
+    "exact_statement": "α=log₂3; κ>1; pozitif olağan tek-Syracuse yörüngesinde F_k=⌊αk⌋, s_k=F_k−∑_{i<k}a_i=κlog₂k+O(1). g_i=F_{i+1}−F_i; tip i: g=i=a; D_i(N)=N⁻¹#{u∈[N,2N):tip i}. c=α/κ; 0<ε_r<c, ε_r→0, rε_r→∞, N_r=⌊2^((c−ε_r)r)⌋. Her birikim noktası ρ∈F={0≤ρ_1≤2−α,0≤ρ_2≤α−1,ρ_1−ρ_2≥3−2α} ve h(ρ)≥c; h=E_1+E_2+inf_{t>1}[P log₂(1/(t−1))+Q log₂(t+1/(t−1))], P=2−α−ρ_1,Q=α−1−ρ_2, E_i=M_i log₂M_i−(M_i−ρ_i)log₂(M_i−ρ_i)−ρ_i log₂ρ_i. Eşdeğer liminf_r h(D_1(N_r),D_2(N_r))≥c yalnız D∈F olan/uygun projeksiyona alınmış sonlu tipler için anlamlıdır.",
+    "program_label": "[PROVED][INDEPENDENTLY AUDITED][POST-AUDIT REPAIRED][READY TO FREEZE]",
+    "correctness": "KOSULLU-DOGRU — koşul: gerçek pozitif kritik-log yörünge varlığı; yalnız birikim noktası biçimi kanıtlı (sonlu D, F dışında kalabilir).",
+    "weakest_step": "Asıl yük: Task-6 aynı yörüngede [N_r,2N_r−r] bloklarının farklılığı; h için Q−P→0 sınırında tek kompakt-saddle geçmez, V3 iki-rejim denetimi gerekiyor. Tek başına Banach yoğunluğu kanıtı değildir.",
+    "check_code_and_output": {
+      "file": "exact_checks.py",
+      "code": "from itertools import product\nfrom math import floor,log2,log,ceil,sqrt,exp,pi\n# M02: every word of length 1,...,5 from exponent alphabet 1,2,3,4.\nct=0\nfor k in range(1,6):\n for w in product(range(1,5),repeat=k):\n  A=B=0\n  for a in w: B=3*B+2**A;A+=a\n  r=(-pow(3,-k,2**A)*B)%(2**A)\n  X=(3**k*r+B)//(2**A)\n  M=(pow(2,-A,3**k)*B)%(3**k)\n  assert (3**k*r+B)%(2**A)==0 and 1<=X<3**k and M==X\n  ct+=1\nprint('M02: exact words checked:',ct,'all 1<=X<3^k and M=X')\n# D03/D05/D06: explicit infinite exponent sequence with global critical-log\n# A_k=floor(alpha*k-kappa*log2(k))+constant eventually; prefix ensures a>=1.\nalpha=log2(3); kap=2\nAs=list(range(65))\nfor k in range(65,1201): As.append(64+floor(alpha*(k-64)-kap*log2(k/64)))\nassert min(As[k+1]-As[k] for k in range(1200))>=1\nB=0; residues=[0]; injuries=[]\nfor k in range(1,1201):\n B=3*B+2**As[k-1]; r=(-pow(3,-k,2**As[k])*B)%(2**As[k]);\n if r!=residues[-1]:injuries.append(k-1)\n residues.append(r)\nerrs=[]\nfor t,t2 in zip(injuries[1:-1],injuries[2:]):\n if t>=65 and t2>=65:\n  actual=log(1+residues[t2])/t2\n  pred=(log(3)*t-kap*log(t))/t2\n  errs.append((abs(actual-pred)*t2,t,t2))\nprint('D03/D05/D06: positive exponents:',min(As[k+1]-As[k] for k in range(1200)),'injuries',len(injuries),'max scaled trough error',round(max(x[0] for x in errs),4),'last (t,t_next)',errs[-1][1:]);print('D03 nested:',all(residues[k+1]%(2**As[k])==residues[k] for k in range(1200)))\n# M03: compare rates to softplus using non-astronomical n.\nfor k in [100,300,600]:\n A=As[k];B=0\n for j in range(k):B=3*B+2**As[j]\n r=residues[k];X=(3**k*r+B)//2**A\n rhoM=log(1+X/(1.5**k))/k if k<1400 else None\n rhor=log(1+r)/k\n print('M03 k',k,'rhoM',round(rhoM,6),'positivepart',round(max(0,rhor-log(1.5)),6),'difference',round(rhoM-max(0,rhor-log(1.5)),6))\n# A05 scale selection: real-valued log2N, not a floating 2**L rounding equality.\nc=alpha/kap\nfor N in [1000,10**12,10**50]:\n L=log2(N);r=1\n while c*r-sqrt(r)<L:r+=1\n s=c*r-L;eps=s/r\n print('A05 N digits',len(str(N)),'r',r,'sqrt(r)<=gap<2sqrt(r)',sqrt(r)<=s<2*sqrt(r),'eps',round(eps,5))\n# R03 conservative bound at threshold and beyond.\nbeta=alpha-1\nfor r in [17000,50000,1000000]:\n n=floor(beta*r)-8;u=r//3;v=r-u;m=v-u;W=ceil(8*sqrt(r*log(r+1)))\n k=ceil(u*n/r-W);ell=ceil(v*n/r-W)\n bound=2*pi*m*2**(-W/2-4-beta)+4*m*exp(-W*W/(72*alpha*m))\n print('R03 r',r,'feasible',0<=k<=ell<=n,'bound',f'{bound:.6g}')\n",
+      "relevant_output": "A05 scale examples: A05 N digits 4 r 18 sqrt(r)<=gap<2sqrt(r) True eps 0.23883 | A05 N digits 13 r 61 sqrt(r)<=gap<2sqrt(r) True eps 0.13899 | A05 N digits 51 r 229 sqrt(r)<=gap<2sqrt(r) True eps 0.06717"
+    },
+    "triviality_derivation": "Sturmian dengesi ile sıfır kusurlu kelimeleri binom×[z⁰](A(z)^P B(z)^Q) ile say; Chernoff üst sınırı 2^{(h+o(1))r}; ayrı bloklardan ≥2^{(c−o(1))r} tanesi olduğundan h≥c. Yöntem standart basınç/güvercin yuvası, tip-özel uygulama Garcia–Tal/Curry’den doğrudan çıkmaz.",
+    "queries": [
+      {
+        "provider": "arxiv",
+        "query": "Collatz critical site factor complexity topological entropy",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20critical%20site%20factor%20complexity%20topological%20entropy&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "3x+1 parity vector pressure critical log Syracuse",
+        "status": "200",
+        "endpoint": "https://api.crossref.org/works?query=3x%2B1%20parity%20vector%20pressure%20critical%20log%20Syracuse&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Collatz Banach density divergent orbit Garcia Tal",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Collatz%20Banach%20density%20divergent%20orbit%20Garcia%20Tal&size=3"
+      },
+      {
+        "provider": "arxiv",
+        "query": "Collatz reciprocal sum divergent orbit Curry",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20reciprocal%20sum%20divergent%20orbit%20Curry&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Sturmian subshift parity vector Collatz defect entropy",
+        "status": "200",
+        "endpoint": "https://api.crossref.org/works?query=Sturmian%20subshift%20parity%20vector%20Collatz%20defect%20entropy&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Terras Everett parity vector distinct blocks stopping time",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Terras%20Everett%20parity%20vector%20distinct%20blocks%20stopping%20time&size=3"
+      },
+      {
+        "provider": "openalex",
+        "query": "Collatz critical site entropy pressure",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?search=Collatz%20critical%20site%20entropy%20pressure&per-page=4"
+      },
+      {
+        "provider": "semanticscholar",
+        "query": "Collatz Garcia Tal 1999 Banach density",
+        "status": "HTTP Error 429: ",
+        "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20Garcia%20Tal%201999%20Banach%20density&limit=3&fields=title,year,abstract,externalIds,url"
+      },
+      {
+        "provider": "openalex-cites",
+        "query": "filter=cites:W40702193 (Garcia–Tal 1999); 6 kayıt: 2003/2006 Lagarias, 2018 7x±1, 2019 On the Probabilistic Proof, 2023 An Asymptotic Approach, 2025 A Numerical Verification",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?filter=cites:W40702193&per-page=75"
+      },
+      {
+        "provider": "openalex-cites",
+        "query": "filter=cites:W2192156690 (Rozier 2017), API 0 kayıt; indeks kapsama eksik olabilir",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?filter=cites:W2192156690&per-page=75"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), 245–250, Cor. 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "A direct consequence is that any orbit O(n) under H has Banach density zero (Corollary 1).",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits (2026), DOI 10.5281/zenodo.22087163",
+        "url": "https://zenodo.org/api/records/22087163",
+        "quote": "every divergent orbit has summable reciprocals; no divergent orbit satisfies gn <= B log2(n) + O(1) eventually for any B <= 1; and an occupation bound extends the exclusion to every B < 1.03585...",
+        "opened": true
+      },
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding",
+        "url": "http://arxiv.org/abs/1805.00133v6",
+        "quote": "In this paper, we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called \"3x+1\" map. First, we prove a new formula for the inverse transform. Next, we briefly review what is known about the induced automorphism and study its dynamics on the 2-adic integers. We find that it is ergodic on many small odd invariant sets, and that it has two odd cycles of period 2 in addition to its two",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 problem: An annotated bibliography (1963--1999) (sorted by author)",
+        "url": "http://arxiv.org/abs/math/0309224v13",
+        "quote": "The 3x+ 1 problem concerns iteration of the map on the integers given by T(n) = (3n+1)/2 if n is odd; T(n) = n/2 if n is even. The 3x+1 Conjecture asserts that for every positive integer n > 1 the forward orbit of n under iteration by T includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999. At present the 3x+1 Conjecture remains unsolved.",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 Problem: An Annotated Bibliography, II (2000-2009)",
+        "url": "http://arxiv.org/abs/math/0608208v6",
+        "quote": "The 3x+1 problem concerns iteration of the map T(n) =(3n+1)/2 if n odd; n/2 if n even. The 3x +1 Conjecture asserts that for every positive integer n>1 the forward orbit of n includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem published from 2000 through 2009, plus some later papers that were preprints by 2009. This is a sequel to an annotated bibliography on the 3x+1 problem covering 1963-1999.\n  At p",
+        "opened": true
+      },
+      {
+        "cite": "$7x\\pm1$: Close Relative of Collatz Problem (2018), Garcia–Tal OpenAlex citations listesindeki örnek, eşdeğer değil",
+        "url": "http://arxiv.org/abs/1807.00908v7",
+        "quote": "We show an iterated function of which iterates oscillate wildly and grow at a dizzying pace. We conjecture that the orbit of arbitrary positive integer always returns to 1, as in the case of Collatz function. The conjecture is supported by a heuristic argument and computational results.",
+        "opened": true
+      }
+    ],
+    "value_0_5": 2,
+    "final_verdict": "NEW-MINOR",
+    "one_line_reason": "Koşullu, sınırlı ve standart basınç yönteminin nicel kritik-tip uygulaması; bağımsız yeni makale düzeyinde değil."
+  },
+  {
+    "idx": 17,
+    "claim": "A05 — tam ölçek basınç",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8A — Post-Audit Repair and Freeze/Task 8A V3 — FROZEN CORE + Full-Scale Audit Extension Candidate/CP20_TASK8A_FULL_SCALE_ACCUMULATION_LEMMA.md",
+    "exact_statement": "A01’in bütün κ>1 kritik-log/pozitif sıradan yörünge hipotezleriyle her N_j→∞ ve her ρ∈Acc{(D_1(N_j),D_2(N_j))} için ρ∈F ve h(ρ)≥α/κ. Finite-N h(D(N)) teoremi değil: D(N) F dışında O(1/N) bulunabilir. Her yeterince büyük N=⌊2^((α/κ−ε)r)⌋, ε→0, rε→∞.",
+    "program_label": "[PROVED — AUDIT EXTENSION CANDIDATE]",
+    "correctness": "KOSULLU-DOGRU — yalnız A01’in tüm uygun ε_r dizileri için düzgün ispatı geçerliyse; subsekans tamamlaması gerekir.",
+    "weakest_step": "A01 yalnız sabit, önceden seçilmiş ε_r dizileri için veriliyorsa keyfi seçilen (r_j,ε_j) yi tüm r üzerinde admissible ε_r ye uzatma ve olası tekrarları atma açık yapılmalıdır; mümkündür. Sonlu D için doğrudan h yazılamaz.",
+    "check_code_and_output": {
+      "file": "exact_checks.py",
+      "code": "from itertools import product\nfrom math import floor,log2,log,ceil,sqrt,exp,pi\n# M02: every word of length 1,...,5 from exponent alphabet 1,2,3,4.\nct=0\nfor k in range(1,6):\n for w in product(range(1,5),repeat=k):\n  A=B=0\n  for a in w: B=3*B+2**A;A+=a\n  r=(-pow(3,-k,2**A)*B)%(2**A)\n  X=(3**k*r+B)//(2**A)\n  M=(pow(2,-A,3**k)*B)%(3**k)\n  assert (3**k*r+B)%(2**A)==0 and 1<=X<3**k and M==X\n  ct+=1\nprint('M02: exact words checked:',ct,'all 1<=X<3^k and M=X')\n# D03/D05/D06: explicit infinite exponent sequence with global critical-log\n# A_k=floor(alpha*k-kappa*log2(k))+constant eventually; prefix ensures a>=1.\nalpha=log2(3); kap=2\nAs=list(range(65))\nfor k in range(65,1201): As.append(64+floor(alpha*(k-64)-kap*log2(k/64)))\nassert min(As[k+1]-As[k] for k in range(1200))>=1\nB=0; residues=[0]; injuries=[]\nfor k in range(1,1201):\n B=3*B+2**As[k-1]; r=(-pow(3,-k,2**As[k])*B)%(2**As[k]);\n if r!=residues[-1]:injuries.append(k-1)\n residues.append(r)\nerrs=[]\nfor t,t2 in zip(injuries[1:-1],injuries[2:]):\n if t>=65 and t2>=65:\n  actual=log(1+residues[t2])/t2\n  pred=(log(3)*t-kap*log(t))/t2\n  errs.append((abs(actual-pred)*t2,t,t2))\nprint('D03/D05/D06: positive exponents:',min(As[k+1]-As[k] for k in range(1200)),'injuries',len(injuries),'max scaled trough error',round(max(x[0] for x in errs),4),'last (t,t_next)',errs[-1][1:]);print('D03 nested:',all(residues[k+1]%(2**As[k])==residues[k] for k in range(1200)))\n# M03: compare rates to softplus using non-astronomical n.\nfor k in [100,300,600]:\n A=As[k];B=0\n for j in range(k):B=3*B+2**As[j]\n r=residues[k];X=(3**k*r+B)//2**A\n rhoM=log(1+X/(1.5**k))/k if k<1400 else None\n rhor=log(1+r)/k\n print('M03 k',k,'rhoM',round(rhoM,6),'positivepart',round(max(0,rhor-log(1.5)),6),'difference',round(rhoM-max(0,rhor-log(1.5)),6))\n# A05 scale selection: real-valued log2N, not a floating 2**L rounding equality.\nc=alpha/kap\nfor N in [1000,10**12,10**50]:\n L=log2(N);r=1\n while c*r-sqrt(r)<L:r+=1\n s=c*r-L;eps=s/r\n print('A05 N digits',len(str(N)),'r',r,'sqrt(r)<=gap<2sqrt(r)',sqrt(r)<=s<2*sqrt(r),'eps',round(eps,5))\n# R03 conservative bound at threshold and beyond.\nbeta=alpha-1\nfor r in [17000,50000,1000000]:\n n=floor(beta*r)-8;u=r//3;v=r-u;m=v-u;W=ceil(8*sqrt(r*log(r+1)))\n k=ceil(u*n/r-W);ell=ceil(v*n/r-W)\n bound=2*pi*m*2**(-W/2-4-beta)+4*m*exp(-W*W/(72*alpha*m))\n print('R03 r',r,'feasible',0<=k<=ell<=n,'bound',f'{bound:.6g}')\n",
+      "relevant_output": "A05 N digits 4 r 18 sqrt(r)<=gap<2sqrt(r) True eps 0.23883 | A05 N digits 13 r 61 sqrt(r)<=gap<2sqrt(r) True eps 0.13899 | A05 N digits 51 r 229 sqrt(r)<=gap<2sqrt(r) True eps 0.06717"
+    },
+    "triviality_derivation": "c=α/κ, L=log₂N. En küçük cr−√r≥L seç; √r≤s=cr−L<c+√(r−1)<2√r; ε=s/r→0, rε→∞ ve N=⌊2^{(c−ε)r}⌋. A01’i keyfi alt-diziye uygula; bu bütünüyle parametreleme/kompaktlık argümanı.",
+    "queries": [
+      {
+        "provider": "arxiv",
+        "query": "Collatz pressure critical-site multiplicative windows",
+        "status": "HTTP Error 429: Unknown Error parse no element found: line 1, column 0",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20pressure%20critical-site%20multiplicative%20windows&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Syracuse parity subshift entropy accumulation window",
+        "status": "200",
+        "endpoint": "https://api.crossref.org/works?query=Syracuse%20parity%20subshift%20entropy%20accumulation%20window&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "3x+1 factor complexity growing blocks critical logarithm",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=3x%2B1%20factor%20complexity%20growing%20blocks%20critical%20logarithm&size=3"
+      },
+      {
+        "provider": "arxiv",
+        "query": "Collatz stopping time dyadic windows critical density",
+        "status": "HTTP Error 429: Unknown Error parse no element found: line 1, column 0",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20stopping%20time%20dyadic%20windows%20critical%20density&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Collatz thermodynamic formalism parity word pressure",
+        "status": "HTTP Error 429: Too Many Requests parse Expecting value: line 1 column 1 (char 0)",
+        "endpoint": "https://api.crossref.org/works?query=Collatz%20thermodynamic%20formalism%20parity%20word%20pressure&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Syracuse Banach density critical times multiplicative",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Syracuse%20Banach%20density%20critical%20times%20multiplicative&size=3"
+      },
+      {
+        "provider": "openalex",
+        "query": "Collatz critical site entropy pressure",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?search=Collatz%20critical%20site%20entropy%20pressure&per-page=4"
+      },
+      {
+        "provider": "semanticscholar",
+        "query": "Collatz Garcia Tal 1999 Banach density",
+        "status": "HTTP Error 429: ",
+        "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20Garcia%20Tal%201999%20Banach%20density&limit=3&fields=title,year,abstract,externalIds,url"
+      },
+      {
+        "provider": "openalex-cites",
+        "query": "filter=cites:W40702193 (Garcia–Tal 1999); 6 kayıt: 2003/2006 Lagarias, 2018 7x±1, 2019 On the Probabilistic Proof, 2023 An Asymptotic Approach, 2025 A Numerical Verification",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?filter=cites:W40702193&per-page=75"
+      },
+      {
+        "provider": "openalex-cites",
+        "query": "filter=cites:W2192156690 (Rozier 2017), API 0 kayıt; indeks kapsama eksik olabilir",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?filter=cites:W2192156690&per-page=75"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding",
+        "url": "http://arxiv.org/abs/1805.00133v6",
+        "quote": "In this paper, we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called \"3x+1\" map. First, we prove a new formula for the inverse transform. Next, we briefly review what is known about the induced automorphism and study its dynamics on the 2-adic integers. We find that it is ergodic on many small odd invariant sets, and that it has two odd cycles of period 2 in addition to its two",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 problem: An annotated bibliography (1963--1999) (sorted by author)",
+        "url": "http://arxiv.org/abs/math/0309224v13",
+        "quote": "The 3x+ 1 problem concerns iteration of the map on the integers given by T(n) = (3n+1)/2 if n is odd; T(n) = n/2 if n is even. The 3x+1 Conjecture asserts that for every positive integer n > 1 the forward orbit of n under iteration by T includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999. At present the 3x+1 Conjecture remains unsolved.",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 Problem: An Annotated Bibliography, II (2000-2009)",
+        "url": "http://arxiv.org/abs/math/0608208v6",
+        "quote": "The 3x+1 problem concerns iteration of the map T(n) =(3n+1)/2 if n odd; n/2 if n even. The 3x +1 Conjecture asserts that for every positive integer n>1 the forward orbit of n includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem published from 2000 through 2009, plus some later papers that were preprints by 2009. This is a sequel to an annotated bibliography on the 3x+1 problem covering 1963-1999.\n  At p",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), 245–250, Cor. 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "A direct consequence is that any orbit O(n) under H has Banach density zero (Corollary 1).",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "A01’in bütün uygun parametre dizilerinde uniform hâli kabul edilirse yalnız √r parametre hilesiyle çıkıyor."
+  },
+  {
+    "idx": 18,
+    "claim": "M02 — negatif gölge",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module B — Pressure-Constrained Residue-Rate Extremal Search/CP20_TASK8B1_RESIDUE_REDUNDANCY_THEOREM_V2_AUDITED.md",
+    "exact_statement": "Her k≥1 ve pozitif a_0,...,a_{k−1}: A_k=∑a_i; B_0=0, B_{i+1}=3B_i+2^{A_i}; r_k≡−3^{−k}B_k (mod 2^{A_k}), 0≤r_k<2^{A_k}; X_k=(3^kr_k+B_k)/2^{A_k}; M_k≡2^{−A_k}B_k (mod 3^k) pozitif temsilci. İddia 1≤X_k<3^k, M_k=X_k.",
+    "program_label": "[PROVED][INDEPENDENTLY AUDITED][BRANCH CLOSURE][FROZEN]",
+    "correctness": "DOGRU — pozitif tam sayılı sonlu üs sözcükleri için; bu tek başına sıradan tek Collatz yörüngesi üretmez.",
+    "weakest_step": "X<3^k için yalnız r<2^A yetmez: r_{k+1}=r_k+m2^{A_k} (0≤m<2^{a_k}) uyumluluğunu ve X_{k+1}=(3X_k+1+3^{k+1}m)/2^{a_k} bağıntısını kullanmak gerekir; böylece indüksiyon geçer.",
+    "check_code_and_output": {
+      "file": "exact_checks.py",
+      "code": "from itertools import product\nfrom math import floor,log2,log,ceil,sqrt,exp,pi\n# M02: every word of length 1,...,5 from exponent alphabet 1,2,3,4.\nct=0\nfor k in range(1,6):\n for w in product(range(1,5),repeat=k):\n  A=B=0\n  for a in w: B=3*B+2**A;A+=a\n  r=(-pow(3,-k,2**A)*B)%(2**A)\n  X=(3**k*r+B)//(2**A)\n  M=(pow(2,-A,3**k)*B)%(3**k)\n  assert (3**k*r+B)%(2**A)==0 and 1<=X<3**k and M==X\n  ct+=1\nprint('M02: exact words checked:',ct,'all 1<=X<3^k and M=X')\n# D03/D05/D06: explicit infinite exponent sequence with global critical-log\n# A_k=floor(alpha*k-kappa*log2(k))+constant eventually; prefix ensures a>=1.\nalpha=log2(3); kap=2\nAs=list(range(65))\nfor k in range(65,1201): As.append(64+floor(alpha*(k-64)-kap*log2(k/64)))\nassert min(As[k+1]-As[k] for k in range(1200))>=1\nB=0; residues=[0]; injuries=[]\nfor k in range(1,1201):\n B=3*B+2**As[k-1]; r=(-pow(3,-k,2**As[k])*B)%(2**As[k]);\n if r!=residues[-1]:injuries.append(k-1)\n residues.append(r)\nerrs=[]\nfor t,t2 in zip(injuries[1:-1],injuries[2:]):\n if t>=65 and t2>=65:\n  actual=log(1+residues[t2])/t2\n  pred=(log(3)*t-kap*log(t))/t2\n  errs.append((abs(actual-pred)*t2,t,t2))\nprint('D03/D05/D06: positive exponents:',min(As[k+1]-As[k] for k in range(1200)),'injuries',len(injuries),'max scaled trough error',round(max(x[0] for x in errs),4),'last (t,t_next)',errs[-1][1:]);print('D03 nested:',all(residues[k+1]%(2**As[k])==residues[k] for k in range(1200)))\n# M03: compare rates to softplus using non-astronomical n.\nfor k in [100,300,600]:\n A=As[k];B=0\n for j in range(k):B=3*B+2**As[j]\n r=residues[k];X=(3**k*r+B)//2**A\n rhoM=log(1+X/(1.5**k))/k if k<1400 else None\n rhor=log(1+r)/k\n print('M03 k',k,'rhoM',round(rhoM,6),'positivepart',round(max(0,rhor-log(1.5)),6),'difference',round(rhoM-max(0,rhor-log(1.5)),6))\n# A05 scale selection: real-valued log2N, not a floating 2**L rounding equality.\nc=alpha/kap\nfor N in [1000,10**12,10**50]:\n L=log2(N);r=1\n while c*r-sqrt(r)<L:r+=1\n s=c*r-L;eps=s/r\n print('A05 N digits',len(str(N)),'r',r,'sqrt(r)<=gap<2sqrt(r)',sqrt(r)<=s<2*sqrt(r),'eps',round(eps,5))\n# R03 conservative bound at threshold and beyond.\nbeta=alpha-1\nfor r in [17000,50000,1000000]:\n n=floor(beta*r)-8;u=r//3;v=r-u;m=v-u;W=ceil(8*sqrt(r*log(r+1)))\n k=ceil(u*n/r-W);ell=ceil(v*n/r-W)\n bound=2*pi*m*2**(-W/2-4-beta)+4*m*exp(-W*W/(72*alpha*m))\n print('R03 r',r,'feasible',0<=k<=ell<=n,'bound',f'{bound:.6g}')\n",
+      "relevant_output": "M02: exact words checked: 1364 all 1<=X<3^k and M=X"
+    },
+    "triviality_derivation": "İç içe afin silindir: r_{k+1}=r_k+m2^{A_k}, 0≤m<2^{a_k}; X_0=0, X_{k+1}=(3X_k+1+3^{k+1}m)/2^{a_k}. Eğer 0≤X_k<3^k ise pozitif tam sayı X_{k+1}<3^{k+1} (pay < 2^{a_k}3^{k+1}); mod 3^k indirgeme M=X verir. Salt sonlu kelime/afin bijeksiyon.",
+    "queries": [
+      {
+        "provider": "arxiv",
+        "query": "Collatz negative shadow inverse parity residue 3-adic",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20negative%20shadow%20inverse%20parity%20residue%203-adic&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "3x+1 affine parity word 2-adic 3-adic endpoint",
+        "status": "200",
+        "endpoint": "https://api.crossref.org/works?query=3x%2B1%20affine%20parity%20word%202-adic%203-adic%20endpoint&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Bohm Sontacchi periodic orbit affine 2^m 3^k",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Bohm%20Sontacchi%20periodic%20orbit%20affine%202%5Em%203%5Ek&size=3"
+      },
+      {
+        "provider": "arxiv",
+        "query": "Collatz odd-only Syracuse parity vector exact cylinder",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20odd-only%20Syracuse%20parity%20vector%20exact%20cylinder&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Collatz 3-adic endpoint residue negative starting value",
+        "status": "200",
+        "endpoint": "https://api.crossref.org/works?query=Collatz%203-adic%20endpoint%20residue%20negative%20starting%20value&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Bernstein 2-adic Collatz parity conjugacy affine",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Bernstein%202-adic%20Collatz%20parity%20conjugacy%20affine&size=3"
+      },
+      {
+        "provider": "openalex",
+        "query": "Collatz parity sequence 2-adic conjugacy",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?search=Collatz%20parity%20sequence%202-adic%20conjugacy&per-page=4"
+      },
+      {
+        "provider": "semanticscholar",
+        "query": "Collatz exponent residues 2-adic 3-adic",
+        "status": "HTTP Error 429: ",
+        "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20exponent%20residues%202-adic%203-adic&limit=3&fields=title,year,abstract,externalIds,url"
+      },
+      {
+        "provider": "openalex-cites",
+        "query": "filter=cites:W2192156690 (Rozier 2017), API 0 kayıt; indeks kapsama eksik olabilir",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?filter=cites:W2192156690&per-page=75"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding",
+        "url": "http://arxiv.org/abs/1805.00133v6",
+        "quote": "In this paper, we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called \"3x+1\" map. First, we prove a new formula for the inverse transform. Next, we briefly review what is known about the induced automorphism and study its dynamics on the 2-adic integers. We find that it is ergodic on many small odd invariant sets, and that it has two odd cycles of period 2 in addition to its two",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 problem: An annotated bibliography (1963--1999) (sorted by author)",
+        "url": "http://arxiv.org/abs/math/0309224v13",
+        "quote": "The 3x+ 1 problem concerns iteration of the map on the integers given by T(n) = (3n+1)/2 if n is odd; T(n) = n/2 if n is even. The 3x+1 Conjecture asserts that for every positive integer n > 1 the forward orbit of n under iteration by T includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999. At present the 3x+1 Conjecture remains unsolved.",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 Problem: An Annotated Bibliography, II (2000-2009)",
+        "url": "http://arxiv.org/abs/math/0608208v6",
+        "quote": "The 3x+1 problem concerns iteration of the map T(n) =(3n+1)/2 if n odd; n/2 if n even. The 3x +1 Conjecture asserts that for every positive integer n>1 the forward orbit of n includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem published from 2000 through 2009, plus some later papers that were preprints by 2009. This is a sequel to an annotated bibliography on the 3x+1 problem covering 1963-1999.\n  At p",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Tam sonlu-sözcük afin/bijeksiyon cebiri; yeni matematiksel engel yok."
+  },
+  {
+    "idx": 19,
+    "claim": "M03 — iki artık hızı",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module B — Pressure-Constrained Residue-Rate Extremal Search/CP20_TASK8B1_RESIDUE_REDUNDANCY_THEOREM_V2_AUDITED.md",
+    "exact_statement": "M02 notasyonu ve küresel s_k=⌊αk⌋−A_k=κlog₂k+O(1), κ>1 altında ρ_r(k)=k⁻¹ln(1+r_k), ρ_M(k)=k⁻¹ln(1+M_k/(3/2)^k). ρ_M(k)=max{0,ρ_r(k)−ln(3/2)}+O(ln k/k). Ayrıca liminf ρ_M=max(0,liminf ρ_r−ln(3/2)).",
+    "program_label": "[PROVED][INDEPENDENTLY AUDITED][BRANCH CLOSURE][FROZEN]",
+    "correctness": "DOGRU — global O(1) kritik-log ve κ>1 p-serisi kontrolü şartıyla.",
+    "weakest_step": "B_k/3^k üst sınırının uniform olması κ>1 ve tüm k için O(1) gerektirir; liminf ρ_M>0 önceden varsayılmadan böyle sonuç iddia edilmez.",
+    "check_code_and_output": {
+      "file": "exact_checks.py",
+      "code": "from itertools import product\nfrom math import floor,log2,log,ceil,sqrt,exp,pi\n# M02: every word of length 1,...,5 from exponent alphabet 1,2,3,4.\nct=0\nfor k in range(1,6):\n for w in product(range(1,5),repeat=k):\n  A=B=0\n  for a in w: B=3*B+2**A;A+=a\n  r=(-pow(3,-k,2**A)*B)%(2**A)\n  X=(3**k*r+B)//(2**A)\n  M=(pow(2,-A,3**k)*B)%(3**k)\n  assert (3**k*r+B)%(2**A)==0 and 1<=X<3**k and M==X\n  ct+=1\nprint('M02: exact words checked:',ct,'all 1<=X<3^k and M=X')\n# D03/D05/D06: explicit infinite exponent sequence with global critical-log\n# A_k=floor(alpha*k-kappa*log2(k))+constant eventually; prefix ensures a>=1.\nalpha=log2(3); kap=2\nAs=list(range(65))\nfor k in range(65,1201): As.append(64+floor(alpha*(k-64)-kap*log2(k/64)))\nassert min(As[k+1]-As[k] for k in range(1200))>=1\nB=0; residues=[0]; injuries=[]\nfor k in range(1,1201):\n B=3*B+2**As[k-1]; r=(-pow(3,-k,2**As[k])*B)%(2**As[k]);\n if r!=residues[-1]:injuries.append(k-1)\n residues.append(r)\nerrs=[]\nfor t,t2 in zip(injuries[1:-1],injuries[2:]):\n if t>=65 and t2>=65:\n  actual=log(1+residues[t2])/t2\n  pred=(log(3)*t-kap*log(t))/t2\n  errs.append((abs(actual-pred)*t2,t,t2))\nprint('D03/D05/D06: positive exponents:',min(As[k+1]-As[k] for k in range(1200)),'injuries',len(injuries),'max scaled trough error',round(max(x[0] for x in errs),4),'last (t,t_next)',errs[-1][1:]);print('D03 nested:',all(residues[k+1]%(2**As[k])==residues[k] for k in range(1200)))\n# M03: compare rates to softplus using non-astronomical n.\nfor k in [100,300,600]:\n A=As[k];B=0\n for j in range(k):B=3*B+2**As[j]\n r=residues[k];X=(3**k*r+B)//2**A\n rhoM=log(1+X/(1.5**k))/k if k<1400 else None\n rhor=log(1+r)/k\n print('M03 k',k,'rhoM',round(rhoM,6),'positivepart',round(max(0,rhor-log(1.5)),6),'difference',round(rhoM-max(0,rhor-log(1.5)),6))\n# A05 scale selection: real-valued log2N, not a floating 2**L rounding equality.\nc=alpha/kap\nfor N in [1000,10**12,10**50]:\n L=log2(N);r=1\n while c*r-sqrt(r)<L:r+=1\n s=c*r-L;eps=s/r\n print('A05 N digits',len(str(N)),'r',r,'sqrt(r)<=gap<2sqrt(r)',sqrt(r)<=s<2*sqrt(r),'eps',round(eps,5))\n# R03 conservative bound at threshold and beyond.\nbeta=alpha-1\nfor r in [17000,50000,1000000]:\n n=floor(beta*r)-8;u=r//3;v=r-u;m=v-u;W=ceil(8*sqrt(r*log(r+1)))\n k=ceil(u*n/r-W);ell=ceil(v*n/r-W)\n bound=2*pi*m*2**(-W/2-4-beta)+4*m*exp(-W*W/(72*alpha*m))\n print('R03 r',r,'feasible',0<=k<=ell<=n,'bound',f'{bound:.6g}')\n",
+      "relevant_output": "M03 k 100 rhoM 0.681729 positivepart 0.407962 difference 0.273767 | M03 k 300 rhoM 0.690811 positivepart 0.592641 difference 0.09817 | M03 k 600 rhoM 0.692795 positivepart 0.64199 difference 0.050805"
+    },
+    "triviality_derivation": "B_k/3^k=∑_{j<k}2^{A_j}/3^{j+1}∈[1/3,C], çünkü terimler O(j^{−κ}); M=X=2^{s_k+{αk}}(r+B/3^k)=k^κ Θ(1+r). log M/k=ρ_r+O(log k/k); (1/k)log(1+e^{ku})=max(0,u)+O(1/k).",
+    "queries": [
+      {
+        "provider": "arxiv",
+        "query": "Collatz Kramer residue rate 2-adic 3-adic critical log",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20Kramer%20residue%20rate%202-adic%203-adic%20critical%20log&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Syracuse affine offset cross-adic endpoint rate",
+        "status": "HTTP Error 429: Too Many Requests parse Expecting value: line 1 column 1 (char 0)",
+        "endpoint": "https://api.crossref.org/works?query=Syracuse%20affine%20offset%20cross-adic%20endpoint%20rate&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Collatz 3-adic parity residue growth logarithmic",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Collatz%203-adic%20parity%20residue%20growth%20logarithmic&size=3"
+      },
+      {
+        "provider": "arxiv",
+        "query": "3x+1 critical log stopping time residual rate",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:3x%2B1%20critical%20log%20stopping%20time%20residual%20rate&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Collatz divergence 2-adic starting residue growth",
+        "status": "200",
+        "endpoint": "https://api.crossref.org/works?query=Collatz%20divergence%202-adic%20starting%20residue%20growth&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Collatz reciprocal sum diverging trajectory inverse parity",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Collatz%20reciprocal%20sum%20diverging%20trajectory%20inverse%20parity&size=3"
+      },
+      {
+        "provider": "openalex",
+        "query": "Collatz exponent residues 2-adic 3-adic",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?search=Collatz%20exponent%20residues%202-adic%203-adic&per-page=4"
+      },
+      {
+        "provider": "semanticscholar",
+        "query": "Collatz parity sequence 2-adic conjugacy",
+        "status": "HTTP Error 429: ",
+        "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20parity%20sequence%202-adic%20conjugacy&limit=3&fields=title,year,abstract,externalIds,url"
+      },
+      {
+        "provider": "openalex-cites",
+        "query": "filter=cites:W2192156690 (Rozier 2017), API 0 kayıt; indeks kapsama eksik olabilir",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?filter=cites:W2192156690&per-page=75"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding",
+        "url": "http://arxiv.org/abs/1805.00133v6",
+        "quote": "In this paper, we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called \"3x+1\" map. First, we prove a new formula for the inverse transform. Next, we briefly review what is known about the induced automorphism and study its dynamics on the 2-adic integers. We find that it is ergodic on many small odd invariant sets, and that it has two odd cycles of period 2 in addition to its two",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits (2026), DOI 10.5281/zenodo.22087163",
+        "url": "https://zenodo.org/api/records/22087163",
+        "quote": "every divergent orbit has summable reciprocals; no divergent orbit satisfies gn <= B log2(n) + O(1) eventually for any B <= 1; and an occupation bound extends the exclusion to every B < 1.03585...",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 Problem: An Annotated Bibliography, II (2000-2009)",
+        "url": "http://arxiv.org/abs/math/0608208v6",
+        "quote": "The 3x+1 problem concerns iteration of the map T(n) =(3n+1)/2 if n odd; n/2 if n even. The 3x +1 Conjecture asserts that for every positive integer n>1 the forward orbit of n includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem published from 2000 through 2009, plus some later papers that were preprints by 2009. This is a sequel to an annotated bibliography on the 3x+1 problem covering 1963-1999.\n  At p",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "M02 + yakınsak p-serisi + standart softplus eşitsizliği."
+  },
+  {
+    "idx": 20,
+    "claim": "D03 — plato/oran ikilemi",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Results/CP20_TASK8B2_D0_RATE_STABILIZATION_DICHOTOMY_THEOREM_V2_AUDITED_FROZEN.md",
+    "exact_statement": "Pozitif a_i, A_k=∑_{i<k}a_i, B_{k+1}=3B_k+2^{A_k}, r_k∈[0,2^{A_k}) ve ρ_r(k)=ln(1+r_k)/k. L=lim A_k ln2/k∈(0,∞] varsa r_k ya sonlu sabit (pozitif olağan LEVEL-3 gerçekleştirici ve ρ_r→0), ya sonsuz artış/jump ve limsup ρ_r=L. 0<L<∞ halinde ayrıca gerçekleştirici ⇔ r_k plato ⇔ ρ_r→0 ⇔ limsup ρ_r<L. L=∞ için yalnız limsup=∞ ve stabilite alternatifi.",
+    "program_label": "[PROVED — POST-AUDIT STRENGTHENING][NOT INDEPENDENTLY AUDITED]; [PROVED SYNTHESIS / RATE FORMULATION]",
+    "correctness": "DOGRU — sınır L varsa, pozitif üsler, LEVEL-3 tam değerleme silindirlerinin iç içeliği doğrulandığında.",
+    "weakest_step": "Kanonik mod 2^{A_k} temsilci sabit ise tam değerleme R_k mod 2^{A_k+1} de sabit mi? İç içelik ve a_k≥1 sayesinde evet; sınır L=0 olursa <L testi kurulamaz.",
+    "check_code_and_output": {
+      "file": "exact_checks.py",
+      "code": "from itertools import product\nfrom math import floor,log2,log,ceil,sqrt,exp,pi\n# M02: every word of length 1,...,5 from exponent alphabet 1,2,3,4.\nct=0\nfor k in range(1,6):\n for w in product(range(1,5),repeat=k):\n  A=B=0\n  for a in w: B=3*B+2**A;A+=a\n  r=(-pow(3,-k,2**A)*B)%(2**A)\n  X=(3**k*r+B)//(2**A)\n  M=(pow(2,-A,3**k)*B)%(3**k)\n  assert (3**k*r+B)%(2**A)==0 and 1<=X<3**k and M==X\n  ct+=1\nprint('M02: exact words checked:',ct,'all 1<=X<3^k and M=X')\n# D03/D05/D06: explicit infinite exponent sequence with global critical-log\n# A_k=floor(alpha*k-kappa*log2(k))+constant eventually; prefix ensures a>=1.\nalpha=log2(3); kap=2\nAs=list(range(65))\nfor k in range(65,1201): As.append(64+floor(alpha*(k-64)-kap*log2(k/64)))\nassert min(As[k+1]-As[k] for k in range(1200))>=1\nB=0; residues=[0]; injuries=[]\nfor k in range(1,1201):\n B=3*B+2**As[k-1]; r=(-pow(3,-k,2**As[k])*B)%(2**As[k]);\n if r!=residues[-1]:injuries.append(k-1)\n residues.append(r)\nerrs=[]\nfor t,t2 in zip(injuries[1:-1],injuries[2:]):\n if t>=65 and t2>=65:\n  actual=log(1+residues[t2])/t2\n  pred=(log(3)*t-kap*log(t))/t2\n  errs.append((abs(actual-pred)*t2,t,t2))\nprint('D03/D05/D06: positive exponents:',min(As[k+1]-As[k] for k in range(1200)),'injuries',len(injuries),'max scaled trough error',round(max(x[0] for x in errs),4),'last (t,t_next)',errs[-1][1:]);print('D03 nested:',all(residues[k+1]%(2**As[k])==residues[k] for k in range(1200)))\n# M03: compare rates to softplus using non-astronomical n.\nfor k in [100,300,600]:\n A=As[k];B=0\n for j in range(k):B=3*B+2**As[j]\n r=residues[k];X=(3**k*r+B)//2**A\n rhoM=log(1+X/(1.5**k))/k if k<1400 else None\n rhor=log(1+r)/k\n print('M03 k',k,'rhoM',round(rhoM,6),'positivepart',round(max(0,rhor-log(1.5)),6),'difference',round(rhoM-max(0,rhor-log(1.5)),6))\n# A05 scale selection: real-valued log2N, not a floating 2**L rounding equality.\nc=alpha/kap\nfor N in [1000,10**12,10**50]:\n L=log2(N);r=1\n while c*r-sqrt(r)<L:r+=1\n s=c*r-L;eps=s/r\n print('A05 N digits',len(str(N)),'r',r,'sqrt(r)<=gap<2sqrt(r)',sqrt(r)<=s<2*sqrt(r),'eps',round(eps,5))\n# R03 conservative bound at threshold and beyond.\nbeta=alpha-1\nfor r in [17000,50000,1000000]:\n n=floor(beta*r)-8;u=r//3;v=r-u;m=v-u;W=ceil(8*sqrt(r*log(r+1)))\n k=ceil(u*n/r-W);ell=ceil(v*n/r-W)\n bound=2*pi*m*2**(-W/2-4-beta)+4*m*exp(-W*W/(72*alpha*m))\n print('R03 r',r,'feasible',0<=k<=ell<=n,'bound',f'{bound:.6g}')\n",
+      "relevant_output": "D03/D05/D06: positive exponents: 1 injuries 785 max scaled trough error 18.3129 last (t,t_next) (1198, 1199) | D03 nested: True"
+    },
+    "triviality_derivation": "İç içe r_{k+1}≡r_k mod 2^{A_k}; sıçrama halinde r_{k+1}≥2^{A_k}, öte yandan r_{k+1}<2^{A_{k+1}}. A_k ln2/k→L olduğundan sonsuz sıçrama limsup= L; sabit r ise ρ→0 ve bilinen parity-cylinder bijeksiyonuyla pozitif başlangıç değeridir.",
+    "queries": [
+      {
+        "provider": "arxiv",
+        "query": "Collatz parity cylinders 2-adic residue stabilization",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20parity%20cylinders%202-adic%20residue%20stabilization&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Syracuse inverse parity orbit 2-adic integer ordinary positive",
+        "status": "200",
+        "endpoint": "https://api.crossref.org/works?query=Syracuse%20inverse%20parity%20orbit%202-adic%20integer%20ordinary%20positive&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Collatz return word residue injury digit expansion",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Collatz%20return%20word%20residue%20injury%20digit%20expansion&size=3"
+      },
+      {
+        "provider": "arxiv",
+        "query": "3x+1 starting residue growth limsup ceiling 2-adic",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:3x%2B1%20starting%20residue%20growth%20limsup%20ceiling%202-adic&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Collatz affine 2^m 3^k exact valuation cylinder",
+        "status": "HTTP Error 429: Too Many Requests parse Expecting value: line 1 column 1 (char 0)",
+        "endpoint": "https://api.crossref.org/works?query=Collatz%20affine%202%5Em%203%5Ek%20exact%20valuation%20cylinder&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Terras Everett parity sequence bijection finite word",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Terras%20Everett%20parity%20sequence%20bijection%20finite%20word&size=3"
+      },
+      {
+        "provider": "openalex",
+        "query": "Collatz parity sequence 2-adic conjugacy",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?search=Collatz%20parity%20sequence%202-adic%20conjugacy&per-page=4"
+      },
+      {
+        "provider": "semanticscholar",
+        "query": "Collatz continued fractions plateau sparse injuries",
+        "status": "HTTP Error 429: ",
+        "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20continued%20fractions%20plateau%20sparse%20injuries&limit=3&fields=title,year,abstract,externalIds,url"
+      },
+      {
+        "provider": "openalex-cites",
+        "query": "filter=cites:W2192156690 (Rozier 2017), API 0 kayıt; indeks kapsama eksik olabilir",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?filter=cites:W2192156690&per-page=75"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding",
+        "url": "http://arxiv.org/abs/1805.00133v6",
+        "quote": "In this paper, we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called \"3x+1\" map. First, we prove a new formula for the inverse transform. Next, we briefly review what is known about the induced automorphism and study its dynamics on the 2-adic integers. We find that it is ergodic on many small odd invariant sets, and that it has two odd cycles of period 2 in addition to its two",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 problem: An annotated bibliography (1963--1999) (sorted by author)",
+        "url": "http://arxiv.org/abs/math/0309224v13",
+        "quote": "The 3x+ 1 problem concerns iteration of the map on the integers given by T(n) = (3n+1)/2 if n is odd; T(n) = n/2 if n is even. The 3x+1 Conjecture asserts that for every positive integer n > 1 the forward orbit of n under iteration by T includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999. At present the 3x+1 Conjecture remains unsolved.",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 Problem: An Annotated Bibliography, II (2000-2009)",
+        "url": "http://arxiv.org/abs/math/0608208v6",
+        "quote": "The 3x+1 problem concerns iteration of the map T(n) =(3n+1)/2 if n odd; n/2 if n even. The 3x +1 Conjecture asserts that for every positive integer n>1 the forward orbit of n includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem published from 2000 through 2009, plus some later papers that were preprints by 2009. This is a sequel to an annotated bibliography on the 3x+1 problem covering 1963-1999.\n  At p",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "İç içe modüller + iki eşitsizlikle bir satırlık limsup ikilemi."
+  },
+  {
+    "idx": 21,
+    "claim": "D05 — yaralanma aralıklarının liminf formülü",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Audit/CP20_TASK8B2_D1_SPARSE_INJURY_GEOMETRY_THEOREM_V2_AUDITED_FROZEN.md",
+    "exact_statement": "a_i≥1, pozitif sıradan gerçekleştirici varlığı varsayılmadan küresel s_k=⌊αk⌋−A_k=κlog₂k+O(1), κ>1 ve sonsuz sıçrama t_1<t_2<... (r_{t_j+1}≠r_{t_j}) koşuluyla liminf_{k→∞} ln(1+r_k)/k=(ln 3) liminf_{j→∞} t_j/t_{j+1}. Eşdeğer sıfır liminf ⇔ bazı ardışık sıçrama oranları t_{j+1}/t_j→∞.",
+    "program_label": "[PROVED][INDEPENDENTLY AUDITED][WORDING REPAIRED][FROZEN]",
+    "correctness": "KOSULLU-DOGRU — yalnız sonsuz sıçrama varsa; sonlu sıçramada sağ taraf tanımsız (ρ_r→0).",
+    "weakest_step": "Yanlış çıkarım tehlikesi: liminf oran 0 tüm oranların sonsuza gittiği anlamına gelmez, yalnız alt-dizi. Hata terimi global O(1) denetimi gerektirir.",
+    "check_code_and_output": {
+      "file": "exact_checks.py",
+      "code": "from itertools import product\nfrom math import floor,log2,log,ceil,sqrt,exp,pi\n# M02: every word of length 1,...,5 from exponent alphabet 1,2,3,4.\nct=0\nfor k in range(1,6):\n for w in product(range(1,5),repeat=k):\n  A=B=0\n  for a in w: B=3*B+2**A;A+=a\n  r=(-pow(3,-k,2**A)*B)%(2**A)\n  X=(3**k*r+B)//(2**A)\n  M=(pow(2,-A,3**k)*B)%(3**k)\n  assert (3**k*r+B)%(2**A)==0 and 1<=X<3**k and M==X\n  ct+=1\nprint('M02: exact words checked:',ct,'all 1<=X<3^k and M=X')\n# D03/D05/D06: explicit infinite exponent sequence with global critical-log\n# A_k=floor(alpha*k-kappa*log2(k))+constant eventually; prefix ensures a>=1.\nalpha=log2(3); kap=2\nAs=list(range(65))\nfor k in range(65,1201): As.append(64+floor(alpha*(k-64)-kap*log2(k/64)))\nassert min(As[k+1]-As[k] for k in range(1200))>=1\nB=0; residues=[0]; injuries=[]\nfor k in range(1,1201):\n B=3*B+2**As[k-1]; r=(-pow(3,-k,2**As[k])*B)%(2**As[k]);\n if r!=residues[-1]:injuries.append(k-1)\n residues.append(r)\nerrs=[]\nfor t,t2 in zip(injuries[1:-1],injuries[2:]):\n if t>=65 and t2>=65:\n  actual=log(1+residues[t2])/t2\n  pred=(log(3)*t-kap*log(t))/t2\n  errs.append((abs(actual-pred)*t2,t,t2))\nprint('D03/D05/D06: positive exponents:',min(As[k+1]-As[k] for k in range(1200)),'injuries',len(injuries),'max scaled trough error',round(max(x[0] for x in errs),4),'last (t,t_next)',errs[-1][1:]);print('D03 nested:',all(residues[k+1]%(2**As[k])==residues[k] for k in range(1200)))\n# M03: compare rates to softplus using non-astronomical n.\nfor k in [100,300,600]:\n A=As[k];B=0\n for j in range(k):B=3*B+2**As[j]\n r=residues[k];X=(3**k*r+B)//2**A\n rhoM=log(1+X/(1.5**k))/k if k<1400 else None\n rhor=log(1+r)/k\n print('M03 k',k,'rhoM',round(rhoM,6),'positivepart',round(max(0,rhor-log(1.5)),6),'difference',round(rhoM-max(0,rhor-log(1.5)),6))\n# A05 scale selection: real-valued log2N, not a floating 2**L rounding equality.\nc=alpha/kap\nfor N in [1000,10**12,10**50]:\n L=log2(N);r=1\n while c*r-sqrt(r)<L:r+=1\n s=c*r-L;eps=s/r\n print('A05 N digits',len(str(N)),'r',r,'sqrt(r)<=gap<2sqrt(r)',sqrt(r)<=s<2*sqrt(r),'eps',round(eps,5))\n# R03 conservative bound at threshold and beyond.\nbeta=alpha-1\nfor r in [17000,50000,1000000]:\n n=floor(beta*r)-8;u=r//3;v=r-u;m=v-u;W=ceil(8*sqrt(r*log(r+1)))\n k=ceil(u*n/r-W);ell=ceil(v*n/r-W)\n bound=2*pi*m*2**(-W/2-4-beta)+4*m*exp(-W*W/(72*alpha*m))\n print('R03 r',r,'feasible',0<=k<=ell<=n,'bound',f'{bound:.6g}')\n",
+      "relevant_output": "D03/D05/D06: positive exponents: 1 injuries 785 max scaled trough error 18.3129 last (t,t_next) (1198, 1199)"
+    },
+    "triviality_derivation": "İki sıçrama arasında r sabit ve ln(1+r)∈[A_{t_j}ln2,A_{t_j+1}ln2]; kritik-log ile A_t ln2=t ln3−κln t+O(1), a_t=O(1); çukurda (ln3)t_j/t_{j+1}+O(log t_j/t_{j+1}). Bu hata 0, çünkü t_j≤t_{j+1}.",
+    "queries": [
+      {
+        "provider": "arxiv",
+        "query": "Collatz parity vector 2-adic residue plateau gaps",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20parity%20vector%202-adic%20residue%20plateau%20gaps&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Syracuse stopping time injury times liminf residue growth",
+        "status": "200",
+        "endpoint": "https://api.crossref.org/works?query=Syracuse%20stopping%20time%20injury%20times%20liminf%20residue%20growth&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "3x+1 carry chunk sparse jumps logarithmic critical",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=3x%2B1%20carry%20chunk%20sparse%20jumps%20logarithmic%20critical&size=3"
+      },
+      {
+        "provider": "arxiv",
+        "query": "Collatz parity subshift return word recurrence",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20parity%20subshift%20return%20word%20recurrence&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Collatz divergent orbit Banach density growth gaps",
+        "status": "HTTP Error 429: Too Many Requests parse Expecting value: line 1 column 1 (char 0)",
+        "endpoint": "https://api.crossref.org/works?query=Collatz%20divergent%20orbit%20Banach%20density%20growth%20gaps&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Collatz 2-adic integer parity starting residue recurrence",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Collatz%202-adic%20integer%20parity%20starting%20residue%20recurrence&size=3"
+      },
+      {
+        "provider": "openalex",
+        "query": "Collatz continued fractions plateau sparse injuries",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?search=Collatz%20continued%20fractions%20plateau%20sparse%20injuries&per-page=4"
+      },
+      {
+        "provider": "semanticscholar",
+        "query": "Collatz parity sequence 2-adic conjugacy",
+        "status": "HTTP Error 429: ",
+        "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20parity%20sequence%202-adic%20conjugacy&limit=3&fields=title,year,abstract,externalIds,url"
+      },
+      {
+        "provider": "openalex-cites",
+        "query": "filter=cites:W40702193 (Garcia–Tal 1999); 6 kayıt: 2003/2006 Lagarias, 2018 7x±1, 2019 On the Probabilistic Proof, 2023 An Asymptotic Approach, 2025 A Numerical Verification",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?filter=cites:W40702193&per-page=75"
+      },
+      {
+        "provider": "openalex-cites",
+        "query": "filter=cites:W2192156690 (Rozier 2017), API 0 kayıt; indeks kapsama eksik olabilir",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?filter=cites:W2192156690&per-page=75"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding",
+        "url": "http://arxiv.org/abs/1805.00133v6",
+        "quote": "In this paper, we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called \"3x+1\" map. First, we prove a new formula for the inverse transform. Next, we briefly review what is known about the induced automorphism and study its dynamics on the 2-adic integers. We find that it is ergodic on many small odd invariant sets, and that it has two odd cycles of period 2 in addition to its two",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), 245–250, Cor. 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "A direct consequence is that any orbit O(n) under H has Banach density zero (Corollary 1).",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 problem: An annotated bibliography (1963--1999) (sorted by author)",
+        "url": "http://arxiv.org/abs/math/0309224v13",
+        "quote": "The 3x+ 1 problem concerns iteration of the map on the integers given by T(n) = (3n+1)/2 if n is odd; T(n) = n/2 if n is even. The 3x+1 Conjecture asserts that for every positive integer n > 1 the forward orbit of n under iteration by T includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999. At present the 3x+1 Conjecture remains unsolved.",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "İç içe silindirlerin plato uçları ile doğrudan aralık hesabı."
+  },
+  {
+    "idx": 22,
+    "claim": "D06 — plato çukuru",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Audit/CP20_TASK8B2_D1_SPARSE_INJURY_GEOMETRY_THEOREM_V2_AUDITED_FROZEN.md",
+    "exact_statement": "D05 hipotezleri ve sonsuz ardışık sıçramalar altında ρ_r(t_{j+1})=(ln3)t_j/t_{j+1}−κ ln(t_j)/t_{j+1}+O(1/t_{j+1}); global sabit yalnız kritik-log O(1) ve κ’ye bağlıdır.",
+    "program_label": "[PROVED][INDEPENDENTLY AUDITED][WORDING REPAIRED][FROZEN]",
+    "correctness": "KOSULLU-DOGRU — sonsuz sıçrama ve küresel kritik-log.",
+    "weakest_step": "Üst/alt silindir sınırları arası a_{t_j}ln2=O(1) için a_k nin kritik-log O(1) dan uniform sınırlı olduğu ispatlanmalı; dosyada yapılıyor.",
+    "check_code_and_output": {
+      "file": "exact_checks.py",
+      "code": "from itertools import product\nfrom math import floor,log2,log,ceil,sqrt,exp,pi\n# M02: every word of length 1,...,5 from exponent alphabet 1,2,3,4.\nct=0\nfor k in range(1,6):\n for w in product(range(1,5),repeat=k):\n  A=B=0\n  for a in w: B=3*B+2**A;A+=a\n  r=(-pow(3,-k,2**A)*B)%(2**A)\n  X=(3**k*r+B)//(2**A)\n  M=(pow(2,-A,3**k)*B)%(3**k)\n  assert (3**k*r+B)%(2**A)==0 and 1<=X<3**k and M==X\n  ct+=1\nprint('M02: exact words checked:',ct,'all 1<=X<3^k and M=X')\n# D03/D05/D06: explicit infinite exponent sequence with global critical-log\n# A_k=floor(alpha*k-kappa*log2(k))+constant eventually; prefix ensures a>=1.\nalpha=log2(3); kap=2\nAs=list(range(65))\nfor k in range(65,1201): As.append(64+floor(alpha*(k-64)-kap*log2(k/64)))\nassert min(As[k+1]-As[k] for k in range(1200))>=1\nB=0; residues=[0]; injuries=[]\nfor k in range(1,1201):\n B=3*B+2**As[k-1]; r=(-pow(3,-k,2**As[k])*B)%(2**As[k]);\n if r!=residues[-1]:injuries.append(k-1)\n residues.append(r)\nerrs=[]\nfor t,t2 in zip(injuries[1:-1],injuries[2:]):\n if t>=65 and t2>=65:\n  actual=log(1+residues[t2])/t2\n  pred=(log(3)*t-kap*log(t))/t2\n  errs.append((abs(actual-pred)*t2,t,t2))\nprint('D03/D05/D06: positive exponents:',min(As[k+1]-As[k] for k in range(1200)),'injuries',len(injuries),'max scaled trough error',round(max(x[0] for x in errs),4),'last (t,t_next)',errs[-1][1:]);print('D03 nested:',all(residues[k+1]%(2**As[k])==residues[k] for k in range(1200)))\n# M03: compare rates to softplus using non-astronomical n.\nfor k in [100,300,600]:\n A=As[k];B=0\n for j in range(k):B=3*B+2**As[j]\n r=residues[k];X=(3**k*r+B)//2**A\n rhoM=log(1+X/(1.5**k))/k if k<1400 else None\n rhor=log(1+r)/k\n print('M03 k',k,'rhoM',round(rhoM,6),'positivepart',round(max(0,rhor-log(1.5)),6),'difference',round(rhoM-max(0,rhor-log(1.5)),6))\n# A05 scale selection: real-valued log2N, not a floating 2**L rounding equality.\nc=alpha/kap\nfor N in [1000,10**12,10**50]:\n L=log2(N);r=1\n while c*r-sqrt(r)<L:r+=1\n s=c*r-L;eps=s/r\n print('A05 N digits',len(str(N)),'r',r,'sqrt(r)<=gap<2sqrt(r)',sqrt(r)<=s<2*sqrt(r),'eps',round(eps,5))\n# R03 conservative bound at threshold and beyond.\nbeta=alpha-1\nfor r in [17000,50000,1000000]:\n n=floor(beta*r)-8;u=r//3;v=r-u;m=v-u;W=ceil(8*sqrt(r*log(r+1)))\n k=ceil(u*n/r-W);ell=ceil(v*n/r-W)\n bound=2*pi*m*2**(-W/2-4-beta)+4*m*exp(-W*W/(72*alpha*m))\n print('R03 r',r,'feasible',0<=k<=ell<=n,'bound',f'{bound:.6g}')\n",
+      "relevant_output": "D03/D05/D06: positive exponents: 1 injuries 785 max scaled trough error 18.3129 last (t,t_next) (1198, 1199)"
+    },
+    "triviality_derivation": "2^{A_{t_j}}≤r_{t_{j+1}}<2^{A_{t_j+1}} ve a_{t_j}=O(1) ⇒ ln(1+r)=A_{t_j}ln2+O(1); A_t ln2=t ln3−κln t+O(1); t_{j+1} ye böl.",
+    "queries": [
+      {
+        "provider": "arxiv",
+        "query": "Collatz residue plateau trough second order logarithmic",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20residue%20plateau%20trough%20second%20order%20logarithmic&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Syracuse 2-adic injury time sparse gap critical log",
+        "status": "HTTP Error 429: Too Many Requests parse Expecting value: line 1 column 1 (char 0)",
+        "endpoint": "https://api.crossref.org/works?query=Syracuse%202-adic%20injury%20time%20sparse%20gap%20critical%20log&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Collatz affine starting residue carry O(log n)",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Collatz%20affine%20starting%20residue%20carry%20O%28log%20n%29&size=3"
+      },
+      {
+        "provider": "arxiv",
+        "query": "3x+1 parity word floor log2 3 Sturmian",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:3x%2B1%20parity%20word%20floor%20log2%203%20Sturmian&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Collatz logarithmic correction to stopping time density",
+        "status": "200",
+        "endpoint": "https://api.crossref.org/works?query=Collatz%20logarithmic%20correction%20to%20stopping%20time%20density&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Collatz cycle 2^m-3^k continued fraction plateau",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Collatz%20cycle%202%5Em-3%5Ek%20continued%20fraction%20plateau&size=3"
+      },
+      {
+        "provider": "openalex",
+        "query": "Collatz continued fractions plateau sparse injuries",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?search=Collatz%20continued%20fractions%20plateau%20sparse%20injuries&per-page=4"
+      },
+      {
+        "provider": "semanticscholar",
+        "query": "Collatz parity sequence 2-adic conjugacy",
+        "status": "HTTP Error 429: ",
+        "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20parity%20sequence%202-adic%20conjugacy&limit=3&fields=title,year,abstract,externalIds,url"
+      },
+      {
+        "provider": "openalex-cites",
+        "query": "filter=cites:W2192156690 (Rozier 2017), API 0 kayıt; indeks kapsama eksik olabilir",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?filter=cites:W2192156690&per-page=75"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding",
+        "url": "http://arxiv.org/abs/1805.00133v6",
+        "quote": "In this paper, we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called \"3x+1\" map. First, we prove a new formula for the inverse transform. Next, we briefly review what is known about the induced automorphism and study its dynamics on the 2-adic integers. We find that it is ergodic on many small odd invariant sets, and that it has two odd cycles of period 2 in addition to its two",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 problem: An annotated bibliography (1963--1999) (sorted by author)",
+        "url": "http://arxiv.org/abs/math/0309224v13",
+        "quote": "The 3x+ 1 problem concerns iteration of the map on the integers given by T(n) = (3n+1)/2 if n is odd; T(n) = n/2 if n is even. The 3x+1 Conjecture asserts that for every positive integer n > 1 the forward orbit of n under iteration by T includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999. At present the 3x+1 Conjecture remains unsolved.",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 Problem: An Annotated Bibliography, II (2000-2009)",
+        "url": "http://arxiv.org/abs/math/0608208v6",
+        "quote": "The 3x+1 problem concerns iteration of the map T(n) =(3n+1)/2 if n odd; n/2 if n even. The 3x +1 Conjecture asserts that for every positive integer n>1 the forward orbit of n includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem published from 2000 through 2009, plus some later papers that were preprints by 2009. This is a sequel to an annotated bibliography on the 3x+1 problem covering 1963-1999.\n  At p",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "D05’in ispatındaki iki silindir eşitsizliğinin açık ikinci-terim açılımı."
+  },
+  {
+    "idx": 23,
+    "claim": "R03 — CF-sol Fourier karşıteoremi",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/e7r-b3-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_B3_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+    "exact_statement": "α=log₂3, β=α−1, n_r=⌊βr⌋−8, u_r=⌊r/3⌋,v_r=r−u_r,m_r=v_r−u_r,W_r=⌈8√(r ln(r+1))⌉; r≥17000; k_r=⌈u_r n_r/r−W_r⌉, ℓ_r=⌈v_r n_r/r−W_r⌉ orijinal |k−un/r|≤W, |ℓ−vn/r|≤W penceresindedir. q_{s,j}=exp(2πi(2^{s+j−5} mod 3^s)/3^s); K(k,ℓ) tüm x_{u+1}+...+x_v=ℓ−k zayıf bileşimleri üzerindeki ∏q_{s,t_{s−1}} ortalaması. |K(k_r,ℓ_r)−1|≤2πm_r 2^{−W_r/2−4−β}+4m_r exp(−W_r²/(72αm_r))→0; dolayısıyla bütün pencerede uniform O(1/m_r) Fourier tahmini yanlıştır.",
+    "program_label": "[AUDIT PASS]",
+    "correctness": "DOGRU — belirtilen koşullu zayıf-bileşim Fourier çekirdeği için; gerçek Collatz yörüngeleri hakkında hüküm değil.",
+    "weakest_step": "Azuma Doob/martingale step bound ve yıldız-çubuk koşullu uniformluğu ile Pbad≤2m e^{−W²/(72αm)} zinciri kritik; q nun mod 3^s sarılmadan real faz olması ancak iyi olayda gösterilir. Dosyada eşik 17000 analitik türev + sayısal kontrolle denetlenmiş.",
+    "check_code_and_output": {
+      "file": "exact_checks.py",
+      "code": "from itertools import product\nfrom math import floor,log2,log,ceil,sqrt,exp,pi\n# M02: every word of length 1,...,5 from exponent alphabet 1,2,3,4.\nct=0\nfor k in range(1,6):\n for w in product(range(1,5),repeat=k):\n  A=B=0\n  for a in w: B=3*B+2**A;A+=a\n  r=(-pow(3,-k,2**A)*B)%(2**A)\n  X=(3**k*r+B)//(2**A)\n  M=(pow(2,-A,3**k)*B)%(3**k)\n  assert (3**k*r+B)%(2**A)==0 and 1<=X<3**k and M==X\n  ct+=1\nprint('M02: exact words checked:',ct,'all 1<=X<3^k and M=X')\n# D03/D05/D06: explicit infinite exponent sequence with global critical-log\n# A_k=floor(alpha*k-kappa*log2(k))+constant eventually; prefix ensures a>=1.\nalpha=log2(3); kap=2\nAs=list(range(65))\nfor k in range(65,1201): As.append(64+floor(alpha*(k-64)-kap*log2(k/64)))\nassert min(As[k+1]-As[k] for k in range(1200))>=1\nB=0; residues=[0]; injuries=[]\nfor k in range(1,1201):\n B=3*B+2**As[k-1]; r=(-pow(3,-k,2**As[k])*B)%(2**As[k]);\n if r!=residues[-1]:injuries.append(k-1)\n residues.append(r)\nerrs=[]\nfor t,t2 in zip(injuries[1:-1],injuries[2:]):\n if t>=65 and t2>=65:\n  actual=log(1+residues[t2])/t2\n  pred=(log(3)*t-kap*log(t))/t2\n  errs.append((abs(actual-pred)*t2,t,t2))\nprint('D03/D05/D06: positive exponents:',min(As[k+1]-As[k] for k in range(1200)),'injuries',len(injuries),'max scaled trough error',round(max(x[0] for x in errs),4),'last (t,t_next)',errs[-1][1:]);print('D03 nested:',all(residues[k+1]%(2**As[k])==residues[k] for k in range(1200)))\n# M03: compare rates to softplus using non-astronomical n.\nfor k in [100,300,600]:\n A=As[k];B=0\n for j in range(k):B=3*B+2**As[j]\n r=residues[k];X=(3**k*r+B)//2**A\n rhoM=log(1+X/(1.5**k))/k if k<1400 else None\n rhor=log(1+r)/k\n print('M03 k',k,'rhoM',round(rhoM,6),'positivepart',round(max(0,rhor-log(1.5)),6),'difference',round(rhoM-max(0,rhor-log(1.5)),6))\n# A05 scale selection: real-valued log2N, not a floating 2**L rounding equality.\nc=alpha/kap\nfor N in [1000,10**12,10**50]:\n L=log2(N);r=1\n while c*r-sqrt(r)<L:r+=1\n s=c*r-L;eps=s/r\n print('A05 N digits',len(str(N)),'r',r,'sqrt(r)<=gap<2sqrt(r)',sqrt(r)<=s<2*sqrt(r),'eps',round(eps,5))\n# R03 conservative bound at threshold and beyond.\nbeta=alpha-1\nfor r in [17000,50000,1000000]:\n n=floor(beta*r)-8;u=r//3;v=r-u;m=v-u;W=ceil(8*sqrt(r*log(r+1)))\n k=ceil(u*n/r-W);ell=ceil(v*n/r-W)\n bound=2*pi*m*2**(-W/2-4-beta)+4*m*exp(-W*W/(72*alpha*m))\n print('R03 r',r,'feasible',0<=k<=ell<=n,'bound',f'{bound:.6g}')\n",
+      "relevant_output": "R03 r 17000 feasible True bound 0.00172689 | R03 r 50000 feasible True bound 0.000824874 | R03 r 1000000 feasible True bound 0.000107068"
+    },
+    "triviality_derivation": "Yıldız-çubuk köprüsünde W/2 uniform sapma için Azuma+union; iyi olayda j≤βs−W/2+1 ⇒ 2^{s+j−5}<3^s ve |q−1|≤2π2^{−W/2−4−β}; ürün teleskopu ve kötü olaya 2Pbad. Standart olasılık/Fourier araçları, fakat özgül uniform B3 teoreminin somut karşıörneği ayrı bir fayda.",
+    "queries": [
+      {
+        "provider": "arxiv",
+        "query": "Collatz Fourier Bernoulli bridge microcanonical affine",
+        "status": "200",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20Fourier%20Bernoulli%20bridge%20microcanonical%20affine&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Collatz conditioned geometric 3-adic character sum",
+        "status": "200",
+        "endpoint": "https://api.crossref.org/works?query=Collatz%20conditioned%20geometric%203-adic%20character%20sum&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Syracuse weak composition bridge Fourier resonance",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Syracuse%20weak%20composition%20bridge%20Fourier%20resonance&size=3"
+      },
+      {
+        "provider": "arxiv",
+        "query": "Collatz CF-left frequency no modular wrap",
+        "status": "HTTP Error 429: Unknown Error parse no element found: line 1, column 0",
+        "endpoint": "https://export.arxiv.org/api/query?search_query=all:Collatz%20CF-left%20frequency%20no%20modular%20wrap&start=0&max_results=3"
+      },
+      {
+        "provider": "crossref",
+        "query": "Collatz character sum Fourier boundary stationary phase",
+        "status": "200",
+        "endpoint": "https://api.crossref.org/works?query=Collatz%20character%20sum%20Fourier%20boundary%20stationary%20phase&rows=3"
+      },
+      {
+        "provider": "zenodo",
+        "query": "Azuma Hoeffding weak composition bridge Collatz Fourier",
+        "status": "200",
+        "endpoint": "https://zenodo.org/api/records?q=Azuma%20Hoeffding%20weak%20composition%20bridge%20Collatz%20Fourier&size=3"
+      },
+      {
+        "provider": "openalex",
+        "query": "Collatz Syracuse affine Fourier Bernoulli bridge",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?search=Collatz%20Syracuse%20affine%20Fourier%20Bernoulli%20bridge&per-page=4"
+      },
+      {
+        "provider": "semanticscholar",
+        "query": "Collatz microcanonical bridge Fourier",
+        "status": "HTTP Error 429: ",
+        "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20microcanonical%20bridge%20Fourier&limit=3&fields=title,year,abstract,externalIds,url"
+      },
+      {
+        "provider": "openalex-cites",
+        "query": "filter=cites:W2192156690 (Rozier 2017), API 0 kayıt; indeks kapsama eksik olabilir",
+        "status": "200",
+        "endpoint": "https://api.openalex.org/works?filter=cites:W2192156690&per-page=75"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Yuan Si, A microcanonical phase transition for the Collatz affine random model, Zenodo 20027097 (preprint)",
+        "url": "https://zenodo.org/api/records/20027097",
+        "quote": "Under this conditioning the multiplicative phase becomes deterministic, and the affine Fourier coefficient at hard frequencies reduces to a primitive ternary Bernoulli-bridge transform on a real-line perpetuity.",
+        "opened": true
+      },
+      {
+        "cite": "Almost all orbits of the Collatz map attain almost bounded values",
+        "url": "http://arxiv.org/abs/1909.03562v7",
+        "quote": "Define the \\emph{Collatz map} $\\mathrm{Col} : \\mathbb{N}+1 \\to \\mathbb{N}+1$ on the positive integers $\\mathbb{N}+1 = \\{1,2,3,\\dots\\}$ by setting $\\mathrm{Col}(N)$ equal to $3N+1$ when $N$ is odd and $N/2$ when $N$ is even, and let $\\mathrm{Col}_{\\min}(N) := \\inf_{n \\in \\mathbb{N}} \\mathrm{Col}^n(N)$ denote the minimal element of the Collatz orbit $N, \\mathrm{Col}(N), \\mathrm{Col}^2(N), \\dots$. The infamous \\emph{Collatz conjecture} asserts that ",
+        "opened": true
+      },
+      {
+        "cite": "The 3x+1 Problem: An Annotated Bibliography, II (2000-2009)",
+        "url": "http://arxiv.org/abs/math/0608208v6",
+        "quote": "The 3x+1 problem concerns iteration of the map T(n) =(3n+1)/2 if n odd; n/2 if n even. The 3x +1 Conjecture asserts that for every positive integer n>1 the forward orbit of n includes the integer 1. This paper is an annotated bibliography of work done on the 3x+1 problem published from 2000 through 2009, plus some later papers that were preprints by 2009. This is a sequel to an annotated bibliography on the 3x+1 problem covering 1963-1999.\n  At p",
+        "opened": true
+      },
+      {
+        "cite": "O. Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. Comment. Math. 56 (2017), 7–23, DOI 10.7169/facm/1583",
+        "url": "https://projecteuclid.org/journals/functiones-et-approximatio-commentarii-mathematici/volume-56/issue-1/The-3x1-problem-a-lower-bound-hypothesis/10.7169/facm/1583.full",
+        "quote": "DOGRULANMADI: yayın metni Project Euclid bot duvarı nedeniyle açılamadı; başlık/yıl Crossref kaydında doğrulandı, teorem alıntısı yapılmıyor.",
+        "opened": false
+      }
+    ],
+    "value_0_5": 3,
+    "final_verdict": "NEW-MINOR",
+    "one_line_reason": "Özgül B3 pencere tahminini çürüten nicel Fourier sınır etkisi; Si’nin merkez faz-geçiş sonucu bunun aynısı değil."
+  }
+]

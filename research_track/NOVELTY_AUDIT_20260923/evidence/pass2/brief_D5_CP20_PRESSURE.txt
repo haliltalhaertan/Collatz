@@ -1,0 +1,277 @@
+ROLE MARKER: DEEP_D5_CP20_PRESSURE_20260923
+
+Sen bagimsiz bir matematik hakemi + literatur arastirmacisisin. Bir Collatz arastirma programinin onceki taramasinda "NEW-CANDIDATE" (makul aramada esdegeri bulunamadi) etiketi alan asagidaki iddialari DERINLEMESINE incele. Amac: her biri icin "gercekten yeni ve degerli mi, yoksa bilinen/onemsiz/hatali mi" sorusuna kesin cevap.
+
+BAGLAM (dogrulanmis): Garcia-Tal, "A note on the generalized 3n+1 problem", Acta Arith. 90 (1999) 245-250 (her sonsuz yorungenin Banach yogunlugu 0) ve Curry, Zenodo doi 10.5281/zenodo.22087163 (2026; iraksak yorungede sum 1/x < inf, g_n <= B log2 n + O(1) B<1.0358567 icin imkansiz; Thm 2.3 #(O cap [a,a+X)) <= C X^beta log 2X, beta>beta*=0.9653844) programin CP02-CP19 "iraksak yorunge seyrekligi" hattini ASMISTIR. Curry referanslari: De Jesus Zenodo 10.5281/zenodo.21481692 ve 10.5281/zenodo.20593925, Rozier 2017 Funct. Approx. 56, Heppner 1978, Wirsching 1998 LNM 1681. Collatz cozulmedi.
+
+HER IDDIA ICIN ZORUNLU ADIMLAR
+ S1. Kaynagi ac (dosya yolu verildi; SALT-OKUNUR). Iddianin TAM nicel ifadesini, hipotezlerini ve programin kendi etiketini alintila. ZIP ise cwd'ye ac.
+ S2. DOGRULUK: ispati oku; en zayif adimi bul. Mumkunse kucuk exact Python kontrolu yaz ve calistir (kod + cikti). Karsiornek ara. Sonuc: DOGRU / KOSULLU-DOGRU (hangi kosul) / BOSLUKLU / YANLIS.
+ S3. ONEMSIZLIK TESTI: iddia bilinen bir seyden (Terras/Everett bijeksiyonu, afin formul 2^m x_m = 3^k x_0 + B_w, Bohm-Sontacchi, basit sayim, Garcia-Tal/Curry, Inselmann, Tao, Rozier, Parseval/standart Fourier, termodinamik formalizm/topolojik entropi) birkac satirda cikiyor mu? Cikiyorsa turetmeyi yaz.
+ S4. DERIN LITERATUR: her iddia icin EN AZ 6 sorgu, hem YONTEM hem NESNE kelimeleriyle (Banach density, reciprocal sum, factor complexity, topological entropy, subshift, parity vector, stopping time, cycle, 2^m-3^k, affine, 3x-1, Fourier, character sum, collision, carry...). Kaynaklar: arXiv API (export.arxiv.org/api/query), OpenAlex (api.openalex.org/works?search=), Semantic Scholar (api.semanticscholar.org/graph/v1/paper/search?query=&fields=title,year,abstract,externalIds), Crossref, Zenodo (zenodo.org/api/records?q=). Lagarias bibliyografyalari arXiv math/0309224 ve math/0608208 tam metnini indirip ANAHTAR NESNE kelimeleri icin grep yap. Garcia-Tal 1999 ve Rozier 2017'ye ATIF YAPAN calismalari OpenAlex cites: filtresiyle listele ve baslik/ozetlerini tara. Buldugun her aday kaynagin BIRINCIL metnini (ozet ya da PDF) ac, ilgili cumleyi alintila. Acamazsan DOGRULANMADI. UYDURMA ATIF = diskalifiye.
+ S5. DEGER: yayin degeri 0-5 (0=onemsiz/ic arac, 3=kisa not/lemma, 5=bagimsiz makale) + gerekce.
+ S6. NIHAI KARAR (tek etiket): NEW-STRONG (yeni, dogru, onemsiz degil) / NEW-MINOR (yeni ama kucuk/kosullu) / TRIVIAL (bilinenden kolayca cikar) / KNOWN (yayimlanmis) / SUPERSEDED (daha guclusu yayimlanmis) / FLAWED (yanlis veya ispat bosluklu) / UNRESOLVED (neden).
+
+CIKTI (cwd'ye):
+ - deep_D5_CP20_PRESSURE.json: liste; her oge {"idx","claim","exact_statement","program_label","correctness","weakest_step","check_code_and_output","triviality_derivation","queries":[...],"candidates":[{"cite","url","quote","opened"}],"value_0_5","final_verdict","one_line_reason"}
+ - Final cevabin: Turkce, sade, her iddia icin 4-8 satir (karar + neden + en yakin kaynak), sonra ozet tablo. Son satir tam olarak:
+DEEP_D5_CP20_PRESSURE_20260923_COMPLETE
+
+INCELENECEK IDDIALAR (kaynak yollari WSL bicimi):
+[
+ {
+  "id": "T6-04",
+  "checkpoint": "CP20 Task 6",
+  "claim": "Sabit pozitif yörüngede κ>1 kritik-log kanunu varsa her 0<ε<α/κ için [N_r,2N_r−r] r-faktörleri farklı, liminf log₂p_a(r)/r≥α/κ.",
+  "program_label": "[PROVED][INDEPENDENTLY AUDITED][FROZEN]",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 7 — B=4 Zero-Critical Weighted-Pressure Barrier/CP20_PRESSURE_GENERALIZATION_FINAL_FREEZE_2026-08-26/CP20_TASK6_MAJOR_THEOREM_V3_AUDITED_FROZEN.docx.txt",
+  "verdict": "NEW-CANDIDATE",
+  "references": [
+   {
+    "cite": "Wang, An E-sequence approach to the 3x+1 problem (2019), arXiv:1809.02278, özet",
+    "url": "https://arxiv.org/abs/1809.02278",
+    "quote": "all non-periodic E-sequences ... with limsup b_n/n > log_2 3 are Ω-divergent",
+    "opened": true
+   },
+   {
+    "cite": "Garcia–Tal, Acta Arith. 90 (1999), 245–250, Teorem 1/Korolar 1",
+    "url": "https://doi.org/10.4064/aa-90-3-245-250",
+    "quote": "The Banach density of the orbit O(n) under H is zero.",
+    "opened": true
+   },
+   {
+    "cite": "Curry, Zenodo 10.5281/zenodo.22087163 (2026), Teorem 2.3, Korolar 4.3; hakem denetimi yok",
+    "url": "https://zenodo.org/records/22087163",
+    "quote": "No divergent orbit satisfies g_n ≤ B log2 n + K ... B < 1/β* = 1.0358567...",
+    "opened": true
+   },
+   {
+    "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values, arXiv:1909.03562, özet",
+    "url": "https://arxiv.org/abs/1909.03562",
+    "quote": "Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density)",
+    "opened": true
+   }
+  ],
+  "queries": [
+   "Collatz valuation sequence factor complexity repeated factors",
+   "Syracuse E-sequence Wang 4.13 prefix repetition",
+   "Collatz logarithmic stopping time parity word Inselmann"
+  ],
+  "note": "Wang öneğin tekrarı için ilave şartlar ister; Garcia/Curry değer-yoğunluğu veya g_n log tabanı bu üstel faktör alt sınırını söylemez.",
+  "idx": 11
+ },
+ {
+  "id": "T6-06",
+  "checkpoint": "CP20 Task 6",
+  "claim": "κ=1.053 deterministik controller için −41≤z_k≤1 ve p_a(r)≤43(r+1)^2; hiçbir pozitif kritik-log κ>1 yörüngesi onu gerçekleştiremez.",
+  "program_label": "[PROVED][AUDITED][FROZEN]",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 6 — Critical-Equality E-Sequence & Block Renormalization/RESULTS_MAJOR_THEOREM_AND_AUDIT_PACKAGE/CP20_TASK6_SURVIVOR_EXCLUSION_V2_AUDITED_FROZEN.docx.txt",
+  "verdict": "NEW-CANDIDATE",
+  "references": [
+   {
+    "cite": "Wang, An E-sequence approach to the 3x+1 problem (2019), arXiv:1809.02278, özet",
+    "url": "https://arxiv.org/abs/1809.02278",
+    "quote": "all non-periodic E-sequences ... with limsup b_n/n > log_2 3 are Ω-divergent",
+    "opened": true
+   },
+   {
+    "cite": "Curry, Zenodo 10.5281/zenodo.22087163 (2026), Teorem 2.3, Korolar 4.3; hakem denetimi yok",
+    "url": "https://zenodo.org/records/22087163",
+    "quote": "No divergent orbit satisfies g_n ≤ B log2 n + K ... B < 1/β* = 1.0358567...",
+    "opened": true
+   },
+   {
+    "cite": "Garcia–Tal, Acta Arith. 90 (1999), 245–250, Teorem 1/Korolar 1",
+    "url": "https://doi.org/10.4064/aa-90-3-245-250",
+    "quote": "The Banach density of the orbit O(n) under H is zero.",
+    "opened": true
+   }
+  ],
+  "queries": [
+   "Collatz valuation sequence factor complexity repeated factors",
+   "Syracuse E-sequence Wang 4.13 prefix repetition",
+   "Collatz logarithmic stopping time parity word Inselmann"
+  ],
+  "note": "Özel controller dışlaması için eşdeğer yayın bulunamadı; Curry’nin κ<1.0358567 engeli κ=1.053’e ulaşmaz, T6 alt entropiyle çelişir.",
+  "idx": 12
+ },
+ {
+  "id": "T7-02",
+  "checkpoint": "CP20 Task 7",
+  "claim": "B≥3, a_k≤B sıfır-kritik yörüngede limsup log₂p_a(r)/r≤h_B ve T6 ile κ≥α/h_B.",
+  "program_label": "[PROVED][INDEPENDENTLY AUDITED][FROZEN]",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 7 — B=4 Zero-Critical Weighted-Pressure Barrier/CP20_PRESSURE_GENERALIZATION_FINAL_FREEZE_2026-08-26/CP20_TASK7_PRESSURE_GENERALIZATION_THEOREM_V3_AUDITED_FROZEN.docx.txt",
+  "verdict": "NEW-CANDIDATE",
+  "references": [
+   {
+    "cite": "Wang, An E-sequence approach to the 3x+1 problem (2019), arXiv:1809.02278, özet",
+    "url": "https://arxiv.org/abs/1809.02278",
+    "quote": "all non-periodic E-sequences ... with limsup b_n/n > log_2 3 are Ω-divergent",
+    "opened": true
+   },
+   {
+    "cite": "Garcia–Tal, Acta Arith. 90 (1999), 245–250, Teorem 1/Korolar 1",
+    "url": "https://doi.org/10.4064/aa-90-3-245-250",
+    "quote": "The Banach density of the orbit O(n) under H is zero.",
+    "opened": true
+   },
+   {
+    "cite": "Curry, Zenodo 10.5281/zenodo.22087163 (2026), Teorem 2.3, Korolar 4.3; hakem denetimi yok",
+    "url": "https://zenodo.org/records/22087163",
+    "quote": "No divergent orbit satisfies g_n ≤ B log2 n + K ... B < 1/β* = 1.0358567...",
+    "opened": true
+   }
+  ],
+  "queries": [
+   "Collatz zero-critical weighted pressure bounded discrepancy",
+   "Sturmian parity vector local defect sum Syracuse",
+   "Collatz divergent orbit logarithmic floor Curry 2026"
+  ],
+  "note": "Chernoff/Sturmian adımları genel teknik; tam sıfır-kritik valuation dilinin bu h_B üst sınırı için eşdeğer yayın saptanmadı.",
+  "idx": 13
+ },
+ {
+  "id": "T7-04",
+  "checkpoint": "CP20 Task 7",
+  "claim": "B=3 basıncında h₃<0.523467 ve α/h₃>3.027; sıfır-kritik kritik-log pozitif B=3 yörüngede κ>3.027.",
+  "program_label": "[PROVED][INDEPENDENTLY AUDITED][FROZEN]",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 7 — B=4 Zero-Critical Weighted-Pressure Barrier/CP20_PRESSURE_GENERALIZATION_FINAL_FREEZE_2026-08-26/CP20_TASK6_STRENGTHENED_COROLLARY_V3_AUDITED_FROZEN.docx.txt",
+  "verdict": "NEW-CANDIDATE",
+  "references": [
+   {
+    "cite": "Curry, Zenodo 10.5281/zenodo.22087163 (2026), Teorem 2.3, Korolar 4.3; hakem denetimi yok",
+    "url": "https://zenodo.org/records/22087163",
+    "quote": "No divergent orbit satisfies g_n ≤ B log2 n + K ... B < 1/β* = 1.0358567...",
+    "opened": true
+   },
+   {
+    "cite": "Garcia–Tal, Acta Arith. 90 (1999), 245–250, Teorem 1/Korolar 1",
+    "url": "https://doi.org/10.4064/aa-90-3-245-250",
+    "quote": "The Banach density of the orbit O(n) under H is zero.",
+    "opened": true
+   },
+   {
+    "cite": "Wang, An E-sequence approach to the 3x+1 problem (2019), arXiv:1809.02278, özet",
+    "url": "https://arxiv.org/abs/1809.02278",
+    "quote": "all non-periodic E-sequences ... with limsup b_n/n > log_2 3 are Ω-divergent",
+    "opened": true
+   }
+  ],
+  "queries": [
+   "Collatz zero-critical weighted pressure bounded discrepancy",
+   "Sturmian parity vector local defect sum Syracuse",
+   "Collatz divergent orbit logarithmic floor Curry 2026"
+  ],
+  "note": "Curry yalnız κ<1.0358567’yi dışlar; finite-B koşuluyla bu çok daha güçlü, ama Collatz ispatı değil.",
+  "idx": 14
+ },
+ {
+  "id": "T7-05",
+  "checkpoint": "CP20 Task 7",
+  "claim": "B bilinmeden h∞<0.56931 ve κ≥α/h∞>2.784; ortak varsayımlar altında 1<κ≤2.784 olan pozitif tek-yörünge yoktur.",
+  "program_label": "[PROVED][INDEPENDENTLY AUDITED][FROZEN]",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 7 — B=4 Zero-Critical Weighted-Pressure Barrier/CP20_PRESSURE_GENERALIZATION_FINAL_FREEZE_2026-08-26/CP20_TASK7_PRESSURE_GENERALIZATION_THEOREM_V3_AUDITED_FROZEN.docx.txt",
+  "verdict": "NEW-CANDIDATE",
+  "references": [
+   {
+    "cite": "Garcia–Tal, Acta Arith. 90 (1999), 245–250, Teorem 1/Korolar 1",
+    "url": "https://doi.org/10.4064/aa-90-3-245-250",
+    "quote": "The Banach density of the orbit O(n) under H is zero.",
+    "opened": true
+   },
+   {
+    "cite": "Curry, Zenodo 10.5281/zenodo.22087163 (2026), Teorem 2.3, Korolar 4.3; hakem denetimi yok",
+    "url": "https://zenodo.org/records/22087163",
+    "quote": "No divergent orbit satisfies g_n ≤ B log2 n + K ... B < 1/β* = 1.0358567...",
+    "opened": true
+   },
+   {
+    "cite": "Wang, An E-sequence approach to the 3x+1 problem (2019), arXiv:1809.02278, özet",
+    "url": "https://arxiv.org/abs/1809.02278",
+    "quote": "all non-periodic E-sequences ... with limsup b_n/n > log_2 3 are Ω-divergent",
+    "opened": true
+   },
+   {
+    "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values, arXiv:1909.03562, özet",
+    "url": "https://arxiv.org/abs/1909.03562",
+    "quote": "Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density)",
+    "opened": true
+   },
+   {
+    "cite": "Inselmann, An approximation of the Collatz map ..., arXiv:2402.03276, özet",
+    "url": "https://arxiv.org/abs/2402.03276",
+    "quote": "almost all m∈Z+ (in the sense of natural density) fulfill ... simultaneously for all 0≤k≤α log m",
+    "opened": true
+   }
+  ],
+  "queries": [
+   "Collatz zero-critical weighted pressure bounded discrepancy",
+   "Sturmian parity vector local defect sum Syracuse",
+   "Collatz divergent orbit logarithmic floor Curry 2026"
+  ],
+  "note": "Curry’nin 1.0358567 tabanı ve Garcia–Tal’ın Banach yoğunluk 0 önermesi bu 2.784 bandını kapsamaz; sıfır-kritik ve tam log kanunu zorunludur.",
+  "idx": 15
+ },
+ {
+  "id": "E5-090",
+  "checkpoint": "bagimsiz-denetim/07-geriye-donuk-tarama",
+  "claim": "Zero-critical bounded-alphabet eşiğinin α/h_inf≈2.784010903’e güçlenmesi program içi koşullu sayım sonucudur.",
+  "program_label": "PROVED/FROZEN",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/07-geriye-donuk-tarama/RAPOR.md",
+  "verdict": "NEW-CANDIDATE",
+  "references": [
+   {
+    "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Theorem 1 / Corollary 1",
+    "url": "https://doi.org/10.4064/aa-90-3-245-250",
+    "quote": "The Banach density of P is zero. ... The Banach density of the orbit O(n) under H is zero.",
+    "opened": true
+   }
+  ],
+  "queries": [
+   "Collatz zero critical log discrepancy entropy threshold",
+   "Collatz Banach density divergent trajectory Garcia Tal",
+   "Collatz valuation word exponential factor complexity"
+  ],
+  "note": "İlgili CP20 H4/critical-log hipotezi gerekli; García–Tal nitel Banach density daha eski fakat sayısal κ eşiğini kapsamaz.",
+  "idx": 37
+ },
+ {
+  "id": "E5-096",
+  "checkpoint": "bagimsiz-denetim",
+  "claim": "Tekrarlanan faktörden üstel valuation factor-complexity alt sınırı koşullu CP20 sınıfında ileri sürülür.",
+  "program_label": "PROVED/FROZEN",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/GECMIS.md",
+  "verdict": "NEW-CANDIDATE",
+  "references": [
+   {
+    "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Theorem 1 / Corollary 1",
+    "url": "https://doi.org/10.4064/aa-90-3-245-250",
+    "quote": "The Banach density of P is zero. ... The Banach density of the orbit O(n) under H is zero.",
+    "opened": true
+   }
+  ],
+  "queries": [
+   "Collatz valuation word exponential factor complexity repeated factor",
+   "Collatz parity vector factor complexity Dubickas Wang",
+   "Collatz Banach density sparsity Garcia Tal"
+  ],
+  "note": "Garcia–Tal orbit Banach-density eşdeğeri değildir; eski taramanın Wang/Dubickas yakın komşu notları tek başına equivalence sertifikası değil.",
+  "idx": 39
+ },
+ {
+  "id": "E5-097",
+  "checkpoint": "bagimsiz-denetim",
+  "claim": "Ağırlıklı basınç valuation kelimesine koşullu factor-complexity üst sınırı verir.",
+  "program_label": "PROVED/FROZEN",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/GECMIS.md",
+  "verdict": "NEW-CANDIDATE",
+  "references": [],
+  "queries": [
+   "Collatz valuation word weighted pressure upper factor complexity",
+   "Collatz parity word stopping time distribution entropy",
+   "Collatz Garcia Tal Banach density factor complexity"
+  ],
+  "note": "Nitel trajectory Banach density bu sözde-kelime üst sınırını kapsamaz; Collatz çözümü yok.",
+  "idx": 40
+ }
+]

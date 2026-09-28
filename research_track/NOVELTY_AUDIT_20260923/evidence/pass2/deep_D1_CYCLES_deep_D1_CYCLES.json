@@ -1,0 +1,600 @@
+[
+  {
+    "idx": 0,
+    "claim": "İlk crossing indeksi K≥72.057.431.991; eski 49.547.666.544/58.337.919.098.",
+    "exact_statement": "S1 CP02 §3–4 [EXACT]: α=log₂3, A_j=Σ_{i<j}a_i, D_j=A_j−jα; minimal pozitif tek karşıörnek N>2^71 ve ilk K≥1 için D_K>0, D_j≤0 (j<K) ise 0<A_K/K−α≤K^−1 log₂(1+F_K/(3N)), F_K=Σ_{j<K}2^{−{jα}}≤K; Farey üst komşuları ile K≥72,057,431,991. Önceki Legendre değerleri sırasıyla 49,547,666,544 ve 58,337,919,098.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "correctness": "KOSULLU-DOGRU (ilk crossing mevcut ve minimum karşıörnek; 2^71 Barina girdisi)",
+    "weakest_step": "CP01 temel eşitsizliğinin ilkinin orijinal baytları mevcut değil; §3.1 orbit özdeşliğinden yeniden çıkar: n_K≥N ve n_K=(3^K/2^{A_K})(N+Σ2^{D_j}/3). Farey aralığını düşük payda tamamen kapatma adımı ve N sınırı kritik. Döngü K_odd ile ilk-crossing K farklıdır.",
+    "check_code_and_output": "Workspace deep_D1_CYCLES_checks.py: alpha=ln(3)/ln(2) 90 basamak; U=10439860591/6586818670, L=103768467013/65470613321, M=114208327604/72057431991. Çıktı: L<alpha<M<U: True; det L,U: -1; U-alpha=2.21724377580880245586537661e-21; M-alpha=1.10336069332083493019933257e-22; 3*2^69<2^71: True. L,M ve M,U determinantları da ±1 (doğrudan integer çarpımı). Decimal test exact sertifika değildir; CP02 rasyonel log aralık sertifikası ayrıca tarif ediyor.\nÇalıştırılmış ortak kontrol kodu (python3 deep_D1_CYCLES_checks.py):\nfrom decimal import Decimal,getcontext\nfrom fractions import Fraction\nfrom itertools import product\ngetcontext().prec=90\nalpha=Decimal(3).ln()/Decimal(2).ln()\nU=Fraction(10439860591,6586818670); L=Fraction(103768467013,65470613321);M=Fraction(114208327604,72057431991)\na=lambda f:Decimal(f.numerator)/Decimal(f.denominator)\nprint('CP02', 'L<alpha<M<U:',a(L)<alpha<a(M)<a(U),'det L,U:',L.numerator*U.denominator-U.numerator*L.denominator,'gaps:',str(a(U)-alpha)[:28],str(a(M)-alpha)[:28]); print('Hercher threshold', (3*2**69)<2**71)\n# CP26 scan nearest powers for each k\nbad=[];mindiff=None\nfor k in range(1,17013):\n three=3**k; f=three.bit_length()-1\n for m in (f,f+1):\n  if not (abs(2**m-three)*2**(k+1)>three-2**k):bad.append((k,m))\nprint('CP26 nearest scan <=17012:',len(bad),'failures',bad[:3]); print('CP26 LMN numeric',Decimal('24.34')*Decimal(3).ln()*441,Decimal(17013)*Decimal(2).ln())\n# CP25 exhaustive small words, 3x+-1, leading 1, all rotations\ncounts=[0,0,0]\nfor m in range(1,12):\n for t in product((0,1),repeat=m-1):\n  w=(1,)+t;k=sum(w);p=3;D=2**m-p**k\n  if D==0:continue\n  b=1 if D>0 else -1;A=abs(D)\n  def B(w):\n   c=0; pos=0;rem=k\n   for ep in w:\n    if ep:c+=p**(rem-1)*2**pos;rem-=ep;pos+=1\n   return c\n  b0=B(w); h=[];qn=[]\n  for j in range(m):\n   r=w[j:]+w[:j];Br=B(r);hr=(Br*pow(A,-1,2**m))%(2**m);hr=hr or 2**m\n   h.append(hr);qn.append(Br>=A*hr)\n  if all(qn):counts[0]+=1;counts[1]+=b0%A==0;counts[2]+=b0%A!=0\nprint('CP25 m<=11 premise/integral/counter:',counts)\n# CP27 construct simple K=6 M=10 q=2 (2^10>3^6) s=3,3, e0=4, e1=6; gaps=1,1,2,1,1,4 ; D etc\nK,M,q=6,10,2;s=[3,3];e=[(3**s[0]).bit_length()-1,0];e[1]=M-e[0];g=[]\nfor sj,ej in zip(s,e):g += [1]*(sj-1)+[ej-sj+1]\nB=sum(3**(K-1-i)*2**sum(g[:i]) for i in range(K));D=2**M-3**K\nprint('CP27 example s,e,g,D,B,integral',s,e,g,D,B,B%D==0,'proper delta negative',2**e[0]<3**s[0]);print('CP27 x0',Fraction(B,D))\n\nÇıktı:\nCP02 L<alpha<M<U: True det L,U: -1 gaps: 2.21724377580880245586537661 1.10336069332083493019933257\nHercher threshold True\nCP26 nearest scan <=17012: 0 failures []\nCP26 LMN numeric 11792.4383898261693408550786584121755621438847982359232499531048956048454937509555338833791 11792.5129828663495491153700823679579526684837858710226383551290015111056905704161966025528\nCP25 m<=11 premise/integral/counter: [14, 14, 0]\nCP27 example s,e,g,D,B,integral [3, 3] [4, 6] [1, 1, 2, 1, 1, 4] 295 817 False proper delta negative True\nCP27 x0 817/295",
+    "triviality_derivation": "İlk geçişte n_K/N=2^{−D_K}(1+Σ2^{D_j}/(3N))≥1; o halde 0<A_K/K−α<1/(3N ln2). Farey üst-komşu sınıflaması U−α≈2.217e−21>1/(3·2^71 ln2)≈2.037e−22, q<q_M olan üst yaklaşımlar U veya yukarıdadır. K≥q_M. Crandall/Simons–de Weger aynı yöntemleri DÖNGÜYE uygular, genel ilk-geçiş olayı için aynı cümle değildir.",
+    "queries": [
+      {
+        "query": "Collatz first crossing coefficient stopping time continued fractions",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "On the average stopping time of the Collatz map in $F_2[x]$",
+          "Continued fractions"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Afirst+AND+all%3Acrossing&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Collatz cycle length lower bound Hercher odd numbers Barina",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Bit-Position Dynamics and a Lower Bound for Collatz Cycle Length",
+          "Computational Verification of the Collatz Problem"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Acycle+AND+all%3Alength&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "3x+1 first stopping time Farey semiconvergents",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Portfolio Problems Stopping at First Hitting Time with Application to Default Risk",
+          "Farey, John"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3Afirst+AND+all%3Astopping&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Collatz minimum cycle reciprocal sum Eliahou",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Resolution of the Collatz Conjecture: A Rigorous Analysis of Collatz Sequences and their Unique Cycle",
+          "Resolution of the Collatz Conjecture: A Rigorous Analysis of Collatz Sequences and their Unique Cycle"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aminimum+AND+all%3Acycle&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Collatz parity vector Diophantine approximation 2^m 3^k",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "The Collatz Conjecture as a Diophantine Equation",
+          "Diophantine Approximation and Diophantine Equations"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aparity+AND+all%3Avector&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Syracuse local minima coefficient crossing density",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Outlier detection based on local minima density",
+          "Local Energy Minima and Density of Energy Barriers in Dense Clusters of Magnetic Nanoparticles"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ASyracuse+AND+all%3Alocal+AND+all%3Aminima&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Hercher, There are no Collatz m-Cycles with m≤91, J. Integer Seq. 26 (2023), Corollary 29 (yazarın asıl PDF okundu)",
+        "url": "https://cs.uwaterloo.ca/journals/JIS/VOL26/Hercher/hercher5.pdf",
+        "quote": "If X0 ≥ 1536 · 2^60 = 3 · 2^69 then every nontrivial cycle contains at least K > 1.375 · 10^11 odd numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Hercher, Corrigendum to Article 23.3.5, 14 June 2026 (PDF okundu)",
+        "url": "https://cs.uwaterloo.ca/journals/JIS/VOL26/Hercher/corrigendum.pdf",
+        "quote": "The derivation of the inequalities ... in the proof of Theorem 21 at the bottom of page 14 contains an error. To show the statement ... we can proceed as follows.",
+        "opened": true
+      },
+      {
+        "cite": "Simons–de Weger, Acta Arith. 117 (2005), §1.3, Crandall lemma",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "If p_n/q_n is any convergent to δ with n ≥ 4, then for a nontrivial m-cycle, K > min{q_n, 2x_min/(q_n+q_(n+1))}.",
+        "opened": true
+      },
+      {
+        "cite": "Barina, Improved verification limit for the convergence of the Collatz conjecture, J. Supercomputing 81 (2025), publisher abstract indexed at Semantic Scholar",
+        "url": "https://doi.org/10.1007/s11227-025-07337-0",
+        "quote": "We introduce a new result that pushes the limit for which the conjecture is verified up to 2^{71}.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. 56 (2017), arXiv:1510.01610v4 PDF",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "It is known that finite sequences of iterations with a given length and a given number of odd terms have some combinatorial properties modulo powers of two.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences, Discrete Mathematics (2026), arXiv:2502.00948 original PDF",
+        "url": "https://arxiv.org/pdf/2502.00948",
+        "quote": "Terras further conjectured that the proportion of odd terms encountered when starting with an integer n ≥ 2 is sufficient to determine its stopping time, namely, the number of iterations needed to descend below n.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal üzerine atıf: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019), yayımlanmış özgün özet (OpenAlex abstract_inverted_index)",
+        "url": "https://doi.org/10.1155/2019/6814378",
+        "quote": "A new approach towards probabilistic proof of the convergence of the Collatz conjecture is described via identifying a sequential correlation of even natural numbers by divisions by 2",
+        "opened": true
+      },
+      {
+        "cite": "Rozier 2017 üzerine atıf: Rozier, Are the Collatz and abc conjectures related? arXiv:2306.15284, birincil PDF, abstract",
+        "url": "https://arxiv.org/pdf/2306.15284",
+        "quote": "assuming the abc conjecture true is helpful to improve the lower bound of integers initiating a particular type of Collatz sequences, namely finite sequences of a given length where all terms but one are odd",
+        "opened": true
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "NEW-MINOR",
+    "one_line_reason": "Farey ilk-geçiş eşiği koşullu ve sayısal küçük nottur; Hercher corrigendum sonrası döngüler için Barina + Hercher daha yüksek ayrı bir K_odd eşiği verir, ilk-crossing ifadesini birebir aşmaz.",
+    "literature_limits": "OpenAlex works ve cites: filtresi 429 (ücretsiz IP bütçesi dolmuş); arXiv API 30/30 sorgu 429. Crossref sonuçları ve açılan doğrudan PDFler kullanıldı. Hercher düzeltmesi Teorem 21 kanıtındaki hatayı onarır; Cor.29 geri çekilmez. Hercher JIS asıl PDF ve 2026 corrigendum birincil metinleri indirildi (hercher5.pdf, corrigendum.pdf, metinleri cwd’de); corrigendum yalnız Theorem 21 ispatını düzeltir, Corollary 29 geri çekilmez. K_odd döngü uzunluğudur, ilk crossing indeksiyle aynı değildir.",
+    "research_method_log": "Lagarias math/0309224 (74 sayfa), math/0608208 (42 sayfa) indirildi, parity, cycle, Steiner, Eliahou, Sturmian, Rozier, 2^m-3^k terimleri PDF metninde arandı. OpenAlex cites: filtre Garcia–Tal için HTTP200 6, Rozier için HTTP200 0; Semantic Scholar Rozier için 7 kaydı gösterdi, dolayısıyla 0 bir indeks/sürüm sınırlamasıdır. arXiv API sorguları HTTP429; Crossref 30 sorguda çoğunlukla 200 ve gürültülü sonuçlar. Zenodo 5 hedef sorgu 200, sağlam eşdeğer yok. LMN/Steiner/Eliahou birincil metinleri ve bütün atıf metinleri DOGRULANMADI; kayıt başlığı/özeti teoremi kanıtlamaz.",
+    "citation_sweep": "OpenAlex works filter=cites:W40702193 (Garcia–Tal, DOI 10.4064/aa-90-3-245-250): HTTP 200, 6 eser: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019); An Asymptotic Approach for the Collatz Conjecture (2023); Lagarias annotated bibliyografyaları math/0309224 ve math/0608208; 7x±1: Close Relative of Collatz Problem (2018); A Numerical Verification for Asymptotic Approach of the Collatz Conjecture (2025). OpenAlex filter=cites:W2192156690 (Rozier, DOI 10.7169/facm/1583): HTTP 200, 0 eser [dizin kapsam sınırı]. Semantic Scholar /paper/DOI:10.7169/facm/1583/citations HTTP 200: 7 eser: Furstenberg Topology and Collatz Problem (2025); Paradoxical behavior in Collatz sequences (2025/2026); Are the Collatz and abc Conjectures Related? (2023/2026); High-uncertainty audio signal encryption based on the Collatz conjecture (2019); Parity Sequences of the 3x+1 Map on the 2-adic Integers and Euclidean Embedding (2018); The Proof of the 3X + 1 Conjecture (2022); Computer-Based Validation of 3n+1 Hypothesis for Numbers 3n−1 (2019). İlk üç ilgili Rozier bağlantısından Rozier–Terracol ve Rozier abc asıl PDF açıldı; geriye kalan makalelerin yalnız indeks başlığı/özeti görüldü: tam metin DOGRULANMADI. OpenAlex alıntı dizininin Semantic Scholar ile uyuşmaması sonuçların tam bibliyografya olmadığını gösterir."
+  },
+  {
+    "idx": 38,
+    "claim": "q=53,15601,31867 tekrar blokları n₀≥2^107,2^15780,2^50495 verir.",
+    "exact_statement": "S1 PATTERNLER.md §ANA BULGU [EXACT/OBSERVATION]: controller a_k=g_k−d_k, α=log₂3, κ=1.053; a[u:u+r]=a[v:v+r] ve n_u≠n_v için 2^{A(W)} | n_v−n_u; varsayımsal pozitif sonsuz yörünge için n_j≤C(n₀)j^κ. Tabloda (q,u,r,A): (53,31,74,115),(15601,21899,9967,15796),(31867,40572,31871,50513). Metin bunu log₂ n₀≥107,15780,50495 diye adlandırır.",
+    "program_label": "EXACT/OBSERVATION",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/09-literaturden-baglantilar/PATTERNLER.md",
+    "correctness": "YANLIS (n₀ için nicel sınır); KOSULLU-DOGRU yalnız C≥2^A/(v+r)^κ; tekrar sayıları deneysel doğru",
+    "weakest_step": "12_etkin_n0_siniri.py dosyası hatayı açıkça teşhis ediyor: önce C=1 alınmış, yanlıştı. Düzeltme C(n₀) için alt sınırı veriyor; C(n₀)≤c·n₀ gibi sabitli ve ispatlı ÜST sınır bulunmadan C≥2^A/(...) ⇒ n₀≥2^107 çıkarılamaz. Ayrıca kodun C’den n₀’a geçişi tekrar ediyor ve sonsuz birçok konverjantta tekrar ispatlamıyor.",
+    "check_code_and_output": "Python3 kaynak 12_etkin_n0_siniri.py yürütüldü: q,u,r,A, [A−κ log₂(v+r)] sırasıyla (53,31,74,115,107.3), (15601,21899,9967,15796,15779.6), (31867,40572,31871,50513,50495.4). Bu çıktı 2^A/(v+r)^κ için C ALT sınırıdır, n₀ için değil. Örnek 2^115/(31+53+74)^1.053≈2^107.3.\nÇalıştırılmış ortak kontrol kodu (python3 deep_D1_CYCLES_checks.py):\nfrom decimal import Decimal,getcontext\nfrom fractions import Fraction\nfrom itertools import product\ngetcontext().prec=90\nalpha=Decimal(3).ln()/Decimal(2).ln()\nU=Fraction(10439860591,6586818670); L=Fraction(103768467013,65470613321);M=Fraction(114208327604,72057431991)\na=lambda f:Decimal(f.numerator)/Decimal(f.denominator)\nprint('CP02', 'L<alpha<M<U:',a(L)<alpha<a(M)<a(U),'det L,U:',L.numerator*U.denominator-U.numerator*L.denominator,'gaps:',str(a(U)-alpha)[:28],str(a(M)-alpha)[:28]); print('Hercher threshold', (3*2**69)<2**71)\n# CP26 scan nearest powers for each k\nbad=[];mindiff=None\nfor k in range(1,17013):\n three=3**k; f=three.bit_length()-1\n for m in (f,f+1):\n  if not (abs(2**m-three)*2**(k+1)>three-2**k):bad.append((k,m))\nprint('CP26 nearest scan <=17012:',len(bad),'failures',bad[:3]); print('CP26 LMN numeric',Decimal('24.34')*Decimal(3).ln()*441,Decimal(17013)*Decimal(2).ln())\n# CP25 exhaustive small words, 3x+-1, leading 1, all rotations\ncounts=[0,0,0]\nfor m in range(1,12):\n for t in product((0,1),repeat=m-1):\n  w=(1,)+t;k=sum(w);p=3;D=2**m-p**k\n  if D==0:continue\n  b=1 if D>0 else -1;A=abs(D)\n  def B(w):\n   c=0; pos=0;rem=k\n   for ep in w:\n    if ep:c+=p**(rem-1)*2**pos;rem-=ep;pos+=1\n   return c\n  b0=B(w); h=[];qn=[]\n  for j in range(m):\n   r=w[j:]+w[:j];Br=B(r);hr=(Br*pow(A,-1,2**m))%(2**m);hr=hr or 2**m\n   h.append(hr);qn.append(Br>=A*hr)\n  if all(qn):counts[0]+=1;counts[1]+=b0%A==0;counts[2]+=b0%A!=0\nprint('CP25 m<=11 premise/integral/counter:',counts)\n# CP27 construct simple K=6 M=10 q=2 (2^10>3^6) s=3,3, e0=4, e1=6; gaps=1,1,2,1,1,4 ; D etc\nK,M,q=6,10,2;s=[3,3];e=[(3**s[0]).bit_length()-1,0];e[1]=M-e[0];g=[]\nfor sj,ej in zip(s,e):g += [1]*(sj-1)+[ej-sj+1]\nB=sum(3**(K-1-i)*2**sum(g[:i]) for i in range(K));D=2**M-3**K\nprint('CP27 example s,e,g,D,B,integral',s,e,g,D,B,B%D==0,'proper delta negative',2**e[0]<3**s[0]);print('CP27 x0',Fraction(B,D))\n\nÇıktı:\nCP02 L<alpha<M<U: True det L,U: -1 gaps: 2.21724377580880245586537661 1.10336069332083493019933257\nHercher threshold True\nCP26 nearest scan <=17012: 0 failures []\nCP26 LMN numeric 11792.4383898261693408550786584121755621438847982359232499531048956048454937509555338833791 11792.5129828663495491153700823679579526684837858710226383551290015111056905704161966025528\nCP25 m<=11 premise/integral/counter: [14, 14, 0]\nCP27 example s,e,g,D,B,integral [3, 3] [4, 6] [1, 1, 2, 1, 1, 4] 295 817 False proper delta negative True\nCP27 x0 817/295\nEk kesin kod: T=lambda n:(3*n+1)//2 if n%2 else n//2\nfor n in (1,9):\n z=n;v=[]\n for _ in range(3):v.append(z%2);z=T(z)\n print(n,v,z)\nprint((9-1)%8)\nÇıktı: 1 [1, 0, 1] 2; 9 [1, 0, 1] 11; 0. Yalnız 2-adic eşdeğerliği doğrular, üstel n0 alt sınırını değil.",
+    "triviality_derivation": "Aynı r-valuation word W için afin ters yineleme n_u≡n_v (mod 2^{A(W)}) (Terras/Everett); n_u≠n_v ise |n_u−n_v|≥2^{A(W)}. n_j≤C(j+1)^κ ile C≥2^{A(W)}/(v+r+1)^κ. C üst sınırını belirtmeden n₀ alt sınırı yok; ters çevrilen büyüklük yanlıştır. Rozier/Sturmian tekrarları yalnız bağlamsal, sayılar bu controller’a özgü.",
+    "queries": [
+      {
+        "query": "Collatz factor complexity repeated parity vector congruence",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Natural Numbers Generalized Parity, and the Collatz Algorithm",
+          "Parity-Based Level-Set Approach to the Collatz Conjecture"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Afactor+AND+all%3Acomplexity&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Syracuse Sturmian word convergent repeated valuation block",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "The 3x + 1 Conjugacy Map over a Sturmian Word",
+          "Syracuse. Inscription on a limestone block, 6th cent. B.C."
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ASyracuse+AND+all%3ASturmian+AND+all%3Aword&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "3x+1 2-adic repeated parity block initial value bound",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Second-order initial value problems with singularities",
+          "On singular nonlinear distributional and impulsive initial and boundary value problems"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3A2-adic+AND+all%3Arepeated&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Collatz stopping time continued fraction log2 3 repeat",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "On the average stopping time of the Collatz map in $F_2[x]$",
+          "Continued Disproof Sentence towards Collatz Conjecture"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Astopping+AND+all%3Atime&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Collatz subshift topological entropy repeated factor",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Topological entropy and periodic points of a factor of a subshift of finite type",
+          "Invariance of proximal cells in shift spaces and the construction of a densely Li-Yorke chaotic non-minimal subshift with zero topological entropy"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Asubshift+AND+all%3Atopological&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Syracuse affine same parity prefix 2-adic divisibility",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "On Imbalance Sums, p-adic Divisibility, and an Approach to Beal's Conjecture",
+          "Affine flag varieties"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ASyracuse+AND+all%3Aaffine+AND+all%3Asame&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. 56 (2017), arXiv:1510.01610v4 PDF",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "It is known that finite sequences of iterations with a given length and a given number of odd terms have some combinatorial properties modulo powers of two.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, 3x+1 bibliography, arXiv:math/0608208, entry 67 (annotated bibliography; secondary for López–Stoll)",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "This paper studies the 3x+1 conjugacy map Φ : Z₂ → Z₂ on the 2-adic integers ... This paper studies this function for x whose 2-adic expansion is a Sturmian word.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), Corollary 1, original PDF",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal üzerine atıf: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019), yayımlanmış özgün özet (OpenAlex abstract_inverted_index)",
+        "url": "https://doi.org/10.1155/2019/6814378",
+        "quote": "A new approach towards probabilistic proof of the convergence of the Collatz conjecture is described via identifying a sequential correlation of even natural numbers by divisions by 2",
+        "opened": true
+      },
+      {
+        "cite": "Rozier 2017 üzerine atıf: Rozier, Are the Collatz and abc conjectures related? arXiv:2306.15284, birincil PDF, abstract",
+        "url": "https://arxiv.org/pdf/2306.15284",
+        "quote": "assuming the abc conjecture true is helpful to improve the lower bound of integers initiating a particular type of Collatz sequences, namely finite sequences of a given length where all terms but one are odd",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "FLAWED",
+    "one_line_reason": "Tam sayılı tekrar doğru; raporlanan n₀ bit alt sınırları gerçekte bilinmeyen C(n₀) sabitinin alt sınırları.",
+    "research_method_log": "Lagarias math/0309224 (74 sayfa), math/0608208 (42 sayfa) indirildi, parity, cycle, Steiner, Eliahou, Sturmian, Rozier, 2^m-3^k terimleri PDF metninde arandı. OpenAlex cites: filtre Garcia–Tal için HTTP200 6, Rozier için HTTP200 0; Semantic Scholar Rozier için 7 kaydı gösterdi, dolayısıyla 0 bir indeks/sürüm sınırlamasıdır. arXiv API sorguları HTTP429; Crossref 30 sorguda çoğunlukla 200 ve gürültülü sonuçlar. Zenodo 5 hedef sorgu 200, sağlam eşdeğer yok. LMN/Steiner/Eliahou birincil metinleri ve bütün atıf metinleri DOGRULANMADI; kayıt başlığı/özeti teoremi kanıtlamaz.",
+    "citation_sweep": "OpenAlex works filter=cites:W40702193 (Garcia–Tal, DOI 10.4064/aa-90-3-245-250): HTTP 200, 6 eser: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019); An Asymptotic Approach for the Collatz Conjecture (2023); Lagarias annotated bibliyografyaları math/0309224 ve math/0608208; 7x±1: Close Relative of Collatz Problem (2018); A Numerical Verification for Asymptotic Approach of the Collatz Conjecture (2025). OpenAlex filter=cites:W2192156690 (Rozier, DOI 10.7169/facm/1583): HTTP 200, 0 eser [dizin kapsam sınırı]. Semantic Scholar /paper/DOI:10.7169/facm/1583/citations HTTP 200: 7 eser: Furstenberg Topology and Collatz Problem (2025); Paradoxical behavior in Collatz sequences (2025/2026); Are the Collatz and abc Conjectures Related? (2023/2026); High-uncertainty audio signal encryption based on the Collatz conjecture (2019); Parity Sequences of the 3x+1 Map on the 2-adic Integers and Euclidean Embedding (2018); The Proof of the 3X + 1 Conjecture (2022); Computer-Based Validation of 3n+1 Hypothesis for Numbers 3n−1 (2019). İlk üç ilgili Rozier bağlantısından Rozier–Terracol ve Rozier abc asıl PDF açıldı; geriye kalan makalelerin yalnız indeks başlığı/özeti görüldü: tam metin DOGRULANMADI. OpenAlex alıntı dizininin Semantic Scholar ile uyuşmaması sonuçların tam bibliyografya olmadığını gösterir."
+  },
+  {
+    "idx": 46,
+    "claim": "Her rotasyonda q_r≥h_r ⇒ A|B_0 (C1).",
+    "exact_statement": "S1 CP25 §1–2 [OPEN-NONTRIVIAL]: ikili sıfır olmayan w uzunluğu m, k=Σepsilon_i>0, odd p≥3, M=2^m, P=p^k, D=M−P≠0, b=sgn D, A=|D|; B_r Böhm–Sontacchi rotasyon payı, q_r=B_r/A, h_r∈{1,...,M}: Ph_r+bB_r≡0 (mod M). C1: [her cyclic rotation r için q_r≥h_r] ⇒ A|B_0. Sonlu p=3,5,7 tüm başlangıcı 1 olan kelimeler m≤22 ile kontrol; teorem değil.",
+    "program_label": "OPEN-NONTRIVIAL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_C1_LIFT_COHERENCE_REPORT.md",
+    "correctness": "BOSLUKLU (açık önerme; bir ispat sunulmuyor)",
+    "weakest_step": "B_r=A h_r+M t_r exact; q_r≥h_r eşdeğer t_r≥0; t_r≥0 tüm rotasyonlarda ⇒ A|t_r sonucu kanıtlanmamış. Product Barrier PB± yalnız varsayım; CP26 KILL stratejik karardır, C1 çürütmesi değildir.",
+    "check_code_and_output": "Workspace deep_D1_CYCLES_checks.py p=3, m≤11, 1 ile başlayan tüm 2^{m−1} kelimeler, her rotasyonda Br,A,hr tamsayı ile: C1 m<=11 premise/integral/counter: [14,14,0]. Daha büyük m≤22 taraması kaynakta [61,61,0] p=3; bunlar ispat değildir.\nÇalıştırılmış ortak kontrol kodu (python3 deep_D1_CYCLES_checks.py):\nfrom decimal import Decimal,getcontext\nfrom fractions import Fraction\nfrom itertools import product\ngetcontext().prec=90\nalpha=Decimal(3).ln()/Decimal(2).ln()\nU=Fraction(10439860591,6586818670); L=Fraction(103768467013,65470613321);M=Fraction(114208327604,72057431991)\na=lambda f:Decimal(f.numerator)/Decimal(f.denominator)\nprint('CP02', 'L<alpha<M<U:',a(L)<alpha<a(M)<a(U),'det L,U:',L.numerator*U.denominator-U.numerator*L.denominator,'gaps:',str(a(U)-alpha)[:28],str(a(M)-alpha)[:28]); print('Hercher threshold', (3*2**69)<2**71)\n# CP26 scan nearest powers for each k\nbad=[];mindiff=None\nfor k in range(1,17013):\n three=3**k; f=three.bit_length()-1\n for m in (f,f+1):\n  if not (abs(2**m-three)*2**(k+1)>three-2**k):bad.append((k,m))\nprint('CP26 nearest scan <=17012:',len(bad),'failures',bad[:3]); print('CP26 LMN numeric',Decimal('24.34')*Decimal(3).ln()*441,Decimal(17013)*Decimal(2).ln())\n# CP25 exhaustive small words, 3x+-1, leading 1, all rotations\ncounts=[0,0,0]\nfor m in range(1,12):\n for t in product((0,1),repeat=m-1):\n  w=(1,)+t;k=sum(w);p=3;D=2**m-p**k\n  if D==0:continue\n  b=1 if D>0 else -1;A=abs(D)\n  def B(w):\n   c=0; pos=0;rem=k\n   for ep in w:\n    if ep:c+=p**(rem-1)*2**pos;rem-=ep;pos+=1\n   return c\n  b0=B(w); h=[];qn=[]\n  for j in range(m):\n   r=w[j:]+w[:j];Br=B(r);hr=(Br*pow(A,-1,2**m))%(2**m);hr=hr or 2**m\n   h.append(hr);qn.append(Br>=A*hr)\n  if all(qn):counts[0]+=1;counts[1]+=b0%A==0;counts[2]+=b0%A!=0\nprint('CP25 m<=11 premise/integral/counter:',counts)\n# CP27 construct simple K=6 M=10 q=2 (2^10>3^6) s=3,3, e0=4, e1=6; gaps=1,1,2,1,1,4 ; D etc\nK,M,q=6,10,2;s=[3,3];e=[(3**s[0]).bit_length()-1,0];e[1]=M-e[0];g=[]\nfor sj,ej in zip(s,e):g += [1]*(sj-1)+[ej-sj+1]\nB=sum(3**(K-1-i)*2**sum(g[:i]) for i in range(K));D=2**M-3**K\nprint('CP27 example s,e,g,D,B,integral',s,e,g,D,B,B%D==0,'proper delta negative',2**e[0]<3**s[0]);print('CP27 x0',Fraction(B,D))\n\nÇıktı:\nCP02 L<alpha<M<U: True det L,U: -1 gaps: 2.21724377580880245586537661 1.10336069332083493019933257\nHercher threshold True\nCP26 nearest scan <=17012: 0 failures []\nCP26 LMN numeric 11792.4383898261693408550786584121755621438847982359232499531048956048454937509555338833791 11792.5129828663495491153700823679579526684837858710226383551290015111056905704161966025528\nCP25 m<=11 premise/integral/counter: [14, 14, 0]\nCP27 example s,e,g,D,B,integral [3, 3] [4, 6] [1, 1, 2, 1, 1, 4] 295 817 False proper delta negative True\nCP27 x0 817/295",
+    "triviality_derivation": "P h+bB≡0 (mod M), bD=A ⇒ h≡A^−1 B (mod M). Bu yalnız h ile B/A kesir payı arasında kongrüans verir; işaret t_r≥0 bölünebilirliği A|t_r sağlamaz. Rukhin integrality için prefix/suffix testleri veriyor, aynı tüm-rotasyon eşitsizliği birincil metinde bulunmadı.",
+    "queries": [
+      {
+        "query": "Bohm Sontacchi integrality modular division cyclic rotation",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Congruences between Modular Forms, Cyclic Isogenies of Modular Elliptic Curves, and Integrality of 𝑝-adic 𝐿-Functions",
+          "Generalization of the Aharonov-Bohm effect"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ABohm+AND+all%3ASontacchi+AND+all%3Aintegrality&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Collatz product inequality lifted parity residues cycles",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Collatz Sequence: Negative Parity Invariance, Saturation Point, and Cycles",
+          "On Collatz conjecture. Approach to nontrivial cycles."
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aproduct+AND+all%3Ainequality&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "3x-1 3x+1 rational cycles carry modular",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "The 3x+1 Problem on Rational Numbers",
+          "The set of rational cycles for the 3x+1 problem"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3A3x-1+AND+all%3A3x%2B1+AND+all%3Arational&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Collatz quotient cylinder parity vector Rukhin",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Parity-Based Statistics and Combinatorial Identities",
+          "The Collatz-Wielandt quotient for pairs of nonnegative operators"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aquotient+AND+all%3Acylinder&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "3n+1 cycles rotation integral affine numerator",
+        "arxiv_api_status": 429,
+        "crossref_status": 429,
+        "crossref_hits": [],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3A3n%2B1+AND+all%3Acycles+AND+all%3Arotation&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "dual radix modular division cycle product barrier",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Division-less high-radix interleaved modular multiplication using a scaled modulus",
+          "Rational Design of Ru@2D Polyaramid Enabling Ultra-Low Barrier and Dual-Product Selective CO2 Electroreduction"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3Adual+AND+all%3Aradix+AND+all%3Amodular&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Rukhin, A dual-radix modular division algorithm..., arXiv:1506.07622v8, PDF, Abstract",
+        "url": "https://arxiv.org/pdf/1506.07622v8",
+        "quote": "This division algorithm yields two novel methods for testing the integrality of the Böhm-Sontacchi numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Simons–de Weger, Acta Arith. 117 (2005), original PDF",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "We call a cycle an m-cycle if the numbers in it appear in m sequences, each consisting of an increasing subsequence of odd numbers, followed by a decreasing subsequence of even numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal üzerine atıf: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019), yayımlanmış özgün özet (OpenAlex abstract_inverted_index)",
+        "url": "https://doi.org/10.1155/2019/6814378",
+        "quote": "A new approach towards probabilistic proof of the convergence of the Collatz conjecture is described via identifying a sequential correlation of even natural numbers by divisions by 2",
+        "opened": true
+      },
+      {
+        "cite": "Rozier 2017 üzerine atıf: Rozier, Are the Collatz and abc conjectures related? arXiv:2306.15284, birincil PDF, abstract",
+        "url": "https://arxiv.org/pdf/2306.15284",
+        "quote": "assuming the abc conjecture true is helpful to improve the lower bound of integers initiating a particular type of Collatz sequences, namely finite sequences of a given length where all terms but one are odd",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "UNRESOLVED",
+    "one_line_reason": "Sonlu karşıörnek bulunmaması ispat değil; açık taşıyıcı öncülün integrality sonucunu zorlayıp zorlamadığı belirsiz.",
+    "note": "CP26 ürün bariyerini değil araştırma rotasını öldürür; LMN aday kaynak bu iddia için kullanılmıyor, açılmamış diye açık işaretli.",
+    "research_method_log": "Lagarias math/0309224 (74 sayfa), math/0608208 (42 sayfa) indirildi, parity, cycle, Steiner, Eliahou, Sturmian, Rozier, 2^m-3^k terimleri PDF metninde arandı. OpenAlex cites: filtre Garcia–Tal için HTTP200 6, Rozier için HTTP200 0; Semantic Scholar Rozier için 7 kaydı gösterdi, dolayısıyla 0 bir indeks/sürüm sınırlamasıdır. arXiv API sorguları HTTP429; Crossref 30 sorguda çoğunlukla 200 ve gürültülü sonuçlar. Zenodo 5 hedef sorgu 200, sağlam eşdeğer yok. LMN/Steiner/Eliahou birincil metinleri ve bütün atıf metinleri DOGRULANMADI; kayıt başlığı/özeti teoremi kanıtlamaz.",
+    "citation_sweep": "OpenAlex works filter=cites:W40702193 (Garcia–Tal, DOI 10.4064/aa-90-3-245-250): HTTP 200, 6 eser: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019); An Asymptotic Approach for the Collatz Conjecture (2023); Lagarias annotated bibliyografyaları math/0309224 ve math/0608208; 7x±1: Close Relative of Collatz Problem (2018); A Numerical Verification for Asymptotic Approach of the Collatz Conjecture (2025). OpenAlex filter=cites:W2192156690 (Rozier, DOI 10.7169/facm/1583): HTTP 200, 0 eser [dizin kapsam sınırı]. Semantic Scholar /paper/DOI:10.7169/facm/1583/citations HTTP 200: 7 eser: Furstenberg Topology and Collatz Problem (2025); Paradoxical behavior in Collatz sequences (2025/2026); Are the Collatz and abc Conjectures Related? (2023/2026); High-uncertainty audio signal encryption based on the Collatz conjecture (2019); Parity Sequences of the 3x+1 Map on the 2-adic Integers and Euclidean Embedding (2018); The Proof of the 3X + 1 Conjecture (2022); Computer-Based Validation of 3n+1 Hypothesis for Numbers 3n−1 (2019). İlk üç ilgili Rozier bağlantısından Rozier–Terracol ve Rozier abc asıl PDF açıldı; geriye kalan makalelerin yalnız indeks başlığı/özeti görüldü: tam metin DOGRULANMADI. OpenAlex alıntı dizininin Semantic Scholar ile uyuşmaması sonuçların tam bibliyografya olmadığını gösterir."
+  },
+  {
+    "idx": 47,
+    "claim": "Pozitif periyodik rasyonel 3x±1 gap adayı x₀<2^(m+1).",
+    "exact_statement": "S1 CP26 §1 [PROOF, bağımlılık: LMN 1995]: (m,k>0, binary word with k ones, A=|2^m−3^k|>0, b=sgn(2^m−3^k), B=Σ_{i=0}^{k−1}3^{k−1−i}2^{j_i}, j_i odd positions) x₀=B/A>0 satisfies x₀<2^{m+1}. Kanıt satırları: B≤2^{m−k}(3^k−2^k), A>(3^k−2^k)/2^{k+1}; k≤17012 exact scan, k≥17013 LMN Cor.2.",
+    "program_label": "PROOF (LMN 1995 + exact)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP26_COLLAPSE_AND_INTERNAL_RESONANCE/CP26_REPORT.md",
+    "correctness": "KOSULLU-DOGRU (doğrulanamamış LMN Cor.2 özel sabiti ve parametre koşulları varsayımıyla)",
+    "weakest_step": "24.34·ln3·max{ln(3k)+0.14,21}² LMN Cor.2 özel hali birincil JNT makalesinden okunamadı (Elsevier 403). Sayısal eşik 17013 çok hassas: 17013 ln2−24.34 ln3·21²≈0.07459; LMN seçimi veya kuvvette ufak hata eşiği değiştirir. Tüm m için finite taramada yalnız floor(kα) ve +1 yeterli olmasını ayrıca ispatla.",
+    "check_code_and_output": "Workspace deep_D1_CYCLES_checks.py: k=1..17012, m∈{bit_length(3^k)−1, bit_length(3^k)}; CP26 nearest scan <=17012: 0 failures []; LMN numeric RHS=11792.438389826169..., 17013 ln2=11792.512982866349... . Kaba m uçları analitik geçer; LMN basılı metni kontrol edilmeden sonsuz k sertifikası değildir.\nÇalıştırılmış ortak kontrol kodu (python3 deep_D1_CYCLES_checks.py):\nfrom decimal import Decimal,getcontext\nfrom fractions import Fraction\nfrom itertools import product\ngetcontext().prec=90\nalpha=Decimal(3).ln()/Decimal(2).ln()\nU=Fraction(10439860591,6586818670); L=Fraction(103768467013,65470613321);M=Fraction(114208327604,72057431991)\na=lambda f:Decimal(f.numerator)/Decimal(f.denominator)\nprint('CP02', 'L<alpha<M<U:',a(L)<alpha<a(M)<a(U),'det L,U:',L.numerator*U.denominator-U.numerator*L.denominator,'gaps:',str(a(U)-alpha)[:28],str(a(M)-alpha)[:28]); print('Hercher threshold', (3*2**69)<2**71)\n# CP26 scan nearest powers for each k\nbad=[];mindiff=None\nfor k in range(1,17013):\n three=3**k; f=three.bit_length()-1\n for m in (f,f+1):\n  if not (abs(2**m-three)*2**(k+1)>three-2**k):bad.append((k,m))\nprint('CP26 nearest scan <=17012:',len(bad),'failures',bad[:3]); print('CP26 LMN numeric',Decimal('24.34')*Decimal(3).ln()*441,Decimal(17013)*Decimal(2).ln())\n# CP25 exhaustive small words, 3x+-1, leading 1, all rotations\ncounts=[0,0,0]\nfor m in range(1,12):\n for t in product((0,1),repeat=m-1):\n  w=(1,)+t;k=sum(w);p=3;D=2**m-p**k\n  if D==0:continue\n  b=1 if D>0 else -1;A=abs(D)\n  def B(w):\n   c=0; pos=0;rem=k\n   for ep in w:\n    if ep:c+=p**(rem-1)*2**pos;rem-=ep;pos+=1\n   return c\n  b0=B(w); h=[];qn=[]\n  for j in range(m):\n   r=w[j:]+w[:j];Br=B(r);hr=(Br*pow(A,-1,2**m))%(2**m);hr=hr or 2**m\n   h.append(hr);qn.append(Br>=A*hr)\n  if all(qn):counts[0]+=1;counts[1]+=b0%A==0;counts[2]+=b0%A!=0\nprint('CP25 m<=11 premise/integral/counter:',counts)\n# CP27 construct simple K=6 M=10 q=2 (2^10>3^6) s=3,3, e0=4, e1=6; gaps=1,1,2,1,1,4 ; D etc\nK,M,q=6,10,2;s=[3,3];e=[(3**s[0]).bit_length()-1,0];e[1]=M-e[0];g=[]\nfor sj,ej in zip(s,e):g += [1]*(sj-1)+[ej-sj+1]\nB=sum(3**(K-1-i)*2**sum(g[:i]) for i in range(K));D=2**M-3**K\nprint('CP27 example s,e,g,D,B,integral',s,e,g,D,B,B%D==0,'proper delta negative',2**e[0]<3**s[0]);print('CP27 x0',Fraction(B,D))\n\nÇıktı:\nCP02 L<alpha<M<U: True det L,U: -1 gaps: 2.21724377580880245586537661 1.10336069332083493019933257\nHercher threshold True\nCP26 nearest scan <=17012: 0 failures []\nCP26 LMN numeric 11792.4383898261693408550786584121755621438847982359232499531048956048454937509555338833791 11792.5129828663495491153700823679579526684837858710226383551290015111056905704161966025528\nCP25 m<=11 premise/integral/counter: [14, 14, 0]\nCP27 example s,e,g,D,B,integral [3, 3] [4, 6] [1, 1, 2, 1, 1, 4] 295 817 False proper delta negative True\nCP27 x0 817/295",
+    "triviality_derivation": "j_i≤m−k+i ⇒ B≤2^{m−k} Σ_{i<k}3^{k−1−i}2^i=2^{m−k}(3^k−2^k). İddia edilen gap eşitsizliğiyle B/A<2^{m+1}. Bu son adım iki satırdır ama gap eşitsizliği üstel Diophantine/LMN girdisine bağımlıdır. Simons–de Weger §1 ve Steiner tek-run ve Eliahou döngü uzunluğu/alt sınırlarını inceler; tam x₀<2^{m+1} eşdeğeri açılan metinlerde görünmedi.",
+    "queries": [
+      {
+        "query": "Laurent Mignotte Nesterenko corollary 2 2^m 3^k",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "A corollary to a theorem of Laurent-Mignotte-Nesterenko",
+          "Formes linéaires en deux logarithmes et déterminants d′interpolation"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ALaurent+AND+all%3AMignotte+AND+all%3ANesterenko&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Bohm Sontacchi cycle minimum upper 2^m",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Upper bound on the minimum average cycle weight of classes of convolutional codes",
+          "Correspondence"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ABohm+AND+all%3ASontacchi+AND+all%3Acycle&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Steiner Eliahou cycle integer upper bound parity vector",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Upper bound of convergence for smooth support vector classifier",
+          "Parity-regular Steinhaus graphs"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ASteiner+AND+all%3AEliahou+AND+all%3Acycle&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Collatz exponential Diophantine lower bound 2^m-3^k",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Applications of a lower bound for linear forms in two logarithms to exponential Diophantine equations",
+          "Bit-Position Dynamics and a Lower Bound for Collatz Cycle Length"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aexponential+AND+all%3ADiophantine&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Simons de Weger local minimum bound cycle",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Upper bound on the minimum average cycle weight of classes of convolutional codes",
+          "From Journal of Record to the 24/7 News Cycle"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ASimons+AND+all%3Ade+AND+all%3AWeger&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Collatz rational periodic parity word numerator gap",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Natural Numbers Generalized Parity, and the Collatz Algorithm",
+          "Näherungsverfahren höherer Ordnung für Gleichungen in Banach-Käumen"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Arational+AND+all%3Aperiodic&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Laurent–Mignotte–Nesterenko, Formes linéaires en deux logarithmes et déterminants d’interpolation, J. Number Theory 55 (1995) 285–321, Cor. 2",
+        "url": "https://doi.org/10.1006/jnth.1995.1141",
+        "quote": "DOĞRULANMADI: yayınevi birincil PDF 403; özel 24.34 sabiti, h_i ve b parametreleri doğrudan okunamadı. Crossref sadece bibliyografik DOI kimliğini doğruluyor.",
+        "opened": false
+      },
+      {
+        "cite": "Simons–de Weger, Acta Arith. 117 (2005), original PDF",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "We call a cycle an m-cycle if the numbers in it appear in m sequences, each consisting of an increasing subsequence of odd numbers, followed by a decreasing subsequence of even numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Simons–de Weger, Acta Arith. 117 (2005), §1.3, Crandall lemma",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "If p_n/q_n is any convergent to δ with n ≥ 4, then for a nontrivial m-cycle, K > min{q_n, 2x_min/(q_n+q_(n+1))}.",
+        "opened": true
+      },
+      {
+        "cite": "Rukhin, A dual-radix modular division algorithm..., arXiv:1506.07622v8, PDF, Abstract",
+        "url": "https://arxiv.org/pdf/1506.07622v8",
+        "quote": "This division algorithm yields two novel methods for testing the integrality of the Böhm-Sontacchi numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal üzerine atıf: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019), yayımlanmış özgün özet (OpenAlex abstract_inverted_index)",
+        "url": "https://doi.org/10.1155/2019/6814378",
+        "quote": "A new approach towards probabilistic proof of the convergence of the Collatz conjecture is described via identifying a sequential correlation of even natural numbers by divisions by 2",
+        "opened": true
+      },
+      {
+        "cite": "Rozier 2017 üzerine atıf: Rozier, Are the Collatz and abc conjectures related? arXiv:2306.15284, birincil PDF, abstract",
+        "url": "https://arxiv.org/pdf/2306.15284",
+        "quote": "assuming the abc conjecture true is helpful to improve the lower bound of integers initiating a particular type of Collatz sequences, namely finite sequences of a given length where all terms but one are odd",
+        "opened": true
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "UNRESOLVED",
+    "one_line_reason": "17.012 olgu exact doğrulandı, sonsuz aralık LMN Cor.2’nin birincil 24.34 formu erişilemediğinden sertifikalanmadı.",
+    "literature_limits": "Steiner 1977/1978 ve Eliahou 1993 birincil tam metinleri erişilemedi; Lagarias arXiv:math/0309224 ve math/0608208 tam bibliyografyaları içinde Steiner/Eliahou gözden geçirildi, yalnız ikincil bilgi. OpenAlex LMN 1995 DOI 10.1006/jnth.1995.1141 için tek OA konumu yayıncı landing page, PDF yok; Elsevier 403. LMN Corollary 2 için 24.34 nicel formu birincil kaynaktan teyit edilemedi. Rozier abc makalesi sadece başka tür alt sınırları ele alır (PDF açıldı); genel x0<2^(m+1) ile eşitlenemez.",
+    "research_method_log": "Lagarias math/0309224 (74 sayfa), math/0608208 (42 sayfa) indirildi, parity, cycle, Steiner, Eliahou, Sturmian, Rozier, 2^m-3^k terimleri PDF metninde arandı. OpenAlex cites: filtre Garcia–Tal için HTTP200 6, Rozier için HTTP200 0; Semantic Scholar Rozier için 7 kaydı gösterdi, dolayısıyla 0 bir indeks/sürüm sınırlamasıdır. arXiv API sorguları HTTP429; Crossref 30 sorguda çoğunlukla 200 ve gürültülü sonuçlar. Zenodo 5 hedef sorgu 200, sağlam eşdeğer yok. LMN/Steiner/Eliahou birincil metinleri ve bütün atıf metinleri DOGRULANMADI; kayıt başlığı/özeti teoremi kanıtlamaz.",
+    "citation_sweep": "OpenAlex works filter=cites:W40702193 (Garcia–Tal, DOI 10.4064/aa-90-3-245-250): HTTP 200, 6 eser: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019); An Asymptotic Approach for the Collatz Conjecture (2023); Lagarias annotated bibliyografyaları math/0309224 ve math/0608208; 7x±1: Close Relative of Collatz Problem (2018); A Numerical Verification for Asymptotic Approach of the Collatz Conjecture (2025). OpenAlex filter=cites:W2192156690 (Rozier, DOI 10.7169/facm/1583): HTTP 200, 0 eser [dizin kapsam sınırı]. Semantic Scholar /paper/DOI:10.7169/facm/1583/citations HTTP 200: 7 eser: Furstenberg Topology and Collatz Problem (2025); Paradoxical behavior in Collatz sequences (2025/2026); Are the Collatz and abc Conjectures Related? (2023/2026); High-uncertainty audio signal encryption based on the Collatz conjecture (2019); Parity Sequences of the 3x+1 Map on the 2-adic Integers and Euclidean Embedding (2018); The Proof of the 3X + 1 Conjecture (2022); Computer-Based Validation of 3n+1 Hypothesis for Numbers 3n−1 (2019). İlk üç ilgili Rozier bağlantısından Rozier–Terracol ve Rozier abc asıl PDF açıldı; geriye kalan makalelerin yalnız indeks başlığı/özeti görüldü: tam metin DOGRULANMADI. OpenAlex alıntı dizininin Semantic Scholar ile uyuşmaması sonuçların tam bibliyografya olmadığını gösterir."
+  },
+  {
+    "idx": 48,
+    "claim": "q≤K/2 dengeli run blokları bütün proper blok prefix Δ_t<0 yapabilir (Lemma V).",
+    "exact_statement": "S1 CP27 §X-A [PROOF/EXACT 15/15]: K,M∈N, 2^M>3^K (pozitif 3x+1 rasyonel periyodik aday), q blok sayısı ve q≤K/2; s_i∈{⌊K/q⌋,⌈K/q⌉}, Σs_i=K; i<q için e_i=⌊s_i log₂3⌋, son e_q=M−Σ_{i<q}e_i. Her proper blok prefix t<q için S_t=Σ_{i≤t}s_i, E_t=Σ_{i≤t}e_i, Δ_t=E_t ln2−S_t ln3<0. Böylece n_j≥X ve Δ_t>0 gerektiren pozitif prefix koridor testi bu düzeyde boş olabilir; integral kelime iddiası yok.",
+    "program_label": "PROOF/EXACT 15/15",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP27_CONSORTIUM_PREFIX_CORRIDOR/CP27_REPORT.md",
+    "correctness": "DOGRU (rasyonel, blok ucu, q≤K/2; integral döngü veya her odd-prefix iddiası değil)",
+    "weakest_step": "Öncül x_min≥X>2^71 blok inşasında zorlanmıyor; X-A için boş olma örneği gerçek integral nontrivial cycle kanıtı değil. Δ_t yalnız blok uçları içindir; s_i≥2 olduğunda e_i≥s_i, son e_q geçerli olmalı: 2^M>3^K ve kalan tanımı bunu sağlar. İndirgenebilir düzey: e_i<α s_i zaten seçimin tanımı.",
+    "check_code_and_output": "Workspace deep_D1_CYCLES_checks.py: K=6,M=10,q=2, s=[3,3],e=[4,6], gaps=[1,1,2,1,1,4]; D=295,B=817; B%D==0 False; 2^4<3^3 True; x0=817/295. Kaynak cp27_xa_construct.py K=306,665,1636,3274,15601 ve q=92,100,120: 15/15 kontrol, ispat değil.\nÇalıştırılmış ortak kontrol kodu (python3 deep_D1_CYCLES_checks.py):\nfrom decimal import Decimal,getcontext\nfrom fractions import Fraction\nfrom itertools import product\ngetcontext().prec=90\nalpha=Decimal(3).ln()/Decimal(2).ln()\nU=Fraction(10439860591,6586818670); L=Fraction(103768467013,65470613321);M=Fraction(114208327604,72057431991)\na=lambda f:Decimal(f.numerator)/Decimal(f.denominator)\nprint('CP02', 'L<alpha<M<U:',a(L)<alpha<a(M)<a(U),'det L,U:',L.numerator*U.denominator-U.numerator*L.denominator,'gaps:',str(a(U)-alpha)[:28],str(a(M)-alpha)[:28]); print('Hercher threshold', (3*2**69)<2**71)\n# CP26 scan nearest powers for each k\nbad=[];mindiff=None\nfor k in range(1,17013):\n three=3**k; f=three.bit_length()-1\n for m in (f,f+1):\n  if not (abs(2**m-three)*2**(k+1)>three-2**k):bad.append((k,m))\nprint('CP26 nearest scan <=17012:',len(bad),'failures',bad[:3]); print('CP26 LMN numeric',Decimal('24.34')*Decimal(3).ln()*441,Decimal(17013)*Decimal(2).ln())\n# CP25 exhaustive small words, 3x+-1, leading 1, all rotations\ncounts=[0,0,0]\nfor m in range(1,12):\n for t in product((0,1),repeat=m-1):\n  w=(1,)+t;k=sum(w);p=3;D=2**m-p**k\n  if D==0:continue\n  b=1 if D>0 else -1;A=abs(D)\n  def B(w):\n   c=0; pos=0;rem=k\n   for ep in w:\n    if ep:c+=p**(rem-1)*2**pos;rem-=ep;pos+=1\n   return c\n  b0=B(w); h=[];qn=[]\n  for j in range(m):\n   r=w[j:]+w[:j];Br=B(r);hr=(Br*pow(A,-1,2**m))%(2**m);hr=hr or 2**m\n   h.append(hr);qn.append(Br>=A*hr)\n  if all(qn):counts[0]+=1;counts[1]+=b0%A==0;counts[2]+=b0%A!=0\nprint('CP25 m<=11 premise/integral/counter:',counts)\n# CP27 construct simple K=6 M=10 q=2 (2^10>3^6) s=3,3, e0=4, e1=6; gaps=1,1,2,1,1,4 ; D etc\nK,M,q=6,10,2;s=[3,3];e=[(3**s[0]).bit_length()-1,0];e[1]=M-e[0];g=[]\nfor sj,ej in zip(s,e):g += [1]*(sj-1)+[ej-sj+1]\nB=sum(3**(K-1-i)*2**sum(g[:i]) for i in range(K));D=2**M-3**K\nprint('CP27 example s,e,g,D,B,integral',s,e,g,D,B,B%D==0,'proper delta negative',2**e[0]<3**s[0]);print('CP27 x0',Fraction(B,D))\n\nÇıktı:\nCP02 L<alpha<M<U: True det L,U: -1 gaps: 2.21724377580880245586537661 1.10336069332083493019933257\nHercher threshold True\nCP26 nearest scan <=17012: 0 failures []\nCP26 LMN numeric 11792.4383898261693408550786584121755621438847982359232499531048956048454937509555338833791 11792.5129828663495491153700823679579526684837858710226383551290015111056905704161966025528\nCP25 m<=11 premise/integral/counter: [14, 14, 0]\nCP27 example s,e,g,D,B,integral [3, 3] [4, 6] [1, 1, 2, 1, 1, 4] 295 817 False proper delta negative True\nCP27 x0 817/295",
+    "triviality_derivation": "Her i<q için e_i=⌊α s_i⌋<αs_i (α irrasyonel); toplama Δ_t=Σ(e_i−αs_i)ln2<0. q≤K/2 s_i≥2, her blokta s_i−1 tane valuation=1 ve son gap e_i−s_i+1≥1; son gap pozitif çünkü M>αK ve önceki e_i<αs_i. Bu floor/afin kelime inşası yeni döngü yasağı değildir.",
+    "queries": [
+      {
+        "query": "Collatz local minimum positive prefix corridor cycles",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "On Collatz conjecture. Approach to nontrivial cycles.",
+          "Looking for cycles in an alternative representation of the Collatz sequences"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Alocal+AND+all%3Aminimum&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Collatz cycle balanced runs subshift entropy",
+        "arxiv_api_status": 429,
+        "crossref_status": 429,
+        "crossref_hits": [],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Acycle+AND+all%3Abalanced&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "3n+1 local minimum run length odd even prefix",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Odd-Even Effects and the Influence of  Length and Specific Positioning of  Alkoxy Side Chains on the Optical  Properties of PPE-PPV Polymers",
+          "Is the odd effect odd or even?"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3A3n%2B1+AND+all%3Alocal+AND+all%3Aminimum&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Hercher reciprocal sums local minimum parity cycle",
+        "arxiv_api_status": 429,
+        "crossref_status": 429,
+        "crossref_hits": [],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3AHercher+AND+all%3Areciprocal+AND+all%3Asums&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Simons de Weger continued fraction cycle block",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Block digital filter structures based on continued and block partial fraction expansions",
+          "GENERALIZED CONTINUED FRACTION EXPANSION FOR EULER CONSTANT"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ASimons+AND+all%3Ade+AND+all%3AWeger&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      },
+      {
+        "query": "Syracuse 2^m-3^k balanced partition affine cycles",
+        "arxiv_api_status": 429,
+        "crossref_status": 200,
+        "crossref_hits": [
+          "Partition identities and characters of affine Lie algebras",
+          "Oxygen Balanced Mixotrophy under DayNight Cycles"
+        ],
+        "arxiv_url": "https://export.arxiv.org/api/query?search_query=all%3ASyracuse+AND+all%3A2%5Em-3%5Ek+AND+all%3Abalanced&start=0&max_results=2",
+        "openalex_cites_status_update": "HTTP 200 (Garcia–Tal n=6; Rozier n=0, Semantic Scholar n=7)"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Simons–de Weger, Acta Arith. 117 (2005), original PDF",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "We call a cycle an m-cycle if the numbers in it appear in m sequences, each consisting of an increasing subsequence of odd numbers, followed by a decreasing subsequence of even numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Hercher, There are no Collatz m-Cycles with m≤91, J. Integer Seq. 26 (2023), Corollary 29 (yazarın asıl PDF okundu)",
+        "url": "https://cs.uwaterloo.ca/journals/JIS/VOL26/Hercher/hercher5.pdf",
+        "quote": "If X0 ≥ 1536 · 2^60 = 3 · 2^69 then every nontrivial cycle contains at least K > 1.375 · 10^11 odd numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Hercher, Corrigendum to Article 23.3.5, 14 June 2026 (PDF okundu)",
+        "url": "https://cs.uwaterloo.ca/journals/JIS/VOL26/Hercher/corrigendum.pdf",
+        "quote": "The derivation of the inequalities ... in the proof of Theorem 21 at the bottom of page 14 contains an error. To show the statement ... we can proceed as follows.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. 56 (2017), arXiv:1510.01610v4 PDF",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "It is known that finite sequences of iterations with a given length and a given number of odd terms have some combinatorial properties modulo powers of two.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal üzerine atıf: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019), yayımlanmış özgün özet (OpenAlex abstract_inverted_index)",
+        "url": "https://doi.org/10.1155/2019/6814378",
+        "quote": "A new approach towards probabilistic proof of the convergence of the Collatz conjecture is described via identifying a sequential correlation of even natural numbers by divisions by 2",
+        "opened": true
+      },
+      {
+        "cite": "Rozier 2017 üzerine atıf: Rozier, Are the Collatz and abc conjectures related? arXiv:2306.15284, birincil PDF, abstract",
+        "url": "https://arxiv.org/pdf/2306.15284",
+        "quote": "assuming the abc conjecture true is helpful to improve the lower bound of integers initiating a particular type of Collatz sequences, namely finite sequences of a given length where all terms but one are odd",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Blok-prefix eşitsizliği doğrudan floor toplamı; integral döngüler ve büyük x_min hakkında yeni yasak getirmez.",
+    "research_method_log": "Lagarias math/0309224 (74 sayfa), math/0608208 (42 sayfa) indirildi, parity, cycle, Steiner, Eliahou, Sturmian, Rozier, 2^m-3^k terimleri PDF metninde arandı. OpenAlex cites: filtre Garcia–Tal için HTTP200 6, Rozier için HTTP200 0; Semantic Scholar Rozier için 7 kaydı gösterdi, dolayısıyla 0 bir indeks/sürüm sınırlamasıdır. arXiv API sorguları HTTP429; Crossref 30 sorguda çoğunlukla 200 ve gürültülü sonuçlar. Zenodo 5 hedef sorgu 200, sağlam eşdeğer yok. LMN/Steiner/Eliahou birincil metinleri ve bütün atıf metinleri DOGRULANMADI; kayıt başlığı/özeti teoremi kanıtlamaz.",
+    "citation_sweep": "OpenAlex works filter=cites:W40702193 (Garcia–Tal, DOI 10.4064/aa-90-3-245-250): HTTP 200, 6 eser: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019); An Asymptotic Approach for the Collatz Conjecture (2023); Lagarias annotated bibliyografyaları math/0309224 ve math/0608208; 7x±1: Close Relative of Collatz Problem (2018); A Numerical Verification for Asymptotic Approach of the Collatz Conjecture (2025). OpenAlex filter=cites:W2192156690 (Rozier, DOI 10.7169/facm/1583): HTTP 200, 0 eser [dizin kapsam sınırı]. Semantic Scholar /paper/DOI:10.7169/facm/1583/citations HTTP 200: 7 eser: Furstenberg Topology and Collatz Problem (2025); Paradoxical behavior in Collatz sequences (2025/2026); Are the Collatz and abc Conjectures Related? (2023/2026); High-uncertainty audio signal encryption based on the Collatz conjecture (2019); Parity Sequences of the 3x+1 Map on the 2-adic Integers and Euclidean Embedding (2018); The Proof of the 3X + 1 Conjecture (2022); Computer-Based Validation of 3n+1 Hypothesis for Numbers 3n−1 (2019). İlk üç ilgili Rozier bağlantısından Rozier–Terracol ve Rozier abc asıl PDF açıldı; geriye kalan makalelerin yalnız indeks başlığı/özeti görüldü: tam metin DOGRULANMADI. OpenAlex alıntı dizininin Semantic Scholar ile uyuşmaması sonuçların tam bibliyografya olmadığını gösterir."
+  }
+]

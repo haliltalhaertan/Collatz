@@ -1,0 +1,1163 @@
+[
+  {
+    "idx": 25,
+    "claim": "E5-015",
+    "exact_statement": "For t≥1, 0≤j≤t and nonzero ξ=a·2^(t−s), a odd, 1≤s≤t: hat T_(t,j)(ξ)=0 ⇔ s=1, 2j=t; at s≥2 no zeros. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_visible_defect_20260908/ZERO_CLASSIFICATION.md Source literal: \"hat T_(t,j)(xi)=0 if and only if s=1, t is even, and j=t/2.\"",
+    "program_label": "PROOF/EXACT (user-provided); source status: Exact all-length algebraic result; no novelty claim.",
+    "correctness": "DOĞRU",
+    "weakest_step": "The sibling weight differs by exactly one, and every initial parity weight h=0,…,s−1 occurs; no quantitative lower bound for nonzero Fourier coefficients.",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-015 exact cyclotomic sibling coefficient test and claimed zeros\ncases=zeros=0\nfor t in range(1,10):\n for j in range(t+1):\n  for s in range(1,t+1):\n   n=t-s;Hh=1<<(s-1)\n   a=[comb(n,j-wt(u,s)) if 0<=j-wt(u,s)<=n else 0 for u in range(2*Hh)]\n   z=all(a[i]==a[i+Hh] for i in range(Hh));assert z==(s==1 and t==2*j)\n   cases+=1;zeros+=z\nprint('015: cases',cases,'zero conductors',zeros)\nOutput (python3 audit_checks.py):\n015: cases 330 zero conductors 4",
+    "triviality_derivation": "The parity-code bijection (Terras/Everett) gives F(X)=Σ_u binom(t−s,j−K_s(u))X^u. Primitive 2^s vanishing iff Φ_(2^s)=1+X^(2^(s−1)) divides F, iff sibling coefficients agree; binomial adjacent equality occurs only at central pair. The specific exact classification is a short nontrivial specialization, not an existing general orbit theorem.",
+    "queries": [
+      {
+        "query": "Collatz fixed weight parity cyclic Fourier zeros",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+fixed+weight+parity+cyclic+Fourier+zeros&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Collatz Parity Vector Toolkit",
+          "Level 3 Analysis via the QFT Dictionary: Confinement, Anomalies, and Trace Formulas for Collatz, abc, and the Riemann Hypothesis"
+        ]
+      },
+      {
+        "query": "3x+1 binomial parity cyclotomic nonvanishing",
+        "service_url": "https://api.crossref.org/works?query=3x%2B1+binomial+parity+cyclotomic+nonvanishing&rows=2",
+        "status": 200,
+        "candidate_titles": [
+          "A binomial representation of the 3x + 1 problem",
+          "Power Reciprocity for Binomial Cyclotomic Integers"
+        ]
+      },
+      {
+        "query": "Collatz tail parity character sum zeros",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Atail&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 Fourier parity vector fixed weight",
+        "service_url": "https://api.openalex.org/works?search=3x%2B1+Fourier+parity+vector+fixed+weight&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz stopping time parity spectrum",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+stopping+time+parity+spectrum&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz parity kernel conductor spectral zeros",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+parity+kernel+conductor+spectral+zeros&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "A Spectral Realization of the Riemann Zeta Zeros",
+          "Collatz Parity Vector Toolkit"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "Collatz Parity Vector Toolkit, Zenodo record 21186540, description opened (software, no matching spectral lemma)",
+        "url": "https://zenodo.org/api/records/21186540",
+        "quote": "\"counting parity vectors by length, counting parity vectors by Hamming weight\"",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 2,
+    "final_verdict": "NEW-MINOR",
+    "one_line_reason": "Exact special-kernel zero classification is valid; no lower bound, orbit theorem or verified prior identical lemma."
+  },
+  {
+    "idx": 26,
+    "claim": "E5-021",
+    "exact_statement": "For real f0,f1 on Z/q with q=2^(s−1), ΔZ(b)=Z(b)−Z(b+q/2), A_e(b)=Σ_u f_e(u)f_e(u+b), B(b)=Σ_u f0(u)f1(3u+b): E=Σ_(h<q/2)ΔA0(h)ΔA1(3h)=N_B=Σ_(b<q/2)ΔB(b)^2≥0. RZ(b)=Z(1−b), N_±=|| (Z±RZ)/2 ||²_half, O=N_+−N_−; S=N0+N1+6N_++2N_− and S_even≤S≤2S_even. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_cross_terms_20260912/REPORT_TR.md Source literal: \"E=NB>=0.\"; \"S=N0+N1+6N_++2N_-.\"",
+    "program_label": "PROOF (user-provided); source status: Uniform W, D2 and Collatz remain open.",
+    "correctness": "DOĞRU",
+    "weakest_step": "Normalization of the half-period and inverse 3 dilation must match; no uniform W follows.",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-021 generic nonnegative real channels; E5-028 four-term phase-blind inequality\nfor q in (4,8,16):\n f0=[(7*i+1)%5 for i in range(q)];f1=[(3*i+2)%7 for i in range(q)];hh=q//2\n A0=[sum(f0[u]*f0[(u+b)%q] for u in range(q)) for b in range(q)]\n A1=[sum(f1[u]*f1[(u+b)%q] for u in range(q)) for b in range(q)]\n B=[sum(f0[u]*f1[(3*u+b)%q] for u in range(q)) for b in range(q)]\n da=lambda a,b:a[b]-a[(b+hh)%q]\n e=sum(da(A0,h)*da(A1,(3*h)%q) for h in range(hh))\n nb=sum(da(B,b)**2 for b in range(hh))\n assert e==nb\n print('021: generic q',q,'E=NB',e)\nfor A,B,C,D in [(2+1j,3-1j,-2+3j,4+2j),(0j,1j,2j,3j)]:\n for u,v in [(1j,-1j),(1+0j,1+0j)]:\n  val=sum(abs(A+sign*u*B)**2*abs(C+sign*v*D)**2 for sign in (1,-1))\n  upper=2*(abs(A)**2+abs(B)**2)*(abs(C)**2+abs(D)**2)+4*(abs(A*C)**2+abs(B*D)**2)\n  assert val<=upper+1e-8\nprint('028: four-term phase-blind bound for 4 complex tests OK')\nOutput (python3 audit_checks.py):\n021: generic q 4 E=NB 4\n021: generic q 8 E=NB 482\n021: generic q 16 E=NB 1695",
+    "triviality_derivation": "Fourier(A_e)=|Fourier(f_e)|², Fourier(B)(a)=hat f1(a)·conj(hat f0(3a)); Parseval and odd-character projection give E=N_B. For R²=1, ⟨Z,RZ⟩=||Z+||²−||Z−||²; Cauchy gives the twofold bound. All work for generic real vectors.",
+    "queries": [
+      {
+        "query": "Collatz Fourier valuation word cross term Gram",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+Fourier+valuation+word+cross+term+Gram&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Dissipative Bounds and Ruiz Castillo Residual Decomposition in the Accelerated Dynamics of the Collatz Conjecture",
+          "Modular Closure and Internal 2-adic Structure in Collatz Dynamics"
+        ]
+      },
+      {
+        "query": "3x+1 autocorrelation reflection mixed channels",
+        "service_url": "https://api.crossref.org/works?query=3x%2B1+autocorrelation+reflection+mixed+channels&rows=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz parity tail filter Fourier norm",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aparity&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz fourth moment reflection cross term",
+        "service_url": "https://api.openalex.org/works?search=Collatz+fourth+moment+reflection+cross+term&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 correlation cyclic Fourier energy",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+correlation+cyclic+Fourier+energy&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz parity Fourier transfer mixed kernel",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+parity+Fourier+transfer+mixed+kernel&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Collatz Parity Vector Toolkit",
+          "Looping and Divergence in the Collatz Conjecture"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Generic Parseval and reflection-projector algebra; local bookkeeping only."
+  },
+  {
+    "idx": 27,
+    "claim": "E5-022",
+    "exact_statement": "For shell n=2^s,H=n/2, D_X(d)=C_X(d)−C_X(d+H), Γ_l=Σ_(0<d<H,v2(d)=l−1) D_P(d)D_F(d), A=1+Σ_l Γ_l/[D_P(0)D_F(0)]. For tail, T_1=Σ_(odd d<H)D_F(d)^2=4N_+. Signed-retention U_L is nonincreasing and U_(s−1)=A. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_shift_haar_20260912/REPORT_TR.md Source literal: \"T_1(t,j,s) = 4 N_+(t,j,s).\"",
+    "program_label": "PROOF (user-provided); source status: new exact identities; no uniform W.",
+    "correctness": "DOĞRU",
+    "weakest_step": "The scale factors and zero-energy-shell exclusions matter; the dual Haar interpretation must not be miscalled Walsh parity coding.",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-021/022 reflection of cross-correlation first Haar energy\nfor n in (4,8,16):\n x=[((i*7+2)%11)//3 for i in range(n)];q=n//2; hh=q//2\n a=x[::2];b=x[1::2];B=[sum(a[i]*b[(i+k)%q] for i in range(q)) for k in range(q)]\n Z=[B[i]-B[(i+hh)%q] for i in range(q)]\n T=sum((C(x,d)-C(x,d+n//2))**2 for d in range(1,n//2,2))\n Np=sum(((Z[i]+Z[(-i-1)%q])/2)**2 for i in range(hh))\n assert T==4*Np\n print('021/022: n',n,'T1',T,'4N+',4*Np)\nOutput (python3 audit_checks.py):\n021/022: n 4 T1 0 4N+ 0.0\n021/022: n 8 T1 128 4N+ 128.0\n021/022: n 16 T1 0 4N+ 0.0",
+    "triviality_derivation": "Primitive-frequency Ramanujan orthogonality gives Σ_odd |hat P|²|hat F|²=HΣ_(d<H)D_P(d)D_F(d). Partition d by v₂(d); an odd-shift D(2h+1)=Z(h)+Z(−h−1)=2Z_+(h). Cauchy on remaining blocks proves monotonic U_L.",
+    "queries": [
+      {
+        "query": "Collatz Fourier source filter Haar shift",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+Fourier+source+filter+Haar+shift&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Assignment 8 Lock-in Amplifiers",
+          "tight binding simulation graphene with defect wavefront filtering"
+        ]
+      },
+      {
+        "query": "3x+1 2-adic shifted autocorrelation energy",
+        "service_url": "https://api.crossref.org/works?query=3x%2B1+2-adic+shifted+autocorrelation+energy&rows=2",
+        "status": 200,
+        "candidate_titles": [
+          "2-Adic Finite-Certificate Descent Closure for the 3x + 1 Collatz Problem",
+          "Symmetric 4-adic Complexity of Quaternary Sequences of Length pq with Low Autocorrelation"
+        ]
+      },
+      {
+        "query": "Collatz parity vector cyclic Fourier Haar",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aparity&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz primitive character v2 shift correlations",
+        "service_url": "https://api.openalex.org/works?search=Collatz+primitive+character+v2+shift+correlations&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 source tail spectral alignment",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+source+tail+spectral+alignment&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz autocorrelation Ramanujan sums",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+autocorrelation+Ramanujan+sums&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Legendre Ramanujan Sums Transform",
+          "Legendre Ramanujan Sums Transform"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Standard cyclic Parseval, a valuation partition, and Cauchy; no new W bound."
+  },
+  {
+    "idx": 28,
+    "claim": "E5-024",
+    "exact_statement": "For G_d(t,j,s)=Σ_(a odd mod 2^s)|φ_j(a)|²|φ_(j−d)(3^(−d)a)|² (d≥1): G_d(parent)≤6G_d(child j)+6G_d(child j−1)+2G_(d+1)(child j)+2G_(d−1)(child j−1); for d=0: G0(parent)≤2G0(j)+2G0(j−1)+12G1(j). In 612 fixed critical finite cases it never strictly improves M4≤M2²/2. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_mixed_gram_20260912/REPORT_TR.md Source literal: \"G_d(t,j,s) <= 6 G_d(t-1,j,s-1) + 6 G_d(t-1,j-1,s-1) + 2 G_(d+1)(t-1,j,s-1) + 2 G_(d-1)(t-1,j-1,s-1).\"",
+    "program_label": "PROOF (user-provided); source status: local analytic progress; no W.",
+    "correctness": "DOĞRU",
+    "weakest_step": "Correct dilation and paired lifts required; finite 612 failures are not an all-s impossibility theorem.",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-021 generic nonnegative real channels; E5-028 four-term phase-blind inequality\nfor q in (4,8,16):\n f0=[(7*i+1)%5 for i in range(q)];f1=[(3*i+2)%7 for i in range(q)];hh=q//2\n A0=[sum(f0[u]*f0[(u+b)%q] for u in range(q)) for b in range(q)]\n A1=[sum(f1[u]*f1[(u+b)%q] for u in range(q)) for b in range(q)]\n B=[sum(f0[u]*f1[(3*u+b)%q] for u in range(q)) for b in range(q)]\n da=lambda a,b:a[b]-a[(b+hh)%q]\n e=sum(da(A0,h)*da(A1,(3*h)%q) for h in range(hh))\n nb=sum(da(B,b)**2 for b in range(hh))\n assert e==nb\n print('021: generic q',q,'E=NB',e)\nfor A,B,C,D in [(2+1j,3-1j,-2+3j,4+2j),(0j,1j,2j,3j)]:\n for u,v in [(1j,-1j),(1+0j,1+0j)]:\n  val=sum(abs(A+sign*u*B)**2*abs(C+sign*v*D)**2 for sign in (1,-1))\n  upper=2*(abs(A)**2+abs(B)**2)*(abs(C)**2+abs(D)**2)+4*(abs(A*C)**2+abs(B*D)**2)\n  assert val<=upper+1e-8\nprint('028: four-term phase-blind bound for 4 complex tests OK')\nOutput (python3 audit_checks.py):\n028: four-term phase-blind bound for 4 complex tests OK",
+    "triviality_derivation": "For four lift amplitudes A,B,C,D, Σ_±|A±uB|²|C±vD|²=2(|A|²+|B|²)(|C|²+|D|²)+8Re(uBĀ)Re(vDĊ). Apply 8|ABCD|≤4(|AC|²+|BD|²), then reindex frequency. Elementary phase-blind AM–GM.",
+    "queries": [
+      {
+        "query": "Collatz Fourier mixed Gram overlap recursion",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+Fourier+mixed+Gram+overlap+recursion&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "VII. Structure of entries to C1 and the rigid regime",
+          "Deciphering the Collatz Conjecture Through Recursion"
+        ]
+      },
+      {
+        "query": "3x+1 parity fourth moment Jacobi recurrence",
+        "service_url": "https://api.crossref.org/works?query=3x%2B1+parity+fourth+moment+Jacobi+recurrence&rows=2",
+        "status": 200,
+        "candidate_titles": [
+          "Jacobi Matrices and the Classical Moment Problem",
+          "Parity Recurrence in Thue-Morse Sequence"
+        ]
+      },
+      {
+        "query": "Collatz tail filter channel correlation",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Atail&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz parity Krawtchouk spectral Gram",
+        "service_url": "https://api.openalex.org/works?search=Collatz+parity+Krawtchouk+spectral+Gram&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 Fourier phase blind bound",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+Fourier+phase+blind+bound&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz fourth moment overlap neighboring weights",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+fourth+moment+overlap+neighboring+weights&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Genomic structural equation modelling of 12 cancers identifies a latent pan-cancer susceptibility factor and shared determinants of carcinogenesis",
+          "Data from: When good neighbors don't need fences: Temporal landscape partitioning among baboon social groups"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Elementary expansion and AM–GM produce the bound; it does not beat the trivial benchmark in reported grid."
+  },
+  {
+    "idx": 29,
+    "claim": "E5-026",
+    "exact_statement": "For K_ef=Σ_(a odd)x_e(a)x_f(a), x_d=[P_d^+(a)−P_d^−(a)]/4, K is PSD. If a=K00,b=K11,c=K22,x=K01,z=K02,y=K12,c>0: x≤zy/c+√[(a−z²/c)(b−y²/c)]≤√(ab); hence 3×3 bound ≤phase-blind G1 upper bound. Finite fixed critical grid: 543/543 strict improvements over phase-blind. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_phase_gram_20260912/REPORT_TR.md Source literal: \"x <= zy/c + sqrt[(a-z^2/c)(b-y^2/c)] =: U_Schur.\"",
+    "program_label": "PROOF/EXACT (user-provided); source status: local theorems and finite checks; no W.",
+    "correctness": "DOĞRU",
+    "weakest_step": "One must know actual K22 and off-diagonal entries; PSD cannot bound the needed G0 diagonal alone. 543/543 is finite only.",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-026 Schur vs Cauchy example via actual 3 vectors in R^3\nv0=[2,0,1];v1=[1,2,0];v2=[1,1,3]\ndot=lambda x,y:sum(a*b for a,b in zip(x,y))\na,b,c=dot(v0,v0),dot(v1,v1),dot(v2,v2)\nx,z,y=dot(v0,v1),dot(v0,v2),dot(v1,v2)\nus=z*y/c+((a-z*z/c)*(b-y*y/c))**.5\nassert x<=us+1e-12 and us< (a*b)**.5\nprint('026: PSD Schur x,U3,U2 =',x,round(us,5),round((a*b)**.5,5))\nOutput (python3 audit_checks.py):\n026: PSD Schur x,U3,U2 = 2 4.74076 5.0",
+    "triviality_derivation": "K=Σ_a x(a)x(a)^T is a Gram matrix; the Schur complement K/K22≥0 yields the inequality. Its domination of 2×2 follows directly from Cauchy. The numerical strictness is not an asymptotic theorem.",
+    "queries": [
+      {
+        "query": "Collatz Fourier phase Gram Schur complement",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+Fourier+phase+Gram+Schur+complement&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Mitratae Kuk.",
+          "The SATOR Matrix - Discrete Warped First-Return Realization of the Golden-Torus Transfer Operators"
+        ]
+      },
+      {
+        "query": "3x+1 tail channels PSD moment",
+        "service_url": "https://api.crossref.org/works?query=3x%2B1+tail+channels+PSD+moment&rows=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz Fourier mixed power overlap Schur",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3AFourier&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz parity fourth moment phase coherence",
+        "service_url": "https://api.openalex.org/works?search=Collatz+parity+fourth+moment+phase+coherence&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 Gram matrix primitive Fourier",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+Gram+matrix+primitive+Fourier&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz filter Fourier two lift Schur",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+filter+Fourier+two+lift+Schur&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "The SATOR Matrix - The Refined Pentagrammatic Markov Lift and its Projection to the Decagonal Angular Operator",
+          "Two Bands Fourier Transform  Tidal Filter"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Schur/PSD standard, application bookkeeping and fixed finite panel only."
+  },
+  {
+    "idx": 30,
+    "claim": "E5-029",
+    "exact_statement": "For the specified quartic-character root state (two positive and two negative factors), depth d≤s: N_d≤min(8^d, binom(d+2,2)^2·2^(s−d)), hence Σ_(d=0)^s N_d=O(s^4·2^(3s/4)); computes one primitive tail M4 in poly(t,s) bit overhead per state, not W. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_phase_quotient_20260913/REPORT_TR.md Source literal: \"N_d <= min(8^d, binom(d+2,2)^2 * 2^(s-d))\"",
+    "program_label": "PROOF/EXACT (user-provided); source status: state-count theorem; W open.",
+    "correctness": "KOŞULLU-DOĞRU: stated recurrence has eight admissible masks, fixed four offset factors and one C modulo 2^(s−d)",
+    "weakest_step": "State count alone does not independently verify the quartic recurrence; quotient symmetries require primitive odd ξ and odd 3-dilation. Constant/polynomial makes finite s often worse than enumeration.",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-029 bound root states sum arithmetic sanity\nfor s in (4,12,24):\n upper=sum(min(8**d,comb(d+2,2)**2*2**(s-d)) for d in range(s+1))\n print('029: s',s,'state upper sum',upper,'vs enumeration',2**s)\nOutput (python3 audit_checks.py):\n029: s 4 state upper sum 498 vs enumeration 16\n029: s 12 state upper sum 223570 vs enumeration 4096\n029: s 24 state upper sum 335633050 vs enumeration 16777216\nWARNING: arithmetic count only, not an independent check of Q recurrence.",
+    "triviality_derivation": "At depth d there are at most 8^d mask words. Each sign-pair unordered offsets in {0,…,d} has binom(d+2,2) possibilities; two pairs and ≤2^(s−d) characters. Split at d=floor(s/4) and sum geometric series; this counting step is a few lines once recurrence exists.",
+    "queries": [
+      {
+        "query": "Collatz quartic character recurrence state complexity",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+quartic+character+recurrence+state+complexity&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "The End of Every Hailstone: A Formally Verified Structural Parity Proof of the Collatz Conjecture",
+          "Needs Analysis of Wasaka Character Assessment Instruments (Religious&Hard Work) in Learning in Elementary Schools"
+        ]
+      },
+      {
+        "query": "3x+1 parity Fourier fourth moment algorithm",
+        "service_url": "https://api.crossref.org/works?query=3x%2B1+parity+Fourier+fourth+moment+algorithm&rows=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz primitive Fourier phase quotient states",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aprimitive&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz 2-adic character sum dynamic programming",
+        "service_url": "https://api.openalex.org/works?search=Collatz+2-adic+character+sum+dynamic+programming&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 fourth moment subexponential recurrence",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+fourth+moment+subexponential+recurrence&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz tail filter quartic symbolic state",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+tail+filter+quartic+symbolic+state&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Dissipative Bounds and Ruiz Castillo Residual Decomposition in the Accelerated Dynamics of the Collatz Conjecture",
+          "Online data preprocessing: a case study approach"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 2,
+    "final_verdict": "NEW-MINOR",
+    "one_line_reason": "Specialized exact-phase recurrence yields a sub-enumeration exponent for a single M4, not a small moment theorem."
+  },
+  {
+    "idx": 31,
+    "claim": "E5-032",
+    "exact_statement": "P_(m,k,s)(z) counts odd 1≤h<2^m with K_m(h)=k and H^m(h)=z mod 2^s. With N=2^(s+1),q=N/2,c_k=3^k,r=3^(−1) mod N: P_(m+1,k,s)=E_(c_k)P_(m,k,s+1)+O_(c_(k−1))P_(m,k−1,s+1), E_c P(z)=P(2z)+P(2z−c), O_c P(z)=P(r(2z−1))+P(r(2z−1)−c). Its unnormalized Fourier transforms have the two-lift 1/2 matrices stated in source §3. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_source_transfer_20260912/REPORT_TR.md Source literal: \"P_(m+1,k,s) = E_(3^k) P_(m,k,s+1) + O_(3^(k-1)) P_(m,k-1,s+1).\"",
+    "program_label": "PROOF (user-provided); source status: exact source recurrence; W open.",
+    "correctness": "DOĞRU",
+    "weakest_step": "Representatives h and h+2^m differ in endpoint by 3^k modulo 2^(s+1); indexing O_c uses c from the INPUT stratum (not output k).",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-031 source lift exact base endpoint and E/O and E5-036 energy identity\nfor m in range(2,7):\n for s in range(1,4):\n  N=1<<(s+1);q=N//2\n  P={k:[0]*N for k in range(1,m+1)}\n  Pout={k:[0]*q for k in range(1,m+2)}\n  for h in range(1,1<<m,2):\n   x=h;k=0\n   for _ in range(m):k+=x&1;x=H(x)\n   P[k][x%N]+=1\n  for h in range(1,1<<(m+1),2):\n   x=h;k=0\n   for _ in range(m+1):k+=x&1;x=H(x)\n   Pout[k][x%q]+=1\n  E={};O={};F=I=L=MM=0\n  for k in range(1,m+1):\n   p=P[k];c=pow(3,k,N); inv=pow(3,-1,N); nk=comb(m-1,k-1)\n   E[k]=[p[(2*z)%N]+p[(2*z-c)%N] for z in range(q)]\n   O[k]=[p[(inv*(2*z-1))%N]+p[(inv*(2*z-1)-c)%N] for z in range(q)]\n   F+=Fraction(J(E[k])+J(O[k]),nk);I+=Fraction(J(p),nk)\n   L+=Fraction(q*(C(p,c)-C(p,c+q)),nk)\n  OO=0\n  for k in range(1,m+2):\n   v=[(E.get(k,[0]*q)[i]+O.get(k-1,[0]*q)[i]) for i in range(q)]\n   assert v==Pout[k]\n   nk=comb(m,k-1); OO+=Fraction(J(v),nk)\n   if 1<k<m+1:\n    a=comb(m-1,k-1);b=comb(m-1,k-2)\n    MM+=Fraction(J([b*E[k][i]-a*O[k-1][i] for i in range(q)]),a*b*(a+b))\n  assert F-I==L and I-OO==MM-L and MM>=0\n print('031/036: m',m,'transfer and defect s=1..3 OK')\nOutput (python3 audit_checks.py):\n031/036: m 2 transfer and defect s=1..3 OK\n031/036: m 3 transfer and defect s=1..3 OK\n031/036: m 4 transfer and defect s=1..3 OK\n031/036: m 5 transfer and defect s=1..3 OK\n031/036: m 6 transfer and defect s=1..3 OK",
+    "triviality_derivation": "Affine parity coding gives H^m(h+2^m)=H^m(h)+3^k, an odd endpoint shift. Branch on even/odd endpoint and solve z=H(v); splitting even/odd indexed Fourier coefficients is the standard DFT decimation-in-time 2×2 butterfly.",
+    "queries": [
+      {
+        "query": "Collatz parity vector endpoint histogram transfer",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+parity+vector+endpoint+histogram+transfer&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Collatz Parity Vector Toolkit",
+          "Characteristic numbers of parity vectors of Collatz sequences"
+        ]
+      },
+      {
+        "query": "3x+1 affine prefix residue Fourier lift",
+        "service_url": "https://api.crossref.org/works?query=3x%2B1+affine+prefix+residue+Fourier+lift&rows=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz source histogram 2x2 Fourier recursion",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Asource&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz 2-adic conjugacy transfer operator",
+        "service_url": "https://api.openalex.org/works?search=Collatz+2-adic+conjugacy+transfer+operator&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 parity weight generating function endpoint",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+parity+weight+generating+function+endpoint&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz stopping time source Fourier lift",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+stopping+time+source+Fourier+lift&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "PRH | Aux | 4.10 • A Blur–Knob Program for Collatz",
+          "collatz-cuda: an exact branch-free CUDA kernel for merged-step Collatz stopping times"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "Collatz Parity Vector Toolkit, Zenodo record 21186540, description opened (software, no matching spectral lemma)",
+        "url": "https://zenodo.org/api/records/21186540",
+        "quote": "\"counting parity vectors by length, counting parity vectors by Hamming weight\"",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Direct affine/parity lift and elementary two-lift FFT identity; no norm estimate."
+  },
+  {
+    "idx": 32,
+    "claim": "E5-036",
+    "exact_statement": "For n_k=binom(m−1,k−1), J_r(X)=Σ_(ξ odd mod 2^r)|Xhat(ξ)|², Ecal(m,r)=Σ_k J_r(P_(m,k,r))/n_k, with E_k=E_(3^k)P_k,O_k=O_(3^k)P_k: Ecal(m,s+1)−Ecal(m+1,s)=M_merge−L_lift; L_lift=2^s Σ_k[C_k(3^k)−C_k(3^k+2^s)]/n_k, M_merge=Σ_(k=2..m) J_s(n_(k−1)E_k−n_k O_(k−1))/[n_k n_(k−1)(n_k+n_(k−1))]≥0. No general monotonicity asserted. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_source_defect_20260913/REPORT_TR.md Source literal: \"Ecal(m,s+1) - Ecal(m+1,s) = M_merge - L_lift.\"",
+    "program_label": "PROOF (user-provided); source status: exact defect identity; monotonicity unproved.",
+    "correctness": "DOĞRU",
+    "weakest_step": "Do not silently infer Ecal monotonicity: L_lift may be positive, and arbitrary positive histograms give 10/9 expansion in the source.",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-031 source lift exact base endpoint and E/O and E5-036 energy identity\nfor m in range(2,7):\n for s in range(1,4):\n  N=1<<(s+1);q=N//2\n  P={k:[0]*N for k in range(1,m+1)}\n  Pout={k:[0]*q for k in range(1,m+2)}\n  for h in range(1,1<<m,2):\n   x=h;k=0\n   for _ in range(m):k+=x&1;x=H(x)\n   P[k][x%N]+=1\n  for h in range(1,1<<(m+1),2):\n   x=h;k=0\n   for _ in range(m+1):k+=x&1;x=H(x)\n   Pout[k][x%q]+=1\n  E={};O={};F=I=L=MM=0\n  for k in range(1,m+1):\n   p=P[k];c=pow(3,k,N); inv=pow(3,-1,N); nk=comb(m-1,k-1)\n   E[k]=[p[(2*z)%N]+p[(2*z-c)%N] for z in range(q)]\n   O[k]=[p[(inv*(2*z-1))%N]+p[(inv*(2*z-1)-c)%N] for z in range(q)]\n   F+=Fraction(J(E[k])+J(O[k]),nk);I+=Fraction(J(p),nk)\n   L+=Fraction(q*(C(p,c)-C(p,c+q)),nk)\n  OO=0\n  for k in range(1,m+2):\n   v=[(E.get(k,[0]*q)[i]+O.get(k-1,[0]*q)[i]) for i in range(q)]\n   assert v==Pout[k]\n   nk=comb(m,k-1); OO+=Fraction(J(v),nk)\n   if 1<k<m+1:\n    a=comb(m-1,k-1);b=comb(m-1,k-2)\n    MM+=Fraction(J([b*E[k][i]-a*O[k-1][i] for i in range(q)]),a*b*(a+b))\n  assert F-I==L and I-OO==MM-L and MM>=0\n print('031/036: m',m,'transfer and defect s=1..3 OK')\nOutput (python3 audit_checks.py):\n031/036: m 2 transfer and defect s=1..3 OK\n031/036: m 3 transfer and defect s=1..3 OK\n031/036: m 4 transfer and defect s=1..3 OK\n031/036: m 5 transfer and defect s=1..3 OK\n031/036: m 6 transfer and defect s=1..3 OK",
+    "triviality_derivation": "Put I=input, F=separate categories, O=merged output. Then I−O=(F−O)−(F−I); weighted Hilbert identity gives F−O=M≥0, odd-Fourier Parseval gives F−I=L. This is essentially an exact telescoping/parallelogram identity.",
+    "queries": [
+      {
+        "query": "Collatz source primitive energy defect monotonicity",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+source+primitive+energy+defect+monotonicity&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "A Critical Monotonicity Principle A modular identity–rigidity package for constrained gradient dynamics",
+          "FontesJVC/collatz-relative-defect-dynamics: Collatz Relative Defect Dynamics"
+        ]
+      },
+      {
+        "query": "3x+1 Fourier Pascal weighted parallelogram",
+        "service_url": "https://api.crossref.org/works?query=3x%2B1+Fourier+Pascal+weighted+parallelogram&rows=2",
+        "status": 200,
+        "candidate_titles": [
+          "Parallelogram interferometer for Fourier spectrometers",
+          "A Public Key Encryption System Derived from the Pascal Parallelogram"
+        ]
+      },
+      {
+        "query": "Collatz prefix histogram energy lift",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aprefix&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz affine source autocorrelation shift",
+        "service_url": "https://api.openalex.org/works?search=Collatz+affine+source+autocorrelation+shift&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 Fourier merge slack",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+Fourier+merge+slack&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz stopping time endpoint spectrum",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+stopping+time+endpoint+spectrum&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "The Collatz map as a (2,3)-adic bridge: a framework for characterizing the canonical transfer between incompatible completions of ℚ",
+          "PRH | Aux | 4.10 • A Blur–Knob Program for Collatz"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Correct specialized bookkeeping but no positivity of full defect and no new inequality."
+  },
+  {
+    "idx": 33,
+    "claim": "E5-038",
+    "exact_statement": "For K_n(v) shortcut odd count, Q_n(a,b;x,y)=Σ_(v mod 2^n)x^K_n(v)y^K_n(av+b), a odd, J_n(d)=Q_n(1,d): Q_n(a,b)=Σ_(e=0,1)x^e y^f Q_(n−1)(3^(f−e)a, [3^f(ae+b)+f]/2−2e a′), f=(ae+b) mod 2, a′=3^(f−e)a mod 2^(n−1); all reduced modulo 2^(n−1). J_n(2d)=J_(n−1)(d)+xy J_(n−1)(3d). For one shift, distinct states at depth d≤min(2^d,(2d+1)·2^(s−d)), totaling O(√s·2^(s/2)) / poly(s)2^(s/2) bit operations. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_shift_recurrence_20260912/REPORT_TR.md Source literal: \"N_d <= min(2^d,(2d+1)2^(s-d)).\"",
+    "program_label": "PROOF (user-provided); source status: project-local result; no global priority claim.",
+    "correctness": "KOŞULLU-DOĞRU: reduction of even numerator before modulo and 3^(-1) a modulo 2^(n−1); single shift only",
+    "weakest_step": "The slope is indispensable on odd branches; the coarse depth count does not simultaneously handle every shift or whole M4.",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-038 Q recursion direct, small: verify even shift relation\nfor n in range(2,6):\n d=1;x,y=2,3\n def Q(n,d):\n  return sum(x**wt(v,n)*y**wt((v+d)%(1<<n),n) for v in range(1<<n))\n assert Q(n,2*d)==Q(n-1,d)+x*y*Q(n-1,3*d)\n print('038: n',n,'even-shift polynomial at x=2,y=3 OK')\nOutput (python3 audit_checks.py):\n038: n 2 even-shift polynomial at x=2,y=3 OK\n038: n 3 even-shift polynomial at x=2,y=3 OK\n038: n 4 even-shift polynomial at x=2,y=3 OK\n038: n 5 even-shift polynomial at x=2,y=3 OK",
+    "triviality_derivation": "Apply H to v=2u+e and av+b=2(au+floor((ae+b)/2))+f; the relative affine slope updates by 3^(f−e). At depth d at most 2^d branch paths and ≤(2d+1)2^(s−d) (slope,shift) pairs; balance at d≈s/2.",
+    "queries": [
+      {
+        "query": "Collatz shifted parity correlation affine recursion",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+shifted+parity+correlation+affine+recursion&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Collatz Parity Vector Toolkit",
+          "Looping and Divergence in the Collatz Conjecture"
+        ]
+      },
+      {
+        "query": "3x+1 parity vector joint shift polynomial",
+        "service_url": "https://api.crossref.org/works?query=3x%2B1+parity+vector+joint+shift+polynomial&rows=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz 2-adic affine slope memoization",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3A2-adic&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 parity autocorrelation dynamic programming",
+        "service_url": "https://api.openalex.org/works?search=3x%2B1+parity+autocorrelation+dynamic+programming&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz parity vector fourth moment Kronecker",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+parity+vector+fourth+moment+Kronecker&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz stopping time shift joint distribution",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+stopping+time+shift+joint+distribution&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "PRH | Aux | 4.10 • A Blur–Knob Program for Collatz",
+          "collatz-cuda: an exact branch-free CUDA kernel for merged-step Collatz stopping times"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "Collatz Parity Vector Toolkit, Zenodo record 21186540, description opened (software, no matching spectral lemma)",
+        "url": "https://zenodo.org/api/records/21186540",
+        "quote": "\"counting parity vectors by length, counting parity vectors by Hamming weight\"",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 2,
+    "final_verdict": "NEW-MINOR",
+    "one_line_reason": "Precise affine-state memoization cost appears special and useful computationally, but no analytic moment saving."
+  },
+  {
+    "idx": 34,
+    "claim": "E5-051",
+    "exact_statement": "For positive odd-only valuation words a_1+…+a_r=A, canonical odd starts S_(r,A)={odd x∈[1,2^A):S_(r−1)(x)<A≤S_r(x)}, B_w>0, 2^A n=3^r x+B_w. With q=3^r,c=2^A/q,X=cL,F(T)=#{x∈S:x<T}, D=2^(A−r)−c: F(X−D)≤Q_(r,A)(L)≤F(X), 0≤F(X)−Q≤ceil(D/2)+1; if A=αr+O(1), α=log₂3, D=O(2^((α−1)r)). Canonical n can be even; Q is relaxed. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_collision_debate_20260908/REPORT.md Source literal: \"F(X-D) <= Q_(r,A)(L) <= F(X)\"",
+    "program_label": "PROOF (user-provided); source status: dual interval reduction; no distribution estimate.",
+    "correctness": "DOĞRU",
+    "weakest_step": "The word count is a parity crossing S_(r−1)<A≤S_r, NOT exact S_r=A; endpoints n may be even. No distribution estimate for the short interval follows.",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-051 naive r=3..5 words and crossing, exact sandwich\nfor r,A in [(3,5),(4,7),(5,8)]:\n words=[w for w in product(range(1,A+1),repeat=r) if sum(w)==A]\n starts={}\n for w in words:\n  B=0; su=0\n  for i,v in enumerate(w):\n   su+=v;B+=pow(3,r-i-1)*(1<<(su)) if i<r-1 else 0\n  # affine odd-only x_r=(3^r*x+B)/2^A; derive B with earlier positions:\n  B=sum(pow(3,r-i)*(1<<sum(w[:i-1])) for i in range(1,r+1))\n  x=(-B*pow(pow(3,r),-1,1<<A))%(1<<A)\n  if x==0:x=1<<A\n  starts[x]=(w,B)\n S=[]\n for x in range(1,1<<A,2):\n  z=x;odd=0\n  for _ in range(A):odd+=z&1;z=H(z)\n  if odd==r:S.append(x)\n assert S==sorted(starts), (r,A,S,sorted(starts),[(x,w,B) for x,(w,B) in starts.items() if x not in S][:5])\n L=10;X=(1<<A)*L/pow(3,r);D=(1<<(A-r))-(1<<A)/pow(3,r)\n Q=sum((pow(3,r)*x+B)//(1<<A)<L for x,(w,B) in starts.items())\n lo=sum(x<X-D for x in S);hi=sum(x<X for x in S)\n assert lo<=Q<=hi\n print('051:',r,A,'starts',len(S),'sandwich',lo,Q,hi)\nOutput (python3 audit_checks.py):\n051: 3 5 starts 6 sandwich 1 1 2\n051: 4 7 starts 20 sandwich 2 3 4\n051: 5 8 starts 35 sandwich 0 1 2",
+    "triviality_derivation": "From 2^A n=3^r x+B and positive a_i, 0<B/q≤D. Thus n<L iff x<X−B/q, sandwiched. Distinct odd starts in a length-D interval number at most ceil(D/2)+1. α choice gives exponent α−1.",
+    "queries": [
+      {
+        "query": "Collatz endpoint interval sandwich start count",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+endpoint+interval+sandwich+start+count&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "github.com/ChaissonLab/countme/countme",
+          "Counts of Dengue hemorrhagic fever reported in PUERTO RICO: 1985-2012"
+        ]
+      },
+      {
+        "query": "3x+1 affine offset short interval parity weight",
+        "service_url": "https://api.crossref.org/works?query=3x%2B1+affine+offset+short+interval+parity+weight&rows=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz stopping time truncated crossing event",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Astopping&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz predecessor collision endpoint affine",
+        "service_url": "https://api.openalex.org/works?search=Collatz+predecessor+collision+endpoint+affine&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 inverse word short interval count",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+inverse+word+short+interval+count&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz parity vector dual interval boundary",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+parity+vector+dual+interval+boundary&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Collatz Parity Vector Toolkit",
+          "Characteristic numbers of parity vectors of Collatz sequences"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "Collatz Parity Vector Toolkit, Zenodo record 21186540, description opened (software, no matching spectral lemma)",
+        "url": "https://zenodo.org/api/records/21186540",
+        "quote": "\"counting parity vectors by length, counting parity vectors by Hamming weight\"",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits (2026), Zenodo DOI 10.5281/zenodo.22087163; description opened, distinct orbit-sparsity scope",
+        "url": "https://zenodo.org/api/records/22087163",
+        "quote": "\"for every infinite aperiodic orbit, the number of orbit points in any window [a, a+X) is at most C X^b log(2X) uniformly in a, for every b > 0.96538...\"",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem (1999), text unavailable here; Lagarias bibliographic annotated description opened",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "\"In particular, the Banach density of any divergent trajectory for such a map is zero.\" [Lagarias bibliography, NOT the Garcia–Tal primary paper]",
+        "opened": false
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. Comment. Math. 56 (2017), DOI 10.7169/facm/1583, Crossref metadata; full text blocked by Project Euclid; no equivalence verified",
+        "url": "https://doi.org/10.7169/facm/1583",
+        "quote": "\"The $3x+1$ problem: a lower bound hypothesis\" [metadata title only; primary text NOT opened]",
+        "opened": false
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Affine coding plus a one-line interval translation; does not prove short-interval equidistribution."
+  },
+  {
+    "idx": 35,
+    "claim": "E5-058",
+    "exact_statement": "For uniform weak compositions of K into R raw increments in actual suffix domain z0∈(1,2), K−βR∈(−15−2β,−13−2β), β=log₂3−1, fixed 0<η<1/2: P(N_white=0)≥c_η/R (large R); along actual prime-length subsequence for each fixed A>0, P(W_reg<A log R)≥c_(η,A)log R/R. Thus proposed ≤C/R hard logarithmic-opportunity lower tail is false; direct E exp(−λN_white)≤C/R remains OPEN. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_dense_pairs_20260908/REPORT_TR.md Source literal: \"P(N_white=0)>=P(D)/n>=c_eta/R\"; \"P(W_reg<A log R)>= ... >=c_(eta,A)*log R/R\" (companion proof file).",
+    "program_label": "PROOF/COUNTEREXAMPLE (user-provided); source status: two rigorous lower bounds; C/R upper open.",
+    "correctness": "KOŞULLU-DOĞRU: prime-length coprime middle bridge nonpositive-event probability exactly 1/n after D; general all-R no-white event only Ω(1/R), Θ(1/R) upper bound NOT proved.",
+    "weakest_step": "Important scope correction: source gives P(N_white=0)≥c/R, NOT P(N_white=0)=Θ(1/R). The prime subsequence with gcd(K′,n)=1 has exactly one rank-1 rotation (probability 1/n), but this does not upper-bound all no-white paths. Endpoint law uniform only after boundary conditioning D.",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-058 centered excursion rotation ranks exact with coprime K,n\nn,K=3,4;counts=Counter()\nfor u in product(range(K+1),repeat=n):\n if sum(u)!=K:continue\n ss=[sum(u[:i])-i*K/n for i in range(n)]\n counts[sum(v>=0 for v in ss)]+=1\nprint('058: n=3 K=4 rank counts',dict(sorted(counts.items())))\nOutput (python3 audit_checks.py):\n058: n=3 K=4 rank counts {1: 5, 2: 5, 3: 5}\nFinite rank illustration only; asymptotic is from companion proof.",
+    "triviality_derivation": "Force finitely many boundary increments with probability→c>0. The middle uniform composition law is invariant under rotations; a rotation rooted at maximum has nonpositive bridge (≥1/n). For prime n and n<K′<2n, all heights distinct, their rotation ranks are 1,…,n uniformly. Hence first A log n ranks have mass ≍log n/n. This is the classical cycle/rank lemma in a specially configured model.",
+    "queries": [
+      {
+        "query": "conditioned geometric random walk excursion cycle lemma",
+        "service_url": "https://zenodo.org/api/records?q=conditioned+geometric+random+walk+excursion+cycle+lemma&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Visual Models and Classification of 1D, 2D, and 3D Random Walk",
+          "Gold Price Dynamics: Geometric Random Walk and ARIMAX Models"
+        ]
+      },
+      {
+        "query": "Collatz inverse tree density random walk ballot",
+        "service_url": "https://api.crossref.org/works?query=Collatz+inverse+tree+density+random+walk+ballot&rows=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 low excursion cyclic rank probability",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3Alow&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "random composition bridge occupation uniform ranks",
+        "service_url": "https://api.openalex.org/works?search=random+composition+bridge+occupation+uniform+ranks&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "geometric random walk first passage 1/R",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=geometric+random+walk+first+passage+1%2FR&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz renewal walk opportunity lower tail",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+renewal+walk+opportunity+lower+tail&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "DIFFUSION SCALING IN EVENT-DRIVEN RANDOM WALKS: AN APPLICATION TO TURBULENCE",
+          "SECOND-ORDER RENEWAL ASYMPTOTICS FOR HEAVY-TAILED LIFETIME DISTRIBUTIONS: A LAPLACE-TAUBERIAN APPROACH"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits (2026), Zenodo DOI 10.5281/zenodo.22087163; description opened, distinct orbit-sparsity scope",
+        "url": "https://zenodo.org/api/records/22087163",
+        "quote": "\"for every infinite aperiodic orbit, the number of orbit points in any window [a, a+X) is at most C X^b log(2X) uniformly in a, for every b > 0.96538...\"",
+        "opened": true
+      },
+      {
+        "cite": "Woan, Uniform Partitions of Lattice Paths and Chung-Feller Generalizations, Amer. Math. Monthly (2001), Crossref metadata ONLY; full primary article inaccessible, equivalence UNVERIFIED",
+        "url": "https://doi.org/10.1080/00029890.2001.11919785",
+        "quote": "\"Uniform Partitions of Lattice Paths and Chung-Feller Generalizations\" [metadata title only; article NOT opened]",
+        "opened": false
+      },
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem (1999), text unavailable here; Lagarias bibliographic annotated description opened",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "\"In particular, the Banach density of any divergent trajectory for such a map is zero.\" [Lagarias bibliography, NOT the Garcia–Tal primary paper]",
+        "opened": false
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. Comment. Math. 56 (2017), DOI 10.7169/facm/1583, Crossref metadata; full text blocked by Project Euclid; no equivalence verified",
+        "url": "https://doi.org/10.7169/facm/1583",
+        "quote": "\"The $3x+1$ problem: a lower bound hypothesis\" [metadata title only; primary text NOT opened]",
+        "opened": false
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Cycle lemma proves prime-subsequence rank 1/n and lower-tail counterexample; an unconditional Θ claim for no-white paths overreaches the source; upper C/R remains open."
+  },
+  {
+    "idx": 36,
+    "claim": "E5-060",
+    "exact_statement": "For iid pair B with p_b=(b+1)β^b/(1+β)^(b+2), z↦(4/9)2^B z and 0<η≤1/17, fixed H≥η, choose L with 9^(L−1)≥H+η. For paths with block starts in [η,H], E[e^(−λN_[0,mL)) 1_EC]≤q_H^m, q_H=1−(1−e^(−λ))p_1^L<1; under full endpoint conditioning, bound ≤C√R exp(−(1−e^(−λ))p_1^L floor(R/(2L))). No uniform contraction on all z (z0=9^m black for first m+1 pairs); K=T+V resonance expansion exact, weighted renewal conclusion requires unproved θ<1. Source: /mnt/c/Users/MDP/collatz-analysis/Collatz/research_excursion_split_20260908/COMPACT_AND_RESONANT_KERNELS.md Source literal: \"E_z[exp(-lambda N_[0,mL))*1_E_C] <= q_H^m.\"",
+    "program_label": "PROOF/CONDITIONAL (user-provided); source status: compact proved, renewal conditional.",
+    "correctness": "KOŞULLU-DOĞRU: compact H fixed and conditioning on TOTAL raw sum in K−βR=O(1); global weighted renewal reference/θ conditions unproved",
+    "weakest_step": "Black-word equivalence needs η≤1/17 and strict blackness. Do not use unnormalized block estimate as a bound conditioned on E_C, or treat resonant z=9^m as reachable from actual z0∈(1,2).",
+    "check_code_and_output": "Shared reproducible root file audit_checks.py; relevant excerpt:\n# E5-060 resonant state integer black for all b word of length m\nfor m in (2,4):\n z=9**m\n for j,b in enumerate(range(m)):\n  assert z==int(z)\n  z=z*(4/9)*(2**b)\n print('060: starting z=9^%d, first %d entries black'%(m,m))\nOutput (python3 audit_checks.py):\n060: starting z=9^2, first 2 entries black\n060: starting z=9^4, first 4 entries black\nOnly resonance counterexample independently checked; q_H proof audited symbolically.",
+    "triviality_derivation": "The word B=1^L has probability p_1^L and for η≤z≤H necessarily contains a white mark by integrality of 8m_i−9m_(i+1). A fixed minorization gives q_H<1 via Markov iteration; divide by the local-limit endpoint probability ≍R^(−1/2). K=T+V is standard Duhamel/renewal expansion.",
+    "queries": [
+      {
+        "query": "conditioned geometric random walk compact height contraction",
+        "service_url": "https://zenodo.org/api/records?q=conditioned+geometric+random+walk+compact+height+contraction&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "Visual Models and Classification of 1D, 2D, and 3D Random Walk",
+          "Gold Price Dynamics: Geometric Random Walk and ARIMAX Models"
+        ]
+      },
+      {
+        "query": "Collatz excursion resonance killed kernel",
+        "service_url": "https://api.crossref.org/works?query=Collatz+excursion+resonance+killed+kernel&rows=2",
+        "status": 200,
+        "candidate_titles": [
+          "Median Nerve Excursion During Neurodynamic Mobilization",
+          "Continuous Measurement of Diaphragm Excursion as a Predictor of Extubation Failure"
+        ]
+      },
+      {
+        "query": "random walk ballot low excursion survival exponential",
+        "service_url": "https://export.arxiv.org/api/query?search_query=all%3Arandom+AND+all%3Awalk&start=0&max_results=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "3x+1 inverse tree renewal soft killed kernel",
+        "service_url": "https://api.openalex.org/works?search=3x%2B1+inverse+tree+renewal+soft+killed+kernel&per-page=2",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "geometric walk endpoint conditioned spectral gap",
+        "service_url": "https://api.semanticscholar.org/graph/v1/paper/search?query=geometric+walk+endpoint+conditioned+spectral+gap&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "Collatz near integer 3x-1 Fourier resonance",
+        "service_url": "https://zenodo.org/api/records?q=Collatz+near+integer+3x-1+Fourier+resonance&size=2",
+        "status": 200,
+        "candidate_titles": [
+          "A Definitive Proof of the Collatz Conjecture using the Halemane(3X±1)/4System",
+          "Halemane's Theory on the Collatz (3x+1) System"
+        ]
+      },
+      {
+        "query": "OpenAlex cites: 10.4064/aa-90-3-245-250 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.4064%2Faa-90-3-245-250&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      },
+      {
+        "query": "OpenAlex cites: 10.7169/facm/1583 [specific citing-work enumeration]",
+        "service_url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583&per-page=10",
+        "status": 429,
+        "candidate_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224, PDF opened; this is a bibliography, NOT a primary proof of any spectral claim",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "\"The main result of this paper was obtained independently and contemporaneously by Everett (1977).\" [entry on Terras (1976)]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), arXiv:math/0608208, PDF opened",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "\"This paper studies a multiplicative random walk imitating the 3x + 1 iteration.\" [annotated bibliography]",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits (2026), Zenodo DOI 10.5281/zenodo.22087163; description opened, distinct orbit-sparsity scope",
+        "url": "https://zenodo.org/api/records/22087163",
+        "quote": "\"for every infinite aperiodic orbit, the number of orbit points in any window [a, a+X) is at most C X^b log(2X) uniformly in a, for every b > 0.96538...\"",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem (1999), text unavailable here; Lagarias bibliographic annotated description opened",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "\"In particular, the Banach density of any divergent trajectory for such a map is zero.\" [Lagarias bibliography, NOT the Garcia–Tal primary paper]",
+        "opened": false
+      },
+      {
+        "cite": "OpenAlex cites: Garcia–Tal 1999 and Rozier 2017 attempted; HTTP 429 shared unauthenticated budget exhausted. Citing works and their abstracts NOT VERIFIED; absence of matching publications cannot be established by this scan.",
+        "url": "https://api.openalex.org/works?filter=cites%3Ahttps%3A%2F%2Fdoi.org%2F10.7169%2Ffacm%2F1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Standard finite-height minorization and resolvent; global C/R problem and resonance criterion remain open."
+  }
+]

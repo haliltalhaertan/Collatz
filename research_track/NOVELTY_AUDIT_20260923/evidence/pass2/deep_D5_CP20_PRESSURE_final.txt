@@ -1,0 +1,30 @@
+İnceleme kaydı ve çalıştırılan denetim kodu çalışma dizinine kaydedildi: [deep_D5_CP20_PRESSURE.json](deep_D5_CP20_PRESSURE.json), [exact_checks.py](exact_checks.py). **“Yeni” kararı, literatürde eşdeğerini bulamadığım anlamındadır; yokluğunun kesin ispatı değildir.** OpenAlex’in atıf listeleri, Semantic Scholar ve bazı arXiv API sorguları hız sınırına takıldı; bu eksiklik JSON’da kayıtlıdır.
+
+**T6-04 — NEW-MINOR.** Pozitif tek bir tamsayı yörüngesi için \(s_k=\kappa\log_2k+O(1)\), \(\kappa>1\) varsayımı altında alt sınır ispatı geçerli görünüyor. Afin özdeşlik \(n_k=O(k^\kappa)\) verir; aynı faktörün farklı durumlardaki tekrarında durum farkı \(2^{\alpha r-O(1)}\) ile bölünür. Belirtilen üstel pencerede ikisi bağdaşmaz. Bu, koşullu ve kısa bir lemma; genel Collatz yörüngeleri için üstel karmaşıklık teoremi değildir. En yakın karşılaştırma Dubickas’ın *parite* sözcüğü için lineer sınırıdır.
+
+**T6-06 — SUPERSEDED.** Controller’ın pozitif yörünge olarak gerçekleşemeyeceği sonucu, daha geniş \(B=3\) sınıfını dışlayan T7-04’ten zaten çıkar. Buna karşılık kaynak, **kesin** \(p_a(r)\leq43(r+1)^2\) katsayısını kanıtlamıyor: kendi ifadesi “bounded jump description” için ek sabitlere izin veriyor. Nitekim \(q_{50}=5,\ q_{100}=7\); bir pencerede iki sıçrama mümkündür. \(O(r^2)\) ile kesin 43 katsayısı ayrı iddialardır. En yakın kaynak burada T7-04’ün genel basınç sınırıdır.
+
+**T7-02 — NEW-MINOR.** Sıfır-kritiklik, sonlu \(B\) ve kritik-log yasası birlikte varsayıldığında \(h_B\) üst sınırı doğru görünüyor. Hassas adım, defekt toplamının başlangıca göre uniform \(O(\log r)\) bandını doğru yönlü Chernoff eşitsizliğiyle saymaktır; Sturmian fazın yalnız \(r+1\) faktörü vardır. Yöntem standart ağırlıklı sayımdır, fakat bu koşullu tek-yörünge uygulamasına eşdeğer bir yayın doğrulayamadım. García–Tal ve Curry yörüngenin **değer kümesini** sayar, valuation faktörlerini değil.
+
+**T7-04 — TRIVIAL.** \(h_3\approx0{,}52346668069\) ve \(\alpha/h_3\approx3{,}02781927\) bağımsız hesapta yeniden elde edildi. \(\kappa>3{,}027\), T7-02’nin \(B=3\) yerine konmuş doğrudan sayısal özel hâlidir; ayrı bir teorem olarak yenilik taşımaz. Kritik-log ve sıfır-kritiklik hipotezleri zorunludur. En yakın kaynak T7-02’nin kendisidir.
+
+**T7-05 — NEW-MINOR.** \(h_\infty\approx0{,}56930901349\) ve \(\alpha/h_\infty\approx2{,}784010903\) yeniden hesaplandı. “Önceden \(B\) bilinmemesi”, gerçekten sınırsız valuationlı bir kritik-log yörüngesi demek değildir: \(a_k=g_k-(s_{k+1}-s_k)\) her böyle yörüngede sınırlıdır. Sonuç T7-02’nin bütün sonlu alfabeler için ortak basınç zarfıdır; koşullu bir iyileştirmedir, Collatz çözümü değildir. Curry’nin yaklaşık \(1{,}0358567\) engeli bu farklı hipotezli \(2{,}784\) sonucunu kapsamaz.
+
+**E5-090 — TRIVIAL.** RAPOR.md’deki \(2{,}784010903\) kaydı T7-05 sonucunun geriye dönük özetidir, bağımsız ispat değildir. Üstelik RAPOR kendi bulguları için “denetlenmemiş” uyarısı taşır; istemde aktarılan `PROVED/FROZEN` etiketi o dosyanın etiketiyle örtüşmez. Sayı kanonik T7-05 hipotezleriyle geçerlidir. En yakın kaynak doğrudan T7-05’tir.
+
+**E5-096 — TRIVIAL.** GECMIS.md tekrar bölünebilirliği deneylerini ve denetim geçmişini kaydeder; tam \(\varepsilon,N_r,\kappa\) ifadesini ayrı bir teorem olarak vermez. Asimptotik sonuç için kaynak T6-04’tür; sonlu testler onun yerini tutmaz. García–Tal’ın Banach-yoğunluk teoremi de aynı faktör-karmaşıklığı sonucu değildir. Bu kayıt yeni bir iddia değil, mevcut iddianın tarihçesidir.
+
+**E5-097 — TRIVIAL.** GECMIS.md ağırlıklı basınç üst sınırının denetim kaydıdır; gerekli hipotezler ve \(h_B\) formülü tam olarak T7-02’de bulunur. Dolayısıyla aynı koşullu sonuç doğru olsa da ikinci bir yenilik oluşturmaz. En yakın yöntem standart Chernoff sayımı, en yakın program kaynağı T7-02’dir.
+
+| İddia | Nihai karar | Yayın değeri / 5 |
+|---|---|---:|
+| T6-04 | NEW-MINOR | 3 |
+| T6-06 | SUPERSEDED; kesin katsayı ispatında boşluk | 1 |
+| T7-02 | NEW-MINOR | 2 |
+| T7-04 | TRIVIAL | 1 |
+| T7-05 | NEW-MINOR | 2 |
+| E5-090 | TRIVIAL | 0 |
+| E5-096 | TRIVIAL | 0 |
+| E5-097 | TRIVIAL | 0 |
+
+DEEP_D5_CP20_PRESSURE_20260923_COMPLETE

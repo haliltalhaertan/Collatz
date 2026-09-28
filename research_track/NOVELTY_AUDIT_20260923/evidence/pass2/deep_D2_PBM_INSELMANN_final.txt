@@ -1,0 +1,16 @@
+**28-06 — TRIVIAL; doğruluk: DOĞRU.** Tek sayılı dyadik kabuktan seçilen \(X_m\) için, bütçe çıkışı \(\tau=\min\{j:S_j>m\}\) sonrasındaki ilk \(\lfloor\delta m\rfloor\) valuation arasında sabit \(k\)’nin oranının \(2^{-k}\)’ye olasılıkta gittiği iddia ediliyor (\(0<\delta<1\)). Kaynak bunu iki parçalı **[PROOF]** olarak işaretliyor.  
+En hassas nokta, \(\tau\) sonrasındaki bitleri bağımsız sanmamaktır; ispat bunu yapmıyor. Terras–Everett’in başlangıç parite kodlamasıyla tipik kelime kümelerini kurup Inselmann’ın Lemma 2.16’sıyla sonraki ölçeklere taşıyor. Üç blok yetmiyor, dört bloğun kapasitesi \(1.156312\ldots m>m\); aradaki denetlenmeyen boşlukların payı sıfıra indiriliyor.  
+Dolayısıyla ifade makul biçimde kanıtlanmış, fakat **yeni bir mixing teoremi değil**, Inselmann araçlarının özel bir sonucu. En yakın birincil kaynak: [Inselmann, Proposition 2.4, Lemma 2.16 ve Theorem 3.1](https://arxiv.org/pdf/2402.03276v3). Yayın değeri: **1/5**.
+
+**E5-005 — NEW-MINOR; doğruluk: KOŞULLU-DOĞRU.** Kaynağın **EXACT/CONDITIONAL** diye sunulan denetimi, seçilmiş tek-geri-çekme hesabında \(d_{\rm cert}=5\times10^{-10}\) asimptotik istisna üssü veriyor. Aynı *korunan parite-altkümesi usulünün* cömert üst-yaklaşım tavanı \(0.000979308877\); hedef \(0.050332383666\).  
+Hoeffding, kesirli moment ve Inselmann’ın geri-çekme parametreleri yeniden hesaplandığında sayılar tutuyor. Zayıf adım bir hesap hatası değil, **kapsam ayrımı**: usulün attığı noktalar gerçek istisna olmak zorunda değil. Tavan, bütün ispatların veya gerçek istisna kümesinin tavanı değildir; \(Q\)’ya aktarım da raporun atıf yaptığı ayrı indirgemeye bağlıdır.  
+Sayılar [Inselmann’ın Lemma 2.13–2.16’sında](https://arxiv.org/pdf/2402.03276v3) yazmayan, çok zayıf ve yönteme özgü açık sabitlerdir; yeni bir yörünge sonucu sağlamaz. Yayın değeri: **0/5**.
+
+| İddia | Nihai karar | Doğruluk | Yayın değeri |
+|---|---|---|---:|
+| 28-06 | TRIVIAL | Doğru | 1/5 |
+| E5-005 | NEW-MINOR | Belirtilen usulle koşullu doğru | 0/5 |
+
+Kod, çıktısı, nicel kaynak ifadeleri ve iddia başına 30 arama kaydı [deep_D2_PBM_INSELMANN.json](deep_D2_PBM_INSELMANN.json) dosyasında. OpenAlex atıf sorguları kota nedeniyle HTTP 429 döndü; erişilebilen Semantic Scholar atıf kayıtları ayrıca tarandı. Bu erişim sınırı, literatürde mutlak öncelik iddiasını desteklemez.
+
+DEEP_D2_PBM_INSELMANN_20260923_COMPLETE

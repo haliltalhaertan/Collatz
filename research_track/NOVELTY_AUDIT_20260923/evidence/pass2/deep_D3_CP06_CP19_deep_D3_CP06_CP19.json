@@ -1,0 +1,759 @@
+[
+  {
+    "idx": 1,
+    "claim": "CP06-07",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+    "exact_statement": "[EXACT] ρ=1/log₂3, h(ℓ)=⌈ρℓ⌉ mekanik sonsuz parity sözcüğü için R_j=[−Σ_{r<q_j}3^{−r−1}2^{d_r}]_{2^j} ∈ {1,…,2^j−1}; bu sözcüğün 2-adik ters görüntüsü pozitif sıradan tam sayı değilse limsup_{j→∞}(log₂ R_j)/j=1. Yalnız alt dizi; tüm j için alt sınır değil. Kaynak CP02 pozitif olmama öncülünü kullanıyor.",
+    "program_label": "Kaynak §16: [EXACT] (16.1); önceki tarama: EXACT, NEW-CANDIDATE.",
+    "correctness": "KOŞULLU-DOĞRU: x*∉N_{>0} koşuluyla; CP02 ayrı orbit/pigeonhole ispatı veriyor.",
+    "weakest_step": "x*∉N_{>0} yalnız irrational parity frekansından çıkmaz (varsayımsal divergent positive orbit aperiodic olabilir); CP02’de bounded orbit argument lazım. Pozitif olmama kabulüyle limsup tüm 2-adik sayılar için basit binary gözlemdir.",
+    "check_code_and_output": {
+      "code_file": "check_claims.py",
+      "code_excerpt": "w=[ceil((j+1)/alpha)-ceil(j/alpha) for j in range(32)]; rs=[R(w[:j]) for j in range(1,33)]; assert all(rs[j]%2**j==rs[j-1] for j in range(1,len(rs)))",
+      "output": "CP06 mechanical j=1..12 residues [1, 3, 3, 11, 27, 59, 123, 251, 507, 1019, 1019, 3067] ; max log2(R_j)/j j<=32: 0.999294",
+      "note": "Finite sample infinite limsup ispatı değildir."
+    },
+    "triviality_derivation": "Uygunluk R_{j+1}≡R_j (mod 2^j). x*=Σ b_m2^m pozitif ordinary değil ⇒ sonsuz çok b_m=1 (aksi halde sonunda sıfır ve x*≥0 sıradan tam sayı). O j=m+1 alt dizisinde 2^m≤R_{m+1}<2^{m+1}; sıkıştırma limsup=1. Mekaniklik nicel son adımda kullanılmıyor.",
+    "queries": [
+      {
+        "query": "Collatz mechanical word least residue growth",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Amechanical+AND+all%3Aword&start=0&max_results=3",
+        "http_status": 200,
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+mechanical+word+least+residue+growth&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "3x+1 Sturmian parity vector 2-adic conjugacy",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3ASturmian+AND+all%3Aparity&start=0&max_results=3",
+        "http_status": 200,
+        "hits": [
+          {
+            "title": "The 3x+1 Periodicity Conjeture in $\\mathbb{R}$",
+            "url": "http://arxiv.org/abs/2101.12747v1"
+          }
+        ],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=3x%2B1+Sturmian+parity+vector+2-adic+conjugacy&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz least realizer parity prefix valuation",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aleast+AND+all%3Arealizer&start=0&max_results=3",
+        "http_status": 200,
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+least+realizer+parity+prefix+valuation&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz Bernstein inverse transform finite parity",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3ABernstein+AND+all%3Ainverse&start=0&max_results=3",
+        "http_status": 200,
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+Bernstein+inverse+transform+finite+parity&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz critical density lower bound Rozier",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Acritical+AND+all%3Adensity&start=0&max_results=3",
+        "http_status": 200,
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+critical+density+lower+bound+Rozier&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "3x+1 mechanical word binary expansion stopping time",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3Amechanical+AND+all%3Aword&start=0&max_results=3",
+        "http_status": 200,
+        "hits": [
+          {
+            "title": "PortaSpeech: Portable and High-Quality Generative Text-to-Speech",
+            "url": "http://arxiv.org/abs/2109.15166v5"
+          }
+        ],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=3x%2B1+mechanical+word+binary+expansion+stopping+time&searchtype=all&abstracts=show&size=5"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Rozier, Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding, arXiv:1805.00133",
+        "url": "https://arxiv.org/pdf/1805.00133",
+        "quote": "In this paper, we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called “3 x + 1” map. First, we prove a new formula for the inverse transform.",
+        "opened": true
+      },
+      {
+        "cite": "López–Stoll, The 3x+1 conjugacy map over a Sturmian word, Integers 9 (2009), A13, 141–162",
+        "url": "https://math.colgate.edu/~integers/j13/j13.pdf",
+        "quote": "It is unknown if there exists any aperiodic v with an eventually periodic Φ(v). In this paper we compute Φ(v) for a class of aperiodic infinite words v of minimal complexity, the mechanical words with irrational slope and intercept. [OCR punctuation normalized]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography, II (2000–2009), arXiv:math/0608208",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "López and Stoll (2009), The 3x + 1 conjugacy map over a Sturmian word, Integers 9 (2009), A13, 141–162. This paper studies the 3x+1 conjugacy map Φ : Z2 → Z2.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. 56 (2017), 7–23; arXiv:1510.01610",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "In this paper, we formulate a new hypothesis asserting that the first terms of those sequences have a lower bound which depends on the binary entropy of the “ones-ratio”.",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Pozitif olmama öncülünden her 2-adik tamsayı için geçerli genel bit lemması.",
+    "literature_audit_limits": {
+      "bibliography_fulltext": "Downloaded both arXiv bibliography PDFs and extracted full text to lagarias_0309224.txt and lagarias_0608208.txt; grep counts (0309224/0608208): Sturmian 0/2, parity vector 4/6, entropy 0/4, collision 0/0, Fourier 3/0, density 52/8, cycle 141/84, Bernstein 4/4. No exact theorem identified; negative keyword match is NOT a proof of novelty.",
+      "citation_audit": "OpenAlex DOI resolve Garcia–Tal -> W40702193, cites:W40702193 returned six titles: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019); An Asymptotic Approach for the Collatz Conjecture; Lagarias annotated bibliographies I & II; 7x±1: Close Relative of Collatz Problem; A Numerical Verification for Asymptotic Approach of the Collatz Conjecture. Abstracts on OpenAlex scanned; PDFs not opened for those six: no claimed theorem verification. Rozier 2017 citing-works query could not complete: OpenAlex shared free-IP budget exhausted (HTTP 429); do NOT infer no citing paper. Semantic Scholar HTTP 429, Crossref later HTTP 429. Zenodo targeted queries 200 but mostly irrelevant results. Several arXiv API queries returned non-XML/429; per-query statuses logged. Supplementary arXiv HTML fallback (same 36 queries) gave HTTP 400 or HTTP 429; not evidence of absence.",
+      "primary_sources_opened": [
+        "https://arxiv.org/pdf/math/0309224",
+        "https://arxiv.org/pdf/math/0608208",
+        "https://arxiv.org/pdf/1909.03562",
+        "https://arxiv.org/pdf/1805.00133",
+        "https://arxiv.org/pdf/1510.01610",
+        "https://arxiv.org/pdf/1907.00775",
+        "https://math.colgate.edu/~integers/j13/j13.pdf",
+        "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content"
+      ]
+    }
+  },
+  {
+    "idx": 2,
+    "claim": "CP12-01",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP12/CP12 — Collatz_Checkpoint_12_2026-08-15.docx.txt",
+    "exact_statement": "[EXACT] T(x)=x/2 (çift), (3x+1)/2 (tek); M(m,q;y)=#{0≤x<2^m:T^m(x)=y, ilk m parity bitinde q tane 1} ≤ 2^{m−q}; m≥0, 0≤q≤m, sabit tamsayı endpoint y.",
+    "program_label": "Kaynak §§0,5: [EXACT]; önceki tarama: EXACT, NEW-CANDIDATE.",
+    "correctness": "DOĞRU",
+    "weakest_step": "“v₂(C_w)=d₀, çıkarınca recursive injectivity” q sabitliği ve tam parity word tek residue koşulu belirtilmeli. Üst sınır C_w<2^{m−q}3^q ve fixed y için C_w≡2^m y (mod 3^q) ile tamamlanır. q=0 durumunda C_w=0 olduğundan kaynakta yazılan 0<C_w adımı yanlıştır; q=0 ayrıca ele alınır (x=0 tek çözüm), bound etkilenmez.",
+    "check_code_and_output": {
+      "code_file": "check_claims.py",
+      "code_excerpt": "for m in range(2,11):\n c=Counter();\n for x in range(2**m):\n  n=x;q=0\n  for j in range(m):q+=n&1;n=T(n)\n  c[n,q]+=1\n assert all(v<=2**(m-q) for (_,q),v in c.items())",
+      "output": "CP12 m 2 max 1\nCP12 m 3 max 2\nCP12 m 4 max 2\nCP12 m 5 max 3\nCP12 m 6 max 4\nCP12 m 7 max 5\nCP12 m 8 max 6\nCP12 m 9 max 8\nCP12 m 10 max 10"
+    },
+    "triviality_derivation": "2^m y=3^q x+C_w ve C_w=Σ_{i<q}3^{q−1−i}2^{d_i}. İlk farklı one-position en küçük 2-adik valuation ile ayırt edilir (q fixed ⇒ injective). d_i≤m−q+i ⇒ 0≤C_w≤2^{m−q}(3^q−2^q)<2^{m−q}3^q. Fixed y’de tüm C_w aynı mod 3^q sınıfında, dolayısıyla intervalde ≤2^{m−q} tanedir. Standart affine + bir satır pigeonhole.",
+    "queries": [
+      {
+        "query": "Collatz inverse tree fixed endpoint collision multiplicity",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Ainverse+AND+all%3Atree&start=0&max_results=3",
+        "http_status": 200,
+        "hits": [
+          {
+            "title": "The Proof of the Collatz Conjecture",
+            "url": "http://arxiv.org/abs/2309.09991v3"
+          },
+          {
+            "title": "A Graph Theoretical Approach to the Collatz Problem",
+            "url": "http://arxiv.org/abs/1905.07575v5"
+          },
+          {
+            "title": "Using binary string to prove the Collatz conjecture",
+            "url": "http://arxiv.org/abs/2402.00001v3"
+          }
+        ],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+inverse+tree+fixed+endpoint+collision+multiplicity&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "3x+1 inverse trajectories fixed odd steps bound",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3Ainverse+AND+all%3Atrajectories&start=0&max_results=3",
+        "http_status": 200,
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=3x%2B1+inverse+trajectories+fixed+odd+steps+bound&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz parity vector affine numerator injectivity",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aparity+AND+all%3Avector&start=0&max_results=3",
+        "http_status": 200,
+        "hits": [
+          {
+            "title": "Parity vectors and paradoxical sequences in the accelerated Collatz map",
+            "url": "http://arxiv.org/abs/2605.13886v2"
+          },
+          {
+            "title": "Characteristic numbers and characteristic equations of parity vectors of Collatz sequences",
+            "url": "http://arxiv.org/abs/2209.03730v1"
+          },
+          {
+            "title": "Fourier Analysis of the Parity-Vector Parameterization of the Generalized Collatz px+1 maps",
+            "url": "http://arxiv.org/abs/2002.12762v2"
+          }
+        ],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+parity+vector+affine+numerator+injectivity&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "3x+1 ancestor count conditioned parity weight",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=3x%2B1+ancestor+count+conditioned+parity+weight&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz inverse tree modulo 3 valuation cylinders",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Ainverse+AND+all%3Atree&start=0&max_results=3",
+        "http_status": 200,
+        "hits": [
+          {
+            "title": "The Proof of the Collatz Conjecture",
+            "url": "http://arxiv.org/abs/2309.09991v3"
+          },
+          {
+            "title": "A Graph Theoretical Approach to the Collatz Problem",
+            "url": "http://arxiv.org/abs/1905.07575v5"
+          },
+          {
+            "title": "Using binary string to prove the Collatz conjecture",
+            "url": "http://arxiv.org/abs/2402.00001v3"
+          }
+        ],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+inverse+tree+modulo+3+valuation+cylinders&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz parity permutation endpoint stopping time",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+parity+permutation+endpoint+stopping+time&searchtype=all&abstracts=show&size=5"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Stérin, Binary expression of ancestors in the Collatz graph, arXiv:1907.00775",
+        "url": "https://arxiv.org/pdf/1907.00775",
+        "quote": "Our construction is exponential in k which improves upon the doubly exponentially construction of Shallit and Wilson. Furthermore, our result generalises Colussi’s work on the x = 1 case to any natural number x.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding, arXiv:1805.00133",
+        "url": "https://arxiv.org/pdf/1805.00133",
+        "quote": "In this paper, we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called “3 x + 1” map. First, we prove a new formula for the inverse transform.",
+        "opened": true
+      },
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values, arXiv:1909.03562, Lemma 6.2",
+        "url": "https://arxiv.org/pdf/1909.03562",
+        "quote": "Lemma 6.2 (Injectivity of offsets). For each natural number n, the n-Syracuse offset map F_n : (N_{+1})^n → Z[1/2] is injective.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "Bernstein (1994), A Non-Iterative 2-adic Statement of the 3x + 1 Conjecture; Applegate and Lagarias (1995a), Density Bounds for the 3x + 1 Problem I. Tree-Search Method.",
+        "opened": true
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Affine formül ve 3^q-aralığında basit residue sayımı; tam bound yayınlandığını iddia etmiyoruz.",
+    "literature_audit_limits": {
+      "bibliography_fulltext": "Downloaded both arXiv bibliography PDFs and extracted full text to lagarias_0309224.txt and lagarias_0608208.txt; grep counts (0309224/0608208): Sturmian 0/2, parity vector 4/6, entropy 0/4, collision 0/0, Fourier 3/0, density 52/8, cycle 141/84, Bernstein 4/4. No exact theorem identified; negative keyword match is NOT a proof of novelty.",
+      "citation_audit": "OpenAlex DOI resolve Garcia–Tal -> W40702193, cites:W40702193 returned six titles: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019); An Asymptotic Approach for the Collatz Conjecture; Lagarias annotated bibliographies I & II; 7x±1: Close Relative of Collatz Problem; A Numerical Verification for Asymptotic Approach of the Collatz Conjecture. Abstracts on OpenAlex scanned; PDFs not opened for those six: no claimed theorem verification. Rozier 2017 citing-works query could not complete: OpenAlex shared free-IP budget exhausted (HTTP 429); do NOT infer no citing paper. Semantic Scholar HTTP 429, Crossref later HTTP 429. Zenodo targeted queries 200 but mostly irrelevant results. Several arXiv API queries returned non-XML/429; per-query statuses logged. Supplementary arXiv HTML fallback (same 36 queries) gave HTTP 400 or HTTP 429; not evidence of absence.",
+      "primary_sources_opened": [
+        "https://arxiv.org/pdf/math/0309224",
+        "https://arxiv.org/pdf/math/0608208",
+        "https://arxiv.org/pdf/1909.03562",
+        "https://arxiv.org/pdf/1805.00133",
+        "https://arxiv.org/pdf/1510.01610",
+        "https://arxiv.org/pdf/1907.00775",
+        "https://math.colgate.edu/~integers/j13/j13.pdf",
+        "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content"
+      ]
+    }
+  },
+  {
+    "idx": 3,
+    "claim": "17-energy",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP17 — FROZEN FINAL/CP17_FINAL_PACKAGE_V3.zip",
+    "exact_statement": "[PROVED] Bağımsız P(A_i=a)=2^{−a} (a≥1), S_j=Σ_{i≤j}A_i, X_n=Σ_{j=1}^n 3^{j−1}2^{−S_j} (mod 3^n), p_n(y)=P(X_n=y); χ_n=3^nΣ_{y mod3^n}p_n(y)^2≤(√(J_n B_n)+η^{n/2})²=O(n⁴); J_n=(4n+1)(⌊n log₂(3/2)⌋+1), B_n=1+(2n/3)(1+n ln(3/2)), η=29296875/67108864<1.",
+    "program_label": "Zip provenance/CP17_SYRACUSE_POLYNOMIAL_ENERGY_THEOREM_V2.md: “Status: [PROVED]”; zip ismi FROZEN FINAL; önceki tarama [PROVED][FROZEN], NEW-CANDIDATE.",
+    "correctness": "DOĞRU",
+    "weakest_step": "Sabit toplam S_n=l altında rational offset injectivity (Tao Lemma 6.2) ve her (l,h) sınıfı tekil tamsayı kodunun 3^n ile spacing’i önemli. Metindeki (5.2)-(5.3) katsayısı doğru; kuyruk η<1. Independently upper asymptotic from finite checks impossible.",
+    "check_code_and_output": {
+      "code_file": "check_claims.py",
+      "code_excerpt": "for n in range(1,7):\n p=Counter()\n for gaps in product(range(1,13),repeat=n):\n  if sum(gaps)>12:continue\n  S=0;x=0\n  for j,a in enumerate(gaps):S+=a;x+=3**j*pow(2,-S,3**n)\n  p[x%(3**n)]+=Fraction(1,2**S)\n print(n,float(sum(p.values())),float(3**n*sum(v*v for v in p.values())))",
+      "output": "CP17 n 1 S<=12 mass 0.999755859375 chi_truncated 1.665852963924408\nCP17 n 2 S<=12 mass 0.996826171875 chi_truncated 2.1330369114875793\nCP17 n 3 S<=12 mass 0.980712890625 chi_truncated 2.5428999066352844\nCP17 n 4 S<=12 mass 0.927001953125 chi_truncated 2.8223721385002136\nCP17 n 5 S<=12 mass 0.80615234375 chi_truncated 2.8732348680496216\nCP17 n 6 S<=12 mass 0.61279296875 chi_truncated 2.670981287956238",
+      "note": "S_n≤12 truncated subprobability; does NOT calculate full χ_n."
+    },
+    "triviality_derivation": "Parseval gives χ_n=Σ_{characters}|E χ(X_n)|² but alone does NOT give O(n⁴). Proof: W_j=3^j2^{-S_j} mean-one martingale, E max W≤1+n ln(3/2); partition by l=S_n and dyadic height h (O(n²) good classes). 2-adic offset injectivity ⇒ modulo 3^n fiber size ≤1+2^l n2^{h+1}/(3·3^n), summing class energies O(n²); Cauchy across O(n²) classes and exponential tail ⇒ O(n⁴). This is a substantive combination, not a bare Parseval identity.",
+    "queries": [
+      {
+        "query": "Syracuse distribution collision energy modulo 3^n",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Syracuse+distribution+collision+energy+modulo+3%5En&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "3x+1 geometric gaps second moment Fourier",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=3x%2B1+geometric+gaps+second+moment+Fourier&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Syracuse random walk modulo 3^n chi square",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Syracuse+random+walk+modulo+3%5En+chi+square&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz inverse tree residue collision Parseval",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Ainverse+AND+all%3Atree&start=0&max_results=3",
+        "http_status": 200,
+        "hits": [
+          {
+            "title": "The Proof of the Collatz Conjecture",
+            "url": "http://arxiv.org/abs/2309.09991v3"
+          },
+          {
+            "title": "A Graph Theoretical Approach to the Collatz Problem",
+            "url": "http://arxiv.org/abs/1905.07575v5"
+          },
+          {
+            "title": "Using binary string to prove the Collatz conjecture",
+            "url": "http://arxiv.org/abs/2402.00001v3"
+          }
+        ],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+inverse+tree+residue+collision+Parseval&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Tao Syracuse random variables equidistribution modulo 3",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Tao+Syracuse+random+variables+equidistribution+modulo+3&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "3x+1 character sum geometric gaps entropy",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=3x%2B1+character+sum+geometric+gaps+entropy&searchtype=all&abstracts=show&size=5"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values, arXiv:1909.03562, Lemma 6.2",
+        "url": "https://arxiv.org/pdf/1909.03562",
+        "quote": "Lemma 6.2 (Injectivity of offsets). For each natural number n, the n-Syracuse offset map F_n : (N_{+1})^n → Z[1/2] is injective.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "Bernstein (1994), A Non-Iterative 2-adic Statement of the 3x + 1 Conjecture; Applegate and Lagarias (1995a), Density Bounds for the 3x + 1 Problem I. Tree-Search Method.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography, II (2000–2009), arXiv:math/0608208",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "López and Stoll (2009), The 3x + 1 conjugacy map over a Sturmian word, Integers 9 (2009), A13, 141–162. This paper studies the 3x+1 conjugacy map Φ : Z2 → Z2.",
+        "opened": true
+      }
+    ],
+    "value_0_5": 4,
+    "final_verdict": "NEW-STRONG",
+    "one_line_reason": "Açılmış Tao 2019’da offset injectivity/Fourier decay var, bu mod 3^n ikinci-moment polinom sınırı tespit edilmedi; bağımsız kanıt sağlam.",
+    "literature_audit_limits": {
+      "bibliography_fulltext": "Downloaded both arXiv bibliography PDFs and extracted full text to lagarias_0309224.txt and lagarias_0608208.txt; grep counts (0309224/0608208): Sturmian 0/2, parity vector 4/6, entropy 0/4, collision 0/0, Fourier 3/0, density 52/8, cycle 141/84, Bernstein 4/4. No exact theorem identified; negative keyword match is NOT a proof of novelty.",
+      "citation_audit": "OpenAlex DOI resolve Garcia–Tal -> W40702193, cites:W40702193 returned six titles: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019); An Asymptotic Approach for the Collatz Conjecture; Lagarias annotated bibliographies I & II; 7x±1: Close Relative of Collatz Problem; A Numerical Verification for Asymptotic Approach of the Collatz Conjecture. Abstracts on OpenAlex scanned; PDFs not opened for those six: no claimed theorem verification. Rozier 2017 citing-works query could not complete: OpenAlex shared free-IP budget exhausted (HTTP 429); do NOT infer no citing paper. Semantic Scholar HTTP 429, Crossref later HTTP 429. Zenodo targeted queries 200 but mostly irrelevant results. Several arXiv API queries returned non-XML/429; per-query statuses logged. Supplementary arXiv HTML fallback (same 36 queries) gave HTTP 400 or HTTP 429; not evidence of absence.",
+      "primary_sources_opened": [
+        "https://arxiv.org/pdf/math/0309224",
+        "https://arxiv.org/pdf/math/0608208",
+        "https://arxiv.org/pdf/1909.03562",
+        "https://arxiv.org/pdf/1805.00133",
+        "https://arxiv.org/pdf/1510.01610",
+        "https://arxiv.org/pdf/1907.00775",
+        "https://math.colgate.edu/~integers/j13/j13.pdf",
+        "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content"
+      ]
+    }
+  },
+  {
+    "idx": 4,
+    "claim": "19-3-lower",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 3 — Sturmian Critical-Tail Small-Residue Exclusion/ALL_ARTIFACTS/CP19_TASK3_MAJOR_THEOREM.md",
+    "exact_statement": "Pozitif, birbirinden farklı n_0,…,n_r tek-terimli Syracuse segmenti; a_j=v₂(3n_j+1)=F_{u+j+1}−F_{u+j}, F_k=⌊k log₂3⌋, 0≤j<r ve r≥16. N=n_0≥r^{1+log₂3}/(24 log₂r)−2r/3. Daha keskin finite form: 1≤ℓ<r/2 için N≥2^{⌊αℓ⌋}(r−2ℓ)/(ℓ+1)−2r/3, α=log₂3.",
+    "program_label": "Gösterilen kaynak: “[MAJOR LOAD-BEARING THEOREM CANDIDATE — INDEPENDENT AUDIT REQUIRED] Not frozen yet.” Önceki tarama: [PROVED][AUDITED][FROZEN], NEW-CANDIDATE — KAYNAK ETİKETİYLE UYUŞMUYOR.",
+    "correctness": "DOĞRU (belirtilen injectivity ve TAM Beatty valuation hipotezleriyle)",
+    "weakest_step": "Faktör valuation sınıfı modulo 2^{A+1} tek residue: exact valuation, merely divisibility değil. Kritik segment ceiling n_j<2N+4r/3, injective packing p(ℓ)=ℓ+1 ve r≥16 sabitleri kontrol edildi. Source theorem sketch yetersiz; CP19_TASK3_STURMIAN_FACTOR_THEOREM.md tam ispat gerekli.",
+    "check_code_and_output": {
+      "code_file": "check_claims.py",
+      "code_excerpt": "for r in [16,32,64,128]:\n ell=int(log2(r));lhs=2**floor(alpha*ell)*(r-2*ell)/(ell+1)-2*r/3\n rhs=r**(1+alpha)/(24*log2(r))-2*r/3\n assert lhs>=rhs;print(r,round(lhs,2),round(rhs,2))",
+      "output": "CP19 r 16 exact_vs_poly 91.73 2.83\nCP19 r 32 exact_vs_poly 448.0 43.47\nCP19 r 64 exact_vs_poly 3760.76 281.33\nCP19 r 128 exact_vs_poly 29098.67 1580.95",
+      "note": "Sample only checks final constants, not injective orbit existence."
+    },
+    "triviality_derivation": "p(ℓ)=ℓ+1 klasik Sturmian, cylinders modulo 2^{A+1} klasik; fakat üç bileşeni birleştirip H=2N+4r/3 içinde r−ℓ+1 farklı state sayımıyla N≳r^{1+α}/log r elde etmek birkaç satırdan fazla belirli packing argümanıdır. Garcia–Tal/Curry yalnız genel sublinear window count; aynı exponent çıkmaz.",
+    "queries": [
+      {
+        "query": "Collatz Sturmian factor complexity injective orbit packing",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+Sturmian+factor+complexity+injective+orbit+packing&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Syracuse critical Beatty valuations cylinder lower bound",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Syracuse+critical+Beatty+valuations+cylinder+lower+bound&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "3x+1 critical density orbit segment polynomial start",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=3x%2B1+critical+density+orbit+segment+polynomial+start&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz Sturmian subshift topological entropy orbit",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+Sturmian+subshift+topological+entropy+orbit&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "3x+1 cycle parity words 2^m 3^k lower bound",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 400,
+        "html_fallback_url": "https://arxiv.org/search/?query=3x%2B1+cycle+parity+words+2%5Em+3%5Ek+lower+bound&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz trajectory injective segment uniform density",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+trajectory+injective+segment+uniform+density&searchtype=all&abstracts=show&size=5"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "López–Stoll, The 3x+1 conjugacy map over a Sturmian word, Integers 9 (2009), A13, 141–162",
+        "url": "https://math.colgate.edu/~integers/j13/j13.pdf",
+        "quote": "It is unknown if there exists any aperiodic v with an eventually periodic Φ(v). In this paper we compute Φ(v) for a class of aperiodic infinite words v of minimal complexity, the mechanical words with irrational slope and intercept. [OCR punctuation normalized]",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), Corollary 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor. 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every infinite aperiodic orbit O, #(O ∩ [a,a+X)) ≤ C X^β log(2X) uniformly in a, for every β > β∗; the reciprocal sum of a divergent orbit converges (Proposition 3.1).",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. 56 (2017), 7–23; arXiv:1510.01610",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "In this paper, we formulate a new hypothesis asserting that the first terms of those sequences have a lower bound which depends on the binary entropy of the “ones-ratio”.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography, II (2000–2009), arXiv:math/0608208",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "López and Stoll (2009), The 3x + 1 conjugacy map over a Sturmian word, Integers 9 (2009), A13, 141–162. This paper studies the 3x+1 conjugacy map Φ : Z2 → Z2.",
+        "opened": true
+      }
+    ],
+    "value_0_5": 4,
+    "final_verdict": "NEW-STRONG",
+    "one_line_reason": "Tam kritik Beatty bloklarına özgü r^{2.58496…}/log r alt sınırı; genel yörünge seyreklik teoremlerinden çıkmıyor.",
+    "literature_audit_limits": {
+      "bibliography_fulltext": "Downloaded both arXiv bibliography PDFs and extracted full text to lagarias_0309224.txt and lagarias_0608208.txt; grep counts (0309224/0608208): Sturmian 0/2, parity vector 4/6, entropy 0/4, collision 0/0, Fourier 3/0, density 52/8, cycle 141/84, Bernstein 4/4. No exact theorem identified; negative keyword match is NOT a proof of novelty.",
+      "citation_audit": "OpenAlex DOI resolve Garcia–Tal -> W40702193, cites:W40702193 returned six titles: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019); An Asymptotic Approach for the Collatz Conjecture; Lagarias annotated bibliographies I & II; 7x±1: Close Relative of Collatz Problem; A Numerical Verification for Asymptotic Approach of the Collatz Conjecture. Abstracts on OpenAlex scanned; PDFs not opened for those six: no claimed theorem verification. Rozier 2017 citing-works query could not complete: OpenAlex shared free-IP budget exhausted (HTTP 429); do NOT infer no citing paper. Semantic Scholar HTTP 429, Crossref later HTTP 429. Zenodo targeted queries 200 but mostly irrelevant results. Several arXiv API queries returned non-XML/429; per-query statuses logged. Supplementary arXiv HTML fallback (same 36 queries) gave HTTP 400 or HTTP 429; not evidence of absence.",
+      "primary_sources_opened": [
+        "https://arxiv.org/pdf/math/0309224",
+        "https://arxiv.org/pdf/math/0608208",
+        "https://arxiv.org/pdf/1909.03562",
+        "https://arxiv.org/pdf/1805.00133",
+        "https://arxiv.org/pdf/1510.01610",
+        "https://arxiv.org/pdf/1907.00775",
+        "https://math.colgate.edu/~integers/j13/j13.pdf",
+        "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content"
+      ]
+    }
+  },
+  {
+    "idx": 5,
+    "claim": "19-3-general",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 3 — Sturmian Critical-Tail Small-Residue Exclusion/ALL_ARTIFACTS/CP19_TASK3_SPARSE_CRITICAL_THEOREM.md",
+    "exact_statement": "Pozitif injektif tek-terimli Syracuse yörüngesinde u_m→∞ başlangıçlı TAM kritik Beatty valuation blokları (u_m,r_m) için r_m≥u_m^δ (nihayet, δ>0), n_{u_m}=O(u_m^κ L(u_m)), L(u)=u^{o(1)}. δ(1+log₂3)>κ ise böyle yörünge yoktur. Bu, u_m→∞ ve kritik blok özellikleri altında n_{u_m}≤u_m^{κ+o(1)} formülasyonuna eşdeğer.",
+    "program_label": "Kaynak “GENERAL SPARSE-CRITICAL EXCLUSION THEOREM”; kaynakta [PROVED][AUDITED][FROZEN] YOK; önceki tarama bu etiketi kullanmış, NEW-CANDIDATE.",
+    "correctness": "KOŞULLU-DOĞRU: tam kritik Beatty bloğu, injektivite ve u_m→∞ varsayımları açık yazılmalı.",
+    "weakest_step": "Kaynak “critical length” ifadesi tek başına yetmez; T3 finite theorem ancak g_{u+j}=⌊α(u+j+1)⌋−⌊α(u+j)⌋ için geçerli. Eşit üs durumunda ve u_m bounded halinde çelişki kurulamaz.",
+    "check_code_and_output": {
+      "code_file": "check_claims.py",
+      "code_excerpt": "# CP19 r=16,32,64,128 finite vs polynomial check (same underlying theorem); exponent comparison: r>=u**delta => N>=u**(delta*(1+alpha)-o(1))",
+      "output": "CP19 r 16 exact_vs_poly 91.73 2.83\nCP19 r 32 exact_vs_poly 448.0 43.47\nCP19 r 64 exact_vs_poly 3760.76 281.33\nCP19 r 128 exact_vs_poly 29098.67 1580.95",
+      "note": "Finite test cannot certify infinite contradiction."
+    },
+    "triviality_derivation": "T3’ten N≥r^{1+α}/(24log₂r)−2r/3; r≥u^δ, ayrıca r=O(u^{κ/(1+α)+o(1)}) varsayım üst N ve T3 ile çıkar (gerekirse önce r yerine u^δ uzunluğunda ilk blok seç). Doğrudan ilk u^δ alt-bloka T3 uygulayarak N≥u^{δ(1+α)-o(1)}. Üst N≤u^{κ+o(1)} ile üsleri karşılaştır. Dolayısıyla T3’ün sadece bir satırlık korolleri.",
+    "queries": [
+      {
+        "query": "Collatz sparse critical gaps growth exponent",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+sparse+critical+gaps+growth+exponent&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Syracuse Sturmian block injective segment exclusion",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=Syracuse+Sturmian+block+injective+segment+exclusion&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "3x+1 critical Beatty stopping time lower bound",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=3x%2B1+critical+Beatty+stopping+time+lower+bound&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz Banach density divergent orbit gaps",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+Banach+density+divergent+orbit+gaps&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz windowed orbit occupancy Curry",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+windowed+orbit+occupancy+Curry&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz polynomial initial state critical run",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+polynomial+initial+state+critical+run&searchtype=all&abstracts=show&size=5"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), Corollary 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor. 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every infinite aperiodic orbit O, #(O ∩ [a,a+X)) ≤ C X^β log(2X) uniformly in a, for every β > β∗; the reciprocal sum of a divergent orbit converges (Proposition 3.1).",
+        "opened": true
+      },
+      {
+        "cite": "López–Stoll, The 3x+1 conjugacy map over a Sturmian word, Integers 9 (2009), A13, 141–162",
+        "url": "https://math.colgate.edu/~integers/j13/j13.pdf",
+        "quote": "It is unknown if there exists any aperiodic v with an eventually periodic Φ(v). In this paper we compute Φ(v) for a class of aperiodic infinite words v of minimal complexity, the mechanical words with irrational slope and intercept. [OCR punctuation normalized]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography, II (2000–2009), arXiv:math/0608208",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "López and Stoll (2009), The 3x + 1 conjugacy map over a Sturmian word, Integers 9 (2009), A13, 141–162. This paper studies the 3x+1 conjugacy map Φ : Z2 → Z2.",
+        "opened": true
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Yeni bağımsız teorem değil: T3 alt sınırı ile üs karşılaştırması; ana hipotezler korunmalı.",
+    "literature_audit_limits": {
+      "bibliography_fulltext": "Downloaded both arXiv bibliography PDFs and extracted full text to lagarias_0309224.txt and lagarias_0608208.txt; grep counts (0309224/0608208): Sturmian 0/2, parity vector 4/6, entropy 0/4, collision 0/0, Fourier 3/0, density 52/8, cycle 141/84, Bernstein 4/4. No exact theorem identified; negative keyword match is NOT a proof of novelty.",
+      "citation_audit": "OpenAlex DOI resolve Garcia–Tal -> W40702193, cites:W40702193 returned six titles: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019); An Asymptotic Approach for the Collatz Conjecture; Lagarias annotated bibliographies I & II; 7x±1: Close Relative of Collatz Problem; A Numerical Verification for Asymptotic Approach of the Collatz Conjecture. Abstracts on OpenAlex scanned; PDFs not opened for those six: no claimed theorem verification. Rozier 2017 citing-works query could not complete: OpenAlex shared free-IP budget exhausted (HTTP 429); do NOT infer no citing paper. Semantic Scholar HTTP 429, Crossref later HTTP 429. Zenodo targeted queries 200 but mostly irrelevant results. Several arXiv API queries returned non-XML/429; per-query statuses logged. Supplementary arXiv HTML fallback (same 36 queries) gave HTTP 400 or HTTP 429; not evidence of absence.",
+      "primary_sources_opened": [
+        "https://arxiv.org/pdf/math/0309224",
+        "https://arxiv.org/pdf/math/0608208",
+        "https://arxiv.org/pdf/1909.03562",
+        "https://arxiv.org/pdf/1805.00133",
+        "https://arxiv.org/pdf/1510.01610",
+        "https://arxiv.org/pdf/1907.00775",
+        "https://math.colgate.edu/~integers/j13/j13.pdf",
+        "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content"
+      ]
+    }
+  },
+  {
+    "idx": 6,
+    "claim": "19-9-highhalf",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 9 — Neutral Critical-Density High-Half Cocycle/RESULTS_PACKAGE_AND_ALL_ARTIFACTS/ALL_ARTIFACTS/CP19_TASK9_DYADIC_RENORMALIZATION.md",
+    "exact_statement": "Çift t, F_k=⌊k log₂3⌋, n=F_t, F_{2t}=2n+ε (ε∈{0,1}), P=3^t; odd-only neutral word g_k=F_{k+1}−F_k; B_{2t}=P B_t+2^n D_t, r_t=[−B_t P^{−1}]_{2^n}, Y_t=(P r_t+B_t)/2^n=−C_t; r_{2t}=r_t+2^n z_t, z_t=[−(P Y_t+D_t)P^{−2}]_{2^{n+ε}}, C_{2t}=−(P Y_t+D_t+P²z_t)/2^{n+ε}; özel sonsuz pure-neutral 2-adik x₀ için bit_{F_t}(x₀)≡1+C_t (mod2). Fixed-width kapalı kokeylin imkânsızlığı İDDİA EDİLMİYOR, yalnız bu formül derinlik n+ε+w ister.",
+    "program_label": "Kaynak §Why it is not…: “No reduction to C_t mod 2^{w+O(1)} plus a bounded phase descriptor was found”; Task9 findings: “[FAIL: DYADIC HIGH-HALF REMAINS NONLOCAL]”, “[EXACT BUT GROWING-DEPTH]”; önceki tarama “[EXACT][FAIL fixed width]”, NEW-CANDIDATE.",
+    "correctness": "KOŞULLU-DOĞRU: bit eşitliği yalnız tarif edilen sonsuz pure-neutral x₀ ve yerel tail parity=1 için; unbounded-depth formül doğru, herhangi fixed-state mekanizmanın imkânsızlığı ispatlanmadı.",
+    "weakest_step": "Sırf quotient n+w precision gerektiriyor diye hiçbir alternatif bounded-state recurrence olamayacağı çıkmaz. Kaynak zaten böyle evrensel bir iddia kurmuyor; naive states k≤8 için finite collision bulunması tüm state sınıflarına yayılmaz.",
+    "check_code_and_output": {
+      "code_file": "check_claims.py",
+      "code_excerpt": "B,n=BC(0,t);D,k=BC(t,2*t);B2,N=BC(0,2*t); assert B2==3**t*B+2**n*D; assert z==(-(P*(-C)+D)*pow(P**2,-1,2**(N-n)))%2**(N-n)",
+      "output": "CP19T9 t 2 F_t 3 epsilon 0 C_t -4 C_2t -76 bit_Ft 1\nCP19T9 t 4 F_t 6 epsilon 0 C_t -76 C_2t -4916 bit_Ft 1\nCP19T9 t 6 F_t 9 epsilon 1 C_t -724 C_2t -422452 bit_Ft 1\nCP19T9 t 8 F_t 12 epsilon 1 C_t -4916 C_2t -37527943 bit_Ft 1",
+      "note": "Bu kontrol cocycle identity içindir; sonsuz x₀ tail bitinin ayrıca kritik ölçek dosyasında ispatı okunmuştur."
+    },
+    "triviality_derivation": "İki affine blok kompozisyonu B_{2t}=3^tB_t+2^{F_t}D_t ve r_{2t}=r_t+2^{F_t}z; substitution ve odd P² için modüler bölme z formülünü doğrudan verir. bit=1+C_t ise depth-(F_t+1) exact odd-cylinder top-lift parity’den gelir. Gösterilen precision gereği standart 2-adic Hensel bölmesinin muhasebesidir; evrensel fixed-width lower bound değildir.",
+    "queries": [
+      {
+        "query": "Collatz high-half 2-adic carry Hensel parity",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+high-half+2-adic+carry+Hensel+parity&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Syracuse neutral word dyadic renormalization cocycle",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=Syracuse+neutral+word+dyadic+renormalization+cocycle&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "3x+1 parity vector fixed width automaton",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=3x%2B1+parity+vector+fixed+width+automaton&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz Bernstein conjugacy nonlocal carries",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+Bernstein+conjugacy+nonlocal+carries&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "3x+1 affine 3^k numerator Hensel lift",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=3x%2B1+affine+3%5Ek+numerator+Hensel+lift&searchtype=all&abstracts=show&size=5"
+      },
+      {
+        "query": "Collatz Sturmian high binary digit critical density",
+        "service": "arXiv API",
+        "url": "https://export.arxiv.org/api/query",
+        "http_status": "no element found: line 1, column 0",
+        "hits": [],
+        "html_fallback_status": 429,
+        "html_fallback_url": "https://arxiv.org/search/?query=Collatz+Sturmian+high+binary+digit+critical+density&searchtype=all&abstracts=show&size=5"
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Rozier, Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding, arXiv:1805.00133",
+        "url": "https://arxiv.org/pdf/1805.00133",
+        "quote": "In this paper, we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called “3 x + 1” map. First, we prove a new formula for the inverse transform.",
+        "opened": true
+      },
+      {
+        "cite": "López–Stoll, The 3x+1 conjugacy map over a Sturmian word, Integers 9 (2009), A13, 141–162",
+        "url": "https://math.colgate.edu/~integers/j13/j13.pdf",
+        "quote": "It is unknown if there exists any aperiodic v with an eventually periodic Φ(v). In this paper we compute Φ(v) for a class of aperiodic infinite words v of minimal complexity, the mechanical words with irrational slope and intercept. [OCR punctuation normalized]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "Bernstein (1994), A Non-Iterative 2-adic Statement of the 3x + 1 Conjecture; Applegate and Lagarias (1995a), Density Bounds for the 3x + 1 Problem I. Tree-Search Method.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography, II (2000–2009), arXiv:math/0608208",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "López and Stoll (2009), The 3x + 1 conjugacy map over a Sturmian word, Integers 9 (2009), A13, 141–162. This paper studies the 3x+1 conjugacy map Φ : Z2 → Z2.",
+        "opened": true
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Affine bileşim + Hensel bölümünden çıkan iç hesap; genel sonlu-durum imkânsızlığı kanıtlanmadı.",
+    "literature_audit_limits": {
+      "bibliography_fulltext": "Downloaded both arXiv bibliography PDFs and extracted full text to lagarias_0309224.txt and lagarias_0608208.txt; grep counts (0309224/0608208): Sturmian 0/2, parity vector 4/6, entropy 0/4, collision 0/0, Fourier 3/0, density 52/8, cycle 141/84, Bernstein 4/4. No exact theorem identified; negative keyword match is NOT a proof of novelty.",
+      "citation_audit": "OpenAlex DOI resolve Garcia–Tal -> W40702193, cites:W40702193 returned six titles: On the Probabilistic Proof of the Convergence of the Collatz Conjecture (2019); An Asymptotic Approach for the Collatz Conjecture; Lagarias annotated bibliographies I & II; 7x±1: Close Relative of Collatz Problem; A Numerical Verification for Asymptotic Approach of the Collatz Conjecture. Abstracts on OpenAlex scanned; PDFs not opened for those six: no claimed theorem verification. Rozier 2017 citing-works query could not complete: OpenAlex shared free-IP budget exhausted (HTTP 429); do NOT infer no citing paper. Semantic Scholar HTTP 429, Crossref later HTTP 429. Zenodo targeted queries 200 but mostly irrelevant results. Several arXiv API queries returned non-XML/429; per-query statuses logged. Supplementary arXiv HTML fallback (same 36 queries) gave HTTP 400 or HTTP 429; not evidence of absence.",
+      "primary_sources_opened": [
+        "https://arxiv.org/pdf/math/0309224",
+        "https://arxiv.org/pdf/math/0608208",
+        "https://arxiv.org/pdf/1909.03562",
+        "https://arxiv.org/pdf/1805.00133",
+        "https://arxiv.org/pdf/1510.01610",
+        "https://arxiv.org/pdf/1907.00775",
+        "https://math.colgate.edu/~integers/j13/j13.pdf",
+        "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content"
+      ]
+    }
+  }
+]

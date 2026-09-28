@@ -1477,7 +1477,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-23T13:22:15.637901+00:00",
+  "updated_at": "2026-09-28T09:19:16.376336+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
@@ -1544,5 +1544,15 @@
     "report_sha256": "505cc5177496818ca73c9afa68d546a1680359d9424094a5a10009a0a44b0423",
     "code_sha256": "2ed81f58f5a6765c249a973bd9ff8cd0ecb9465b873deff9579db8b8ae555d31",
     "next_action": "Muse line audit; apply red-team clarity fixes; consortium: iterate PBM to growing delta (log m blocks) with *-density exponent control"
+  },
+  "novelty_audit_20260923": {
+    "timestamp": "2026-09-28T09:19:16.376336+00:00",
+    "checkpoint": "NOVELTY_AUDIT_20260923",
+    "status": "CLOSED",
+    "method": "whole-programme novelty scan: 7 isolated Unreal Agent era sessions (391 claims) + 8 deep sessions on 50 NEW-CANDIDATEs; coordinator primary-source checks (Curry 2026 Zenodo, LMN 1995 Cor. 2, Inselmann 2024); external cross-check session",
+    "scientific_status": "CP02-CP19 sparsity line SUPERSEDED by Garcia-Tal 1999 / Curry 2026; NEW-MINOR: CP17 chi_n=O(n^4), CP19 T3, CP20 kappa band, CP26 COLLAPSE (PROOF stands, LMN Cor.2 verified, threshold 17013 exact); TRIVIAL: CP27 Lemma V, CP28 PBM (corollary of Inselmann), CP23 sign-blindness; FLAWED: continued-fraction n0>=2^... figures (bounds on C(n0), withdrawn). chi_s exact s<=16: increments 0.4616->0.4714 rising, linear vs s log s undecided; 7/15 guess withdrawn. Collatz OPEN",
+    "report_sha256": "daf5644196df3e133cb270688d115a73b599c61f44999894708421c7c3408e7a",
+    "code_sha256": "ec1c7903fd82bcc0a1de7131b8910bf17c096f29242b5734991aac4a3d2bf1a9",
+    "next_action": "bound off-diagonal collision term (sup E_j) for chi_s; optional: short honest note on NEW-MINOR items"
   }
 }

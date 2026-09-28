@@ -1,0 +1,268 @@
+[
+  {
+    "q": "Collatz valuation word factor complexity repeated factor affine divisibility",
+    "service": "crossref",
+    "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20valuation%20word%20factor%20complexity%20repeated%20factor%20affine%20divisibility",
+    "status": 429
+  },
+  {
+    "q": "Syracuse E-sequence prefix repetition logarithmic discrepancy stopping time",
+    "service": "zenodo",
+    "url": "https://zenodo.org/api/records?size=2&q=Syracuse%20E-sequence%20prefix%20repetition%20logarithmic%20discrepancy%20stopping%20time",
+    "status": 200,
+    "hits": [
+      {
+        "title": "The Minimal Interference Law for Rotational Systems",
+        "doi": "10.5281/zenodo.18263554"
+      },
+      {
+        "title": "Attention-Based LSTM + XGBoost for Orbit Stability Prediction",
+        "doi": "10.5281/zenodo.20676823"
+      }
+    ]
+  },
+  {
+    "q": "Collatz parity vector subword complexity exponential entropy",
+    "service": "arxiv",
+    "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=0&max_results=2",
+    "status": 429
+  },
+  {
+    "q": "3x+1 cycle 2^m-3^k affine repeated valuation blocks",
+    "service": "crossref",
+    "url": "https://api.crossref.org/works?rows=2&query.bibliographic=3x%2B1%20cycle%202%5Em-3%5Ek%20affine%20repeated%20valuation%20blocks",
+    "status": 200,
+    "hits": [
+      {
+        "title": "Property Market Cycle and Valuation: A Geometrical Approach",
+        "doi": "10.1007/978-3-031-09450-7_13",
+        "abstract": ""
+      },
+      {
+        "title": "Chapter 9. Trees with Valuation",
+        "doi": "10.1515/9781400829057.77",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "q": "Collatz polynomial orbit growth valuation word factor complexity",
+    "service": "crossref",
+    "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20polynomial%20orbit%20growth%20valuation%20word%20factor%20complexity",
+    "status": 200,
+    "hits": [
+      {
+        "title": "On the complexity of orbit word problems",
+        "doi": "10.1016/j.jco.2025.101929",
+        "abstract": ""
+      },
+      {
+        "title": "ORBIT COUNTING AND THE TUTTE POLYNOMIAL",
+        "doi": "10.1093/acprof:oso/9780198571278.003.0001",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "q": "Collatz symbolic controller Sturmian subshift bounded discrepancy",
+    "service": "zenodo",
+    "url": "https://zenodo.org/api/records?size=2&q=Collatz%20symbolic%20controller%20Sturmian%20subshift%20bounded%20discrepancy",
+    "status": 200,
+    "hits": [
+      {
+        "title": "Monotone Loss of Symbolic Freedom in the Collatz Dynamics via HKD Piano Lanes",
+        "doi": "10.5281/zenodo.18378243"
+      },
+      {
+        "title": "Static Block Cellular Automata Theory - A Formal Reconstruction from Dynamic Evolution to Spacetime Graphs",
+        "doi": "10.5281/zenodo.17391526"
+      }
+    ]
+  },
+  {
+    "q": "Collatz zero critical valuation weighted pressure entropy Chernoff",
+    "service": "arxiv",
+    "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=2&max_results=2",
+    "status": 429
+  },
+  {
+    "q": "Syracuse valuation sequence topological entropy zero critical",
+    "service": "crossref",
+    "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Syracuse%20valuation%20sequence%20topological%20entropy%20zero%20critical",
+    "status": 200,
+    "hits": [
+      {
+        "title": "Polynomial Entropy in Planar Filippov Systems with Zero Topological Entropy",
+        "doi": "10.2139/ssrn.6711871",
+        "abstract": "<jats:p>In this paper, we study polynomial entropy as a refined invariant for planar Filippov systems with zero topological entropy. Using a semiconjugation with symbolic dynamics, we construct invariant subsets whose polynomial entropy reaches any prescribed value $\\beta \\geq 1$, through Sturmian a"
+      },
+      {
+        "title": "Graph maps with zero topological entropy and sequence entropy pairs",
+        "doi": "10.1090/proc/15578",
+        "abstract": "<p>\n                    We show that graph map with zero topological entropy is Li-Yorke chaotic if and only if it has an NS-pair (a pair of non-separable points containing in a same solenoidal\n                    <inline-formula content-type=\"math/mathml\">\n                      <mml:math xmlns:mml="
+      }
+    ]
+  },
+  {
+    "q": "Collatz Sturmian phase parity vector large deviations",
+    "service": "crossref",
+    "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20Sturmian%20phase%20parity%20vector%20large%20deviations",
+    "status": 200,
+    "hits": [
+      {
+        "title": "Large Deviations for Vector-Valued Additive Functionals",
+        "doi": "10.1017/9781009053129.012",
+        "abstract": ""
+      },
+      {
+        "title": "GENERAL LEMMAS ON THE DISTRIBUTION DENSITY FOR LARGE DEVIATIONS OF A RANDOM VECTOR",
+        "doi": "10.1515/9783112319024-038",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "q": "Collatz factor complexity Banach density divergent orbit",
+    "service": "zenodo",
+    "url": "https://zenodo.org/api/records?size=2&q=Collatz%20factor%20complexity%20Banach%20density%20divergent%20orbit",
+    "status": 200,
+    "hits": [
+      {
+        "title": "Almost-sure non-divergence of positive Collatz orbits: a 2-adic density-zero result",
+        "doi": "10.5281/zenodo.19058317"
+      },
+      {
+        "title": "VERIFICATION OF THE COLLATZ CONJECTURE VIA DENSITY MAP CONTRACTION AND THE MATRYOSHKA PRINCIPLE",
+        "doi": "10.5281/zenodo.19703093"
+      }
+    ]
+  },
+  {
+    "q": "Collatz critical logarithm reciprocal sum valuation sequence",
+    "service": "arxiv",
+    "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=4&max_results=2",
+    "status": 429
+  },
+  {
+    "q": "3x-1 Collatz carry character sum Fourier collision",
+    "service": "crossref",
+    "url": "https://api.crossref.org/works?rows=2&query.bibliographic=3x-1%20Collatz%20carry%20character%20sum%20Fourier%20collision",
+    "status": 200,
+    "hits": [
+      {
+        "title": "Collatz Trees: A Structural Framework for Understanding the 3x+1 Problem",
+        "doi": "10.20944/preprints202504.1491.v4",
+        "abstract": "<jats:p>The Collatz Conjecture remains one of the most enduring unsolved problems in mathematics, despite being based on an extraordinarily simple rule. Given any natural number n, the conjecture posits that repeatedly applying the operation—dividing by 2 if even, or multiplying by 3 and adding 1 if"
+      },
+      {
+        "title": "A Definitive Proof of the Collatz Conjecture using the Halemane(3X±1)/4System",
+        "doi": "10.31224/7569",
+        "abstract": "<jats:p>Halemane(3X±1)/4System is defined, similar to the Collatz (3x+1) System, with slightly modified operations.  On similar lines, we define the CTUHSK(3x+1)/4System, and show that to be exactly the same as the Collatz (3x+1) System.  The convergence of Halemane(3X±1)/4System to its trivial-cycl"
+      }
+    ]
+  },
+  {
+    "q": "Collatz geometric valuation entropy bounded alphabet",
+    "service": "crossref",
+    "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20geometric%20valuation%20entropy%20bounded%20alphabet",
+    "status": 200,
+    "hits": [
+      {
+        "title": "Proposal for Geometric Parallel Cosmology (GPC) Framework: A Cyclic Geometric Cosmology with Bounded Entropy, Universal Rotation, and Testable CMB and Tensor Spectrum Signatures",
+        "doi": "10.2139/ssrn.6411919",
+        "abstract": "<jats:p>The Geometric Parallel Cosmology (GPC) Framework proposes a cyclically evolving universe operating on trillion-year timescales, stabilized through a three-way bleed-through mechanism involving gravitational leakage, bubble overlap, and quantum entanglement persistence. Unlike Conformal Cycli"
+      },
+      {
+        "title": "Collatz dynamics as an almost circle rotation with bounded error",
+        "doi": "10.64240/5b0b1e0cca",
+        "abstract": "<jats:p>If Collatz iterates are nearly an irrational circle rotation, what does that change about how we should look for a proof?</jats:p>"
+      }
+    ]
+  },
+  {
+    "q": "Syracuse weighted pressure unbounded valuations zero defect",
+    "service": "zenodo",
+    "url": "https://zenodo.org/api/records?size=2&q=Syracuse%20weighted%20pressure%20unbounded%20valuations%20zero%20defect",
+    "status": 200,
+    "hits": [
+      {
+        "title": "Total Quality Management (TQM) – ZERO EFFECT ZERO DEFECT (ZED)",
+        "doi": "10.5281/zenodo.3607008"
+      },
+      {
+        "title": "Fractal analysis of AIDS prevalence across economic demographics",
+        "doi": "10.5281/zenodo.1964390"
+      }
+    ]
+  },
+  {
+    "q": "Collatz critical stopping time 2.784 entropy obstruction",
+    "service": "arxiv",
+    "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=6&max_results=2",
+    "status": 429
+  },
+  {
+    "q": "Collatz Garcia Tal Rozier Banach density trajectories",
+    "service": "crossref",
+    "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20Garcia%20Tal%20Rozier%20Banach%20density%20trajectories",
+    "status": 200,
+    "hits": [
+      {
+        "title": "Paradoxical behavior in Collatz sequences",
+        "doi": "10.1016/j.disc.2026.115167",
+        "abstract": ""
+      },
+      {
+        "title": "Are the Collatz and abc Conjectures Related?",
+        "doi": "10.1080/10586458.2025.2470938",
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "q": "Collatz cycle zero-critical Sturmian subshift",
+    "service": "crossref",
+    "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20cycle%20zero-critical%20Sturmian%20subshift",
+    "status": 429
+  },
+  {
+    "q": "Collatz affine map repeated factors 2-adic divisibility",
+    "service": "zenodo",
+    "url": "https://zenodo.org/api/records?size=2&q=Collatz%20affine%20map%20repeated%20factors%202-adic%20divisibility",
+    "status": 200,
+    "hits": [
+      {
+        "title": "Collatz Lab — exact-arithmetic laboratory and obstruction map for the accelerated Collatz map",
+        "doi": "10.5281/zenodo.21423111"
+      },
+      {
+        "title": "IV. Arithmetic obstruction to mixed orbits in the 2-adic Collatz dynamics",
+        "doi": "10.5281/zenodo.19006411"
+      }
+    ]
+  },
+  {
+    "q": "Collatz subword complexity Dubickas Lopez Stoll",
+    "service": "arxiv",
+    "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=8&max_results=2",
+    "status": 429
+  },
+  {
+    "q": "Syracuse pressure transfer matrix entropy bounded discrepancy",
+    "service": "crossref",
+    "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Syracuse%20pressure%20transfer%20matrix%20entropy%20bounded%20discrepancy",
+    "status": 200,
+    "hits": [
+      {
+        "title": "Ising’s Roots and the Transfer-Matrix Eigenvalues",
+        "doi": "10.3390/e26060459",
+        "abstract": "<jats:p>Today, the Ising model is an archetype describing collective ordering processes. As such, it is widely known in physics and far beyond. Less known is the fact that the thesis defended by Ernst Ising 100 years ago (in 1924) contained not only the solution of what we call now the ‘classical 1D"
+      },
+      {
+        "title": "Bounded Confidence and Cohesion-Moderated Pressure: A General Model for the Large-Scale Dynamics of Ordered Opinion",
+        "doi": "10.3390/e25081219",
+        "abstract": "<jats:p>Due to the development of social media, the mechanisms underlying consensus and chaos in opinion dynamics have become open questions and have been extensively researched in disciplines such as sociology, statistical physics, and nonlinear mathematics. In this regard, our paper establishes a "
+      }
+    ]
+  }
+]

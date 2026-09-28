@@ -1,0 +1,979 @@
+[
+  {
+    "id": "14-energy-transfer",
+    "checkpoint": "CP14",
+    "claim": "p_fixed(m,s;y) ≤ (2^m/binom(m,s))p_Syr(s;y) ve χ_fixed ≤ (2^m/binom(m,s))²χ_Syr.",
+    "program_label": "[EXACT]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP14 — RECOVERED ARCHIVE/CP14_SOURCE_RECOVERY_MANIFEST_AND_SUMMARY.docx.txt",
+    "verdict": "PARTIAL",
+    "references": [],
+    "queries": [
+      "fixed weight Syracuse collision energy modulo 3^s",
+      "3x+1 reverse gaps geometric distribution endpoint",
+      "Collatz parity vector affine offset 3^s energy"
+    ],
+    "note": "Koşullandırma olasılığına bölme standart; Syracuse offseti ile özel eşleme için birebir daha eski yayımlanmış eşdeğer bulunamadı; yalnız yeniden kurulmuş özet mevcut."
+  },
+  {
+    "id": "15-unrecovered",
+    "checkpoint": "CP15",
+    "claim": "CP15 arşivinde geri kazanılabilir teorem veya exact hesap yok (metin 0 bayt).",
+    "program_label": "[MISSING]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP15 — RECOVERED ARCHIVE/CP15_SOURCE_RECOVERY_MANIFEST_AND_SUMMARY.docx.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz unrecovered orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "İddia değil, kapsamın veri kaybı kaydı."
+  },
+  {
+    "id": "17-harmonic",
+    "checkpoint": "CP17",
+    "claim": "Pozitif injektif Syracuse yörüngesinde limsup H_N/ln ln N ≤ 2.74288143876594.",
+    "program_label": "[PROVED][FROZEN][AUDITED]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP17 — FROZEN FINAL/CP17_FINAL_PACKAGE_V3.zip",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Banach density infinite 3x+1 orbit Garcia Tal 1999 fundamental lemma",
+      "divergent Collatz orbit reciprocal sum summable",
+      "Collatz limsup harmonic sum log log N Curry"
+    ],
+    "note": "Garcia–Tal Fundamental Lemma 1999 + Heppner g(k)=O(k^δ₂) doğrudan uniform #orbit∩[a,a+X)=O(X^b log X), b<1 verir; a=1 dyadik toplama ile H_∞<∞. Curry aynı sonucu açıkça Proposition 3.1 olarak yazdı. Her iki kaynak periyodik olmayan/injektif sonsuz yörüngeler için; döngüler hariç."
+  },
+  {
+    "id": "17-log-floor",
+    "checkpoint": "CP17",
+    "claim": "Pozitif injektif sonsuz yörüngede limsup(s_k−log₂k)=+∞; s_k≤log₂k+C nihayette imkânsız.",
+    "program_label": "[PROVED][FROZEN]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP17 — FROZEN FINAL/CP17_FINAL_PACKAGE_V3.zip",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz logarithmic floor exclusion divergent orbit",
+      "Collatz reciprocal sum Banach density orbit",
+      "Syracuse valuation drift g_n B log2 n Curry"
+    ],
+    "note": "g_k=αk−A_k=s_k+{αk}; Curry B<1/β*=1.0358567... ile B=1 ve hatta daha geniş bandı dışlar; Garcia–Tal polinom sayımdan da summability yoluyla B=1 çıkar."
+  },
+  {
+    "id": "17-carry",
+    "checkpoint": "CP17",
+    "claim": "U_N=1+Σ_{k<N}2^{A_k−αk}/(3n₀) ve 0≤H_N−3ln U_N≤π²/48.",
+    "program_label": "[PROVED]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP17 — FROZEN FINAL/CP17_FINAL_PACKAGE_V3.zip",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Eliahou Rozier Syracuse product identity",
+      "Collatz harmonic sum log product odd orbit",
+      "3x+1 reciprocal sum carry identity"
+    ],
+    "note": "Curry §4 product identity kullanır; kaynak ürün özdeşliğini Eliahou/Rozier diye anar; kare toplamı injektif tek sayılar üzerinden elementerdir."
+  },
+  {
+    "id": "17-energy",
+    "checkpoint": "CP17",
+    "claim": "Syracuse mod 3^s çarpışma enerjisi χ_s=3^sΣ_y p_s(y)²=O(s⁴).",
+    "program_label": "[PROVED][FROZEN]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP17 — FROZEN FINAL/CP17_FINAL_PACKAGE_V3.zip",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Syracuse polynomial collision energy modulo 3^s",
+      "3x+1 inverse tree density second moment 3^s",
+      "Collatz geometric gap residue distribution chi_s",
+      "arXiv API: all:Collatz AND all:collision AND all:energy (0)"
+    ],
+    "note": "Birebir yayımlanmış polinom sınır tespit edilmedi; matematiksel geçerlik için arşiv auditine dayanılıyor, bağımsız hakemlik yok. Lagarias bibliyografyaları arandı, tekil teorem için birincil pozitif eşleşme bulunmadı."
+  },
+  {
+    "id": "17-prefix-rate",
+    "checkpoint": "CP17",
+    "claim": "Kritik tasarruf β₀=4(α−1)/(α+2)=0.6526846522 ile K17=β₀ ln2/(3I(α)); regresyon K11=4.91656355.",
+    "program_label": "[CERTIFIED NUM][PROVED]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP17 — FROZEN FINAL/CP17_FINAL_PACKAGE_V3.zip",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz harmonic upper constant 2.742881",
+      "Syracuse rate function I log2 3",
+      "Banach density harmonic sum 3x+1"
+    ],
+    "note": "Programın kendine özgü ispat sabitleri, önceki 1999 sonucu karşısında optimum yenilik iddiası yok."
+  },
+  {
+    "id": "18-1-cylinder",
+    "checkpoint": "CP18T1",
+    "claim": "Her uzunluk-r değerleme sözü w tam bir tek başlangıç sınıfı n₀≡3⁻ʳ(2ᴬ−B_w) (mod 2^{A+1}) belirler.",
+    "program_label": "[EXACT]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK1_PACKAGE.zip",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Terras Everett parity vector residue classes 2^m",
+      "odd Collatz valuation word exact cylinder modulus 2^A",
+      "Collatz affine offset inverse tree"
+    ],
+    "note": "Terras/Everett parity prefix sınıflaması; Curry Lemma 2.1 tam parite için. Özel değerleme modülü yine elementer affine iterasyondur."
+  },
+  {
+    "id": "18-1-enum",
+    "checkpoint": "CP18T1",
+    "claim": "r≤22 için 11,904,053 söz, 97 (r,q) ailesi tam tarandı; r=5 için Rmin=63 ve r=6 için Rmin=27 monotonluk yok.",
+    "program_label": "[EXACT-COMPUTATION][FAIL]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK1_PACKAGE.zip",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz least realizer residue class enumeration",
+      "3x+1 valuation word minimal representative",
+      "Collatz stopping time distribution records"
+    ],
+    "note": "Tarama sonlu/stratejiye özgü; digestte r=5,6 karşılaştırması, T1 denetiminde sayım off-by-one notu."
+  },
+  {
+    "id": "18-1-sign",
+    "checkpoint": "CP18T1",
+    "claim": "q=αr−A>0 için n_v/n_u=2^q+B/(2ᴬn_u)>1; büyük s çekilmeyi zorunlu kılmaz.",
+    "program_label": "[EXACT][FALSE prior intuition]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK1_PACKAGE.zip",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz sign orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Affine formülden işaret hesabı; yanlış karşı yön yorumu düzeltilmiş."
+  },
+  {
+    "id": "18-2-firstpass",
+    "checkpoint": "CP18T2",
+    "claim": "Yeni E rekorunun artışı tam 1’dir; blokta S_j≥C_u(j) (j<r), S_r=C_u(r)−1 gerekir.",
+    "program_label": "[EXACT]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK2_PACKAGE.zip",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz firstpass orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Adım artışı ≤1 ve ilk geçiş koşulları tanımdan."
+  },
+  {
+    "id": "18-2-min-counter",
+    "checkpoint": "CP18T2",
+    "claim": "M(1,5)=127>M(1,6)=103; M(1,17)=17897>M(1,18)=4985: yerel en-küçük durum büyümesi zorunlu değil.",
+    "program_label": "[COUNTEREXAMPLE][FAIL]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK2_PACKAGE.zip",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz counter orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Pozitif sonlu Syracuse tanıkları 169 ve 137; bu strateji-özel ters örnektir."
+  },
+  {
+    "id": "18-3-ratio",
+    "checkpoint": "CP18T3",
+    "claim": "Sonsuz alt-yakınsak Christoffel ailesinde N_FP(u,r)/N_END(u,r)=1/r; tek biçimli 2^(−ηr) tasarruf yanlış.",
+    "program_label": "[EXACT][COUNTEREXAMPLE]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK3_PACKAGE.zip",
+    "verdict": "PARTIAL",
+    "references": [],
+    "queries": [
+      "Christoffel word cycle lemma 1/r first passage",
+      "Collatz first passage stopping time distribution entropy",
+      "Terras Everett ballot cyclic compositions"
+    ],
+    "note": "Klasik çevrim-minimum/Raney-cycle lemma şeması; özel ilk-geçiş sınırına uygulanışı için denk yayımlanmış kaynak doğrulanmadı."
+  },
+  {
+    "id": "18-4-alternating",
+    "checkpoint": "CP18T4",
+    "claim": "(1,2)^∞ sözü E_{2m}=⌊m log₂(9/8)⌋−⌊log₂(2m)⌋→∞ ve 1-koşusu ≤1; her sonlu önek pozitifte gerçekleşir.",
+    "program_label": "[PROVED][COUNTEREXAMPLE]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK4_PACKAGE.zip",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz alternating orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Tek sabit pozitif başlangıç iddia edilmiyor: 2-adik limit −5."
+  },
+  {
+    "id": "18-5-occupation",
+    "checkpoint": "CP18T5",
+    "claim": "b<1−K17/3≈0.085706 için Σ_{k<N:E_k≤b log₂ lnN}1/k=o(lnN).",
+    "program_label": "[VALID][AUDITED]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK5_PACKAGE.zip",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz weighted logarithmic occupation drift",
+      "Banach density orbit reciprocal sum Garcia Tal",
+      "Syracuse sparse low excess harmonic weight"
+    ],
+    "note": "1999 uniform sublinear üs sayımı ⇒ ∑_k1/n_k<∞; n_k≥? E_k≤b log₂ lnN iken n_k≤const k(lnN)^b, böylece ağırlık ≤const(lnN)^b, b<1 için o(lnN)."
+  },
+  {
+    "id": "18-5-phase",
+    "checkpoint": "CP18T5",
+    "claim": "CP17 işgali E seviyesini sınırlasa da noktasal faz uyuşması veya sıradan-zaman yoğunluğu çıkarmaz.",
+    "program_label": "[VALID][NEGATIVE]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK5_PACKAGE.zip",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz phase orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Mantıksal kapsam sınırlaması; T9 somut ters örnekleri var."
+  },
+  {
+    "id": "18-6-2adic",
+    "checkpoint": "CP18T6",
+    "claim": "Sabit sonsuz a_i için x=−Σ_{j≥0}2^{A_j}/3^{j+1}∈Z₂ tek 2-adik gerçekleyicidir; x≥0 tam sayı ⇔ kanonik ρ_R sonunda sabit.",
+    "program_label": "[VALID][EXACT]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK6_PACKAGE.zip",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz 2-adic parity vector inverse conjugacy",
+      "Syracuse 2-adic realizer valuation sequence",
+      "3x+1 residues canonical stabilization"
+    ],
+    "note": "Bilinen 2-adik ters-limit ve sayısal kesit ilkesi; pozitif gerçekleyiciyi otomatik vermez."
+  },
+  {
+    "id": "18-6-periodic",
+    "checkpoint": "CP18T6",
+    "claim": "Periyodik düşük ortalamalı A/r<log₂3 değerleme sözünün tek 2-adik sabit-noktası −B/(3^r−2^A)<0; pozitif periyodik/nihayette periyodik yörünge olmaz.",
+    "program_label": "[EXACT]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK6_PACKAGE.zip",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz cycles 2^m-3^k Steiner Eliahou",
+      "3x-1 cycles negative periodic valuations",
+      "Syracuse periodic word rational cycle"
+    ],
+    "note": "Negatif işaret affine cycle denkleminden standart; bibliyografya yalnız alan rehberi, aynı teorem için birincil yayımlı tam eşleşme doğrulanmadı; teknik olarak STANDARD daha emniyetli."
+  },
+  {
+    "id": "18-7-redundant",
+    "checkpoint": "CP18T7",
+    "claim": "Task 7 popcount alt sınırı CP17’ye göre yeni bağımsız Side-B kazancı vermedi.",
+    "program_label": "[FAIL/REDUNDANT]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK7_PACKAGE.zip",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz redundant orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Ölü yol; başka bir evrensel imkânsızlık iddiası değildir."
+  },
+  {
+    "id": "18-8-redundant",
+    "checkpoint": "CP18T8",
+    "claim": "Task 8 uç nokta mod 3^r bağımsız kazancı CP17’ye göre yeni bağımsız Side-B kazancı vermedi.",
+    "program_label": "[FAIL/REDUNDANT]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK8_PACKAGE.zip",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz redundant orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Ölü yol; başka bir evrensel imkânsızlık iddiası değildir."
+  },
+  {
+    "id": "18-9-extremes",
+    "checkpoint": "CP18T9",
+    "claim": "Seyrek A’da turnover O(logN), yoğun B’de turnover N−O(logN), ikisinde s_k farkı O(1) ve X_N^B≤2X_N^A.",
+    "program_label": "[COUNTEREXAMPLE][FAIL]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK9_PACKAGE.zip",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz extremes orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "İki soyut sonsuz sözün her sonlu öneki pozitif gerçekleşir; LEVEL-3 burada gösterilmiyor."
+  },
+  {
+    "id": "18-10-barrier",
+    "checkpoint": "CP18T10",
+    "claim": "Her sonlu değerleme öneki pozitif aritmetik ilerlemede gerçekleşirken 1^∞/ (1,2)^∞ limitleri −1/−5 olup pozitif LEVEL-3 vermez.",
+    "program_label": "[VALID][COUNTEREXAMPLE]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK10_PACKAGE.zip",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz barrier orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Z₂ kompaktlığı ile N>0 kapalı olmaması; sonlu koşuldan tek başlangıç çıkarımı yanlıştır."
+  },
+  {
+    "id": "19-1-negative",
+    "checkpoint": "CP19T1",
+    "claim": "X_R=Σ_{j<R}2^{D_j}→∞ ise 2-adik gerçekleyici x negatif olağan tam sayı olamaz.",
+    "program_label": "[EXACT]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 1 — Critical Sparse-Defect Inverse-Limit Classification/CP19_TASK1_SPARSE_DEFECT_THEOREM.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz negative orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "İşaret + affine özdeşlik, koşullu; pozitif dışlanmadı."
+  },
+  {
+    "id": "19-1-schedule",
+    "checkpoint": "CP19T1",
+    "claim": "A’nın p_m=2^m/(m+1)+O(1) defektleri ile s_k=log₂k+log₂log₂k+O(1) ve X_N=O(loglogN) elde edilir.",
+    "program_label": "[EXACT][FAIL positive exclusion]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 1 — Critical Sparse-Defect Inverse-Limit Classification/CP19_TASK1_FINDINGS.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz schedule orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Program inşasının özelliği; sabit pozitif yörünge değildir."
+  },
+  {
+    "id": "19-2-gap",
+    "checkpoint": "CP19T2",
+    "claim": "Kritik g_{u..u+r−1} bloğu tek 2^{G+1} sınıfını belirler; gerçekleşmede n_u≥M(u,r), varsayılan pozitif sabit yörüngede n_u=O(u logu loglogu).",
+    "program_label": "[LEAD][EXACT]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 2 — Critical-Gap State Barrier/CP19_TASK2_CRITICAL_GAP_THEOREM.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz critical Beatty valuation block minimum residue",
+      "Syracuse affine offset state bound critical gaps",
+      "Sturmian parity vector 2^A residue"
+    ],
+    "note": "İlk kısmı standart; ikinci A-özel üst sınır, genel uniform M alt bağı gösterilmemiştir."
+  },
+  {
+    "id": "19-3-sturmian",
+    "checkpoint": "CP19T3",
+    "claim": "Kritik mekanik sözcüğün uzunluk-ℓ faktör sayısı tam ℓ+1 ve A_min=⌊αℓ⌋.",
+    "program_label": "[PROVED][AUDITED][FROZEN]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 3 — Sturmian Critical-Tail Small-Residue Exclusion/ALL_ARTIFACTS/CP19_TASK3_STURMIAN_FACTOR_THEOREM.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz sturmian orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Klasik Sturmian faktör karmaşıklığı / dengelilik; özel g sözcüğünde α−1 eğimi."
+  },
+  {
+    "id": "19-3-lower",
+    "checkpoint": "CP19T3",
+    "claim": "Pozitif injektif kritik r≥16 Syracuse segmenti n_u≥r^(1+α)/(24log₂r)−2r/3 sağlar.",
+    "program_label": "[PROVED][AUDITED][FROZEN]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 3 — Sturmian Critical-Tail Small-Residue Exclusion/ALL_ARTIFACTS/CP19_TASK3_MAJOR_THEOREM.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "critical Beatty block Syracuse state lower bound r^(1+log2 3)",
+      "Sturmian factor complexity Collatz injective segment packing",
+      "Collatz Banach density windowed count Garcia Tal Curry",
+      "arXiv API: all:Collatz AND all:Sturmian AND all:segment (0)"
+    ],
+    "note": "Garcia–Tal/Curry uniform genel yörünge sayımı en fazla r^(1/β*) ölçekli alt sınır sağlar; kritik blok Sturmian özel r^(1+α) (>r^2.58) sınırını kapsamaz."
+  },
+  {
+    "id": "19-3-general",
+    "checkpoint": "CP19T3",
+    "claim": "r_m≥u_m^δ, n_{u_m}≤u_m^(κ+o(1)) olan kritik aralıklı varsayımsal orbit δ(1+α)>κ ise imkânsızdır.",
+    "program_label": "[PROVED][AUDITED][FROZEN]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 3 — Sturmian Critical-Tail Small-Residue Exclusion/ALL_ARTIFACTS/CP19_TASK3_SPARSE_CRITICAL_THEOREM.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz sparse critical gaps growth exponent delta",
+      "Syracuse Sturmian gap polynomial state lower bound",
+      "Collatz windowed orbit count power saving",
+      "arXiv API: all:Collatz AND all:Sturmian AND all:segment (0)"
+    ],
+    "note": "T3 özel blok alt sınırı + üst büyüme birleştirmesi; Garcia–Tal genel sayımı aynı δ(1+α) eşiğini vermez."
+  },
+  {
+    "id": "19-3-A",
+    "checkpoint": "CP19T3",
+    "claim": "Kritik aralıkları r_m/u_m→1 olan Construction A’nın 2-adik gerçekleyicisi x_A∉Z.",
+    "program_label": "[PROVED][AUDITED][FROZEN]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 3 — Sturmian Critical-Tail Small-Residue Exclusion/ALL_ARTIFACTS/CP19_TASK3_MAJOR_THEOREM.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz a orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Pozitif kısmı zaten Garcia–Tal ile: hipotetik A yörüngesinde n_k=k^(1+o(1)) tüm k için, b<1 küresel orbit sayımına aykırı; negatif tam sayı dışlaması A-özel işaret kanıtından gelir, Garcia negatiflere uygulanmaz."
+  },
+  {
+    "id": "19-4-packing",
+    "checkpoint": "CP19T4",
+    "claim": "Pozitif injektif segmentte #pencere başlangıcı≤(H/2)Σ_{W∈C}2^(−A(W))+|C|.",
+    "program_label": "[PROVED][AUDITED][FROZEN]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 4 — Occupation–Complexity–Turnover Dichotomy/ALL_ARTIFACTS/CP19_TASK4_GENERAL_PACKING_THEOREM.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz valuation cylinder weighted packing",
+      "Syracuse parity vector residue class count H/2^A",
+      "Terras Everett counting affine offset"
+    ],
+    "note": "Tam silindir başına ≤H/2^(A+1)+1 sayımı ve toplama; ağırlıklı özel yazım basit pigeonhole."
+  },
+  {
+    "id": "19-4-nearlinear",
+    "checkpoint": "CP19T4",
+    "claim": "H_N=max_{k<N}n_k=N^(1+o(1)) olan pozitif injektif yörüngede ℓ=⌊½log₂N⌋ tüm pencerelerin A(v,ℓ)≤(μ+o(1))ℓ olması hiçbir 1<μ<2 için mümkün değildir.",
+    "program_label": "[PROVED][AUDITED][FROZEN]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 4 — Occupation–Complexity–Turnover Dichotomy/ALL_ARTIFACTS/CP19_TASK4_MAJOR_THEOREM.md",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz logarithmic valuation windows mean below 2 injective",
+      "Syracuse near linear maximum state entropy composition",
+      "Collatz Banach density parity vector windowed count"
+    ],
+    "note": "Daha kuvvetli: Garcia–Tal 1999 #O∩[1,X]=O(X^b logX), b<1. H_N=N^(1+o(1)) varsayımı bile N≤O(H_N^b log H_N)=N^(b+o(1)) çelişir; pencere şartına gerek kalmaz."
+  },
+  {
+    "id": "19-4-threshold",
+    "checkpoint": "CP19T4",
+    "claim": "ℓ≈c log₂N, A≤(α+o(1))ℓ için packing κ<κ*=α/h(α)=1.0526808586 durumunu dışlar; h(α)=1.5056438879.",
+    "program_label": "[PROVED][AUDITED][FROZEN]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 4 — Occupation–Complexity–Turnover Dichotomy/ALL_ARTIFACTS/CP19_TASK4_ENTROPY_ANALYSIS.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz drift exponent 1.0526808586 entropy window",
+      "Syracuse logarithmic floor 1.0358567 Curry",
+      "Collatz composition entropy parity vector state exponent"
+    ],
+    "note": "Curry s_k=κlog₂k+O(1) ve κ<1/β*=1.0358567 dışlar; bu iddia ek tüm-pencere koşulunda κ∈[1.0358567,1.0526808586) bandında daha güçlüdür; κ ile B yalnız varsayılan orbitte bounded Q∞ sayesinde eşlenir. H_N burada harmonik toplam değil, maksimum durum yüksekliğidir; η(α)=α−h(α)=0.0793186127."
+  },
+  {
+    "id": "19-4-B",
+    "checkpoint": "CP19T4",
+    "claim": "Construction B her pencerede A≤⌈αℓ⌉+2 ve varsayılan pozitif başlangıçta H_N=N^(1+o(1)); dolayısıyla x_B∉Z_{>0}.",
+    "program_label": "[PROVED][AUDITED][FROZEN]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 4 — Occupation–Complexity–Turnover Dichotomy/ALL_ARTIFACTS/CP19_TASK4_MAJOR_THEOREM.md",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz b orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "1999 Garcia–Tal sayımı varsayılan pozitif injektif B yörüngesinde H_N=N^(1+o(1)) olasılığını tek başına dışlar; özel şema sonuca gereksiz."
+  },
+  {
+    "id": "19-4-complexity-counter",
+    "checkpoint": "CP19T4",
+    "claim": "Construction B’de turnover N−O(logN) olduğu halde faktör sayısı P_a(N,ℓ)≤2(ℓ+3)+K_N(ℓ+1)=O(ℓlogN).",
+    "program_label": "[COUNTEREXAMPLE][FAIL H3]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 4 — Occupation–Complexity–Turnover Dichotomy/ALL_ARTIFACTS/CP19_TASK4_FACTOR_COMPLEXITY_THEOREM.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz counter orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Yüksek turnover ⇒ yüksek karmaşıklık sezgisini aynı program nesnesi çürütür."
+  },
+  {
+    "id": "19-6-raw-prompt",
+    "checkpoint": "CP19T6",
+    "claim": "İlk R terimli q_R mod 2^{A_R+1} kanonik kalanı ρ_R ile doğrudan eşittir (promptun karşılaştırma talebi).",
+    "program_label": "[PROMPT][BUG]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 6 — Survivor 2-adic Coherence & Ordinary-Integrality/CP19_TASK6_RESEARCH_PROMPT.docx.txt",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz finite partial inverse sum top bit 2^A",
+      "Syracuse parity vector canonical cylinder rho qR",
+      "3x+1 affine offset terminal oddness"
+    ],
+    "note": "Gerçekte ρ_R−q_R≡2^{A_R} (mod 2^{A_R+1}); Task 6 bulguları aynı hatayı açıkça tamir eder."
+  },
+  {
+    "id": "19-5-recovery",
+    "checkpoint": "CP19T5",
+    "claim": "Mean-2 ℓ penceresi Δs≤−(2−α)ℓ+1 zorlar; derinlik-R toparlama L≥⌊(R−1)/(α−1)⌋+1.",
+    "program_label": "[EXACT][THEOREM]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 5 — Negative Discrepancy Excursions & Superlinear State Escape/ALL_ARTIFACTS/CP19_TASK5_FINDINGS.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz recovery orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Denklem A=F farkı−Δs ve mekanik-faz sayımı."
+  },
+  {
+    "id": "19-5-survivor",
+    "checkpoint": "CP19T5",
+    "claim": "Soyut s_k=(53/50)log₂k+O(1), her dyadik ölçekte mean-2 log pencere, sonlu carry ve LEVEL-2 tanıklar aynı anda mümkündür; LEVEL-3 bilinmiyor.",
+    "program_label": "[FAIL][EXACT construction]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 5 — Negative Discrepancy Excursions & Superlinear State Escape/ALL_ARTIFACTS/CP19_TASK5_ABSTRACT_SURVIVORS.md",
+    "verdict": "INTERNAL",
+    "references": [
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz survivor orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Curry eşiği B<1.0358567 olduğundan κ=1.06 kapsam dışıdır; inşa pozitif sonsuz gerçekleyici değildir."
+  },
+  {
+    "id": "19-6-topbit",
+    "checkpoint": "CP19T6",
+    "claim": "ρ_R≡q_R+2^{A_R}3^(−R) (mod 2^{A_R+1}); q_R ile doğrudan karşılaştırma tek üst bit kadar yanlıştır.",
+    "program_label": "[LEAD][BUG REPAIRED]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 6 — Survivor 2-adic Coherence & Ordinary-Integrality/ALL_ARTIFACTS/CP19_TASK6_FINDINGS.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz topbit orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Program kendi prompt hatasını onardı; nitel yeni teorem değil."
+  },
+  {
+    "id": "19-6-surgery",
+    "checkpoint": "CP19T6",
+    "claim": "İki sözde ilk değişen kümülatif üs j₀ ise v₂(x′−x)=min(A_j₀,A′_j₀); survivor olaylarında q_m=F_{t_m}−⌊53m/50⌋.",
+    "program_label": "[EXACT][LEAD]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 6 — Survivor 2-adic Coherence & Ordinary-Integrality/ALL_ARTIFACTS/CP19_TASK6_FINITE_SURGERY_LEMMA.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz 2-adic finite surgery first changed valuation valuation",
+      "Syracuse realizer difference ord2 affine event",
+      "Collatz inverse limit separated dyadic corrections"
+    ],
+    "note": "İlk değişen üsün terimi daha yüksek 2-adik dereceli tüm sonraki terimlerden ayrılır; bu yüzden elementer; olaya özgü q_m program içi."
+  },
+  {
+    "id": "19-7-cancellation",
+    "checkpoint": "CP19T7",
+    "claim": "x_S≥0 olağan tam sayı ise yeterince büyük m için B_m+U_m≡0 (mod 2^{q_{m+1}−q_m}); sonsuz sabit-genişlik uyumsuzluğu dışlamaya yeter.",
+    "program_label": "[EXACT][LEAD]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 7 — Event-Cancellation Rigidity & Protected Blocks/RESULTS_AND_ALL_ARTIFACTS/ALL_ARTIFACTS/CP19_TASK7_CANCELLATION_CRITERION.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz cancellation orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "İki-adik sonlu-bit stabilizasyonunun blok biçimi; sonsuz uyumsuzluk kanıtlanmamış."
+  },
+  {
+    "id": "19-8-rotation",
+    "checkpoint": "CP19T8",
+    "claim": "Saf-nötr çift sınırında A_{2r}=⌊2rα⌋ ve çift değerlemesi {r(2α−3)} üç aralıklı rotasyon koduyla belirlenir.",
+    "program_label": "[EXACT][LEAD]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 8 — Reference-Block Recurrence & Infinite Mismatch/RESULTS_PACKAGE_AND_ALL_ARTIFACTS/ALL_ARTIFACTS/CP19_TASK8_REFERENCE_RECURRENCE.md",
+    "verdict": "PARTIAL",
+    "references": [],
+    "queries": [
+      "three interval rotation coding Syracuse neutral valuation",
+      "Sturmian pair coding Collatz critical density",
+      "Collatz parity vector 2-adic reference recurrence"
+    ],
+    "note": "Mekanik/irrasyonel rotasyon standardı; özel survivor referansının üç aralıklı ifadesi uygulama."
+  },
+  {
+    "id": "19-8-gain",
+    "checkpoint": "CP19T8",
+    "claim": "Bir a_k’yi bir azaltıp ardılı sabit tutan sürekli gain, x′=(x+P_k)/2 2-adik gerçekleyici işlemini verir.",
+    "program_label": "[EXACT][LEAD]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 8 — Reference-Block Recurrence & Infinite Mismatch/RESULTS_PACKAGE_AND_ALL_ARTIFACTS/ALL_ARTIFACTS/CP19_TASK8_REFERENCE_RECURRENCE.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz gain orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "İki-adik seriyi iki parçaya ayırma ve 2 ile bölme."
+  },
+  {
+    "id": "19-9-highhalf",
+    "checkpoint": "CP19T9",
+    "claim": "Saf-nötr çift t için bit_{F_t}(x₀)=1+C_t (mod2), fakat C_{2t} tam güncellemesi F_t derinliğinde Hensel çözümü gerektirir.",
+    "program_label": "[EXACT][FAIL fixed width]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 9 — Neutral Critical-Density High-Half Cocycle/RESULTS_PACKAGE_AND_ALL_ARTIFACTS/ALL_ARTIFACTS/CP19_TASK9_DYADIC_RENORMALIZATION.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz critical density high-half 2-adic Hensel carry",
+      "Syracuse neutral word dyadic renormalization cocycle",
+      "3x+1 parity vector fixed-width automaton",
+      "arXiv API: all:Collatz AND all:Hensel AND all:carry (0)"
+    ],
+    "note": "Özel kritik yoğunluk kokeyli; kısa-genişlik kapanış bulunmaması evrensel imkânsızlık teoremi değildir."
+  },
+  {
+    "id": "19-9-automaton",
+    "checkpoint": "CP19T9",
+    "claim": "Önerilen faz+ε_t+C_t mod 2^k sonlu durumları k=1,2,3,4,8 için aynı durumdan zıt ardıl parite üretir.",
+    "program_label": "[COUNTEREXAMPLE][FAIL]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 9 — Neutral Critical-Density High-Half Cocycle/RESULTS_PACKAGE_AND_ALL_ARTIFACTS/ALL_ARTIFACTS/CP19_TASK9_FINDINGS.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz automaton orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Yalnız sınanan makine aileleri çürür; her olası otomat değil."
+  },
+  {
+    "id": "19-10-park",
+    "checkpoint": "CP19T10",
+    "claim": "Test edilmiş üst-yarı belirleyen tüm tam durumlar Θ(F_t) bit korur; o(F_t) evrensel alt sınırı ileri sürülmez.",
+    "program_label": "[VALID][AUDITED][PARKED]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 10 — Critical-Density Barrier Escape or Branch Park/Audits & Freeze/CP19_TASK10_FINAL_PARK_DECISION.docx.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz park orbit",
+      "3x+1 parity vector residue class inverse tree density Terras Everett",
+      "Collatz Banach density reciprocal sum windowed count Garcia Tal Curry"
+    ],
+    "note": "Eski “No o(F_t) invariant survived” ifadesi aşırı genelleme; karar metni bunu tested ile sınırlıyor."
+  },
+  {
+    "id": "18-5-carry",
+    "checkpoint": "CP18T5",
+    "claim": "X_N=Σ_{k<N}2^{D_k}≤3n₀(lnN)^{K17/3+ε} her ε>0 için nihayette.",
+    "program_label": "[NEW EXACT CONSEQUENCE]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK5_PACKAGE.zip",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz reciprocal sum divergent orbit",
+      "Collatz Banach density Garcia Tal orbit",
+      "Syracuse carry bounded product infinite orbit"
+    ],
+    "note": "Garcia–Tal/Curry H∞<∞ ile U∞<∞ ve dolayısıyla X∞=3n₀(U∞−1)<∞; daha güçlü. ZIP üyesi: CP18_TASK5_OCCUPATION_THEOREM.md."
+  },
+  {
+    "id": "18-5-jensen",
+    "checkpoint": "CP18T5",
+    "claim": "1/k-ağırlıklı E ortalaması için liminf Ē_N/log₂ lnN≥1−K17/3≈0.085706.",
+    "program_label": "[THEOREM][VALID]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK5_PACKAGE.zip",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector residue class Terras Everett",
+      "3x+1 Banach density windowed count Garcia Tal",
+      "Syracuse inverse tree density affine offset"
+    ],
+    "note": "X∞<∞⇒S_N=Σ2^(−E_k)/k=O(1); Jensen ile Ē_N≥log₂lnN−O(1), yani en az 1 katsayısı. ZIP üyesi: CP18_TASK5_OCCUPATION_THEOREM.md."
+  },
+  {
+    "id": "18-5-crt",
+    "checkpoint": "CP18T5",
+    "claim": "Her sonlu değerleme sözü ve her 3^m birim başlangıç sınıfı CRT ile aynı pozitif başlangıçta gerçekleştirilebilir.",
+    "program_label": "[EXACT][FAIL modular]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK5_PACKAGE.zip",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector residue class Terras Everett",
+      "3x+1 Banach density windowed count Garcia Tal",
+      "Syracuse inverse tree density affine offset"
+    ],
+    "note": "Sonlu derinlik dışında yasak örüntü çıkarılamaz. ZIP üyesi: CP18_TASK5_MODULAR_AUTOMATON.md."
+  },
+  {
+    "id": "18-7-popcount",
+    "checkpoint": "CP18T7",
+    "claim": "ρ_{r+1}=ρ_r+2^{A_r+1}λ_r ve popcount ρ_{r+1}=popcount ρ_r+popcount λ_r; sınırlı popcount ⇔ 2-adik x≥0 olağan tam sayıdır.",
+    "program_label": "[EXACT]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK7_PACKAGE.zip",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector residue class Terras Everett",
+      "3x+1 Banach density windowed count Garcia Tal",
+      "Syracuse inverse tree density affine offset"
+    ],
+    "note": "İkili basamak bloklarının çakışmaması, pozitiflik için zaten bilinen stabilizasyonun başka ifadesi. ZIP üyesi: CP18_TASK7_BINARY_SUPPORT_THEOREM.md."
+  },
+  {
+    "id": "18-8-3adic",
+    "checkpoint": "CP18T8",
+    "claim": "η_R=[2^(−A_R)B_R]_{3^R}, fiili sabit-pozitif yörüngede η_R=n_R ve n_R+1≤(n₀+1)(3/2)^R nihayette.",
+    "program_label": "[EXACT]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP18 Task 1-10 — 2026-08-24/CP18_TASK8_PACKAGE.zip",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector residue class Terras Everett",
+      "3x+1 Banach density windowed count Garcia Tal",
+      "Syracuse inverse tree density affine offset"
+    ],
+    "note": "Affine uç nokta ve basit üst büyüme; 3-adik yöntem yeni sınırlama üretmedi. ZIP üyesi: CP18_TASK8_ENDPOINT_COMPRESSION_THEOREM.md."
+  },
+  {
+    "id": "19-4-composition",
+    "checkpoint": "CP19T4",
+    "claim": "Uzunluk ℓ, toplam ≤U değerleme bileşimi sayısı binom(U,ℓ) ve ortalama μ için entropi h(μ)=μ H₂(1/μ), η(μ)=μ−h(μ)>0 (1<μ<2).",
+    "program_label": "[PROVED][AUDITED][FROZEN]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 4 — Occupation–Complexity–Turnover Dichotomy/ALL_ARTIFACTS/CP19_TASK4_ENTROPY_ANALYSIS.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector residue class Terras Everett",
+      "3x+1 Banach density windowed count Garcia Tal",
+      "Syracuse inverse tree density affine offset"
+    ],
+    "note": "Stars-and-bars ve Stirling/geometrik dağılım entropisi; κ* koşullu paketlemesi ayrı kayıt."
+  },
+  {
+    "id": "19-5-harmonic-excursions",
+    "checkpoint": "CP19T5",
+    "claim": "Her dyadik N≈2^m civarındaki O(m) uzunluklu bir sapmanın 1/k işgal ağırlığı O(m/2^m) olup bütün ölçeklerde toplamı sonludur.",
+    "program_label": "[EXACT][FAIL global pressure]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 5 — Negative Discrepancy Excursions & Superlinear State Escape/ALL_ARTIFACTS/CP19_TASK5_FINDINGS.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector residue class Terras Everett",
+      "3x+1 Banach density windowed count Garcia Tal",
+      "Syracuse inverse tree density affine offset"
+    ],
+    "note": "Seri kıyaslaması; bu, işgal alt sınırının tek başına yerel sapmaları öldürmediğini açıklar."
+  },
+  {
+    "id": "19-7-qrecursion",
+    "checkpoint": "CP19T7",
+    "claim": "Olay q_m derinlikleri q_{m+1}=2q_m+H_m−h_m+ε_m, m≥10 için q_{m+1}>2q_m sağlar.",
+    "program_label": "[EXACT][LEAD]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 7 — Event-Cancellation Rigidity & Protected Blocks/RESULTS_AND_ALL_ARTIFACTS/ALL_ARTIFACTS/CP19_TASK7_Q_RECURSION.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz parity vector residue class Terras Everett",
+      "3x+1 Banach density windowed count Garcia Tal",
+      "Syracuse inverse tree density affine offset"
+    ],
+    "note": "Bu programa özgü olay derinliği; sonsuz bit-uyumsuzluk ispatlamaz."
+  }
+]

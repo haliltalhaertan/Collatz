@@ -1,0 +1,63 @@
+# E5 bağımsız yenilik denetimi — 23 Eylül 2026
+
+**Hüküm:** Collatz açık. Bu çalışma Collatz ispatı veya literatürde yeniliğin sertifikası değildir. `ledger_E5_AUDIT_RESEARCH0908.json` içinde 103 ayrı iddia, iddianın kendi program etiketi, tam kaynak yolu, sorgular ve karşılaştırma kararı bulunur. `NEW-CANDIDATE` yalnızca **aradım, eşdeğer yayımlanmış ifadeyi bulamadım** anlamındadır. Özellikle genel C/R yoğun-excursion tahmini, uniform `W`/`W_flat`/`D₂`, başlangıç kökenindeki üstel sayım ve ordinary-integer köprüsü **açık** kalmaktadır.
+
+## A. Sayım
+
+| Karar | Adet |
+|---|---:|
+| KNOWN | 4 |
+| SUPERSEDED | 1 |
+| PARTIAL | 4 |
+| STANDARD | 21 |
+| NEW-CANDIDATE | 17 |
+| INTERNAL | 47 |
+| FLAWED | 9 |
+| **Toplam** | **103** |
+
+`FLAWED`, çoğu kez *denetçinin çürüttüğü eski aday iddia* demektir; çürütmeyi raporlayan düzeltilmiş belgeye karşı verilmiş hüküm değildir. `INTERNAL` sayısal panelleri ve sınırlı yöntem karşıörneklerini yayınlanmış pozitif Collatz teoremi saymaz. `STANDARD` sonlu Fourier/Parseval, Cauchy, PSD, yıldız-çubuk ve affine kodlamanın sıradan cebridir.
+
+## B. NEW-CANDIDATE — güçlüden zayıfa
+
+1. **E5-029, Round 6:** Tam faz quartic-character recurrence için toplam durum `O(s⁴ 2^(3s/4))`; bu **tek tail dördüncü momentinin algoritmik state** sınırıdır, `W` küçüklüğü değildir.
+2. **E5-015, görünür sapma:** Sabit ağırlık kuyruk Fourier katsayılarının tüm tam sıfırları `t=2j`, iletken 2 istisnasıyla sınırlıdır. Nicel Fourier alt sınırı vermez.
+3. **E5-036, Round 7:** Gerçek kaynak monotonicity kusurunun `M_merge−L_lift` tam ayrımı ve gerekli `M_merge≥L_lift` hedefi; eşitsizlik **kanıtlanmadı**.
+4. **E5-026, Round 4:** Fazlı `3×3` Gram/Schur sınırı ve 543/543 önceden seçilmiş finite iyileşme; üniform spectral üst sınır henüz yok.
+5. **E5-022, shift-Haar:** Gerçek source/filter hizalanmasının 2-adik *shift* katmanları ve ilk tail katmanda `4N_+` eşitliği; Walsh parite-küp izomorfizmi iddiası değil.
+6. **E5-021, çapraz terimler:** Even cross term'in mixed-channel normuna exact eşitliği ve signed reflection ayrımı.
+7. **E5-024, mixed-Gram:** `G_(d−1), G_d, G_(d+1)` üst-yineleme; finite kritik gridde trivial `M4≤M2²/2` sınırını **geçemedi**.
+8. **E5-032, E5-038:** Gerçek prefix-source `2×2` Fourier lift'i ve kaydırılmış parity ağırlığının affine-state recurrence'ı; genel affine/Fourier yöntemi eski, **bu özel formüller** için eşdeğer bulamadım.
+9. **E5-051:** Endpoint sayımının başlangıç-aralığına exact dual sandwich'i ve `O(2^((α−1)r))` sınır hatası; birebir dağılım teoremi değildir.
+10. **E5-058, E5-060:** Yardımcı boundary-configured excursion'un `Θ(1/R)` ölçeği ve yalnız **sabit kompakt yükseklikte** contraction; genel yürüyüş/ballot fikirleriyle yakın, Collatz yörüngesiyle özdeş değil. Bu özel yardımcı law için literatür çakışması **DOĞRULANMADI**.
+11. **E5-005:** Inselmann yöntemine yapılan belirli değişikliklerden `5·10^−10` istisna üssü çıkarımı; gerekli `0.050332…` üssüne ulaşmıyor. Bu sayı **Inselmann makalesinin ifadesi değildir**.
+12. **E5-090, E5-096, E5-097:** Zero-critical `κ≈2.784010903` koşullu eşik, tekrar→üstel valuation-word faktör karmaşıklığı alt sınırı ve ağırlıklı basınç üst sınırı. CP20'nin **hipotezli** kelime sayım teoremleri; Garcia–Tal'ın tek-yörünge Banach yoğunluğuyla aynı nesne değildir. Arşiv teoremlerinin bağımsız tam proof-audit'i burada yapılmadı.
+13. **E5-093:** `q=53,15601,31867` konverjantlarında `n₀≥2^107,2^15780,2^50495` koşullu etkin blok çıkarımı; finite tablolar ve Lemma B şartları ayrıca denetlenmeli.
+
+Her adayın ledger kaydında **en az üç nesne/yöntem sorgusu** vardır (ör. `parity vector`, `cycle length`, `2^m-3^k`, `affine offset`, `residue class`, `Krawtchouk`, `quartic character`). Etiketlerin bir kısmı yalnız **özel operatöre uygulama** için verilmiştir; PSD, Krawtchouk, Haar veya martingale yönteminin kendisi yeni diye etiketlenmemiştir. Dış PDF'de aynı özel denklemi doğrulayamadığım yerde uydurma kaynak koymadım.
+
+## C. KNOWN / SUPERSEDED ve asıl literatür kanıtı
+
+**Önceki taramaların kaçırdığı en önemli bulgu: Garcia–Tal, 1999.** *A note on the generalized 3n+1 problem*, *Acta Arith.* **90** (1999), 245–250, [özgün PDF](https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf), [DOI](https://doi.org/10.4064/aa-90-3-245-250). PDF **açıldı**, Theorem 1: “**The Banach density of P is zero.**”; Corollary 1: “**The Banach density of the orbit O(n) under H is zero.**” Makale açıkça klasik `d=2, m=3` haritasını kapsıyor ve girişte Korec–Znám sonucunu “**we will improve the result of Korec and Znám**” diyerek belirtiyor. [Lagarias 1963–1999, madde 69](https://arxiv.org/abs/math/0309224) ayrıca açıldı, ama kanıt olarak **birincil Garcia–Tal** kullanıldı. Dolayısıyla tek bir divergent yörünge için *nitel sıfır Banach yoğunluğu* **KNOWN** (E5-001). Daha önceki temsilci-küme doğal yoğunluk ifadesi, yeni eşdeğerlik ve Banach yoğunluğu yönünden **SUPERSEDED** (E5-102); Korec–Znám'ın özgün 1987 PDF'sini ayrıca açmadım.
+
+**Kesin kapsam uyarısı:** Garcia–Tal, CP17'nin `H_N/log log N` için `K17<2.742882` **nicel harmonik katsayısını**, CP20'nin **valuation-word faktör karmaşıklığı** veya windowed origin-count üst sınırını *ispatlamaz*. Bu iddiaları KNOWN diye yazmak da yanlış olur. Aynı şekilde bir yörüngenin sıfır Banach yoğunluğu, **tüm istisnai başlangıçların yokluğu**, `Σ_{n∈orbit}1/n` yakınsaklığı veya her sabit başlangıcın indiği anlamına gelmez. CP17 için karar bu nedenle **PARTIAL** (E5-002), genel istisna ile tek yörünge farkı **KNOWN** (E5-003).
+
+Diğer doğrulanmış kaynaklar: [Tao, arXiv:1909.03562](https://arxiv.org/abs/1909.03562), **açılan abstract**: “`Col_min(N) ≤ f(N)` for almost all `N` ... **in the sense of logarithmic density**”; [Inselmann, arXiv:2402.03276](https://arxiv.org/abs/2402.03276), **açılan abstract**: “almost all `m` ... simultaneously for all `0≤k≤α log m`”, ayrıca daha uzun zaman penceresine uzatma. Bunlar sırasıyla E5-075 ve E5-004'ün literatür karşılığıdır; hiçbirisi **tek sabit istisnai yörüngeyi** silmez. [Kocik, arXiv:quant-ph/0702073](https://arxiv.org/abs/quant-ph/0702073) abstract'ı Krawtchouk matrislerini “**condensed Sylvester-Hadamard matrices**” ve Ehrenfest urn ile ilişkilendirir: Round 5 Krawtchouk **yöntemi** yeni değil, Collatz'a özel `1+cosφ(1−2ℓ/m)` gauge formülünün aynılığı bu kaynakta **DOĞRULANMADI** (E5-033, PARTIAL). [Hercher, arXiv:2201.00406](https://arxiv.org/abs/2201.00406) abstract'ı: “**Simons and de Weger proved that m ≥ 76 ... we prove m ≥ 92**”; döngünün *yerel minimumları* için bu dış sınır, programın minimum-istisna checkpointiyle karıştırılmamalıdır (E5-103).
+
+## D. Yanlış “yeni” gerekçesi, fazla iddia ve düzeltilenler
+
+- `bagimsiz-denetim/08-literatur-taramasi/RAPOR.md` bibliyografyada `factor complexity`, `Chernoff`, `pressure` tarayıp **1999 Garcia–Tal sıfır Banach yoğunluğu teoremini kaçırmış**. Arama sözcüğü yokluğundan bütün “seyreklik/yoğunluk yenidir” çıkarsaması **FLAWED** (E5-092); bu, CP20'nin nicel factor-complexity formülünü otomatik çürütmez. Nesneyle arama süreç zorunludur.
+- `research_project_review/FINDINGS.md`'deki **global minimum ≠ S içi minimum** düzeltmesi zorunlu: `55,210/65,536` sertifika yalnız `S={20+27k}` içindeki *en küçük olası istisna* sınıfına uygulanır. “Bu kalıntı sınıflarındaki bütün sayılar Collatz'a iner” iddiası yok.
+- D1 supplementary “zayıf residue = en küçük **exact** valuation gerçekleştiren sayı” ifadesi **yanlış**: `w=(1)`, zayıf `r₁=1`, en küçük exact başlangıç `3` (E5-099). Önceki küresel D1 teoremini tümüyle çürütmez.
+- `N(S)≤P(t)t^(+S)` işareti yanlış, doğru `t^(−S)`; `0.0017` “Sturmian faz maliyeti” **grid artefaktı**; T5 survivor dışlanması **hipotez uyuşmazlığı**. Belgeler bunları zaten düzeltiyor (E5-094/095/091). `t=4,j=2,s=1` Fourier tam-sıfır istisnası “hiç sıfır yok” derlemesini çürütüyor (E5-019).
+- High-bucket Bellman'ın **her zaman** `N`'ye çöktüğü iddiasını aynı program `Q/F/N=(0,9,10),(3,17,20)` finite karşıhesaplarıyla düzeltti (E5-054). Naif tam-faz memo'nun finite aralıkta yavaş olmasından asymptotic `2^s` altına inilemeyeceği çıkarımı Round 6 state teoremiyle çürütüldü (E5-031).
+- Sonlu oranlar (`r≤22`, `543/543`, `108/108`), `m=3,s=2` **generic** pozitif-histogram monotonicity karşıörneği ve küçük residue-join kazancı **gerçek büyüyen source üzerinde üniform tahmin** değildir. Round 5'in 108 monotonicity geçişi **CONJECTURE/NUM**, Round 7 yalnız exact defect ayrımıdır. Gereksiz bir “tek noktadaki sıfır olmayan katsayı ⇒ uniform alt sınır” aktarımı yapılmamalıdır.
+
+## E. Kapsam, yöntem ve erişim sınırı
+
+- `/mnt/c/Users/MDP/collatz-analysis/Collatz/` altındaki tarihli **53 `research_*` dizininin tamamı** envanterlendi; 51 dizindeki ana `REPORT*`, `RESULT` veya `FINDINGS` başlıkları ve ilgili ispat/denetim alt belgeleri seçilerek okundu; kalan ikisi `research_full_sync_20260908` (**manifest/JSON, ana rapor yok**) ve `research_publication_20260908` (**persistence readback**). Özellikle `research_visible_defect/ZERO_CLASSIFICATION.md`, `research_phase_quotient/REPORT_TR.md`, `research_source_krawtchouk/REPORT_TR.md`, `research_source_defect/REPORT_TR.md`, `research_shift_haar/REPORT_TR.md`, `research_project_review/FINDINGS.md` ve önemli exact-join/collision raporları incelendi. Tek tek bütün `*.py`, JSON/panel, ZIP, 60 KB CP17 referans ispatı veya her klasördeki her ek belge **satır satır denetlenmedi**; ledger bu yüzden ispat hakemliği değil yenilik ve iddia-kapsam denetimidir.
+- `arch-era-e.log`, `arch-era-f.log`, `RESEARCH_INDEX_20260908.md` digestleri; `bagimsiz-denetim` **07/RAPOR.md, 08/RAPOR.md, 09/BAGLANTILAR.md ve PATTERNLER.md, DURUM.md, GECMIS.md** ve yönetişim protokol/handoff metinleri incelendi. Çok büyük logların tamamı satır satır kanıt gibi okunmadı. `research_manager` journal, karar ve sealed payload’larının hepsi tekrar yürütülmedi; B4 V2'nin yürütülmemesi provenance, yeni matematik değildir.
+- Arama: arXiv API'den **açılan özgün abstract'lar**, OpenAlex'ten bibliyografik bulgular, Zenodo'dan tarihlendirilmiş arama sonucu; Crossref ve Semantic Scholar bazı isteklerde **HTTP 429** verdi. Bunlar sessizce “kaynak açıldı” diye yazılmadı. Garcia–Tal **özgün makale PDF** ve Lagarias 1963–1999 PDF açıldı. Lagarias 2000–2009 yalnız abstract düzeyinde açıldı. Aramada `Banach density`, `sparsity`, `reciprocal sum`, `windowed count`, `stopping time distribution`, `parity vector`, `cycle length bound`, `2^m-3^k`, `local minima cycle`, `inverse tree density`, `3x−1 cycles`, `affine offset`, `residue class`, `Terras`, `Everett`, `Garcia Tal`, `Krasikov Lagarias`, `Hercher`, `Simons de Weger`, `Eliahou`, `Steiner` ve yönteme özel terimler kullanıldı. Gürültülü indeks sonuçları kaynak sayılmadı; 2026 tarihli **programın kendi Zenodo kaydı** bağımsız öncelik kanıtı sayılmadı. Açılmamış 1987 Korec–Znám tam metni ve tüm başka dillerdeki makaleler **DOĞRULANMADI**.
+
+**Son karar:** 1999 Banach-yoğunluk önceliği gerçek ve önemlidir; fakat 2026 programının farklı nicel Fourier/kelime teoremlerini tek başına aşmaz. En güçlü yeni adaylar özel exact operatör/algoritma lemmalarıdır; şartlı ve finite iddialar Collatz'ı çözmez.
+
+NOVELTY_SCAN_E5_AUDIT_RESEARCH0908_20260923_COMPLETE

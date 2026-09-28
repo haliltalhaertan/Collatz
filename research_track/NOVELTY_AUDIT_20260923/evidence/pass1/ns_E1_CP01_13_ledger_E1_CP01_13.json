@@ -1,0 +1,1233 @@
+[
+  {
+    "id": "CP02-01",
+    "checkpoint": "CP02",
+    "claim": "D_j≤0 boyunca F_K üst sınırı A_j=⌊j log₂3⌋ ile sağlanır; F_K=Σ_{j<K}2^{−{j log₂3}}.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP02-02",
+    "checkpoint": "CP02",
+    "claim": "F_K≤(7/8)K+1/8 bütün K≥1 için geçerlidir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP02-03",
+    "checkpoint": "CP02",
+    "claim": "F_K≤K/(2 ln2)+s_β(K) Ostrowski–Denjoy–Koksma ayrışımıyla elde edilir.",
+    "program_label": "KNOWN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Klasik Denjoy–Koksma/Ostrowski ayrışımının standart uygulaması; özgül +121 sertifikası ayrı kalemdir."
+  },
+  {
+    "id": "CP02-04",
+    "checkpoint": "CP02",
+    "claim": "K<137528045312 için F_K≤K/(2ln2)+121 ve K<65470613321 için +120 sertifikalıdır.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Özel CF hesabı; ham sertifika yeniden üretilmedi."
+  },
+  {
+    "id": "CP02-05",
+    "checkpoint": "CP02",
+    "claim": "İlk crossing indeksi K≥72057431991 (önceki 49547666544 ve 58337919098) olarak raporlanır.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz lower bound cycle length Eliahou Simons de Weger Hercher",
+      "Collatz 3x-1 cycles affine offset Steiner",
+      "Collatz parity vector stopping time distribution Terras Everett"
+    ],
+    "note": "Birinci-kesişim alt sınırıdır; cycle length bound ile aynı değildir; ilk CP01 bytes yok, aritmetik bağımsız doğrulanmadı."
+  },
+  {
+    "id": "CP02-06",
+    "checkpoint": "CP02",
+    "claim": "CST τ(n)=t(n) ⇒ K_D=K_S; tersi açık kalır.",
+    "program_label": "EXACT / OPEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Bu implication indeks tanımları ve odd-block projection ile hemen çıkar; tersine hüküm yok."
+  },
+  {
+    "id": "CP02-07",
+    "checkpoint": "CP02",
+    "claim": "Mekanik sonsuz parity sözcüğünün 2-adik gerçekleyicisi pozitif tamsayı değildir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Mekanik yolun drift s_k≤0; Garcia–Tal pencere büyümesi/Curry B≤1 bu tür diverjansı dışlar; koşullu tüm diziler için değil ordinary pozitif orbit için."
+  },
+  {
+    "id": "CP02-08",
+    "checkpoint": "CP02",
+    "claim": "D_k≤0 ve 0≤s_k≤2 bütün k için tutan pozitif odd-only orbit yoktur.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Garcia Tal 1999 Collatz Banach density divergent orbits",
+      "Collatz divergent trajectories upper Banach density reciprocal sum",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP02-09",
+    "checkpoint": "CP02",
+    "claim": "D≤0 altında sonsuz eventually-periodic parity/valuation word pozitif tamsayı yörüngesi vermez.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Periyodik çarpan 3^p/2^H≥1 ve +offset pozitifliği ile basit sabit nokta hesabı."
+  },
+  {
+    "id": "CP02-10",
+    "checkpoint": "CP02",
+    "claim": "Mekanik residue temsilcileri r₉=r₁₀=23547; her adımda katı büyüme iddiası yanlıştır.",
+    "program_label": "NUM / FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP03-01",
+    "checkpoint": "CP03",
+    "claim": "Her sonlu C için D_k≤0 iken sup s_k=∞ olmak zorundadır.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP03/CP03 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Garcia Tal 1999 Collatz Banach density divergent orbits",
+      "Collatz divergent trajectories upper Banach density reciprocal sum",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "1999 pencere seyreklikten H∞<∞; bounded slack varsa carry çarpımıyla n_k=O(1), imkânsız; daha genel B≤1 de imkânsız."
+  },
+  {
+    "id": "CP03-02",
+    "checkpoint": "CP03",
+    "claim": "D_k≤0 iken limsup s_k/log₂k≥8/9 olur.",
+    "program_label": "EXACT / KNOWN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP03/CP03 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "De Jesús (2026), A Global Occupation Conjecture for the Accelerated 3x+1 Map, Appendix D / Open Problem 12.8, Zenodo 21481692",
+        "url": "https://zenodo.org/api/records/21481692",
+        "quote": "harmonic packing exponent has been improved once, from β=1/6 ... to β=1/9 ... sharpening Theorem C from 5/6 to 8/9 (Appendix D)",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Garcia Tal 1999 Collatz Banach density divergent orbits",
+      "Collatz divergent trajectories upper Banach density reciprocal sum",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "De Jesús Appendix D aynı 8/9; Garcia–Tal 1999 eq(6) eski ve daha güçlü türetim, Curry 2026 B<1.03585."
+  },
+  {
+    "id": "CP03-03",
+    "checkpoint": "CP03",
+    "claim": "Sınırlı slack geçiş matrisi satır normu r_C=1−2^{−(C+1)}<1 sağlar.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP03/CP03 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Terras–Everett sayımına yakın özel finite-state lemma; bu tam matris ifadesi primerde bulunmadı; genel yöntem benzer."
+  },
+  {
+    "id": "CP04-01",
+    "checkpoint": "CP04",
+    "claim": "Carry-harmonik eşitliği H_N=3 ln(1+X_N/(3n₀))+O(1), hata ≤π²/48 olarak yazılır.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP04/CP04 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": "Çarpım özdeşliği ve log(1+x) Taylor hatası; ≤π²/48 hesabı ayrı tekrarlanmadı."
+  },
+  {
+    "id": "CP04-02",
+    "checkpoint": "CP04",
+    "claim": "Bir residue sınıfı için harmonik toplam Σ_{n≤X,n≡r mod q}1/n ≤(ln X)/q+1/r.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP04/CP04 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Garcia Tal 1999 Collatz Banach density divergent orbits",
+      "Collatz divergent trajectories upper Banach density reciprocal sum",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP04-03",
+    "checkpoint": "CP04",
+    "claim": "Küçük Haar cylinder ölçüsü tek başına küçük harmonik işgal sağlamaz; m≈Q^{1/2} karşıörneği verilmiştir.",
+    "program_label": "EXACT / FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP04/CP04 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Garcia Tal 1999 Collatz Banach density divergent orbits",
+      "Collatz divergent trajectories upper Banach density reciprocal sum",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP04-04",
+    "checkpoint": "CP04",
+    "claim": "Real-relaxed affine Syracuse şemasında B=8/9 saturasyonu vardır; 8/9 üstüne çıkan bu yoldaki kanıt tamsayı yapısı kullanmalıdır.",
+    "program_label": "EXACT / methodological no-go",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP04/CP04 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "De Jesús (2026), A Global Occupation Conjecture for the Accelerated 3x+1 Map, Appendix D / Open Problem 12.8, Zenodo 21481692",
+        "url": "https://zenodo.org/api/records/21481692",
+        "quote": "harmonic packing exponent has been improved once, from β=1/6 ... to β=1/9 ... sharpening Theorem C from 5/6 to 8/9 (Appendix D)",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "De Jesús Appendix E sabit-modül congruence packing tavanını gösterir; gerçek gevşetme örneğinin eşdeğeri bulunmadı; zorunluluk yalnız belirtilen gevşetilmiş model içindir."
+  },
+  {
+    "id": "CP06-01",
+    "checkpoint": "CP06",
+    "claim": "Sonlu parity sözcüğü v için T^j(n)=(3^qn+C(v))/2^j ve R_j(v)≡−Σ3^{−r−1}2^{d_r} (mod 2^j).",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP06-02",
+    "checkpoint": "CP06",
+    "claim": "D_k≤0 koşulu shortcut sözcüğünde bütün ℓ için h_v(ℓ)≥⌈ℓ/log₂3⌉ ballot şartına denktir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP06-03",
+    "checkpoint": "CP06",
+    "claim": "Mekanik minimum iddiası j=4 için R₄(1101)=11>R₄(1110)=7 ile çürür.",
+    "program_label": "FAIL / EXACT counterexample",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP06-04",
+    "checkpoint": "CP06",
+    "claim": "Christoffel minimumu j=5 için R₅(11110)=15>R₅(11101)=7 ile çürür; dominance genel monotone değildir.",
+    "program_label": "FAIL / EXACT counterexample",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP06-05",
+    "checkpoint": "CP06",
+    "claim": "Least-realizer için bir swap R_j(v′)−R_j(v)≡−3^{−r−1}2^d mod 2^j verir; wraparound sıralamayı bozabilir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP06-06",
+    "checkpoint": "CP06",
+    "claim": "C=0.5 için M₁₀=M₂₀=27, M₁₀₀=579687 ve C=0.6 için M₁₄₀=5460807 raporlanır.",
+    "program_label": "NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Sonlu tablo; kod ve tüm state space yeniden hesaplanmadı."
+  },
+  {
+    "id": "CP06-07",
+    "checkpoint": "CP06",
+    "claim": "Mekanik residue temsilcisi için limsup_j log₂R_j/j=1 (yalnız subsequence iddiası).",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "2-adik mekanik sözcük least-realizer büyümesi; aynı nicel ifade primer literatürde bulunmadı."
+  },
+  {
+    "id": "CP06-08",
+    "checkpoint": "CP06",
+    "claim": "R_{ℓ+1}=R_ℓ+b_ℓ2^ℓ ve b_ℓ≡ε_ℓ−Y_ℓ (mod 2) bit-lift ile gerçekleşir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP07-01",
+    "checkpoint": "CP07",
+    "claim": "Dual 3-adik uçta Y≡2^{−j}C(v) mod 3^q ve küçük realizer için Y=O(j^{1+B}) bulunur.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP07/CP07 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "Affine formül ve bounded logarithmic drift hesabı."
+  },
+  {
+    "id": "CP07-02",
+    "checkpoint": "CP07",
+    "claim": "C(v) mod 3^m yalnız son m one-pozisyonundan belirlenir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP07/CP07 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP07-03",
+    "checkpoint": "CP07",
+    "claim": "Yanlış S_{m+1}=3S_m+2^d yerine S_{m+1}=S_m+3^m2^d gerekir.",
+    "program_label": "FAIL / EXACT correction",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP07/CP07 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "FLAWED yalnız ilk formül için; aynı dosya hatayı düzeltir."
+  },
+  {
+    "id": "CP07-04",
+    "checkpoint": "CP07",
+    "claim": "E_{m+1}=E_m+λ_m3^m, λ_m∈{0,1,2}; 3^m>Y iken zero-lift otomatikleşir.",
+    "program_label": "EXACT / FAIL obstruction",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP07/CP07 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP07-05",
+    "checkpoint": "CP07",
+    "claim": "q=10³…10⁶ doğal derinlik örneklerinde suffix residue desteği bütün 3-adik birimleri kaplar.",
+    "program_label": "NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP07/CP07 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Örneklem; tüm parametrelerde theorem değildir."
+  },
+  {
+    "id": "CP07-06",
+    "checkpoint": "CP07",
+    "claim": "ord_{3^m}(2)=2·3^{m−1} ve suffix triangular sensitivity v₃(ΔS_m)=m−1−u.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP07/CP07 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP08-01",
+    "checkpoint": "CP08",
+    "claim": "W_m=2^{−Δ}E_m−P_suf=2^{D_{q−m}}R_suf self-duality ile kısa least-realizer problemine eşittir.",
+    "program_label": "EXACT / FAIL solo strategy",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP08/CP08 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "Affine değişken dönüşümü; solo bağımsız engel iddiası kendi dosyasında terk edilir."
+  },
+  {
+    "id": "CP08-02",
+    "checkpoint": "CP08",
+    "claim": "Suffix functional S_m, bit peeling ile suffix vektörünü tekil belirler; fixed fiber gap g_r>2^{−C₀−1}(r+1)^{−B}.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP08/CP08 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "PARTIAL",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Parity bijeksiyonunun özel nicel sabitli sonucu; genel bijeksiyon eski, exact gap öncülü bulunmadı; hedef aynı kafes üstündedir."
+  },
+  {
+    "id": "CP08-03",
+    "checkpoint": "CP08",
+    "claim": "Carry bootstrap Y=O(j^{B+1/9}) ve tek-ölçekli bound 8/9 tavanını yeniden üretir.",
+    "program_label": "EXACT / methodological",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP08/CP08 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": "Önceki 8/9 mimarisine bağımlı artık aşılmış strateji hesabı."
+  },
+  {
+    "id": "CP09-01",
+    "checkpoint": "CP09",
+    "claim": "Her sonsuz injective pozitif odd-only orbit için H_N=Σ_{k<N}1/n_k=o(ln N).",
+    "program_label": "EXACT / audit fixable",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP09/CP09 — Collatz_Checkpoint_9_2026-08-14.docx.txt",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Garcia Tal 1999 Collatz Banach density divergent orbits",
+      "Collatz divergent trajectories upper Banach density reciprocal sum",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "1999 eq(6) uniform O(X^θ log X), θ<1 ⇒ değerler üzerinde Σ1/n_k<∞; Curry Prop 3.1 açıkça belirtir. Farklı kanıt yöntemi yeniliği iddiası değil."
+  },
+  {
+    "id": "CP09-02",
+    "checkpoint": "CP09",
+    "claim": "X_N=N^{o(1)} her injective orbit için ve undercritical limsup s_k/log₂k≥1.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP09/CP09 — Collatz_Checkpoint_9_2026-08-14.docx.txt",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Garcia Tal 1999 Collatz Banach density divergent orbits",
+      "Collatz divergent trajectories upper Banach density reciprocal sum",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "Garcia–Tal pencere hesabından H∞<∞ ⇒ X_N=O(1); Curry B≤1 ve B<1.03585 dışlaması."
+  },
+  {
+    "id": "CP09-03",
+    "checkpoint": "CP09",
+    "claim": "Mod-18 tablosundan H_N≤(4/15)ln N ve 41/45 limsup çıkarıldığı iddia edilir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP09/CP09 — Collatz_Checkpoint_9_2026-08-14.docx.txt",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": "CP09 audit: basılı tablodan yalnız 9/32; 4/15 bu kanıtla elde edilmiyor. Ayrı doğru teorem olabilir fakat bu gerekçe geçersiz."
+  },
+  {
+    "id": "CP09-04",
+    "checkpoint": "CP09",
+    "claim": "CP09 finite-LP β_t=0.2667…0.1019 tablosu tanımlanmış LP olmaksızın sertifika olarak sunulur.",
+    "program_label": "NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP09/CP09 — Collatz_Checkpoint_9_2026-08-14.docx.txt",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "CP09 audit: variables/constraints/objective tanımsız, doğal katsayılar 9/32,61/256,..."
+  },
+  {
+    "id": "CP09-05",
+    "checkpoint": "CP09",
+    "claim": "Her length-t valuation word mod 3^{t+1} tam iki unit terminal class verir ve #{μ_t=A}≤2·C(A−1,t−1).",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP09/CP09 — Collatz_Checkpoint_9_2026-08-14.docx.txt",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Sonlu parity/Congruence sayımı klasik; iki terminal sınıfındaki μ_t bound özel uygulama, eşdeğer primer theorem bulunmadı."
+  },
+  {
+    "id": "CP09-06",
+    "checkpoint": "CP09",
+    "claim": "Overlap deep suffix constraints bağımsız çarpılamaz; n₀=26716671 ve q=187 için üç near-top örneği bulunur.",
+    "program_label": "FAIL / NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP09/CP09 — Collatz_Checkpoint_9_2026-08-14.docx.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP10-01",
+    "checkpoint": "CP10",
+    "claim": "Injective odd-only orbitte H_N=O(ln ln N) ve limsup H_N/ln ln N≤6.3274088946… iddia edilir.",
+    "program_label": "EXACT / audit fixable",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP10/CP10 — Collatz_Checkpoint_10_2026-08-15.docx.txt",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": "Garcia–Tal 1999 uniform power-window ⇒ H_N=O(1); CP10 başlangıç n₀ blok açığı CP12de düzeltilmiş."
+  },
+  {
+    "id": "CP10-02",
+    "checkpoint": "CP10",
+    "claim": "X_N=O_ε((ln N)^{2.1091362983…+ε}) her injective odd-only orbitte geçerlidir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP10/CP10 — Collatz_Checkpoint_10_2026-08-15.docx.txt",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": "H∞<∞ ve carry product özdeşliği ⇒ X_N=O(1)."
+  },
+  {
+    "id": "CP10-03",
+    "checkpoint": "CP10",
+    "claim": "Fixed t reciprocal telescope hatası O((ln t)²) ve uniform inequality raporlanır.",
+    "program_label": "EXACT / audit fixable",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP10/CP10 — Collatz_Checkpoint_10_2026-08-15.docx.txt",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": "Özgül pair-graph muhasebe literatürde eşdeğer bulunmadı, fakat genel 1999 sonucu hedef oranı tamamen kapsar; CP10 n₀ gap gerekir."
+  },
+  {
+    "id": "CP10-04",
+    "checkpoint": "CP10",
+    "claim": "B_t(c)=o(t) sınır lemması H_N=O((lnlnln N)²) için yeterli olarak önerilir.",
+    "program_label": "OPEN / reduction",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP10/CP10 — Collatz_Checkpoint_10_2026-08-15.docx.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": "İspat edilmiş B_t(c)=o(t) teoremi yok; Garcia–Tal hedef H_N=O(1) zaten sağlıyor."
+  },
+  {
+    "id": "CP10-05",
+    "checkpoint": "CP10",
+    "claim": "İlk n₀ exceptional block atlanınca büyüyen t için uniform inequality bütün orbitlerde yanlış olabilir.",
+    "program_label": "GAP / FIXABLE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP10/CP10 — Collatz_Checkpoint_10_2026-08-15.docx.txt",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": "CP10 ve CP11 yazımı; CP12 §1 repair: teleskopu s≥1’den başlat."
+  },
+  {
+    "id": "CP11-01",
+    "checkpoint": "CP11",
+    "claim": "t=3,y=65 için iki en kısa word (1,3,3)→307 ve (2,4,1)→305; kanonik ξ_t seçimi gerekir.",
+    "program_label": "FAIL / EXACT fix",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP11/CP11 — Collatz_Checkpoint_11_2026-08-15.docx.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP11-02",
+    "checkpoint": "CP11",
+    "claim": "Parity-prefix count N_t(2^J−1,c)≤Σ_{z≤D}C(J−1,z).",
+    "program_label": "EXACT / KNOWN easy corollary",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP11/CP11 — Collatz_Checkpoint_11_2026-08-15.docx.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Parite-sözcüğü bijeksiyonu ve binomial prefix sayımı."
+  },
+  {
+    "id": "CP11-03",
+    "checkpoint": "CP11",
+    "claim": "B_t(c)≤[2(c−1)ln2/3]t+O(√t) sınır katsayısı elde edilir.",
+    "program_label": "EXACT / audit fixable",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP11/CP11 — Collatz_Checkpoint_11_2026-08-15.docx.txt",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "Bu özel B_t katsayısı primerlerde eşleştirilmedi, genel H sonucu Garcia–Tal altında aşılmıştır."
+  },
+  {
+    "id": "CP11-04",
+    "checkpoint": "CP11",
+    "claim": "limsup H_N/lnln N≤4.91656355095… ve X_N için log exponent 1.63885451698… bulunur.",
+    "program_label": "EXACT / audit fixable",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP11/CP11 — Collatz_Checkpoint_11_2026-08-15.docx.txt",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP11-05",
+    "checkpoint": "CP11",
+    "claim": "limsup (s_k−log₂k)/log₂log₂k≥−0.63885451698… hesaplanır.",
+    "program_label": "EXACT / audit fixable",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP11/CP11 — Collatz_Checkpoint_11_2026-08-15.docx.txt",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Garcia Tal 1999 Collatz Banach density divergent orbits",
+      "Collatz divergent trajectories upper Banach density reciprocal sum",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "Curry 2026 limsup s/log₂k≥1.03585… (undercritical gerekmeksizin divergent) bundan kesin güçlü."
+  },
+  {
+    "id": "CP11-06",
+    "checkpoint": "CP11",
+    "claim": "B_t için subadditivity öngörüsü B₉≈0.49764 > B₄+B₅≈0.47952 ile çürür.",
+    "program_label": "FAIL / NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP11/CP11 — Collatz_Checkpoint_11_2026-08-15.docx.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP12-01",
+    "checkpoint": "CP12",
+    "claim": "Fixed endpoint için collision multiplicity M(m,q;y)≤2^{m−q} bulunur.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP12/CP12 — Collatz_Checkpoint_12_2026-08-15.docx.txt",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Parity bijeksiyonundan ince fixed-(m,q) bound; arama denk literatür ifadesi bulmadı; kanıt audit ile minor repair."
+  },
+  {
+    "id": "CP12-02",
+    "checkpoint": "CP12",
+    "claim": "İki-blok endpoint count ile üst rate K<K₁₁−η₁₂ sağlanır.",
+    "program_label": "EXACT / repair",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP12/CP12 — Collatz_Checkpoint_12_2026-08-15.docx.txt",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": "H∞<∞ daha kuvvetli; yöntem özgül hesabı ve audit düzeltmeleri ayrı tutulur."
+  },
+  {
+    "id": "CP12-03",
+    "checkpoint": "CP12",
+    "claim": "Repaired two-block bound sertifikasında limsup H_N/lnln N<4.723565548607766 bulunur.",
+    "program_label": "PROOF VALID AFTER MINOR REPAIRS / CERTIFIED",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP12/COLLATZ_CP12_THIRD_CLEAN_ROOM_AUDIT_2026-08-15.md",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Thm 1 / Cor 1 / eq (6)",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "#(P∩{a,...,a+k−1})≤2(⌊log_d(k)⌋+1)(k^{1−δ1}+g(k)); ... g(k) is O(k^{δ2}) ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry (24 Aug 2026), An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 10.5281/zenodo.22087163, Thm 2.3/Prop 3.1/Cor 4.3",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "every divergent orbit has summable reciprocals, ∑n 1/y_n < ∞ ... [no orbit has g_n ≤ B log₂ n + K eventually with] B < 1/β* = 1.0358567...",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP12-04",
+    "checkpoint": "CP12",
+    "claim": "Frozen collision-only rate mimarisinin en iyi katsayısı >3.01652611280307 olduğundan K<3 bu mimariden çıkmaz.",
+    "program_label": "CERTIFIED / methodological no-go",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP12/COLLATZ_CP12_THIRD_CLEAN_ROOM_AUDIT_2026-08-15.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "Yalnız tanımlanmış mimariye dair optimizasyon; evrensel imkânsızlık değil."
+  },
+  {
+    "id": "CP12-05",
+    "checkpoint": "CP12",
+    "claim": "Global w↦C_w injectivity iddiası C=19 için q=2 ve q=3 çarpışmasıyla yanlıştır.",
+    "program_label": "FALSE / repair",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP12/COLLATZ_CP12_THIRD_CLEAN_ROOM_AUDIT_2026-08-15.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Fixed-q injectivity kalır; CP12 audit aynı dosyada düzeltir."
+  },
+  {
+    "id": "CP12-06",
+    "checkpoint": "CP12",
+    "claim": "Two-block toplamını s≤min(m,q) ile sınırlamak J=4,m=3,q=1 örneğinde doğru 7 yerine 4 verir.",
+    "program_label": "BUG / repair",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP12/COLLATZ_CP12_THIRD_CLEAN_ROOM_AUDIT_2026-08-15.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Geçerli aralık max(0,q−R)≤s≤m; corrected certified upper bound ayrı girdide."
+  },
+  {
+    "id": "CP13-01",
+    "checkpoint": "CP13",
+    "claim": "0≤j≤R için Y(R,s,r)≤⌈3^s/2^j⌉ Σ_{a≥r−(R−j)}C(j,a) ve j üzerinden min üst sınırı geçerlidir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP13/CP13 — Collatz Checkpoint 13 Ara Rapor — Partial-period Endpoint Discrepancy.docx.txt",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Inselmann (2024), An approximation of the Collatz map and a lower bound for the average total stopping time, arXiv:2402.03276",
+        "url": "https://export.arxiv.org/api/query?id_list=2402.03276",
+        "quote": "Results of Terras and Everett imply that ... almost all m ... fulfill ... simultaneously for all 0 ≤ k ≤ α log m",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "CP13 kanıtı doğrudan parity-cylinder bijeksiyonu + initial interval residue count + union bound; özgül Y notasyonu yayımlanmamış olabilir, teknik standart."
+  },
+  {
+    "id": "CP13-02",
+    "checkpoint": "CP13",
+    "claim": "Y örneklerinde 31,553,419 ve iki-blok testinde 1227 exact sayılmıştır.",
+    "program_label": "CERTIFIED NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP13/CP13 — Collatz Checkpoint 13 Ara Rapor — Partial-period Endpoint Discrepancy.docx.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Sonlu örneklem; orijinal docx embedded öğeler metin çıkarımında doğrulanmadı."
+  },
+  {
+    "id": "CP13-03",
+    "checkpoint": "CP13",
+    "claim": "Collision-only stratejisi B=1 sınırına kendi başına erişmez, K>3.01652611280307.",
+    "program_label": "FAIL / KNOWN from CP12",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP13/CP13 — Collatz Checkpoint 13 Ara Rapor — Partial-period Endpoint Discrepancy.docx.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "CP12 audit sonucunun tekrarı; yeni teorem değil."
+  },
+  {
+    "id": "CP13-04",
+    "checkpoint": "CP13",
+    "claim": "Partial-period exponential ρ>0 ve weighted endpoint correlation şimdilik açık hedeftir.",
+    "program_label": "LEAD / OPEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP13/CP13 — Research Log 01 — Partial-Period Endpoint Discrepancy — 2026-08-15.docx.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "Hipotez, kanıtlanmış sonuç değildir."
+  },
+  {
+    "id": "CP02-11",
+    "checkpoint": "CP02",
+    "claim": "K≥49547666544 önceki CP01 first-crossing basamağı CP02de 2^71 başlangıç eşiğinden yeniden elde edilir.",
+    "program_label": "EXACT / reproduced",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP02/CP02 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz lower bound cycle length Eliahou Simons de Weger Hercher",
+      "Collatz 3x-1 cycles affine offset Steiner",
+      "Collatz parity vector stopping time distribution Terras Everett"
+    ],
+    "note": "CP01 asıl belge eksiktir; 72,057,431,991 güçlendirme ayrı satırdadır."
+  },
+  {
+    "id": "CP04-05",
+    "checkpoint": "CP04",
+    "claim": "Zamana göre değişen slack contraction Haar ölçüsünü stretched-exponential azaltır fakat O(R) boundary hatası log K tasarrufunu yutar.",
+    "program_label": "EXACT / FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP04/CP04 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Garcia Tal 1999 Collatz Banach density divergent orbits",
+      "Collatz divergent trajectories upper Banach density reciprocal sum",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP06-09",
+    "checkpoint": "CP06",
+    "claim": "Corridor least-realizer için M_j(C,C₀)→∞ her sabit C,C₀ altında kanıtlanması hedeflenir; CP06 bunu ispatlamaz.",
+    "program_label": "OPEN / corrected target",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Sadece önerilen karşıt-iptal teoremi; kesin çıktı değildir."
+  },
+  {
+    "id": "CP08-04",
+    "checkpoint": "CP08",
+    "claim": "Yakın üst suffix gerçekleyicisi için 2^J/(m+3)≤R_suf<2^J formülü geçerlidir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP08/CP08 — Checkpoint Sonuç Raporu.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": ""
+  },
+  {
+    "id": "CP09-07",
+    "checkpoint": "CP09",
+    "claim": "Geom(1/2) toplamı S_t kullanarak γ_t=P(S_t≤ct)/[3(1−2^{−(c−α)t})]→0, c<2 yakın α, hesaplanır.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP09/CP09 — Collatz_Checkpoint_9_2026-08-14.docx.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz Syracuse divergent orbit harmonic sum log log N",
+      "Collatz divergent orbit windowed count sparsity",
+      "Collatz density divergent orbit Inselmann"
+    ],
+    "note": "Klasik negatif binom/large-deviation alt kuyruğunun uygulaması; özel μ_t terminal sayımı 09-05 ayrıdır."
+  },
+  {
+    "id": "CP10-06",
+    "checkpoint": "CP10",
+    "claim": "CP10 audit B_t(c) nesnesinin Rozier LBH finite-boundary ölçüsüyle örtüştüğünü, LBH tek başına gereken 3I(α) tasarrufunu vermediğini bildirir.",
+    "program_label": "AUDIT / OPEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP10/CP10 — Audit — Bağımsız Adversarial Denetim.txt",
+    "verdict": "INTERNAL",
+    "references": [
+      {
+        "cite": "Rozier (2017), The 3x+1 problem: a lower bound hypothesis, DOI 10.7169/facm/1583 — DOĞRULANMADI (tam metin açılmadı)",
+        "url": "https://doi.org/10.7169/facm/1583",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "queries": [
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias",
+      "Collatz divergent orbit windowed count sparsity"
+    ],
+    "note": "Rozier primer makalesine DOI 10.7169/facm/1583 üzerinden ulaşıldı ancak tam PDF açılmadı: öncelik eşleştirmesi DOĞRULANMADI."
+  },
+  {
+    "id": "CP12-07",
+    "checkpoint": "CP12",
+    "claim": "Length-m shortcut parity permutation finite endpoint count için sabit-q bijeksiyon verir; farklı q için global C_w bijeksiyonunu vermez.",
+    "program_label": "EXACT / repaired",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP12/CP12 — Collatz_Checkpoint_12_2026-08-15.docx.txt",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz logarithmic discrepancy valuation least realizer",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": ""
+  }
+]

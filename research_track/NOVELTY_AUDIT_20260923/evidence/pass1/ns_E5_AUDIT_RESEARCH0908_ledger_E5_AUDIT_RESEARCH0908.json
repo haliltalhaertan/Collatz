@@ -1,0 +1,1388 @@
+[
+  {
+    "id": "E5-001",
+    "checkpoint": "project_review_20260908",
+    "claim": "Sonsuz Collatz yörüngesinin sayı kümesi sıfır Banach yoğunlukludur (nitel sparsity).",
+    "program_label": "CONTEXT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_project_review_20260908/ASSESSMENT_TR.md",
+    "verdict": "KNOWN",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "The Banach density of P is zero. ... The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias (2011 version), annotated bibliography 1963–1999, entry 69 (SECONDARY: Garcia–Tal source separately opened)",
+        "url": "https://arxiv.org/abs/math/0309224",
+        "quote": "As a corollary they conclude that the Banach density of the orbit of any integer n under such a map H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz Banach density divergent orbit Garcia Tal 1999",
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz reciprocal sum windowed count divergent orbit"
+    ],
+    "note": "1999 makalesinin Corollary 1 ifadesi; bir tek divergent orbitin sıfır Banach yoğunluğu, tüm istisnai başlangıçlar kümesinin sıfır yoğunluğu demek değildir."
+  },
+  {
+    "id": "E5-002",
+    "checkpoint": "project_review_20260908",
+    "claim": "Pozitif tekrarsız tek-Syracuse yörüngesi için harmonik H_N/log log N üst katsayısı K17<2.742882 olarak verilir.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_project_review_20260908/CP17_PROOF_REFERENCE.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "The Banach density of P is zero. ... The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz Banach density divergent orbit Garcia Tal 1999",
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz reciprocal sum windowed count divergent orbit"
+    ],
+    "note": "Garcia–Tal sıfır Banach yoğunluğu aynı yörünge için nitel seyrekliği bilinir kılar; CP17 nicel harmonik sınırını veya koşullu alanını kapsamaz; özel CP17 metninin tüm ispatı yeniden denetlenmedi."
+  },
+  {
+    "id": "E5-003",
+    "checkpoint": "project_review_20260908",
+    "claim": "Tek tek yörüngenin sıfır yoğunluğundan istisnai tüm başlangıçların bittiği çıkarılamaz.",
+    "program_label": "AUDIT/REPAIR",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_project_review_20260908/FINDINGS.md",
+    "verdict": "KNOWN",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "The Banach density of P is zero. ... The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Tao (2019), arXiv:1909.03562, abstract",
+        "url": "https://arxiv.org/abs/1909.03562",
+        "quote": "Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density).",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz Banach density divergent orbit Garcia Tal 1999",
+      "Collatz parity vector stopping time distribution Terras Everett",
+      "Collatz reciprocal sum windowed count divergent orbit"
+    ],
+    "note": "Garcia–Tal yalnızca orbit O(n) için yoğunluk sıfır ispatlıyor; farklı nicelik olan tüm olası istisnaları kapatmaz."
+  },
+  {
+    "id": "E5-004",
+    "checkpoint": "rate_audit_20260908",
+    "claim": "Inselmann’ın hemen hemen her başlangıç için logaritmik zaman penceresinde trajektori yaklaşımı vardır.",
+    "program_label": "LITERATURE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_rate_audit_20260908/REPORT.md",
+    "verdict": "KNOWN",
+    "references": [
+      {
+        "cite": "Inselmann (2024), arXiv:2402.03276, abstract",
+        "url": "https://arxiv.org/abs/2402.03276",
+        "quote": "almost all m ... fulfill ... simultaneously for all 0≤k≤α log m ... We extend this result to α=2(log(4/3))^{-1}",
+        "opened": true
+      },
+      {
+        "cite": "Tao (2019), arXiv:1909.03562, abstract",
+        "url": "https://arxiv.org/abs/1909.03562",
+        "quote": "Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density).",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz stopping time distribution Inselmann 2024",
+      "Collatz Terras Everett logarithmic time approximation",
+      "Collatz almost all orbits Tao logarithmic density"
+    ],
+    "note": "Orijinal theorem koşulları için abstract kontrol edildi; uniform olarak belirli istisnai yörüngeye aktarım yok."
+  },
+  {
+    "id": "E5-005",
+    "checkpoint": "rate_audit_20260908",
+    "claim": "İnselmann’dan tek çekim ve değiştirilmiş üst-yaklaşımla d_cert=5×10^-10 istisna üssü çıkarken seçili usulün tavanı yaklaşık 0.000979308877 ve gerekli 0.050332383666’dır.",
+    "program_label": "EXACT/CONDITIONAL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_rate_audit_20260908/REPORT.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Inselmann (2024), arXiv:2402.03276, abstract",
+        "url": "https://arxiv.org/abs/2402.03276",
+        "quote": "almost all m ... fulfill ... simultaneously for all 0≤k≤α log m ... We extend this result to α=2(log(4/3))^{-1}",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Inselmann Collatz explicit exceptional rate 5e-10",
+      "Collatz stopping time distribution exceptional exponent rate",
+      "Collatz pullback Hoeffding residue window rate"
+    ],
+    "note": "Sayılar programın değiştirilmiş çıkarımı, Inselmann’dan alıntı rakamlar değil; ispatın bağımsız teyidi yapılmadı."
+  },
+  {
+    "id": "E5-006",
+    "checkpoint": "tail_debate_20260908",
+    "claim": "Gerçek kritik r12 ve r16 örneklerinin açığa çıkmamış 5 ve 6 adımının tamamı tek olabilir.",
+    "program_label": "EXACT/FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_tail_debate_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Noktasal kuyrukta zorunlu çift-adım varsayımını çürütür; literatür karşılaştırması gereksiz."
+  },
+  {
+    "id": "E5-007",
+    "checkpoint": "tail_debate_20260908",
+    "claim": "Bağlı önek/kuyruk üst sınırının üs fonksiyonu Γ(b) en az b H₂(1/α)/α olduğu için κ≥1.0526808586 bölgesini bu yöntemle kapatamaz.",
+    "program_label": "PROOF/NEGATIVE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_tail_debate_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Sınır yöntemin tavanı, gerçek sayımların alt sınırı değil."
+  },
+  {
+    "id": "E5-008",
+    "checkpoint": "block_variance_20260908",
+    "claim": "q çevirili bloğun varyansı V iken |G(0)-B|≤√((q−1)V), eşitlik mümkün.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_block_variance_20260908/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Merkezlenmiş q-vektörde Cauchy–Schwarz eşitliği."
+  },
+  {
+    "id": "E5-009",
+    "checkpoint": "block_variance_20260908",
+    "claim": "V≤B eşitsizliği r=5,A=7,m=6 örneğinde G=(4,11), B=15/2, V=49/4 ile yanlıştır.",
+    "program_label": "EXACT/FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_block_variance_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Yalnız sabit-1 bütün-r varsayımını çürütür."
+  },
+  {
+    "id": "E5-010",
+    "checkpoint": "block_variance_20260908",
+    "claim": "Gerçek blok varyansı, k-ağırlıklı kaynak ve kuyruk katsayılarının Fourier çarpımının sıfır-olmayan frekans enerji toplamıdır.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_block_variance_20260908/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Sonlu döngüsel konvolüsyon ve Parseval; programa özgü normalizasyon."
+  },
+  {
+    "id": "E5-011",
+    "checkpoint": "attack_round_20260908",
+    "claim": "Sabit kütleyi çıkardıktan sonra r=14 ham grup diyagonali ~1.27 milyon yerine ~1490, gerçek V~1617 olur.",
+    "program_label": "EXACT/REPAIR",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_attack_round_20260908/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Önceki dev çapraz iptal zorunluluğu yorumu geri çekilmiş."
+  },
+  {
+    "id": "E5-012",
+    "checkpoint": "attack_round_20260908",
+    "claim": "Gerçek kaynak sapmaları için D₂≤D_source ve V≤KqD₂; r14 dahil sonlu örnekler asimptotik D₂ tahmini vermez.",
+    "program_label": "PROOF/CONDITIONAL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_attack_round_20260908/REPORT_TR.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Üçgen eşitsizliği/konvolüsyon normu; gerçek D₂ üst sınırı açık."
+  },
+  {
+    "id": "E5-013",
+    "checkpoint": "attack_round_20260908",
+    "claim": "22. moment hiper-kontraktivite yolu, aynı W21 bilgisinden doğrudan Cauchy yoluna göre daha kötü üstel tolerans verir (0.002843 yerine 0.012003).",
+    "program_label": "EXACT/FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_attack_round_20260908/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Bu modelde dolaylı yol bırakılmış."
+  },
+  {
+    "id": "E5-014",
+    "checkpoint": "reassessment_20260908",
+    "claim": "Küçük r blok varyansı bağımsızlık veya global büyük-sapma önermesi değildir.",
+    "program_label": "REASSESSMENT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_reassessment_20260908/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Programın nicel iddia kapsamı daraltıldı."
+  },
+  {
+    "id": "E5-015",
+    "checkpoint": "visible_defect_20260908",
+    "claim": "Sabit-ağırlık kuyruk göstergesinin sıfır dışı cyclic Fourier katsayısı yalnız t=2j ve ξ=2^(t−1) durumunda sıfırdır.",
+    "program_label": "PROOF/EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_visible_defect_20260908/ZERO_CLASSIFICATION.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz parity vector fixed weight Fourier coefficients zeros",
+      "3x+1 tail parity count cyclotomic zero",
+      "binomial parity weight cyclic Fourier nonvanishing"
+    ],
+    "note": "Özel tam sıfır sınıflandırması; s≥2 için sıfır yok, fakat nicel alt sınır yok."
+  },
+  {
+    "id": "E5-016",
+    "checkpoint": "visible_defect_20260908",
+    "claim": "Yukarıdaki istisnada kuyruk konvolüsyon çekirdeğinin rankı 2^t−1 ve sıfır uzayı span{(−1)^z} olur.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_visible_defect_20260908/REPORT_TR.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz valuation word Fourier tail kernel zeros",
+      "Collatz cyclic Fourier phase Gram affine offset",
+      "Collatz Krawtchouk source transfer binomial Jacobi spectrum"
+    ],
+    "note": "Sıfır sınıflandırmasının standart Fourier diyagonalizasyonuyla sonucu; bağımsız yenilik iddiası zayıf."
+  },
+  {
+    "id": "E5-017",
+    "checkpoint": "concentration_audit_20260912",
+    "claim": "Normalleştirilmiş kaynak ve filtre enerjileri için |A−1|≤√((C_X−1)(C_Y−1)).",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_concentration_audit_20260912/REPORT_TR.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Merkezlenmiş Cauchy–Schwarz."
+  },
+  {
+    "id": "E5-018",
+    "checkpoint": "concentration_audit_20260912",
+    "claim": "r=12 ihlal katmanında C_X=1123655/418609≈2.68426 ve ortak hizalanma A≈1.90211’dir.",
+    "program_label": "EXACT/NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_concentration_audit_20260912/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Önceki yaklaşık 2.67 düzeltilmiş; tek başına C_X veya C_Y düzlüğü yetersiz."
+  },
+  {
+    "id": "E5-019",
+    "checkpoint": "concentration_audit_20260912",
+    "claim": "Hiçbir iletkende tam sıfır yok genellemesi t=4,j=2,s=1 karşıörneğiyle yanlıştır.",
+    "program_label": "FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_concentration_audit_20260912/REPORT_TR.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [],
+    "note": "Doğrudan program içi önceki sıfır sınıflaması bunu reddediyor; denetim raporunun kendi iddiası değil, denetlenen iddia."
+  },
+  {
+    "id": "E5-020",
+    "checkpoint": "galois_audit_20260912",
+    "claim": "Galois simetrisi tek başına dördüncü Fourier momentin düzleşmesini garanti etmez.",
+    "program_label": "AUDIT/FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_galois_audit_20260912/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "İşaret açıklamasındaki nicel aşırılık iptal edildi."
+  },
+  {
+    "id": "E5-021",
+    "checkpoint": "cross_terms_20260912",
+    "claim": "Even cross term tam mixed-channel kare normuna eşittir; odd reflection ayrımı kalan signed bileşeni izole eder.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_cross_terms_20260912/REPORT_TR.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz valuation word Fourier tail kernel zeros",
+      "Collatz cyclic Fourier phase Gram affine offset",
+      "Collatz Krawtchouk source transfer binomial Jacobi spectrum"
+    ],
+    "note": "Belirli Collatz kuyruk filtresinin exact yenilemesi; yeni asimptotik norm tahmini yok."
+  },
+  {
+    "id": "E5-022",
+    "checkpoint": "shift_haar_20260912",
+    "claim": "Source–filter hizalanması shift v₂(d) sınıflarına ayrılır; ilk v₂(d)=0 tail Haar enerji katmanı tam 4N_+’dır.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_shift_haar_20260912/REPORT_TR.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz shifted autocorrelation Haar primitive Fourier",
+      "Collatz source filter alignment 2-adic shift",
+      "Collatz parity vector Fourier Haar N plus"
+    ],
+    "note": "Bu cyclic Fourier lift Haar yapısı Walsh parite-küp izomorfizmi değildir."
+  },
+  {
+    "id": "E5-023",
+    "checkpoint": "shift_haar_20260912",
+    "claim": "İlk L katmanın işaretini tutan U_L üst sınırı L arttıkça azalır ve tüm katmanlarda tam hizalanmaya eşit olur.",
+    "program_label": "PROOF/EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_shift_haar_20260912/REPORT_TR.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz valuation word Fourier tail kernel zeros",
+      "Collatz cyclic Fourier phase Gram affine offset",
+      "Collatz Krawtchouk source transfer binomial Jacobi spectrum"
+    ],
+    "note": "Ortogonal katmanların kısmi Cauchy uygulanması standarttır; özel uygulama E5-022 ile bağıntılı."
+  },
+  {
+    "id": "E5-024",
+    "checkpoint": "mixed_gram_20260912",
+    "claim": "G_d karışık overlap güçleri G_(d−1),G_d,G_(d+1) komşularıyla faz-kör kapalı üst-yineleme sağlar.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_mixed_gram_20260912/REPORT_TR.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz valuation word Fourier tail kernel zeros",
+      "Collatz cyclic Fourier phase Gram affine offset",
+      "Collatz Krawtchouk source transfer binomial Jacobi spectrum"
+    ],
+    "note": "Özel tail-filtre için; 612 kritik finite örnekte trivial M4≤M2²/2 eşiğini hiç iyileştirmedi."
+  },
+  {
+    "id": "E5-025",
+    "checkpoint": "mixed_gram_20260912",
+    "claim": "(t,j,s)=(11,6,4) ve çocuğunda N_−=0,N_B>0 birlikte gerçekleşerek iki-ölçekte eşzamanlı saturation olmaz varsayımını çürütür.",
+    "program_label": "COUNTEREXAMPLE/PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_mixed_gram_20260912/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Bu aday reddedildi."
+  },
+  {
+    "id": "E5-026",
+    "checkpoint": "phase_gram_20260912",
+    "claim": "Üç kanallı phase Gram 3×3 Schur sınırı faz-kör G₁’den zayıf değildir ve sabit kritik gridin 543/543 örneğinde daha sıkıdır.",
+    "program_label": "PROOF/EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_phase_gram_20260912/REPORT_TR.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz valuation word Fourier tail kernel zeros",
+      "Collatz cyclic Fourier phase Gram affine offset",
+      "Collatz Krawtchouk source transfer binomial Jacobi spectrum"
+    ],
+    "note": "Finite verideki iyileşme genel uniform W ispatı değil; PSD ve Schur standart, özgünlük filtre uygulamasında."
+  },
+  {
+    "id": "E5-027",
+    "checkpoint": "phase_gram_20260912",
+    "claim": "Aynı real-edge Gram verisine sahip iki örnekte sonraki diyagonal 6±4√2 olduğu için real-edge tek başına exact kapanmaz.",
+    "program_label": "COUNTEREXAMPLE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_phase_gram_20260912/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Kurulan gevşetmenin kapanış sınırı."
+  },
+  {
+    "id": "E5-028",
+    "checkpoint": "phase_gram_20260912",
+    "claim": "Tam faz quartic-character recurrence 272 finite filtrede exact M4 ile eşleşir; saf memo s=12’de 88198 state kullanır.",
+    "program_label": "PROOF/EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_phase_gram_20260912/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz valuation word Fourier tail kernel zeros",
+      "Collatz cyclic Fourier phase Gram affine offset",
+      "Collatz Krawtchouk source transfer binomial Jacobi spectrum"
+    ],
+    "note": "Döngüsel karakter açılımı doğal; asymptotik daha iyi state sınırı sonraki Round 6’da geldi."
+  },
+  {
+    "id": "E5-029",
+    "checkpoint": "phase_quotient_20260913",
+    "claim": "Quartic-character state için derinlik d sayısı ≤min(8^d,binom(d+2,2)^2·2^(s−d)) ve toplam O(s⁴2^(3s/4))’tür.",
+    "program_label": "PROOF/EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_phase_quotient_20260913/REPORT_TR.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "quartic character recurrence Collatz Fourier state count",
+      "Collatz parity Fourier fourth moment 2^(3s/4)",
+      "Collatz phase quotient primitive fourth moment"
+    ],
+    "note": "Tek tail primitive M4 için enumeration’dan küçük state üssü; W üst sınırı değil."
+  },
+  {
+    "id": "E5-030",
+    "checkpoint": "phase_quotient_20260913",
+    "claim": "Quartic recurrence ortak kanal shift, yarım-karakter işareti ve conjugation simetrilerine sahiptir.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_phase_quotient_20260913/REPORT_TR.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Frekans yeniden indeksleme ve primitive karakter işaret simetrileri."
+  },
+  {
+    "id": "E5-031",
+    "checkpoint": "phase_quotient_20260913",
+    "claim": "Round 4’ün finite saf-state pahalı gözleminden asimptotik olarak 2^s altına inilemez sonucu çıkarılamaz.",
+    "program_label": "AUDIT/REPAIR",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_phase_quotient_20260913/REPORT_TR.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [],
+    "note": "Program sonraki Round 6 teoremiyle önceki aşırı yorumu kaldırdı; finite ölçüm doğru."
+  },
+  {
+    "id": "E5-032",
+    "checkpoint": "source_transfer_20260912",
+    "claim": "Gerçek prefix endpoint histogramının m→m+1 transferi ve Fourier 2×2 lift matrisi exact’tır.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_source_transfer_20260912/REPORT_TR.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz parity vector source histogram 2x2 Fourier lift",
+      "Collatz affine offset prefix residue transfer",
+      "Collatz cyclic Fourier source recursion"
+    ],
+    "note": "Spesifik Collatz kaynağı recurrence; genel affine/parity kodlama yöntemleri eski."
+  },
+  {
+    "id": "E5-033",
+    "checkpoint": "source_krawtchouk_20260913",
+    "claim": "k-gauge sonrası binom normalize source-transfer squared singular değerleri 1+cosφ(1−2ℓ/m), ℓ=0..m’dir.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_source_krawtchouk_20260913/REPORT_TR.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Kocik (2007), Krawtchouk polynomials and Krawtchouk matrices, arXiv:quant-ph/0702073, abstract",
+        "url": "https://arxiv.org/abs/quant-ph/0702073",
+        "quote": "Krawtchouk matrices ... arise as condensed Sylvester-Hadamard matrices ... used to solve ... Ehrenfest urn model.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Krawtchouk Jacobi binomial Pascal singular values",
+      "Collatz source transfer Krawtchouk eigenvalues",
+      "Hamming weight hypercube Jacobi 1-2l/m"
+    ],
+    "note": "Krawtchouk/Hamming-weight spektrumu klasik; açılan kaynak Collatz gauge eşitliğini kanıtlamaz; özgül source-phase gauge için eşdeğer kaynak bulunamadı."
+  },
+  {
+    "id": "E5-034",
+    "checkpoint": "source_krawtchouk_20260913",
+    "claim": "En kötü primitive frekansta squared norm 1+|cosφ|→2 ve strict-gap çarpımı ancak sabit faktör kazandırır.",
+    "program_label": "PROOF/NEGATIVE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_source_krawtchouk_20260913/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Bu worst-case norm yinelemesi üstel W saving vermez."
+  },
+  {
+    "id": "E5-035",
+    "checkpoint": "source_krawtchouk_20260913",
+    "claim": "Ecal(m+1,s)≤Ecal(m,s+1) 108 gerçek finite geçişte görüldü, generic inputta geçerli değil.",
+    "program_label": "NUM/CONJECTURE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_source_krawtchouk_20260913/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Tekdüzelik kanıtlanmadı; 108 gözlem bir theorem değildir."
+  },
+  {
+    "id": "E5-036",
+    "checkpoint": "source_defect_20260913",
+    "claim": "Gerçek source primitive enerji farkı Ecal(m,s+1)−Ecal(m+1,s)=M_merge−L_lift tamdır, M_merge≥0.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_source_defect_20260913/REPORT_TR.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz valuation word Fourier tail kernel zeros",
+      "Collatz cyclic Fourier phase Gram affine offset",
+      "Collatz Krawtchouk source transfer binomial Jacobi spectrum"
+    ],
+    "note": "Collatz source için kesin monotonicity indirgemesi, L_lift işaretli ve açık."
+  },
+  {
+    "id": "E5-037",
+    "checkpoint": "source_defect_20260913",
+    "claim": "m=3,s=2 pozitif histogramda input=12 ve output=40/3 olduğundan salt pozitiflik ve binom kütleleri enerji monotonicity’sini sağlamaz.",
+    "program_label": "COUNTEREXAMPLE/EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_source_defect_20260913/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Generic histogram, gerçek reachable-source karşıörneği değil."
+  },
+  {
+    "id": "E5-038",
+    "checkpoint": "shift_recurrence_20260912",
+    "claim": "Kaydırılmış parity ağırlığı için affine state recurrence kapanır; sadece translation-state kapanmaz ve tek shift için memo bound verilir.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_shift_recurrence_20260912/REPORT_TR.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz parity shifted correlation affine-state recursion",
+      "3x+1 parity vector fourth moment Kronecker substitution",
+      "Collatz residue shift correlation memoization"
+    ],
+    "note": "Standart transfer kavramı; özel modül/shift karmaşıklık sınırı için eşdeğer kaynak bulunamadı."
+  },
+  {
+    "id": "E5-039",
+    "checkpoint": "shift_recurrence_20260912",
+    "claim": "Kronecker substitution ile s=18’de 262144 rezidünün exact dördüncü momenti hesaplanmıştır.",
+    "program_label": "EXACT/NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_shift_recurrence_20260912/ALGORITHM.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Algoritmik finite panel; yayınlanmış asimptotik teorem değil."
+  },
+  {
+    "id": "E5-040",
+    "checkpoint": "peak_peeling_20260912",
+    "claim": "Kuyruk-spektrum tepe ayırmada weighted exceedance remainder exact bound sağlanır, finite L büyüyen problemi çözmez.",
+    "program_label": "PROOF/NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_peak_peeling_20260912/ANALYTIC_REVIEW.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz valuation word Fourier tail kernel zeros",
+      "Collatz cyclic Fourier phase Gram affine offset",
+      "Collatz Krawtchouk source transfer binomial Jacobi spectrum"
+    ],
+    "note": "Markov/enerji kısmı standart; programa özel seçilmiş peak-shell uygulaması; uniform W hâlâ açık."
+  },
+  {
+    "id": "E5-041",
+    "checkpoint": "w_continuation_20260912",
+    "claim": "Tail-shell ağırlık bütçesi exact; filtre üzerinden ortalama alarak gerçek W’yi kontrol etme adımı generic karşıörnekte başarısızdır.",
+    "program_label": "PROOF/FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_w_continuation_20260912/PROPOSAL.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "İşaretli source-tail bağını atamayız."
+  },
+  {
+    "id": "E5-042",
+    "checkpoint": "integration_20260912",
+    "claim": "Round 1–3 birleştirmesi açık W,W_flat,D2 problemlerini kapatmaz.",
+    "program_label": "AUDIT/OPEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_integration_20260912/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Entegrasyon ve kaynak doğrulama yeni teorem değil."
+  },
+  {
+    "id": "E5-043",
+    "checkpoint": "joint_panel_20260908",
+    "claim": "r=10..22 yedi finite panelde gerçek N/B oranı 0.988939 ile 1.006914 arasında değişir.",
+    "program_label": "EXACT/NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_joint_panel_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Düzgünlük asimptotik olarak ispatlı değil."
+  },
+  {
+    "id": "E5-044",
+    "checkpoint": "join_energy_20260908",
+    "claim": "Join collision enerjisi kabul edilmiş suffixlerin lifted-demand sınıflarını ölçmeli; raw CS ortalaması çıkarılmadan savurgandır.",
+    "program_label": "EXACT/NEGATIVE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_join_energy_20260908/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Doğru marjinalin seçimi ve merkezlenmiş Cauchy."
+  },
+  {
+    "id": "E5-045",
+    "checkpoint": "exact_join_20260908",
+    "claim": "L≤3^k iken split full count tam Q=Σ_(R,t) P_(j,A−R)(t)D_(k,R)(t) join’idir.",
+    "program_label": "EXACT/PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_exact_join_20260908/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz affine offset prefix suffix residue class join",
+      "Collatz 3-adic endpoint split 2^m 3^k",
+      "Collatz valuation word collision energy lifted residues"
+    ],
+    "note": "Affine numerator identity ve sonlu histogram join standart; belirli lifted suffix demand nesnesinin formülü kullanışlı fakat sonuç eşdeğer yeni dağılım teoremi değil."
+  },
+  {
+    "id": "E5-046",
+    "checkpoint": "stratified_join_20260908",
+    "claim": "Mod 3^s hücrelerine ayrılan centered-CS sertifikası refine edilince monoton küçülür ve singleton’da exact olur.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_stratified_join_20260908/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Ortogonal izdüşüm ve Cauchy; m10 r10 örneğinde bound 58→47→36, gerçek10."
+  },
+  {
+    "id": "E5-047",
+    "checkpoint": "inverse_transfer_20260908",
+    "claim": "Yalnız iki histogramın marjinalleri generic halde gerçek joint join’ini belirlemez.",
+    "program_label": "COUNTEREXAMPLE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_inverse_transfer_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Proposed inverse-convolution bridge missing implication false."
+  },
+  {
+    "id": "E5-048",
+    "checkpoint": "local_collision_20260908",
+    "claim": "Sabit r,A için exact numerator B kelimeye göre birebirdir, modulo 3^r çarpışma farklı olgudur.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_local_collision_20260908/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Pozitif 2-3 asal-bölünebilirliği ve affine kodlama; çarpışmalar için sayısal saving vermez."
+  },
+  {
+    "id": "E5-049",
+    "checkpoint": "collision_debate_20260908",
+    "claim": "145 ve 147 farklı r=7,A=11 kelimeleriyle aynı tek endpoint 161’e birleşir.",
+    "program_label": "COUNTEREXAMPLE/EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_collision_debate_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Küçük endpointin birleşmeleri yasaklamadığına gerçek tanık."
+  },
+  {
+    "id": "E5-050",
+    "checkpoint": "collision_debate_20260908",
+    "claim": "Kanonik başlangıçlar {x tek: S_(r−1)(x)<A≤S_r(x),x<2^A} ile birebir ve sayı binom(A−1,r−1)’dir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_collision_debate_20260908/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Terras/Everett parity-vector kodlama ve stars-and-bars; özel kaynak olmaksızın sayım."
+  },
+  {
+    "id": "E5-051",
+    "checkpoint": "collision_debate_20260908",
+    "claim": "Q endpoint koşulu dual start count F(cL) ile iki taraflı aralık sandviçi içindedir ve sınır hatası O(2^((α−1)r))’dir.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_collision_debate_20260908/REPORT.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz parity vector endpoint interval sandwich",
+      "Collatz affine offset canonical start count",
+      "Collatz stopping time distribution prefix short interval"
+    ],
+    "note": "Spesifik dual interval dönüşümü, klasik affine kodlamanın nicel eklentisi; yayınlanmış eşdeğeri doğrulanmadı."
+  },
+  {
+    "id": "E5-052",
+    "checkpoint": "compressed_count_20260908",
+    "claim": "(j,a,B_j mod3^j) her common suffix için final endpointi koruyan exact future-equivalence quotient’tir.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_compressed_count_20260908/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "B_w=3^kB_j+2^aB(u) affine eşitliği."
+  },
+  {
+    "id": "E5-053",
+    "checkpoint": "compressed_count_20260908",
+    "claim": "L≥3^t ise yalnız 3^t düşük digit tutan terminal üst-başarı göstergesi 1’dir ve root bound N’ye çöker.",
+    "program_label": "PROOF/NEGATIVE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_compressed_count_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Bu model için körlük, bütün sıkıştırma algoritmaları için lower bound değil."
+  },
+  {
+    "id": "E5-054",
+    "checkpoint": "compressed_count_20260908",
+    "claim": "High-bucket Bellman upper modelinin bütün kelimelerde N’ye çöktüğü iddiası r=4,t=3,L=9,A=6,7 için yanlıştır.",
+    "program_label": "FAIL/RETRACTED",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_compressed_count_20260908/REPORT.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [],
+    "note": "Program karşıhesapları Q=0,F=9,N=10 ve Q=3,F=17,N=20 ile eski denetçi nicelik sırası hatasını düzeltiyor."
+  },
+  {
+    "id": "E5-055",
+    "checkpoint": "hybrid_count_20260908",
+    "claim": "High-bucket ve düşük-3-adic digit Bellman hibriti finite üst sınır sertifikasıdır, sabit precision artışı exponent körlüğünü çözmez.",
+    "program_label": "EXACT/NEGATIVE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_hybrid_count_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "İki zıt yönden tamamlanmamış kuantifier uzatma özel yöntem sınırı."
+  },
+  {
+    "id": "E5-056",
+    "checkpoint": "intersection_debate_20260908",
+    "claim": "Aynı geleceğe sahip exact endpoint-state’ler birleştirilince finite DP küçülür, sabit kısa lookahead eski üssü geçmez.",
+    "program_label": "EXACT/FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_intersection_debate_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Yöntemsel finite artış; Collatz asimptotiği yok."
+  },
+  {
+    "id": "E5-057",
+    "checkpoint": "outlier_debate_20260908",
+    "claim": "Conditional parity recovery için moment üst sınırı vardır ama sentetik infinite family kayıp üssün sıfırlanmasını yasaklar.",
+    "program_label": "PROOF/NEGATIVE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_outlier_debate_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Gerçek kaynak dağılımı için lower bound değil."
+  },
+  {
+    "id": "E5-058",
+    "checkpoint": "dense_pairs_20260908",
+    "claim": "Boundary-configured low-excursion probability Θ(1/R); daha kuvvetli logaritmik fırsat lower-tail hedefi yanlıştır.",
+    "program_label": "PROOF/COUNTEREXAMPLE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_dense_pairs_20260908/REPORT_TR.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "conditioned random walk excursion probability 1/R",
+      "Collatz inverse tree density renewal walk",
+      "random walk ballot theorem boundary excursion"
+    ],
+    "note": "Random-walk first-passage ölçeği bilinen mekanizma; bu yardımcı Markov süreçte somut olayın eşiği özel; gerçek Collatz istisnaları değil."
+  },
+  {
+    "id": "E5-059",
+    "checkpoint": "dense_tilt_20260908",
+    "claim": "Predictable opportunity tilt exact martingale density verir, fakat original-law karşılaştırması finite örnekte yanlıştır.",
+    "program_label": "PROOF/FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_dense_tilt_20260908/DIRECT_HAZARD_TRANSFER.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Doob/Radon–Nikodym change-of-measure genel aracı; sapma kontrolü özgün veri gerektirir."
+  },
+  {
+    "id": "E5-060",
+    "checkpoint": "excursion_split_20260908",
+    "claim": "Sabit kompakt excursion yüksekliğinde blok joint exponential bound geçer, unrestricted height aynı bound’u vermez.",
+    "program_label": "PROOF/CONDITIONAL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_excursion_split_20260908/COMPACT_AND_RESONANT_KERNELS.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "conditioned geometric random walk compact height survival exponential",
+      "Collatz excursion inverse tree density",
+      "random walk ballot low excursion 1/R"
+    ],
+    "note": "Kompakt durumlarda spektral boşluk genel; bu yardımcı geometrik random walk ve uç koşulu özel, global dense C/R açık."
+  },
+  {
+    "id": "E5-061",
+    "checkpoint": "sol_gap_20260908",
+    "claim": "Bir sabit log grid için coarse all-block origin lower event olasılığı 1’e gider ve önerilen Laplace üst stratejisini bozar.",
+    "program_label": "PROOF/NEGATIVE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_sol_gap_20260908/COARSE_GRID_OBSTRUCTION_PROOF.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Bu yardımcı koşullu law’a ait strateji engeli, gerçek yörüngelerin çürütülmesi değil."
+  },
+  {
+    "id": "E5-062",
+    "checkpoint": "coarse_windows_20260908",
+    "claim": "Sabit her log katsayısı için origin-grid strateji engeli genişletilir; sublog versiyon koşulludur.",
+    "program_label": "PROOF/NEGATIVE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_coarse_windows_20260908/ALL_LOG_COEFFICIENTS_PROOF.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Stratejiyi eliyor, bir Collatz yörüngesi inşa etmiyor."
+  },
+  {
+    "id": "E5-063",
+    "checkpoint": "spectral_target_audit_20260908",
+    "claim": "Sparse-exception ile count-to-orbit köprüsü koşullu önermelerdir; göreli o(1) eski E0 üs gereğinden güçlüdür.",
+    "program_label": "PROOF/CONDITIONAL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_spectral_target_audit_20260908/RESULT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Hipotez gerçekleşmedi; sabitlerin hedefi değiştirmesi asimptotik kazanım değildir."
+  },
+  {
+    "id": "E5-064",
+    "checkpoint": "weighted_spectrum_20260908",
+    "claim": "Seyrek primitive Fourier katsayılarının tek tek O(1/r) olması relative-o(1) interval hatasını tek başına sağlamaz.",
+    "program_label": "COUNTERMODEL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_weighted_spectrum_20260908/RESULT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Sentetik law gerçek Collatz endpoint measure değil."
+  },
+  {
+    "id": "E5-065",
+    "checkpoint": "cross_domain_20260908",
+    "claim": "Finite-horizon rare-event kontrol sertifikası doğal Bellman restatement’tir; global yörünge transferi açık kalır.",
+    "program_label": "METHOD/CONDITIONAL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_cross_domain_20260908/COUNT_CERTIFICATE.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Önerilen araç, gerçek orijinal-alt-kısıt çözümü değil."
+  },
+  {
+    "id": "E5-066",
+    "checkpoint": "merge_extension_20260908",
+    "claim": "16 ileri adım ve tek inverse ebeveynle 65536 sınıftan 54556’sı yalnız en küçük istisnai checkpoint adayı olmaktan dışlanır.",
+    "program_label": "EXACT/CERTIFICATE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_merge_extension_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Önceki 50568 üzerine 3988; bütün o sınıflardaki sayıların yakınsadığı sonucu çıkmaz."
+  },
+  {
+    "id": "E5-067",
+    "checkpoint": "double_merge_20260908",
+    "claim": "İki inverse ebeveyn eklenince 653 yeni sertifika ile 55209/65536 sınıf minimal-istisna adayı olmaktan dışlanır.",
+    "program_label": "EXACT/CERTIFICATE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_double_merge_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Sabit arama kütüphanesi ve parametreli sonsuz aile sertifikası; 10327 hâlâ belirsiz."
+  },
+  {
+    "id": "E5-068",
+    "checkpoint": "residual_diagnosis_20260908",
+    "claim": "Başlangıç öneki gevşetilince 10327 bilinmeyen sınıfın yalnız 1’i daha kapanır, toplam 55210/65536 olur.",
+    "program_label": "EXACT/CERTIFICATE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_residual_diagnosis_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "102? hayır: 10326 bilinmeyen kalır; göreli arama kütüphanesi sonucu."
+  },
+  {
+    "id": "E5-069",
+    "checkpoint": "checkpoint_bridge_20260908",
+    "claim": "Küçük ortak gelecek checkpointi, minimal istisna sınıfından kesin dışlama sağlar; örtülmemiş sınıfları otomatik kapatmaz.",
+    "program_label": "PROOF/CONDITIONAL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_checkpoint_bridge_20260908/SYNTHESIS.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Well-founded minimal-counterexample ilkesi; kodlanan aileler özel."
+  },
+  {
+    "id": "E5-070",
+    "checkpoint": "basin_20260908",
+    "claim": "Bilinen sonlu havza/kaçınılmaz checkpoint sayımı global Collatz yörüngesine aktarım için ayrı bağ ister.",
+    "program_label": "LITERATURE/OPEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_basin_20260908/BASIN_CHECKPOINTS.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Araştırma programı yönü, nicel yenilik teoremi değil."
+  },
+  {
+    "id": "E5-071",
+    "checkpoint": "sol_20260908",
+    "claim": "Coarse-chord occupation eşitliği exact, Laplace domination yeterli ama eşdeğer değil.",
+    "program_label": "EXACT/REPAIR",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_sol_20260908/PRINCIPAL_ANALYSIS.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Sonlu toplam dönüşümü; öneri ispat değil."
+  },
+  {
+    "id": "E5-072",
+    "checkpoint": "project_review_20260908",
+    "claim": "Weak 2-adic realization ile pozitif tek sıradan tamsayının tüm kelimeyi gerçekleştirmesi farklıdır.",
+    "program_label": "AUDIT/REPAIR",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_project_review_20260908/FINDINGS.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Sonlu silindir/kompaktlık ile ordinary integer integrality eş tutulamaz."
+  },
+  {
+    "id": "E5-073",
+    "checkpoint": "literature_followup_20260908",
+    "claim": "Tamamlayıcı parite simetrisi affine uçnokta dağılımını korumaz ve yüksek moment otomatik çıkmaz.",
+    "program_label": "AUDIT/NEGATIVE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_literature_followup_20260908/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Literatürden doğrudan aktarım başarısız."
+  },
+  {
+    "id": "E5-074",
+    "checkpoint": "multiscale_literature_20260908",
+    "claim": "Kritik kütle koşulu gerçek affine yörünge yeniden-kurulumuyla korunmalı, ölçekler arası signed bileşen bilinmiyor.",
+    "program_label": "LITERATURE/OPEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_multiscale_literature_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Gerekli açık hedef, teorem değil."
+  },
+  {
+    "id": "E5-075",
+    "checkpoint": "merging_literature_20260908",
+    "claim": "Tao’nun log-yoğunlukla hemen-hemen-her yörünge sonucu tek bir en küçük istisna checkpointinin yokluğunu kanıtlamaz.",
+    "program_label": "LITERATURE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_merging_literature_20260908/REPORT.md",
+    "verdict": "KNOWN",
+    "references": [
+      {
+        "cite": "Tao (2019), arXiv:1909.03562, abstract",
+        "url": "https://arxiv.org/abs/1909.03562",
+        "quote": "Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density).",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz Tao 2019 logarithmic density exceptional orbit",
+      "Collatz minimal exception checkpoint Tao",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Birincil abstract açık; log density ile tüm sayılar farklıdır."
+  },
+  {
+    "id": "E5-076",
+    "checkpoint": "project_review_20260908",
+    "claim": "Proje özeti finite sertifikaları global Collatz ispatı olarak saymaz.",
+    "program_label": "ASSESSMENT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_project_review_20260908/ASSESSMENT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Özetin doğru scope uyarısı; original proof exhaustive audit değil."
+  },
+  {
+    "id": "E5-077",
+    "checkpoint": "manager",
+    "claim": "Bağımsız reproduction üreticinin kendi verifierını çalıştırmak değil, ayrı hesap ve açık dissent gerektirir.",
+    "program_label": "GOVERNANCE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Güvenilirlik prosedürü, matematiksel teorem değil."
+  },
+  {
+    "id": "E5-078",
+    "checkpoint": "manager",
+    "claim": "Journal hash chain ve atomic milestone kayıtları bilimsel yeni teorem değil, provenance sağlar.",
+    "program_label": "GOVERNANCE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_manager/CONTINUITY_PROTOCOL.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Geçmiş artefaktlar varsayılan olarak freeze edilemez."
+  },
+  {
+    "id": "E5-079",
+    "checkpoint": "manager",
+    "claim": "B4 V2 onayı bir byte dependency uyuşmazlığında consumed/closed olur ve T1–T8 matematiği çalışmaz.",
+    "program_label": "AUDIT/FAIL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/START_HERE_CURRENT_HANDOFF.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Arşiv-f log özetiyle doğrulanan yönetişim sonucu; tek başına novelty evidence değil."
+  },
+  {
+    "id": "E5-080",
+    "checkpoint": "integration_20260912",
+    "claim": "Entegre paket auditinin yayın/provenance eksikleri matematiksel çözüm eksiklerini gidermez.",
+    "program_label": "AUDIT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_integration_20260912/AUDIT_REVIEW.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Audit acceptance tüm alt-paket sonuçlarının dış literatüre üstünlüğü değildir."
+  },
+  {
+    "id": "E5-081",
+    "checkpoint": "local_collision_20260908",
+    "claim": "Tek komşu taşıma ile aynı modulo 3^r endpoint oluşması ancak taşıma d, 2·3^i ile bölünürse mümkündür.",
+    "program_label": "EXACT/PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_local_collision_20260908/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz valuation word adjacent transfer 3-adic",
+      "Collatz affine offset parity vector collision",
+      "Collatz residue class word 2^m 3^k"
+    ],
+    "note": "LTE bölünebilirliği standart; özel Collatz numerator konumlaması; rapor doğru olarak bunu genel word-pair collision iddiasına GENELLEMİYOR."
+  },
+  {
+    "id": "E5-082",
+    "checkpoint": "coarse_windows_20260908",
+    "claim": "Bir sabit grid engelini bütün sabit log katsayılarına karşı otomatik genelleştirmek önceki raporda henüz gösterilmemişti.",
+    "program_label": "REPAIR",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_coarse_windows_20260908/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Sonraki ALL_LOG_COEFFICIENTS_PROOF farklı katsayılar için ayrı adım sağlar; iki iddia aynı değil."
+  },
+  {
+    "id": "E5-083",
+    "checkpoint": "stratified_join_20260908",
+    "claim": "m10,A15,L256 için stratified join finite sertifikası modulo9’da 36 iken gerçek Q=10’dur.",
+    "program_label": "EXACT/NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_stratified_join_20260908/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Tam histogram kullanımı zorunlu; sıkı nontrivial global exponent değil."
+  },
+  {
+    "id": "E5-084",
+    "checkpoint": "reassessment_20260908",
+    "claim": "Programın uniform window hedefini r=5..20 sayısal varyansla kanıtladığı çıkarımı yanlıştır.",
+    "program_label": "FAIL/REPAIR",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_reassessment_20260908/REPORT_TR.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [],
+    "note": "Rapor açıkça bu çıkarımı reddediyor; eski aşırı iddiaya verdict uygulanır."
+  },
+  {
+    "id": "E5-085",
+    "checkpoint": "galois_audit_20260912",
+    "claim": "Dördüncü moment otokorelasyon özdeşliği daha önceki koda dahildi; yeni Galois-rigidity açıklaması değildir.",
+    "program_label": "AUDIT/NEGATIVE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_galois_audit_20260912/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Yanlış novelty mekanizması elendi."
+  },
+  {
+    "id": "E5-086",
+    "checkpoint": "integration_20260912",
+    "claim": "W ve D₂ için uniform büyüme tahmini ile pozitif ordinary-orbit integrality köprüsü hâlâ açıktır.",
+    "program_label": "OPEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_integration_20260912/REPORT_TR.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Matematiksel eksiklik yeni pozitif teorem değildir."
+  },
+  {
+    "id": "E5-087",
+    "checkpoint": "ideas_review_20260908",
+    "claim": "3x−1 gibi değişmiş haritalardaki döngüler 3x+1 için karşıörnek sayılamaz.",
+    "program_label": "AUDIT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_ideas_review_20260908/REVIEW.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "Dinamik kuralın korunması mantıksal zorunluluk."
+  },
+  {
+    "id": "E5-088",
+    "checkpoint": "literature_20260908",
+    "claim": "Güncel almost-all yoğunluk teoremleri koşullu bir tek yörünge için gerekli weighted spectral interval bound’u sağlamaz.",
+    "program_label": "LITERATURE/OPEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_literature_20260908/LITERATURE_TRIAGE.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Tao (2019), arXiv:1909.03562, abstract",
+        "url": "https://arxiv.org/abs/1909.03562",
+        "quote": "Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density).",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024), arXiv:2402.03276, abstract",
+        "url": "https://arxiv.org/abs/2402.03276",
+        "quote": "almost all m ... fulfill ... simultaneously for all 0≤k≤α log m ... We extend this result to α=2(log(4/3))^{-1}",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Tao Collatz almost all logarithmic density",
+      "Inselmann Collatz natural density trajectory approximation",
+      "Collatz microcanonical fiber Fourier endpoint"
+    ],
+    "note": "Tao ve Inselmann almost-all sonuçları biliniyor; ihtiyaç duyulan microcanonical numerator daha dar/farklıdır."
+  },
+  {
+    "id": "E5-089",
+    "checkpoint": "project_review_20260908",
+    "claim": "Kritik mikrokanoik bireysel orijin blok hedefinin finite Fourier katmanından otomatik çıkarımı ispatlanmamıştır.",
+    "program_label": "AUDIT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_project_review_20260908/FINDINGS.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Üç açık köprü özeti, programın OVERCLAIM düzeltmesi."
+  },
+  {
+    "id": "E5-090",
+    "checkpoint": "bagimsiz-denetim/07-geriye-donuk-tarama",
+    "claim": "Zero-critical bounded-alphabet eşiğinin α/h_inf≈2.784010903’e güçlenmesi program içi koşullu sayım sonucudur.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/07-geriye-donuk-tarama/RAPOR.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "The Banach density of P is zero. ... The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz zero critical log discrepancy entropy threshold",
+      "Collatz Banach density divergent trajectory Garcia Tal",
+      "Collatz valuation word exponential factor complexity"
+    ],
+    "note": "İlgili CP20 H4/critical-log hipotezi gerekli; García–Tal nitel Banach density daha eski fakat sayısal κ eşiğini kapsamaz."
+  },
+  {
+    "id": "E5-091",
+    "checkpoint": "bagimsiz-denetim/07-geriye-donuk-tarama",
+    "claim": "CP19 T5 survivor’ının yeni kritik-yoğunluk eşitsizliğiyle dışlandığı çıkarımı hipotez uyumsuzluğu nedeniyle yanlıştır.",
+    "program_label": "FAIL/REPAIR",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/07-geriye-donuk-tarama/RAPOR.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [],
+    "note": "Global kritik-log hipotezi survivor için sağlanmaz; hesaplanan yoğunluk ayrıdır."
+  },
+  {
+    "id": "E5-092",
+    "checkpoint": "bagimsiz-denetim/08-literatur-taramasi",
+    "claim": "1963–1999 bibliyografyasında factor complexity ve Chernoff anahtar kelimelerinin yokluğu aynı dönemde divergent orbit Banach density teoremi olmadığını göstermez.",
+    "program_label": "NOVELTY/CLAIM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/08-literatur-taramasi/RAPOR.md",
+    "verdict": "FLAWED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "The Banach density of P is zero. ... The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias (2011 version), annotated bibliography 1963–1999, entry 69 (SECONDARY: Garcia–Tal source separately opened)",
+        "url": "https://arxiv.org/abs/math/0309224",
+        "quote": "As a corollary they conclude that the Banach density of the orbit of any integer n under such a map H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz Banach density Garcia Tal 1999",
+      "3x+1 divergent trajectory sparsity windowed count",
+      "Collatz factor complexity Chernoff pressure"
+    ],
+    "note": "Garcia–Tal 1999 Theorem 1 ve Corollary 1 birincil PDF’ten teyit edildi; CP20 factor-complexity nicel sınırına aynı theorem denemez."
+  },
+  {
+    "id": "E5-093",
+    "checkpoint": "bagimsiz-denetim/09-literaturden-baglantilar",
+    "claim": "q=53,15601,31867 konverjant bloklarında n₀ için sırasıyla 2^107,2^15780,2^50495 efektif alt sınır raporlanır.",
+    "program_label": "EXACT/OBSERVATION",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/09-literaturden-baglantilar/PATTERNLER.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz log2 3 continued fraction repeat effective initial integer bound",
+      "Collatz parity valuation repeat convergents q 15601",
+      "Terras Garner continued fraction stopping time bound"
+    ],
+    "note": "CP20 Lemma B’ye koşullu çıkarım; sayıların bağımsız yeniden-hesabı ve dış eşdeğerlerin tam taraması yapılmadı."
+  },
+  {
+    "id": "E5-094",
+    "checkpoint": "bagimsiz-denetim",
+    "claim": "Chernoff’da N(S)≤P(t)t^S işareti yanlış, doğru üst sınır N(S)≤P(t)t^(−S)’dir.",
+    "program_label": "FAIL/REPAIRED",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/DURUM.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [],
+    "note": "Kendi belgesi hatayı düzeltmiş; sonraki V3 eşiği bundan dolayı çürütülmez."
+  },
+  {
+    "id": "E5-095",
+    "checkpoint": "bagimsiz-denetim",
+    "claim": "Sturmian phase cost 0.0017 farkı gerçek yapısal kazanç değil, feasible domain eksik grid artefaktıdır.",
+    "program_label": "FAIL/REPAIRED",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/DURUM.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [],
+    "note": "CP19 T4 ile aynı optimizasyonu geri verir."
+  },
+  {
+    "id": "E5-096",
+    "checkpoint": "bagimsiz-denetim",
+    "claim": "Tekrarlanan faktörden üstel valuation factor-complexity alt sınırı koşullu CP20 sınıfında ileri sürülür.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/GECMIS.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "The Banach density of P is zero. ... The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz valuation word exponential factor complexity repeated factor",
+      "Collatz parity vector factor complexity Dubickas Wang",
+      "Collatz Banach density sparsity Garcia Tal"
+    ],
+    "note": "Garcia–Tal orbit Banach-density eşdeğeri değildir; eski taramanın Wang/Dubickas yakın komşu notları tek başına equivalence sertifikası değil."
+  },
+  {
+    "id": "E5-097",
+    "checkpoint": "bagimsiz-denetim",
+    "claim": "Ağırlıklı basınç valuation kelimesine koşullu factor-complexity üst sınırı verir.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/GECMIS.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "Collatz valuation word weighted pressure upper factor complexity",
+      "Collatz parity word stopping time distribution entropy",
+      "Collatz Garcia Tal Banach density factor complexity"
+    ],
+    "note": "Nitel trajectory Banach density bu sözde-kelime üst sınırını kapsamaz; Collatz çözümü yok."
+  },
+  {
+    "id": "E5-098",
+    "checkpoint": "project_review_20260908",
+    "claim": "S={20+27k} sınıfında herhangi bir elemanı global en küçük Collatz istisnası varsaymak boştur: aynı yörüngede daha küçük tamsayıya iniş vardır.",
+    "program_label": "AUDIT/REPAIR",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_project_review_20260908/FINDINGS.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [],
+    "note": "S-içindeki en küçük istisna ile bütün tamsayılar arasındaki global minimum ayrı; önceki 55210/65536 S-sertifikaları bozulmaz."
+  },
+  {
+    "id": "E5-099",
+    "checkpoint": "project_review_20260908",
+    "claim": "w=(1) için zayıf residue r1=1 iken exact valuation-1 gerçekleştiren en küçük başlangıç 3’tür.",
+    "program_label": "COUNTEREXAMPLE/AUDIT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_project_review_20260908/FINDINGS.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [],
+    "note": "D1 supplementary r_L=least exact realizer cümlesi yanlış; report F3 karşıörneğiyle ayrıştırıyor."
+  },
+  {
+    "id": "E5-100",
+    "checkpoint": "publication_20260908",
+    "claim": "20 dosyalık coarse-occupation V1 paketinin SHA-256 ve Drive/GitHub readback eşleşmesi matematiksel asimptotik ispat değildir.",
+    "program_label": "PUBLISHED/PROVENANCE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_publication_20260908/PERSISTENCE_RECEIPT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "Okunan kayıt tarihsel readback, canlı bağlantılar yeniden doğrulanmadı."
+  },
+  {
+    "id": "E5-101",
+    "checkpoint": "full_sync_20260908",
+    "claim": "1008+ üyeli arşiv snapshot manifesti araştırma kaynağı sürümleme bilgisidir; kendi başına yeni Collatz teoremi değildir.",
+    "program_label": "MANIFEST",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_full_sync_20260908/SNAPSHOT_MANIFEST.json",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [],
+    "note": "SNAPSHOT_MANIFEST.json içeriklerinin tamamı manuel incelenmedi, FINDINGS.md 1008 üye sayısını verir."
+  },
+  {
+    "id": "E5-102",
+    "checkpoint": "bagimsiz-denetim/08-literatur-taramasi",
+    "claim": "Korec–Znám (1987) sınıf-temsilcileri doğal yoğunluk sıfırı bilgisi, Garcia–Tal (1999) aynı-zaman eşdeğerlik ve Banach yoğunluğu teoremiyle güçlendirilmiştir.",
+    "program_label": "LITERATURE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/08-literatur-taramasi/RAPOR.md",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Garcia–Tal (1999), A note on the generalized 3n+1 problem, Acta Arith. 90, Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "The Banach density of P is zero. ... The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Korec Znam 1987 representatives natural density Collatz",
+      "Garcia Tal 1999 representatives Banach density",
+      "Collatz trajectory orbit Banach density 1999"
+    ],
+    "note": "1987 özgün makale ayrıca açılmadı; Garcia–Tal birincil girişinde önceki iddia ve geliştirme açıkça verilir, o makalenin ayrıntılı kapsamı ikincil teyit gerektirir."
+  },
+  {
+    "id": "E5-103",
+    "checkpoint": "ideas_review_20260908",
+    "claim": "Yerel merge/least-exception sınıf sertifikaları Collatz m-cycle yerel-minimum m≥92 sınırı değildir.",
+    "program_label": "LITERATURE/CONTEXT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_ideas_review_20260908/REVIEW.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Hercher (2022), There are no Collatz-m-Cycles with m≤91, arXiv:2201.00406, abstract",
+        "url": "https://arxiv.org/abs/2201.00406",
+        "quote": "Simons and de Weger proved that m ≥ 76 ... we prove m ≥ 92.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz cycle length bound local minima Hercher",
+      "Simons de Weger Collatz m cycle 76",
+      "Collatz 2^m-3^k Steiner Eliahou 3x-1"
+    ],
+    "note": "Hercher abstract 91 ve altındaki m-cycle dışlamasını doğrular; programın finite residue-class sertifikalarını veya sonsuz yörünge harmonik üst sınırını kapsamaz."
+  }
+]

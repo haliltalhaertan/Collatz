@@ -1,0 +1,494 @@
+[
+  {
+    "idx": 7,
+    "claim": "ℓ≈c log₂N ve μ∈(1,2) için n_v≤N^κ,A(v,ℓ)≤μℓ başlangıçları en çok N^{max(c h(μ),κ−c η(μ))+o(1)}.",
+    "exact_statement": "Pozitif enjekte tek-Syracuse yörüngesi; 1<μ<2, κ,c>0, ℓ=⌊c log₂N⌋, U_N=⌊μℓ+r_N⌋, r_N=o(ℓ), v∈[N,2N−ℓ], n_v≤N^κ ve A(v,ℓ)≤U_N. Sayı ≤N^{ρ+o(1)}, ρ=max{c h(μ), κ−c η(μ)}, h(μ)=μH₂(1/μ), η=μ−h>0. Optimum c=κ/μ: ρ*=κ h/μ, κ<μ/h halinde ρ*<1. Son ℓ−1 uç ayrı eklenebilir.",
+    "program_label": "[PROVED][AUDITED][FROZEN] (kullanıcının sonraki denetim etiketi); theorem dosyasının kendi etiketi: [MAJOR LOAD-BEARING THEOREM CANDIDATE — AUDIT REQUIRED].; kaynak: CP20_TASK1_QUANTILE_DICHOTOMY.md",
+    "correctness": "DOĞRU (pozitif enjekte tek yörünge, μ<2, U_N/ℓ→μ şartıyla).",
+    "weakest_step": "En kritik ±1 ve modül 2^{A+1}: yalnız 2^A ile exact değerleme sınıflanmaz. İnjektiflik çıkarılırsa bir döngünün tekrarlı zaman başlangıçları için ifade yanlış. Z_ℓ(U) üst-kuyruk Stirling gerekçesi μ<2 ile geçerlidir.",
+    "check_code_and_output": "Kod (d4_exact_checks.py, ilgili kısım):\nfor word in product(range(1,4),repeat=4):\n A=B=0\n for a in word: B=3*B+2**A; A+=a\n res=((2**A-B)*pow(3,-4,2**(A+1)))%(2**(A+1))\n assert res%2==1\n# P=comb(6,4), Z=sum(comb(A-1,3)/2**A for A in range(4,7))\nÇıktı (d4_checks_output.txt):\nexact words: 81 all cylinders/endpoints valid\npacking example 15 0.34375 bound 186.875",
+    "triviality_derivation": "Afin formül 2^A n_ℓ=3^ℓn_0+B_w ve odd final state n_ℓ koşulundan her kompozisyon tek bir n_0 (mod 2^{A+1}) sınıfına oturur. n_v≤H olan enjekte başlatmalar ≤H/2^{A+1}+1; A≤U üzerinde toplamak ≤(H/2)Σ_{A≤U}binom(A−1,ℓ−1)2^{−A}+binom(U,ℓ) verir. Stirling ile iki terim N^{κ−cη+o(1)} ve N^{ch+o(1)}: iddia tam bu standart sayım.",
+    "queries": [
+      {
+        "source": "arxiv",
+        "query": "Collatz valuation word composition cylinder entropy upper tail",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      },
+      {
+        "source": "crossref",
+        "query": "Syracuse parity vector stopping time large deviation binomial",
+        "status": 200,
+        "top_hits": [
+          "Time Consistent Stopping for the Mean-Standard Deviation Problem --- The Discrete Time Case",
+          "Use of (Time-Domain) Vector Autoregressions to Test Uncovered Interest Parity"
+        ]
+      },
+      {
+        "source": "zenodo",
+        "query": "3x+1 divergent orbit Banach density reciprocal sum",
+        "status": 200,
+        "top_hits": [
+          "Loop Structure of Collatz-Type Functions 3x+n: A Conjugacy Theorem and Powers of Three",
+          "Deterministic Upper Bound on Expansive Phases in the Collatz Dynamics"
+        ]
+      },
+      {
+        "source": "arxiv",
+        "query": "Collatz dynamical subshift factor complexity injective orbit",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      },
+      {
+        "source": "crossref",
+        "query": "Collatz quantile window valuation sparse state packing",
+        "status": 200,
+        "top_hits": [
+          "Sparse Quantile Regression",
+          "Compression Spectra of Collatz Orbits: Sharp Residual Ordering, Exact Valuation Cylinders, and Near-extremal Sparsity"
+        ]
+      },
+      {
+        "source": "zenodo",
+        "query": "Collatz topological entropy parity sequences stopping times",
+        "status": 200,
+        "top_hits": [
+          "collatz-cuda: an exact branch-free CUDA kernel for merged-step Collatz stopping times",
+          "A new approach to study and analysis  of behavior of Collatz sequences"
+        ]
+      },
+      {
+        "source": "zenodo",
+        "query": "Collatz valuation word composition cylinder entropy upper tail",
+        "status": 200,
+        "top_hits": [
+          "I. 2-adic Structure of Tails and Survival Sets in the Collatz Dynamics",
+          "V. The function φ and the extension of the 2-adic budget argument to arbitrary k_0 in the Collatz dynamics"
+        ]
+      },
+      {
+        "source": "crossref",
+        "query": "Syracuse parity vector stopping time large deviation binomial",
+        "status": "Expecting value: line 1 column 1 (char 0)",
+        "top_hits": []
+      },
+      {
+        "source": "arxiv",
+        "query": "3x+1 divergent orbit Banach density reciprocal sum",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), Cor. 1",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 22087163 (2026; preprint, not peer-reviewed), Thm 2.3, Prop. 3.1",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗, a constant Cβ with #(A ∩ [a, a + X)) ≤ CβX^β log(2X) uniformly in a. ... For a divergent orbit, Proposition 3.1 gives Qn ↗ Q∞ < ∞",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963–1999), arXiv:math/0309224, p. 12 (primary bibliography text)",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "They observe that as a consequence of linearity alone there are at most 2^k possible cycles of period k, corresponding to all possible sequences of “true” and “false” of length n.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II, arXiv:math/0608208, p. 14 (primary bibliography text)",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "Note. This result is implicit in Terras (1976), and properties of the parity vector are described in Lagarias (1985).",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann, An approximation of the Collatz map and a lower bound for the average total stopping time, arXiv:2402.03276 (abstract)",
+        "url": "https://arxiv.org/abs/2402.03276",
+        "quote": "Results of Terras and Everett imply that ... almost all m ... fulfill ... simultaneously for all 0 ≤ k ≤ α log m",
+        "opened": true
+      },
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values, arXiv:1909.03562 (abstract)",
+        "url": "https://arxiv.org/abs/1909.03562",
+        "quote": "Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density).",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. Comment. Math. 56 (2017), 7–23, doi:10.7169/facm/1583",
+        "url": "https://doi.org/10.7169/facm/1583",
+        "quote": "Birincil makale erişimi engellendi (Incapsula); Curry kaynakçası başlığı doğruluyor; içerik alıntılanmadı.",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Aynı sayım afin formül + silindir eşlemesi + binom özdeşliği + Stirling ile birkaç satırda çıkıyor; aynı niceleme yayınında doğrulanmadı.",
+    "literature_limit": "arXiv API export.arxiv.org 429 (initial simple Collatz query 200; batch queries 429); OpenAlex works and cites: 429 shared public quota; Semantic Scholar: 429; Crossref/Zenodo accessible but low-specificity hits. Citing-paper lists Garcia–Tal/Rozier could not be verified via OpenAlex; no sources inferred from failed API."
+  },
+  {
+    "idx": 8,
+    "claim": "κ<μ/h(μ), μ=α+σ<2 iken N^{ρ*+o(1)} istisna dışında yüksek s_v veya s_{v+ℓ}−s_v≤−σκ/μ log₂N+o(log N) ikilemi vardır.",
+    "exact_statement": "α=log₂3, σ>0, μ=α+σ<2, pozitif enjekte odd-only orbit, κ>0, κ<μ/h(μ), ℓ=⌊(κ/μ)log₂N⌋. Tüm v∈[N,2N) için N^{κh(μ)/μ+o(1)} istisna dışında, ya s_v≥κlog₂N−(θ+ε)log₂log N−O_{n₀,ε}(1) (her ε>0, θ CP17 carry üsteli) ya da s_{v+ℓ}−s_v≤−(σκ/μ)log₂N+o(log N); kenar ℓ−1 başlangıç istisnaya eklenir.",
+    "program_label": "[PROVED][AUDITED][FROZEN] (kullanıcının sonraki etiketi); asıl kaynak [MAJOR LOAD-BEARING THEOREM CANDIDATE — AUDIT REQUIRED].; kaynak: CP20_TASK1_MAJOR_THEOREM.md",
+    "correctness": "DOĞRU (T1-03 varsayımları ve carry üst sınırı altında; Curry 2026 yakınsak reciprocal toplamı doğru uygulanırsa yüksek s dalı daha kuvvetli O(1) hatalıdır).",
+    "weakest_step": "Yüksek n_v→yüksek s_v için CP17 carry üst sınırını ithal ediyor, kaynak dosyada kanıtlamıyor. Curry Prop. 3.1, enjekte ıraksak yörüngede Q∞<∞ verirse doğrudan s_v=log₂n_v−log₂n₀−log₂Q_v−{αv} ve hata O(1). α<μ ve U_N=(μ+o(1))ℓ zorunlu.",
+    "check_code_and_output": "Kod (d4_exact_checks.py, ilgili kısım):\nh=lambda m:m*math.log2(m)-(m-1)*math.log2(m-1)\nfor mu in [math.log2(3),math.log2(3)+.1]: print(mu, mu/h(mu))\n# A(v,ell)=floor(alpha*(v+ell))-floor(alpha*v)-(s[v+ell]-s[v])\nÇıktı (d4_checks_output.txt):\nentropy 1.584963 1.505643888 0.079318613 1.052680859\nentropy 1.684963 1.642222193 0.042740307 1.026025898",
+    "triviality_derivation": "T1-03 sayımı ⇒ düşük state + düşük A başlangıçları istisna; A=F_{v+ℓ}−F_v−(s_{v+ℓ}−s_v), F=floor(αk), dolayısıyla yüksek A ⇒ Δs≤−(μ−α)ℓ+o(ℓ). Diğer dal: n_v=n₀Q_v2^{s_v+{αv}}. Curry Prop.3.1 ile Q_v≤Q∞ (veya CP17 polilog üst sınır) ⇒ yüksek n yüksek s. Yeni kombinasyon ama standart cebir.",
+    "queries": [
+      {
+        "source": "arxiv",
+        "query": "Collatz discrepancy excursion state growth valuation windows",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      },
+      {
+        "source": "crossref",
+        "query": "Syracuse stopping time large deviation entropy excursion",
+        "status": "Expecting value: line 1 column 1 (char 0)",
+        "top_hits": []
+      },
+      {
+        "source": "zenodo",
+        "query": "Collatz orbit high state negative excursion dichotomy",
+        "status": 200,
+        "top_hits": [
+          "VIII. Return map, rigid regime, and invariance gap in the 2-adic Collatz dynamics",
+          "IV. Arithmetic obstruction to mixed orbits in the 2-adic Collatz dynamics"
+        ]
+      },
+      {
+        "source": "arxiv",
+        "query": "3x+1 divergent orbit reciprocal sum Banach density",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      },
+      {
+        "source": "crossref",
+        "query": "Collatz carry series parity vector affine relation",
+        "status": "Expecting value: line 1 column 1 (char 0)",
+        "top_hits": []
+      },
+      {
+        "source": "zenodo",
+        "query": "Collatz natural density logarithmic time approximation Inselmann",
+        "status": 200,
+        "top_hits": [
+          "Mersenne Block Dynamics: A Framework for the Collatz Conjecture",
+          "PRH | Aux | 4.10 • A Blur–Knob Program for Collatz"
+        ]
+      },
+      {
+        "source": "zenodo",
+        "query": "Collatz discrepancy excursion state growth valuation windows",
+        "status": 200,
+        "top_hits": [
+          "V. The function φ and the extension of the 2-adic budget argument to arbitrary k_0 in the Collatz dynamics",
+          "IV. Arithmetic obstruction to mixed orbits in the 2-adic Collatz dynamics"
+        ]
+      },
+      {
+        "source": "crossref",
+        "query": "Syracuse stopping time large deviation entropy excursion",
+        "status": "Expecting value: line 1 column 1 (char 0)",
+        "top_hits": []
+      },
+      {
+        "source": "arxiv",
+        "query": "Collatz orbit high state negative excursion dichotomy",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), Cor. 1",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 22087163 (2026; preprint, not peer-reviewed), Thm 2.3, Prop. 3.1",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗, a constant Cβ with #(A ∩ [a, a + X)) ≤ CβX^β log(2X) uniformly in a. ... For a divergent orbit, Proposition 3.1 gives Qn ↗ Q∞ < ∞",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963–1999), arXiv:math/0309224, p. 12 (primary bibliography text)",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "They observe that as a consequence of linearity alone there are at most 2^k possible cycles of period k, corresponding to all possible sequences of “true” and “false” of length n.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II, arXiv:math/0608208, p. 14 (primary bibliography text)",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "Note. This result is implicit in Terras (1976), and properties of the parity vector are described in Lagarias (1985).",
+        "opened": true
+      },
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values, arXiv:1909.03562 (abstract)",
+        "url": "https://arxiv.org/abs/1909.03562",
+        "quote": "Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density).",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann, An approximation of the Collatz map and a lower bound for the average total stopping time, arXiv:2402.03276 (abstract)",
+        "url": "https://arxiv.org/abs/2402.03276",
+        "quote": "Results of Terras and Everett imply that ... almost all m ... fulfill ... simultaneously for all 0 ≤ k ≤ α log m",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. Comment. Math. 56 (2017), 7–23, doi:10.7169/facm/1583",
+        "url": "https://doi.org/10.7169/facm/1583",
+        "quote": "Birincil makale erişimi engellendi (Incapsula); Curry kaynakçası başlığı doğruluyor; içerik alıntılanmadı.",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "T1-03 elementer binom sayımı ile tam floor/carry eşitliğini birleştirmekten ibaret; daha yeni bir orbit-niceleme sonucu saptanmadı.",
+    "literature_limit": "arXiv API export.arxiv.org 429 (initial simple Collatz query 200; batch queries 429); OpenAlex works and cites: 429 shared public quota; Semantic Scholar: 429; Crossref/Zenodo accessible but low-specificity hits. Citing-paper lists Garcia–Tal/Rozier could not be verified via OpenAlex; no sources inferred from failed API."
+  },
+  {
+    "idx": 9,
+    "claim": "Her κ>1 için {1,2,3} içinde sıfır-kritik 20-blok simgesel sözcükle s_k=κ log₂k+O(1) sağlanır; tek tamsayı realizasyonu gösterilmez.",
+    "exact_statement": "α=log₂3, F_k=⌊αk⌋, g_k=F_{k+1}−F_k∈{1,2}; her ardışık 20 g içinde g=2 sayısı 11 veya 12. κ>1 sabit. Her blokta g=2 pozisyonlarından 10 (nadir seçilmiş bloklarda 11) tanesi d_k=+1, kalanlar d_k=−1; a_k=g_k−d_k∈{1,2,3}, d_k≠0. Seçilen blok sayısı m(J)=(κ/2)log₂(J+2)+O_κ(1), net s_{20J}=2m(J)+O_κ(1), dolayısıyla bütün k→∞ için s_k=κlog₂k+O_κ(1). Her sonlu sözcüğün pozitif tamsayı realizasyonu var; bir tek başlangıçtan sonsuz realizasyon İDDİA EDİLMİYOR.",
+    "program_label": "[EXACT] LEVEL-2; LEVEL-3 [OPEN] (kaynak: [EXACT] symbolic construction; [OPEN] one fixed integer). Sonraki audit: «LEVEL-3 for every κ>1» yanlış, κ<1.0526808586 düşük-pencere realizasyonu dışlanmış.; kaynak: CP20_TASK1_ADVERSARIAL_SCHEDULES.md",
+    "correctness": "DOĞRU (yalnız sembolik/sonlu LEVEL-2; LEVEL-3 için hiçbir sonuç; küçük-J artışları >1 ise sabit uzunluklu geçici rejim atlanmalı).",
+    "weakest_step": "Her κ>1 için hedef floor(κ/2 log₂(J+2)) ilk bloklarda birden fazla artabilir: literal “precisely when this integer target increases” ile m(J)=hedef+O(1) ancak ilk O_κ(1) blok düzeltilirse doğrudur. Sonlu silindir realizasyonu bir sabit pozitif n₀ üretmez. Curry/T1-03 κ<1.05268 düşük-pencere LEVEL-3 engeliyle uyumlu.",
+    "check_code_and_output": "Kod (d4_exact_checks.py, ilgili kısım):\ng=[(3**(20*j+i+1)).bit_length()-(3**(20*j+i)).bit_length() for i in range(20)]\nneed=11 if int(1.06/2*math.log2(j+3))>int(1.06/2*math.log2(j+2)) else 10\n# d=+1 yalnız need adet g=2 pozisyonunda; diğerlerinde -1; a=g-d\nÇıktı (d4_checks_output.txt):\nsymbolic 20 0 4.581\nsymbolic 40 2 5.641\nsymbolic 100 2 7.042",
+    "triviality_derivation": "⌊20α+x⌋−⌊x⌋∈{31,32} ⇒ 11/12 adet g=2; 10 adet +1 ve 10 adet −1 her blokta denge sağlar; seyrek 11 adet +1 seçimi +2 büyütür. J blokta ≈(κ/2)log₂J seçim yeterli. Birkaç satırlık dengeli sözcük / mekanik-word inşası, ancak sonsuz sıradan tamsayı yörüngesi vermez.",
+    "queries": [
+      {
+        "source": "arxiv",
+        "query": "Collatz E-sequence infinite realizability bounded valuation",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      },
+      {
+        "source": "crossref",
+        "query": "3x+1 parity vector 2-adic integer realization",
+        "status": "Expecting value: line 1 column 1 (char 0)",
+        "top_hits": []
+      },
+      {
+        "source": "zenodo",
+        "query": "Syracuse factor complexity symbolic subshift valuation",
+        "status": 200,
+        "top_hits": [
+          "Static Block Cellular Automata Theory - A Formal Reconstruction from Dynamic Evolution to Spacetime Graphs",
+          "Eternal Graph Cellular Automata Theory - Independent Formalization Framework"
+        ]
+      },
+      {
+        "source": "arxiv",
+        "query": "Collatz logarithmic growth prescribed parity sequence",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      },
+      {
+        "source": "crossref",
+        "query": "3x+1 inverse limit integer vs 2-adic E sequence",
+        "status": 200,
+        "top_hits": [
+          "A p-adic algorithm for computing the inverse of integer matrices",
+          "GAUSSIAN INTEGER SOLUTIONS OF AN INFINITE ELLIPTIC CONE   73X^2+70XZ+73Y^2+Z^2=54Y(3X+Z)"
+        ]
+      },
+      {
+        "source": "zenodo",
+        "query": "Collatz 20 block discrepancy mechanical word schedule",
+        "status": 200,
+        "top_hits": [
+          "Roman2023 block schedule",
+          "Attitude towards Block Scheduling of the College Students"
+        ]
+      },
+      {
+        "source": "zenodo",
+        "query": "Collatz E-sequence infinite realizability bounded valuation",
+        "status": 200,
+        "top_hits": [
+          "Convergence Framework via Monotonicity and Boundedness in the Collatz Conjecture",
+          "V. The function φ and the extension of the 2-adic budget argument to arbitrary k_0 in the Collatz dynamics"
+        ]
+      },
+      {
+        "source": "crossref",
+        "query": "3x+1 parity vector 2-adic integer realization",
+        "status": 200,
+        "top_hits": [
+          "Parity realization in vector-like theories from fermion bilinears",
+          "GAUSSIAN INTEGER SOLUTIONS OF AN INFINITE ELLIPTIC CONE   73X^2+70XZ+73Y^2+Z^2=54Y(3X+Z)"
+        ]
+      },
+      {
+        "source": "arxiv",
+        "query": "Syracuse factor complexity symbolic subshift valuation",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963–1999), arXiv:math/0309224, p. 12 (primary bibliography text)",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "They observe that as a consequence of linearity alone there are at most 2^k possible cycles of period k, corresponding to all possible sequences of “true” and “false” of length n.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II, arXiv:math/0608208, p. 14 (primary bibliography text)",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "Note. This result is implicit in Terras (1976), and properties of the parity vector are described in Lagarias (1985).",
+        "opened": true
+      },
+      {
+        "cite": "Wang, An E-sequence approach to the 3x+1 problem, arXiv:1809.02278 (abstract)",
+        "url": "https://arxiv.org/abs/1809.02278",
+        "quote": "We then define (a_n) to be Ω-convergent to x if it is the E-sequence of x and to be Ω-divergent if it is not the E-sequence of any odd positive integer.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, Zenodo 22087163 (2026; preprint, not peer-reviewed), Thm 2.3, Prop. 3.1",
+        "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+        "quote": "for every β > β∗, a constant Cβ with #(A ∩ [a, a + X)) ≤ CβX^β log(2X) uniformly in a. ... For a divergent orbit, Proposition 3.1 gives Qn ↗ Q∞ < ∞",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann, An approximation of the Collatz map and a lower bound for the average total stopping time, arXiv:2402.03276 (abstract)",
+        "url": "https://arxiv.org/abs/2402.03276",
+        "quote": "Results of Terras and Everett imply that ... almost all m ... fulfill ... simultaneously for all 0 ≤ k ≤ α log m",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. Comment. Math. 56 (2017), 7–23, doi:10.7169/facm/1583",
+        "url": "https://doi.org/10.7169/facm/1583",
+        "quote": "Birincil makale erişimi engellendi (Incapsula); Curry kaynakçası başlığı doğruluyor; içerik alıntılanmadı.",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "20-blok dengesi ve logaritmik seyrek işaret seçimi elementer; E-sequence çalışması 2-adik/pozitif-tamsayı ayrımını özellikle vurgular.",
+    "literature_limit": "arXiv API export.arxiv.org 429 (initial simple Collatz query 200; batch queries 429); OpenAlex works and cites: 429 shared public quota; Semantic Scholar: 429; Crossref/Zenodo accessible but low-specificity hits. Citing-paper lists Garcia–Tal/Rozier could not be verified via OpenAlex; no sources inferred from failed API."
+  },
+  {
+    "idx": 10,
+    "claim": "Sınırlı değerlemeli üstel-altı e_k dalında yeterince ileri m_k=0; Amax=3 için tek derinlikte polinom e_k, ≥0.5283208336 k−O(log k) terminal sıfır-sheet ister.",
+    "exact_statement": "A_k=Σ_{j<k}a_j, a_j∈[1,Amax] pozitif tamsayı, B_0=0, B_{j+1}=3B_j+2^{A_j}. e_k=[2^{−A_k}B_k]_{3^k}, 0≤e_k<3^k. 2^{a_k}e_{k+1}=3e_k+1+m_k3^{k+1}, 0≤m_k<2^{a_k}. m_k>0 ⇒ e_{k+1}≥3^{k+1}/2^{Amax}. Eğer bütün yeterince ileri k için e_k=exp(o(k)), m_k sonunda 0; e_{k+1}=(3e_k+1)/2^{a_k} pozitif odd-only Syracuse kuyruğu. Eğer yalnız bir derinlikte e_k≤k^C ve Amax=3, o k öncesindeki son nonzero sheet k−j≥(log 3/log 8)k−O_C(log k) (=0.52832083357…k−O_C(log k)); m_j hiç yoksa tüm önek zaten sıfır-sheet.",
+    "program_label": "[EXACT][LEAD]; dosyanın kendi metni: «small-endpoint tree collapses to ordinary dynamics», «This is a genuine structural reduction, but not an extinction theorem».; kaynak: CP20_TASK4_FINDINGS.docx.txt",
+    "correctness": "DOĞRU (e_k=exp(o(k)) bütün yeterince büyük k için, Amax sabit şartıyla; yalnız seyrek k için küçük e_k ⇒ sonunda m_k=0 çıkarımı YANLIŞ olur).",
+    "weakest_step": "Bir nonzero sheet verdiği e_{j+1}≥3^{j+1}/2^{Amax} ve sıfır-sheet adımlarındaki e_{i+1}≥3e_i/2^{Amax} eşitsizlikleri yeterli. “Bir derinlikte küçük” ve “her büyük derinlikte küçük” niceleyicilerini karıştırmak tek tehlike; şimdiki sonuç sınırlı değerlemeli gerçek pozitif yörüngenin imkânsızlığını söylemez.",
+    "check_code_and_output": "Kod (d4_exact_checks.py, ilgili kısım):\ne=0\nfor k in range(8):\n m=next(m for m in range(4) if (3*e+1+m*3**(k+1))%4==0)\n e=(3*e+1+m*3**(k+1))//4\n print(k,m,e)\nprint(math.log(3,8))\nÇıktı (d4_checks_output.txt):\n3adic 0 e 0 a 2 m 1 e_next 1\n3adic 1 e 1 a 2 m 0 e_next 1\n3adic 7 e 1 a 2 m 0 e_next 1\nterminal constant 0.5283208335737188",
+    "triviality_derivation": "2^{A_k}n_k=3^kn₀+B_k ⇒ n_k≡e_k (mod 3^k). Önceki residueyi sonraki basamağa taşı ve kanonik temsilci al: 2^{a_k}e_{k+1}=3e_k+1+m_k3^{k+1}. m_k≥1 ⇒ e_{k+1}≥3^{k+1}/2^{Amax}; subexp cap bunu dışlar. Son nonzero sheet sonrası t sıfır adımı e_k≥3^k/2^{Amax t} (sabitler gömülür), e_k≤poly(k) ⇒ t≥k log_{2^{Amax}}3−O(log k). Temel boy karşılaştırması; a=2, e=1 sabit örneği ağacın tükenmediğini gösterir.",
+    "queries": [
+      {
+        "source": "arxiv",
+        "query": "Collatz 3-adic endpoint residue least representative",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      },
+      {
+        "source": "crossref",
+        "query": "3x+1 3-adic inverse tree affine endpoint",
+        "status": "Expecting value: line 1 column 1 (char 0)",
+        "top_hits": []
+      },
+      {
+        "source": "zenodo",
+        "query": "Collatz 2^m-3^k cycles valuation residue",
+        "status": 200,
+        "top_hits": [
+          "PRH | Aux | 4.3.3 • Refreshers for the Collatz Certificate Method",
+          "V. The function φ and the extension of the 2-adic budget argument to arbitrary k_0 in the Collatz dynamics"
+        ]
+      },
+      {
+        "source": "arxiv",
+        "query": "Syracuse inverse tree sheet transitions bounded valuation",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      },
+      {
+        "source": "crossref",
+        "query": "Collatz 3x-1 cycle endpoint modulo powers of 3",
+        "status": "Expecting value: line 1 column 1 (char 0)",
+        "top_hits": []
+      },
+      {
+        "source": "zenodo",
+        "query": "Collatz bounded valuation polynomial orbit 3-adic coherence",
+        "status": 200,
+        "top_hits": [
+          "The Collatz map as a (2,3)-adic bridge: a framework for characterizing the canonical transfer between incompatible completions of ℚ",
+          "Lema de densidad 2-ádica en la trayectoria impar de Collatz"
+        ]
+      },
+      {
+        "source": "zenodo",
+        "query": "Collatz 3-adic endpoint residue least representative",
+        "status": 200,
+        "top_hits": [
+          "Topology of Vanishing Sums in the Collatz Problem:\\\\ 2-adic Reduction, 3-adic Scales, and Dynamic Incompatibility",
+          "The Collatz map as a (2,3)-adic bridge: a framework for characterizing the canonical transfer between incompatible completions of ℚ"
+        ]
+      },
+      {
+        "source": "crossref",
+        "query": "3x+1 3-adic inverse tree affine endpoint",
+        "status": "Expecting value: line 1 column 1 (char 0)",
+        "top_hits": []
+      },
+      {
+        "source": "arxiv",
+        "query": "Collatz 2^m-3^k cycles valuation residue",
+        "status": "no element found: line 1, column 0",
+        "top_hits": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963–1999), arXiv:math/0309224, p. 12 (primary bibliography text)",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "They observe that as a consequence of linearity alone there are at most 2^k possible cycles of period k, corresponding to all possible sequences of “true” and “false” of length n.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II, arXiv:math/0608208, p. 14 (primary bibliography text)",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "Note. This result is implicit in Terras (1976), and properties of the parity vector are described in Lagarias (1985).",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, annotated bibliography I, discussion of Wirsching, arXiv:math/0309224 (primary bibliography; Wirsching original not opened)",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "The author constructs from the inverse iterates of the 3x + 1 function (“backward Syracuse algorithm”) a Markov chain defined on the state space [0, 1] × Z_3^×",
+        "opened": true
+      },
+      {
+        "cite": "Wang, An E-sequence approach to the 3x+1 problem, arXiv:1809.02278 (abstract)",
+        "url": "https://arxiv.org/abs/1809.02278",
+        "quote": "We then define (a_n) to be Ω-convergent to x if it is the E-sequence of x and to be Ω-divergent if it is not the E-sequence of any odd positive integer.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), Cor. 1",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. Comment. Math. 56 (2017), 7–23, doi:10.7169/facm/1583",
+        "url": "https://doi.org/10.7169/facm/1583",
+        "quote": "Birincil makale erişimi engellendi (Incapsula); Curry kaynakçası başlığı doğruluyor; içerik alıntılanmadı.",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Afin kimlikten tek modüler yeniden yazım ve 3^k ile 2^{Amax t} karşılaştırması; terminal 0.5283 katsayısı log_8(3), bağımsız yeni engel yok.",
+    "literature_limit": "arXiv API export.arxiv.org 429 (initial simple Collatz query 200; batch queries 429); OpenAlex works and cites: 429 shared public quota; Semantic Scholar: 429; Crossref/Zenodo accessible but low-specificity hits. Citing-paper lists Garcia–Tal/Rozier could not be verified via OpenAlex; no sources inferred from failed API."
+  }
+]

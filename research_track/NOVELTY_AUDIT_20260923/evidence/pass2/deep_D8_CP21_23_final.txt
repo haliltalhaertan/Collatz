@@ -1,0 +1,21 @@
+**E21-02 — UNRESOLVED.** Genel \(M_{\rm merge}\ge L_{\rm lift}\) eşitsizliği hâlâ bir varsayım; ispatı yok. CP24, CP21’in uzatma hesabındaki histogram hatasını düzeltti ve **221 farklı sonlu satırda** ihlal bulmadı. Kendi küçük tam-aritmetik kontrolümde de 55 satırda ihlal çıkmadı; bunlar evrensel sonuç değil. En yakın kaynak olan Rozier’in 2017 çalışması parite sözcüklerinin modüler yapısını inceliyor, bu enerji eşitsizliğini vermiyor.
+
+**E21-04 — UNRESOLVED.** Tek frekanslar için \(\Delta^{(a)}\ge0\) kanıtlanmadı. “57 çift” sayısı, iki taramanın **tekilleştirilmiş parametre kapsamı**; CP24 bu 57 çiftin bütün siklotomik işaretlerini yeniden sertifikalandırmadı. Tanımda frekansın mod \(2^s\) alınması önemli: mod \(2^{s+1}\)’de merge katkısını keyfî bölmek negatif değerler üretebiliyor. \((m,s)=(4,2)\) küçük kontrolü \(a=1,3\) için \(\Delta=3/2\) verdi; genel işaret hakkında hüküm vermiyor. En yakın kaynak: Rozier 2017’nin parite-vektörü teoremi.
+
+**E21-11 — TRIVIAL.** \(M(m,k)\) için belirtilen tavan **doğru**, fakat bilinen afin formdan ve basit aralık sayımından çıkıyor. Aynı uç noktaya giden sözcüklerde \(3^k|h-h'|=|B_w-B_{w'}|\); ortak ilk tek adımdan sonraki ofset yayılımını sınırlayıp tek başlangıçların en az 2 aralıklı olduğunu kullanmak formülü veriyor. Kendi kontrolümde \(m=2,\ldots,12\) için 77 katmanda ihlal yok. Bu \(M(m,k)\), **\(M_{\rm merge}\) değildir**. En yakın kaynaklar: Lagarias’ın Böhm–Sontacchi bibliyografya kaydı ve Rozier–Terracol’un afin yineleme açıklaması.
+
+**E21-20 — UNRESOLVED.** Yarıçap-2 yerel şarj eşitsizliği, toplam eşitsizlikten daha güçlüdür; toplamda yeterli merge kütlesi olması onun her aralığa dağıtılabildiğini göstermez. CP24’ün düzeltilmiş tablosunda 221 satır ve 33.540 aralıkta ihlal yok; kendi küçük kontrolümde pozitif talepli 607 aralıkta da yok. Gerçek kaynak için bütün \(m,s,a,b\)’yi kapsayan bir şarj ispatı bulunmuyor. En yakın Rozier 2017 ve Garcia–Tal 1999 sonuçları bu yerel eşitsizliği içermiyor.
+
+**E23-04 — TRIVIAL.** Histogram yansıması ve \(\mathcal E^-(m,r)=\mathcal E^+(m,r)\) **doğru**. \(H_-(-x)=-H_+(x)\); pozitif başlangıçlara geçerken \(-h\) yerine \(2^m-h\) alınır. Aynı parite sözcüğünün afin denklemleri uç noktaların toplamını \(3^k\) yapar; \(z\mapsto3^k-z\) dönüşümü \(J_r\)’deki fark **karelerini** korur. Bu, klasik parite-kalıntı eşleşmesiyle birkaç satırlık bir sonuçtur. \(3n-1\)’de \(5\to7\to10\to5\) çevrimi, yalnız bu işarete duyarsız enerjiyle çevrim dışlanamayacağını gösterir; işarete duyarlı ek bir argümanı dışlamaz.
+
+| İddia | Doğruluk | Nihai karar | Yayın değeri / 5 |
+|---|---|---|---:|
+| E21-02 | Evrensel önerme açık | UNRESOLVED | 1 |
+| E21-04 | Evrensel önerme açık | UNRESOLVED | 1 |
+| E21-11 | Doğru | TRIVIAL | 0 |
+| E21-20 | Evrensel önerme açık | UNRESOLVED | 2 |
+| E23-04 | Doğru | TRIVIAL | 1 |
+
+Ayrıntılı nicel ifadeler, kaynak alıntıları, sorgu kayıtları ve kontrol çıktıları `deep_D8_CP21_23.json` dosyasındadır; bağımsız küçük kontrol kodu `deep_D8_CP21_23_check.py` dosyasındadır. Lagarias bibliyografyalarının ve ilgili birincil metinlerin PDF’leri incelendi. **OpenAlex atıf listesi ve bazı arama API’leri 429 erişim sınırı verdiği için**, erişilemeyen atıf çalışmalarına ilişkin bir “eşdeğeri kesinlikle yok” hükmü verilmedi.
+
+DEEP_D8_CP21_23_20260923_COMPLETE

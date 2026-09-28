@@ -1,0 +1,74 @@
+# Derin hakem değerlendirmesi
+
+**Kapsam notu:** On iki kaynak dosyasını ve ilgili yardımcı ispatları okudum; küçük durumlar için `audit_checks.py` dosyasını çalıştırdım. Her iddia için en az altı yöntem–nesne sorgusu kaydedildi. Lagarias’ın iki bibliyografyasının tam PDF’leri tarandı. Ancak OpenAlex’in Garcia–Tal ve Rozier’e atıf yapan çalışmalar sorguları **HTTP 429** döndürdü; bu nedenle aşağıdaki “NEW-MINOR” kararları, dünya literatüründe mutlak öncelik sertifikası değildir. Açılmayan birincil metinler eşdeğerlik kanıtı olarak kullanılmadı.
+
+### E5-015 — **NEW-MINOR** · değer **2/5**
+İfade doğru: sıfır dışı cyclic katsayı ancak iletken \(2\), çift \(t\) ve \(j=t/2\) için sıfırdır; kontrol edilen 330 \((t,j,s)\) durumunda sınıflandırma tuttu.  
+İspatın belirleyici adımı, cyclotomic bölünebilirliği kardeş binom katsayılarının eşitliğine çevirmesidir. Bu, bilinen parite kodlamasının kısa fakat özgül bir sonucudur.  
+En yakın açılan kaynak Lagarias’ın [bibliyografyasıdır](https://arxiv.org/pdf/math/0309224); aynı sıfır sınıflandırmasını doğrulayan birincil yayın bulunmadı. Nicel sıfırdan-uzaklık sınırı çıkmaz.
+
+### E5-021 — **TRIVIAL** · değer **1/5**
+\(E=N_B\geq0\), yansıma ayrımı ve verilen kare-norm ifadesi doğru; genel kanallarla üç bağımsız küçük kontrol de geçti.  
+En zayıf nokta yarım-periyot normalizasyonu ve \(3\) ile frekans yeniden indekslemesidir; bunlar doğru yapıldığında özdeşlik **Parseval + yansıma izdüşümleri** ile çıkar.  
+En yakın yöntem standart Fourier/Gram cebridir; sonuç Collatz’a özgü yeni bir norm tasarrufu veya uniform \(W\) sınırı değildir.
+
+### E5-022 — **TRIVIAL** · değer **1/5**
+Hizalanma toplamının \(v_2(d)\) sınıflarına ayrılması ve ilk katmanın \(T_1=4N_+\) olması doğru; küçük dizi kontrolü bunu doğruladı.  
+Ayrıştırma cyclic Fourier korelasyon özdeşliği, kaydırmaları sınıflandırma ve Cauchy eşitsizliğinden gelir. **Walsh parite-küp dönüşümü değildir.**  
+En yakın kaynak, açılan [Lagarias bibliyografyasında](https://arxiv.org/pdf/math/0309224) belgelenen eski parite-kodlama çerçevesidir; özgül eşitlik için yayın eşdeğeri doğrulanmadı.
+
+### E5-024 — **TRIVIAL** · değer **1/5**
+\(G_d\) komşu-indeks üst-yinelemesi doğru: iki Fourier lift’inin dört terimli açılımı ve \(2|uv|\leq |u|^2+|v|^2\) yeterlidir.  
+Küçük kompleks örneklerde eşitsizlik geçti. Kaynağın **612 sonlu kritik durumda** \(M_4\leq M_2^2/2\) eşiğini iyileştirmediği bulgusu, genel imkânsızlık teoremi değildir.  
+En yakın yöntem standart faz-kör Gram/AM–GM gevşetmesidir; yayın değeri bağımsız bir sonuçtan çok iç hesap aracıdır.
+
+### E5-026 — **TRIVIAL** · değer **1/5**
+\(3\times3\) Schur üst sınırının \(2\times2\) sınırından zayıf olmaması doğrudur: matris doğrudan bir Gram matrisidir.  
+**543/543** sıkı iyileşme yalnız belirtilen sonlu panel içindir. PSD bilgisi, asıl gereken yeni \(G_0\) diyagonalini tek başına sınırlamaz.  
+En yakın kaynak standart Schur-tümleyeni eşitsizliğidir; özgüllük filtrenin sayısal uygulamasındadır, yeni genel teoremde değil.
+
+### E5-029 — **NEW-MINOR** · değer **2/5**
+Belirtilen sekiz-dallı quartic recurrence kabul edildiğinde durum sayımı doğrudur: derinlikte iki ayrı üst sınırı alıp \(d\approx s/4\)’te bölmek \(O(s^4 2^{3s/4})\) verir.  
+Bağımsız kontrolüm **sayım formülünü**, recurrence’ın tüm uygulamasını değil, sınadı; polinom çarpan nedeniyle hesap küçük \(s\)’lerde doğrudan enumerasyondan kötü olabilir.  
+En yakın açılan genel kaynak [Lagarias’ın ikinci bibliyografyasıdır](https://arxiv.org/pdf/math/0608208); aynı özel algoritma için birincil eşdeğer doğrulanmadı. Kazanç yalnız **tek bir \(M_4\) hesabının** durum üssündedir.
+
+### E5-032 — **TRIVIAL** · değer **1/5**
+Gerçek prefix histogramının \(E/O\) transferi ve Fourier iki-lift formülü doğru; \(m=2,\ldots,6\), \(s=1,\ldots,3\) için doğrudan sayımla eşleşti.  
+Temel türetme \(H^m(h+2^m)=H^m(h)+3^k\), endpoint paritesine dallanma ve standart DFT decimation işlemidir.  
+En yakın bilinen çerçeve Terras/Everett parite kodlamasıdır; [Lagarias](https://arxiv.org/pdf/math/0309224) bunu bibliyografik olarak kaydeder. Transfer tek başına enerji sınırı vermez.
+
+### E5-036 — **TRIVIAL** · değer **1/5**
+\(\mathcal E(m,s+1)-\mathcal E(m+1,s)=M_{\rm merge}-L_{\rm lift}\) ve \(M_{\rm merge}\geq0\) doğru; küçük source sayımlarıyla **tam rasyonel aritmetikte** kontrol edildi.  
+\(M_{\rm merge}\) ağırlıklı paralelkenar özdeşliğidir; \(L_{\rm lift}\) Parseval ile autocorrelation kardeş farkıdır.  
+**Monotonluk kanıtlanmış değildir:** \(L_{\rm lift}\) işaretli olabilir ve kaynak, keyfî pozitif histogramlar için genişleme karşıörneği verir. En yakın yöntem standart Hilbert-uzayı enerji muhasebesidir.
+
+### E5-038 — **NEW-MINOR** · değer **2/5**
+Affine eğim durumuyla recurrence, belirtilen modüler bölme kuralıyla doğru; çift-kaydırma alt özdeşliği küçük durumlarda doğrulandı.  
+Tek kaydırma için \(O(\sqrt{s}\,2^{s/2})\) **durum** sınırı, dal sayısı ile olası eğim–öteleme çiftlerini dengelemekten gelir. Bütün kaydırmalar veya tam \(M_4\) için aynı maliyet iddia edilemez.  
+En yakın kaynak eski parite-vektörü çerçevesi ve açılan [Collatz Parity Vector Toolkit açıklamasıdır](https://zenodo.org/api/records/21186540); bu özel maliyet teoreminin eşdeğeri doğrulanmadı.
+
+### E5-051 — **TRIVIAL** · değer **1/5**
+\(F(X-D)\leq Q_{r,A}(L)\leq F(X)\) ve belirtilen sınır hatası doğru; üç küçük \((r,A)\) örneğinde kelimelerle başlangıçlar ayrı ayrı sayıldı.  
+Kritik ayrıntı, başlangıç olayının \(S_{r-1}<A\leq S_r\) olmasıdır; **\(S_r=A\) değildir** ve rahatlatılmış \(Q\)’nun endpoint’i çift olabilir.  
+Sandviç, \(2^A n=3^r x+B_w\) afin formülü ile aralık ötelemesinden çıkar. Yakın literatür Terras/Everett kodlamasıdır; kısa aralıkta dağılım tahmini elde edilmez.
+
+### E5-058 — **TRIVIAL** · değer **1/5**
+Kaynak, özel sınır konfigürasyonunda **en az** \(c/R\) beyaz-fırsatsız olasılık ve asal uzunluklu alt dizide \(c_A\log R/R\) alt-kuyruk karşıörneği kanıtlıyor. Küçük bir köprüde döngüsel sıra sayıları \(5,5,5\) çıktı.  
+**Kapsam düzeltmesi:** Tüm \(R\) için beyaz-fırsatsız olasılığın \(\Theta(1/R)\) olduğu kaynakta kanıtlanmıyor. Asal/koprim köprüde *rank-1 excursion olayının* koşullu olasılığı tam \(1/n\).  
+Mekanizma klasik döngüsel sıralama/Chung–Feller türündedir; aday [Woan makalesinin](https://doi.org/10.1080/00029890.2001.11919785) yalnız metaverisi açılabildi, içerik eşdeğerliği **doğrulanmadı**. Doğrudan \(C/R\) üst hedefi açık.
+
+### E5-060 — **TRIVIAL** · değer **1/5**
+Sabit kompakt yükseklikte blok-başı **joint** üstel sınır doğru; \(B=1\) kelimesinin en az bir beyaz giriş zorlaması sabit olasılıklı bir minorization verir.  
+Sınırsız yükseklikte \(z_0=9^m\) rezonansı uniform blok daralmasını engeller; bu, gerçek başlangıçların \((1,2)\) aralığından erişilebilirlik karşıörneği **değildir**.  
+\(K=T+V\) açılımı standart yenileme cebridir. Ağırlıklı \(\theta<1\) koşulu ve küresel \(C/R\) sonucu kanıtlanmamıştır; en yakın yöntem sonlu-yükseklik spektral daralmasıdır.
+
+## Özet
+
+| Karar | İddialar |
+|---|---|
+| **NEW-MINOR** | E5-015, E5-029, E5-038 |
+| **TRIVIAL** | E5-021, E5-022, E5-024, E5-026, E5-032, E5-036, E5-051, E5-058, E5-060 |
+
+İstenen yapılandırılmış değerlendirme, sorgu kayıtları, aday kaynakların açılma durumları ve **kod ile çıktısı** çalışma dizinindeki `deep_D7_SPECTRAL_0908.json` dosyasındadır. Yeniden çalıştırma kodu `audit_checks.py` dosyasındadır.
+
+DEEP_D7_SPECTRAL_0908_20260923_COMPLETE
