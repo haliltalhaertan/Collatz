@@ -127,3 +127,13 @@ Açık kalanlar: yüksek-κ rejimi, kritik siteler (`a_k = g_k`),
 kritik-log dışı discrepancy yasaları, ve LEVEL-3 ordinary integrality.
 
 **Collatz çözülmedi.**
+
+---
+## DÜZELTME 2026-09-23 — sürekli kesir "n₀ ≥ 2^…" sayıları GERİ ÇEKİLDİ
+Bu sayılar n₀ üzerine alt sınır **değildir**: `q=53 → 2^107`, `q=306 → 2^1520`, `q=15601 → 2^15780`, `q=31867 → 2^50495` ve tekrar argümanındaki `q=665, r=671 → 2^1050`.
+- Elde edilen şey, Task 6 Lemma A'nın n₀'a bağlı **bilinmeyen sabiti C(n₀)** üzerine alt sınırdır: C ≥ 2^{A(W)}/(v+r)^κ.
+- `12_etkin_n0_siniri.py`'nin kendi docstring'i bunu doğru söylüyor; çıktı satırları ve bu belge yanlış etiketlemiş.
+- `11-surekli-kesir-denetim/DENETIM_RAPORU.md` §5 zaten "C(n₀) sabiti tam izlenmedi" diye uyarmıştı.
+- C(n₀) ile n₀ arasında açık bir bağıntı kurulmadıkça bu sayılar n₀ hakkında hiçbir şey söylemez.
+- Gözlem kısmı (büyük kısmi bölümlerin uzun tekrar üretmesi) geçerlidir; yalnız "etkin n₀ sınırı" yorumu geri çekilmiştir.
+- Kaynak: `research_track/NOVELTY_AUDIT_20260923/NOVELTY_AUDIT_REPORT.md` §2 ve §5 (FLAWED kararı; bağımsız karşı kontrol `evidence/external_crosscheck_deep_scan.txt`).

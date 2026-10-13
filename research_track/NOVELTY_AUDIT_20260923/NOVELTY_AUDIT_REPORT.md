@@ -67,3 +67,8 @@ Proved identities [PROOF]:
 - `evidence/pass2/`: 8 briefs, 8 reports and JSONs, DEEP_MERGED.json.
 - `evidence/lmn1995_corollaire2_verified.txt`, `evidence/cp17_linear_unreal.txt`.
 - `chi_s_exact.py`, `chi_s_exact.json`.
+
+---
+## CORRECTION 2026-09-23 (same day, after commit bc4bbc7)
+- `chi_s_exact.py` is a **full-support, untruncated float64/FFT** transfer computation, not exact rational arithmetic. Total-mass error ≤ 4·10⁻¹⁶. Exact rationals were obtained only for s ≤ 3 (χ_1=5/3, χ_2=15/7, χ_3=177005/67963). Unreal's independent Decimal(45-digit) code agrees for s ≤ 15.
+- CP26/LMN: the k > 3.82·10⁸ tail uses max{log(3k)+0.14, 21} = log(3k)+0.14. The required inequality k·ln2 > 24.34·log3·(log(3k)+0.14)² holds because of monotonicity; see the CP26 report correction.

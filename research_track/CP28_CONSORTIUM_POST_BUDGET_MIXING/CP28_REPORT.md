@@ -73,3 +73,9 @@ Definitions:
   - Apply the red-team fixes to the write-up.
   - Consortium question: can PBM be iterated to growing δ (log m blocks) with *-density exponent control? That is the natural limit of this bridge.
 - Remaining theories T2, T4–T6, T8, T11: record-orbits GO/PARK, universality PARK/PARK; others not reviewed.
+
+---
+## CORRECTION 2026-09-23 (after the novelty audit; original text unchanged)
+- **Proof status unchanged:** PBM remains PROOF-with-minor-revisions.
+- **Novelty label lowered:** The whole-programme novelty audit (8 isolated Unreal sessions, pass 2) classifies PBM as **TRIVIAL as a standalone result**: a routine corollary of Inselmann 2024 Lemma 2.16 + Theorem 3.1. It should not be presented as an independent theorem.
+- See `../NOVELTY_AUDIT_20260923/NOVELTY_AUDIT_REPORT.md` §2.

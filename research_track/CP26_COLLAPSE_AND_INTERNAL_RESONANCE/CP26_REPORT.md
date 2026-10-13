@@ -45,3 +45,14 @@ Aday B'yi n_min ≥ X (X=2^71) koşuluyla sına: rasyonel aday yerine "n_min ≥
 
 ## 6. Ajan kullanımı
 ChatGPT Web: teori/eleştiri (2 tur, bitiş işaretiyle doğrulandı). Unreal Agent (gpt-6-sol, Codex kotası): ilk gerçek görev, 366 sn, sonuçlar yerel tekrar ile birebir. Hiçbir ajan çıktısı kanıt sayılmadı.
+
+---
+## DÜZELTME 2026-09-23 (yenilik denetimi sonrası; eski metin değiştirilmedi)
+- **LMN bağımlılığı birincil kaynaktan doğrulandı.** Laurent–Mignotte–Nesterenko, J. Number Theory 55 (1995) 285–321, s.288 Corollaire 2: α1,α2 reel, pozitif, çarpımsal bağımsız ise
+  log|Λ| ≥ −24,34·D⁴·(max{log b′+0,14, 21/D, 1/2})²·log A1·log A2.
+  Uygulama: α1=2, α2=3, D=1, log A1=1, log A2=log 3. b′=m/log 3+k ≤ 3k (m ≤ k·log₂3+1). Sınır b′'de azalan olduğundan b′≤3k yerine koymak geçerlidir.
+- **İki aralık:**
+  - k ≤ 3.82e+08 (log(3k)+0,14 ≤ 21): log|Λ| ≥ −24,34·log3·21² = −11792,438390. k=17013'te k·ln2 = 11792,512983 yeterli; k=17012'de 11791,819836 yetmez. Eşik 17013 birebir doğru.
+  - k > 3.82e+08: gerekli eşitsizlik k·ln2 > 24,34·log3·(log(3k)+0,14)². Sol taraf doğrusal, sağ taraf (log k)² büyür; geçiş noktasında fark ≈ 2.65e+08 > 0 ve türev ln2 − 2·24,34·log3·(log(3k)+0,14)/k > 0, dolayısıyla tüm kuyrukta sağlanır.
+- **Durum:** COLLAPSE **[PROOF]** olarak kalır. Yenilik etiketi: NEW-MINOR (LMN + elementer sınır).
+- Kanıt: `../NOVELTY_AUDIT_20260923/evidence/lmn1995_corollaire2_verified.txt`, `../NOVELTY_AUDIT_20260923/NOVELTY_AUDIT_REPORT.md`.

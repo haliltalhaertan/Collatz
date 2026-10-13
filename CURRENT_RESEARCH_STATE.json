@@ -1477,7 +1477,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-28T09:19:16.376336+00:00",
+  "updated_at": "2026-10-13T14:24:36.789201+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
@@ -1522,7 +1522,7 @@
     "checkpoint": "CP26_COLLAPSE_AND_INTERNAL_RESONANCE",
     "status": "CLOSED",
     "scientific_status": "COLLAPSE lemma PROOF (LMN1995 + k<=17012 exact); C1 KILL; carry-band KILL; SIGNED_CRT_DEPTH PARK; CP26 cand A PROOF(weak), B CONDITIONAL/PARK, C PARK, D KILL, E untested; Collatz OPEN",
-    "report_sha256": "4cb0e97a36e0227ea4d116ce9749f4374eda5f247f07c893eec3d88429683168",
+    "report_sha256": "b9adefa965939a50a48aee02d4bf628fa5cb026cf804a52b613b25ad21022b16",
     "code_sha256": "d6db8dc6e81a8bb068836fc927b4eb419e51db8f2aea05d1cc1d34bc6aed90f9",
     "next_action": "CP27: test candidate B under n_min>=2^71 constraint; success = systematic S*/K << 1"
   },
@@ -1541,7 +1541,7 @@
     "status": "CLOSED",
     "method": "consortium CP28 (free T0, anonymous Borda T1, sequential review; ChatGPT Web, Muse 1.3 [quota-out later rounds], Unreal Agent; Hermes coordinator)",
     "scientific_status": "T10 PARK; T3 PARK/KILL; T7 KILL; T9 KILL (exact); T12 KILL (pre-registered MI). Wall = Terras free budget. PBM theorem (post-budget valuation frequencies -> 2^-k, delta<1) PROOF-with-minor-revisions via Inselmann 2402.03276 Lemma 2.16 + Thm 3.1; audits UA line + UA red-team; Muse pending. Collatz OPEN",
-    "report_sha256": "505cc5177496818ca73c9afa68d546a1680359d9424094a5a10009a0a44b0423",
+    "report_sha256": "25cc4fc1998fc219ec9b7ee31a3842b6fcd3244c8aa7ea9d7fb3d7a386981469",
     "code_sha256": "2ed81f58f5a6765c249a973bd9ff8cd0ecb9465b873deff9579db8b8ae555d31",
     "next_action": "Muse line audit; apply red-team clarity fixes; consortium: iterate PBM to growing delta (log m blocks) with *-density exponent control"
   },
@@ -1551,8 +1551,16 @@
     "status": "CLOSED",
     "method": "whole-programme novelty scan: 7 isolated Unreal Agent era sessions (391 claims) + 8 deep sessions on 50 NEW-CANDIDATEs; coordinator primary-source checks (Curry 2026 Zenodo, LMN 1995 Cor. 2, Inselmann 2024); external cross-check session",
     "scientific_status": "CP02-CP19 sparsity line SUPERSEDED by Garcia-Tal 1999 / Curry 2026; NEW-MINOR: CP17 chi_n=O(n^4), CP19 T3, CP20 kappa band, CP26 COLLAPSE (PROOF stands, LMN Cor.2 verified, threshold 17013 exact); TRIVIAL: CP27 Lemma V, CP28 PBM (corollary of Inselmann), CP23 sign-blindness; FLAWED: continued-fraction n0>=2^... figures (bounds on C(n0), withdrawn). chi_s exact s<=16: increments 0.4616->0.4714 rising, linear vs s log s undecided; 7/15 guess withdrawn. Collatz OPEN",
-    "report_sha256": "daf5644196df3e133cb270688d115a73b599c61f44999894708421c7c3408e7a",
+    "report_sha256": "281e3f31d973f272a7513d621539e07420188e6224359719749210407d641713",
     "code_sha256": "ec1c7903fd82bcc0a1de7131b8910bf17c096f29242b5734991aac4a3d2bf1a9",
     "next_action": "bound off-diagonal collision term (sup E_j) for chi_s; optional: short honest note on NEW-MINOR items"
+  },
+  "novelty_audit_corrections_20260923": {
+    "timestamp": "2026-10-13T14:24:36.789201+00:00",
+    "checkpoint": "NOVELTY_AUDIT_20260923_CORRECTIONS",
+    "status": "APPLIED",
+    "method": "dated correction notes appended (original text untouched); SHA256SUMS + state hashes refreshed",
+    "scientific_status": "CP26 COLLAPSE [PROOF] stands: LMN 1995 Corollaire 2 verified from primary source, threshold 17013 exact, tail k>3.82e8 by monotonicity; CP28 PBM proof status unchanged, novelty TRIVIAL/corollary of Inselmann; continued-fraction n0>=2^107/2^1520/2^15780/2^50495 and 2^1050 WITHDRAWN (bounds on C(n0), not n0) in DURUM.md, GECMIS.md, 09/PATTERNLER.md, 09/BAGLANTILAR.md; chi_s_exact labelled float64/FFT full-support (not exact rational). Collatz OPEN",
+    "next_action": "chi_s: bound off-diagonal collision term (sup E_j)"
   }
 }
