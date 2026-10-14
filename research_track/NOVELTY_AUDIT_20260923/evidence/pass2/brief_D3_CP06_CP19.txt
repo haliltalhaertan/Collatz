@@ -1,0 +1,148 @@
+ROLE MARKER: DEEP_D3_CP06_CP19_20260923
+
+Sen bagimsiz bir matematik hakemi + literatur arastirmacisisin. Bir Collatz arastirma programinin onceki taramasinda "NEW-CANDIDATE" (makul aramada esdegeri bulunamadi) etiketi alan asagidaki iddialari DERINLEMESINE incele. Amac: her biri icin "gercekten yeni ve degerli mi, yoksa bilinen/onemsiz/hatali mi" sorusuna kesin cevap.
+
+BAGLAM (dogrulanmis): Garcia-Tal, "A note on the generalized 3n+1 problem", Acta Arith. 90 (1999) 245-250 (her sonsuz yorungenin Banach yogunlugu 0) ve Curry, Zenodo doi 10.5281/zenodo.22087163 (2026; iraksak yorungede sum 1/x < inf, g_n <= B log2 n + O(1) B<1.0358567 icin imkansiz; Thm 2.3 #(O cap [a,a+X)) <= C X^beta log 2X, beta>beta*=0.9653844) programin CP02-CP19 "iraksak yorunge seyrekligi" hattini ASMISTIR. Curry referanslari: De Jesus Zenodo 10.5281/zenodo.21481692 ve 10.5281/zenodo.20593925, Rozier 2017 Funct. Approx. 56, Heppner 1978, Wirsching 1998 LNM 1681. Collatz cozulmedi.
+
+HER IDDIA ICIN ZORUNLU ADIMLAR
+ S1. Kaynagi ac (dosya yolu verildi; SALT-OKUNUR). Iddianin TAM nicel ifadesini, hipotezlerini ve programin kendi etiketini alintila. ZIP ise cwd'ye ac.
+ S2. DOGRULUK: ispati oku; en zayif adimi bul. Mumkunse kucuk exact Python kontrolu yaz ve calistir (kod + cikti). Karsiornek ara. Sonuc: DOGRU / KOSULLU-DOGRU (hangi kosul) / BOSLUKLU / YANLIS.
+ S3. ONEMSIZLIK TESTI: iddia bilinen bir seyden (Terras/Everett bijeksiyonu, afin formul 2^m x_m = 3^k x_0 + B_w, Bohm-Sontacchi, basit sayim, Garcia-Tal/Curry, Inselmann, Tao, Rozier, Parseval/standart Fourier, termodinamik formalizm/topolojik entropi) birkac satirda cikiyor mu? Cikiyorsa turetmeyi yaz.
+ S4. DERIN LITERATUR: her iddia icin EN AZ 6 sorgu, hem YONTEM hem NESNE kelimeleriyle (Banach density, reciprocal sum, factor complexity, topological entropy, subshift, parity vector, stopping time, cycle, 2^m-3^k, affine, 3x-1, Fourier, character sum, collision, carry...). Kaynaklar: arXiv API (export.arxiv.org/api/query), OpenAlex (api.openalex.org/works?search=), Semantic Scholar (api.semanticscholar.org/graph/v1/paper/search?query=&fields=title,year,abstract,externalIds), Crossref, Zenodo (zenodo.org/api/records?q=). Lagarias bibliyografyalari arXiv math/0309224 ve math/0608208 tam metnini indirip ANAHTAR NESNE kelimeleri icin grep yap. Garcia-Tal 1999 ve Rozier 2017'ye ATIF YAPAN calismalari OpenAlex cites: filtresiyle listele ve baslik/ozetlerini tara. Buldugun her aday kaynagin BIRINCIL metnini (ozet ya da PDF) ac, ilgili cumleyi alintila. Acamazsan DOGRULANMADI. UYDURMA ATIF = diskalifiye.
+ S5. DEGER: yayin degeri 0-5 (0=onemsiz/ic arac, 3=kisa not/lemma, 5=bagimsiz makale) + gerekce.
+ S6. NIHAI KARAR (tek etiket): NEW-STRONG (yeni, dogru, onemsiz degil) / NEW-MINOR (yeni ama kucuk/kosullu) / TRIVIAL (bilinenden kolayca cikar) / KNOWN (yayimlanmis) / SUPERSEDED (daha guclusu yayimlanmis) / FLAWED (yanlis veya ispat bosluklu) / UNRESOLVED (neden).
+
+CIKTI (cwd'ye):
+ - deep_D3_CP06_CP19.json: liste; her oge {"idx","claim","exact_statement","program_label","correctness","weakest_step","check_code_and_output","triviality_derivation","queries":[...],"candidates":[{"cite","url","quote","opened"}],"value_0_5","final_verdict","one_line_reason"}
+ - Final cevabin: Turkce, sade, her iddia icin 4-8 satir (karar + neden + en yakin kaynak), sonra ozet tablo. Son satir tam olarak:
+DEEP_D3_CP06_CP19_20260923_COMPLETE
+
+INCELENECEK IDDIALAR (kaynak yollari WSL bicimi):
+[
+ {
+  "id": "CP06-07",
+  "checkpoint": "CP06",
+  "claim": "Mekanik residue temsilcisi için limsup_j log₂R_j/j=1 (yalnız subsequence iddiası).",
+  "program_label": "EXACT",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP06/CP06 — Checkpoint Sonuç Raporu.txt",
+  "verdict": "NEW-CANDIDATE",
+  "references": [],
+  "queries": [
+   "Collatz parity vector stopping time distribution Terras Everett",
+   "Collatz logarithmic discrepancy valuation least realizer",
+   "Collatz inverse tree density Krasikov Lagarias"
+  ],
+  "note": "2-adik mekanik sözcük least-realizer büyümesi; aynı nicel ifade primer literatürde bulunmadı.",
+  "idx": 1
+ },
+ {
+  "id": "CP12-01",
+  "checkpoint": "CP12",
+  "claim": "Fixed endpoint için collision multiplicity M(m,q;y)≤2^{m−q} bulunur.",
+  "program_label": "EXACT",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP12/CP12 — Collatz_Checkpoint_12_2026-08-15.docx.txt",
+  "verdict": "NEW-CANDIDATE",
+  "references": [],
+  "queries": [
+   "Collatz parity vector stopping time distribution Terras Everett",
+   "Collatz logarithmic discrepancy valuation least realizer",
+   "Collatz inverse tree density Krasikov Lagarias"
+  ],
+  "note": "Parity bijeksiyonundan ince fixed-(m,q) bound; arama denk literatür ifadesi bulmadı; kanıt audit ile minor repair.",
+  "idx": 2
+ },
+ {
+  "id": "17-energy",
+  "checkpoint": "CP17",
+  "claim": "Syracuse mod 3^s çarpışma enerjisi χ_s=3^sΣ_y p_s(y)²=O(s⁴).",
+  "program_label": "[PROVED][FROZEN]",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP17 — FROZEN FINAL/CP17_FINAL_PACKAGE_V3.zip",
+  "verdict": "NEW-CANDIDATE",
+  "references": [],
+  "queries": [
+   "Syracuse polynomial collision energy modulo 3^s",
+   "3x+1 inverse tree density second moment 3^s",
+   "Collatz geometric gap residue distribution chi_s",
+   "arXiv API: all:Collatz AND all:collision AND all:energy (0)"
+  ],
+  "note": "Birebir yayımlanmış polinom sınır tespit edilmedi; matematiksel geçerlik için arşiv auditine dayanılıyor, bağımsız hakemlik yok. Lagarias bibliyografyaları arandı, tekil teorem için birincil pozitif eşleşme bulunmadı.",
+  "idx": 3
+ },
+ {
+  "id": "19-3-lower",
+  "checkpoint": "CP19T3",
+  "claim": "Pozitif injektif kritik r≥16 Syracuse segmenti n_u≥r^(1+α)/(24log₂r)−2r/3 sağlar.",
+  "program_label": "[PROVED][AUDITED][FROZEN]",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 3 — Sturmian Critical-Tail Small-Residue Exclusion/ALL_ARTIFACTS/CP19_TASK3_MAJOR_THEOREM.md",
+  "verdict": "NEW-CANDIDATE",
+  "references": [
+   {
+    "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+    "url": "https://doi.org/10.4064/aa-90-3-245-250",
+    "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+    "opened": true
+   },
+   {
+    "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+    "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+    "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+    "opened": true
+   }
+  ],
+  "queries": [
+   "critical Beatty block Syracuse state lower bound r^(1+log2 3)",
+   "Sturmian factor complexity Collatz injective segment packing",
+   "Collatz Banach density windowed count Garcia Tal Curry",
+   "arXiv API: all:Collatz AND all:Sturmian AND all:segment (0)"
+  ],
+  "note": "Garcia–Tal/Curry uniform genel yörünge sayımı en fazla r^(1/β*) ölçekli alt sınır sağlar; kritik blok Sturmian özel r^(1+α) (>r^2.58) sınırını kapsamaz.",
+  "idx": 4
+ },
+ {
+  "id": "19-3-general",
+  "checkpoint": "CP19T3",
+  "claim": "r_m≥u_m^δ, n_{u_m}≤u_m^(κ+o(1)) olan kritik aralıklı varsayımsal orbit δ(1+α)>κ ise imkânsızdır.",
+  "program_label": "[PROVED][AUDITED][FROZEN]",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 3 — Sturmian Critical-Tail Small-Residue Exclusion/ALL_ARTIFACTS/CP19_TASK3_SPARSE_CRITICAL_THEOREM.md",
+  "verdict": "NEW-CANDIDATE",
+  "references": [
+   {
+    "cite": "Garcia–Tal, “A note on the generalized 3n+1 problem”, Acta Arith. 90 (1999), 245–250, Thm 1/Fundamental Lemma/Cor. 1",
+    "url": "https://doi.org/10.4064/aa-90-3-245-250",
+    "quote": "#(P ∩ {a,...,a+k−1}) ≤ 2(⌊log_d(k)⌋+1)(k^{1−δ₁}+g(k)) ... g(k) is O(k^{δ₂}); ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+    "opened": true
+   },
+   {
+    "cite": "Curry, “An Explicit Windowed Sparsity Bound ...”, Zenodo (2026-08-24), version DOI 10.5281/zenodo.22087163 (concept 22087162), Thm 2.3/Prop 3.1/Cor 4.3",
+    "url": "https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content",
+    "quote": "for every β > β∗ ... #(A ∩ [a,a+X)) ≤ Cβ X^β log(2X) uniformly in a. ... Proposition 3.1 ... ∑_{x∈O} 1/x < ∞. ... Corollary 4.3. No divergent orbit satisfies g_n ≤ B log₂ n + K ... B < 1/β∗",
+    "opened": true
+   }
+  ],
+  "queries": [
+   "Collatz sparse critical gaps growth exponent delta",
+   "Syracuse Sturmian gap polynomial state lower bound",
+   "Collatz windowed orbit count power saving",
+   "arXiv API: all:Collatz AND all:Sturmian AND all:segment (0)"
+  ],
+  "note": "T3 özel blok alt sınırı + üst büyüme birleştirmesi; Garcia–Tal genel sayımı aynı δ(1+α) eşiğini vermez.",
+  "idx": 5
+ },
+ {
+  "id": "19-9-highhalf",
+  "checkpoint": "CP19T9",
+  "claim": "Saf-nötr çift t için bit_{F_t}(x₀)=1+C_t (mod2), fakat C_{2t} tam güncellemesi F_t derinliğinde Hensel çözümü gerektirir.",
+  "program_label": "[EXACT][FAIL fixed width]",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP19/Task 9 — Neutral Critical-Density High-Half Cocycle/RESULTS_PACKAGE_AND_ALL_ARTIFACTS/ALL_ARTIFACTS/CP19_TASK9_DYADIC_RENORMALIZATION.md",
+  "verdict": "NEW-CANDIDATE",
+  "references": [],
+  "queries": [
+   "Collatz critical density high-half 2-adic Hensel carry",
+   "Syracuse neutral word dyadic renormalization cocycle",
+   "3x+1 parity vector fixed-width automaton",
+   "arXiv API: all:Collatz AND all:Hensel AND all:carry (0)"
+  ],
+  "note": "Özel kritik yoğunluk kokeyli; kısa-genişlik kapanış bulunmaması evrensel imkânsızlık teoremi değildir.",
+  "idx": 6
+ }
+]

@@ -1,0 +1,169 @@
+# Tüm proje yenilik taraması (CP01–CP28) — Unreal Agent ×7, 2026-09-23
+
+Toplam iddia: 391. Karar dağılımı: {'STANDARD': 110, 'INTERNAL': 127, 'NEW-CANDIDATE': 50, 'SUPERSEDED': 24, 'PARTIAL': 34, 'FLAWED': 35, 'KNOWN': 11}
+
+Koordinatör birincil-kaynak kontrolü: Curry Zenodo 10.5281/zenodo.22087163 (162 → 163 yönlendirme) PDF açıldı; Prop 3.1, Thm 2.3 (β*=0.9653844, γ*=0.6090897), Thm 4.1 (B≤1), Cor 4.3 (B<1/β*=1.0358567) doğrulandı. Garcia–Tal, Acta Arith. 90 (1999) 245–250, doi 10.4064/aa-90-3-245-250 Crossref ile doğrulandı (içerik UA özetine dayanır).
+
+## NEW-CANDIDATE
+- [E1_CP01_13] CP02: İlk crossing indeksi K≥72057431991 (önceki 49547666544 ve 58337919098) olarak raporlanır.
+- [E1_CP01_13] CP06: Mekanik residue temsilcisi için limsup_j log₂R_j/j=1 (yalnız subsequence iddiası).
+- [E1_CP01_13] CP12: Fixed endpoint için collision multiplicity M(m,q;y)≤2^{m−q} bulunur.
+- [E2_CP14_19] CP17: Syracuse mod 3^s çarpışma enerjisi χ_s=3^sΣ_y p_s(y)²=O(s⁴).
+- [E2_CP14_19] CP19T3: Pozitif injektif kritik r≥16 Syracuse segmenti n_u≥r^(1+α)/(24log₂r)−2r/3 sağlar.
+- [E2_CP14_19] CP19T3: r_m≥u_m^δ, n_{u_m}≤u_m^(κ+o(1)) olan kritik aralıklı varsayımsal orbit δ(1+α)>κ ise imkânsızdır.
+- [E2_CP14_19] CP19T9: Saf-nötr çift t için bit_{F_t}(x₀)=1+C_t (mod2), fakat C_{2t} tam güncellemesi F_t derinliğinde Hensel çözümü gerektirir.
+- [E3_CP20_T1_7] CP20 Task 1: ℓ≈c log₂N ve μ∈(1,2) için n_v≤N^κ,A(v,ℓ)≤μℓ başlangıçları en çok N^{max(c h(μ),κ−c η(μ))+o(1)}.
+- [E3_CP20_T1_7] CP20 Task 1: κ<μ/h(μ), μ=α+σ<2 iken N^{ρ*+o(1)} istisna dışında yüksek s_v veya s_{v+ℓ}−s_v≤−σκ/μ log₂N+o(log N) ikilemi vardır.
+- [E3_CP20_T1_7] CP20 Task 1: Her κ>1 için {1,2,3} içinde sıfır-kritik 20-blok simgesel sözcükle s_k=κ log₂k+O(1) sağlanır; tek tamsayı realizasyonu gösterilmez.
+- [E3_CP20_T1_7] CP20 Task 4: Sınırlı değerlemeli üstel-altı e_k dalında yeterince ileri m_k=0; Amax=3 için tek derinlikte polinom e_k, ≥0.5283208336 k−O(log k) terminal sıfır-sheet ister.
+- [E3_CP20_T1_7] CP20 Task 6: Sabit pozitif yörüngede κ>1 kritik-log kanunu varsa her 0<ε<α/κ için [N_r,2N_r−r] r-faktörleri farklı, liminf log₂p_a(r)/r≥α/κ.
+- [E3_CP20_T1_7] CP20 Task 6: κ=1.053 deterministik controller için −41≤z_k≤1 ve p_a(r)≤43(r+1)^2; hiçbir pozitif kritik-log κ>1 yörüngesi onu gerçekleştiremez.
+- [E3_CP20_T1_7] CP20 Task 7: B≥3, a_k≤B sıfır-kritik yörüngede limsup log₂p_a(r)/r≤h_B ve T6 ile κ≥α/h_B.
+- [E3_CP20_T1_7] CP20 Task 7: B=3 basıncında h₃<0.523467 ve α/h₃>3.027; sıfır-kritik kritik-log pozitif B=3 yörüngede κ>3.027.
+- [E3_CP20_T1_7] CP20 Task 7: B bilinmeden h∞<0.56931 ve κ≥α/h∞>2.784; ortak varsayımlar altında 1<κ≤2.784 olan pozitif tek-yörünge yoktur.
+- [E4_CP20_T8_E7] 8A: Kritik-log varsayımı altında N_r≈2^{αr/κ} pencerelerinde liminf h(D_1,D_2)≥α/κ.
+- [E4_CP20_T8_E7] 8A: Her n≍2^{(α/κ)r} tam-ölçek penceresi için basınç birikim alt sınırı h(D_1,D_2)≥α/κ uzantısı V3 donmuş çekirdeğine dahil değildir.
+- [E4_CP20_T8_E7] 8B1: Her pozitif sonlu sözcükte negatif gölge 1≤X_k<3^k ve M_k=X_k (k≥1).
+- [E4_CP20_T8_E7] 8B1: Kritik-log altında ρ_M(k)=max(0,ρ_r(k)−ln(3/2))+O(log k/k).
+- [E4_CP20_T8_E7] D0: Genel A_k/k→L tavan-limitinde r_k plateau/oran alternatifinin D0 uzantısı bağımsız denetlenmemiştir.
+- [E4_CP20_T8_E7] D1: Kritik-log altında liminf_k ln(1+r_k)/k=(ln 3) liminf_j t_j/t_{j+1}.
+- [E4_CP20_T8_E7] D1: Plato çukurunda ρ_r(t_{j+1})=(ln3)t_j/t_{j+1}−κ ln(t_j)/t_{j+1}+O(1/t_{j+1}).
+- [E4_CP20_T8_E7] E7R-B3: CF-left uçlarında r≥17000 için |K(k_r,l_r)−1|≤2πm_r2^(−W_r/2−4−β)+4m_r exp(−W_r²/(72αm_r))→0.
+- [E5_AUDIT_RESEARCH0908] rate_audit_20260908: İnselmann’dan tek çekim ve değiştirilmiş üst-yaklaşımla d_cert=5×10^-10 istisna üssü çıkarken seçili usulün tavanı yaklaşık 0.000979308877 ve gerekli 0.050332383666’dır.
+- [E5_AUDIT_RESEARCH0908] visible_defect_20260908: Sabit-ağırlık kuyruk göstergesinin sıfır dışı cyclic Fourier katsayısı yalnız t=2j ve ξ=2^(t−1) durumunda sıfırdır.
+- [E5_AUDIT_RESEARCH0908] cross_terms_20260912: Even cross term tam mixed-channel kare normuna eşittir; odd reflection ayrımı kalan signed bileşeni izole eder.
+- [E5_AUDIT_RESEARCH0908] shift_haar_20260912: Source–filter hizalanması shift v₂(d) sınıflarına ayrılır; ilk v₂(d)=0 tail Haar enerji katmanı tam 4N_+’dır.
+- [E5_AUDIT_RESEARCH0908] mixed_gram_20260912: G_d karışık overlap güçleri G_(d−1),G_d,G_(d+1) komşularıyla faz-kör kapalı üst-yineleme sağlar.
+- [E5_AUDIT_RESEARCH0908] phase_gram_20260912: Üç kanallı phase Gram 3×3 Schur sınırı faz-kör G₁’den zayıf değildir ve sabit kritik gridin 543/543 örneğinde daha sıkıdır.
+- [E5_AUDIT_RESEARCH0908] phase_quotient_20260913: Quartic-character state için derinlik d sayısı ≤min(8^d,binom(d+2,2)^2·2^(s−d)) ve toplam O(s⁴2^(3s/4))’tür.
+- [E5_AUDIT_RESEARCH0908] source_transfer_20260912: Gerçek prefix endpoint histogramının m→m+1 transferi ve Fourier 2×2 lift matrisi exact’tır.
+- [E5_AUDIT_RESEARCH0908] source_defect_20260913: Gerçek source primitive enerji farkı Ecal(m,s+1)−Ecal(m+1,s)=M_merge−L_lift tamdır, M_merge≥0.
+- [E5_AUDIT_RESEARCH0908] shift_recurrence_20260912: Kaydırılmış parity ağırlığı için affine state recurrence kapanır; sadece translation-state kapanmaz ve tek shift için memo bound verilir.
+- [E5_AUDIT_RESEARCH0908] collision_debate_20260908: Q endpoint koşulu dual start count F(cL) ile iki taraflı aralık sandviçi içindedir ve sınır hatası O(2^((α−1)r))’dir.
+- [E5_AUDIT_RESEARCH0908] dense_pairs_20260908: Boundary-configured low-excursion probability Θ(1/R); daha kuvvetli logaritmik fırsat lower-tail hedefi yanlıştır.
+- [E5_AUDIT_RESEARCH0908] excursion_split_20260908: Sabit kompakt excursion yüksekliğinde blok joint exponential bound geçer, unrestricted height aynı bound’u vermez.
+- [E5_AUDIT_RESEARCH0908] bagimsiz-denetim/07-geriye-donuk-tarama: Zero-critical bounded-alphabet eşiğinin α/h_inf≈2.784010903’e güçlenmesi program içi koşullu sayım sonucudur.
+- [E5_AUDIT_RESEARCH0908] bagimsiz-denetim/09-literaturden-baglantilar: q=53,15601,31867 konverjant bloklarında n₀ için sırasıyla 2^107,2^15780,2^50495 efektif alt sınır raporlanır.
+- [E5_AUDIT_RESEARCH0908] bagimsiz-denetim: Tekrarlanan faktörden üstel valuation factor-complexity alt sınırı koşullu CP20 sınıfında ileri sürülür.
+- [E5_AUDIT_RESEARCH0908] bagimsiz-denetim: Ağırlıklı basınç valuation kelimesine koşullu factor-complexity üst sınırı verir.
+- [E6_CP21_24] CP21: Gerçek önek kaynağı için tüm m≥2,1≤s<m düzeylerinde M_merge≥L_lift öne sürülüyor.
+- [E6_CP21_24] CP21: Her tek a mod 2^s için programın Δ^(a)=M^(a)−L^(a)≥0 varsayımı 57 farklı parametre çiftinde karşıörneksizdir.
+- [E6_CP21_24] CP21: M(m,k)≤⌊2^(m−k)(3^(k−1)−2^(k−1))/3^k⌋+1 iddiası her m,k için türetilmiştir.
+- [E6_CP21_24] CP21: Her m≥2,1≤s<m ve 1≤a≤b≤m için Σ_[a,b]max(L_k,0)≤Σ_[max(a−1,2),min(b+2,m)]M_j önerilir.
+- [E6_CP21_24] CP23: Tüm uygun m,r,k için H_- kaynağı P^-_{m,k,r}(z)=P^+_{m,k,r}(3^k−z) ve Ecal^-(m,r)=Ecal^+(m,r).
+- [E7_CP25_28] CP25: Bütün rotasyonlarda q_r≥h_r öncülü A|B_0 sonucunu verir (C1), fakat yalnızca m≤22 seviyesinde test edilmiştir.
+- [E7_CP25_28] CP26: Pozitif periyodik rasyonel 3x±1 gap adayı x0<2^(m+1) koşulunu sağlar.
+- [E7_CP25_28] CP27: q≤K/2 olan dengeli run bloklarında her proper blok-prefix Δ_t<0 seçilebildiği için pozitif-prefix koridor testi varlıksal olarak boş kalabilir (Lemma V).
+- [E7_CP25_28] CP28: Tek sayılı [2^m,2^(m+1)) kabuğundan τ=min{j:S_j>m} sonrası ilk ⌊δm⌋ valuation içinde her sabit k frekansı 2^(−k)’ye olasılıkta gider, 0<δ<1.
+
+## SUPERSEDED
+- [E1_CP01_13] CP02: Mekanik sonsuz parity sözcüğünün 2-adik gerçekleyicisi pozitif tamsayı değildir.
+- [E1_CP01_13] CP02: D_k≤0 ve 0≤s_k≤2 bütün k için tutan pozitif odd-only orbit yoktur.
+- [E1_CP01_13] CP03: Her sonlu C için D_k≤0 iken sup s_k=∞ olmak zorundadır.
+- [E1_CP01_13] CP03: D_k≤0 iken limsup s_k/log₂k≥8/9 olur.
+- [E1_CP01_13] CP09: Her sonsuz injective pozitif odd-only orbit için H_N=Σ_{k<N}1/n_k=o(ln N).
+- [E1_CP01_13] CP09: X_N=N^{o(1)} her injective orbit için ve undercritical limsup s_k/log₂k≥1.
+- [E1_CP01_13] CP10: Injective odd-only orbitte H_N=O(ln ln N) ve limsup H_N/ln ln N≤6.3274088946… iddia edilir.
+- [E1_CP01_13] CP10: X_N=O_ε((ln N)^{2.1091362983…+ε}) her injective odd-only orbitte geçerlidir.
+- [E1_CP01_13] CP11: limsup H_N/lnln N≤4.91656355095… ve X_N için log exponent 1.63885451698… bulunur.
+- [E1_CP01_13] CP11: limsup (s_k−log₂k)/log₂log₂k≥−0.63885451698… hesaplanır.
+- [E1_CP01_13] CP12: İki-blok endpoint count ile üst rate K<K₁₁−η₁₂ sağlanır.
+- [E1_CP01_13] CP12: Repaired two-block bound sertifikasında limsup H_N/lnln N<4.723565548607766 bulunur.
+- [E2_CP14_19] CP17: Pozitif injektif Syracuse yörüngesinde limsup H_N/ln ln N ≤ 2.74288143876594.
+- [E2_CP14_19] CP17: Pozitif injektif sonsuz yörüngede limsup(s_k−log₂k)=+∞; s_k≤log₂k+C nihayette imkânsız.
+- [E2_CP14_19] CP18T5: b<1−K17/3≈0.085706 için Σ_{k<N:E_k≤b log₂ lnN}1/k=o(lnN).
+- [E2_CP14_19] CP19T4: H_N=max_{k<N}n_k=N^(1+o(1)) olan pozitif injektif yörüngede ℓ=⌊½log₂N⌋ tüm pencerelerin A(v,ℓ)≤(μ+o(1))ℓ olması hiçbir 1<μ<2 için mümkün değildir.
+- [E2_CP14_19] CP19T4: Construction B her pencerede A≤⌈αℓ⌉+2 ve varsayılan pozitif başlangıçta H_N=N^(1+o(1)); dolayısıyla x_B∉Z_{>0}.
+- [E2_CP14_19] CP18T5: X_N=Σ_{k<N}2^{D_k}≤3n₀(lnN)^{K17/3+ε} her ε>0 için nihayette.
+- [E2_CP14_19] CP18T5: 1/k-ağırlıklı E ortalaması için liminf Ē_N/log₂ lnN≥1−K17/3≈0.085706.
+- [E3_CP20_T1_7] CP20 Task 6: B≥3 sınırlı alfabe ve her k için a_k≠g_k altında p_a(r)≤(r+1)(B−1)^r; B=3 sonucu κ≥α verir.
+- [E3_CP20_T1_7] CP20 Task 7: B=4 için h₄≈0.5619007341374007 ve κ≥α/h₄≈2.8207161949241867; 1<κ<2.820716194924185 dışlanır.
+- [E5_AUDIT_RESEARCH0908] bagimsiz-denetim/08-literatur-taramasi: Korec–Znám (1987) sınıf-temsilcileri doğal yoğunluk sıfırı bilgisi, Garcia–Tal (1999) aynı-zaman eşdeğerlik ve Banach yoğunluğu teoremiyle güçlendirilmiştir.
+- [E6_CP21_24] CP24: CP24 m≤14 pozitif 3n+1 kelime-adaylarında trivial çevrim dışı döngü bulunmadığını hesaplamıştır.
+- [E7_CP25_28] CP27: X=2^71 ilk-geçiş eleğinin bildirilen ilk izinli t değeri 72.057.431.991 ve S=114.208.327.604 olur.
+
+## KNOWN
+- [E4_CP20_T8_E7] E7R-LT: Σa_i=T_r koşulunda proje fazı Tao/Si affine offsetin tek primitive 3^r mikrokanonik Fourier katsayısına eşittir; η_r≡2^(T_r−4) (mod 3^r).
+- [E5_AUDIT_RESEARCH0908] project_review_20260908: Sonsuz Collatz yörüngesinin sayı kümesi sıfır Banach yoğunlukludur (nitel sparsity).
+- [E5_AUDIT_RESEARCH0908] project_review_20260908: Tek tek yörüngenin sıfır yoğunluğundan istisnai tüm başlangıçların bittiği çıkarılamaz.
+- [E5_AUDIT_RESEARCH0908] rate_audit_20260908: Inselmann’ın hemen hemen her başlangıç için logaritmik zaman penceresinde trajektori yaklaşımı vardır.
+- [E5_AUDIT_RESEARCH0908] merging_literature_20260908: Tao’nun log-yoğunlukla hemen-hemen-her yörünge sonucu tek bir en küçük istisna checkpointinin yokluğunu kanıtlamaz.
+- [E6_CP21_24] CP23: Her parity word için 2^m H_+^m(h)=3^k h+B_w afin bağıntısı geçerlidir.
+- [E6_CP21_24] CP23: Yoğunluk-1 tipik yörünge önermeleri tek bir kaçak yörüngeyi dışlamaz; 1999 Garcia–Tal her yörüngenin Banach yoğunluğunun 0 olduğunu kanıtladı.
+- [E6_CP21_24] CP23: Uzunluğu m ve ağırlığı k olan pozitif 3n+1 döngüsünde D=2^m−3^k>0, x=B_w/D∈Z ve periyot m’yi böler.
+- [E7_CP25_28] CP25: D|B olan her tam sayı aday verilen parite kelimesini gerçekleştirir; b işaretinden bağımsızdır.
+- [E7_CP25_28] CP26: Sabit tam gap kelimesinde bütün exact yerel 2-adik realizability filtreleri D|B sağlandıktan sonra ek engel koymaz.
+- [E7_CP25_28] CP28: m-kabuktan ilk j≤m parite biti tam düzgün dağılım verir; prefix log-yörünge Brownian limiti bu kesitte Donsker’e iner.
+
+## PARTIAL
+- [E1_CP01_13] CP03: Sınırlı slack geçiş matrisi satır normu r_C=1−2^{−(C+1)}<1 sağlar.
+- [E1_CP01_13] CP04: Real-relaxed affine Syracuse şemasında B=8/9 saturasyonu vardır; 8/9 üstüne çıkan bu yoldaki kanıt tamsayı yapısı kullanmalıdır.
+- [E1_CP01_13] CP08: Suffix functional S_m, bit peeling ile suffix vektörünü tekil belirler; fixed fiber gap g_r>2^{−C₀−1}(r+1)^{−B}.
+- [E1_CP01_13] CP09: Her length-t valuation word mod 3^{t+1} tam iki unit terminal class verir ve #{μ_t=A}≤2·C(A−1,t−1).
+- [E1_CP01_13] CP10: Fixed t reciprocal telescope hatası O((ln t)²) ve uniform inequality raporlanır.
+- [E1_CP01_13] CP11: B_t(c)≤[2(c−1)ln2/3]t+O(√t) sınır katsayısı elde edilir.
+- [E2_CP14_19] CP14: p_fixed(m,s;y) ≤ (2^m/binom(m,s))p_Syr(s;y) ve χ_fixed ≤ (2^m/binom(m,s))²χ_Syr.
+- [E2_CP14_19] CP18T3: Sonsuz alt-yakınsak Christoffel ailesinde N_FP(u,r)/N_END(u,r)=1/r; tek biçimli 2^(−ηr) tasarruf yanlış.
+- [E2_CP14_19] CP19T2: Kritik g_{u..u+r−1} bloğu tek 2^{G+1} sınıfını belirler; gerçekleşmede n_u≥M(u,r), varsayılan pozitif sabit yörüngede n_u=O(u logu loglogu).
+- [E2_CP14_19] CP19T3: Kritik aralıkları r_m/u_m→1 olan Construction A’nın 2-adik gerçekleyicisi x_A∉Z.
+- [E2_CP14_19] CP19T4: ℓ≈c log₂N, A≤(α+o(1))ℓ için packing κ<κ*=α/h(α)=1.0526808586 durumunu dışlar; h(α)=1.5056438879.
+- [E2_CP14_19] CP19T8: Saf-nötr çift sınırında A_{2r}=⌊2rα⌋ ve çift değerlemesi {r(2α−3)} üç aralıklı rotasyon koduyla belirlenir.
+- [E3_CP20_T1_7] CP20 Task 1: Her sonlu G ve n_v≤H için |G|≤(H/2)Σ_{W∈C_G}2^{-A(W)}+|C_G|; silindir modülü 2^{A(W)+1}.
+- [E3_CP20_T1_7] CP20 Task 3: Büyük a-adımından sonra en hızlı telafinin adım sayısı yaklaşık (a−α)/(α−1); sınırlı {1,2,3} kontrolcü occupation kazancını önler.
+- [E3_CP20_T1_7] CP20 Task 5: Her sonlu W için r tane sıfır-sheet koşulu tek e_u≡−B_W·3^{-r} (mod 2^{A(W)}) sınıfıdır; keyfi uzun sonlu koşum mümkündür.
+- [E3_CP20_T1_7] CP20 Task 6: κ>1 ve s_k=κ log₂k+O(1) iken 2^{A_k}n_k=3^k n_0+B_k ile yakınsak carry toplamı n_k=O(k^κ) verir.
+- [E3_CP20_T1_7] CP20 Task 6: İki yerde görülen W için 2^{A(W)} | (n_v−n_u); kritik-log yörüngesinde n_v≠n_u olduğundan farkın mutlak değeri ≥2^{A(W)}.
+- [E4_CP20_T8_E7] 8A: Uygun tip bölgesi F içinde h basıncının en büyüğü CP19 T4 entropisi 1.5056438879463 ve κ*=1.0526808586.
+- [E4_CP20_T8_E7] 8A: Tam kutuda h sonlu değildir: h(0,M_2)=−∞; geçerli bölge Q≥P ve uniformite iki rejimle sağlanır.
+- [E4_CP20_T8_E7] 8B0-A: López–Stoll reel serisi kritik-log κ>1 altında yakınsar; proje Task6 taşıma serisinin aynısıdır.
+- [E4_CP20_T8_E7] D0: Sonlu sözcüğün tam-silindir gerçekleyicisi iki komşu lift arasındadır; eventual plato tek LEVEL-3 pozitif gerçekleyiciyle eşdeğerdir.
+- [E4_CP20_T8_E7] E0: A/r→α sabit kütle altında son bölüm TV olarak Geom(1/α) ve conductor-3 genliği ≈0.63975298067.
+- [E4_CP20_T8_E7] E4: Merkezlenmiş kritik yürüyüş için üstel ağırlıklı L∞ transferinin spektral yarıçapı ≥1; naif üstel kompaktlık çıkmazdır.
+- [E4_CP20_T8_E7] E6: E6-N1: katsayı/Hadamard/koşullu Feynman–Kac yazımı exact, fazın periyodu 2·3^{r−1}.
+- [E4_CP20_T8_E7] E7R-B2: Koşullu uniform zayıf-kompozisyon köprüsünde max prefix sapması için açık Azuma/Doob üst kuyruğu elde edilir.
+- [E4_CP20_T8_E7] E7R-LT: Si merkez s=2n+O(√(n log n)) şartında; proje T_r=αr+O(1) ve h=0 olduğundan Tao/Si doğrudan bozunma aktarımı geçersizdir.
+- [E5_AUDIT_RESEARCH0908] project_review_20260908: Pozitif tekrarsız tek-Syracuse yörüngesi için harmonik H_N/log log N üst katsayısı K17<2.742882 olarak verilir.
+- [E5_AUDIT_RESEARCH0908] source_krawtchouk_20260913: k-gauge sonrası binom normalize source-transfer squared singular değerleri 1+cosφ(1−2ℓ/m), ℓ=0..m’dir.
+- [E5_AUDIT_RESEARCH0908] literature_20260908: Güncel almost-all yoğunluk teoremleri koşullu bir tek yörünge için gerekli weighted spectral interval bound’u sağlamaz.
+- [E5_AUDIT_RESEARCH0908] ideas_review_20260908: Yerel merge/least-exception sınıf sertifikaları Collatz m-cycle yerel-minimum m≥92 sınırı değildir.
+- [E6_CP21_24] CP24: Sabit m’de H^m(h)<h iff (2^m−3^k)h>B_w; m=8 için 94/128 ve m=16 için 27823/32768 son-adım inişi sayılmıştır.
+- [E7_CP25_28] CP25: Nonintegral primitive kelimelerde PB+ ürün <2^m veya PB− ürün >2^m varsayılırsa C1 çıkar.
+- [E7_CP25_28] CP27: Pozitif işaret ve n_min≥X için her Δ_t>0 prefixte 0<Δ_t<t ln(1+1/X) olur.
+- [E7_CP25_28] CP28: A truncation’lı mod 3^h ters-ağaç matrisinde Perron kökü λ(A,s)=3^(s−1)∑_{a=1}^A 2^(−as) ve h’den bağımsızdır; λ(8,1)=255/256.
+
+## FLAWED
+- [E1_CP01_13] CP07: Yanlış S_{m+1}=3S_m+2^d yerine S_{m+1}=S_m+3^m2^d gerekir.
+- [E1_CP01_13] CP09: Mod-18 tablosundan H_N≤(4/15)ln N ve 41/45 limsup çıkarıldığı iddia edilir.
+- [E1_CP01_13] CP09: CP09 finite-LP β_t=0.2667…0.1019 tablosu tanımlanmış LP olmaksızın sertifika olarak sunulur.
+- [E1_CP01_13] CP10: İlk n₀ exceptional block atlanınca büyüyen t için uniform inequality bütün orbitlerde yanlış olabilir.
+- [E1_CP01_13] CP12: Global w↦C_w injectivity iddiası C=19 için q=2 ve q=3 çarpışmasıyla yanlıştır.
+- [E1_CP01_13] CP12: Two-block toplamını s≤min(m,q) ile sınırlamak J=4,m=3,q=1 örneğinde doğru 7 yerine 4 verir.
+- [E2_CP14_19] CP19T6: İlk R terimli q_R mod 2^{A_R+1} kanonik kalanı ρ_R ile doğrudan eşittir (promptun karşılaştırma talebi).
+- [E3_CP20_T1_7] CP20 Task 1: Orijinal “κ>1 için LEVEL-3 survivor” genellemesi κ<κ₀=1.0526808586 için yanlıştır; düzeltilmiş metin yalnız LEVEL-2 der.
+- [E3_CP20_T1_7] CP20 Task 6: T6 V2’deki “her ε>0” pencere ifadesi ε≥α/κ için N_r büyümediğinden yanlış; V3 bunu 0<ε<α/κ olarak onarır.
+- [E3_CP20_T1_7] CP20 Task 7: T7/guçlendirme taslağındaki N(S)t^{-S}≤P(t) işareti yanlıştır; doğru eşitsizlik N(S)t^S≤P(t) ve V3’te düzeltilmiştir.
+- [E3_CP20_T1_7] CP20 Task 7 bağımsız denetim: B=4,r=640,C_D=8 için tabloda 0.579440 yerine doğru altı basamaklı log₂N/r=0.579436 bulunur.
+- [E4_CP20_T8_E7] D1-D: Tekrar eden faz sözcüğü tek başına değerleme tekrarını zorlamaz; sonlu defect mask karşıörnekleri vardır.
+- [E4_CP20_T8_E7] D1 Finding D: En küçük tam gerçekleyici daima r_L değildir: w=(1) için r_1=1, en küçük tam gerçekleyici 3.
+- [E4_CP20_T8_E7] D1 Finding D: Sonsuz plato divergent/noncyclic demek değildir: a_k≡2,n₀=1 sabit çevrimdir.
+- [E4_CP20_T8_E7] E7: E7-B3 için tüm donmuş pencerede sup|K|≤A/m_r hedefi başlangıçta PRE-RUN idi.
+- [E4_CP20_T8_E7] E7R-LT: Koşulsuz Syracuse affine Fourier üst sınırı tek başına exponentially rare sabit-kütle fiberi için aynı decay üst sınırını vermez.
+- [E5_AUDIT_RESEARCH0908] concentration_audit_20260912: Hiçbir iletkende tam sıfır yok genellemesi t=4,j=2,s=1 karşıörneğiyle yanlıştır.
+- [E5_AUDIT_RESEARCH0908] phase_quotient_20260913: Round 4’ün finite saf-state pahalı gözleminden asimptotik olarak 2^s altına inilemez sonucu çıkarılamaz.
+- [E5_AUDIT_RESEARCH0908] compressed_count_20260908: High-bucket Bellman upper modelinin bütün kelimelerde N’ye çöktüğü iddiası r=4,t=3,L=9,A=6,7 için yanlıştır.
+- [E5_AUDIT_RESEARCH0908] reassessment_20260908: Programın uniform window hedefini r=5..20 sayısal varyansla kanıtladığı çıkarımı yanlıştır.
+- [E5_AUDIT_RESEARCH0908] bagimsiz-denetim/07-geriye-donuk-tarama: CP19 T5 survivor’ının yeni kritik-yoğunluk eşitsizliğiyle dışlandığı çıkarımı hipotez uyumsuzluğu nedeniyle yanlıştır.
+- [E5_AUDIT_RESEARCH0908] bagimsiz-denetim/08-literatur-taramasi: 1963–1999 bibliyografyasında factor complexity ve Chernoff anahtar kelimelerinin yokluğu aynı dönemde divergent orbit Banach density teoremi olmadığını göstermez.
+- [E5_AUDIT_RESEARCH0908] bagimsiz-denetim: Chernoff’da N(S)≤P(t)t^S işareti yanlış, doğru üst sınır N(S)≤P(t)t^(−S)’dir.
+- [E5_AUDIT_RESEARCH0908] bagimsiz-denetim: Sturmian phase cost 0.0017 farkı gerçek yapısal kazanç değil, feasible domain eksik grid artefaktıdır.
+- [E5_AUDIT_RESEARCH0908] project_review_20260908: w=(1) için zayıf residue r1=1 iken exact valuation-1 gerçekleştiren en küçük başlangıç 3’tür.
+- [E6_CP21_24] CP21: CP21 yazıldığı gibi q-uzunluklu w ile R3: w_k=E(w′_k)+O(w′_{k−1}) özdeşliği geçerlidir.
+- [E6_CP21_24] CP21: e≡e′ (mod 2^r) ile sınırlı t kullanılarak B−B′≡2^(m+r)t (mod 3^k) koşulları eşdeğerdir.
+- [E6_CP21_24] CP21: CP21 m=25,26 için 11 eski uzatma satırının lift/merge/defect sayıları doğru hesaplanmıştır.
+- [E6_CP21_24] CP22: CP21 41 ve CP22 35 frekans satırı 76 ayrı parametre çiftidir.
+- [E6_CP21_24] CP23: m≤12 için r=2 ham Ecal(m,r) artışı, normalize sabit-r enerji sönümünü veya karışmayı çürütür.
+- [E6_CP21_24] CP23: D|B_w ve pozitif bölüm bulunmasına rağmen adayın w kelimesini ayrıca sağlaması bağımsız ikinci elemeyi gerektirir.
+- [E6_CP21_24] CP24: İhlalsiz satırlarda defect/M oranı hep 1’in üstündedir.
+- [E6_CP21_24] CP23: Sabit m+r diyagonalinde sonsuz sayıda (m,r) bulunduğu ve monoton enerjinin bu diyagonal boyunca bir limiti olduğu ileri sürülür.
+- [E7_CP25_28] CP27: Z-B biçiminde C_t<t 3^(t−1) her t≥1 için geçerlidir.
+- [E7_CP25_28] CP28: PBM b iddiası üç post-budget F-bloğu ve P∩F^−1P∩F^−2P∩F^−3P koşuluyla bütün 0<δ<1 için kanıtlanır.

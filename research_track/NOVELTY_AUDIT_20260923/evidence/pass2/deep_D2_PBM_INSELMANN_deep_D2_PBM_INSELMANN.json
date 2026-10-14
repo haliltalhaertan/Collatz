@@ -1,0 +1,772 @@
+[
+  {
+    "idx": 49,
+    "claim": "28-06",
+    "exact_statement": "T(n)=n/2 (n even), (3n+1)/2 (n odd); U(x)=(3x+1)/2^{a(x)}, a(x)=v₂(3x+1), x odd. X_m uniform on odd x∈[2^m,2^{m+1}); S_j=Σ_{i<j}a(U^i X_m), τ=min{j:S_j>m}. For every fixed integer k≥1 and 0<δ<1, L=⌊δm⌋, N_k=#{τ≤i<τ+L:a(U^i X_m)=k}, N_k/L→2^{-k} in probability as m→∞ (source also proves part (a) 0<δ<β/2, β=log₂√3). This is a random-start statement, not every orbit nor independent post-budget draws.",
+    "program_label": "Supplied program label: PROOF-with-minor-revisions (a δ<β/2, b δ<1); file itself labels Lemmas A–C and (a),(b) [PROOF]; supplied novelty tag NEW-CANDIDATE (not literally in source).",
+    "correctness": "DOĞRU (publicly available Inselmann v3 Lemma 2.16 and Theorem 3.1 assumed; no counterexample to probabilistic limit). b proof has boundary O_k(1), cannot claim exact iid of suffix. Verification finite only.",
+    "weakest_step": "Post-budget suffix is NOT uniform after conditioning on a stopping time. Repair: construct ∗-dense P of uniformly typical ALL prefixes and word 10^{k−1}1 up to c log₂y by exact parity bijection and Hoeffding; pull P back via F^{-1} where F(y)=T^{⌊log₂y⌋}(y). Inselmann scale gives log₂F^j(X_m)/m→β^j. Four blocks, not three, yield Σ_{j=1}^4 β^j/2=1.156312>1; gap and partial-block start counts ≤O(((1−c)+α+η)m), sent to zero in that order. The source Lemma C fraction in garbled display has its numerator/denominator reversed in one explanatory line; correct equation is log F^{j+1}/log F^j→β, not its reciprocal. Its actual scale estimates and proof use the correct direction. Equation (38) boundary ≤1 and case y odd handled; no falsifier.",
+    "check_code_and_output": {
+      "code_file": "pbm_rate_exact_check.py",
+      "code": "from collections import Counter\nfrom math import log2,log,comb\n\ndef T(x): return x//2 if x%2==0 else (3*x+1)//2\ndef U_a(x):\n    z=3*x+1; a=(z&-z).bit_length()-1\n    return z>>a,a\nfor n in range(2,11):\n    seqs=[tuple((lambda x: [None])(x)) for x in []]\n    seqs=[]\n    for x in range(2**n,2**(n+1)):\n        v=[];y=x\n        for _ in range(n):v.append(y%2);y=T(y)\n        seqs.append(tuple(v))\n    assert len(set(seqs))==2**n\n    assert Counter(seqs)==Counter({tuple((i>>j)&1 for j in range(n)):1 for i in range(2**n)})\n    for x in range(2**n+1,2**(n+1),2):\n        states=[x];aa=[];s=0;tau=None\n        for j in range(100):\n            z,a=U_a(states[-1]);aa.append(a);s+=a;states.append(z)\n            if s>n:tau=j+1;break\n        assert tau is not None\n        y=x\n        for _ in range(n):y=T(y)\n        z=y;d=0\n        while True:\n            d+=1;z=T(z)\n            if z%2:break\n        assert z==states[tau] and d==s-n\n        for k in range(1,5):\n            zz=z;bits=[]\n            for _ in range(k+1):bits.append(zz%2);zz=T(zz)\n            assert (a if False else U_a(z)[1]==k)==(bits==[1]+[0]*(k-1)+[1])\nprint('PASS parity bijection n=2..10; tau synchronization and valuation-word test all odd x in shells')\na=log2(3);beta=a/2;A3=sum(beta**j for j in range(1,4))/2;A4=sum(beta**j for j in range(1,5))/2\nD=.001;ep=D/4;eta=D/32;ln2=log(2)\nrates={'base':2*(.04/a)**2/ln2,'initial':2*(.01/a)**2/ln2,'dilation':(D*(1+ep)-2*ep)*a*(.5-eta),'parity':eta**2/(2*ln2),'offset':3*eta**2/(2*ln2)}\ndef I(u):\n p=.5+u\n return 1+(p*log(p)+(1-p)*log(1-p))/ln2\nE=(1-beta)*a/1.2\ncaps=[I(I(z/a)/(2*(4-I(z/a)))) for z in [E,E/beta]]\nprint('beta=%.12f A3=%.12f A4=%.12f'%(beta,A3,A4))\nprint('rates:',rates,'certificate=',5e-10,'min_rate=',min(rates.values()))\nprint('caps: literal %.12f generous %.12f required %.12f'%(caps[0],caps[1],1-1/1.053))\nassert A3<1<A4 and min(rates.values())>5e-10 and caps[1]<1-1/1.053\n",
+      "output": "PASS parity bijection n=2..10; tau synchronization and valuation-word test all odd x in shells\nbeta=0.792481250361 A3=0.959103517005 A4=1.156312179562\nrates: {'base': 0.001837750435029583, 'initial': 0.00011485940218934894, 'dilation': 0.0003964139680712859, 'parity': 7.044409379340642e-10, 'offset': 2.1133228138021926e-09} certificate= 5e-10 min_rate= 7.044409379340642e-10\ncaps: literal 0.000365875806 generous 0.000979308877 required 0.050332383666"
+    },
+    "triviality_derivation": "(1) Terras/Everett: shell length 2^n gives exactly iid first n parity bits; Hoeffding and union over O(n) prefixes prove ∗-dense P of typical 1 and 10^{k−1}1 words, and short zero runs. (2) Inselmann Lemma 2.16: F^{-j}P ∗-dense for any fixed j. (3) Thm 3.1 with λ=β gives log₂F^j(x)=(β^j+o(1))m on ∗-dense sets. (4) Select four almost-full parity blocks at F(X_m),…,F^4(X_m); their total odd-start capacity is (c/2)Σβ^j m>δm; uncontrolled gaps ≤(1−c)Σβ^j m. (5) For every controlled prefix, occurrences 10^{k−1}1 divided by occurrences 1 tend to (2^{-(k+1)})/(1/2)=2^{-k}; at most O(k) boundary words/block. Shrink c↑1 and errors↓0. Existing machinery, corollary, NOT fresh conditional independence/mixing.",
+    "queries": [
+      {
+        "query": "Collatz post budget parity vector valuation geometric frequency Inselmann",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Apost+AND+all%3Abudget+AND+all%3Aparity&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz post budget parity vector valuation geometric frequency Inselmann",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz+post+budget+parity+vector+valuation+geometric+frequency+Inselmann&rows=2",
+        "http_status": 200,
+        "top_titles": [
+          "On the average stopping time of the Collatz map in $F_2[x]$",
+          "Compression Spectra of Collatz Orbits: Sharp Residual Ordering, Exact Valuation Cylinders, and Near-extremal Sparsity"
+        ]
+      },
+      {
+        "query": "Collatz post budget parity vector valuation geometric frequency Inselmann",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+post+budget+parity+vector+valuation+geometric+frequency+Inselmann&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz post budget parity vector valuation geometric frequency Inselmann",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Collatz+post+budget+parity+vector+valuation+geometric+frequency+Inselmann&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "Collatz Parity Vector Toolkit",
+          "Characteristic numbers of parity vectors of Collatz sequences"
+        ]
+      },
+      {
+        "query": "Collatz post budget parity vector valuation geometric frequency Inselmann",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=Collatz+post+budget+parity+vector+valuation+geometric+frequency+Inselmann&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz first passage stopping time odd accelerated parity vector mixing",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Afirst+AND+all%3Apassage+AND+all%3Astopping&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz first passage stopping time odd accelerated parity vector mixing",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz+first+passage+stopping+time+odd+accelerated+parity+vector+mixing&rows=2",
+        "http_status": 200,
+        "top_titles": [
+          "A Modular Classification of Pre-Descent Resistance in Accelerated Odd Collatz Dynamics",
+          "Exact and Delayed Descent in Accelerated Odd Collatz Spines with AAS-Based Metamorphic Separation"
+        ]
+      },
+      {
+        "query": "Collatz first passage stopping time odd accelerated parity vector mixing",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+first+passage+stopping+time+odd+accelerated+parity+vector+mixing&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz first passage stopping time odd accelerated parity vector mixing",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Collatz+first+passage+stopping+time+odd+accelerated+parity+vector+mixing&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "A Modular Classification of Pre-Descent Resistance in Accelerated Odd Collatz Dynamics",
+          "A new approach to study and analysis  of behavior of Collatz sequences"
+        ]
+      },
+      {
+        "query": "Collatz first passage stopping time odd accelerated parity vector mixing",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=Collatz+first+passage+stopping+time+odd+accelerated+parity+vector+mixing&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 valuation word frequency logarithmic time Inselmann",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3Avaluation+AND+all%3Aword+AND+all%3Afrequency&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 valuation word frequency logarithmic time Inselmann",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=3x%2B1+valuation+word+frequency+logarithmic+time+Inselmann&rows=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 valuation word frequency logarithmic time Inselmann",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+valuation+word+frequency+logarithmic+time+Inselmann&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 valuation word frequency logarithmic time Inselmann",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=3x%2B1+valuation+word+frequency+logarithmic+time+Inselmann&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "The $3x+1$ Problem: Algebraic Reduction of Macro-cycles via Local Polynomials and Diophantine Balance",
+          "Novel Approach to Synchronize National Knowledge Network (NKN) of National Informatics Centre (NIC) Network with IST Over IoT Framework"
+        ]
+      },
+      {
+        "query": "3x+1 valuation word frequency logarithmic time Inselmann",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=3x%2B1+valuation+word+frequency+logarithmic+time+Inselmann&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz Syracuse geometric distribution post stopping time parity",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3ASyracuse+AND+all%3Ageometric+AND+all%3Adistribution&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": [
+          "Emergence of Gamma-Type Upward-Phase Statistics in the Collatz Map: An Effective Poisson Process Mechanism"
+        ]
+      },
+      {
+        "query": "Collatz Syracuse geometric distribution post stopping time parity",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz+Syracuse+geometric+distribution+post+stopping+time+parity&rows=2",
+        "http_status": 200,
+        "top_titles": [
+          "collatz: Functions Related to the Collatz/Syracuse/3n+1 Problem",
+          "On the average stopping time of the Collatz map in $F_2[x]$"
+        ]
+      },
+      {
+        "query": "Collatz Syracuse geometric distribution post stopping time parity",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+Syracuse+geometric+distribution+post+stopping+time+parity&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz Syracuse geometric distribution post stopping time parity",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Collatz+Syracuse+geometric+distribution+post+stopping+time+parity&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "Mirror, Mirror: Collatz hits a wall.",
+          "The second Syracuse sequence in Pascal"
+        ]
+      },
+      {
+        "query": "Collatz Syracuse geometric distribution post stopping time parity",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=Collatz+Syracuse+geometric+distribution+post+stopping+time+parity&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz valuation window typical orbit entropy subshift",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Avaluation+AND+all%3Awindow+AND+all%3Atypical&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz valuation window typical orbit entropy subshift",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz+valuation+window+typical+orbit+entropy+subshift&rows=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz valuation window typical orbit entropy subshift",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+valuation+window+typical+orbit+entropy+subshift&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz valuation window typical orbit entropy subshift",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Collatz+valuation+window+typical+orbit+entropy+subshift&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "Critical-Line Tails and Summable Near-Return Costs in Accelerated Odd Collatz Dynamics",
+          "IV. Arithmetic obstruction to mixed orbits in the 2-adic Collatz dynamics"
+        ]
+      },
+      {
+        "query": "Collatz valuation window typical orbit entropy subshift",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=Collatz+valuation+window+typical+orbit+entropy+subshift&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz parity vector mixing stopping time Terras Everett",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aparity+AND+all%3Avector+AND+all%3Amixing&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz parity vector mixing stopping time Terras Everett",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz+parity+vector+mixing+stopping+time+Terras+Everett&rows=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz parity vector mixing stopping time Terras Everett",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+parity+vector+mixing+stopping+time+Terras+Everett&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz parity vector mixing stopping time Terras Everett",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Collatz+parity+vector+mixing+stopping+time+Terras+Everett&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "PRH | Aux | 4.10 • A Blur–Knob Program for Collatz",
+          "The Collatz map as a (2,3)-adic bridge: a framework for characterizing the canonical transfer between incompatible completions of ℚ"
+        ]
+      },
+      {
+        "query": "Collatz parity vector mixing stopping time Terras Everett",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=Collatz+parity+vector+mixing+stopping+time+Terras+Everett&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Inselmann (2024) Proposition 2.4",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "the push-forward measure of the uniform measure on [M · · · M + 2^N) under the map m ↦ (p(m)_i)_{0≤i<N} is the uniform measure on {0,1}^{[0···N)}.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024) Lemma 2.16",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "Suppose that P ⊆ Z+ is ∗-dense. Then the set {m ∈ Z+ | T^{⌊log₂ m⌋}(m) ∈ P} is ∗-dense as well.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024) Theorem 3.1",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "Suppose that ε > 0. Then the set {m ∈ Z+ | ∀λ ∈ [0,1] : m^{λ−ε} ≤ T^{⌊(1−λ)/(1−log₂√3) log₂ m⌋}(m) ≤ m^{λ+ε}} is ∗-dense.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024) Theorem 3.4",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "For any 0 ≤ α < 1/(1−log₂√3) the set {m ∈ Z+ | τ(m) > α log₂(m)} is ∗-dense. [τ here total stopping time, NOT CP28 bit-budget exit.]",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024) Theorem 3.3",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "For every ε>0, uniformly for 0≤k≤log₂m/(1−log₂√3), the parity prefix sum minus k/2 is between −ε log₂m and +ε log₂m on a ∗-dense set; this is single-bit, not all words.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias annotated bibliography I (1963–1999), Garcia–Tal annotation",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "A direct consequence is that any orbit O(n) under H has Banach density zero (Corollary 1).",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias annotated bibliography II (2000–2009), Borovkov–Pfeifer annotation",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "This paper studies a multiplicative random walk imitating the 3x+1 iteration.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias annotated bibliography II, Kontorovich–Sinai annotation",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "They deduce that, as m → ∞, a properly logarithmically scaled version of iterates converges to a Brownian motion with drift.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias annotated bibliography II, Lagarias–Soundararajan annotation",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "This paper proves a quantitative version of Benford’s law valid for finite N.",
+        "opened": true
+      },
+      {
+        "cite": "Tao (2019/2022) Proposition 1.9, primary full PDF",
+        "url": "https://arxiv.org/pdf/1909.03562",
+        "quote": "If N mod 2^{n′} is approximately uniformly distributed in odd residue classes and n′≥(2+c₀)n, then dTV(⃗a^{(n)}(N),Geom(2)^n) ≪ 2^{−c₁n}. This is an initial-residue hypothesis, not the post-budget stopping-time assertion.",
+        "opened": true
+      },
+      {
+        "cite": "Tao (2019/2022) Proposition 1.14, primary full PDF",
+        "url": "https://arxiv.org/pdf/1909.03562",
+        "quote": "Fine scale mixing of n-Syracuse offsets: Osc_{m,n}(P(Syrac(Z/3^n Z)=Y mod 3^n)) ≪_A m^{−A}. Object: 3-adic offsets, not post-budget parity suffix.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024) Theorem 1.10",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "For every ε>0 almost all odd m obey (3/4)^k m^{1−ε} ≤ Syr^k(m) ≤ (3/4)^k m^{1+ε} for 0≤k≤(log₂(4/3))^{−1}log₂ m; orbit size does not specify each valuation frequency.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis (journal 2017; arXiv 1510.01610)",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "Hypothesis 2.3. (Lower Bound Hypothesis - LBH) There is a real constant C ≥ 0 such that ... n ≥ j^{−C} · 2^{(1−H(q/j))j}. This is conjectural and not PBM.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal (1999), Corollary 1, primary full PDF",
+        "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa90/aa9033.pdf",
+        "quote": "The Banach density of the orbit O(n) under H is zero. Concerns one fixed orbit, not random-start pattern laws.",
+        "opened": true
+      },
+      {
+        "cite": "Semantic Scholar citation endpoint Inselmann ARXIV:2402.03276",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/ARXIV:2402.03276/citations?limit=30&fields=title,year,abstract,externalIds",
+        "quote": "Indexed citation: Efficient Computation of Collatz Sequence Stopping Times: A Novel Algorithmic Approach (2025); S2 total 1. The citing primary abstract concerns algorithmic computation, not post-budget valuation laws.",
+        "opened": true
+      },
+      {
+        "cite": "Getachew et al. (2025), Inselmann-citing article abstract",
+        "url": "https://arxiv.org/abs/2501.04032",
+        "quote": "This research focuses on designing an efficient algorithm to compute the stopping time of numbers in the Collatz sequence.",
+        "opened": true
+      },
+      {
+        "cite": "Semantic Scholar citation endpoint Garcia–Tal DOI:10.4064/aa-90-3-245-250",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.4064/aa-90-3-245-250/citations?limit=30&fields=title,year,abstract,externalIds",
+        "quote": "Indexed 10 citing records; titles include A Numerical Verification for Asymptotic Approach of the Collatz Conjecture (2025), An Asymptotic Approach for the Collatz Conjecture (2023), 7x±1: Close Relative of Collatz Problem (2018), two Lagarias annotated bibliographies. This is catalog metadata, NOT primary statements of those citing works.",
+        "opened": true
+      },
+      {
+        "cite": "Semantic Scholar citation endpoint Rozier DOI:10.7169/facm/1583",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.7169/facm/1583/citations?limit=30&fields=title,year,abstract,externalIds",
+        "quote": "Indexed 7 citing records: Furstenberg Topology and Collatz Problem (2025), Paradoxical behavior in Collatz sequences (2025), Are the Collatz and abc Conjectures Related? (2023), Parity Sequences of the 3x+1 Map on the 2-adic Integers and Euclidean Embedding (2018), plus signal encryption, a purported proof and a 3n−1 study. Catalog metadata only.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier (2018/2019), cited Rozier 2017, primary abstract",
+        "url": "https://arxiv.org/abs/1805.00133",
+        "quote": "we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called \"3x+1\" map.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier & co. (2025/2026), cited Rozier 2017, primary abstract",
+        "url": "https://arxiv.org/abs/2502.00948",
+        "quote": "when iterating beyond the stopping time, there exist \"paradoxical\" sequences of finite length whose first term is unexpectedly exceeded",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal citing article on 7x±1, primary abstract",
+        "url": "https://arxiv.org/abs/1807.00908",
+        "quote": "We show an iterated function of which iterates oscillate wildly and grow at a dizzying pace.",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex cites:Garcia–Tal; cites:Rozier; cites:Inselmann blocked",
+        "url": "https://api.openalex.org/works?filter=cites:W...",
+        "quote": "HTTP 429: shared IP free daily budget exhausted; OpenAlex cite lists unverified. S2 citation-index substitutes listed above; S2 coverage not exhaustive.",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "İddia doğru, fakat dört bloklu rutin kelime-sayımıyla Inselmann ∗-dense çekme/ölçek ve Terras–Everett kodlamasından çıkan özel bir corollary; bağımsız mixing buluşu değil."
+  },
+  {
+    "idx": 24,
+    "claim": "E5-005",
+    "exact_statement": "b=1.2, κ=1.053, a=log₂3, c=a/2, ρ=√3/2. Report selects input D=.001, η′=.00025, η=.00003125; upper-only direct estimates, a ONE-STEP Inselmann Lemma 2.16 affine pullback, parity-restricted retained subset, and a single-time fractional-moment bound give an asymptotic exceptional exponent d_cert=5×10^{-10}: at horizon A=a r+O(1), X=2^{1.2r+o(r)}, the associated count F(X)≤2^{.95r}+O(X^{1−d_cert}), with unspecified O constants/threshold. Separately, in the SAME retained-subset proof, under generous upper-only tolerance and necessary input rate D≤I(ζ/a), ζ<E/c, E=(1−c)a/1.2, I(u)=1−H₂(1/2+u), η<D/[2(4−D)], the certifiable rate is ≤I(I((E/c)/a)/[2(4−I((E/c)/a))])≈.000979308877. Literal accounting ceiling ≈.000365875806; target 1−1/κ≈.050332383666. The ceiling is NOT a bound for all methods or the actual exceptional set.",
+    "program_label": "Supplied program label EXACT/CONDITIONAL (not literally in REPORT); source Outcome calls d_cert valid asymptotic; selected-method ceiling necessary only for its retained-subset construction; supplied novelty tag NEW-CANDIDATE.",
+    "correctness": "KOŞULLU-DOĞRU: certificate true for stated fixed b, κ, one-pullback horizon, fixed-band reduction and constants, using Inselmann Lemmas 2.13–2.16 (plus source-specific earlier dual-interval count reduction for Q). Ceiling true ONLY for the selected retained parity-subset certificate with upper orbit tolerance: it is not an intrinsic exception-rate ceiling. Big-O not effective in numerical threshold.",
+    "weakest_step": "Do not conflate a subset discarded by the proof with the actual bad preimage. The cap η<D/[2(4−D)] comes specifically from Inselmann Lemma 2.16 parameter choices, then the retained parity window forces a binomial discarded tail exponent ≤I(η); other proofs might keep those points. For d_cert: a shell has full n-bit uniform parity only BEFORE pullback; on incomplete/conditioned shells no iid assumption. The source explicitly uses exact full-shell uniformity before pullback, and upper-only base; Markov on r_n uses only the initial bits and independent Bernoullis. Endpoint floor slack and r_n θ-moment were checked. Necessity D≤I(ζ/a) presupposes P enforces a uniform n-step upper envelope; generous ζ<E/c is a deliberately relaxed necessary threshold. A valid count for Q additionally depends on the separate dual-interval reduction not stated in REPORT; no stand-alone claim about Q is established by this file alone.",
+    "check_code_and_output": {
+      "code_file": "pbm_rate_exact_check.py",
+      "code": "from collections import Counter\nfrom math import log2,log,comb\n\ndef T(x): return x//2 if x%2==0 else (3*x+1)//2\ndef U_a(x):\n    z=3*x+1; a=(z&-z).bit_length()-1\n    return z>>a,a\nfor n in range(2,11):\n    seqs=[tuple((lambda x: [None])(x)) for x in []]\n    seqs=[]\n    for x in range(2**n,2**(n+1)):\n        v=[];y=x\n        for _ in range(n):v.append(y%2);y=T(y)\n        seqs.append(tuple(v))\n    assert len(set(seqs))==2**n\n    assert Counter(seqs)==Counter({tuple((i>>j)&1 for j in range(n)):1 for i in range(2**n)})\n    for x in range(2**n+1,2**(n+1),2):\n        states=[x];aa=[];s=0;tau=None\n        for j in range(100):\n            z,a=U_a(states[-1]);aa.append(a);s+=a;states.append(z)\n            if s>n:tau=j+1;break\n        assert tau is not None\n        y=x\n        for _ in range(n):y=T(y)\n        z=y;d=0\n        while True:\n            d+=1;z=T(z)\n            if z%2:break\n        assert z==states[tau] and d==s-n\n        for k in range(1,5):\n            zz=z;bits=[]\n            for _ in range(k+1):bits.append(zz%2);zz=T(zz)\n            assert (a if False else U_a(z)[1]==k)==(bits==[1]+[0]*(k-1)+[1])\nprint('PASS parity bijection n=2..10; tau synchronization and valuation-word test all odd x in shells')\na=log2(3);beta=a/2;A3=sum(beta**j for j in range(1,4))/2;A4=sum(beta**j for j in range(1,5))/2\nD=.001;ep=D/4;eta=D/32;ln2=log(2)\nrates={'base':2*(.04/a)**2/ln2,'initial':2*(.01/a)**2/ln2,'dilation':(D*(1+ep)-2*ep)*a*(.5-eta),'parity':eta**2/(2*ln2),'offset':3*eta**2/(2*ln2)}\ndef I(u):\n p=.5+u\n return 1+(p*log(p)+(1-p)*log(1-p))/ln2\nE=(1-beta)*a/1.2\ncaps=[I(I(z/a)/(2*(4-I(z/a)))) for z in [E,E/beta]]\nprint('beta=%.12f A3=%.12f A4=%.12f'%(beta,A3,A4))\nprint('rates:',rates,'certificate=',5e-10,'min_rate=',min(rates.values()))\nprint('caps: literal %.12f generous %.12f required %.12f'%(caps[0],caps[1],1-1/1.053))\nassert A3<1<A4 and min(rates.values())>5e-10 and caps[1]<1-1/1.053\n",
+      "output": "PASS parity bijection n=2..10; tau synchronization and valuation-word test all odd x in shells\nbeta=0.792481250361 A3=0.959103517005 A4=1.156312179562\nrates: {'base': 0.001837750435029583, 'initial': 0.00011485940218934894, 'dilation': 0.0003964139680712859, 'parity': 7.044409379340642e-10, 'offset': 2.1133228138021926e-09} certificate= 5e-10 min_rate= 7.044409379340642e-10\ncaps: literal 0.000365875806 generous 0.000979308877 required 0.050332383666"
+    },
+    "triviality_derivation": "Affine shortcut formula T^ℓx=3^{Kℓ}(x/2^ℓ+rℓ), 0≤rℓ<1, plus uniform initial n parity bits gives base Hoeffding exponents 2(.04/a)^2/ln2≈.00183775 and 2(.01/a)^2/ln2≈.000114859. Inselmann 2.13 dilation yields (D(1+η′)−2η′)a(.5−η)≈.000396414. For θ≤1, E r_n^θ≤C_θ[(1+3^{−θ})/2]^n; θ=2η/(a ln2) gives offset 3η²/(2ln2)≈2.1133e−9, while retained parity upper-half Hoeffding gives η²/(2ln2)≈7.0444e−10; choose 5e−10. For ceiling: exact binomial tails force D≤I(ζ/a), Lemma 2.16 requires η<D/[2(4−D)], discarded parity tail forces rate≤I(η); ζ<E/c gives numerical .000979308877. Entirely an audit/explicit instantiation of known method plus standard concentration, no new Collatz orbit property.",
+    "queries": [
+      {
+        "query": "Inselmann Collatz explicit exceptional density exponent pullback",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3AInselmann+AND+all%3ACollatz+AND+all%3Aexplicit+AND+all%3Aexceptional&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": []
+      },
+      {
+        "query": "Inselmann Collatz explicit exceptional density exponent pullback",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Inselmann+Collatz+explicit+exceptional+density+exponent+pullback&rows=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Inselmann Collatz explicit exceptional density exponent pullback",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Inselmann+Collatz+explicit+exceptional+density+exponent+pullback&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Inselmann Collatz explicit exceptional density exponent pullback",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Inselmann+Collatz+explicit+exceptional+density+exponent+pullback&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "Mersenne Block Dynamics: A Framework for the Collatz Conjecture",
+          "Critical-Line Tails and Summable Near-Return Costs in Accelerated Odd Collatz Dynamics"
+        ]
+      },
+      {
+        "query": "Inselmann Collatz explicit exceptional density exponent pullback",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=Inselmann+Collatz+explicit+exceptional+density+exponent+pullback&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz quantitative stopping time parity vector Hoeffding rate",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aquantitative+AND+all%3Astopping+AND+all%3Atime&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz quantitative stopping time parity vector Hoeffding rate",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz+quantitative+stopping+time+parity+vector+Hoeffding+rate&rows=2",
+        "http_status": 200,
+        "top_titles": [
+          "On the average stopping time of the Collatz map in $F_2[x]$",
+          "Reversing Neel Vector in Parity-Time Antiferromagnets by Nonreciprocal Light Scattering"
+        ]
+      },
+      {
+        "query": "Collatz quantitative stopping time parity vector Hoeffding rate",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+quantitative+stopping+time+parity+vector+Hoeffding+rate&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz quantitative stopping time parity vector Hoeffding rate",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Collatz+quantitative+stopping+time+parity+vector+Hoeffding+rate&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "Collatz Parity Vector Toolkit",
+          "Characteristic numbers of parity vectors of Collatz sequences"
+        ]
+      },
+      {
+        "query": "Collatz quantitative stopping time parity vector Hoeffding rate",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=Collatz+quantitative+stopping+time+parity+vector+Hoeffding+rate&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 affine pullback power density exceptional set Inselmann",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3Aaffine+AND+all%3Apullback+AND+all%3Apower&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 affine pullback power density exceptional set Inselmann",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=3x%2B1+affine+pullback+power+density+exceptional+set+Inselmann&rows=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 affine pullback power density exceptional set Inselmann",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+affine+pullback+power+density+exceptional+set+Inselmann&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 affine pullback power density exceptional set Inselmann",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=3x%2B1+affine+pullback+power+density+exceptional+set+Inselmann&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "Halemane's Theory on the Collatz (3x+1) System",
+          "A Definitive Proof of the Collatz Conjecture using the Halemane(3X±1)/4System"
+        ]
+      },
+      {
+        "query": "3x+1 affine pullback power density exceptional set Inselmann",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=3x%2B1+affine+pullback+power+density+exceptional+set+Inselmann&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz parity vector binomial large deviations retained subset",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aparity+AND+all%3Avector+AND+all%3Abinomial&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz parity vector binomial large deviations retained subset",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz+parity+vector+binomial+large+deviations+retained+subset&rows=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz parity vector binomial large deviations retained subset",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+parity+vector+binomial+large+deviations+retained+subset&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz parity vector binomial large deviations retained subset",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Collatz+parity+vector+binomial+large+deviations+retained+subset&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "Collatz Parity Vector Toolkit",
+          "Mirror, Mirror: Collatz hits a wall."
+        ]
+      },
+      {
+        "query": "Collatz parity vector binomial large deviations retained subset",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=Collatz+parity+vector+binomial+large+deviations+retained+subset&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz quantitative approximation trajectory density exponent",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aquantitative+AND+all%3Aapproximation+AND+all%3Atrajectory&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz quantitative approximation trajectory density exponent",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz+quantitative+approximation+trajectory+density+exponent&rows=2",
+        "http_status": 200,
+        "top_titles": [
+          "Collatz Progressions Reframed: Exponent Representation, Algorithmic Hierarchies, and Record Computations_supp1-3704917.pdf",
+          "Some Applications of Polynomial and Spline Approximation"
+        ]
+      },
+      {
+        "query": "Collatz quantitative approximation trajectory density exponent",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+quantitative+approximation+trajectory+density+exponent&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz quantitative approximation trajectory density exponent",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Collatz+quantitative+approximation+trajectory+density+exponent&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "Multifractality approach of a generalized Shannon index in financial time series",
+          "Multifractality approach of a generalized Shannon index in financial time series"
+        ]
+      },
+      {
+        "query": "Collatz quantitative approximation trajectory density exponent",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=Collatz+quantitative+approximation+trajectory+density+exponent&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz affine offset fractional moment 3x+1 exceptional rate",
+        "provider": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aaffine+AND+all%3Aoffset+AND+all%3Afractional&start=0&max_results=3",
+        "http_status": 200,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz affine offset fractional moment 3x+1 exceptional rate",
+        "provider": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz+affine+offset+fractional+moment+3x%2B1+exceptional+rate&rows=2",
+        "http_status": 200,
+        "top_titles": [
+          "Collatz Trees: A Structural Framework for Understanding the 3x+1 Problem",
+          "A Definitive Proof of the Collatz Conjecture using the Halemane(3X±1)/4System"
+        ]
+      },
+      {
+        "query": "Collatz affine offset fractional moment 3x+1 exceptional rate",
+        "provider": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+affine+offset+fractional+moment+3x%2B1+exceptional+rate&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+        "http_status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz affine offset fractional moment 3x+1 exceptional rate",
+        "provider": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Collatz+affine+offset+fractional+moment+3x%2B1+exceptional+rate&size=2",
+        "http_status": 200,
+        "top_titles": [
+          "A Definitive Proof of the Collatz Conjecture using the Halemane(3X±1)/4System",
+          "Halemane's Theory on the Collatz (3x+1) System"
+        ]
+      },
+      {
+        "query": "Collatz affine offset fractional moment 3x+1 exceptional rate",
+        "provider": "openalex",
+        "url": "https://api.openalex.org/works?search=Collatz+affine+offset+fractional+moment+3x%2B1+exceptional+rate&per-page=2",
+        "http_status": 429,
+        "top_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Inselmann (2024) Lemma 2.13, primary full PDF",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "For every 0 < η < D/(2−D), the thickened set {m | ∀0≤k≤⌊η log₃m⌋ ∀0≤i<K3^k : 3^km+i∈S} has (D(1+η)−2η)-density.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024) Lemma 2.14, primary full PDF",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "the set {m | ⌊3^{⌊α⌊log₂m⌋⌋}m /2^{⌊log₂m⌋}⌋∈S} has Dα log₂3-density.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024) Lemma 2.15, primary full PDF",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "∃0≤L≤2η⌊log₂m⌋ ∃0≤i<2·3^L: T^{⌊log₂m⌋}(m)=⌊3^{⌊(1/2−η)⌊log₂m⌋⌋}m/2^{⌊log₂m⌋}⌋3^L+i, on a ∗-dense set.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024) Lemma 2.16 proof, primary full PDF",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "Choose 0 < η′ < D/(2−D) ... if 0 < η < η′/[2(η′+2)].",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024) Theorem 2.18",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "For every ε>0, the upper and lower bounds (√3/2)^k m^{1±ε} hold uniformly through k≤log₂m/(1−log₂√3) on a ∗-dense set; no numeric d_cert given.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024) Proposition 2.4",
+        "url": "https://arxiv.org/pdf/2402.03276v3",
+        "quote": "the push-forward measure of the uniform measure on [M · · · M + 2^N) under the map m ↦ (p(m)_i)_{0≤i<N} is the uniform measure on {0,1}^{[0···N)}.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias annotated bibliography I (1963–1999), Garcia–Tal annotation",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "A direct consequence is that any orbit O(n) under H has Banach density zero (Corollary 1).",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias annotated bibliography II (2000–2009), Borovkov–Pfeifer annotation",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "This paper studies a multiplicative random walk imitating the 3x+1 iteration.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias annotated bibliography II, Kontorovich–Sinai annotation",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "They deduce that, as m → ∞, a properly logarithmically scaled version of iterates converges to a Brownian motion with drift.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias annotated bibliography II, Lagarias–Soundararajan annotation",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "This paper proves a quantitative version of Benford’s law valid for finite N.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier (2017) Hypothesis 2.3, primary arXiv PDF",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "There is a real constant C ≥ 0 such that ... n ≥ j^{−C}·2^{(1−H(q/j))j}; hypothesis, NOT a proven numerical exception exponent.",
+        "opened": true
+      },
+      {
+        "cite": "Tao (2019/2022) Proposition 1.9, primary PDF",
+        "url": "https://arxiv.org/pdf/1909.03562",
+        "quote": "dTV(⃗a^{(n)}(N),Geom(2)^n) ≪ 2^{−c₁n}, under approximate odd-residue uniformity to precision 2^{n′}, n′≥(2+c₀)n; not the Inselmann retained-subset rate.",
+        "opened": true
+      },
+      {
+        "cite": "Semantic Scholar citation endpoint Inselmann ARXIV:2402.03276",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/ARXIV:2402.03276/citations?limit=30&fields=title,year,abstract,externalIds",
+        "quote": "Indexed citation: Efficient Computation of Collatz Sequence Stopping Times: A Novel Algorithmic Approach (2025); S2 total 1. The citing primary abstract concerns algorithmic computation, not post-budget valuation laws.",
+        "opened": true
+      },
+      {
+        "cite": "Getachew et al. (2025), Inselmann-citing article abstract",
+        "url": "https://arxiv.org/abs/2501.04032",
+        "quote": "This research focuses on designing an efficient algorithm to compute the stopping time of numbers in the Collatz sequence.",
+        "opened": true
+      },
+      {
+        "cite": "Semantic Scholar citation endpoint Garcia–Tal DOI:10.4064/aa-90-3-245-250",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.4064/aa-90-3-245-250/citations?limit=30&fields=title,year,abstract,externalIds",
+        "quote": "Indexed 10 citing records; titles include A Numerical Verification for Asymptotic Approach of the Collatz Conjecture (2025), An Asymptotic Approach for the Collatz Conjecture (2023), 7x±1: Close Relative of Collatz Problem (2018), two Lagarias annotated bibliographies. This is catalog metadata, NOT primary statements of those citing works.",
+        "opened": true
+      },
+      {
+        "cite": "Semantic Scholar citation endpoint Rozier DOI:10.7169/facm/1583",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.7169/facm/1583/citations?limit=30&fields=title,year,abstract,externalIds",
+        "quote": "Indexed 7 citing records: Furstenberg Topology and Collatz Problem (2025), Paradoxical behavior in Collatz sequences (2025), Are the Collatz and abc Conjectures Related? (2023), Parity Sequences of the 3x+1 Map on the 2-adic Integers and Euclidean Embedding (2018), plus signal encryption, a purported proof and a 3n−1 study. Catalog metadata only.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier (2018/2019), cited Rozier 2017, primary abstract",
+        "url": "https://arxiv.org/abs/1805.00133",
+        "quote": "we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called \"3x+1\" map.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier & co. (2025/2026), cited Rozier 2017, primary abstract",
+        "url": "https://arxiv.org/abs/2502.00948",
+        "quote": "when iterating beyond the stopping time, there exist \"paradoxical\" sequences of finite length whose first term is unexpectedly exceeded",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal citing article on 7x±1, primary abstract",
+        "url": "https://arxiv.org/abs/1807.00908",
+        "quote": "We show an iterated function of which iterates oscillate wildly and grow at a dizzying pace.",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex cites:Garcia–Tal; cites:Rozier; cites:Inselmann blocked",
+        "url": "https://api.openalex.org/works?filter=cites:W...",
+        "quote": "HTTP 429: shared IP free daily budget exhausted; OpenAlex cite lists unverified. S2 citation-index substitutes listed above; S2 coverage not exhaustive.",
+        "opened": false
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "NEW-MINOR",
+    "one_line_reason": "Açık 5e−10 ve .000979308877 değerleri Inselmann’da yazmayan, doğru ama parametreye/usule bağlı ve son derece zayıf bir sayısal denetimdir; yayınlık yeni Collatz sonucu değil."
+  }
+]

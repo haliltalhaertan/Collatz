@@ -1,0 +1,31 @@
+ROLE MARKER: CP28_PBM_WRITEUP_20260923
+
+Görev: TAM İSPAT METNİ yaz (denetimden geçmiş iskelet + kapatılması gereken boşluklar). Bu metin bir sonraki turda başka bir model tarafından satır satır denetlenecek; her adım kontrol edilebilir olmalı, "açıktır" deme.
+
+TEOREM (PBM). T(n)=n/2 | (3n+1)/2, U(x)=(3x+1)/2^{a(x)}, a=v2(3x+1). X_m tekdüze tek ∈[2^m,2^{m+1}), S_j=Σ_{i<j}a(U^i X_m), τ=min{j:S_j>m}. β=log2√3=0.79248…
+ (a) Her sabit k≥1 ve 0<δ<β/2≈0.3962: N_k/L → 2^{-k} olasılıkta, L=⌊δm⌋, N_k=#{τ≤i<τ+L: a_i=k}.
+ (b) Aynısı her sabit 0<δ<1 için.
+
+KULLANILACAK KAYNAK (Inselmann, arXiv:2402.03276v3): Tanım 2.6 (*-dense), Lemma 2.7 (kesişim), Lemma 2.8 (kabuk eşdeğerliği), Prop 2.4 (Terras/Everett), Lemma 2.16 (S *-dense ⇒ {n: T^{⌊log2 n⌋}(n)∈S} *-dense), ve *-dense zarf teoremi (Theorem 3.1 — ifadesini alıntıla; emin değilsen tam ifadeyi yaz ve "DOĞRULANMADI" işaretle).
+
+İKİ BAĞIMSIZ DENETÇİNİN BULDUĞU VE KAPATILMASI GEREKEN BOŞLUKLAR:
+ G1. P kümesi nicel tanımlanmalı: sabitler α,η,ε>0, c<1. y∈P ⇔ ilk R(y)=⌊c log2 y⌋ parite bitinde (i) her prefix uzunluğu ℓ ≥ α log2 y için her sabit w (|w|≤k+1) frekansı 2^{-|w|}±ε, (ii) η log2 y'den uzun 0-koşusu yok. *-density: Prop 2.4 + mod |w| sınıflara bölüp Hoeffding + O(log y) prefix üzerinde birleşim; Lemma 2.8 ile kabuk hatası → *-dense. Açık hesap.
+ G2. τ senkronizasyonu: U^τ X_m, T^m X_m'den sonraki ilk tek durum (T^m X_m tek olsa bile S_j>m koşulu nedeniyle bir sonraki tek durumu seçip seçmediğini kesin göster); gecikme ≤ η log2 y + O(1). η↓0 limiti ile o(m).
+ G3. log2 T^m X_m = (β+o(1))m olasılıkta — hangi Inselmann sonucundan (*-dense sürüm) alındığını yaz.
+ G4. (a) için: δ<cβ/2 seçimi; c↑1. Sınır δ=β/2 dahil değil.
+ G5. (b) için İNDEKS DÜZELTMESİ (denetçi bulgusu): P∩F^{-1}P∩F^{-2}P∩F^{-3}P, x'ten sayılınca bütçe SONRASI yalnız ÜÇ blok verir (kapasite (β+β²+β³)/2=0.9591 <1 — YETMEZ). Doğrusu F^{-1}(P∩F^{-1}P∩F^{-2}P∩F^{-3}P) (veya eşdeğeri): dört post-budget blok, kapasite (β+β²+β³+β⁴)/2=1.1563>1. F(z)=T^{⌊log2 z⌋}(z).
+ G6. (b) blok aralıkları: her blokta yalnız ilk c·log2 F^j bit kontrol ediliyor; kontrolsüz aralıklar toplam O((1−c)m) T-adımı. Bu aralıklarda a_i sayılarının katkısı: kaba üst sınır (aralıktaki tek-durum sayısı ≤ aralık uzunluğu) → N_k/L hatası O((1−c)/δ). c↑1 ile sıfıra. Ölçek takibi: log2 F^j(x)=(β^j+o(1))m (G3'ün iterasyonu; *-dense).
+ G7. *-dense → X_m üzerindeki olasılık: Lemma 2.8 ile her dyadik kabukta istisna oranı ≤ C 2^{-Dm}; tek sayılara kısıtlama (yoğunluk 1/2) sorun değil.
+
+ÇIKTI:
+ 1. Teorem ifadesi, notasyon.
+ 2. Lemma A (P *-dense, açık sabitlerle) + ispat.
+ 3. Lemma B (τ senkronizasyonu) + ispat.
+ 4. Lemma C (ölçek zarfı, Inselmann'dan alıntı) — kaynak ifadesiyle.
+ 5. (a)'nın ispatı.
+ 6. (b)'nin ispatı (düzeltilmiş dört blok, aralıklar).
+ 7. Sonuçta ne kadarının "yeni" olduğunu dürüstçe söyleyen bir not (Inselmann araçlarının corollary'si; yenilik, bütçe-sonrası valuation-kalıp frekansı ifadesinde).
+ Etiket: her lemma [PROOF] veya [PROOF-with-gap: …].
+
+Türkçe, formül serbest, gerekirse uzun. Son satır tam olarak:
+CP28_PBM_WRITEUP_20260923_COMPLETE

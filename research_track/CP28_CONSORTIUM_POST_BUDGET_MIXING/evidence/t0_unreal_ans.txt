@@ -1,0 +1,63 @@
+### Teori A — Durdurma zamanının koşullu tehlike yasası
+
+**Fikir:** Tek sayılar üzerindeki hızlandırılmış dönüşümü \(U(n)=(3n+1)/2^{v_2(3n+1)}\), ilk düşüş zamanını da \(\tau(n)=\min\{k\geq1:U^k(n)<n\}\) olarak tanımlayalım. \(n\in[X,2X]\) için \(\tau>j\) koşulu altında, bir sonraki adımda düşme olasılığının yalnızca \(j\)’ye değil, yörüngenin o ana kadarki *en düşük yüksekliğine* de bağlı olduğunu öne sürüyorum. Daha somut hipotez: \(j\asymp c\log X\) ölçeğinde, uygun biçimde ölçeklenmiş yükseklik ve kalan durdurma zamanı yaklaşık bir yenilenme yasası oluşturur. Bu, bağımsız geometrik \(v_2\) değerleri modelinden ölçülebilir biçimde farklı bir kuyruk öngörür.
+
+**Neden işe yarayabilir?** İlk birkaç adımın değerlemeleri basamak koşullarıyla açıklanır; asıl bilinmeyen, *uzun süre düşmemiş olmanın* sonraki adımları nasıl seçtiğidir. Bu seçilim için bir yasa bulunursa yoğunluk sonuçlarının ötesinde, olağanüstü uzun yörüngeler hakkında nicel bilgi verebilir.
+
+**İlk küçük adım:** \(n\in[2^{24},2^{25}]\) örnekleminde, aynı \(j\) ve yükseklik aralığı için koşullu düşüş oranlarını ölçüp bağımsız-değerleme modeliyle karşılaştırmak.
+
+**Kısmi başarı neye benzer?** \(j\) büyürken geçerli, koşullu durdurma zamanı kuyruğu için yeni ve nicel bir üst veya alt sınır.
+
+**Yenilik tahmini:** Koşullu *yenilenme yasası* biçiminde bir benzerini bilmiyorum; **BİLMİYORUM**.
+
+**Cesaret puanı:** 3/5.
+
+### Teori B — Ters Collatz ağacında 3-adik dallanma basıncı
+
+**Fikir:** Tek sayı \(y\)’nin tek ters çocukları, tam sayı olduklarında \(x=(2^a y-1)/3\) biçimindedir. Kökü 1 olan ters ağaçta, \(a\leq A\) kısıtıyla derinlik \(r\)’deki yollar için \(Z_{r,A}(s)=\sum_{\text{yollar}}\prod_{\text{kenarlar}}(3/2^a)^s\) ağırlığını inceleyelim; \(1\to1\) öz-ilmeğini dışarıda bırakalım. Hipotez, \(r\) arttıkça bu toplamın büyümesini belirleyen basıncın, dalları bağımsız sayan modelden farklı olduğudur: bir çocuk üretmek, sonraki üretkenlik hakkında \(3\)-adik bilgi taşır. Amaç, ağacın farklı büyüklük ölçeklerindeki büyümesini bu bilgiyle öngörmek.
+
+**Neden işe yarayabilir?** Ters yönde “kaç öncül var?” sorusu, ileri yöndeki tek bir yörüngenin davranışından farklı bir yapı açığa çıkarır. Üretken ve verimsiz dalların uzun vadeli oranı, yakınsayan başlangıç değerlerinin sayılması için yeni sınırlar sağlayabilir.
+
+**İlk küçük adım:** \(a\leq8\) ile ters ağacı 20 derinliğe kadar üretip çocukların \(3^h\) modülündeki durumlarına göre dallanma istatistiklerini karşılaştırmak.
+
+**Kısmi başarı neye benzer?** Sınırlı \(a\) için ters ağacın ağırlıklı büyüme üssüne, bağımsız-dallanma hesabından daha keskin ve kanıtlı bir sınır.
+
+**Yenilik tahmini:** Ters ağaçların incelenmesi yeni değil; önerilen basınç formülasyonunun özgünlüğü için **BİLMİYORUM**.
+
+**Cesaret puanı:** 4/5.
+
+### Teori C — Rekor yörüngelerde iki ayrı büyüme stratejisi
+
+**Fikir:** \(a_i=v_2(3U^i(n)+1)\) yazılırsa
+\[
+\log\frac{U^k(n)}n
+=k\log3-\Bigl(\sum_{i<k}a_i\Bigr)\log2
++\sum_{i<k}\log\!\left(1+\frac1{3U^i(n)}\right).
+\]
+\(J=\lfloor c\log X\rfloor\) için \(n\in[X,2X]\) yörüngelerinde \(M_J(n)=\max_{k\leq J}\log(U^k(n)/n)\) rekorunu ölçelim. Hipotezim, büyük \(M_J\) değerlerine götüren değerleme dizilerinin tek bir biçime yığılmadığıdır: bazı eşiklerde uzun süreli hafif yanlılık, bazılarında kısa ve şiddetli bir düşük-\(a_i\) atağı baskın gelir. Bu iki strateji arasında bir eşik geçişi varsa, rekor yörüngelerin dağılımında görünmelidir.
+
+**Neden işe yarayabilir?** Rekorların yalnızca yüksekliğini değil, *hangi yoldan* oluştuğunu açıklamak gerekir. Böyle bir geçiş, sıradan rastgele-yürüyüş benzetmesinin kaçırdığı aritmetik kısıtları görünür kılabilir.
+
+**İlk küçük adım:** Seçilen \(X\) ve \(J\) için en yüksek rekorları bulup kümülatif \(\sum_{i<k}a_i\) eğrilerini gruplayarak tek mi, iki mi baskın profil bulunduğunu ölçmek.
+
+**Kısmi başarı neye benzer?** Gerçek Collatz yörüngeleri için rekor olasılığına ilişkin, yalnızca bağımsız değerlemeleri varsaymayan yeni bir büyük-sapma sınırı.
+
+**Yenilik tahmini:** Rekor yörüngeler çalışılmıştır; iki stratejili geçiş hipotezinin literatürdeki durumunu **BİLMİYORUM**.
+
+**Cesaret puanı:** 4/5.
+
+### Teori D — Uzun yaşayan yörüngelerde ön ve son bitlerin kilitlenmesi
+
+**Fikir:** \(B_b(m)\), \(m\)’nin baştaki \(b\) ikili basamağı; \(V(m)=\min\{v_2(3m+1),v_{\max}\}\) olsun. \(n\in[X,2X]\) ve \(j=\lfloor c\log X\rfloor\) için, \(\tau(n)>j\) koşulu altında \(I(B_b(U^j n);V(U^j n)\mid\tau>j)\) karşılıklı bilgisini ölçmeyi öneriyorum. Cesur hipotez: uygun sabit \(b,c\) için bu miktar \(X\to\infty\) iken sıfıra gitmez. Yani uzun süre düşmemiş bir yörüngede büyüklüğü temsil eden ön basamaklarla sonraki bölme sayısını belirleyen son basamaklar istatistiksel olarak kilitlenir.
+
+**Neden işe yarayabilir?** Rastgele seçilmiş büyük sayılarda bu iki basamak ölçeğinin büyük ölçüde bağımsız olması beklenir; uzun ömür koşulunun yarattığı bağımlılık, seçkin yörüngelere özgü bir mekanizma olur. Bu mekanizma saptanırsa hem veri modellerini düzeltebilir hem de uzun süre hayatta kalan kümelerin boyutunu sınırlamaya yardım edebilir.
+
+**İlk küçük adım:** \(n\in[2^{22},2^{23}]\) için birkaç \(j\) değerinde karşılıklı bilgiyi hesaplamak; örneklem yanlılığını, büyüklük aralıkları içinde \(V\) etiketlerini karıştırarak denetlemek.
+
+**Kısmi başarı neye benzer?** Büyüyen \(j\) aralığında, uzun ömür koşulu altında ön–son basamak bağımlılığına ilişkin kanıtlı, sıfırdan farklı bir sınır veya güçlü bir üst sınır.
+
+**Yenilik tahmini:** Bu koşullu karşılıklı-bilgi sorusunun literatürdeki karşılığı için **BİLMİYORUM**.
+
+**Cesaret puanı:** 5/5.
+
+CP28_T0_UNREAL_20260923_COMPLETE

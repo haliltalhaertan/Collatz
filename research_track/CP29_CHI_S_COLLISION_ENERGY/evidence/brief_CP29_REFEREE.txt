@@ -1,0 +1,18 @@
+ROL: CP29_REFEREE (bağımsız hakem; önceki tartışmayı görmüyorsun)
+
+Aşağıdaki iddiaları ÇÜRÜTMEYE çalış. Her biri için karar ver: DOĞRU / HATALI (karşı-örnek ile) / BOŞLUK (eksik adımı göster). Kendi bağımsız kodunu yaz; başkasının kodunu ÇALIŞTIRMA, yalnız sonuçlarını karşılaştır.
+
+TANIM. A_1,A_2,... bağımsız, P(A=a)=2^{-a} (a≥1). Dağılımca X_0=0, X_s = 2^{-A}(1+3X_{s-1}) (mod 3^s), A taze. p_s(y)=P(X_s≡y mod 3^s). q_s=Σ_y p_s(y)^2 = P(X_s≡X'_s) (X' bağımsız kopya). χ_s=3^s q_s. E_s=χ_s−χ_{s−1}, χ_0=1.
+
+İDDİALAR
+ I1 (ilk ayrılma). r_s := P(X_s≡X'_s mod 3^s, A_1≠A'_1) (A_1: özyinelemede en dıştaki, taze A). O zaman q_s = q_{s−1}/3 + r_s ve E_s = 3^s r_s. Sonuç: aynı A-kelimesi katkısı her s'de tam 1; r_1=2/9, r_2=10/189.
+ I2 (korelasyon formülü). n=3^{s−1}, T=1+3X_{s−1} mod 3^s, C_s(j)=P(T'≡4^j T mod 3^s) (j mod n). O zaman E_s = n·Σ_{l∈Z, l≠0} 4^{−|l|}·C_s(l mod n). (Gerekçe: K=A'−A, P(K=k)=2^{−|k|}/3; T,T'≡1 mod 3 olduğundan yalnız çift K mümkün.)
+ I3 (lif-kare). q_s(r,t)=P(X_s ≡ r + t·3^{s−1}) (r mod 3^{s−1}, t∈{0,1,2}). O zaman E_s = 3^s Σ_{r,t}(q_s(r,t) − p_{s−1}(r)/3)^2, dolayısıyla 0 ≤ E_s ≤ 2χ_{s−1}.
+ I4 (Markov değil). 3-adik değerleme v_3(X−X') tek başına kapalı bir Markov durumu değildir. İddia edilen karşı-örnek: (x,y)=(1,2) ve (2,4) çiftlerinin ikisinde de v_3(x−y)=0. Taze A,A' ile u=2^{−A}(1+3x), u'=2^{−A'}(1+3y) için P(27 | u−u') sırasıyla 16400/786429 ve 1280/786429. Hangi modülde, hangi tanımla? Yeniden üret ya da çürüt.
+ I5 (sayısal). E_s değerleri: s=1..8: 0.666666667, 0.476190476, 0.461574680, 0.464214408, 0.465514920, 0.466168761, 0.465491430, 0.465921120; s=16: χ=8.684947712648, E=0.471351643393; s=17: χ=9.156767868074, E=0.471820155426; s=18: χ=9.629001325254, E=0.472233457180. 3^s·max_y p_s(y): s=16 960.34, s=18 2160.91.
+   s≤10'u yüksek hassasiyetle (Fraction veya mpmath 50+ basamak) hesapla. s=17 ve 18'i bağımsız ve bellek-dostu bir yöntemle yeniden hesapla. Önce `free -g` ile belleği kontrol et; 18 sığmıyorsa yalnız 17'yi yap. Farkları raporla.
+ I6 (mantık). "χ_s = 1+Σ E_j; sup E_j<∞ ⇒ χ_s=O(s); lim E_s=∞ ⇒ χ_s/s→∞; yalnız sup E_s=∞ ise χ_s=O(s) çürümez." Doğru mu?
+
+KURALLAR: Kaynak gerekiyorsa Tao arXiv:1909.03562'yi birincil metinden aç (Syrac tanımı (1.22), Remark 1.13; Lemma 6.2; Prop 1.17). Uydurma atıf yasak. Sade Türkçe yaz; her iddiaya bir satırlık karar ve gerekçe ver.
+ÇIKTI: cwd'ye kod + cp29_referee.json + final cevap. Son satır tam olarak:
+CP29_REFEREE_20260923_COMPLETE

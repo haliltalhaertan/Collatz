@@ -1,0 +1,30 @@
+
+ROLE MARKER: NOVELTY_SCAN_E6_CP21_24_20260923
+
+Sen bir Collatz araştırma programının BAĞIMSIZ yenilik denetçisisin. Görev: aşağıdaki kapsamdaki HER önemli sonucu (teorem, lemma, exact hesap, çürütme/karşıörnek, yöntem) tek tek çıkar ve her biri için "YENİ mi, ZATEN BİLİNİYOR mu, AŞILMIŞ mı" kararını LİTERATÜR KANITIYLA ver.
+
+KURALLAR
+- Dosyalar SALT-OKUNUR (/mnt/c altında). Hiçbir dosyayı değiştirme; çalışma dizinine (cwd) yaz.
+- Collatz çözülmedi. Programın hiçbir sonucu Collatz ispatı değil.
+- Literatür araması: internet erişimin var (curl). Kullan: arXiv API (http://export.arxiv.org/api/query?search_query=...), OpenAlex (https://api.openalex.org/works?search=...), Crossref (https://api.crossref.org/works?query=...), Semantic Scholar (https://api.semanticscholar.org/graph/v1/paper/search?query=...&fields=title,year,authors,externalIds,abstract), Zenodo (https://zenodo.org/api/records?q=...). Lagarias'ın açıklamalı bibliyografyaları: arXiv math/0309224 (1963–1999) ve math/0608208 (2000–2009). Tao 2019 arXiv:1909.03562. Inselmann arXiv:2402.03276.
+- ÖNEMLİ SÜREÇ DERSİ: önceki taramalar YÖNTEM kelimeleriyle yapıldı (pressure, Chernoff, discrepancy, factor complexity) ve bir 1999 teoremini kaçırdı. Her sonuç için NESNE kelimeleriyle de ara: ör. "Banach density", "sparsity", "reciprocal sum", "windowed count", "stopping time distribution", "parity vector", "cycle length bound", "2^m-3^k", "local minima cycle", "inverse tree density", "3x-1 cycles", "affine offset", "residue class", "Terras", "Everett", "Garcia Tal", "Krasikov Lagarias", "Hercher", "Simons de Weger", "Eliahou", "Steiner". En az 3 farklı sorgu/sonuç.
+- Kaynak bulduğunda BİRİNCİL kaynağı aç (özet/abstract veya PDF) ve ilgili ifadeyi kısa alıntıla. Açamadıysan "DOĞRULANMADI" yaz. Uydurma atıf = en ağır hata.
+- Etiketler (tam olarak birini seç):
+  KNOWN — aynı ya da daha güçlü ifade yayımlanmış (kaynak + ifade).
+  SUPERSEDED — sonradan/önceden yayımlanmış daha güçlü sonuç kapsıyor (kaynak).
+  PARTIAL — yakın/özel hali biliniyor, programın katkısı dar (farkı yaz).
+  STANDARD — ders kitabı/folklor (bijeksiyon, basit sayım vb.), özel kaynak gerekmez.
+  NEW-CANDIDATE — makul aramada eşdeğeri bulunamadı (hangi sorguları yaptığını yaz). Bu "yeni" demek değil, "bulamadık" demek.
+  INTERNAL — yalnız programın iç aracı/negatif sonucu (ölü yol, sayısal tablo); literatür karşılaştırması anlamsız.
+  FLAWED — programın kendi dosyalarında veya senin kontrolünde sonucun hatalı olduğu görülüyor.
+- Programın kendi etiketini (PROOF/EXACT/CONJECTURE/FAIL...) ayrıca kaydet; iddia gücü ile senin değerlendirmen farklıysa belirt.
+
+ÇIKTI (cwd'ye):
+ 1. ledger_E6_CP21_24.json — liste; her öğe: {"id","checkpoint","claim"(tek cümle, nicel),"program_label","source_file"(tam yol),"verdict","references":[{"cite","url","quote","opened":true/false}],"queries":[...],"note"}
+ 2. REPORT_E6_CP21_24.md — Türkçe, sade: (a) sayım tablosu (verdict başına adet), (b) NEW-CANDIDATE listesi (en güçlüden zayıfa), (c) KNOWN/SUPERSEDED listesi ve neyin kapsadığı, (d) programın kendi belgelerinde yanlış "yeni" iddiası veya overclaim, (e) kapsam: okuduğun/okuyamadığın dosyalar.
+Final cevabın REPORT_E6_CP21_24.md'nin tam içeriği olsun ve son satırı tam olarak:
+NOVELTY_SCAN_E6_CP21_24_20260923_COMPLETE
+
+KAPSAM: CP21–CP24 (kaynak monotonluğu, maks-girdi tavanı T2/T4/T6/T7, B_w afin ofset denkliği, yarıçap-2 charging, CP23 zincir kırılması: 3n+1 ve 3n−1 aynı enerji tablosu / işaret körlüğü, A3+A4 sayma teoremi, CP24 düzeltme).
+ Birincil: /mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914, 04-cp22-adversarial-brainstorm-20260914, 05-cp23-chain-kill-20260914, 06-cp24-recovery-20260914; ayrıca /mnt/c/Users/MDP/collatz-analysis/cp21-bridge.log, cp21-audit.log, cp21-prove.log, /mnt/c/Users/MDP/collatz-analysis/CP21_LITERATURE_SWEEP.md, /mnt/c/Users/MDP/collatz-analysis/r8-*.log, /mnt/c/Users/MDP/collatz-analysis/induction/REPORT.md.
+ Özellikle: "e_w = e_w' ⇔ B_w ≡ B_w' (mod 3^k)", "B_w asla 0 mod 3", "1 ≤ e_w ≤ 3^k−1", "H_{3n−1}(−x) = −H_{3n+1}(x)" türü özdeşlikler — Böhm–Sontacchi 1978, Lagarias 1985 "The 3x+1 problem and its generalizations", Wirsching 1998 kitabı, Rozier, Simons ile karşılaştır.

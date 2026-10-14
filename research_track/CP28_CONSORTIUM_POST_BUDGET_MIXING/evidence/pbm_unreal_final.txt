@@ -1,0 +1,79 @@
+**Hüküm:** PBM’nin belirtilen sabit-\(k\) sıklık sonucu için bu kaynaklarda bir ispat bulmadım. Buna karşılık, aynı post-bütçe aralığında **ortalama valuation’ın 2’ye yakınsadığı** daha zayıf bir sonuç, Inselmann’ın 2024 teoreminden çıkarılabiliyor. İki sonucu birbirine karıştırmamak önemli: blok toplamının doğru olması, \(a_i=k\) sıklıklarının doğru olmasını gerektirmez.
+
+### 1. PBM için ispat iskeleti ve eksik köprü
+
+\(Y=U^\tau X_m\) yazalım. Bir valuation kelimesi sabitlendiğinde
+\[
+U^\tau x=\frac{3^\tau x+C_\tau}{2^{S_\tau}},
+\qquad
+C_\tau=\sum_{\ell=0}^{\tau-1}3^{\tau-1-\ell}2^{S_\ell}.
+\]
+Kelimeyi veren silindir içinde \(x\)’in değişebilen kısmı tükenmiştir; \(S_\tau>m\) olduğundan **o silindirin içinde bağımsız «yeni bitler» yoktur**. Önerilen rastgelelik, farklı silindirler ve başlangıç sayıları arasında \(3^\tau x+C_\tau\)’nun bölme sonrasındaki taşıma yapısının dağılmasından gelmek zorundadır. Bunu «\(3^\tau\) ile çarpma bit üretiyor» diye varsaymak, ispatlanması gereken şeyi varsaymak olur.
+
+İzlenecek yol:
+
+1. Terras sayımıyla \(\tau/m\to 1/2\) ve geçiş anındaki tipik büyüklük belirlenir. Kabaca
+   \[
+   \log _2Y=\bigl(\tfrac12\log _2 3+o(1)\bigr)m
+   = (0.79248\ldots+o(1))m.
+   \]
+2. **Yeni köprü lemması** olarak, durma zamanı seçiminin ve \(C_\tau\) ile \(x\) arasındaki bağımlılığın hesaba katıldığı bir \(2\)-adik dağılım veya doğrudan korelasyon tahmini kanıtlanır. Örneğin kısa bloklar için \(Y\)’nin ilgili \(2^r\) modülündeki dağılımını kontrol etmek yeterli bir başlangıç olabilir; fakat \(\tau\)’daki *tam valuation geçmişine koşullandırılmış* Haar dağılımı istenemez: o geçmiş ve \(x\) verildiğinde \(Y\) deterministiktir.
+3. Kısa blok tahminleri, \(\tau\le i<\tau+\delta m\) boyunca **güncellenen** dağılımlarla veya
+   \[
+   \operatorname{Var}\!\left(\frac1L\sum_{i=\tau}^{\tau+L-1}{\bf1}_{a_i=k}\right)\longrightarrow0
+   \]
+   verecek tek- ve iki-zaman tahminleriyle birleştirilir. Başlangıçtaki tek bir karışma tahmini bütün aralığa otomatik taşınmaz.
+
+Tao’nun *Almost all orbits of the Collatz map attain almost bounded values* (arXiv:1909.03562) makalesinde **Önerme 1.9**, başlangıç sayısı yeterince uniform \(2\)-adik kalıntılara sahipse kısa valuation kelimesinin geometrik yasaya yakınlığını verir. Dolayısıyla köprü lemması sağlanırsa uygulanabilecek önerme budur. **Önerme 1.17** ise iid geometrik valuation’lardan kurulan Syracuse offset’inin \(3^n\) modülündeki karakteristik fonksiyonunun sönümüdür; **Önerme 1.14** bunun ince-ölçekli \(3\)-adik karışma biçimidir. Bunlar ilk-geçiş analizinde işe yarar, fakat \(U^\tau X_m\)’nin ihtiyaç duyulan **\(2\)-adik** kalıntılarını doğrudan uniformlaştırmaz. \(3\)-adikten bu durma-zamanlı \(2\)-adik iddiaya geçiş, burada **DOĞRULANMADI**.
+
+**En zor ve kırılmaya en açık adım budur.** Ayrıca tüm \(L\)-kelimesinin iid geometrik yasaya TV yakınlığını hedeflememek gerekir: \(\delta>1/2\) için tipik iid kelimenin yaklaşık \(2L>m\) bit entropisi vardır, oysa \(X_m\) yalnızca yaklaşık \(m\) rastgele bit taşır. PBM’nin istediği ampirik sıklık bundan çok daha zayıftır.
+
+### 2. Yükseklik, `skip` ve hız
+
+Tanımdaki yükseklik
+\[
+h=\log _2(Y/X_m)\simeq \tau\log _2 3-S_\tau
+\simeq-0.20752\,m
+\]
+olduğundan **yüksek \(h\)** gerçekten daha büyük \(Y\), dolayısıyla daha fazla kullanılabilir büyüklük/bit demektir. Başlangıçta tipik bit uzunluğu \(0.79248m\)’dir.
+
+Yalnızca **koşullu bir oyuncak hesap** yapılabilir: \(Y\)’nin, uzunluğu yaklaşık \(2^{\beta m}\) olan bir aralıkta yeterince düzgün dağıldığını ve \(L=m/4\) adımlık kelime için yaklaşık \(r=2L=m/2\) düşük bit gerektiğini varsayarsak, basit kalıntı-sayma hatası
+\[
+2^{r-\beta m}=2^{-(0.79248-0.5)m}
+=2^{-0.29248m}
+\]
+ölçeğindedir. Bu, bildirilen \(0.24\)–\(0.35\) eğimlerinin arasındadır; **bir türetilmiş PBM hızı değildir**, çünkü varsayılan düzgün dağılım tam da eksik köprüdür. Blok *toplamı* tam kelimeden daha az bilgi istediği için aynı üs onun için zorunlu da değildir.
+
+Sabit sayıda `skip` sonrasında tipik yükseklik her adımda yaklaşık \(\log _2(4/3)=0.415\) bit azalır. Bu modelde mutlak hata \(s\) skip ile yaklaşık \((4/3)^s\) katına çıkabilir; \(s=3\) için yaklaşık \(2.37\). Böylece artan göreli bağımlılığın **yönü makuldür**. Ancak sabit `skip`, asimptotik \(m\)-üssünü değiştirmez. Çeyrekler arasındaki tipik yükseklik farkı da \(O(\sqrt m)\) mertebesindedir, \(O(m)\) değil. Bu nedenle ölçülen iki ayrı eğimi yalnızca «daha çok bit» açıklamasıyla doğrulanmış saymam; permütasyon-null oranları bir mekanizma ispatı veya tek başına anlamlılık testi değildir.
+
+### 3. Hemen elde edilen en zayıf gerçek post-bütçe sonuç
+
+**[PROOF]** Her sabit \(0<\delta<1\) için
+\[
+\frac1{\lfloor\delta m\rfloor}
+\sum_{i=\tau}^{\tau+\lfloor\delta m\rfloor-1}a_i
+\ \xrightarrow{\mathbb P}\ 2.
+\]
+Bu, sabit \(k\) sıklığına ilişkin PBM değildir; ama aynı \(\tau\)-sonrası doğrusal uzunluklu aralık hakkında Terras’ın bit bütçesinin ötesinde bir ifadedir.
+
+Gerekçe: Inselmann’ın arXiv:2402.03276 **Teorem 1.10**’u, doğal yoğunluk 1 anlamında, Syracuse yörüngesinin yüksekliğini
+\(\log _2U^j x=\log _2x+j\log _2(3/4)+o(m)\) biçiminde, ilgili zamanlarda uniform olarak kontrol eder. Terras sayımı \(\tau=(1/2+o_{\mathbb P}(1))m\) verir. \(\tau+\delta m<1.5m\) iken yükseklik hâlâ \(m\)’nin pozitif bir katıdır. Son olarak
+\[
+\log _2\frac{U^{j+1}x}{U^jx}
+=\log _2 3-a_j+
+ \log _2\!\left(1+\frac1{3U^jx}\right)
+\]
+eşitliği aralıkta toplanır; düzeltme ihmal edilebilir ve iki uçtaki yükseklik farkı \(L\log _2(3/4)+o(m)\)’dir. Sonuç \(2L+o(m)\) olur. Teoremin doğal yoğunluk-1 istisna kümesi, \([2^m,2^{m+1})\)’de uniform örnekleme için de ihmal edilebilirdir.
+
+**[SANI]** Sabit bir \(k\), özellikle \(k=1\), için istenen sıklığı 1–2 haftada kanıtlanabilir diye vaat edemem: bu, yukarıdaki ortalama sonucunun kapatmadığı mikro-dağılım boşluğudur. \(L=O(1)\) için örnek ampirik sıklığın sabit \(2^{-k}\)’ye *olasılıkta yakınsaması* ise iid modelde bile genel olarak yanlıştır; o varyant uygun bir zayıflatma değildir.
+
+### 4. Literatür sınırı
+
+- **Tao (2019), arXiv:1909.03562:** Yukarıdaki 1.9, 1.14, 1.17 numaralı önermeler ve ilk-geçiş stabilizasyonu (Önerme 1.11) doğrulandı. Bunları PBM ispatı olarak okumuyorum.
+- **Inselmann (2024), arXiv:2402.03276:** Teorem 1.10’dan yukarıdaki *ortalama-valuation* sonucu çıkar; makalenin yükseklik yaklaşımı sabit-\(k\) PBM’yi tek başına vermez.
+- **Lagarias–Soundararajan**, “Benford’s law for the \(3x+1\) function”, *J. London Math. Soc.* **74** (2006), 289–303: başlık ve bibliyografik bilgi doğrulandı. Benford türü büyüklük/mantissa dağılımı, buradaki durma-zamanlı \(2\)-adik valuation sıklığıyla aynı önerme değildir.
+- **Kontorovich–Lagarias**, “Stochastic Models for the \(3x+1\) and \(5x+1\) Problems”, arXiv:0910.1944: yörüngeler için stokastik modeller ve sezgisel öngörüler sunar; deterministik PBM teoremi olarak gösterilemez.
+
+Dolayısıyla taranan bu eserlerde **PBM’nin eşdeğer biçimde zaten kanıtlandığını doğrulayamadım**. En somut araştırma hedefi, Tao 1.9’un önkoşulunu durma-zamanı görüntüsü için sağlayacak yeni \(2\)-adik köprü; en önemli ihtiyat ise blok-toplam başarısını sabit-\(k\) karışması sanmamaktır.
+
+CP28_PBM_PROOF_20260923_COMPLETE

@@ -1,0 +1,1 @@
+{"model":"jev-1.13.0","answers":{"c1_stronger_than_positivity":{"type":"noul","noul":0.7},"c1_would_bridge_to_integrality":{"type":"noul","noul":0.79},"c1_currently_proved":{"type":"noul","noul":0.03},"single_counterexample_kills_c1":{"type":"noul","noul":0.96}},"usage":{"input_tokens":856,"output_tokens":99}}

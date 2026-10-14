@@ -1,0 +1,14 @@
+Source URL: https://arxiv.org/abs/1506.07622v8
+PDF URL: https://arxiv.org/pdf/1506.07622v8
+Title: A Dual-Radix Modular Division Algorithm for Computing Periodic Orbits within Syracuse Dynamical Systems
+Author: Andrey Rukhin
+Accessed: 2026-09-21
+
+Evidence excerpt from the immutable v8 PDF:
+
+"This division algorithm yields two novel methods for testing the integrality of the Bohm-Sontacchi numbers."
+
+"Theorem 4.9 yields a method (the prefix test) for deciding the integrality of the rational expression."
+
+Scope note:
+This establishes directly relevant prior art for modular/prefix integrality tests. It does not, from the inspected statements, establish the CP25 Product Barrier inequality. Therefore no novelty claim is made for that inequality.

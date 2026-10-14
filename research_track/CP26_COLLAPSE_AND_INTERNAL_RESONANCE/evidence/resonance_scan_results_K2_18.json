@@ -1,0 +1,1116 @@
+{
+  "config": {
+    "min_K": 2,
+    "max_K": 18,
+    "seconds_per_K_limit": 600,
+    "integrality_filter_used": false,
+    "enumeration": "FKM primitive lex-min necklaces with fixed sum",
+    "quantile_method": "sorted nearest rank at floor((n-1)*p)",
+    "crossing_interval": "S at entrance below 1 : S at first exit to >=1, or K",
+    "completed_through_K": 18
+  },
+  "per_K": {
+    "2": {
+      "b-1": {
+        "candidates": 1,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 3,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 1,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 1
+        },
+        "S_intervals": {
+          "2:2": 1
+        },
+        "S_over_K_quantiles": {
+          "min": 1.0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 1.0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.4375,
+          "q25": 0.4375,
+          "median": 0.4375,
+          "q75": 0.4375,
+          "max": 0.4375
+        },
+        "full_cycle_crossing_fraction": 1.0,
+        "M": 4,
+        "complete": true
+      },
+      "seconds": 0.000195615
+    },
+    "3": {
+      "b-1": {
+        "candidates": 1,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 4,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 2,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 2
+        },
+        "S_intervals": {
+          "3:3": 2
+        },
+        "S_over_K_quantiles": {
+          "min": 1.0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 1.0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.15625,
+          "q25": 0.15625,
+          "median": 0.15625,
+          "q75": 0.15625,
+          "max": 0.15625
+        },
+        "full_cycle_crossing_fraction": 1.0,
+        "M": 5,
+        "complete": true
+      },
+      "seconds": 0.000301424
+    },
+    "4": {
+      "b-1": {
+        "candidates": 2,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 6,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 5,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 5
+        },
+        "S_intervals": {
+          "3:4": 2,
+          "4:4": 3
+        },
+        "S_over_K_quantiles": {
+          "min": 0.75,
+          "q25": 0.75,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.5,
+          "q25": 0.6666666666666666,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.31355337078651685,
+          "q25": 0.3344678217821782,
+          "median": 0.3671875,
+          "q75": 0.3671875,
+          "max": 0.3671875
+        },
+        "full_cycle_crossing_fraction": 0.6,
+        "M": 7,
+        "complete": true
+      },
+      "seconds": 0.000464836
+    },
+    "5": {
+      "b-1": {
+        "candidates": 3,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 7,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 7,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 7
+        },
+        "S_intervals": {
+          "5:5": 7
+        },
+        "S_over_K_quantiles": {
+          "min": 1.0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 1.0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.05078125,
+          "q25": 0.05078125,
+          "median": 0.05078125,
+          "q75": 0.05078125,
+          "max": 0.05078125
+        },
+        "full_cycle_crossing_fraction": 1.0,
+        "M": 8,
+        "complete": true
+      },
+      "seconds": 0.001325503
+    },
+    "6": {
+      "b-1": {
+        "candidates": 9,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 9,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 20,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 20
+        },
+        "S_intervals": {
+          "3:6": 1,
+          "5:6": 7,
+          "6:6": 12
+        },
+        "S_over_K_quantiles": {
+          "min": 0.5,
+          "q25": 0.8333333333333334,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.5,
+          "q25": 0.6666666666666666,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.17252339300244102,
+          "q25": 0.2880859375,
+          "median": 0.2880859375,
+          "q75": 0.2880859375,
+          "max": 0.3030483563478978
+        },
+        "full_cycle_crossing_fraction": 0.6,
+        "M": 10,
+        "complete": true
+      },
+      "seconds": 0.002338882
+    },
+    "7": {
+      "b-1": {
+        "candidates": 30,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 11,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 66,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 64,
+          "2": 2
+        },
+        "S_intervals": {
+          "3:6": 2,
+          "3:7": 8,
+          "5:7": 14,
+          "6:7": 12,
+          "7:7": 32
+        },
+        "S_over_K_quantiles": {
+          "min": 0.42857142857142855,
+          "q25": 0.7142857142857143,
+          "median": 0.8571428571428571,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.25,
+          "q25": 0.6,
+          "median": 0.75,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.2375746698805282,
+          "q25": 0.4383017648381295,
+          "median": 0.466064453125,
+          "q75": 0.466064453125,
+          "max": 0.5730650370392677
+        },
+        "full_cycle_crossing_fraction": 0.45454545454545453,
+        "M": 12,
+        "complete": true
+      },
+      "seconds": 0.007101451
+    },
+    "8": {
+      "b-1": {
+        "candidates": 40,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 12,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 99,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 92,
+          "2": 7
+        },
+        "S_intervals": {
+          "5:7": 7,
+          "5:8": 7,
+          "8:8": 92
+        },
+        "S_over_K_quantiles": {
+          "min": 0.625,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.3333333333333333,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.11603804758308157,
+          "q25": 0.1990966796875,
+          "median": 0.1990966796875,
+          "q75": 0.1990966796875,
+          "max": 0.1990966796875
+        },
+        "full_cycle_crossing_fraction": 0.8585858585858586,
+        "M": 13,
+        "complete": true
+      },
+      "seconds": 0.010508917
+    },
+    "9": {
+      "b-1": {
+        "candidates": 143,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 14,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 333,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 283,
+          "2": 50
+        },
+        "S_intervals": {
+          "3:6": 10,
+          "3:7": 13,
+          "3:8": 6,
+          "3:9": 10,
+          "5:7": 14,
+          "5:8": 7,
+          "5:9": 15,
+          "8:9": 101,
+          "9:9": 207
+        },
+        "S_over_K_quantiles": {
+          "min": 0.3333333333333333,
+          "q25": 0.8888888888888888,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.2,
+          "q25": 0.6666666666666666,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.15665326645831232,
+          "q25": 0.38697809496745467,
+          "median": 0.399322509765625,
+          "q75": 0.399322509765625,
+          "max": 0.44201216301012275
+        },
+        "full_cycle_crossing_fraction": 0.5195195195195195,
+        "M": 15,
+        "complete": true
+      },
+      "seconds": 0.038128162
+    },
+    "10": {
+      "b-1": {
+        "candidates": 200,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 15,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 497,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 482,
+          "2": 15
+        },
+        "S_intervals": {
+          "5:7": 1,
+          "5:8": 6,
+          "5:9": 8,
+          "5:10": 6,
+          "10:10": 491
+        },
+        "S_over_K_quantiles": {
+          "min": 0.5,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.4,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.05114696042767022,
+          "q25": 0.0989837646484375,
+          "median": 0.0989837646484375,
+          "q75": 0.0989837646484375,
+          "max": 0.0989837646484375
+        },
+        "full_cycle_crossing_fraction": 0.9577464788732394,
+        "M": 16,
+        "complete": true
+      },
+      "seconds": 0.062212534
+    },
+    "11": {
+      "b-1": {
+        "candidates": 728,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 17,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 1768,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 1625,
+          "2": 143
+        },
+        "S_intervals": {
+          "3:7": 1,
+          "3:8": 2,
+          "3:9": 4,
+          "3:10": 3,
+          "3:11": 1,
+          "5:7": 49,
+          "5:8": 35,
+          "5:9": 35,
+          "5:10": 14,
+          "5:11": 28,
+          "8:11": 173,
+          "10:11": 518,
+          "11:11": 1048
+        },
+        "S_over_K_quantiles": {
+          "min": 0.2727272727272727,
+          "q25": 0.9090909090909091,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.2,
+          "q25": 0.8,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.13977371026124727,
+          "q25": 0.3242378234863281,
+          "median": 0.3242378234863281,
+          "q75": 0.3284698492368397,
+          "max": 0.37697780732630265
+        },
+        "full_cycle_crossing_fraction": 0.543552036199095,
+        "M": 18,
+        "complete": true
+      },
+      "seconds": 0.234533323
+    },
+    "12": {
+      "b-1": {
+        "candidates": 2652,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 19,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 6288,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 5081,
+          "2": 1190,
+          "3": 17
+        },
+        "S_intervals": {
+          "3:6": 133,
+          "3:7": 172,
+          "3:8": 112,
+          "3:9": 103,
+          "3:10": 50,
+          "3:11": 30,
+          "3:12": 63,
+          "5:7": 134,
+          "5:8": 98,
+          "5:9": 123,
+          "5:10": 68,
+          "5:11": 47,
+          "5:12": 89,
+          "6:9": 14,
+          "6:10": 19,
+          "6:11": 19,
+          "6:12": 24,
+          "8:11": 102,
+          "8:12": 411,
+          "9:12": 1,
+          "10:12": 1164,
+          "11:12": 1165,
+          "12:12": 3371
+        },
+        "S_over_K_quantiles": {
+          "min": 0.25,
+          "q25": 0.6666666666666666,
+          "median": 0.9166666666666666,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.14285714285714285,
+          "q25": 0.6,
+          "median": 0.8333333333333334,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.156576361270708,
+          "q25": 0.4444808560781607,
+          "median": 0.4931783676147461,
+          "q75": 0.4964272904201059,
+          "max": 0.704417367708311
+        },
+        "full_cycle_crossing_fraction": 0.4217557251908397,
+        "M": 20,
+        "complete": true
+      },
+      "seconds": 0.922579637
+    },
+    "13": {
+      "b-1": {
+        "candidates": 3876,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 20,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 9690,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 8535,
+          "2": 1113,
+          "3": 42
+        },
+        "S_intervals": {
+          "5:7": 161,
+          "5:8": 161,
+          "5:9": 161,
+          "5:10": 98,
+          "5:11": 63,
+          "5:12": 35,
+          "5:13": 14,
+          "10:12": 518,
+          "10:13": 518,
+          "13:13": 9158
+        },
+        "S_over_K_quantiles": {
+          "min": 0.38461538461538464,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.16666666666666666,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.08131673945214159,
+          "q25": 0.23976755142211914,
+          "median": 0.23976755142211914,
+          "q75": 0.23976755142211914,
+          "max": 0.23976755142211914
+        },
+        "full_cycle_crossing_fraction": 0.8302373581011352,
+        "M": 21,
+        "complete": true
+      },
+      "seconds": 1.327143989
+    },
+    "14": {
+      "b-1": {
+        "candidates": 14520,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 22,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 35530,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 28239,
+          "2": 7015,
+          "3": 276
+        },
+        "S_intervals": {
+          "3:6": 367,
+          "3:7": 454,
+          "3:8": 427,
+          "3:9": 355,
+          "3:10": 235,
+          "3:11": 143,
+          "3:12": 74,
+          "3:13": 29,
+          "3:14": 20,
+          "5:7": 692,
+          "5:8": 529,
+          "5:9": 524,
+          "5:10": 312,
+          "5:11": 231,
+          "5:12": 162,
+          "5:13": 58,
+          "5:14": 106,
+          "8:11": 461,
+          "8:12": 645,
+          "8:13": 283,
+          "8:14": 696,
+          "10:12": 1049,
+          "10:13": 537,
+          "10:14": 1610,
+          "11:14": 543,
+          "13:14": 10131,
+          "14:14": 22424
+        },
+        "S_over_K_quantiles": {
+          "min": 0.21428571428571427,
+          "q25": 0.7142857142857143,
+          "median": 0.9285714285714286,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.14285714285714285,
+          "q25": 0.7142857142857143,
+          "median": 0.875,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.15191871497100579,
+          "q25": 0.4084647285060332,
+          "median": 0.42982566356658936,
+          "q75": 0.42982566356658936,
+          "max": 0.5055349654565384
+        },
+        "full_cycle_crossing_fraction": 0.4963974106388967,
+        "M": 23,
+        "complete": true
+      },
+      "seconds": 5.791301399
+    },
+    "15": {
+      "b-1": {
+        "candidates": 21318,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 23,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 54477,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 51202,
+          "2": 3205,
+          "3": 70
+        },
+        "S_intervals": {
+          "5:7": 572,
+          "5:8": 649,
+          "5:9": 676,
+          "5:10": 515,
+          "5:11": 366,
+          "5:12": 210,
+          "5:13": 99,
+          "5:14": 41,
+          "5:15": 13,
+          "10:12": 5,
+          "10:13": 61,
+          "10:14": 151,
+          "10:15": 185,
+          "15:15": 54279
+        },
+        "S_over_K_quantiles": {
+          "min": 0.3333333333333333,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.14285714285714285,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.05080824419433692,
+          "q25": 0.14473849534988403,
+          "median": 0.14473849534988403,
+          "q75": 0.14473849534988403,
+          "max": 0.14473849534988403
+        },
+        "full_cycle_crossing_fraction": 0.9367806597279585,
+        "M": 24,
+        "complete": true
+      },
+      "seconds": 9.233886446
+    },
+    "16": {
+      "b-1": {
+        "candidates": 81719,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 25,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 204248,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 176835,
+          "2": 26023,
+          "3": 1390
+        },
+        "S_intervals": {
+          "3:6": 60,
+          "3:7": 136,
+          "3:8": 212,
+          "3:9": 266,
+          "3:10": 268,
+          "3:11": 229,
+          "3:12": 165,
+          "3:13": 95,
+          "3:14": 45,
+          "3:15": 14,
+          "3:16": 4,
+          "5:7": 3278,
+          "5:8": 2639,
+          "5:9": 2639,
+          "5:10": 1785,
+          "5:11": 1380,
+          "5:12": 925,
+          "5:13": 494,
+          "5:14": 266,
+          "5:15": 84,
+          "5:16": 95,
+          "8:11": 779,
+          "8:12": 1053,
+          "8:13": 990,
+          "8:14": 800,
+          "8:15": 359,
+          "8:16": 300,
+          "10:12": 3626,
+          "10:13": 2590,
+          "10:14": 2590,
+          "10:15": 1036,
+          "10:16": 2072,
+          "13:16": 16920,
+          "15:16": 58608,
+          "16:16": 126249
+        },
+        "S_over_K_quantiles": {
+          "min": 0.1875,
+          "q25": 0.9375,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.125,
+          "q25": 0.8333333333333334,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.10671601336329897,
+          "q25": 0.358553871512413,
+          "median": 0.358553871512413,
+          "q75": 0.358553871512413,
+          "max": 0.43351656731001054
+        },
+        "full_cycle_crossing_fraction": 0.5334201558889193,
+        "M": 26,
+        "complete": true
+      },
+      "seconds": 42.771191707
+    },
+    "17": {
+      "b-1": {
+        "candidates": 120175,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 26,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 312455,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 312455
+        },
+        "S_intervals": {
+          "17:17": 312455
+        },
+        "S_over_K_quantiles": {
+          "min": 1.0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 1.0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.03783080726861954,
+          "q25": 0.03783080726861954,
+          "median": 0.03783080726861954,
+          "q75": 0.03783080726861954,
+          "max": 0.03783080726861954
+        },
+        "full_cycle_crossing_fraction": 1.0,
+        "M": 27,
+        "complete": true
+      },
+      "seconds": 59.759827368
+    },
+    "18": {
+      "b-1": {
+        "candidates": 468611,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0,
+        "M": 28,
+        "complete": true
+      },
+      "b+1": {
+        "candidates": 1193010,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "first_crossing_missing": 0,
+        "crossings_histogram": {
+          "1": 1080016,
+          "2": 109004,
+          "3": 3990
+        },
+        "S_intervals": {
+          "5:7": 13762,
+          "5:8": 13762,
+          "5:9": 13762,
+          "5:10": 9737,
+          "5:11": 7098,
+          "5:12": 4620,
+          "5:13": 2674,
+          "5:14": 1421,
+          "5:15": 623,
+          "5:16": 252,
+          "5:17": 63,
+          "5:18": 56,
+          "10:12": 11914,
+          "10:13": 11914,
+          "10:14": 11914,
+          "10:15": 7252,
+          "10:16": 4662,
+          "10:17": 1554,
+          "10:18": 2072,
+          "15:18": 115016,
+          "17:18": 346237,
+          "18:18": 729629
+        },
+        "S_over_K_quantiles": {
+          "min": 0.2777777777777778,
+          "q25": 0.9444444444444444,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "t_over_q_quantiles": {
+          "min": 0.1111111111111111,
+          "q25": 0.8571428571428571,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1.0
+        },
+        "C_over_n0_quantiles": {
+          "min": 0.06758701073708692,
+          "q25": 0.27837310545146465,
+          "median": 0.27837310545146465,
+          "q75": 0.2937415878705145,
+          "max": 0.3431699125934533
+        },
+        "full_cycle_crossing_fraction": 0.5561856145380173,
+        "M": 29,
+        "complete": true
+      },
+      "seconds": 245.316021647
+    }
+  },
+  "negative_controls": {
+    "(5, 7)": {
+      "given_gaps": [
+        1,
+        2
+      ],
+      "given_gaps_are_rotation": true,
+      "verified_gaps": [
+        1,
+        2
+      ],
+      "verified_cycle": true,
+      "scan": {
+        "candidates": 1,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0
+      },
+      "details": {
+        "word": [
+          1,
+          2
+        ],
+        "orbit": [
+          "5",
+          "7"
+        ],
+        "blocks": [
+          [
+            2,
+            2
+          ]
+        ],
+        "q": 1,
+        "integral_label_only": true
+      }
+    },
+    "(17, 25, 37, 55, 41, 61, 91)": {
+      "given_gaps": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        4
+      ],
+      "given_gaps_are_rotation": false,
+      "verified_gaps": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        4
+      ],
+      "verified_cycle": true,
+      "scan": {
+        "candidates": 1,
+        "q0_skipped": 0,
+        "theorem_violations": 0,
+        "proper_prefix_A_le_1": 0
+      },
+      "details": {
+        "word": [
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          4
+        ],
+        "orbit": [
+          "17",
+          "25",
+          "37",
+          "55",
+          "41",
+          "61",
+          "91"
+        ],
+        "blocks": [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "q": 2,
+        "integral_label_only": true
+      }
+    },
+    "trivial_x1": {
+      "b": -1,
+      "word": [
+        1
+      ],
+      "q": 0,
+      "scan": {
+        "candidates": 0,
+        "q0_skipped": 1,
+        "theorem_violations": 0
+      }
+    },
+    "single_gap_perturbation": {
+      "original_word": [
+        1,
+        2
+      ],
+      "changed_word": [
+        1,
+        1
+      ],
+      "original_start": "5",
+      "original_start_after_changed_word": "10",
+      "original_cycle_does_not_close": true,
+      "changed_word_rational_candidate_start": "1",
+      "changed_word_has_own_periodic_rational_candidate": true,
+      "closing_affine_identity_at_original_start_fails": true,
+      "local_affine_identity_is_universal_not_claimed_broken": true
+    }
+  },
+  "seconds": 365.611437939
+}

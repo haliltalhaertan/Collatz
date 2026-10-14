@@ -1,0 +1,40 @@
+**[PROOF] İlk ayrılma özdeşliği.** \(q_s=\Pr(X_s=X'_s\pmod{3^s})\) ve
+\[
+r_s=\Pr(X_s=X'_s\pmod{3^s},\ A_1\ne A'_1)
+\]
+olsun. İlk harfler aynıysa fark \(3\,2^{-A_1}(X_{s-1}-X'_{s-1})\) olur. \(\Pr(A_1=A'_1)=\sum_{a\ge1}4^{-a}=1/3\) olduğundan
+\[
+q_s=\tfrac13q_{s-1}+r_s,\qquad
+\boxed{E_s=3^sr_s}.
+\]
+Yani \(E_s\) tek başına bir olayın olasılığı **değil**, ilk harfleri farklı olan bir çarpışmanın olasılığının \(3^s\) katıdır. İlk farklı harften önce \(k\) ortak harf varsa katkı \(3^{-k}r_{s-k}\)’dir. Hiç ayrılmayanların katkısı \(3^{-s}\); dolayısıyla
+\[
+q_s=3^{-s}+\sum_{k=0}^{s-1}3^{-k}r_{s-k},
+\qquad \chi_s=1+\sum_{j=1}^sE_j.
+\]
+Bu, ilk ayrılma yerine göre kapalı bir **çarpışma yenileme özdeşliği** verir; tek başına \(r_s\)’yi hesaplayan sabit boyutlu bir zincir vermez.
+
+**[PROOF] Fark için transfer.** \(K=A'_1-A_1\) dağılımı \(\Pr(K=k)=2^{-|k|}/3\)’tür. \(T=1+3X_{s-1}\), \(T'=1+3X'_{s-1}\) yazınca çarpışma koşulu \(2^KT=T'\pmod{3^s}\) olur. \(T,T'\equiv1\pmod3\) olduğundan yalnız \(K=2l\) mümkündür. \(n=3^{s-1}\) ve
+\[
+C_s(j)=\Pr\!\left(T'=4^jT\pmod{3^s}\right),\quad j\bmod n
+\]
+ile, **literal olarak farklı** ilk harfleri sayan formül
+\[
+\boxed{E_s=n\sum_{l\in\mathbb Z\setminus\{0\}}4^{-|l|}C_s(l\bmod n)}
+\]
+çıkar. Burada \(l=0\)’ı dışlamak önemlidir: aynı kalıntı sınıfındaki iki farklı \(A\) hâlâ köşegen dışıdır. Sonsuz toplam geometrik seriyle \(n\) kalıntı sınıfına tam olarak indirgenir; fakat \(C_s\)’yi bulmak için \(X_{s-1}\)’in büyüyen kalıntı dağılımı gerekir.
+
+**[PROOF] Değerleme tek başına Markov durumu değildir.** Geçiş \(A,A',X,X'\) bilgisine bağlıdır. Örneğin \(v_3(x-y)=0\) hem \((x,y)=(1,2)\) hem \((2,4)\) için geçerlidir; buna karşılık bu çiftlerden taze \(A,A'\) ile üretilen farkın \(27\)’ye bölünme olasılıkları sırasıyla \(16400/786429\) ve \(1280/786429\)’dur. Dolayısıyla bu değerlemeye indirgenen geçiş kapalı değildir. Sabit boyutlu başka bir durum indirgemesi bulamadım.
+
+**[PROOF] Sayısal ve kaynak kontrolü.** [cp29_pair.py](cp29_pair.py) ve [cp29_pair.json](cp29_pair.json) kaydedildi. Kod ilk-harf eşitsizliğini \(s=1,2\)’de rasyonel çift-harf sayımıyla tam doğruluyor; \(s\leq8\)’de bağımsız doğrudan kalıntı transferini yukarıdaki korelasyon/yenileme formülüyle ve verilen \(\chi_s\) tablosuyla karşılaştırıyor. En büyük fark \(6.3\cdot10^{-15}\); ek \(s=9\) kontrolü de uyuşuyor. Örneğin \(r_1=2/9\), \(r_2=10/189\). Geometrik \(A\) kuyruğu kesilmedi; \(s>2\) sonuçları float64’tür.
+
+Tao’nun **birincil metnini** (arXiv:1909.03562, PDF ve HTML) açtım: sorudaki sonsuz toplam Remark 1.13’te yer alıyor. Lemma 6.2 rasyonel ofset haritasının birebirliğini, Proposition 1.17 ise **tek ilkel frekans** için üniform \(O_B(s^{-B})\) sönümünü veriyor. Bunların hiçbiri yaklaşık \(2\cdot3^{s-1}\) frekansın kareleri toplamını burada sınırlamıyor.
+
+**[PROOF-with-gap: üniform ağırlıklı korelasyon eşitsizliği eksik]** G1 için gereken en zayıf tek tahmin, tam olarak
+\[
+3^{s-1}\sum_{l\ne0}4^{-|l|}C_s(l\bmod3^{s-1})\leq C
+\quad\text{(bütün \(s\) için)}
+\]
+eşitsizliğidir; bunu kanıtlayamadım. **[CONJECTURE]** Küçük \(|l|\) boşluklarının ağırlığı yüksek olduğu ve hesaplanan korelasyonları yavaş değiştiği için \(E_s\) yavaş değişiyor olabilir. Bu bir sabitlenme açıklamasının *sezgisi*, ispatı değildir; veride \(s=7\)’de düşüş de vardır. Sonuç: **G1, G2 ve G3’ün hiçbiri burada kanıtlanmadı.** Özellikle gözlenen yaklaşık doğrusal \(\chi_s\), \(E_s\)’nin yakınsadığını göstermez.
+
+CP29_PAIR_20260923_COMPLETE

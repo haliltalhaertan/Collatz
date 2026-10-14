@@ -1,0 +1,36 @@
+{
+ "round": "CP28_T2",
+ "votes": {
+  "T10": {
+   "chatgpt": "PARK",
+   "muse": "KILL",
+   "unreal": "PARK",
+   "hermes": "PARK"
+  },
+  "T3": {
+   "chatgpt": "KILL",
+   "muse": "PARK",
+   "unreal": "KILL",
+   "hermes": "PARK"
+  },
+  "T7": {
+   "chatgpt": "KILL",
+   "muse": "KILL",
+   "unreal": "PARK"
+  }
+ },
+ "T7_Istar": 0.05497947281081719,
+ "T9_exact": {
+  "lambda_s1": {
+   "4": "15/16",
+   "8": "255/256",
+   "12": "4095/4096"
+  },
+  "lambda_s0": {
+   "4": "4/3",
+   "8": "8/3",
+   "12": "4"
+  },
+  "h_independent": "h=1..5"
+ }
+}

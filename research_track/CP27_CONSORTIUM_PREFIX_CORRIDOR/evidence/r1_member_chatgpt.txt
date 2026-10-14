@@ -1,0 +1,169 @@
+1. Koordinatör CP27 değerlendirmesi: DEĞİŞTİR
+t∗
+=min{t:A
+t
+<1} olsun. CP26 blok notasyonunda r
+j=cj/αj
+=1−(2/3)
+sj
+∈(0,1) ve ilk geçişte A
+h
+≥1 olduğundan
+Ct∗=At∗h<t∗∑Ahrh<t∗.
+Dolayısıyla n
+min
+≥X için
+0<Δt∗:=Et∗
+log2−S
+t∗
+log3<−log(1−t
+∗
+/X)∼t
+∗/X.
+Yani büyük X, proper-prefix geçiş varsa B'yi gerçekten çok güçlendiriyor. Fakat erken geçişi zorlamıyor; tersine proper geçişi daha nadir yapıp t
+∗
+=q'ya itebilir. Bu yüzden başarı ölçütü yalnız S
+∗
+/K≪1 olmamalı; t
+∗
+<q ve t
+∗
+=q dalları ayrı ölçülmeli. t
+∗
+=q dalı ise büyük ölçüde klasik global product/reciprocal-sum + Diophantine yaklaşımına geri düşüyor ve Hercher hattıyla yüksek örtüşme riski taşıyor. 
+Cheriton School of Computer Science
++1
+Güncel literatür notu: Haziran 2026 tarihli Wang “m≤95” çalışmasını buldum; ancak kaynak açıkça preprint olarak işaretliyor, hakemli kabul kaydı göstermiyor. Bu nedenle sonuç DOĞRULANMADI ve teorem olarak kullanmıyorum. Fakat çalışma X=2
+71
+, Simons–de Weger sınırları, suffix-balanced bloklar ve global-minimum finite search kullandığını iddia ettiği için CP27'nin yenilik çakışması ciddi biçimde kontrol edilmeli. 
+ResearchGate
+2. Sonraki checkpoint için iki yön
+Yön A — ALL_PREFIX_CORRIDOR
+[PROOF]
+b=+1 gerçek bir pozitif döngüyü global yerel minimum n
+0
+ noktasından döndürün ve n
+j
+≥X olsun. Her blok için
+nj+1=αj(nj+rj),rj
+=1−(2/3)
+sj
+∈(0,1).
+O zaman her 1≤t≤q için
+Δt=j<t∑
+log(1+r
+j/nj
+)−log(n
+t/n0).
+Global minimum nedeniyle n
+t≥n0
+; dolayısıyla
+Δt
+>0⇒0<Δ
+t≤j<t∑
+log(1+r
+j
+/X)<tlog(1+1/X).
+Bu, Aday B'nin yalnız ilk geçişini değil bütün proper prefix'leri aynı dar O(t/X) koridoruna sokuyor. b=−1'de aynı hesap log(1−r
+j/nj
+) verir ve global minimumdan bütün ilgili Δ
+t
+<0; dolayısıyla verilen 3n−1 döngülerini dışlamaz.
+COLLAPSE: D∣B yalnız tam kapanışı belirler; bu eşitsizlik global-minimum sıralaması ve bağımsız n
+j
+≥X bilgisini kullanıyor. Dolayısıyla post-integrality yeni kısıt.
+Literatür: Steiner/Simons–de Weger çizgisindeki linear-form/CF yöntemlerine ve Hercher'in local-minimum/product yaklaşımına çok yakın; proper-prefix biçiminin yeniliği DOĞRULANMADI. Simons–de Weger açıkça m-cycle'larda continued fractions/lattice reduction kullanıyor; Hercher m≥92'yi local-minimum yapısıyla elde ediyor. 
+De Weger's Math Page
++2
+Cheriton School of Computer Science
++2
+En ucuz exact falsification: Fraction ile q≤5, s
+j
+=1..3, d
+j
+=2..4, n
+0
+=1..31; tüm affine prefix'leri exact üret, yalnız n
+t≥n0
+ kalanları tut ve boxed eşitsizliği test et. Sonra asıl fayda testi: X=2
+71
+, q=92..120 için certified one-sided CF ile koridorun global t=q koşulundan kaç ek prefix dışladığını say.
+Kill: q=92..120'de proper-prefix koridoru global CF koşuluna göre ölçülebilir ek eleme üretmiyorsa, lemma tutulur ama araştırma rotası PARK/KILL.
+Başarı olasılığı: 0.50. Maliyet: düşük.
+Yön B — PREFIX/GLOBAL RESONANCE DETERMINANT
+[PROOF]
+Tam döngü için
+Λ=Mlog2−Klog3>0,
+pozitif bir proper prefix için Δ
+t
+>0 ve
+ht
+:=KE
+t−MSt∈Z.
+Exact kimlik:
+ht
+log2=KΔ
+t−StΛ.
+Yön A ve global product bound ile L
+X
+:=log(1+1/X):
+Δt<tLX
+,Λ<qL
+X.
+Bu nedenle h
+t
+=0 ise
+max{Kt,S
+tq}LX
+>log2.
+Eşdeğer olarak, H
+X
+=log2/L
+X
+ için
+ht
+=0veyaKt>H
+X
+veyaS
+tq>HX.X=271
+ için H
+X
+≈1.63665×10
+21
+. Böylece çok erken ve küçük-S
+t
+/K iç rezonans, genel bir “iyi yaklaşım” olmaktan çıkıp tam orantı KE
+t=MSt
+ dalına zorlanabilir.
+COLLAPSE: tam kelimenin integralliği bu prefix/global determinantı sıfıra zorlamaz; iki ayrı rezonansı ve X sınırını birlikte kullanıyor.
+Literatür: Baker/CF teknikleri Steiner, Eliahou ve Simons–de Weger'in merkezinde; fakat bir proper-prefix linear form ile full-cycle linear formun bu determinantla doğrudan bağlandığı formu bulamadım. Yenilik iddiası DOĞRULANMADI. 
+ScienceDirect
++2
+ResearchGate
++2
+En ucuz exact falsification: CP26'nın q≤18 exact adaylarında her pozitif proper prefix için h
+t
+ ve boxed disjunction'ı yeniden hesapla. Ardından q=92..120 için yalnız certified K
+max
+(q) kullanarak hangi t'lerin otomatik olarak h
+t
+=0 dalına düştüğünü çıkar; kelime enumerasyonu gerekmez.
+Kill: surviving erken geçişlerin çoğu h
+t
+=0 dalına düşüyor ve KE
+t=MSt
+'den primitivity/affine yapı üzerine bağımsız bir çelişki çıkarılamıyorsa PARK.
+Başarı olasılığı: 0.30. Maliyet: düşük.
+Barina'nın hakemli 2025 sonucu 2
+71
+'e kadar doğrulamayı gerçekten sağlıyor; dolayısıyla burada kullanılan X dış girdisi sağlam. 
+Springer Link
+3. Oy
+Yön A — ALL_PREFIX_CORRIDOR. İlk-geçiş özel durumunu kaldırıyor; exact, ucuz ve doğrudan COLLAPSE-sonrası bilgi.
+Yön B — RESONANCE DETERMINANT. A'nın ürettiği iç rezonansı global rezonansla bağlayan somut ikinci kapı.
+Koordinatör CP27, mevcut haliyle. X eklemek doğru, fakat “S
+∗
+/K≪1 görürsek başarı” kriteri yönlü önyargılı. Bölüm 1'deki iki-dallı sürüme çevrilirse #2 seviyesine çıkar.
+4. En büyük olası metodolojik hata
+En büyük hata, COLLAPSE kapısını araştırmanın başında değil geç aşamada uygulamış olmak olabilir. Böylece C1, carry/residue ve benzeri yapılar matematiksel olarak yeni görünürken aslında integrality'nin yeniden kodlanmış biçimleri üzerinde uzun süre harcanmış olabilir. İkinci risk, aynı küçük near-resonant pilotlardan fikir üretip yine aynı rejimde doğrulama yaparak adaptif overfitting yaratmak. CP27'de “önce bilgi-bağımsızlığı, sonra numerik güç” sırası tersine çevrilmemeli.
+CP27_CONSORTIUM_R1_20260923_COMPLETE

@@ -1,0 +1,22 @@
+**A — T9.** [PROOF] Koordinatörün tanımladığı, üst 3-adik rakamı eşit olasılıkla kaldıran \(M_h\) için her hedef birim sınıf \(x\bmod 3^h\) ve her \(a\) karşısında kaynak sınıf
+\[
+y\equiv(3x+1)2^{-a}\pmod{3^h}
+\]
+tektir. Bu kaynaktan \(x\)'e geçiren üç kaldırmadan biri seçilir; dolayısıyla **her sütunun toplamı**
+\[
+\lambda_A(s)=\frac13\sum_{a=1}^{A}(3/2^a)^s
+\]
+olur. Sabit sütun toplamı hem bir sol özdeğer verir hem de matris normuyla spektral yarıçapı üstten sınırlar. Böylece \(h\)'den bağımsız olarak
+\(\lambda_A(1)=1-2^{-A}\) ve \(\lambda_A(0)=A/3\). Hesap doğrudur. Gerekçe yalnızca “2 ilkel köktür” değil; belirleyici nokta, ters bağıntıdaki **tek kaynak sınıf ve üçte birlik kaldırma ağırlığıdır**. Satır toplamlarının farklı olması buna aykırı değildir.
+
+Kurtarılabilecek ayrı soru, *1 köklü gerçek tam sayı ağacının* sonlu derinlik sayıları ve sınır \(a\to\infty\) davranışıdır; sonlu modül Perron kökü bunları belirlemez. Örneğin \(1\xrightarrow{a=2}1\) öz-döngüsü ağaç sayımında ayrıca ele alınmalıdır. Sınır kaldırılınca \(\lambda_\infty(1)=1\), \(s=0\)'da ise toplam ıraksar; burada gizli bir basınç farkı çıkmaz. Applegate–Lagarias’ın **1995 tarihli** *Density Bounds for the 3x + 1 Problem. I. Tree-Search Method* ve *II. Krasikov Inequalities* çalışmalarının künyeleri doğrulandı (DOI: 10.2307/2153345, 10.2307/2153346). Bunlar gerçek ters-ağaç/density sınırlarıyla ilgilidir; burada ölçülen ortalama operatörün özdeğeriyle aynı önerme değildir. Atfedilen **\(n^{0.84}\) alt sınırının tam ifadesi DOĞRULANMADI**. **T9 oyu: KILL** — özgün “farklı basınç” hipotezi çürüdü; köklü ağaç problemi ancak yeni öneri olarak değerlendirilebilir.
+
+**B — T6.** \(S_j=\sum_{i<j}v_2(3U^i n+1)\) ve sabit değerleme geçmişinde \(n=r+2^{S_j+1}t\) yazılırsa
+\[
+U^j n=u+2\,3^jt.
+\]
+Bu yüzden \(U^j n\)'nin alt bitleri, yeterince çok \(t\) içeren her üst-bit kutusunda geometrik değerleme sınıflarını dengeli tarar. \(V\) kesildiği için gerekli tarama periyodu sabittir. \(\tau>j\) kısıtı da sabit geçmişte yine \(t\) üzerinde aralık kısıtları verir. **Tam \(I=0\) sonucu genel olarak yoktur:** kutu uçları, kısa aralıklar ve geçmişlerin karışımı kalır. Fakat her ilgili kutudaki \(t\) sayısı \(2^{v_{\max}}\)'a göre büyüyorsa bu mekanizmadan kalıcı bir karşılıklı bilgi beklenmez. Tipik \(S_j\simeq2j\) için çözünürlük sınırı \(j\simeq(\log_2X)/2\), yani \(c\simeq1/(2\ln2)\); hayatta kalma koşulu \(S_j\)'nin dağılımını değiştireceğinden bu **evrensel eşik değildir**. Sabit \(b,v_{\max}\) ile aday sinyal, esasen ilgili geçmişlerde \(S_j\) artık \(\log_2X\)'e yaklaştığında mümkündür; \(b\)'yi büyütüp kutuları boşaltmak tek başına anlamlı sinyal sayılmaz.
+
+**Önceden kayıtlı tek sert test:** \(\tau\)'yı “ilk kez başlangıç değerinin altına iniş” diye sabitle; tek başlangıçlar \(X=2^{22},2^{24},2^{26}\), \(j=\lfloor0.90\ln X\rfloor\), \(b=4\), \(v_{\max}=5\) kullan. Ham \(I\)'yi hesapla; \(V\) etiketlerini yalnızca aynı \((S_j,\lfloor\log_2U^jn\rfloor)\) ve \(\tau>j\) tabakasında permüte ederek yanlılık/null dağılımını çıkar. **Kill kriteri:** en büyük iki ölçekte permütasyon \(p<0.01\) sağlanmaması *veya* son ölçekte fazlalığın %95 üst sınırının \(0.005\) bitin altında kalması. **T6 oyu: PARK** — önce bu çöküş kontrolü geçilmeli.
+
+CP28_T3_VERDICT_20260923_COMPLETE

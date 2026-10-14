@@ -1,0 +1,69 @@
+# CP20 Task 8 (E1–E7/E7R) bağımsız yenilik taraması
+
+**Sınır:** Collatz problemi çözülmedi. Etiketler yayımlanmış önceliği, yöntem sıradanlığını ve programın kendi çürütmelerini ayırır. `NEW-CANDIDATE`, “yeni teorem” onayı değil, aramada eşdeğerinin bulunamadığı anlamına gelir. Yuan Si kaynağı Zenodo ön baskısıdır; hakemli yayın olduğu doğrulanmadı.
+
+## Sayım
+
+| Verdict | Adet |
+|---|---:|
+| KNOWN | 1 |
+| SUPERSEDED | 0 |
+| PARTIAL | 9 |
+| STANDARD | 8 |
+| NEW-CANDIDATE | 8 |
+| INTERNAL | 7 |
+| FLAWED | 5 |
+
+**Toplam: 38 ayrı iddia.** Her iddianın program etiketi, tam kaynak yolu, kaynak alıntıları ve nesne-odaklı sorguları `ledger_E4_CP20_T8_E7.json` dosyasındadır.
+
+## NEW-CANDIDATE
+
+Aşağıdaki sıralama araştırma önemine göredir; bağımsız denetim durumu ayrıca belirtilmiştir.
+
+- **A01 [PROVED/FROZEN]:** Kritik-log varsayımı altında \(N_r\approx2^{\alpha r/\kappa}\) pencerelerinde \(\liminf h(D_1,D_2)\geq\alpha/\kappa\). Aynı tip-özel, nicel kritik-*zaman* pencere teoremi bulunamadı.
+- **R03 [PROVED/AUDIT PASS]:** E7R-B3 karşıteoremi: donmuş pencerenin CF-left uçlarında, yeterince büyük \(r\) için açık bir hata sınırıyla \(\mathcal K(k_r,\ell_r)\to1\). Bu, bütün pencerede \(O(1/m_r)\) daralmasını çürütür; B4 küresel hedefinin hükmü değildir.
+- **D05 [PROVED/FROZEN]:** Kritik-log altında \(\liminf_k\ln(1+r_k)/k=(\ln3)\liminf_j t_j/t_{j+1}\). Bu, yaralanma zamanlarına ilişkin koşullu bir yapısal eşitliktir.
+- **M03 [PROVED/FROZEN]:** Kritik-log altında \(\rho_M(k)=\max(0,\rho_r(k)-\ln(3/2))+O(\log k/k)\). Sayısal pozitif alt sınır `[B-LEAD]` olarak kalır.
+- **M02 [PROVED/FROZEN]:** Her pozitif sonlu sözcükte \(1\leq X_k<3^k\) ve \(M_k=X_k\), \(k\geq1\). Tam çift-adik/üç-adik eşitliğin yayımlanmış eşdeğeri bulunamadı; ispatın sonlu-sözcük cebiri temel niteliktedir.
+- **D06 [PROVED/FROZEN]:** Plato çukurundaki \(\rho_r(t_{j+1})\) için \((\ln3)t_j/t_{j+1}-\kappa\ln(t_j)/t_{j+1}+O(1/t_{j+1})\) ikinci-mertebe formülü. D05’in dar bir keskinleştirmesidir.
+- **A05 [PROVED — AUDIT EXTENSION CANDIDATE]:** Tam-ölçek pencerelerindeki basınç birikim uzantısı V3’ün donmuş, bağımsız denetlenmiş çekirdeğine dahil değildir.
+- **D03 [PROVED — NOT INDEPENDENTLY AUDITED]:** Genel \(A_k/k\to L\) tavan-limit uzantısı bağımsız denetlenmemiştir; program etiketinin ispat gücü bu kayıtla sınırlıdır.
+
+## KNOWN / SUPERSEDED ve yakın öncüller
+
+- **R04 — KNOWN, nesne düzeyinde:** Yuan Si’nin [*A microcanonical phase transition for the Collatz affine random model*](https://zenodo.org/api/records/20027097) ön baskısı, \(S_n=s\) ile koşullandırılmış affine Fourier katsayısını açıkça inceler. E7R-LT denetimi proje fazını bu gözlenebilirin özel ilkel \(3^r\) frekansı olarak eşler. Projenin özel \(\eta_r=2^{T_r-4}\) modüler hesabının aynı formülle yayımlandığı ayrıca doğrulanmadı.
+- **E11 — PARTIAL:** Si’nin mikrokanonik affine Fourier çerçevesi E6-N1’in model fikrini önceler; özel Hadamard ve periyot özdeşliklerinin birebir yayımlanmış eşdeğeri doğrulanmadı.
+- **R05 — PARTIAL:** Si’nin denetlenen merkez/entropi ve sert-frekans rejimlerinden proje hedefi \(T_r=\alpha r+O(1)\), \(h=0\) için doğrudan bozunma teoremi aktarılmıyor. [Tao’nun sonucu](https://export.arxiv.org/api/query?id_list=1909.03562) da gerekli mikrokanonik fiber tahmini değildir.
+- **SUPERSEDED: 0.** Özgül kritik-zaman basıncı veya CF-left karşıteoremi için aynı niceleyicileri kapsayan daha güçlü yayımlanmış ifade doğrulanmadı. Benzer terminoloji, kapsama kanıtı değildir.
+- **E01, D01 ve D04 — STANDARD:** Mod-3 destek hesabı ile modüler iç içelik/lift/chunk cebiri, özgül bir makaleye özgün sonuç diye atfedilmemelidir.
+
+**Atlanmaması gereken 1999 teoremi:** Garcia–Tal, [*A note on the generalized 3n+1 problem*, *Acta Arith.* 90 (1999), 245–250](https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf), bir tam yörüngenin **değer kümesinin üst Banach yoğunluğunun sıfır** olduğunu Koroler 1’de verir. Birincil PDF’nin ifadesi: “A direct consequence is that any orbit \(O(n)\) under \(H\) has Banach density zero (Corollary 1).” Yöntem sözcükleriyle yapılan taramada bu teorem kaçabilir. Bununla birlikte değer kümesinin yoğunluğu, A01’in kritik-*zaman* tip yoğunluğu veya D05’in yaralanma oranı değildir; Garcia–Tal’a bunları kapsadığı yönünde atıf yapılmadı.
+
+### Açılmış birincil kaynaklardan kısa ifadeler
+
+- [Tao, arXiv:1909.03562](https://export.arxiv.org/api/query?id_list=1909.03562): “\(\mathrm{Col}_{\min}(N)\leq f(N)\) for almost all \(N\) ... in the sense of logarithmic density.”
+- [Si, Zenodo 20027097](https://zenodo.org/api/records/20027097): “by conditioning on \(S_n=s\) ... the affine Fourier coefficient at hard frequencies reduces to a primitive ternary Bernoulli-bridge transform.”
+- [Inselmann, arXiv:2402.03276](https://export.arxiv.org/api/query?id_list=2402.03276): “Results of Terras and Everett imply that ... almost all \(m\) ... fulfill ... simultaneously ... We extend this result.”
+- [Lagarias, 1963–1999 açıklamalı bibliyografya](https://export.arxiv.org/api/query?id_list=math/0309224): “an annotated bibliography of work done on the 3x+1 problem ... from 1963 through 1999.”
+- [Lagarias, 2000–2009 açıklamalı bibliyografya](https://export.arxiv.org/api/query?id_list=math/0608208): “an annotated bibliography ... published from 2000 through 2009.”
+- [*Parity sequences of the 3x+1 map on the 2-adic integers*, arXiv:1805.00133](https://export.arxiv.org/api/query?id_list=1805.00133): “the one-to-one correspondence between a 2-adic integer and its parity sequence.”
+
+Aramada arXiv API, OpenAlex, Crossref ve Zenodo kullanıldı; Semantic Scholar sorgusu `429` döndürdüğünden oradaki sonuçlar **DOĞRULANMADI**. “Banach density”, “sparsity”, “reciprocal sum”, “windowed count”, “parity vector”, “inverse tree density”, “affine offset” ve “microcanonical Fourier” gibi **nesne** sorguları da yapıldı. Sorgular iddia bazında JSON kaydındadır.
+
+## Yanlış “yeni” iddiaları ve overclaim sınırları
+
+- **Literatür önceliği:** E6-N1’in *bütün* koşullu affine Fourier mekanizmasını özgün diye sunmak fazla güçlüdür; Si’nin ön baskısı aynı gözlenebilir türünü tanımlar. Buna karşılık Si veya Tao’dan projenin açık kompleks bound’una doğrudan teorem aktarımı da kurulmamıştır.
+- D1 bağımsız denetimindeki “GERÇEKTEN YENİ” ifadesi D05/D06 için literatür sertifikası değildir. Buradaki karar yalnız `NEW-CANDIDATE`’tir.
+- Task 8A V2’nin tam-kutu basınç dili \(h(0,M_2)=-\infty\) nedeniyle V3’te onarıldı. CP19 T4 köprüsü kurum-içi önceki sonuca dayanır; kesin pozitif “Sturmian penalty” iddiası doğru değildir.
+- D-T4’ün “en küçük tam gerçekleyici daima \(r_L\)” ifadesini \(w=(1)\) çürütür: \(r_1=1\), fakat en küçük tam gerçekleyici \(3\)’tür. D-T5’in “sonsuz plato çevrimsiz ıraksama demektir” ifadesini \(a_k\equiv2,n_0=1\) sabit çevrimi çürütür.
+- E0’da bütün sıfır-dışı frekanslar için üstel spectral gap yanlıştır: mod-3 frekansında \(|\phi|\geq1/2\). Bu, E1’in hâlâ açık yüksek-conductor hedefiyle karıştırılmamalıdır.
+- E7’nin ilk B3 üniform \(O(1/m_r)\) hedefi E7R-B3 karşıteoremiyle yanlıştır. İlk E7 kaydı `[PRE-RUN]` idi; yanlış bir hedefi kanıtlanmış teorem gibi göstermez.
+- E5/E6’da kanıtlananlar S1/N1 exact normal formlarıyla sınırlıdır. Kompleks \(N_r=O(r^{-3/2})\), E6-N2 ve derece-bir asimptotik **OPEN** kalır. B4 V2’nin tek çalıştırma yetkisi giriş-bütünlüğü uyuşmazlığıyla T1 başlamadan tüketildi; matematiksel B4 sonucu elde edilmedi.
+
+## Okuma kapsamı ve sınırlar
+
+`arch-era-d2.log`; CP20 Task 8A V2/V3, 8B0–8B2 D0/D1 ve Module E E0–E7’nin ilgili teorem, master, strateji ve mühür kayıtları; belirtilen `10-task8a`, `11-surekli-kesir-denetim`, `12-d0-denetim`, `13-d1-denetim` raporları; E4 ve E7R bağımsız sıfır-güven raporları okundu. Garcia–Tal’ın **birincil yayıncı PDF’si** açılıp ilgili ifade kontrol edildi.
+
+E3’ün yaklaşık 88 MB ham JSON’u ve 14,7 MB CSV’si bütün olarak işlenmedi; ZIP paketlerinin tüm iç dosyaları ve ikili DOCX özgünleri tek tek okunmadı. Her exact veya sayısal sonuç bağımsız olarak yeniden hesaplanmış sayılmamalıdır. Lagarias’ın ilk bibliyografyası Garcia–Tal maddesi için PDF’den, ikincisi API özetinden incelendi. Bulunamayan bir literatür eşdeğeri için yokluk ispatı ileri sürülmüyor.
+
+NOVELTY_SCAN_E4_CP20_T8_E7_20260923_COMPLETE

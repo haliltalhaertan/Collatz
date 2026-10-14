@@ -1,0 +1,27 @@
+ROLE MARKER: CP28_T2_VERDICT_20260923
+
+Konsorsiyum Tur 2 — sıralamanın ilk iki teorisi (T10 Brown/mesoskopik invarians, T3 koşullu tehlike yasası) incelendi. Sırada T7 (valuation "entropi borcu") var. Senden: (A) T10 ve T3 için oy, (B) T7 için derin ön inceleme.
+
+=== KANITLAR ===
+1) EXACT HESAP (kod ajanı, koordinatör tarafından ayrı kodla sayı sayı tekrar edildi): Terras dönüşümü T(x)=x/2 | (3x+1)/2, kabuk [2^m,2^{m+1}) tüm tamsayılar, σ(x)=min{j: T^j x < x}. Gerçek P(σ>j) ile iid-parite rastgele yürüyüş modelinin exact P(σ>j) karşılaştırması:
+ m | ilk sapma j | j/m | |D(2m)| | |D(4m)|
+ 16 | 18 | 1.13 | 7.5e-5 | 1.0e-4
+ 18 | 20 | 1.11 | 4.6e-5 | 4.5e-5
+ 20 | 21 | 1.05 | 2.5e-4 | 7.3e-5
+ 22 | 23 | 1.05 | 3.4e-5 | 1.7e-6
+ 24 | 26 | 1.08 | 3.4e-5 | 4.1e-6
+ - j≤m: D=0 exact (Terras). +1 terimi çıkarılınca (gerçek parite dizisi korunarak) dağılım j≤4m boyunca DEĞİŞMİYOR → sapma +1 kaynaklı değil, parite dizisinin kendisinden.
+ - Binom standart hatasına göre z-skor, j∈(m,3m]: kabuk başına rms 0.5–2.5, max 0.9–3.9, işaret kabuktan kabuğa değişiyor; m ile sistematik büyüme yok. Yani model m'nin ötesinde de gürültü düzeyinde doğru; sömürülebilir sistematik sapma görülmedi.
+ - T3: j sabitken yükseklik dilimlerine göre tehlike farkı gürültü düzeyinde (ör. m=24,j=25: 27611/55005 vs 1/2).
+2) TEORİ/LİTERATÜR (bir üye): j≤m kısmı Terras/Everett + Donsker'ın tek satırlık sonucu (yeni değil). j>m'de tam parite vektörü için TV yaklaşımı imkânsız (destek engeli d_TV ≥ 1−2^{m−j}). Inselmann 2024 (arXiv:2402.03276, varlığı doğrulandı; içerik iddiası bu üyeden) yoğunluk-1 için k ≤ (2/log(4/3))·log n ufkunda (3^{1/2}/2)^k n^{1±ε} zarfını kanıtlıyor → m<j<~4.82m bölgesinin drift/LLN ölçeği kapsanmış. Önerilen ara lemma: j=m+r, r≤m^{1/2−η} için Kolmogorov mesafesi ≪ m^{−η} ("subdiffusive overshoot"). Sabit δ>0 ile j=(1+δ)m CLT'si "büyük olasılıkla ana problemin kendisi".
+ Koordinatör notu: önerilen ara lemma trivial görünüyor (r ek adım log-yüksekliği en fazla O(r) değiştirir, r/√m→0; Berry–Esseen ilk m adımda). Yayınlanabilir değer taşıdığı şüpheli.
+
+=== GÖREV ===
+(A) T10 ve T3 için GO / PARK / KILL oyu + tek paragraf gerekçe. Sorular: (i) Koordinatörün "ara lemma trivial" notu doğru mu? (ii) T10'un √m-ölçekli (1+δ)m CLT'si ulaşılabilir bir hedef mi, yoksa Collatz-zorluğunda mı? (iii) Hesap sonucu T3'ü öldürür mü (sadece bu ölçekte mi)?
+
+(B) T7 "entropi borcu" (orijinal öneri özeti): Syracuse S(x)=(3x+1)/2^{a(x)}, a_j=a(S^j x). Uzun büyüyen yörünge Σa_j ≤ log2(3)·n taşır; bunun maliyeti I* = inf_{Σk q_k ≤ log2 3} D(q‖p), p_k=2^{−k}. İlk adım: uzunluk r gerçekleştirilebilir valuation-word'ler için Σ a_j ≤ (log2 3+ε)r koşulundaki 2-adik silindir ölçüsüne üstel üst sınır. Kısmi başarı: uzun pozitif-drift Syracuse segmentli başlangıçların logaritmik yoğunluğu δ_log(E_r) ≤ e^{−cr}.
+ İncele: (i) r ≤ ~m (valuation toplamı ≤ bit uzunluğu) bölgesinde bu, silindirlerin exact geometrik ölçüsünden (Terras) + Cramér'den trivially çıkıyor mu? Evetse tautoloji (bizim "COLLAPSE" kapımız: integrality/bilinen bijeksiyon bilinseydi yeni bir şey söyler miydi?). (ii) Trivial olmayan bir versiyonu var mı — örn. SEGMENT BAŞLANGICI keyfi (her zaman j0 için, sadece başlangıçtan değil), ya da r≫log x (ufuk ötesi)? Bu versiyon Tao 2019'un veya Inselmann'ın zaten kapsadığı bir şey mi? (iii) Açık, kanıtlanabilir tek bir önerme yaz (varsa) ve 1–2 haftada ispatlanabilirliğini değerlendir. Kaynak uydurma; emin değilsen "DOĞRULANMADI".
+ Son: T7 için GO / PARK / KILL oyu.
+
+Türkçe, kısa, formül serbest. Son satır tam olarak:
+CP28_T2_VERDICT_20260923_COMPLETE

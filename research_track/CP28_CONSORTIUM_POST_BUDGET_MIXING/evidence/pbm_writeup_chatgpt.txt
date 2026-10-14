@@ -1,0 +1,3485 @@
+ROLE MARKER: CP28_PBM_WRITEUP_20260923
+
+Aşağıdaki metin, Inselmann’ın arXiv:2402.03276v3 sürümündeki ilgili sonuçlar doğrudan kontrol edilerek yazılmıştır. Özellikle Definition 2.6, Lemma 2.7–2.8, Proposition 2.4, Lemma 2.16 ve Theorem 3.1 doğrulandı. Inselmann’ın Lemma 2.16’sı gerçekten de her ∗-dense P için
+
+F
+−1
+(P):={n:T
+⌊log
+2
+	​
+
+n⌋
+(n)∈P}
+
+kümesinin yine ∗-dense olduğunu söylüyor. 
+arXiv
++1
+
+1. Teorem ve notasyon
+T(n)=
+⎩
+⎨
+⎧
+	​
+
+n/2,
+(3n+1)/2,
+	​
+
+n≡0(mod2),
+n≡1(mod2).
+	​
+
+
+Bir tek x için
+
+a(x)=v
+2
+	​
+
+(3x+1),U(x)=
+2
+a(x)
+3x+1
+	​
+
+.
+
+X
+m
+	​
+
+, dyadik kabuktaki tek sayılar üzerinde düzgün seçilsin:
+
+X
+m
+	​
+
+∼Unif{x∈[2
+m
+,2
+m+1
+):x tek}.
+
+Yörünge boyunca
+
+a
+i
+	​
+
+:=a(U
+i
+X
+m
+	​
+
+),S
+j
+	​
+
+:=
+i=0
+∑
+j−1
+	​
+
+a
+i
+	​
+
+,S
+0
+	​
+
+=0,
+
+ve bit-bütçesi çıkış indeksi
+
+τ:=min{j:S
+j
+	​
+
+>m}
+
+olsun.
+
+Ayrıca
+
+β:=log
+2
+	​
+
+3
+	​
+
+=0.792481250360…
+
+ve
+
+L=L
+m
+	​
+
+:=⌊δm⌋,N
+k
+	​
+
+:=#{τ≤i<τ+L:a
+i
+	​
+
+=k}.
+
+İspatlanacak PBM teoremi:
+
+PBM.
+
+(a) Her sabit k≥1 ve
+
+0<δ<
+2
+β
+	​
+
+=0.39624062518…
+
+için
+
+L
+N
+k
+	​
+
+	​
+
+P
+m→∞
+	​
+
+2
+−k
+.
+
+(b) Aynı yakınsama her sabit
+
+0<δ<1
+
+için geçerlidir.
+
+Aşağıda
+
+p(n)
+t
+	​
+
+:=T
+t
+(n)(mod2)∈{0,1}
+
+parite dizisini kullanacağız.
+
+Inselmann’ın ∗-density tanımı şudur: S⊆Z
++
+, bazı C>0, 0<D≤1 için
+
+N
+#(S∩[1,N])
+	​
+
+≥1−
+N
+D
+C
+	​
+
+
+ise S, (C,D)-dense; bazı böyle C,D varsa ∗-dense’dir. Finite intersections yine ∗-dense’dir. Ayrıca Lemma 2.8 bu tanımı geometrik/dyadik kabuklara eşdeğer hale getirir: S D-dense ise
+
+2
+m
+#(S∩[2
+m
+,2
+m+1
+))
+	​
+
+≥1−C
+′
+2
+−Dm
+.
+(1)
+
+arXiv
++2
+arXiv
++2
+
+Bu son nicel biçim daha sonra X
+m
+	​
+
+'ye geçişte kullanılacaktır.
+
+2. Lemma A — nicel tipiklik kümesi P
+Lemma A [PROOF]
+
+Sabit
+
+K≥1,0<α<c<1,0<η<c,ε>0
+
+verilsin.
+
+R(y):=⌊clog
+2
+	​
+
+y⌋.
+
+Bir ikili kelime w=(w
+0
+	​
+
+,…,w
+r−1
+	​
+
+)∈{0,1}
+r
+ için
+
+A
+w
+	​
+
+(y,ℓ):=#{0≤t≤ℓ−r:(p(y)
+t
+	​
+
+,…,p(y)
+t+r−1
+	​
+
+)=w}.
+
+Yani ℓ bitlik prefix içinde kelimenin tamamen bulunan başlangıçlarını sayıyoruz; toplam mümkün başlangıç sayısı
+
+M
+ℓ,r
+	​
+
+=ℓ−r+1.
+
+P=P(K,c,α,η,ε) şu y'lerden oluşsun:
+
+Her 1≤r≤K, her w∈{0,1}
+r
+ ve her
+
+⌈αlog
+2
+	​
+
+y⌉≤ℓ≤R(y)
+
+için
+
+	​
+
+ℓ−r+1
+A
+w
+	​
+
+(y,ℓ)
+	​
+
+−2
+−r
+	​
+
+≤ε;
+(2)
+
+İlk R(y) parite biti içinde uzunluğu
+
+>ηlog
+2
+	​
+
+y
+
+olan sıfır koşusu bulunmasın.
+
+Yeterince küçük y'leri tanım gereği P'ye ekleyebiliriz.
+
+O zaman P ∗-dense’dir.
+
+İspat
+
+Dyadik kabuğu
+
+I
+n
+	​
+
+=[2
+n
+,2
+n+1
+)
+
+ele alalım.
+
+Inselmann Proposition 2.4, Terras–Everett sonucunu şu exact biçimde kullanır: uzunluğu 2
+N
+ olan herhangi bir ardışık tamsayı aralığında ilk N parite bitlerinin push-forward dağılımı {0,1}
+N
+ üzerinde tam düzgün dağılımdır. Özellikle I
+n
+	​
+
+ uzunluğu 2
+n
+ olduğundan, y kabukta düzgün seçildiğinde
+
+(p(y)
+0
+	​
+
+,…,p(y)
+n−1
+	​
+
+)
+
+exact olarak n bağımsız adil bit gibi dağılır. 
+arXiv
+
+c<1 olduğundan yeterince büyük n için
+
+R(y)≤c(n+1)≤n
+
+bütün y∈I
+n
+	​
+
+ için geçerlidir. Dolayısıyla P'nin istediği bütün bitler Proposition 2.4’ün exact-uniform bölgesindedir.
+
+Şimdi sabit bir r≤K, kelime w, prefix uzunluğu ℓ alalım. Kısaca
+
+M=ℓ−r+1,q=2
+−r
+.
+
+Her başlangıç için
+
+I
+t
+	​
+
+=1
+{(p
+t
+	​
+
+,…,p
+t+r−1
+	​
+
+)=w}
+	​
+
+
+olsun. Başlangıçları modulo r sınıflarına ayıralım:
+
+C
+s
+	​
+
+={t:0≤t<M, t≡s(modr)},s=0,…,r−1.
+
+Aynı sınıftaki iki başlangıcın kullandığı r-bitlik bloklar ayrık olduğundan I
+t
+	​
+
+'ler o sınıf içinde bağımsızdır. Ayrıca her biri Bernoulli(q)'dur.
+
+A
+s
+	​
+
+:=
+t∈C
+s
+	​
+
+∑
+	​
+
+I
+t
+	​
+
+,M
+s
+	​
+
+:=#C
+s
+	​
+
+.
+
+O halde
+
+A
+w
+	​
+
+=
+s=0
+∑
+r−1
+	​
+
+A
+s
+	​
+
+,EA
+s
+	​
+
+=qM
+s
+	​
+
+.
+
+Eğer
+
+∣A
+w
+	​
+
+−qM∣>εM,
+
+üçgen eşitsizliği gereği en az bir s için
+
+∣A
+s
+	​
+
+−qM
+s
+	​
+
+∣>
+r
+εM
+	​
+
+.
+
+Hoeffding ile
+
+P(∣A
+s
+	​
+
+−qM
+s
+	​
+
+∣>
+r
+εM
+	​
+
+)≤2exp(−
+r
+2
+M
+s
+	​
+
+2ε
+2
+M
+2
+	​
+
+).
+
+M≥r olduğunda
+
+M
+s
+	​
+
+≤
+r
+M
+	​
+
++1≤
+r
+2M
+	​
+
+.
+
+Dolayısıyla
+
+P(∣A
+w
+	​
+
+−qM∣>εM)≤2rexp(−
+r
+ε
+2
+M
+	​
+
+).
+(3)
+
+Şimdi ℓ≥αlog
+2
+	​
+
+y≥αn. Sabit K için, yeterince büyük n'de
+
+M=ℓ−r+1≥
+2
+αn
+	​
+
+.
+
+Ayrıca r≤K. (3)'ten
+
+P(bu w,ℓ i
+c
+¸
+	​
+
+in (2) bozulur)≤2Kexp(−
+2K
+ε
+2
+α
+	​
+
+n).
+(4)
+
+Uzunluğu en fazla K olan kelimelerin toplam sayısı
+
+r=1
+∑
+K
+	​
+
+2
+r
+<2
+K+1
+.
+
+Mümkün ℓ'lerin sayısı en fazla n+1. Birleşim sınırı verir:
+
+P((i) bozulur)≤C
+K
+	​
+
+ne
+−γn
+,γ:=
+2K
+ε
+2
+α
+	​
+
+.
+(5)
+
+Yeterince büyük n'de
+
+ne
+−γn
+≤C
+γ
+	​
+
+e
+−γn/2
+=C
+γ
+	​
+
+2
+−D
+1
+	​
+
+n
+,D
+1
+	​
+
+:=
+2log2
+γ
+	​
+
+=
+4Klog2
+ε
+2
+α
+	​
+
+.
+(6)
+
+Şimdi sıfır koşusu koşulunu ele alalım.
+
+y∈I
+n
+	​
+
+ için
+
+ηlog
+2
+	​
+
+y≥ηn.
+
+Dolayısıyla (ii) bozuluyorsa ilk n bitte en az
+
+q
+n
+	​
+
+:=⌊ηn⌋+1
+
+ardışık sıfır vardır.
+
+Her sabit başlangıç için bunun olasılığı 2
+−q
+n
+	​
+
+, olası başlangıç sayısı en fazla n. Böylece
+
+P((ii) bozulur)≤n2
+−q
+n
+	​
+
+≤n2
+−ηn
+.
+(7)
+
+Yine polinom prefaktörünü üste yedirerek
+
+n2
+−ηn
+≤C
+η
+	​
+
+2
+−D
+2
+	​
+
+n
+,D
+2
+	​
+
+:=η/2
+(8)
+
+yeterince büyük n için.
+
+(5)–(8)'i birleştirirsek bazı C>0 ve
+
+0<D<min(1,D
+1
+	​
+
+,D
+2
+	​
+
+)
+
+için
+
+2
+n
+#(P
+c
+∩[2
+n
+,2
+n+1
+))
+	​
+
+≤C2
+−Dn
+.
+(9)
+
+Sonlu sayıdaki küçük n'i C'yi büyüterek kapsayabiliriz. Inselmann Lemma 2.8'in dyadik-kabuktan-global-yöne geçişi (9)'dan P'nin D-dense, dolayısıyla ∗-dense olduğunu verir. 
+arXiv
+
+Lemma A tamamlandı. □
+
+3. Lemma B — τ senkronizasyonu
+Lemma B [PROOF]
+
+Tek x için
+
+a
+i
+	​
+
+=a(U
+i
+x),S
+j
+	​
+
+=
+i<j
+∑
+	​
+
+a
+i
+	​
+
+,τ=min{j:S
+j
+	​
+
+>m}
+
+olsun.
+
+O zaman:
+
+T
+S
+j
+	​
+
+(x)=U
+j
+(x)
+(10)
+
+ve S
+j
+	​
+
+'ler, x'in T-yörüngesinde görülen ardışık tek durumların zaman indeksleridir.
+
+Özellikle
+
+S
+τ−1
+	​
+
+≤m<S
+τ
+	​
+
+(11)
+
+ve
+
+z:=U
+τ
+(x)=T
+S
+τ
+	​
+
+(x)
+
+T
+m
+(x)'ten strictly sonra gelen ilk tek durumdur.
+
+T
+m
+(x) zaten tek olsa bile z=T
+m
+(x) değildir; bu durumda m=S
+τ−1
+	​
+
+ olur ve τ, sonraki tek durumu seçer.
+
+Dahası
+
+y:=T
+m
+(x),d:=S
+τ
+	​
+
+−m
+
+dersek
+
+z=T
+d
+y,d≥1.
+(12)
+
+Eğer y∈P(K,c,α,η,ε) ve y yeterince büyükse
+
+d≤ηlog
+2
+	​
+
+y+1.
+(13)
+İspat
+
+Tek q için
+
+3q+1=2
+a(q)
+U(q).
+
+İlk T-adımında
+
+T(q)=
+2
+3q+1
+	​
+
+.
+
+Bu sayı a(q)>1 ise hâlâ çifttir. Ardından a(q)−1 kez ikiye bölündüğünde
+
+T
+a(q)
+q=
+2
+a(q)
+3q+1
+	​
+
+=U(q),
+
+ve bu tek sayıdır.
+
+Dolayısıyla q'dan sonraki ilk tek durum tam a(q) T-adımı sonradır. Aradaki zamanlarda tek durum yoktur.
+
+Bunu q=U
+j
+x'e ardışık uygulayarak indüksiyonla
+
+T
+S
+j
+	​
+
+x=U
+j
+x
+
+ve S
+0
+	​
+
+,S
+1
+	​
+
+,…'nin bütün ardışık tek-zamanları olduğu çıkar.
+
+Her a
+i
+	​
+
+≥1 olduğundan S
+j
+	​
+
+→∞; dolayısıyla τ vardır. Minimalite tanımı doğrudan
+
+S
+τ−1
+	​
+
+≤m<S
+τ
+	​
+
+
+verir.
+
+S
+τ−1
+	​
+
+ ile S
+τ
+	​
+
+ arasında başka tek durum olmadığı için T
+S
+τ
+	​
+
+x, zaman m'den sonraki ilk tek durumdur.
+
+Şimdi y=T
+m
+x. d=S
+τ
+	​
+
+−m olduğundan (12) elde edilir.
+
+İki durum vardır.
+
+Durum 1: y çift.
+
+Bu durumda
+
+p(y)
+0
+	​
+
+=p(y)
+1
+	​
+
+=⋯=p(y)
+d−1
+	​
+
+=0,p(y)
+d
+	​
+
+=1.
+
+Eğer d≥R(y) olsaydı ilk R(y) bitte R(y) uzunluğunda sıfır koşusu olurdu. Çünkü η<c,
+
+R(y)=clog
+2
+	​
+
+y+O(1)>ηlog
+2
+	​
+
+y
+
+yeterince büyük y için; bu P'nin (ii) koşuluna aykırıdır.
+
+Dolayısıyla d<R(y). İlk d bit bir sıfır koşusudur, dolayısıyla
+
+d≤ηlog
+2
+	​
+
+y.
+
+Durum 2: y tek.
+
+Şimdi p(y)
+0
+	​
+
+=1, fakat τ mevcut tek durumu değil sonraki tek durumu seçmektedir. Bu nedenle
+
+p(y)
+1
+	​
+
+=⋯=p(y)
+d−1
+	​
+
+=0,p(y)
+d
+	​
+
+=1.
+
+Aynı argümanla
+
+d−1≤ηlog
+2
+	​
+
+y,
+
+yani
+
+d≤ηlog
+2
+	​
+
+y+1.
+
+Her iki durumda da (13) ispatlandı. □
+
+Bu ayrıca, aşağıdaki ölçek sonucu kullanıldığında
+
+d=o
+P
+	​
+
+(m)
+(14)
+
+anlamını verir: herhangi bir θ>0 için önce η yeterince küçük seçilir, sonra m→∞.
+
+4. Lemma C — Inselmann ölçek zarfı
+Lemma C [PROOF]
+F(n):=T
+⌊log
+2
+	​
+
+n⌋
+(n).
+
+Inselmann v3 Theorem 3.1’in doğrulanan ∗-dense biçimi şudur:
+
+Her ρ>0 için
+
+{n:∀λ∈[0,1], n
+λ−ρ
+≤T
+⌊
+1−log
+2
+	​
+
+3
+	​
+
+1−λ
+	​
+
+log
+2
+	​
+
+n⌋
+(n)≤n
+λ+ρ
+}
+
+∗-dense’dir. 
+arXiv
++1
+
+Bu ifade kaynakta doğrudan doğrulandı; DOĞRULANMADI değildir.
+
+λ=β=log
+2
+	​
+
+3
+	​
+
+ koyarsak
+
+1−log
+2
+	​
+
+3
+	​
+
+1−λ
+	​
+
+=1,
+
+dolayısıyla her ρ>0 için
+
+E
+ρ
+	​
+
+:={n:n
+β−ρ
+≤F(n)≤n
+β+ρ
+}
+(15)
+
+∗-dense’dir.
+
+Bundan
+
+m
+log
+2
+	​
+
+F(X
+m
+	​
+
+)
+	​
+
+P
+	​
+
+β
+(16)
+
+elde edilir.
+
+Daha genel olarak her sabit J için
+
+m
+log
+2
+	​
+
+F
+j
+(X
+m
+	​
+
+)
+	​
+
+P
+	​
+
+β
+j
+,1≤j≤J,
+(17)
+
+ve yakınsamalar ortak olarak geçerlidir.
+
+İspat
+
+X
+m
+	​
+
+∈[2
+m
+,2
+m+1
+) olduğundan
+
+1≤
+m
+log
+2
+	​
+
+X
+m
+	​
+
+	​
+
+<1+
+m
+1
+	​
+
+.
+(18)
+
+X
+m
+	​
+
+∈E
+ρ
+	​
+
+ ise (15)'ten
+
+(β−ρ)log
+2
+	​
+
+X
+m
+	​
+
+≤log
+2
+	​
+
+F(X
+m
+	​
+
+)≤(β+ρ)log
+2
+	​
+
+X
+m
+	​
+
+.
+
+(18)'e bölerek
+
+β−ρ≤
+m
+log
+2
+	​
+
+F(X
+m
+	​
+
+)
+	​
+
+≤(β+ρ)(1+1/m).
+
+Aşağıdaki G7 geçişi nedeniyle E
+ρ
+c
+	​
+
+'nin tek sayılı dyadik kabuktaki olasılığı üstel küçüktür. Önce m→∞, sonra ρ↓0 alınca (16) çıkar.
+
+İterasyon için Inselmann Lemma 2.16 kullanılır:
+
+S ∗-dense⟹F
+−1
+(S) ∗-dense.
+(19)
+
+arXiv
+
+Bu yüzden sabit J için
+
+E
+ρ
+	​
+
+∩F
+−1
+(E
+ρ
+	​
+
+)∩⋯∩F
+−(J−1)
+(E
+ρ
+	​
+
+)
+
+Lemma 2.7 ile ∗-dense’dir. 
+arXiv
+
+Bu kümede ardışık olarak
+
+β−ρ≤
+logF
+j
+(x)
+logF
+j+1
+(x)
+	​
+
+≤β+ρ.
+
+J sabit olduğundan çarpımlar alınarak ve ρ↓0 gönderilerek
+
+log
+2
+	​
+
+x
+log
+2
+	​
+
+F
+j
+(x)
+	​
+
+=β
+j
++o
+ρ
+	​
+
+(1)
+
+ortak olarak elde edilir. (18) ile (17) çıkar. □
+
+G7. ∗-dense kümeden X
+m
+	​
+
+-olasılığına geçiş
+
+Bunu bundan sonra sessizce kullanmamak için açık yazalım.
+
+S ∗-dense olsun. Lemma 2.8'e göre bazı C,D>0 için
+
+#(S
+c
+∩[2
+m
+,2
+m+1
+))≤C2
+(1−D)m
+.
+
+Kabuktaki tek sayıların sayısı tam
+
+2
+m−1
+
+olduğundan
+
+P(X
+m
+	​
+
+∈
+/
+S)≤
+2
+m−1
+C2
+(1−D)m
+	​
+
+=2C2
+−Dm
+.
+(20)
+
+Dolayısıyla herhangi sabit sonlu sayıda ∗-dense koşul, X
+m
+	​
+
+ için olasılık 1−O(2
+−Dm
+) ile gerçekleşir.
+
+Bu, tek sayılara koşullamanın hiçbir sorun yaratmadığını gösterir.
+
+5. PBM (a)
+(a) [PROOF]
+
+Sabit k≥1 ve
+
+0<δ<β/2
+
+olsun.
+
+İstenen:
+
+L
+N
+k
+	​
+
+	​
+
+→2
+−k
+olasılıkta.
+
+Bir
+
+c∈(0,1)
+
+öyle seçebiliriz ki
+
+δ<
+2
+cβ
+	​
+
+,
+(21)
+
+çünkü eşitsizlik strict olarak δ<β/2.
+
+K:=k+1 alalım.
+
+Daha sonra küçük seçilecek
+
+ρ,ε,η,α>0
+
+ile Lemma A’daki
+
+P=P(K,c,α,η,ε)
+
+kümesini kuruyoruz.
+
+Lemma A’ya göre P ∗-dense. Lemma 2.16'ya göre
+
+F
+−1
+(P)={x:F(x)∈P}
+
+∗-dense. Ayrıca Lemma C'deki E
+ρ
+	​
+
+ ∗-dense. Bunların kesişimi ∗-dense.
+
+Dolayısıyla G7'ye göre olasılık 1−o(1) ile aynı anda
+
+y:=F(X
+m
+	​
+
+)=T
+m
+(X
+m
+	​
+
+)∈P
+(22)
+
+ve
+
+(β−ρ)m≤log
+2
+	​
+
+y≤(β+ρ)(m+1)
+(23)
+
+gerçekleşir.
+
+Bundan sonra bu iyi olay üzerinde çalışıyoruz.
+
+Lemma B ile
+
+z=U
+τ
+X
+m
+	​
+
+=T
+d
+y,d=S
+τ
+	​
+
+−m,
+
+ve z, y'den strictly sonraki ilk tek durumdur.
+
+y'nin parite dizisindeki zaman >0 tek durumlarını
+
+t
+0
+	​
+
+=d<t
+1
+	​
+
+<t
+2
+	​
+
+<⋯
+
+diye sıralayalım.
+
+Böylece
+
+T
+t
+j
+	​
+
+y=U
+τ+j
+X
+m
+	​
+
+.
+(24)
+
+Ardışık tek durumlar arasındaki T-adım sayısı valuation olduğundan
+
+t
+j+1
+	​
+
+−t
+j
+	​
+
+=a(U
+τ+j
+X
+m
+	​
+
+).
+(25)
+
+Dolayısıyla
+
+N
+k
+	​
+
+=#{0≤j<L:t
+j+1
+	​
+
+−t
+j
+	​
+
+=k}.
+(26)
+
+Şimdi
+
+w
+k
+	​
+
+:=10
+k−1
+1
+
+kelimesini alalım. Uzunluğu k+1'dir.
+
+(25)'ten
+
+t
+j+1
+	​
+
+−t
+j
+	​
+
+=k
+
+ancak ve ancak p(y)'de t
+j
+	​
+
+'de başlayan kelime tam w
+k
+	​
+
+'dir.
+
+Kontrol penceresine sığma
+R:=R(y)=⌊clog
+2
+	​
+
+y⌋.
+
+Önce t
+L
+	​
+
++k≤R olduğunu göstereceğiz.
+
+P'nin w=1 koşulundan, R−k≥αlogy olduğunda
+
+#{0≤t<R−k:p(y)
+t
+	​
+
+=1}≥(1/2−ε)(R−k).
+(27)
+
+t
+0
+	​
+
+=d, pozitif zamandaki ilk tek durumdur. Bu yüzden t
+0
+	​
+
+'dan önce en fazla bir tek bit vardır: yalnızca p(y)
+0
+	​
+
+, o da y tekse.
+
+Dolayısıyla t
+0
+	​
+
+,…,t
+L
+	​
+
+'nin R−k'den önce bulunması için
+
+(1/2−ε)(R−k)>L+2
+(28)
+
+yeterlidir.
+
+(23)'ten
+
+R≥c(β−ρ)m−O(1).
+
+Bu nedenle (28)'in sol tarafının m-katsayısı
+
+(1/2−ε)c(β−ρ).
+
+(21) strict olduğundan önce ρ>0, ardından ε>0 yeterince küçük seçilerek
+
+(1/2−ε)c(β−ρ)>δ
+(29)
+
+sağlanabilir.
+
+O halde büyük m'lerde
+
+t
+L
+	​
+
++k≤R.
+(30)
+
+Ayrıca
+
+t
+L
+	​
+
+≥L
+
+çünkü ardışık tek zamanlar en az bir adım ayrıdır. α'yı yeterince küçük seçerek
+
+L≥αlog
+2
+	​
+
+y
+(31)
+
+de büyük m'ler için sağlanır.
+
+Böylece P'nin prefix frekansı koşulları hem t
+L
+	​
+
+, hem de t
+L
+	​
+
++k için uygulanabilir.
+
+t
+L
+	​
+
+∼2L
+
+İlk t
+L
+	​
+
+ bitte, yani zamanlar
+
+0,…,t
+L
+	​
+
+−1
+
+arasında post-budget tek durumlar tam
+
+t
+0
+	​
+
+,…,t
+L−1
+	​
+
+
+olmak üzere L tanedir.
+
+Bunlara ek olarak p(y)
+0
+	​
+
+=1 olabilir. Dolayısıyla bir
+
+b∈{0,1}
+
+için
+
+A
+1
+	​
+
+(y,t
+L
+	​
+
+)=L+b.
+(32)
+
+P'den
+
+	​
+
+L+b−
+2
+t
+L
+	​
+
+	​
+
+	​
+
+≤εt
+L
+	​
+
+.
+(33)
+
+Özellikle ε<1/4 alırsak
+
+t
+L
+	​
+
+≤
+1−2ε
+2(L+1)
+	​
+
+≤4(L+1),
+(34)
+
+ve (33)'ten
+
+∣t
+L
+	​
+
+−2L∣≤2εt
+L
+	​
+
++2≤8ε(L+1)+2.
+(35)
+
+Dolayısıyla
+
+L
+t
+L
+	​
+
+	​
+
+=2+O(ε)+o(1).
+(36)
+w
+k
+	​
+
+ sayımı
+
+Prefix uzunluğunu
+
+ℓ:=t
+L
+	​
+
++k
+
+alalım.
+
+w
+k
+	​
+
+'nin uzunluğu k+1 olduğundan bu prefixteki mümkün başlangıç sayısı tam
+
+ℓ−(k+1)+1=t
+L
+	​
+
+.
+
+P'den
+
+	​
+
+A
+w
+k
+	​
+
+	​
+
+(y,t
+L
+	​
+
++k)−2
+−(k+1)
+t
+L
+	​
+
+	​
+
+≤εt
+L
+	​
+
+.
+(37)
+
+Bu A
+w
+k
+	​
+
+	​
+
+, başlangıç zamanı
+
+0≤t<t
+L
+	​
+
+
+olan bütün w
+k
+	​
+
+'leri sayar.
+
+Her böyle kelime bir tek bitte başlar. t
+0
+	​
+
+=d'den önce pozitif tek bit bulunmadığı için N
+k
+	​
+
+ ile A
+w
+k
+	​
+
+	​
+
+ arasındaki tek olası fazladan başlangıç t=0'dır. Dolayısıyla
+
+∣N
+k
+	​
+
+−A
+w
+k
+	​
+
+	​
+
+(y,t
+L
+	​
+
++k)∣≤1.
+(38)
+
+(37)–(38):
+
+	​
+
+N
+k
+	​
+
+−2
+−(k+1)
+t
+L
+	​
+
+	​
+
+≤εt
+L
+	​
+
++1.
+(39)
+
+Şimdi
+
+2
+−k
+L=2
+−(k+1)
+(2L).
+
+Böylece
+
+	​
+
+L
+N
+k
+	​
+
+	​
+
+−2
+−k
+	​
+
+≤ε
+L
+t
+L
+	​
+
+	​
+
++
+L
+1
+	​
+
++2
+−(k+1)
+L
+∣t
+L
+	​
+
+−2L∣
+	​
+
+.
+(40)
+
+(34)–(35)'i koyarsak
+
+m→∞
+limsup
+	​
+
+	​
+
+L
+N
+k
+	​
+
+	​
+
+−2
+−k
+	​
+
+≤C
+k
+	​
+
+ε
+(41)
+
+iyi olay üzerinde; burada C
+k
+	​
+
+<∞ yalnız k'ya bağlıdır.
+
+Verilen herhangi bir ζ>0 için ε öyle küçük seçilir ki
+
+C
+k
+	​
+
+ε<ζ.
+
+İyi olayın tamamlayıcısı G7 nedeniyle o(1) olasılığa sahiptir. Sonuç:
+
+P(
+	​
+
+L
+N
+k
+	​
+
+	​
+
+−2
+−k
+	​
+
+>ζ)⟶0.
+
+Bu (a)'yı ispatlar. □
+
+Dikkat: (a)'da sınır
+
+δ=β/2
+
+bu argümanla kapsanmaz; (21)'de strict slack gereklidir. Bu tam olarak G4'tür.
+
+6. PBM (b): dört post-budget blok
+(b) [PROOF]
+
+Şimdi
+
+0<δ<1
+
+sabit olsun.
+
+Tek bir post-budget kontrol bloğunun valuation kapasitesi yaklaşık
+
+2
+β
+	​
+
+m.
+
+Üç blok için:
+
+A
+3
+	​
+
+:=
+2
+β+β
+2
++β
+3
+	​
+
+=0.9591035170…<1.
+(42)
+
+Bu nedenle yalnız üç post-budget blok δ'yı 1'e kadar götürmez.
+
+Dört blok için ise
+
+A
+4
+	​
+
+:=
+2
+β+β
+2
++β
+3
++β
+4
+	​
+
+=1.15631217956…>1.
+(43)
+
+Bu G5'teki indeks düzeltmesinin kritik noktasıdır.
+
+6.1 Doğru ∗-dense good set
+
+Yine
+
+F(n)=T
+⌊log
+2
+	​
+
+n⌋
+(n).
+y
+j
+	​
+
+:=F
+j+1
+(X
+m
+	​
+
+),j=0,1,2,3.
+(44)
+
+Yani
+
+y
+0
+	​
+
+=F(X
+m
+	​
+
+)=T
+m
+X
+m
+	​
+
+
+ilk post-budget T-başlangıcıdır.
+
+Dört y
+j
+	​
+
+'nin de P'de olmasını istiyoruz. Bunun X
+m
+	​
+
+ açısından koşulu
+
+X
+m
+	​
+
+∈F
+−1
+(P∩F
+−1
+P∩F
+−2
+P∩F
+−3
+P).
+(45)
+
+Bu, önceki yanlış
+
+P∩F
+−1
+P∩F
+−2
+P∩F
+−3
+P
+
+ifadesinden bir dış F
+−1
+ ile farklıdır.
+
+(45)'te gerçekten:
+
+F(X
+m
+	​
+
+)=y
+0
+	​
+
+∈P,
+F
+2
+(X
+m
+	​
+
+)=y
+1
+	​
+
+∈P,
+F
+3
+(X
+m
+	​
+
+)=y
+2
+	​
+
+∈P,
+F
+4
+(X
+m
+	​
+
+)=y
+3
+	​
+
+∈P.
+
+Lemma 2.16 her F
+−j
+P'yi ∗-dense yapar; Lemma 2.7 sonlu kesişimi korur; son dış F
+−1
+ de tekrar Lemma 2.16 ile ∗-dense’dir. 
+arXiv
++1
+
+Lemma C'yi de dört kez uygularsak aynı anda
+
+log
+2
+	​
+
+y
+j
+	​
+
+=(β
+j+1
++o(1))m,j=0,1,2,3,
+(46)
+
+olasılık 1−o(1) ile.
+
+Daha doğrusu, herhangi sabit ρ>0 için ∗-dense bir good set üzerinde
+
+	​
+
+m
+log
+2
+	​
+
+y
+j
+	​
+
+	​
+
+−β
+j+1
+	​
+
+<ρ,j=0,1,2,3
+(47)
+
+büyük m'lerde sağlanabilir.
+
+6.2 Blok geometrisi
+
+Yerel ölçekleri
+
+r
+j
+	​
+
+:=⌊log
+2
+	​
+
+y
+j
+	​
+
+⌋
+(48)
+
+ve kontrol uzunluklarını
+
+R
+j
+	​
+
+:=⌊clog
+2
+	​
+
+y
+j
+	​
+
+⌋
+(49)
+
+tanımlayalım.
+
+y
+0
+	​
+
+'dan itibaren global T-zamanında
+
+b
+0
+	​
+
+:=0,b
+j
+	​
+
+:=
+h=0
+∑
+j−1
+	​
+
+r
+h
+	​
+
+
+olsun. Çünkü
+
+y
+j+1
+	​
+
+=F(y
+j
+	​
+
+)=T
+r
+j
+	​
+
+y
+j
+	​
+
+,
+
+dolayısıyla
+
+y
+j
+	​
+
+=T
+b
+j
+	​
+
+y
+0
+	​
+
+.
+
+Kontrollü aralıklar
+
+C
+j
+	​
+
+=[b
+j
+	​
+
+,b
+j
+	​
+
++R
+j
+	​
+
+),j=0,1,2,3,
+(50)
+
+ve aradaki kontrolsüz boşluklar
+
+G
+j
+	​
+
+=[b
+j
+	​
+
++R
+j
+	​
+
+,b
+j+1
+	​
+
+),j=0,1,2
+(51)
+
+olsun.
+
+Boşluğun uzunluğu
+
+∣G
+j
+	​
+
+∣=r
+j
+	​
+
+−R
+j
+	​
+
+≤(1−c)log
+2
+	​
+
+y
+j
+	​
+
++2.
+(52)
+
+Dolayısıyla (46)'dan
+
+j=0
+∑
+2
+	​
+
+∣G
+j
+	​
+
+∣=O((1−c)m).
+(53)
+
+Bu G6'nın temel nicel hesabıdır.
+
+6.3 Dört bloğun yeterli kapasitesi
+
+δ<1<A
+4
+	​
+
+ olduğundan
+
+c<1
+
+ama 1'e yeterince yakın seçilerek
+
+δ<cA
+4
+	​
+
+=
+2
+c
+	​
+
+j=1
+∑
+4
+	​
+
+β
+j
+(54)
+
+sağlanabilir.
+
+Her y
+j
+	​
+
+∈P olduğundan
+
+#{0≤t<R
+j
+	​
+
+:p(y
+j
+	​
+
+)
+t
+	​
+
+=1}≥(1/2−ε)R
+j
+	​
+
+.
+(55)
+
+Kontrollü bloklar global T-zamanında ayrık olduğundan toplam kontrollü tek başlangıç sayısı en az
+
+(1/2−ε)
+j=0
+∑
+3
+	​
+
+R
+j
+	​
+
+.
+(56)
+
+C
+0
+	​
+
+'da post-budget başlangıcı z'den önce en fazla bir tek durum bulunur: p(y
+0
+	​
+
+)
+0
+	​
+
+. Lemma B ayrıca z'nin C
+0
+	​
+
+ içinde bulunduğunu garanti eder, çünkü η<c ve büyük m'de
+
+d<R
+0
+	​
+
+.
+
+(46) ile
+
+m
+1
+	​
+
+j=0
+∑
+3
+	​
+
+R
+j
+	​
+
+⟶c
+j=1
+∑
+4
+	​
+
+β
+j
+.
+(57)
+
+(54) strict olduğundan ρ,ε yeterince küçük seçildiğinde
+
+(1/2−ε)
+j=0
+∑
+3
+	​
+
+R
+j
+	​
+
+>L+2
+(58)
+
+büyük m'lerde.
+
+Dolayısıyla ilk L post-budget valuation başlangıcının tamamı, en geç C
+3
+	​
+
+'ün sonuna ulaşmadan görülür. Aradaki boşluklardaki tek durumlar yalnız bunu daha erken hale getirebilir.
+
+6.4 Tek bir kontrollü prefixte valuation sayımı
+
+Şimdi kullanacağımız deterministik tahmini yazalım.
+
+Bir y
+j
+	​
+
+∈P bloğunda
+
+αlog
+2
+	​
+
+y
+j
+	​
+
+≤s≤R
+j
+	​
+
+(59)
+
+uzunluğunda bir prefix düşünelim.
+
+O
+j
+	​
+
+(s):=#{0≤t<s:p(y
+j
+	​
+
+)
+t
+	​
+
+=1}.
+
+P'den
+
+∣O
+j
+	​
+
+(s)−s/2∣≤εs.
+(60)
+
+K
+j
+	​
+
+(s), başlangıcı 0≤t<s olan ve valuation'ı k olan tek durumların sayısı olsun.
+
+Tamamen s-prefixinin içinde bulunanlar w
+k
+	​
+
+=10
+k−1
+1 kelimeleriyle sayılır:
+
+W
+j
+	​
+
+(s)=A
+w
+k
+	​
+
+	​
+
+(y
+j
+	​
+
+,s).
+
+Mümkün kelime başlangıçlarının sayısı
+
+s−k.
+
+Dolayısıyla
+
+	​
+
+W
+j
+	​
+
+(s)−2
+−(k+1)
+(s−k)
+	​
+
+≤ε(s−k).
+(61)
+
+K
+j
+	​
+
+(s) ile W
+j
+	​
+
+(s) arasındaki fark yalnız prefixin son k zamanında başlayan valuation'lardan gelebilir; dolayısıyla
+
+∣K
+j
+	​
+
+(s)−W
+j
+	​
+
+(s)∣≤k.
+(62)
+
+(60)–(62)'den
+
+∣K
+j
+	​
+
+(s)−2
+−k
+O
+j
+	​
+
+(s)∣
+	​
+
+≤∣K
+j
+	​
+
+−W
+j
+	​
+
+∣
++∣W
+j
+	​
+
+−2
+−(k+1)
+(s−k)∣
++2
+−(k+1)
+k
++2
+−k
+∣O
+j
+	​
+
+−s/2∣
+≤(1+2
+−k
+)εs+C
+k
+	​
+
+,
+	​
+
+(63)
+
+burada örneğin
+
+C
+k
+	​
+
+:=k(1+2
+−(k+1)
+)
+
+alınabilir.
+
+Yani yeterince uzun her kontrollü prefixte, valuation-k sayısı
+
+2
+−k
+×(tek ba
+s
+¸
+	​
+
+langı
+c
+¸
+	​
+
+ sayısı)
+
+olup hata O
+k
+	​
+
+(εs+1)'dir.
+
+6.5 İlk L valuation'ın parçalanması
+
+İlk L post-budget valuation başlangıcını global T-zamanlarına göre sınıflandıralım.
+
+Kontrollü bloklarda bulunanlar iki tiptir:
+
+cutoff'tan tamamen önce kalan bütün C
+j
+	​
+
+'ler;
+
+eğer cutoff bir C
+j
+	​
+
+'nin içindeyse, o bloğun kullanılan başlangıç prefixi.
+
+Kronolojik yapı nedeniyle en fazla bir kontrollü blok kısmen kullanılır.
+
+Eğer bu son prefixin uzunluğu
+
+s≥αlog
+2
+	​
+
+y
+j
+	​
+
+,
+
+(63) uygulanır.
+
+Eğer
+
+s<αlog
+2
+	​
+
+y
+j
+	​
+
+,
+
+bu kısa parçayı tamamen “kontrolsüz” sınıfa atarız. İçindeki valuation başlangıçlarının sayısı s'den fazla değildir.
+
+Kontrolsüz valuation başlangıçlarının toplam sayısına U
+m
+	​
+
+ diyelim.
+
+Kaba fakat yeterli üst sınır:
+
+U
+m
+	​
+
+≤d+
+j=0
+∑
+2
+	​
+
+(r
+j
+	​
+
+−R
+j
+	​
+
+)+α
+j=0
+∑
+3
+	​
+
+log
+2
+	​
+
+y
+j
+	​
+
++O(1).
+(64)
+
+Buradaki d terimi aslında valuation-start sayımı için gerekenden daha kaba bir fazlalıktır; eklenmesi eşitsizliği yalnız gevşetir. Lemma B sayesinde
+
+d≤ηlog
+2
+	​
+
+y
+0
+	​
+
++1.
+(65)
+
+(46), (52), (64), (65) kullanılırsa sabit
+
+B
+4
+	​
+
+:=
+j=1
+∑
+4
+	​
+
+β
+j
+<∞
+
+için
+
+m
+U
+m
+	​
+
+	​
+
+≤B
+4
+	​
+
+((1−c)+α+η)+o(1),
+(66)
+
+sabit çarpanları büyütmek kaydıyla.
+
+L=δm+O(1) olduğundan
+
+L
+U
+m
+	​
+
+	​
+
+≤
+δ
+C
+β
+	​
+
+	​
+
+((1−c)+α+η)+o(1).
+(67)
+
+Bu tam olarak G6'daki
+
+O((1−c)/δ)
+
+kontrolsüz-aralık hatasıdır; α,η terimleri aynı yöntemle sıfıra gönderilir.
+
+6.6 Kontrollü parçaların toplam hatası
+
+İlk L valuation'ın kontrollü parçalardaki sayısına
+
+M
+C
+	​
+
+:=L−U
+m
+	​
+
+
+diyelim.
+
+Bu parçalarda a=k olanların toplamı N
+k
+(C)
+	​
+
+ olsun.
+
+En fazla dört blok bulunduğundan (63)'ü toplayınca
+
+	​
+
+N
+k
+(C)
+	​
+
+−2
+−k
+M
+C
+	​
+
+	​
+
+≤(1+2
+−k
+)ε
+j=0
+∑
+3
+	​
+
+R
+j
+	​
+
++O
+k
+	​
+
+(1)+O(1),
+(68)
+
+son O(1) başlangıç y
+0
+	​
+
+'daki bütçe-senkronizasyonundan kaynaklanabilecek tek boundary odd state'i absorbe eder.
+
+(57)'den
+
+j=0
+∑
+3
+	​
+
+R
+j
+	​
+
+=O(m),
+
+dolayısıyla
+
+L
+∣N
+k
+(C)
+	​
+
+−2
+−k
+M
+C
+	​
+
+∣
+	​
+
+≤C
+k,δ
+	​
+
+ε+o(1).
+(69)
+
+Kontrolsüz U
+m
+	​
+
+ valuation'ın a=k olan sayısına N
+k
+(U)
+	​
+
+ diyelim. Herhangi istatistiksel bilgi kullanmadan
+
+0≤N
+k
+(U)
+	​
+
+≤U
+m
+	​
+
+,
+
+dolayısıyla
+
+∣N
+k
+(U)
+	​
+
+−2
+−k
+U
+m
+	​
+
+∣≤U
+m
+	​
+
+.
+(70)
+
+Şimdi
+
+N
+k
+	​
+
+=N
+k
+(C)
+	​
+
++N
+k
+(U)
+	​
+
+,L=M
+C
+	​
+
++U
+m
+	​
+
+.
+
+(69)–(70):
+
+	​
+
+L
+N
+k
+	​
+
+	​
+
+−2
+−k
+	​
+
+≤C
+k,δ
+	​
+
+ε+
+L
+U
+m
+	​
+
+	​
+
++o(1).
+(71)
+
+(67)'yi koyarsak
+
+limsup
+	​
+
+L
+N
+k
+	​
+
+	​
+
+−2
+−k
+	​
+
+≤C
+k,δ
+	​
+
+ε+
+δ
+C
+β
+	​
+
+	​
+
+((1−c)+α+η)
+(72)
+
+iyi olay üzerinde.
+
+Şimdi verilen herhangi bir ζ>0 için parametreleri şu sırada seç:
+
+(43) ve δ<1 sayesinde c<1'i 1'e öyle yakın seç ki hem
+
+δ<cA
+4
+	​
+
+
+hem de (1−c)/δ hata bütçesi yeterince küçük olsun.
+
+ρ>0'yu kapasite eşitsizliği (58)'deki strict slack'i koruyacak kadar küçük seç.
+
+α,η>0'yı
+
+δ
+α+η
+	​
+
+
+yeterince küçük olacak şekilde seç; ayrıca
+
+α<c,η<c.
+
+Son olarak ε>0'yi hem kapasiteyi koruyacak hem de
+
+C
+k,δ
+	​
+
+ε
+
+istenen hata payından küçük olacak şekilde seç.
+
+Bu sabit parametrelerle ilgili tüm P-ve ölçek-good-set koşulları ∗-dense’dir; Lemma 2.7 ve Lemma 2.16 ile sonlu kesişimleri yine ∗-dense’dir. G7'ye göre X
+m
+	​
+
+ bunların dışında o(1) olasılıkla kalır.
+
+Dolayısıyla her ζ>0 için
+
+P(
+	​
+
+L
+N
+k
+	​
+
+	​
+
+−2
+−k
+	​
+
+>ζ)→0.
+
+Yani
+
+L
+N
+k
+	​
+
+	​
+
+P
+	​
+
+2
+−k
+	​
+
+
+her sabit
+
+0<δ<1
+
+için.
+
+PBM (b) ispatlandı. □
+
+7. Denetim boşluklarının durumu
+
+G1 kapalı: P nicel tanımlandı; overlapping kelimeler modulo ∣w∣ sınıflarına ayrıldı, her sınıfta ayrık bit blokları sayesinde Hoeffding uygulandı, O(n) prefix ve sonlu kelime kümesi üzerinde birleşim yapıldı, uzun sıfır koşuları ayrıca üstel kontrol edildi ve Lemma 2.8 ile ∗-density elde edildi.
+
+G2 kapalı: S
+j
+	​
+
+'lerin tam olarak ardışık tek-durum zamanları olduğu ispatlandı. τ, T
+m
+X
+m
+	​
+
+ tek olduğunda dahi mevcut tek durumu değil sonraki tek durumu seçiyor. P'nin sıfır-koşusu koşulu
+
+d≤ηlog
+2
+	​
+
+y+1
+
+veriyor.
+
+G3 kapalı: Inselmann Theorem 3.1’in doğrulanmış ∗-dense ifadesinde
+
+λ=β
+
+koymak doğrudan
+
+log
+2
+	​
+
+T
+m
+X
+m
+	​
+
+=(β+o
+P
+	​
+
+(1))m
+
+veriyor. 
+arXiv
+
+G4 kapalı: (a)'da
+
+δ<cβ/2
+
+seçiliyor. c↑1 ile tüm
+
+δ<β/2
+
+elde edilir; eşitlik noktası iddia edilmez.
+
+G5 kapalı: doğru küme
+
+F
+−1
+(P∩F
+−1
+P∩F
+−2
+P∩F
+−3
+P)
+	​
+
+
+olup post-budget dört bloğu verir. Kapasiteler:
+
+A
+3
+	​
+
+=0.9591035170…<1,
+A
+4
+	​
+
+=1.1563121796…>1.
+
+G6 kapalı: bloklar arasındaki toplam kontrolsüz T-zamanı
+
+O((1−c)m),
+
+ve bir T-zamanında en fazla bir valuation başlangıcı bulunduğundan aynı kaba sınır kontrolsüz valuation sayısına uygulanır. Kısa partial-prefix ve senkronizasyon terimleri sırasıyla O(αm), O(ηm)'dir. Son hata
+
+O(
+δ
+1−c+α+η
+	​
+
+).
+
+G7 kapalı: Lemma 2.8'den kabuk istisna oranı
+
+O(2
+−Dm
+);
+
+tek sayılara koşullamak yalnız sabit 2 faktörü getirir:
+
+P(X
+m
+	​
+
+∈
+/
+S)≤2C2
+−Dm
+.
+
+Bu yazımda açık kalan matematiksel boşluk görmüyorum; dolayısıyla Lemma A, B, C ve iki teorem parçası [PROOF] olarak etiketlendi.
+
+8. “Yeni” olan nedir?
+
+Burada dikkatli ayrım gerekli.
+
+PBM'nin temel mixing mekanizması yeni bir bağımsız mixing teoremi değildir. Inselmann’ın Proposition 2.4’ü bit-bütçesi içindeki exact parity randomness'i sağlıyor; ∗-dense formalizmi ve Lemma 2.16 ise tipik bir özelliği
+
+n↦T
+⌊log
+2
+	​
+
+n⌋
+(n)
+
+üzerinden yeniden başlatmaya izin veriyor. Theorem 3.1 de ardışık blokların ölçeklerini kontrol ediyor. 
+arXiv
++2
+arXiv
++2
+
+Dolayısıyla bu ispatın doğru sınıflandırması:
+
+PBM, Inselmann’ın ∗-dense iterasyon mekanizmasının yazılmamış bir corollary/application’ıdır; yeni derin bir mixing lemması değildir.
+
+Bu writeup'taki esas ek çalışma, Inselmann’ın sonuçlarından PBM'nin özel biçimine geçiştir: τ'nın bit-bütçesi sınırıyla kesin senkronizasyonu, a
+i
+	​
+
+=k↔10
+k−1
+1 kalıp dönüşümü, valuation-indeksi ile T-adımı arasındaki 1/2 yoğunluk hesabı, üç/dört post-budget blok indeks düzeltmesi ve kontrolsüz aralıkların O(1−c) hata olarak kapatılması.
+
+Inselmann v3'te incelediğimiz sonuçlarda PBM'nin bu valuation-frekansı formülasyonu açıkça ifade edilmiyor. Fakat bundan “literatürde ilk kez” sonucu çıkarılmamalıdır; burada doğrulanan iddia yalnızca, PBM'nin Inselmann araçlarından ciddi ölçüde doğrudan türediğidir.
+
+CP28_PBM_WRITEUP_20260923_COMPLETE

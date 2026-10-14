@@ -9,10 +9,33 @@
   },
   "active_task": {
     "code": "CP25_SIGN_SENSITIVE_CYCLE_PILOT_20260920",
-    "name": "Sign-sensitive affine cycle equation pilot",
-    "stage": "STAGE_0_READY_NOT_DISPATCHED",
-    "objective": "Test whether the sign of 2^m-3^k plus exact integrality and parity-word realisability separates positive 3n+1 cycle candidates from positive 3n-1 candidates; finite evidence is not proof and novelty is unassessed.",
+    "name": "Sign-sensitive cycle pilot — oriented lift/Product Barrier continuation",
+    "stage": "BASE_ROUTE_KILLED_C1_OPEN_NONTRIVIAL",
+    "objective": "The original sign + integrality + realizability split is killed. Test or prove the bounded-carry Product Barrier sufficient for oriented-lift integrality; finite evidence is not proof, novelty is unassessed, and Collatz remains open.",
     "scientific_route_change": true
+  },
+  "cp25_sign_sensitive_cycle_pilot": {
+    "base_route": "KILL",
+    "c1_oriented_lift": "OPEN-NONTRIVIAL",
+    "product_barrier": "OPEN-NONTRIVIAL",
+    "collatz_status": "OPEN / NOT PROVED",
+    "local_c1_raw_words_m22_per_p": 4194303,
+    "local_c1_nonintegral_survivors_p3_p5_p7": 0,
+    "local_product_barrier_p3_m22_nonintegral_necklaces": 401423,
+    "local_product_barrier_p3_m22_falsifiers": 0,
+    "local_product_barrier_odd_p3_101_m16_nonintegral_necklaces": 439934,
+    "local_product_barrier_odd_p3_101_m16_falsifiers": 0,
+    "chatgpt_web_verdict": "OPEN-NONTRIVIAL",
+    "muse_proof_verdict": "OPEN-NONTRIVIAL",
+    "muse_falsifier_verdict": "BOUNDED-PASS",
+    "jev_role": "ADVISORY only",
+    "jev_followup": {
+      "accept": 0.33,
+      "needs_lemma": 0.67,
+      "reject": 0.0
+    },
+    "report": "research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_C1_LIFT_COHERENCE_REPORT.md",
+    "next_action": "Prove or falsify the bounded-carry Product Barrier, prioritizing near-resonance cases |2^m-p^k| small, and compare it explicitly with Rukhin's quotient-cylinder prefix/suffix integrality tests."
   },
   "archive": {
     "budget_policy": {
@@ -312,6 +335,8 @@
     "management_protocol": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
     "current_integration_decision": "research_manager/decisions/INTEGRATED_RESEARCH_MUSE_W_2026-09-12.json",
     "current_exploratory_decision": "research_manager/decisions/CP23_CP24_CHAIN_KILL_INTEGRATION_AND_CP25_SIGN_SENSITIVE_PILOT_2026-09-20.md",
+    "cp25_base_and_c1_report": "research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_C1_LIFT_COHERENCE_REPORT.md",
+    "cp25_base_kill_c1_continuation_decision": "research_manager/decisions/CP25_BASE_KILL_AND_C1_PRODUCT_BARRIER_CONTINUATION_2026-09-21.md",
     "archive_limit_decision": "research_manager/decisions/ARCHIVE_LIMIT_100_MIB_CLARIFICATION_2026-09-20.md",
     "analogue_gate_lf_repair_decision": "research_manager/decisions/ANALOGUE_GATE_LF_CANONICALIZATION_REPAIR_2026-09-20.md"
   },
@@ -403,7 +428,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/REPOSITORY_TOOLING/verify_handoff.py",
-        "sha256": "a5f1883ad52b57b01039684ca264b2208a8537f6951251609e15504212cce22b"
+        "sha256": "f6a157346e89671da4a9e2ecf145f6e6e7f53988226ff3e9e4fc77669461aaac"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/CONTINUITY_PROTOCOL.md",
@@ -411,7 +436,7 @@
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_JOURNAL.jsonl",
-        "sha256": "646010079d2219895061b51017b1ea2c9e1d131f655845d7e979c1bee863eba1"
+        "sha256": "399615dfa4045ba84a187448ee6f1863fe948c95d53eea50850ff91d419b7549"
       },
       {
         "path": "Collatz Problemi — Araştırma Arşivi/RESEARCH_MANAGEMENT/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -785,7 +810,7 @@
       },
       {
         "path": "research_manager/RESEARCH_JOURNAL.jsonl",
-        "sha256": "646010079d2219895061b51017b1ea2c9e1d131f655845d7e979c1bee863eba1"
+        "sha256": "399615dfa4045ba84a187448ee6f1863fe948c95d53eea50850ff91d419b7549"
       },
       {
         "path": "research_manager/RESEARCH_MANAGEMENT_PROTOCOL.md",
@@ -1237,7 +1262,7 @@
       },
       {
         "path": "tools/verify_handoff.py",
-        "sha256": "a5f1883ad52b57b01039684ca264b2208a8537f6951251609e15504212cce22b"
+        "sha256": "f6a157346e89671da4a9e2ecf145f6e6e7f53988226ff3e9e4fc77669461aaac"
       }
     ]
   },
@@ -1452,7 +1477,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-09-20T20:38:52.361161+00:00",
+  "updated_at": "2026-10-14T08:01:28.224792+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
@@ -1491,5 +1516,61 @@
     "finite_5n_plus_1_rows_differing": 38,
     "scope": "The 44-row table is a regression diagnostic. General Ecal reflection blindness comes from CP24's analytic derivation and applies only under its stated invariant/shared-hypothesis scope.",
     "collatz_status": "OPEN_NOT_PROVED"
+  },
+  "cp26_collapse_and_internal_resonance": {
+    "timestamp": "2026-09-23T09:35:11.855247+00:00",
+    "checkpoint": "CP26_COLLAPSE_AND_INTERNAL_RESONANCE",
+    "status": "CLOSED",
+    "scientific_status": "COLLAPSE lemma PROOF (LMN1995 + k<=17012 exact); C1 KILL; carry-band KILL; SIGNED_CRT_DEPTH PARK; CP26 cand A PROOF(weak), B CONDITIONAL/PARK, C PARK, D KILL, E untested; Collatz OPEN",
+    "report_sha256": "b9adefa965939a50a48aee02d4bf628fa5cb026cf804a52b613b25ad21022b16",
+    "code_sha256": "d6db8dc6e81a8bb068836fc927b4eb419e51db8f2aea05d1cc1d34bc6aed90f9",
+    "next_action": "CP27: test candidate B under n_min>=2^71 constraint; success = systematic S*/K << 1"
+  },
+  "cp27_consortium_prefix_corridor": {
+    "timestamp": "2026-09-23T10:58:16.779165+00:00",
+    "checkpoint": "CP27_CONSORTIUM_PREFIX_CORRIDOR",
+    "status": "CLOSED",
+    "method": "consortium Rev4 (ChatGPT Web, Muse 1.3, Unreal Agent; Hermes coordinator)",
+    "scientific_status": "Candidate B PARK (3/3); X-B KILL; X-A main regime KILL/PARK via Lemma V (vacuity, exact 15/15, audited 3/3); narrow regime PARK (already excluded by global X condition); Collatz OPEN",
+    "report_sha256": "da8412d58bd1c32dba59dcdf75a9299fd610295a3a44197e38df313484802591",
+    "next_action": "New consortium Round 1 for a direction not reducible to product+continued-fraction skeleton"
+  },
+  "cp28_consortium_post_budget_mixing": {
+    "timestamp": "2026-09-23T13:22:15.637901+00:00",
+    "checkpoint": "CP28_CONSORTIUM_POST_BUDGET_MIXING",
+    "status": "CLOSED",
+    "method": "consortium CP28 (free T0, anonymous Borda T1, sequential review; ChatGPT Web, Muse 1.3 [quota-out later rounds], Unreal Agent; Hermes coordinator)",
+    "scientific_status": "T10 PARK; T3 PARK/KILL; T7 KILL; T9 KILL (exact); T12 KILL (pre-registered MI). Wall = Terras free budget. PBM theorem (post-budget valuation frequencies -> 2^-k, delta<1) PROOF-with-minor-revisions via Inselmann 2402.03276 Lemma 2.16 + Thm 3.1; audits UA line + UA red-team; Muse pending. Collatz OPEN",
+    "report_sha256": "25cc4fc1998fc219ec9b7ee31a3842b6fcd3244c8aa7ea9d7fb3d7a386981469",
+    "code_sha256": "2ed81f58f5a6765c249a973bd9ff8cd0ecb9465b873deff9579db8b8ae555d31",
+    "next_action": "Muse line audit; apply red-team clarity fixes; consortium: iterate PBM to growing delta (log m blocks) with *-density exponent control"
+  },
+  "novelty_audit_20260923": {
+    "timestamp": "2026-09-28T09:19:16.376336+00:00",
+    "checkpoint": "NOVELTY_AUDIT_20260923",
+    "status": "CLOSED",
+    "method": "whole-programme novelty scan: 7 isolated Unreal Agent era sessions (391 claims) + 8 deep sessions on 50 NEW-CANDIDATEs; coordinator primary-source checks (Curry 2026 Zenodo, LMN 1995 Cor. 2, Inselmann 2024); external cross-check session",
+    "scientific_status": "CP02-CP19 sparsity line SUPERSEDED by Garcia-Tal 1999 / Curry 2026; NEW-MINOR: CP17 chi_n=O(n^4), CP19 T3, CP20 kappa band, CP26 COLLAPSE (PROOF stands, LMN Cor.2 verified, threshold 17013 exact); TRIVIAL: CP27 Lemma V, CP28 PBM (corollary of Inselmann), CP23 sign-blindness; FLAWED: continued-fraction n0>=2^... figures (bounds on C(n0), withdrawn). chi_s exact s<=16: increments 0.4616->0.4714 rising, linear vs s log s undecided; 7/15 guess withdrawn. Collatz OPEN",
+    "report_sha256": "281e3f31d973f272a7513d621539e07420188e6224359719749210407d641713",
+    "code_sha256": "ec1c7903fd82bcc0a1de7131b8910bf17c096f29242b5734991aac4a3d2bf1a9",
+    "next_action": "bound off-diagonal collision term (sup E_j) for chi_s; optional: short honest note on NEW-MINOR items"
+  },
+  "novelty_audit_corrections_20260923": {
+    "timestamp": "2026-10-13T14:24:36.789201+00:00",
+    "checkpoint": "NOVELTY_AUDIT_20260923_CORRECTIONS",
+    "status": "APPLIED",
+    "method": "dated correction notes appended (original text untouched); SHA256SUMS + state hashes refreshed",
+    "scientific_status": "CP26 COLLAPSE [PROOF] stands: LMN 1995 Corollaire 2 verified from primary source, threshold 17013 exact, tail k>3.82e8 by monotonicity; CP28 PBM proof status unchanged, novelty TRIVIAL/corollary of Inselmann; continued-fraction n0>=2^107/2^1520/2^15780/2^50495 and 2^1050 WITHDRAWN (bounds on C(n0), not n0) in DURUM.md, GECMIS.md, 09/PATTERNLER.md, 09/BAGLANTILAR.md; chi_s_exact labelled float64/FFT full-support (not exact rational). Collatz OPEN",
+    "next_action": "chi_s: bound off-diagonal collision term (sup E_j)"
+  },
+  "cp29_chi_s_collision_energy": {
+    "timestamp": "2026-10-14T08:01:28.224792+00:00",
+    "checkpoint": "CP29_CHI_S_COLLISION_ENERGY",
+    "status": "CLOSED (partial/negative)",
+    "method": "Unreal-only round: 3 author arms (PAIR, FOURIER, NUMERIC) + SELFSIM theory arm + clean UA referee; Hermes exact Fraction reproduction (cp29_verify.py)",
+    "scientific_status": "Identities I1-I6 PROOF (elementary; INTERNAL tools): E_s=3^s r_s (first divergence), weighted 4^j-correlation formula, fiber-square 0<=E_s<=2chi_{s-1}, v3-difference not Markov (16400 vs 1280 /786429), cross-overlap form, logic lemma. Growth of chi_s OPEN: best rigorous bound still O(s^4) (CP17); single missing inequality sup_s 3^{s-1} sum_{l!=0} 4^{-|l|} C_s(l) < inf. Numerics s<=18 (3 independent codes, agreement <=5e-13, not certified): E_16=0.471352, E_17=0.471820, E_18=0.472233, non-monotone at 6->7; fits undecided. Self-similar framing: 3-adic critical L2 IFS, no positive minimal separation in infinite alphabet; no known theorem closes it. Audit: UA referee + Hermes exact (identities only). Collatz OPEN",
+    "report_sha256": "69c3031ec9539fbc525b133db07c991a63628d8ab33751fdc571888a90304db3",
+    "code_sha256": "5886525642a9643f6600d16a5823fbb2a1f6b09eb91fb3b14129415c98168cca",
+    "next_action": "user decision: PARK chi_s (recommended) / weighted near-overlap estimate for C_s(l) / return to main programme"
   }
 }

@@ -1,0 +1,477 @@
+[
+  {
+    "idx": 41,
+    "id": "E21-02",
+    "claim": "Gerçek önek kaynağı için tüm m≥2,1≤s<m düzeylerinde M_merge≥L_lift öne sürülüyor.",
+    "exact_statement": "H(x)=(3x+1)/2 (x odd), x/2 (x even); P_{m,k,r}(z)=#{1<=h<2^m odd: first m steps have k odd parities, H^m(h)≡z (mod 2^r)}; n_k=C(m-1,k-1); J_r(X)=2^(r-1)Σ_{u<2^(r-1)}(X[u]-X[u+2^(r-1)])²; Ecal(m,r)=Σ_{k=1}^m J_r(P_{m,k,r})/n_k. Put N=2^(s+1),q=2^s,c_k=3^k mod N; E_k[z]=P_k[2z]+P_k[2z-c_k], O_k[z]=P_k[3^(-1)(2z-1)]+P_k[3^(-1)(2z-1)-c_k] (mod N); L_k=(J_s(E_k)+J_s(O_k)-J_{s+1}(P_k))/n_k, L_lift=Σ_k L_k; M_j=J_s(n_{j-1}E_j-n_j O_{j-1})/[n_j n_{j-1}(n_j+n_{j-1})], M_merge=Σ_{j=2}^m M_j. Conjecture: ∀m≥2, 1≤s≤m-1, M_merge(m,s)≥L_lift(m,s), equivalently Ecal(m,s+1)−Ecal(m+1,s)≥0. CP21 reported 221 finite rows, but 11 old extension rows were incorrect; CP24 regenerated them and restored 221 distinct rows.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md",
+    "program_label": "[CONJECTURE]; [EXACT COMPUTATION]",
+    "correctness": "BOSLUKLU (evrensel önerme kanıtlanmadı; hesaplanmış satırlar koşullu olarak doğrulandı)",
+    "weakest_step": "M≥0 tek başına imzalı L için yeterli değil; gerçek parity-word kaynağına has küresel M≥L kontrolü yok. CP21 eski 11 satırın histogram mod küçültmesinde dilimleme hatası CP24 ile giderildi.",
+    "check_code_and_output": "Bağımsız kod: ./deep_D8_CP21_23_check.py (Python 3 stdlib); çıktı: gate [(2,1,L=0,M=0,defect=0),(3,2,L=0,M=4,defect=4),(4,2,L=8/3,M=17/3,defect=3)]; radius2: 55 rows, 607 positive-demand intervals, 0 violations; T4: 77 strata (m=2..12), 0 violations; reflection: 1023 starts m=1..10, r=1..4, 0 violations; freq (4,2), a=1,3: M=17/6, L≈4/3, Δ≈1.5 (Fourier part float; NOT certified sign at general m). CP24 source: /mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md",
+    "triviality_derivation": "Parseval J_r=Σ_{ξ odd}|P̂_r(ξ)|² ve afin/parite bijeksiyonu Ecal defect = M−L verir; M≥0 yeterli değildir, L işaret değiştirir. Garcia–Tal / Curry sonsuz yörünge seyreklik sınırları sonlu kaynak Fourier-enerji monotonluğunu gerektirmez.",
+    "queries": [
+      {
+        "query": "Collatz parity source Fourier energy monotonicity",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz%20parity%20source%20Fourier%20energy%20monotonicity&rows=3",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 inverse tree Banach density source histogram",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?q=3x%2B1%20inverse%20tree%20Banach%20density%20source%20histogram&size=3",
+        "status": 200,
+        "top_titles": [
+          "Dealgebraic Symmetry in the Inverse Path of the 3x+1 Problem: Generalization of Hole Nodes and 4x+c Recurrence Relations",
+          "Project files provided as supporting information to the manuscript \"A journey through mapping space: characterising the statistical and metric properties of reduced representations of macromolecules\"",
+          "An inverse Problem: Histogram Equalization"
+        ]
+      },
+      {
+        "query": "Collatz parity vector odd character energy Parseval",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz%20AND%20all%3A%22parity%20vector%20odd%20character%20energy%20Parseval%22&start=0&max_results=2",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 prefix stopping time spectral inequality",
+        "service": "openalex",
+        "url": "https://api.openalex.org/works?search=3x%2B1%20prefix%20stopping%20time%20spectral%20inequality&per-page=2",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz source entropy topological subshift",
+        "service": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20source%20entropy%20topological%20subshift&limit=2&fields=title,year,abstract,externalIds",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz reciprocal sum divergent orbits density",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz%20reciprocal%20sum%20divergent%20orbits%20density&rows=3",
+        "status": 429,
+        "top_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Functiones et Approximatio 56 (2017), arXiv:1510.01610v4, Theorem 2.1",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "Two positive integers n and m have same parity vector of length j if and only if n ≡ m (mod 2^j).",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), Theorem 1 and Corollary 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "Theorem 1. The Banach density of P is zero. ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography, II (2000–2009), arXiv:math/0608208 (full PDF, Huang–Wu 2000 annotation)",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "One-to-one correspondence between the natural numbers and the parity vectors in the Collatz problem",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex Garcia–Tal 1999 / Rozier 2017 cited-by title/abstract lists: API daily budget exhausted; no citing publications verified",
+        "url": "https://api.openalex.org/works?filter=cites:W2012210876&per-page=3",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "UNRESOLVED",
+    "one_line_reason": "Düzeltilmiş sonlu doğrulama genel eşitsizliği kanıtlamıyor; eşdeğer yayın tespit edilmedi.",
+    "bibliography_audit": "Both Lagarias full PDFs downloaded and searched (math/0309224: parity vector, Fourier, Sontacchi, cycles, density; math/0608208: parity vector, cycles, complexity, density). Garcia–Tal PDF, Rozier 2017 arXiv PDF and Rozier 2026 PDF opened. OpenAlex citing Garcia–Tal and Rozier 2017 lookup + cites: HTTP 429 shared quota; citing list/abstracts NOT VERIFIED. Semantic Scholar and export.arxiv.org/api/query often HTTP 429; search metadata is not a full prior-art clearance. No direct published equivalent found in accessible primary texts; nonexistence is NOT established."
+  },
+  {
+    "idx": 42,
+    "id": "E21-04",
+    "claim": "Her tek a mod 2^s için programın Δ^(a)=M^(a)−L^(a)≥0 varsayımı 57 farklı parametre çiftinde karşıörneksizdir.",
+    "exact_statement": "H(x)=(3x+1)/2 (x odd), x/2 (x even); P_{m,k,r}(z)=#{1<=h<2^m odd: first m steps have k odd parities, H^m(h)≡z (mod 2^r)}; n_k=C(m-1,k-1); J_r(X)=2^(r-1)Σ_{u<2^(r-1)}(X[u]-X[u+2^(r-1)])²; Ecal(m,r)=Σ_{k=1}^m J_r(P_{m,k,r})/n_k. Put N=2^(s+1),q=2^s,c_k=3^k mod N; E_k[z]=P_k[2z]+P_k[2z-c_k], O_k[z]=P_k[3^(-1)(2z-1)]+P_k[3^(-1)(2z-1)-c_k] (mod N); L_k=(J_s(E_k)+J_s(O_k)-J_{s+1}(P_k))/n_k, L_lift=Σ_k L_k; M_j=J_s(n_{j-1}E_j-n_j O_{j-1})/[n_j n_{j-1}(n_j+n_{j-1})], M_merge=Σ_{j=2}^m M_j. For odd a mod q=2^s, use the stated stratum-dependent frequency gauge, lifts_k(a)={ξ,ξ+q} odd mod N, L^(a)=Σ_k n_k^(-1)Σ_{ξ∈lifts_k(a)}cos(2π3^kξ/N)|P̂_k(ξ)|²; M^(a)=Σ_{k=2}^mΣ_{ξ∈lifts_k(a)}|n_{k-1}Ê_k(ξ)-n_kÔ_{k-1}(ξ)|²/[2n_kn_{k-1}(n_k+n_{k-1})]; conjecture Δ^(a)=M^(a)−L^(a)≥0 for ALL m≥2, 1≤s<m, all odd a mod q (s=1 allowed). CP21 independently signs 41 rows; CP24 union of prior 41 with later 35 is 57 UNIQUE (m,s), 19 overlaps; CP24 only rechecked scope and common TOTAL defects, NOT all 57 cyclotomic sign certificates.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md",
+    "program_label": "[CONJECTURE]; [EXACT COMPUTATION]",
+    "correctness": "BOSLUKLU (genel pozitiflik için kanıt yok; 57 işaretin bağımsız sertifikası yok)",
+    "weakest_step": "Stratum-gauge ve mod q indeks seçimi esas: mod N düzeyinde merge katkısını iki lift arasında paylaştırma konvansiyonel ve doğal yarıya bölüşte negatifler çıkıyor. Ayrıca CP24 birleşiminin tüm siklotomik işaretleri yeniden sertifikalandırılmadı.",
+    "check_code_and_output": "Bağımsız kod: ./deep_D8_CP21_23_check.py (Python 3 stdlib); çıktı: gate [(2,1,L=0,M=0,defect=0),(3,2,L=0,M=4,defect=4),(4,2,L=8/3,M=17/3,defect=3)]; radius2: 55 rows, 607 positive-demand intervals, 0 violations; T4: 77 strata (m=2..12), 0 violations; reflection: 1023 starts m=1..10, r=1..4, 0 violations; freq (4,2), a=1,3: M=17/6, L≈4/3, Δ≈1.5 (Fourier part float; NOT certified sign at general m). (m=4,s=2 için sayısal Fourier L değeri; büyük alanlarda exact sign iddiası değil).",
+    "triviality_derivation": "Parseval ve DFT, Σ_a Δ^(a)=M−L verir ama toplamın işareti tek tek Δ^(a) işaretlerini belirlemez. E/O Fourier mod q periyodik, lift kosinüsü mod N yarım periyotta anti-periyodik; bu yalnız frekans tanımını ve M^(a)≥0 değerini açıklar, Δ^(a)≥0 sonucunu vermez.",
+    "queries": [
+      {
+        "query": "Collatz parity vector per frequency positivity Fourier",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz%20parity%20vector%20per%20frequency%20positivity%20Fourier&rows=3",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 cyclotomic energy defect frequency",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?q=3x%2B1%20cyclotomic%20energy%20defect%20frequency&size=3",
+        "status": 200,
+        "top_titles": [
+          "Thermosonic Testing with Phased Matched Guided Wave Excitation",
+          "Highly efficient and noncontact vibrothermography via local defect resonance",
+          "Highl y - efficient and n oncontact vibro - thermograph y via local defect resonance"
+        ]
+      },
+      {
+        "query": "Collatz character sums spectral positivity",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz%20AND%20all%3A%22character%20sums%20spectral%20positivity%22&start=0&max_results=2",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 odd parity Fourier source convolution",
+        "service": "openalex",
+        "url": "https://api.openalex.org/works?search=3x%2B1%20odd%20parity%20Fourier%20source%20convolution&per-page=2",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz factor complexity subshift Fourier",
+        "service": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20factor%20complexity%20subshift%20Fourier&limit=2&fields=title,year,abstract,externalIds",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz source reciprocal sum Banach density",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz%20source%20reciprocal%20sum%20Banach%20density&rows=3",
+        "status": 429,
+        "top_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Functiones et Approximatio 56 (2017), arXiv:1510.01610v4, Theorem 2.1",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "Two positive integers n and m have same parity vector of length j if and only if n ≡ m (mod 2^j).",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224 (2011 revision), Böhm–Sontacchi 1978 annotation",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "The authors are primarily concerned with cycles of a generalization of the 3x + 1 function.",
+        "opened": true
+      },
+      {
+        "cite": "Characteristic numbers of parity vectors of Collatz sequences, Zenodo record 6964639 (2022), original record abstract",
+        "url": "https://zenodo.org/records/6964639",
+        "quote": "The present work deals with the characterization of parity vectors of Collatz sequences (of finite and infinite length).",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex Garcia–Tal 1999 / Rozier 2017 cited-by title/abstract lists: API daily budget exhausted; no citing publications verified",
+        "url": "https://api.openalex.org/works?filter=cites:W2012210876&per-page=3",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "UNRESOLVED",
+    "one_line_reason": "Duyarlı Fourier bileşeni pozitifliği ne ispatlandı ne literatürde eşdeğerine ulaşıldı.",
+    "bibliography_audit": "Both Lagarias full PDFs downloaded and searched (math/0309224: parity vector, Fourier, Sontacchi, cycles, density; math/0608208: parity vector, cycles, complexity, density). Garcia–Tal PDF, Rozier 2017 arXiv PDF and Rozier 2026 PDF opened. OpenAlex citing Garcia–Tal and Rozier 2017 lookup + cites: HTTP 429 shared quota; citing list/abstracts NOT VERIFIED. Semantic Scholar and export.arxiv.org/api/query often HTTP 429; search metadata is not a full prior-art clearance. No direct published equivalent found in accessible primary texts; nonexistence is NOT established."
+  },
+  {
+    "idx": 43,
+    "id": "E21-11",
+    "claim": "M(m,k)≤⌊2^(m−k)(3^(k−1)−2^(k−1))/3^k⌋+1 iddiası her m,k için türetilmiştir.",
+    "exact_statement": "For m≥2, 1≤k≤m, w_0=1, |w|=k, unique odd h_w∈[1,2^m), e_w=H^m(h_w), B_w=Σ_{j=1}^k 3^(k-j)2^(i_j), 2^m e_w=3^k h_w+B_w. M(m,k)=max_e #{w:e_w=e}. T4: M(m,k)≤ floor[2^(m−k)(3^(k−1)−2^(k−1))/3^k]+1. This is stabilized exact-endpoint cap, NOT M_merge.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/02-cap-bound/REPORT.md",
+    "program_label": "[PROOF] T4",
+    "correctness": "DOĞRU (basit sayım / bilinen afin formun sonucu)",
+    "weakest_step": "Pairwise spread inequality needs justification for arbitrary words: first common prefix p≥1, suffix weight q=k−p≤k−1; bound the suffix affine offset by maximizing positions at the end. Source script tests pairs, not itself a symbolic proof; this derivation closes the gap.",
+    "check_code_and_output": "Bağımsız kod: ./deep_D8_CP21_23_check.py (Python 3 stdlib); çıktı: gate [(2,1,L=0,M=0,defect=0),(3,2,L=0,M=4,defect=4),(4,2,L=8/3,M=17/3,defect=3)]; radius2: 55 rows, 607 positive-demand intervals, 0 violations; T4: 77 strata (m=2..12), 0 violations; reflection: 1023 starts m=1..10, r=1..4, 0 violations; freq (4,2), a=1,3: M=17/6, L≈4/3, Δ≈1.5 (Fourier part float; NOT certified sign at general m). Dikkat: aynı kaynakta ayrı T7r iff yanlıştır; T4 onu kullanmaz.",
+    "triviality_derivation": "Let first differing index follow a common prefix with p≥1 ones and q=k−p. Prefix B contributions coincide; remaining offset B_suffix>0 and <2^(m−q)(3^q−2^q), because max uses last q slots. Hence |B−B′|<2^(m−k+1)(3^(k−1)−2^(k−1)). Equal e implies 3^k|h−h′|=|B−B′|; odd h values are ≥2 apart, so at most floor[2^(m−k)(3^(k−1)−2^(k−1))/3^k]+1 starts share e. Elementary affine identity + packing; no distinct difficult theorem.",
+    "queries": [
+      {
+        "query": "Collatz parity vector affine offset endpoint multiplicity",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz%20parity%20vector%20affine%20offset%20endpoint%20multiplicity&rows=3",
+        "status": 200,
+        "top_titles": [
+          "Affine self similarities and the non existence of non trivia collatz cycles ;a critical analysis",
+          "Collatz Trees:&lt;em&gt; &lt;/em&gt;Trunk–Branch Indexing and Affine Cycle-Freeness",
+          "Natural Numbers Generalized Parity, and the Collatz Algorithm"
+        ]
+      },
+      {
+        "query": "3x+1 Böhm Sontacchi cycles affine parity",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?q=3x%2B1%20B%C3%B6hm%20Sontacchi%20cycles%20affine%20parity&size=3",
+        "status": 200,
+        "top_titles": [
+          "A new approach to study and analysis  of behavior of Collatz sequences",
+          "Two-Parameter Generalization of the Collatz Function: Characterization of Terminal Cycles and Empirical Results",
+          "A Deterministic Geometric Bound for the 3x+1 Problem via Multiplicative Topological Invariants"
+        ]
+      },
+      {
+        "query": "Collatz endpoint collision 3^k residues 2^m",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz%20AND%20all%3A%22endpoint%20collision%203%5Ek%20residues%202%5Em%22&start=0&max_results=2",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 inverse tree fiber maximum multiplicity",
+        "service": "openalex",
+        "url": "https://api.openalex.org/works?search=3x%2B1%20inverse%20tree%20fiber%20maximum%20multiplicity&per-page=2",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz stopping time residue class upper bound",
+        "service": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20stopping%20time%20residue%20class%20upper%20bound&limit=2&fields=title,year,abstract,externalIds",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz 2^m-3^k carry parity word",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz%202%5Em-3%5Ek%20carry%20parity%20word&rows=3",
+        "status": 429,
+        "top_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences, arXiv:2502.00948v5 (2026), introduction (PDF authors verified)",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "We omit the general expression of E_j(n) as it already appears in many papers [8, 11, 22, 23]",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224 (2011 revision), Böhm–Sontacchi 1978 annotation",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "The authors are primarily concerned with cycles of a generalization of the 3x + 1 function.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Functiones et Approximatio 56 (2017), arXiv:1510.01610v4, Theorem 2.1",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "Two positive integers n and m have same parity vector of length j if and only if n ≡ m (mod 2^j).",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography, II (2000–2009), arXiv:math/0608208 (full PDF, Huang–Wu 2000 annotation)",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "One-to-one correspondence between the natural numbers and the parity vectors in the Collatz problem",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex Garcia–Tal 1999 / Rozier 2017 cited-by title/abstract lists: API daily budget exhausted; no citing publications verified",
+        "url": "https://api.openalex.org/works?filter=cites:W2012210876&per-page=3",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Tavan doğrulanıyor, fakat klasik afin ifade ve aralıkta çift tamsayı sayımının doğrudan sonucu.",
+    "bibliography_audit": "Both Lagarias full PDFs downloaded and searched (math/0309224: parity vector, Fourier, Sontacchi, cycles, density; math/0608208: parity vector, cycles, complexity, density). Garcia–Tal PDF, Rozier 2017 arXiv PDF and Rozier 2026 PDF opened. OpenAlex citing Garcia–Tal and Rozier 2017 lookup + cites: HTTP 429 shared quota; citing list/abstracts NOT VERIFIED. Semantic Scholar and export.arxiv.org/api/query often HTTP 429; search metadata is not a full prior-art clearance. No direct published equivalent found in accessible primary texts; nonexistence is NOT established."
+  },
+  {
+    "idx": 44,
+    "id": "E21-20",
+    "claim": "Her m≥2,1≤s<m ve 1≤a≤b≤m için Σ_[a,b]max(L_k,0)≤Σ_[max(a−1,2),min(b+2,m)]M_j önerilir.",
+    "exact_statement": "H(x)=(3x+1)/2 (x odd), x/2 (x even); P_{m,k,r}(z)=#{1<=h<2^m odd: first m steps have k odd parities, H^m(h)≡z (mod 2^r)}; n_k=C(m-1,k-1); J_r(X)=2^(r-1)Σ_{u<2^(r-1)}(X[u]-X[u+2^(r-1)])²; Ecal(m,r)=Σ_{k=1}^m J_r(P_{m,k,r})/n_k. Put N=2^(s+1),q=2^s,c_k=3^k mod N; E_k[z]=P_k[2z]+P_k[2z-c_k], O_k[z]=P_k[3^(-1)(2z-1)]+P_k[3^(-1)(2z-1)-c_k] (mod N); L_k=(J_s(E_k)+J_s(O_k)-J_{s+1}(P_k))/n_k, L_lift=Σ_k L_k; M_j=J_s(n_{j-1}E_j-n_j O_{j-1})/[n_j n_{j-1}(n_j+n_{j-1})], M_merge=Σ_{j=2}^m M_j. Conjecture: ∀m≥2, 1≤s<m, 1≤a≤b≤m, Σ_{k=a}^b max(L_k,0) ≤ Σ_{j=max(a−1,2)}^{min(b+2,m)}M_j (empty sum=0). CP24 221 UNIQUE (m,s), 33,540 intervals, 18,259 positive demand, 0 failures; first 210 used archived term tables, new 11 recomputed from scratch.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md",
+    "program_label": "[CONJECTURE]",
+    "correctness": "BOSLUKLU (genel tüm aralıklar kanıtlanmadı)",
+    "weakest_step": "Komşu j=k−1..k+2 aralığına her pozitif L_k için yeterli merge kütlesi tahsisi yok; salt kütle/cap/destek ve parent induction yetersiz (CP21/CP22 adversarial witnesses). m≤26 testi tüm m için kanıt değildir.",
+    "check_code_and_output": "Bağımsız kod: ./deep_D8_CP21_23_check.py (Python 3 stdlib); çıktı: gate [(2,1,L=0,M=0,defect=0),(3,2,L=0,M=4,defect=4),(4,2,L=8/3,M=17/3,defect=3)]; radius2: 55 rows, 607 positive-demand intervals, 0 violations; T4: 77 strata (m=2..12), 0 violations; reflection: 1023 starts m=1..10, r=1..4, 0 violations; freq (4,2), a=1,3: M=17/6, L≈4/3, Δ≈1.5 (Fourier part float; NOT certified sign at general m). Full CP24 grid: 221 rows/33,540 intervals/18,259 binding-positive/0 failures from /mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md",
+    "triviality_derivation": "M_j≥0 and interval bound, if proved, imply Σ_k max(L_k,0)≤Σ_j M_j by [a,b]=[1,m], hence Ecal defect≥0; conversely global inequality does NOT distribute M locally. Fourier/affine inversion, Garcia–Tal or generic graph flow alone do not yield radius-2 localization.",
+    "queries": [
+      {
+        "query": "Collatz radius two local charging lift merge",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz%20radius%20two%20local%20charging%20lift%20merge&rows=3",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz parity vector source energy interval inequality",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Collatz%20parity%20vector%20source%20energy%20interval%20inequality&size=3",
+        "status": 200,
+        "top_titles": [
+          "Collatz Parity Vector Toolkit",
+          "Characteristic numbers of parity vectors of Collatz sequences",
+          "A new approach to study and analysis  of behavior of Collatz sequences"
+        ]
+      },
+      {
+        "query": "3x+1 inverse tree Fourier windowed count",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz%20AND%20all%3A%223x%2B1%20inverse%20tree%20Fourier%20windowed%20count%22&start=0&max_results=2",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz Banach density stopping time intervals",
+        "service": "openalex",
+        "url": "https://api.openalex.org/works?search=Collatz%20Banach%20density%20stopping%20time%20intervals&per-page=2",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz subshift factor complexity local entropy",
+        "service": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20subshift%20factor%20complexity%20local%20entropy&limit=2&fields=title,year,abstract,externalIds",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x+1 prefix source Fourier max entry cap",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=3x%2B1%20prefix%20source%20Fourier%20max%20entry%20cap&rows=3",
+        "status": 429,
+        "top_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Functiones et Approximatio 56 (2017), arXiv:1510.01610v4, Theorem 2.1",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "Two positive integers n and m have same parity vector of length j if and only if n ≡ m (mod 2^j).",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), Theorem 1 and Corollary 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "Theorem 1. The Banach density of P is zero. ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224 (2011 revision), Böhm–Sontacchi 1978 annotation",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "The authors are primarily concerned with cycles of a generalization of the 3x + 1 function.",
+        "opened": true
+      },
+      {
+        "cite": "Characteristic numbers of parity vectors of Collatz sequences, Zenodo record 6964639 (2022), original record abstract",
+        "url": "https://zenodo.org/records/6964639",
+        "quote": "The present work deals with the characterization of parity vectors of Collatz sequences (of finite and infinite length).",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex Garcia–Tal 1999 / Rozier 2017 cited-by title/abstract lists: API daily budget exhausted; no citing publications verified",
+        "url": "https://api.openalex.org/works?filter=cites:W2012210876&per-page=3",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 2,
+    "final_verdict": "UNRESOLVED",
+    "one_line_reason": "Yerel şarj önerisi kuvvetli fakat ispat yok; düzeltilmiş 221 satır yalnız deneysel kanıt.",
+    "bibliography_audit": "Both Lagarias full PDFs downloaded and searched (math/0309224: parity vector, Fourier, Sontacchi, cycles, density; math/0608208: parity vector, cycles, complexity, density). Garcia–Tal PDF, Rozier 2017 arXiv PDF and Rozier 2026 PDF opened. OpenAlex citing Garcia–Tal and Rozier 2017 lookup + cites: HTTP 429 shared quota; citing list/abstracts NOT VERIFIED. Semantic Scholar and export.arxiv.org/api/query often HTTP 429; search metadata is not a full prior-art clearance. No direct published equivalent found in accessible primary texts; nonexistence is NOT established."
+  },
+  {
+    "idx": 45,
+    "id": "E23-04",
+    "claim": "Tüm uygun m,r,k için H_- kaynağı P^-_{m,k,r}(z)=P^+_{m,k,r}(3^k−z) ve Ecal^-(m,r)=Ecal^+(m,r).",
+    "exact_statement": "For b=±1, H_b(x)=(3x+b)/2 if odd, x/2 otherwise (on all integers). Define P^b_{m,k,r}(z) over odd 1≤h<2^m, m≥1,r≥1,1≤k≤m, z∈Z/2^rZ, with n_k=binom(m−1,k−1), J_r and Ecal^b as above. P^-_{m,k,r}(z)=P^+_{m,k,r}((3^k−z) mod 2^r), and Ecal^-(m,r)=Ecal^+(m,r). m=1,h=1 is a fixed point of start pairing, allowed.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md",
+    "program_label": "[PROOF] ve [EXACT COMPUTATION]",
+    "correctness": "DOĞRU (tam genel kanıt var; 3n−1 içinde pozitif çevrim bulunduğu da doğru)",
+    "weakest_step": "H_-(-h)=-H_+(h) gives endpoints for negative starts, not directly positive chosen range: need parity-word congruence h_- = 2^m−h ≡−h (mod 2^m) and affine endpoint relation 3^k; then show reflection preserves sibling-difference squares. Beware equality of UNSQUARED differences is unnecessary.",
+    "check_code_and_output": "Bağımsız kod: ./deep_D8_CP21_23_check.py (Python 3 stdlib); çıktı: gate [(2,1,L=0,M=0,defect=0),(3,2,L=0,M=4,defect=4),(4,2,L=8/3,M=17/3,defect=3)]; radius2: 55 rows, 607 positive-demand intervals, 0 violations; T4: 77 strata (m=2..12), 0 violations; reflection: 1023 starts m=1..10, r=1..4, 0 violations; freq (4,2), a=1,3: M=17/6, L≈4/3, Δ≈1.5 (Fourier part float; NOT certified sign at general m). 3n−1 shortcut cycle: 5→7→10→5. CP24 clarified sign-sensitive hypotheses remain usable.",
+    "triviality_derivation": "Negation conjugacy H_-(-x)=−H_+(x) and Terras/Everett m-bit parity bijection give same word for −h and 2^m−h. Add 2^m e_+=3^k h+B_w and 2^m e_-=3^k(2^m−h)−B_w: e_-+e_+=3^k. Reflection z↦3^k−z permutes pairs {u,u+2^(r−1)} up to exchange, preserves squared difference J_r. Elementary conjugacy plus affine form and Parseval; novel Ecal notation does not make a new theorem. It excludes only arguments using sign-insensitive observables ALONE, not every modular approach.",
+    "queries": [
+      {
+        "query": "3x+1 3x-1 parity vector conjugacy sign",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=3x%2B1%203x-1%20parity%20vector%20conjugacy%20sign&rows=3",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "Collatz 3n-1 affine reflection endpoint symmetry",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?q=Collatz%203n-1%20affine%20reflection%20endpoint%20symmetry&size=3",
+        "status": 200,
+        "top_titles": [
+          "LA CONJETURA DE COLLATZ Orden y armonía en los números de la secuencia",
+          "LA CONJETURA DE COLLATZ. Orden en los números de la secuencia.",
+          "DEMOSTRACIÓN VISUAL DE LA CONJETURA DE COLLATZ"
+        ]
+      },
+      {
+        "query": "3x+1 3x-1 Fourier character energy equality",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz%20AND%20all%3A%223x%2B1%203x-1%20Fourier%20character%20energy%20equality%22&start=0&max_results=2",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "generalized Collatz sign conjugacy inverse tree",
+        "service": "openalex",
+        "url": "https://api.openalex.org/works?search=generalized%20Collatz%20sign%20conjugacy%20inverse%20tree&per-page=2",
+        "status": 429,
+        "top_titles": []
+      },
+      {
+        "query": "3x-1 cycles 2^m-3^k parity vector",
+        "service": "semanticscholar",
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x-1%20cycles%202%5Em-3%5Ek%20parity%20vector&limit=2&fields=title,year,abstract,externalIds",
+        "status": 200,
+        "top_titles": [
+          "CYCLES FOR THE 3X+1 MAP ON THE GAUSSIAN INTEGERS",
+          "The autoconjugacy of the 3x+1 function"
+        ]
+      },
+      {
+        "query": "Collatz topological entropy reflection sign conjugacy",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?query.bibliographic=Collatz%20topological%20entropy%20reflection%20sign%20conjugacy&rows=3",
+        "status": 429,
+        "top_titles": []
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences, arXiv:2502.00948v5 (2026), introduction (PDF authors verified)",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "We omit the general expression of E_j(n) as it already appears in many papers [8, 11, 22, 23]",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Functiones et Approximatio 56 (2017), arXiv:1510.01610v4, Theorem 2.1",
+        "url": "https://arxiv.org/pdf/1510.01610",
+        "quote": "Two positive integers n and m have same parity vector of length j if and only if n ≡ m (mod 2^j).",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), arXiv:math/0309224 (2011 revision), Böhm–Sontacchi 1978 annotation",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "The authors are primarily concerned with cycles of a generalization of the 3x + 1 function.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography, II (2000–2009), arXiv:math/0608208 (full PDF, Huang–Wu 2000 annotation)",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "One-to-one correspondence between the natural numbers and the parity vectors in the Collatz problem",
+        "opened": true
+      },
+      {
+        "cite": "OpenAlex Garcia–Tal 1999 / Rozier 2017 cited-by title/abstract lists: API daily budget exhausted; no citing publications verified",
+        "url": "https://api.openalex.org/works?filter=cites:W2012210876&per-page=3",
+        "quote": "",
+        "opened": false
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "Yansıma eşitliği afin denklem + −x eşlenikliğinden birkaç satırda çıkar; çevrim karşılaştırması yararlı negatif uyarıdır.",
+    "bibliography_audit": "Both Lagarias full PDFs downloaded and searched (math/0309224: parity vector, Fourier, Sontacchi, cycles, density; math/0608208: parity vector, cycles, complexity, density). Garcia–Tal PDF, Rozier 2017 arXiv PDF and Rozier 2026 PDF opened. OpenAlex citing Garcia–Tal and Rozier 2017 lookup + cites: HTTP 429 shared quota; citing list/abstracts NOT VERIFIED. Semantic Scholar and export.arxiv.org/api/query often HTTP 429; search metadata is not a full prior-art clearance. No direct published equivalent found in accessible primary texts; nonexistence is NOT established."
+  }
+]

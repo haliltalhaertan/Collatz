@@ -1,0 +1,452 @@
+A) T9 — ters ağaçta 3-adik dallanma basıncı
+(i) Hesap doğru; hatta genel formül var
+
+Koordinatörün kullandığı “3 eşit lift” normalizasyonuyla
+
+λ
+h
+	​
+
+(A,s)=3
+s−1
+a=1
+∑
+A
+	​
+
+2
+−as
+	​
+
+
+ve bu değer her h≥1 için aynıdır.
+
+[PROOF] Durum uzayı R
+h
+	​
+
+=(Z/3
+h
+Z)
+×
+ olsun ve w
+a
+	​
+
+=(3/2
+a
+)
+s
+. Sabit bir çocuk x∈R
+h
+	​
+
+ ve sabit a için
+
+y≡(3x+1)2
+−a
+(mod3
+h
+)
+
+tek bir birim y verir. ymod3
+h
+'den xmod3
+h
+'ye ters bölmede bir 3-adik rakam kaybedildiğinden, üç lift'ten ilgili olanın ağırlığı w
+a
+	​
+
+/3'tür. Dolayısıyla her sütunun toplamı
+
+L
+A
+	​
+
+(s)=
+3
+1
+	​
+
+a=1
+∑
+A
+	​
+
+(3/2
+a
+)
+s
+=3
+s−1
+a=1
+∑
+A
+	​
+
+2
+−as
+.
+
+Yani 1
+T
+M=L
+A
+	​
+
+(s)1
+T
+, ayrıca ∥M∥
+1
+	​
+
+=L
+A
+	​
+
+(s). Böylece
+
+ρ(M)=L
+A
+	​
+
+(s).
+
+Özel olarak
+
+λ(A,1)=
+a=1
+∑
+A
+	​
+
+2
+−a
+=1−2
+−A
+,λ(A,0)=A/3.
+
+s=1/2 formülü de sırasıyla 1.045385…, 1.306731…, 1.372068… veriyor; koordinatörün sayıları tam bunlar.
+
+Dolayısıyla yorumun özü doğru. “2, 3
+h
+ modulo ilkel köktür” de doğrudur ve literatürde açıkça kullanılıyor, fakat Perron sonucu için buna bile ihtiyaç yok; sabit sütun toplamı yeterli. 
+Department of Mathematics
+
+(ii) T9'dan ne kalıyor?
+
+Sabit A,h için asimptotik büyüme üssü tarafında çekirdek hipotez ölü. Daha yüksek h, Perron basıncını değiştirmiyor.
+
+Kalanlar yalnız daha zayıf nesneler:
+
+sonlu derinlikte subdominant özdeğerler / geçici dalgalanmalar;
+
+özel kök y=1'in Perron moda ulaşana kadarki prefaktörü;
+
+residue-class bazlı varyans ve dağılım şekli.
+
+Bunlar üs değiştirmez. A→∞ de kurtarmıyor:
+
+λ
+∞
+	​
+
+(s)=
+2
+s
+−1
+3
+s−1
+	​
+
+(s>0),
+
+özellikle λ
+∞
+	​
+
+(1)=1. Yani kritik bağımsız-dallanma değeri yine aynen geri geliyor.
+
+Applegate–Lagarias bağlantısı önemli: “I/II'de x
+0.84
+” DOĞRULANMADI; atıf yanlış. Part I γ=.643, Part II γ=.81 kanıtlıyor. Part II ayrıca gelişmenin mod 3
+k
+ yapısındaki “mixing” bilgisini Krasikov eşitsizlikleriyle kullanmaktan geldiğini açıkça söylüyor. 
+Department of Mathematics
+ x
+0.84
+ ise daha sonraki Krasikov–Lagarias çalışmasının bilgisayar destekli sonucudur. 
+arXiv
+
+Bu ayrım T9 açısından teşhis koyuyor: gerçek kazanım, düzgün-lift Perron basıncında değil; boyut kesmesi + residue-dependent pruning/difference inequalities birleşiminde. T9'u oraya taşımak yeni bir teori olur ve zaten Applegate–Lagarias/Krasikov hattına çok yaklaşır.
+
+T9 oyu: KILL.
+
+B) T6 — uzun yaşayanlarda ön/son bit kilitlenmesi
+(i) COLLAPSE kapısı
+
+Burada U(n)=(3n+1)/2
+a(n)
+, a(n)=v
+2
+	​
+
+(3n+1) olsun. Bir valuation prefix'i
+
+(a
+0
+	​
+
+,…,a
+j−1
+	​
+
+),S
+j
+	​
+
+=
+t<j
+∑
+	​
+
+a
+t
+	​
+
+
+tam olarak bir odd residue class modulo 2
+S
+j
+	​
+
++1
+ belirler. Bu, accelerated biçimde Terras cylinder yapısıdır; klasik parity sürümünde sonlu parite kelimeleriyle residue sınıfları birebirdir. 
+Colgate University Math
+
+Daha önemlisi, aynı silindirde
+
+n=n
+0
+	​
+
++2
+S
+j
+	​
+
++1
+q⟹U
+j
+(n)=u
+0
+	​
+
++23
+j
+q.
+
+Dolayısıyla V(U
+j
+n), q'nun yalnız birkaç alt bitine bağlıdır; tam bloklarda capped geometric dağılım exact çıkar.
+
+Ama B
+b
+	​
+
+(U
+j
+n) üst/Archimedean bit bilgisidir. Terras bunu randomize ettiğini söylemez. Bu yüzden
+
+I(B
+b
+	​
+
+;V∣τ>j) exact 0 de
+g
+˘
+	​
+
+ildir.
+	​
+
+
+Sinyalin kaynağı varsa, valuationların “rastgele olmaması” değil; uzun q-aralıklarının üst-bit sınırları ve τ>j tarafından nerede kesildiğiyle alt-bit fazının kilitlenmesidir.
+
+Ek olarak survival çok güçlü bir bit-bütçesi kısıtı veriyor. Kompozisyonu
+
+U
+t
+(n)=
+2
+S
+t
+	​
+
+3
+t
+n+C
+t
+	​
+
+	​
+
+,C
+t+1
+	​
+
+=3C
+t
+	​
+
++2
+S
+t
+	​
+
+
+yazarsak, U
+t
+(n)≥n boyunca kısa bir indüksiyonla
+
+3
+t
+2
+S
+t
+	​
+
+	​
+
+≤(1+
+3n
+1
+	​
+
+)
+t
+.
+
+Dolayısıyla t=O(logn) için
+
+S
+t
+	​
+
+≤tlog
+2
+	​
+
+3+o(1).
+
+Bu, survival altında tipik S
+j
+	​
+
+≈2j eşiğinden daha serttir.
+
+(ii) Nontrivial bölge
+
+X≍2
+m
+ ve ρ=j/m yazalım. Sabit b,v
+max
+	​
+
+ için kabaca kalan serbest 2-adik bütçe
+
+m−S
+j
+	​
+
+≳m−jlog
+2
+	​
+
+3.
+
+Bu doğrusal olarak büyük kaldığı sürece üst-bit hücrelerinde birçok tam valuation periyodu bulunur ve Terras-collapse çok güçlüdür.
+
+Dolayısıyla gerçekten ilginç bölge
+
+ρ≳
+log
+2
+	​
+
+3
+1
+	​
+
+=0.63092975…
+	​
+
+
+çevresi ve sonrasıdır.
+
+Yani log = log2 ise c≳0.631; doğal log ise c≳1/ln3=0.91024. b küçük ve sabit tutulmalı, örneğin 3–6. b'yi m ile büyütüp residual entropy'yi tüketmek yapay bir “sinyal” üretir.
+
+Lagarias–Soundararajan'ın Benford sonucu da bunu kapatmıyor: onların teoremi sabit sayıda ilk iterasyonu ve çoğu başlangıç değerini ele alıyor; burada ise j∼clogX ve ayrıca τ>j ile sert koşullama var. 
+Cambridge University Press
+
+(iii) Tek sert test + önceden kill kriteri
+
+Ben testi doğrudan kritik bölgenin ötesine koyardım:
+
+ρ=0.70,b=4,
+
+ve aynı tanımı m=18,20,22,24 kabuklarında exact çalıştırırdım. Ana istatistik I
+m
+	​
+
+.
+
+Null: her valuation silindiri içinde qmod2
+v
+max
+	​
+
+−1
+ fazını rastgele döndür; böylece aynı survivor kümesi, aynı üst-bit histogramı, aynı silindir uzunlukları ve aynı finite-sample bias korunurken gerçek alt-bit/üst-bit faz kilidi kırılır.
+
+Önceden kill kriteri:
+
+m=20,22,24’te I
+m
+	​
+
+ faz-null zarfından 
+c
+¸
+	​
+
+ıkmıyor veya excess-MI ardı
+s
+¸
+	​
+
+ık olarak k
+u
+¨
+c
+¸
+	​
+
+u
+¨
+l
+u
+¨
+yorsa T6 KILL.
+	​
+
+
+Tek bir m=22 anomalisi yeterli değil; hipotez limitte sıfırdan farklılık iddia ettiği için ölçek kalıcılığı şart.
+
+(iv) T6 oyu
+
+GO — ama yalnız bu dar post-collapse bölgede ve yukarıdaki scaling gate ile.
+
+Terras T6'yı T7 gibi tautolojiye indirmiyor. Fakat ρ<0.63 bölgesindeki sinyalleri ben şimdiden düşük değerli/boundary artifact adayı sayarım. Gerçek yeni içerik varsa j/m≈0.63 sonrasında, sabit küçük b ile ve m büyürken kaybolmayan excess-MI'da olmalı.
+
+CP28_T3_VERDICT_20260923_COMPLETE

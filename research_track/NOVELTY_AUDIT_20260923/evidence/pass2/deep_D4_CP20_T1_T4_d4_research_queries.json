@@ -1,0 +1,506 @@
+[
+  {
+    "id": "T1-03",
+    "query": "Collatz valuation word composition cylinder entropy upper tail",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  },
+  {
+    "id": "T1-03",
+    "query": "Syracuse parity vector stopping time large deviation binomial",
+    "source": "crossref",
+    "url": "https://api.crossref.org/works?query=Syracuse+parity+vector+stopping+time+large+deviation+binomial&rows=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "Time Consistent Stopping for the Mean-Standard Deviation Problem --- The Discrete Time Case",
+        "url": "10.2139/ssrn.3128866",
+        "quote": ""
+      },
+      {
+        "title": "Use of (Time-Domain) Vector Autoregressions to Test Uncovered Interest Parity",
+        "url": "10.3386/w1493",
+        "quote": ""
+      },
+      {
+        "title": "Reversing Neel Vector in Parity-Time Antiferromagnets by Nonreciprocal Light Scattering",
+        "url": "10.1021/acs.nanolett.5c01576.s001",
+        "quote": ""
+      }
+    ]
+  },
+  {
+    "id": "T1-03",
+    "query": "3x+1 divergent orbit Banach density reciprocal sum",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=3x%2B1+divergent+orbit+Banach+density+reciprocal+sum&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "Loop Structure of Collatz-Type Functions 3x+n: A Conjugacy Theorem and Powers of Three",
+        "url": "https://zenodo.org/records/22182478",
+        "quote": "<p>We record three elementary structural facts about the loop behavior of the Collatz-type maps x ↦ 3x+n for odd n, working with the odd-only reduced map. First, the net displacements around any cycle sum to zero; this is a pure arithmetic identity, "
+      },
+      {
+        "title": "Deterministic Upper Bound on Expansive Phases in the Collatz Dynamics",
+        "url": "https://zenodo.org/records/17785860",
+        "quote": "<p>This paper establishes a sharp deterministic bound on expansive phases in the Collatz ($3x+1$) dynamics.</p>\n<p>We prove that any maximal sequence of consecutive odd outputs under the reduced map $T(n) = (3n+1)/2$ has length $K_{\\exp} = \\tau(n)-1 "
+      },
+      {
+        "title": "Critical-Line Tails and Summable Near-Return Costs in Accelerated Odd Collatz Dynamics",
+        "url": "https://zenodo.org/records/22276803",
+        "quote": "<p>Hypothetical injective (and hence nonperiodic) orbits of the accelerated odd Collatz map are studied. As a known global input, a quantitative window-sparsity estimate for the half-step orbit implies orbit-zeta convergence above a fixed exponent (\\"
+      }
+    ]
+  },
+  {
+    "id": "T1-03",
+    "query": "Collatz dynamical subshift factor complexity injective orbit",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  },
+  {
+    "id": "T1-03",
+    "query": "Collatz quantile window valuation sparse state packing",
+    "source": "crossref",
+    "url": "https://api.crossref.org/works?query=Collatz+quantile+window+valuation+sparse+state+packing&rows=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "Sparse Quantile Regression",
+        "url": "10.1920/wp.cem.2020.3020",
+        "quote": ""
+      },
+      {
+        "title": "Compression Spectra of Collatz Orbits: Sharp Residual Ordering, Exact Valuation Cylinders, and Near-extremal Sparsity",
+        "url": "10.2139/ssrn.7314419",
+        "quote": "<jats:p>The accelerated Collatz (Syracuse) map separates each odd event into multiplication-addition followed by complete dyadic contraction. We develop a finite-time compression framework in which orbit displacement is decomposed exactly into multip"
+      },
+      {
+        "title": "L1-Penalized quantile regression in high-dimensional sparse models",
+        "url": "10.1920/wp.cem.2009.1009",
+        "quote": ""
+      }
+    ]
+  },
+  {
+    "id": "T1-03",
+    "query": "Collatz topological entropy parity sequences stopping times",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=Collatz+topological+entropy+parity+sequences+stopping+times&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "collatz-cuda: an exact branch-free CUDA kernel for merged-step Collatz stopping times",
+        "url": "https://zenodo.org/records/21311603",
+        "quote": "<p>An exact, branch-free, divide-free CUDA kernel that computes merged-step (shortcut) Collatz chain lengths (stopping times) for every seed in a range, on the GPU, using 64-bit integer arithmetic. Companion software artifact to the paper \"Computing "
+      },
+      {
+        "title": "A new approach to study and analysis  of behavior of Collatz sequences",
+        "url": "https://zenodo.org/records/17879748",
+        "quote": "<p><span lang=\"EN-US\">This paper introduces a new approach for the study and analysis of Collatz sequences based on three key Diophantine equations that describes the polynomial relationships between the length and the number of odd terms in any Coll"
+      },
+      {
+        "title": "Characteristic numbers of parity vectors of Collatz sequences",
+        "url": "https://zenodo.org/records/6964639",
+        "quote": "<p>The present work deals with the characterization of parity vectors of Collatz sequences (of finite and infinite length). Such a characterization leads to the determination of several numbers (integers or non-integers) that we call the characterist"
+      }
+    ]
+  },
+  {
+    "id": "T1-05",
+    "query": "Collatz discrepancy excursion state growth valuation windows",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  },
+  {
+    "id": "T1-05",
+    "query": "Syracuse stopping time large deviation entropy excursion",
+    "source": "crossref",
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "id": "T1-05",
+    "query": "Collatz orbit high state negative excursion dichotomy",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=Collatz+orbit+high+state+negative+excursion+dichotomy&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "VIII. Return map, rigid regime, and invariance gap in the 2-adic Collatz dynamics",
+        "url": "https://zenodo.org/records/18879361",
+        "quote": "<p>This work proposes a structural reduction of the Collatz dynamics on ℕ to an autonomous dynamical system in the ring of 2-adic integers ℤ₂. By formalising the rigid regime &mdash; the phase in which the binary support of the initial parameter is e"
+      },
+      {
+        "title": "IV. Arithmetic obstruction to mixed orbits in the 2-adic Collatz dynamics",
+        "url": "https://zenodo.org/records/19006411",
+        "quote": "<p dir=\"auto\">This paper concludes a series on the 2-adic structure of the compressed Collatz dynamics. Previous works showed that no positive integer has an orbit remaining indefinitely in the class of odd integers with 2-adic valuation at least 2, "
+      },
+      {
+        "title": "2-adic Structure and the Rigid Regime in Collatz Dynamics",
+        "url": "https://zenodo.org/records/18952626",
+        "quote": "<p>This article develops a structural framework for the study of the Collatz dynamics based on its 2-adic structure. The approach introduces cylindrical constraints on the initial parameter, a binary budget describing the irreversible consumption of "
+      }
+    ]
+  },
+  {
+    "id": "T1-05",
+    "query": "3x+1 divergent orbit reciprocal sum Banach density",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  },
+  {
+    "id": "T1-05",
+    "query": "Collatz carry series parity vector affine relation",
+    "source": "crossref",
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "id": "T1-05",
+    "query": "Collatz natural density logarithmic time approximation Inselmann",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=Collatz+natural+density+logarithmic+time+approximation+Inselmann&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "Mersenne Block Dynamics: A Framework for the Collatz Conjecture",
+        "url": "https://zenodo.org/records/17971540",
+        "quote": "<p>This paper introduces Mersenne Block Dynamics, a structural framework for analyzing the accelerated Collatz or Syracuse map on odd integers. The approach decomposes orbits based on the 2-adic valuation of the successor of an odd integer, effective"
+      },
+      {
+        "title": "PRH | Aux | 4.10 • A Blur–Knob Program for Collatz",
+        "url": "https://zenodo.org/records/20771677",
+        "quote": "<p>A complete proof of the Collatz conjecture remains elusive despite strong average-case theorems and powerful computational verification. This paper organizes several established ingredients into a single closed \"program\" with explicit knobs (resol"
+      },
+      {
+        "title": "Approximation and entropy numbers of embeddings between approximation spaces",
+        "url": "https://zenodo.org/records/10616148",
+        "quote": "<p>We consider general linear approximation spaces $X^b_q$ based on a quasi-Banach space $X$, and we analyse the degree of compactness of the embedding $X^b_q \\hookrightarrow X$. Applications are given to periodic Besov spaces on the $d$-torus, inclu"
+      }
+    ]
+  },
+  {
+    "id": "T1-06",
+    "query": "Collatz E-sequence infinite realizability bounded valuation",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  },
+  {
+    "id": "T1-06",
+    "query": "3x+1 parity vector 2-adic integer realization",
+    "source": "crossref",
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "id": "T1-06",
+    "query": "Syracuse factor complexity symbolic subshift valuation",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=Syracuse+factor+complexity+symbolic+subshift+valuation&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "Static Block Cellular Automata Theory - A Formal Reconstruction from Dynamic Evolution to Spacetime Graphs",
+        "url": "https://zenodo.org/records/17391526",
+        "quote": "<div>\n<div>Static Block Cellular Automata Theory treats Cellular Automata (CA) as an eternal, immutable static block structure, where the temporal dimension is incorporated into the coordinate system, forming a high-dimensional data body. The core in"
+      },
+      {
+        "title": "Eternal Graph Cellular Automata Theory - Independent Formalization Framework",
+        "url": "https://zenodo.org/records/17391485",
+        "quote": "<div>\n<div>Eternal Graph Cellular Automata Theory represents cellular automata as an eternal static graph structure, where spacetime dimensions are encoded through nodes and edges, forming an invariant network. The theory is independently constructed"
+      },
+      {
+        "title": "Mersenne Block Dynamics: A Framework for the Collatz Conjecture",
+        "url": "https://zenodo.org/records/17971540",
+        "quote": "<p>This paper introduces Mersenne Block Dynamics, a structural framework for analyzing the accelerated Collatz or Syracuse map on odd integers. The approach decomposes orbits based on the 2-adic valuation of the successor of an odd integer, effective"
+      }
+    ]
+  },
+  {
+    "id": "T1-06",
+    "query": "Collatz logarithmic growth prescribed parity sequence",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  },
+  {
+    "id": "T1-06",
+    "query": "3x+1 inverse limit integer vs 2-adic E sequence",
+    "source": "crossref",
+    "url": "https://api.crossref.org/works?query=3x%2B1+inverse+limit+integer+vs+2-adic+E+sequence&rows=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "A p-adic algorithm for computing the inverse of integer matrices",
+        "url": "10.1016/j.cam.2008.07.044",
+        "quote": ""
+      },
+      {
+        "title": "GAUSSIAN INTEGER SOLUTIONS OF AN INFINITE ELLIPTIC CONE   73X^2+70XZ+73Y^2+Z^2=54Y(3X+Z)",
+        "url": "10.21884/ijmter.2017.4209.sg7vj",
+        "quote": ""
+      },
+      {
+        "title": "Construction of periods for 3x&amp;#x002B;1 problem: Use of division algorithm by 2 in 3-base number system for construction of 3-adic numbers as periods of collatz sequence",
+        "url": "10.1109/icaict.2013.6722717",
+        "quote": ""
+      }
+    ]
+  },
+  {
+    "id": "T1-06",
+    "query": "Collatz 20 block discrepancy mechanical word schedule",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=Collatz+20+block+discrepancy+mechanical+word+schedule&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "Roman2023 block schedule",
+        "url": "https://zenodo.org/records/8028130",
+        "quote": "<p>Basic block schedule for the conference week 20-23 June 2023. See the full program for speakers, titles, and abstracts.</p>"
+      },
+      {
+        "title": "Attitude towards Block Scheduling of the College Students",
+        "url": "https://zenodo.org/records/8171246",
+        "quote": "<p>This study determines the attitude towards block scheduling of St. Paul University Surigao college students and explores the relationship between their attitude and profile. The participants were 200 college students from different departments and"
+      },
+      {
+        "title": "Design and Fabrication of Rectangular Pavement Blocks with Embedded Light-Transmitting Optical Fiber Strands",
+        "url": "https://zenodo.org/records/20485762",
+        "quote": "<p>This study determines the structural and optical performance of rectangular pavement blocks integrated with lighttransmitting optical fibers. The objective is to create innovative pavement blocks and identify their best applications based on their"
+      }
+    ]
+  },
+  {
+    "id": "T4-03",
+    "query": "Collatz 3-adic endpoint residue least representative",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  },
+  {
+    "id": "T4-03",
+    "query": "3x+1 3-adic inverse tree affine endpoint",
+    "source": "crossref",
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "id": "T4-03",
+    "query": "Collatz 2^m-3^k cycles valuation residue",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=Collatz+2%5Em-3%5Ek+cycles+valuation+residue&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "PRH | Aux | 4.3.3 • Refreshers for the Collatz Certificate Method",
+        "url": "https://zenodo.org/records/17244623",
+        "quote": "<p>These exercises refresh the exact techniques used in the Lyapunov-certificate proof for the accelerated Collatz map: 2 -adic valuation and odd part, residue arithmetic modulo $2^k$, the exceptional residue, the accelerated step and its $\\log$ deco"
+      },
+      {
+        "title": "V. The function φ and the extension of the 2-adic budget argument to arbitrary k_0 in the Collatz dynamics",
+        "url": "https://zenodo.org/records/19006590",
+        "quote": "<p dir=\"auto\">This paper completes a series on the 2-adic analysis of the compressed Collatz dynamics by extending the global budget argument to arbitrary initial classes. Prior works proved convergence for the class with valuation 2; here, the funct"
+      },
+      {
+        "title": "Topology of Vanishing Sums in the Collatz Problem:\\\\ 2-adic Reduction, 3-adic Scales, and Dynamic Incompatibility",
+        "url": "https://zenodo.org/records/18466601",
+        "quote": "<p>A deterministic framework is developed for excluding the existence of non-trivial<br>cycles in the Collatz map $3n+1$ on $\\mathbb{N}$. The trajectory is interpreted not as<br>a pseudo-random process, but as an evolution through a hierarchy of $3$-"
+      }
+    ]
+  },
+  {
+    "id": "T4-03",
+    "query": "Syracuse inverse tree sheet transitions bounded valuation",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  },
+  {
+    "id": "T4-03",
+    "query": "Collatz 3x-1 cycle endpoint modulo powers of 3",
+    "source": "crossref",
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "id": "T4-03",
+    "query": "Collatz bounded valuation polynomial orbit 3-adic coherence",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=Collatz+bounded+valuation+polynomial+orbit+3-adic+coherence&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "The Collatz map as a (2,3)-adic bridge: a framework for characterizing the canonical transfer between incompatible completions of ℚ",
+        "url": "https://zenodo.org/records/19069063",
+        "quote": "<p>We develop a structural framework in which the Collatz map is interpreted as a canonical transfer between incompatible completions of ℚ, specifically linking the 2-adic and 3-adic regimes. In this perspective, the Collatz dynamics is not treated a"
+      },
+      {
+        "title": "Lema de densidad 2-ádica en la trayectoria impar de Collatz",
+        "url": "https://zenodo.org/records/18035347",
+        "quote": "<p>Este trabajo estudia la conjetura de Collatz desde una perspectiva estructural basada en la valoraci&oacute;n 2-&aacute;dica. Se establece un lema de densidad que caracteriza c&oacute;mo se distribuyen los n&uacute;meros impares seg&uacute;n la po"
+      },
+      {
+        "title": "Reverse Collatz Reachability, Modular Steering, and a Reduction to a Uniform Interval-Hit Problem",
+        "url": "https://zenodo.org/records/18137179",
+        "quote": "<div><strong>Disclosure.</strong> <em>This document contains AI-assisted mathematical exploration. The research direction, hypotheses, and numerical experiments (if applicable) were generated and performed by the author. A large language model was us"
+      }
+    ]
+  },
+  {
+    "id": "T1-03",
+    "query": "Collatz valuation word composition cylinder entropy upper tail",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=Collatz+valuation+word+composition+cylinder+entropy+upper+tail&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "I. 2-adic Structure of Tails and Survival Sets in the Collatz Dynamics",
+        "url": "https://zenodo.org/records/18831439",
+        "quote": "<p>This paper studies the 2-adic structure of the compressed Collatz dynamics from a purely arithmetic perspective. We prove that each tail level corresponds to a unique modular class and that the dynamics acts affinely within each of them. From this"
+      },
+      {
+        "title": "V. The function φ and the extension of the 2-adic budget argument to arbitrary k_0 in the Collatz dynamics",
+        "url": "https://zenodo.org/records/19006590",
+        "quote": "<p dir=\"auto\">This paper completes a series on the 2-adic analysis of the compressed Collatz dynamics by extending the global budget argument to arbitrary initial classes. Prior works proved convergence for the class with valuation 2; here, the funct"
+      },
+      {
+        "title": "IV. Arithmetic obstruction to mixed orbits in the 2-adic Collatz dynamics",
+        "url": "https://zenodo.org/records/19006411",
+        "quote": "<p dir=\"auto\">This paper concludes a series on the 2-adic structure of the compressed Collatz dynamics. Previous works showed that no positive integer has an orbit remaining indefinitely in the class of odd integers with 2-adic valuation at least 2, "
+      }
+    ]
+  },
+  {
+    "id": "T1-03",
+    "query": "Syracuse parity vector stopping time large deviation binomial",
+    "source": "crossref",
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "id": "T1-03",
+    "query": "3x+1 divergent orbit Banach density reciprocal sum",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  },
+  {
+    "id": "T1-05",
+    "query": "Collatz discrepancy excursion state growth valuation windows",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=Collatz+discrepancy+excursion+state+growth+valuation+windows&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "V. The function φ and the extension of the 2-adic budget argument to arbitrary k_0 in the Collatz dynamics",
+        "url": "https://zenodo.org/records/19006590",
+        "quote": "<p dir=\"auto\">This paper completes a series on the 2-adic analysis of the compressed Collatz dynamics by extending the global budget argument to arbitrary initial classes. Prior works proved convergence for the class with valuation 2; here, the funct"
+      },
+      {
+        "title": "IV. Arithmetic obstruction to mixed orbits in the 2-adic Collatz dynamics",
+        "url": "https://zenodo.org/records/19006411",
+        "quote": "<p dir=\"auto\">This paper concludes a series on the 2-adic structure of the compressed Collatz dynamics. Previous works showed that no positive integer has an orbit remaining indefinitely in the class of odd integers with 2-adic valuation at least 2, "
+      },
+      {
+        "title": "Residual Drift and Dissipative Pressure in the Accelerated Dynamics of the Collatz Conjecture",
+        "url": "https://zenodo.org/records/20969098",
+        "quote": "<p>The present work develops a theory of \\emph{residual drift} for the accelerated dynamics of the Collatz Conjecture. The proposal begins with a structural observation: each odd step of the dynamics produces a tension between two opposing arithmetic"
+      }
+    ]
+  },
+  {
+    "id": "T1-05",
+    "query": "Syracuse stopping time large deviation entropy excursion",
+    "source": "crossref",
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "id": "T1-05",
+    "query": "Collatz orbit high state negative excursion dichotomy",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  },
+  {
+    "id": "T1-06",
+    "query": "Collatz E-sequence infinite realizability bounded valuation",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=Collatz+E-sequence+infinite+realizability+bounded+valuation&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "Convergence Framework via Monotonicity and Boundedness in the Collatz Conjecture",
+        "url": "https://zenodo.org/records/17252018",
+        "quote": "<p>The Collatz conjecture states that every positive integer eventually reaches 1 under a simple iterative process: divide by 2 if the number is even, or multiply by 3 and add 1 if it is odd. Despite the simplicity of these rules, a general proof rem"
+      },
+      {
+        "title": "V. The function φ and the extension of the 2-adic budget argument to arbitrary k_0 in the Collatz dynamics",
+        "url": "https://zenodo.org/records/19006590",
+        "quote": "<p dir=\"auto\">This paper completes a series on the 2-adic analysis of the compressed Collatz dynamics by extending the global budget argument to arbitrary initial classes. Prior works proved convergence for the class with valuation 2; here, the funct"
+      },
+      {
+        "title": "Exact and Delayed Descent in Accelerated Odd Collatz Spines with AAS-Based Metamorphic Separation",
+        "url": "https://zenodo.org/records/20825291",
+        "quote": "<p>This record contains the manuscript and supporting code for the paper &ldquo;Exact and Delayed Descent in Accelerated Odd Collatz Spines with AAS-Based Metamorphic Separation.&rdquo;</p>\n<p>The paper studies exact and delayed first-descent behavio"
+      }
+    ]
+  },
+  {
+    "id": "T1-06",
+    "query": "3x+1 parity vector 2-adic integer realization",
+    "source": "crossref",
+    "url": "https://api.crossref.org/works?query=3x%2B1+parity+vector+2-adic+integer+realization&rows=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "Parity realization in vector-like theories from fermion bilinears",
+        "url": "10.1088/1126-6708/2008/04/035",
+        "quote": ""
+      },
+      {
+        "title": "GAUSSIAN INTEGER SOLUTIONS OF AN INFINITE ELLIPTIC CONE   73X^2+70XZ+73Y^2+Z^2=54Y(3X+Z)",
+        "url": "10.21884/ijmter.2017.4209.sg7vj",
+        "quote": ""
+      },
+      {
+        "title": "On the Algebraic Structure of Root-Based Integer Sequences and p-adic Resonance",
+        "url": "10.55277/researchhub.bt5xzltd.1",
+        "quote": ""
+      }
+    ]
+  },
+  {
+    "id": "T1-06",
+    "query": "Syracuse factor complexity symbolic subshift valuation",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  },
+  {
+    "id": "T4-03",
+    "query": "Collatz 3-adic endpoint residue least representative",
+    "source": "zenodo",
+    "url": "https://zenodo.org/api/records?q=Collatz+3-adic+endpoint+residue+least+representative&size=3",
+    "status": 200,
+    "results": [
+      {
+        "title": "Topology of Vanishing Sums in the Collatz Problem:\\\\ 2-adic Reduction, 3-adic Scales, and Dynamic Incompatibility",
+        "url": "https://zenodo.org/records/18466601",
+        "quote": "<p>A deterministic framework is developed for excluding the existence of non-trivial<br>cycles in the Collatz map $3n+1$ on $\\mathbb{N}$. The trajectory is interpreted not as<br>a pseudo-random process, but as an evolution through a hierarchy of $3$-"
+      },
+      {
+        "title": "The Collatz map as a (2,3)-adic bridge: a framework for characterizing the canonical transfer between incompatible completions of ℚ",
+        "url": "https://zenodo.org/records/19069063",
+        "quote": "<p>We develop a structural framework in which the Collatz map is interpreted as a canonical transfer between incompatible completions of ℚ, specifically linking the 2-adic and 3-adic regimes. In this perspective, the Collatz dynamics is not treated a"
+      },
+      {
+        "title": "Reverse Collatz Reachability, Modular Steering, and a Reduction to a Uniform Interval-Hit Problem",
+        "url": "https://zenodo.org/records/18137179",
+        "quote": "<div><strong>Disclosure.</strong> <em>This document contains AI-assisted mathematical exploration. The research direction, hypotheses, and numerical experiments (if applicable) were generated and performed by the author. A large language model was us"
+      }
+    ]
+  },
+  {
+    "id": "T4-03",
+    "query": "3x+1 3-adic inverse tree affine endpoint",
+    "source": "crossref",
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "id": "T4-03",
+    "query": "Collatz 2^m-3^k cycles valuation residue",
+    "source": "arxiv",
+    "error": "no element found: line 1, column 0"
+  }
+]

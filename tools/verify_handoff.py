@@ -85,7 +85,7 @@ def main():
     if state["schema"]!="COLLATZ_CURRENT_RESEARCH_STATE_V1": raise AssertionError("state schema mismatch")
     if build["schema"]!="COLLATZ_CURRENT_ARCHIVE_BUILD_V1": raise AssertionError("build schema mismatch")
     if member_record["schema"]!="COLLATZ_ARCHIVE_MEMBER_ROOT_V1": raise AssertionError("archive member-root schema mismatch")
-    allowed={"STAGE_1_AUTHORIZED_NOT_EXECUTED","STAGE_1_RUNNING","RESULT_RETURNED_UNVERIFIED","AUDIT_PENDING","ACCEPTED","STAGE_0_READY_NOT_DISPATCHED","STAGE_0_REPAIR_READY_NOT_DISPATCHED","STAGE_0_RUNNING","PRE_RUN_SEAL_AWAITING_AUTHORIZATION","STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED"}
+    allowed={"STAGE_1_AUTHORIZED_NOT_EXECUTED","STAGE_1_RUNNING","RESULT_RETURNED_UNVERIFIED","AUDIT_PENDING","ACCEPTED","STAGE_0_READY_NOT_DISPATCHED","STAGE_0_REPAIR_READY_NOT_DISPATCHED","STAGE_0_RUNNING","PRE_RUN_SEAL_AWAITING_AUTHORIZATION","STAGE_1_INPUT_INTEGRITY_FAILURE_AUTHORIZATION_CONSUMED_CLOSED","BASE_ROUTE_KILLED_C1_OPEN_NONTRIVIAL"}
     if state["active_task"]["stage"] not in allowed: raise AssertionError("unrecognized active stage")
     if not state["next_action"]["instruction"]: raise AssertionError("next action is empty")
     lock=state.get("active_integrator")

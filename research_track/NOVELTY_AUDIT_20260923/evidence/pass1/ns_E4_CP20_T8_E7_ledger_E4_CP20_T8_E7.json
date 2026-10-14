@@ -1,0 +1,826 @@
+[
+  {
+    "id": "A01",
+    "checkpoint": "8A",
+    "claim": "Kritik-log varsayımı altında N_r≈2^{αr/κ} pencerelerinde liminf h(D_1,D_2)≥α/κ.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8A — Post-Audit Repair and Freeze/Task 8A V3 — FROZEN CORE + Full-Scale Audit Extension Candidate/CP20_TASK8A_CRITICAL_SITE_DENSITY_PRESSURE_THEOREM_V3.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Garcia & Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), 245–250, Corollary 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "A direct consequence is that any orbit O(n) under H has Banach density zero (Corollary 1).",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963--1999), arXiv:math/0309224",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0309224",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography, II (2000-2009), arXiv:math/0608208",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0608208",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem published from 2000 through 2009",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann, An approximation of the Collatz map and a lower bound for the average total stopping time (2024), arXiv:2402.03276",
+        "url": "https://export.arxiv.org/api/query?id_list=2402.03276",
+        "quote": "Results of Terras and Everett imply that ... almost all m ... fulfill ... simultaneously ... We extend this result to α=2(log(4/3))^{-1}",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz critical site density multiplicative window",
+      "3x+1 Banach density sparsity reciprocal sum 1999",
+      "Terras Everett stopping time distribution",
+      "Collatz pressure entropy Sturmian parity vector"
+    ],
+    "note": "Yalnız koşullu kritik-log yörüngeler; literatürde aynı tip-özel nicel pencere teoremi saptanmadı. Garcia–Tal (1999) yörüngenin değer kümesinin Banach yoğunluğunu sıfır gösterir, kritik-zaman indeksleri veya tip basıncını değil."
+  },
+  {
+    "id": "A02",
+    "checkpoint": "8A",
+    "claim": "Uygun tip bölgesi F içinde h basıncının en büyüğü CP19 T4 entropisi 1.5056438879463 ve κ*=1.0526808586.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8A — Post-Audit Repair and Freeze/Task 8A V3 — FROZEN CORE + Full-Scale Audit Extension Candidate/CP20_TASK8A_CRITICAL_SITE_DENSITY_PRESSURE_THEOREM_V3.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963--1999), arXiv:math/0309224",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0309224",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz critical site density multiplicative window",
+      "3x+1 Banach density sparsity reciprocal sum 1999",
+      "Terras Everett stopping time distribution",
+      "Collatz pressure entropy Sturmian parity vector"
+    ],
+    "note": "CP19 T4 kurum-içi öncül; literatür eşdeğerliği gösterilmedi; salt maksimum eşitliği kurum-içi önceden biliniyor."
+  },
+  {
+    "id": "A03",
+    "checkpoint": "8A",
+    "claim": "ρ_min(κ) için κ=1.06,1.5,2.0 değerleri sırasıyla yaklaşık .3462262371,.0916083302,.0314445509.",
+    "program_label": "CERTIFIED NUM/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8A — Post-Audit Repair and Freeze/Task 8A V3 — FROZEN CORE + Full-Scale Audit Extension Candidate/CP20_TASK8A_RIGOROUS_CERTIFICATE_V3_OUTPUT.txt",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz critical site density multiplicative window",
+      "3x+1 Banach density sparsity reciprocal sum 1999",
+      "Terras Everett stopping time distribution",
+      "Collatz pressure entropy Sturmian parity vector"
+    ],
+    "note": "V3 interval sertifikaları; başka kuramla karşılaştırma sayılar açısından anlamlı değil."
+  },
+  {
+    "id": "A04",
+    "checkpoint": "8A",
+    "claim": "Tam kutuda h sonlu değildir: h(0,M_2)=−∞; geçerli bölge Q≥P ve uniformite iki rejimle sağlanır.",
+    "program_label": "PROVED/REPAIR",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8A — Post-Audit Repair and Freeze/Task 8A V3 — FROZEN CORE + Full-Scale Audit Extension Candidate/CP20_TASK8A_FEASIBLE_DOMAIN_LEMMA.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963--1999), arXiv:math/0309224",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0309224",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz critical site density multiplicative window",
+      "3x+1 Banach density sparsity reciprocal sum 1999",
+      "Terras Everett stopping time distribution",
+      "Collatz pressure entropy Sturmian parity vector"
+    ],
+    "note": "Feasible domain düzeltmesi proje basıncına özgü; önceki tam-kutu iddiası yanlış."
+  },
+  {
+    "id": "A05",
+    "checkpoint": "8A",
+    "claim": "Her n≍2^{(α/κ)r} tam-ölçek penceresi için basınç birikim alt sınırı h(D_1,D_2)≥α/κ uzantısı V3 donmuş çekirdeğine dahil değildir.",
+    "program_label": "PROVED — AUDIT EXTENSION CANDIDATE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8A — Post-Audit Repair and Freeze/Task 8A V3 — FROZEN CORE + Full-Scale Audit Extension Candidate/CP20_TASK8A_FULL_SCALE_ACCUMULATION_LEMMA.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963--1999), arXiv:math/0309224",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0309224",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography, II (2000-2009), arXiv:math/0608208",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0608208",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem published from 2000 through 2009",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz critical site density multiplicative window",
+      "3x+1 Banach density sparsity reciprocal sum 1999",
+      "Terras Everett stopping time distribution",
+      "Collatz pressure entropy Sturmian parity vector"
+    ],
+    "note": "Bağımsız denetim bekleyen koşullu ek."
+  },
+  {
+    "id": "A06",
+    "checkpoint": "8A",
+    "claim": "log₂ n₀≳α q_n sürekli-kesir konverjantlarında ölçülür, ama C(n₀) ile n₀ arasında gerekli köprü ispatlanmamıştır.",
+    "program_label": "LEAD",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/11-surekli-kesir-denetim/DENETIM_RAPORU.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz continued fraction log2 3 repeat word",
+      "3x-1 cycles Simons de Weger Steiner",
+      "Collatz Sturmian factor complexity convergents"
+    ],
+    "note": "Sonlu deney; genel n₀ sınırı teorem değildir."
+  },
+  {
+    "id": "M01",
+    "checkpoint": "8B0-A",
+    "claim": "López–Stoll reel serisi kritik-log κ>1 altında yakınsar; proje Task6 taşıma serisinin aynısıdır.",
+    "program_label": "PROVED/BRANCH CLOSURE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/CP20_TASK8B0_MODULE_A_LOPEZ_STOLL_BRIDGE.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963--1999), arXiv:math/0309224",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0309224",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography, II (2000-2009), arXiv:math/0608208",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0608208",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem published from 2000 through 2009",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector inverse residues 2-adic 3-adic",
+      "3x+1 residue class exact cylinder stopping time",
+      "Collatz local minima cycle 2^m-3^k Steiner Eliahou Hercher"
+    ],
+    "note": "Kaynakların özeti López–Stoll spesifik eşitliğini doğrulamaz; proje kendi Task6 öncülünü yeniden yazar; yeni yakınsama iddiası geri çekilmelidir."
+  },
+  {
+    "id": "M02",
+    "checkpoint": "8B1",
+    "claim": "Her pozitif sonlu sözcükte negatif gölge 1≤X_k<3^k ve M_k=X_k (k≥1).",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module B — Pressure-Constrained Residue-Rate Extremal Search/CP20_TASK8B1_RESIDUE_REDUNDANCY_THEOREM_V2_AUDITED.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding, arXiv:1805.00133",
+        "url": "https://export.arxiv.org/api/query?id_list=1805.00133",
+        "quote": "we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called 3x+1 map",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963--1999), arXiv:math/0309224",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0309224",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector inverse residues 2-adic 3-adic",
+      "3x+1 residue class exact cylinder stopping time",
+      "Collatz local minima cycle 2^m-3^k Steiner Eliahou Hercher"
+    ],
+    "note": "Tam çift-adik/üç-adik eşitliğin literatür eşdeğeri bulunmadı; sonlu sözcük cebiri kendisi temel."
+  },
+  {
+    "id": "M03",
+    "checkpoint": "8B1",
+    "claim": "Kritik-log altında ρ_M(k)=max(0,ρ_r(k)−ln(3/2))+O(log k/k).",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module B — Pressure-Constrained Residue-Rate Extremal Search/CP20_TASK8B1_RESIDUE_REDUNDANCY_THEOREM_V2_AUDITED.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963--1999), arXiv:math/0309224",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0309224",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999.",
+        "opened": true
+      },
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding, arXiv:1805.00133",
+        "url": "https://export.arxiv.org/api/query?id_list=1805.00133",
+        "quote": "we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called 3x+1 map",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector inverse residues 2-adic 3-adic",
+      "3x+1 residue class exact cylinder stopping time",
+      "Collatz local minima cycle 2^m-3^k Steiner Eliahou Hercher"
+    ],
+    "note": "Eşitlik koşullu; sayısal pozitif-alt-sınır [B-LEAD], kanıt değildir."
+  },
+  {
+    "id": "D01",
+    "checkpoint": "D0",
+    "claim": "r_v≡r_u(mod 2^{A_u}) ve değişim r_{k+1}≥2^{A_k}≥2^k.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Results/CP20_TASK8B2_D0_RATE_STABILIZATION_DICHOTOMY_THEOREM_V2_AUDITED_FROZEN.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector inverse residues 2-adic 3-adic",
+      "3x+1 residue class exact cylinder stopping time",
+      "Collatz local minima cycle 2^m-3^k Steiner Eliahou Hercher"
+    ],
+    "note": "Modüler iç içelik ve yaralanma alt sınırı elementer cebir."
+  },
+  {
+    "id": "D02",
+    "checkpoint": "D0",
+    "claim": "Sonlu sözcüğün tam-silindir gerçekleyicisi iki komşu lift arasındadır; eventual plato tek LEVEL-3 pozitif gerçekleyiciyle eşdeğerdir.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Results/CP20_TASK8B2_D0_RATE_STABILIZATION_DICHOTOMY_THEOREM_V2_AUDITED_FROZEN.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding, arXiv:1805.00133",
+        "url": "https://export.arxiv.org/api/query?id_list=1805.00133",
+        "quote": "we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called 3x+1 map",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963--1999), arXiv:math/0309224",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0309224",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector inverse residues 2-adic 3-adic",
+      "3x+1 residue class exact cylinder stopping time",
+      "Collatz local minima cycle 2^m-3^k Steiner Eliahou Hercher"
+    ],
+    "note": "2-adik kodlamanın özel yeniden ifadesi; eşdeğer LEVEL-3 ayrıntısı literatürce teyit edilmedi."
+  },
+  {
+    "id": "D03",
+    "checkpoint": "D0",
+    "claim": "Genel A_k/k→L tavan-limitinde r_k plateau/oran alternatifinin D0 uzantısı bağımsız denetlenmemiştir.",
+    "program_label": "PROVED — NOT INDEPENDENTLY AUDITED",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Results/CP20_TASK8B2_D0_RATE_STABILIZATION_DICHOTOMY_THEOREM_V2_AUDITED_FROZEN.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding, arXiv:1805.00133",
+        "url": "https://export.arxiv.org/api/query?id_list=1805.00133",
+        "quote": "we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called 3x+1 map",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector inverse residues 2-adic 3-adic",
+      "3x+1 residue class exact cylinder stopping time",
+      "Collatz local minima cycle 2^m-3^k Steiner Eliahou Hercher"
+    ],
+    "note": "Bağımsız denetim yok; varlığı ispat değildir."
+  },
+  {
+    "id": "D04",
+    "checkpoint": "D1",
+    "claim": "r_{k+1}=r_k+m_k2^{A_k}, 0≤m_k<2^{a_k}, ve r_k=Σ_{j<k}m_j2^{A_j}.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Audit/CP20_TASK8B2_D1_SPARSE_INJURY_GEOMETRY_THEOREM_V2_AUDITED_FROZEN.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz parity vector inverse residues 2-adic 3-adic",
+      "3x+1 residue class exact cylinder stopping time",
+      "Collatz local minima cycle 2^m-3^k Steiner Eliahou Hercher"
+    ],
+    "note": "D0 iç içeliğinin yeniden parametrelenmesi."
+  },
+  {
+    "id": "D05",
+    "checkpoint": "D1",
+    "claim": "Kritik-log altında liminf_k ln(1+r_k)/k=(ln 3) liminf_j t_j/t_{j+1}.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Audit/CP20_TASK8B2_D1_SPARSE_INJURY_GEOMETRY_THEOREM_V2_AUDITED_FROZEN.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Garcia & Tal, A note on the generalized 3n+1 problem, Acta Arith. 90 (1999), 245–250, Corollary 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "A direct consequence is that any orbit O(n) under H has Banach density zero (Corollary 1).",
+        "opened": true
+      },
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding, arXiv:1805.00133",
+        "url": "https://export.arxiv.org/api/query?id_list=1805.00133",
+        "quote": "we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called 3x+1 map",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963--1999), arXiv:math/0309224",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0309224",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector inverse residues 2-adic 3-adic",
+      "3x+1 residue class exact cylinder stopping time",
+      "Collatz local minima cycle 2^m-3^k Steiner Eliahou Hercher"
+    ],
+    "note": "D1 sınırlı alfabe/yaralanma zamanları için, Collatz çözümü değil. Garcia–Tal (1999) yörüngenin değer kümesinin Banach yoğunluğunu sıfır gösterir, kritik-zaman indeksleri veya tip basıncını değil."
+  },
+  {
+    "id": "D06",
+    "checkpoint": "D1",
+    "claim": "Plato çukurunda ρ_r(t_{j+1})=(ln3)t_j/t_{j+1}−κ ln(t_j)/t_{j+1}+O(1/t_{j+1}).",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Audit/CP20_TASK8B2_D1_SPARSE_INJURY_GEOMETRY_THEOREM_V2_AUDITED_FROZEN.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding, arXiv:1805.00133",
+        "url": "https://export.arxiv.org/api/query?id_list=1805.00133",
+        "quote": "we consider the one-to-one correspondence between a 2-adic integer and its parity sequence under iteration of the so-called 3x+1 map",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 problem: An annotated bibliography (1963--1999), arXiv:math/0309224",
+        "url": "https://export.arxiv.org/api/query?id_list=math/0309224",
+        "quote": "This paper is an annotated bibliography of work done on the 3x+1 problem and related problems from 1963 through 1999.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz parity vector inverse residues 2-adic 3-adic",
+      "3x+1 residue class exact cylinder stopping time",
+      "Collatz local minima cycle 2^m-3^k Steiner Eliahou Hercher"
+    ],
+    "note": "D05 ikinci mertebe özelleştirmesi."
+  },
+  {
+    "id": "D07",
+    "checkpoint": "D1-D",
+    "claim": "Tekrar eden faz sözcüğü tek başına değerleme tekrarını zorlamaz; sonlu defect mask karşıörnekleri vardır.",
+    "program_label": "FAIL (naive bridge)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Results/D1-E — Defect-Coupled Return + Repeated-Factor Conjunction/CP20_TASK8B2_D1E_MASTER_FINDINGS.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz continued fraction log2 3 repeat word",
+      "3x-1 cycles Simons de Weger Steiner",
+      "Collatz Sturmian factor complexity convergents"
+    ],
+    "note": "Yanlış olan iddia saf faz⇒değerleme çıkarımıdır; doğru karşıörnek negatif sonuç olarak geçerlidir."
+  },
+  {
+    "id": "D08",
+    "checkpoint": "D1 Finding D",
+    "claim": "En küçük tam gerçekleyici daima r_L değildir: w=(1) için r_1=1, en küçük tam gerçekleyici 3.",
+    "program_label": "FAIL (overbroad)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Results/CP20_TASK8B2_FINDING_D_TRIAGE.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz parity vector inverse residues 2-adic 3-adic",
+      "3x+1 residue class exact cylinder stopping time",
+      "Collatz local minima cycle 2^m-3^k Steiner Eliahou Hercher"
+    ],
+    "note": "İlk aşırı geniş iddia: w=(1) v₂(3·1+1)=2≠1."
+  },
+  {
+    "id": "D09",
+    "checkpoint": "D1 Finding D",
+    "claim": "Sonsuz plato divergent/noncyclic demek değildir: a_k≡2,n₀=1 sabit çevrimdir.",
+    "program_label": "FAIL (overbroad)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Results/CP20_TASK8B2_FINDING_D_TRIAGE.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz parity vector inverse residues 2-adic 3-adic",
+      "3x+1 residue class exact cylinder stopping time",
+      "Collatz local minima cycle 2^m-3^k Steiner Eliahou Hercher"
+    ],
+    "note": "Düzeltme eventual plato⇔LEVEL-3, çevrim olasılığı var."
+  },
+  {
+    "id": "E01",
+    "checkpoint": "E0",
+    "claim": "Mod 3 uç noktalar yalnız {1,2}; tüm pozitif sözcük dağılımlarında |φ(3^{r−1})|≥1/2.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Module E Results/CP20_TASK8B3_E0_LOW_CONDUCTOR_OBSTRUCTION_THEOREM_V2_AUDITED_FROZEN.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz fixed mass affine offset ternary Fourier",
+      "Syracuse geometric parity vector conditional bridge",
+      "microcanonical Collatz Fourier Yuan Si Tao",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Tek satırlık modüler/kompleks hesap; tüm-frekans üstel gap yanlış."
+  },
+  {
+    "id": "E02",
+    "checkpoint": "E0",
+    "claim": "A/r→α sabit kütle altında son bölüm TV olarak Geom(1/α) ve conductor-3 genliği ≈0.63975298067.",
+    "program_label": "PROVED/FROZEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Module E Results/CP20_TASK8B3_E0_LOW_CONDUCTOR_OBSTRUCTION_THEOREM_V2_AUDITED_FROZEN.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Yuan Si, A microcanonical phase transition for the Collatz affine random model (2026), Zenodo 20027097 (preprint; hakemli yayın doğrulanmadı)",
+        "url": "https://zenodo.org/api/records/20027097",
+        "quote": "by conditioning on S_n = s. Under this conditioning the multiplicative phase becomes deterministic, and the affine Fourier coefficient at hard frequencies reduces to a primitive ternary Bernoulli-bridge transform",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz fixed mass affine offset ternary Fourier",
+      "Syracuse geometric parity vector conditional bridge",
+      "microcanonical Collatz Fourier Yuan Si Tao",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Sonlu uniform bileşim geometrik marjinali standart; spesifik faz limiti kuruma özgü hesap."
+  },
+  {
+    "id": "E03",
+    "checkpoint": "E0",
+    "claim": "Sabit kütle uç-nokta dağılımı exact özyineleme ve 87 r≤10 tam sayım kontrolüyle tanımlanır.",
+    "program_label": "EXACT/CERTIFIED NUM",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Module E Results/CP20_TASK8B3_E0_EXACT_RECURSION_V2.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz fixed mass affine offset ternary Fourier",
+      "Syracuse geometric parity vector conditional bridge",
+      "microcanonical Collatz Fourier Yuan Si Tao",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Özyineleme elementary; 87 testi yalnız sonlu doğrulama."
+  },
+  {
+    "id": "E04",
+    "checkpoint": "E1",
+    "claim": "Alt-conductor toplu bound exact; yüksek conductor teoremi için τ<b/α ve δ>α−b bölgesi yeterlidir ama elde edilmemiştir.",
+    "program_label": "EXACT SUFFICIENCY/LEAD",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E1 — Low-High Conductor Decomposition/CP20_TASK8B3_E1_MASTER_FINDINGS.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz fixed mass affine offset ternary Fourier",
+      "Syracuse geometric parity vector conditional bridge",
+      "microcanonical Collatz Fourier Yuan Si Tao",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "İhtiyaç koşulu kanıtlanmış high-conductor decay değildir."
+  },
+  {
+    "id": "E05",
+    "checkpoint": "E2",
+    "claim": "Yapısal ilkel-frekans indirgemesi exact; 1/r ölçekli rezonans yalnız r≤8000 civarı numerik lead.",
+    "program_label": "EXACT/LEAD",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E2 — Structured Primitive Resonance/CP20_TASK8B3_E2_MASTER_FINDINGS.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz fixed mass affine offset ternary Fourier",
+      "Syracuse geometric parity vector conditional bridge",
+      "microcanonical Collatz Fourier Yuan Si Tao",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Sonlu rezonans gözlemi asimptotik alt sınır veya pozitif hız teoremi değil."
+  },
+  {
+    "id": "E06",
+    "checkpoint": "E3",
+    "claim": "Kuaziperiyodik kritik ray recurrence exact; T1 transfer, T2 nontriviality ve T3 compactness ispatlanmamıştır.",
+    "program_label": "LEAD",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E3 — Quasiperiodic Critical-Ray Transfer/CP20_TASK8B3_E3_MASTER_FINDINGS.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz fixed mass affine offset ternary Fourier",
+      "Syracuse geometric parity vector conditional bridge",
+      "microcanonical Collatz Fourier Yuan Si Tao",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Limit denklemi hedef; sonsuz serinin doğruluğu ayrıca varsayıma muhtaç."
+  },
+  {
+    "id": "E07",
+    "checkpoint": "E4",
+    "claim": "Merkezlenmiş kritik yürüyüş için üstel ağırlıklı L∞ transferinin spektral yarıçapı ≥1; naif üstel kompaktlık çıkmazdır.",
+    "program_label": "PROVED/AUDIT CANDIDATE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E4 — Weighted-Offset Compactness & Critical Walk/CP20_TASK8B3_E4_EXACT_UNROLLING_AND_CRITICAL_WALK.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values (2019/2022), arXiv:1909.03562",
+        "url": "https://export.arxiv.org/api/query?id_list=1909.03562",
+        "quote": "for any function f ... with lim ... f(N)=+infty ... Col_min(N) <= f(N) for almost all N ... in the sense of logarithmic density",
+        "opened": true
+      },
+      {
+        "cite": "Yuan Si, A microcanonical phase transition for the Collatz affine random model (2026), Zenodo 20027097 (preprint; hakemli yayın doğrulanmadı)",
+        "url": "https://zenodo.org/api/records/20027097",
+        "quote": "by conditioning on S_n = s. Under this conditioning the multiplicative phase becomes deterministic, and the affine Fourier coefficient at hard frequencies reduces to a primitive ternary Bernoulli-bridge transform",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz fixed mass affine offset ternary Fourier",
+      "Syracuse geometric parity vector conditional bridge",
+      "microcanonical Collatz Fourier Yuan Si Tao",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Özel sınır koşuluna ilişkin negatif sonuç; ortak muadil teorem görülmedi, genel üstel-moment yöntemi standart."
+  },
+  {
+    "id": "E08",
+    "checkpoint": "E4",
+    "claim": "Sonlu açılım ve silindir→doğru eşlenimi kesin; sonsuz açılım ancak kuyruk sönmesi varsa geçerli.",
+    "program_label": "PROVED/AUDITED",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E4 — Weighted-Offset Compactness & Critical Walk/CP20_TASK8B3_E4_EXACT_UNROLLING_AND_CRITICAL_WALK.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz fixed mass affine offset ternary Fourier",
+      "Syracuse geometric parity vector conditional bridge",
+      "microcanonical Collatz Fourier Yuan Si Tao",
+      "Collatz inverse tree density Krasikov Lagarias"
+    ],
+    "note": "Bağımsız E4 denetimi sonlu unrolling satırındaki eksik + işaretinin düzeltilmesini istedi."
+  },
+  {
+    "id": "E09",
+    "checkpoint": "E5",
+    "claim": "E5-S1: exact Green/yenileme çözümü ve sabit-toplam altında beta-binom/kompozisyon köprüsü vardır.",
+    "program_label": "PROVED",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_EXACT_FINITE_RENEWAL.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Formal üreteç/kompozisyon cebiri; karmaşık r^(−3/2) bound çıkarmaz."
+  },
+  {
+    "id": "E10",
+    "checkpoint": "E5",
+    "claim": "Pozitif koşullu uç toplamında yerel limit var; kompleks numerator N_r=O(r^(−3/2)) bilinmiyor.",
+    "program_label": "PROVED (positive), OPEN (complex)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E5 — Degree-One Centered Complex Renewal Local-Limit Bridge/CP20_TASK8B3_E5_MASTER_FINDINGS.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Pozitif kompozisyon yerel limitinin basit Stirling uygulaması; eksik kompleks çıkarımı iddia edilmemeli."
+  },
+  {
+    "id": "E11",
+    "checkpoint": "E6",
+    "claim": "E6-N1: katsayı/Hadamard/koşullu Feynman–Kac yazımı exact, fazın periyodu 2·3^{r−1}.",
+    "program_label": "PROVED",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_EXACT_NUMERATOR_NORMAL_FORM.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values (2019/2022), arXiv:1909.03562",
+        "url": "https://export.arxiv.org/api/query?id_list=1909.03562",
+        "quote": "for any function f ... with lim ... f(N)=+infty ... Col_min(N) <= f(N) for almost all N ... in the sense of logarithmic density",
+        "opened": true
+      },
+      {
+        "cite": "Yuan Si, A microcanonical phase transition for the Collatz affine random model (2026), Zenodo 20027097 (preprint; hakemli yayın doğrulanmadı)",
+        "url": "https://zenodo.org/api/records/20027097",
+        "quote": "by conditioning on S_n = s. Under this conditioning the multiplicative phase becomes deterministic, and the affine Fourier coefficient at hard frequencies reduces to a primitive ternary Bernoulli-bridge transform",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Yuan Si önceden koşullu affine Fourier dönüşümünü tanımlamış; projenin özgül normal formu ve periyot eşdeğerliği doğrulanmadı."
+  },
+  {
+    "id": "E12",
+    "checkpoint": "E6",
+    "claim": "İki adımlı holonomy, exact coboundary ve summable local-defect M1 varsayımlarını çürütür.",
+    "program_label": "FAIL (M1)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E6 — Conditioned-Geometric Complex Numerator/CP20_TASK8B3_E6_COBOUNDARY_MARTINGALE_ATTEMPT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Çürütülen dar iç yöntemdir, bütün telafi mekanizmaları değil."
+  },
+  {
+    "id": "E13",
+    "checkpoint": "E7",
+    "claim": "E7-B3 için tüm donmuş pencerede sup|K|≤A/m_r hedefi başlangıçta PRE-RUN idi.",
+    "program_label": "PRE-RUN/OPEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 8 — Literature Reconnaissance and Branch Selection/Task 8B0 — Literature Mechanism Falsification/Module D — 2-adic Start-Rate + Return-Word Recurrence/Module E — Critical-Mass Endpoint Anti-Concentration/E7 — Two-Sided Feynman-Kac Block Kernel/CP20_TASK8B3_E7_PRE_RUN_SEAL.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Sonraki E7R-B3 karşıteorem CF-left noktasında |K|→1; hedef imkânsız. Başlangıçta kanıt olarak sunulmamıştı."
+  },
+  {
+    "id": "R01",
+    "checkpoint": "E7R-B1",
+    "claim": "Kompozisyon kesilerek complex/positive blok çekirdekleri Vandermonde ve cotransition özdeşliklerini sağlar.",
+    "program_label": "PROVED/AUDIT PASS",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/e7-recovery-v1-zero-trust-audit-20260903/CP20_TASK8B3_E7_RECOVERY_V1_ZERO_TRUST_AUDIT_2026-09-03.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Kompozisyonların split bijeksiyonu; audit fiili ispatı yeniden kuruyor."
+  },
+  {
+    "id": "R02",
+    "checkpoint": "E7R-B2",
+    "claim": "Koşullu uniform zayıf-kompozisyon köprüsünde max prefix sapması için açık Azuma/Doob üst kuyruğu elde edilir.",
+    "program_label": "PROVED/AUDIT PASS",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/e7-recovery-v1-zero-trust-audit-20260903/CP20_TASK8B3_E7_RECOVERY_V1_ZERO_TRUST_AUDIT_2026-09-03.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values (2019/2022), arXiv:1909.03562",
+        "url": "https://export.arxiv.org/api/query?id_list=1909.03562",
+        "quote": "for any function f ... with lim ... f(N)=+infty ... Col_min(N) <= f(N) for almost all N ... in the sense of logarithmic density",
+        "opened": true
+      },
+      {
+        "cite": "Yuan Si, A microcanonical phase transition for the Collatz affine random model (2026), Zenodo 20027097 (preprint; hakemli yayın doğrulanmadı)",
+        "url": "https://zenodo.org/api/records/20027097",
+        "quote": "by conditioning on S_n = s. Under this conditioning the multiplicative phase becomes deterministic, and the affine Fourier coefficient at hard frequencies reduces to a primitive ternary Bernoulli-bridge transform",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Bu özel pencere ve üstel sabitlere ilişkin sonlu koşullu köprü; konsantrasyon yöntemi standart, özgül sonuç tespit edilmedi."
+  },
+  {
+    "id": "R03",
+    "checkpoint": "E7R-B3",
+    "claim": "CF-left uçlarında r≥17000 için |K(k_r,l_r)−1|≤2πm_r2^(−W_r/2−4−β)+4m_r exp(−W_r²/(72αm_r))→0.",
+    "program_label": "PROVED/AUDIT PASS",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/e7r-b3-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_B3_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Yuan Si, A microcanonical phase transition for the Collatz affine random model (2026), Zenodo 20027097 (preprint; hakemli yayın doğrulanmadı)",
+        "url": "https://zenodo.org/api/records/20027097",
+        "quote": "by conditioning on S_n = s. Under this conditioning the multiplicative phase becomes deterministic, and the affine Fourier coefficient at hard frequencies reduces to a primitive ternary Bernoulli-bridge transform",
+        "opened": true
+      },
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values (2019/2022), arXiv:1909.03562",
+        "url": "https://export.arxiv.org/api/query?id_list=1909.03562",
+        "quote": "for any function f ... with lim ... f(N)=+infty ... Col_min(N) <= f(N) for almost all N ... in the sense of logarithmic density",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Karşıteorem B3 üniform O(1/m_r) hedefine ters; mevcut Si teoreminin merkezi s≈2n bölgesi bu αn bölgesi değil."
+  },
+  {
+    "id": "R04",
+    "checkpoint": "E7R-LT",
+    "claim": "Σa_i=T_r koşulunda proje fazı Tao/Si affine offsetin tek primitive 3^r mikrokanonik Fourier katsayısına eşittir; η_r≡2^(T_r−4) (mod 3^r).",
+    "program_label": "PROVED/AUDIT PASS",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+    "verdict": "KNOWN",
+    "references": [
+      {
+        "cite": "Yuan Si, A microcanonical phase transition for the Collatz affine random model (2026), Zenodo 20027097 (preprint; hakemli yayın doğrulanmadı)",
+        "url": "https://zenodo.org/api/records/20027097",
+        "quote": "by conditioning on S_n = s. Under this conditioning the multiplicative phase becomes deterministic, and the affine Fourier coefficient at hard frequencies reduces to a primitive ternary Bernoulli-bridge transform",
+        "opened": true
+      },
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values (2019/2022), arXiv:1909.03562",
+        "url": "https://export.arxiv.org/api/query?id_list=1909.03562",
+        "quote": "for any function f ... with lim ... f(N)=+infty ... Col_min(N) <= f(N) for almost all N ... in the sense of logarithmic density",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Nesne düzeyinde aynı microcanonical affine Fourier coefficient Si 2026 öncülündedir; spesifik η_r=2^(T_r−4) frekans formülü projenin özel cebri olup aynı formülle yayımlandığı doğrulanmadı. Zenodo preprint, hakemlilik doğrulanmadı."
+  },
+  {
+    "id": "R05",
+    "checkpoint": "E7R-LT",
+    "claim": "Si merkez s=2n+O(√(n log n)) şartında; proje T_r=αr+O(1) ve h=0 olduğundan Tao/Si doğrudan bozunma aktarımı geçersizdir.",
+    "program_label": "PROVED — DIRECT TRANSFER CLOSED",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Yuan Si, A microcanonical phase transition for the Collatz affine random model (2026), Zenodo 20027097 (preprint; hakemli yayın doğrulanmadı)",
+        "url": "https://zenodo.org/api/records/20027097",
+        "quote": "by conditioning on S_n = s. Under this conditioning the multiplicative phase becomes deterministic, and the affine Fourier coefficient at hard frequencies reduces to a primitive ternary Bernoulli-bridge transform",
+        "opened": true
+      },
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values (2019/2022), arXiv:1909.03562",
+        "url": "https://export.arxiv.org/api/query?id_list=1909.03562",
+        "quote": "for any function f ... with lim ... f(N)=+infty ... Col_min(N) <= f(N) for almost all N ... in the sense of logarithmic density",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Si özetindeki kritik eşik doğrudan αr teorisini vermez; örtüşme observable düzeyinde, istenen uniform bound düzeyinde değil."
+  },
+  {
+    "id": "R06",
+    "checkpoint": "E7R-B4",
+    "claim": "B4 V2 Stage-1 tek yetkisi Phase-A CURRENT_RESEARCH_STATE.json blob uyuşmazlığıyla T1 öncesi tüketildi; E6-N2 hâlâ OPEN.",
+    "program_label": "AUDIT FAIL / INPUT INTEGRITY FAILURE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/e7r-b4-v2-preexec-zero-trust-audit-20260905/CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2_PREEXEC_ZERO_TRUST_AUDIT_2026-09-05.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Matematik çalışmadı; B4 kanıtı olarak anılmamalı."
+  },
+  {
+    "id": "R07",
+    "checkpoint": "E7R-LT",
+    "claim": "Koşulsuz Syracuse affine Fourier üst sınırı tek başına exponentially rare sabit-kütle fiberi için aynı decay üst sınırını vermez.",
+    "program_label": "FAIL (direct theorem transfer)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/e7r-literature-transfer-v1-zero-trust-audit-20260904/CP20_TASK8B3_E7R_LITERATURE_TRANSFER_V1_ZERO_TRUST_AUDIT_2026-09-04.md",
+    "verdict": "FLAWED",
+    "references": [
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values (2019/2022), arXiv:1909.03562",
+        "url": "https://export.arxiv.org/api/query?id_list=1909.03562",
+        "quote": "for any function f ... with lim ... f(N)=+infty ... Col_min(N) <= f(N) for almost all N ... in the sense of logarithmic density",
+        "opened": true
+      },
+      {
+        "cite": "Yuan Si, A microcanonical phase transition for the Collatz affine random model (2026), Zenodo 20027097 (preprint; hakemli yayın doğrulanmadı)",
+        "url": "https://zenodo.org/api/records/20027097",
+        "quote": "by conditioning on S_n = s. Under this conditioning the multiplicative phase becomes deterministic, and the affine Fourier coefficient at hard frequencies reduces to a primitive ternary Bernoulli-bridge transform",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz microcanonical Fourier Bernoulli bridge",
+      "Collatz conditioned geometric Fourier 3-adic resonance",
+      "Syracuse affine offset 3-adic frequency Yuan Si"
+    ],
+    "note": "Yanlış olan aktarım çıkarımıdır: şartlandırma üstel nadir, mutlak frekans ve entropi rejimi farklı."
+  }
+]

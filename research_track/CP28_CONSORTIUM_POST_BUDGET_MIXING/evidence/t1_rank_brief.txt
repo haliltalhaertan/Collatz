@@ -1,0 +1,513 @@
+ROLE MARKER: CP28_T1_RANK_20260923
+
+Konsorsiyum Tur 1 — SIRALAMA. Tur 0'da üç bağımsız üye (farklı modeller) serbest beyin fırtınasıyla toplam 12 teori önerdi. Aşağıda anonim ve karışık sırada (T1..T12) veriliyorlar; bir kısmı senin olabilir — önemli değil, hepsine aynı ölçüyle bak. (Kendi verdikleri cesaret puanları çıkarıldı.)
+
+Bağlam: Collatz açık. Ekibin önceki turlarda öldürdüğü alan: döngü denklemindeki 2-adik/residue/prefix/minimum argümanları (integrality'e veya klasik 2^M≈3^K Baker/CF sınırına indirgendi). Hedef Collatz'ı çözmek değil; gerçek, yayınlanabilir bir ARA SONUÇ üretebilecek ve ekibimizin (LLM'ler + Python exact hesap + tarama yapan kod ajanı; Lean yok, süper bilgisayar yok) yürütebileceği bir yön seçmek.
+
+===== T1 =====
+1. Başlık: Collatz Bir Kelime-Yeniden-Yazma Sistemi Olarak ve Sonlanmazlık Çekirdeği
+2. Fikir: Sayıyı LSB-first kelime olarak kodlayıp Collatz'ı bir string-rewriting sistemi `R` olarak yazalım: çift kural `0w -> w`, tek adım ise elde-yayan kurallarla `1w -> g(w,1)` ve `g(0w,c) -> b'(c) g(w,c')` biçiminde modellenir. Bu kurulumda "her yörünge 1'e ulaşır" iddiası, `R` sisteminin sonlanmasına (termination) karşılık gelir. Iraksak yörünge ise sonsuz yeniden-yazma dizisidir. Soru artık şudur: `R` hangi yorum sınıfı altında sonlanabilir?
+3. Neden işe yarayabilir? Sonlanma-ispat topluluğunun (polinom yorumlar, yol-sıralamalar, otomatik provers) dev araç seti Collatz'a sistematik hiç uygulanmadı. Doğrudan çözüm gelmese bile Collatz'ın "ispatlanamazlık katmanı" ölçülebilir.
+4. İlk küçük adım: 10 kuraldan küçük açık bir `R` kodlayıp AProVE/TTT2 gibi bir sonlanma-ispatlayıcıya ver; lineer polinom yorumların nerede tıkandığını ve hangi kritik çiftten (critical pair) döndüğünü bir haftada raporla.
+5. Kısmi başarı neye benzer? "Bu `R` kodlaması lineer/karesel polinom yorumlarla sonlanamaz" türü bir imkânsızlık lemması; rewriting hiyerarşisinde Collatz'ın yerini belirleyen yayınlanabilir bir sonuç.
+6. Yenilik tahmini: BİLMİYORUM. Collatz'ı rewriting-termination diliyle kodlama denemeleri olabilir ama standard SRS kodlaması ve otomatik prover taraması benzerini bilmiyorum.
+
+===== T2 =====
+Ters Syracuse ağacını bir spektral transfer operatörü olarak incelemek
+
+Fikir. Tek y için olası tek öncüller
+
+R
+a
+	​
+
+(y)=
+3
+2
+a
+y−1
+	​
+
+,2
+a
+y≡1(mod3)
+
+şeklindedir. Şimdi ters ağacı tek tek düğümler yerine
+
+(L
+s
+	​
+
+f)(y)=
+a≥1
+3∣2
+a
+y−1
+	​
+
+∑
+	​
+
+2
+−sa
+f(R
+a
+	​
+
+(y))
+
+gibi bir transfer operatörüyle ele alalım; durum uzayında hem küçük modüller hem de logy ölçeği tutulsun. Temel fikir, “1'in ters ağacı bütün tamsayıları yakalar mı?” sorusunu doğrudan çözmek yerine, kaçan kütlenin operatör altında spektral olarak sürdürülebilir olup olmadığına bakmak. Eğer uygun bir Banach uzayında kötü bölgeye kısıtlı operatörün spektral yarıçapı <1 yapılabilirse, ters ağacın tamamlayıcısı ölçek büyüdükçe kütle kaybetmek zorunda kalır.
+
+Neden işe yarayabilir? Collatz grafiği genellikle kombinatorik ağaç olarak inceleniyor; spektral bakış dallanma, residue tipi ve ölçek değişimini tek nesnede birleştirir. Özellikle sonsuz sayıda inverse branch'in geometrik ağırlıkları 2
+−a
+, operatör teorisine doğal bir kompaktlık/decay mekanizması verebilir.
+
+İlk küçük adım. a≤A kesmesi ve mod 3⋅2
+r
+ durumları için sonlu transfer matrisini türetmek; sonra A→∞ kuyruğunun normunu analitik olarak sınırlayabilecek bir oyuncak lemma kurmak.
+
+Kısmi başarı neye benzer? Ters Syracuse ağacının belirli residue sınıflarında veya belirli ağırlıklı yoğunluklarda üstel kapsama oranı gösterdiğine dair rigorlu bir spektral teorem, Collatz çözülmese bile bağımsız yayınlanabilir.
+
+Yenilik tahmini. Collatz preimage ağaçları ve operatör benzeri yaklaşımlar kuşkusuz komşu literatüre sahip. Fakat yukarıdaki sonsuz-branch ağırlıklı L
+s
+	​
+
+ ailesinin spektral yarıçapını doğrudan “kaçan kütle” ölçüsü olarak kullanan tam formülasyon için BİLMİYORUM.
+
+
+===== T3 =====
+Durdurma zamanının koşullu tehlike yasası
+
+**Fikir:** Tek sayılar üzerindeki hızlandırılmış dönüşümü \(U(n)=(3n+1)/2^{v_2(3n+1)}\), ilk düşüş zamanını da \(\tau(n)=\min\{k\geq1:U^k(n)<n\}\) olarak tanımlayalım. \(n\in[X,2X]\) için \(\tau>j\) koşulu altında, bir sonraki adımda düşme olasılığının yalnızca \(j\)’ye değil, yörüngenin o ana kadarki *en düşük yüksekliğine* de bağlı olduğunu öne sürüyorum. Daha somut hipotez: \(j\asymp c\log X\) ölçeğinde, uygun biçimde ölçeklenmiş yükseklik ve kalan durdurma zamanı yaklaşık bir yenilenme yasası oluşturur. Bu, bağımsız geometrik \(v_2\) değerleri modelinden ölçülebilir biçimde farklı bir kuyruk öngörür.
+
+**Neden işe yarayabilir?** İlk birkaç adımın değerlemeleri basamak koşullarıyla açıklanır; asıl bilinmeyen, *uzun süre düşmemiş olmanın* sonraki adımları nasıl seçtiğidir. Bu seçilim için bir yasa bulunursa yoğunluk sonuçlarının ötesinde, olağanüstü uzun yörüngeler hakkında nicel bilgi verebilir.
+
+**İlk küçük adım:** \(n\in[2^{24},2^{25}]\) örnekleminde, aynı \(j\) ve yükseklik aralığı için koşullu düşüş oranlarını ölçüp bağımsız-değerleme modeliyle karşılaştırmak.
+
+**Kısmi başarı neye benzer?** \(j\) büyürken geçerli, koşullu durdurma zamanı kuyruğu için yeni ve nicel bir üst veya alt sınır.
+
+**Yenilik tahmini:** Koşullu *yenilenme yasası* biçiminde bir benzerini bilmiyorum; **BİLMİYORUM**.
+
+
+===== T4 =====
+Iraksama, 2-adik parity kodunda kalıcı “normal olmama” gerektirir
+
+Fikir. Hızlandırılmamış dönüşümü
+
+T(x)={
+x/2,
+(3x+1)/2,
+	​
+
+x≡0(mod2),
+x≡1(mod2)
+	​
+
+
+ve parity kodunu ϵ
+j
+	​
+
+=T
+j
+(x)mod2 alalım. Eğer T
+j
+(x)→∞ ise,
+
+logT
+N
+(x)−logx=K
+N
+	​
+
+log3−Nlog2+o(N),K
+N
+	​
+
+=
+j<N
+∑
+	​
+
+ϵ
+j
+	​
+
+,
+
+dolayısıyla zorunlu olarak
+
+N→∞
+liminf
+	​
+
+N
+K
+N
+	​
+
+	​
+
+≥
+log3
+log2
+	​
+
+≈0.63093.
+
+Oysa Haar-2-adik sembolik dinamiğin doğal parity yoğunluğu 1/2'dir. Teori şu: pozitif tamsayılardan gelen parity kodlarının, bütün yeterince uzun prefixlerde 0.6309'un üzerinde kalan kadar ağır bir biası sürdüremeyeceğini aritmetik bir “normalite/entropy-dimension” teoremiyle kanıtlamak.
+
+Neden işe yarayabilir? Iraksama burada bir döngü denklemi değil, sonsuz sembolik davranışa ilişkin çok sert bir zorunluluğa dönüşüyor: yörüngenin yaklaşık %50 değil en az %63.1 oranında odd-adım üretmesi gerekiyor. 2-adik dinamik ile gerçek pozitif tamsayıların gömülüşü arasındaki fark tam olarak bu tür sonsuz exceptional kodları sınırlayabilecek bir yer.
+
+İlk küçük adım. Yukarıdaki 0.63093 eşiğini tam lemma haline getirip ardından
+
+E
+N
+	​
+
+(ρ)={n:
+m
+1
+	​
+
+j<m
+∑
+	​
+
+ϵ
+j
+	​
+
+(n)≥ρ t
+u
+¨
+m m∈[N,2N]}
+
+için ρ>
+2
+1
+	​
+
+ olduğunda kuvvetli logaritmik-yoğunluk üst sınırı elde etmek.
+
+Kısmi başarı neye benzer? Belirli herhangi bir ρ>1/2 için uzun süre kalıcı parity biası gösteren başlangıçların Hausdorff/entropy boyutu veya logaritmik yoğunluğu hakkında yeni bir nicel teorem gerçek bir ara sonuç olur.
+
+Yenilik tahmini. Collatz'ın 2-adik parity kodlaması ve shift ile ilişkisi bilinen bir yön; parity frekansı üzerinden büyüme sezgisi de doğal. Fakat özellikle “ıraksayan pozitif tamsayılar = kalıcı yüksek-biaslı 2-adik kodların aritmetik exceptional kümesi” programının mevcut en güçlü sonuçlarla ne ölçüde çakıştığını BİLMİYORUM.
+
+
+===== T5 =====
+1. Başlık: Seyrek Evrensel Hesaplama: Sabit `3x+1` İçinde Küçük Bir Turing Makinesi Aramak
+2. Fikir: Conway'in genelleştirilmiş Collatz fonksiyonlarının evrensel hesap yapabildiği biliniyor; soru bunu sabit `3x+1`'e indirmektir. Bir modül `M`, kalıntı kümesi `R ⊂ Z/MZ` ve kodçözme `φ` arayalım öyle ki `n ∈ R` için `t` adım sonra yine `R`'ye dönülsün ve `φ(T^t(n)) = U(φ(n))` olsun, burada `U` Rule 110 veya 2-durumlu evrensel bir makinenin bir adımıdır. Yani Collatz'ın seyrek bir aritmetik ilerlemeye kısıtlanışı evrensel hesabı simüle eder. Her Collatz dalı `k` adımda `n -> (3^a n+b)/2^k` afin formundadır, aranacak şey doğru `(a,b,k)` desenleridir.
+3. Neden işe yarayabilir? Seyrek de olsa böyle bir gömme bulunursa Collatz'ın zorluğu yapısal açıklanır: tam çözüm, durma problemine dayanmak zorundadır. Bulunamazsa bile "hangi modüle kadar gömme yok" bilgisi evrensellik eşiğini daraltır.
+4. İlk küçük adım: `M = 2^k·3^l` formunda küçük modüller için tüm `k ≤ 12` afin dallarını listele ve bir SAT-çözücüyle Rule 110'un 8 geçiş kuralına uyan alt-otomat araması yap; bir haftada var/yok tablosu çıkar.
+5. Kısmi başarı neye benzer? "Şu `M,R` üzerinde `k` adımlı Collatz şu küçük otomatı simüle eder" türü somut bir gömme teoremi; negatif sonuç bile (`M ≤ M0` için gömme yoktur) hesaplanabilirlik-kombinatorik kesişiminde yayınlanır.
+6. Yenilik tahmini: Conway'in genelleştirilmiş yapılardaki evrenselliği biliniyor; sabit `3x+1` içinde seyrek-modül evrensel gömme araması için BİLMİYORUM.
+
+===== T6 =====
+Uzun yaşayan yörüngelerde ön ve son bitlerin kilitlenmesi
+
+**Fikir:** \(B_b(m)\), \(m\)’nin baştaki \(b\) ikili basamağı; \(V(m)=\min\{v_2(3m+1),v_{\max}\}\) olsun. \(n\in[X,2X]\) ve \(j=\lfloor c\log X\rfloor\) için, \(\tau(n)>j\) koşulu altında \(I(B_b(U^j n);V(U^j n)\mid\tau>j)\) karşılıklı bilgisini ölçmeyi öneriyorum. Cesur hipotez: uygun sabit \(b,c\) için bu miktar \(X\to\infty\) iken sıfıra gitmez. Yani uzun süre düşmemiş bir yörüngede büyüklüğü temsil eden ön basamaklarla sonraki bölme sayısını belirleyen son basamaklar istatistiksel olarak kilitlenir.
+
+**Neden işe yarayabilir?** Rastgele seçilmiş büyük sayılarda bu iki basamak ölçeğinin büyük ölçüde bağımsız olması beklenir; uzun ömür koşulunun yarattığı bağımlılık, seçkin yörüngelere özgü bir mekanizma olur. Bu mekanizma saptanırsa hem veri modellerini düzeltebilir hem de uzun süre hayatta kalan kümelerin boyutunu sınırlamaya yardım edebilir.
+
+**İlk küçük adım:** \(n\in[2^{22},2^{23}]\) için birkaç \(j\) değerinde karşılıklı bilgiyi hesaplamak; örneklem yanlılığını, büyüklük aralıkları içinde \(V\) etiketlerini karıştırarak denetlemek.
+
+**Kısmi başarı neye benzer?** Büyüyen \(j\) aralığında, uzun ömür koşulu altında ön–son basamak bağımlılığına ilişkin kanıtlı, sıfırdan farklı bir sınır veya güçlü bir üst sınır.
+
+**Yenilik tahmini:** Bu koşullu karşılıklı-bilgi sorusunun literatürdeki karşılığı için **BİLMİYORUM**.
+
+
+===== T7 =====
+Valuation dizilerinde “entropi borcu”
+
+Fikir. Tek sayılar üzerindeki Syracuse dönüşümünü
+
+S(x)=
+2
+a(x)
+3x+1
+	​
+
+,a(x)=v
+2
+	​
+
+(3x+1)
+
+olarak yazalım ve a
+j
+	​
+
+=a(S
+j
+x) olsun. Tam olarak
+
+logS
+n
+(x)−logx=nlog3−log2
+j<n
+∑
+	​
+
+a
+j
+	​
+
++
+j<n
+∑
+	​
+
+log(1+
+3S
+j
+(x)
+1
+	​
+
+).
+
+Rastgele tek tamsayı sezgisinde a
+j
+	​
+
+ için doğal referans dağılım p
+k
+	​
+
+=2
+−k
+, k≥1, ve ortalaması 2; buna karşılık uzun süre büyüyen bir yörünge kabaca 
+n
+1
+	​
+
+∑a
+j
+	​
+
+≤log
+2
+	​
+
+3 zorunluluğu taşır. Önerim, böyle bir yörüngenin yalnızca “nadir” olduğunu değil, her uzun blokta pozitif bir bilgi maliyeti
+
+I
+∗
+	​
+
+=
+∑kq
+k
+	​
+
+≤log
+2
+	​
+
+3
+inf
+	​
+
+D(q∥p)>0
+
+ödemek zorunda olduğunu deterministik olarak göstermeye çalışmak. Asıl nesne bağımsız değişkenler değil, gerçekten gerçekleştirilebilir valuation-word'lerin göreli entropi oranı olur.
+
+Neden işe yarayabilir? Klasik rastgele yürüyüş sezgisi negatif drift söylüyor fakat deterministik korelasyonlar deliği açık bırakıyor. Eğer gerçekleştirilebilir kötü valuation dizilerinin sayısı da bağımsız modeldeki büyük-sapma oranına yakın biçimde üstel küçültülebilirse, ıraksama “aritmetik olarak sürekli entropi üretmek zorunda olan” bir fenomen haline gelir.
+
+İlk küçük adım. Uzunluğu r olan gerçekleştirilebilir valuation-word'ler için, koşul
+
+j<r
+∑
+	​
+
+a
+j
+	​
+
+≤(log
+2
+	​
+
+3+ε)r
+
+altındaki sınıfların toplam 2-adik silindir ölçüsüne doğrudan bir üstel üst sınır veren sonlu-r lemma çıkarmak.
+
+Kısmi başarı neye benzer? Collatz çözülmeden, uzun pozitif-drift Syracuse segmentlerine sahip başlangıçların logaritmik yoğunluğu için
+
+δ
+log
+	​
+
+(E
+r
+	​
+
+)≤e
+−cr
+
+tipinde yeni ve açık bir büyük-sapma teoremi yayınlanabilir.
+
+Yenilik tahmini. Valuation'ların geometrik dağılımı ve rastgele yürüyüş modelleri bilinen temalar. Fakat problemi doğrudan gerçekleştirilebilir itinerary'lerin KL-entropi oranı olarak kuran ve deterministik bağımlılık maliyetini ölçen bu biçimin literatürde olup olmadığını BİLMİYORUM.
+
+
+===== T8 =====
+1. Başlık: `px+q` Ailesinde Kritik Faz Kenarı Olarak `3x+1`
+2. Fikir: Bu teori döngülerle hiç ilgili değildir; sadece ıraksama ve yoğunluk hakkındadır. Aileyi `T_{p,q}(n) = n/2` (çift) ve `(pn+q)/2` (tek), `p,q` tek olarak tanımlayalım. Rastgele parite varsayımı altında adım başına beklenen log-sürüklenme `μ(p) = (1/2)log(p/4)` olur. O halde `p=3` sürüklenmesi negatif olan en büyük tek sayı, `p=5` sürüklenmesi pozitif olan en küçük tek sayıdır; `3x+1` ayrık bir faz sınırının tam kenarında durur. Fikir, `px+q` uzayında bir faz diyagramı çizip `3`'e iki yandan yaklaşmaktır.
+3. Neden işe yarayabilir? Kritik kenardaki sistemler evrensel ölçekleme yasaları gösterir; zorluk tek bir noktada değil, faz geçişinin doğasında olabilir. Yanlardaki rejimler (`p=1` daralan, `p≥5` genişleyen) teknik olarak çok daha kolaydır.
+4. İlk küçük adım: Bir haftada `p ∈ {1,3,5,7}`, küçük `q` değerleri için `n ≤ 10^9` aralığında sonlu-zaman Lyapunov üstellerinin dağılımını ve büyük-sapma fonksiyonunu sayısal çıkar; `p=3`'ün kuyruk davranışının ara rejim olduğunu göster.
+5. Kısmi başarı neye benzer? "Sürüklenme negatifken hemen-hemen tüm yörüngeler logaritmik sınıra sahiptir" türü bir teoremin `p`'de uniform versiyonu; Tao 2019 tarzı sonucun `px+q` faz diyagramına genişletilmesi.
+6. Yenilik tahmini: `px+q` genellemeleri ve Terras/Everett yoğunluk sonuçları biliniyor; ama `3`'ü "son daralan tek sayı" olarak faz-kritikliği diliyle ele alan derli toplu bir çalışma BİLMİYORUM.
+
+===== T9 =====
+Ters Collatz ağacında 3-adik dallanma basıncı
+
+**Fikir:** Tek sayı \(y\)’nin tek ters çocukları, tam sayı olduklarında \(x=(2^a y-1)/3\) biçimindedir. Kökü 1 olan ters ağaçta, \(a\leq A\) kısıtıyla derinlik \(r\)’deki yollar için \(Z_{r,A}(s)=\sum_{\text{yollar}}\prod_{\text{kenarlar}}(3/2^a)^s\) ağırlığını inceleyelim; \(1\to1\) öz-ilmeğini dışarıda bırakalım. Hipotez, \(r\) arttıkça bu toplamın büyümesini belirleyen basıncın, dalları bağımsız sayan modelden farklı olduğudur: bir çocuk üretmek, sonraki üretkenlik hakkında \(3\)-adik bilgi taşır. Amaç, ağacın farklı büyüklük ölçeklerindeki büyümesini bu bilgiyle öngörmek.
+
+**Neden işe yarayabilir?** Ters yönde “kaç öncül var?” sorusu, ileri yöndeki tek bir yörüngenin davranışından farklı bir yapı açığa çıkarır. Üretken ve verimsiz dalların uzun vadeli oranı, yakınsayan başlangıç değerlerinin sayılması için yeni sınırlar sağlayabilir.
+
+**İlk küçük adım:** \(a\leq8\) ile ters ağacı 20 derinliğe kadar üretip çocukların \(3^h\) modülündeki durumlarına göre dallanma istatistiklerini karşılaştırmak.
+
+**Kısmi başarı neye benzer?** Sınırlı \(a\) için ters ağacın ağırlıklı büyüme üssüne, bağımsız-dallanma hesabından daha keskin ve kanıtlı bir sınır.
+
+**Yenilik tahmini:** Ters ağaçların incelenmesi yeni değil; önerilen basınç formülasyonunun özgünlüğü için **BİLMİYORUM**.
+
+
+===== T10 =====
+Mesoskopik invarians ilkesi: Collatz log-yüksekliği Brownian drift'e yaklaşır
+
+Fikir. Başlangıç N
+X
+	​
+
+'i 1≤n≤X arasında logaritmik ölçüyle,
+
+Pr(N
+X
+	​
+
+=n)∝
+n
+1
+	​
+
+,
+
+seçelim. Hızlandırılmamış Collatz için rastgele-parity modelinin ortalama log drift'i
+
+m=
+2
+1
+	​
+
+log3−log2<0.
+
+Önerilen güçlü ifade, yalnız sabit sayıda adımda değil, O(logX) uzunluğundaki “mesoskopik” zaman ölçeğinde
+
+Z
+X
+	​
+
+(t)=
+logX
+	​
+
+logT
+⌊tlogX⌋
+(N
+X
+	​
+
+)−logN
+X
+	​
+
+−mtlogX
+	​
+
+
+sürecinin, yörünge çok küçük değerlere çarpmadan önce, uygun varyanslı Brown hareketine yaklaşmasıdır. Yani Syracuse rastgele-yürüyüş sezgisini tek-adım istatistiğinden gerçek bir fonksiyonel limit teoremine yükseltmek.
+
+Neden işe yarayabilir? O(logX) tam kritik ölçek: negatif drift'in X büyüklüğündeki bir sayıyı ciddi biçimde aşağı taşıyabildiği zaman burada. Bu ölçekte deterministik sistem gerçekten Brownian negatif drift gibi davranıyorsa, çok uzun yukarı kaçışların olasılığı klasik first-passage teorisindeki kadar keskin biçimde bastırılabilir.
+
+İlk küçük adım. Önce yörünge X
+η
+'nın üzerinde kaldığı sürece, j≤clogX aralığında parity-block korelasyonlarını kontrol edip
+
+Var
+	​
+
+j<N
+∑
+	​
+
+(ϵ
+j
+	​
+
+−
+2
+1
+	​
+
+)
+	​
+
+=
+4
+N
+	​
+
++o(N)
+
+ve iki/bloklu merkezi-limit tipi bir sonuç elde etmeye çalışmak.
+
+Kısmi başarı neye benzer? N≍clogX zamanlarına kadar geçerli bir CLT, moderate-deviation bound veya fonksiyonel invarians ilkesi tek başına ciddi bir sonuç olur; mevcut “hemen hemen tüm” sonuçlara dinamik bir yol şekli ve first-passage dağılımı ekler.
+
+Yenilik tahmini. Collatz için rastgele yürüyüş modelleri ve Tao tipi olasılıksal/yoğunluk yöntemleri mevcut. Fakat logaritmik başlangıç ölçüsü altında, clogX zaman ufkunda ve düşük-yükseklik sınırına kadar bir mesoskopik fonksiyonel invarians ilkesinin bilinen literatürde kanıtlanıp kanıtlanmadığını BİLMİYORUM.
+
+
+===== T11 =====
+1. Başlık: Collatz Transducer Yarıgrubu ve Otomat-Grup Büyümesi
+2. Fikir: Sayıyı LSB-first ikili kelime olarak yazalım: `n = b0 b1 b2 ...`, `bi ∈ {0,1}`. `n -> 3n+1` işlemi elde `c ∈ {0,1,2}` taşıyan 3-durumlu bir transducer'dır: `b' = (3b+c) mod 2`, `c' = (3b+c-b')/2`. Bölme `D: b0w -> w` ise tek-durumlu bir shift-transducer'dır. Böylece hızlandırılmış Collatz adımı `T = D^e ∘ M` biçiminde transducer bileşimidir ve soru, `S = <D, M>` yarıgrubunun `{0,1}^ω` üzerindeki yörünge büyümesine dönüşür. Iraksama, bu yarıgrubun bir yörüngeyi sonsuzca şişirmesi demektir.
+3. Neden işe yarayabilir? Otomat gruplarında daralma (contracting), çekirdek (nucleus) ve Schreier grafikleri için güçlü makine var. Bu makine hiç Collatz yörünge büyümesine doğrultulmadı. Başarısızlık bile yarıgrubun hangi anlamda "büyük" olduğunu söyler.
+4. İlk küçük adım: `M` ve `D` transducer tablolarını açıkça yazıp bir haftada küçük derinliklerde (ör. 12 seviyeye kadar) Schreier grafiğini ve büyüme fonksiyonunu hesapla; çekirdeğin sonlu mu sonsuz mu göründüğünü sayısal raporla.
+5. Kısmi başarı neye benzer? `S` yarıgrubunun üstel büyüdüğünün ya da nucleus'unun sonsuz olduğunun ispatı; Collatz çözülmeden otomat-yarıgruplar literatürüne girecek bir sonuç.
+6. Yenilik tahmini: BİLMİYORUM. İkili transducer olarak `3x+1` folklordur ama Collatz sorusunu otomat-grup büyümesine indirgeme benzerini bilmiyorum.
+
+===== T12 =====
+Rekor yörüngelerde iki ayrı büyüme stratejisi
+
+**Fikir:** \(a_i=v_2(3U^i(n)+1)\) yazılırsa
+\[
+\log\frac{U^k(n)}n
+=k\log3-\Bigl(\sum_{i<k}a_i\Bigr)\log2
++\sum_{i<k}\log\!\left(1+\frac1{3U^i(n)}\right).
+\]
+\(J=\lfloor c\log X\rfloor\) için \(n\in[X,2X]\) yörüngelerinde \(M_J(n)=\max_{k\leq J}\log(U^k(n)/n)\) rekorunu ölçelim. Hipotezim, büyük \(M_J\) değerlerine götüren değerleme dizilerinin tek bir biçime yığılmadığıdır: bazı eşiklerde uzun süreli hafif yanlılık, bazılarında kısa ve şiddetli bir düşük-\(a_i\) atağı baskın gelir. Bu iki strateji arasında bir eşik geçişi varsa, rekor yörüngelerin dağılımında görünmelidir.
+
+**Neden işe yarayabilir?** Rekorların yalnızca yüksekliğini değil, *hangi yoldan* oluştuğunu açıklamak gerekir. Böyle bir geçiş, sıradan rastgele-yürüyüş benzetmesinin kaçırdığı aritmetik kısıtları görünür kılabilir.
+
+**İlk küçük adım:** Seçilen \(X\) ve \(J\) için en yüksek rekorları bulup kümülatif \(\sum_{i<k}a_i\) eğrilerini gruplayarak tek mi, iki mi baskın profil bulunduğunu ölçmek.
+
+**Kısmi başarı neye benzer?** Gerçek Collatz yörüngeleri için rekor olasılığına ilişkin, yalnızca bağımsız değerlemeleri varsaymayan yeni bir büyük-sapma sınırı.
+
+**Yenilik tahmini:** Rekor yörüngeler çalışılmıştır; iki stratejili geçiş hipotezinin literatürdeki durumunu **BİLMİYORUM**.
+
+
+===== GÖREV =====
+Her teoriye 1–10 arası dört puan ver:
+ M = matematiksel sağlamlık (doğru kurulmuş mu, gizli hata/tautoloji var mı?)
+ Y = yenilik olasılığı (literatürde zaten yapılmış olma riski düşükse yüksek; bilmiyorsan dürüstçe orta ver)
+ U = uygulanabilirlik (ekibimiz 1–2 haftada anlamlı ilk sonuç alabilir mi?)
+ K = kısmi başarının değeri (gerçek, yayınlanabilir ara sonuç potansiyeli)
+Toplam = M+Y+U+K.
+
+Çıktı:
+1. Tablo: T | M | Y | U | K | Toplam | tek satır gerekçe (bulduğun hata/tautoloji/literatür çakışması; kaynak uydurma, emin değilsen "DOĞRULANMADI").
+2. Aynı ya da birleştirilmesi gereken teoriler (ör. "T4+T7 aynı fikir").
+3. SIRALAMA: 12'nin en mantıklıdan en az mantıklıya tam sırası.
+4. İlk 3 için: "ilk küçük adım"ı nasıl daha sert (daha kesin karar veren) yapardın — tek cümle.
+
+Türkçe, kısa. Son satır tam olarak:
+CP28_T1_RANK_20260923_COMPLETE

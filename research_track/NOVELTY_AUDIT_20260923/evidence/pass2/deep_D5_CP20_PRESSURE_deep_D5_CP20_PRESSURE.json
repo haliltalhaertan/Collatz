@@ -1,0 +1,854 @@
+[
+  {
+    "idx": 11,
+    "id": "T6-04",
+    "claim": "Sabit pozitif yörüngede κ>1 kritik-log kanunu varsa her 0<ε<α/κ için [N_r,2N_r−r] r-faktörleri farklı, liminf log₂p_a(r)/r≥α/κ.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 7 — B=4 Zero-Critical Weighted-Pressure Barrier/CP20_PRESSURE_GENERALIZATION_FINAL_FREEZE_2026-08-26/CP20_TASK6_MAJOR_THEOREM_V3_AUDITED_FROZEN.docx.txt",
+    "source_excerpt": "Assume s_k=kappa log_2 k+O(1) with kappa>1. For every epsilon satisfying 0 < epsilon < alpha/kappa, choose N_r=floor(2^((alpha/kappa-epsilon)r)). ... all factors in that window are distinct and liminf_(r->infinity) log_2 p_a(r)/r >= alpha/kappa.",
+    "exact_statement": "Assume s_k=kappa log_2 k+O(1) with kappa>1. For every epsilon satisfying 0 < epsilon < alpha/kappa, choose N_r=floor(2^((alpha/kappa-epsilon)r)). ... all factors in that window are distinct and liminf_(r->infinity) log_2 p_a(r)/r >= alpha/kappa.",
+    "program_label": "[PROVED][INDEPENDENTLY AUDITED][FROZEN]",
+    "correctness": "KOŞULLU-DOĞRU",
+    "weakest_step": "κ>1, tek sabit pozitif tamsayı başlangıcı; Lemma A taşıma serisinin yakınsaklığı, Lemma B çakışan sözcüklerin 2^A bölünebilirliği; farklı durum şartı dönemsel çevrimden çelişkiyle çıkar.",
+    "check_code_and_output": {
+      "code_file": "exact_checks.py",
+      "code": "from decimal import Decimal,localcontext,ROUND_FLOOR\nfrom collections import defaultdict\nfrom fractions import Fraction\nwith localcontext() as ctx:\n ctx.prec=85\n alpha=Decimal(3).ln()/Decimal(2).ln();kap=Decimal(1053)/1000\n N=2400\n F=[int((alpha*k).to_integral_value(rounding=ROUND_FLOOR)) for k in range(N+2)]\n g=[F[k+1]-F[k] for k in range(N)]\n a=[];s=0; zs=[];q=[]\n for k in range(N):\n  m=max(2,k+1);Q=int((kap*Decimal(m).ln()/Decimal(2).ln()).to_integral_value(rounding=ROUND_FLOOR))\n  # exact arithmetic threshold safety\n  assert (1<<(1000*Q))<=m**1053<(1<<(1000*(Q+1)))\n  d= 1 if g[k]==2 and s<=Q else -1\n  a.append(g[k]-d);s+=d;q.append(Q);zs.append(s-Q)\n print('controller N,alphabet,z range k>=100:',N,sorted(set(a)),(min(zs[100:]),max(zs[100:])))\n print('q jumps in u>=r windows max (r<=u, u+r<N):',[(r,max(q[u+r]-q[u] for u in range(r,N-r))) for r in [8,32,128,400]])\n print('factor complexities:',[(r,len({tuple(a[u:u+r]) for u in range(N-r+1)})) for r in [4,8,12,24,40]])\n # integer Syracuse trajectories including 1 cycle: verify difference divisibility for repeated valuation words if n distinct\n cnt=0;fail=0\n for n0 in range(1,152,2):\n  n=n0; ns=[]; av=[]\n  for k in range(32):\n   ns.append(n);t=3*n+1;v=(t&-t).bit_length()-1;av.append(v);n=t>>v\n  for r in range(1,6):\n   seen=defaultdict(list)\n   for u in range(32-r+1):\n    w=tuple(av[u:u+r]);mass=sum(w)\n    for v in seen[w]:\n     if ns[u]!=ns[v]: cnt+=1;fail+=((ns[u]-ns[v])%(1<<mass)!=0)\n    seen[w].append(u)\n print('same word distinct states exact divisibility tested/fail:',cnt,fail)\n",
+      "output": "controller N,alphabet,z range k>=100: 2400 [1, 2, 3] (-1, 1)\nq jumps in u>=r windows max (r<=u, u+r<N): [(8, 1), (32, 1), (128, 1), (400, 1)]\nfactor complexities: [(4, 9), (8, 22), (12, 41), (24, 128), (40, 239)]\nsame word distinct states exact divisibility tested/fail: 10076 0\nadditional: u=r=50, q(50)=5, q(100)=7 (two jumps).",
+      "additional_note": ""
+    },
+    "triviality_derivation": "Afin kimlikten n_k=2^{s_k+O(1)}(n₀+Σ_{i<k} 2^{-s_i+O(1)})=O(k^κ) (κ>1). Tekrarlanan W için 2^{A(W)}|(n_v−n_u), A(W)≥αr−O(1), u≥r. O(N_r^κ)<2^{αr−O(1)}; tekrar imkânsız. Literatürde kullanılan araçlar standart, nicel tek-yörünge çıkarımı özel. ",
+    "queries": [
+      {
+        "query": "Collatz valuation word factor complexity repeated factor affine divisibility",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20valuation%20word%20factor%20complexity%20repeated%20factor%20affine%20divisibility",
+        "http_status": 429
+      },
+      {
+        "query": "Syracuse E-sequence prefix repetition logarithmic discrepancy stopping time",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?size=2&q=Syracuse%20E-sequence%20prefix%20repetition%20logarithmic%20discrepancy%20stopping%20time",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz parity vector subword complexity exponential entropy",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=0&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "3x+1 cycle 2^m-3^k affine repeated valuation blocks",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=3x%2B1%20cycle%202%5Em-3%5Ek%20affine%20repeated%20valuation%20blocks",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz polynomial orbit growth valuation word factor complexity",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20polynomial%20orbit%20growth%20valuation%20word%20factor%20complexity",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz affine map repeated factors 2-adic divisibility",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?size=2&q=Collatz%20affine%20map%20repeated%20factors%202-adic%20divisibility",
+        "http_status": 200
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Dubickas, On integer sequences generated by linear maps, Glasgow Math. J. 51 (2009), Theorem 5",
+        "url": "https://doi.org/10.1017/S0017089508004655",
+        "quote": "P(X, n) > 1.70951129 n",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), entry 67",
+        "url": "https://arxiv.org/abs/math/0608208",
+        "quote": "This paper studies this function for x whose 2-adic expansion is a Sturmian word ... suggesting that the images Φ(x) then have 2-adic expansions of full complexity.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, Acta Arith. 90 (1999), Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound ..., Zenodo (2026), Theorem 2.3",
+        "url": "https://zenodo.org/records/22087163",
+        "quote": "for every β > β∗, a constant Cβ with #( A ∩ [a, a + X)) ≤ Cβ X^β log(2X) uniformly in a.",
+        "opened": true
+      },
+      {
+        "cite": "Wang, An E-sequence approach to the 3x+1 problem (2019), abstract",
+        "url": "https://arxiv.org/abs/1809.02278",
+        "quote": "all non-periodic E-sequences ... with limsup b_n/n > log_2 3 are Ω-divergent",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. 56 (2017)",
+        "url": "https://doi.org/10.7169/facm/1583",
+        "quote": "Primary text inaccessible (Project Euclid anti-bot); no verified primary quotation.",
+        "opened": false
+      }
+    ],
+    "value_0_5": 3,
+    "final_verdict": "NEW-MINOR",
+    "one_line_reason": "Yeni olabilecek, doğru fakat güçlü kritik-log varsayımına bağlı kısa afin/sayım lemması.",
+    "literature_audit_notes": "Lagarias arXiv:math/0309224 ve math/0608208 PDF indirildi; PDF metninde factor complexity=0, pressure=0, Sturmian=2 (iki bibliyografya toplamı). Garcia–Tal 1999 ve Curry 2026 PDF açıldı; Dubickas tam metin okundu. López–Stoll için yalnız Lagarias birincil bibliyografya anotasyonu açıldı; orijinal makale açılmadı. Rozier 2017 Project Euclid anti-bot: birincil metin doğrulanamadı. OpenAlex work ID ve cites: DOI sorguları 429 nedeniyle atıf listeleri çıkarılamadı; Semantic Scholar 429, arXiv API bazı sorgular 429; sonuç bulunamadı ≠ yokluğun ispatı. Sorgu durumları literature_search_log.json içinde.",
+    "citation_audit": {
+      "lagarias_full_text_files": [
+        "lagarias_0309224.txt",
+        "lagarias_0608208.txt"
+      ],
+      "garcia_primary": "garcia_tal_1999.txt",
+      "curry_primary": "curry_2026.txt",
+      "openalex_cites_attempts": [
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.4064/aa-90-3-245-250&per-page=20",
+          "http_status": 429
+        },
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.7169/facm/1583&per-page=20",
+          "http_status": 429
+        }
+      ],
+      "semantic_scholar_attempt": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20factor%20complexity&limit=2&fields=title,year,abstract,externalIds ; HTTP 429"
+    }
+  },
+  {
+    "idx": 12,
+    "id": "T6-06",
+    "claim": "κ=1.053 deterministik controller için −41≤z_k≤1 ve p_a(r)≤43(r+1)^2; hiçbir pozitif kritik-log κ>1 yörüngesi onu gerçekleştiremez.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 6 — Critical-Equality E-Sequence & Block Renormalization/RESULTS_MAJOR_THEOREM_AND_AUDIT_PACKAGE/CP20_TASK6_SURVIVOR_EXCLUSION_V2_AUDITED_FROZEN.docx.txt",
+    "source_excerpt": "Assume the exact CP20 controller with kappa=1053/1000 is realized by one fixed positive ordinary Syracuse orbit. ... z_k=s_k-q_k has a proved fixed coarse range -41<=z_k<=1 for all sufficiently large k; ... p_a(r)<=43(r+1)^2 up to harmless fixed factors in the bounded jump description. ... Therefore ... controller is not LEVEL 3.",
+    "exact_statement": "Assume the exact CP20 controller with kappa=1053/1000 is realized by one fixed positive ordinary Syracuse orbit. ... z_k=s_k-q_k has a proved fixed coarse range -41<=z_k<=1 for all sufficiently large k; ... p_a(r)<=43(r+1)^2 up to harmless fixed factors in the bounded jump description. ... Therefore ... controller is not LEVEL 3.",
+    "program_label": "[PROVED][AUDITED][FROZEN]",
+    "correctness": "BOŞLUKLU (kesin 43 katsayısı); dışlama KOŞULLU-DOĞRU",
+    "weakest_step": "Yalnız verilen belge 43(r+1)^2 kesin sabitini çıkarmaz: q bir r-penceresinde iki sıçrama yapabilir; r+1 faz sözcüğü ×43 durum × q sıçrama-konumu sayısına ek katsayı gerekir. O(r²) için sıçrama-desenlerini ayrıca O(r) saymak gerekir; ana dışlama T7 B=3 ile ayrıca sağlanır.",
+    "check_code_and_output": {
+      "code_file": "exact_checks.py",
+      "code": "from decimal import Decimal,localcontext,ROUND_FLOOR\nfrom collections import defaultdict\nfrom fractions import Fraction\nwith localcontext() as ctx:\n ctx.prec=85\n alpha=Decimal(3).ln()/Decimal(2).ln();kap=Decimal(1053)/1000\n N=2400\n F=[int((alpha*k).to_integral_value(rounding=ROUND_FLOOR)) for k in range(N+2)]\n g=[F[k+1]-F[k] for k in range(N)]\n a=[];s=0; zs=[];q=[]\n for k in range(N):\n  m=max(2,k+1);Q=int((kap*Decimal(m).ln()/Decimal(2).ln()).to_integral_value(rounding=ROUND_FLOOR))\n  # exact arithmetic threshold safety\n  assert (1<<(1000*Q))<=m**1053<(1<<(1000*(Q+1)))\n  d= 1 if g[k]==2 and s<=Q else -1\n  a.append(g[k]-d);s+=d;q.append(Q);zs.append(s-Q)\n print('controller N,alphabet,z range k>=100:',N,sorted(set(a)),(min(zs[100:]),max(zs[100:])))\n print('q jumps in u>=r windows max (r<=u, u+r<N):',[(r,max(q[u+r]-q[u] for u in range(r,N-r))) for r in [8,32,128,400]])\n print('factor complexities:',[(r,len({tuple(a[u:u+r]) for u in range(N-r+1)})) for r in [4,8,12,24,40]])\n # integer Syracuse trajectories including 1 cycle: verify difference divisibility for repeated valuation words if n distinct\n cnt=0;fail=0\n for n0 in range(1,152,2):\n  n=n0; ns=[]; av=[]\n  for k in range(32):\n   ns.append(n);t=3*n+1;v=(t&-t).bit_length()-1;av.append(v);n=t>>v\n  for r in range(1,6):\n   seen=defaultdict(list)\n   for u in range(32-r+1):\n    w=tuple(av[u:u+r]);mass=sum(w)\n    for v in seen[w]:\n     if ns[u]!=ns[v]: cnt+=1;fail+=((ns[u]-ns[v])%(1<<mass)!=0)\n    seen[w].append(u)\n print('same word distinct states exact divisibility tested/fail:',cnt,fail)\n",
+      "output": "controller N,alphabet,z range k>=100: 2400 [1, 2, 3] (-1, 1)\nq jumps in u>=r windows max (r<=u, u+r<N): [(8, 1), (32, 1), (128, 1), (400, 1)]\nfactor complexities: [(4, 9), (8, 22), (12, 41), (24, 128), (40, 239)]\nsame word distinct states exact divisibility tested/fail: 10076 0\nadditional: u=r=50, q(50)=5, q(100)=7 (two jumps).",
+      "additional_note": "q_50=5, q_100=7 exact integer thresholds; controller SOURCE controller_definition.md uses eventual -41≤z≤1 but the specified survivor exclusion file says 43(r+1)^2 only “up to harmless fixed factors”."
+    },
+    "triviality_derivation": "q_u≈κ log₂u ve r≤u için iki sıçrama ancak u=O(r) olduğunda olabilir; q desenleri O(r), g desenleri r+1, z durumu ≤43 => O(r²). Daha doğrudan a∈{1,2,3}, a≠g ile T7-04 κ>3.027; κ=1.053 çelişir. Kesin 43 katsayısı buradan çıkmaz.",
+    "queries": [
+      {
+        "query": "Collatz valuation word factor complexity repeated factor affine divisibility",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20valuation%20word%20factor%20complexity%20repeated%20factor%20affine%20divisibility",
+        "http_status": 429
+      },
+      {
+        "query": "Syracuse E-sequence prefix repetition logarithmic discrepancy stopping time",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?size=2&q=Syracuse%20E-sequence%20prefix%20repetition%20logarithmic%20discrepancy%20stopping%20time",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz symbolic controller Sturmian subshift bounded discrepancy",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?size=2&q=Collatz%20symbolic%20controller%20Sturmian%20subshift%20bounded%20discrepancy",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz zero critical valuation weighted pressure entropy Chernoff",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=2&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Collatz cycle zero-critical Sturmian subshift",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20cycle%20zero-critical%20Sturmian%20subshift",
+        "http_status": 429
+      },
+      {
+        "query": "Collatz affine map repeated factors 2-adic divisibility",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?size=2&q=Collatz%20affine%20map%20repeated%20factors%202-adic%20divisibility",
+        "http_status": 200
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Wang, An E-sequence approach to the 3x+1 problem (2019), abstract",
+        "url": "https://arxiv.org/abs/1809.02278",
+        "quote": "all non-periodic E-sequences ... with limsup b_n/n > log_2 3 are Ω-divergent",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, Acta Arith. 90 (1999), Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound ..., Zenodo (2026), Theorem 2.3",
+        "url": "https://zenodo.org/records/22087163",
+        "quote": "for every β > β∗, a constant Cβ with #( A ∩ [a, a + X)) ≤ Cβ X^β log(2X) uniformly in a.",
+        "opened": true
+      },
+      {
+        "cite": "Dubickas, On integer sequences generated by linear maps, Glasgow Math. J. 51 (2009), Theorem 5",
+        "url": "https://doi.org/10.1017/S0017089508004655",
+        "quote": "P(X, n) > 1.70951129 n",
+        "opened": true
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "SUPERSEDED",
+    "one_line_reason": "Controller dışlamasını daha geniş B=3 basınç engeli zaten verir; belgede kesin 43 sabiti ispatlanmıyor.",
+    "literature_audit_notes": "Lagarias arXiv:math/0309224 ve math/0608208 PDF indirildi; PDF metninde factor complexity=0, pressure=0, Sturmian=2 (iki bibliyografya toplamı). Garcia–Tal 1999 ve Curry 2026 PDF açıldı; Dubickas tam metin okundu. López–Stoll için yalnız Lagarias birincil bibliyografya anotasyonu açıldı; orijinal makale açılmadı. Rozier 2017 Project Euclid anti-bot: birincil metin doğrulanamadı. OpenAlex work ID ve cites: DOI sorguları 429 nedeniyle atıf listeleri çıkarılamadı; Semantic Scholar 429, arXiv API bazı sorgular 429; sonuç bulunamadı ≠ yokluğun ispatı. Sorgu durumları literature_search_log.json içinde.",
+    "citation_audit": {
+      "lagarias_full_text_files": [
+        "lagarias_0309224.txt",
+        "lagarias_0608208.txt"
+      ],
+      "garcia_primary": "garcia_tal_1999.txt",
+      "curry_primary": "curry_2026.txt",
+      "openalex_cites_attempts": [
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.4064/aa-90-3-245-250&per-page=20",
+          "http_status": 429
+        },
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.7169/facm/1583&per-page=20",
+          "http_status": 429
+        }
+      ],
+      "semantic_scholar_attempt": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20factor%20complexity&limit=2&fields=title,year,abstract,externalIds ; HTTP 429"
+    }
+  },
+  {
+    "idx": 13,
+    "id": "T7-02",
+    "claim": "B≥3, a_k≤B sıfır-kritik yörüngede limsup log₂p_a(r)/r≤h_B ve T6 ile κ≥α/h_B.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 7 — B=4 Zero-Critical Weighted-Pressure Barrier/CP20_PRESSURE_GENERALIZATION_FINAL_FREEZE_2026-08-26/CP20_TASK7_PRESSURE_GENERALIZATION_THEOREM_V3_AUDITED_FROZEN.docx.txt",
+    "source_excerpt": "Assume a positive ordinary odd-only Syracuse orbit satisfies s_k=kappa log_2 k+O(1), kappa>1, and zero-criticality a_k != g_k for every k. For finite B>=3 ... limsup_(r->infinity) log_2 p_a(r)/r <= h_B, where h_B = inf_lambda [(2-alpha) log_2(sum_(a=2..B) exp(lambda(1-a))) + (alpha-1) log_2(sum_(1<=a<=B,a!=2) exp(lambda(2-a)))]. ... kappa >= alpha/h_B.",
+    "exact_statement": "Assume a positive ordinary odd-only Syracuse orbit satisfies s_k=kappa log_2 k+O(1), kappa>1, and zero-criticality a_k != g_k for every k. For finite B>=3 ... limsup_(r->infinity) log_2 p_a(r)/r <= h_B, where h_B = inf_lambda [(2-alpha) log_2(sum_(a=2..B) exp(lambda(1-a))) + (alpha-1) log_2(sum_(1<=a<=B,a!=2) exp(lambda(2-a)))]. ... kappa >= alpha/h_B.",
+    "program_label": "[PROVED][INDEPENDENTLY AUDITED][FROZEN]",
+    "correctness": "KOŞULLU-DOĞRU",
+    "weakest_step": "Chernoff yönü N(S)≤P(e^λ)e^{−λ S} ve |S|=O(log r) başlangıca göre uniform olmalı; sonlu istisna yalnızca O(1) farklı başlangıç ekler.",
+    "check_code_and_output": {
+      "code_file": "exact_checks.py",
+      "code": "from decimal import Decimal,localcontext,ROUND_FLOOR\nfrom collections import defaultdict\nfrom fractions import Fraction\nwith localcontext() as ctx:\n ctx.prec=85\n alpha=Decimal(3).ln()/Decimal(2).ln();kap=Decimal(1053)/1000\n N=2400\n F=[int((alpha*k).to_integral_value(rounding=ROUND_FLOOR)) for k in range(N+2)]\n g=[F[k+1]-F[k] for k in range(N)]\n a=[];s=0; zs=[];q=[]\n for k in range(N):\n  m=max(2,k+1);Q=int((kap*Decimal(m).ln()/Decimal(2).ln()).to_integral_value(rounding=ROUND_FLOOR))\n  # exact arithmetic threshold safety\n  assert (1<<(1000*Q))<=m**1053<(1<<(1000*(Q+1)))\n  d= 1 if g[k]==2 and s<=Q else -1\n  a.append(g[k]-d);s+=d;q.append(Q);zs.append(s-Q)\n print('controller N,alphabet,z range k>=100:',N,sorted(set(a)),(min(zs[100:]),max(zs[100:])))\n print('q jumps in u>=r windows max (r<=u, u+r<N):',[(r,max(q[u+r]-q[u] for u in range(r,N-r))) for r in [8,32,128,400]])\n print('factor complexities:',[(r,len({tuple(a[u:u+r]) for u in range(N-r+1)})) for r in [4,8,12,24,40]])\n # integer Syracuse trajectories including 1 cycle: verify difference divisibility for repeated valuation words if n distinct\n cnt=0;fail=0\n for n0 in range(1,152,2):\n  n=n0; ns=[]; av=[]\n  for k in range(32):\n   ns.append(n);t=3*n+1;v=(t&-t).bit_length()-1;av.append(v);n=t>>v\n  for r in range(1,6):\n   seen=defaultdict(list)\n   for u in range(32-r+1):\n    w=tuple(av[u:u+r]);mass=sum(w)\n    for v in seen[w]:\n     if ns[u]!=ns[v]: cnt+=1;fail+=((ns[u]-ns[v])%(1<<mass)!=0)\n    seen[w].append(u)\n print('same word distinct states exact divisibility tested/fail:',cnt,fail)\n",
+      "output": "controller N,alphabet,z range k>=100: 2400 [1, 2, 3] (-1, 1)\nq jumps in u>=r windows max (r<=u, u+r<N): [(8, 1), (32, 1), (128, 1), (400, 1)]\nfactor complexities: [(4, 9), (8, 22), (12, 41), (24, 128), (40, 239)]\nsame word distinct states exact divisibility tested/fail: 10076 0\nadditional: u=r=50, q(50)=5, q(100)=7 (two jumps).",
+      "additional_note": ""
+    },
+    "triviality_derivation": "Sözlük ağırlıkları P=e^{λΣ(g−a)}; |Σ(g−a)|≤κ log₂(r+1)+O(1), Sturmian g uzunluk-r faktörleri r+1, iki Parikh vektörü. N(S)≤Pe^{−λS} ve O(log r) bandı polinom => inf_λ üst hız h_B; T6 alt hızı ile κ≥α/h_B. Standart Chernoff sayımı, özgül uygulama yeni olabilir.",
+    "queries": [
+      {
+        "query": "Collatz parity vector subword complexity exponential entropy",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=0&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Collatz zero critical valuation weighted pressure entropy Chernoff",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=2&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Syracuse valuation sequence topological entropy zero critical",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Syracuse%20valuation%20sequence%20topological%20entropy%20zero%20critical",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz Sturmian phase parity vector large deviations",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20Sturmian%20phase%20parity%20vector%20large%20deviations",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz geometric valuation entropy bounded alphabet",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20geometric%20valuation%20entropy%20bounded%20alphabet",
+        "http_status": 200
+      },
+      {
+        "query": "Syracuse pressure transfer matrix entropy bounded discrepancy",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Syracuse%20pressure%20transfer%20matrix%20entropy%20bounded%20discrepancy",
+        "http_status": 200
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), entry 67",
+        "url": "https://arxiv.org/abs/math/0608208",
+        "quote": "This paper studies this function for x whose 2-adic expansion is a Sturmian word ... suggesting that the images Φ(x) then have 2-adic expansions of full complexity.",
+        "opened": true
+      },
+      {
+        "cite": "Dubickas, On integer sequences generated by linear maps, Glasgow Math. J. 51 (2009), Theorem 5",
+        "url": "https://doi.org/10.1017/S0017089508004655",
+        "quote": "P(X, n) > 1.70951129 n",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, Acta Arith. 90 (1999), Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound ..., Zenodo (2026), Theorem 2.3",
+        "url": "https://zenodo.org/records/22087163",
+        "quote": "for every β > β∗, a constant Cβ with #( A ∩ [a, a + X)) ≤ Cβ X^β log(2X) uniformly in a.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. 56 (2017)",
+        "url": "https://doi.org/10.7169/facm/1583",
+        "quote": "Primary text inaccessible (Project Euclid anti-bot); no verified primary quotation.",
+        "opened": false
+      }
+    ],
+    "value_0_5": 2,
+    "final_verdict": "NEW-MINOR",
+    "one_line_reason": "Basınç üst sınırı standart Chernoff hesabı ama özel tek-yörünge/zero-critical birleşimi koşullu bir lemma.",
+    "literature_audit_notes": "Lagarias arXiv:math/0309224 ve math/0608208 PDF indirildi; PDF metninde factor complexity=0, pressure=0, Sturmian=2 (iki bibliyografya toplamı). Garcia–Tal 1999 ve Curry 2026 PDF açıldı; Dubickas tam metin okundu. López–Stoll için yalnız Lagarias birincil bibliyografya anotasyonu açıldı; orijinal makale açılmadı. Rozier 2017 Project Euclid anti-bot: birincil metin doğrulanamadı. OpenAlex work ID ve cites: DOI sorguları 429 nedeniyle atıf listeleri çıkarılamadı; Semantic Scholar 429, arXiv API bazı sorgular 429; sonuç bulunamadı ≠ yokluğun ispatı. Sorgu durumları literature_search_log.json içinde.",
+    "citation_audit": {
+      "lagarias_full_text_files": [
+        "lagarias_0309224.txt",
+        "lagarias_0608208.txt"
+      ],
+      "garcia_primary": "garcia_tal_1999.txt",
+      "curry_primary": "curry_2026.txt",
+      "openalex_cites_attempts": [
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.4064/aa-90-3-245-250&per-page=20",
+          "http_status": 429
+        },
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.7169/facm/1583&per-page=20",
+          "http_status": 429
+        }
+      ],
+      "semantic_scholar_attempt": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20factor%20complexity&limit=2&fields=title,year,abstract,externalIds ; HTTP 429"
+    }
+  },
+  {
+    "idx": 14,
+    "id": "T7-04",
+    "claim": "B=3 basıncında h₃<0.523467 ve α/h₃>3.027; sıfır-kritik kritik-log pozitif B=3 yörüngede κ>3.027.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 7 — B=4 Zero-Critical Weighted-Pressure Barrier/CP20_PRESSURE_GENERALIZATION_FINAL_FREEZE_2026-08-26/CP20_TASK6_STRENGTHENED_COROLLARY_V3_AUDITED_FROZEN.docx.txt",
+    "source_excerpt": "For every finite B>=3, assume 1<=a_k<=B and zero-criticality a_k!=g_k ... limsup_(r->infinity) log_2 p_a(r)/r <= h_B ... The exact rational certificate proves h_3<523467/1000000 and therefore alpha/h_3 > 3.027. Hence ... kappa > 3.027.",
+    "exact_statement": "For every finite B>=3, assume 1<=a_k<=B and zero-criticality a_k!=g_k ... limsup_(r->infinity) log_2 p_a(r)/r <= h_B ... The exact rational certificate proves h_3<523467/1000000 and therefore alpha/h_3 > 3.027. Hence ... kappa > 3.027.",
+    "program_label": "[PROVED][INDEPENDENTLY AUDITED][FROZEN]",
+    "correctness": "KOŞULLU-DOĞRU",
+    "weakest_step": "λ optimizasyonunda doğrulanmış aralık sertifikası gerekir; ondalık yaklaşık tek başına katı < ispatı değildir. T7 + T6 hipotezleri atlanmamalı.",
+    "check_code_and_output": {
+      "code_file": "exact_checks.py",
+      "code": "from decimal import Decimal,localcontext,ROUND_FLOOR\nfrom collections import defaultdict\nfrom fractions import Fraction\nwith localcontext() as ctx:\n ctx.prec=85\n alpha=Decimal(3).ln()/Decimal(2).ln();kap=Decimal(1053)/1000\n N=2400\n F=[int((alpha*k).to_integral_value(rounding=ROUND_FLOOR)) for k in range(N+2)]\n g=[F[k+1]-F[k] for k in range(N)]\n a=[];s=0; zs=[];q=[]\n for k in range(N):\n  m=max(2,k+1);Q=int((kap*Decimal(m).ln()/Decimal(2).ln()).to_integral_value(rounding=ROUND_FLOOR))\n  # exact arithmetic threshold safety\n  assert (1<<(1000*Q))<=m**1053<(1<<(1000*(Q+1)))\n  d= 1 if g[k]==2 and s<=Q else -1\n  a.append(g[k]-d);s+=d;q.append(Q);zs.append(s-Q)\n print('controller N,alphabet,z range k>=100:',N,sorted(set(a)),(min(zs[100:]),max(zs[100:])))\n print('q jumps in u>=r windows max (r<=u, u+r<N):',[(r,max(q[u+r]-q[u] for u in range(r,N-r))) for r in [8,32,128,400]])\n print('factor complexities:',[(r,len({tuple(a[u:u+r]) for u in range(N-r+1)})) for r in [4,8,12,24,40]])\n # integer Syracuse trajectories including 1 cycle: verify difference divisibility for repeated valuation words if n distinct\n cnt=0;fail=0\n for n0 in range(1,152,2):\n  n=n0; ns=[]; av=[]\n  for k in range(32):\n   ns.append(n);t=3*n+1;v=(t&-t).bit_length()-1;av.append(v);n=t>>v\n  for r in range(1,6):\n   seen=defaultdict(list)\n   for u in range(32-r+1):\n    w=tuple(av[u:u+r]);mass=sum(w)\n    for v in seen[w]:\n     if ns[u]!=ns[v]: cnt+=1;fail+=((ns[u]-ns[v])%(1<<mass)!=0)\n    seen[w].append(u)\n print('same word distinct states exact divisibility tested/fail:',cnt,fail)\n",
+      "output": "controller N,alphabet,z range k>=100: 2400 [1, 2, 3] (-1, 1)\nq jumps in u>=r windows max (r<=u, u+r<N): [(8, 1), (32, 1), (128, 1), (400, 1)]\nfactor complexities: [(4, 9), (8, 22), (12, 41), (24, 128), (40, 239)]\nsame word distinct states exact divisibility tested/fail: 10076 0\nadditional: u=r=50, q(50)=5, q(100)=7 (two jumps).",
+      "additional_note": ""
+    },
+    "triviality_derivation": "B=3 için g=1: yalnız d=−1,−2; g=2: d=+1,−1. T7-02 formülüne konup λ≈1.299312 seçilir: h₃≈0.52346668069<0.523467 ve α/h₃≈3.02781927. Genel teoremin doğrudan sayısal özel hali.",
+    "queries": [
+      {
+        "query": "Collatz zero critical valuation weighted pressure entropy Chernoff",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=2&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Syracuse valuation sequence topological entropy zero critical",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Syracuse%20valuation%20sequence%20topological%20entropy%20zero%20critical",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz Sturmian phase parity vector large deviations",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20Sturmian%20phase%20parity%20vector%20large%20deviations",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz geometric valuation entropy bounded alphabet",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20geometric%20valuation%20entropy%20bounded%20alphabet",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz critical stopping time 2.784 entropy obstruction",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=6&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Syracuse pressure transfer matrix entropy bounded discrepancy",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Syracuse%20pressure%20transfer%20matrix%20entropy%20bounded%20discrepancy",
+        "http_status": 200
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), entry 67",
+        "url": "https://arxiv.org/abs/math/0608208",
+        "quote": "This paper studies this function for x whose 2-adic expansion is a Sturmian word ... suggesting that the images Φ(x) then have 2-adic expansions of full complexity.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound ..., Zenodo (2026), Theorem 2.3",
+        "url": "https://zenodo.org/records/22087163",
+        "quote": "for every β > β∗, a constant Cβ with #( A ∩ [a, a + X)) ≤ Cβ X^β log(2X) uniformly in a.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, Acta Arith. 90 (1999), Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "value_0_5": 1,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "B=3 sabiti genel T7-02 formülüne doğrudan yerleştirmedir; bağımsız teorem değildir.",
+    "literature_audit_notes": "Lagarias arXiv:math/0309224 ve math/0608208 PDF indirildi; PDF metninde factor complexity=0, pressure=0, Sturmian=2 (iki bibliyografya toplamı). Garcia–Tal 1999 ve Curry 2026 PDF açıldı; Dubickas tam metin okundu. López–Stoll için yalnız Lagarias birincil bibliyografya anotasyonu açıldı; orijinal makale açılmadı. Rozier 2017 Project Euclid anti-bot: birincil metin doğrulanamadı. OpenAlex work ID ve cites: DOI sorguları 429 nedeniyle atıf listeleri çıkarılamadı; Semantic Scholar 429, arXiv API bazı sorgular 429; sonuç bulunamadı ≠ yokluğun ispatı. Sorgu durumları literature_search_log.json içinde.",
+    "citation_audit": {
+      "lagarias_full_text_files": [
+        "lagarias_0309224.txt",
+        "lagarias_0608208.txt"
+      ],
+      "garcia_primary": "garcia_tal_1999.txt",
+      "curry_primary": "curry_2026.txt",
+      "openalex_cites_attempts": [
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.4064/aa-90-3-245-250&per-page=20",
+          "http_status": 429
+        },
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.7169/facm/1583&per-page=20",
+          "http_status": 429
+        }
+      ],
+      "semantic_scholar_attempt": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20factor%20complexity&limit=2&fields=title,year,abstract,externalIds ; HTTP 429"
+    }
+  },
+  {
+    "idx": 15,
+    "id": "T7-05",
+    "claim": "B bilinmeden h∞<0.56931 ve κ≥α/h∞>2.784; ortak varsayımlar altında 1<κ≤2.784 olan pozitif tek-yörünge yoktur.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/archive-x/Collatz Problemi — Araştırma Arşivi/CP20/Task 7 — B=4 Zero-Critical Weighted-Pressure Barrier/CP20_PRESSURE_GENERALIZATION_FINAL_FREEZE_2026-08-26/CP20_TASK7_PRESSURE_GENERALIZATION_THEOREM_V3_AUDITED_FROZEN.docx.txt",
+    "source_excerpt": "If a positive ordinary odd-only Syracuse orbit satisfies a_k!=g_k for all k and s_k=kappa log_2 k+O(1) with kappa>1, then, without specifying any a priori valuation-alphabet upper bound, kappa >= alpha/h_infinity > 2.784. ... h_infinity < 56931/100000.",
+    "exact_statement": "If a positive ordinary odd-only Syracuse orbit satisfies a_k!=g_k for all k and s_k=kappa log_2 k+O(1) with kappa>1, then, without specifying any a priori valuation-alphabet upper bound, kappa >= alpha/h_infinity > 2.784. ... h_infinity < 56931/100000.",
+    "program_label": "[PROVED][INDEPENDENTLY AUDITED][FROZEN]",
+    "correctness": "KOŞULLU-DOĞRU",
+    "weakest_step": "Tek yörüngede s_{k+1}−s_k=g_k−a_k=O(1) ⇒ alfabe aslında sonludur (O(1) sabiti yörüngeye bağlı). Formal sonsuz toplam yalnız λ>0 için yakınsar; kesme ve inf yönleri korunmalı.",
+    "check_code_and_output": {
+      "code_file": "exact_checks.py",
+      "code": "from decimal import Decimal,localcontext,ROUND_FLOOR\nfrom collections import defaultdict\nfrom fractions import Fraction\nwith localcontext() as ctx:\n ctx.prec=85\n alpha=Decimal(3).ln()/Decimal(2).ln();kap=Decimal(1053)/1000\n N=2400\n F=[int((alpha*k).to_integral_value(rounding=ROUND_FLOOR)) for k in range(N+2)]\n g=[F[k+1]-F[k] for k in range(N)]\n a=[];s=0; zs=[];q=[]\n for k in range(N):\n  m=max(2,k+1);Q=int((kap*Decimal(m).ln()/Decimal(2).ln()).to_integral_value(rounding=ROUND_FLOOR))\n  # exact arithmetic threshold safety\n  assert (1<<(1000*Q))<=m**1053<(1<<(1000*(Q+1)))\n  d= 1 if g[k]==2 and s<=Q else -1\n  a.append(g[k]-d);s+=d;q.append(Q);zs.append(s-Q)\n print('controller N,alphabet,z range k>=100:',N,sorted(set(a)),(min(zs[100:]),max(zs[100:])))\n print('q jumps in u>=r windows max (r<=u, u+r<N):',[(r,max(q[u+r]-q[u] for u in range(r,N-r))) for r in [8,32,128,400]])\n print('factor complexities:',[(r,len({tuple(a[u:u+r]) for u in range(N-r+1)})) for r in [4,8,12,24,40]])\n # integer Syracuse trajectories including 1 cycle: verify difference divisibility for repeated valuation words if n distinct\n cnt=0;fail=0\n for n0 in range(1,152,2):\n  n=n0; ns=[]; av=[]\n  for k in range(32):\n   ns.append(n);t=3*n+1;v=(t&-t).bit_length()-1;av.append(v);n=t>>v\n  for r in range(1,6):\n   seen=defaultdict(list)\n   for u in range(32-r+1):\n    w=tuple(av[u:u+r]);mass=sum(w)\n    for v in seen[w]:\n     if ns[u]!=ns[v]: cnt+=1;fail+=((ns[u]-ns[v])%(1<<mass)!=0)\n    seen[w].append(u)\n print('same word distinct states exact divisibility tested/fail:',cnt,fail)\n",
+      "output": "controller N,alphabet,z range k>=100: 2400 [1, 2, 3] (-1, 1)\nq jumps in u>=r windows max (r<=u, u+r<N): [(8, 1), (32, 1), (128, 1), (400, 1)]\nfactor complexities: [(4, 9), (8, 22), (12, 41), (24, 128), (40, 239)]\nsame word distinct states exact divisibility tested/fail: 10076 0\nadditional: u=r=50, q(50)=5, q(100)=7 (two jumps).",
+      "additional_note": ""
+    },
+    "triviality_derivation": "Her gerçek kritik-log sözcükte a_k= g_k−(s_{k+1}−s_k)=O(1); ilgili B için T7-02 geçerli. h_B≤h∞; h∞ için 1/(e^λ−1) ve e^λ+1/(e^λ−1) kullanarak κ≥α/h∞≈2.784010903. Özel sayısal evrensel zarf; güçlü ek varsayımlar.",
+    "queries": [
+      {
+        "query": "Collatz zero critical valuation weighted pressure entropy Chernoff",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=2&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Syracuse valuation sequence topological entropy zero critical",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Syracuse%20valuation%20sequence%20topological%20entropy%20zero%20critical",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz factor complexity Banach density divergent orbit",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?size=2&q=Collatz%20factor%20complexity%20Banach%20density%20divergent%20orbit",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz critical logarithm reciprocal sum valuation sequence",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=4&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Syracuse weighted pressure unbounded valuations zero defect",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?size=2&q=Syracuse%20weighted%20pressure%20unbounded%20valuations%20zero%20defect",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz critical stopping time 2.784 entropy obstruction",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=6&max_results=2",
+        "http_status": 429
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), entry 67",
+        "url": "https://arxiv.org/abs/math/0608208",
+        "quote": "This paper studies this function for x whose 2-adic expansion is a Sturmian word ... suggesting that the images Φ(x) then have 2-adic expansions of full complexity.",
+        "opened": true
+      },
+      {
+        "cite": "Dubickas, On integer sequences generated by linear maps, Glasgow Math. J. 51 (2009), Theorem 5",
+        "url": "https://doi.org/10.1017/S0017089508004655",
+        "quote": "P(X, n) > 1.70951129 n",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, Acta Arith. 90 (1999), Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound ..., Zenodo (2026), Theorem 2.3",
+        "url": "https://zenodo.org/records/22087163",
+        "quote": "for every β > β∗, a constant Cβ with #( A ∩ [a, a + X)) ≤ Cβ X^β log(2X) uniformly in a.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier, The 3x+1 problem: a lower bound hypothesis, Funct. Approx. 56 (2017)",
+        "url": "https://doi.org/10.7169/facm/1583",
+        "quote": "Primary text inaccessible (Project Euclid anti-bot); no verified primary quotation.",
+        "opened": false
+      }
+    ],
+    "value_0_5": 2,
+    "final_verdict": "NEW-MINOR",
+    "one_line_reason": "Evrensel zarf daha önce eşdeğerine rastlanmayan ama T7-02 den hemen çıkan koşullu sonuç.",
+    "literature_audit_notes": "Lagarias arXiv:math/0309224 ve math/0608208 PDF indirildi; PDF metninde factor complexity=0, pressure=0, Sturmian=2 (iki bibliyografya toplamı). Garcia–Tal 1999 ve Curry 2026 PDF açıldı; Dubickas tam metin okundu. López–Stoll için yalnız Lagarias birincil bibliyografya anotasyonu açıldı; orijinal makale açılmadı. Rozier 2017 Project Euclid anti-bot: birincil metin doğrulanamadı. OpenAlex work ID ve cites: DOI sorguları 429 nedeniyle atıf listeleri çıkarılamadı; Semantic Scholar 429, arXiv API bazı sorgular 429; sonuç bulunamadı ≠ yokluğun ispatı. Sorgu durumları literature_search_log.json içinde.",
+    "citation_audit": {
+      "lagarias_full_text_files": [
+        "lagarias_0309224.txt",
+        "lagarias_0608208.txt"
+      ],
+      "garcia_primary": "garcia_tal_1999.txt",
+      "curry_primary": "curry_2026.txt",
+      "openalex_cites_attempts": [
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.4064/aa-90-3-245-250&per-page=20",
+          "http_status": 429
+        },
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.7169/facm/1583&per-page=20",
+          "http_status": 429
+        }
+      ],
+      "semantic_scholar_attempt": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20factor%20complexity&limit=2&fields=title,year,abstract,externalIds ; HTTP 429"
+    }
+  },
+  {
+    "idx": 37,
+    "id": "E5-090",
+    "claim": "Zero-critical bounded-alphabet eşiğinin α/h_inf≈2.784010903’e güçlenmesi program içi koşullu sayım sonucudur.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/07-geriye-donuk-tarama/RAPOR.md",
+    "source_excerpt": "Zero-criticality ... + Sturmian yapısıyla basınç sabiti 0,5693090135 -> eşik 2,7840109030. ... Bütün bu bulgular denetlenmemiş.",
+    "exact_statement": "Zero-criticality ... + Sturmian yapısıyla basınç sabiti 0,5693090135 -> eşik 2,7840109030. ... Bütün bu bulgular denetlenmemiş.",
+    "program_label": "İstemden aktarılan: PROVED/FROZEN; RAPOR.md etiketi: “Tüm bu bulgular denetlenmemiş”",
+    "correctness": "KOŞULLU-DOĞRU (kanonik T7-05 ile; RAPOR tek başına ispat değil)",
+    "weakest_step": "RAPOR başlığının ve “denetlenmemiş” uyarısının istemdeki FROZEN etiketiyle uyuşmazlığı; metin hesap ve geriye-dönük kıyas, ispatın yeri T7-05.",
+    "check_code_and_output": {
+      "code_file": "exact_checks.py",
+      "code": "python3 exact_checks.py (see workspace root exact_checks.py)",
+      "output": "controller N,alphabet,z range k>=100: 2400 [1, 2, 3] (-1, 1)\nq jumps in u>=r windows max (r<=u, u+r<N): [(8, 1), (32, 1), (128, 1), (400, 1)]\nfactor complexities: [(4, 9), (8, 22), (12, 41), (24, 128), (40, 239)]\nsame word distinct states exact divisibility tested/fail: 10076 0\nadditional: u=r=50, q(50)=5, q(100)=7 (two jumps).",
+      "additional_note": ""
+    },
+    "triviality_derivation": "RAPOR aynı T7-05 hesabını tekrarlar: h∞ ve α/h∞; ayrıca bounded-alphabet terimi yanıltıcı: T7-05 herhangi önsel B istemez, ama her gerçekleştirilmiş yörüngede B vardır.",
+    "queries": [
+      {
+        "query": "Collatz zero critical valuation weighted pressure entropy Chernoff",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=2&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Collatz factor complexity Banach density divergent orbit",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?size=2&q=Collatz%20factor%20complexity%20Banach%20density%20divergent%20orbit",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz critical logarithm reciprocal sum valuation sequence",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=4&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Syracuse weighted pressure unbounded valuations zero defect",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?size=2&q=Syracuse%20weighted%20pressure%20unbounded%20valuations%20zero%20defect",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz critical stopping time 2.784 entropy obstruction",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=6&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Collatz Garcia Tal Rozier Banach density trajectories",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20Garcia%20Tal%20Rozier%20Banach%20density%20trajectories",
+        "http_status": 200
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Garcia–Tal, Acta Arith. 90 (1999), Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound ..., Zenodo (2026), Theorem 2.3",
+        "url": "https://zenodo.org/records/22087163",
+        "quote": "for every β > β∗, a constant Cβ with #( A ∩ [a, a + X)) ≤ Cβ X^β log(2X) uniformly in a.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), entry 67",
+        "url": "https://arxiv.org/abs/math/0608208",
+        "quote": "This paper studies this function for x whose 2-adic expansion is a Sturmian word ... suggesting that the images Φ(x) then have 2-adic expansions of full complexity.",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "T7-05’in ikincil rapor özetidir; ayrıca RAPOR’da dondurulmuş ispat olarak etiketlenmez.",
+    "literature_audit_notes": "Lagarias arXiv:math/0309224 ve math/0608208 PDF indirildi; PDF metninde factor complexity=0, pressure=0, Sturmian=2 (iki bibliyografya toplamı). Garcia–Tal 1999 ve Curry 2026 PDF açıldı; Dubickas tam metin okundu. López–Stoll için yalnız Lagarias birincil bibliyografya anotasyonu açıldı; orijinal makale açılmadı. Rozier 2017 Project Euclid anti-bot: birincil metin doğrulanamadı. OpenAlex work ID ve cites: DOI sorguları 429 nedeniyle atıf listeleri çıkarılamadı; Semantic Scholar 429, arXiv API bazı sorgular 429; sonuç bulunamadı ≠ yokluğun ispatı. Sorgu durumları literature_search_log.json içinde.",
+    "citation_audit": {
+      "lagarias_full_text_files": [
+        "lagarias_0309224.txt",
+        "lagarias_0608208.txt"
+      ],
+      "garcia_primary": "garcia_tal_1999.txt",
+      "curry_primary": "curry_2026.txt",
+      "openalex_cites_attempts": [
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.4064/aa-90-3-245-250&per-page=20",
+          "http_status": 429
+        },
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.7169/facm/1583&per-page=20",
+          "http_status": 429
+        }
+      ],
+      "semantic_scholar_attempt": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20factor%20complexity&limit=2&fields=title,year,abstract,externalIds ; HTTP 429"
+    }
+  },
+  {
+    "idx": 39,
+    "id": "E5-096",
+    "claim": "Tekrarlanan faktörden üstel valuation factor-complexity alt sınırı koşullu CP20 sınıfında ileri sürülür.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/GECMIS.md",
+    "source_excerpt": "Lemma B (tekrarlanan faktör bölünebilirliği): 6.363.065 tekrar çiftinde sıfır ihlal ... Gözlenen faktör karmaşıklığı teoremin alt sınırının çok altında ... bağımsız zero-trust denetimi — PROOF VALID WITH WORDING REPAIR.",
+    "exact_statement": "Lemma B (tekrarlanan faktör bölünebilirliği): 6.363.065 tekrar çiftinde sıfır ihlal ... Gözlenen faktör karmaşıklığı teoremin alt sınırının çok altında ... bağımsız zero-trust denetimi — PROOF VALID WITH WORDING REPAIR.",
+    "program_label": "İstemden aktarılan: PROVED/FROZEN; GECMIS.md: “PROOF VALID WITH WORDING REPAIR”",
+    "correctness": "KOŞULLU-DOĞRU (T6-04 metninde; GECMIS deney/denetim günlüğü)",
+    "weakest_step": "Sonlu testler asimptotik teorem kanıtı değildir; GECMIS nicel κ,ε, N_r teoremini tam ifade etmez; kanonik T6-04 ile tamamlanır.",
+    "check_code_and_output": {
+      "code_file": "exact_checks.py",
+      "code": "python3 exact_checks.py (see workspace root exact_checks.py)",
+      "output": "controller N,alphabet,z range k>=100: 2400 [1, 2, 3] (-1, 1)\nq jumps in u>=r windows max (r<=u, u+r<N): [(8, 1), (32, 1), (128, 1), (400, 1)]\nfactor complexities: [(4, 9), (8, 22), (12, 41), (24, 128), (40, 239)]\nsame word distinct states exact divisibility tested/fail: 10076 0\nadditional: u=r=50, q(50)=5, q(100)=7 (two jumps).",
+      "additional_note": ""
+    },
+    "triviality_derivation": "T6-04 ile birebir aynı bulgunun özetidir; afin fark ve yakınsak taşıma serisiyle 2^{αr} ayrıklığı ve p_a(r)≥2^{(α/κ−ε)r} elde edilir.",
+    "queries": [
+      {
+        "query": "Collatz valuation word factor complexity repeated factor affine divisibility",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20valuation%20word%20factor%20complexity%20repeated%20factor%20affine%20divisibility",
+        "http_status": 429
+      },
+      {
+        "query": "Syracuse E-sequence prefix repetition logarithmic discrepancy stopping time",
+        "service": "zenodo",
+        "url": "https://zenodo.org/api/records?size=2&q=Syracuse%20E-sequence%20prefix%20repetition%20logarithmic%20discrepancy%20stopping%20time",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz parity vector subword complexity exponential entropy",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=0&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "3x+1 cycle 2^m-3^k affine repeated valuation blocks",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=3x%2B1%20cycle%202%5Em-3%5Ek%20affine%20repeated%20valuation%20blocks",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz polynomial orbit growth valuation word factor complexity",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20polynomial%20orbit%20growth%20valuation%20word%20factor%20complexity",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz subword complexity Dubickas Lopez Stoll",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=8&max_results=2",
+        "http_status": 429
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Dubickas, On integer sequences generated by linear maps, Glasgow Math. J. 51 (2009), Theorem 5",
+        "url": "https://doi.org/10.1017/S0017089508004655",
+        "quote": "P(X, n) > 1.70951129 n",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), entry 67",
+        "url": "https://arxiv.org/abs/math/0608208",
+        "quote": "This paper studies this function for x whose 2-adic expansion is a Sturmian word ... suggesting that the images Φ(x) then have 2-adic expansions of full complexity.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, Acta Arith. 90 (1999), Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Wang, An E-sequence approach to the 3x+1 problem (2019), abstract",
+        "url": "https://arxiv.org/abs/1809.02278",
+        "quote": "all non-periodic E-sequences ... with limsup b_n/n > log_2 3 are Ω-divergent",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "GECMIS ayrı yeni sonuç değil; daha kesin T6-04 iddiasının tarihçe kaydı.",
+    "literature_audit_notes": "Lagarias arXiv:math/0309224 ve math/0608208 PDF indirildi; PDF metninde factor complexity=0, pressure=0, Sturmian=2 (iki bibliyografya toplamı). Garcia–Tal 1999 ve Curry 2026 PDF açıldı; Dubickas tam metin okundu. López–Stoll için yalnız Lagarias birincil bibliyografya anotasyonu açıldı; orijinal makale açılmadı. Rozier 2017 Project Euclid anti-bot: birincil metin doğrulanamadı. OpenAlex work ID ve cites: DOI sorguları 429 nedeniyle atıf listeleri çıkarılamadı; Semantic Scholar 429, arXiv API bazı sorgular 429; sonuç bulunamadı ≠ yokluğun ispatı. Sorgu durumları literature_search_log.json içinde.",
+    "citation_audit": {
+      "lagarias_full_text_files": [
+        "lagarias_0309224.txt",
+        "lagarias_0608208.txt"
+      ],
+      "garcia_primary": "garcia_tal_1999.txt",
+      "curry_primary": "curry_2026.txt",
+      "openalex_cites_attempts": [
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.4064/aa-90-3-245-250&per-page=20",
+          "http_status": 429
+        },
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.7169/facm/1583&per-page=20",
+          "http_status": 429
+        }
+      ],
+      "semantic_scholar_attempt": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20factor%20complexity&limit=2&fields=title,year,abstract,externalIds ; HTTP 429"
+    }
+  },
+  {
+    "idx": 40,
+    "id": "E5-097",
+    "claim": "Ağırlıklı basınç valuation kelimesine koşullu factor-complexity üst sınırı verir.",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/GECMIS.md",
+    "source_excerpt": "Task 7’nin basınç yöntemi onu da kullanıyor. ... B->sonsuz limitinde h_inf = 0,5693090134858, kappa_inf* = 2,7840109030009 ... Madde 6: üst sınır üç kelimede test edildi.",
+    "exact_statement": "Task 7’nin basınç yöntemi onu da kullanıyor. ... B->sonsuz limitinde h_inf = 0,5693090134858, kappa_inf* = 2,7840109030009 ... Madde 6: üst sınır üç kelimede test edildi.",
+    "program_label": "İstemden aktarılan: PROVED/FROZEN; GECMIS.md: “PROOF VALID WITH WORDING REPAIR (kapsam)”",
+    "correctness": "KOŞULLU-DOĞRU (T7-02’de; GECMIS bağımsız teorem metni değil)",
+    "weakest_step": "GECMIS burada tam faz/defekt hipotezlerini, h_B tanımını ve limsup niceliğini ayrı bir teorem olarak yazmaz; T7-02 olmadan ileri sürülen üst sınır tanımsız.",
+    "check_code_and_output": {
+      "code_file": "exact_checks.py",
+      "code": "python3 exact_checks.py (see workspace root exact_checks.py)",
+      "output": "controller N,alphabet,z range k>=100: 2400 [1, 2, 3] (-1, 1)\nq jumps in u>=r windows max (r<=u, u+r<N): [(8, 1), (32, 1), (128, 1), (400, 1)]\nfactor complexities: [(4, 9), (8, 22), (12, 41), (24, 128), (40, 239)]\nsame word distinct states exact divisibility tested/fail: 10076 0\nadditional: u=r=50, q(50)=5, q(100)=7 (two jumps).",
+      "additional_note": ""
+    },
+    "triviality_derivation": "T7-02 ile aynı Chernoff/Parikh sayımıdır; yeni ispat veya daha kuvvetli iddia değil.",
+    "queries": [
+      {
+        "query": "Collatz parity vector subword complexity exponential entropy",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=0&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Collatz zero critical valuation weighted pressure entropy Chernoff",
+        "service": "arxiv",
+        "url": "https://export.arxiv.org/api/query?search_query=all:Collatz&start=2&max_results=2",
+        "http_status": 429
+      },
+      {
+        "query": "Syracuse valuation sequence topological entropy zero critical",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Syracuse%20valuation%20sequence%20topological%20entropy%20zero%20critical",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz Sturmian phase parity vector large deviations",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20Sturmian%20phase%20parity%20vector%20large%20deviations",
+        "http_status": 200
+      },
+      {
+        "query": "Collatz geometric valuation entropy bounded alphabet",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Collatz%20geometric%20valuation%20entropy%20bounded%20alphabet",
+        "http_status": 200
+      },
+      {
+        "query": "Syracuse pressure transfer matrix entropy bounded discrepancy",
+        "service": "crossref",
+        "url": "https://api.crossref.org/works?rows=2&query.bibliographic=Syracuse%20pressure%20transfer%20matrix%20entropy%20bounded%20discrepancy",
+        "http_status": 200
+      }
+    ],
+    "candidates": [
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography II (2000–2009), entry 67",
+        "url": "https://arxiv.org/abs/math/0608208",
+        "quote": "This paper studies this function for x whose 2-adic expansion is a Sturmian word ... suggesting that the images Φ(x) then have 2-adic expansions of full complexity.",
+        "opened": true
+      },
+      {
+        "cite": "Dubickas, On integer sequences generated by linear maps, Glasgow Math. J. 51 (2009), Theorem 5",
+        "url": "https://doi.org/10.1017/S0017089508004655",
+        "quote": "P(X, n) > 1.70951129 n",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, Acta Arith. 90 (1999), Theorem 1 / Corollary 1",
+        "url": "https://doi.org/10.4064/aa-90-3-245-250",
+        "quote": "Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Curry, An Explicit Windowed Sparsity Bound ..., Zenodo (2026), Theorem 2.3",
+        "url": "https://zenodo.org/records/22087163",
+        "quote": "for every β > β∗, a constant Cβ with #( A ∩ [a, a + X)) ≤ Cβ X^β log(2X) uniformly in a.",
+        "opened": true
+      }
+    ],
+    "value_0_5": 0,
+    "final_verdict": "TRIVIAL",
+    "one_line_reason": "T7-02’nin genel teorem değil, iç denetim günlüğündeki özeti.",
+    "literature_audit_notes": "Lagarias arXiv:math/0309224 ve math/0608208 PDF indirildi; PDF metninde factor complexity=0, pressure=0, Sturmian=2 (iki bibliyografya toplamı). Garcia–Tal 1999 ve Curry 2026 PDF açıldı; Dubickas tam metin okundu. López–Stoll için yalnız Lagarias birincil bibliyografya anotasyonu açıldı; orijinal makale açılmadı. Rozier 2017 Project Euclid anti-bot: birincil metin doğrulanamadı. OpenAlex work ID ve cites: DOI sorguları 429 nedeniyle atıf listeleri çıkarılamadı; Semantic Scholar 429, arXiv API bazı sorgular 429; sonuç bulunamadı ≠ yokluğun ispatı. Sorgu durumları literature_search_log.json içinde.",
+    "citation_audit": {
+      "lagarias_full_text_files": [
+        "lagarias_0309224.txt",
+        "lagarias_0608208.txt"
+      ],
+      "garcia_primary": "garcia_tal_1999.txt",
+      "curry_primary": "curry_2026.txt",
+      "openalex_cites_attempts": [
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.4064/aa-90-3-245-250&per-page=20",
+          "http_status": 429
+        },
+        {
+          "url": "https://api.openalex.org/works?filter=cites:10.7169/facm/1583&per-page=20",
+          "http_status": 429
+        }
+      ],
+      "semantic_scholar_attempt": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz%20factor%20complexity&limit=2&fields=title,year,abstract,externalIds ; HTTP 429"
+    }
+  }
+]

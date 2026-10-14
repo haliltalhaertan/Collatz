@@ -1,0 +1,71 @@
+muse: workspace root: /mnt/c/Users/MDP/collatz-analysis/Collatz (explicit)
+muse: Agent delegation: auto unavailable: workspace is untrusted.
+Independent exact scan done. Collatz is OPEN / NOT PROVED. All below is [EXACT COMPUTATION] with Python ints only.
+
+Program: [/tmp/cp25-compute/cp25_independent.py](/tmp/cp25-compute/cp25_independent.py)
+SHA256 `4e22f387ecde16abd9dbc5f01138655f68725fab7cf8eb7a74ed4a77da004b73`
+Frozen m20: [/tmp/cp25-compute/frozen_m20.json](/tmp/cp25-compute/frozen_m20.json) `048d5b1e…5731fec`
+Frozen m22: [/tmp/cp25-compute/frozen_m22.json](/tmp/cp25-compute/frozen_m22.json) `ef5a9b49…e970220a7`
+Repo files read only after freezing. No repo edits. No web.
+
+GATE A (m<=18, words beginning with 1):
+
+| map | words | div/pos | cyc |
+|---|---|---|---|
+| 3n+1 | 262143 | 46/9 | 1 |
+| 3n-1 | 262143 | 46/37 | 3 |
+| 5n+1 | 262143 | 27/18 | 3 |
+
+All match claimed values. Extra: 5n-1 is 262143, 27/9, 1 cycle.
+
+GATE B (every integral candidate follows word and returns, incl. negatives, m<=18):
+
+- (3,+1): tested 46, fails 0
+- (3,-1): tested 46, fails 0
+- (5,+1): tested 27, fails 0
+- (5,-1): tested 27, fails 0
+
+C1 (b=sign(D), A=|D|, q=B/A, h=-bB inv(p^k) mod 2^m, 0 as 2^m; need B>=hA for all m rotations):
+
+| regime | raw/neck | lift r/n | nonint |
+|---|---|---|---|
+| 3,+ | 841117/94912 | 1/1 | 0/0 |
+| 3,- | 206362/16100 | 10/3 | 0/0 |
+| 5,+ | 206174/30518 | 8/3 | 0/0 |
+| 5,- | 841305/80494 | 1/1 | 0/0 |
+| 7,+ | 77066/13274 | 1/1 | 0/0 |
+| 7,- | 970413/97738 | 0/0 | 0/0 |
+
+Conventions: raw = primitive words with eps0=1 (enumerated); neck = primitive necklaces by lex-min rotation (Moreau formula, validated by explicit dedup for m<=12). lift r/n = raw/necklace survivors. All survivors integral, so no counterexample. Extension m<=22: same survivors, nonint 0/0 in all regimes.
+
+Survivors (begin-1 words, x=B/A):
+
+- 3,+: m2 `10`, x1.
+- 3,-: m1 `1` x1; m3 `110` x5, `101` x7; m11 seven words x17,25,37,41,55,61,91 (one 11-cycle).
+- 5,+: m5 `11000` x1, `10001` x3; m7 six words x13,17,27,33,43,83.
+- 5,-: m2 `10` x1.
+- 7,+: m3 `100` x1.
+- 7,-: none.
+
+Smallest counterexample: none.
+
+Reconciliation: prior `15010/16100/4796` are not total primitives. They are repo `all_q_at_least_one` necklace counts (B>=A for all rotations). Independent q1 gives 15010, 16100, 4796 exactly. Survivor counts 1/3/3 match as necklaces. Total-primitive reading would give 94912/16100/30518, which only matches the middle value.
+
+Repo comparison: gate m<=22 independent gives 61/11/1, 61/50/3, 37/26/3, matching [CP25_REPORT.md](/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_REPORT.md). Lift totals, q1, survivors match [lift_scan_p3/p5/p7_m20.json](/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/lift_scan_p3_m20.json) up to representative: repo stores lex-min (may start 0, e.g. `01`, B=2); independent stores begin-1 rotation (e.g. `10`, B=1). Same necklaces and cycles.
+
+Excerpts (independent, not copied):
+
+```python
+B += (1 << j) * pow_p[suf]  # j desc, suf=ones above j
+h = (-b * B * inv) % mod; h = h or mod
+if B < h * A: return False  # per rotation
+low = F & ((1 << (m-d)) - 1)  # primitive test
+```
+
+Common-mode risk: both codes implement the same spec formulas, so a shared spec misread (rotation set, h, B) would pass both. Mitigated by gate match to classical 1/3/3 cycles, Moreau cross-check, and exact q1 match, but residual spec risk remains.
+
+Verdict: C1_SURVIVES_SCAN
+
+```json
+{"verdict":"C1_SURVIVES_SCAN","gateA_pass":true,"gateB_fails":0,"c1_m20_nonintegral_raw":0,"c1_m20_nonintegral_neck":0,"c1_m22_nonintegral_raw":0,"program_sha256":"4e22f387ecde16abd9dbc5f01138655f68725fab7cf8eb7a74ed4a77da004b73","prior_convention":"all_q_at_least_one necklaces"}
+```

@@ -1,0 +1,1967 @@
+[
+  {
+    "service": "openalex",
+    "query": "Shmerkin Furstenberg Lq self-similar",
+    "url": "https://api.openalex.org/works?search=Shmerkin+Furstenberg+Lq+self-similar&per-page=4&select=id%2Ctitle%2Cpublication_year%2Cdoi%2Cprimary_location%2Copen_access",
+    "status": 200,
+    "results": [
+      {
+        "id": "https://openalex.org/W4310514431",
+        "title": "Furstenberg sumset conjecture and Mandelbrot percolations",
+        "publication_year": 2022,
+        "doi": "https://doi.org/10.48550/arxiv.2211.16410",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2211.16410",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2211.16410",
+          "pdf_url": "https://arxiv.org/pdf/2211.16410",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2211.16410",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W7169762633",
+        "title": "Smooth projections of self-similar measures",
+        "publication_year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2607.15635",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2607.15635",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://arxiv.org/abs/2607.15635",
+          "pdf_url": "https://arxiv.org/pdf/2607.15635",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2607.15635",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W7125156162",
+        "title": "Frostman dimension of Furstenberg measure for $\\mathrm{SL}(2,\\mathbb{R})$ random matrix products",
+        "publication_year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2601.14061",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2601.14061",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2601.14061",
+          "pdf_url": "https://arxiv.org/pdf/2601.14061",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2601.14061",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4410412108",
+        "title": "Inverse theorems for discretized sums and Lq norms of convolutions in ℝd",
+        "publication_year": 2025,
+        "doi": "https://doi.org/10.2140/om.2025.2.65",
+        "primary_location": {
+          "id": "doi:10.2140/om.2025.2.65",
+          "doi": "https://doi.org/10.2140/om.2025.2.65",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.2140/om.2025.2.65",
+          "pdf_url": "https://msp.org/om/2025/2-1/om-v2-n1-p04-s.pdf",
+          "source": {
+            "id": "https://openalex.org/S4389158234",
+            "display_name": "Orbita Mathematicae",
+            "issn_l": "2993-6144",
+            "issn": [
+              "2993-6144",
+              "2993-6152"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/P4310320446",
+            "host_organization_name": "Mathematical Sciences Publishers",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320446"
+            ],
+            "host_organization_lineage_names": [
+              "Mathematical Sciences Publishers"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Orbita Mathematicae",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://msp.org/om/2025/2-1/om-v2-n1-p04-s.pdf",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "service": "openalex",
+    "query": "Hochman 2014 overlaps entropy self-similar",
+    "url": "https://api.openalex.org/works?search=Hochman+2014+overlaps+entropy+self-similar&per-page=4&select=id%2Ctitle%2Cpublication_year%2Cdoi%2Cprimary_location%2Copen_access",
+    "status": 200,
+    "results": [
+      {
+        "id": "https://openalex.org/W2113119296",
+        "title": "On self-similar sets with overlaps and inverse theorems for entropy",
+        "publication_year": 2014,
+        "doi": "https://doi.org/10.4007/annals.2014.180.2.7",
+        "primary_location": {
+          "id": "doi:10.4007/annals.2014.180.2.7",
+          "doi": "https://doi.org/10.4007/annals.2014.180.2.7",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.4007/annals.2014.180.2.7",
+          "pdf_url": "http://annals.math.princeton.edu/wp-content/uploads/annals-v180-n2-p07-s.pdf",
+          "source": {
+            "id": "https://openalex.org/S45918994",
+            "display_name": "Annals of Mathematics",
+            "issn_l": "0003-486X",
+            "issn": [
+              "0003-486X",
+              "1939-8980"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-class-a",
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-a",
+              "jufo-3",
+              "norway-2",
+              "poland-200",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310316273",
+            "host_organization_name": "Princeton University",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310316273"
+            ],
+            "host_organization_lineage_names": [
+              "Princeton University"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Annals of Mathematics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "http://annals.math.princeton.edu/wp-content/uploads/annals-v180-n2-p07-s.pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W1963499885",
+        "title": "On the Assouad dimension of self-similar sets with overlaps",
+        "publication_year": 2015,
+        "doi": "https://doi.org/10.1016/j.aim.2014.12.026",
+        "primary_location": {
+          "id": "doi:10.1016/j.aim.2014.12.026",
+          "doi": "https://doi.org/10.1016/j.aim.2014.12.026",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.aim.2014.12.026",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S000187081400454X/pdf",
+          "source": {
+            "id": "https://openalex.org/S122441808",
+            "display_name": "Advances in Mathematics",
+            "issn_l": "0001-8708",
+            "issn": [
+              "0001-8708",
+              "1090-2082"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-a",
+              "jufo-3",
+              "norway-2",
+              "poland-200",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Advances in Mathematics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S000187081400454X/pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W1924327771",
+        "title": "On self-similar sets with overlaps and inverse theorems for entropy in $\\mathbb{R}^d$",
+        "publication_year": 2015,
+        "doi": "https://doi.org/10.48550/arxiv.1503.09043",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:1503.09043",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/1503.09043",
+          "pdf_url": "https://arxiv.org/pdf/1503.09043",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/1503.09043",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2963974063",
+        "title": "Multiplication on self-similar sets with overlaps",
+        "publication_year": 2019,
+        "doi": "https://doi.org/10.1016/j.jmaa.2019.03.043",
+        "primary_location": {
+          "id": "doi:10.1016/j.jmaa.2019.03.043",
+          "doi": "https://doi.org/10.1016/j.jmaa.2019.03.043",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.jmaa.2019.03.043",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0022247X19302641/pdf",
+          "source": {
+            "id": "https://openalex.org/S151579836",
+            "display_name": "Journal of Mathematical Analysis and Applications",
+            "issn_l": "0022-247X",
+            "issn": [
+              "0022-247X",
+              "1096-0813"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-class-a",
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-b",
+              "jufo-1",
+              "norway-1",
+              "poland-70",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Mathematical Analysis and Applications",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S0022247X19302641/pdf",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "service": "openalex",
+    "query": "Varju Bernoulli convolutions absolute continuity",
+    "url": "https://api.openalex.org/works?search=Varju+Bernoulli+convolutions+absolute+continuity&per-page=4&select=id%2Ctitle%2Cpublication_year%2Cdoi%2Cprimary_location%2Copen_access",
+    "status": 200,
+    "results": [
+      {
+        "id": "https://openalex.org/W7153301319",
+        "title": "Linear Shannon Entropy Defect for Bernoulli Convolutions at the Golden Ratio",
+        "publication_year": 2026,
+        "doi": "https://doi.org/10.5281/zenodo.19497728",
+        "primary_location": {
+          "id": "doi:10.5281/zenodo.19497728",
+          "doi": "https://doi.org/10.5281/zenodo.19497728",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.5281/zenodo.19497728",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306400562",
+            "display_name": "Zenodo (CERN European Organization for Nuclear Research)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I67311998",
+            "host_organization_name": "European Organization for Nuclear Research",
+            "host_organization_lineage": [
+              "https://openalex.org/I67311998"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": null,
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "Preprint"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://doi.org/10.5281/zenodo.19497728",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2229869949",
+        "title": "Finite orbits in multivalued maps and Bernoulli convolutions",
+        "publication_year": 2017,
+        "doi": "https://doi.org/10.1016/j.aim.2017.11.011",
+        "primary_location": {
+          "id": "doi:10.1016/j.aim.2017.11.011",
+          "doi": "https://doi.org/10.1016/j.aim.2017.11.011",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.aim.2017.11.011",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0001870816314281/pdf",
+          "source": {
+            "id": "https://openalex.org/S122441808",
+            "display_name": "Advances in Mathematics",
+            "issn_l": "0001-8708",
+            "issn": [
+              "0001-8708",
+              "1090-2082"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-3",
+              "norway-2"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Advances in Mathematics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S0001870816314281/pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4415360713",
+        "title": "Exceptions in the domain of generic absolute continuity of non-homogeneous self-similar measures",
+        "publication_year": 2025,
+        "doi": "https://doi.org/10.3934/dcdss.2025152",
+        "primary_location": {
+          "id": "doi:10.3934/dcdss.2025152",
+          "doi": "https://doi.org/10.3934/dcdss.2025152",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3934/dcdss.2025152",
+          "pdf_url": "https://www.aimsciences.org/data/article/export-pdf?id=68f6017767b6ba23df18e740",
+          "source": {
+            "id": "https://openalex.org/S16594347",
+            "display_name": "Discrete and Continuous Dynamical Systems - S",
+            "issn_l": "1937-1179",
+            "issn": [
+              "1937-1179",
+              "1937-1632"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-1",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4310315844",
+            "host_organization_name": "American Institute of Mathematical Sciences",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315844"
+            ],
+            "host_organization_lineage_names": [
+              "American Institute of Mathematical Sciences"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Discrete and Continuous Dynamical Systems - S",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://www.aimsciences.org/data/article/export-pdf?id=68f6017767b6ba23df18e740",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W3004067644",
+        "title": "Self-similar measures and the Rajchman property",
+        "publication_year": 2021,
+        "doi": "https://doi.org/10.5802/ahl.94",
+        "primary_location": {
+          "id": "doi:10.5802/ahl.94",
+          "doi": "https://doi.org/10.5802/ahl.94",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.5802/ahl.94",
+          "pdf_url": "https://ahl.centre-mersenne.org/item/10.5802/ahl.94.pdf",
+          "source": {
+            "id": "https://openalex.org/S4210236331",
+            "display_name": "Annales Henri Lebesgue",
+            "issn_l": "2644-9463",
+            "issn": [
+              "2644-9463"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "jufo-1",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4361727469",
+            "host_organization_name": "Cellule MathDoc/CEDRAM",
+            "host_organization_lineage": [
+              "https://openalex.org/P4361727469",
+              "https://openalex.org/P4310311411"
+            ],
+            "host_organization_lineage_names": [
+              "Cellule MathDoc/CEDRAM",
+              "National Center for Scientific Research"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Annales Henri Lebesgue",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://ahl.centre-mersenne.org/item/10.5802/ahl.94.pdf",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "service": "openalex",
+    "query": "Breuillard Varju Bernoulli convolutions entropy",
+    "url": "https://api.openalex.org/works?search=Breuillard+Varju+Bernoulli+convolutions+entropy&per-page=4&select=id%2Ctitle%2Cpublication_year%2Cdoi%2Cprimary_location%2Copen_access",
+    "status": 200,
+    "results": [
+      {
+        "id": "https://openalex.org/W7153301319",
+        "title": "Linear Shannon Entropy Defect for Bernoulli Convolutions at the Golden Ratio",
+        "publication_year": 2026,
+        "doi": "https://doi.org/10.5281/zenodo.19497728",
+        "primary_location": {
+          "id": "doi:10.5281/zenodo.19497728",
+          "doi": "https://doi.org/10.5281/zenodo.19497728",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.5281/zenodo.19497728",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306400562",
+            "display_name": "Zenodo (CERN European Organization for Nuclear Research)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I67311998",
+            "host_organization_name": "European Organization for Nuclear Research",
+            "host_organization_lineage": [
+              "https://openalex.org/I67311998"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": null,
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "Preprint"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://doi.org/10.5281/zenodo.19497728",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W3177352440",
+        "title": "Computing Garsia entropy for Bernoulli convolutions with algebraic parameters *",
+        "publication_year": 2021,
+        "doi": "https://doi.org/10.1088/1361-6544/abf849",
+        "primary_location": {
+          "id": "doi:10.1088/1361-6544/abf849",
+          "doi": "https://doi.org/10.1088/1361-6544/abf849",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1088/1361-6544/abf849",
+          "pdf_url": "https://iopscience.iop.org/article/10.1088/1361-6544/abf849/pdf",
+          "source": {
+            "id": "https://openalex.org/S158842918",
+            "display_name": "Nonlinearity",
+            "issn_l": "0951-7715",
+            "issn": [
+              "0951-7715",
+              "1361-6544"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-b",
+              "jufo-1",
+              "norway-2",
+              "poland-100",
+              "russia-white-list-2"
+            ],
+            "host_organization": "https://openalex.org/P4310320083",
+            "host_organization_name": "IOP Publishing",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320083",
+              "https://openalex.org/P4310311669"
+            ],
+            "host_organization_lineage_names": [
+              "IOP Publishing",
+              "Institute of Physics"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Nonlinearity",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://iopscience.iop.org/article/10.1088/1361-6544/abf849/pdf",
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2229869949",
+        "title": "Finite orbits in multivalued maps and Bernoulli convolutions",
+        "publication_year": 2017,
+        "doi": "https://doi.org/10.1016/j.aim.2017.11.011",
+        "primary_location": {
+          "id": "doi:10.1016/j.aim.2017.11.011",
+          "doi": "https://doi.org/10.1016/j.aim.2017.11.011",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.aim.2017.11.011",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0001870816314281/pdf",
+          "source": {
+            "id": "https://openalex.org/S122441808",
+            "display_name": "Advances in Mathematics",
+            "issn_l": "0001-8708",
+            "issn": [
+              "0001-8708",
+              "1090-2082"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-3",
+              "norway-2"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Advances in Mathematics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S0001870816314281/pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W3028958240",
+        "title": "Arithmetic groups and the Lehmer conjecture",
+        "publication_year": 2021,
+        "doi": "https://doi.org/10.1007/s11856-021-2229-7",
+        "primary_location": {
+          "id": "doi:10.1007/s11856-021-2229-7",
+          "doi": "https://doi.org/10.1007/s11856-021-2229-7",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1007/s11856-021-2229-7",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S1382107",
+            "display_name": "Israel Journal of Mathematics",
+            "issn_l": "0021-2172",
+            "issn": [
+              "0021-2172",
+              "1565-8511"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-2",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4310319208",
+            "host_organization_name": "Hebrew University of Jerusalem",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319208"
+            ],
+            "host_organization_lineage_names": [
+              "Hebrew University of Jerusalem"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Israel Journal of Mathematics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2005.13726",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "service": "openalex",
+    "query": "Kittle Kogler absolute continuity self similar measures",
+    "url": "https://api.openalex.org/works?search=Kittle+Kogler+absolute+continuity+self+similar+measures&per-page=4&select=id%2Ctitle%2Cpublication_year%2Cdoi%2Cprimary_location%2Copen_access",
+    "status": 200,
+    "results": [
+      {
+        "id": "https://openalex.org/W4403799684",
+        "title": "On absolute continuity of inhomogeneous and contracting on average self-similar measures",
+        "publication_year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2409.18936",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2409.18936",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2409.18936",
+          "pdf_url": "https://arxiv.org/pdf/2409.18936",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2409.18936",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4415240830",
+        "title": "Fourier decay and absolute continuity for typical homogeneous self-similar measures in ${\\mathbb R}^d$ for $d\\ge 3$",
+        "publication_year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2508.14698",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2508.14698",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2508.14698",
+          "pdf_url": "https://arxiv.org/pdf/2508.14698",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2508.14698",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W7169762633",
+        "title": "Smooth projections of self-similar measures",
+        "publication_year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2607.15635",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2607.15635",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://arxiv.org/abs/2607.15635",
+          "pdf_url": "https://arxiv.org/pdf/2607.15635",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2607.15635",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4406975836",
+        "title": "Dimension of contracting on average self-similar measures",
+        "publication_year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2501.17795",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2501.17795",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2501.17795",
+          "pdf_url": "https://arxiv.org/pdf/2501.17795",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2501.17795",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "service": "openalex",
+    "query": "p-adic self-similar measures dimension",
+    "url": "https://api.openalex.org/works?search=p-adic+self-similar+measures+dimension&per-page=4&select=id%2Ctitle%2Cpublication_year%2Cdoi%2Cprimary_location%2Copen_access",
+    "status": 200,
+    "results": [
+      {
+        "id": "https://openalex.org/W4402393514",
+        "title": "Self-similar sets and self-similar measures in the $p$-adics",
+        "publication_year": 2024,
+        "doi": "https://doi.org/10.4171/jfg/154",
+        "primary_location": {
+          "id": "doi:10.4171/jfg/154",
+          "doi": "https://doi.org/10.4171/jfg/154",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.4171/jfg/154",
+          "pdf_url": "https://ems.press/content/serial-article-files/48830",
+          "source": {
+            "id": "https://openalex.org/S4210206932",
+            "display_name": "Journal of Fractal Geometry Mathematics of Fractals and Related Topics",
+            "issn_l": "2308-1309",
+            "issn": [
+              "2308-1309",
+              "2308-1317"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "dongbi-b",
+              "jufo-1",
+              "poland-70",
+              "russia-white-list-3"
+            ],
+            "host_organization": "https://openalex.org/I4389425263",
+            "host_organization_name": "EMS Press",
+            "host_organization_lineage": [
+              "https://openalex.org/I4389425263"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Fractal Geometry, Mathematics of Fractals and Related Topics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://ems.press/content/serial-article-files/48830",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2024773407",
+        "title": "Divergence points of self-similar measures and packing dimension",
+        "publication_year": 2007,
+        "doi": "https://doi.org/10.1016/j.aim.2007.02.003",
+        "primary_location": {
+          "id": "doi:10.1016/j.aim.2007.02.003",
+          "doi": "https://doi.org/10.1016/j.aim.2007.02.003",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.aim.2007.02.003",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0001870807000503/pdf",
+          "source": {
+            "id": "https://openalex.org/S122441808",
+            "display_name": "Advances in Mathematics",
+            "issn_l": "0001-8708",
+            "issn": [
+              "0001-8708",
+              "1090-2082"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-3",
+              "norway-2"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Advances in Mathematics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S0001870807000503/pdf",
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W4413984610",
+        "title": "On the Hausdorff measure of self-similar sets in Q p d",
+        "publication_year": 2025,
+        "doi": "https://doi.org/10.1016/j.jmaa.2025.130046",
+        "primary_location": {
+          "id": "doi:10.1016/j.jmaa.2025.130046",
+          "doi": "https://doi.org/10.1016/j.jmaa.2025.130046",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1016/j.jmaa.2025.130046",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S151579836",
+            "display_name": "Journal of Mathematical Analysis and Applications",
+            "issn_l": "0022-247X",
+            "issn": [
+              "0022-247X",
+              "1096-0813"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-1",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Mathematical Analysis and Applications",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2099449228",
+        "title": "Measure rigidity and $p$-adic Littlewood-type problems",
+        "publication_year": 2007,
+        "doi": "https://doi.org/10.1112/s0010437x07002801",
+        "primary_location": {
+          "id": "doi:10.1112/s0010437x07002801",
+          "doi": "https://doi.org/10.1112/s0010437x07002801",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1112/s0010437x07002801",
+          "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/1CADF1EAA4DF66CA39C84B8ED71C1118/S0010437X07002801a.pdf/div-class-title-measure-rigidity-and-p-adic-littlewood-type-problems-div.pdf",
+          "source": {
+            "id": "https://openalex.org/S66563395",
+            "display_name": "Compositio Mathematica",
+            "issn_l": "0010-437X",
+            "issn": [
+              "0010-437X",
+              "1570-5846"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "dongbi-b",
+              "jufo-2",
+              "norway-2",
+              "poland-200",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310311721",
+            "host_organization_name": "Cambridge University Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310311721",
+              "https://openalex.org/P4310311702"
+            ],
+            "host_organization_lineage_names": [
+              "Cambridge University Press",
+              "University of Cambridge"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Compositio Mathematica",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/1CADF1EAA4DF66CA39C84B8ED71C1118/S0010437X07002801a.pdf/div-class-title-measure-rigidity-and-p-adic-littlewood-type-problems-div.pdf",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "service": "openalex",
+    "query": "Garsia entropy critical Bernoulli convolutions",
+    "url": "https://api.openalex.org/works?search=Garsia+entropy+critical+Bernoulli+convolutions&per-page=4&select=id%2Ctitle%2Cpublication_year%2Cdoi%2Cprimary_location%2Copen_access",
+    "status": 200,
+    "results": [
+      {
+        "id": "https://openalex.org/W3100187951",
+        "title": "A LOWER BOUND FOR GARSIA’S ENTROPY FOR CERTAIN BERNOULLI CONVOLUTIONS",
+        "publication_year": 2009,
+        "doi": null,
+        "primary_location": {
+          "id": "pmh:oai:CiteSeerX.psu:10.1.1.140.1339",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.140.1339",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "http://www.ma.umist.ac.uk/nikita/garsia7.pdf",
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2166790954",
+        "title": "A lower bound for Garsia’s entropy for certain Bernoulli convolutions",
+        "publication_year": 2010,
+        "doi": "https://doi.org/10.1112/s1461157008000430",
+        "primary_location": {
+          "id": "doi:10.1112/s1461157008000430",
+          "doi": "https://doi.org/10.1112/s1461157008000430",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1112/s1461157008000430",
+          "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/459E389E92D978A9CFB33DE56BB9EDC9/S1461157008000430a.pdf/div-class-title-a-lower-bound-for-garsia-s-entropy-for-certain-bernoulli-convolutions-div.pdf",
+          "source": {
+            "id": "https://openalex.org/S118668765",
+            "display_name": "LMS Journal of Computation and Mathematics",
+            "issn_l": "1461-1570",
+            "issn": [
+              "1461-1570"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-1",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4310311874",
+            "host_organization_name": "London Mathematical Society",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310311874"
+            ],
+            "host_organization_lineage_names": [
+              "London Mathematical Society"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "LMS Journal of Computation and Mathematics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/459E389E92D978A9CFB33DE56BB9EDC9/S1461157008000430a.pdf/div-class-title-a-lower-bound-for-garsia-s-entropy-for-certain-bernoulli-convolutions-div.pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4391552880",
+        "title": "Remarks on Garsia entropy and multidimensional Erdos measures",
+        "publication_year": 2022,
+        "doi": "https://doi.org/10.13108/2022-14-4-141",
+        "primary_location": {
+          "id": "doi:10.13108/2022-14-4-141",
+          "doi": "https://doi.org/10.13108/2022-14-4-141",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.13108/2022-14-4-141",
+          "pdf_url": "https://matem.anrb.ru/sites/default/files/files/vupe56/Kulikov.pdf",
+          "source": {
+            "id": "https://openalex.org/S4210222302",
+            "display_name": "Ufimskii Matematicheskii Zhurnal",
+            "issn_l": "2074-1863",
+            "issn": [
+              "2074-1863",
+              "2074-1871",
+              "2304-0122"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Ufa Mathematical Journal",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://matem.anrb.ru/sites/default/files/files/vupe56/Kulikov.pdf",
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W7220999863",
+        "title": "Strict correlation-dimension drop for quartic Salem Bernoulli convolutions",
+        "publication_year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2610.09902",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2610.09902",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://arxiv.org/abs/2610.09902",
+          "pdf_url": "https://arxiv.org/pdf/2610.09902",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2610.09902",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "service": "openalex",
+    "query": "infinite iterated function system Lq measures",
+    "url": "https://api.openalex.org/works?search=infinite+iterated+function+system+Lq+measures&per-page=4&select=id%2Ctitle%2Cpublication_year%2Cdoi%2Cprimary_location%2Copen_access",
+    "status": 200,
+    "results": [
+      {
+        "id": "https://openalex.org/W2019333009",
+        "title": "Porosity in Conformal Infinite Iterated Function Systems",
+        "publication_year": 2001,
+        "doi": "https://doi.org/10.1006/jnth.2000.2645",
+        "primary_location": {
+          "id": "doi:10.1006/jnth.2000.2645",
+          "doi": "https://doi.org/10.1006/jnth.2000.2645",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1006/jnth.2000.2645",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0022314X00926453/pdf",
+          "source": {
+            "id": "https://openalex.org/S40813394",
+            "display_name": "Journal of Number Theory",
+            "issn_l": "0022-314X",
+            "issn": [
+              "0022-314X",
+              "1096-1658"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-2",
+              "norway-2"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Number Theory",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S0022314X00926453/pdf",
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2949973629",
+        "title": "Infinite Non-Conformal Iterated Function Systems",
+        "publication_year": 2011,
+        "doi": "https://doi.org/10.48550/arxiv.1105.3137",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:1105.3137",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/1105.3137",
+          "pdf_url": "https://arxiv.org/pdf/1105.3137",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/1105.3137",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2626515289",
+        "title": "Iterated function systems with overlaps",
+        "publication_year": 2000,
+        "doi": "https://doi.org/10.4310/ajm.2000.v4.n3.a3",
+        "primary_location": {
+          "id": "doi:10.4310/ajm.2000.v4.n3.a3",
+          "doi": "https://doi.org/10.4310/ajm.2000.v4.n3.a3",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.4310/ajm.2000.v4.n3.a3",
+          "pdf_url": "https://www.intlpress.com/site/pub/files/_fulltext/journals/ajm/2000/0004/0003/AJM-2000-0004-0003-a003.pdf",
+          "source": {
+            "id": "https://openalex.org/S45079764",
+            "display_name": "Asian Journal of Mathematics",
+            "issn_l": "1093-6106",
+            "issn": [
+              "1093-6106",
+              "1945-0036"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-c",
+              "jufo-1",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-3"
+            ],
+            "host_organization": "https://openalex.org/P4327904645",
+            "host_organization_name": "International Press of Boston",
+            "host_organization_lineage": [
+              "https://openalex.org/P4327904645"
+            ],
+            "host_organization_lineage_names": [
+              "International Press of Boston"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Asian Journal of Mathematics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.intlpress.com/site/pub/files/_fulltext/journals/ajm/2000/0004/0003/AJM-2000-0004-0003-a003.pdf",
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2593545567",
+        "title": "Differentiability of L-spectrum and multifractal decomposition by using infinite graph-directed IFSs",
+        "publication_year": 2017,
+        "doi": "https://doi.org/10.1016/j.aim.2017.02.021",
+        "primary_location": {
+          "id": "doi:10.1016/j.aim.2017.02.021",
+          "doi": "https://doi.org/10.1016/j.aim.2017.02.021",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.aim.2017.02.021",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S122441808",
+            "display_name": "Advances in Mathematics",
+            "issn_l": "0001-8708",
+            "issn": [
+              "0001-8708",
+              "1090-2082"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "jufo-3",
+              "norway-2"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Advances in Mathematics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://doi.org/10.1016/j.aim.2017.02.021",
+          "any_repository_has_fulltext": false
+        }
+      }
+    ]
+  },
+  {
+    "service": "openalex",
+    "query": "ultrametric self similar measures overlaps",
+    "url": "https://api.openalex.org/works?search=ultrametric+self+similar+measures+overlaps&per-page=4&select=id%2Ctitle%2Cpublication_year%2Cdoi%2Cprimary_location%2Copen_access",
+    "status": 200,
+    "results": [
+      {
+        "id": "https://openalex.org/W2122846501",
+        "title": "Ultrametric Distance in Syntax",
+        "publication_year": 2015,
+        "doi": "https://doi.org/10.1515/pralin-2015-0006",
+        "primary_location": {
+          "id": "doi:10.1515/pralin-2015-0006",
+          "doi": "https://doi.org/10.1515/pralin-2015-0006",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1515/pralin-2015-0006",
+          "pdf_url": "https://doi.org/10.1515/pralin-2015-0006",
+          "source": {
+            "id": "https://openalex.org/S109223824",
+            "display_name": "The Prague Bulletin of Mathematical Linguistics",
+            "issn_l": "0032-6585",
+            "issn": [
+              "0032-6585",
+              "1804-0462"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "jufo-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320322",
+            "host_organization_name": "De Gruyter Open",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320322",
+              "https://openalex.org/P4310313990"
+            ],
+            "host_organization_lineage_names": [
+              "De Gruyter Open",
+              "De Gruyter"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "The Prague Bulletin of Mathematical Linguistics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://doi.org/10.1515/pralin-2015-0006",
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2952036060",
+        "title": "Ultrametric Distance in Syntax",
+        "publication_year": 1998,
+        "doi": "https://doi.org/10.48550/arxiv.cs/9810012",
+        "primary_location": {
+          "id": "pmh:oai:cogprints.org:225",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "http://cogprints.org/225/2/udv3.ps",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401879",
+            "display_name": "CogPrints (University of Southampton)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I43439940",
+            "host_organization_name": "University of Southampton",
+            "host_organization_lineage": [
+              "https://openalex.org/I43439940"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": "Preprint"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/cs/9810012",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4388024478",
+        "title": "Ultrametrics for context-aware comparison of binary images",
+        "publication_year": 2023,
+        "doi": "https://doi.org/10.1016/j.inffus.2023.102101",
+        "primary_location": {
+          "id": "doi:10.1016/j.inffus.2023.102101",
+          "doi": "https://doi.org/10.1016/j.inffus.2023.102101",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.inffus.2023.102101",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S7560371",
+            "display_name": "Information Fusion",
+            "issn_l": "1566-2535",
+            "issn": [
+              "1566-2535",
+              "1872-6305"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "cwts-core",
+              "dongbi-b",
+              "jufo-3",
+              "norway-1",
+              "poland-200",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc",
+          "license_id": "https://openalex.org/licenses/cc-by-nc",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Information Fusion",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://doi.org/10.1016/j.inffus.2023.102101",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2952946574",
+        "title": "Universality of chaos and ultrametricity in mixed p-spin models",
+        "publication_year": 2014,
+        "doi": "https://doi.org/10.48550/arxiv.1410.8123",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:1410.8123",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/1410.8123",
+          "pdf_url": "https://arxiv.org/pdf/1410.8123",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/1410.8123",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "service": "arxiv",
+    "query": "all:Shmerkin AND all:Furstenberg AND all:Lq AND all:self-similar",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3AShmerkin+AND+all%3AFurstenberg+AND+all%3ALq+AND+all%3Aself-similar&start=0&max_results=4",
+    "status": 200,
+    "results": []
+  },
+  {
+    "service": "arxiv",
+    "query": "all:Hochman AND all:2014 AND all:overlaps AND all:entropy AND all:self-similar",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3AHochman+AND+all%3A2014+AND+all%3Aoverlaps+AND+all%3Aentropy+AND+all%3Aself-similar&start=0&max_results=4",
+    "status": 200,
+    "results": [
+      {
+        "title": "On self-similar sets with overlaps and inverse theorems for entropy",
+        "id": "http://arxiv.org/abs/1212.1873v6",
+        "summary": "We study the Hausdorff dimension of self-similar sets and measures on the line. We show that if the dimension is smaller than the minimum of 1 and the similarity dimension, then at small scales there are super-exponentially close cylinders. This is a"
+      },
+      {
+        "title": "Self similar sets, entropy and additive combinatorics",
+        "id": "http://arxiv.org/abs/1307.6399v5",
+        "summary": "This article is an exposition of recent results on self-similar sets, asserting that if the dimension is smaller than the trivial upper bound then there are almost overlaps between cylinders. We give a heuristic derivation of the theorem using elemen"
+      }
+    ]
+  },
+  {
+    "service": "arxiv",
+    "query": "all:Varju AND all:Bernoulli AND all:convolutions AND all:absolute AND all:continuity",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3AVarju+AND+all%3ABernoulli+AND+all%3Aconvolutions+AND+all%3Aabsolute+AND+all%3Acontinuity&start=0&max_results=4",
+    "status": 200,
+    "results": [
+      {
+        "title": "Absolute continuity of Bernoulli convolutions for algebraic parameters",
+        "id": "http://arxiv.org/abs/1602.00261v4",
+        "summary": "We prove that Bernoulli convolutions are absolutely continuous provided the parameter lambda is an algebraic number sufficiently close to 1 depending on the Mahler measure of lambda."
+      },
+      {
+        "title": "Random walks in the group of Euclidean isometries and self-similar measures",
+        "id": "http://arxiv.org/abs/1405.4426v2",
+        "summary": "We study products of random isometries acting on Euclidean space. Building on previous work of the second author, we prove a local limit theorem for balls of shrinking radius with exponential speed under the assumption that a Markov operator associat"
+      }
+    ]
+  },
+  {
+    "service": "arxiv",
+    "query": "all:Breuillard AND all:Varju AND all:Bernoulli AND all:convolutions AND all:entropy",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3ABreuillard+AND+all%3AVarju+AND+all%3ABernoulli+AND+all%3Aconvolutions+AND+all%3Aentropy&start=0&max_results=4",
+    "status": 200,
+    "results": [
+      {
+        "title": "Entropy of Bernoulli convolutions and uniform exponential growth for linear groups",
+        "id": "http://arxiv.org/abs/1510.04043v4",
+        "summary": "The exponential growth rate of non polynomially growing subgroups of $GL_d$ is conjectured to admit a uniform lower bound. This is known for non-amenable subgroups, while for amenable subgroups it is known to imply the Lehmer conjecture from number t"
+      }
+    ]
+  },
+  {
+    "service": "arxiv",
+    "query": "all:Kittle AND all:Kogler AND all:absolute AND all:continuity AND all:self AND all:similar AND all:measures",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3AKittle+AND+all%3AKogler+AND+all%3Aabsolute+AND+all%3Acontinuity+AND+all%3Aself+AND+all%3Asimilar+AND+all%3Ameasures&start=0&max_results=4",
+    "status": 200,
+    "results": [
+      {
+        "title": "On absolute continuity of inhomogeneous and contracting on average self-similar measures",
+        "id": "http://arxiv.org/abs/2409.18936v4",
+        "summary": "We give a condition for absolute continuity of self-similar measures in arbitrary dimensions. This allows us to construct the first explicit absolutely continuous examples of inhomogeneous self-similar measures in dimension one and two. In fact, for "
+      }
+    ]
+  },
+  {
+    "service": "arxiv",
+    "query": "all:p-adic AND all:self-similar AND all:measures AND all:dimension",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3Ap-adic+AND+all%3Aself-similar+AND+all%3Ameasures+AND+all%3Adimension&start=0&max_results=4",
+    "status": 200,
+    "results": [
+      {
+        "title": "Self-similar sets and self-similar measures in the $p$-adics",
+        "id": "http://arxiv.org/abs/2307.07375v2",
+        "summary": "In this paper we investigate $p$-adic self-similar sets and $p$-adic self-similar measures. We show that $p$-adic self-similar sets are $p$-adic path set fractals, and that the converse is not necessarily true. For $p$-adic self-similar sets and $p$-"
+      },
+      {
+        "title": "Minkowski Measurability and Exact Fractal Tube Formulas for p-Adic Self-Similar Strings",
+        "id": "http://arxiv.org/abs/1209.6440v2",
+        "summary": "The theory of p-adic fractal strings and their complex dimensions was developed by the first two authors in [17, 18, 19], particularly in the self-similar case, in parallel with its archimedean (or real) counterpart developed by the first and third a"
+      }
+    ]
+  },
+  {
+    "service": "arxiv",
+    "query": "all:Garsia AND all:entropy AND all:critical AND all:Bernoulli AND all:convolutions",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3AGarsia+AND+all%3Aentropy+AND+all%3Acritical+AND+all%3ABernoulli+AND+all%3Aconvolutions&start=0&max_results=4",
+    "status": 200,
+    "results": []
+  },
+  {
+    "service": "arxiv",
+    "query": "all:infinite AND all:iterated AND all:function AND all:system AND all:Lq AND all:measures",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3Ainfinite+AND+all%3Aiterated+AND+all%3Afunction+AND+all%3Asystem+AND+all%3ALq+AND+all%3Ameasures&start=0&max_results=4",
+    "status": 200,
+    "results": []
+  },
+  {
+    "service": "arxiv",
+    "query": "all:ultrametric AND all:self AND all:similar AND all:measures AND all:overlaps",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3Aultrametric+AND+all%3Aself+AND+all%3Asimilar+AND+all%3Ameasures+AND+all%3Aoverlaps&start=0&max_results=4",
+    "status": 200,
+    "results": []
+  },
+  {
+    "service": "semantic",
+    "query": "p-adic self-similar measures",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=p-adic+self-similar+measures&limit=4&fields=title%2Cauthors%2Cyear%2Curl%2CexternalIds",
+    "status": 429,
+    "error": "{\"message\": \"Too Many Requests. Please wait and try again or apply for a key for higher rate limits. https://www.semanticscholar.org/product/api#api-key-form\", \"code\": \"429\"}"
+  },
+  {
+    "service": "semantic",
+    "query": "Kittle Kogler absolute continuity",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Kittle+Kogler+absolute+continuity&limit=4&fields=title%2Cauthors%2Cyear%2Curl%2CexternalIds",
+    "status": 429,
+    "error": "{\"message\": \"Too Many Requests. Please wait and try again or apply for a key for higher rate limits. https://www.semanticscholar.org/product/api#api-key-form\", \"code\": \"429\"}"
+  }
+]

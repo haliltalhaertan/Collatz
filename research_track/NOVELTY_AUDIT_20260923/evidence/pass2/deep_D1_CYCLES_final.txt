@@ -1,0 +1,33 @@
+İnceleme tamamlandı. Beş iddianın kaynak ifadeleri, kontrolleri ve literatür kayıtları [deep_D1_CYCLES.json](deep_D1_CYCLES.json) dosyasında; çalıştırılan ortak kod [deep_D1_CYCLES_checks.py](deep_D1_CYCLES_checks.py) dosyasındadır.
+
+**CP02-05 — NEW-MINOR; koşullu doğru.**  
+\(K\ge72\,057\,431\,991\), ancak \(N>2^{71}\) olan varsayımsal bir minimal karşıörnekte **ilk crossing mevcutsa** ona ilişkin sınırdır. Farey-komşuluğu ve sayısal sıralama kontrol edildi.  
+En yakın kaynak [Hercher 2023, Corollary 29](https://cs.uwaterloo.ca/journals/JIS/VOL26/Hercher/hercher5.pdf): uygun doğrulama eşiğinde bir döngüde \(K_{\rm odd}>1{,}375\times10^{11}\). [Düzeltme](https://cs.uwaterloo.ca/journals/JIS/VOL26/Hercher/corrigendum.pdf) kanıttaki bir adımı onarır. **Döngü uzunluğu ilk-crossing indeksi değildir**; Hercher bu ifadeyi birebir aşmış sayılmaz. Yayın değeri: **1/5**.
+
+**E5-093 — FLAWED; bildirilen \(n_0\) sınırları yanlış çıkarılmış.**  
+Tekrarlanan blok için \(2^{A(W)}\mid n_v-n_u\) doğru bir parite-kelimesi olgusudur. Buradan elde edilen \(2^{107},2^{15780},2^{50495}\) mertebeleri, metnin kullandığı büyüme varsayımında **\(C(n_0)\) sabitine** alt sınır verir; \(n_0\)’a değil.  
+\(C(n_0)\) için gerekli üst sınır gösterilmemiştir. En yakın klasik çerçeve Terras–Everett parite eşleşmesidir; [Rozier 2017](https://arxiv.org/pdf/1510.01610) de parite dizilerinin kombinatoriğini ele alır. Yayın değeri: **0/5**.
+
+**25-05 — UNRESOLVED; C1 bir teorem değil.**  
+Her rotasyonda \(q_r\ge h_r\Rightarrow A\mid B_0\) önermesi için kaynak açıkça **OPEN-NONTRIVIAL** der. \(m\le22\) taramasında karşıörnek bulunmaması ispat oluşturmaz.  
+Zayıf halka, rotasyonların tümünde işaretli taşıyıcıların \(t_r\ge0\) olmasından bölünebilirliğe geçiştir. En yakın yöntemsel kaynak [Rukhin’in Böhm–Sontacchi integrallik testleri](https://arxiv.org/pdf/1506.07622v8); açılan metinde C1’in aynısı doğrulanmadı. Yayın değeri: **0/5**, çözülmeden.
+
+**26-01 — UNRESOLVED; büyük-\(k\) kanıt bağımlılığı doğrulanamadı.**  
+\(x_0<2^{m+1}\) için payın üst sınırı cebirseldir; kullanılan \(2^m-3^k\) alt sınırı \(k\le17012\) aralığında kesin tamsayı taramasını geçti.  
+Sonsuz aralık ise [Laurent–Mignotte–Nesterenko 1995, Corollary 2](https://doi.org/10.1006/jnth.1995.1141) için ileri sürülen **24,34’lü özel biçime** dayanıyor. Birincil makaleden bu biçim ve parametre koşulları okunamadı; dolayısıyla “PROOF” etiketi bağımsızca tasdik edilemedi. [Simons–de Weger 2005](https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf) yakın döngü yöntemidir, tam eşdeğer önerme olarak doğrulanmadı. Yayın değeri: **1/5**, koşul çözülürse.
+
+**27-03 — TRIVIAL; doğru fakat yalnız blok uçlarında.**  
+Her uygun blokta \(e_i=\lfloor s_i\log_2 3\rfloor<s_i\log_2 3\); toplamak bütün *proper blok-prefix* değerlerinde \(\Delta_t<0\) verir. Kesin küçük örnek kontrolü de bunu doğruladı.  
+Bu inşa bir **rasyonel aday** içindir: integral döngü, her tek-adım prefix’i veya büyük minimum varsayımını sağlamaz. En yakın döngü-blok bağlamı [Simons–de Weger 2005](https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf). Yayın değeri: **0/5**.
+
+| İddia | Nihai karar | Değer / 5 |
+|---|---|---:|
+| CP02-05 | NEW-MINOR | 1 |
+| E5-093 | FLAWED | 0 |
+| 25-05 | UNRESOLVED | 0 |
+| 26-01 | UNRESOLVED | 1 |
+| 27-03 | TRIVIAL | 0 |
+
+Literatür sınırı: OpenAlex atıf taraması yapıldı; Rozier için OpenAlex’ın sıfır kaydı, Semantic Scholar’ın yedi kaydıyla uyuşmadı. Erişilemeyen birincil LMN metninden sabit veya teorem **doğrulanmış gibi kullanılmadı**.
+
+DEEP_D1_CYCLES_20260923_COMPLETE

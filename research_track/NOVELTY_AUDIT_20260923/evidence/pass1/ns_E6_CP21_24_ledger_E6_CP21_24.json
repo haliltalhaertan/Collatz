@@ -1,0 +1,1119 @@
+[
+  {
+    "id": "E21-01",
+    "checkpoint": "CP21",
+    "claim": "Her (m,s) için Ecal(m,s+1)−Ecal(m+1,s)=M_merge−L_lift ve M_merge≥0.",
+    "program_label": "[PROOF]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "Paralelkenar/Jensen-kare kimliği ve teleskopik ayrıştırma; monotonluğun ispatı değil."
+  },
+  {
+    "id": "E21-02",
+    "checkpoint": "CP21",
+    "claim": "Gerçek önek kaynağı için tüm m≥2,1≤s<m düzeylerinde M_merge≥L_lift öne sürülüyor.",
+    "program_label": "[CONJECTURE]; [EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)",
+      "OpenAlex: Collatz Banach density sparsity reciprocal sum",
+      "Crossref: Garcia Tal A note on the generalized 3n+1 problem",
+      "arXiv: stopping time residue class; inverse tree density",
+      "Semantic Scholar: 3x+1 inverse tree density 1999 (429 erişim sınırı)"
+    ],
+    "note": "221 doğru sonlu satır 0 ihlal; evrensel sonuç elde edilmedi; CP24 sayıları esas."
+  },
+  {
+    "id": "E21-03",
+    "checkpoint": "CP21",
+    "claim": "Frekans ayrışımında ortak zorunlu indis a tek mod q=2^s olup mod 2q ayrıştırması yanlış negatif üretebilir.",
+    "program_label": "[PROOF]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/01-freq-defect/README.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "Programın tanımladığı Fourier ayrışımı; q-periyodiklik ve kosinüs anti-periyodiklik cebirsel."
+  },
+  {
+    "id": "E21-04",
+    "checkpoint": "CP21",
+    "claim": "Her tek a mod 2^s için programın Δ^(a)=M^(a)−L^(a)≥0 varsayımı 57 farklı parametre çiftinde karşıörneksizdir.",
+    "program_label": "[CONJECTURE]; [EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "CP24 birleşim 57 farklı (m,s), 76 değil; 19 tekrar, tüm siklotomik işaretler CP24 tarafından tekrar kanıtlanmadı."
+  },
+  {
+    "id": "E21-05",
+    "checkpoint": "CP21",
+    "claim": "Üst düzey charging + Pascal kütleleri + parent transferi, (4,2) tanığıyla çocuk radius-2 charging sonucunu mantıken gerektirmez.",
+    "program_label": "[FAIL]; [EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/03-induction/REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "W(4,2) parent IH sağlar; çocukta 16/3>14/3; gerçek histogram değildir."
+  },
+  {
+    "id": "E21-06",
+    "checkpoint": "CP21",
+    "claim": "CP21 yazıldığı gibi q-uzunluklu w ile R3: w_k=E(w′_k)+O(w′_{k−1}) özdeşliği geçerlidir.",
+    "program_label": "[PROOF] (eksik konvansiyon)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/03-induction/REPORT.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "CP22: R3 q-uzunluğunda yanlış, (4,2), k=3: [-1,0,0,0] ≠ [1,0,0,0]; N anti-periyodik biçimi doğrudur."
+  },
+  {
+    "id": "E21-07",
+    "checkpoint": "CP21",
+    "claim": "R1 N-noktalı negasiklikte L_k=q⟨w,T^(3^k)w⟩/(2n_k), R2 M_j≥0 kare normudur.",
+    "program_label": "[PROOF] (yalnız N konvansiyonu)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/03-induction/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "q-boyutlu iç çarpımda R1 katsayısı q/n_k; N-boyutlu iç çarpımda q/(2n_k); çapraz terim simetrikleştirilmeli."
+  },
+  {
+    "id": "E21-08",
+    "checkpoint": "CP21",
+    "claim": "Aynı k ağırlıklı iki farklı kelimede v₂(B_w−B_w′)=v₂(h_w−h_w′).",
+    "program_label": "[PROOF]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/02-cap-bound/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Bernstein–Lagarias, The 3x+1 Conjugacy Map (1996), yazar özeti",
+        "url": "https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/3x-1-conjugacy-map/6975BB4A8C46CF6842217043AAF9EC13",
+        "quote": "The map Φ mod 2^n induces a permutation Φ_n on Z/2^n Z.",
+        "opened": true
+      },
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF",
+      "Crossref: 3x+1 conjugacy map Bernstein Lagarias 1996"
+    ],
+    "note": "Afin özdeşlik farkından aynı k için doğrudan; Bernardo–Lagarias 2-adik parite bijeksiyonu ile yakın, B-fark formülasyonu özel."
+  },
+  {
+    "id": "E21-09",
+    "checkpoint": "CP21",
+    "claim": "Tek 1≤h<2^m ve k≥1 için 1≤e_w=H^m(h)≤3^k−1.",
+    "program_label": "[PROOF] T2",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/02-cap-bound/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF"
+    ],
+    "note": "Temel yörünge büyüklüğü sınırı; örneğin k=1 için e=2 olabilir, üst uç 2; T2 ile aynı şartlarda."
+  },
+  {
+    "id": "E21-10",
+    "checkpoint": "CP21",
+    "claim": "Aynı k için e_w=e_w′ ancak ve ancak B_w≡B_w′ (mod 3^k).",
+    "program_label": "[PROOF] T7; CP23 [PROOF] A3",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/02-cap-bound/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      },
+      {
+        "cite": "Böhm–Sontacchi, On the existence of cycles of given length (1978), bibliyografik kayıt; BİRİNCİL METİN AÇILMADI",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "DOĞRULANMADI",
+        "opened": false
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem and Its Generalizations (1985), dergi metadata; BİRİNCİL METİN AÇILMADI",
+        "url": "https://doi.org/10.2307/2322189",
+        "quote": "DOĞRULANMADI",
+        "opened": false
+      },
+      {
+        "cite": "Wirsching, The Dynamical System Generated by the 3n+1 Function (1998), Springer kayıt sayfası; BİRİNCİL METİN AÇILMADI",
+        "url": "https://doi.org/10.1007/BFb0095985",
+        "quote": "DOĞRULANMADI",
+        "opened": false
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF",
+      "arXiv: parity vector endpoint collision affine offset congruence 3^k"
+    ],
+    "note": "T2 ile 3^k | (e−e′) ve |e−e′|<3^k kullanılır; yeni diyen CP23 literatürü taramamıştır; mevcut birincil kaynaklar denkliği lafzen yazmaz, bu yüzden standart cebir kararı öncelik değil."
+  },
+  {
+    "id": "E21-11",
+    "checkpoint": "CP21",
+    "claim": "M(m,k)≤⌊2^(m−k)(3^(k−1)−2^(k−1))/3^k⌋+1 iddiası her m,k için türetilmiştir.",
+    "program_label": "[PROOF] T4",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/02-cap-bound/REPORT.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF",
+      "Crossref: Collatz parity vector maximum endpoint multiplicity B-spread"
+    ],
+    "note": "Özel sayısal tavan klasik afin formdan çıkarılmış; eşdeğer kap formülü taranan ilk kaynaklarda görülmedi; düşük yenilik güveni."
+  },
+  {
+    "id": "E21-12",
+    "checkpoint": "CP21",
+    "claim": "cap(m,k,r)≤2cap(m−1,k,r+1)+2cap(m−1,k−1,r+1), m≥2.",
+    "program_label": "[PROOF] T6",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/02-cap-bound/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Bernstein–Lagarias, The 3x+1 Conjugacy Map (1996), yazar özeti",
+        "url": "https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/3x-1-conjugacy-map/6975BB4A8C46CF6842217043AAF9EC13",
+        "quote": "The map Φ mod 2^n induces a permutation Φ_n on Z/2^n Z.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF"
+    ],
+    "note": "Dört terimlik parent pushforward ve üçgen/kutu maksimumu; bir özel kaynak önceliği gerektirmeyen sayım."
+  },
+  {
+    "id": "E21-13",
+    "checkpoint": "CP21",
+    "claim": "e≡e′ (mod 2^r) ile sınırlı t kullanılarak B−B′≡2^(m+r)t (mod 3^k) koşulları eşdeğerdir.",
+    "program_label": "[PROOF] T7r (sonra [FAIL])",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/02-cap-bound/step4_3adic.py",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF"
+    ],
+    "note": "(m,k,r)=(4,2,1), h=1,13; e=1,8; t koşulu var fakat uçlar mod 2 çakışmaz; 356259/2896792 hata."
+  },
+  {
+    "id": "E21-14",
+    "checkpoint": "CP21",
+    "claim": "Aynı ağırlıkta e≡e′ (mod 2^r) olunca uygun sınırlı t için B−B′≡2^(m+r)t (mod 3^k) gerekir.",
+    "program_label": "[PROOF] gerekli yön",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/02-cap-bound/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF"
+    ],
+    "note": "T7r ters yönü yanlış olsa da e≡e′⇒t-gerek şartı aynı afin eşitlikten gelir."
+  },
+  {
+    "id": "E21-15",
+    "checkpoint": "CP21",
+    "claim": "2^r≥3^k−1 olunca cap(m,k,r), r artınca artık değişmez.",
+    "program_label": "[EXACT COMPUTATION]; CP23 A6 plausibly new",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/02-cap-bound/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF",
+      "Crossref: Collatz maximum input cap stabilisation residue class"
+    ],
+    "note": "T2, tüm endpointlerin [1,3^k−1] içinde olduğunu verdiğinden eşitlik e≡e′ mod 2^r artık e=e′ olur; sonlu tabloya gerek yok."
+  },
+  {
+    "id": "E21-16",
+    "checkpoint": "CP21",
+    "claim": "Her m,k,r için cap(m,k,r)≤2^(m−r) önermesi (2,1,3) ile çürür.",
+    "program_label": "[FAIL]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/02-cap-bound/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF"
+    ],
+    "note": "2^(m-r)<1 olduğunda tavan trivyal olarak 0; tanık m=2,k=1,r=3, cap=1."
+  },
+  {
+    "id": "E21-17",
+    "checkpoint": "CP21",
+    "claim": "Tüm m,k,r için geçerli mutlak sabit C bulunamaz: k=2 seçilirse maksimum yığın m ile sınırsız büyür.",
+    "program_label": "[FAIL], gerekçe yalnız 39 örneği",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/02-cap-bound/REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF"
+    ],
+    "note": "39 tek başına evrensel C’yi çürütmez; ancak sabit k=2 için ≥ceil((m−1)/6) (A3+A4 sayımı), böylece onarılmış ispat var."
+  },
+  {
+    "id": "E21-18",
+    "checkpoint": "CP21",
+    "claim": "CP21 m=25,26 için 11 eski uzatma satırının lift/merge/defect sayıları doğru hesaplanmıştır.",
+    "program_label": "[EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "CP24 11 satırın tümü coarse=fine[:N] kütle kaybı yüzünden yanlış; eski 221 satırlık tutarlar kanıt değil."
+  },
+  {
+    "id": "E21-19",
+    "checkpoint": "CP21",
+    "claim": "Gerçek histogramlar için radius-2 charging 221 farklı (m,s) satırındaki 33540 aralıkta ihlal göstermez.",
+    "program_label": "[EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "CP24 düzeltmesi sonrası 221 benzersiz satır, 33540 aralık, 18259 pozitif talepli, 0 ihlal; sonlu."
+  },
+  {
+    "id": "E21-20",
+    "checkpoint": "CP21",
+    "claim": "Her m≥2,1≤s<m ve 1≤a≤b≤m için Σ_[a,b]max(L_k,0)≤Σ_[max(a−1,2),min(b+2,m)]M_j önerilir.",
+    "program_label": "[CONJECTURE]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)",
+      "OpenAlex: Collatz Banach density sparsity reciprocal sum",
+      "Crossref: Garcia Tal A note on the generalized 3n+1 problem",
+      "arXiv: stopping time residue class; inverse tree density",
+      "Semantic Scholar: 3x+1 inverse tree density 1999 (429 erişim sınırı)"
+    ],
+    "note": "Klasik frekans ve ters-ağaç sayımı bunu kapsamaz; güçlü ama hâlâ sonlu, 3n−1 üzerinde de çalışabilir."
+  },
+  {
+    "id": "E22-01",
+    "checkpoint": "CP22",
+    "claim": "Her tek başlangıçlı parity-word w ve k≥1 için B_w asla 0 (mod 3) değildir.",
+    "program_label": "[PROOF] A4",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/04-cp22-adversarial-brainstorm-20260914/CP22_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF"
+    ],
+    "note": "w0=1 olduğundan mod 3 yalnız ilk B terimi kalır: B≡2^j (mod 3)≠0; kanıt çok kısa."
+  },
+  {
+    "id": "E22-02",
+    "checkpoint": "CP22",
+    "claim": "Yalnız gerçek destek ve tavanlara sahip histogram sınıfı radius-2 charging teoremi sağlamaz; yapay (20,3) tanığı 91 aralık ihlal eder.",
+    "program_label": "[FAIL] ve [EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/04-cp22-adversarial-brainstorm-20260914/01-attack/attack_witness.json",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "Gerçek Collatz kaynağı değil; (20,3) cap+destek+kütle+tamsayılık koşulunu sağlayan yapay tanık 91 ihlal bildirir; CP24 bu turda 91’i tekrar saymadı."
+  },
+  {
+    "id": "E22-03",
+    "checkpoint": "CP22",
+    "claim": "Radius-2 charging ile T6-propagated cap birleştirilmiş tümevarım altında kapalı değildir.",
+    "program_label": "[FAIL]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/04-cp22-adversarial-brainstorm-20260914/02-defend/defend_composite.py",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "W(4,2) child talep 16/3, arz 14/3; T6-propagated cap 4, gerçek cap 1."
+  },
+  {
+    "id": "E22-04",
+    "checkpoint": "CP22",
+    "claim": "(20,3)[14,16] için charging arz/talep oranı 29517649/28111980>1 olarak ölçülür.",
+    "program_label": "[EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/04-cp22-adversarial-brainstorm-20260914/CP22_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "CP24 18 sıcak-bölge satırı 210 eski satırın tekrarları; minimum oran kesin 29517649/28111980."
+  },
+  {
+    "id": "E22-05",
+    "checkpoint": "CP22",
+    "claim": "CP21 41 ve CP22 35 frekans satırı 76 ayrı parametre çiftidir.",
+    "program_label": "[EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/04-cp22-adversarial-brainstorm-20260914/CP22_REPORT.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "CP24 kesişimi 19: 41+35−19=57 farklı çift, 76 değil; sonlu işaret kontrolü iptal değil."
+  },
+  {
+    "id": "E22-06",
+    "checkpoint": "CP22",
+    "claim": "Yarıçap-1 charging her aralıkta doğru değildir ve L_k terimleri daima pozitif değildir.",
+    "program_label": "[FAIL]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/04-cp22-adversarial-brainstorm-20260914/CP22_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "(18,2)[14,14]: 3/35>4033/69615; s=1 L=0 fakat M>0; noktasal L_k≥0 da yanlış."
+  },
+  {
+    "id": "E23-01",
+    "checkpoint": "CP23",
+    "claim": "Her parity word için 2^m H_+^m(h)=3^k h+B_w afin bağıntısı geçerlidir.",
+    "program_label": "[PROOF] A1",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md",
+    "verdict": "KNOWN",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      },
+      {
+        "cite": "Böhm–Sontacchi, On the existence of cycles of given length (1978), bibliyografik kayıt; BİRİNCİL METİN AÇILMADI",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "DOĞRULANMADI",
+        "opened": false
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem and Its Generalizations (1985), dergi metadata; BİRİNCİL METİN AÇILMADI",
+        "url": "https://doi.org/10.2307/2322189",
+        "quote": "DOĞRULANMADI",
+        "opened": false
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF"
+    ],
+    "note": "Rozier–Terracol aynen 3^k/2^m katsayı ve yalnız parity worde bağlı kalan verir; +1 işaretli ofset klasik."
+  },
+  {
+    "id": "E23-02",
+    "checkpoint": "CP23",
+    "claim": "Aynı k tabakasında farklı tam uç sayısı dolu B_w mod 3^k sınıf sayısıdır ve en çok 2·3^(k−1) olur.",
+    "program_label": "[PROOF] A3+A4+count",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      },
+      {
+        "cite": "Bernstein–Lagarias, The 3x+1 Conjugacy Map (1996), yazar özeti",
+        "url": "https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/3x-1-conjugacy-map/6975BB4A8C46CF6842217043AAF9EC13",
+        "quote": "The map Φ mod 2^n induces a permutation Φ_n on Z/2^n Z.",
+        "opened": true
+      },
+      {
+        "cite": "Böhm–Sontacchi, On the existence of cycles of given length (1978), bibliyografik kayıt; BİRİNCİL METİN AÇILMADI",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "DOĞRULANMADI",
+        "opened": false
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF",
+      "Crossref: Collatz parity word endpoint collision occupied B residue class"
+    ],
+    "note": "Özel h kodlamasında T2+mod 3+birimsınıf sayımı; doluluk tamlığı iddiası yok; CP23 «publishable/plausibly new» öncelik taramasız overclaim."
+  },
+  {
+    "id": "E23-03",
+    "checkpoint": "CP23",
+    "claim": "Tüm x∈Z için H_{3n−1}(−x)=−H_{3n+1}(x).",
+    "program_label": "[PROOF]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF",
+      "arXiv: cycles 3x-1 sign conjugacy"
+    ],
+    "note": "İki dalda x→−x bir satır doğrudan; genel afin dönüşüm simetrisi."
+  },
+  {
+    "id": "E23-04",
+    "checkpoint": "CP23",
+    "claim": "Tüm uygun m,r,k için H_- kaynağı P^-_{m,k,r}(z)=P^+_{m,k,r}(3^k−z) ve Ecal^-(m,r)=Ecal^+(m,r).",
+    "program_label": "[PROOF] ve [EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem (1999), Theorem 1/Corollary 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "Theorem 1. The Banach density of P is zero. ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)",
+      "Crossref: 3x+1 cycle length 2^m-3^k Eliahou Steiner Simons de Weger Hercher",
+      "arXiv: cycles 3x-1; parity vector 3x+1",
+      "Lagarias math/0309224: Böhm Sontacchi, Steiner, Eliahou; math/0608208: Simons"
+    ],
+    "note": "Özel kaynak fonksiyoneli Ecal için m,r boyunca yapısal eşitlik; Rozier afin q ve Garcia yörünge seyreklik sonuçları bunu lafzen içermiyor; CP24 tam kapsamı netleştirir."
+  },
+  {
+    "id": "E23-05",
+    "checkpoint": "CP23",
+    "claim": "Ecal-özdeşliğine ve harita-körü hipotezlere dayanan tek başına monotonluk, 3n−1 üzerindeki 5→7→10→5 döngüsünü dışlayamaz.",
+    "program_label": "[PROOF]; [FAIL] Collatz zinciri",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem (1999), Theorem 1/Corollary 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "Theorem 1. The Banach density of P is zero. ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)",
+      "Crossref: 3x+1 cycle length 2^m-3^k Eliahou Steiner Simons de Weger Hercher",
+      "arXiv: cycles 3x-1; parity vector 3x+1",
+      "Lagarias math/0309224: Böhm Sontacchi, Steiner, Eliahou; math/0608208: Simons"
+    ],
+    "note": "5→7→10→5 3n−1; Ecal eşitliği tek başına döngüleri dışlamaz; haritaya özgü ek girdi yasaklanmış değildir."
+  },
+  {
+    "id": "E23-06",
+    "checkpoint": "CP23",
+    "claim": "m≤12 için r=2 ham Ecal(m,r) artışı, normalize sabit-r enerji sönümünü veya karışmayı çürütür.",
+    "program_label": "[FAIL] L2",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/01-cartograph/cartograph.md",
+    "verdict": "FLAWED",
+    "references": [
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values (2019/2022), özet",
+        "url": "https://arxiv.org/pdf/1909.03562",
+        "quote": "Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density).",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann, An Approximation of the Collatz Map and a Lower Bound for its Average Total Stopping Time (2024), özet",
+        "url": "https://arxiv.org/pdf/2402.03276",
+        "quote": "We extend this result to α=2(log(4/3))^−1 ≈ 6.952, which is the maximally possible value.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "OpenAlex: Collatz Banach density sparsity reciprocal sum",
+      "Crossref: Garcia Tal A note on the generalized 3n+1 problem",
+      "arXiv: stopping time residue class; inverse tree density",
+      "Semantic Scholar: 3x+1 inverse tree density 1999 (429 erişim sınırı)",
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "CP23 m≤12 r=2 ham enerji artışından asimptotik normalize sönüm yok sonucunu çıkardı; CP24 bunu geri aldı; sabit m+r diyagonali de sonlu."
+  },
+  {
+    "id": "E23-07",
+    "checkpoint": "CP23",
+    "claim": "Yoğunluk-1 tipik yörünge önermeleri tek bir kaçak yörüngeyi dışlamaz; 1999 Garcia–Tal her yörüngenin Banach yoğunluğunun 0 olduğunu kanıtladı.",
+    "program_label": "[PROOF] B1",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/02-barrier/barrier_analysis.md",
+    "verdict": "KNOWN",
+    "references": [
+      {
+        "cite": "Garcia–Tal, A note on the generalized 3n+1 problem (1999), Theorem 1/Corollary 1",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "Theorem 1. The Banach density of P is zero. ... Corollary 1. The Banach density of the orbit O(n) under H is zero.",
+        "opened": true
+      },
+      {
+        "cite": "Tao, Almost all orbits of the Collatz map attain almost bounded values (2019/2022), özet",
+        "url": "https://arxiv.org/pdf/1909.03562",
+        "quote": "Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density).",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann, An Approximation of the Collatz Map and a Lower Bound for its Average Total Stopping Time (2024), özet",
+        "url": "https://arxiv.org/pdf/2402.03276",
+        "quote": "We extend this result to α=2(log(4/3))^−1 ≈ 6.952, which is the maximally possible value.",
+        "opened": true
+      },
+      {
+        "cite": "Garcia–Tal 1999, girişte Lagarias 1985 sonucunun aktarımı (1985 birincil metni AÇILMADI)",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf",
+        "quote": "In a classical 1985 paper, Lagarias [Lag85] shows ... #{n∈N : n≤x, T^k(n)>n, ∀k≥1} ≤ c_1 x^(1−η).",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "OpenAlex: Collatz Banach density sparsity reciprocal sum",
+      "Crossref: Garcia Tal A note on the generalized 3n+1 problem",
+      "arXiv: stopping time residue class; inverse tree density",
+      "Semantic Scholar: 3x+1 inverse tree density 1999 (429 erişim sınırı)"
+    ],
+    "note": "Garcia–Tal 1999 birincil Theorem 1/Corollary 1: HER diverjan yörüngenin Banach yoğunluğu sıfır; Tao ve Inselmann hemen her için, tek yörünge değil; 1999 sonucu ham sayımdan kuvvetli fakat farklı nesne."
+  },
+  {
+    "id": "E23-08",
+    "checkpoint": "CP23",
+    "claim": "Uyumlu tüm sonlu parity word pencereleri 2-adik başlangıç verir; otomatik pozitif tam sayı başlangıç vermez.",
+    "program_label": "[PROOF] B2",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/02-barrier/barrier_analysis.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Bernstein–Lagarias, The 3x+1 Conjugacy Map (1996), yazar özeti",
+        "url": "https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/3x-1-conjugacy-map/6975BB4A8C46CF6842217043AAF9EC13",
+        "quote": "The map Φ mod 2^n induces a permutation Φ_n on Z/2^n Z.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF"
+    ],
+    "note": "∀m∃n ⇒ ∃n∀m geçersiz; 2-adik parite realizasyonu pozitif tam sayı olmayı zorlamaz."
+  },
+  {
+    "id": "E23-09",
+    "checkpoint": "CP23",
+    "claim": "Uzunluğu m ve ağırlığı k olan pozitif 3n+1 döngüsünde D=2^m−3^k>0, x=B_w/D∈Z ve periyot m’yi böler.",
+    "program_label": "[PROOF] döngü denklemi",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md",
+    "verdict": "KNOWN",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      },
+      {
+        "cite": "Simons–de Weger, Theoretical and computational bounds for m-cycles of the 3n+1-problem (2005), giriş",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "The cycle {1,2} is a 1-cycle, and in 1977 Steiner proved that no other 1-cycles exist. ... Simons proved the nonexistence of nontrivial 2-cycles.",
+        "opened": true
+      },
+      {
+        "cite": "Böhm–Sontacchi, On the existence of cycles of given length (1978), bibliyografik kayıt; BİRİNCİL METİN AÇILMADI",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "DOĞRULANMADI",
+        "opened": false
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), Böhm–Sontacchi 1978 kaydı; BİRİNCİL DEĞİL",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "one can effectively determine the 2^n rationals that are the solutions to each of these equations and check if they give cycles.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, Annotated Bibliography II (2000–2009), Simons kaydı; BİRİNCİL DEĞİL",
+        "url": "https://arxiv.org/pdf/math/0608208",
+        "quote": "there are no non-trivial 2-cycles for the 3x+1 function.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Crossref: 3x+1 cycle length 2^m-3^k Eliahou Steiner Simons de Weger Hercher",
+      "arXiv: cycles 3x-1; parity vector 3x+1",
+      "Lagarias math/0309224: Böhm Sontacchi, Steiner, Eliahou; math/0608208: Simons"
+    ],
+    "note": "Afin yineleme ve döngü koşulunun klasik rasyonel çevrim denklemi; Böhm–Sontacchi birincil PDF açılmadı, Rozier–Terracol birincil affine form ve döngü ayrımı açıldı; karşılaştırma bibliyografya düzeyinde."
+  },
+  {
+    "id": "E23-10",
+    "checkpoint": "CP23",
+    "claim": "Programın 212629 kelimelik sonlu taramasında D|B_w koşulunu 9 kelime geçer; tümü trivial döngü tekrarlarıdır.",
+    "program_label": "[EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      },
+      {
+        "cite": "Simons–de Weger, Theoretical and computational bounds for m-cycles of the 3n+1-problem (2005), giriş",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "The cycle {1,2} is a 1-cycle, and in 1977 Steiner proved that no other 1-cycles exist. ... Simons proved the nonexistence of nontrivial 2-cycles.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Crossref: 3x+1 cycle length 2^m-3^k Eliahou Steiner Simons de Weger Hercher",
+      "arXiv: cycles 3x-1; parity vector 3x+1",
+      "Lagarias math/0309224: Böhm Sontacchi, Steiner, Eliahou; math/0608208: Simons"
+    ],
+    "note": "212629 soyut kelimeden 9 tamsayı adayının hepsi trivial yörünge ve tekrarları raporlanır; evrensel döngü sınırı değil."
+  },
+  {
+    "id": "E23-11",
+    "checkpoint": "CP23",
+    "claim": "m,k≥1 için gcd(2^m−3^k,6)=1.",
+    "program_label": "[PROOF]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Crossref: 3x+1 cycle length 2^m-3^k Eliahou Steiner Simons de Weger Hercher",
+      "arXiv: cycles 3x-1; parity vector 3x+1",
+      "Lagarias math/0309224: Böhm Sontacchi, Steiner, Eliahou; math/0608208: Simons"
+    ],
+    "note": "3∤(2^m−3^k), 2∤(2^m−3^k) (k≥1)."
+  },
+  {
+    "id": "E23-12",
+    "checkpoint": "CP23",
+    "claim": "D|B_w ve pozitif bölüm bulunmasına rağmen adayın w kelimesini ayrıca sağlaması bağımsız ikinci elemeyi gerektirir.",
+    "program_label": "[PROOF] ancak koşulu eksik",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md",
+    "verdict": "FLAWED",
+    "references": [
+      {
+        "cite": "Bernstein–Lagarias, The 3x+1 Conjugacy Map (1996), yazar özeti",
+        "url": "https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/3x-1-conjugacy-map/6975BB4A8C46CF6842217043AAF9EC13",
+        "quote": "The map Φ mod 2^n induces a permutation Φ_n on Z/2^n Z.",
+        "opened": true
+      },
+      {
+        "cite": "Lagarias, The 3x+1 Problem: An Annotated Bibliography (1963–1999), Böhm–Sontacchi 1978 kaydı; BİRİNCİL DEĞİL",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "one can effectively determine the 2^n rationals that are the solutions to each of these equations and check if they give cycles.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Crossref: 3x+1 cycle length 2^m-3^k Eliahou Steiner Simons de Weger Hercher",
+      "arXiv: cycles 3x-1; parity vector 3x+1",
+      "Lagarias math/0309224: Böhm Sontacchi, Steiner, Eliahou; math/0608208: Simons"
+    ],
+    "note": "CP23 «D|B yetmez, ayrıca kelime öz-tutarlılığı gerek» dedi; CP24 parity-bijection kullanarak tamsayılık ⇒ öz-tutarlılık ispatladı."
+  },
+  {
+    "id": "E23-13",
+    "checkpoint": "CP23",
+    "claim": "5n+1 için gerçek bir 1→3→8→4→2→1 döngüsü bulunurken 118 sonlu monotonicity satırı ihlalsizdir.",
+    "program_label": "[PROOF] 5n+1 kontrolü",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/CP23_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Crossref: 3x+1 cycle length 2^m-3^k Eliahou Steiner Simons de Weger Hercher",
+      "arXiv: cycles 3x-1; parity vector 3x+1",
+      "Lagarias math/0309224: Böhm Sontacchi, Steiner, Eliahou; math/0608208: Simons"
+    ],
+    "note": "(1→3→8→4→2→1) beş basit adım; 118/118 sayımı evrensel karışma değil."
+  },
+  {
+    "id": "E24-01",
+    "checkpoint": "CP24",
+    "claim": "CP21 m=25,26 eski 11 satırın fine[:N] ile kesme hatası giderilince kütle korunur ve terim toplamı özdeşliği sağlanır.",
+    "program_label": "[EXACT COMPUTATION] + regresyon",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "11 CP21 satırının eski alanları truncation ile tam üretilir; doğru coarse[z]=Σ fine[z+jN] ve kutu başına transfer kontrolü."
+  },
+  {
+    "id": "E24-02",
+    "checkpoint": "CP24",
+    "claim": "CP24 tablosu 221 farklı satır, 33540 aralık, 18259 pozitif talepli aralık ve 0 radius-2 ihlali içerir.",
+    "program_label": "[EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/06-cp24-recovery-20260914/cp24-recovery/lead_verification.json",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "210 arşiv satırı bu tur baştan yörünge enumerate edilmedi; yeni 11 baştan, toplam 221 benzersiz."
+  },
+  {
+    "id": "E24-03",
+    "checkpoint": "CP24",
+    "claim": "Uzunluğu m olan ikili parity wordler mod 2^m başlangıç kalıntılarıyla birebirdir.",
+    "program_label": "[PROOF]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Bernstein–Lagarias, The 3x+1 Conjugacy Map (1996), yazar özeti",
+        "url": "https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/3x-1-conjugacy-map/6975BB4A8C46CF6842217043AAF9EC13",
+        "quote": "The map Φ mod 2^n induces a permutation Φ_n on Z/2^n Z.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF"
+    ],
+    "note": "Her m-step parity word 2^m başlangıç kalıntısını tek belirler: 2-adik sonlu permütasyonun doğrudan versiyonu."
+  },
+  {
+    "id": "E24-04",
+    "checkpoint": "CP24",
+    "claim": "w_0=1 ve x=bB_w/(2^m−3^k) tamsayı ise x w’yi izler, H_b^m(x)=x; pozitiflik için x>0 gerekir.",
+    "program_label": "[PROOF]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      },
+      {
+        "cite": "Bernstein–Lagarias, The 3x+1 Conjugacy Map (1996), yazar özeti",
+        "url": "https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/3x-1-conjugacy-map/6975BB4A8C46CF6842217043AAF9EC13",
+        "quote": "The map Φ mod 2^n induces a permutation Φ_n on Z/2^n Z.",
+        "opened": true
+      },
+      {
+        "cite": "Böhm–Sontacchi, On the existence of cycles of given length (1978), bibliyografik kayıt; BİRİNCİL METİN AÇILMADI",
+        "url": "https://arxiv.org/pdf/math/0309224",
+        "quote": "DOĞRULANMADI",
+        "opened": false
+      }
+    ],
+    "queries": [
+      "Crossref: 3x+1 cycle length 2^m-3^k Eliahou Steiner Simons de Weger Hercher",
+      "arXiv: cycles 3x-1; parity vector 3x+1",
+      "Lagarias math/0309224: Böhm Sontacchi, Steiner, Eliahou; math/0608208: Simons"
+    ],
+    "note": "Rozier affine yineleme + modüler kalıntı bijeksiyonu ile bilinen rasyonel cycle konstrüksiyonu; Böhm–Sontacchi birincil metni açılamadı."
+  },
+  {
+    "id": "E24-05",
+    "checkpoint": "CP24",
+    "claim": "Normalize ağırlıklı üst-bit enerji tam olarak Ecal(m,r)/2^(m−1) olur.",
+    "program_label": "[PROOF]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "J kuadratik homojen: Σ(n_k/2^(m−1))J(P_k/n_k)=Ecal/2^(m−1); CP23 yanlış yorumunu geri alır."
+  },
+  {
+    "id": "E24-06",
+    "checkpoint": "CP24",
+    "claim": "Sabit m’de H^m(h)<h iff (2^m−3^k)h>B_w; m=8 için 94/128 ve m=16 için 27823/32768 son-adım inişi sayılmıştır.",
+    "program_label": "[EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Rozier–Terracol, Paradoxical behavior in Collatz sequences (2026), giriş",
+        "url": "https://arxiv.org/pdf/2502.00948v5",
+        "quote": "For a sequence of j iterations with q odd terms ... T^j(n) = (3^q/2^j)n + E_j(n) ... This term only depends on ... the parity vector.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "OpenAlex: Collatz Banach density sparsity reciprocal sum",
+      "Crossref: Garcia Tal A note on the generalized 3n+1 problem",
+      "arXiv: stopping time residue class; inverse tree density",
+      "Semantic Scholar: 3x+1 inverse tree density 1999 (429 erişim sınırı)",
+      "arXiv: parity vector 3x+1 affine offset",
+      "Crossref: Böhm Sontacchi 1978 cycles; Lagarias 1985 generalizations",
+      "OpenAlex: Collatz parity vector affine offset",
+      "Lagarias math/0309224 + math/0608208 bibliyografya PDF"
+    ],
+    "note": "Rozier–Terracol birincil metni C_j<1 olduğu hâlde T^j(n)≥n olan örnekleri inceler; program yalnız m=8,16 penceresinde sayı üretir; tam Dh>B sınırı afin özdeşlik."
+  },
+  {
+    "id": "E24-07",
+    "checkpoint": "CP24",
+    "claim": "3n±1 yansıması için eşit J_r, yalnız farkların karelerinin permütasyonunu gerektirir; m=1’de h=1 sabit olabilir.",
+    "program_label": "[PROOF] düzeltme",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "m=1,h=1 yansıma sabit; doğru değişmez işaretli sibling farklar değil kareler; tüm modüler yöntemler elenmedi."
+  },
+  {
+    "id": "E24-08",
+    "checkpoint": "CP24",
+    "claim": "İhlalsiz satırlarda defect/M oranı hep 1’in üstündedir.",
+    "program_label": "[EXACT COMPUTATION] geri alma",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "CP22 iddiası defect/M daima 1 üstünde: (4,2) 9/17; CP24 düzeltti."
+  },
+  {
+    "id": "E21-21",
+    "checkpoint": "CP21",
+    "claim": "(18,2),k=14 üzerinde L_k=3/35>M_k+M_(k+1)=4033/69615; 210 satırlık tabloda radius-1 için 27 ihlal bulunur.",
+    "program_label": "[FAIL] / [EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "Noktasal L_k>M_k 46 tanık; radius-1 singleton L_k>M_k+M_(k+1) 8 tanık, toplam aralık 27; kavramlar birbirine karıştırılmamalı."
+  },
+  {
+    "id": "E21-22",
+    "checkpoint": "CP21",
+    "claim": "s=1 için tüm L_k=0 ama M_merge, (2,1) dışında ilk 23 s=1 satırın 22’sinde pozitiftir.",
+    "program_label": "[PROOF] (düzeltilmiş)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/03-cp21-source-monotonicity-20260914/CP21_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "s=1 tarafında korelasyon L=0 cebirsel; merge tarafı genellikle >0: 23 satırın 22’si; eski «her iki taraf sıfır» yanlıştı."
+  },
+  {
+    "id": "E23-14",
+    "checkpoint": "CP23",
+    "claim": "Sabit m+r diyagonalinde sonsuz sayıda (m,r) bulunduğu ve monoton enerjinin bu diyagonal boyunca bir limiti olduğu ileri sürülür.",
+    "program_label": "[PROOF] yorum",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/05-cp23-chain-kill-20260914/01-cartograph/cartograph.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "OpenAlex: Collatz source energy Fourier frequency monotonicity max entry cap",
+      "arXiv: affine Collatz; parity vector 3x+1",
+      "Crossref: Collatz source monotonicity windowed count inverse tree density",
+      "Zenodo: Collatz (ad-soyad gürültüsü, eşdeğer ifade bulunamadı)"
+    ],
+    "note": "CP23 sabit m+r diyagonali boyunca sınırsız monotone dizi limitinden söz eder; m,r≥1 ile bu diyagonal sonlu; CP24 düzeltmesi."
+  },
+  {
+    "id": "E24-09",
+    "checkpoint": "CP24",
+    "claim": "CP24 m≤14 pozitif 3n+1 kelime-adaylarında trivial çevrim dışı döngü bulunmadığını hesaplamıştır.",
+    "program_label": "[EXACT COMPUTATION]",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/bagimsiz-denetim/06-cp24-recovery-20260914/CP24_REPORT.md",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Simons–de Weger 2005, Corollary 2, sayfa 53–54",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "Corollary 2. K > 2.2564 · 10^8 [for a nontrivial m-cycle].",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Crossref: 3x+1 cycle length 2^m-3^k Eliahou Steiner Simons de Weger Hercher",
+      "arXiv: cycles 3x-1; parity vector 3x+1",
+      "Lagarias math/0309224: Böhm Sontacchi, Steiner, Eliahou; math/0608208: Simons"
+    ],
+    "note": "Yalnız pozitif 3n+1 için m≤14 çevrim taramasının dışlama gücü 2005 yayımlanmış K>2.2564·10^8 odd-step alt sınırının içinde kalır; − harita çevrimleri bu hükmün dışında."
+  }
+]

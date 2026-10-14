@@ -1,0 +1,25 @@
+**Lemma V.** (i) ve (ii) doğru. \(s_j\ge2\) için \(\lfloor s_j\log_2 3\rfloor\ge s_j+1\); son blokta da \(M>K\log_2 3\) eşitsizliği gereken daha güçlü alt sınırı verir. Her proper prefixte \(E_t\le\lfloor S_t\log_2 3\rfloor<S_t\log_2 3\), dolayısıyla \(\Delta_t<0\).
+
+(iii) **varlıksal anlamda** doğru: \(q\le K/2\) olan her \((K,M,q)\) için koridoru ihlal etmeyen bir kelime kuruluyor. Bu, *her* kelimenin geçtiği veya gerçek bir tamsayı döngüsü bulunduğu anlamına gelmez. Rotasyon boşluğu da yok: kurulan kelimenin pozitif rasyonel periyodik adayında \(\Delta_t<0\) ve pozitif affine sabit terim, her blok başlangıcının blok 0'dan büyük olduğunu gösterir; blok içindeki \(e=1\) adımları da değeri artırır. Böylece blok 0 gerçekten global minimumdur. **Tamsayılılık ise gösterilmemiştir.**
+
+**Dar rejim.** \(\beta=\log_2 3-1\) olsun. Son bloktan önce \(e_j\ge s_j+1\) zorunluluğu
+\[
+\Delta_{q-1}\ge\bigl[q-1-\beta(K-1)\bigr]\ln2
+\]
+verir. Ters yönde, \(q-1\le\beta(K-1)\) ise şu inşa *bütün* proper prefixleri çizginin altında tutar: \(s_0=K-q+1,\ e_0=s_0+1\); sonraki \(q-2\) blok \((s,e)=(1,2)\); son blok \(s=1,\ e=M-K-q+2\). Prefix farkları artar ve sonuncusu bile \(\le0\)'dır. Demek ki \(s=1\) bloklarının varlığı tek başına koridor elemesi sağlamaz.
+
+Buna karşılık **yalnız** \(2^M>3^K,\ M\ge K+q\) global koşulları kullanılırsa ek eleme vardır: \((K,M,q)=(200,320,120)\) bu koşulları sağlar, fakat her kelimede
+\[
+\Delta_{119}\ge\ln(2^{318}/3^{199})>119\ln(1+2^{-71}).
+\]
+Koridor bu üçlüyü eler.
+
+**Karar oyu — hangi “global koşul” kullanıldığı belirleyici.** Gerçek döngüde global minimum \(n_0\ge X\) koşulu da hesaba katılıyorsa zaten
+\[
+0<M\ln2-K\ln3\le K\ln(1+1/(3X)).
+\]
+Dar rejimde \(q=92,\ldots,120\) için \(K<240\). Bu aralıkta \(2^M>3^K\) için en küçük sol taraf yaklaşık \(0{,}0051985\), sağ taraf ise \(3{,}38\cdot10^{-20}\)'den küçüktür. **Dolayısıyla bu aralıkta global koşul dar rejimi zaten boşaltır.** Oyum: tam \(X\)-global koşula göre **X-A → PARK/KILL; dar rejim → PARK/KILL**. Global koşul yalnız \(2^M>3^K\) diye zayıflatılırsa dar rejim için oy **GO** olur.
+
+**DOĞRULANMADI:** Gerçek döngülerde \(q/K>1/2\)'yi genel olarak dışlayan bir literatür sonucu burada teyit edilmedi.
+
+CP27_XA_AUDIT_20260923_COMPLETE

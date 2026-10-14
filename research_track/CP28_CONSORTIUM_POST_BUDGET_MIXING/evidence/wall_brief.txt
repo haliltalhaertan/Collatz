@@ -1,0 +1,18 @@
+ROLE MARKER: CP28_WALL_20260923
+
+Konsorsiyum "DUVAR" turu. CP28'de sıralanan ilk 5 teori derin incelendi, hepsi aynı duvara çarptı:
+ - T10 Brown invarians: j≤m Terras+Donsker (bilinen); j>m tam parite TV'si destek engeliyle imkânsız (d_TV≥1−2^{m−j}); (1+δ)m CLT 1–2 haftada değil. PARK.
+ - T3 tehlike yasası: exact m=16..24 hesabında sistematik sapma yok (z-rms 0.5–2.5, işaret kararsız). PARK/KILL.
+ - T7 entropi borcu: valuation-silindir bijeksiyonu + Cramér (I*=0.05498) → tautoloji. KILL.
+ - T9 ters ağaç 3-adik basınç: transfer matrisinin sütun toplamları sabit → ρ=3^{s−1}Σ2^{−as}, h'den bağımsız; 3-adik bilgi Perron üssünü değiştirmez (Applegate–Lagarias I γ=.643, II γ=.81; Krasikov–Lagarias 0.84 — kazanım pruning/Krasikov eşitsizliklerinden). KILL.
+ - T6 ön/son bit kilitlenmesi: exact test m=18..26, ρ=j/m∈{0.63,0.70,0.90}, b=4, vmax=5, (S_j, bit-uzunluğu) tabakalı permütasyon null'u: excess MI ≤ 4e-5 bit, m ile küçülüyor, en büyük iki ölçekte p≥0.09. Önceden yazılmış kill kriteri sağlandı. KILL.
+
+DUVAR (ortak teşhis): Terras bijeksiyonu ilk ~m bit/adımı (valuation toplamı ≤ bit uzunluğu) BEDAVA ve exact rastgele verir → bu bölgedeki her "yeni" istatistik tautolojidir. Bütçenin ötesi (j>m, "post-budget") ise tam parite kelimesi için rastgelelik imkânsız, özet istatistikler için Collatz-zor görünür. Bilinen tek köprüler: Tao 2019 (Syracuse rastgele değişkenlerinin 3-adik karışımı, almost-all), Inselmann 2024 (density-1 LLN zarfı ~4.82m), Krasikov/Applegate–Lagarias (ters ağaç eşitsizlikleri), Baker/LMN (döngüler).
+
+GÖREV:
+1. Duvarın tam matematiksel ifadesi: "post-budget" bölgede hangi bilgi eksik? Tek cümlelik bir "eksik lemma" yaz (ör. "U^{m}(x)'in sonraki δm valuation'ı, x'in ilk m bitinden bağımsız olarak ... dağılır" gibi) ve bunun Collatz'a ne kadar yakın olduğunu değerlendir.
+2. Duvarı BİLİNEN köprülerden biriyle aşmayı deneyen 3 YENİ teori (A, B, C): her biri için fikir (3–5 satır), hangi köprüyü kullandığı, ilk küçük exact test, kısmi başarının neye benzediği, literatür çakışma riski (bilmiyorsan "BİLMİYORUM"; kaynak uydurma). En az biri döngü/ıraksama dışı, en az biri ters ağaç/Krasikov hattını genişleten, en az biri cesur olsun.
+3. Kalan listeden kısa oy (GO/PARK/KILL, tek satır): T12 "rekor yörüngelerde iki büyüme stratejisi", T5 "3x+1 içinde seyrek evrensel hesaplama (sabit modülde Turing gömme)".
+
+Türkçe, kısa. Son satır tam olarak:
+CP28_WALL_20260923_COMPLETE

@@ -1,0 +1,21 @@
+**1. Koordinatör önerisi: DEĞİŞTİR.**  
+\(b=+1\) için \(S_t=\sum_{i\le t}a_i\), \(E_t=2^{S_t}-3^t\) ve \(C_t=\sum_{j<t}3^{t-1-j}2^{S_j}\) olsun. Minimumdan başlayan bir döngüde ilk \(E_t>0\) anında \(E_t n_{\min}\le C_t\). Dolayısıyla \(n_{\min}\ge X\), erken geçişi *kolaylaştırmaz*; küçük \(C_t\) için geciktirir. Öte yandan küçük \(k\)’de tam döngüye kadar gecikmeyi de dışlayabilir. Bu iki etkiyi ayıran exact test yararlı; fakat «\(X\) büyüyünce \(S^*/k\ll1\)» beklentisini desteklemiyorum.
+
+**2. Sonraki checkpoint için iki yön**
+
+**Yön A — Tam-döngü geçişine karşı örnek. [PROOF]**  
+Her \(X\ge1\) için, \(k\ge6X\) alınsın. \(1\le j<k\) için \(S_j=\lfloor j\log_2 3\rfloor\), \(S_k=\lceil k\log_2 3\rceil\) seçimi, \(b=+1\) için pozitif, primitive bir *rasyonel* döngü adayı verir; \(n_{\min}>k/6\ge X\), fakat ilk \(E_t>0\) tam \(t=k\)’dedir. Çünkü bütün proper prefix’lerde \(2^{S_j}<3^j\), ayrıca \(B>k3^{k-1}/2\) ve \(0<D<3^k\).  
+**COLLAPSE:** Bu, \(D\mid B\) testi değil; integrality filtresi uygulanmamış adaylar hakkındaki erken-geçiş beklentisini çürüten bir no-go sonucudur. **Sınır:** Tamsayı döngüleri hakkında sonuç vermez; \(3n-1\) döngülerine uygulanmaz. Listelenen literatürde bu özgül inşanın yeniliği **DOĞRULANMADI**. **En ucuz exact test:** \(k=256,\ X=128\): doğrudan \(B,D\) hesabı \( \lfloor B/D\rfloor=326\), ilk geçiş \(256\). **Kill:** İspatta veya bu exact hesapta hata bulunması. **Başarı olasılığı:** 0,99; **maliyet:** düşük.
+
+**Yön B — İlk geçiş için gerekli eşitsizlik. [PROOF]**  
+\(b=+1\), \(n_{\min}\ge X\) ve ilk pozitif \(E_t\) anı \(t\) ise, önceki prefix’ler için \(2^{S_j}<3^j\) olduğundan
+\[
+X\bigl(2^{S_t}-3^t\bigr)\le C_t<t3^{t-1}.
+\]
+Özellikle \(D_t=2^{\lceil t\log_2 3\rceil}-3^t\) için **\(XD_t<t3^{t-1}\) gereklidir**. Bu, \(S^*/k\) için üst sınır değil, izin verilen ilk geçiş zamanları için exact bir elek verir. **COLLAPSE:** Tam-kelime integrality’sinden değil, minimumun *proper-prefix* eşitsizliklerinden gelir; \(D\mid B\) bilinse de ayrı koşuldur. Hercher’in minimum sayısı sonuçlarıyla aynı nicelik değildir; Steiner/Simons–de Weger/Eliahou’ya göre özgül yeniliği **DOĞRULANMADI**. **En ucuz exact test:** \(X=2^{71}\), \(1\le t\le10\,000\) için tamsayılarla gerekli koşulu tara; bu aralıkta izinli \(t\) çıkmadı. **Kill:** Eleğin mevcut çevrim sınırlarıyla birleştirildiğinde yeni bir dışlama üretmemesi; o durumda yalnız lemma olarak sakla. **Başarı olasılığı:** lemma için 0,99, güçlü çevrim sınırı için 0,1; **maliyet:** düşük.
+
+**3. Oy:** 1 — Yön A (beklentiyi kesin sınırlar); 2 — Yön B (geçerli, fakat gücü belirsiz elek); 3 — koordinatörün CP27’si, yalnızca \(k\) ve global gap’e göre katmanlandırılmış bir test olarak.
+
+**4. Olası en büyük metodolojik hata:** Küçük rasyonel adaylardaki geçiş dağılımını, devasa minimumlu *tamsayı* döngü adaylarının dağılımına taşıma eğilimi. Yön A, minimum eşiğinin tek başına bu boşluğu kapatmadığını gösteriyor. Sonlu tarama bu ayrımı teşhis edebilir; teorem yerine geçmez.
+
+CP27_CONSORTIUM_R1_20260923_COMPLETE

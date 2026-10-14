@@ -1,0 +1,30 @@
+**[PROOF — bellek kararı]** `free -g` çıktısında 15 GiB toplam, yaklaşık 14 GiB kullanılabilir bellek vardı. Özgün FFT aktarımının, Fourier dizileri ve çarpım ara dizisi dâhil, **s=17 için en az yaklaşık 6,1 GiB; s=18 için en az 18,3 GiB** tepe bellek gerektirdiğini hesapladım. Geçici tahsisler bu alt sınırları artırır. Verilen s=16 süresinden ölçeklenen süreler sırasıyla yaklaşık 95 ve 305 saniyedir; s=18 özgün FFT hesabını **çalıştırmadım**.
+
+Yerine, geometrik çekirdeğin kararlı ters yönlü bağıntısını kullanan, FFT’siz ve kırpmasız float64 aktarımı uyguladım; **float32 kullanılmadı**. s=18’e kadar çalışmanın ölçülen tepe belleği yaklaşık **5,0 GiB**, toplam süresi **11,8 saniye** oldu. Kod ve ayrıntılı tablo cwd’dedir: `cp29_numeric.py`, `cp29_numeric.json`.
+
+| s | χ_s | E_s | 3^s·max p_s |
+|---:|---:|---:|---:|
+| 10 | 5,865789026498 | 0,467387417584 | 84,17694 |
+| 16 | 8,684947712648 | 0,471351643393 | 960,34287 |
+| 17 | 9,156767868074 | 0,471820155426 | 1440,57273 |
+| 18 | 9,629001325254 | 0,472233457180 | 2160,91293 |
+
+**[PROOF — sayısal kontrollerin kapsamı]** s≤10’da 60 basamaklı `mpmath` karşılaştırmasında en büyük gözlenen *E_s* farkı **3,53·10⁻¹⁵** idi. Özgün FFT yöntemini aynı aralıkta ayrıca denedim: negatif giriş sayısı **sıfır**, dolayısıyla negatifleri kırpmanın ölçülen χ etkisi **sıfır**; kırpılmış FFT χ değerinin yüksek duyarlıklı değerden en büyük farkı **1,81·10⁻¹⁴**. s≥7’de `2^{-φ}` float64’te sıfıra iner; atlanan geometrik ağırlık kuyruğu en çok yaklaşık `2⁻¹⁰⁷⁴` mertebesindedir. Yeni aktarımda negatif değer oluşmadı veya kırpılmadı.
+
+**[PROOF-with-gap: standart IEEE float64 ve belirtilen kayan nokta toplama modeli varsayılıyor]** JSON’daki muhafazakâr hata hesabı, s≤18 için *E_s* mutlak hatasını en çok **3,8·10⁻⁷** olarak sınırlar; bu, belirli bir BLAS uygulamasına yönelik biçimsel sertifika değildir. Hem gözlenen yüksek duyarlık farkları hem bu ihtiyatlı sınır, 10⁻³ mertebesindeki değişimleri yuvarlama veya underflow ile açıklamaktan çok uzaktır. Ayrıca s=6→7’de küçük bir **düşüş** vardır; bütün dizinin monoton arttığı iddia edilmemelidir.
+
+**[PROOF — çift katkıları]** Aynı **gerçek A-kelimesini** taşıyan çiftlerin ölçekli katkısı tam **1**’dir. İlk ayrılma konumu *j* olanların χ_s’ye ölçekli katkısı **E_{s−j+1}**’dir: ortak önekten sonra çarpışma sorusu kalan kelimeye iner. Gerçek A-kelimelerini doğrudan sayarak s≤3’te kontrol ettim; en büyük fark **4,2·10⁻¹²**, kesilen kelimelerin belgelenmiş üst sınırı **1,5·10⁻¹⁰** idi. Örneğin s=3’te aynı kelime katkısı 1; j=1,2,3 katkıları sırasıyla **0,461574680341; 0,476190476190; 0,666666666667**. Ayrı bir doğrudan olasılık aktarımı ve pozitif lif-kare özdeşliği s≤8’de en çok yaklaşık **2·10⁻¹⁵** farkla denetlendi. JSON, bütün s≤18 için ayrılma dökümünü içerir.
+
+**[CONJECTURE — yalnız keşifsel uyum]** Sabit, `a+b/s`, `a+b·log s`, `a+b/log s` ve `a+b·s⁻¹ᐟ²` modellerinin RMSE değerleri şöyledir; katsayılar ve en büyük kalıntılar JSON’dadır.
+
+| Uyum aralığı | sabit | 1/s | log s | 1/log s | 1/√s |
+|---|---:|---:|---:|---:|---:|
+| 3–16 | 0,00266 | 0,00105 | 0,000693 | 0,00107 | 0,000854 |
+| 10–16 | 0,00133 | 0,0000851 | 0,0000140 | 0,0000668 | 0,0000410 |
+| 10–18 | 0,00157 | 0,000104 | 0,0000361 | 0,0000761 | 0,0000416 |
+
+Başlangıç ve bitiş aralığı değişince göreli uyum da değişiyor. **Sonlu veri asimptotiği kararlaştırmaz:** ne `sup E_s<∞`, ne `χ_s=O(s)`, ne de `E_s→∞` bu tablodan çıkıyor. İspat açısından **en zayıf eksik eşitsizlik**, pozitif lif-kare toplamı olan `E_s` için s’den bağımsız bir üst sınırdır.
+
+**[PROOF — kaynak kontrolü]** Tao’nun [birincil metnini](https://arxiv.org/pdf/1909.03562) açıp denetledim: sonlu Syracuse değişkeni **(1.22)**’de, sorudaki ileri 3-adik seri **Remark 1.13, (1.25)** civarındadır. Dolayısıyla sorudaki “Def. 1.8” yer gösterimi doğru değildir; metindeki eşdeğer dağılım, kelime sırasının ters çevrilmesiyle elde edilir.
+
+CP29_NUMERIC_20260923_COMPLETE

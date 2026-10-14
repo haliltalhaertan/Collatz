@@ -1,0 +1,696 @@
+[
+  {
+    "id": "25-01",
+    "checkpoint": "CP25",
+    "claim": "Uzunluğu m ve k tek adımı olan işaretli kelimenin periyodik adayı x=bB/(2^m−p^k) olur.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Rukhin, dual-radix modular division (arXiv:1506.07622), abstract",
+        "url": "https://export.arxiv.org/api/query?id_list=1506.07622",
+        "quote": "This division algorithm yields two novel methods for testing the integrality of the Böhm-Sontacchi numbers.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Böhm Sontacchi cycles of given length parity vector residue class",
+      "3x-1 negative Collatz cycles 1 5 17",
+      "2^m-3^k cycle integrality affine offset Rukhin"
+    ],
+    "note": "Böhm–Sontacchi formülünün doğrudan açılımı."
+  },
+  {
+    "id": "25-02",
+    "checkpoint": "CP25",
+    "claim": "D|B olan her tam sayı aday verilen parite kelimesini gerçekleştirir; b işaretinden bağımsızdır.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_REPORT.md",
+    "verdict": "KNOWN",
+    "references": [
+      {
+        "cite": "Rukhin, dual-radix modular division (arXiv:1506.07622), abstract",
+        "url": "https://export.arxiv.org/api/query?id_list=1506.07622",
+        "quote": "This division algorithm yields two novel methods for testing the integrality of the Böhm-Sontacchi numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024), Proposition 2.4 (cites Terras/Everett)",
+        "url": "https://arxiv.org/html/2402.03276v3",
+        "quote": "the push-forward measure of the uniform measure on [M ... M+2^N) under the map m↦(p(m)_i)_{0≤i<N} is the uniform measure on {0,1}^{[0...N)}.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Böhm Sontacchi cycles of given length parity vector residue class",
+      "3x-1 negative Collatz cycles 1 5 17",
+      "2^m-3^k cycle integrality affine offset Rukhin"
+    ],
+    "note": "Klasik kelime ↔ 2^m kalıntı sınıfı; negatif n ve p için aynı elementer modüler kanıt."
+  },
+  {
+    "id": "25-03",
+    "checkpoint": "CP25",
+    "claim": "m≤22 her p∈{3,5,7} için 4.194.303 kelimede p=3,+ için 1, 3,− için 3, 5,+ için 3 pozitif primitive çevrim bulunur.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Böhm Sontacchi cycles of given length parity vector residue class",
+      "3x-1 negative Collatz cycles 1 5 17",
+      "2^m-3^k cycle integrality affine offset Rukhin"
+    ],
+    "note": "Kelime satırları farklı primitive çevrim sayısı değildir; yukarıdaki üç çevrim sınıfı dışında keşif iddiası yok."
+  },
+  {
+    "id": "25-04",
+    "checkpoint": "CP25",
+    "claim": "p=3,5,7 ve m≤22 C1 öncülünden geçip D∤B olan kelime sayısı 0; p=3 m≤22 için PB ters örneği 0 (401.423 nonintegral primitive).",
+    "program_label": "EXACT/OPEN-NONTRIVIAL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_C1_LIFT_COHERENCE_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz product barrier oriented lift h_r cyclic residues",
+      "Bohm Sontacchi modular division prefix integrality Rukhin",
+      "3x-1 cycles rational parity words product inequality"
+    ],
+    "note": "Sınırlı hesap; evrensel sonuç değil."
+  },
+  {
+    "id": "25-05",
+    "checkpoint": "CP25",
+    "claim": "Bütün rotasyonlarda q_r≥h_r öncülü A|B_0 sonucunu verir (C1), fakat yalnızca m≤22 seviyesinde test edilmiştir.",
+    "program_label": "OPEN-NONTRIVIAL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_C1_LIFT_COHERENCE_REPORT.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Rukhin, dual-radix modular division (arXiv:1506.07622), abstract",
+        "url": "https://export.arxiv.org/api/query?id_list=1506.07622",
+        "quote": "This division algorithm yields two novel methods for testing the integrality of the Böhm-Sontacchi numbers.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz product barrier oriented lift h_r cyclic residues",
+      "Bohm Sontacchi modular division prefix integrality Rukhin",
+      "3x-1 cycles rational parity words product inequality"
+    ],
+    "note": "Teorem DEĞİL; negatif arama, eşdeğerlik görülmedi; Rukhin integrality testleri mevcut. CP26 rotayı öldürüyor."
+  },
+  {
+    "id": "25-06",
+    "checkpoint": "CP25",
+    "claim": "Nonintegral primitive kelimelerde PB+ ürün <2^m veya PB− ürün >2^m varsayılırsa C1 çıkar.",
+    "program_label": "PROVED-REDUCTION/PB-OPEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_C1_LIFT_COHERENCE_REPORT.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Rukhin, dual-radix modular division (arXiv:1506.07622), abstract",
+        "url": "https://export.arxiv.org/api/query?id_list=1506.07622",
+        "quote": "This division algorithm yields two novel methods for testing the integrality of the Böhm-Sontacchi numbers.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz product barrier oriented lift h_r cyclic residues",
+      "Bohm Sontacchi modular division prefix integrality Rukhin",
+      "3x-1 cycles rational parity words product inequality"
+    ],
+    "note": "İma elementer monotoni; PB eşitsizliği kanıtlanmadı, bağımsız koşul ise aranabilir."
+  },
+  {
+    "id": "25-07",
+    "checkpoint": "CP25",
+    "claim": "Sabit full gap kelimesinde rotasyon başına taşımalar u_r ∈{0,1} ya da {−(p−1),…,1} olup PB taşıma çarpım eşitsizliğine indirgenir.",
+    "program_label": "PROOF/OPEN",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP25_SIGN_SENSITIVE_CYCLE_PILOT/CP25_C1_LIFT_COHERENCE_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [],
+    "queries": [
+      "Collatz product barrier oriented lift h_r cyclic residues",
+      "Bohm Sontacchi modular division prefix integrality Rukhin",
+      "3x-1 cycles rational parity words product inequality"
+    ],
+    "note": "Cebirsel yeniden parametreleme, çarpım eşitsizliği kanıtı değil."
+  },
+  {
+    "id": "26-01",
+    "checkpoint": "CP26",
+    "claim": "Pozitif periyodik rasyonel 3x±1 gap adayı x0<2^(m+1) koşulunu sağlar.",
+    "program_label": "PROOF (LMN 1995 + exact)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP26_COLLAPSE_AND_INTERNAL_RESONANCE/CP26_REPORT.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Laurent–Mignotte–Nesterenko (1995), J. Number Theory 55, Corollary 2",
+        "url": "https://doi.org/10.1006/jnth.1995.1141",
+        "quote": "DOĞRULANMADI: Corollary 2 sayısal sabiti 24.34 ve h_i seçimi birincil tam metinden doğrulanamadı.",
+        "opened": false
+      },
+      {
+        "cite": "Rukhin, dual-radix modular division (arXiv:1506.07622), abstract",
+        "url": "https://export.arxiv.org/api/query?id_list=1506.07622",
+        "quote": "This division algorithm yields two novel methods for testing the integrality of the Böhm-Sontacchi numbers.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "2^m-3^k Laurent Mignotte Nesterenko cycle small denominator",
+      "Collatz parity vector canonical residue 2^(m+1) integrality",
+      "cycle initial integer upper bound parity word 2^m"
+    ],
+    "note": "B≤2^(m−k)(3^k−2^k) ve |2^m−3^k|>(3^k−2^k)/2^(k+1) iddia ediliyor; LMN nicel özel hali birincil kaynaktan DOĞRULANMADI, dolayısıyla koşullu/bağımsız yayın teoremi diye sunulamaz."
+  },
+  {
+    "id": "26-02",
+    "checkpoint": "CP26",
+    "claim": "k=1..17012 için en yakın 2^m değerlerinde 34024 tamsayı karşılaştırması gap alt sınırını ihlal etmez.",
+    "program_label": "EXACT (review)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP26_COLLAPSE_AND_INTERNAL_RESONANCE/CP26_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "2^m-3^k Laurent Mignotte Nesterenko cycle small denominator",
+      "Collatz parity vector canonical residue 2^(m+1) integrality",
+      "cycle initial integer upper bound parity word 2^m"
+    ],
+    "note": "Tam kod/34024 karşılaştırma için ayrı sertifika bu CP26 klasöründe yok; review raporu aktarımı."
+  },
+  {
+    "id": "26-03",
+    "checkpoint": "CP26",
+    "claim": "Sabit tam gap kelimesinde bütün exact yerel 2-adik realizability filtreleri D|B sağlandıktan sonra ek engel koymaz.",
+    "program_label": "PROOF/COLLAPSE",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP26_COLLAPSE_AND_INTERNAL_RESONANCE/CP26_REPORT.md",
+    "verdict": "KNOWN",
+    "references": [
+      {
+        "cite": "Rukhin, dual-radix modular division (arXiv:1506.07622), abstract",
+        "url": "https://export.arxiv.org/api/query?id_list=1506.07622",
+        "quote": "This division algorithm yields two novel methods for testing the integrality of the Böhm-Sontacchi numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024), Proposition 2.4 (cites Terras/Everett)",
+        "url": "https://arxiv.org/html/2402.03276v3",
+        "quote": "the push-forward measure of the uniform measure on [M ... M+2^N) under the map m↦(p(m)_i)_{0≤i<N} is the uniform measure on {0,1}^{[0...N)}.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "2^m-3^k Laurent Mignotte Nesterenko cycle small denominator",
+      "Collatz parity vector canonical residue 2^(m+1) integrality",
+      "cycle initial integer upper bound parity word 2^m"
+    ],
+    "note": "CP25 integrality→realizability zaten kanıtlıyor; bütün local predikatlar D|B ile eşdeğerdir demek yanlış."
+  },
+  {
+    "id": "26-04",
+    "checkpoint": "CP26",
+    "claim": "Carry-band m≤48 stresinde işaret ayrımı N≥28 için sıfıra iner; CRT derinlik m≤16 kontrolde sıfır hata bildirilir.",
+    "program_label": "EXACT/KILL/PARK",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP26_COLLAPSE_AND_INTERNAL_RESONANCE/CP26_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "2^m-3^k Laurent Mignotte Nesterenko cycle small denominator",
+      "Collatz parity vector canonical residue 2^(m+1) integrality",
+      "cycle initial integer upper bound parity word 2^m"
+    ],
+    "note": "Sadece seçilen stres ve CRT tanımları için; 3-adik CRT üzerinden yeni Archimedean sınır ihtimalini dışlamaz."
+  },
+  {
+    "id": "26-05",
+    "checkpoint": "CP26",
+    "claim": "K=2..18 rasyonel periyodik aday taramasında 2.532.524 örnek incelenip b=+ için ilk geçişin ortanca S*/K oranı yaklaşık 0,86–1,0 bulunur.",
+    "program_label": "EXACT/PARK",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP26_COLLAPSE_AND_INTERNAL_RESONANCE/evidence/resonance_scan_results_K2_18.json",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz local minima cycle prefix corridor X",
+      "Hercher reciprocal sum cycle length minimum 2023",
+      "Simons de Weger minimum 3x+1 m cycles",
+      "Steiner Eliahou 2^m-3^k local minima"
+    ],
+    "note": "D|B uygulanmamış; gerçek tamsayı döngülerine genellenemez."
+  },
+  {
+    "id": "26-06",
+    "checkpoint": "CP26",
+    "claim": "En küçük yörünge öğesinden başlayan pozitif döngüde pozitif prefix farkı Δ_t varsa Δ_t<t ln(1+1/X) (n_min≥X).",
+    "program_label": "PROOF (A)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP26_COLLAPSE_AND_INTERNAL_RESONANCE/CP26_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Hercher (2023), There are no Collatz m-Cycles with m≤91, Theorem 23 and Corollary 29",
+        "url": "https://arxiv.org/pdf/2201.00406v3",
+        "quote": "we prove that m ≥ 92. ... Corollary 29. If X0 ≥ 1536 · 2^60 = 3 · 2^69 then every nontrivial cycle contains at least K > 1.375 · 10^11 odd numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Simons–de Weger (2005), Acta Arith. 117, introduction",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "We call a cycle an m-cycle if the numbers in it appear in m sequences, each consisting of an increasing subsequence of odd numbers, followed by a decreasing subsequence of even numbers.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz local minima cycle prefix corridor X",
+      "Hercher reciprocal sum cycle length minimum 2023",
+      "Simons de Weger minimum 3x+1 m cycles",
+      "Steiner Eliahou 2^m-3^k local minima"
+    ],
+    "note": "Ürün/monotonluk hesabı; minimum/reciprocal-sum şeması Hercher ve Simons–de Weger çizgisinde."
+  },
+  {
+    "id": "26-07",
+    "checkpoint": "CP26",
+    "claim": "İlk iç alt geçişe ilişkin rezonansın büyük X ile erkenleşeceği önerisi ispatlanmış değildir.",
+    "program_label": "CONDITIONAL/PARK",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP26_COLLAPSE_AND_INTERNAL_RESONANCE/CP26_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz local minima cycle prefix corridor X",
+      "Hercher reciprocal sum cycle length minimum 2023",
+      "Simons de Weger minimum 3x+1 m cycles",
+      "Steiner Eliahou 2^m-3^k local minima"
+    ],
+    "note": "CP27 256-adım rasyonel karşıörnekle erken geçiş bekleyişini rasyonel rejimde çürütür."
+  },
+  {
+    "id": "27-01",
+    "checkpoint": "CP27",
+    "claim": "K=256, X=128 için periyodik pozitif rasyonel kelimede ⌊B/D⌋=326 ve ilk 2^S>3^t geçişi t=256 olur.",
+    "program_label": "PROOF/EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP27_CONSORTIUM_PREFIX_CORRIDOR/evidence/r1_coordinator_checks.json",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz local minima cycle prefix corridor X",
+      "Hercher reciprocal sum cycle length minimum 2023",
+      "Simons de Weger minimum 3x+1 m cycles",
+      "Steiner Eliahou 2^m-3^k local minima"
+    ],
+    "note": "n_min>X iken erken geçiş genellemesini karşılar; D|B sağlandığı iddia edilmiyor."
+  },
+  {
+    "id": "27-02",
+    "checkpoint": "CP27",
+    "claim": "Pozitif işaret ve n_min≥X için her Δ_t>0 prefixte 0<Δ_t<t ln(1+1/X) olur.",
+    "program_label": "PROOF",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP27_CONSORTIUM_PREFIX_CORRIDOR/CP27_REPORT.md",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Hercher (2023), There are no Collatz m-Cycles with m≤91, Theorem 23 and Corollary 29",
+        "url": "https://arxiv.org/pdf/2201.00406v3",
+        "quote": "we prove that m ≥ 92. ... Corollary 29. If X0 ≥ 1536 · 2^60 = 3 · 2^69 then every nontrivial cycle contains at least K > 1.375 · 10^11 odd numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Simons–de Weger (2005), Acta Arith. 117, introduction",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "We call a cycle an m-cycle if the numbers in it appear in m sequences, each consisting of an increasing subsequence of odd numbers, followed by a decreasing subsequence of even numbers.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz local minima cycle prefix corridor X",
+      "Hercher reciprocal sum cycle length minimum 2023",
+      "Simons de Weger minimum 3x+1 m cycles",
+      "Steiner Eliahou 2^m-3^k local minima"
+    ],
+    "note": "Tam periyot versiyonunun ürün/reciprocal-sum sınırına çok yakın; bütün prefixte uygulanması özel bir yeniden kullanım, yayınlanmış birebir öncelik doğrulanmadı."
+  },
+  {
+    "id": "27-03",
+    "checkpoint": "CP27",
+    "claim": "q≤K/2 olan dengeli run bloklarında her proper blok-prefix Δ_t<0 seçilebildiği için pozitif-prefix koridor testi varlıksal olarak boş kalabilir (Lemma V).",
+    "program_label": "PROOF/EXACT 15/15",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP27_CONSORTIUM_PREFIX_CORRIDOR/CP27_REPORT.md",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Simons–de Weger (2005), Acta Arith. 117, introduction",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "We call a cycle an m-cycle if the numbers in it appear in m sequences, each consisting of an increasing subsequence of odd numbers, followed by a decreasing subsequence of even numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Hercher (2023), There are no Collatz m-Cycles with m≤91, Theorem 23 and Corollary 29",
+        "url": "https://arxiv.org/pdf/2201.00406v3",
+        "quote": "we prove that m ≥ 92. ... Corollary 29. If X0 ≥ 1536 · 2^60 = 3 · 2^69 then every nontrivial cycle contains at least K > 1.375 · 10^11 odd numbers.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz local minima cycle prefix corridor X",
+      "Hercher reciprocal sum cycle length minimum 2023",
+      "Simons de Weger minimum 3x+1 m cycles",
+      "Steiner Eliahou 2^m-3^k local minima"
+    ],
+    "note": "Tamsayılılık iddiası değil; bütün kelimeler için boşluk iddiası değil; 15 örnek yalnız kontrol."
+  },
+  {
+    "id": "27-04",
+    "checkpoint": "CP27",
+    "claim": "q−1> (log₂3−1)(K−1) şeridinde Δ_(q−1)≥[q−1−(log₂3−1)(K−1)]ln 2 olur.",
+    "program_label": "PROOF/PARK",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP27_CONSORTIUM_PREFIX_CORRIDOR/evidence/xa_member_unreal.txt",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Simons–de Weger (2005), Acta Arith. 117, introduction",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "We call a cycle an m-cycle if the numbers in it appear in m sequences, each consisting of an increasing subsequence of odd numbers, followed by a decreasing subsequence of even numbers.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz local minima cycle prefix corridor X",
+      "Hercher reciprocal sum cycle length minimum 2023",
+      "Simons de Weger minimum 3x+1 m cycles",
+      "Steiner Eliahou 2^m-3^k local minima"
+    ],
+    "note": "e_j≥s_j+1 toplamından doğrudan sayım; K<240,q=92..120 rejimini zaten tam global X koşulu eler."
+  },
+  {
+    "id": "27-05",
+    "checkpoint": "CP27",
+    "claim": "X=2^71 ilk-geçiş eleğinin bildirilen ilk izinli t değeri 72.057.431.991 ve S=114.208.327.604 olur.",
+    "program_label": "EXACT (t≤200000); numerical semiconvergent afterwards",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP27_CONSORTIUM_PREFIX_CORRIDOR/evidence/r1_coordinator_checks.json",
+    "verdict": "SUPERSEDED",
+    "references": [
+      {
+        "cite": "Hercher (2023), There are no Collatz m-Cycles with m≤91, Theorem 23 and Corollary 29",
+        "url": "https://arxiv.org/pdf/2201.00406v3",
+        "quote": "we prove that m ≥ 92. ... Corollary 29. If X0 ≥ 1536 · 2^60 = 3 · 2^69 then every nontrivial cycle contains at least K > 1.375 · 10^11 odd numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Simons–de Weger (2005), Acta Arith. 117, introduction",
+        "url": "https://www.impan.pl/shop/publication/transaction/download/product/82263?download.pdf",
+        "quote": "We call a cycle an m-cycle if the numbers in it appear in m sequences, each consisting of an increasing subsequence of odd numbers, followed by a decreasing subsequence of even numbers.",
+        "opened": true
+      },
+      {
+        "cite": "Eliahou (1993), Discrete Mathematics 118",
+        "url": "https://doi.org/10.1016/0012-365X(93)90052-U",
+        "quote": "DOĞRULANMADI: yayınevinin PDF metni açılamadı; Lagarias bibliyografyası ≥17,087,915 bildirmektedir.",
+        "opened": false
+      }
+    ],
+    "queries": [
+      "Collatz first crossing 2^m 3^k 72057431991",
+      "Eliahou continued fraction nontrivial cycle length minimum",
+      "Hercher 2023 K 137500000000 2^71"
+    ],
+    "note": "İlk izinli t tam sayı sertifikası değil: koordinatör kaydı mpmath 80 basamak der; 200000 sınırı sonrası yaklaşık. Gerçek döngü K>1,375·10^11 yayımlı Hercher + X0≥3·2^69 zaten daha güçlü."
+  },
+  {
+    "id": "27-06",
+    "checkpoint": "CP27",
+    "claim": "Determinant X-B sınırları bilinen K alt sınırından h_t=0 sonucunu zorlamaz.",
+    "program_label": "KILL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP27_CONSORTIUM_PREFIX_CORRIDOR/CP27_REPORT.md",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz local minima cycle prefix corridor X",
+      "Hercher reciprocal sum cycle length minimum 2023",
+      "Simons de Weger minimum 3x+1 m cycles",
+      "Steiner Eliahou 2^m-3^k local minima"
+    ],
+    "note": "Blok sayısı ile tek adım K karıştırılmamalı."
+  },
+  {
+    "id": "27-07",
+    "checkpoint": "CP27",
+    "claim": "Z-B biçiminde C_t<t 3^(t−1) her t≥1 için geçerlidir.",
+    "program_label": "PROOF (ilk teklif; sonradan t=1 istisnası)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP27_CONSORTIUM_PREFIX_CORRIDOR/CP27_REPORT.md",
+    "verdict": "FLAWED",
+    "references": [],
+    "queries": [
+      "Collatz first crossing 2^m 3^k 72057431991",
+      "Eliahou continued fraction nontrivial cycle length minimum",
+      "Hercher 2023 K 137500000000 2^71"
+    ],
+    "note": "t=1 ve 1→2→1: C_1=1=t3^0; düzeltilmiş t≥2 özel hali geçerli. CP27 dosyası istisnayı zaten kaydeder."
+  },
+  {
+    "id": "28-01",
+    "checkpoint": "CP28",
+    "claim": "m-kabuktan ilk j≤m parite biti tam düzgün dağılım verir; prefix log-yörünge Brownian limiti bu kesitte Donsker’e iner.",
+    "program_label": "PARK (T10)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP28_CONSORTIUM_POST_BUDGET_MIXING/CP28_REPORT.md",
+    "verdict": "KNOWN",
+    "references": [
+      {
+        "cite": "Inselmann (2024), Proposition 2.4 (cites Terras/Everett)",
+        "url": "https://arxiv.org/html/2402.03276v3",
+        "quote": "the push-forward measure of the uniform measure on [M ... M+2^N) under the map m↦(p(m)_i)_{0≤i<N} is the uniform measure on {0,1}^{[0...N)}.",
+        "opened": true
+      },
+      {
+        "cite": "Kontorovich–Lagarias (2010), Stochastic Models for the 3x+1 and 5x+1 Problems",
+        "url": "https://arxiv.org/html/0910.1944",
+        "quote": "3 x + 1 Stopping Time Statistics ... 3 x + 1 Count Statistics: Inverse Iterate Counts ... Backwards Stochastic Models: Branching Random Walks",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Terras Everett parity vector Brownian stopping time distribution",
+      "Kontorovich Lagarias stochastic models 3x+1 large deviations",
+      "Collatz windowed count parity TV after bit budget"
+    ],
+    "note": "j≤m ve tam dyadik kabuk; odd koşulunda ilk bit 1 sabit olduğundan geri kalan j−1 bit adildir."
+  },
+  {
+    "id": "28-02",
+    "checkpoint": "CP28",
+    "claim": "j>m için gerçek j-bit parite dağılımının iid adil bitlerden TV uzaklığı ≥1−2^(m−j) olur.",
+    "program_label": "PROOF/T10 WALL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP28_CONSORTIUM_POST_BUDGET_MIXING/CP28_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Inselmann (2024), Proposition 2.4 (cites Terras/Everett)",
+        "url": "https://arxiv.org/html/2402.03276v3",
+        "quote": "the push-forward measure of the uniform measure on [M ... M+2^N) under the map m↦(p(m)_i)_{0≤i<N} is the uniform measure on {0,1}^{[0...N)}.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Terras Everett parity vector Brownian stopping time distribution",
+      "Kontorovich Lagarias stochastic models 3x+1 large deviations",
+      "Collatz windowed count parity TV after bit budget"
+    ],
+    "note": "En çok 2^m başlangıç, iid için 2^j destek; farklı, düşük boyutlu frekans yakınsamasını dışlamaz."
+  },
+  {
+    "id": "28-03",
+    "checkpoint": "CP28",
+    "claim": "T7 valuation entropy-debt modeli iid modelinde I*≈0,05498 Cramér oranına iner; +1 artışı düşük valuation demek değildir.",
+    "program_label": "KILL",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP28_CONSORTIUM_POST_BUDGET_MIXING/CP28_REPORT.md",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Kontorovich–Lagarias (2010), Stochastic Models for the 3x+1 and 5x+1 Problems",
+        "url": "https://arxiv.org/html/0910.1944",
+        "quote": "3 x + 1 Stopping Time Statistics ... 3 x + 1 Count Statistics: Inverse Iterate Counts ... Backwards Stochastic Models: Branching Random Walks",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024), Proposition 2.4 (cites Terras/Everett)",
+        "url": "https://arxiv.org/html/2402.03276v3",
+        "quote": "the push-forward measure of the uniform measure on [M ... M+2^N) under the map m↦(p(m)_i)_{0≤i<N} is the uniform measure on {0,1}^{[0...N)}.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Terras Everett parity vector Brownian stopping time distribution",
+      "Kontorovich Lagarias stochastic models 3x+1 large deviations",
+      "Collatz windowed count parity TV after bit budget"
+    ],
+    "note": "Sabitin izlenen olay ve log tabanına bağlı anlamı araştırma dosyasındaki modelle sınırlı; gerçek post-budget yörünge için oran değil."
+  },
+  {
+    "id": "28-04",
+    "checkpoint": "CP28",
+    "claim": "A truncation’lı mod 3^h ters-ağaç matrisinde Perron kökü λ(A,s)=3^(s−1)∑_{a=1}^A 2^(−as) ve h’den bağımsızdır; λ(8,1)=255/256.",
+    "program_label": "EXACT/KILL (T9)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP28_CONSORTIUM_POST_BUDGET_MIXING/evidence/t3_chatgpt.txt",
+    "verdict": "PARTIAL",
+    "references": [
+      {
+        "cite": "Kontorovich–Lagarias (2010), Stochastic Models for the 3x+1 and 5x+1 Problems",
+        "url": "https://arxiv.org/html/0910.1944",
+        "quote": "3 x + 1 Stopping Time Statistics ... 3 x + 1 Count Statistics: Inverse Iterate Counts ... Backwards Stochastic Models: Branching Random Walks",
+        "opened": true
+      },
+      {
+        "cite": "Krasikov–Lagarias (2003), Acta Arith. 109, abstract",
+        "url": "https://arxiv.org/html/math/0205002",
+        "quote": "for any fixed positive integer a not divisible by 3, and for large enough x ... at least x^0.84 of integers below x have a in their forward orbit",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz inverse tree density residue class 3-adic Perron root",
+      "Applegate Lagarias 3x+1 trees distribution mod 3^h",
+      "Krasikov Lagarias difference inequalities inverse iterates"
+    ],
+    "note": "Bu particular weighted uniform-lift matris için sabit kolon toplamından elementer sonuç; gerçek ters ağaç sayımı yahut Krasikov eşitsizliklerinin Perron kökü sanılmamalı."
+  },
+  {
+    "id": "28-05",
+    "checkpoint": "CP28",
+    "claim": "T3 hazard ve T12 head/tail MI testleri m≤24/26’da kalıcı gürültü üstü etki bulmaz (T12 p=0,09–1,0).",
+    "program_label": "KILL/PARK",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP28_CONSORTIUM_POST_BUDGET_MIXING/evidence/t6_mi_test.json",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Terras Everett parity vector Brownian stopping time distribution",
+      "Kontorovich Lagarias stochastic models 3x+1 large deviations",
+      "Collatz windowed count parity TV after bit budget"
+    ],
+    "note": "Sonlu örneklerin yokluk ispatı yoktur; MI test farklı m,j/ρ hücrelerini kapsar."
+  },
+  {
+    "id": "28-06",
+    "checkpoint": "CP28",
+    "claim": "Tek sayılı [2^m,2^(m+1)) kabuğundan τ=min{j:S_j>m} sonrası ilk ⌊δm⌋ valuation içinde her sabit k frekansı 2^(−k)’ye olasılıkta gider, 0<δ<1.",
+    "program_label": "PROOF-with-minor-revisions (a δ<β/2, b δ<1)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP28_CONSORTIUM_POST_BUDGET_MIXING/evidence/pbm_writeup_chatgpt.txt",
+    "verdict": "NEW-CANDIDATE",
+    "references": [
+      {
+        "cite": "Inselmann (2024), Lemma 2.16",
+        "url": "https://arxiv.org/html/2402.03276v3",
+        "quote": "Suppose that P ⊆ ℤ+ is ∗-dense. Then the set {m∈ℤ+ | T^{⌊log₂m⌋}(m)∈P} is ∗-dense as well.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024), Theorem 3.1",
+        "url": "https://arxiv.org/html/2402.03276v3",
+        "quote": "Suppose that ε>0. Then the set {m∈ℤ+ | ∀λ∈[0,1]: m^{λ−ε}≤T^{⌊(1−λ)/(1−log₂√3) log₂m⌋}(m)≤m^{λ+ε}} is ∗-dense.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024), Proposition 2.4 (cites Terras/Everett)",
+        "url": "https://arxiv.org/html/2402.03276v3",
+        "quote": "the push-forward measure of the uniform measure on [M ... M+2^N) under the map m↦(p(m)_i)_{0≤i<N} is the uniform measure on {0,1}^{[0...N)}.",
+        "opened": true
+      },
+      {
+        "cite": "Tao (2019), arXiv:1909.03562, abstract",
+        "url": "https://export.arxiv.org/api/query?id_list=1909.03562",
+        "quote": "for any function f ... with lim f(N)=+∞, one has Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density).",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz post budget pattern frequencies valuation window",
+      "Inselmann Lemma 2.16 odd Syracuse geometric frequencies",
+      "stopping time distribution parity vector post logarithm",
+      "Tao first passage valuation 3-adic offset"
+    ],
+    "note": "Kaynakta PBM açık ifadesi görülmedi; Inselmann Lemma 2.16 + Thm 3.1 ve pattern Hoeffding’den türeyen corollary, bağımsız mixing teoremi değil; ters log F oranı yazım hatası raporda kabul edilmiş."
+  },
+  {
+    "id": "28-07",
+    "checkpoint": "CP28",
+    "claim": "PBM için post-budget dört F-bloğunun kapasitesi (β+β²+β³+β⁴)/2≈1,1563m, üç blok ise ≈0,9591m olur.",
+    "program_label": "PROOF (index fixed)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP28_CONSORTIUM_POST_BUDGET_MIXING/evidence/pbm_writeup_chatgpt.txt",
+    "verdict": "STANDARD",
+    "references": [
+      {
+        "cite": "Inselmann (2024), Theorem 3.1",
+        "url": "https://arxiv.org/html/2402.03276v3",
+        "quote": "Suppose that ε>0. Then the set {m∈ℤ+ | ∀λ∈[0,1]: m^{λ−ε}≤T^{⌊(1−λ)/(1−log₂√3) log₂m⌋}(m)≤m^{λ+ε}} is ∗-dense.",
+        "opened": true
+      },
+      {
+        "cite": "Inselmann (2024), Lemma 2.16",
+        "url": "https://arxiv.org/html/2402.03276v3",
+        "quote": "Suppose that P ⊆ ℤ+ is ∗-dense. Then the set {m∈ℤ+ | T^{⌊log₂m⌋}(m)∈P} is ∗-dense as well.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz post budget pattern frequencies valuation window",
+      "Inselmann Lemma 2.16 odd Syracuse geometric frequencies",
+      "stopping time distribution parity vector post logarithm",
+      "Tao first passage valuation 3-adic offset"
+    ],
+    "note": "Özgün ikinci teorem değil, geometrik seri; F^1..F^4 gerekir, eski P∩F^−1P∩F^−2P∩F^−3P yanlış başlangıç."
+  },
+  {
+    "id": "28-08",
+    "checkpoint": "CP28",
+    "claim": "δ=0,25 için m=14..22 tam tek-kabuk sayımında a=1 frekansı 0,491984→0,498762, blok-sum TV 0,01447→0,00228 olur.",
+    "program_label": "EXACT",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP28_CONSORTIUM_POST_BUDGET_MIXING/evidence/postbudget_test.json",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz post budget pattern frequencies valuation window",
+      "Inselmann Lemma 2.16 odd Syracuse geometric frequencies",
+      "stopping time distribution parity vector post logarithm",
+      "Tao first passage valuation 3-adic offset"
+    ],
+    "note": "Frekans marjinali ve blok toplamı için TV; tüm post-budget bit dizisinin iid-TV’si değildir."
+  },
+  {
+    "id": "28-09",
+    "checkpoint": "CP28",
+    "claim": "τ yüksekliği ile post-budget blok arasındaki örneklem TV farkı m=16,20,22 için 0,03760,0,01469,0,00870 olup 2^(−0,2925m) hız önerisi sezgiseldir.",
+    "program_label": "EXACT/HEURISTIC",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP28_CONSORTIUM_POST_BUDGET_MIXING/evidence/postbudget_dependence.json",
+    "verdict": "INTERNAL",
+    "references": [],
+    "queries": [
+      "Collatz post budget pattern frequencies valuation window",
+      "Inselmann Lemma 2.16 odd Syracuse geometric frequencies",
+      "stopping time distribution parity vector post logarithm",
+      "Tao first passage valuation 3-adic offset"
+    ],
+    "note": "Sınırlı shell ve seçili blok; otonom bağımsızlık teoremi değil."
+  },
+  {
+    "id": "28-10",
+    "checkpoint": "CP28",
+    "claim": "PBM b iddiası üç post-budget F-bloğu ve P∩F^−1P∩F^−2P∩F^−3P koşuluyla bütün 0<δ<1 için kanıtlanır.",
+    "program_label": "early PROOF SKETCH (fixed in final)",
+    "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP28_CONSORTIUM_POST_BUDGET_MIXING/CP28_REPORT.md",
+    "verdict": "FLAWED",
+    "references": [
+      {
+        "cite": "Inselmann (2024), Theorem 3.1",
+        "url": "https://arxiv.org/html/2402.03276v3",
+        "quote": "Suppose that ε>0. Then the set {m∈ℤ+ | ∀λ∈[0,1]: m^{λ−ε}≤T^{⌊(1−λ)/(1−log₂√3) log₂m⌋}(m)≤m^{λ+ε}} is ∗-dense.",
+        "opened": true
+      }
+    ],
+    "queries": [
+      "Collatz post budget pattern frequencies valuation window",
+      "Inselmann Lemma 2.16 odd Syracuse geometric frequencies",
+      "stopping time distribution parity vector post logarithm",
+      "Tao first passage valuation 3-adic offset"
+    ],
+    "note": "A3<1 ve F^0 başlangıç ön-bütçedir; nihai düzeltme dış F^−1 ekler ve dört gerçek post-budget bloğu kullanır."
+  }
+]

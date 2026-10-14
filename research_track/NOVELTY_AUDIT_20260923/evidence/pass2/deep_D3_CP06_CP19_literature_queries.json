@@ -1,0 +1,522 @@
+{
+  "CP06-07": [
+    {
+      "query": "Collatz mechanical word least residue growth",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Amechanical+AND+all%3Aword&start=0&max_results=3",
+      "status": 200,
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+mechanical+word+least+residue+growth&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "3x+1 Sturmian parity vector 2-adic conjugacy",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3ASturmian+AND+all%3Aparity&start=0&max_results=3",
+      "status": 200,
+      "hits": [
+        {
+          "title": "The 3x+1 Periodicity Conjeture in $\\mathbb{R}$",
+          "url": "http://arxiv.org/abs/2101.12747v1",
+          "quote": "The $3x+1$ map $T$ is defined on the $2$-adic integers $\\mathbb{Z}_2$ by $T(x)=x/2$ for even $x$ and $T(x)=(3x+1)/2$ for odd $x$. It is still unproved that under iteration of $T$ the trajectory of any rational $2$-adic integer is eventually cyclic. A $2$-adic integer is rational if and only if its representation with $1$'s and $0$'s is eventually periodic. We prove that the $3x+1$ conjugacy $Φ$ maps aperiodic $v\\in\\mathbb{Z}_2$ onto aperiodic $2$-adic integers provided that $\\underline{\\lim}\\;(\\frac{h}{\\ell})_{\\ell=1}^{\\infty} > \\frac{\\ln(2)}{\\ln(3)}$ where $h$ is the number of $1$'s in the first $\\ell$ digits of $v$ with the following constraint: if there is a rational $2$-adic integer with a non-cyclic trajectory, then necessarily $\\underline{\\lim}\\;(\\frac{h}{\\ell})_{\\ell=1}^{\\infty}=\\frac{\\ln(2)}{\\ln(3)}$. We study $Φ$ as an infinite series in $\\mathbb{R}$ and obtain negative irration"
+        }
+      ],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=3x%2B1+Sturmian+parity+vector+2-adic+conjugacy&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz least realizer parity prefix valuation",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aleast+AND+all%3Arealizer&start=0&max_results=3",
+      "status": 200,
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+least+realizer+parity+prefix+valuation&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz Bernstein inverse transform finite parity",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3ABernstein+AND+all%3Ainverse&start=0&max_results=3",
+      "status": 200,
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+Bernstein+inverse+transform+finite+parity&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz critical density lower bound Rozier",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Acritical+AND+all%3Adensity&start=0&max_results=3",
+      "status": 200,
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+critical+density+lower+bound+Rozier&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "3x+1 mechanical word binary expansion stopping time",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3Amechanical+AND+all%3Aword&start=0&max_results=3",
+      "status": 200,
+      "hits": [
+        {
+          "title": "PortaSpeech: Portable and High-Quality Generative Text-to-Speech",
+          "url": "http://arxiv.org/abs/2109.15166v5",
+          "quote": "Non-autoregressive text-to-speech (NAR-TTS) models such as FastSpeech 2 and Glow-TTS can synthesize high-quality speech from the given text in parallel. After analyzing two kinds of generative NAR-TTS models (VAE and normalizing flow), we find that: VAE is good at capturing the long-range semantics features (e.g., prosody) even with small model size but suffers from blurry and unnatural results; and normalizing flow is good at reconstructing the frequency bin-wise details but performs poorly when the number of model parameters is limited. Inspired by these observations, to generate diverse speech with natural details and rich prosody using a lightweight architecture, we propose PortaSpeech, a portable and high-quality generative text-to-speech model. Specifically, 1) to model both the prosody and mel-spectrogram details accurately, we adopt a lightweight VAE with an enhanced prior follow"
+        }
+      ],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=3x%2B1+mechanical+word+binary+expansion+stopping+time&searchtype=all&abstracts=show&size=5"
+      }
+    }
+  ],
+  "CP12-01": [
+    {
+      "query": "Collatz inverse tree fixed endpoint collision multiplicity",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Ainverse+AND+all%3Atree&start=0&max_results=3",
+      "status": 200,
+      "hits": [
+        {
+          "title": "The Proof of the Collatz Conjecture",
+          "url": "http://arxiv.org/abs/2309.09991v3",
+          "quote": "The 3n+1, or Collatz problem, is one of the hardest math problems, yet still unsolved. The Collatz conjecture is to prove or disprove that the Collatz sequences COL(n) always eventually reach the number of 1, for all n belongs to N+ (all positive integers). The Syracuse conjecture is a (2N+1)-version of Collatz conjecture, where (2N+1) is all odd integers. The Syracuse and Collatz problem can be conceptually described by a tree trunk and branches. The trunk is made of the junctions that produce the main branches, where J0=1 is the root junction. Each branch consists of active and dead junctions, where only the active junctions are capable of producing new sub-branches. Conceptually assuming the trunk and branches can grow indefinitely and can also absorb nutrients from the root. As the tree grows indefinitely, all N+ (2N+1) are included for the Collatz (Syracuse) sequence. This paper dev"
+        },
+        {
+          "title": "A Graph Theoretical Approach to the Collatz Problem",
+          "url": "http://arxiv.org/abs/1905.07575v5",
+          "quote": "Andrei et al. have shown in 2000 that the graph $\\boldsymbol{\\mathrm{C}}$ of the Collatz function starting with root $8$ after the initial loop is an infinite binary tree $\\boldsymbol{A}(8)$. According to their result they gave a reformulated version of the Collatz conjecture: the vertex set $V(\\boldsymbol{A}(8))=\\mathbb{Z}^+$. In this paper an inverse Collatz function $\\overrightarrow{C}$ with eliminated initial loop is used as generating function of a Collatz graph ${\\boldsymbol{\\mathrm{C}}}_{\\overrightarrow{C}}$. This graph can be considered as the union of one forest that stems from sequences of powers of 2 with odd start values and a second forest that is based on branch values $y=6k+4$ where two Collatz sequences meet. A proof that the graph ${\\boldsymbol{\\mathrm{C}}}_{\\overrightarrow{C}}(1)$ is an infinite binary tree $\\boldsymbol{A}_{\\overrightarrow{C}}$ with vertex set $V({\\bold"
+        },
+        {
+          "title": "Using binary string to prove the Collatz conjecture",
+          "url": "http://arxiv.org/abs/2402.00001v3",
+          "quote": "We introduce a full binary directed tree structure to represent the set of natural numbers, further categorizing them into three distinct subsets: pure odd numbers, pure even numbers, and mixed numbers. We adopt a binary string representation for natural numbers and elaborate on the composite methodology encompassing odd- and even-number functions. Our analysis focuses on examining the iteration sequence (or composition) of the Collatz function and its reduced variant, which serves as an analog to the inverse function, to scrutinize the validity of the Collatz conjecture. To substantiate this conjecture, we incorporate binary strings into an algebraic formula that captures the essence of the Collatz sequence. By this means, we transform discrete powers of 2 into continuous counterparts, ultimately culminating in the smallest natural number, 1. Consequently, the sequence generated through"
+        }
+      ],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+inverse+tree+fixed+endpoint+collision+multiplicity&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "3x+1 inverse trajectories fixed odd steps bound",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3Ainverse+AND+all%3Atrajectories&start=0&max_results=3",
+      "status": 200,
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=3x%2B1+inverse+trajectories+fixed+odd+steps+bound&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz parity vector affine numerator injectivity",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aparity+AND+all%3Avector&start=0&max_results=3",
+      "status": 200,
+      "hits": [
+        {
+          "title": "Parity vectors and paradoxical sequences in the accelerated Collatz map",
+          "url": "http://arxiv.org/abs/2605.13886v2",
+          "quote": "This note studies parity vectors and paradoxical sequences in the accelerated Collatz iteration $T(n) = (3n+1)/2$ for $n$ odd, $T(n) = n/2$ for $n$ even. Building on Rozier and Terracol (arXiv:2502.00948, 2025), Terras (1976), Lagarias (1985), and Tao (2019), we prove three theorems and add one numerical observation. The first is a sharp finitary form of Terras's parity-vector density; the second is a closed-form analytic count of paradoxical $Ω_k(n)$ for each fixed length $k$. The third is a density-zero theorem for bounded-length paradoxical sequences with explicit constant. As for the numerical piece, among the seven $(j, q)$ pairs that show up in the Rozier-Terracol enumeration with first term $n \\le 10^9$, every paradoxical reduced ratio $q/j$ turns out to be a left convergent, a left semiconvergent, or a Stern-Brocot mediant of adjacent convergents/semiconvergents of $\\log_3 2$. Th"
+        },
+        {
+          "title": "Characteristic numbers and characteristic equations of parity vectors of Collatz sequences",
+          "url": "http://arxiv.org/abs/2209.03730v1",
+          "quote": "The present work deals with the characterization of parity vectors of Collatz sequences (of finite and infinite length). Such a characterization leads to the determination of several numbers (integers or non-integers) that we call the characteristic numbers of a given parity vector. Some characteristic numbers are linked together by equations that can be called characteristic equations of the considered parity vector. If a parity vector v of finite length n contains the first n terms of a parity vector V of infinite length then all the characteristic numbers of v are considered as characteristic numbers of order n of the infinite vector V. The limits of nth order characteristic numbers when n tends to infinity constitute the absolute characteristic numbers of the infinite vector V and they allow determining its behavior and properties. In this paper, we study the properties of parity vec"
+        },
+        {
+          "title": "Fourier Analysis of the Parity-Vector Parameterization of the Generalized Collatz px+1 maps",
+          "url": "http://arxiv.org/abs/2002.12762v2",
+          "quote": "Let p be an odd prime, and consider the map H_p which sends an integer x to either x/2 or (px+1)/2 depending on whether x is even or odd. The values at x=0 of arbitrary composition sequences of the maps x/2 and (px+1)/2 can be parameterized over the 2-adic integers (Z2) leading to a continuous function from Z2 to Zp which the author calls the \"characteristic function\" (or \"numen\") of H_p. Lipschitz-type estimates are given for the characteristic function when p-1 is a power of 2 and 2 is a primitive root mod p, and it is shown that the set of periodic points of H_p is equal to the set of (rational) integer values attained by the characteristic function over Z2. Additionally, although the pre-image of R under the characteristic function has zero Haar measure in the Z2, by pre-composing the characteristic function with an appropriately selected self-embedding of Z2, one can perform Fourier"
+        }
+      ],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+parity+vector+affine+numerator+injectivity&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "3x+1 ancestor count conditioned parity weight",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=3x%2B1+ancestor+count+conditioned+parity+weight&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz inverse tree modulo 3 valuation cylinders",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Ainverse+AND+all%3Atree&start=0&max_results=3",
+      "status": 200,
+      "hits": [
+        {
+          "title": "The Proof of the Collatz Conjecture",
+          "url": "http://arxiv.org/abs/2309.09991v3",
+          "quote": "The 3n+1, or Collatz problem, is one of the hardest math problems, yet still unsolved. The Collatz conjecture is to prove or disprove that the Collatz sequences COL(n) always eventually reach the number of 1, for all n belongs to N+ (all positive integers). The Syracuse conjecture is a (2N+1)-version of Collatz conjecture, where (2N+1) is all odd integers. The Syracuse and Collatz problem can be conceptually described by a tree trunk and branches. The trunk is made of the junctions that produce the main branches, where J0=1 is the root junction. Each branch consists of active and dead junctions, where only the active junctions are capable of producing new sub-branches. Conceptually assuming the trunk and branches can grow indefinitely and can also absorb nutrients from the root. As the tree grows indefinitely, all N+ (2N+1) are included for the Collatz (Syracuse) sequence. This paper dev"
+        },
+        {
+          "title": "A Graph Theoretical Approach to the Collatz Problem",
+          "url": "http://arxiv.org/abs/1905.07575v5",
+          "quote": "Andrei et al. have shown in 2000 that the graph $\\boldsymbol{\\mathrm{C}}$ of the Collatz function starting with root $8$ after the initial loop is an infinite binary tree $\\boldsymbol{A}(8)$. According to their result they gave a reformulated version of the Collatz conjecture: the vertex set $V(\\boldsymbol{A}(8))=\\mathbb{Z}^+$. In this paper an inverse Collatz function $\\overrightarrow{C}$ with eliminated initial loop is used as generating function of a Collatz graph ${\\boldsymbol{\\mathrm{C}}}_{\\overrightarrow{C}}$. This graph can be considered as the union of one forest that stems from sequences of powers of 2 with odd start values and a second forest that is based on branch values $y=6k+4$ where two Collatz sequences meet. A proof that the graph ${\\boldsymbol{\\mathrm{C}}}_{\\overrightarrow{C}}(1)$ is an infinite binary tree $\\boldsymbol{A}_{\\overrightarrow{C}}$ with vertex set $V({\\bold"
+        },
+        {
+          "title": "Using binary string to prove the Collatz conjecture",
+          "url": "http://arxiv.org/abs/2402.00001v3",
+          "quote": "We introduce a full binary directed tree structure to represent the set of natural numbers, further categorizing them into three distinct subsets: pure odd numbers, pure even numbers, and mixed numbers. We adopt a binary string representation for natural numbers and elaborate on the composite methodology encompassing odd- and even-number functions. Our analysis focuses on examining the iteration sequence (or composition) of the Collatz function and its reduced variant, which serves as an analog to the inverse function, to scrutinize the validity of the Collatz conjecture. To substantiate this conjecture, we incorporate binary strings into an algebraic formula that captures the essence of the Collatz sequence. By this means, we transform discrete powers of 2 into continuous counterparts, ultimately culminating in the smallest natural number, 1. Consequently, the sequence generated through"
+        }
+      ],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+inverse+tree+modulo+3+valuation+cylinders&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz parity permutation endpoint stopping time",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+parity+permutation+endpoint+stopping+time&searchtype=all&abstracts=show&size=5"
+      }
+    }
+  ],
+  "17-energy": [
+    {
+      "query": "Syracuse distribution collision energy modulo 3^n",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Syracuse+distribution+collision+energy+modulo+3%5En&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "3x+1 geometric gaps second moment Fourier",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=3x%2B1+geometric+gaps+second+moment+Fourier&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Syracuse random walk modulo 3^n chi square",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Syracuse+random+walk+modulo+3%5En+chi+square&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz inverse tree residue collision Parseval",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Ainverse+AND+all%3Atree&start=0&max_results=3",
+      "status": 200,
+      "hits": [
+        {
+          "title": "The Proof of the Collatz Conjecture",
+          "url": "http://arxiv.org/abs/2309.09991v3",
+          "quote": "The 3n+1, or Collatz problem, is one of the hardest math problems, yet still unsolved. The Collatz conjecture is to prove or disprove that the Collatz sequences COL(n) always eventually reach the number of 1, for all n belongs to N+ (all positive integers). The Syracuse conjecture is a (2N+1)-version of Collatz conjecture, where (2N+1) is all odd integers. The Syracuse and Collatz problem can be conceptually described by a tree trunk and branches. The trunk is made of the junctions that produce the main branches, where J0=1 is the root junction. Each branch consists of active and dead junctions, where only the active junctions are capable of producing new sub-branches. Conceptually assuming the trunk and branches can grow indefinitely and can also absorb nutrients from the root. As the tree grows indefinitely, all N+ (2N+1) are included for the Collatz (Syracuse) sequence. This paper dev"
+        },
+        {
+          "title": "A Graph Theoretical Approach to the Collatz Problem",
+          "url": "http://arxiv.org/abs/1905.07575v5",
+          "quote": "Andrei et al. have shown in 2000 that the graph $\\boldsymbol{\\mathrm{C}}$ of the Collatz function starting with root $8$ after the initial loop is an infinite binary tree $\\boldsymbol{A}(8)$. According to their result they gave a reformulated version of the Collatz conjecture: the vertex set $V(\\boldsymbol{A}(8))=\\mathbb{Z}^+$. In this paper an inverse Collatz function $\\overrightarrow{C}$ with eliminated initial loop is used as generating function of a Collatz graph ${\\boldsymbol{\\mathrm{C}}}_{\\overrightarrow{C}}$. This graph can be considered as the union of one forest that stems from sequences of powers of 2 with odd start values and a second forest that is based on branch values $y=6k+4$ where two Collatz sequences meet. A proof that the graph ${\\boldsymbol{\\mathrm{C}}}_{\\overrightarrow{C}}(1)$ is an infinite binary tree $\\boldsymbol{A}_{\\overrightarrow{C}}$ with vertex set $V({\\bold"
+        },
+        {
+          "title": "Using binary string to prove the Collatz conjecture",
+          "url": "http://arxiv.org/abs/2402.00001v3",
+          "quote": "We introduce a full binary directed tree structure to represent the set of natural numbers, further categorizing them into three distinct subsets: pure odd numbers, pure even numbers, and mixed numbers. We adopt a binary string representation for natural numbers and elaborate on the composite methodology encompassing odd- and even-number functions. Our analysis focuses on examining the iteration sequence (or composition) of the Collatz function and its reduced variant, which serves as an analog to the inverse function, to scrutinize the validity of the Collatz conjecture. To substantiate this conjecture, we incorporate binary strings into an algebraic formula that captures the essence of the Collatz sequence. By this means, we transform discrete powers of 2 into continuous counterparts, ultimately culminating in the smallest natural number, 1. Consequently, the sequence generated through"
+        }
+      ],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+inverse+tree+residue+collision+Parseval&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Tao Syracuse random variables equidistribution modulo 3",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Tao+Syracuse+random+variables+equidistribution+modulo+3&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "3x+1 character sum geometric gaps entropy",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=3x%2B1+character+sum+geometric+gaps+entropy&searchtype=all&abstracts=show&size=5"
+      }
+    }
+  ],
+  "19-3-lower": [
+    {
+      "query": "Collatz Sturmian factor complexity injective orbit packing",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+Sturmian+factor+complexity+injective+orbit+packing&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Syracuse critical Beatty valuations cylinder lower bound",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Syracuse+critical+Beatty+valuations+cylinder+lower+bound&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "3x+1 critical density orbit segment polynomial start",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=3x%2B1+critical+density+orbit+segment+polynomial+start&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz Sturmian subshift topological entropy orbit",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+Sturmian+subshift+topological+entropy+orbit&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "3x+1 cycle parity words 2^m 3^k lower bound",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 400,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=3x%2B1+cycle+parity+words+2%5Em+3%5Ek+lower+bound&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz trajectory injective segment uniform density",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+trajectory+injective+segment+uniform+density&searchtype=all&abstracts=show&size=5"
+      }
+    }
+  ],
+  "19-3-general": [
+    {
+      "query": "Collatz sparse critical gaps growth exponent",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+sparse+critical+gaps+growth+exponent&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Syracuse Sturmian block injective segment exclusion",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Syracuse+Sturmian+block+injective+segment+exclusion&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "3x+1 critical Beatty stopping time lower bound",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=3x%2B1+critical+Beatty+stopping+time+lower+bound&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz Banach density divergent orbit gaps",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+Banach+density+divergent+orbit+gaps&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz windowed orbit occupancy Curry",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+windowed+orbit+occupancy+Curry&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz polynomial initial state critical run",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+polynomial+initial+state+critical+run&searchtype=all&abstracts=show&size=5"
+      }
+    }
+  ],
+  "19-9-highhalf": [
+    {
+      "query": "Collatz high-half 2-adic carry Hensel parity",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+high-half+2-adic+carry+Hensel+parity&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Syracuse neutral word dyadic renormalization cocycle",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Syracuse+neutral+word+dyadic+renormalization+cocycle&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "3x+1 parity vector fixed width automaton",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=3x%2B1+parity+vector+fixed+width+automaton&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz Bernstein conjugacy nonlocal carries",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+Bernstein+conjugacy+nonlocal+carries&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "3x+1 affine 3^k numerator Hensel lift",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=3x%2B1+affine+3%5Ek+numerator+Hensel+lift&searchtype=all&abstracts=show&size=5"
+      }
+    },
+    {
+      "query": "Collatz Sturmian high binary digit critical density",
+      "url": "https://export.arxiv.org/api/query",
+      "status": "no element found: line 1, column 0",
+      "hits": [],
+      "arxiv_html_search": {
+        "http_status": 429,
+        "titles": [],
+        "abs_urls": [],
+        "search_url": "https://arxiv.org/search/?query=Collatz+Sturmian+high+binary+digit+critical+density&searchtype=all&abstracts=show&size=5"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+ROLE MARKER: CP27_XA_AUDIT_20260923
+
+Konsorsiyum CP27 kararı: X-A "ALL_PREFIX_CORRIDOR" (b=+1). Tanım: döngü global yerel minimum n_0'dan döndürülür; bloklar j=0..q-1, blok j'de s_j≥1 tek adım, e_j=s_j-1+d_j (d_j≥2 bloğu bitiren büyük gap). S_t=Σ_{j<t}s_j, E_t=Σ_{j<t}e_j, Δ_t=E_t·ln2−S_t·ln3. Koridor lemması [PROOF]: n_j≥X ise Δ_t>0 ⇒ Δ_t < t·ln(1+1/X) (1≤t<q). Kill kriteri (konsorsiyum): X=2^71, q=92..120 için koridor, global koşula göre (K,M,q) fizibil kümesini hiç küçültmüyorsa rota PARK/KILL, lemma saklanır.
+
+KOORDİNATÖRÜN ÖNERDİĞİ LEMMA (denetlenecek):
+LEMMA V (koridorun boşluğu). K,M pozitif tamsayılar, 2^M>3^K ve 2q≤K olsun. s_j ∈ {⌊K/q⌋,⌈K/q⌉} (toplam K, hepsi ≥2), j<q−1 için e_j=⌊s_j·log2 3⌋, e_{q−1}=M−Σ_{j<q−1}e_j. O zaman:
+ (i) her j için d_j=e_j−s_j+1 ≥ 2 (s≥2 ⇒ ⌊s·log2 3⌋ ≥ s+1; son blok için e_{q−1} > s_{q−1}·log2 3 çünkü M > K·log2 3 ve Σ_{j<q-1}e_j < S_{q−1}·log2 3);
+ (ii) her proper prefix 1≤t<q için E_t ≤ ⌊S_t·log2 3⌋ < S_t·log2 3, yani Δ_t<0: koridor kısıtı BOŞ;
+ (iii) dolayısıyla q≤K/2 rejiminde koridor, (K,M,q) düzeyinde global koşula hiçbir ek eleme eklemez.
+Exact kontrol (koordinatör, cp27_xa_construct.py): K∈{306,665,1636,3274,15601}, M=⌈K log2 3⌉, q∈{92,100,120}: 15/15 kelime geçerli, bütün proper blok-prefixler çizginin altında, rasyonel adayın global minimumu blok 0'da.
+
+AÇIK KALAN DAR REJİM: Her blokta e_j≥s_j+1 ⇒ M≥K+q ⇒ q≤M−K≈0,585K. Yani K/2<q≤0,585K rejiminde en az 2q−K blok s_j=1'dir; s=1 bloğu (e≥2) çizginin ÜSTÜNDEdir (4>3). Burada koridor zorlayıcı olabilir.
+
+GÖREV:
+1. Lemma V'yi satır satır denetle: (i),(ii),(iii) doğru mu? Özellikle "sieve olarak kullanımı": bir kelimenin koridordan geçmesi için global-minimum rotasyonunun Δ_t>0 prefixlerinin koridorda olması gerekir; Lemma V kelimesinde rotasyon 0'ın gerçekten global minimum olması gerekiyor mu, yoksa değer bilgisi olmadan (yalnız kombinatorik) "survives" demek yeterli mi? Boşluk varsa göster.
+2. Dar rejim K/2<q≤M−K: koridorun burada gerçekten ek eleme verip vermediğini analiz et. İpucu: s=1 blokları (e=2, Δ=ln(4/3)>0) ile uzun blokları (Δ<0) serpiştirerek bütün proper prefix Δ_t'yi ≤0 tutan bir düzen var mı? Bir inşa ya da imkânsızlık argümanı ver. Gerçek döngü için q/K oranının literatürdeki bilinen durumu (DOĞRULANMADI işaretiyle).
+3. Karar oyu: X-A → KILL / PARK / GO (dar rejim için ayrı).
+
+Türkçe, kısa, exact. Son satır tam olarak:
+CP27_XA_AUDIT_20260923_COMPLETE

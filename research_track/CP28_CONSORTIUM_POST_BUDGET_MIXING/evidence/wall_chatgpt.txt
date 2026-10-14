@@ -1,0 +1,201 @@
+Duvarın matematiksel özü
+
+X
+m
+	​
+
+, [2
+m
+,2
+m+1
+)’den düzgün seçilsin ve P
+m
+	​
+
+(X
+m
+	​
+
+) ilk m Terras-parite biti olsun. Terras bijeksiyonu nedeniyle P
+m
+	​
+
+ zaten X
+m
+	​
+
+’nin bütün m serbest bitini tüketir. Dolayısıyla post-budget blok Q deterministik olarak P
+m
+	​
+
+’den belirlenir:
+
+H(Q∣P
+m
+	​
+
+)=0.
+
+Bu yüzden “sonraki δm valuation, ilk m bitten bağımsızdır” biçiminde gerçek bir koşullu bağımsızlık lemması mümkün değildir.
+
+Eksik lemma tek cümleyle:
+
+Post-budget pseudorandomness lemma: S
+r
+	​
+
+=∑
+i≤r
+	​
+
+v
+2
+	​
+
+(3U
+i−1
+(X
+m
+	​
+
+)+1) ve τ
+m
+	​
+
+=min{r:S
+r
+	​
+
+>m} için, a
+τ
+m
+	​
+
++1
+	​
+
+,…,a
+τ
+m
+	​
+
++δm
+	​
+
+ bloğunun tam kelimesi değil fakat belirli düşük-karmaşıklıklı gözlenebilirleri, shell üzerinde ortalama alındığında, iid geometrik P(G=k)=2
+−k
+ modeline o(1) hata ile uyar.
+
+Eksik olan şey yeni entropi değil; yalnız 2
+m
+ deterministik yörüngenin post-budget aritmetiğinde iptal/dekorrelasyon gösterecek bir mekanizma. Düşük dereceli Fourier momentleri veya toplam valuation gibi sınırlı gözlenebilirler için böyle bir lemma Collatz’tan oldukça uzaktır ve makul bir ara sonuçtur. Bunu adaptif tüm pencerelere, her başlangıca ve süresiz negatif drift sağlayacak kadar güçlendirmek ise fiilen Collatz-zor hale gelir. Tao’nun ispatı tam TV rastgeleliği yerine tam bu tür 3-adik karakteristik-fonksiyon/transport kontrolünü kullanıyor; Inselmann ise natural-density-1 yörünge zarfını yaklaşık 4.8188m bit-zamanına kadar götürüyor. 
+arXiv
++1
+
+Üç yeni teori
+
+A — POST-BUDGET FOURIER MIXING.
+Fikir: Tam valuation kelimesini taklit etmeye çalışma. τ
+m
+	​
+
+’den sonra yalnız
+
+∑(a
+i
+	​
+
+−2),e
+it∑a
+i
+	​
+
+,
+
+ve sabit uzunluklu valuation-pattern frekanslarının düşük Fourier modlarını kontrol et. Tao’nun 3-adik karakteristik-fonksiyon tekniğini, Inselmann’ın post-budget’a taşan density-1 büyüklük zarfı içinde kullanmayı dene. Böylece destek engeline rağmen kaba gözlenebilirlerde CLT/Cramér tipi yasa mümkün olabilir. Tao’nun mevcut köprüsü 3-adik skew random walk’ın yüksek frekanslarını kontrol eder. 
+arXiv
++1
+
+İlk exact test: m=14,…,20; bütün tek x’ler. S
+r
+	​
+
+>m ilk geçişinden sonraki L=⌊m/4⌋ valuation için iid-geometrik modele karşı karakteristik fonksiyon hatası ve ∑a
+i
+	​
+
+ kuyrukları. Ayrıca pre-budget yüksekliği 8–16 kaba bin’e ayırıp aynı testi tekrarla.
+
+Kısmi başarı: post-budget Fourier hatasının m ile düzenli küçülmesi ve aynı küçülmenin kaba erken-tarih koşullamasından sonra kalması. Bu, tam-TV istemeden gerçek duvarın ötesinde bir yasa olur.
+
+Literatür çakışması: BİLMİYORUM; orta-yüksek. Tao’ya metodolojik olarak çok yakın; yenilik post-budget pencere + valuation gözlenebilirleri + natural-density horizon kombinasyonunda olmak zorunda.
+
+B — BARRIER-AUGMENTED KRASIKOV.
+Fikir: T9’daki sabit sütun toplamlı transfer matrisini terk et. Krasikov–Lagarias difference inequalities’e residue durumunun yanına yol-bağımlı bir “yükseklik açığı”
+
+D
+r
+	​
+
+=
+i≤r
+∑
+	​
+
+(a
+i
+	​
+
+log2−log3)
+
+ve absorbe edici bariyer ekle. Böylece bazı ters dallar, residue’den değil geçmişteki büyüme bütçesinden dolayı budanır; Perron sabit-sütun tautolojisi kırılır. Hedef ya mevcut x
+0.84
+ alt sınırını yükseltmek ya da aynı tip alt sınırı “kontrollü maksimum excursion ile 1’e ulaşanlar” gibi daha güçlü bir sınıfa taşımak. KL’nin mevcut bilgisayar destekli difference-inequality yöntemi x
+0.84
+ sayımını veriyor. 
+arXiv
+
+İlk exact test: küçük derinlikte ters ağacı tamamen üret; yalnız residue LP’sini ve (residue,D-bin) LP’sini aynı veri üzerinde karşılaştır. Önce bilinen bound mekanizmasını yeniden üret, sonra bariyer koordinatının gerçekten daha sıkı inequality verdiğini ölç.
+
+Kısmi başarı: 0.84’ü geçmek şart değil; örneğin x
+γ
+ adet başlangıcın hem 1’e ulaşıp hem de belirli bir excursion bariyerini aşmadığını sertifikalamak da yeni ve anlamlı olur.
+
+Literatür çakışması: BİLMİYORUM; yüksek. Krasikov/Applegate–Lagarias’ın hangi path-state refinements’ı denediği ayrıntılı taranmalı.
+
+C — SUMMABLE EXCEPTIONAL-SET RENORMALIZATION [CESUR].
+Fikir: Inselmann tek bir O(logn) fazında natural-density-1 güçlü küçülme veriyor; sorun yeni küçük ölçeğe indikten sonra teoremi tekrar tekrar uygulayamamak. “Kötü” shell oranı için yalnız o(1) değil,
+
+∣E
+m
+	​
+
+∣/2
+m
+≤m
+−1−η
+veyae
+−cm
+
+gibi toplanabilir nicel bound ara. Sonra Tao’nun transport fikriyle kötü kümelerin Collatz push-forward altında birikmediğini gösterip küçülme fazlarını restart et. Inselmann gerçekten klasik digit-budget ufkunun çok ötesine kadar natural-density-1 zarfı sağlıyor. 
+arXiv
++1
+
+İlk exact test: m=14…24 için “cm adımda x
+ϵ
+’in altına inmeyenler” oranı; daha önemlisi, ilk başarılı inişten sonraki yeni shell’de ikinci-faz hata oranını taze shell oranıyla karşılaştır.
+
+Kısmi başarı: iki veya r(m)→∞ restart için rigoröz exceptional-set kontrolü. Natural density’de x
+ϵ
+ küçülmeden Tao-tipi “almost bounded” sonuca doğru gerçek ilerleme olur; tam Collatz gerekmez.
+
+Literatür çakışması: BİLMİYORUM; çok yüksek. 2025–26 arXiv taramamda Tao’nun logarithmic-density sonucunun bu biçimde natural-density almost-bounded yükseltmesini görmedim; bu, yenilik kanıtı değildir.
+
+Kalan iki oy
+
+T12 “rekor yörüngelerde iki büyüme stratejisi” — GO. Density-1 teorilerin özellikle görmediği ekstrem kuyruğu hedefliyor; exact veride iki rejim gerçekten invariant bir yapıyla ayrılıyorsa değerli olabilir. Salt clustering/rekor-seçim yanlılığı çıkarsa hemen KILL.
+
+T5 “3x+1 içinde seyrek evrensel hesaplama” — PARK. Sabit Collatz sürecinin base-3→base-2 dönüşüm ve nontrivial hesaplama gömdüğü biliniyor; Turing simülasyonu ise bilinen biçimiyle generalized Collatz haritalarına ait. Sabit 3x+1’de universality çok büyük ve duvardan uzak bir sıçrama. 
+arXiv
+
+CP28_WALL_20260923_COMPLETE

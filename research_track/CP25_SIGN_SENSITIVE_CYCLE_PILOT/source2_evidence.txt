@@ -1,0 +1,2 @@
+The results of first k iterations of T are completely described by the parity vector.
+Theorem B allows one to associate with each vector of length k a unique congruence class.

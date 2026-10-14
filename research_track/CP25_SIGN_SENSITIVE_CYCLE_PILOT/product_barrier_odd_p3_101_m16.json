@@ -1,0 +1,558 @@
+{
+  "3": {
+    "p": 3,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8795,
+    "nonintegral_by_sign": {
+      "+1": 7550,
+      "-1": 1245
+    },
+    "counterexamples": []
+  },
+  "5": {
+    "p": 5,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8795,
+    "nonintegral_by_sign": {
+      "+1": 2485,
+      "-1": 6310
+    },
+    "counterexamples": []
+  },
+  "7": {
+    "p": 7,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8798,
+    "nonintegral_by_sign": {
+      "+1": 1073,
+      "-1": 7725
+    },
+    "counterexamples": []
+  },
+  "9": {
+    "p": 9,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8798,
+    "nonintegral_by_sign": {
+      "+1": 822,
+      "-1": 7976
+    },
+    "counterexamples": []
+  },
+  "11": {
+    "p": 11,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 482,
+      "-1": 8317
+    },
+    "counterexamples": []
+  },
+  "13": {
+    "p": 13,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 394,
+      "-1": 8405
+    },
+    "counterexamples": []
+  },
+  "15": {
+    "p": 15,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8798,
+    "nonintegral_by_sign": {
+      "+1": 302,
+      "-1": 8496
+    },
+    "counterexamples": []
+  },
+  "17": {
+    "p": 17,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8798,
+    "nonintegral_by_sign": {
+      "+1": 169,
+      "-1": 8629
+    },
+    "counterexamples": []
+  },
+  "19": {
+    "p": 19,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 169,
+      "-1": 8630
+    },
+    "counterexamples": []
+  },
+  "21": {
+    "p": 21,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 147,
+      "-1": 8652
+    },
+    "counterexamples": []
+  },
+  "23": {
+    "p": 23,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 143,
+      "-1": 8656
+    },
+    "counterexamples": []
+  },
+  "25": {
+    "p": 25,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 143,
+      "-1": 8656
+    },
+    "counterexamples": []
+  },
+  "27": {
+    "p": 27,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 117,
+      "-1": 8682
+    },
+    "counterexamples": []
+  },
+  "29": {
+    "p": 29,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 117,
+      "-1": 8682
+    },
+    "counterexamples": []
+  },
+  "31": {
+    "p": 31,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8798,
+    "nonintegral_by_sign": {
+      "+1": 116,
+      "-1": 8682
+    },
+    "counterexamples": []
+  },
+  "33": {
+    "p": 33,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8798,
+    "nonintegral_by_sign": {
+      "+1": 82,
+      "-1": 8716
+    },
+    "counterexamples": []
+  },
+  "35": {
+    "p": 35,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 82,
+      "-1": 8717
+    },
+    "counterexamples": []
+  },
+  "37": {
+    "p": 37,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 82,
+      "-1": 8717
+    },
+    "counterexamples": []
+  },
+  "39": {
+    "p": 39,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 82,
+      "-1": 8717
+    },
+    "counterexamples": []
+  },
+  "41": {
+    "p": 41,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 47,
+      "-1": 8752
+    },
+    "counterexamples": []
+  },
+  "43": {
+    "p": 43,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 47,
+      "-1": 8752
+    },
+    "counterexamples": []
+  },
+  "45": {
+    "p": 45,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 47,
+      "-1": 8752
+    },
+    "counterexamples": []
+  },
+  "47": {
+    "p": 47,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 42,
+      "-1": 8757
+    },
+    "counterexamples": []
+  },
+  "49": {
+    "p": 49,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 42,
+      "-1": 8757
+    },
+    "counterexamples": []
+  },
+  "51": {
+    "p": 51,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 42,
+      "-1": 8757
+    },
+    "counterexamples": []
+  },
+  "53": {
+    "p": 53,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 42,
+      "-1": 8757
+    },
+    "counterexamples": []
+  },
+  "55": {
+    "p": 55,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 42,
+      "-1": 8757
+    },
+    "counterexamples": []
+  },
+  "57": {
+    "p": 57,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 42,
+      "-1": 8757
+    },
+    "counterexamples": []
+  },
+  "59": {
+    "p": 59,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 42,
+      "-1": 8757
+    },
+    "counterexamples": []
+  },
+  "61": {
+    "p": 61,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 42,
+      "-1": 8757
+    },
+    "counterexamples": []
+  },
+  "63": {
+    "p": 63,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8798,
+    "nonintegral_by_sign": {
+      "+1": 41,
+      "-1": 8757
+    },
+    "counterexamples": []
+  },
+  "65": {
+    "p": 65,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8798,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8762
+    },
+    "counterexamples": []
+  },
+  "67": {
+    "p": 67,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "69": {
+    "p": 69,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "71": {
+    "p": 71,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "73": {
+    "p": 73,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "75": {
+    "p": 75,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "77": {
+    "p": 77,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "79": {
+    "p": 79,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "81": {
+    "p": 81,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "83": {
+    "p": 83,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "85": {
+    "p": 85,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "87": {
+    "p": 87,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "89": {
+    "p": 89,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 36,
+      "-1": 8763
+    },
+    "counterexamples": []
+  },
+  "91": {
+    "p": 91,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 30,
+      "-1": 8769
+    },
+    "counterexamples": []
+  },
+  "93": {
+    "p": 93,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 30,
+      "-1": 8769
+    },
+    "counterexamples": []
+  },
+  "95": {
+    "p": 95,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 30,
+      "-1": 8769
+    },
+    "counterexamples": []
+  },
+  "97": {
+    "p": 97,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 30,
+      "-1": 8769
+    },
+    "counterexamples": []
+  },
+  "99": {
+    "p": 99,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 30,
+      "-1": 8769
+    },
+    "counterexamples": []
+  },
+  "101": {
+    "p": 101,
+    "max_m": 16,
+    "primitive_necklaces": 8799,
+    "nonintegral_necklaces": 8799,
+    "nonintegral_by_sign": {
+      "+1": 30,
+      "-1": 8769
+    },
+    "counterexamples": []
+  },
+  "meta": {
+    "max_m": 16,
+    "odd_p_min": 3,
+    "odd_p_max": 101,
+    "seconds": 211.0920968055725
+  }
+}

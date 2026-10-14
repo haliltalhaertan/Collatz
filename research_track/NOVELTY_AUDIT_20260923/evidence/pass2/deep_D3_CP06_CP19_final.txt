@@ -1,0 +1,32 @@
+İnceleme dosyası **[deep_D3_CP06_CP19.json](deep_D3_CP06_CP19.json)** olarak kaydedildi. Her iddia için kaynak metni, altı literatür sorgusu, açılan birincil kaynaklar, ispat denetimi ve çalıştırılan kontrol kodunun çıktısı dosyada bulunuyor. Kontrol kodu: [check_claims.py](check_claims.py).
+
+**CP06-07 — TRIVIAL; değer 0/5.**  
+Mekanik sözcüğün 2-adik ters görüntüsünün pozitif sıradan tam sayı olmaması ayrı bir öncüldür. Bu öncül verildiğinde, ikili açılımda sonsuz sayıda `1` bulunması ve dolayısıyla belirtilen `limsup` eşitliği her 2-adik sayı için aynı kısa argümanla çıkar. Sonuç doğru, fakat yeni bir mekanik-sözcük büyüme yöntemi değil. En yakın kaynak: [López–Stoll, 2009](https://math.colgate.edu/~integers/j13/j13.pdf).
+
+**CP12-01 — TRIVIAL; değer 1/5.**  
+Sabit uç ve sabit `q` için \(M(m,q;y)\leq2^{m-q}\) doğru. Afin formül, \(C_w\)’lerin birebirliği ve uzunluğu \(2^{m-q}3^q\)’dan küçük bir aralıkta aynı mod \(3^q\) sınıfını saymak sınırı verir. Kaynaktaki \(0<C_w\) adımı `q=0` için geçersizdir; bu kolayca ayrı ele alınır. En yakın kaynak: [Stérin’in ancestor çalışması](https://arxiv.org/pdf/1907.00775); aynı nicel sınırın yayımlandığını doğrulamadım.
+
+**17-energy — NEW-STRONG; değer 4/5.**  
+\(\chi_n^{\rm Syr}=O(n^4)\) ispatını bağımsız denetimde geçerli buldum: sabit toplam-boşlukta injektivite, martingal maksimum sınırı, residue-fiber sayımı ve kuyruk tahmini birbirini tamamlıyor. Sonuç tek başına Parseval’den çıkmıyor. [Tao’nun çalışması](https://arxiv.org/pdf/1909.03562) kullanılan offset injektivitesini ve Fourier sonuçlarını içeriyor; açılan metinde bu polinom ikinci-moment sınırını tespit etmedim.
+
+**19-3-lower — NEW-STRONG; değer 4/5.**  
+\(r^{1+\log_2 3}/(24\log_2r)-2r/3\) alt sınırı, **injektif ve tam kritik Beatty değerlemelerini izleyen** segment için doğru; kaynak paketindeki ayrıntılı faktör-paketleme ispatı gerekli. [Garcia–Tal](https://www.impan.pl/shop/publication/transaction/download/product/110779?download.pdf) ve [Curry](https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content) genel yörünge seyreklik sınırları bu özel üssü vermiyor. Önemli kayıt: gösterilen ana kaynak kendisini hâlâ **“INDEPENDENT AUDIT REQUIRED; Not frozen yet”** diye etiketliyor; önceki taramanın “FROZEN” etiketiyle uyuşmuyor.
+
+**19-3-general — TRIVIAL; değer 1/5.**  
+\(\delta(1+\log_2 3)>\kappa\) dışlaması, önceki alt sınırın \(r_m\geq u_m^\delta\) uzunluğunda bir kritik alt-bloka uygulanıp üslerin karşılaştırılmasıdır. Doğru olması için blokların tam Beatty niteliği, injektivite ve \(u_m\to\infty\) açıkça korunmalıdır. Bağımsız yeni teorem değil, **19-3-lower’ın korolleridir**. Karşılaştırma için en yakın genel seyreklik kaynağı [Curry](https://zenodo.org/api/records/22087163/files/occupation_note_clean.pdf/content).
+
+**19-9-highhalf — TRIVIAL; değer 1/5.**  
+Tarif edilen saf-nötr 2-adik sözcük için \(\operatorname{bit}_{F_t}(x_0)\equiv1+C_t\pmod2\) ve yazılan \(C_{2t}\) güncellemesi doğru afin-bileşim/Hensel hesaplarıdır. Formülün büyüyen hassasiyet gerektirmesi, *başka hiçbir* sabit-genişlikli yöntemin var olamayacağını kanıtlamaz; kaynak da bunu iddia etmiyor. En yakın cebirsel çerçeve: [Rozier’in parity dönüşümü](https://arxiv.org/pdf/1805.00133).
+
+| İddia | Nihai karar | Değer / 5 |
+|---|---|---:|
+| CP06-07 | TRIVIAL | 0 |
+| CP12-01 | TRIVIAL | 1 |
+| 17-energy | NEW-STRONG | 4 |
+| 19-3-lower | NEW-STRONG | 4 |
+| 19-3-general | TRIVIAL | 1 |
+| 19-9-highhalf | TRIVIAL | 1 |
+
+**Literatür sınırı:** “NEW-STRONG”, açılabilen birincil metinler ve yapılan tarama ışığındaki hakem kanaatidir; mutlak öncelik sertifikası değildir. OpenAlex kotası dolduğu için Rozier 2017’ye atıf yapan çalışmaların taraması tamamlanamadı; bu eksiklik JSON’da işaretli, yokluk kanıtı olarak kullanılmadı.
+
+DEEP_D3_CP06_CP19_20260923_COMPLETE

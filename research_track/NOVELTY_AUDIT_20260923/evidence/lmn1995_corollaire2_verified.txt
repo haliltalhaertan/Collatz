@@ -1,0 +1,9 @@
+LMN 1995 (J. Number Theory 55, 285-321) — koordinatör birincil kaynak kontrolü, 2026-09-23
+Kaynak: kullanıcının ScienceDirect açık arşivinden indirdiği PDF (taranmış; sayfalar görüntü olarak okundu).
+s.286: Λ = b2 log α2 − b1 log α1, b1,b2 pozitif tamsayı, |α1|,|α2| ≥ 1, D=[Q(α1,α2):Q]/[R(α1,α2):R].
+s.288: b' = b1/(D log A2) + b2/(D log A1), log Ai ≥ max{h(αi), |log αi|/D, 1/D}.
+  Corollaire 2 (α1, α2 çarpımsal bağımsız, reel ve pozitif): log|Λ| ≥ −24.34 D^4 (max{log b' + 0.14, 21/D, 1/2})^2 log A1 log A2.
+CP26 uygulaması: α1=2 (b1=m), α2=3 (b2=k), D=1, log A1=1, log A2=log 3; b' = m/log3 + k ≤ 3k (m ≤ k·log2 3 + 1) → kontrol True.
+  log|Λ| ≥ −24.34·log3·max{log(3k)+0.14,21}^2 = −11792.438390 (k ≤ ~3.82e+08 için).
+  Gerekli: k·ln2 > bu değer; k=17013: 11792.512983 > 11792.438390 (marj 0.0746); k=17012: 11791.819836 (yetmez) → CP26 eşiği birebir doğru.
+Sonuç: COLLAPSE'ın LMN bağımlılığı birincil kaynaktan DOĞRULANDI; k≤17012 exact tarama ile birlikte [PROOF] etiketi ayakta.

@@ -1,0 +1,825 @@
+[
+  {
+    "idx": 25,
+    "query": "Collatz fixed weight parity cyclic Fourier zeros",
+    "url": "https://zenodo.org/api/records?q=Collatz+fixed+weight+parity+cyclic+Fourier+zeros&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Collatz Parity Vector Toolkit",
+        "url": "https://zenodo.org/records/21186540",
+        "description": "<p>The Collatz Parity Vector Toolkit is a collection of software tools for studying the Collatz Conjecture through Parity Vector analysis and Parity Vector Geometry. It provides computational verification, visualization, and numerical experiments based on dynamic programming algorithms.</p>\n<p>The toolkit includes both Python and PHP implementations of six programs &mdash; a unified launcher, counting parity vectors by length, counting parity vectors by Hamming weight, a Collatz sequence calculator, and parity-vector graph generation from a string and from a natural number &mdash; together with English user manuals and sample output files.</p>"
+      },
+      {
+        "title": "Level 3 Analysis via the QFT Dictionary: Confinement, Anomalies, and Trace Formulas for Collatz, abc, and the Riemann Hypothesis",
+        "url": "https://zenodo.org/records/19273405",
+        "description": "<p>We apply the QFT dictionary of the Algorithmic Motives (AM) framework to three central problems in arithmetic dynamics and number theory: the Collatz conjecture, the abc conjecture, and the Riemann hypothesis.</p>\n<p>For the Collatz system, we formalize the (2,3)-adic structure as a transfer operator on L^2(\\mathbb{Z}_2), derive the coupling constant \\lambda = \\log 3 / \\log 2, and compute an anomaly index \\kappa = \\log 3 / \\log 6. We show that the forward&ndash;reverse asymmetry corresponds to a broken S-duality between the 2-adic and 3-adic sectors, and interpret the Liv&scaron;ic gap as a confinement strength.</p>\n<p>For the abc conjecture, we identify a vertical anomaly arising from the interaction between additive (weight 0) and multiplicative (weight 1) structures. The quality q = \\log c / \\log \\mathrm{rad}(abc) defines an anomaly parameter, and the conjecture is reformulated as a boundedness condition on this anomaly.</p>\n<p>For the spectral problem associated with the Riemann hypothesis, we interpret the functional equation and Artin factorization as manifestations of a spectral symmetry and Higgs-type decomposition within the QFT dictionary.</p>\n<p>We define a formal trace formula for the Collatz transfer operator via the Atiyah&ndash;Bott fixed-point framework and relate its spectral properties to periodic orbits, with explicit caveats regarding convergence.</p>\n<p>All results are explicitly classified as Theorem, Conditional statement, Structural correspondence, or Conjecture. No claim is made to resolve any of the three problems; rather, the paper develops a unified structural framework identifying common algebraic mechanisms underlying them.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 25,
+    "query": "3x+1 binomial parity cyclotomic nonvanishing",
+    "url": "https://api.crossref.org/works?query=3x%2B1+binomial+parity+cyclotomic+nonvanishing&rows=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "A binomial representation of the 3x + 1 problem",
+        "url": "https://doi.org/10.4064/aa-91-4-367-378",
+        "description": ""
+      },
+      {
+        "title": "Power Reciprocity for Binomial Cyclotomic Integers",
+        "url": "https://doi.org/10.1006/jnth.1998.2250",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "idx": 25,
+    "query": "Collatz tail parity character sum zeros",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Atail&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 25,
+    "query": "3x+1 Fourier parity vector fixed weight",
+    "url": "https://api.openalex.org/works?search=3x%2B1+Fourier+parity+vector+fixed+weight&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 25,
+    "query": "Collatz stopping time parity spectrum",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+stopping+time+parity+spectrum&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 25,
+    "query": "Collatz parity kernel conductor spectral zeros",
+    "url": "https://zenodo.org/api/records?q=Collatz+parity+kernel+conductor+spectral+zeros&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "A Spectral Realization of the Riemann Zeta Zeros",
+        "url": "https://zenodo.org/records/17335645",
+        "description": "<div>\n<p>This paper provides strong analytic evidence for the Riemann Hypothesis by constructing a spectral correspondence between the nontrivial zeros of the Riemann zeta function and the real eigenvalues of a unique self-adjoint extension of the Berry&ndash;Keating operator <span>H = 1/2(xp + px)</span>. By analyzing the heat kernel and verifying the Connes spectral triple conditions, it is shown that the Fredholm determinant of this operator satisfies</p>\n<span>det(H - iE) = Xi(1/2 + iE)</span>\n<p>for&nbsp;<span>all E in C, where Xi(s)</span> is the completed zeta function. The completeness and simplicity of the operator&rsquo;s spectrum are established, supporting a bijection between its real eigenvalues and all nontrivial zeros of the zeta function. Since the spectrum is real, all nontrivial zeros must lie on the critical line <span>Re(s) = 1/2</span> and be simple. These results provide strong analytic evidence for the Riemann Hypothesis.</p>\n</div>\n<p>+<br>v1.1<br>Includes detailed verification of FLS conditions (C3/C4) and explicit exclusion of non-critical line zeros via heat kernel asymptotics and self-adjointness constraints.<br><br>+<br>v1.2<br>Corrected 1.1&rsquo;s limit exchange with a uniform exponential bound,<br>proved C3&ndash;C4 in 6.1 and 7.2 by showing scale invariance through the dilation action and establishing Dixmier trace nontriviality via heat-kernel logarithmic term extraction,<br>and completed 7.1 by excluding off-critical zeros through both operator-theoretic and analytic arguments.<br><br>+<br>v1.3 &nbsp;<br>Added consolidated proof file(8.1) for C1&ndash;C4 (FLS Conditions), summarizing results from 1.2, 1.5, 1.8, and 6.1/7.2.<br><br>+<br>v1.4<br>replaced the hallucinated FLS conditions in the markdown file with references to Connes&rsquo"
+      },
+      {
+        "title": "Collatz Parity Vector Toolkit",
+        "url": "https://zenodo.org/records/21186540",
+        "description": "<p>The Collatz Parity Vector Toolkit is a collection of software tools for studying the Collatz Conjecture through Parity Vector analysis and Parity Vector Geometry. It provides computational verification, visualization, and numerical experiments based on dynamic programming algorithms.</p>\n<p>The toolkit includes both Python and PHP implementations of six programs &mdash; a unified launcher, counting parity vectors by length, counting parity vectors by Hamming weight, a Collatz sequence calculator, and parity-vector graph generation from a string and from a natural number &mdash; together with English user manuals and sample output files.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 26,
+    "query": "Collatz Fourier valuation word cross term Gram",
+    "url": "https://zenodo.org/api/records?q=Collatz+Fourier+valuation+word+cross+term+Gram&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Dissipative Bounds and Ruiz Castillo Residual Decomposition in the Accelerated Dynamics of the Collatz Conjecture",
+        "url": "https://zenodo.org/records/21184721",
+        "description": "<p>The present work develops a new advance within the theory of residual debt and residual drift applied to the accelerated dynamics of the Collatz Conjecture. Starting from the accelerated map<br>\\[<br>U(n)=\\frac{3n+1}{2^{\\nu_2(3n+1)}},<br>\\]<br>the exact affine representation<br>\\[<br>U^k(n)=\\frac{3^k n+B_k(n)}{2^{A_k(n)}}<br>\\]<br>is studied, where \\(A_k(n)\\) represents the accumulated binary dissipation and \\(B_k(n)\\) collects the arithmetic memory induced by the additive terms \\(+1\\).<br>The \\emph{Ruiz Castillo residual decomposition} is formally introduced,<br>\\[<br>U^k(n)=2^{L_k(n)}n+R_k(n),<br>\\]<br>where<br>\\[<br>L_k(n)=k\\log_2(3)-A_k(n)<br>\\]<br>is the accumulated residual debt and<br>\\[<br>R_k(n)=\\frac{B_k(n)}{2^{A_k(n)}}<br>\\]<br>is the normalized residue. This decomposition separates the accelerated dynamics into two components: a dominant multiplicative term, controlled by the residual debt, and a normalized residual memory term, controlled by the complete structure of the \\(2\\)-adic valuations.<br>The article proves the symbolic formula for \\(R_k(n)\\), obtains universal bounds and bounds under hypotheses of average tail dissipation, and introduces a residual criterion for effective descent. The objective is not to assert a final proof of the Collatz Conjecture, but rather to construct a mathematical architecture for studying the relationship among negative drift, dissipative pressure, residual memory, and effective descent of accelerated orbits.<br>\\end{abstract}<br>\\textbf{Keywords:} Collatz Conjecture; residual debt; residual drift; Ruiz Castillo residual decomposition; normalized residue; \\(2\\)-adic valuation; dissipative pressure; discrete dynamical systems.</p>"
+      },
+      {
+        "title": "Modular Closure and Internal 2-adic Structure in Collatz Dynamics",
+        "url": "https://zenodo.org/records/18347620",
+        "description": "<p>We present a structural analysis of Collatz dynamics based on an early modular closure and on the study of the 2-adic valuation of odd terms. We prove that, after the first odd term, trajectories permanently avoid multiples of 3 and become confined to a rigid modular cycle modulo 9. Within this framework, the dynamics reduces to the analysis of the factors 3n+1 and their 2-adic valuation. A systematic decomposition of trajectories into odd segments and even tails is introduced, showing that the global structural organization of the orbit &mdash;though not its exact length&mdash; is determined from the initial value. The balance between episodes of odd growth and divisions by 2 is interpreted as a structural constraint of the dynamics, without recourse to probabilistic hypotheses or heuristic arguments.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 26,
+    "query": "3x+1 autocorrelation reflection mixed channels",
+    "url": "https://api.crossref.org/works?query=3x%2B1+autocorrelation+reflection+mixed+channels&rows=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 26,
+    "query": "Collatz parity tail filter Fourier norm",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aparity&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 26,
+    "query": "Collatz fourth moment reflection cross term",
+    "url": "https://api.openalex.org/works?search=Collatz+fourth+moment+reflection+cross+term&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 26,
+    "query": "3x+1 correlation cyclic Fourier energy",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+correlation+cyclic+Fourier+energy&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 26,
+    "query": "Collatz parity Fourier transfer mixed kernel",
+    "url": "https://zenodo.org/api/records?q=Collatz+parity+Fourier+transfer+mixed+kernel&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Collatz Parity Vector Toolkit",
+        "url": "https://zenodo.org/records/21186540",
+        "description": "<p>The Collatz Parity Vector Toolkit is a collection of software tools for studying the Collatz Conjecture through Parity Vector analysis and Parity Vector Geometry. It provides computational verification, visualization, and numerical experiments based on dynamic programming algorithms.</p>\n<p>The toolkit includes both Python and PHP implementations of six programs &mdash; a unified launcher, counting parity vectors by length, counting parity vectors by Hamming weight, a Collatz sequence calculator, and parity-vector graph generation from a string and from a natural number &mdash; together with English user manuals and sample output files.</p>"
+      },
+      {
+        "title": "Looping and Divergence in the Collatz Conjecture",
+        "url": "https://zenodo.org/records/5733841",
+        "description": "<p>In this paper, we investigate the possible scenarios in which a number does not satisfy the Collatz Conjecture. Specifically, we examine numbers which may have a looping Collatz reduction sequence as well as numbers which may lead to a diverging Collatz reduction sequence. In order to investigate these, we look at the parity of the numbers in a general Collatz reduction sequence. Further, we examine cases in which these parity cycles repeat themselves infinitely in the reduction sequence. Through the research conducted in the paper, we formulate a necessary condition for looping in the Collatz Conjecture. We also prove that if a number has a diverging reduction sequence, then it must generate an infinite non-repeating parity cycle.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 27,
+    "query": "Collatz Fourier source filter Haar shift",
+    "url": "https://zenodo.org/api/records?q=Collatz+Fourier+source+filter+Haar+shift&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Assignment 8 Lock-in Amplifiers",
+        "url": "https://zenodo.org/records/18716631",
+        "description": "<p>In this lab, we learned about lock-in amplifiers and how it is able to recognize signal from noises. We are first able to see how lock-in amplifier performed a better job than oscilloscope in retrieving good data. Then we went on to see different components inside of the lock-in amplifier:&nbsp;</p>\n<p>- preamplifier reduces the noise, low pass filter-amplifier<br>- band pass filter if the bandpass filter has the same frequency as the original signal, there would not be a phase shift; whereas if the bandpass filter does not have the same frequency as the original signal, there would be a phase shift.&nbsp;<br>- low-pass filter amplifier outputs a DC voltage&nbsp;<br>- lock-in filter-amplifier behaves like a rectifier</p>\n<p><br>We further investigated the harmonics in the lock-in amplifier with the commercial lock-in amplifier.&nbsp;</p>\n<p>- RMS amplitude of the signal from the function generator has odd harmonic frequencies under fourier transform, therefore at even harmonic frequencies, there would be no signal. And therefore, at odd harmonics, there are reducing voltages.&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>"
+      },
+      {
+        "title": "tight binding simulation graphene with defect wavefront filtering",
+        "url": "https://zenodo.org/records/20476668",
+        "description": "<p>The tight-binding simulation for public convenience. Spatial orbitals are added, assuming xy spatial symmetry and Fourier transform is used to filter the electronic local density and find dislocations.&nbsp;</p>\n<p>&nbsp;</p>\n<p>Start at the main code \"main_bond_fluct\" which will use the other functions. After calculating the local density and performing a Fourier transform the user needs to choose two points to filter around and reverse the Fourier transform.</p>\n<p>&nbsp;</p>"
+      }
+    ]
+  },
+  {
+    "idx": 27,
+    "query": "3x+1 2-adic shifted autocorrelation energy",
+    "url": "https://api.crossref.org/works?query=3x%2B1+2-adic+shifted+autocorrelation+energy&rows=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "2-Adic Finite-Certificate Descent Closure for the 3x + 1 Collatz Problem",
+        "url": "https://doi.org/10.37648/ijiest.v12i01.010",
+        "description": "<jats:p>The Collatz problem asks whether every positive integer reaches the classical cycle 1 ? 4 ? 2 ? 1; for the shortcut map used here, this is the cycle 1 ? 2 ? 1. This paper develops a ranked 2-adic residue automaton framework for a certificate-based closure of the problem. Each parity word is converted into an exact affine iterate, a unique residue cylinder, and a descent threshold. Non-descending cylinders are then organized by an author-defined carry-pressure rank: either a cylinder descends above a finite height, or it transitions within bounded time to a strictly lower-ranked cylinder. The central theorem proves that a finite total certificate of this kind, together with a checked base interval, forces global convergence by well-founded induction. The manuscript therefore isolates the whole infinite problem into a finite residue-rank certificate whose accepted replay leaves no density-one exception, probabilistic residue, or unranked divergent orbit.</jats:p>"
+      },
+      {
+        "title": "Symmetric 4-adic Complexity of Quaternary Sequences of Length pq with Low Autocorrelation",
+        "url": "https://doi.org/10.1109/itw55543.2023.10161654",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "idx": 27,
+    "query": "Collatz parity vector cyclic Fourier Haar",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aparity&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 27,
+    "query": "Collatz primitive character v2 shift correlations",
+    "url": "https://api.openalex.org/works?search=Collatz+primitive+character+v2+shift+correlations&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 27,
+    "query": "3x+1 source tail spectral alignment",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+source+tail+spectral+alignment&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 27,
+    "query": "Collatz autocorrelation Ramanujan sums",
+    "url": "https://zenodo.org/api/records?q=Collatz+autocorrelation+Ramanujan+sums&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Legendre Ramanujan Sums Transform",
+        "url": "https://zenodo.org/records/54332",
+        "description": "Publication in the conference proceedings of EUSIPCO, Nice, France, 2015"
+      },
+      {
+        "title": "Legendre Ramanujan Sums Transform",
+        "url": "https://zenodo.org/records/35787",
+        "description": "Publication in the conference proceedings of EUSIPCO, Nice, France, 2015"
+      }
+    ]
+  },
+  {
+    "idx": 28,
+    "query": "Collatz Fourier mixed Gram overlap recursion",
+    "url": "https://zenodo.org/api/records?q=Collatz+Fourier+mixed+Gram+overlap+recursion&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "VII. Structure of entries to C1 and the rigid regime",
+        "url": "https://zenodo.org/records/18879276",
+        "description": "<p>This technical note identifies precisely the point where the remaining obstacle in the 2-adic argument applied to the Collatz conjecture is concentrated. It is proved that any infinite orbit initiated in ℕ must eventually enter a <em>rigid regime</em> in which the initial parameter ceases to play a role and the dynamics are governed by an autonomous recursion on 2-adic residues. In that regime, the cylindrical constraints trivialise and the remaining problem becomes purely dynamical. The obstacle is reformulated in terms of 2-adic convergence towards a target point, and a natural sufficient condition is identified &mdash; the bi-Lipschitz 2-adic regularity of the entry parametrization &mdash; that would allow the argument to be closed. The document delineates precisely the boundary between what is proved and what remains open.</p>\n<p>This paper is part of a series of six works on the Collatz conjecture. In reading order:</p>\n<p>I. 2-adic structure of tails and survival sets in Collatz dynamics&nbsp;<a href=\"https://doi.org/10.5281/zenodo.18831439\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.5281/zenodo.18831439</a></p>\n<p>II. Cylinder collision, bit non-reusage, and effective non-degeneration in 2-adic Collatz dynamics&nbsp;<a href=\"https://doi.org/10.5281/zenodo.18831527\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.5281/zenodo.18831527</a></p>\n<p>III. Arithmetic obstruction to indefinite survival in 2-adic Collatz dynamics&nbsp;<a href=\"https://doi.org/10.5281/zenodo.18831690\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.5281/zenodo.18831690</a></p>\n<p>IV. Arithmetic obstruction to mixed orbits in 2-adic Collatz dynamics&nbsp;<a href=\"https://doi.org/10.5281/zenodo.18831791\" target=\"_blank\" rel=\"noopener\">https://doi.org/10.5281/zenodo.18831791</a><"
+      },
+      {
+        "title": "Deciphering the Collatz Conjecture Through Recursion",
+        "url": "https://zenodo.org/records/5759527",
+        "description": "<p>More than 80 years has passed since the Collatz conjecture has been proposed, but since then there has been no concrete proof as to why it is stuck in the 4 to 2 to 1 loop endlessly. There had been various attempts to find the reason as to why this infinite loop occurs, but there hasn&rsquo;t been any widely recognized proof for the Collatz conjecture.</p>\n\n<p>This paper details a different approach to explain why this infinite loop occurs and at the same time explain why the Collatz conjecture is similar to a computer source code. Section 2, 3, 4, and 5 details the process used to determine the purpose of 2n and n+1 functions inside an iterative loop, while section 6 and 7 reveals the logical reasoning behind how the 2n+2 algebraic expression was obtained based on 3n+1 or 2n+n+1.</p>\n\n<p>Section 8 provides proof for 2n+2 as the hidden algebraic expression of the Collatz conjecture, while both sections 9 and 10 provides proof that it is also possible to get stuck in the -4 to -2 to -1 loop endlessly when n is any negative odd integer by simply replacing addition with subtraction. Sections 11 provides the key reason why the Collatz conjecture is getting stuck in an endless loop of 4 to 2 to 1.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 28,
+    "query": "3x+1 parity fourth moment Jacobi recurrence",
+    "url": "https://api.crossref.org/works?query=3x%2B1+parity+fourth+moment+Jacobi+recurrence&rows=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Jacobi Matrices and the Classical Moment Problem",
+        "url": "https://doi.org/10.1007/978-3-031-46387-7_3",
+        "description": ""
+      },
+      {
+        "title": "Parity Recurrence in Thue-Morse Sequence",
+        "url": "https://doi.org/10.3840/07000572",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "idx": 28,
+    "query": "Collatz tail filter channel correlation",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Atail&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 28,
+    "query": "Collatz parity Krawtchouk spectral Gram",
+    "url": "https://api.openalex.org/works?search=Collatz+parity+Krawtchouk+spectral+Gram&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 28,
+    "query": "3x+1 Fourier phase blind bound",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+Fourier+phase+blind+bound&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 28,
+    "query": "Collatz fourth moment overlap neighboring weights",
+    "url": "https://zenodo.org/api/records?q=Collatz+fourth+moment+overlap+neighboring+weights&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Genomic structural equation modelling of 12 cancers identifies a latent pan-cancer susceptibility factor and shared determinants of carcinogenesis",
+        "url": "https://zenodo.org/records/20300592",
+        "description": "<p><code><strong>pan.gz</strong></code><br>GWAS summary statistics for gSEM-based pan-cancer factor.<br><strong>A1:</strong> effect allele<br><strong>A2:</strong> other allele</p>\n<p>&nbsp;</p>\n<p><code><strong>EAS_5e-8.score</strong></code><br>SNP weights used for polygenic risk score (PRS) calculation in the East Asian (EAS) population, derived using the P+T method. The file includes weights for pan-cancer, cross-cancer, and 12 site-specific cancer PRS models, all based on EraSOR-adjusted GWAS summary statistics to reduce bias from sample overlap with the UK Biobank.<br><strong>A1:</strong> effect allele</p>\n<p>&nbsp;</p>\n<p><code><strong>score_merged.txt.gz</strong></code><br>SNP weights used for polygenic risk score (PRS) calculation in the European (EUR) population, derived using the SBayesRC method. The file includes weights for pan-cancer, cross-cancer, and 12 site-specific cancer PRS models, all based on EraSOR-adjusted GWAS summary statistics to reduce bias from sample overlap with the UK Biobank.<br><strong>A1:</strong> effect allele<br><strong>SNP:</strong> SNP identifier used in the UK Biobank, formatted as <code>chr:pos:ref:alt</code>, where the genomic position is based on GRCh37.</p>"
+      },
+      {
+        "title": "Data from: When good neighbors don't need fences: Temporal landscape partitioning among baboon social groups",
+        "url": "https://zenodo.org/records/4994614",
+        "description": "Intraspecific competition is a key factor shaping space-use strategies and movement decisions inmany species, yet how and when neighbors utilize shared areas while exhibiting active avoidance of one another is largely un- known. Here, we investigated temporal landscape partitioning in a population of wild baboons (Papio cynocephalus). We used global positioning system (GPS) collars to synchronously record the hourly locations of five baboon social groups for ∼900 days, and we used behavioral, demographic, and life history data to measure factors affecting use of overlap areas. Annual home ranges of neighboring groups overlapped substantially, as predicted (baboons are considered non-territorial), but home ranges overlapped less when space use was assessed over shorter time scales. Moreover, neighboring groups were in close spatial proximity to one another on fewer days than predicted by a null model, suggesting an avoidance-based spacing pattern. At all time scales examined (monthly, biweekly, and weekly), time spent in overlap areas was greater during time periods when groups fed on evenly dispersed, low-quality foods. The percent of fertile females in social groups was negatively correlated with time spent in overlap areas only during weekly time intervals. This suggests that broad temporal changes in ecological resources are a major predictor of how intensively overlap areas are used, and groups modify these ecologically driven spacing patterns at short time scales based on female reproductive status. Together, these findings offer insight into the economics of territoriality by highlighting the dynamics of spacing patterns at differing time scales."
+      }
+    ]
+  },
+  {
+    "idx": 29,
+    "query": "Collatz Fourier phase Gram Schur complement",
+    "url": "https://zenodo.org/api/records?q=Collatz+Fourier+phase+Gram+Schur+complement&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Mitratae Kuk.",
+        "url": "https://zenodo.org/records/14164465",
+        "description": "<p><b>Sectio 18. Mitratae K&uuml;k. in H.G.A.Engler (ed.) Pflanzenr., IV, 20(38): 394 (1909).</b></p><p>T y p u s: <i>Carex mitrata</i> Franch.</p><p>38 (51). <i>Carex caryophyllea</i> Latourr., Chlor. Lugd.: 27 (1785).&mdash; <i>&Scy;arex</i> <i>praecox</i> Jacq., Fl.Austriac. 5: 23 (1778), <i>nom. illeg.&mdash;&Scy;arex verna</i> Chaix, Pl. Vapinc.: 8 (1785), <i>nom. illeg.&mdash;&Scy;arex ruthenica</i> V.I.Krecz. in V.L.Komarov (ed.) Fl. URSS 3: 610 (1935).</p><p>38.1. <i>Carex caryophyllea</i> var. <i>caryophyllea</i></p><p>39 (52). <i>Carex umbrosa</i> Host, Icon. Descr. Gram. Austriac. 1: 52 (1801).&mdash; <i>Carex longifolia</i> Host, Icon. Descr. Gram. Austriac. 4: t. 85 (1809), <i>nom. illeg.&mdash;</i> <i>Carex polyrrhiza</i> Wallr., Sched. Crit.: 492 (1822).</p><p>39.1. <i>Carex umbrosa</i> subsp. <i>umbrosa</i></p><p>40 (53). <i>Carex depressa</i> Link, J. Bot. (Schrader) 1799 (2): 309 (1800).</p><p>40.1. <i>Carex depressa</i> subsp. <i>transsilvanica</i> (Schur) K.Richt., Pl. Eur. 1: 158 (1890). <b>&mdash;</b> <i>&Scy;arex transsilvanica</i> Schur, Verh. Mitth. Siebenb̧rg. Vereins Naturwiss. Hermannstadt 4: 80 (1853).&mdash; <i>Carex euxina</i> (Woronow &amp; Marcow.) V.I.Krecz. in V.L.Komarov (ed.) Fl. URSS 3: 321 (1935).</p>"
+      },
+      {
+        "title": "The SATOR Matrix - Discrete Warped First-Return Realization of the Golden-Torus Transfer Operators",
+        "url": "https://zenodo.org/records/19412452",
+        "description": "<p>This paper closes the discrete half of the bridge between the golden-torus geometry and the transfer operators of the pentagonal programme. The height function h(A)=0, h(U)=1, h(X)=2, h(Y)=1 on the branch-resolved decagonal shell-arm complex is shown to be a genuine discrete warp potential: the weighted adjacency operator is the warped conjugate A_h(s) = D_h⁻&sup1;(tA₀)D_h of an unweighted topological graph A₀. A cocycle law for path weights is proved: w(&gamma;) = t^|&gamma;| &middot; t^{h(end)&minus;h(start)}, so that every root-to-root return carries weight t^|&gamma;| independently of the warp profile. The central result is that the warp diagonal cancels exactly in the Schur complement onto the root phase space, yielding Sch_R(I&minus;A_h) = I &minus; t&sup2;A_RT(I&minus;tA_TT)⁻&sup1;A_TR. Since the transient block A_TT is nilpotent of order two, the Schur complement truncates after exactly two terms: the 2-edge shell returns (shift &plusmn;2, weight t&sup2;) and the 3-edge arm returns (shift &plusmn;1, weight t&sup3;). The exact first-return operator is therefore L(s) = t&sup2;(S&sup2;+S⁻&sup2;) + t&sup3;(S+S⁻&sup1;) with unit coefficients and no free normalization constants. The D₅ quotient M(s) = t&sup2;(C+C⁻&sup1;) + t&sup3;I is recovered by pentagonal folding. What remains open is the continuous analytic problem of deriving the same operator from the twisted Dirac operator on the warped golden torus. Part of the SATOR Matrix programme.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 29,
+    "query": "3x+1 tail channels PSD moment",
+    "url": "https://api.crossref.org/works?query=3x%2B1+tail+channels+PSD+moment&rows=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 29,
+    "query": "Collatz Fourier mixed power overlap Schur",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3AFourier&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 29,
+    "query": "Collatz parity fourth moment phase coherence",
+    "url": "https://api.openalex.org/works?search=Collatz+parity+fourth+moment+phase+coherence&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 29,
+    "query": "3x+1 Gram matrix primitive Fourier",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+Gram+matrix+primitive+Fourier&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 29,
+    "query": "Collatz filter Fourier two lift Schur",
+    "url": "https://zenodo.org/api/records?q=Collatz+filter+Fourier+two+lift+Schur&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "The SATOR Matrix - The Refined Pentagrammatic Markov Lift and its Projection to the Decagonal Angular Operator",
+        "url": "https://zenodo.org/records/19393294",
+        "description": "<p>This paper constructs the full-state symbolic Markov realization underlying the decagonal angular operator L(s). The refined lift has 70 symbolic states (10 roots, 20 oriented shell states, 40 oriented arm states over two internal levels) arranged over 10 decagonal phases and sitting on 40 geometric positions. Its 70&times;70 weighted adjacency operator is D₁₀-equivariant and projects exactly, via Schur complement, to the decagonal angular lift. The Fourier decomposition yields ten 7&times;7 character blocks whose characteristic polynomials factorize as &lambda;⁴(&lambda;&sup3; &minus; aₘ&lambda; &minus; bₘ), revealing a canonical depressed cubic governing each harmonic sector. The angular root-return denominators are recovered by evaluating the cubic at &lambda; = 1. The twisted Galois sign lifts canonically to the full symbolic graph and acts by a half-turn on the decagonal character table. The paper establishes the refined lift as the correct branch-resolved intermediate object between the geometric pentagram complex and the projected angular operator.</p>"
+      },
+      {
+        "title": "Two Bands Fourier Transform  Tidal Filter",
+        "url": "https://zenodo.org/records/6478113",
+        "description": "<p>This is the Python version of&nbsp;a Fourier transform digital tidal filter that allow to select two bands and their extension&nbsp;in order to remove&nbsp;specific frequencies&nbsp;from a sea level time series. The filter can be easily inverted to consider only specific frequencies.</p>\n\n<p>The package includes&nbsp;essential bibliography on digital filters and a testcase.&nbsp;&nbsp;</p>"
+      }
+    ]
+  },
+  {
+    "idx": 30,
+    "query": "Collatz quartic character recurrence state complexity",
+    "url": "https://zenodo.org/api/records?q=Collatz+quartic+character+recurrence+state+complexity&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "The End of Every Hailstone: A Formally Verified Structural Parity Proof of the Collatz Conjecture",
+        "url": "https://zenodo.org/records/18601487",
+        "description": "<p>The Collatz Conjecture is widely viewed as a stochastic hailstone sequence, yet formal verification in <strong>Lean 4</strong> reveals it to be a disguised algebraic tautology. We demonstrate that the <span>$3n + 1$</span> map is not a generator of chaos, but a subtraction engine that systematically eliminates <span>$3$</span>-adic complexity. By establishing <strong>[The Principle of Structural Parity]</strong> we prove that every odd integer <span>$n$</span> is definitionally bound to the identity <span>$3^m n + R = 2^K$</span>. Utilizing a recursive lift function to track the structural residue (<span>$R$</span>), we provide a machine-verified proof that the function&rsquo;s <span>$+1$</span> is a closing constant that maintains an invariant balance. This reveals that convergence to <span>$1$</span> is the only mathematically legal configuration for the system, effectively reducing the <span>$3n + 1$</span> problem to the self-evident identity:</p>\n<h3>Syracuse Cancellation:</h3>\n<div>\n<div>$$\\frac{3n (\\text{cancels}) + 1}{2^K (\\text{forced-to-balance})} \\implies 1 = 1$$</div>\n</div>"
+      },
+      {
+        "title": "Needs Analysis of Wasaka Character Assessment Instruments (Religious&Hard Work) in Learning in Elementary Schools",
+        "url": "https://zenodo.org/records/6548289",
+        "description": "<p>Character in education has become the focus of discussion at school and home, even in social settings. Character is the key to individual goals. Therefore, when children face competition with colleagues from various countries around the world, the quality of human resources in the future will undoubtedly require good character s. This research was conducted to determine the need for wasaka character assessment instruments (religious, hard work) during learning in elementary schools. Descriptive qualitative research was used as a method in this research. Interviews, observations, and document analysis were used to collect data. The purpose of the study was to analyze the need to develop a character assessment instrument for elementary school students. The subject of this research is the classroom teacher. Research data were collected through observation, interviews, and questionnaires/questionnaires. The data analysis technique used is triangulation. The results showed that the analysis of the need for wasaka character assessment instruments (religious, hard work) in learning in elementary schools found findings on the development of assessment instruments that were expected to make it easier for users to assess wasaka character (religious, hard work) in learning in elementary schools needed. The design of the development of the Wasaka character assessment instrument is sought to improve students&#39; self-development and can measure the Wasaka character of the students.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 30,
+    "query": "3x+1 parity Fourier fourth moment algorithm",
+    "url": "https://api.crossref.org/works?query=3x%2B1+parity+Fourier+fourth+moment+algorithm&rows=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 30,
+    "query": "Collatz primitive Fourier phase quotient states",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aprimitive&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 30,
+    "query": "Collatz 2-adic character sum dynamic programming",
+    "url": "https://api.openalex.org/works?search=Collatz+2-adic+character+sum+dynamic+programming&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 30,
+    "query": "3x+1 fourth moment subexponential recurrence",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+fourth+moment+subexponential+recurrence&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 30,
+    "query": "Collatz tail filter quartic symbolic state",
+    "url": "https://zenodo.org/api/records?q=Collatz+tail+filter+quartic+symbolic+state&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Dissipative Bounds and Ruiz Castillo Residual Decomposition in the Accelerated Dynamics of the Collatz Conjecture",
+        "url": "https://zenodo.org/records/21184721",
+        "description": "<p>The present work develops a new advance within the theory of residual debt and residual drift applied to the accelerated dynamics of the Collatz Conjecture. Starting from the accelerated map<br>\\[<br>U(n)=\\frac{3n+1}{2^{\\nu_2(3n+1)}},<br>\\]<br>the exact affine representation<br>\\[<br>U^k(n)=\\frac{3^k n+B_k(n)}{2^{A_k(n)}}<br>\\]<br>is studied, where \\(A_k(n)\\) represents the accumulated binary dissipation and \\(B_k(n)\\) collects the arithmetic memory induced by the additive terms \\(+1\\).<br>The \\emph{Ruiz Castillo residual decomposition} is formally introduced,<br>\\[<br>U^k(n)=2^{L_k(n)}n+R_k(n),<br>\\]<br>where<br>\\[<br>L_k(n)=k\\log_2(3)-A_k(n)<br>\\]<br>is the accumulated residual debt and<br>\\[<br>R_k(n)=\\frac{B_k(n)}{2^{A_k(n)}}<br>\\]<br>is the normalized residue. This decomposition separates the accelerated dynamics into two components: a dominant multiplicative term, controlled by the residual debt, and a normalized residual memory term, controlled by the complete structure of the \\(2\\)-adic valuations.<br>The article proves the symbolic formula for \\(R_k(n)\\), obtains universal bounds and bounds under hypotheses of average tail dissipation, and introduces a residual criterion for effective descent. The objective is not to assert a final proof of the Collatz Conjecture, but rather to construct a mathematical architecture for studying the relationship among negative drift, dissipative pressure, residual memory, and effective descent of accelerated orbits.<br>\\end{abstract}<br>\\textbf{Keywords:} Collatz Conjecture; residual debt; residual drift; Ruiz Castillo residual decomposition; normalized residue; \\(2\\)-adic valuation; dissipative pressure; discrete dynamical systems.</p>"
+      },
+      {
+        "title": "Online data preprocessing: a case study approach",
+        "url": "https://zenodo.org/records/4065977",
+        "description": "<p>Besides the Internet search facility and e-mails, social networking is now one of the three best uses of the Internet. A tremendous number of volunteers every day write articles, share photos, videos and links at a scope and scale never imagined before. However, because social network data are huge and come from heterogeneous sources, the data are highly susceptible to inconsistency, redundancy, noise, and loss. For data scientists, preparing the data and getting it into a standard format is critical because the quality of data is going to directly affect the performance of mining algorithms that are going to be applied next. Low-quality data will certainly limit the analysis and lower the quality of mining results. To this end, the goal of this study is to provide an overview of the different phases involved in data preprocessing, with a focus on social network data. As a case study, we will show how we applied preprocessing to the data that we collected for the Malaysian Flight MH370 that disappeared in 2014.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 31,
+    "query": "Collatz parity vector endpoint histogram transfer",
+    "url": "https://zenodo.org/api/records?q=Collatz+parity+vector+endpoint+histogram+transfer&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Collatz Parity Vector Toolkit",
+        "url": "https://zenodo.org/records/21186540",
+        "description": "<p>The Collatz Parity Vector Toolkit is a collection of software tools for studying the Collatz Conjecture through Parity Vector analysis and Parity Vector Geometry. It provides computational verification, visualization, and numerical experiments based on dynamic programming algorithms.</p>\n<p>The toolkit includes both Python and PHP implementations of six programs &mdash; a unified launcher, counting parity vectors by length, counting parity vectors by Hamming weight, a Collatz sequence calculator, and parity-vector graph generation from a string and from a natural number &mdash; together with English user manuals and sample output files.</p>"
+      },
+      {
+        "title": "Characteristic numbers of parity vectors of Collatz sequences",
+        "url": "https://zenodo.org/records/6964639",
+        "description": "<p>The present work deals with the characterization of parity vectors of Collatz sequences (of finite and infinite length). Such a characterization leads to the determination of several numbers (integers or non-integers) that we call the characteristic numbers of a given parity vector. Some characteristic numbers are linked together by equations that can be called characteristic equations of the considered parity vector. If a parity vector v of finite length n contains the first n terms of a parity vector V of infinite length then all the characteristic numbers of v are considered as characteristic numbers of order n of the infinite vector V. The limits of n<sup>th</sup> order characteristic numbers when n tends to infinity constitute the absolute characteristic numbers of the infinite vector V and they allow determining its behavior and properties. In this paper, we study the properties of parity vectors of infinite length based on their characteristic numbers. Then, we establish the relations between the first term of a Collatz sequence and its parity vector. Finally, still based on the characteristic numbers, we determine some conditions of existence and non-existence of divergent sequences.&nbsp;</p>"
+      }
+    ]
+  },
+  {
+    "idx": 31,
+    "query": "3x+1 affine prefix residue Fourier lift",
+    "url": "https://api.crossref.org/works?query=3x%2B1+affine+prefix+residue+Fourier+lift&rows=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 31,
+    "query": "Collatz source histogram 2x2 Fourier recursion",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Asource&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 31,
+    "query": "Collatz 2-adic conjugacy transfer operator",
+    "url": "https://api.openalex.org/works?search=Collatz+2-adic+conjugacy+transfer+operator&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 31,
+    "query": "3x+1 parity weight generating function endpoint",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+parity+weight+generating+function+endpoint&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 31,
+    "query": "Collatz stopping time source Fourier lift",
+    "url": "https://zenodo.org/api/records?q=Collatz+stopping+time+source+Fourier+lift&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "PRH | Aux | 4.10 • A Blur–Knob Program for Collatz",
+        "url": "https://zenodo.org/records/20771677",
+        "description": "<p>A complete proof of the Collatz conjecture remains elusive despite strong average-case theorems and powerful computational verification. This paper organizes several established ingredients into a single closed \"program\" with explicit knobs (resolution, smoothing, spectral cutoffs) and an explicit optimization problem (a linear program on finite-state transfer operators). Each step is stated in a mathematically precise form, and the exact missing statements needed for the program to close are isolated as concrete lemmas.</p>\n<p>The program uses: (i) the 2-adic carrier/conjugacy of Bernstein Lagarias; (ii) the difference-inequality/LP method of Krasikov Lagarias; (iii) rigorous \"almost all\" descent results of Terras, Everett, Korec, and Tao; and (iv) a canonical spectral/transfer-operator formalism that packages all parity-paths at once. That is, rather than selecting a single favored attack, we treat the Collatz landscape as a situation where many partial controls coexist but do not naturally synchronize. Blur is designed to lower that coordination cost. The companion papers in this series implement the resulting \"closure package\" as an auditable pipeline: a finite-state proxy with exact-lift screening, a certified contraction instance (the S5 Witness Theorem), and the Lyapunov step that converts contraction into a finite verification problem. The point is not to claim a minimal hypothesis set, but to give an obstruction-complete and executable reduction: either the package closes with explicit constants, or it returns concrete next-step targets (which constants, which cycles, which scales).</p>\n<p>Reading order: The papers in this package are intended to be read in the alphabetic order of their PDF filenames, namely $0_{-} \\ldots, 1_{-} \\ldots, 2_{-} \\ldots$, and so"
+      },
+      {
+        "title": "collatz-cuda: an exact branch-free CUDA kernel for merged-step Collatz stopping times",
+        "url": "https://zenodo.org/records/21311603",
+        "description": "<p>An exact, branch-free, divide-free CUDA kernel that computes merged-step (shortcut) Collatz chain lengths (stopping times) for every seed in a range, on the GPU, using 64-bit integer arithmetic. Companion software artifact to the paper \"Computing Collatz stopping times at scale.\" Verified against a pure-Python reference over seeds 1..10^6 and against known anchors (n=3&rarr;5, 837799&rarr;329, 63728127&rarr;592). MIT-licensed.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 32,
+    "query": "Collatz source primitive energy defect monotonicity",
+    "url": "https://zenodo.org/api/records?q=Collatz+source+primitive+energy+defect+monotonicity&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "A Critical Monotonicity Principle A modular identity–rigidity package for constrained gradient dynamics",
+        "url": "https://zenodo.org/records/18041335",
+        "description": "<p>We formalize a Critical Monotonicity Principle (CMP) for normalized/constrained&nbsp;gradient dynamics in a Hilbert/Dirichlet framework. The core mechanism is a structural defect identity whose induced criticality observable is monotone and whose&nbsp;equality case enforces rigidity (selection of a critical state / eigenstate). We present&nbsp;a localized version with cutoffs and leakage, and a quantitative threshold criterion&nbsp;turning monotonicity into a usable selection mechanism. As a model application, we&nbsp;connect CMP to Rayleigh-type normalized flows generated by a self-adjoint dissipation operator and a constraint functional, clarifying how energy decay, rigidity, and&nbsp;localization emerge from the same identity.</p>"
+      },
+      {
+        "title": "FontesJVC/collatz-relative-defect-dynamics: Collatz Relative Defect Dynamics",
+        "url": "https://zenodo.org/records/22736761",
+        "description": "<p>Computational supplement for the preprint:</p>\n<p>\"Relative Ternary Defect Dynamics in the Accelerated Collatz Inverse Relation\"</p>\n<p>This release contains the code and reproducibility material used to audit finite instances of the main constructions in the manuscript, including:</p>\n<ul>\n<li>inverse-family identities;</li>\n<li>exact relative-defect recurrence;</li>\n<li>local lift-defect isometry;</li>\n<li>finite triangular bijection;</li>\n<li>countdown and recharge identities;</li>\n<li>layered-state and finite-horizon closure;</li>\n<li>precision lower-bound examples;</li>\n<li>finite-state obstruction examples;</li>\n<li>randomized and exhaustive counterexample searches.</li>\n</ul>\n<p>The computations are intended for reproducibility and falsification support. They do not replace the mathematical proofs and do not constitute a proof of the Collatz conjecture.</p>\n<p>This release corresponds to the code version cited in the manuscript.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 32,
+    "query": "3x+1 Fourier Pascal weighted parallelogram",
+    "url": "https://api.crossref.org/works?query=3x%2B1+Fourier+Pascal+weighted+parallelogram&rows=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Parallelogram interferometer for Fourier spectrometers",
+        "url": "https://doi.org/10.17586/1023-5086-2019-86-02-52-54",
+        "description": ""
+      },
+      {
+        "title": "A Public Key Encryption System Derived from the Pascal Parallelogram",
+        "url": "https://doi.org/10.1109/southeastcon42311.2019.9020398",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "idx": 32,
+    "query": "Collatz prefix histogram energy lift",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Aprefix&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 32,
+    "query": "Collatz affine source autocorrelation shift",
+    "url": "https://api.openalex.org/works?search=Collatz+affine+source+autocorrelation+shift&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 32,
+    "query": "3x+1 Fourier merge slack",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+Fourier+merge+slack&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 32,
+    "query": "Collatz stopping time endpoint spectrum",
+    "url": "https://zenodo.org/api/records?q=Collatz+stopping+time+endpoint+spectrum&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "The Collatz map as a (2,3)-adic bridge: a framework for characterizing the canonical transfer between incompatible completions of ℚ",
+        "url": "https://zenodo.org/records/19069063",
+        "description": "<p>We develop a structural framework in which the Collatz map is interpreted as a canonical transfer between incompatible completions of ℚ, specifically linking the 2-adic and 3-adic regimes. In this perspective, the Collatz dynamics is not treated as a purely combinatorial process, but as a bridge between arithmetic structures that are otherwise incompatible.</p>\n<p>We construct a multi-layer correspondence between arithmetic residue dynamics, orbit structure, spectral representations, and operator-theoretic behavior. Within this framework, the system decomposes into a resolved sector, where symmetry and averaging mechanisms yield strong statistical control, and an obstruction sector consisting of points whose dynamics fails to stabilize at any finite depth.</p>\n<p>We prove that the obstruction sector is dynamically invariant under the Collatz return map and is thin, with density O(2^{-m}) among residue classes modulo 2^m, and therefore zero in the profinite limit. This sector admits consistent realizations across multiple structures, including arithmetic towers, unresolved residue classes, bounded cocycles, and sparse spectral components.</p>\n<p>The Collatz map thus functions as a canonical interface between distinct arithmetic completions, with the obstruction sector representing the precise locus where compatibility fails. This reframes the Collatz conjecture as a structural problem of extending compatibility across these regimes.</p>"
+      },
+      {
+        "title": "PRH | Aux | 4.10 • A Blur–Knob Program for Collatz",
+        "url": "https://zenodo.org/records/20771677",
+        "description": "<p>A complete proof of the Collatz conjecture remains elusive despite strong average-case theorems and powerful computational verification. This paper organizes several established ingredients into a single closed \"program\" with explicit knobs (resolution, smoothing, spectral cutoffs) and an explicit optimization problem (a linear program on finite-state transfer operators). Each step is stated in a mathematically precise form, and the exact missing statements needed for the program to close are isolated as concrete lemmas.</p>\n<p>The program uses: (i) the 2-adic carrier/conjugacy of Bernstein Lagarias; (ii) the difference-inequality/LP method of Krasikov Lagarias; (iii) rigorous \"almost all\" descent results of Terras, Everett, Korec, and Tao; and (iv) a canonical spectral/transfer-operator formalism that packages all parity-paths at once. That is, rather than selecting a single favored attack, we treat the Collatz landscape as a situation where many partial controls coexist but do not naturally synchronize. Blur is designed to lower that coordination cost. The companion papers in this series implement the resulting \"closure package\" as an auditable pipeline: a finite-state proxy with exact-lift screening, a certified contraction instance (the S5 Witness Theorem), and the Lyapunov step that converts contraction into a finite verification problem. The point is not to claim a minimal hypothesis set, but to give an obstruction-complete and executable reduction: either the package closes with explicit constants, or it returns concrete next-step targets (which constants, which cycles, which scales).</p>\n<p>Reading order: The papers in this package are intended to be read in the alphabetic order of their PDF filenames, namely $0_{-} \\ldots, 1_{-} \\ldots, 2_{-} \\ldots$, and so"
+      }
+    ]
+  },
+  {
+    "idx": 33,
+    "query": "Collatz shifted parity correlation affine recursion",
+    "url": "https://zenodo.org/api/records?q=Collatz+shifted+parity+correlation+affine+recursion&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Collatz Parity Vector Toolkit",
+        "url": "https://zenodo.org/records/21186540",
+        "description": "<p>The Collatz Parity Vector Toolkit is a collection of software tools for studying the Collatz Conjecture through Parity Vector analysis and Parity Vector Geometry. It provides computational verification, visualization, and numerical experiments based on dynamic programming algorithms.</p>\n<p>The toolkit includes both Python and PHP implementations of six programs &mdash; a unified launcher, counting parity vectors by length, counting parity vectors by Hamming weight, a Collatz sequence calculator, and parity-vector graph generation from a string and from a natural number &mdash; together with English user manuals and sample output files.</p>"
+      },
+      {
+        "title": "Looping and Divergence in the Collatz Conjecture",
+        "url": "https://zenodo.org/records/5733841",
+        "description": "<p>In this paper, we investigate the possible scenarios in which a number does not satisfy the Collatz Conjecture. Specifically, we examine numbers which may have a looping Collatz reduction sequence as well as numbers which may lead to a diverging Collatz reduction sequence. In order to investigate these, we look at the parity of the numbers in a general Collatz reduction sequence. Further, we examine cases in which these parity cycles repeat themselves infinitely in the reduction sequence. Through the research conducted in the paper, we formulate a necessary condition for looping in the Collatz Conjecture. We also prove that if a number has a diverging reduction sequence, then it must generate an infinite non-repeating parity cycle.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 33,
+    "query": "3x+1 parity vector joint shift polynomial",
+    "url": "https://api.crossref.org/works?query=3x%2B1+parity+vector+joint+shift+polynomial&rows=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 33,
+    "query": "Collatz 2-adic affine slope memoization",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3A2-adic&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 33,
+    "query": "3x+1 parity autocorrelation dynamic programming",
+    "url": "https://api.openalex.org/works?search=3x%2B1+parity+autocorrelation+dynamic+programming&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 33,
+    "query": "Collatz parity vector fourth moment Kronecker",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Collatz+parity+vector+fourth+moment+Kronecker&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 33,
+    "query": "Collatz stopping time shift joint distribution",
+    "url": "https://zenodo.org/api/records?q=Collatz+stopping+time+shift+joint+distribution&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "PRH | Aux | 4.10 • A Blur–Knob Program for Collatz",
+        "url": "https://zenodo.org/records/20771677",
+        "description": "<p>A complete proof of the Collatz conjecture remains elusive despite strong average-case theorems and powerful computational verification. This paper organizes several established ingredients into a single closed \"program\" with explicit knobs (resolution, smoothing, spectral cutoffs) and an explicit optimization problem (a linear program on finite-state transfer operators). Each step is stated in a mathematically precise form, and the exact missing statements needed for the program to close are isolated as concrete lemmas.</p>\n<p>The program uses: (i) the 2-adic carrier/conjugacy of Bernstein Lagarias; (ii) the difference-inequality/LP method of Krasikov Lagarias; (iii) rigorous \"almost all\" descent results of Terras, Everett, Korec, and Tao; and (iv) a canonical spectral/transfer-operator formalism that packages all parity-paths at once. That is, rather than selecting a single favored attack, we treat the Collatz landscape as a situation where many partial controls coexist but do not naturally synchronize. Blur is designed to lower that coordination cost. The companion papers in this series implement the resulting \"closure package\" as an auditable pipeline: a finite-state proxy with exact-lift screening, a certified contraction instance (the S5 Witness Theorem), and the Lyapunov step that converts contraction into a finite verification problem. The point is not to claim a minimal hypothesis set, but to give an obstruction-complete and executable reduction: either the package closes with explicit constants, or it returns concrete next-step targets (which constants, which cycles, which scales).</p>\n<p>Reading order: The papers in this package are intended to be read in the alphabetic order of their PDF filenames, namely $0_{-} \\ldots, 1_{-} \\ldots, 2_{-} \\ldots$, and so"
+      },
+      {
+        "title": "collatz-cuda: an exact branch-free CUDA kernel for merged-step Collatz stopping times",
+        "url": "https://zenodo.org/records/21311603",
+        "description": "<p>An exact, branch-free, divide-free CUDA kernel that computes merged-step (shortcut) Collatz chain lengths (stopping times) for every seed in a range, on the GPU, using 64-bit integer arithmetic. Companion software artifact to the paper \"Computing Collatz stopping times at scale.\" Verified against a pure-Python reference over seeds 1..10^6 and against known anchors (n=3&rarr;5, 837799&rarr;329, 63728127&rarr;592). MIT-licensed.</p>"
+      }
+    ]
+  },
+  {
+    "idx": 34,
+    "query": "Collatz endpoint interval sandwich start count",
+    "url": "https://zenodo.org/api/records?q=Collatz+endpoint+interval+sandwich+start+count&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "github.com/ChaissonLab/countme/countme",
+        "url": "https://zenodo.org/records/16421249",
+        "description": "<p>This is a simple program to count the average methylation of CpG\nislands in intervals of reads that map to intervals in a reference.\nThis way, if there are expansions in the read that are contained\nat the interval on the reference, the CpGs in the expansion are counted.</p>\n<p>The input bam must be phased with HP tags.\nThe result that is output is the mean and variance of CpG, as well as the\nnumber of CpGs for each haplotype over a region.</p>\n<p>The output columns are:\n1-3 chrom start end (from bed flie)\n4-7 hap1: nReads avgReadLen avgCpGCount avgMeth\n8-11 hap2: nReads avgReadLen avgCpGCount avgMeth</p>\n<p>The nreads are the number of reads from the corresponding haplotype that\noverlap the interval, and avgReadLen is the length of each read between\nthe bases that are mapped to the starting and ending positions of the\ninterval.  This should roughly equal the starting and ending positions of the\ninterval.  The avgCpG count is according to the read itself rather\nthan the genome, and the avgMeth is the average of the methylation scores\nfor all CpG islands for all reads from a haplotype.</p>"
+      },
+      {
+        "title": "Counts of Dengue hemorrhagic fever reported in PUERTO RICO: 1985-2012",
+        "url": "https://zenodo.org/records/11451883",
+        "description": "<p>Project Tycho datasets contain case counts for reported disease conditions for countries around the world. The Project Tycho data curation team extracts these case counts from various reputable sources, typically from national or international health authorities, such as the US Centers for Disease Control or the World Health Organization. These original data sources include both open- and restricted-access sources. For restricted-access sources, the Project Tycho team has obtained permission for redistribution from data contributors. All datasets contain case count data that are identical to counts published in the original source and no counts have been modified in any way by the Project Tycho team. The Project Tycho team has pre-processed datasets by adding new variables, such as standard disease and location identifiers, that improve data interpretabilty. We also formatted the data into a standard data format.</p><p>Each Project Tycho dataset contains case counts for a specific condition (e.g. measles) and for a specific country (e.g. The United States). Case counts are reported per time interval. In addition to case counts, datsets include information about these counts (attributes), such as the location, age group, subpopulation, diagnostic certainty, place of aquisition, and the source from which we extracted case counts. One dataset can include many series of case count time intervals, such as \"US measles cases as reported by CDC\", or \"US measles cases reported by WHO\", or \"US measles cases that originated abroad\", etc.</p><p>Depending on the intended use of a dataset, we recommend a few data processing steps before analysis:</p><ul><li>Analyze missing data: Project Tycho datasets do not inlcude time intervals for which no case count was reported (for many dat"
+      }
+    ]
+  },
+  {
+    "idx": 34,
+    "query": "3x+1 affine offset short interval parity weight",
+    "url": "https://api.crossref.org/works?query=3x%2B1+affine+offset+short+interval+parity+weight&rows=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 34,
+    "query": "Collatz stopping time truncated crossing event",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3ACollatz+AND+all%3Astopping&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 34,
+    "query": "Collatz predecessor collision endpoint affine",
+    "url": "https://api.openalex.org/works?search=Collatz+predecessor+collision+endpoint+affine&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 34,
+    "query": "3x+1 inverse word short interval count",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=3x%2B1+inverse+word+short+interval+count&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 34,
+    "query": "Collatz parity vector dual interval boundary",
+    "url": "https://zenodo.org/api/records?q=Collatz+parity+vector+dual+interval+boundary&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Collatz Parity Vector Toolkit",
+        "url": "https://zenodo.org/records/21186540",
+        "description": "<p>The Collatz Parity Vector Toolkit is a collection of software tools for studying the Collatz Conjecture through Parity Vector analysis and Parity Vector Geometry. It provides computational verification, visualization, and numerical experiments based on dynamic programming algorithms.</p>\n<p>The toolkit includes both Python and PHP implementations of six programs &mdash; a unified launcher, counting parity vectors by length, counting parity vectors by Hamming weight, a Collatz sequence calculator, and parity-vector graph generation from a string and from a natural number &mdash; together with English user manuals and sample output files.</p>"
+      },
+      {
+        "title": "Characteristic numbers of parity vectors of Collatz sequences",
+        "url": "https://zenodo.org/records/6964639",
+        "description": "<p>The present work deals with the characterization of parity vectors of Collatz sequences (of finite and infinite length). Such a characterization leads to the determination of several numbers (integers or non-integers) that we call the characteristic numbers of a given parity vector. Some characteristic numbers are linked together by equations that can be called characteristic equations of the considered parity vector. If a parity vector v of finite length n contains the first n terms of a parity vector V of infinite length then all the characteristic numbers of v are considered as characteristic numbers of order n of the infinite vector V. The limits of n<sup>th</sup> order characteristic numbers when n tends to infinity constitute the absolute characteristic numbers of the infinite vector V and they allow determining its behavior and properties. In this paper, we study the properties of parity vectors of infinite length based on their characteristic numbers. Then, we establish the relations between the first term of a Collatz sequence and its parity vector. Finally, still based on the characteristic numbers, we determine some conditions of existence and non-existence of divergent sequences.&nbsp;</p>"
+      }
+    ]
+  },
+  {
+    "idx": 35,
+    "query": "conditioned geometric random walk excursion cycle lemma",
+    "url": "https://zenodo.org/api/records?q=conditioned+geometric+random+walk+excursion+cycle+lemma&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Visual Models and Classification of 1D, 2D, and 3D Random Walk",
+        "url": "https://zenodo.org/records/10687018",
+        "description": "<p><strong><span>ABSTRACT</span></strong></p>\n<p><span>A new visual model has been proposed for describing 1D, 2D and 2D random walk based on consideration of linear and nonlinear arithmetic triangles (1D), linear and nonlinear arithmetic squarer (2D), and linear and nonlinear arithmetic octahedrons (3D Our studies and visual constructions presented in this work show that the nonlinear case of an arithmetic triangle coincides with the optical scheme of the laser. Geometric constructions and recursive formulas are given. The studies presented in this paper show various geometric properties and nonlinear effects of 1D, 2D, and 3D spaces. For nonlinear 1D and 3D cases we can speak of filling the numbers of the arithmetic triangle (1D) and the arithmetic octahedron (3D) in the form of &ldquo;islands of numbers&rdquo; or separate structures of numbers.</span><em><span>&nbsp;</span></em></p>"
+      },
+      {
+        "title": "Gold Price Dynamics: Geometric Random Walk and ARIMAX Models",
+        "url": "https://zenodo.org/records/16926312",
+        "description": "<p><span lang=\"EN-GB\">This paper presents a unified analysis of gold price dynamics from 1970 to 2024, integrating two complementary approaches: the Geometric Random Walk (GRW) model with ARIMA techniques and the ARIMAX model examining the relationship between gold prices and global GDP. The first part explores gold price movements through five distinct historical phases, revealing varying growth rates and structural shifts, including periods of rapid increase and stability. Forecasts using the Geometric Linear Regression (GLR) model project annual gold price growth between 7.9% and 10.6% through 2030. The second part employs ARIMAX models to investigate the relationship between gold prices and global GDP, finding a strong, statistically significant correlation where a 1% increase in global GDP corresponds to a 1% rise in gold prices. </span></p>\n<p><span lang=\"EN-GB\">An update through August 2025 shows extraordinary growth and increased volatility in the gold market, with the growth rate exceeding earlier forecasts. These developments suggest a significant market shift, but further observation is needed to determine if the trend will persist.</span></p>"
+      }
+    ]
+  },
+  {
+    "idx": 35,
+    "query": "Collatz inverse tree density random walk ballot",
+    "url": "https://api.crossref.org/works?query=Collatz+inverse+tree+density+random+walk+ballot&rows=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 35,
+    "query": "3x+1 low excursion cyclic rank probability",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3A3x%2B1+AND+all%3Alow&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 35,
+    "query": "random composition bridge occupation uniform ranks",
+    "url": "https://api.openalex.org/works?search=random+composition+bridge+occupation+uniform+ranks&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 35,
+    "query": "geometric random walk first passage 1/R",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=geometric+random+walk+first+passage+1%2FR&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 35,
+    "query": "Collatz renewal walk opportunity lower tail",
+    "url": "https://zenodo.org/api/records?q=Collatz+renewal+walk+opportunity+lower+tail&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "DIFFUSION SCALING IN EVENT-DRIVEN RANDOM WALKS: AN APPLICATION TO TURBULENCE",
+        "url": "https://zenodo.org/records/8160797",
+        "description": "<p>Scaling laws for the diffusion generated by three different random walk models are reviewed.<br>\nThe random walks, defined on a one-dimensional lattice, are driven by renewal intermittent events<br>\nwith non-Poisson statistics and inverse power-law tail in the distribution of the inter-event or<br>\nwaiting times, so that the event sequences are characterized by self-similarity. Intermittency is<br>\na ubiquitous phenomenon in many complex systems and the power exponent of the waiting<br>\ntime distribution, denoted as complexity index, is a crucial parameter characterizing the system&rsquo;s<br>\ncomplexity. It is shown that different scaling exponents emerge from the different random walks,<br>\neven if the self-similarity, i.e. the complexity index, of the underlying event sequence remains<br>\nthe same. The direct evaluation of the complexity index from the time distribution is affected<br>\nby the presence of added noise and secondary or spurious events. It is possible to minimize the<br>\neffect of spurious events by exploiting the scaling relationships of the random walk models. This<br>\nallows to get a reliable estimation of the complexity index and, at the same time, a confirmation<br>\nof the renewal assumption. An application to turbulence data is shown to explain the basic ideas<br>\nof this approach.</p>"
+      },
+      {
+        "title": "SECOND-ORDER RENEWAL ASYMPTOTICS FOR HEAVY-TAILED LIFETIME DISTRIBUTIONS: A LAPLACE-TAUBERIAN APPROACH",
+        "url": "https://zenodo.org/records/22706962",
+        "description": "<p class=\"MsoNormal\"><span>For a renewal process whose inter-arrival distribution has a regularly varying tail of index <span>&nbsp;</span>with , this paper summarizes a unified Laplace-Stieltjes framework for second-order renewal asymptotics. The centered renewal function and the secondary residual are treated<span>&nbsp; </span>as successive terms of one geometric transform series, and Karamata theory is combined with tauberian-abelian inversion to obtain sharp asymptotics across the infinite-variance interior regime and the critical boundary , where the behavior bifurcates according to whether the second moment is finite. A worked Pareto example illustrates the results.</span></p>"
+      }
+    ]
+  },
+  {
+    "idx": 36,
+    "query": "conditioned geometric random walk compact height contraction",
+    "url": "https://zenodo.org/api/records?q=conditioned+geometric+random+walk+compact+height+contraction&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Visual Models and Classification of 1D, 2D, and 3D Random Walk",
+        "url": "https://zenodo.org/records/10687018",
+        "description": "<p><strong><span>ABSTRACT</span></strong></p>\n<p><span>A new visual model has been proposed for describing 1D, 2D and 2D random walk based on consideration of linear and nonlinear arithmetic triangles (1D), linear and nonlinear arithmetic squarer (2D), and linear and nonlinear arithmetic octahedrons (3D Our studies and visual constructions presented in this work show that the nonlinear case of an arithmetic triangle coincides with the optical scheme of the laser. Geometric constructions and recursive formulas are given. The studies presented in this paper show various geometric properties and nonlinear effects of 1D, 2D, and 3D spaces. For nonlinear 1D and 3D cases we can speak of filling the numbers of the arithmetic triangle (1D) and the arithmetic octahedron (3D) in the form of &ldquo;islands of numbers&rdquo; or separate structures of numbers.</span><em><span>&nbsp;</span></em></p>"
+      },
+      {
+        "title": "Gold Price Dynamics: Geometric Random Walk and ARIMAX Models",
+        "url": "https://zenodo.org/records/16926312",
+        "description": "<p><span lang=\"EN-GB\">This paper presents a unified analysis of gold price dynamics from 1970 to 2024, integrating two complementary approaches: the Geometric Random Walk (GRW) model with ARIMA techniques and the ARIMAX model examining the relationship between gold prices and global GDP. The first part explores gold price movements through five distinct historical phases, revealing varying growth rates and structural shifts, including periods of rapid increase and stability. Forecasts using the Geometric Linear Regression (GLR) model project annual gold price growth between 7.9% and 10.6% through 2030. The second part employs ARIMAX models to investigate the relationship between gold prices and global GDP, finding a strong, statistically significant correlation where a 1% increase in global GDP corresponds to a 1% rise in gold prices. </span></p>\n<p><span lang=\"EN-GB\">An update through August 2025 shows extraordinary growth and increased volatility in the gold market, with the growth rate exceeding earlier forecasts. These developments suggest a significant market shift, but further observation is needed to determine if the trend will persist.</span></p>"
+      }
+    ]
+  },
+  {
+    "idx": 36,
+    "query": "Collatz excursion resonance killed kernel",
+    "url": "https://api.crossref.org/works?query=Collatz+excursion+resonance+killed+kernel&rows=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "Median Nerve Excursion During Neurodynamic Mobilization",
+        "url": "https://doi.org/10.31525/ct1-nct03970408",
+        "description": ""
+      },
+      {
+        "title": "Continuous Measurement of Diaphragm Excursion as a Predictor of Extubation Failure",
+        "url": "https://doi.org/10.31525/ct1-nct03896048",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "idx": 36,
+    "query": "random walk ballot low excursion survival exponential",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3Arandom+AND+all%3Awalk&start=0&max_results=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 36,
+    "query": "3x+1 inverse tree renewal soft killed kernel",
+    "url": "https://api.openalex.org/works?search=3x%2B1+inverse+tree+renewal+soft+killed+kernel&per-page=2",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 36,
+    "query": "geometric walk endpoint conditioned spectral gap",
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=geometric+walk+endpoint+conditioned+spectral+gap&limit=2&fields=title%2Cyear%2Cabstract%2CexternalIds",
+    "status": 429,
+    "results": []
+  },
+  {
+    "idx": 36,
+    "query": "Collatz near integer 3x-1 Fourier resonance",
+    "url": "https://zenodo.org/api/records?q=Collatz+near+integer+3x-1+Fourier+resonance&size=2",
+    "status": 200,
+    "results": [
+      {
+        "title": "A Definitive Proof of the Collatz Conjecture using the Halemane(3X±1)/4System",
+        "url": "https://zenodo.org/records/22871588",
+        "description": "<p class=\"MsoNormal\"><strong>A Definitive Proof of the Collatz</strong><strong> Conjecture using the</strong><strong> Halemane(3X&plusmn;1)/4System </strong></p>\n<p class=\"MsoNormal\">&nbsp;</p>\n<p class=\"MsoNormal\">&nbsp;</p>\n<p class=\"MsoNormal\">&copy; Dr.(Prof.) Keshava Prasad Halemane,</p>\n<p class=\"MsoNormal\">Professor - retired (2017JAN31) from</p>\n<p class=\"MsoNormal\">Department of Mathematical And Computational Sciences,</p>\n<p class=\"MsoNormal\">National Institute of Technology Karnataka Surathkal,</p>\n<p class=\"MsoNormal\">Srinivasnagar, Mangaluru - 575025, India.</p>\n<p class=\"MsoNormal\"><a href=\"https://orcid.org/0000-0003-3483-3521\">https://orcid.org/0000-0003-3483-3521</a></p>\n<p class=\"MsoNormal\">Independent Researcher @ SASHESHA</p>\n<p class=\"MsoNormal\">(no affiliations; no funding; no data used; no conflict of interests)</p>\n<p class=\"MsoNormal\"><a href=\"https://www.linkedin.com/in/keshavaprasadahalemane/\">https://www.linkedin.com/in/keshavaprasadahalemane/</a></p>\n<p class=\"MsoNormal\"><a href=\"mailto:k.prasad.h@gmail.com\">k.prasad.h@gmail.com</a></p>\n<p class=\"MsoNormal\"><strong>&nbsp;</strong></p>\n<p class=\"MsoNormal\"><strong>&nbsp;</strong></p>\n<p class=\"MsoNormal\"><a name=\"_Toc104093183\"></a><strong>Abstract</strong><strong> </strong></p>\n<p class=\"MsoNormal\">&nbsp;</p>\n<p class=\"MsoNormal\">Halemane(3X&plusmn;1)/4System is defined, similar to the Collatz (3x+1) System, with slightly modified operations.&nbsp; On similar lines, we define the CTUHSK(3x+1)/4System, and show that to be exactly the same as the Collatz (3x+1) System.&nbsp; The convergence of Halemane(3X&plusmn;1)/4System to its trivial-cycle {(1&lArr;(2)&lArr;4)} is established.&nbsp; A reversible (invertible) transformation - based on a judiciously designed pruning-&amp;-joining operations "
+      },
+      {
+        "title": "Halemane's Theory on the Collatz (3x+1) System",
+        "url": "https://zenodo.org/records/22137594",
+        "description": "<p class=\"MsoNormal\"><strong>Halemane&rsquo;s Theory on the Collatz</strong><strong> (3x+1) System </strong></p>\n<p class=\"MsoNormal\">&nbsp;</p>\n<p class=\"MsoNormal\">&nbsp;</p>\n<p class=\"MsoNormal\">&copy; Dr.(Prof.) Keshava Prasad Halemane,</p>\n<p class=\"MsoNormal\">Professor - retired (2017JAN31) from</p>\n<p class=\"MsoNormal\">Department of Mathematical And Computational Sciences,</p>\n<p class=\"MsoNormal\">National Institute of Technology Karnataka Surathkal,</p>\n<p class=\"MsoNormal\">Srinivasnagar, Mangaluru - 575025, India.</p>\n<p class=\"MsoNormal\"><a href=\"https://orcid.org/0000-0003-3483-3521\">https://orcid.org/0000-0003-3483-3521</a></p>\n<p class=\"MsoNormal\">Independent Researcher @ SASHESHA</p>\n<p class=\"MsoNormal\">(no affiliations; no funding; no data used; no conflict of interests)</p>\n<p class=\"MsoNormal\"><a href=\"https://www.linkedin.com/in/keshavaprasadahalemane/\">https://www.linkedin.com/in/keshavaprasadahalemane/</a></p>\n<p class=\"MsoNormal\"><a href=\"mailto:k.prasad.h@gmail.com\">k.prasad.h@gmail.com</a></p>\n<p class=\"MsoNormal\"><strong>&nbsp;</strong></p>\n<p class=\"MsoNormal\"><strong>&nbsp;</strong></p>\n<p class=\"MsoNormal\"><a name=\"_Toc104093183\"></a><strong>Abstract</strong><strong> </strong></p>\n<p class=\"MsoNormal\">&nbsp;</p>\n<p class=\"MsoNormal\"><span>This paper presents certain details about the development of Halemane&rsquo;s Theory on the Collatz (3x+1) System. <span>&nbsp;</span>The concept of binary-exponential-ladder BEL has been introduced, to enable effective merging/absorption of repeated application of the Collatz even-operator (x/2) whenever valid, within the corresponding BEL. <span>&nbsp;</span>The set of all binary exponential ladders has a direct bijective mapping with the set of all positive integers. <span>&nbsp;</span>Every positive odd "
+      }
+    ]
+  }
+]

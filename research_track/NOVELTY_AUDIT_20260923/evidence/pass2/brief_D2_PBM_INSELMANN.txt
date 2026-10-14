@@ -1,0 +1,88 @@
+ROLE MARKER: DEEP_D2_PBM_INSELMANN_20260923
+
+Sen bagimsiz bir matematik hakemi + literatur arastirmacisisin. Bir Collatz arastirma programinin onceki taramasinda "NEW-CANDIDATE" (makul aramada esdegeri bulunamadi) etiketi alan asagidaki iddialari DERINLEMESINE incele. Amac: her biri icin "gercekten yeni ve degerli mi, yoksa bilinen/onemsiz/hatali mi" sorusuna kesin cevap.
+
+BAGLAM (dogrulanmis): Garcia-Tal, "A note on the generalized 3n+1 problem", Acta Arith. 90 (1999) 245-250 (her sonsuz yorungenin Banach yogunlugu 0) ve Curry, Zenodo doi 10.5281/zenodo.22087163 (2026; iraksak yorungede sum 1/x < inf, g_n <= B log2 n + O(1) B<1.0358567 icin imkansiz; Thm 2.3 #(O cap [a,a+X)) <= C X^beta log 2X, beta>beta*=0.9653844) programin CP02-CP19 "iraksak yorunge seyrekligi" hattini ASMISTIR. Curry referanslari: De Jesus Zenodo 10.5281/zenodo.21481692 ve 10.5281/zenodo.20593925, Rozier 2017 Funct. Approx. 56, Heppner 1978, Wirsching 1998 LNM 1681. Collatz cozulmedi.
+
+HER IDDIA ICIN ZORUNLU ADIMLAR
+ S1. Kaynagi ac (dosya yolu verildi; SALT-OKUNUR). Iddianin TAM nicel ifadesini, hipotezlerini ve programin kendi etiketini alintila. ZIP ise cwd'ye ac.
+ S2. DOGRULUK: ispati oku; en zayif adimi bul. Mumkunse kucuk exact Python kontrolu yaz ve calistir (kod + cikti). Karsiornek ara. Sonuc: DOGRU / KOSULLU-DOGRU (hangi kosul) / BOSLUKLU / YANLIS.
+ S3. ONEMSIZLIK TESTI: iddia bilinen bir seyden (Terras/Everett bijeksiyonu, afin formul 2^m x_m = 3^k x_0 + B_w, Bohm-Sontacchi, basit sayim, Garcia-Tal/Curry, Inselmann, Tao, Rozier, Parseval/standart Fourier, termodinamik formalizm/topolojik entropi) birkac satirda cikiyor mu? Cikiyorsa turetmeyi yaz.
+ S4. DERIN LITERATUR: her iddia icin EN AZ 6 sorgu, hem YONTEM hem NESNE kelimeleriyle (Banach density, reciprocal sum, factor complexity, topological entropy, subshift, parity vector, stopping time, cycle, 2^m-3^k, affine, 3x-1, Fourier, character sum, collision, carry...). Kaynaklar: arXiv API (export.arxiv.org/api/query), OpenAlex (api.openalex.org/works?search=), Semantic Scholar (api.semanticscholar.org/graph/v1/paper/search?query=&fields=title,year,abstract,externalIds), Crossref, Zenodo (zenodo.org/api/records?q=). Lagarias bibliyografyalari arXiv math/0309224 ve math/0608208 tam metnini indirip ANAHTAR NESNE kelimeleri icin grep yap. Garcia-Tal 1999 ve Rozier 2017'ye ATIF YAPAN calismalari OpenAlex cites: filtresiyle listele ve baslik/ozetlerini tara. Buldugun her aday kaynagin BIRINCIL metnini (ozet ya da PDF) ac, ilgili cumleyi alintila. Acamazsan DOGRULANMADI. UYDURMA ATIF = diskalifiye.
+ S5. DEGER: yayin degeri 0-5 (0=onemsiz/ic arac, 3=kisa not/lemma, 5=bagimsiz makale) + gerekce.
+ S6. NIHAI KARAR (tek etiket): NEW-STRONG (yeni, dogru, onemsiz degil) / NEW-MINOR (yeni ama kucuk/kosullu) / TRIVIAL (bilinenden kolayca cikar) / KNOWN (yayimlanmis) / SUPERSEDED (daha guclusu yayimlanmis) / FLAWED (yanlis veya ispat bosluklu) / UNRESOLVED (neden).
+
+CIKTI (cwd'ye):
+ - deep_D2_PBM_INSELMANN.json: liste; her oge {"idx","claim","exact_statement","program_label","correctness","weakest_step","check_code_and_output","triviality_derivation","queries":[...],"candidates":[{"cite","url","quote","opened"}],"value_0_5","final_verdict","one_line_reason"}
+ - Final cevabin: Turkce, sade, her iddia icin 4-8 satir (karar + neden + en yakin kaynak), sonra ozet tablo. Son satir tam olarak:
+DEEP_D2_PBM_INSELMANN_20260923_COMPLETE
+
+INCELENECEK IDDIALAR (kaynak yollari WSL bicimi):
+[
+ {
+  "id": "28-06",
+  "checkpoint": "CP28",
+  "claim": "Tek sayılı [2^m,2^(m+1)) kabuğundan τ=min{j:S_j>m} sonrası ilk ⌊δm⌋ valuation içinde her sabit k frekansı 2^(−k)’ye olasılıkta gider, 0<δ<1.",
+  "program_label": "PROOF-with-minor-revisions (a δ<β/2, b δ<1)",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_track/CP28_CONSORTIUM_POST_BUDGET_MIXING/evidence/pbm_writeup_chatgpt.txt",
+  "verdict": "NEW-CANDIDATE",
+  "references": [
+   {
+    "cite": "Inselmann (2024), Lemma 2.16",
+    "url": "https://arxiv.org/html/2402.03276v3",
+    "quote": "Suppose that P ⊆ ℤ+ is ∗-dense. Then the set {m∈ℤ+ | T^{⌊log₂m⌋}(m)∈P} is ∗-dense as well.",
+    "opened": true
+   },
+   {
+    "cite": "Inselmann (2024), Theorem 3.1",
+    "url": "https://arxiv.org/html/2402.03276v3",
+    "quote": "Suppose that ε>0. Then the set {m∈ℤ+ | ∀λ∈[0,1]: m^{λ−ε}≤T^{⌊(1−λ)/(1−log₂√3) log₂m⌋}(m)≤m^{λ+ε}} is ∗-dense.",
+    "opened": true
+   },
+   {
+    "cite": "Inselmann (2024), Proposition 2.4 (cites Terras/Everett)",
+    "url": "https://arxiv.org/html/2402.03276v3",
+    "quote": "the push-forward measure of the uniform measure on [M ... M+2^N) under the map m↦(p(m)_i)_{0≤i<N} is the uniform measure on {0,1}^{[0...N)}.",
+    "opened": true
+   },
+   {
+    "cite": "Tao (2019), arXiv:1909.03562, abstract",
+    "url": "https://export.arxiv.org/api/query?id_list=1909.03562",
+    "quote": "for any function f ... with lim f(N)=+∞, one has Col_min(N) ≤ f(N) for almost all N ... (in the sense of logarithmic density).",
+    "opened": true
+   }
+  ],
+  "queries": [
+   "Collatz post budget pattern frequencies valuation window",
+   "Inselmann Lemma 2.16 odd Syracuse geometric frequencies",
+   "stopping time distribution parity vector post logarithm",
+   "Tao first passage valuation 3-adic offset"
+  ],
+  "note": "Kaynakta PBM açık ifadesi görülmedi; Inselmann Lemma 2.16 + Thm 3.1 ve pattern Hoeffding’den türeyen corollary, bağımsız mixing teoremi değil; ters log F oranı yazım hatası raporda kabul edilmiş.",
+  "idx": 49
+ },
+ {
+  "id": "E5-005",
+  "checkpoint": "rate_audit_20260908",
+  "claim": "İnselmann’dan tek çekim ve değiştirilmiş üst-yaklaşımla d_cert=5×10^-10 istisna üssü çıkarken seçili usulün tavanı yaklaşık 0.000979308877 ve gerekli 0.050332383666’dır.",
+  "program_label": "EXACT/CONDITIONAL",
+  "source_file": "/mnt/c/Users/MDP/collatz-analysis/Collatz/research_rate_audit_20260908/REPORT.md",
+  "verdict": "NEW-CANDIDATE",
+  "references": [
+   {
+    "cite": "Inselmann (2024), arXiv:2402.03276, abstract",
+    "url": "https://arxiv.org/abs/2402.03276",
+    "quote": "almost all m ... fulfill ... simultaneously for all 0≤k≤α log m ... We extend this result to α=2(log(4/3))^{-1}",
+    "opened": true
+   }
+  ],
+  "queries": [
+   "Inselmann Collatz explicit exceptional rate 5e-10",
+   "Collatz stopping time distribution exceptional exponent rate",
+   "Collatz pullback Hoeffding residue window rate"
+  ],
+  "note": "Sayılar programın değiştirilmiş çıkarımı, Inselmann’dan alıntı rakamlar değil; ispatın bağımsız teyidi yapılmadı.",
+  "idx": 24
+ }
+]
+NOT: Inselmann arXiv:2402.03276v3 tam metnini indir; Lemma 2.16, Thm 3.1, 3.4 ve varsa valuation/parite frekansi sonuclarini ara. Inselmann'a atif yapan calismalari (OpenAlex/Semantic Scholar citations) tara. Tao 2019 Prop 1.9/1.14, Kontorovich-Sinai 2002, Borovkov-Pfeifer 2000, Lagarias-Soundararajan 2006 stochastic model sonuclariyla karsilastir.

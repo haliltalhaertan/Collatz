@@ -1,0 +1,194 @@
+\email{tao@math.ucla.edu}
+
+%\email{}
+
+\subjclass[2010]{37P99}
+
+\begin{abstract}  Define the \emph{Collatz map} $\Col \colon \N+1 \to \N+1$ on the positive integers $\N+1 = \{1,2,3,\dots\}$ by setting $\Col(N)$ equal to $3N+1$ when $N$ is odd and $N/2$ when $N$ is even, and let $\Col_{\min}(N) \coloneqq \inf_{n \in \N} \Col^n(N)$ denote the minimal element of the Collatz orbit $N, \Col(N), \Col^2(N), \dots$. The infamous \emph{Collatz conjecture} asserts that $\Col_{\min}(N)=1$ for all $N \in \N+1$.  Previously, it was shown by Korec that for any $\theta > \frac{\log 3}{\log 4} \approx 0.7924$, one has $\Col_{\min}(N) \leq N^\theta$ for almost all $N \in \N+1$ (in the sense of natural density).  In this paper we show that for \emph{any} function $f \colon \N+1 \to \R$ with $\lim_{N \to \infty} f(N)=+\infty$, one has $\Col_{\min}(N) \leq f(N)$ for almost all $N \in \N+1$ (in the sense of logarithmic density).  Our proof proceeds by establishing a stabilisation property for a certain first passage random variable associated with the Collatz iteration (or more precisely, the closely related Syracuse iteration), which in turn follows from estimation of the characteristic function of a certain skew random walk on a $3$-adic cyclic group $\Z/3^n\Z$ at high frequencies.  This estimation is achieved by studying how a certain two-dimensional renewal process interacts with a union of triangles associated to a given frequency.
+\end{abstract}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+\subsection{Statement of main result}
+
+Let $\N \coloneqq \{0,1,2,\dots\}$ denote the natural numbers, so that $\N+1 = \{1,2,3,\dots\}$ are the positive integers.  The \emph{Collatz map} $\Col \colon \N+1 \to \N+1$ is defined by setting $\Col(N) \coloneqq 3N+1$ when $N$ is odd and $\Col(N) \coloneqq N/2$ when $N$ is even.  For any $N \in \N+1$, let $\Col_{\min}(N) \coloneqq \min \Col^\N(N) = \inf_{n \in \N} \Col^n(N)$ denote the minimal element of the Collatz orbit $\Col^\N(N) \coloneqq \{ N, \Col(N), \Col^2(N), \dots\}$.    We have the infamous \emph{Collatz conjecture} (also known as the $3x+1$ conjecture):
+
+\begin{conjecture}[Collatz conjecture]\label{collatz}  We have $\Col_{\min}(N)=1$ for all $N \in \N+1$.
+\end{conjecture}
+
+We refer the reader to \cite{lag}, \cite{chamber} for extensive surveys and historical discussion of this conjecture.
+
+While the full resolution of Conjecture \ref{collatz} remains well beyond reach of current methods, some partial results are known.
+Numerical computation has verified $\Col_{\min}(N)=1$ for all $N \leq 5.78 \times 10^{18}$ \cite{olive}, for all $N \leq 10^{20}$ \cite{eric}, and most recently for all $N \leq 2^{68} \approx 2.95 \times 10^{20}$ \cite{barina}, while Krasikov and Lagarias \cite{kl} showed that
+$$ \# \{ N \in \N+1 \cap [1,x]: \Col_{\min}(N) = 1 \} \gg x^{0.84}$$
+for all sufficiently large $x$, where $\# E$ denotes the cardinality of a finite set $E$, and our conventions for asymptotic notation are set out in Section \ref{notation-sec}.  In this paper we will focus on a different type of partial result, in which one establishes upper bounds on the minimal orbit value $\Col_{\min}(N)$ for ``almost all'' $N \in \N+1$.  For technical reasons, the notion of ``almost all'' that we will use here is based on logarithmic density, which has better approximate multiplicative invariance properties than the more familiar notion of natural density (see \cite{tao:chowla} for a related phenomenon in a more number-theoretic context).  Due to the highly probabilistic nature of the arguments in this paper, we will define logarithmic density using the language of probability theory.
+
+\begin{definition}[Almost all]  Given a finite non-empty subset $R$ of $\N+1$, we define\footnote{In this paper all random variables will be denoted by boldface symbols, to distinguish them from purely deterministic quantities that will be denoted by non-boldface symbols.  When it is only the distribution of the random variable that is important, we will use multi-character boldface symbols such as $\Log$, $\Unif$, or $\Geom$ to denote the random variable, but when the dependence or independence properties of the random variable are also relevant, we shall usually use single-character boldface symbols such as $\a$ or $\j$ instead.}  $\Log(R)$ to be a random variable taking values in $R$ with the logarithmically uniform distribution
+$$ \P( \Log(R) \in A ) = \frac{\sum_{N \in A \cap R} \frac{1}{N}}{\sum_{N \in R} \frac{1}{N}}$$
+for all $A \subset \N+1$.  The \emph{logarithmic density} of a set $A \subset \N+1$ is then defined to be $\lim_{x \to \infty} \P( \Log(\N+1 \cap [1,x]) \in A )$, provided that the limit exists.  We say that a property $P(N)$ holds for \emph{almost all} $N \in \N+1$ if $P(N)$ holds for $N$ in a subset of $\N+1$ of logarithmic density $1$, or equivalently if
+$$ \lim_{x \to \infty} \P( P( \Log( \N+1 \cap [1,x] ) ) ) = 1.$$
+\end{definition}
+
+In Terras \cite{terras} (and independently Everett \cite{everett}) it was shown that $\Col_{\min}(N) < N$ for almost all $N$.  This was improved by Allouche \cite{allouche} to $\Col_{\min}(N) < N^\theta$ for almost all $N$, and any fixed constant $\theta>\frac{3}{2} - \frac{\log 3}{\log 2} \approx 0.869$; the range of $\theta$ was later extended to $\theta > \frac{\log 3}{\log 4} \approx 0.7924$ by Korec \cite{korec}.  (Indeed, in these results one can use natural density instead of logarithmic density to define ``almost all''.)  It is tempting to try to iterate these results to lower the value of $\theta$ further.  However, one runs into the difficulty that the uniform (or logarithmic) measure does not enjoy any invariance properties with respect to the Collatz map: in particular, even if it is true that $\Col_{\min}(N) < x^\theta$ for almost all $N \in [1,x]$, and $\Col_{\min}(N') \leq x^{\theta^2}$ for almost all $N' \in [1, x^\theta]$, the two claims cannot be immediately concatenated to imply that $\Col_{\min}(N) \leq x^{\theta^2}$ for almost all $N \in [1,x]$, since the Collatz iteration may send almost all of $[1,x]$ into a very sparse subset of $[1,x^\theta]$, and in particular into the exceptional set of the latter claim $\Col_{\min}(N') \leq x^{\theta^2}$.
+
+Nevertheless, in this paper we show that it is possible to locate an alternate probability measure (or more precisely, a family of probability measures) on the natural numbers with enough invariance properties that an iterative argument does become fruitful.  More precisely, the main result of this paper is the following improvement of these ``almost all'' results.
+
+\begin{theorem}[Almost all Collatz orbits attain almost bounded values]\label{main}  Let $f \colon \N + 1 \to \R$ be any function with $\lim_{N \to\infty} f(N) = +\infty$.  Then one has $\Col_{\min}(N) < f(N)$ for almost all $N \in \N+1$ (in the sense of logarithmic density).
+\end{theorem}
+
+Thus for instance one has $\Col_{\min}(N) < \log\log\log\log N$ for almost all $N$.
+
+
+\begin{remark}  One could ask whether it is possible to sharpen the conclusion of Theorem \ref{main} further, to assert that there is an absolute constant $C_0$ such that $\Col_{\min}(N) \leq C_0$ for almost all $N \in \N+1$.  However this question is likely to be almost as hard to settle as the full Collatz conjecture, and out of reach of the methods of this paper.  Indeed, suppose for any given $C_0$ that there existed an orbit $\Col^\N(N_0) = \{N_0, \Col(N_0), \Col^2(N_0),\dots\}$ that never dropped below $C_0$ (this is the case if there are infinitely many periodic orbits, or if there is at least one unbounded orbit).  Then probabilistic heuristics (such as \eqref{snn} below) suggest that for a positive density set of $N \in \N+1$, the orbit $\Col^\N(N) = \{N, \Col(N), \Col^2(N), \dots\}$ should encounter one of the elements $\Col^n(N_0)$ of the orbit of $N_0$ before going below $C_0$, and then the orbit of $N$ will never dip below $C_0$.  However, Theorem \ref{main} is easily seen\footnote{Indeed, if the latter assertion failed, then there exists a $\delta$ such that the set $\{ N \in \N+1: \Col_{\min}(N) \leq C\}$ has lower logarithmic density less than $1-\delta$ for every $C$.  A routine diagonalisation argument then shows that there exists a function $f$ growing to infinity such that $\{ N \in \N+1: \Col_{\min}(N) \leq f(N)\}$ has lower logarithmic density at most $1-\delta$, contradicting Theorem \ref{main}.} to be equivalent to the assertion that for any $\delta>0$, there exists a constant $C_\delta$ such that $\Col_{\min}(N) \leq C_\delta$ for all $N$ in a subset of $\N+1$ of lower logarithmic density (in which the limit in the definition of logarithmic density is replaced by the limit inferior) at least $1-\delta$; in fact (see Theorem \ref{main-alt}) our arguments give a constant of the form $C_\delta \ll \exp(\delta^{-O(1)})$, and it may be possible to refine the subset so that the logarithmic density (as opposed to merely the lower logarithmic density) exists and is at least $1-\delta$.  In particular\footnote{We thank Ben Green for this observation.}, it is possible in principle that a sufficiently explicit version of the arguments here, when combined with numerical verification of the Collatz conjecture, can be used to show that the Collatz conjecture holds for a set of $N$ of positive logarithmic density.  Also, it is plausible that some refinement of the arguments below will allow one to replace logarithmic density by natural density in the definition of ``almost all''.
+\end{remark}
+
+\subsection{Syracuse formulation}
+
+We now discuss the methods of proof of Theorem \ref{main}.  It is convenient to replace the Collatz map $\Col \colon \N+1 \to \N+1$ with a slightly more tractable acceleration $N \mapsto \Col^{f(N)}(N)$ of that map.  One common instance of such an acceleration in the literature is the map $\Col_2 \colon \N+1 \to \N+1$, defined by setting $\Col_2(N) \coloneqq \Col^2(N) = \frac{3N+1}{2}$ when $N$ is odd and $\Col_2(N) \coloneqq \frac{N}{2}$ when $N$ is even.  Each iterate of the map $\Col_2$ performs exactly one division by $2$, and for this reason $\Col_2$ is a particularly convenient choice of map when performing ``$2$-adic'' analysis of the Collatz iteration.  It is easy to see that $\Col_{\min}(N) = (\Col_2)_{\min}(N)$ for all $N \in \N+1$, so all the results in this paper concerning $\Col$ may be equivalently reformulated using $\Col_2$.  The triple iterate $\Col^3$ was also recently proposed as an acceleration in \cite{carletti}.  However, the methods in this paper will rely instead on ``$3$-adic'' analysis, and it will be preferable to use an acceleration of the Collatz map (first appearing to the author's knowledge in \cite{crandall}) which performs exactly one multiplication by $3$ per iteration.  More precisely, let $2\N+1 = \{1,3,5,\dots\}$ denote the odd natural numbers, and define the \emph{Syracuse map} $\Syr \colon 2\N+1 \to 2\N+1$ (OEIS A075677) to be the largest odd number dividing $3N+1$; thus for instance
+$$ \Syr(1)=1; \quad \Syr(3) = 5; \quad \Syr(5) = 1; \quad \Syr(7) = 11.$$
+Equivalently, one can write
+\begin{equation}\label{S-def}
+ \Syr(N) = \Col^{\nu_2(3N+1)+1}(N) = \Aff_{\nu_2(3N+1)}(N)
+\end{equation}
+where for each positive integer $a \in \N+1$, $\Aff_a\colon \R \to \R$ denotes the affine map
+$$ \Aff_a(x) \coloneqq \frac{3x+1}{2^a}$$
+and for each integer $M$ and each prime $p$, the \emph{$p$-valuation} $\nu_p(M)$ of $M$ is defined as the largest natural number $a$ such that $p^a$ divides $M$ (with the convention $\nu_p(0) = +\infty$).  (Note that $\nu_2(3N+1)$ is always a positive integer when $N$ is odd.)  For any $N \in 2\N+1$, let $\Syr_{\min}(N) \coloneqq \min \Syr^\N(N)$ be the minimal element of the Syracuse orbit
+$$\Syr^\N(N) \coloneqq \{ N, \Syr(N), \Syr^2(N), \dots\}.$$
+This Syracuse orbit $\Syr^\N(N)$ is nothing more than the odd elements of the corresponding Collatz orbit $\Col^\N(N)$, and from this observation it is easy to verify the identity
+\begin{equation}\label{c-ident}
+ \Col_{\min}(N) = \Syr_{\min}( N / 2^{\nu_2(N)} )
+\end{equation}
+for any $N \in \N+1$.  Thus, the Collatz conjecture can be equivalently rephrased as
+
+\begin{conjecture}[Collatz conjecture, Syracuse formulation]\label{collatz-syr}  We have $\Syr_{\min}(N)=1$ for all $N \in 2\N+1$.
+\end{conjecture}
+
+We may similarly reformulate Theorem \ref{main} in terms of the Syracuse map.  We say that a property $P(N)$ holds for \emph{almost all} $N \in 2\N+1$  if
+$$ \lim_{x \to \infty} \P( P(\Log( 2\N+1 \cap [1,x] ) )  )= 1,$$
+or equivalently if $P(N)$ holds for a set of odd natural numbers of logarithmic density $1/2$.  Theorem \ref{main} is then equivalent to
+
+\begin{theorem}[Almost all Syracuse orbits attain almost bounded values]\label{main-syr}  Let $f\colon 2\N + 1 \to \R$ be a function with $\lim_{N \to\infty} f(N) = +\infty$.  Then one has $\Syr_{\min}(N) < f(N)$ for almost all $N \in 2\N+1$.
+\end{theorem}
+
+Indeed, if Theorem \ref{main-syr} holds and $f\colon \N +1 \to \R$ is such that $\lim_{N \to \infty} f(N) = +\infty$, then from \eqref{c-ident} we see that for any $a \in \N$, the set of $N \in \N+1$ with $\nu_2(N) = a$ and $\Col_{\min}( N ) = \Syr_{\min}(N/2^a) < f(N)$ has logarithmic density $2^{-a}$.  Summing over any finite range $0 \leq a \leq a_0$ we obtain a set of logarithmic density $1 - 2^{-a_0}$ on which the claim $\Col_{\min}(N) < f(N)$ holds, and on sending $a_0$ to infinity one obtains Theorem \ref{main}.  The converse implication (which we will not need) is also straightforward and left to the reader.
+
+The iterates $\Syr^n$ of the Syracuse map can be described explicitly as follows.  For any finite tuple $\vec a = (a_1,\dots,a_n) \in (\N+1)^n$ of positive integers, we define the composition $\Aff_{\vec a} = \Aff_{a_1,\dots,a_n}\colon \R \to \R$ to be the affine map
+$$ \Aff_{a_1,\dots,a_n}(x) \coloneqq \Aff_{a_n}( \Aff_{a_{n-1}}( \dots (\Aff_{a_1}(x)) \dots )).$$
+A brief calculation shows that
+\begin{equation}\label{a-form}
+\Aff_{a_1,\dots,a_n}(x) = 3^n 2^{-|\vec a|} x + F_n(\vec a)
+\end{equation}
+where the \emph{size} $|\vec a|$ of a tuple $\vec a$ is defined as
+\begin{equation}\label{length}
+ |\vec a| \coloneqq a_1 + \dots + a_n,
+\end{equation}
+and we define the \emph{$n$-Syracuse offset map} $F_n\colon (\N+1)^n \to \Z[\frac{1}{2}]$ to be the function
+\begin{equation}\label{fn-def}
+\begin{split}
+ F_n(\vec a) &\coloneqq \sum_{m=1}^n 3^{n-m} 2^{-a_{[m,n]}} \\
+&= 3^{n-1} 2^{-a_{[1,n]}} + 3^{n-2} 2^{-a_{[2,n]}} + \dots + 3^1 2^{-a_{[n-1,n]}} + 2^{-a_n},
+\end{split}
+\end{equation}
+where we adopt the summation notation
+\begin{equation}\label{sum}
+a_{[j,k]} \coloneqq \sum_{i=j}^k a_i
+\end{equation}
+for any $1 \leq j \leq k \leq n$, thus for instance $|\vec a| = a_{[1,n]}$.  The $n$-Syracuse offset map $F_n$ takes values in the ring $\Z[\frac{1}{2}] \coloneqq \{ \frac{M}{2^a}: M \in\Z, a \in \N \}$ formed by adjoining $\frac{1}{2}$ to the integers.
+
+By iterating \eqref{S-def} and then using \eqref{a-form}, we conclude that
+\begin{equation}\label{s-iter}
+\Syr^n(N) = \Aff_{\vec a^{(n)}(N)}(N) = 3^n 2^{-|\vec a^{(n)}(N)|} N + F_n(\vec a^{(n)}(N))
+\end{equation}
+for any $N \in 2\N+1$ and $n \in \N$, where we define \emph{$n$-Syracuse valuation} $\vec a^{(n)}(N) \in (\N+1)^n$ of $N$ to be the tuple
+\begin{equation}\label{van}
+ \vec a^{(n)}(N) \coloneqq \left(\nu_2(3N+1), \nu_2(3\Syr(N)+1), \dots, \nu_2(3\Syr^{n-1}(N)+1)\right).
+\end{equation}
+This tuple is referred to as the \emph{$n$-path} of $N$ in \cite{ks}.
+
+The identity \eqref{s-iter} asserts that $\Syr^n(N)$ is the image of $N$ under a certain affine map $\Aff_{\vec a^{(n)}(N)}$ that is determined by the $n$-Syracuse valuation $\vec a^{(n)}(N)$ of $N$.  This suggests that in order to understand the behaviour of the iterates $\Syr^n(N)$ of a typical large number $N$, one needs to understand the behaviour of $n$-Syracuse valuation $\vec a^{(n)}(N)$, as well as the $n$-Syracuse offset map $F_n$.  For the former, we can gain heuristic insight by observing that for a positive integer $a$, the set of odd natural numbers $N \in 2\N+1$ with $\nu_2(3N+1)=a$ has (logarithmic) relative density $2^{-a}$.  To model this probabilistically, we introduce the following probability distribution:
+
+\begin{definition}[Geometric random variable]\label{geom}  If $\mu > 1$, we use $\Geom(\mu)$ to denote a geometric random variable of mean $\mu$, that is to say $\Geom(\mu)$ takes values in $\N+1$ with
+$$ \P( \Geom(\mu) = a ) = \frac{1}{\mu} \left( \frac{\mu-1}{\mu} \right)^{a-1}$$
+for all $a \in \N+1$.  We use $\Geom(\mu)^n$ to denote a tuple of $n$ independent, identically distributed (or \emph{iid} for short) copies of $\Geom(\mu)$, and use $\X \equiv \Y$ to denote the assertion that two random variables $\X,\Y$ have the same distribution.  Thus for instance
+$$ \P( \a = a ) = 2^{-a}$$
+whenever $\a \equiv \Geom(2)$ and $a \in \N+1$, and more generally
+$$ \P( \vec \a = \vec a ) = 2^{-|\vec a|}$$
+whenever $\vec \a \equiv \Geom(2)^n$ and $\vec a \in (\N+1)^n$ for some $n \in \N$.
+\end{definition}
+
+In this paper, the only geometric random variables we will actually use are $\Geom(2)$ and $\Geom(4)$.
+
+We will then be guided by the following heuristic:
+
+\begin{heuristic}[Valuation heuristic]\label{Val}  If $N$ is a ``typical'' large odd natural number, and $n$ is much smaller than $\log N$, then the $n$-Syracuse valuation $\vec a^{(n)}(N)$ behaves like $\Geom(2)^n$.
+\end{heuristic}
+
+We can make this heuristic precise as follows.  Given two random variables $\X,\Y$ taking values in the same discrete space $R$, we define the \emph{total variation} $d_\TV(\X,\Y)$ between the two variables to be the total variation of the difference in the probability measures, thus
+\begin{equation}\label{tv-1}
+ d_\TV(\X,\Y) \coloneqq \sum_{r \in R} |\P( \X = r ) - \P( \Y = r )|.
+\end{equation}
+Note that
+\begin{equation}\label{tv-2}
+ \sup_{E \subset R} |\P(\X \in E) - \P(\Y \in E)| \leq d_\TV(\X,\Y) \leq 2 \sup_{E \subset R} |\P(\X \in E) - \P(\Y \in E)|.
+\end{equation}
+For any finite non-empty set $R$, let $\Unif(R)$ denote a uniformly distributed random variable on $R$.  Then we have the following result, proven in Section \ref{rach-sec}:
+
+\begin{proposition}[Distribution of $n$-Syracuse valuation]\label{rach}  Let $n \in \N$, and let $\mathbf{N}$ be a random variable taking values in $2\N+1$.  Suppose there exist an absolute constant $c_0 > 0$ and some natural number $n' \geq (2+c_0) n$ such that $\mathbf{N} \mod 2^{n'}$ is approximately uniformly distributed in the odd residue classes $(2\Z+1)/2^{n'}\Z$ of $\Z/2^\ell\Z$, in the sense that
+\begin{equation}\label{boy}
+ d_\TV( \mathbf{N} \mod 2^{n'}, \Unif((2\Z+1)/2^{n'}\Z) ) \ll 2^{-n'}.
+\end{equation}
+Then
+\begin{equation}\label{girl}
+ d_\TV( \vec a^{(n)}(\mathbf{N}), \Geom(2)^n ) \ll 2^{-c_1 n}
+$$ \ll_{A'} n^{-2 A'} 3^n \sum_{Y_{k+1} \in \Z/3^n\Z} \P ( (F_{k+1}(\a_{k+1},\dots,\a_1) = Y_{k+1}) \wedge E_k \wedge B_k \wedge C_{k,l} )^2.$$
+
+\begin{remark} If we ignore the technical restriction to the events $E_k, B_k, C_{k,l}$, this quantity is essentially the Renyi $2$-entropy (also known as \emph{collision entropy}) of the random variable $F_{k+1}(\a_{k+1},\dots,\a_1) \mod 3^n$.
+\end{remark}
+
+Now we make a key elementary number theory observation:
+
+\begin{lemma}[Injectivity of offsets]\label{inj}  For each natural number $n$, the $n$-Syracuse offset map $F_n\colon (\N+1)^n \to \Z[\frac{1}{2}]$ is injective.
+\end{lemma}
+
+\begin{proof}  Suppose that $(a_1,\dots,a_n), (a'_1,\dots,a'_n) \in (\N+1)^n$ are such that $F_n(a_1,\dots,a_n) = F_n(a'_1,\dots,a'_n)$.  Taking $2$-valuations of both sides using \eqref{fn-def}, we conclude that
+$$ - a_{[1,n]} = - a'_{[1,n]}.$$
+On the other hand, from \eqref{fn-def} we have
+$$ F_n(a_1,\dots,a_n) = 3^n 2^{-a_{[1,n]}} + F_{n-1}(a_2,\dots,a_n)$$
+and similarly for $a'_1,\dots,a'_n$, hence
+$$ F_{n-1}(a_2,\dots,a_n) = F_{n-1}(a'_2,\dots,a'_n).$$
+The claim now follows from iteration (or an induction on $n$).
+\end{proof}
+
+We will need a more quantitative $3$-adic version of this injectivity:
+
+\begin{corollary}[$3$-adic separation of offsets]  Let $C_A$ be sufficiently large, let $n$ be sufficiently large (depending on $C_A$), let $k$ be a natural number, and let $l$ be a natural number obeying \eqref{bmd-3}.  Then the residue classes $F_{k+1}(a_{k+1},\dots,a_1) \mod 3^n$, as $(a_1,\dots,a_{k+1}) \in (\N+1)^{k+1}$ range over ${k+1}$-tuples of positive integers that obey the conditions
+\begin{equation}\label{amb-x}
+ |a_{[i+1,j]} - 2(j-i)| \leq C_A \left( \sqrt{(j-i)(\log n)} + \log n \right)
+\end{equation}
+for $1 \leq i < j \leq k+1$ as well as
+\begin{equation}\label{amb-2x}
+a_{[1,k+1]} = l,
+\end{equation}
+are distinct.
+\end{corollary}
+
+\begin{proof}  Suppose that $(a_1,\dots,a_{k+1}), (a'_1,\dots,a'_{k+1})$ are two tuples of positive integers that both obey \eqref{amb-x}, \eqref{amb-2x}, and such that
+$$ F_{k+1}(a_{k+1},\dots,a_1) = F_{k+1}(a'_{k+1},\dots,a'_1) \mod 3^n.$$
+Applying \eqref{fn-def} and multiplying by $2^l$, we conclude that
+\begin{equation}\label{lrs}
+ \sum_{j=1}^{k+1} 3^{j-1} 2^{l - a_{[1,j]}} = \sum_{j=1}^{k+1} 3^{j-1} 2^{l - a'_{[1,j]}} \mod 3^n.
+\end{equation}
+From \eqref{amb-2x}, the expressions on the left and right sides are natural numbers.  Using \eqref{amb-x}, \eqref{bmd-3}, and Young's inequality $C_A j^{1/2} \log^{1/2} n \leq \frac{\eps}{2} j + \frac{1}{2\eps} C_A^2 \log n$ for a suitable choice of $\eps>0$, the left-hand side may be bounded for $C_A$ large enough by
+\begin{align*}
+ \sum_{j=1}^{k+1} 3^{j-1} 2^{l - a_{[1,j]}}
+&\ll 2^l \sum_{j=1}^{k+1} 3^{j} 2^{- 2j + C_A (\sqrt{j \log n} + \log n)} \\
+&\ll \exp( - 0.99 \log 2 (C_A)^2 \log n ) 3^n \sum_{j=1}^{k+1} \exp\left( - j \log \frac{4}{3} + \log 2 C_A j^{1/2} \log^{1/2} n + O( C_A \log n ) \right) \\
+&\ll \exp\left( - c (C_A)^2 \log n \right) 3^n \sum_{j=1}^{k+1} \exp( - c j ) \\
+&\ll n^{- c (C_A)^2} 3^n
+\end{align*}
+(here we use the fact that $\frac{\log^2 2}{4 \log \frac{4}{3}} \approx 0.4175$ is smaller than $0.99 \log 2 \approx 0.6862$); in particular, for $n$ large enough, this expression is less than $3^n$.  Similarly for the right-hand side of \eqref{lrs}.  Thus these two sides are equal as natural numbers, not simply as residue classes modulo $3^n$:
+\begin{equation}\label{span}

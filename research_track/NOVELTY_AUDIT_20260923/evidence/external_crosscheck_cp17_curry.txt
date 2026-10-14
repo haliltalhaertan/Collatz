@@ -1,0 +1,41 @@
+Adil bir itiraz — o hükmü tek bir cümleye dayandırmıştım. Arşivin kendi CP17 paketine bakıp doğrulayayım.
+
+Bu önemli — bulduğum şey beni düzeltiyor. Devam edeyim.
+
+Bunu tam olarak doğrulamam gerek — Curry'nin notunu çekmeyi deneyeyim.
+
+Bu, yayın değerlendirmesini değiştiriyor — önce kaydı düzeltip sonra anlatayım.
+
+Haklı çıktın, ama beklediğinden farklı bir yönde. İki parçalı cevap:
+
+## Önce: verdiğim gerekçe yanlıştı
+
+"2.865 satırlık ana ispat metni hiç tam bağımsız denetimden geçmedi" dedim. **Yanlış.** Arşivde `CP17 — FROZEN FINAL/CP17_FINAL_STANDALONE_V3_ZERO_TRUST_AUDIT.md` (2026-08-23) tam o metni denetliyor: birincil nesne açıkça `CP17_FINAL_STANDALONE_PROOF_V3.md` (2865 satır), paket 18/18 SHA256, V2→V3 farkı üç lokusta satır satır kontrol edilmiş, **18 düğümlü verdict tablosu hepsi `[VALID]`** — tek bir `[GAP]/[BUG]/[UNVERIFIED]` yok, üstelik bağımsız yeni kodla ((10.RG) 39.186 kelimede 0 hata, Lemma 10.1 m≤18'de 524.286 başlangıçta 0 ihlal). Kapanış sorusu bile yazılı: "paket içinde ispatlanmamış taşıyıcı adım var mı? **Hayır.**"
+
+Benim dayandığım "ana ispat metni test edilmedi" cümlesi, **repo tarafındaki** `03-cp17-zemin-kontrolu` turunun kendi *kapsam* beyanıydı — o tur yalnız carry özdeşliklerini almış. İki ayrı şeyi karıştırdım. Doğrusu: CP17 programda **en iyi denetlenmiş** kalem.
+
+## Ama gerçek sebep daha ağır: sonuç aşılmış
+
+**Michael John Curry**, *An Explicit Windowed Sparsity Bound for Divergent 3x+1 Orbits, with Logarithmic-Floor Exclusion beyond the Harmonic Barrier*, Zenodo, **2026-08-24**, doi 10.5281/zenodo.22087162 — 5 sayfa, elementer:
+
+- **Önerme 3.1:** `O` ıraksak bir yörüngenin değer kümesiyse `Σ_{x∈O} 1/x < ∞`.
+- Teorem 4.1: taban dışlaması her `B ≤ 1` için; Teorem 4.2/Kor. 4.3: her `B < 1/β* = 1,03585…`
+- Temeli **Garcia–Tal 1999** (3x+1'in her sonsuz yörüngesi Banach yoğunluğu sıfır) + Terras/Everett sayımı; Teorem 2.3: `#(O ∩ [a,a+X)) ≤ C·X^β·log(2X)`, her `β > β* = r_H·log₂3`.
+
+Neden CP17'yi kapsıyor: `Σ1/n_k` yakınsıyorsa `H_N` **sınırlıdır**, yani `limsup H_N/loglog N = 0` — `≤ 2,742882` sınırından kesin daha güçlü. Ve CP17'nin korolarisi (`s_k ≤ log₂k + C` imkânsız) onun Teorem 4.1'inin `B=1` hâli. Alan farkı da kapanıyor: Teorem 2.3 sonsuz **aperiyodik** yörünge için ve `β<1` olduğundan ikili ayrıştırma `Σ ≤ Σ_j C·j·2^{−j(1−β)} < ∞` veriyor; injektiflik yeterli.
+
+Sabitlerini kendi kodumla doğruladım: `γ* = 0,6090897679`, `β* = 0,9653844417`, `1/β* = 1,0358567600` — yazdığı basamaklarla birebir.
+
+**Çekinceler:** hakemsiz Zenodo notu, 0 atıf; beş sayfanın ifadelerini okudum ama Teorem 2.3'ün ispatını satır satır doğrulamadım. Kendi Remark 2.4'ü de ölçülü: güç kazancı Garcia–Tal'ın ispatında Heppner exponentleri açılınca örtük, "literatürde açık exponent bulunamadı, fazlası iddia edilmiyor".
+
+Yani CP17'yi bir ay önceki rakip değil, **1999'dan beri yayımda olan bir teorem** aştı.
+
+## Bunun acil dokunduğu yer
+
+CP19 T4 ve CP20 T6/T7 hipotezi `s_k = κ·log₂k + O(1)` ve elde edilen `κ* = 1,0526808586` / `1 < κ < 2,784` bandı. Curry'nin dışladığı `g_n ≤ B·log₂n + O(1)`, `B < 1,03585`. Normalizasyonlar farklı (değerin logaritması ↔ indeksin logaritması), o yüzden "kapsıyor" demiyorum — ama sayılar tesadüfen yakın değil. **Basınç makinesine dayanan herhangi bir gönderimden önce cevaplanması gereken soru bu.**
+
+CP17'den kalan: ledger özdeşlikleri (`0 ≤ H_N − 3log U_N ≤ π²/48` vb.), `β₀ = 4(α−1)/(α+2)` keskin tasarruf bandı ve rasyonel sertifika disiplini birer araç olarak duruyor; ayrıca `limsup(s_k − log₂k) = +∞` için artık daha kısa bir kaynak var — bundan sonra CP17 yerine Garcia–Tal/Curry zinciri alıntılanabilir.
+
+Süreç dersi: taramalar **yöntem** kelimeleriyle yapılmış (factor complexity, pressure, Chernoff, discrepancy — Lagarias'ın 1963–1999 bibliyografyasında "0 geçiş" bulunmuş). Aranmayan şey **nesne** kelimeleriydi: Banach density, sparsity, reciprocal sum, windowed count.
+
+[cp17_duzeltme_ve_oncelik_2026-09-23.md]({{artifact:87111ac2-507b-4421-ac51-9a433b74d254}}) — düzeltmenin dosya/satır dayanakları, Curry'nin ifadelerinin birebir alıntısı, sabit doğrulamam ve CP19/CP20 için kontrol maddesi.

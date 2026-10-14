@@ -1,0 +1,73 @@
+**Sonuç:** Fourier ayrışımı ve çarpışma özdeşliği doğrudur. Bağımsız hesap, \(\chi_1,\ldots,\chi_{15}\) değerlerini verdi; ancak \(E_n\)’in yakınsadığını veya \(\sup_n E_n<\infty\) olduğunu ispatlayamadım. Özellikle \(7/15\), ilk dokuz terimin düşündürdüğünden daha zayıf bir adaydır.
+
+Dosyalar: [cp17_linear.py](cp17_linear.py) · [cp17_linear.json](cp17_linear.json). Kod geometrik dağılımın **tam periyodunu** kullanır; Monte Carlo veya olasılık kuyruğu kesmesi yapmaz. \(n\leq4\) kontrolleri `Fraction` ile exact, tablonun diğer basamakları 45 basamaklı `Decimal` hesabıdır.
+
+### (a) Hesap tablosu
+
+\(E_n=\chi_n-\chi_{n-1}\), \(\chi_0=1\).
+
+| \(n\) | \(\chi_n\) | \(E_n\) |
+|---:|---:|---:|
+| 1 | 1.66666666666667 | 0.66666666666667 |
+| 2 | 2.14285714285714 | 0.47619047619048 |
+| 3 | 2.60443182319792 | 0.46157468034077 |
+| 4 | 3.06864623161626 | 0.46421440841835 |
+| 5 | 3.53416115136780 | 0.46551491975154 |
+| 6 | 4.00032991236925 | 0.46616876100145 |
+| 7 | 4.46582134220554 | 0.46549142983629 |
+| 8 | 4.93174246250492 | 0.46592112029938 |
+| 9 | 5.39840160891443 | 0.46665914640951 |
+| 10 | 5.86578902649821 | 0.46738741758378 |
+| 11 | 6.33395766017696 | 0.46816863367875 |
+| 12 | 6.80289904056419 | 0.46894138038723 |
+| 13 | 7.27251395454801 | 0.46961491398382 |
+| 14 | 7.74276828864221 | 0.47025433409420 |
+| 15 | 8.21359606925490 | 0.47082778061269 |
+
+Exact kontroller: \(\chi_1=5/3\), \(\chi_2=15/7\), \(\chi_3=177005/67963\). \(n=2\) için \(y=0,\ldots,8\) sırasındaki olasılıklar
+\[
+(0,8,16,0,11,4,0,2,22)/63;
+\]
+bunlar Tao’nun yayımladığı küçük-\(n\) kontrolüyle de örtüşür. En büyük hesaplanmış toplam-kütle sapması \(5.8\cdot10^{-43}\); doğrudan hesaplanan \(E_n\) ile \(\chi_n-\chi_{n-1}\) arasındaki en büyük sapma \(1.93\cdot10^{-41}\).
+
+### (b) Limit ve olasılık yorumu
+
+**[CONJECTURE]** \(E_n\)’in bir limiti olabilir; bu veriler limitin varlığını da değerini de belirlemiyor. \(7/15\) henüz elenmiş değildir, fakat *hızlı yakınsama* varsayımıyla desteklenmez: \(E_{15}-7/15=0.004161113946\ldots\). Bu nedenle \(c=7/15\) sonucunu veya başka bir kapalı formülü iddia etmiyorum.
+
+**[PROOF]** Bağımsız iki kopya için \(q_n=\Pr(X_n\equiv X'_n\pmod{3^n})\) yazılırsa
+\[
+E_n=3^nq_n-3^{n-1}q_{n-1}.
+\]
+\(D=X-X'\) 3-adik farkı kullanılarak aynı ifade
+\[
+E_n=3^{n-1}\!\left(2\Pr(v_3(D)\ge n)-\Pr(v_3(D)=n-1)\right)
+\]
+olur. Bu, tek başına “\(n-1\)’de uyuşup \(n\)’de uyuşmama” olayının olasılığı değildir; iki çarpışma olasılığının *ağırlıklı farkıdır*. Farkın değerlemesi tek başına kapalı bir yenileme zinciri de vermez: sonraki geçiş için kopyaların daha ayrıntılı kalıntıları gerekir.
+
+### (c) İspatın ulaştığı nokta
+
+**[PROOF]** Sonlu grupta Parseval,
+\[
+\chi_n=\sum_{\xi\bmod3^n}|\phi_n(\xi)|^2
+\]
+verir. \(X_n\bmod3^j=X_j\) olduğundan \(\phi_n(3^{n-j}u)=\phi_j(u)\). Frekansları 3-adik mertebelerine ayırınca
+\[
+\chi_n=1+\sum_{j=1}^n E_j,\qquad
+E_j=\sum_{\substack{u\bmod3^j\\3\nmid u}}|\phi_j(u)|^2\ge0.
+\]
+Ayrıca \(p_{n-1}(r)=\sum_{y\equiv r\ (3^{n-1})}p_n(y)\). Her üçlü lifte kareleri açmak, kodun kullandığı doğrudan ve pozitif formülü verir:
+\[
+E_n=3^n\sum_{y\bmod3^n}
+ \left(p_n(y)-\frac{p_{n-1}(y\bmod3^{n-1})}{3}\right)^2.
+\]
+Dolayısıyla \(\sup_nE_n<\infty\) **olsaydı** \(\chi_n=O(n)\); \(E_n\to c\) **olsaydı** \(\chi_n/n\to c\). Tersine, yalnız \(\chi_n/n\to c\), \(E_n\to c\) demek değildir.
+
+**[PROOF-with-gap: gerekli üniform lif-kare tahmini yok]** Yukarıdaki son toplamı bütün \(n\)’lerde sabitle sınırlayamadım. Bu, istenen \(O(n)\) ispatının eksik adımıdır; tabloda sınırlı görünmesi ispat değildir. Tao’nun birincil metnindeki Lemma 6.2’nin ifadesi şöyledir: “**For each natural number \(n\), the \(n\)-Syracuse offset map \(F_n:(\mathbb N+1)^n\to\mathbb Z[1/2]\) is injective.**” Bu ofset birebirliği, tek başına yukarıdaki *modüler* lif-kare toplamını üniform sınırlamaz. Aynı metnin Proposition 1.17’si her ilkel frekansta, her sabit \(A>0\) için üniform \(O_A(n^{-A})\) Fourier sönümü verir; yaklaşık \(2\cdot3^{n-1}\) ilkel frekansın kareleri toplamına doğrudan üniform sınır çıkarmaz. Soruda CP17 için verilen \(O(n^4)\) sonucu burada ayrıca yeniden ispatlanmış değildir.
+
+### (d) Literatür kontrolü
+
+Birincil metni açıp kontrol ettiğim kaynak **Tao, arXiv:1909.03562**: Lemma 1.12 sonlu dağılım için özyinelemeyi, §6 Remark 6.1 ilgili ofsetin çarpışma/Rényi entropisi yorumunu, Lemma 6.2 ofset birebirliğini, §§6–7 ve Proposition 1.17 Fourier sönümünü ele alır. Bunlar \(E_n\to c\) veya \(\sup E_n<\infty\) iddiası olarak sunulmuyor.
+
+En az beş tarama yaptım: arXiv API’de “Syracuse AND Fourier”, “Syracuse random variable” ve Collatz/3-adik sorguları; OpenAlex’te “Syracuse random variable Fourier”, “Collatz collision probability”, “Wirsching stochastic Collatz”, “Kontorovich Lagarias stochastic models” ve Ryan/Si sorguları; Semantic Scholar’da “Syracuse random variable Fourier” ile “random Syracuse 3-adic Fourier”. Semantic Scholar istekleri **429** döndü; diğer sorgular bu özel \(E_n\) limitini doğrulayan bir birincil metin sağlamadı. Kontorovich–Lagarias ve Wirsching eserleri Tao’nun kaynakçasında geçiyor, fakat kendi birincil metinlerini açmadım: bu niceliği işledikleri **DOĞRULANMADI**. Ryan/Si için de ilgili birincil çalışma **DOĞRULANMADI**.
+
+CP17_LINEAR_20260923_COMPLETE

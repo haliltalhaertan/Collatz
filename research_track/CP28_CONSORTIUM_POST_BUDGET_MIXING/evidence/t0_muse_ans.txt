@@ -1,0 +1,37 @@
+Teori A
+1. Başlık: Collatz Transducer Yarıgrubu ve Otomat-Grup Büyümesi
+2. Fikir: Sayıyı LSB-first ikili kelime olarak yazalım: `n = b0 b1 b2 ...`, `bi ∈ {0,1}`. `n -> 3n+1` işlemi elde `c ∈ {0,1,2}` taşıyan 3-durumlu bir transducer'dır: `b' = (3b+c) mod 2`, `c' = (3b+c-b')/2`. Bölme `D: b0w -> w` ise tek-durumlu bir shift-transducer'dır. Böylece hızlandırılmış Collatz adımı `T = D^e ∘ M` biçiminde transducer bileşimidir ve soru, `S = <D, M>` yarıgrubunun `{0,1}^ω` üzerindeki yörünge büyümesine dönüşür. Iraksama, bu yarıgrubun bir yörüngeyi sonsuzca şişirmesi demektir.
+3. Neden işe yarayabilir? Otomat gruplarında daralma (contracting), çekirdek (nucleus) ve Schreier grafikleri için güçlü makine var. Bu makine hiç Collatz yörünge büyümesine doğrultulmadı. Başarısızlık bile yarıgrubun hangi anlamda "büyük" olduğunu söyler.
+4. İlk küçük adım: `M` ve `D` transducer tablolarını açıkça yazıp bir haftada küçük derinliklerde (ör. 12 seviyeye kadar) Schreier grafiğini ve büyüme fonksiyonunu hesapla; çekirdeğin sonlu mu sonsuz mu göründüğünü sayısal raporla.
+5. Kısmi başarı neye benzer? `S` yarıgrubunun üstel büyüdüğünün ya da nucleus'unun sonsuz olduğunun ispatı; Collatz çözülmeden otomat-yarıgruplar literatürüne girecek bir sonuç.
+6. Yenilik tahmini: BİLMİYORUM. İkili transducer olarak `3x+1` folklordur ama Collatz sorusunu otomat-grup büyümesine indirgeme benzerini bilmiyorum.
+7. Cesaret puanı: 4
+
+Teori B
+1. Başlık: Collatz Bir Kelime-Yeniden-Yazma Sistemi Olarak ve Sonlanmazlık Çekirdeği
+2. Fikir: Sayıyı LSB-first kelime olarak kodlayıp Collatz'ı bir string-rewriting sistemi `R` olarak yazalım: çift kural `0w -> w`, tek adım ise elde-yayan kurallarla `1w -> g(w,1)` ve `g(0w,c) -> b'(c) g(w,c')` biçiminde modellenir. Bu kurulumda "her yörünge 1'e ulaşır" iddiası, `R` sisteminin sonlanmasına (termination) karşılık gelir. Iraksak yörünge ise sonsuz yeniden-yazma dizisidir. Soru artık şudur: `R` hangi yorum sınıfı altında sonlanabilir?
+3. Neden işe yarayabilir? Sonlanma-ispat topluluğunun (polinom yorumlar, yol-sıralamalar, otomatik provers) dev araç seti Collatz'a sistematik hiç uygulanmadı. Doğrudan çözüm gelmese bile Collatz'ın "ispatlanamazlık katmanı" ölçülebilir.
+4. İlk küçük adım: 10 kuraldan küçük açık bir `R` kodlayıp AProVE/TTT2 gibi bir sonlanma-ispatlayıcıya ver; lineer polinom yorumların nerede tıkandığını ve hangi kritik çiftten (critical pair) döndüğünü bir haftada raporla.
+5. Kısmi başarı neye benzer? "Bu `R` kodlaması lineer/karesel polinom yorumlarla sonlanamaz" türü bir imkânsızlık lemması; rewriting hiyerarşisinde Collatz'ın yerini belirleyen yayınlanabilir bir sonuç.
+6. Yenilik tahmini: BİLMİYORUM. Collatz'ı rewriting-termination diliyle kodlama denemeleri olabilir ama standard SRS kodlaması ve otomatik prover taraması benzerini bilmiyorum.
+7. Cesaret puanı: 5
+
+Teori C
+1. Başlık: `px+q` Ailesinde Kritik Faz Kenarı Olarak `3x+1`
+2. Fikir: Bu teori döngülerle hiç ilgili değildir; sadece ıraksama ve yoğunluk hakkındadır. Aileyi `T_{p,q}(n) = n/2` (çift) ve `(pn+q)/2` (tek), `p,q` tek olarak tanımlayalım. Rastgele parite varsayımı altında adım başına beklenen log-sürüklenme `μ(p) = (1/2)log(p/4)` olur. O halde `p=3` sürüklenmesi negatif olan en büyük tek sayı, `p=5` sürüklenmesi pozitif olan en küçük tek sayıdır; `3x+1` ayrık bir faz sınırının tam kenarında durur. Fikir, `px+q` uzayında bir faz diyagramı çizip `3`'e iki yandan yaklaşmaktır.
+3. Neden işe yarayabilir? Kritik kenardaki sistemler evrensel ölçekleme yasaları gösterir; zorluk tek bir noktada değil, faz geçişinin doğasında olabilir. Yanlardaki rejimler (`p=1` daralan, `p≥5` genişleyen) teknik olarak çok daha kolaydır.
+4. İlk küçük adım: Bir haftada `p ∈ {1,3,5,7}`, küçük `q` değerleri için `n ≤ 10^9` aralığında sonlu-zaman Lyapunov üstellerinin dağılımını ve büyük-sapma fonksiyonunu sayısal çıkar; `p=3`'ün kuyruk davranışının ara rejim olduğunu göster.
+5. Kısmi başarı neye benzer? "Sürüklenme negatifken hemen-hemen tüm yörüngeler logaritmik sınıra sahiptir" türü bir teoremin `p`'de uniform versiyonu; Tao 2019 tarzı sonucun `px+q` faz diyagramına genişletilmesi.
+6. Yenilik tahmini: `px+q` genellemeleri ve Terras/Everett yoğunluk sonuçları biliniyor; ama `3`'ü "son daralan tek sayı" olarak faz-kritikliği diliyle ele alan derli toplu bir çalışma BİLMİYORUM.
+7. Cesaret puanı: 3
+
+Teori D
+1. Başlık: Seyrek Evrensel Hesaplama: Sabit `3x+1` İçinde Küçük Bir Turing Makinesi Aramak
+2. Fikir: Conway'in genelleştirilmiş Collatz fonksiyonlarının evrensel hesap yapabildiği biliniyor; soru bunu sabit `3x+1`'e indirmektir. Bir modül `M`, kalıntı kümesi `R ⊂ Z/MZ` ve kodçözme `φ` arayalım öyle ki `n ∈ R` için `t` adım sonra yine `R`'ye dönülsün ve `φ(T^t(n)) = U(φ(n))` olsun, burada `U` Rule 110 veya 2-durumlu evrensel bir makinenin bir adımıdır. Yani Collatz'ın seyrek bir aritmetik ilerlemeye kısıtlanışı evrensel hesabı simüle eder. Her Collatz dalı `k` adımda `n -> (3^a n+b)/2^k` afin formundadır, aranacak şey doğru `(a,b,k)` desenleridir.
+3. Neden işe yarayabilir? Seyrek de olsa böyle bir gömme bulunursa Collatz'ın zorluğu yapısal açıklanır: tam çözüm, durma problemine dayanmak zorundadır. Bulunamazsa bile "hangi modüle kadar gömme yok" bilgisi evrensellik eşiğini daraltır.
+4. İlk küçük adım: `M = 2^k·3^l` formunda küçük modüller için tüm `k ≤ 12` afin dallarını listele ve bir SAT-çözücüyle Rule 110'un 8 geçiş kuralına uyan alt-otomat araması yap; bir haftada var/yok tablosu çıkar.
+5. Kısmi başarı neye benzer? "Şu `M,R` üzerinde `k` adımlı Collatz şu küçük otomatı simüle eder" türü somut bir gömme teoremi; negatif sonuç bile (`M ≤ M0` için gömme yoktur) hesaplanabilirlik-kombinatorik kesişiminde yayınlanır.
+6. Yenilik tahmini: Conway'in genelleştirilmiş yapılardaki evrenselliği biliniyor; sabit `3x+1` içinde seyrek-modül evrensel gömme araması için BİLMİYORUM.
+7. Cesaret puanı: 5
+
+CP28_T0_MUSE_20260923_COMPLETE

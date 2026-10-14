@@ -1,0 +1,40 @@
+İnceleme tamamlandı; sekiz iddianın tam ifadeleri, kaynak yolları, ispat denetimleri, çalıştırılan Python kontrolü ve literatür sorguları **[deep_D6_CP20_T8.json](deep_D6_CP20_T8.json)** dosyasına yazıldı. Buradaki “yeni”, yayımlanmış eşdeğer bulamadığım anlamındadır; yayın önceliğinin kesin kanıtı değildir.
+
+**A01 — NEW-MINOR; koşullu doğru; değer 2/5.**  
+Pozitif bir kritik-log yörünge varsayılırsa, belirtilen \(N_r\) pencerelerinin kritik-tip birikim noktaları için \(h\geq\alpha/\kappa\) sayma ve basınç argümanıyla destekleniyor. Sonlu pencere yoğunluğu bazen basıncın tanım kümesi dışında kaldığından güvenli ifade birikim noktaları üzerindedir. En yakın kaynaklar Garcia–Tal’ın yörünge değerleri için Banach yoğunluğu teoremi ve Curry’nin nicel seyreklik sonucudur; ikisi de bu *tip-özel* basınç eşitsizliği değildir.
+
+**A05 — TRIVIAL; A01’e koşullu doğru; değer 0/5.**  
+Her büyük \(N\) için \(r\), \(cr-\sqrt r\geq\log_2N\) koşulunu ilk sağlayan tamsayı seçilince A01’in izin verdiği bir ölçek elde edilir. Dolayısıyla tam-ölçek birikim sonucu, A01’in **bütün uygun parametre dizileri** için düzgün biçimde geçerli olmasının yeniden parametrelenmesidir. Bağımsız bir basınç teoremi değildir; en yakın kaynak A01’in kendi donmuş çekirdeğidir.
+
+**M02 — TRIVIAL; doğru; değer 0/5.**  
+\(1\leq X_k<3^k\) sınırı, iç içe artıkların verdiği \(r_{k+1}=r_k+m2^{A_k}\) bağıntısından indüksiyonla çıkar; mod \(3^k\) indirgeme de \(M_k=X_k\) verir. Küçük tam-kelime kontrolü 1.364 sözcükte eşitliği doğruladı. En yakın literatür, sonlu parite sözcüklerinin bilinen afin ve 2-adik silindir cebiridir; kontrol genel ispatın yerine geçmez.
+
+**M03 — TRIVIAL; kritik-log ve \(\kappa>1\) altında doğru; değer 0/5.**  
+\(B_k/3^k\) yakınsak bir \(p\)-serisiyle sınırlanır; M02 ardından \(M_k=k^\kappa\Theta(1+r_k)\) verir. İddia, bunun logaritmasını almak ve standart \(\log(1+e^x)\) eşitsizliğini uygulamaktır. En yakın kaynak yine parite-artıklarının afin formülüdür; ayrı bir 3-adik engel kanıtlanmıyor.
+
+**D03 — TRIVIAL; belirtilen tavan limiti varsa doğru; değer 0/5.**  
+Artıklar iç içedir. Sabitlenmezlerse her sıçramada \(r_{k+1}\geq2^{A_k}\), her zaman da \(r_k<2^{A_k}\); varsayılan limit hemen \(\limsup\rho_r=L\) sonucunu verir. Pozitif olağan gerçekleştiriciyle sabitlenme eşdeğerliği, tam-değerleme silindirlerinin iç içeliğini gerektirir. En yakın kaynak sonlu parite-silindiri bijeksiyonudur; \(L=0\) için metindeki “\(<L\)” testi ileri sürülmemelidir.
+
+**D05 — TRIVIAL; sonsuz sıçrama koşuluyla doğru; değer 0/5.**  
+İki sıçrama arasında artık sabittir ve oran plato boyunca azalır. Plato uçlarındaki \(2^{A_{t_j}}\) ve \(2^{A_{t_j+1}}\) sınırları, kritik-log varsayımıyla liminf eşitliğini verir. Sonlu sayıda sıçrama varsa sağ taraf tanımsızdır; sonuç o duruma uygulanamaz. En yakın kaynak iç içe 2-adik parite silindirlerinin temel hesabıdır.
+
+**D06 — TRIVIAL; D05’in koşullarıyla doğru; değer 0/5.**  
+Aynı plato sınırlarına \(A_t\ln2=t\ln3-\kappa\ln t+O(1)\) yazılıp \(t_{j+1}\)’e bölünür. Bu, D05 ispatındaki çukur hesabının ikinci terimini açıkça göstermektir; bağımsız bir sonuç değildir. En yakın kaynak D05’in kullandığı silindir ve afin formüllerdir.
+
+**R03 — NEW-MINOR; tanımlanan çekirdek için doğru; değer 3/5.**  
+CF-sol uçlarda koşullu zayıf-bileşim köprüsü büyük olasılıkla modüler sarılmanın olmadığı bölgede kalır; fazların çarpımı 1’e yaklaşır. Verilen Azuma/union sınırı ve faz teleskoplaması, \(r\geq17000\) için yazılan açık üst sınırı sağlar. Böylece **özgül** bütün-pencere \(O(1/m_r)\) Fourier tahmini çürür; gerçek Collatz yörüngesi hakkında bir karşıörnek çıkmaz. En yakın kaynak Si’nin koşullu afin Fourier-köprüsü ön baskısıdır, fakat aynı uç-pencere karşıteoremi değildir.
+
+| İddia | Nihai karar | Yayın değeri |
+|---|---|---:|
+| A01 | NEW-MINOR | 2/5 |
+| A05 | TRIVIAL | 0/5 |
+| M02 | TRIVIAL | 0/5 |
+| M03 | TRIVIAL | 0/5 |
+| D03 | TRIVIAL | 0/5 |
+| D05 | TRIVIAL | 0/5 |
+| D06 | TRIVIAL | 0/5 |
+| R03 | NEW-MINOR | 3/5 |
+
+Literatür sınırı: Rozier 2017’nin yayın kaydı doğrulandı, ancak birincil metni erişim engeli nedeniyle açılamadı; dosyada metin alıntısı **doğrulanmadı** olarak işaretlendi. OpenAlex atıf indeksinde kayıt bulunmaması da eşdeğer bir sonucun yokluğunun kanıtı sayılmadı.
+
+DEEP_D6_CP20_T8_20260923_COMPLETE

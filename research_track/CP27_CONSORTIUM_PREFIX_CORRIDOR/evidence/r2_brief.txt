@@ -1,0 +1,259 @@
+ROLE MARKER: CP27_CONSORTIUM_R2_20260923
+
+Konsorsiyum Tur 2 — ÇAPRAZ ELEŞTİRİ. Tur 1'de üç bağımsız üye (anonim: Üye X, Üye Y, Üye Z) aynı CP26 brifingine cevap verdi. Aşağıda üç cevap ve koordinatörün exact doğrulamaları var. Senin cevabın da bunlardan biri olabilir; bu önemli değil — hepsini eşit sertlikte eleştir.
+
+Kurallar aynı: Collatz açık; sonlu hesap teorem değil; literatür uydurma yok (emin değilsen DOĞRULANMADI); 3n−1 gerçek döngüleri (1),(5,7),(17,25,37,55,41,61,91) dışlanmamalı; COLLAPSE kapısı ("D|B bilinse de yeni bilgi mi?"); ÖLÇEK kapısı (küçük rasyonel adaylardan n_min>2^71 rejimine genelleme yok).
+
+===== KOORDİNATÖR EXACT DOĞRULAMALARI =====
+(a) Üye Z Yön A (no-go) doğrulandı: k=256, S_j=floor(j·log2 3) (j<k), S_k=ceil(k·log2 3): D>0, primitive, global minimum x_0, floor(x_0)=326>128=X, ilk alt geçiş tam t=256=k. Yani rasyonel düzeyde "n_min≥X ⇒ erken geçiş" YANLIŞ.
+(b) Üye Z Yön B eleği: X=2^71 için X(2^{S_t}-3^t) < t·3^{t-1} koşulunu sağlayan ilk t: t≤200000 brute force'ta 0; üst yarı-yakınsaklar taramasıyla (mpmath 80 hane) ilk izinli t = 72.057.431.991 (S=114.208.327.604). Bu, klasik döngü uzunluğu alt sınırıyla (Hercher'in aktardığı K>7,2·10^10) aynı sayı. Yorum: global minimumdan ilk alt geçişe kadarki prefix bile tek başına klasik minimum döngü uzunluğu kadar uzun olmak zorunda.
+(c) Üç üyenin üçü de koordinatörün CP27'sine "DEĞİŞTİR" dedi.
+
+===== ÜYE X =====
+1. Koordinatör CP27 değerlendirmesi: DEĞİŞTİR
+t∗
+=min{t:A
+t
+<1} olsun. CP26 blok notasyonunda r
+j=cj/αj
+=1−(2/3)
+sj
+∈(0,1) ve ilk geçişte A
+h
+≥1 olduğundan
+Ct∗=At∗h<t∗∑Ahrh<t∗.
+Dolayısıyla n
+min
+≥X için
+0<Δt∗:=Et∗
+log2−S
+t∗
+log3<−log(1−t
+∗
+/X)∼t
+∗/X.
+Yani büyük X, proper-prefix geçiş varsa B'yi gerçekten çok güçlendiriyor. Fakat erken geçişi zorlamıyor; tersine proper geçişi daha nadir yapıp t
+∗
+=q'ya itebilir. Bu yüzden başarı ölçütü yalnız S
+∗
+/K≪1 olmamalı; t
+∗
+<q ve t
+∗
+=q dalları ayrı ölçülmeli. t
+∗
+=q dalı ise büyük ölçüde klasik global product/reciprocal-sum + Diophantine yaklaşımına geri düşüyor ve Hercher hattıyla yüksek örtüşme riski taşıyor. 
+Cheriton School of Computer Science
++1
+Güncel literatür notu: Haziran 2026 tarihli Wang “m≤95” çalışmasını buldum; ancak kaynak açıkça preprint olarak işaretliyor, hakemli kabul kaydı göstermiyor. Bu nedenle sonuç DOĞRULANMADI ve teorem olarak kullanmıyorum. Fakat çalışma X=2
+71
+, Simons–de Weger sınırları, suffix-balanced bloklar ve global-minimum finite search kullandığını iddia ettiği için CP27'nin yenilik çakışması ciddi biçimde kontrol edilmeli. 
+ResearchGate
+2. Sonraki checkpoint için iki yön
+Yön A — ALL_PREFIX_CORRIDOR
+[PROOF]
+b=+1 gerçek bir pozitif döngüyü global yerel minimum n
+0
+ noktasından döndürün ve n
+j
+≥X olsun. Her blok için
+nj+1=αj(nj+rj),rj
+=1−(2/3)
+sj
+∈(0,1).
+O zaman her 1≤t≤q için
+Δt=j<t∑
+log(1+r
+j/nj
+)−log(n
+t/n0).
+Global minimum nedeniyle n
+t≥n0
+; dolayısıyla
+Δt
+>0⇒0<Δ
+t≤j<t∑
+log(1+r
+j
+/X)<tlog(1+1/X).
+Bu, Aday B'nin yalnız ilk geçişini değil bütün proper prefix'leri aynı dar O(t/X) koridoruna sokuyor. b=−1'de aynı hesap log(1−r
+j/nj
+) verir ve global minimumdan bütün ilgili Δ
+t
+<0; dolayısıyla verilen 3n−1 döngülerini dışlamaz.
+COLLAPSE: D∣B yalnız tam kapanışı belirler; bu eşitsizlik global-minimum sıralaması ve bağımsız n
+j
+≥X bilgisini kullanıyor. Dolayısıyla post-integrality yeni kısıt.
+Literatür: Steiner/Simons–de Weger çizgisindeki linear-form/CF yöntemlerine ve Hercher'in local-minimum/product yaklaşımına çok yakın; proper-prefix biçiminin yeniliği DOĞRULANMADI. Simons–de Weger açıkça m-cycle'larda continued fractions/lattice reduction kullanıyor; Hercher m≥92'yi local-minimum yapısıyla elde ediyor. 
+De Weger's Math Page
++2
+Cheriton School of Computer Science
++2
+En ucuz exact falsification: Fraction ile q≤5, s
+j
+=1..3, d
+j
+=2..4, n
+0
+=1..31; tüm affine prefix'leri exact üret, yalnız n
+t≥n0
+ kalanları tut ve boxed eşitsizliği test et. Sonra asıl fayda testi: X=2
+71
+, q=92..120 için certified one-sided CF ile koridorun global t=q koşulundan kaç ek prefix dışladığını say.
+Kill: q=92..120'de proper-prefix koridoru global CF koşuluna göre ölçülebilir ek eleme üretmiyorsa, lemma tutulur ama araştırma rotası PARK/KILL.
+Başarı olasılığı: 0.50. Maliyet: düşük.
+Yön B — PREFIX/GLOBAL RESONANCE DETERMINANT
+[PROOF]
+Tam döngü için
+Λ=Mlog2−Klog3>0,
+pozitif bir proper prefix için Δ
+t
+>0 ve
+ht
+:=KE
+t−MSt∈Z.
+Exact kimlik:
+ht
+log2=KΔ
+t−StΛ.
+Yön A ve global product bound ile L
+X
+:=log(1+1/X):
+Δt<tLX
+,Λ<qL
+X.
+Bu nedenle h
+t
+=0 ise
+max{Kt,S
+tq}LX
+>log2.
+Eşdeğer olarak, H
+X
+=log2/L
+X
+ için
+ht
+=0veyaKt>H
+X
+veyaS
+tq>HX.X=271
+ için H
+X
+≈1.63665×10
+21
+. Böylece çok erken ve küçük-S
+t
+/K iç rezonans, genel bir “iyi yaklaşım” olmaktan çıkıp tam orantı KE
+t=MSt
+ dalına zorlanabilir.
+COLLAPSE: tam kelimenin integralliği bu prefix/global determinantı sıfıra zorlamaz; iki ayrı rezonansı ve X sınırını birlikte kullanıyor.
+Literatür: Baker/CF teknikleri Steiner, Eliahou ve Simons–de Weger'in merkezinde; fakat bir proper-prefix linear form ile full-cycle linear formun bu determinantla doğrudan bağlandığı formu bulamadım. Yenilik iddiası DOĞRULANMADI. 
+ScienceDirect
++2
+ResearchGate
++2
+En ucuz exact falsification: CP26'nın q≤18 exact adaylarında her pozitif proper prefix için h
+t
+ ve boxed disjunction'ı yeniden hesapla. Ardından q=92..120 için yalnız certified K
+max
+(q) kullanarak hangi t'lerin otomatik olarak h
+t
+=0 dalına düştüğünü çıkar; kelime enumerasyonu gerekmez.
+Kill: surviving erken geçişlerin çoğu h
+t
+=0 dalına düşüyor ve KE
+t=MSt
+'den primitivity/affine yapı üzerine bağımsız bir çelişki çıkarılamıyorsa PARK.
+Başarı olasılığı: 0.30. Maliyet: düşük.
+Barina'nın hakemli 2025 sonucu 2
+71
+'e kadar doğrulamayı gerçekten sağlıyor; dolayısıyla burada kullanılan X dış girdisi sağlam. 
+Springer Link
+3. Oy
+Yön A — ALL_PREFIX_CORRIDOR. İlk-geçiş özel durumunu kaldırıyor; exact, ucuz ve doğrudan COLLAPSE-sonrası bilgi.
+Yön B — RESONANCE DETERMINANT. A'nın ürettiği iç rezonansı global rezonansla bağlayan somut ikinci kapı.
+Koordinatör CP27, mevcut haliyle. X eklemek doğru, fakat “S
+∗
+/K≪1 görürsek başarı” kriteri yönlü önyargılı. Bölüm 1'deki iki-dallı sürüme çevrilirse #2 seviyesine çıkar.
+4. En büyük olası metodolojik hata
+En büyük hata, COLLAPSE kapısını araştırmanın başında değil geç aşamada uygulamış olmak olabilir. Böylece C1, carry/residue ve benzeri yapılar matematiksel olarak yeni görünürken aslında integrality'nin yeniden kodlanmış biçimleri üzerinde uzun süre harcanmış olabilir. İkinci risk, aynı küçük near-resonant pilotlardan fikir üretip yine aynı rejimde doğrulama yaparak adaptif overfitting yaratmak. CP27'de “önce bilgi-bağımsızlığı, sonra numerik güç” sırası tersine çevrilmemeli.
+
+===== ÜYE Y =====
+## 1. Koordinatör CP27 değerlendirmesi: DEĞİŞTİR
+
+X büyüdükçe C_t/n_min küçülür; erken dip varsa gereken yaklaşıklık sertleşir, bu B lehine görünür. Fakat pilotun kendi bulgusu ters seçim etkisidir: log(2^M/3^K) küçükken ilk geçiş %96–100 tam döngüde. Büyük-X rejimi tam da en iyi global rezonansları seçer, yani B'nin işleyeceği erken-dip popülasyonunu kurutur.
+Dolayısıyla ağır "(S,E) kısıt çözümü" önce bu seçim etkisini ölçmeden yapılırsa ya global LMN'i yeniden üretir ya boş (t*=tam döngü) vakaları sayar. Önce ucuz tabakalı test, sonra — ancak erken-dip sağkalımı varsa — kısıt çözümü.
+
+## 2. Yönler
+
+**Yön 1 — İç-LMN derinlik lemması (analitik B).**
+Önerme: e_i≥1, M=Σe_i, K tek adım; prefix t'de k_t,E_t,C_t ile n_t=(3^{k_t}n_0+C_t)/2^{E_t}, n_0=n_min≥X. t*=min{t>0: 3^{k_t}<2^{E_t}} (yoksa ∞). t*<T ise:
+0 < E_{t*}ln2−k_{t*}ln3 ≤ C_t/(3^{k_t}X), ve C_t/3^{k_t}≤E_{t*} (elementer, e_i≥1'den).
+LMN-1995 ile birleşince X=2^71 için E_{t*}≥c_1 log X−c_2 (explicit sabitler). Etiket: [PROOF] (LMN black-box + elementer cebir).
+COLLAPSE: X büyüklük bilgisidir, D|B'de yoktur; residue/bit-filtre değildir.
+Literatür: Eliahou 1993 / Simons–de Weger 2005 global yaklaşıklık kullanır; yenilik prefix-seviyesidir. Hercher 2023 (≥92 minimum) ortogonaldir. Steiner hattıyla kesişmez.
+Exact falsification: K≤18 primitive necklace tam sayımı (pilot kodu yeniden), Fraction exact; eşitsizlik + 3n−1 kontrolleri (1),(5,7),(17..91) — küçük X'te bound gevşek kalmalı, kontroller korunmalı.
+Kill: X=2^71'de bound önemsiz (örn. E*≥5 altı) çıkarsa veya kontrolleri dışlarsa KILL.
+Başarı (güçlü bound verme): 0.25. Maliyet: düşük.
+
+**Yön 2 — B×Hercher bağlaşımı: Dyck-zorunluluğu vs minimum sayısı.**
+Önerme: Yön 1'in E_{t*} alt sınırı, sağ kalan kelimeleri L(X) uzunluğunda prefix-Dyck olmaya zorlar (ilk dipten önce yerel minimum yok); bu, K verilen aralıkta Hercher'in ≥92 yerel-minimum alt sınırıyla (m≤91 yokluğu üzerinden) çelişir. Etiket: [CONJECTURE] (Dyck→minimum-sayısı üst sınırı köprüsü sanı).
+COLLAPSE: sıralama/minimum-sayısı bilgisi D|B'de yoktur.
+Literatür: Hercher 2023 + Aday B'nin birleşimi; tek başına ikisinde de yok — yenilik budur.
+Exact falsification: K≤18'de t* ile minima-sayısı korelasyonu (exact sayım) + 3n−1 kontrollerinin minima sayıları.
+Kill: korelasyon yoksa / kontroller ters yöndeyse KILL.
+Başarı: 0.15. Maliyet: orta.
+
+**Yön 3 — Tabakalı sağkalım ölçümü (B'nin ucuz celladı).**
+Önerme: δ=|M/K−log_2 3| küçüldükçe P(ilk geçiş=tam döngü)→1 (monoton). Etiket: [HEURISTIC] (ampirik, teorem değil).
+COLLAPSE: geçmezse B'yi öldüren ölçüdür; kendisi teori iddiası değildir.
+Literatür: bağımsız;sonsten global-rezonans yeniden-paketleme şüphesini teste döker.
+Exact falsification: K=19..24 yalnızca near-resonant M dilimi (tam sayım değil), D|B yok, Fraction exact; δ desillerinde tam-döngü oranı. Sonlu hesap teorem değildir, yalnızca falsifikasyon.
+Kill (B'ye): en iyi δ desilinde oran ≥0.95 ise Aday B KILL.
+Başarı (net karar üretme): 0.6. Maliyet: düşük.
+
+## 3. Sıralama
+
+1. Yön 3 (en ucuz, B hakkında 1 checkpointte karar verdirir).
+2. Yön 1 (B ancak analitik lemmasıyla teori olur; kaba kısıt-taramasından önce).
+3. Koordinatör CP27 kısıt-çözümü (yalnız Yön 3 erken-dip sağkalımı bulursa).
+4. Yön 2 (bağlaşım; Yön 1 güçlü bound vermeden değmez).
+
+## 4. En büyük metodolojik hata
+
+Gerçek rejimden (n_min>2^71, Hercher+Barina ile K>1.375·10^11) kopuk küçük-ölçek rasyonel istatistiği (S*/K medyanı, %42–100 tam-döngü) üzerinden Aday B'nin gücünü okumak: ölçek-dışı genelleme. COLLAPSE'u fikir-doğumunda değil sonradan uygulayıp C1/carry-band'a emek harcamak da aynı köktendir.
+
+
+
+
+===== ÜYE Z =====
+**1. Koordinatör önerisi: DEĞİŞTİR.**  
+\(b=+1\) için \(S_t=\sum_{i\le t}a_i\), \(E_t=2^{S_t}-3^t\) ve \(C_t=\sum_{j<t}3^{t-1-j}2^{S_j}\) olsun. Minimumdan başlayan bir döngüde ilk \(E_t>0\) anında \(E_t n_{\min}\le C_t\). Dolayısıyla \(n_{\min}\ge X\), erken geçişi *kolaylaştırmaz*; küçük \(C_t\) için geciktirir. Öte yandan küçük \(k\)’de tam döngüye kadar gecikmeyi de dışlayabilir. Bu iki etkiyi ayıran exact test yararlı; fakat «\(X\) büyüyünce \(S^*/k\ll1\)» beklentisini desteklemiyorum.
+
+**2. Sonraki checkpoint için iki yön**
+
+**Yön A — Tam-döngü geçişine karşı örnek. [PROOF]**  
+Her \(X\ge1\) için, \(k\ge6X\) alınsın. \(1\le j<k\) için \(S_j=\lfloor j\log_2 3\rfloor\), \(S_k=\lceil k\log_2 3\rceil\) seçimi, \(b=+1\) için pozitif, primitive bir *rasyonel* döngü adayı verir; \(n_{\min}>k/6\ge X\), fakat ilk \(E_t>0\) tam \(t=k\)’dedir. Çünkü bütün proper prefix’lerde \(2^{S_j}<3^j\), ayrıca \(B>k3^{k-1}/2\) ve \(0<D<3^k\).  
+**COLLAPSE:** Bu, \(D\mid B\) testi değil; integrality filtresi uygulanmamış adaylar hakkındaki erken-geçiş beklentisini çürüten bir no-go sonucudur. **Sınır:** Tamsayı döngüleri hakkında sonuç vermez; \(3n-1\) döngülerine uygulanmaz. Listelenen literatürde bu özgül inşanın yeniliği **DOĞRULANMADI**. **En ucuz exact test:** \(k=256,\ X=128\): doğrudan \(B,D\) hesabı \( \lfloor B/D\rfloor=326\), ilk geçiş \(256\). **Kill:** İspatta veya bu exact hesapta hata bulunması. **Başarı olasılığı:** 0,99; **maliyet:** düşük.
+
+**Yön B — İlk geçiş için gerekli eşitsizlik. [PROOF]**  
+\(b=+1\), \(n_{\min}\ge X\) ve ilk pozitif \(E_t\) anı \(t\) ise, önceki prefix’ler için \(2^{S_j}<3^j\) olduğundan
+\[
+X\bigl(2^{S_t}-3^t\bigr)\le C_t<t3^{t-1}.
+\]
+Özellikle \(D_t=2^{\lceil t\log_2 3\rceil}-3^t\) için **\(XD_t<t3^{t-1}\) gereklidir**. Bu, \(S^*/k\) için üst sınır değil, izin verilen ilk geçiş zamanları için exact bir elek verir. **COLLAPSE:** Tam-kelime integrality’sinden değil, minimumun *proper-prefix* eşitsizliklerinden gelir; \(D\mid B\) bilinse de ayrı koşuldur. Hercher’in minimum sayısı sonuçlarıyla aynı nicelik değildir; Steiner/Simons–de Weger/Eliahou’ya göre özgül yeniliği **DOĞRULANMADI**. **En ucuz exact test:** \(X=2^{71}\), \(1\le t\le10\,000\) için tamsayılarla gerekli koşulu tara; bu aralıkta izinli \(t\) çıkmadı. **Kill:** Eleğin mevcut çevrim sınırlarıyla birleştirildiğinde yeni bir dışlama üretmemesi; o durumda yalnız lemma olarak sakla. **Başarı olasılığı:** lemma için 0,99, güçlü çevrim sınırı için 0,1; **maliyet:** düşük.
+
+**3. Oy:** 1 — Yön A (beklentiyi kesin sınırlar); 2 — Yön B (geçerli, fakat gücü belirsiz elek); 3 — koordinatörün CP27’si, yalnızca \(k\) ve global gap’e göre katmanlandırılmış bir test olarak.
+
+**4. Olası en büyük metodolojik hata:** Küçük rasyonel adaylardaki geçiş dağılımını, devasa minimumlu *tamsayı* döngü adaylarının dağılımına taşıma eğilimi. Yön A, minimum eşiğinin tek başına bu boşluğu kapatmadığını gösteriyor. Sonlu tarama bu ayrımı teşhis edebilir; teorem yerine geçmez.
+
+
+===== GÖREV =====
+1. Her üyenin her yönü için: HATA (matematiksel/mantıksal hata var mı? satır göster), KAPILAR (COLLAPSE/işaret/ölçek/literatür hangisinden kalıyor?), ÖRTÜŞME (X-A, Y-1, Z-B aynı fikir mi? (b) ışığında klasik sınırın prefix'e taşınmasından öte ne ekliyor?). Kısa tablo.
+2. Özellikle Üye X Yön B (RESONANCE DETERMINANT, h_t=K·E_t−M·S_t): (b)'deki t≥7,2·10^10 ve bilinen K>1,375·10^11 ile birlikte h_t=0 dalına zorlama gerçekten oluyor mu? Hesabı sayılarla göster ya da neden olmadığını söyle.
+3. Nihai oy: aşağıdaki havuzdan EN İYİ 2 yönü sırala ve her biri için kill kriterini sabitle. Havuz: X-A, X-B, Y-1, Y-2, Y-3, Z-A, Z-B, koordinatör-CP27(değiştirilmiş), YENİ (tek cümleyle, varsa).
+4. Aday B (ilk geçiş iç-rezonansı) için karar oyu: KILL / PARK / GO — tek satır gerekçe.
+
+Türkçe, kısa, exact. Son satır tam olarak:
+CP27_CONSORTIUM_R2_20260923_COMPLETE

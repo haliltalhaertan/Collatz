@@ -1,0 +1,32 @@
+{
+  "model": "jev-latest",
+  "state": {
+    "role": "ADVISORY prefilter only; no proof authority",
+    "candidate": "C1: for every primitive parity word w, if B_r/|2^m-p^k| is at least the least positive residue h_r for every cyclic rotation r, then |2^m-p^k| divides B_w.",
+    "independent_exact_evidence": "Two Muse 1.3 read-only sessions independently reproduced the m<=18 gate. One independent implementation reported no nonintegral C1 survivor for p=3,5,7 through m<=22. A separate local implementation found no nonintegral survivor for p=3,5,7 through m<=20 and matched the ChatGPT Web prefilter counts 15010,16100,4796 under the all-q>=1 necklace convention.",
+    "derived_identities": "Let A=|2^m-p^k| and h_r be the least positive lift. B_r-Ah_r is divisible by 2^m. Writing t_r=(B_r-Ah_r)/2^m, the C1 premise is t_r>=0 for all rotations; the conclusion is A|t_r. Adjacent rotations obey exact B and lift-carry recurrences, but no derivation from nonnegativity to A-divisibility has been found.",
+    "status": "No counterexample in bounded exact scans; no general proof; Collatz remains open."
+  },
+  "questions": {
+    "evidence_is_only_bounded": {
+      "type": "noul",
+      "instructions": "Does the supplied evidence remain bounded exact computation rather than a proof of universally quantified C1?",
+      "criteria": {"true": "Finite scans cannot establish all lengths and all odd p.", "false": "The finite scans constitute a general proof."}
+    },
+    "statement_is_non_circular": {
+      "type": "noul",
+      "instructions": "As stated, does C1 avoid assuming A|B_w in its premise?",
+      "criteria": {"true": "The premise uses only rotation-wise inequalities and defined residues, not divisibility.", "false": "The premise already includes A|B_w or an equivalent explicit integrality condition."}
+    },
+    "proof_label_is_justified": {
+      "type": "noul",
+      "instructions": "Is a PROOF label justified for C1 from the supplied state?",
+      "criteria": {"true": "A valid general derivation is supplied.", "false": "The key implication t_r>=0 for all r => A|t_r is still missing."}
+    },
+    "open_nontrivial_label_is_appropriate": {
+      "type": "noul",
+      "instructions": "Is OPEN-NONTRIVIAL an appropriate advisory label for C1 at this stage?",
+      "criteria": {"true": "C1 is non-circular, stronger than positivity, survives stated scans, but lacks proof.", "false": "C1 is proved, disproved, or merely positivity restated."}
+    }
+  }
+}

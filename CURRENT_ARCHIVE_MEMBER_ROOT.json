@@ -1,8 +1,8 @@
 {
   "algorithm": "sha256(sorted UTF-8 lines: path\\0uncompressed_size\\0member_sha256\\n)",
   "archive": "Collatz_Research_Archive_CURRENT.zip",
-  "archive_sha256": "04bba8b4d2d6aaa326a499b48d1ccd12e7d26a64a0f22f71e09371ce4162f93b",
-  "member_count": 1765,
-  "member_root_sha256": "e02a8807640fca11fe048e091dd234c926a3abf5b95fb6a5669b860c0db1369d",
+  "archive_sha256": "692f78e1e8d910d5701a6b218e725230ca456b020a27d3d011631dba5b699c96",
+  "member_count": 1804,
+  "member_root_sha256": "c518f98b5481480aa2dd2a71131a0fe1ad81c2342c9fdbdb48c4bf8e7b24b121",
   "schema": "COLLATZ_ARCHIVE_MEMBER_ROOT_V1"
 }

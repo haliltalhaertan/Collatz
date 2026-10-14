@@ -1,0 +1,45 @@
+{
+  "model": "jev-latest",
+  "state": {
+    "role": "ADVISORY prefilter only; Collatz is not proved",
+    "map": "For odd p>=3 and b in {+1,-1}, H_{p,b}(x)=x/2 on even x and (p*x+b)/2 on odd x.",
+    "word_data": "For a primitive binary word w of length m and weight k, B_w=sum_{j:w_j=1}2^j p^(ones after j), D=2^m-p^k, A=abs(D), b=sign(D). For each cyclic rotation r, q_r=B_r/A and h_r is the unique representative in {1,...,2^m} of -b B_r (p^k)^(-1) mod 2^m.",
+    "proved_background": "If A divides B_w, the corresponding integer candidate automatically realizes its parity word and returns. Divisibility is independent of b; positivity selects sign(D)=b.",
+    "candidate_C1": "For every primitive w, if q_r>=h_r for every cyclic rotation r, then A divides B_w.",
+    "status": "ChatGPT Web reported no nonintegral survivor through m<=20, but no proof and no independently verified scan were available when this advisory request was prepared."
+  },
+  "questions": {
+    "c1_stronger_than_positivity": {
+      "type": "noul",
+      "instructions": "Is candidate_C1 logically stronger than the classical positivity requirement sign(D)=b, because it imposes one exact lift inequality for every cyclic rotation?",
+      "criteria": {
+        "true": "C1 includes constraints not implied merely by sign(D)=b or q_r>0.",
+        "false": "C1 is just sign(D)=b or positivity rewritten without additional constraints."
+      }
+    },
+    "c1_would_bridge_to_integrality": {
+      "type": "noul",
+      "instructions": "If candidate_C1 were proved, would it provide a genuine bridge from rotation-wise lift inequalities to denominator divisibility A|B_w?",
+      "criteria": {
+        "true": "The conclusion A|B_w is an integrality statement not already assumed in the hypothesis.",
+        "false": "The hypothesis already assumes A|B_w or an equivalent condition, making the implication circular."
+      }
+    },
+    "c1_currently_proved": {
+      "type": "noul",
+      "instructions": "Does the supplied state contain a valid general proof of candidate_C1?",
+      "criteria": {
+        "true": "A quantified derivation of C1 is present in the supplied state.",
+        "false": "Only the statement and finite computational support are present; no general proof is supplied."
+      }
+    },
+    "single_counterexample_kills_c1": {
+      "type": "noul",
+      "instructions": "Would one primitive word satisfying all q_r>=h_r inequalities but failing A|B_w refute candidate_C1?",
+      "criteria": {
+        "true": "Such a word satisfies the premise and violates the conclusion.",
+        "false": "Such a word would not refute the universally quantified implication."
+      }
+    }
+  }
+}

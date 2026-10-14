@@ -1,0 +1,37 @@
+ROL: CP29_NUMERIC (sayısal kol)
+GÖREV: (1) Mevcut transfer hesabını s=17, 18'e uzatmanın tepe bellek ve süresini ÖNCE hesapla (3^17≈1,3·10^8, 3^18≈3,9·10^8 durum; FFT tepe belleği dahil); makine belleğini `free -g` ile kontrol et; sığmıyorsa çalıştırma, bellek-dostu alternatif (ör. digit-lifting ile yalnız E_s'yi hesaplayan, durum uzayını küçülten yöntem; parçalı FFT; float32 değil) öner ve uygula. (2) Negatif değer kırpmasının ve 2^{-phi} underflow'unun etkisini ölç: s≤10'da Fraction veya mpmath (60 basamak) ile karşılaştır, hata sınırı ver; E_s artışlarının (10^{-3} mertebesi) yuvarlama hatasıyla açıklanamayacağını göster. (3) E_s dizisine sabit, a+b/s, a+b·log s, a+b/log s, a+b·s^{-1/2} modellerini uydur, kalıntıları ve s aralığına duyarlılığı raporla; ama sonlu verinin asimptotiği KARARLAŞTIRMADIĞINI açıkça yaz (yalnız keşif). (4) Ek nicelikler: 3^s·max_y p_s(y), ve "aynı kelime"/"ilk ayrılma j'de" katkılarının s'ye göre dökümü (küçük s'de brute-force). Kod + tablo (cp29_numeric.json) bırak.
+
+BAĞLAM (kendi kendine yeter). Collatz çözülmedi; bu, programın CP17 yan ürünü olan bir yardımcı niceliğin büyüme hızı sorusudur.
+
+TANIM. A_1,A_2,... bağımsız, P(A=a)=2^{-a} (a≥1). S_j=A_1+...+A_j.
+ X_s = Σ_{j=1}^s 3^{j-1}·2^{-S_j} (mod 3^s)   (Tao 2019 "Syracuse random variable", arXiv:1909.03562, Def. 1.8 civarı; kontrol et).
+ Dağılımca eşdeğer özyineleme: X_s = 2^{-A}(1+3X_{s-1}) (mod 3^s), A taze.
+ p_s(y)=P(X_s≡y mod 3^s).  χ_s = 3^s Σ_y p_s(y)^2 = 3^s·P(X_s≡X'_s) (X' bağımsız kopya).
+ E_s = χ_s − χ_{s−1} (χ_0=1).
+KANITLI (önceki tur): χ_s = 1+Σ_{j≤s}E_j;  E_j = Σ_{u∈(Z/3^j)^*} |φ_j(u)|^2 = 3^j Σ_y (p_j(y) − p_{j−1}(y mod 3^{j−1})/3)^2 ≥ 0;
+ aynı A-kelimesini taşıyan çiftlerin katkısı 3^s·(Σ_a 4^{-a})^s = 1 (tam). Programın bilinen sınırı: χ_s = O(s^4) (CP17).
+SAYISAL VERİ (tam destekli float64/FFT transfer, kesilmemiş; exact rasyonel DEĞİL; s≤15'te 45 basamak Decimal ile bağımsız uyuşma; χ_1=5/3, χ_2=15/7, χ_3=177005/67963 exact):
+ s= 1  chi=1.666666666667  E=0.666666666667
+ s= 2  chi=2.142857142857  E=0.476190476190
+ s= 3  chi=2.604431823198  E=0.461574680341
+ s= 4  chi=3.068646231616  E=0.464214408418
+ s= 5  chi=3.534161151368  E=0.465514919752
+ s= 6  chi=4.000329912369  E=0.466168761001
+ s= 7  chi=4.465821342206  E=0.465491429836
+ s= 8  chi=4.931742462505  E=0.465921120299
+ s= 9  chi=5.398401608914  E=0.466659146410
+ s=10  chi=5.865789026498  E=0.467387417584
+ s=11  chi=6.333957660177  E=0.468168633679
+ s=12  chi=6.802899040564  E=0.468941380387
+ s=13  chi=7.272513954548  E=0.469614913984
+ s=14  chi=7.742768288642  E=0.470254334094
+ s=15  chi=8.213596069255  E=0.470827780613
+ s=16  chi=8.684947712648  E=0.471351643393
+ Artışlar 0,4616 (s=3) → 0,4714 (s=16), yavaş ama monoton artıyor. 7/15 tahmini GERİ ÇEKİLDİ. s≤16 verisi E_s→sabit, E_s~c·log s, vb. arasında karar VERMİYOR.
+MANTIK UYARISI: sup_s E_s<∞ ⇒ χ_s=O(s), ama tersi doğru değil; χ_s~cs, E_s→c'yi vermez. Hedefleri ayrı etiketle.
+HEDEF KADEMELERİ (hepsi değerli; yanlış olabilecek bir şeyi ispatlamaya ZORLANMA):
+ (G1) sup E_s<∞  (G2) χ_s=O(s) veya O(s log s) veya O(s^4)'ten açıkça iyi herhangi bir sınır  (G3) NEGATİF: E_s→∞ alt sınırı (doğrusal hedefi çürütür).
+KURALLAR: her adımı [PROOF]/[PROOF-with-gap: ...]/[CONJECTURE] etiketle; en zayıf tek eşitsizliği açıkça söyle. "Tao Fourier sönümü verir" yeterli DEĞİL: tek frekans sönümü ~2·3^{s−1} frekans toplamını kontrol etmez. Dış sonuçları birincil kaynaktan alıntıla (açmadığına DOĞRULANMADI de; uydurma atıf yasak). Önerdiğin her özdeşliği küçük s'de (s≤8) brute-force ile ve yukarıdaki tabloyla sayısal kontrol et. Dosyalar: /mnt/c/Users/MDP/collatz-analysis/cp29_chi/ (chi_s_exact.py, chi_s_exact.json, prev_unreal_cp17_linear.txt — önceki denemenin raporu; salt-okunur). Kendi çıktılarını cwd'ye yaz. Türkçe, sade yaz.
+
+ÇIKTI: cwd'ye kod + cp29_numeric.json + final cevap. Son satır tam olarak:
+CP29_NUMERIC_20260923_COMPLETE

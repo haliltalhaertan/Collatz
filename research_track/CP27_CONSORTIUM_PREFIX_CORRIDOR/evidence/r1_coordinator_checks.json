@@ -1,0 +1,16 @@
+{
+ "unreal_A_k256_X128": {
+  "D_pos": true,
+  "floor_B_over_D": 326,
+  "global_min_index": 0,
+  "first_crossing": 256,
+  "primitive": true,
+  "status": "VERIFIED exact"
+ },
+ "unreal_B_sieve_X2^71": {
+  "bruteforce_t_le_200000_allowed": 0,
+  "first_allowed_t_via_semiconvergents": 72057431991,
+  "S": 114208327604,
+  "note": "equals classical Eliahou/Simons-type K bound (Hercher cites K>7.2e10); computed with mpmath 80 digits, semiconvergent scan (not exact integer)"
+ }
+}

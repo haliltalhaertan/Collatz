@@ -1,0 +1,22 @@
+**T1-03 — TRIVIAL; doğru, yayın değeri 1/5.**  
+Pozitif ve enjekte tek-Syracuse yörüngesi varsayımı altında nicel sınır geçerli. En hassas nokta, bir değerleme sözcüğünün başlangıç sayısını \(2^{A+1}\) modülünde belirlemesi ve her sınıf için gerekli \(+1\) sayım terimi. Afin iterasyon formülü, bileşim sayısı \(\binom U\ell\) ve Stirling tahmini iddiayı doğrudan veriyor. En yakın kaynaklar Terras/Everett silindir sayımı geleneği ve Lagarias’ın bibliyografyaları; aynı nicel ifade için yayımlanmış bir eşleşme doğrulanmadı.
+
+**T1-05 — TRIVIAL; doğru, yayın değeri 1/5.**  
+T1-03’te sayılan istisnaların dışında, \(A(v,\ell)=F_{v+\ell}-F_v-(s_{v+\ell}-s_v)\) eşitliği yüksek değerlemeyi belirtilen negatif sapmaya çeviriyor. Öteki dalda yüksek \(n_v\), carry çarpanının üst sınırıyla yüksek \(s_v\) veriyor. Curry’nin 2026 ön baskısındaki yakınsak karşılıklı-toplam sonucu, uygulanabildiği ıraksak yörüngede bu dalın \(\log\log N\) hatasını **\(O(1)\)** düzeyine bile indiriyor. İkilem ayrı bir yeni mekanizmadan çok sayım ve iki özdeşliğin birleşimi.
+
+**T1-06 — TRIVIAL; yalnız simgesel düzeyde doğru, yayın değeri 1/5.**  
+Her 20 konumda 11 veya 12 uygun işaret yeri bulunması, dengeli bloklar ve seyrek \(+2\) blokları kurmaya yetiyor; böylece sabit \(\kappa>1\) için istenen logaritmik \(s_k\) elde ediliyor. Hedef seçimin ilk bloklarda birden fazla artabilmesi, yalnız sonlu bir başlangıç düzeltmesi gerektirir. **Tek bir pozitif tamsayının sonsuz sözcüğü gerçekleştirdiği gösterilmiyor.** En yakın kaynak Wang’ın *E-sequence* çalışmasıdır; o da simgesel dizi ile tamsayı yörüngesi ayrımını açıkça yapar.
+
+**T4-03 — TRIVIAL; belirtilen niceleyicilerle doğru, yayın değeri 1/5.**  
+Afin formülden çıkan \(3^k\) modülündeki uç kalıntı bağıntısı, bir sıfır-olmayan sheet’in üstel büyüklükte kalıntı oluşturduğunu hemen gösteriyor. **Her yeterince büyük derinlikte** üstel-altı kalıntı varsa sheet sonunda sıfırdır; **yalnız tek bir derinlikte** polinom kalıntı varsa sonuç, en az \((\log_8 3)k-O(\log k)\) uzunlukta terminal sıfır-sheet parçasıdır. Bu iki koşul birbirinin yerine kullanılamaz. İndirgeme gerçek yörüngeyi dışlamaz; \(a_k=2,\ e_k=1\) sabit kuyruğu bunun basit örneğidir.
+
+| İddia | Doğruluk | Nihai karar | Değer |
+|---|---|---|---:|
+| T1-03 | Doğru | TRIVIAL | 1/5 |
+| T1-05 | Doğru | TRIVIAL | 1/5 |
+| T1-06 | Simgesel olarak doğru | TRIVIAL | 1/5 |
+| T4-03 | Koşullarıyla doğru | TRIVIAL | 1/5 |
+
+Ayrıntılı ifadeler, her iddia için en az altı sorgu, kaynak alıntıları, kod ve çıktılar `deep_D4_CP20_T1_T4.json` dosyasında. Lagarias’ın iki bibliyografyasının tam metni tarandı. **Literatür sınırı:** OpenAlex atıf listeleri ile toplu arXiv API sorguları kota hatası verdi; Rozier 2017’nin birincil metnine erişilemedi. Bu nedenle doğrulanmamış atıflardan “yayında kesinlikle yok” sonucu çıkarılmadı.
+
+DEEP_D4_CP20_T1_T4_20260923_COMPLETE

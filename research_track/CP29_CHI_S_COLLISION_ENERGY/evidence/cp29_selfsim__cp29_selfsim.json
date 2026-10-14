@@ -1,0 +1,773 @@
+{
+  "role": "CP29_SELFSIM",
+  "verdict": "B (programmatic target only, not a reduction to one already-proven or known-to-suffice hypothesis)",
+  "labels": {
+    "verified": "[PROOF]",
+    "conditional": "[PROOF-with-gap]",
+    "prediction": "[CONJECTURE]"
+  },
+  "distribution": {
+    "A": "independent P(A=a)=2^-a, a>=1",
+    "X": "sum_{j>=0} 3^j*2^(-sum_{i=1}^{j+1} A_i) in Z_3",
+    "maps": "f_a(x)=2^-a*(1+3x)",
+    "invariance": "mu=sum_{a>=1}2^-a*(f_a)_*mu",
+    "ratio": "1/3",
+    "critical_formal_L2_dimension": 1,
+    "note": "formal similarity dimension, not proven actual L2 dimension",
+    "cylinders": "each image one of 1+3Z3 and 2+3Z3; parity repeats exactly the same full radius-1/3 ball",
+    "exact_overlap": "no equal maps for distinct equal-length words; Tao Lemma 6.2 offset F_k injectivity"
+  },
+  "statistics": {
+    "exact_increment_identity": "E_s=3^s sum_{a!=b}2^(-a-b) sum_{y mod 3^s} nu_{a,s}(y)*nu_{b,s}(y), s>=1; nu_{a,s} is f_a applied to mu mod 3^(s-1), reduced mod 3^s. The diagonal is chi_{s-1} since 3*sum_a p_a^2=1",
+    "chi_s": "3^s sum_{y mod 3^s} mu(y+3^s Z3)^2",
+    "E_s": "chi_s-chi_{s-1} >=0; E_s need not be monotone",
+    "observations_source": "user-given E16, E18 and chi18 not independently reproduced; s<=10 checked independently",
+    "computed": [
+      {
+        "s": 1,
+        "chi": 1.6666666666666665,
+        "E": 0.6666666666666665
+      },
+      {
+        "s": 2,
+        "chi": 2.1428571428571397,
+        "E": 0.47619047619047317
+      },
+      {
+        "s": 3,
+        "chi": 2.604431823197911,
+        "E": 0.4615746803407714
+      },
+      {
+        "s": 4,
+        "chi": 3.068646231616258,
+        "E": 0.4642144084183468
+      },
+      {
+        "s": 5,
+        "chi": 3.534161151367792,
+        "E": 0.46551491975153425
+      },
+      {
+        "s": 6,
+        "chi": 4.000329912369236,
+        "E": 0.4661687610014438
+      },
+      {
+        "s": 7,
+        "chi": 4.465821342205527,
+        "E": 0.4654914298362911
+      },
+      {
+        "s": 8,
+        "chi": 4.931742462504906,
+        "E": 0.46592112029937915
+      },
+      {
+        "s": 9,
+        "chi": 5.398401608914416,
+        "E": 0.46665914640950934
+      },
+      {
+        "s": 10,
+        "chi": 5.865789026498194,
+        "E": 0.46738741758377866
+      }
+    ],
+    "user_observed": {
+      "E16": 0.4714,
+      "E18": 0.4722,
+      "chi18": 9.629
+    }
+  },
+  "separation": {
+    "definition": "delta_k(A)=min_{u!=v in [1,A]^k} |T_u(0)-T_v(0)|_3, with T_u=f_u1 o ... o f_uk",
+    "finite_data": [
+      {
+        "k": 1,
+        "alphabet_max_A": 2,
+        "word_count": 2,
+        "max_pair_v3": 0,
+        "min_pair_distance": "3^-0",
+        "natural_scale": "3^-1",
+        "distance_over_natural_scale": "3^1",
+        "witness": null
+      },
+      {
+        "k": 2,
+        "alphabet_max_A": 2,
+        "word_count": 4,
+        "max_pair_v3": 1,
+        "min_pair_distance": "3^-1",
+        "natural_scale": "3^-2",
+        "distance_over_natural_scale": "3^1",
+        "witness": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 3,
+        "alphabet_max_A": 2,
+        "word_count": 8,
+        "max_pair_v3": 2,
+        "min_pair_distance": "3^-2",
+        "natural_scale": "3^-3",
+        "distance_over_natural_scale": "3^1",
+        "witness": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 4,
+        "alphabet_max_A": 2,
+        "word_count": 16,
+        "max_pair_v3": 3,
+        "min_pair_distance": "3^-3",
+        "natural_scale": "3^-4",
+        "distance_over_natural_scale": "3^1",
+        "witness": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 5,
+        "alphabet_max_A": 2,
+        "word_count": 32,
+        "max_pair_v3": 4,
+        "min_pair_distance": "3^-4",
+        "natural_scale": "3^-5",
+        "distance_over_natural_scale": "3^1",
+        "witness": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 6,
+        "alphabet_max_A": 2,
+        "word_count": 64,
+        "max_pair_v3": 5,
+        "min_pair_distance": "3^-5",
+        "natural_scale": "3^-6",
+        "distance_over_natural_scale": "3^1",
+        "witness": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 7,
+        "alphabet_max_A": 2,
+        "word_count": 128,
+        "max_pair_v3": 6,
+        "min_pair_distance": "3^-6",
+        "natural_scale": "3^-7",
+        "distance_over_natural_scale": "3^1",
+        "witness": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 1,
+        "alphabet_max_A": 3,
+        "word_count": 3,
+        "max_pair_v3": 1,
+        "min_pair_distance": "3^-1",
+        "natural_scale": "3^-1",
+        "distance_over_natural_scale": "3^0",
+        "witness": [
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "k": 2,
+        "alphabet_max_A": 3,
+        "word_count": 9,
+        "max_pair_v3": 2,
+        "min_pair_distance": "3^-2",
+        "natural_scale": "3^-2",
+        "distance_over_natural_scale": "3^0",
+        "witness": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "k": 3,
+        "alphabet_max_A": 3,
+        "word_count": 27,
+        "max_pair_v3": 5,
+        "min_pair_distance": "3^-5",
+        "natural_scale": "3^-3",
+        "distance_over_natural_scale": "3^-2",
+        "witness": [
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            3,
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 4,
+        "alphabet_max_A": 3,
+        "word_count": 81,
+        "max_pair_v3": 6,
+        "min_pair_distance": "3^-6",
+        "natural_scale": "3^-4",
+        "distance_over_natural_scale": "3^-2",
+        "witness": [
+          [
+            1,
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            3,
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 5,
+        "alphabet_max_A": 3,
+        "word_count": 243,
+        "max_pair_v3": 7,
+        "min_pair_distance": "3^-7",
+        "natural_scale": "3^-5",
+        "distance_over_natural_scale": "3^-2",
+        "witness": [
+          [
+            1,
+            1,
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            3,
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 6,
+        "alphabet_max_A": 3,
+        "word_count": 729,
+        "max_pair_v3": 9,
+        "min_pair_distance": "3^-9",
+        "natural_scale": "3^-6",
+        "distance_over_natural_scale": "3^-3",
+        "witness": [
+          [
+            1,
+            2,
+            2,
+            1,
+            1,
+            2
+          ],
+          [
+            3,
+            3,
+            2,
+            2,
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "k": 7,
+        "alphabet_max_A": 3,
+        "word_count": 2187,
+        "max_pair_v3": 11,
+        "min_pair_distance": "3^-11",
+        "natural_scale": "3^-7",
+        "distance_over_natural_scale": "3^-4",
+        "witness": [
+          [
+            1,
+            2,
+            2,
+            2,
+            3,
+            2,
+            1
+          ],
+          [
+            3,
+            3,
+            2,
+            3,
+            2,
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 1,
+        "alphabet_max_A": 4,
+        "word_count": 4,
+        "max_pair_v3": 1,
+        "min_pair_distance": "3^-1",
+        "natural_scale": "3^-1",
+        "distance_over_natural_scale": "3^0",
+        "witness": [
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "k": 2,
+        "alphabet_max_A": 4,
+        "word_count": 16,
+        "max_pair_v3": 3,
+        "min_pair_distance": "3^-3",
+        "natural_scale": "3^-2",
+        "distance_over_natural_scale": "3^-1",
+        "witness": [
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "k": 3,
+        "alphabet_max_A": 4,
+        "word_count": 64,
+        "max_pair_v3": 5,
+        "min_pair_distance": "3^-5",
+        "natural_scale": "3^-3",
+        "distance_over_natural_scale": "3^-2",
+        "witness": [
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            3,
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 4,
+        "alphabet_max_A": 4,
+        "word_count": 256,
+        "max_pair_v3": 7,
+        "min_pair_distance": "3^-7",
+        "natural_scale": "3^-4",
+        "distance_over_natural_scale": "3^-3",
+        "witness": [
+          [
+            1,
+            4,
+            4,
+            4
+          ],
+          [
+            3,
+            3,
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "k": 5,
+        "alphabet_max_A": 4,
+        "word_count": 1024,
+        "max_pair_v3": 9,
+        "min_pair_distance": "3^-9",
+        "natural_scale": "3^-5",
+        "distance_over_natural_scale": "3^-4",
+        "witness": [
+          [
+            1,
+            2,
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            3,
+            2,
+            4,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 6,
+        "alphabet_max_A": 4,
+        "word_count": 4096,
+        "max_pair_v3": 11,
+        "min_pair_distance": "3^-11",
+        "natural_scale": "3^-6",
+        "distance_over_natural_scale": "3^-5",
+        "witness": [
+          [
+            1,
+            4,
+            4,
+            4,
+            4,
+            3
+          ],
+          [
+            3,
+            3,
+            1,
+            1,
+            3,
+            1
+          ]
+        ]
+      },
+      {
+        "k": 7,
+        "alphabet_max_A": 4,
+        "word_count": 16384,
+        "max_pair_v3": 13,
+        "min_pair_distance": "3^-13",
+        "natural_scale": "3^-7",
+        "distance_over_natural_scale": "3^-6",
+        "witness": [
+          [
+            1,
+            2,
+            4,
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            3,
+            2,
+            3,
+            3,
+            4,
+            3
+          ]
+        ]
+      },
+      {
+        "k": 1,
+        "alphabet_max_A": 6,
+        "word_count": 6,
+        "max_pair_v3": 1,
+        "min_pair_distance": "3^-1",
+        "natural_scale": "3^-1",
+        "distance_over_natural_scale": "3^0",
+        "witness": [
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      {
+        "k": 2,
+        "alphabet_max_A": 6,
+        "word_count": 36,
+        "max_pair_v3": 4,
+        "min_pair_distance": "3^-4",
+        "natural_scale": "3^-2",
+        "distance_over_natural_scale": "3^-2",
+        "witness": [
+          [
+            1,
+            3
+          ],
+          [
+            5,
+            2
+          ]
+        ]
+      },
+      {
+        "k": 3,
+        "alphabet_max_A": 6,
+        "word_count": 216,
+        "max_pair_v3": 7,
+        "min_pair_distance": "3^-7",
+        "natural_scale": "3^-3",
+        "distance_over_natural_scale": "3^-4",
+        "witness": [
+          [
+            1,
+            1,
+            4
+          ],
+          [
+            5,
+            2,
+            6
+          ]
+        ]
+      },
+      {
+        "k": 4,
+        "alphabet_max_A": 6,
+        "word_count": 1296,
+        "max_pair_v3": 9,
+        "min_pair_distance": "3^-9",
+        "natural_scale": "3^-4",
+        "distance_over_natural_scale": "3^-5",
+        "witness": [
+          [
+            1,
+            3,
+            6,
+            5
+          ],
+          [
+            5,
+            2,
+            1,
+            4
+          ]
+        ]
+      },
+      {
+        "k": 5,
+        "alphabet_max_A": 6,
+        "word_count": 7776,
+        "max_pair_v3": 14,
+        "min_pair_distance": "3^-14",
+        "natural_scale": "3^-5",
+        "distance_over_natural_scale": "3^-9",
+        "witness": [
+          [
+            1,
+            1,
+            2,
+            3,
+            6
+          ],
+          [
+            5,
+            4,
+            5,
+            5,
+            5
+          ]
+        ]
+      }
+    ],
+    "infinite_alphabet": "inf_{u!=v in N_{>0}^k} |T_u(0)-T_v(0)|_3=0 for each k>=1; no minimum",
+    "mechanism": "a and a+2*3^(m-1) coincide in powers of 2 mod 3^m at arbitrary m; prepend or append common letters to generate close k-word pairs"
+  },
+  "bibliography": [
+    {
+      "id": "Tao-1909.03562",
+      "work": "Almost all orbits of the Collatz map attain almost bounded values",
+      "url": "https://arxiv.org/abs/1909.03562",
+      "primary": "local v7 TeX source collatz.tex",
+      "part": "(1.22) Syracuse random variables; Remark 1.13 Z3 series and stationarity; Lemma 6.2 injectivity; corollary conditional 3-adic separation",
+      "result": "iid Geom(2), F_n injective as rational; not uniform p-adic separation"
+    },
+    {
+      "id": "Shmerkin-1609.07802",
+      "work": "On Furstenberg’s intersection conjecture, self-similar measures, and the L^q norms of convolutions",
+      "url": "https://arxiv.org/abs/1609.07802",
+      "primary": "primary_sources/1609.07802.pdf",
+      "part": "Theorem 6.2 and Theorem 6.6; Definition 6.5",
+      "result": "real-line finite IFS, exponential separation along a sequence, Lq dimension formula only; no critical rate"
+    },
+    {
+      "id": "Shmerkin-survey-1907.07121",
+      "work": "L^q dimensions of self-similar measures, and applications: a survey",
+      "url": "https://arxiv.org/abs/1907.07121",
+      "primary": "primary_sources/1907.07121.pdf",
+      "part": "Theorem 3.1",
+      "result": "finite homogeneous real IFS with exponential separation; dimension formula, not O(s)"
+    },
+    {
+      "id": "Hochman-1212.1873",
+      "work": "On self-similar sets with overlaps and inverse theorems for entropy",
+      "url": "https://arxiv.org/abs/1212.1873",
+      "primary": "primary_sources/1212.1873.pdf",
+      "part": "Theorem 1.1",
+      "result": "real-line finite IFS Shannon dimension drop implies super-exponentially close cylinders; no L2 growth bound"
+    },
+    {
+      "id": "Varju-1602.00261",
+      "work": "Absolute continuity of Bernoulli convolutions for algebraic parameters",
+      "url": "https://arxiv.org/abs/1602.00261",
+      "primary": "primary_sources/1602.00261.pdf",
+      "part": "Theorem 1",
+      "result": "real algebraic lambda sufficiently near 1 relative to Mahler measure, L log L density; irrelevant for p-adic critical L2"
+    },
+    {
+      "id": "Breuillard-Varju-1510.04043",
+      "work": "Entropy of Bernoulli convolutions and uniform exponential growth for linear groups",
+      "url": "https://arxiv.org/abs/1510.04043",
+      "primary": "primary_sources/1510.04043.pdf",
+      "part": "Theorem 1",
+      "result": "Lehmer hypothesis yields dimension one for real algebraic lambda near 1, not L2 critical rate"
+    },
+    {
+      "id": "Kittle-Kogler-2409.18936",
+      "work": "On absolute continuity of inhomogeneous and contracting on average self-similar measures",
+      "url": "https://arxiv.org/abs/2409.18936",
+      "primary": "primary_sources/2409.18936.pdf",
+      "part": "Theorem 1.4",
+      "result": "finite k real Euclidean similarities, pi >= epsilon; strong entropy/Lyapunov separation hypothesis for absolute continuity; not here"
+    },
+    {
+      "id": "Kittle-Kogler-2501.17795",
+      "work": "Dimension of contracting on average self-similar measures",
+      "url": "https://arxiv.org/abs/2501.17795",
+      "primary": "primary_sources/2501.17795.pdf",
+      "part": "introduction and stated dimension theorem",
+      "result": "finite-support Euclidean contracting-on-average with separation; no p-adic critical L2 estimate"
+    },
+    {
+      "id": "Hare-Vavra-2307.07375",
+      "work": "Self-similar sets and self-similar measures in the p-adics",
+      "url": "https://arxiv.org/abs/2307.07375",
+      "primary": "primary_sources/2307.07375.pdf",
+      "part": "Introduction; Section 7",
+      "result": "finite rational p-adic IFS, transducers/essential classes; no applicable infinite critical L2 theorem"
+    },
+    {
+      "id": "Garsia-2303.07785",
+      "work": "On absolute continuity and maximal Garsia entropy for self-similar measures with algebraic contraction ratio",
+      "url": "https://arxiv.org/abs/2303.07785",
+      "primary": "primary_sources/2303.07785.pdf",
+      "part": "Introduction entropy definition",
+      "result": "finite-digit real series and Shannon/Garsia entropy; no critical 3-adic Renyi-2 bound"
+    }
+  ],
+  "searches": {
+    "total": 20,
+    "openalex": 9,
+    "arxiv": 9,
+    "semantic": 2,
+    "semantic_status": "429 on both requests, do not treat as verification",
+    "raw_file": "literature_search_results.json"
+  },
+  "logical_boundary": "Shmerkin real finite-alphabet exponential separation yields only D2=1 (chi_s=3^o(s)) if transported to this context. It does not yield E_s bounded or O(s polylog s); infinite alphabet separation fails globally even at k=1. Finite truncation normalized weights have sum p_a^2=(1+2^-A)/(3*(1-2^-A))>1/3, so its similarity D2<1. Weighted truncated/typical-word correlation control is still missing.",
+  "prediction": "[CONJECTURE] E_s tends to a finite positive c (~0.47 suggested by s<=18); alternative slow log s growth cannot be excluded from data.",
+  "outputs": [
+    "cp29_separation.py",
+    "cp29_chi_check.py",
+    "literature_search.py",
+    "primary_fetch.py",
+    "separation_data.json",
+    "chi_small_check.json",
+    "literature_search_results.json",
+    "cp29_selfsim.json"
+  ]
+}

@@ -1,0 +1,25 @@
+ROLE MARKER: CP17_LINEAR_20260923
+
+Görev: bir Collatz ara sonucunu keskinleştir (ispat + exact hesap). Collatz çözülmedi; bu yalnız bir yardımcı lemma.
+
+TANIM. A_1,A_2,... bağımsız, P(A=a)=2^{-a} (a≥1). S_j=A_1+...+A_j. X_n = Σ_{j=1}^n 3^{j-1}·2^{-S_j} (mod 3^n) (2^{-1} mod 3^n'de ters). p_n(y)=P(X_n≡y). χ_n = 3^n Σ_y p_n(y)^2 (çarpışma enerjisi; düzgün dağılımda 1).
+Programın kanıtlı sonucu (CP17): χ_n = O(n^4) (Tao 2019 Lemma 6.2 ofset birebirliği + martingal + sınıflama).
+
+KOORDİNATÖRÜN EXACT DEĞERLERİ (kesilmemiş; durum (X mod 3^n, S mod 2·3^{n-1}) üzerinde transfer, kütle 1):
+ n : 1 2 3 4 5 6 7 8 9
+ χ : 1.666667 2.142857 2.604432 3.068646 3.534161 4.000330 4.465821 4.931742 5.398402
+ farklar: .4762 .4616 .4642 .4655 .4662 .4665 .4665 .4666(8→9: .466659)
+ Tahmin: χ_n − χ_{n−1} → c ≈ 0.46666 (7/15 = 0.466667 aday). χ_1=5/3, χ_2=15/7 (kontrol et).
+
+GÖZLEM (kontrol et, ispatla): Fourier ile χ_n = Σ_{ξ mod 3^n} |φ_n(ξ)|^2, φ_n(ξ)=E e(ξX_n/3^n). ξ=3^{n−j}u (u birim mod 3^j) ise X_n ≡ X_j (mod 3^j) olduğundan φ_n(ξ)=φ_j(u). Dolayısıyla
+ χ_n = Σ_{j=0}^n E_j,  E_j = Σ_{u ∈ (Z/3^j)^*} |φ_j(u)|^2,  E_0=1,
+yani χ_n − χ_{n−1} = E_n = ilkel frekanslardaki enerji. Doğrusal büyüme ⇔ E_n → c.
+
+GÖREVLER
+ T1. χ_1..χ_9'u KENDİ bağımsız kodunla exact (Fraction veya yüksek hassasiyet) yeniden hesapla; mümkünse n=10,11'e uzat (akıllı yöntem: E_n'i doğrudan hesapla; 2-adik yapı: 2 mod 3^n ilkel kök, 2^{-S} mod 3^n yalnız S mod 2·3^{n−1}'e bağlı). Tabloyu ver.
+ T2. E_n'in limitini bul. Kapalı form ara (7/15? başka rasyonel? 2-adik/3-adik bir seri?). E_n'i bir "iki bağımsız kopyanın mod 3^n uyuşup mod 3^{n−1} ötesine geçmesi" olasılığı gibi yorumla: E_n = 3^n·P(X_n≡X'_n) − 3^{n−1}·P(X_{n−1}≡X'_{n−1}) mi? Bir yenileme/Markov zinciri yapısı (fark süreci D_j = X_j − X'_j'nin 3-adik değerlemesi) ile c'yi türet.
+ T3. İSPAT hedefi: sup_n E_n < ∞ (⇒ χ_n = O(n)), ideal olarak E_n → c ve c'nin formülü. En az "χ_n ≤ C·n" için tam, adım adım ispat yaz; kullandığın her dış sonucu (Tao Lemma 6.2 vb.) birincil kaynaktan ifadesiyle alıntıla (arXiv:1909.03562). İspat bulamazsan en zayıf adımı ve neyin eksik olduğunu kesin söyle.
+ T4. Literatür: bu nicelik (Syracuse rastgele değişkeninin mod 3^n çarpışma olasılığı / L^2 normu / "Syracuse random variable" "Fourier" "3-adic") Tao 2019 §6–7, Kontorovich–Lagarias, Wirsching 1998, Ryan/Si vb.'de var mı? En az 5 sorgu (arXiv API, OpenAlex, Semantic Scholar). Birincil metni açmadığın kaynağa DOĞRULANMADI de; uydurma atıf yasak.
+
+ÇIKTI: cwd'ye cp17_linear.py (kod), cp17_linear.json (tablo + limit + kontrol), ve final cevap: Türkçe, sade; (a) exact tablo, (b) c için formül/tahmin ve gerekçe, (c) ispat (etiket [PROOF]/[PROOF-with-gap: ...]/[CONJECTURE]), (d) literatür. Son satır tam olarak:
+CP17_LINEAR_20260923_COMPLETE
