@@ -1477,7 +1477,7 @@
     "stage1_executed": false,
     "status": "[HISTORICAL B4 V1 — CONSUMED / CLOSED]"
   },
-  "updated_at": "2026-10-13T14:24:36.789201+00:00",
+  "updated_at": "2026-10-14T08:01:28.224792+00:00",
   "historical_governed_active_task": {
     "code": "CP20_TASK8B3_E7R_B4_TILTED_MICROCANONICAL_FOURIER_V2",
     "name": "Tilted / Recentered Microcanonical Fourier Cancellation — Integrity-Repair Reseal",
@@ -1562,5 +1562,15 @@
     "method": "dated correction notes appended (original text untouched); SHA256SUMS + state hashes refreshed",
     "scientific_status": "CP26 COLLAPSE [PROOF] stands: LMN 1995 Corollaire 2 verified from primary source, threshold 17013 exact, tail k>3.82e8 by monotonicity; CP28 PBM proof status unchanged, novelty TRIVIAL/corollary of Inselmann; continued-fraction n0>=2^107/2^1520/2^15780/2^50495 and 2^1050 WITHDRAWN (bounds on C(n0), not n0) in DURUM.md, GECMIS.md, 09/PATTERNLER.md, 09/BAGLANTILAR.md; chi_s_exact labelled float64/FFT full-support (not exact rational). Collatz OPEN",
     "next_action": "chi_s: bound off-diagonal collision term (sup E_j)"
+  },
+  "cp29_chi_s_collision_energy": {
+    "timestamp": "2026-10-14T08:01:28.224792+00:00",
+    "checkpoint": "CP29_CHI_S_COLLISION_ENERGY",
+    "status": "CLOSED (partial/negative)",
+    "method": "Unreal-only round: 3 author arms (PAIR, FOURIER, NUMERIC) + SELFSIM theory arm + clean UA referee; Hermes exact Fraction reproduction (cp29_verify.py)",
+    "scientific_status": "Identities I1-I6 PROOF (elementary; INTERNAL tools): E_s=3^s r_s (first divergence), weighted 4^j-correlation formula, fiber-square 0<=E_s<=2chi_{s-1}, v3-difference not Markov (16400 vs 1280 /786429), cross-overlap form, logic lemma. Growth of chi_s OPEN: best rigorous bound still O(s^4) (CP17); single missing inequality sup_s 3^{s-1} sum_{l!=0} 4^{-|l|} C_s(l) < inf. Numerics s<=18 (3 independent codes, agreement <=5e-13, not certified): E_16=0.471352, E_17=0.471820, E_18=0.472233, non-monotone at 6->7; fits undecided. Self-similar framing: 3-adic critical L2 IFS, no positive minimal separation in infinite alphabet; no known theorem closes it. Audit: UA referee + Hermes exact (identities only). Collatz OPEN",
+    "report_sha256": "69c3031ec9539fbc525b133db07c991a63628d8ab33751fdc571888a90304db3",
+    "code_sha256": "5886525642a9643f6600d16a5823fbb2a1f6b09eb91fb3b14129415c98168cca",
+    "next_action": "user decision: PARK chi_s (recommended) / weighted near-overlap estimate for C_s(l) / return to main programme"
   }
 }

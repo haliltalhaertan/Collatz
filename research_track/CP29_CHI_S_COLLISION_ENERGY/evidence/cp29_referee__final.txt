@@ -1,0 +1,15 @@
+**I1 — DOĞRU:** Aynı dıştaki \(A\) olasılığı \(1/3\); bu durumda çakışma olasılığı \(q_{s-1}\). Dolayısıyla \(E_s=3^sr_s\). Aynı \(A\)-kelimesinin \(\chi_s\)’ye katkısı 1; \(r_1=2/9,\ r_2=10/189\).
+
+**I2 — DOĞRU:** Eşitlik yalnız çift \(K=A'-A=2l\) için mümkün. \(\Pr(K=2l)=4^{-|l|}/3\); \(l=0\) terimi çıkarılınca verilen \(E_s\) formülü kalır.
+
+**I3 — DOĞRU:** Her lifte \(\sum_tq_s(r,t)=p_{s-1}(r)\). Kareleri açmak özdeşliği, lifteki kareler toplamını sınırlandırmak da \(0\le E_s\le2\chi_{s-1}\) eşitsizliğini verir.
+
+**I4 — DOĞRU:** \(x,y\) mod 9, çıktılar mod 27 alınır; sınanan olay \(v_3(u-u')\ge3\)’tür. \(A\) mod 18 üzerinden bağımsız sayım sırasıyla \(16400/786429\) ve \(1280/786429\) veriyor. Başlangıç değerlemesi ikisinde de sıfırken olasılıklar farklı.
+
+**I5 — DOĞRU:** 75 basamaklı \(s\le10\) hesabında ilk sekiz iddianın en büyük mutlak farkı \(4.184\times10^{-10}\); ayrıca \(E_9=0.466659146409511148\), \(E_{10}=0.467387417583781298\). `free -g` 14 GiB kullanılabilir bellek gösterdi; bellek-dostu uzun-kesirli hesapla \(s=17\) için \((\chi,E)=(9.156767868073868085,\ 0.47182015542620476308)\), \(s=18\) için \((9.629001325254328114,\ 0.47223345718046002943)\) bulundu. İddialardan farklar sırasıyla \((-1.31915\times10^{-13},\ +2.04763\times10^{-13})\) ve \((+3.28114\times10^{-13},\ +4.60029\times10^{-13})\); \(s=18\) ölçekli maksimumu \(2160.912930766\), yani verilen iki ondalıktan \(0.002931\) farklı.
+
+**I6 — DOĞRU:** İlk iki sonuç teleskopik toplam ve Cesàro ortalamasından çıkar. Yalnız sınırsızlık yetmez: \(E_{2^k}=k\), diğer \(E_j=0\) seçimi sınırsız \(E_j\)’ye rağmen \(\chi_s=O(s)\) verir.
+
+Bağımsız kod ve ayrıntılı sonuçlar çalışma dizinindeki `cp29_small.py`, `cp29_large.py`, `cp29_large_extended.py` ve `cp29_referee.json` dosyalarındadır.
+
+CP29_REFEREE_20260923_COMPLETE

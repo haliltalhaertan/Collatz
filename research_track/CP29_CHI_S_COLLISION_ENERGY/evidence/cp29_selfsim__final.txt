@@ -1,0 +1,74 @@
+## CP29_SELFSIM — karar: **B, önemli bir kayıtla**
+
+[PROOF] Kendine-benzer ölçü çerçevesi doğru. χ_s’nin artışını haritalar *arasındaki* örtüşmeye bağlayan kesin bir özdeşlik veriyor. Fakat bu örtüşmeyi gerekli güçte sınırlayan uygulanabilir bir teorem bulamadım. Dolayısıyla B, “bilinen bir teoremin tek eksik varsayımına indirgeme” değil; **kanıtlanması gereken nicel hedefi belirleme** anlamında geçerli.
+
+### 1. Çerçeve ve Tao ile karşılaştırma
+
+[PROOF] Bağımsız \(A_i\)’ler için \(\Pr(A_i=a)=2^{-a}\) alınırsa
+\[
+X_\infty=\sum_{j=0}^{\infty}3^j2^{-(A_1+\cdots+A_{j+1})}\in\mathbb Z_3
+\]
+yakınsar. İlk değişkeni ayırmak,
+\[
+X_\infty\ \overset d=\ f_{A_1}(X'_\infty),\qquad
+f_a(x)=2^{-a}(1+3x)
+\]
+verir; \(X'_\infty\) bağımsız bir kopyadır. Böylece belirtilen \(\mu=\sum_{a\ge1}2^{-a}(f_a)_*\mu\) denklemi doğrudur.
+
+Tao’nun birincil metninde, arXiv:1909.03562, **(1.22)** \(\operatorname{Syrac}(\mathbb Z/3^n\mathbb Z)\)’yi \(F_n(\operatorname{Geom}(2)^n)\bmod 3^n\) olarak tanımlar. **Remark 1.13** aynı \(\mathbb Z_3\) serisini yazar ve dağılımını \(x\mapsto(3x+1)/2^a\), olasılık \(2^{-a}\), Markov sürecinin durağan ölçüsü olarak açıklar. Burada önemli bir sıra ayrıntısı vardır: Tao’nun \(F_n\)’si, yukarıdaki iç içe \(f_{A_1}\circ\cdots\circ f_{A_n}\) yazılışına geçerken kelime sırası ters çevrilerek kullanılır.
+
+[PROOF] \(2^{-a}\) bir 3-adik birim olduğundan \(f_a\)’nın benzerlik oranı \(1/3\)’tür. Tek \(a\)’ların görüntüsü \(2+3\mathbb Z_3\), çift \(a\)’larınki \(1+3\mathbb Z_3\)’tür: aynı paritedeki farklı haritaların **bütün görüntü topları çakışır**. Buna karşılık \(\sum_{a\ge1}(2^{-a})^2=1/3\); bundan çıkan benzerlik \(L^2\)-boyutu **biçimsel olarak** 1’dir. Örtüşmeler varken ölçünün gerçek korelasyon boyutunun 1 olduğu bu hesapla kanıtlanmaz.
+
+[PROOF] Tao **Lemma 6.2**, sabit uzunluktaki ofset haritası \(F_n:(\mathbb N+1)^n\to\mathbb Z[1/2]\)’nin birebir olduğunu söyler. Aynı uzunlukta iki bileşik affine harita eşitse ofsetleri de eşit olacağından kelimeler aynıdır. Farklı uzunluklarda ise eğimlerin 3-adik değerlemeleri farklıdır. Dolayısıyla **tam harita örtüşmesi yoktur**; görüntü toplarının çakışmasıyla bu olgu karıştırılmamalıdır. Tao’nun hemen sonraki nicel 3-adik ayrışma sonucu da yalnızca belirtilmiş tipik-kelime/toplam koşulları altındadır; bütün sonsuz alfabeye tekdüze ayrışma vermez.
+
+### 2. χ_s için kesin özdeşlik ve beklenti
+
+[PROOF] \(\nu_{a,s}\), \(f_a(X_\infty)\)’nin \(3^s\) modülündeki dağılımı olsun. Her \(f_a\), \(3^{s-1}\) modülündeki girdileri görüntüsünde birebir taşıdığı için köşegen terimler tam olarak \(\chi_{s-1}\)’i verir:
+\[
+\boxed{\ E_s=\chi_s-\chi_{s-1}
+=3^s\sum_{a\ne b}2^{-a-b}
+       \sum_{y\bmod3^s}\nu_{a,s}(y)\nu_{b,s}(y).\ }
+\]
+Bu, eksik adımı açıkça gösterir: **farklı haritaların ağırlıklı çapraz çakışma enerjisi** tekdüze sınırlanırsa \(\sup_sE_s<\infty\), dolayısıyla \(\chi_s=O(s)\) çıkar. Birbirinin aynı ilk \(s\) harfini seçen iki bağımsız kelimenin \(\chi_s\)’ye katkısı da tam \(3^s(1/3)^s=1\)’dir. Bu katkı doğrusal büyümeyi tek başına kanıtlamaz.
+
+[PROOF] Bağımsız küçük-ölçek hesabım koordinatörün verisini doğruluyor: \(E_3=0{,}46157468\), \(E_7=0{,}46549143<E_6=0{,}46616876\), \(E_{10}=0{,}46738742\). \(s=16,18\) ve \(\chi_{18}\) değerlerini yeniden hesaplamadım; bunlar verilen gözlemdir. \(E_s\ge0\) kesindir, fakat \(E_s\)’nin monotonluğu yanlıştır.
+
+[CONJECTURE] Veriler \(E_s\to c\), \(c\) yaklaşık \(0{,}47\), yönünü düşündürüyor. Yavaş \(c\log s\) büyümesini veya başka bir alt-üstel düzeltmeyi bu ölçekler dışlamaz.
+
+### 3. Literatürün eriştiği sınır
+
+OpenAlex’te 9, arXiv API’de 9 sorgu yaptım; Semantic Scholar’a yapılan 2 sorgu **429** döndü ve doğrulama sayılmadı. Sorgular ve sonuçlar `literature_search_results.json` içindedir. Aşağıdaki eserlerin metinlerini açıp denetledim:
+
+| Birincil kaynak | İlgili sonuç ve buradaki sınır |
+|---|---|
+| Shmerkin, arXiv:1609.07802, Thm. 6.2 ve 6.6 | **Gerçel doğru**, sonlu IFS ve üstel ayrışma altında \(L^q\)-boyutu formülü. Kritik noktada \(E_s=O(1)\) hızı vermez. |
+| Hochman, arXiv:1212.1873, Thm. 1.1 | Gerçel, sonlu IFS’de Shannon-boyutu düşerse süper-üstel yakın silindirler sonucu. Kritik \(L^2\) artış sınırı değil. |
+| Varjú, arXiv:1602.00261, Thm. 1 | Belirtilen Mahler-ölçüsü koşuluyla 1’e yakın gerçel cebirsel Bernoulli parametrelerinde \(L\log L\) yoğunluğu. |
+| Breuillard–Varjú, arXiv:1510.04043, Thm. 1 | Lehmer varsayımına bağlı, gerçel Bernoulli konvolüsyonları için boyut-1 sonucu. |
+| Kittle–Kogler, arXiv:2409.18936, Thm. 1.4; arXiv:2501.17795 | Sonlu destekli Öklid benzerlikleri için nicel varsayımlı mutlak süreklilik/boyut sonuçları. |
+| Hare–Vávra, arXiv:2307.07375 | Doğrudan **p-adik** kendine-benzer kümeler ve ölçüler; başlangıçtaki IFS sonlu ve incelenen özel harita sınıfı bu sonsuz aileyi kapsamaz. |
+| Shmerkin’in arXiv:1907.07121 taraması, Thm. 3.1; arXiv:2303.07785 | Sırasıyla sonlu gerçel IFS’de \(L^q\)-boyutu ve sonlu-rakamlı gerçel serilerde Garsia/Shannon entropisi; gereken 3-adik kritik \(L^2\) hızını vermez. |
+
+[PROOF-with-gap] Shmerkin’in en yakın teoreminin varsayımı, **sonlu gerçel IFS’de**, uygun ölçekler dizisi boyunca farklı silindir haritaları arasında \(e^{-O(k)}\) türü **üstel ayrışmadır**. Bizim aile sonsuz ve 3-adiktir; aşağıdaki hesapta ayrışma daha \(k=1\)’de tekdüze olarak bozulur. Ayrıca teoremin sonucu aktarılabilse bile “boyut 1” yalnızca \(\chi_s=3^{o(s)}\) türü bir bilgi olur, \(O(s\,\mathrm{polylog}\,s)\) değil. Sonlu alfabeye kesip olasılıkları yeniden normalize etmek kritiklik eşitliğini de bozar:
+\[
+\sum_{a=1}^{A}\left(\frac{2^{-a}}{1-2^{-A}}\right)^2
+=\frac{1+2^{-A}}{3(1-2^{-A})}>\frac13.
+\]
+Denetlenen sonuçlar arasında doğrudan \(\sup E_s<\infty\) veya \(\chi_s=O(s\,\mathrm{polylog}\,s)\) veren bir teorem yok.
+
+### 4. Exact ayrışma deneyi
+
+`cp29_separation.py`, \(1\le a_i\le A\) kelimelerinin rasyonel ofsetlerini **tam kesirlerle** kurar; en yakın farklı çift için en büyük \(v_3\)’ü modüler çakışma tablolarıyla bulur. Küçük örnekler:
+
+| \(A\) | \(k\) | en yakın çiftin \(v_3\)’ü | uzaklık / doğal ölçek |
+|---:|---:|---:|---:|
+| 2 | 7 | 6 | \(3^{-6}\) / \(3^{-7}\) |
+| 3 | 7 | 11 | \(3^{-11}\) / \(3^{-7}\) |
+| 4 | 7 | 13 | \(3^{-13}\) / \(3^{-7}\) |
+| 6 | 5 | 14 | \(3^{-14}\) / \(3^{-5}\) |
+
+[PROOF] **Tam sonsuz alfabede “en küçük pozitif uzaklık” yoktur:** her sabit \(k\)’de farklı kelimeler arası uzaklıkların infimumu sıfırdır. Çünkü \(2^{\,2\cdot3^{m-1}}\equiv1\pmod{3^m}\); \(a\) ile \(a+2\cdot3^{m-1}\) seçilip ortak bir kuyruk eklendiğinde ofsetler istenen her \(3^m\) modülünde çakışabilir. Tao’nun rasyonel ofset birebirliği nedeniyle yine de eşit değildirler. Sonlu-\(A\) tablosu ayrıca doğal \(3^{-k}\) ölçeğinde güçlü ayrışmanın beklenmemesi gerektiğini gösterir; tek başına her sonlu kesit için *üstel* ayrışmanın başarısızlığını göstermez.
+
+Kod, ham tarama, kaynak PDF’leri, küçük-ölçek kontrolü ve makinece okunabilir sonuç `cp29_selfsim.json` olarak çalışma dizinine kaydedildi.
+
+CP29_SELFSIM_20260923_COMPLETE

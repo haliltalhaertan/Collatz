@@ -1,0 +1,45 @@
+**Sonuç:** [PROOF] Fourier ve basamak-kaldırma formülleri \(E_s\)’yi pozitif bir koşullu kare toplamı olarak veriyor. Bundan \(0\leq E_s\leq2\chi_{s-1}\) çıkıyor; fakat bu eşitsizlik istenen büyüme sınırları için yeterli değil. **(G1), (G2)’de \(O(s^4)\)’ten iyi bir sınır ve (G3) kanıtlanmadı.** Bağlamda verilen \(O(s^4)\) sınırını burada yeniden kanıtlamıyorum.
+
+**[PROOF] Fourier transferi.** \(M=3^s\), \(L=2\cdot3^{s-1}\) ve \(w_s(a)=2^{-a}/(1-2^{-L})\), \(1\leq a\leq L\) olsun. \(2\), modulo \(M\)’de ilkel kök olduğundan bu ağırlıklar \(A\bmod L\)’nin **tam** dağılımıdır. \(e(t)=\exp(2\pi it)\) seçimiyle
+\[
+\phi_s(u)=\sum_{a=1}^{L}w_s(a)\,
+ e\!\left(\frac{u2^{-a}}{M}\right)
+ \phi_{s-1}(u2^{-a}\bmod3^{s-1}).
+\]
+İlkel \(u=2^k\bmod M\) yazılırsa transfer, \(k\mapsto k-a\bmod L\) yörüngeleri üzerinde işler; alt düzeyde indis \(k-a\bmod(2\cdot3^{s-2})\)’ye iner. Buradaki \(k\) bir **ayrık logaritma indisi**dir, \(u\)’nun 2-adik değerlemesi değildir. \(3\mid u\) frekansları ise alt düzeye iner; \(E_s\) yalnız ilkel frekansların kare toplamıdır.
+
+**[PROOF] Basamak fonksiyoneli.** Taze \(A\)’lı özyinelemede ortak dağılım açıkça
+\[
+J_s(y,a)=p_{s-1}(y)w_s(a),\qquad
+T_s(y,a)=2^{-a}(1+3y)\bmod M
+\]
+olur. \(q_s(r,t)=\sum_{T_s(y,a)=r+t3^{s-1}}J_s(y,a)\) ve \(p_{s-1}(r)>0\) için \(\pi_s(t\mid r)=q_s(r,t)/p_{s-1}(r)\) tanımlayalım. Sıfır kütleli liflerin katkısı sıfır alınır. O zaman
+\[
+\boxed{\ E_s=3^{s-1}\sum_r p_{s-1}(r)^2
+                 \left(3\sum_{t=0}^2\pi_s(t\mid r)^2-1\right)\ }.
+\]
+Bu, \(3^s\sum_{r,t}(q_s(r,t)-p_{s-1}(r)/3)^2\) ile aynıdır. \(1/3\leq\sum_t\pi_s(t\mid r)^2\leq1\) olduğundan
+\[
+0\leq E_s\leq2\chi_{s-1}.
+\]
+**[PROOF-with-gap: üniform ağırlıklı lif-kare tahmini yok]** (G1) için eksik olan *tek belirleyici eşitsizlik*, kutulu ifadenin sağ tarafının bütün \(s\)’lerde sabit bir \(C\) ile sınırlanmasıdır. Elde edilen \(2\chi_{s-1}\) üst sınırı bunu sağlamaz.
+
+**[PROOF] \(S_s\) konusunda yön ayrımı önemlidir.** Yukarıdaki formül *taze \(A\)* ile doğrudur. Özgün kelimenin \((X_{s-1}\bmod3^{s-1},S_s\bmod L)\) çifti tek başına en üst basamağı belirlemez: \(s=2\)’de \((A_1,A_2)=(1,3)\) ve \((3,1)\) için her iki çiftte \(X_1\bmod3=2,\ S_2\bmod6=4\), fakat \(X_2\bmod9\) sırasıyla \(8\) ve \(2\)’dir. Özgün yön kullanılırsa ek kaldırma/geçmiş bilgisi gerekir.
+
+**[PROOF] Birincil kaynak kontrolü.** Tao, [arXiv:1909.03562](https://arxiv.org/html/1909.03562), Lemma 6.2: “For each natural number \(n\), the \(n\)-Syracuse offset map \(F_n:(\mathbb N+1)^n\to\mathbb Z[1/2]\) is injective.” Bu, rasyonel ofsetlerin birebirliğidir; modulo \(3^s\) çarpışmalarına üniform sınır değildir. Proposition 1.17, \(3\nmid\xi\) ve her sabit \(A>0\) için
+\[
+\left|\mathbb E e^{-2\pi i\xi\,\mathbf{Syrac}(\mathbb Z/3^n\mathbb Z)/3^n}\right|
+\ll_A n^{-A}
+\]
+der; sabit \(n\)’de örtük sabit \(\xi\)’den bağımsızdır. Ancak yaklaşık \(2\cdot3^{n-1}\) ilkel frekansın **kareleri toplamını** bu tek-frekans tahmini kontrol etmez. Sorudaki seri gösterimi metinde (1.29)’da, özyineleme Lemma 1.12’dedir.
+
+**[PROOF] Sayısal kontrol.** `cp29_fourier.py`, her \(s\leq8\) için bütün \((y,A\bmod L)\) durumlarını toplar; koşullu basamak formülünü, ilkel-frekans toplamını ve Fourier özyinelemesini ayrı ayrı sınar. \(E_1,\ldots,E_8\) sırasıyla
+\[
+0.666666667,\ 0.476190476,\ 0.461574680,\ 0.464214408,\
+0.465514920,\ 0.466168761,\ 0.465491430,\ 0.465921120.
+\]
+Verilen tablo ve bu özdeşlikler arasındaki en büyük fark \(6.3\cdot10^{-15}\)’ten küçüktür; ilk üç \(\chi_s\) ayrıca tam kesirlerle doğrulanmıştır. Bu sonlu kontroller asimptotik kanıt değildir.
+
+Çıktılar çalışma dizininde: `cp29_fourier.py`, `cp29_fourier.json`.
+
+CP29_FOURIER_20260923_COMPLETE

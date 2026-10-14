@@ -1,0 +1,208 @@
+{
+  "status": "not_proved_G1_G2_G3",
+  "source": "https://arxiv.org/html/1909.03562 (and https://arxiv.org/pdf/1909.03562), primary text; Lemma 6.2, Proposition 1.17, equation (1.29)",
+  "independent_reference": "/mnt/c/Users/MDP/collatz-analysis/cp29_chi/chi_s_exact.json",
+  "finite_period_no_A_truncation": true,
+  "tests": [
+    {
+      "s": 1,
+      "chi": 1.6666666666666665,
+      "E_digit": 0.6666666666666666,
+      "E_conditional": 0.6666666666666667,
+      "E_Fourier": 0.6666666666666666,
+      "recurrence_max_error": 3.1401849173675503e-16,
+      "mass_error": 0.0,
+      "primitive_count": 2,
+      "E_difference": 0.6666666666666665,
+      "chi_reference": 1.6666666666666667,
+      "E_reference": 0.6666666666666667,
+      "max_difference": 2.220446049250313e-16
+    },
+    {
+      "s": 2,
+      "chi": 2.1428571428571423,
+      "E_digit": 0.4761904761904761,
+      "E_conditional": 0.47619047619047616,
+      "E_Fourier": 0.47619047619047594,
+      "recurrence_max_error": 1.3877787807814457e-16,
+      "mass_error": 0.0,
+      "primitive_count": 6,
+      "E_difference": 0.47619047619047583,
+      "chi_reference": 2.1428571428571423,
+      "E_reference": 0.4761904761904756,
+      "max_difference": 3.3306690738754696e-16
+    },
+    {
+      "s": 3,
+      "chi": 2.604431823197916,
+      "E_digit": 0.4615746803407735,
+      "E_conditional": 0.4615746803407736,
+      "E_Fourier": 0.46157468034077337,
+      "recurrence_max_error": 5.928593550334434e-17,
+      "mass_error": 1.1102230246251565e-16,
+      "primitive_count": 18,
+      "E_difference": 0.46157468034077365,
+      "chi_reference": 2.604431823197914,
+      "E_reference": 0.46157468034077187,
+      "max_difference": 1.7763568394002505e-15
+    },
+    {
+      "s": 4,
+      "chi": 3.0686462316162633,
+      "E_digit": 0.4642144084183477,
+      "E_conditional": 0.4642144084183479,
+      "E_Fourier": 0.46421440841834777,
+      "recurrence_max_error": 1.0103182026100663e-16,
+      "mass_error": 0.0,
+      "primitive_count": 54,
+      "E_difference": 0.46421440841834727,
+      "chi_reference": 3.0686462316162624,
+      "E_reference": 0.46421440841834816,
+      "max_difference": 8.881784197001252e-16
+    },
+    {
+      "s": 5,
+      "chi": 3.534161151367799,
+      "E_digit": 0.46551491975153536,
+      "E_conditional": 0.46551491975153464,
+      "E_Fourier": 0.46551491975153525,
+      "recurrence_max_error": 7.609091204154493e-17,
+      "mass_error": 0.0,
+      "primitive_count": 162,
+      "E_difference": 0.4655149197515356,
+      "chi_reference": 3.534161151367796,
+      "E_reference": 0.4655149197515338,
+      "max_difference": 2.6645352591003757e-15
+    },
+    {
+      "s": 6,
+      "chi": 4.000329912369244,
+      "E_digit": 0.4661687610014459,
+      "E_conditional": 0.4661687610014457,
+      "E_Fourier": 0.4661687610014458,
+      "recurrence_max_error": 2.8609792490763984e-17,
+      "mass_error": 2.220446049250313e-16,
+      "primitive_count": 486,
+      "E_difference": 0.4661687610014451,
+      "chi_reference": 4.000329912369243,
+      "E_reference": 0.4661687610014469,
+      "max_difference": 1.7763568394002505e-15
+    },
+    {
+      "s": 7,
+      "chi": 4.465821342205537,
+      "E_digit": 0.46549142983629205,
+      "E_conditional": 0.46549142983629244,
+      "E_Fourier": 0.4654914298362918,
+      "recurrence_max_error": 1.3884562417838567e-17,
+      "mass_error": 2.4424906541753444e-15,
+      "primitive_count": 1458,
+      "E_difference": 0.4654914298362929,
+      "chi_reference": 4.465821342205532,
+      "E_reference": 0.4654914298362893,
+      "max_difference": 4.440892098500626e-15
+    },
+    {
+      "s": 8,
+      "chi": 4.931742462504918,
+      "E_digit": 0.46592112029938065,
+      "E_conditional": 0.4659211202993804,
+      "E_Fourier": 0.46592112029938065,
+      "recurrence_max_error": 8.940560153363745e-18,
+      "mass_error": 4.440892098500626e-16,
+      "primitive_count": 4374,
+      "E_difference": 0.46592112029938093,
+      "chi_reference": 4.9317424625049116,
+      "E_reference": 0.46592112029937915,
+      "max_difference": 6.217248937900877e-15
+    }
+  ],
+  "exact": [
+    {
+      "s": 1,
+      "chi": "5/3",
+      "p": [
+        "0",
+        "1/3",
+        "2/3"
+      ]
+    },
+    {
+      "s": 2,
+      "chi": "15/7",
+      "p": [
+        "0",
+        "8/63",
+        "16/63",
+        "0",
+        "11/63",
+        "4/63",
+        "0",
+        "2/63",
+        "22/63"
+      ]
+    },
+    {
+      "s": 3,
+      "chi": "177005/67963",
+      "p": [
+        "0",
+        "1376/37449",
+        "2752/37449",
+        "0",
+        "5240/262143",
+        "8632/262143",
+        "0",
+        "344/37449",
+        "10480/262143",
+        "0",
+        "17264/262143",
+        "12784/262143",
+        "0",
+        "23285/262143",
+        "688/37449",
+        "0",
+        "4316/262143",
+        "34492/262143",
+        "0",
+        "6392/262143",
+        "34528/262143",
+        "0",
+        "17246/262143",
+        "3196/262143",
+        "0",
+        "1598/262143",
+        "46570/262143"
+      ]
+    }
+  ],
+  "identities": {
+    "weights": "w_s(a)=2^{-a}/(1-2^{-L_s}), 1<=a<=L_s, L_s=2*3^(s-1)",
+    "fourier": "phi_s(u)=sum_a w_s(a) exp(2*pi*i*u*2^(-a)/3^s) phi_(s-1)(u*2^(-a) mod 3^(s-1))",
+    "joint": "J_s(y,a)=p_(s-1)(y) w_s(a); q_s(r,t)=sum_{y,a:2^(-a)(1+3y)=r+t*3^(s-1) mod 3^s} J_s(y,a)",
+    "conditional": "E_s=3^(s-1) sum_r p_(s-1)(r)^2 [3 sum_t pi_s(t|r)^2-1], pi=q_s(r,t)/p_(s-1)(r)",
+    "unconditional_bound": "0<=E_s<=2 chi_(s-1) (insufficient for G1,G2)"
+  },
+  "primary_quotes": {
+    "lemma_6_2": "For each natural number n, the n-Syracuse offset map F_n:(N+1)^n -> Z[1/2] is injective.",
+    "prop_1_17": "Let n >= 1, and let xi in Z/3^n Z be not divisible by 3. Then E e^(-2 pi i xi Syrac(Z/3^n Z)/3^n) <<_A n^(-A) for any fixed A > 0."
+  },
+  "counterexample_prefix_joint": [
+    {
+      "a1": 1,
+      "a2": 3,
+      "X1_mod3": 2,
+      "S2_mod6": 4,
+      "X2_mod9": 8,
+      "top_digit": 2
+    },
+    {
+      "a1": 3,
+      "a2": 1,
+      "X1_mod3": 2,
+      "S2_mod6": 4,
+      "X2_mod9": 2,
+      "top_digit": 0
+    }
+  ]
+}

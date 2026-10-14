@@ -1,0 +1,24 @@
+ROL: CP29_SELFSIM (yeni teori kolu; yön önerisi, kanıt şart değil ama hedef)
+
+GÖZLEM (koordinatör; kontrol et, yanlışsa söyle). X_s'nin 3-adik limiti X_∞ ∈ Z_3, dağılım denklemini sağlar: μ = Σ_{a≥1} 2^{−a}·(f_a)_*μ, f_a(x)=2^{−a}(1+3x). Her f_a, Z_3 üzerinde oranı 1/3 olan bir 3-adik benzerliktir; çünkü 2^{−a} birimdir ve |3|_3=1/3. Yani μ, sonsuz sayıda haritası olan, aşırı örtüşmeli bir **kendine-benzer ölçü**dür. Görüntüler yalnız 1+3Z_3 ve 2+3Z_3 toplarına düşer.
+ Ağırlık kareleri toplamı: Σ_a 4^{−a} = 1/3 = oran. Bu, L² boyutu için TAM KRİTİK durumdur: benzerlik L²-boyutu = log Σp_a² / log r = 1 = ortam boyutu. Aynı nedenle "aynı A-kelimesi" katkısı her ölçekte tam 1'dir.
+ Tao 2019 Lemma 6.2 (ofset haritası birebir): Farklı sonlu kelimeler hiçbir zaman aynı bileşik haritayı vermez, yani tam örtüşme yoktur.
+ χ_s = 3^s Σ_y μ(y+3^sZ_3)^2, ölçek 3^{−s}'deki L² korelasyon toplamıdır. "χ_s doğrusal mı, s·log s mi" sorusu, kritik L² durumundaki ince (alt-üstel) düzeltmeyi sorar.
+Bilinen sayısal veri: E_s=χ_s−χ_{s−1}: s=3: 0,4616 → s=10: 0,4674 → s=16: 0,4714 → s=18: 0,4722. Monoton değil (s=6→7 küçük düşüş). χ_18=9,629.
+GÖREVLER
+ 1. Yukarıdaki çerçeveyi doğrula: μ'nün tanımı, f_a'nın 3-adik oranı, kritiklik hesabı, tam örtüşme yokluğunun Tao Lemma 6.2'den çıkışı. Tao'nun ilgili tanımını birincil metinden alıntıla (arXiv:1909.03562; Syrac(Z_3), (1.22), Remark 1.13).
+ 2. Literatür: kendine-benzer ölçülerin L^q / korelasyon boyutu, ÖZELLİKLE (a) ultrametrik / p-adik / yerel cisim ortamı, (b) kritik durum (benzerlik boyutu = ortam boyutu) ve L² normunun alt-üstel büyümesi, (c) sonsuz harita sayısı. Adaylar (birincil metinden doğrula, açamadığına DOĞRULANMADI de):
+   - Shmerkin 2019 (Annals, L^q dimensions / Furstenberg)
+   - Hochman 2014 (Annals)
+   - Varjú (Bernoulli convolutions)
+   - Breuillard–Varjú
+   - Kittle / Kittle–Kogler (absolute continuity, detail)
+   - p-adic self-similar sets/measures üzerine çalışmalar
+   - Garsia entropy, critical Bernoulli convolutions
+   En az 8 sorgu yap: arXiv API, OpenAlex, Semantic Scholar.
+ 3. Bu çerçevede χ_s için hangi asimptotik beklenir? Örnekler: E_s→c, E_s~c·log s, ya da bilinen bir "kritik" mekanizma. Bilinen bir teorem doğrudan sup E_s<∞ veya χ_s=O(s·polylog) veriyor mu? Vermiyorsa en yakın teoremin tam hipotezini ve bizde hangi hipotezin eksik olduğunu (ör. üstel ayrışma / exponential separation) yaz.
+ 4. Exponential separation benzeri bir niceliği küçük s'de ölç: farklı uzunluk-k kelimelerin bileşik haritalarının ofsetleri arasındaki en küçük 3-adik uzaklık, k'ye göre nasıl küçülüyor? 3^k ölçeğiyle karşılaştır. Kısa exact Python yaz.
+ 5. Karar: bu çerçeve (A) sorunu bilinen bir teoremle çözüyor, (B) doğru dili verip boşluğu tek hipoteze indiriyor, (C) işe yaramıyor. Gerekçesiyle yaz.
+KURALLAR: Etiketler [PROOF]/[PROOF-with-gap]/[CONJECTURE]. Uydurma atıf yasak. Sade Türkçe.
+ÇIKTI: cwd'ye kod + cp29_selfsim.json + final cevap. Son satır tam olarak:
+CP29_SELFSIM_20260923_COMPLETE
